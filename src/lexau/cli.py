@@ -92,6 +92,19 @@ def build(
 
 
 @cli.command()
+@click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
+@click.option("--site-dir", type=click.Path(path_type=Path), default=Path("site"), show_default=True)
+@click.option("--templates-dir", type=click.Path(path_type=Path), default=Path("templates"), show_default=True)
+def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
+    """Generate static HTML site from the corpus."""
+    from lexau.site import SiteGenerator
+    corpus = Corpus(corpus_dir)
+    gen = SiteGenerator(corpus, site_dir, templates_dir)
+    gen.generate()
+    click.echo(f"Site generated -> {site_dir}/")
+
+
+@cli.command()
 @click.option("--since", required=True, help="ISO date, e.g. 2026-01-01")
 @click.option(
     "--corpus-dir",

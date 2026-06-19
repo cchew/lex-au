@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>lex-au — Commonwealth Acts as AKN XML</title></head>
+<body>
+<h1>lex-au</h1>
+<p>Commonwealth Acts in force as Akoma Ntoso 3.0 XML.</p>
+<ul>
+{% for act in acts %}
+  <li><a href="{{ act.site_path }}">{{ act.name }}</a> ({{ act.effective_date }})</li>
+{% endfor %}
+</ul>
+</body>
+</html>

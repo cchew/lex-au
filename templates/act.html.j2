@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ meta.name }}</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .part { margin-top: 2rem; }
+    .section { margin-top: 1rem; padding-left: 1.5rem; }
+    .section-num { font-weight: bold; }
+  </style>
+</head>
+<body>
+<p><a href="/">← All Acts</a></p>
+<h1>{{ meta.name }}</h1>
+<p>Compilation #{{ meta.comp_num }} | Effective {{ meta.effective_date }}</p>
+<p>FRBR Work URI: <code>{{ meta.frbr_work_uri }}</code></p>
+
+{% for node in body %}
+{% if node.tag == "part" %}
+<div class="part" id="{{ node.eid }}">
+  <h2>Part {{ node.num }}{% if node.heading %} — {{ node.heading }}{% endif %}</h2>
+  {% for sec in node.children %}
+  <div class="section" id="{{ sec.eid }}">
+    <span class="section-num">{{ sec.num }}</span>{% if sec.heading %} {{ sec.heading }}{% endif %}
+    {% for p in sec.paragraphs %}<p>{{ p }}</p>{% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% elif node.tag == "section" %}
+<div class="section" id="{{ node.eid }}">
+  <span class="section-num">{{ node.num }}</span>{% if node.heading %} {{ node.heading }}{% endif %}
+  {% for p in node.paragraphs %}<p>{{ p }}</p>{% endfor %}
+</div>
+{% endif %}
+{% endfor %}
+</body>
+</html>
