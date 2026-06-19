@@ -4,7 +4,7 @@ Commonwealth Acts as AKN 3.0 XML.
 
 Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
 
-**Status: v1 complete** -- 8 Acts in corpus; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face.
+**Status: v1** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
 
 ## Install
 
@@ -53,7 +53,7 @@ Opens `site/index.html` for local browsing.
 
 ### Export to Hugging Face
 
-Create the dataset repo first (one-time, via HF web UI or `huggingface-cli repo create lex-au --type dataset`), then:
+Create the dataset repo first (one-time, via HF web UI), then:
 
 ```bash
 lexau export-hf --repo cchew/lex-au --corpus-dir corpus/
@@ -66,13 +66,13 @@ Raw DOCX files are excluded from the upload (`docx/` directory is ignored).
 Acts are listed in `acts.txt`, one per line. Current corpus:
 
 - Privacy Act 1988
+- Fair Work Act 2009
+- Corporations Act 2001
+- Acts Interpretation Act 1901
+- Criminal Code Act 1995
 - Freedom of Information Act 1982
-- Archives Act 1983
-- Public Service Act 1999
-- Crimes Act 1914
-- Administrative Decisions (Judicial Review) Act 1977
-- Australian Human Rights Commission Act 1986
 - National Disability Insurance Scheme Act 2013
+- National Health Act 1953
 
 ## Corpus layout
 

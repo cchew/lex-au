@@ -5,7 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lexau"
 version = "0.1.0"
+description = "Commonwealth Acts as AKN 3.0 XML — crawler, converter, static site, and Hugging Face export"
+authors = [{name = "Ching Chew", email = "ching.chew@gmail.com"}]
+license = {text = "MIT"}
 requires-python = ">=3.12"
+
+[project.urls]
+Repository = "https://github.com/cchew/lex-au"
+Dataset = "https://huggingface.co/datasets/cchew/lex-au"
 dependencies = [
     "requests>=2.32",
     "python-docx>=1.1",
