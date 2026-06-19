@@ -111,12 +111,12 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
 def export_hf(repo: str, corpus_dir: Path) -> None:
     """Push corpus XML + index to a Hugging Face dataset."""
     api = HfApi()
-    click.echo(f"Uploading corpus to {repo}...")
+    click.echo(f"Uploading corpus to {repo}…")
     api.upload_folder(
         folder_path=str(corpus_dir),
         repo_id=repo,
         repo_type="dataset",
-        commit_message="lex-au corpus update",
+        commit_message=f"lex-au corpus update",
         ignore_patterns=["docx/**"],
     )
     click.echo("Upload complete.")
