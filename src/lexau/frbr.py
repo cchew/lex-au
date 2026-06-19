@@ -10,6 +10,16 @@ def make_division_eid(num: str) -> str:
 def make_chapter_eid(num: str) -> str:
     return f"chapter-{num}"
 
+_EID_PREFIX = {
+    "chapter":     "chapter",
+    "part":        "part",
+    "dvs":         "dvs",
+    "subdvs":      "subdvs",
+    "section":     "sec",
+}
+
+
 def make_eid(element_type_value: str, num: str) -> str:
     """Generic eId dispatcher; element_type_value is ElementType.value."""
-    return f"{element_type_value}-{num}"
+    prefix = _EID_PREFIX.get(element_type_value, element_type_value)
+    return f"{prefix}-{num}"
