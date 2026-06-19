@@ -5,6 +5,7 @@ from pathlib import Path
 
 import click
 from docx import Document
+from huggingface_hub import HfApi
 
 from lexau.corpus import Corpus
 from lexau.crawler import Crawler
@@ -102,6 +103,23 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
     gen = SiteGenerator(corpus, site_dir, templates_dir)
     gen.generate()
     click.echo(f"Site generated -> {site_dir}/")
+
+
+@cli.command("export-hf")
+@click.option("--repo", required=True, help="HF dataset repo, e.g. cchew/lex-au")
+@click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
+def export_hf(repo: str, corpus_dir: Path) -> None:
+    """Push corpus XML + index to a Hugging Face dataset."""
+    api = HfApi()
+    click.echo(f"Uploading corpus to {repo}...")
+    api.upload_folder(
+        folder_path=str(corpus_dir),
+        repo_id=repo,
+        repo_type="dataset",
+        commit_message="lex-au corpus update",
+        ignore_patterns=["docx/**"],
+    )
+    click.echo("Upload complete.")
 
 
 @cli.command()
