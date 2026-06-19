@@ -12,6 +12,15 @@ API_BASE = "https://api.prod.legislation.gov.au/v1"
 _TITLE_ID_RE = re.compile(r"C\d{4}A(\d+)")
 
 
+def _odata_escape(s: str) -> str:
+    """Escape a string literal for use inside an OData $filter value.
+
+    OData escapes a single quote by doubling it, e.g.
+    "Children's Education Act" -> "Children''s Education Act".
+    """
+    return s.replace("'", "''")
+
+
 def _parse_year_from_name(name: str) -> int:
     """Parse year from Act name: last token if 4-digit number."""
     last = name.rsplit(None, 1)[-1]
@@ -45,7 +54,7 @@ class Crawler:
         titles = self._get(
             "Titles",
             {
-                "$filter": f"name eq '{act_name}' and isInForce eq true",
+                "$filter": f"name eq '{_odata_escape(act_name)}' and isInForce eq true",
                 "$top": 1,
                 "$select": "id,name,year,number",
             },
@@ -67,7 +76,7 @@ class Crawler:
         versions = self._get(
             "Versions",
             {
-                "$filter": f"titleId eq '{title_id}' and isLatest eq true",
+                "$filter": f"titleId eq '{_odata_escape(title_id)}' and isLatest eq true",
                 "$top": 1,
                 "$select": "titleId,registerId,compilationNumber,start",
             },
@@ -95,7 +104,8 @@ class Crawler:
             "Documents",
             {
                 "$filter": (
-                    f"titleId eq '{meta.title_id}' and registerId eq '{meta.comp_id}'"
+                    f"titleId eq '{_odata_escape(meta.title_id)}'"
+                    f" and registerId eq '{_odata_escape(meta.comp_id)}'"
                     " and format eq 'Word'"
                 ),
                 "$select": "volumeNumber",
@@ -136,7 +146,7 @@ class Crawler:
         versions = self._get(
             "Versions",
             {
-                "$filter": f"isLatest eq true and start gt '{since_str}'",
+                "$filter": f"isLatest eq true and start gt '{_odata_escape(since_str)}'",
                 "$select": "titleId",
             },
         ).get("value", [])
@@ -146,7 +156,7 @@ class Crawler:
             title_resp = self._get(
                 "Titles",
                 {
-                    "$filter": f"id eq '{v['titleId']}'",
+                    "$filter": f"id eq '{_odata_escape(v['titleId'])}'",
                     "$top": 1,
                     "$select": "name",
                 },

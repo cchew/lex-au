@@ -12,13 +12,8 @@ from lexau.models import ActMetadata
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 NS = {"akn": AKN_NS}
 
-
-def _leaf_eid(eid: str) -> str:
-    """Return the leaf segment of a compound eId for use as an HTML anchor id.
-
-    e.g. 'part-I__sec-1' -> 'sec-1', 'sec-4' -> 'sec-4'
-    """
-    return eid.split("__")[-1] if eid else eid
+# Structural container elements that may nest other containers and sections.
+_CONTAINER_TAGS = ("chapter", "part", "division", "subDivision")
 
 
 @dataclass
@@ -31,6 +26,43 @@ class SectionNode:
     children: list["SectionNode"] = field(default_factory=list)
 
 
+def _direct_paragraphs(elem: etree._Element) -> list[str]:
+    """Collect text of <p> elements under this element's own <content>, not nested sections."""
+    paras: list[str] = []
+    for content in elem.findall("akn:content", NS):
+        for p in content.iter(f"{{{AKN_NS}}}p"):
+            if p.text:
+                paras.append(p.text)
+    return paras
+
+
+def _make_node(elem: etree._Element) -> SectionNode:
+    local = elem.tag.split("}")[-1]
+    num_el = elem.find("akn:num", NS)
+    head_el = elem.find("akn:heading", NS)
+    node = SectionNode(
+        eid=elem.get("eId", ""),
+        num=num_el.text if num_el is not None else "",
+        heading=head_el.text if head_el is not None else "",
+        tag=local,
+    )
+    if local == "section":
+        # Sections are leaves: pull every descendant <p>.
+        for p in elem.iter(f"{{{AKN_NS}}}p"):
+            if p.text:
+                node.paragraphs.append(p.text)
+        return node
+
+    # Container: collect its own direct content paragraphs, then recurse into
+    # nested containers and sections.
+    node.paragraphs.extend(_direct_paragraphs(elem))
+    for sub in elem:
+        sub_local = sub.tag.split("}")[-1]
+        if sub_local in _CONTAINER_TAGS or sub_local == "section":
+            node.children.append(_make_node(sub))
+    return node
+
+
 def _parse_body(xml_root: etree._Element) -> list[SectionNode]:
     body = xml_root.find(".//akn:body", NS)
     if body is None:
@@ -38,50 +70,8 @@ def _parse_body(xml_root: etree._Element) -> list[SectionNode]:
     nodes: list[SectionNode] = []
     for child in body:
         local = child.tag.split("}")[-1]
-        if local in ("part", "chapter", "division", "section"):
-            num_el = child.find("akn:num", NS)
-            head_el = child.find("akn:heading", NS)
-            node = SectionNode(
-                eid=_leaf_eid(child.get("eId", "")),
-                num=num_el.text if num_el is not None else "",
-                heading=head_el.text if head_el is not None else "",
-                tag=local,
-            )
-            # Collect direct section children
-            for sub in child:
-                sub_local = sub.tag.split("}")[-1]
-                if sub_local == "section":
-                    sub_num = sub.find("akn:num", NS)
-                    sub_head = sub.find("akn:heading", NS)
-                    sec_node = SectionNode(
-                        eid=_leaf_eid(sub.get("eId", "")),
-                        num=sub_num.text if sub_num is not None else "",
-                        heading=sub_head.text if sub_head is not None else "",
-                        tag="section",
-                    )
-                    for p in sub.iter(f"{{{AKN_NS}}}p"):
-                        if p.text:
-                            sec_node.paragraphs.append(p.text)
-                    node.children.append(sec_node)
-                elif sub_local == "content":
-                    for p in sub.iter(f"{{{AKN_NS}}}p"):
-                        if p.text:
-                            node.paragraphs.append(p.text)
-            nodes.append(node)
-        elif local == "section":
-            # Top-level section (no parent Part)
-            num_el = child.find("akn:num", NS)
-            head_el = child.find("akn:heading", NS)
-            node = SectionNode(
-                eid=_leaf_eid(child.get("eId", "")),
-                num=num_el.text if num_el is not None else "",
-                heading=head_el.text if head_el is not None else "",
-                tag="section",
-            )
-            for p in child.iter(f"{{{AKN_NS}}}p"):
-                if p.text:
-                    node.paragraphs.append(p.text)
-            nodes.append(node)
+        if local in _CONTAINER_TAGS or local == "section":
+            nodes.append(_make_node(child))
     return nodes
 
 
@@ -104,7 +94,9 @@ class SiteGenerator:
             for m in all_meta
         ]
         index_tmpl = self._env.get_template("index.html.j2")
-        (self._site_dir / "index.html").write_text(index_tmpl.render(acts=act_list))
+        (self._site_dir / "index.html").write_text(
+            index_tmpl.render(acts=act_list), encoding="utf-8"
+        )
 
         for meta in all_meta:
             xml_path = self._corpus.root / "xml" / f"{meta.safe_name}.xml"
@@ -120,5 +112,5 @@ class SiteGenerator:
 
             act_tmpl = self._env.get_template("act.html.j2")
             (out_dir / "index.html").write_text(
-                act_tmpl.render(meta=meta, body=body_nodes)
+                act_tmpl.render(meta=meta, body=body_nodes), encoding="utf-8"
             )

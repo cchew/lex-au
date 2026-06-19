@@ -25,31 +25,35 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
     docx_dir = corpus_dir / "docx"
 
     for act_name in act_names:
-        click.echo(f"[fetch ] {act_name}")
-        meta = crawler.fetch_metadata(act_name)
-        if meta is None:
-            click.echo(f"  SKIP -- not found in legislation.gov.au", err=True)
+        try:
+            click.echo(f"[fetch ] {act_name}")
+            meta = crawler.fetch_metadata(act_name)
+            if meta is None:
+                click.echo(f"  SKIP -- not found in legislation.gov.au", err=True)
+                continue
+
+            if not force and corpus.is_current(meta):
+                click.echo(f"  SKIP -- compilation #{meta.comp_num} already current")
+                continue
+
+            docx_path = crawler.fetch_docx(meta, docx_dir)
+            if docx_path is None:
+                click.echo(f"  SKIP -- DOCX download failed", err=True)
+                continue
+
+            click.echo(f"[convert] {act_name}")
+            doc = Document(docx_path)
+            builder = AknBuilder(meta)
+            for para in doc.paragraphs:
+                style = para.style.name if para.style else "Default"
+                builder.add(parse_paragraph(style, para.text))
+
+            xml = builder.build()
+            saved = corpus.save(meta, xml)
+            click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
+        except Exception as exc:  # noqa: BLE001 - one bad Act must not abort the batch
+            click.echo(f"  ERROR -- {act_name}: {exc}", err=True)
             continue
-
-        if not force and corpus.is_current(meta):
-            click.echo(f"  SKIP -- compilation #{meta.comp_num} already current")
-            continue
-
-        docx_path = crawler.fetch_docx(meta, docx_dir)
-        if docx_path is None:
-            click.echo(f"  SKIP -- DOCX download failed", err=True)
-            continue
-
-        click.echo(f"[convert] {act_name}")
-        doc = Document(docx_path)
-        builder = AknBuilder(meta)
-        for para in doc.paragraphs:
-            style = para.style.name if para.style else "Default"
-            builder.add(parse_paragraph(style, para.text))
-
-        xml = builder.build()
-        saved = corpus.save(meta, xml)
-        click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
 
     click.echo("Done.")
 
@@ -144,5 +148,17 @@ def update(since: str, corpus_dir: Path) -> None:
         click.echo("No modified Acts found.")
         return
 
-    click.echo(f"Found {len(modified)} modified Act(s): {', '.join(modified)}")
-    _build_acts(modified, corpus_dir, force=True)
+    # Only re-build Acts already in the corpus; legislation.gov.au returns
+    # modifications across all Acts, not just our corpus members.
+    corpus = Corpus(corpus_dir)
+    corpus_names = {meta.name for meta in corpus.all_metadata()}
+    in_corpus = [name for name in modified if name in corpus_names]
+
+    if not in_corpus:
+        click.echo(
+            f"Found {len(modified)} modified Act(s), none in the corpus."
+        )
+        return
+
+    click.echo(f"Found {len(in_corpus)} modified corpus Act(s): {', '.join(in_corpus)}")
+    _build_acts(in_corpus, corpus_dir, force=True)

@@ -5,7 +5,9 @@
   <title>{{ meta.name }}</title>
   <style>
     body { font-family: Georgia, serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-    .part { margin-top: 2rem; }
+    .container { margin-top: 2rem; }
+    .division { margin-left: 1rem; }
+    .subdivision { margin-left: 2rem; }
     .section { margin-top: 1rem; padding-left: 1.5rem; }
     .section-num { font-weight: bold; }
   </style>
@@ -16,23 +18,23 @@
 <p>Compilation #{{ meta.comp_num }} | Effective {{ meta.effective_date }}</p>
 <p>FRBR Work URI: <code>{{ meta.frbr_work_uri }}</code></p>
 
-{% for node in body %}
-{% if node.tag == "part" %}
-<div class="part" id="{{ node.eid }}">
-  <h2>Part {{ node.num }}{% if node.heading %} — {{ node.heading }}{% endif %}</h2>
-  {% for sec in node.children %}
-  <div class="section" id="{{ sec.eid }}">
-    <span class="section-num">{{ sec.num }}</span>{% if sec.heading %} {{ sec.heading }}{% endif %}
-    {% for p in sec.paragraphs %}<p>{{ p }}</p>{% endfor %}
-  </div>
-  {% endfor %}
-</div>
-{% elif node.tag == "section" %}
+{% set container_labels = {"chapter": "Chapter", "part": "Part", "division": "Division", "subDivision": "Subdivision"} %}
+
+{% macro render_node(node) %}
+{% if node.tag == "section" %}
 <div class="section" id="{{ node.eid }}">
   <span class="section-num">{{ node.num }}</span>{% if node.heading %} {{ node.heading }}{% endif %}
   {% for p in node.paragraphs %}<p>{{ p }}</p>{% endfor %}
 </div>
+{% else %}
+<div class="container {{ node.tag|lower }}" id="{{ node.eid }}">
+  <h2>{{ container_labels.get(node.tag, node.tag) }} {{ node.num }}{% if node.heading %} — {{ node.heading }}{% endif %}</h2>
+  {% for p in node.paragraphs %}<p>{{ p }}</p>{% endfor %}
+  {% for child in node.children %}{{ render_node(child) }}{% endfor %}
+</div>
 {% endif %}
-{% endfor %}
+{% endmacro %}
+
+{% for node in body %}{{ render_node(node) }}{% endfor %}
 </body>
 </html>

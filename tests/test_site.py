@@ -42,5 +42,7 @@ def test_act_page_contains_section_anchor(tmp_path, built_corpus):
     gen.generate()
     act_page = site_dir / "akn" / "au" / "act" / "1988" / "119" / "index.html"
     content = act_page.read_text()
-    assert 'id="sec-1"' in content
+    # Anchor must be the full compound eId to avoid collisions between
+    # like-numbered sections in different Parts (e.g. part-I__sec-1 vs part-II__sec-1).
+    assert 'id="part-I__sec-1"' in content
     assert "Short title" in content
