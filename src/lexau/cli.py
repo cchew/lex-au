@@ -17,41 +17,8 @@ def cli() -> None:
     """lex-au: Commonwealth Acts as AKN 3.0 XML."""
 
 
-@cli.command()
-@click.option("--acts", multiple=True, help="Act name(s) to build (repeatable)")
-@click.option(
-    "--list-file",
-    type=click.Path(exists=True, path_type=Path),
-    help="File with one Act name per line",
-)
-@click.option("--all", "build_all", is_flag=True, help="Build all Acts in acts.txt")
-@click.option(
-    "--corpus-dir",
-    type=click.Path(path_type=Path),
-    default=Path("corpus"),
-    show_default=True,
-)
-@click.option("--force", is_flag=True, help="Re-convert even if compilation is current")
-def build(
-    acts: tuple[str, ...],
-    list_file: Path | None,
-    build_all: bool,
-    corpus_dir: Path,
-    force: bool,
-) -> None:
-    """Download DOCX and convert to AKN XML."""
-    act_names = list(acts)
-
-    if list_file:
-        act_names += [ln.strip() for ln in list_file.read_text().splitlines() if ln.strip()]
-
-    if build_all or (not act_names and not list_file):
-        default_list = Path("acts.txt")
-        if not default_list.exists():
-            click.echo("No acts specified and acts.txt not found.", err=True)
-            sys.exit(1)
-        act_names += [ln.strip() for ln in default_list.read_text().splitlines() if ln.strip()]
-
+def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
+    """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
     docx_dir = corpus_dir / "docx"
@@ -87,6 +54,44 @@ def build(
 
 
 @cli.command()
+@click.option("--acts", multiple=True, help="Act name(s) to build (repeatable)")
+@click.option(
+    "--list-file",
+    type=click.Path(exists=True, path_type=Path),
+    help="File with one Act name per line",
+)
+@click.option("--all", "build_all", is_flag=True, help="Build all Acts in acts.txt")
+@click.option(
+    "--corpus-dir",
+    type=click.Path(path_type=Path),
+    default=Path("corpus"),
+    show_default=True,
+)
+@click.option("--force", is_flag=True, help="Re-convert even if compilation is current")
+def build(
+    acts: tuple[str, ...],
+    list_file: Path | None,
+    build_all: bool,
+    corpus_dir: Path,
+    force: bool,
+) -> None:
+    """Download DOCX and convert to AKN XML."""
+    act_names = list(acts)
+
+    if list_file:
+        act_names += [ln.strip() for ln in list_file.read_text().splitlines() if ln.strip()]
+
+    if build_all or (not act_names and not list_file):
+        default_list = Path("acts.txt")
+        if not default_list.exists():
+            click.echo("No acts specified and acts.txt not found.", err=True)
+            sys.exit(1)
+        act_names += [ln.strip() for ln in default_list.read_text().splitlines() if ln.strip()]
+
+    _build_acts(act_names, corpus_dir, force)
+
+
+@cli.command()
 @click.option("--since", required=True, help="ISO date, e.g. 2026-01-01")
 @click.option(
     "--corpus-dir",
@@ -109,12 +114,4 @@ def update(since: str, corpus_dir: Path) -> None:
         return
 
     click.echo(f"Found {len(modified)} modified Act(s): {', '.join(modified)}")
-    # Delegate to build with --force for each modified act
-    from click.testing import CliRunner
-
-    runner = CliRunner()
-    for act_name in modified:
-        result = runner.invoke(
-            build, ["--acts", act_name, "--corpus-dir", str(corpus_dir), "--force"]
-        )
-        click.echo(result.output)
+    _build_acts(modified, corpus_dir, force=True)
