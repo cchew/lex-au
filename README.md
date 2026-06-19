@@ -4,7 +4,7 @@ Commonwealth Acts as AKN 3.0 XML.
 
 Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
 
-**Status: v1** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
+**Status: v0.1.0** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
 
 ## Install
 
@@ -83,7 +83,7 @@ corpus/
   docx/               # raw DOCX downloads (excluded from HF export)
 ```
 
-## Known limits (v1)
+## Known limits (v0.1.0)
 
-- Multi-volume Acts (Corporations Act, Criminal Code): fetches volume 0 only. Volume merging is v1.1 scope.
+- Multi-volume Acts (Corporations Act, Criminal Code): fetches volume 0 only. Volume merging is v0.2.0 scope.
 - Tables and schedules in DOCX are not structured -- emitted as body text.
