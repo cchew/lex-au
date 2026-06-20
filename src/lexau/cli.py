@@ -112,16 +112,31 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
 @cli.command("export-hf")
 @click.option("--repo", required=True, help="HF dataset repo, e.g. cchew/lex-au")
 @click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
-def export_hf(repo: str, corpus_dir: Path) -> None:
-    """Push corpus XML + index to a Hugging Face dataset."""
+@click.option(
+    "--readme",
+    type=click.Path(exists=True, path_type=Path),
+    default=Path("hf-readme.md"),
+    show_default=True,
+    help="Dataset card to upload as README.md",
+)
+def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
+    """Push corpus XML + index + dataset card to a Hugging Face dataset."""
     api = HfApi()
     click.echo(f"Uploading corpus to {repo}…")
     api.upload_folder(
         folder_path=str(corpus_dir),
         repo_id=repo,
         repo_type="dataset",
-        commit_message=f"lex-au corpus update",
+        commit_message="lex-au corpus update",
         ignore_patterns=["docx/**"],
+    )
+    click.echo(f"Uploading dataset card from {readme}…")
+    api.upload_file(
+        path_or_fileobj=str(readme),
+        path_in_repo="README.md",
+        repo_id=repo,
+        repo_type="dataset",
+        commit_message="lex-au dataset card update",
     )
     click.echo("Upload complete.")
 

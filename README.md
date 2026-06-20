@@ -15,6 +15,16 @@ pip install -e ".[dev]"
 
 ## CLI Usage
 
+### Generate Act list
+
+Fetch all in-force Commonwealth Acts from legislation.gov.au and write to `acts.txt`:
+
+```bash
+lex-au list-acts -o acts.txt
+```
+
+Paginates the OData API (~5-10 requests for ~1,000 Acts). Run once before a full corpus build.
+
 ### Build corpus
 
 Download and convert all Acts listed in `acts.txt`:
