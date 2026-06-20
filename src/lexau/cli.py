@@ -126,6 +126,29 @@ def export_hf(repo: str, corpus_dir: Path) -> None:
     click.echo("Upload complete.")
 
 
+@cli.command("list-acts")
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Write to file instead of stdout (e.g. acts.txt)",
+)
+@click.option("--page-size", default=200, show_default=True, help="OData page size per request")
+def list_acts(output: Path | None, page_size: int) -> None:
+    """List all in-force Commonwealth Acts from legislation.gov.au."""
+    crawler = Crawler()
+    click.echo("Fetching Act list from legislation.gov.au…", err=True)
+    names = crawler.list_acts(page_size=page_size)
+    click.echo(f"Found {len(names)} Acts.", err=True)
+    text = "\n".join(names) + "\n"
+    if output:
+        output.write_text(text)
+        click.echo(f"Written to {output}", err=True)
+    else:
+        click.echo(text, nl=False)
+
+
 @cli.command()
 @click.option("--since", required=True, help="ISO date, e.g. 2026-01-01")
 @click.option(

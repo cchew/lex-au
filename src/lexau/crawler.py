@@ -140,6 +140,37 @@ class Crawler:
         time.sleep(self._delay)
         return dest
 
+    def list_acts(self, page_size: int = 200) -> list[str]:
+        """Return names of all in-force Commonwealth Acts, sorted alphabetically.
+
+        Paginates the Titles endpoint and filters by titleId pattern (C{year}A{number})
+        to exclude legislative instruments and other non-Act titles.
+        """
+        names: list[str] = []
+        skip = 0
+        while True:
+            resp = self._get(
+                "Titles",
+                {
+                    "$filter": "isInForce eq true",
+                    "$select": "id,name",
+                    "$top": page_size,
+                    "$skip": skip,
+                    "$orderby": "name asc",
+                },
+            )
+            page = resp.get("value", [])
+            if not page:
+                break
+            for item in page:
+                if _TITLE_ID_RE.match(item.get("id", "")):
+                    names.append(item["name"])
+            skip += page_size
+            if len(page) < page_size:
+                break
+            time.sleep(0.5)
+        return sorted(names)
+
     def list_modified_since(self, since: date) -> list[str]:
         """Return Act names whose latest compilation started after `since`."""
         since_str = since.isoformat()
