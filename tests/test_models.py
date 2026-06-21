@@ -1,5 +1,6 @@
 from lexau.models import ActMetadata
 from datetime import date
+from cobalt import FrbrUri as CobaltFrbrUri
 
 def test_frbr_work_uri():
     meta = ActMetadata(
@@ -36,3 +37,18 @@ def test_safe_name():
         effective_date=date(2024, 6, 1),
     )
     assert meta.safe_name == "fair-work-act-2009"
+
+
+def test_frbr_work_uri_cobalt_roundtrip(privacy_meta):
+    parsed = CobaltFrbrUri.parse(privacy_meta.frbr_work_uri)
+    assert parsed.country == "au"
+    assert parsed.doctype == "act"
+    assert parsed.date == str(privacy_meta.year)
+    assert parsed.number == str(privacy_meta.number)
+
+
+def test_frbr_expression_uri_cobalt_roundtrip(privacy_meta):
+    parsed = CobaltFrbrUri.parse(privacy_meta.frbr_expression_uri)
+    assert parsed.expression_uri() == privacy_meta.frbr_expression_uri
+    assert parsed.language == "eng"
+    assert parsed.expression_date == f"@{privacy_meta.effective_date.isoformat()}"
