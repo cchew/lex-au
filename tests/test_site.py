@@ -17,7 +17,8 @@ def built_corpus(tmp_path, privacy_meta):
     builder.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
     builder.add(ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."))
     builder.add(ParsedParagraph(ElementType.SECTION, number="2", heading="Commencement"))
-    corpus.save(privacy_meta, builder.build())
+    xml, _validation = builder.build()
+    corpus.save(privacy_meta, xml)
     return corpus
 
 

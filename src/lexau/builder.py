@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from datetime import date
 from lxml import etree
 from lxml.builder import ElementMaker
@@ -7,6 +8,7 @@ from lxml.builder import ElementMaker
 from lexau.models import ActMetadata
 from lexau.parser import ParsedParagraph, ElementType
 from lexau.frbr import make_eid
+from lexau.validator import validate_akn, ValidationResult
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -39,7 +41,7 @@ class AknBuilder:
         if paragraph.element_type != ElementType.SKIP:
             self._paragraphs.append(paragraph)
 
-    def build(self) -> etree._Element:
+    def build(self) -> tuple[etree._Element, ValidationResult]:
         root = self._make_skeleton()
         ns = {"akn": AKN_NS}
         body = root.find(".//akn:body", ns)
@@ -80,7 +82,11 @@ class AknBuilder:
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
                 p_el.text = p.text
 
-        return root
+        result = validate_akn(root, self._meta)
+        if not result.passed:
+            for err in result.errors:
+                print(f"[validation] {self._meta.safe_name}: {err}", file=sys.stderr)
+        return root, result
 
     def _make_skeleton(self) -> etree._Element:
         meta = self._meta

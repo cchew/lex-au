@@ -13,7 +13,7 @@ def _build(meta: ActMetadata, paragraphs: list[ParsedParagraph]) -> etree._Eleme
     b = AknBuilder(meta)
     for p in paragraphs:
         b.add(p)
-    xml = b.build()
+    xml, _ = b.build()
     return xml
 
 

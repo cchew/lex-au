@@ -15,7 +15,8 @@ def build_xml(meta, paragraphs):
     b = AknBuilder(meta)
     for p in paragraphs:
         b.add(p)
-    return b.build()
+    xml, _validation = b.build()
+    return xml
 
 def test_root_element_is_akoma_ntoso(meta):
     xml = build_xml(meta, [])

@@ -48,7 +48,10 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
                 style = para.style.name if para.style else "Default"
                 builder.add(parse_paragraph(style, para.text))
 
-            xml = builder.build()
+            xml, validation = builder.build()
+            if not validation.passed:
+                for err in validation.errors:
+                    click.echo(f"  [validation] {err}", err=True)
             saved = corpus.save(meta, xml)
             click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
         except Exception as exc:  # noqa: BLE001 - one bad Act must not abort the batch
