@@ -223,3 +223,55 @@ def test_body_outside_schedule_not_in_attachments(meta):
     xml, _ = build_xml(meta, paragraphs)
     ns = {"akn": AKN_NS}
     assert xml.find(".//akn:attachments", ns) is None
+
+
+def test_schedule_app_clause_hierarchy(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles"),
+        ParsedParagraph(ElementType.BODY, text="APP 1 — Open and transparent management"),
+        ParsedParagraph(ElementType.BODY, text="1.1 The object of this APP is to ensure..."),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="have an up-to-date APP privacy policy"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-1"
+    num = clause.find("akn:num", ns)
+    assert num is not None and num.text == "1"
+    subclause = xml.find(".//akn:hcontainer[@name='subclause']", ns)
+    assert subclause is not None
+    assert "subclause" in subclause.get("eId", "")
+    para = xml.find(".//akn:hcontainer[@name='subclause']//akn:paragraph", ns)
+    assert para is not None
+    assert "para-a" in para.get("eId", "")
+
+
+def test_schedule_numeric_clause(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Definitions"),
+        ParsedParagraph(ElementType.BODY, text="1  General definitions"),
+        ParsedParagraph(ElementType.BODY, text="1.1 In this Schedule..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-1"
+
+
+def test_build_attachments_returns_tuple(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test"),
+        ParsedParagraph(ElementType.BODY, text="1  First Clause"),
+        ParsedParagraph(ElementType.BODY, text="2  Second Clause"),
+    ]
+    # build() uses _build_attachments internally — just verify it works end-to-end
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clauses = xml.findall(".//akn:hcontainer[@name='clause']", ns)
+    assert len(clauses) == 2
