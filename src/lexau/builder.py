@@ -225,6 +225,39 @@ class AknBuilder:
         result = validate_akn(root, self._meta)
         return root, result
 
+    def build_with_report(self, corpus_index: dict) -> tuple[etree._Element, "ParseReport"]:
+        """Run all build phases and return (xml_root, ParseReport)."""
+        from lexau.reflinks import inject_refs
+        from lexau.models import ParseReport
+
+        preface_paras, body_paras, schedule_groups = _split_stream(self._paragraphs)
+
+        report = ParseReport(
+            act_name=self._meta.name,
+            preface_paras=len(preface_paras),
+            schedules_found=len(schedule_groups),
+            schedule_names=[grp[0].text for grp in schedule_groups if grp],
+        )
+
+        for p in body_paras:
+            if p.element_type == ElementType.SUBSECTION:
+                report.subsections_parsed += 1
+            elif p.element_type == ElementType.PARAGRAPH:
+                report.paragraphs_parsed += 1
+            elif p.element_type == ElementType.SUBPARAGRAPH:
+                report.subparagraphs_parsed += 1
+            if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
+                if p.raw_style not in {"Body Text", "List Paragraph"}:
+                    report.style_fallbacks += 1
+
+        root, _validation = self.build()
+
+        resolved, unresolved = inject_refs(root, corpus_index)
+        report.refs_resolved = resolved
+        report.refs_unresolved = unresolved
+
+        return root, report
+
     def _make_skeleton(self) -> etree._Element:
         meta = self._meta
         today = date.today().isoformat()
