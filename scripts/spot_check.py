@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+"""Automated spot-check for lex-au v0.2.0 corpus.
+
+Run after `lexau build --all` to verify structural requirements are met.
+Exit code 0 = all checks passed. Exit code 1 = one or more failures.
+
+Usage:
+    python scripts/spot_check.py [--corpus-dir corpus/]
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+from lxml import etree
+
+AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+NS = {"akn": AKN_NS}
+
+CHECKS = [
+    # (description, xpath_or_fn, expected)
+    ("FRBRWork date is ISO (YYYY-MM-DD)",
+     ".//akn:FRBRWork/akn:FRBRdate/@date",
+     lambda v: len(v) > 0 and all(len(d) == 10 and d[4] == "-" and d[7] == "-" for d in v)),
+    ("At least one section with eId",
+     ".//akn:section/@eId",
+     lambda v: len(v) > 0),
+]
+
+V02_CHECKS = [
+    ("Subsections present",       ".//akn:subsection", lambda v: len(v) > 0),
+    ("Subsection eId nested",     ".//akn:subsection/@eId", lambda v: all("__subsec-" in e for e in v)),
+    ("No bare-year FRBRWork date", ".//akn:FRBRWork/akn:FRBRdate/@date", lambda v: not any(len(d) == 4 for d in v)),
+]
+
+
+def check_xml(path: Path) -> list[str]:
+    try:
+        tree = etree.parse(str(path))
+        root = tree.getroot()
+    except Exception as exc:
+        return [f"PARSE ERROR: {exc}"]
+
+    failures: list[str] = []
+    for desc, xpath, pred in CHECKS + V02_CHECKS:
+        vals = root.xpath(xpath, namespaces=NS)
+        if not pred(vals):
+            failures.append(f"FAIL [{desc}] — got {vals[:3]!r}")
+    return failures
+
+
+def check_report(path: Path) -> list[str]:
+    try:
+        data = json.loads(path.read_text())
+    except Exception as exc:
+        return [f"PARSE ERROR: {exc}"]
+
+    failures: list[str] = []
+    if data.get("volumes_fetched", 0) < 1:
+        failures.append("FAIL [volumes_fetched < 1]")
+    return failures
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--corpus-dir", default="corpus", type=Path)
+    args = parser.parse_args()
+
+    corpus_dir: Path = args.corpus_dir
+    xml_dir = corpus_dir / "xml"
+    reports_dir = corpus_dir / "reports"
+
+    if not xml_dir.exists():
+        print(f"ERROR: {xml_dir} not found — run `lexau build --all` first", file=sys.stderr)
+        return 1
+
+    xml_files = sorted(xml_dir.glob("*.xml"))
+    if not xml_files:
+        print("ERROR: no XML files found in corpus/xml/", file=sys.stderr)
+        return 1
+
+    print(f"Checking {len(xml_files)} Acts in {xml_dir}\n")
+    total_failures = 0
+
+    for xml_path in xml_files:
+        act_name = xml_path.stem
+        issues = check_xml(xml_path)
+
+        report_path = reports_dir / f"{act_name}-v0.2.0.json"
+        if report_path.exists():
+            issues += check_report(report_path)
+            report_data = json.loads(report_path.read_text())
+            subsecs = report_data.get("subsections_parsed", 0)
+            paras   = report_data.get("paragraphs_parsed", 0)
+            sched   = report_data.get("schedules_found", 0)
+            refs    = report_data.get("refs_resolved", 0)
+            vols    = report_data.get("volumes_fetched", 1)
+            summary = f"vols={vols} subsecs={subsecs} paras={paras} sched={sched} refs={refs}"
+        else:
+            summary = "(no report)"
+
+        status = "OK  " if not issues else "FAIL"
+        print(f"  {status}  {act_name}  [{summary}]")
+        for issue in issues:
+            print(f"        {issue}")
+        total_failures += len(issues)
+
+    print(f"\n{'='*60}")
+    if total_failures == 0:
+        print(f"All checks passed ({len(xml_files)} Acts)")
+        return 0
+    else:
+        print(f"{total_failures} check(s) FAILED across {len(xml_files)} Acts")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

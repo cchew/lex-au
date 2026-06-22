@@ -91,3 +91,72 @@ def test_list_modified_since_returns_act_names():
     crawler = Crawler()
     names = crawler.list_modified_since(date(2026, 1, 1))
     assert "Privacy Act 1988" in names
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_single_volume(tmp_path: Path):
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=DOCX_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    paths = crawler.fetch_docx_volumes(meta, tmp_path)
+
+    assert len(paths) == 1
+    assert paths[0].exists()
+    assert paths[0].read_bytes() == DOCX_BYTES
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_multi_volume(tmp_path: Path):
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={
+        "value": [{"volumeNumber": 0}, {"volumeNumber": 1}]
+    })
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=DOCX_BYTES,
+        content_type="application/octet-stream",
+    )
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=1,rectificationVersionNumber=0)",
+        body=DOCX_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    paths = crawler.fetch_docx_volumes(meta, tmp_path)
+
+    assert len(paths) == 2
+    assert paths[0].name.endswith("vol0.docx")
+    assert paths[1].name.endswith("vol1.docx")
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_returns_empty_on_bad_response(tmp_path: Path):
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=b"not a zip",
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    paths = crawler.fetch_docx_volumes(meta, tmp_path)
+
+    assert paths == []

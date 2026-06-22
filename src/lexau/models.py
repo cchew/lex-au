@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 
 from cobalt import FrbrUri as CobaltFrbrUri
@@ -34,3 +34,18 @@ class ActMetadata:
     @property
     def safe_name(self) -> str:
         return self.name.lower().replace(" ", "-").replace("/", "-")
+
+
+@dataclass
+class ParseReport:
+    act_name: str
+    volumes_fetched: int = 1
+    preface_paras: int = 0
+    schedules_found: int = 0
+    schedule_names: list[str] = field(default_factory=list)
+    subsections_parsed: int = 0
+    paragraphs_parsed: int = 0
+    subparagraphs_parsed: int = 0
+    style_fallbacks: int = 0
+    refs_resolved: int = 0
+    refs_unresolved: int = 0

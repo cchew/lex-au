@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 import click
@@ -23,6 +25,19 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
     docx_dir = corpus_dir / "docx"
+    reports_dir = corpus_dir / "reports"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+
+    index_path = corpus_dir / "index.json"
+    corpus_index: dict = {}
+    if index_path.exists():
+        raw = json.loads(index_path.read_text())
+        corpus_index = {
+            entry["name"]: {"frbr_uri": entry.get("frbr_uri", "")}
+            for entry in raw.get("acts", {}).values()
+        }
+
+    report_rows: list = []
 
     for act_name in act_names:
         try:
@@ -36,29 +51,45 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
                 click.echo(f"  SKIP -- compilation #{meta.comp_num} already current")
                 continue
 
-            docx_path = crawler.fetch_docx(meta, docx_dir)
-            if docx_path is None:
+            docx_paths = crawler.fetch_docx_volumes(meta, docx_dir)
+            if not docx_paths:
                 click.echo(f"  SKIP -- DOCX download failed", err=True)
                 continue
 
-            click.echo(f"[convert] {act_name}")
-            doc = Document(docx_path)
+            click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             builder = AknBuilder(meta)
-            for para in doc.paragraphs:
-                style = para.style.name if para.style else "Default"
-                builder.add(parse_paragraph(style, para.text))
+            for docx_path in docx_paths:
+                doc = Document(docx_path)
+                for para in doc.paragraphs:
+                    style = para.style.name if para.style else "Default"
+                    builder.add(parse_paragraph(style, para.text))
 
-            xml, validation = builder.build()
-            if not validation.passed:
-                for err in validation.errors:
-                    click.echo(f"  [validation] {err}", err=True)
+            xml, report = builder.build_with_report(corpus_index)
+            report.volumes_fetched = len(docx_paths)
+
             saved = corpus.save(meta, xml)
             click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
-        except Exception as exc:  # noqa: BLE001 - one bad Act must not abort the batch
+
+            report_path = reports_dir / f"{meta.safe_name}-v0.2.0.json"
+            report_path.write_text(json.dumps(asdict(report), ensure_ascii=False, indent=2))
+            report_rows.append(report)
+
+        except Exception as exc:  # noqa: BLE001
             click.echo(f"  ERROR -- {act_name}: {exc}", err=True)
             continue
 
-    click.echo("Done.")
+    if report_rows:
+        click.echo("\n--- Parse Report Summary ---")
+        click.echo(f"{'Act':<40} {'Vols':>4} {'Subsecs':>7} {'Paras':>6} {'Sched':>5} {'Refs':>5} {'Unres':>5} {'Fallbk':>6}")
+        click.echo("-" * 85)
+        for r in report_rows:
+            click.echo(
+                f"{r.act_name:<40} {r.volumes_fetched:>4} {r.subsections_parsed:>7} "
+                f"{r.paragraphs_parsed:>6} {r.schedules_found:>5} {r.refs_resolved:>5} "
+                f"{r.refs_unresolved:>5} {r.style_fallbacks:>6}"
+            )
+
+    click.echo("\nDone.")
 
 
 @cli.command()

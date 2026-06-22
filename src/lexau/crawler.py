@@ -96,10 +96,13 @@ class Crawler:
             effective_date=date.fromisoformat(v["start"][:10]),
         )
 
-    def fetch_docx(self, meta: ActMetadata, dest_dir: Path) -> Path | None:
+    def fetch_docx_volumes(self, meta: ActMetadata, dest_dir: Path) -> list[Path]:
+        """Fetch all volumes for an Act and return ordered list of DOCX paths.
+
+        Returns empty list if no valid DOCX is found for any volume.
+        """
         dest_dir.mkdir(parents=True, exist_ok=True)
 
-        # Check available volumes
         volumes_resp = self._get(
             "Documents",
             {
@@ -113,32 +116,37 @@ class Crawler:
             },
         ).get("value", [])
         volumes = sorted({v["volumeNumber"] for v in volumes_resp}) if volumes_resp else [0]
-        vol = volumes[0]
-        time.sleep(0.3)
 
-        dest = dest_dir / f"{meta.safe_name}-vol{vol}.docx"
-        if dest.exists():
-            return dest
+        paths: list[Path] = []
+        for vol in volumes:
+            dest = dest_dir / f"{meta.safe_name}-vol{vol}.docx"
+            if not dest.exists():
+                time.sleep(self._delay)
+                url = (
+                    f"{API_BASE}/documents/find("
+                    f"registerId='{meta.comp_id}',"
+                    f"type='Primary',"
+                    f"format='Word',"
+                    f"uniqueTypeNumber=0,"
+                    f"volumeNumber={vol},"
+                    f"rectificationVersionNumber=0)"
+                )
+                r = self._session.get(
+                    url,
+                    headers={"Accept": "application/octet-stream"},
+                    timeout=self._timeout,
+                )
+                if r.status_code != 200 or not r.content.startswith(b"PK"):
+                    return []
+                dest.write_bytes(r.content)
+            paths.append(dest)
 
-        url = (
-            f"{API_BASE}/documents/find("
-            f"registerId='{meta.comp_id}',"
-            f"type='Primary',"
-            f"format='Word',"
-            f"uniqueTypeNumber=0,"
-            f"volumeNumber={vol},"
-            f"rectificationVersionNumber=0)"
-        )
-        r = self._session.get(
-            url,
-            headers={"Accept": "application/octet-stream"},
-            timeout=self._timeout,
-        )
-        if r.status_code != 200 or not r.content.startswith(b"PK"):
-            return None
-        dest.write_bytes(r.content)
-        time.sleep(self._delay)
-        return dest
+        return paths
+
+    def fetch_docx(self, meta: ActMetadata, dest_dir: Path) -> Path | None:
+        """Backward-compat alias. cli.py switches to fetch_docx_volumes in Task 7."""
+        paths = self.fetch_docx_volumes(meta, dest_dir)
+        return paths[0] if paths else None
 
     def list_acts(self, page_size: int = 200) -> list[str]:
         """Return names of all in-force Commonwealth Acts, sorted alphabetically.
