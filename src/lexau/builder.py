@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import sys
 from datetime import date
 from lxml import etree
 from lxml.builder import ElementMaker
@@ -83,9 +82,6 @@ class AknBuilder:
                 p_el.text = p.text
 
         result = validate_akn(root, self._meta)
-        if not result.passed:
-            for err in result.errors:
-                print(f"[validation] {self._meta.safe_name}: {err}", file=sys.stderr)
         return root, result
 
     def _make_skeleton(self) -> etree._Element:
