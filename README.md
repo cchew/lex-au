@@ -102,8 +102,12 @@ corpus/
   docx/               # raw DOCX downloads (excluded from HF export)
 ```
 
-## Known limits
+## Documentation
 
-- Tables in DOCX are not structured — emitted as body text.
-- Schedule internal hierarchy (sub-items within a schedule) is not parsed.
-- `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
+- [AU Legislative Conventions](docs/au-legislative-conventions.md) — DOCX style map, nesting hierarchy, notes/examples/penalties, schedule patterns, citation forms, FRBR URI construction.
+
+## Known limits (v0.2.0)
+
+- Tables in DOCX are not structured — emitted as body text. _(addressed in v0.3.0)_
+- Schedule internal hierarchy (sub-items within a schedule) is not parsed. _(addressed in v0.3.0)_
+- `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed. _(extended in v0.3.0)_
