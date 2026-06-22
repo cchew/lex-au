@@ -50,6 +50,7 @@ class ParsedParagraph:
     heading: str = ""
     text: str = ""
     raw_style: str = ""
+    table_rows: list[list[str]] = field(default_factory=list)
 
 
 def parse_paragraph(style: str, text: str) -> ParsedParagraph:
