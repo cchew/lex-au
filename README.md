@@ -4,7 +4,12 @@ Commonwealth Acts as AKN 3.0 XML.
 
 Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
 
-**Status: v0.1.0** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
+**Status: v0.2.0** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
+
+## Versions
+
+- **v0.2.0** — 2026-06-22: Intra-section hierarchy (`<subsection>`, `<paragraph>`, `<subparagraph>` with nested eIds), `<ref>` cross-reference markup, `<preface>`/TOC, schedules as `<attachments>`, multi-volume Acts (Corporations 7 vols, Fair Work 4, Criminal Code 3), ISO FRBRdate. 11 Acts. Parse report per Act.
+- **v0.1.0** — 2026-06-19: Structural skeleton (part/division/section, basic FRBR). 8 Acts.
 
 ## Install
 
@@ -83,6 +88,9 @@ Acts are listed in `acts.txt`, one per line. Current corpus:
 - Freedom of Information Act 1982
 - National Disability Insurance Scheme Act 2013
 - National Health Act 1953
+- Social Security Act 1991
+- Superannuation Industry (Supervision) Act 1993
+- Income Tax Assessment Act 1997
 
 ## Corpus layout
 
@@ -90,10 +98,12 @@ Acts are listed in `acts.txt`, one per line. Current corpus:
 corpus/
   index.json          # metadata index
   xml/                # AKN 3.0 XML, one file per Act
+  reports/            # ParseReport JSON per Act (v0.2.0+)
   docx/               # raw DOCX downloads (excluded from HF export)
 ```
 
-## Known limits (v0.1.0)
+## Known limits
 
-- Multi-volume Acts (Corporations Act, Criminal Code): fetches volume 0 only. Volume merging is v0.2.0 scope.
-- Tables and schedules in DOCX are not structured -- emitted as body text.
+- Tables in DOCX are not structured — emitted as body text.
+- Schedule internal hierarchy (sub-items within a schedule) is not parsed.
+- `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
