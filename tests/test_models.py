@@ -1,4 +1,4 @@
-from lexau.models import ActMetadata
+from lexau.models import ActMetadata, ParseReport
 from datetime import date
 from cobalt import FrbrUri as CobaltFrbrUri
 import json
@@ -92,3 +92,22 @@ def test_corpus_frbr_uris_parse_correctly(corpus_act: ActMetadata) -> None:
     assert expr.expression_uri() == corpus_act.frbr_expression_uri
     assert expr.language == "eng"
     assert expr.expression_date == f"@{corpus_act.effective_date.isoformat()}"
+
+
+def test_parse_report_has_required_fields():
+    r = ParseReport(
+        act_name="Privacy Act 1988",
+        volumes_fetched=1,
+        preface_paras=5,
+        schedules_found=1,
+        schedule_names=["Schedule 1"],
+        subsections_parsed=42,
+        paragraphs_parsed=18,
+        subparagraphs_parsed=6,
+        style_fallbacks=2,
+        refs_resolved=31,
+        refs_unresolved=3,
+    )
+    assert r.act_name == "Privacy Act 1988"
+    assert r.schedules_found == 1
+    assert r.refs_unresolved == 3
