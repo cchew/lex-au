@@ -40,7 +40,7 @@ _SUBSEC_RE = re.compile(r'^\((\d+[A-Z]?)\)\s+(.*)', re.DOTALL)
 _PARA_RE = re.compile(r'^\(([a-z]+)\)\s+(.*)', re.DOTALL)
 
 # Matches "(i) text", "(ii) text", "(iii) text" — roman numeral pattern
-_SUBPARA_RE = re.compile(r'^\(([ivxlc]+)\)\s+(.*)', re.DOTALL)
+_SUBPARA_RE = re.compile(r'^\(([ivxlcdm]+)\)\s+(.*)', re.DOTALL)
 
 
 @dataclass

@@ -42,7 +42,7 @@ _ROMAN_CHARS = frozenset("ivxlcdm")
 
 _TOC_HEADING_STYLE = "TOC Heading"
 _TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
-_SCHEDULE_RE = re.compile(r'^Schedule\xa0(\d+|[IVX]+)', re.IGNORECASE)
+_SCHEDULE_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGNORECASE)
 _STRUCTURAL = frozenset({
     ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
     ElementType.SUBDIVISION, ElementType.SECTION,
