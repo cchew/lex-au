@@ -149,3 +149,77 @@ def test_frbr_expression_date_is_iso(meta):
     expr_date = xml.find(".//akn:FRBRExpression/akn:FRBRdate", ns)
     assert expr_date is not None
     assert expr_date.get("date") == "2024-01-01"
+
+
+def test_preface_toc_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.BODY, text="Privacy Act 1988", raw_style="TOC Heading"),
+        ParsedParagraph(ElementType.BODY, text="Part I—Preliminary\t1", raw_style="TOC 1"),
+        ParsedParagraph(ElementType.BODY, text="1  Short title\t1", raw_style="TOC 2"),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    preface = xml.find(".//akn:preface", ns)
+    assert preface is not None
+    toc = preface.find("akn:toc", ns)
+    assert toc is not None
+    toc_items = toc.findall("akn:tocItem", ns)
+    assert len(toc_items) == 2  # both TOC 1 and TOC 2 lines become tocItem elements
+
+
+def test_preface_non_toc_para_emitted_as_p(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.BODY, text="About this compilation", raw_style="Normal"),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    preface = xml.find(".//akn:preface", ns)
+    assert preface is not None
+    p = preface.find("akn:p", ns)
+    assert p is not None and p.text == "About this compilation"
+
+
+def test_schedule_emitted_as_attachment(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles"),
+        ParsedParagraph(ElementType.BODY, text="APP 1  Open and transparent management"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    attachments = xml.find(".//akn:attachments", ns)
+    assert attachments is not None
+    hcontainer = attachments.find(".//akn:hcontainer", ns)
+    assert hcontainer is not None
+    assert hcontainer.get("name") == "schedule"
+    assert hcontainer.get("eId") == "schedule-1"
+
+
+def test_multiple_schedules(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule"),
+        ParsedParagraph(ElementType.BODY, text="Content of first schedule."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Second Schedule"),
+        ParsedParagraph(ElementType.BODY, text="Content of second schedule."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    hcontainers = xml.findall(".//akn:hcontainer[@name='schedule']", ns)
+    assert len(hcontainers) == 2
+    assert hcontainers[0].get("eId") == "schedule-1"
+    assert hcontainers[1].get("eId") == "schedule-2"
+
+
+def test_body_outside_schedule_not_in_attachments(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Section body text."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    assert xml.find(".//akn:attachments", ns) is None

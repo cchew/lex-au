@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import replace
 from datetime import date
 from lxml import etree
@@ -39,6 +40,14 @@ _DEPTH = {
 
 _ROMAN_CHARS = frozenset("ivxlcdm")
 
+_TOC_HEADING_STYLE = "TOC Heading"
+_TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
+_SCHEDULE_RE = re.compile(r'^Schedule\xa0(\d+|[IVX]+)', re.IGNORECASE)
+_STRUCTURAL = frozenset({
+    ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
+    ElementType.SUBDIVISION, ElementType.SECTION,
+})
+
 
 def _resolve_para_ambiguity(
     p: ParsedParagraph,
@@ -64,6 +73,86 @@ def _resolve_para_ambiguity(
     return p
 
 
+def _split_stream(
+    paragraphs: list[ParsedParagraph],
+) -> tuple[list[ParsedParagraph], list[ParsedParagraph], list[list[ParsedParagraph]]]:
+    """Return (preface_paras, body_paras, list_of_schedule_para_groups)."""
+    first_structural = next(
+        (i for i, p in enumerate(paragraphs) if p.element_type in _STRUCTURAL),
+        len(paragraphs),
+    )
+    preface = paragraphs[:first_structural]
+    rest = paragraphs[first_structural:]
+
+    schedule_start = next(
+        (i for i, p in enumerate(rest)
+         if p.element_type == ElementType.BODY and _SCHEDULE_RE.match(p.text)),
+        len(rest),
+    )
+    body = rest[:schedule_start]
+    schedule_paras = rest[schedule_start:]
+
+    schedules: list[list[ParsedParagraph]] = []
+    current: list[ParsedParagraph] = []
+    for p in schedule_paras:
+        if p.element_type == ElementType.BODY and _SCHEDULE_RE.match(p.text):
+            if current:
+                schedules.append(current)
+            current = [p]
+        else:
+            current.append(p)
+    if current:
+        schedules.append(current)
+
+    return preface, body, schedules
+
+
+def _build_preface(preface_paras: list[ParsedParagraph]) -> etree._Element | None:
+    if not preface_paras:
+        return None
+    preface_el = etree.Element(f"{{{AKN_NS}}}preface")
+    toc_el: etree._Element | None = None
+    for p in preface_paras:
+        if p.raw_style == _TOC_HEADING_STYLE:
+            toc_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}toc")
+        elif p.raw_style in _TOC_ITEM_STYLES:
+            parent = toc_el if toc_el is not None else preface_el
+            item = etree.SubElement(parent, f"{{{AKN_NS}}}tocItem")
+            item.text = p.text
+        else:
+            p_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}p")
+            p_el.text = p.text
+    return preface_el
+
+
+def _build_attachments(
+    schedule_groups: list[list[ParsedParagraph]],
+) -> etree._Element | None:
+    if not schedule_groups:
+        return None
+    attachments_el = etree.Element(f"{{{AKN_NS}}}attachments")
+    for idx, group in enumerate(schedule_groups, start=1):
+        attachment_el = etree.SubElement(attachments_el, f"{{{AKN_NS}}}attachment")
+        hcontainer = etree.SubElement(
+            attachment_el,
+            f"{{{AKN_NS}}}hcontainer",
+            name="schedule",
+            eId=f"schedule-{idx}",
+        )
+        if group:
+            heading_text = group[0].text
+            m = _SCHEDULE_RE.match(heading_text)
+            heading_val = heading_text[m.end():].lstrip("—–- ") if m else heading_text
+            h_el = etree.SubElement(hcontainer, f"{{{AKN_NS}}}heading")
+            h_el.text = heading_val or heading_text
+        content_el = etree.SubElement(hcontainer, f"{{{AKN_NS}}}content")
+        for p in group[1:]:
+            if p.text:
+                p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                p_el.text = p.text
+    return attachments_el
+
+
 class AknBuilder:
     def __init__(self, meta: ActMetadata) -> None:
         self._meta = meta
@@ -74,9 +163,18 @@ class AknBuilder:
             self._paragraphs.append(paragraph)
 
     def build(self) -> tuple[etree._Element, ValidationResult]:
+        preface_paras, body_paras, schedule_groups = _split_stream(self._paragraphs)
+
         root = self._make_skeleton()
         ns = {"akn": AKN_NS}
+        act_el = root.find(".//akn:act", ns)
         body = root.find(".//akn:body", ns)
+
+        # Insert <preface> before <body>
+        preface_el = _build_preface(preface_paras)
+        if preface_el is not None:
+            body_index = list(act_el).index(body)
+            act_el.insert(body_index, preface_el)
 
         # Stack entries: (element_type, num, lxml_element)
         stack: list[tuple[ElementType, str, etree._Element]] = []
@@ -91,7 +189,7 @@ class AknBuilder:
             parent = stack[-1][2] if stack else body
             return prefix, parent
 
-        for p in self._paragraphs:
+        for p in body_paras:
             p = _resolve_para_ambiguity(p, stack)
             if p.element_type in _AKN_TAG:
                 prefix, parent = _current_parent(p.element_type)
@@ -118,6 +216,11 @@ class AknBuilder:
                     current_content = etree.SubElement(parent_elem, f"{{{AKN_NS}}}content")
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
                 p_el.text = p.text
+
+        # Append <attachments> after <body>
+        attachments_el = _build_attachments(schedule_groups)
+        if attachments_el is not None:
+            act_el.append(attachments_el)
 
         result = validate_akn(root, self._meta)
         return root, result
