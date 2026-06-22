@@ -275,3 +275,47 @@ def test_build_attachments_returns_tuple(meta):
     ns = {"akn": AKN_NS}
     clauses = xml.findall(".//akn:hcontainer[@name='clause']", ns)
     assert len(clauses) == 2
+
+
+def test_authorial_note_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="16", heading="Notification"),
+        ParsedParagraph(ElementType.NOTE, text="Note: See also section 6."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    note = xml.find(".//akn:authorialNote", ns)
+    assert note is not None
+    assert note.get("placement") == "end"
+    assert note.get("marker") == "*"
+    p = note.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Note: See also section 6."
+
+
+def test_example_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"),
+        ParsedParagraph(ElementType.EXAMPLE, text="Example: A person who transfers data..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    ex = xml.find(".//akn:hcontainer[@name='example']", ns)
+    assert ex is not None
+    p = ex.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Example: A person who transfers data..."
+
+
+def test_penalty_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="13G", heading="Offences"),
+        ParsedParagraph(ElementType.PENALTY, text="Penalty: 60 penalty units."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    pen = xml.find(".//akn:hcontainer[@name='penalty']", ns)
+    assert pen is not None
+    p = pen.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Penalty: 60 penalty units."

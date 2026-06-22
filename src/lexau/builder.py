@@ -346,6 +346,31 @@ class AknBuilder:
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
                 p_el.text = p.text
 
+            elif p.element_type == ElementType.NOTE:
+                parent_elem = stack[-1][2] if stack else body
+                note_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}authorialNote",
+                    placement="end", marker="*",
+                )
+                content_el = etree.SubElement(note_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+            elif p.element_type == ElementType.EXAMPLE:
+                parent_elem = stack[-1][2] if stack else body
+                ex_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}hcontainer", name="example"
+                )
+                content_el = etree.SubElement(ex_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+            elif p.element_type == ElementType.PENALTY:
+                parent_elem = stack[-1][2] if stack else body
+                pen_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}hcontainer", name="penalty"
+                )
+                content_el = etree.SubElement(pen_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
         # Append <attachments> after <body>
         attachments_el, _ = _build_attachments(schedule_groups)
         if attachments_el is not None:
