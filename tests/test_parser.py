@@ -66,3 +66,48 @@ def test_parse_empty_paragraph_is_skip():
 def test_parse_unknown_style_is_body():
     p = parse_paragraph("Normal", "Some text.")
     assert p.element_type == ElementType.BODY
+
+
+def test_subsection_body_text_style():
+    p = parse_paragraph("Body Text", "(1) The applicant must notify the entity.")
+    assert p.element_type == ElementType.SUBSECTION
+    assert p.number == "1"
+    assert p.text == "The applicant must notify the entity."
+
+
+def test_subsection_alphanumeric():
+    p = parse_paragraph("Body Text", "(2A) Despite subsection (2), the entity may...")
+    assert p.element_type == ElementType.SUBSECTION
+    assert p.number == "2A"
+    assert "Despite" in p.text
+
+
+def test_paragraph_list_paragraph_style():
+    p = parse_paragraph("List Paragraph", "(a) the person has suffered serious harm; or")
+    assert p.element_type == ElementType.PARAGRAPH
+    assert p.number == "a"
+    assert "suffered" in p.text
+
+
+def test_subparagraph_list_paragraph_style():
+    p = parse_paragraph("List Paragraph", "(ii) the relevant information is sensitive.")
+    assert p.element_type == ElementType.SUBPARAGRAPH
+    assert p.number == "ii"
+    assert "sensitive" in p.text
+
+
+def test_style_fallback_subsection_no_style():
+    p = parse_paragraph("Unknown", "(3) The notice must be given within 30 days.")
+    assert p.element_type == ElementType.SUBSECTION
+    assert p.number == "3"
+
+
+def test_style_fallback_paragraph_no_style():
+    p = parse_paragraph("Unknown", "(b) in relation to the matter...")
+    assert p.element_type == ElementType.PARAGRAPH
+    assert p.number == "b"
+
+
+def test_body_text_without_leading_paren_remains_body():
+    p = parse_paragraph("Body Text", "For the purposes of this Act...")
+    assert p.element_type == ElementType.BODY

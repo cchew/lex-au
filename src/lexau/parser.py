@@ -11,6 +11,9 @@ class ElementType(Enum):
     DIVISION    = "dvs"
     SUBDIVISION = "subdvs"
     SECTION     = "section"
+    SUBSECTION  = "subsec"
+    PARAGRAPH   = "para"
+    SUBPARAGRAPH = "subpara"
     BODY        = "body"
     SKIP        = "skip"
 
@@ -29,6 +32,15 @@ _HEADING_RE = re.compile(
 
 # Matches "4  Short title", "2A  Objects of this Act"
 _SECTION_RE = re.compile(r'^(\w[\w.\-]*)[ \t]{2,}(.+)$')
+
+# Matches "(1) text", "(2A) text" — subsection pattern
+_SUBSEC_RE = re.compile(r'^\((\d+[A-Z]?)\)\s+(.*)', re.DOTALL)
+
+# Matches "(a) text", "(b) text" — lowercase letter pattern
+_PARA_RE = re.compile(r'^\(([a-z]+)\)\s+(.*)', re.DOTALL)
+
+# Matches "(i) text", "(ii) text", "(iii) text" — roman numeral pattern
+_SUBPARA_RE = re.compile(r'^\(([ivxlc]+)\)\s+(.*)', re.DOTALL)
 
 
 @dataclass
@@ -61,6 +73,58 @@ def parse_paragraph(style: str, text: str) -> ParsedParagraph:
                 ElementType.SECTION,
                 number=m.group(1),
                 heading=m.group(2).strip(),
+                raw_style=style,
+            )
+
+    # Body Text and List Paragraph styles: check for subsection/paragraph/subparagraph patterns
+    if style == "Body Text":
+        m = _SUBSEC_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.SUBSECTION,
+                number=m.group(1),
+                text=m.group(2).strip(),
+                raw_style=style,
+            )
+        # No subsection pattern found; fall through to body text
+
+    elif style == "List Paragraph":
+        # Try subparagraph (roman numeral) first to avoid matching (ii) as (a-z)+
+        m = _SUBPARA_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.SUBPARAGRAPH,
+                number=m.group(1),
+                text=m.group(2).strip(),
+                raw_style=style,
+            )
+        # Try paragraph (lowercase letter)
+        m = _PARA_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.PARAGRAPH,
+                number=m.group(1),
+                text=m.group(2).strip(),
+                raw_style=style,
+            )
+        # No pattern found; fall through to body text
+
+    else:
+        # Fallback for unknown styles: try subsection, then paragraph
+        m = _SUBSEC_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.SUBSECTION,
+                number=m.group(1),
+                text=m.group(2).strip(),
+                raw_style=style,
+            )
+        m = _PARA_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.PARAGRAPH,
+                number=m.group(1),
+                text=m.group(2).strip(),
                 raw_style=style,
             )
 
