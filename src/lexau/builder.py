@@ -16,26 +16,28 @@ AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
 
 # ElementType.value → AKN tag name
 _AKN_TAG = {
-    ElementType.CHAPTER:     "chapter",
-    ElementType.PART:        "part",
-    ElementType.DIVISION:    "division",
-    ElementType.SUBDIVISION: "subDivision",
-    ElementType.SECTION:     "section",
-    ElementType.SUBSECTION:  "subsection",
-    ElementType.PARAGRAPH:   "paragraph",
+    ElementType.CHAPTER:      "chapter",
+    ElementType.PART:         "part",
+    ElementType.DIVISION:     "division",
+    ElementType.SUBDIVISION:  "subDivision",
+    ElementType.SECTION:      "section",
+    ElementType.SUBSECTION:   "subsection",
+    ElementType.PARAGRAPH:    "paragraph",
     ElementType.SUBPARAGRAPH: "subparagraph",
+    ElementType.LEVEL4:       "hcontainer",  # uses name="level4" — handled specially
 }
 
 # Hierarchy depth (lower = higher in tree)
 _DEPTH = {
-    ElementType.CHAPTER:     0,
-    ElementType.PART:        1,
-    ElementType.DIVISION:    2,
-    ElementType.SUBDIVISION: 3,
-    ElementType.SECTION:     4,
-    ElementType.SUBSECTION:  5,
-    ElementType.PARAGRAPH:   6,
+    ElementType.CHAPTER:      0,
+    ElementType.PART:         1,
+    ElementType.DIVISION:     2,
+    ElementType.SUBDIVISION:  3,
+    ElementType.SECTION:      4,
+    ElementType.SUBSECTION:   5,
+    ElementType.PARAGRAPH:    6,
     ElementType.SUBPARAGRAPH: 7,
+    ElementType.LEVEL4:       8,
 }
 
 _ROMAN_CHARS = frozenset("ivxlcdm")
@@ -324,8 +326,14 @@ class AknBuilder:
                 prefix, parent = _current_parent(p.element_type)
                 leaf_eid = make_eid(p.element_type.value, p.number)
                 full_eid = f"{prefix}__{leaf_eid}" if prefix else leaf_eid
-                tag = _AKN_TAG[p.element_type]
-                elem = etree.SubElement(parent, f"{{{AKN_NS}}}{tag}", eId=full_eid)
+                if p.element_type == ElementType.LEVEL4:
+                    elem = etree.SubElement(
+                        parent, f"{{{AKN_NS}}}hcontainer",
+                        name="level4", eId=full_eid,
+                    )
+                else:
+                    tag = _AKN_TAG[p.element_type]
+                    elem = etree.SubElement(parent, f"{{{AKN_NS}}}{tag}", eId=full_eid)
                 num_el = etree.SubElement(elem, f"{{{AKN_NS}}}num")
                 num_el.text = p.number
                 if p.heading:
@@ -333,7 +341,7 @@ class AknBuilder:
                     h_el.text = p.heading
                 stack.append((p.element_type, p.number, elem))
                 current_content = None
-                if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH} and p.text:
+                if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH, ElementType.LEVEL4} and p.text:
                     content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
                     p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                     p_el.text = p.text

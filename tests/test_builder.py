@@ -319,3 +319,22 @@ def test_penalty_emitted(meta):
     p = pen.find("akn:content/akn:p", ns)
     assert p is not None
     assert p.text == "Penalty: 60 penalty units."
+
+
+def test_level4_emitted_with_lowercase_eid(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text=""),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text=""),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text=""),
+        ParsedParagraph(ElementType.LEVEL4, number="A", text="the entity must comply"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    level4 = xml.find(".//akn:hcontainer[@name='level4']", ns)
+    assert level4 is not None
+    assert level4.get("eId") == "sec-45__subsec-1__para-a__subpara-i__level4-a"
+    num = level4.find("akn:num", ns)
+    assert num is not None and num.text == "A"
+    p = level4.find("akn:content/akn:p", ns)
+    assert p is not None and "comply" in p.text
