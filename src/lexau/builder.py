@@ -239,16 +239,36 @@ class AknBuilder:
             schedule_names=[grp[0].text for grp in schedule_groups if grp],
         )
 
+        # Count with reclassification applied (mirrors what build() actually emits)
+        _count_stack: list[tuple[ElementType, str, bool]] = []  # (type, num, had_text)
         for p in body_paras:
-            if p.element_type == ElementType.SUBSECTION:
+            # Mirror _resolve_para_ambiguity logic without lxml elements
+            p_type = p.element_type
+            if (p_type == ElementType.PARAGRAPH
+                    and set(p.number.lower()).issubset(_ROMAN_CHARS)
+                    and _count_stack
+                    and _count_stack[-1][0] == ElementType.PARAGRAPH
+                    and not _count_stack[-1][2]):  # open para has no text = container
+                p_type = ElementType.SUBPARAGRAPH
+
+            # Pop stack to correct depth
+            target_depth = _DEPTH.get(p_type, 99)
+            while _count_stack and _DEPTH.get(_count_stack[-1][0], -1) >= target_depth:
+                _count_stack.pop()
+
+            if p_type == ElementType.SUBSECTION:
                 report.subsections_parsed += 1
-            elif p.element_type == ElementType.PARAGRAPH:
+            elif p_type == ElementType.PARAGRAPH:
                 report.paragraphs_parsed += 1
-            elif p.element_type == ElementType.SUBPARAGRAPH:
+            elif p_type == ElementType.SUBPARAGRAPH:
                 report.subparagraphs_parsed += 1
-            if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
+
+            if p_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
                 if p.raw_style not in {"Body Text", "List Paragraph"}:
                     report.style_fallbacks += 1
+                _count_stack.append((p_type, p.number, bool(p.text)))
+            else:
+                _count_stack = []
 
         root, _validation = self.build()
 

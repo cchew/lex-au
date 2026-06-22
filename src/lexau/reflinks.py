@@ -118,10 +118,6 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
     # Clear existing text; we will rebuild content
     p_el.text = None
 
-    # Remove any existing children (shouldn't be any for plain text <p>, but be safe)
-    for child in list(p_el):
-        p_el.remove(child)
-
     prev_ref: etree._Element | None = None
     cursor = 0
 
