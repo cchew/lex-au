@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import date
 from lxml import etree
 from lxml.builder import ElementMaker
@@ -19,6 +20,9 @@ _AKN_TAG = {
     ElementType.DIVISION:    "division",
     ElementType.SUBDIVISION: "subDivision",
     ElementType.SECTION:     "section",
+    ElementType.SUBSECTION:  "subsection",
+    ElementType.PARAGRAPH:   "paragraph",
+    ElementType.SUBPARAGRAPH: "subparagraph",
 }
 
 # Hierarchy depth (lower = higher in tree)
@@ -28,7 +32,36 @@ _DEPTH = {
     ElementType.DIVISION:    2,
     ElementType.SUBDIVISION: 3,
     ElementType.SECTION:     4,
+    ElementType.SUBSECTION:  5,
+    ElementType.PARAGRAPH:   6,
+    ElementType.SUBPARAGRAPH: 7,
 }
+
+_ROMAN_CHARS = frozenset("ivxlcdm")
+
+
+def _resolve_para_ambiguity(
+    p: ParsedParagraph,
+    stack: list[tuple[ElementType, str, etree._Element]],
+) -> ParsedParagraph:
+    """Reclassify PARAGRAPH->SUBPARAGRAPH when number is all roman chars and an open PARAGRAPH is on the stack.
+
+    Only reclassify if the open PARAGRAPH is a container (no inline content emitted yet).
+    If the open PARAGRAPH has a <content> child it is a leaf node, not a parent.
+    """
+    if p.element_type != ElementType.PARAGRAPH:
+        return p
+    if not set(p.number.lower()).issubset(_ROMAN_CHARS):
+        return p
+    if stack and stack[-1][0] == ElementType.PARAGRAPH:
+        open_para_elem = stack[-1][2]
+        # If the open paragraph already has a <content> child, it's a leaf — (l) is a sibling
+        has_content = any(
+            child.tag == f"{{{AKN_NS}}}content" for child in open_para_elem
+        )
+        if not has_content:
+            return replace(p, element_type=ElementType.SUBPARAGRAPH)
+    return p
 
 
 class AknBuilder:
@@ -59,6 +92,7 @@ class AknBuilder:
             return prefix, parent
 
         for p in self._paragraphs:
+            p = _resolve_para_ambiguity(p, stack)
             if p.element_type in _AKN_TAG:
                 prefix, parent = _current_parent(p.element_type)
                 leaf_eid = make_eid(p.element_type.value, p.number)
@@ -72,6 +106,10 @@ class AknBuilder:
                     h_el.text = p.heading
                 stack.append((p.element_type, p.number, elem))
                 current_content = None
+                if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH} and p.text:
+                    content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
+                    p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                    p_el.text = p.text
 
             elif p.element_type == ElementType.BODY and p.text:
                 # Attach body text to the current section's <content>
@@ -98,7 +136,7 @@ class AknBuilder:
                         AKN.FRBRWork(
                             AKN.FRBRthis(value=f"{work_uri}/!main"),
                             AKN.FRBRuri(value=work_uri),
-                            AKN.FRBRdate(date=str(meta.year), name="Generation"),
+                            AKN.FRBRdate(date=f"{meta.year}-01-01", name="Generation"),
                             AKN.FRBRauthor(href="#parliament"),
                         ),
                         AKN.FRBRExpression(
