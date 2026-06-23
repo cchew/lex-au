@@ -18,10 +18,11 @@ pretty_name: lex-au — Commonwealth Acts as AKN 3.0 XML
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads but no structured XML, no section-level addressing, and no AKN. This dataset fills that gap for Commonwealth Acts in force.
 
-**Version: v0.2.0** — 11 Acts, published 2026-06-22. Source code and CLI at [github.com/cchew/lex-au](https://github.com/cchew/lex-au).
+**Version: v0.3.0** — 11 Acts, published 2026-06-23. Source code and CLI at [github.com/cchew/lex-au](https://github.com/cchew/lex-au).
 
 ## Versions
 
+- **v0.3.0** — 2026-06-23: Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level `(A)(B)(C)`, extended `<ref>` patterns. 11 Acts.
 - **v0.2.0** — 2026-06-22: Intra-section hierarchy, `<ref>` cross-references, `<preface>`/TOC, schedules, multi-volume Acts, ISO FRBRdate. 11 Acts.
 - **v0.1.0** — 2026-06-19: Structural skeleton (part/division/section, basic FRBR). 8 Acts.
 
@@ -37,7 +38,7 @@ Each Act is a single AKN 3.0 XML file with:
 - Schedules as `<attachments><attachment><hcontainer name="schedule">`
 - Corpus index at `index.json`; parse report per Act in `reports/`
 
-## Current corpus (v0.2.0)
+## Current corpus (v0.3.0)
 
 | Act | Year | Compilation |
 |---|---|---|
@@ -55,8 +56,6 @@ Each Act is a single AKN 3.0 XML file with:
 
 ## Known limits
 
-- Tables in DOCX are not structured — emitted as body text.
-- Schedule internal hierarchy (sub-items within a schedule) is not parsed.
 - `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
 
 ## Licence
