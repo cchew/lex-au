@@ -223,3 +223,153 @@ def test_body_outside_schedule_not_in_attachments(meta):
     xml, _ = build_xml(meta, paragraphs)
     ns = {"akn": AKN_NS}
     assert xml.find(".//akn:attachments", ns) is None
+
+
+def test_schedule_app_clause_hierarchy(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles"),
+        ParsedParagraph(ElementType.BODY, text="APP 1 — Open and transparent management"),
+        ParsedParagraph(ElementType.BODY, text="1.1 The object of this APP is to ensure..."),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="have an up-to-date APP privacy policy"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-1"
+    num = clause.find("akn:num", ns)
+    assert num is not None and num.text == "1"
+    subclause = xml.find(".//akn:hcontainer[@name='subclause']", ns)
+    assert subclause is not None
+    assert "subclause" in subclause.get("eId", "")
+    para = xml.find(".//akn:hcontainer[@name='subclause']//akn:paragraph", ns)
+    assert para is not None
+    assert "para-a" in para.get("eId", "")
+
+
+def test_schedule_numeric_clause(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Definitions"),
+        ParsedParagraph(ElementType.BODY, text="1  General definitions"),
+        ParsedParagraph(ElementType.BODY, text="1.1 In this Schedule..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-1"
+
+
+def test_build_attachments_returns_tuple(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test"),
+        ParsedParagraph(ElementType.BODY, text="1  First Clause"),
+        ParsedParagraph(ElementType.BODY, text="2  Second Clause"),
+    ]
+    # build() uses _build_attachments internally — just verify it works end-to-end
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clauses = xml.findall(".//akn:hcontainer[@name='clause']", ns)
+    assert len(clauses) == 2
+
+
+def test_authorial_note_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="16", heading="Notification"),
+        ParsedParagraph(ElementType.NOTE, text="Note: See also section 6."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    note = xml.find(".//akn:authorialNote", ns)
+    assert note is not None
+    assert note.get("placement") == "end"
+    assert note.get("marker") == "*"
+    p = note.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Note: See also section 6."
+
+
+def test_example_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"),
+        ParsedParagraph(ElementType.EXAMPLE, text="Example: A person who transfers data..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    ex = xml.find(".//akn:hcontainer[@name='example']", ns)
+    assert ex is not None
+    p = ex.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Example: A person who transfers data..."
+
+
+def test_penalty_emitted(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="13G", heading="Offences"),
+        ParsedParagraph(ElementType.PENALTY, text="Penalty: 60 penalty units."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    pen = xml.find(".//akn:hcontainer[@name='penalty']", ns)
+    assert pen is not None
+    p = pen.find("akn:content/akn:p", ns)
+    assert p is not None
+    assert p.text == "Penalty: 60 penalty units."
+
+
+def test_table_emitted_as_akn_table(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Fees"),
+        ParsedParagraph(
+            ElementType.TABLE,
+            table_rows=[["Header 1", "Header 2"], ["Data 1", "Data 2"]],
+        ),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(".//akn:table", ns)
+    assert table is not None
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 2
+    ths = rows[0].findall("akn:th", ns)
+    assert len(ths) == 2
+    assert ths[0].text == "Header 1"
+    tds = rows[1].findall("akn:td", ns)
+    assert len(tds) == 2
+    assert tds[0].text == "Data 1"
+
+
+def test_empty_table_rows_skipped(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Fees"),
+        ParsedParagraph(ElementType.TABLE, table_rows=[]),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(".//akn:table", ns)
+    assert table is not None
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 0
+
+
+def test_level4_emitted_with_lowercase_eid(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text=""),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text=""),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text=""),
+        ParsedParagraph(ElementType.LEVEL4, number="A", text="the entity must comply"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    level4 = xml.find(".//akn:hcontainer[@name='level4']", ns)
+    assert level4 is not None
+    assert level4.get("eId") == "sec-45__subsec-1__para-a__subpara-i__level4-a"
+    num = level4.find("akn:num", ns)
+    assert num is not None and num.text == "A"
+    p = level4.find("akn:content/akn:p", ns)
+    assert p is not None and "comply" in p.text

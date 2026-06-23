@@ -1,4 +1,4 @@
-from lexau.frbr import make_section_eid, make_part_eid, make_division_eid, make_chapter_eid
+from lexau.frbr import make_section_eid, make_part_eid, make_division_eid, make_chapter_eid, make_eid
 
 
 def test_section_eid_simple():
@@ -21,3 +21,16 @@ def test_division_eid():
 
 def test_chapter_eid():
     assert make_chapter_eid("1") == "chapter-1"
+
+
+def test_make_eid_level4_lowercase():
+    assert make_eid("level4", "A") == "level4-a"
+
+
+def test_make_eid_level4_multi_char():
+    assert make_eid("level4", "AA") == "level4-aa"
+
+
+def test_make_eid_existing_section_unchanged():
+    # Confirm existing behaviour is unaffected
+    assert make_eid("section", "16") == "sec-16"

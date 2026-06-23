@@ -49,3 +49,10 @@ class ParseReport:
     style_fallbacks: int = 0
     refs_resolved: int = 0
     refs_unresolved: int = 0
+    # v0.3.0 additions
+    schedule_clauses_found: int = 0
+    notes_found: int = 0
+    examples_found: int = 0
+    penalties_found: int = 0
+    level4_found: int = 0
+    tables_found: int = 0

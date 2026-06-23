@@ -4,10 +4,11 @@ Commonwealth Acts as AKN 3.0 XML.
 
 Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
 
-**Status: v0.2.0** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
+**Status: v0.3.0** — dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0).
 
 ## Versions
 
+- **v0.3.0** — 2026-06-23: Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level `(A)(B)(C)`, extended `<ref>` patterns. 11 Acts.
 - **v0.2.0** — 2026-06-22: Intra-section hierarchy (`<subsection>`, `<paragraph>`, `<subparagraph>` with nested eIds), `<ref>` cross-reference markup, `<preface>`/TOC, schedules as `<attachments>`, multi-volume Acts (Corporations 7 vols, Fair Work 4, Criminal Code 3), ISO FRBRdate. 11 Acts. Parse report per Act.
 - **v0.1.0** — 2026-06-19: Structural skeleton (part/division/section, basic FRBR). 8 Acts.
 

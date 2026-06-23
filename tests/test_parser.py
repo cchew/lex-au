@@ -111,3 +111,66 @@ def test_style_fallback_paragraph_no_style():
 def test_body_text_without_leading_paren_remains_body():
     p = parse_paragraph("Body Text", "For the purposes of this Act...")
     assert p.element_type == ElementType.BODY
+
+
+def test_parse_note_by_style():
+    p = parse_paragraph("Note", "Note: See also section 6.")
+    assert p.element_type == ElementType.NOTE
+    assert p.text == "Note: See also section 6."
+    assert p.number == ""
+
+
+def test_parse_note_by_text_pattern():
+    p = parse_paragraph("Body Text", "Note: The Commissioner may...")
+    assert p.element_type == ElementType.NOTE
+
+
+def test_parse_notes_plural_by_text_pattern():
+    p = parse_paragraph("Body Text", "Notes: See sections 6 and 7.")
+    assert p.element_type == ElementType.NOTE
+
+
+def test_parse_example_by_style():
+    p = parse_paragraph("Example", "Example: A person who transfers data...")
+    assert p.element_type == ElementType.EXAMPLE
+    assert p.text == "Example: A person who transfers data..."
+
+
+def test_parse_example_by_text_pattern():
+    p = parse_paragraph("Body Text", "Example: If an entity...")
+    assert p.element_type == ElementType.EXAMPLE
+
+
+def test_parse_examples_plural_by_text_pattern():
+    p = parse_paragraph("Body Text", "Examples: 1. An APP entity...")
+    assert p.element_type == ElementType.EXAMPLE
+
+
+def test_parse_penalty_by_style():
+    p = parse_paragraph("Penalty", "Penalty: 60 penalty units.")
+    assert p.element_type == ElementType.PENALTY
+    assert p.text == "Penalty: 60 penalty units."
+
+
+def test_parse_penalty_by_text_pattern():
+    p = parse_paragraph("Body Text", "Penalty: 120 penalty units.")
+    assert p.element_type == ElementType.PENALTY
+
+
+def test_parse_level4_uppercase_alpha():
+    p = parse_paragraph("List Paragraph", "(A) the entity must comply with...")
+    assert p.element_type == ElementType.LEVEL4
+    assert p.number == "A"
+    assert "entity" in p.text
+
+
+def test_parse_level4_not_triggered_for_body_text():
+    # (A) in Body Text style is NOT level4 — Body Text uses subsec/para detection only
+    p = parse_paragraph("Body Text", "(A) some text")
+    assert p.element_type != ElementType.LEVEL4
+
+
+def test_parse_level4_not_triggered_for_unknown_style_lowercase():
+    # (a) in unknown style should be PARAGRAPH, not LEVEL4
+    p = parse_paragraph("Unknown", "(a) some text")
+    assert p.element_type == ElementType.PARAGRAPH

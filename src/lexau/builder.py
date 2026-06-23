@@ -16,26 +16,28 @@ AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
 
 # ElementType.value → AKN tag name
 _AKN_TAG = {
-    ElementType.CHAPTER:     "chapter",
-    ElementType.PART:        "part",
-    ElementType.DIVISION:    "division",
-    ElementType.SUBDIVISION: "subDivision",
-    ElementType.SECTION:     "section",
-    ElementType.SUBSECTION:  "subsection",
-    ElementType.PARAGRAPH:   "paragraph",
+    ElementType.CHAPTER:      "chapter",
+    ElementType.PART:         "part",
+    ElementType.DIVISION:     "division",
+    ElementType.SUBDIVISION:  "subDivision",
+    ElementType.SECTION:      "section",
+    ElementType.SUBSECTION:   "subsection",
+    ElementType.PARAGRAPH:    "paragraph",
     ElementType.SUBPARAGRAPH: "subparagraph",
+    ElementType.LEVEL4:       "hcontainer",  # uses name="level4" — handled specially
 }
 
 # Hierarchy depth (lower = higher in tree)
 _DEPTH = {
-    ElementType.CHAPTER:     0,
-    ElementType.PART:        1,
-    ElementType.DIVISION:    2,
-    ElementType.SUBDIVISION: 3,
-    ElementType.SECTION:     4,
-    ElementType.SUBSECTION:  5,
-    ElementType.PARAGRAPH:   6,
+    ElementType.CHAPTER:      0,
+    ElementType.PART:         1,
+    ElementType.DIVISION:     2,
+    ElementType.SUBDIVISION:  3,
+    ElementType.SECTION:      4,
+    ElementType.SUBSECTION:   5,
+    ElementType.PARAGRAPH:    6,
     ElementType.SUBPARAGRAPH: 7,
+    ElementType.LEVEL4:       8,
 }
 
 _ROMAN_CHARS = frozenset("ivxlcdm")
@@ -47,6 +49,15 @@ _STRUCTURAL = frozenset({
     ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
     ElementType.SUBDIVISION, ElementType.SECTION,
 })
+
+# Schedule clause detection — applied to BODY paragraphs within schedule content
+# Check order: APP_CLAUSE first, then SUBCLAUSE (3+ parts), then CLAUSE (1-2 parts)
+_APP_CLAUSE_RE = re.compile(
+    r'^APP\s+(\d+(?:\.\d+)*)\s*(?:[—–\-]\s*)?([A-Z].*)',
+    re.DOTALL,
+)
+_SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
+_CLAUSE_RE    = re.compile(r'^(\d+(?:\.\d+)*)\s+([A-Z].*)', re.DOTALL)
 
 
 def _resolve_para_ambiguity(
@@ -125,19 +136,149 @@ def _build_preface(preface_paras: list[ParsedParagraph]) -> etree._Element | Non
     return preface_el
 
 
+def _build_schedule_content(
+    hcontainer: etree._Element,
+    schedule_eid: str,
+    paragraphs: list[ParsedParagraph],
+) -> int:
+    """Build clause hierarchy inside a schedule hcontainer. Returns count of top-level clauses."""
+    clause_count = 0
+    clause_idx = 0
+    current_clause: etree._Element | None = None
+    current_subclause: etree._Element | None = None
+    current_para: etree._Element | None = None
+
+    def _get_or_create_content(parent: etree._Element) -> etree._Element:
+        for child in parent:
+            if child.tag == f"{{{AKN_NS}}}content":
+                return child
+        return etree.SubElement(parent, f"{{{AKN_NS}}}content")
+
+    for p in paragraphs:
+        if p.element_type == ElementType.BODY and p.text:
+            text = p.text.strip()
+
+            m = _APP_CLAUSE_RE.match(text)
+            if m:
+                clause_idx += 1
+                clause_count += 1
+                num_str = m.group(1)
+                heading_str = (m.group(2) or "").strip()
+                eid = f"{schedule_eid}__clause-{clause_idx}"
+                current_clause = etree.SubElement(
+                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                )
+                etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
+                if heading_str:
+                    etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_subclause = None
+                current_para = None
+                continue
+
+            m = _SUBCLAUSE_RE.match(text)
+            if m:
+                num_str = m.group(1)
+                content_text = m.group(2).strip()
+                parent = current_clause if current_clause is not None else hcontainer
+                parent_eid = parent.get("eId", schedule_eid)
+                eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
+                current_subclause = etree.SubElement(
+                    parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
+                )
+                etree.SubElement(current_subclause, f"{{{AKN_NS}}}num").text = num_str
+                if content_text:
+                    content_el = etree.SubElement(current_subclause, f"{{{AKN_NS}}}content")
+                    etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = content_text
+                current_para = None
+                continue
+
+            m = _CLAUSE_RE.match(text)
+            if m:
+                clause_idx += 1
+                clause_count += 1
+                num_str = m.group(1)
+                heading_str = m.group(2).strip()
+                eid = f"{schedule_eid}__clause-{clause_idx}"
+                current_clause = etree.SubElement(
+                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                )
+                etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
+                etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_subclause = None
+                current_para = None
+                continue
+
+            # Plain body text
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
+            content_el = _get_or_create_content(parent)
+            etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = text
+
+        elif p.element_type == ElementType.PARAGRAPH:
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
+            parent_eid = parent.get("eId", schedule_eid)
+            eid = f"{parent_eid}__para-{p.number}"
+            current_para = etree.SubElement(parent, f"{{{AKN_NS}}}paragraph", eId=eid)
+            etree.SubElement(current_para, f"{{{AKN_NS}}}num").text = p.number
+            if p.text:
+                content_el = etree.SubElement(current_para, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+        elif p.element_type == ElementType.SUBPARAGRAPH:
+            if current_para is not None:
+                parent = current_para
+            elif current_subclause is not None:
+                parent = current_subclause
+            elif current_clause is not None:
+                parent = current_clause
+            else:
+                parent = hcontainer
+            parent_eid = parent.get("eId", schedule_eid)
+            eid = f"{parent_eid}__subpara-{p.number}"
+            subpara_el = etree.SubElement(parent, f"{{{AKN_NS}}}subparagraph", eId=eid)
+            etree.SubElement(subpara_el, f"{{{AKN_NS}}}num").text = p.number
+            if p.text:
+                content_el = etree.SubElement(subpara_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+        elif p.text:
+            # TABLE/NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
+            parent = current_clause if current_clause is not None else hcontainer
+            content_el = _get_or_create_content(parent)
+            etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+    return clause_count
+
+
+def _count_schedule_clauses(schedule_groups: list[list[ParsedParagraph]]) -> int:
+    """Count top-level clause hcontainers across all schedule groups (for ParseReport)."""
+    count = 0
+    for group in schedule_groups:
+        for p in group[1:]:  # skip schedule heading
+            if p.element_type == ElementType.BODY and p.text:
+                text = p.text.strip()
+                if _APP_CLAUSE_RE.match(text):
+                    count += 1
+                elif not _SUBCLAUSE_RE.match(text) and _CLAUSE_RE.match(text):
+                    count += 1
+    return count
+
+
 def _build_attachments(
     schedule_groups: list[list[ParsedParagraph]],
-) -> etree._Element | None:
+) -> tuple[etree._Element | None, int]:
+    """Build attachments element. Returns (attachments_el | None, total_clause_count)."""
     if not schedule_groups:
-        return None
+        return None, 0
+    total_clauses = 0
     attachments_el = etree.Element(f"{{{AKN_NS}}}attachments")
     for idx, group in enumerate(schedule_groups, start=1):
         attachment_el = etree.SubElement(attachments_el, f"{{{AKN_NS}}}attachment")
+        schedule_eid = f"schedule-{idx}"
         hcontainer = etree.SubElement(
             attachment_el,
             f"{{{AKN_NS}}}hcontainer",
             name="schedule",
-            eId=f"schedule-{idx}",
+            eId=schedule_eid,
         )
         if group:
             heading_text = group[0].text
@@ -145,12 +286,9 @@ def _build_attachments(
             heading_val = heading_text[m.end():].lstrip("—–- ") if m else heading_text
             h_el = etree.SubElement(hcontainer, f"{{{AKN_NS}}}heading")
             h_el.text = heading_val or heading_text
-        content_el = etree.SubElement(hcontainer, f"{{{AKN_NS}}}content")
-        for p in group[1:]:
-            if p.text:
-                p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
-                p_el.text = p.text
-    return attachments_el
+        clauses = _build_schedule_content(hcontainer, schedule_eid, group[1:] if group else [])
+        total_clauses += clauses
+    return attachments_el, total_clauses
 
 
 class AknBuilder:
@@ -195,8 +333,14 @@ class AknBuilder:
                 prefix, parent = _current_parent(p.element_type)
                 leaf_eid = make_eid(p.element_type.value, p.number)
                 full_eid = f"{prefix}__{leaf_eid}" if prefix else leaf_eid
-                tag = _AKN_TAG[p.element_type]
-                elem = etree.SubElement(parent, f"{{{AKN_NS}}}{tag}", eId=full_eid)
+                if p.element_type == ElementType.LEVEL4:
+                    elem = etree.SubElement(
+                        parent, f"{{{AKN_NS}}}hcontainer",
+                        name="level4", eId=full_eid,
+                    )
+                else:
+                    tag = _AKN_TAG[p.element_type]
+                    elem = etree.SubElement(parent, f"{{{AKN_NS}}}{tag}", eId=full_eid)
                 num_el = etree.SubElement(elem, f"{{{AKN_NS}}}num")
                 num_el.text = p.number
                 if p.heading:
@@ -204,7 +348,7 @@ class AknBuilder:
                     h_el.text = p.heading
                 stack.append((p.element_type, p.number, elem))
                 current_content = None
-                if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH} and p.text:
+                if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH, ElementType.LEVEL4} and p.text:
                     content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
                     p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                     p_el.text = p.text
@@ -217,8 +361,47 @@ class AknBuilder:
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
                 p_el.text = p.text
 
+            elif p.element_type == ElementType.NOTE:
+                parent_elem = stack[-1][2] if stack else body
+                note_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}authorialNote",
+                    placement="end", marker="*",
+                )
+                content_el = etree.SubElement(note_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+            elif p.element_type == ElementType.EXAMPLE:
+                parent_elem = stack[-1][2] if stack else body
+                ex_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}hcontainer", name="example"
+                )
+                content_el = etree.SubElement(ex_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+            elif p.element_type == ElementType.PENALTY:
+                parent_elem = stack[-1][2] if stack else body
+                pen_el = etree.SubElement(
+                    parent_elem, f"{{{AKN_NS}}}hcontainer", name="penalty"
+                )
+                content_el = etree.SubElement(pen_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+            elif p.element_type == ElementType.TABLE:
+                parent_elem = stack[-1][2] if stack else body
+                table_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}table")
+                if p.table_rows:
+                    header_row, *data_rows = p.table_rows
+                    tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                    for cell in header_row:
+                        etree.SubElement(tr_el, f"{{{AKN_NS}}}th").text = cell
+                    for row in data_rows:
+                        tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                        for cell in row:
+                            etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
+                current_content = None
+
         # Append <attachments> after <body>
-        attachments_el = _build_attachments(schedule_groups)
+        attachments_el, _ = _build_attachments(schedule_groups)
         if attachments_el is not None:
             act_el.append(attachments_el)
 
@@ -262,6 +445,16 @@ class AknBuilder:
                 report.paragraphs_parsed += 1
             elif p_type == ElementType.SUBPARAGRAPH:
                 report.subparagraphs_parsed += 1
+            elif p_type == ElementType.NOTE:
+                report.notes_found += 1
+            elif p_type == ElementType.EXAMPLE:
+                report.examples_found += 1
+            elif p_type == ElementType.PENALTY:
+                report.penalties_found += 1
+            elif p_type == ElementType.LEVEL4:
+                report.level4_found += 1
+            elif p_type == ElementType.TABLE:
+                report.tables_found += 1
 
             if p_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
                 if p.raw_style not in {"Body Text", "List Paragraph"}:
@@ -269,6 +462,8 @@ class AknBuilder:
                 _count_stack.append((p_type, p.number, bool(p.text)))
             else:
                 _count_stack = []
+
+        report.schedule_clauses_found = _count_schedule_clauses(schedule_groups)
 
         root, _validation = self.build()
 

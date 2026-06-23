@@ -14,6 +14,11 @@ class ElementType(Enum):
     SUBSECTION  = "subsec"
     PARAGRAPH   = "para"
     SUBPARAGRAPH = "subpara"
+    NOTE        = "note"
+    EXAMPLE     = "example"
+    PENALTY     = "penalty"
+    LEVEL4      = "level4"
+    TABLE       = "table"
     BODY        = "body"
     SKIP        = "skip"
 
@@ -42,6 +47,18 @@ _PARA_RE = re.compile(r'^\(([a-z]+)\)\s+(.*)', re.DOTALL)
 # Matches "(i) text", "(ii) text", "(iii) text" — roman numeral pattern
 _SUBPARA_RE = re.compile(r'^\(([ivxlcdm]+)\)\s+(.*)', re.DOTALL)
 
+# Note: "Note:" or "Notes:" prefix — any style, or "Note" style
+_NOTE_RE = re.compile(r'^Notes?[\xa0: ]', re.IGNORECASE)
+
+# Example: "Example:" or "Examples:" prefix — any style, or "Example" style
+_EXAMPLE_RE = re.compile(r'^Examples?[\xa0: ]', re.IGNORECASE)
+
+# Penalty: "Penalty:" prefix — any style, or "Penalty" style
+_PENALTY_RE = re.compile(r'^Penalty[\xa0: ]', re.IGNORECASE)
+
+# Level4: uppercase alpha (A)(B)(C) in List Paragraph
+_LEVEL4_RE = re.compile(r'^\(([A-Z]+)\)\s+(.*)', re.DOTALL)
+
 
 @dataclass
 class ParsedParagraph:
@@ -50,6 +67,18 @@ class ParsedParagraph:
     heading: str = ""
     text: str = ""
     raw_style: str = ""
+    table_rows: list[list[str]] = field(default_factory=list)
+
+
+def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:
+    """Return NOTE/EXAMPLE/PENALTY ParsedParagraph if text or style matches; else None."""
+    if style == "Note" or _NOTE_RE.match(stripped):
+        return ParsedParagraph(ElementType.NOTE, text=stripped, raw_style=style)
+    if style == "Example" or _EXAMPLE_RE.match(stripped):
+        return ParsedParagraph(ElementType.EXAMPLE, text=stripped, raw_style=style)
+    if style == "Penalty" or _PENALTY_RE.match(stripped):
+        return ParsedParagraph(ElementType.PENALTY, text=stripped, raw_style=style)
+    return None
 
 
 def parse_paragraph(style: str, text: str) -> ParsedParagraph:
@@ -75,6 +104,12 @@ def parse_paragraph(style: str, text: str) -> ParsedParagraph:
                 heading=m.group(2).strip(),
                 raw_style=style,
             )
+
+    # Check for Note/Example/Penalty annotations (any non-ActHead style)
+    if not style.startswith("ActHead"):
+        annotation = _classify_annotation(style, stripped)
+        if annotation is not None:
+            return annotation
 
     # Body Text and List Paragraph styles: check for subsection/paragraph/subparagraph patterns
     if style == "Body Text":
@@ -103,6 +138,15 @@ def parse_paragraph(style: str, text: str) -> ParsedParagraph:
         if m:
             return ParsedParagraph(
                 ElementType.PARAGRAPH,
+                number=m.group(1),
+                text=m.group(2).strip(),
+                raw_style=style,
+            )
+        # Try level4 (uppercase alpha)
+        m = _LEVEL4_RE.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.LEVEL4,
                 number=m.group(1),
                 text=m.group(2).strip(),
                 raw_style=style,
