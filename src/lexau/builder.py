@@ -209,12 +209,12 @@ def _build_schedule_content(
                 continue
 
             # Plain body text
-            parent = current_subclause or current_clause or hcontainer
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
             content_el = _get_or_create_content(parent)
             etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = text
 
         elif p.element_type == ElementType.PARAGRAPH:
-            parent = current_subclause or current_clause or hcontainer
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
             parent_eid = parent.get("eId", schedule_eid)
             eid = f"{parent_eid}__para-{p.number}"
             current_para = etree.SubElement(parent, f"{{{AKN_NS}}}paragraph", eId=eid)
@@ -224,7 +224,14 @@ def _build_schedule_content(
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
         elif p.element_type == ElementType.SUBPARAGRAPH:
-            parent = current_para or current_subclause or current_clause or hcontainer
+            if current_para is not None:
+                parent = current_para
+            elif current_subclause is not None:
+                parent = current_subclause
+            elif current_clause is not None:
+                parent = current_clause
+            else:
+                parent = hcontainer
             parent_eid = parent.get("eId", schedule_eid)
             eid = f"{parent_eid}__subpara-{p.number}"
             subpara_el = etree.SubElement(parent, f"{{{AKN_NS}}}subparagraph", eId=eid)
@@ -235,7 +242,7 @@ def _build_schedule_content(
 
         elif p.text:
             # TABLE/NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
-            parent = current_clause or hcontainer
+            parent = current_clause if current_clause is not None else hcontainer
             content_el = _get_or_create_content(parent)
             etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
