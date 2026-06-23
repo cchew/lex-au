@@ -438,6 +438,16 @@ class AknBuilder:
                 report.paragraphs_parsed += 1
             elif p_type == ElementType.SUBPARAGRAPH:
                 report.subparagraphs_parsed += 1
+            elif p_type == ElementType.NOTE:
+                report.notes_found += 1
+            elif p_type == ElementType.EXAMPLE:
+                report.examples_found += 1
+            elif p_type == ElementType.PENALTY:
+                report.penalties_found += 1
+            elif p_type == ElementType.LEVEL4:
+                report.level4_found += 1
+            elif p_type == ElementType.TABLE:
+                report.tables_found += 1
 
             if p_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
                 if p.raw_style not in {"Body Text", "List Paragraph"}:
@@ -445,6 +455,8 @@ class AknBuilder:
                 _count_stack.append((p_type, p.number, bool(p.text)))
             else:
                 _count_stack = []
+
+        report.schedule_clauses_found = _count_schedule_clauses(schedule_groups)
 
         root, _validation = self.build()
 
