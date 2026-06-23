@@ -83,6 +83,75 @@ def test_quoted_text_skipped():
     assert resolved == 0
 
 
+def test_three_level_inline_ref():
+    root = _make_p("as provided in s 6(1)(a) of this Act")
+    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("href") == "#sec-6__subsec-1__para-a"
+    assert resolved == 1
+
+
+def test_part_intra_act_ref():
+    root = _make_p("as set out in Part III")
+    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("href") == "#part-III"
+    assert resolved == 1
+
+
+def test_division_intra_act_ref():
+    root = _make_p("as defined in Division 3")
+    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("href") == "#dvs-3"
+    assert resolved == 1
+
+
+def test_part_of_another_act_not_matched():
+    # "Part III of the Criminal Code Act 1995" — part_div should NOT match
+    root = _make_p("under Part III of the Criminal Code Act 1995")
+    _, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    refs = root.findall(".//akn:ref", ns)
+    hrefs = [r.get("href", "") for r in refs]
+    assert "#part-III" not in hrefs
+
+
+def test_subsidiary_legislation_unresolved():
+    root = _make_p("under the Privacy Regulation 2013")
+    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("class") == "unresolved"
+    assert unresolved == 1
+
+
+def test_definitional_ref_subsection():
+    root = _make_p("as defined in subsection 6(1)")
+    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("href") == "#sec-6__subsec-1"
+    assert resolved == 1
+
+
+def test_definitional_ref_section_only():
+    root = _make_p("within the meaning of section 6 of this Act")
+    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    ref = root.find(".//akn:ref", ns)
+    assert ref is not None
+    assert ref.get("href") == "#sec-6"
+
+
 def test_heading_text_skipped():
     root = etree.fromstring(
         f'<akomaNtoso xmlns="{AKN_NS}">'

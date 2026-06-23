@@ -13,11 +13,28 @@ _NUM_TAG = f"{AKN_TAG}num"
 _SKIP_PARENT_TAGS = {_HEADING_TAG, _NUM_TAG}
 
 _PATTERNS = [
-    # s N(n) — section + subsection inline (most specific first)
+    # 3-level inline: s 6(1)(a) → #sec-6__subsec-1__para-a  [most specific first]
+    (re.compile(r'\bs\s*(\d+[A-Z]?)\((\d+[A-Z]?)\)\(([a-z]+)\)'), "sec_subsec_para"),
+    # 2-level: s 16(2) → #sec-16__subsec-2
     (re.compile(r'\bs\s*(\d+[A-Z]?)\((\d+[A-Z]?)\)'), "sec_subsec"),
-    # section N or s N
+    # 1-level: section 16 or s 16
     (re.compile(r'\b(?:section|s)\s+(\d+[A-Z]?)'), "sec"),
-    # the X Act YYYY
+    # Part/Division intra-Act (not followed by "of the <Act>")
+    (re.compile(r'\b(Part|Division)\s+([\dIVXA-Z]+[A-Z]?)(?!\s+of\s+the)'), "part_div"),
+    # Definitional refs: "within the meaning of section/subsection N" or "as defined in section N"
+    (
+        re.compile(
+            r'\b(?:within the meaning of|as defined in)\s+'
+            r'(?:section|subsection|s)\s+(\d+[A-Z]?)(?:\((\d+[A-Z]?)\))?'
+        ),
+        "def_ref",
+    ),
+    # Subsidiary legislation: "the X Regulation/Instrument/Order/Rules YYYY"
+    (
+        re.compile(r'\bthe\s+([A-Z][A-Za-z ]+?(?:Regulation|Instrument|Order|Rules?)\s+\d{4})'),
+        "subsidiary",
+    ),
+    # Cross-Act: "the Privacy Act 1988"
     (re.compile(r'\bthe\s+([A-Z][A-Za-z ]+?Act\s+\d{4})'), "act"),
 ]
 
@@ -82,12 +99,35 @@ def _make_ref(
     ref_el = etree.Element(f"{AKN_TAG}ref")
     ref_el.text = match.group(0)
 
-    if kind == "sec_subsec":
+    if kind == "sec_subsec_para":
+        ref_el.set("href", f"#sec-{match.group(1)}__subsec-{match.group(2)}__para-{match.group(3)}")
+        resolved[0] += 1
+    elif kind == "sec_subsec":
         ref_el.set("href", f"#sec-{match.group(1)}__subsec-{match.group(2)}")
         resolved[0] += 1
     elif kind == "sec":
         ref_el.set("href", f"#sec-{match.group(1)}")
         resolved[0] += 1
+    elif kind == "part_div":
+        prefix = "part" if match.group(1) == "Part" else "dvs"
+        ref_el.set("href", f"#{prefix}-{match.group(2)}")
+        resolved[0] += 1
+    elif kind == "def_ref":
+        sec_num = match.group(1)
+        subsec_num = match.group(2)
+        if subsec_num:
+            ref_el.set("href", f"#sec-{sec_num}__subsec-{subsec_num}")
+        else:
+            ref_el.set("href", f"#sec-{sec_num}")
+        resolved[0] += 1
+    elif kind == "subsidiary":
+        leg_name = match.group(1).strip()
+        if leg_name in corpus_index:
+            ref_el.set("href", corpus_index[leg_name]["frbr_uri"])
+            resolved[0] += 1
+        else:
+            ref_el.set("class", "unresolved")
+            unresolved[0] += 1
     elif kind == "act":
         act_name = match.group(1).strip()
         if act_name in corpus_index:
