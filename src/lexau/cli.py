@@ -11,8 +11,8 @@ from huggingface_hub import HfApi
 
 from lexau.corpus import Corpus
 from lexau.crawler import Crawler
-from lexau.parser import parse_paragraph
 from lexau.builder import AknBuilder
+from lexau.docx_reader import iter_paragraphs
 
 
 @click.group()
@@ -60,9 +60,8 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
             builder = AknBuilder(meta)
             for docx_path in docx_paths:
                 doc = Document(docx_path)
-                for para in doc.paragraphs:
-                    style = para.style.name if para.style else "Default"
-                    builder.add(parse_paragraph(style, para.text))
+                for p in iter_paragraphs(doc):
+                    builder.add(p)
 
             xml, report = builder.build_with_report(corpus_index)
             report.volumes_fetched = len(docx_paths)
@@ -70,7 +69,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
             saved = corpus.save(meta, xml)
             click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
 
-            report_path = reports_dir / f"{meta.safe_name}-v0.2.0.json"
+            report_path = reports_dir / f"{meta.safe_name}-v0.3.0.json"
             report_path.write_text(json.dumps(asdict(report), ensure_ascii=False, indent=2))
             report_rows.append(report)
 
@@ -80,13 +79,18 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
 
     if report_rows:
         click.echo("\n--- Parse Report Summary ---")
-        click.echo(f"{'Act':<40} {'Vols':>4} {'Subsecs':>7} {'Paras':>6} {'Sched':>5} {'Refs':>5} {'Unres':>5} {'Fallbk':>6}")
-        click.echo("-" * 85)
+        click.echo(
+            f"{'Act':<40} {'Vols':>4} {'Subsecs':>7} {'Paras':>6} "
+            f"{'Sched':>5} {'Claus':>5} {'Notes':>5} {'Pens':>4} {'Tabs':>4} "
+            f"{'Refs':>5} {'Unres':>5} {'Fallbk':>6}"
+        )
+        click.echo("-" * 105)
         for r in report_rows:
             click.echo(
                 f"{r.act_name:<40} {r.volumes_fetched:>4} {r.subsections_parsed:>7} "
-                f"{r.paragraphs_parsed:>6} {r.schedules_found:>5} {r.refs_resolved:>5} "
-                f"{r.refs_unresolved:>5} {r.style_fallbacks:>6}"
+                f"{r.paragraphs_parsed:>6} {r.schedules_found:>5} {r.schedule_clauses_found:>5} "
+                f"{r.notes_found:>5} {r.penalties_found:>4} {r.tables_found:>4} "
+                f"{r.refs_resolved:>5} {r.refs_unresolved:>5} {r.style_fallbacks:>6}"
             )
 
     click.echo("\nDone.")
