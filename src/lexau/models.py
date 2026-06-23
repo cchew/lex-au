@@ -14,6 +14,7 @@ class ActMetadata:
     number: int
     effective_date: date
     long_title: str = ""
+    subject_keywords: list[str] = field(default_factory=list)
 
     @property
     def _cobalt_uri(self) -> CobaltFrbrUri:

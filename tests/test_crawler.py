@@ -165,6 +165,60 @@ def test_fetch_metadata_populates_long_title():
 
 
 @resp_lib.activate
+def test_fetch_metadata_populates_subject_keywords_from_list():
+    titles_with_subjects = {
+        "value": [{
+            "id": "C2004A03712",
+            "name": "Privacy Act 1988",
+            "year": "1988",
+            "number": "119",
+            "subjects": ["Privacy", "Data Protection"],
+        }]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=titles_with_subjects)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta is not None
+    assert meta.subject_keywords == ["Privacy", "Data Protection"]
+
+
+@resp_lib.activate
+def test_fetch_metadata_populates_subject_keywords_from_string():
+    titles_with_subjects = {
+        "value": [{
+            "id": "C2004A03712",
+            "name": "Privacy Act 1988",
+            "year": "1988",
+            "number": "119",
+            "subjects": "Privacy, Data Protection",
+        }]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=titles_with_subjects)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta is not None
+    assert meta.subject_keywords == ["Privacy", "Data Protection"]
+
+
+@resp_lib.activate
+def test_fetch_metadata_subject_keywords_defaults_to_empty():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta is not None
+    assert meta.subject_keywords == []
+
+
+@resp_lib.activate
 def test_fetch_docx_volumes_returns_empty_on_bad_response(tmp_path: Path):
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)

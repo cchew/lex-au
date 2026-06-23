@@ -539,4 +539,19 @@ class AknBuilder:
                 name="act",
             )
         )
+
+        if self._meta.subject_keywords:
+            ns = {"akn": AKN_NS}
+            meta_el = root.find(".//akn:meta", ns)
+            refs_el = meta_el.find(f"{{{AKN_NS}}}references")
+            refs_index = list(meta_el).index(refs_el) if refs_el is not None else len(list(meta_el))
+            classification_el = etree.Element(f"{{{AKN_NS}}}classification")
+            classification_el.set("source", "#legislation-gov-au")
+            for kw in self._meta.subject_keywords:
+                kw_el = etree.SubElement(classification_el, f"{{{AKN_NS}}}keyword")
+                kw_el.set("value", kw.lower().replace(" ", "-"))
+                kw_el.set("showAs", kw)
+                kw_el.set("dictionary", "#legislation-gov-au")
+            meta_el.insert(refs_index, classification_el)
+
         return root

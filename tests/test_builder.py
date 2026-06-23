@@ -426,6 +426,58 @@ def test_frbr_work_is_authoritative(meta):
 from datetime import date as _date
 
 
+def _meta_with_keywords():
+    from lexau.models import ActMetadata
+    return ActMetadata(
+        name="Privacy Act 1988",
+        title_id="C2004A03712",
+        comp_id="C2024C00280",
+        comp_num="52",
+        year=1988,
+        number=119,
+        effective_date=_date(2024, 1, 1),
+        subject_keywords=["Privacy", "Data Protection"],
+    )
+
+
+def test_classification_keywords_in_meta(meta):
+    m = _meta_with_keywords()
+    b = AknBuilder(m)
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    classification = xml.find(".//akn:meta/akn:classification", ns)
+    assert classification is not None
+    assert classification.get("source") == "#legislation-gov-au"
+    keywords = classification.findall("akn:keyword", ns)
+    assert len(keywords) == 2
+    show_as_values = {kw.get("showAs") for kw in keywords}
+    assert "Privacy" in show_as_values
+    assert "Data Protection" in show_as_values
+    value_attrs = {kw.get("value") for kw in keywords}
+    assert "privacy" in value_attrs
+    assert "data-protection" in value_attrs
+
+
+def test_no_keywords_no_classification(meta):
+    # meta fixture has subject_keywords=[] (default)
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    classification = xml.find(".//akn:meta/akn:classification", ns)
+    assert classification is None
+
+
+def test_classification_before_references(meta):
+    m = _meta_with_keywords()
+    b = AknBuilder(m)
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    meta_el = xml.find(".//akn:meta", ns)
+    tags = [c.tag.split("}")[1] for c in meta_el]
+    assert tags.index("classification") < tags.index("references"), (
+        f"<classification> must precede <references> in <meta>; got order: {tags}"
+    )
+
+
 def _meta_with_long_title():
     from lexau.models import ActMetadata
     m = ActMetadata(
