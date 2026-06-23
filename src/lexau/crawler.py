@@ -56,7 +56,7 @@ class Crawler:
             {
                 "$filter": f"name eq '{_odata_escape(act_name)}' and isInForce eq true",
                 "$top": 1,
-                "$select": "id,name,year,number",
+                "$select": "id,name,year,number,longTitle",
             },
         ).get("value", [])
         if not titles:
@@ -94,6 +94,7 @@ class Crawler:
             year=year,
             number=number,
             effective_date=date.fromisoformat(v["start"][:10]),
+            long_title=t.get("longTitle") or "",
         )
 
     def fetch_docx_volumes(self, meta: ActMetadata, dest_dir: Path) -> list[Path]:

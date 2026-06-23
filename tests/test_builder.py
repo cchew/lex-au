@@ -421,3 +421,39 @@ def test_frbr_work_is_authoritative(meta):
     el = xml.find(".//akn:FRBRWork/akn:FRBRauthoritative", ns)
     assert el is not None
     assert el.get("value") == "true"
+
+
+from datetime import date as _date
+
+
+def _meta_with_long_title():
+    from lexau.models import ActMetadata
+    m = ActMetadata(
+        name="Privacy Act 1988",
+        title_id="C2004A03712",
+        comp_id="C2024C00280",
+        comp_num="52",
+        year=1988,
+        number=119,
+        effective_date=_date(2024, 1, 1),
+        long_title="An Act to make provision to protect the privacy of individuals",
+    )
+    return m
+
+
+def test_long_title_in_preface(meta):
+    m = _meta_with_long_title()
+    b = AknBuilder(m)
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    lt = xml.find(".//akn:preface/akn:longTitle/akn:p", ns)
+    assert lt is not None
+    assert "privacy of individuals" in lt.text
+
+
+def test_no_long_title_no_long_title_element(meta):
+    # meta fixture has long_title="" (default)
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    lt = xml.find(".//akn:longTitle", ns)
+    assert lt is None

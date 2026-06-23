@@ -118,10 +118,20 @@ def _split_stream(
     return preface, body, schedules
 
 
-def _build_preface(preface_paras: list[ParsedParagraph]) -> etree._Element | None:
-    if not preface_paras:
+def _build_preface(
+    preface_paras: list[ParsedParagraph],
+    meta: ActMetadata | None = None,
+) -> etree._Element | None:
+    if not preface_paras and (meta is None or not meta.long_title):
         return None
     preface_el = etree.Element(f"{{{AKN_NS}}}preface")
+
+    # Emit <longTitle> as first child if available
+    if meta and meta.long_title:
+        lt_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}longTitle")
+        p_el = etree.SubElement(lt_el, f"{{{AKN_NS}}}p")
+        p_el.text = meta.long_title
+
     toc_el: etree._Element | None = None
     for p in preface_paras:
         if p.raw_style == _TOC_HEADING_STYLE:
@@ -309,7 +319,7 @@ class AknBuilder:
         body = root.find(".//akn:body", ns)
 
         # Insert <preface> before <body>
-        preface_el = _build_preface(preface_paras)
+        preface_el = _build_preface(preface_paras, self._meta)
         if preface_el is not None:
             body_index = list(act_el).index(body)
             act_el.insert(body_index, preface_el)

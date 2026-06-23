@@ -13,6 +13,7 @@ class ActMetadata:
     year: int
     number: int
     effective_date: date
+    long_title: str = ""
 
     @property
     def _cobalt_uri(self) -> CobaltFrbrUri:

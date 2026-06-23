@@ -144,6 +144,27 @@ def test_fetch_docx_volumes_multi_volume(tmp_path: Path):
 
 
 @resp_lib.activate
+def test_fetch_metadata_populates_long_title():
+    titles_with_long_title = {
+        "value": [{
+            "id": "C2004A03712",
+            "name": "Privacy Act 1988",
+            "year": "1988",
+            "number": "119",
+            "longTitle": "An Act to protect privacy",
+        }]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=titles_with_long_title)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta is not None
+    assert meta.long_title == "An Act to protect privacy"
+
+
+@resp_lib.activate
 def test_fetch_docx_volumes_returns_empty_on_bad_response(tmp_path: Path):
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
