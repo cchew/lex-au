@@ -379,6 +379,20 @@ class AknBuilder:
                 content_el = etree.SubElement(pen_el, f"{{{AKN_NS}}}content")
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
+            elif p.element_type == ElementType.TABLE:
+                parent_elem = stack[-1][2] if stack else body
+                table_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}table")
+                if p.table_rows:
+                    header_row, *data_rows = p.table_rows
+                    tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                    for cell in header_row:
+                        etree.SubElement(tr_el, f"{{{AKN_NS}}}th").text = cell
+                    for row in data_rows:
+                        tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                        for cell in row:
+                            etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
+                current_content = None
+
         # Append <attachments> after <body>
         attachments_el, _ = _build_attachments(schedule_groups)
         if attachments_el is not None:

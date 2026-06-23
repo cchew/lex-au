@@ -321,6 +321,41 @@ def test_penalty_emitted(meta):
     assert p.text == "Penalty: 60 penalty units."
 
 
+def test_table_emitted_as_akn_table(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Fees"),
+        ParsedParagraph(
+            ElementType.TABLE,
+            table_rows=[["Header 1", "Header 2"], ["Data 1", "Data 2"]],
+        ),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(".//akn:table", ns)
+    assert table is not None
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 2
+    ths = rows[0].findall("akn:th", ns)
+    assert len(ths) == 2
+    assert ths[0].text == "Header 1"
+    tds = rows[1].findall("akn:td", ns)
+    assert len(tds) == 2
+    assert tds[0].text == "Data 1"
+
+
+def test_empty_table_rows_skipped(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Fees"),
+        ParsedParagraph(ElementType.TABLE, table_rows=[]),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(".//akn:table", ns)
+    assert table is not None
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 0
+
+
 def test_level4_emitted_with_lowercase_eid(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),
