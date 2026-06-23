@@ -56,7 +56,7 @@ class Crawler:
             {
                 "$filter": f"name eq '{_odata_escape(act_name)}' and isInForce eq true",
                 "$top": 1,
-                "$select": "id,name,year,number,longTitle,subjects",
+                "$select": "id,name,year,number",
             },
         ).get("value", [])
         if not titles:
