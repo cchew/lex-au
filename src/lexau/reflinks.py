@@ -7,6 +7,7 @@ AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN_TAG = f"{{{AKN_NS}}}"
 
 _P_TAG = f"{AKN_TAG}p"
+_DEF_TAG = f"{AKN_TAG}def"
 _HEADING_TAG = f"{AKN_TAG}heading"
 _NUM_TAG = f"{AKN_TAG}num"
 
@@ -183,7 +184,7 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
 
 
 def inject_refs(root: etree._Element, corpus_index: dict) -> tuple[int, int]:
-    """Walk XML tree and inject <ref> elements into <p> text nodes.
+    """Walk XML tree and inject <ref> elements into <p> and <def> text nodes.
 
     Returns (resolved_count, unresolved_count).
     """
@@ -193,11 +194,11 @@ def inject_refs(root: etree._Element, corpus_index: dict) -> tuple[int, int]:
     total_resolved = 0
     total_unresolved = 0
 
-    for p_el in root.iter(_P_TAG):
-        parent = p_el.getparent()
+    for elem in root.iter(_P_TAG, _DEF_TAG):
+        parent = elem.getparent()
         if parent is not None and parent.tag in _SKIP_PARENT_TAGS:
             continue
-        r, u = _process_p(p_el, corpus_index)
+        r, u = _process_p(elem, corpus_index)
         total_resolved += r
         total_unresolved += u
 

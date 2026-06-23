@@ -548,3 +548,34 @@ def test_ordinary_preface_para_unaffected(meta):
     p = xml.find(".//akn:preface/akn:p", ns)
     assert p is not None
     assert p.text == "This is a normal preface paragraph."
+
+
+def test_tlcterm_in_references_after_build_with_report(meta, tmp_path):
+    b = AknBuilder(meta)
+    # Simulate a Definitions section
+    b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
+    b.add(ParsedParagraph(ElementType.BODY, text='"personal information" means information about an individual.'))
+    b.add(ParsedParagraph(ElementType.SECTION, number="7", heading="Objects"))
+    corpus_index = {}
+    xml, report = b.build_with_report(corpus_index)
+    assert report.terms_found == 1
+    ns = {"akn": AKN_NS}
+    tlc = xml.find('.//akn:references/akn:TLCTerm[@eId="term-personal-information"]', ns)
+    assert tlc is not None
+    assert tlc.get("showAs") == "personal information"
+
+
+def test_refs_injected_inside_def_element(meta):
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
+    b.add(ParsedParagraph(ElementType.BODY,
+        text='"notifiable data breach" means a data breach as described in section 26.'))
+    corpus_index = {}
+    xml, _ = b.build_with_report(corpus_index)
+    ns = {"akn": AKN_NS}
+    def_el = xml.find(f".//{{{AKN_NS}}}def")
+    assert def_el is not None
+    # inject_refs should process text within <def> — check for a <ref> inside it
+    ref_in_def = def_el.find(f"{{{AKN_NS}}}ref")
+    assert ref_in_def is not None
+    assert "sec-26" in ref_in_def.get("href", "")

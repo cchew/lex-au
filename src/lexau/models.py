@@ -58,3 +58,6 @@ class ParseReport:
     penalties_found: int = 0
     level4_found: int = 0
     tables_found: int = 0
+    # v0.4.0 additions
+    terms_found: int = 0
+    duplicate_terms: int = 0  # terms whose eId was overwritten (same term defined in 2+ sections)

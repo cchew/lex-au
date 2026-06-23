@@ -6,10 +6,12 @@ from datetime import date
 from lxml import etree
 from lxml.builder import ElementMaker
 
-from lexau.models import ActMetadata
+from lexau.models import ActMetadata, ParseReport
 from lexau.parser import ParsedParagraph, ElementType
 from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
+from lexau.reflinks import inject_refs
+from lexau.termlinks import inject_terms
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -441,11 +443,8 @@ class AknBuilder:
         result = validate_akn(root, self._meta)
         return root, result
 
-    def build_with_report(self, corpus_index: dict) -> tuple[etree._Element, "ParseReport"]:
+    def build_with_report(self, corpus_index: dict) -> tuple[etree._Element, ParseReport]:
         """Run all build phases and return (xml_root, ParseReport)."""
-        from lexau.reflinks import inject_refs
-        from lexau.models import ParseReport
-
         preface_paras, body_paras, schedule_groups = _split_stream(self._paragraphs)
 
         report = ParseReport(
@@ -500,9 +499,29 @@ class AknBuilder:
 
         root, _validation = self.build()
 
+        # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
+        term_registry, terms_found = inject_terms(root)
+        report.terms_found = terms_found
+        # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
+        # Surface via ParseReport for corpus validation.
+        report.duplicate_terms = terms_found - len(term_registry)
+
+        # 2. Inject <ref> links (also processes <def> text after termlinks ran)
         resolved, unresolved = inject_refs(root, corpus_index)
         report.refs_resolved = resolved
         report.refs_unresolved = unresolved
+
+        # 3. Populate <references> with TLCTerm entries
+        # TLCTerm href uses /ontology/term/au/ (not /ontology/concept/au/ — that is for TLCConcept)
+        if term_registry:
+            ns = {"akn": AKN_NS}
+            refs_el = root.find(".//akn:references", ns)
+            if refs_el is not None:
+                for eid, show_as in sorted(term_registry.items()):
+                    tlc = etree.SubElement(refs_el, f"{{{AKN_NS}}}TLCTerm")
+                    tlc.set("eId", eid)
+                    tlc.set("href", f"/ontology/term/au/{eid}")
+                    tlc.set("showAs", show_as)
 
         return root, report
 
