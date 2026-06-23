@@ -509,3 +509,42 @@ def test_no_long_title_no_long_title_element(meta):
     ns = {"akn": AKN_NS}
     lt = xml.find(".//akn:longTitle", ns)
     assert lt is None
+
+
+def test_enacting_formula_detected(meta):
+    from lexau.models import ActMetadata
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.BODY, text="The Parliament of Australia enacts:"))
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    formula = xml.find(".//akn:preface/akn:formula", ns)
+    assert formula is not None
+    assert formula.get("name") == "enacting"
+    assert "enacts" in "".join(formula.itertext())
+
+
+def test_whereas_recital_detected(meta):
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.BODY, text="WHEREAS the Parliament intends to protect privacy:"))
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    # <preamble> must be a sibling of <preface> under <act>, NOT inside <preface>
+    assert xml.find(".//akn:preface/akn:preamble", ns) is None, "<preamble> must NOT be inside <preface>"
+    recital = xml.find(".//akn:act/akn:preamble/akn:recitals/akn:recital", ns)
+    assert recital is not None
+
+
+def test_ordinary_preface_para_unaffected(meta):
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.BODY, text="This is a normal preface paragraph."))
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    # Should be a bare <p> not a <formula> or <recital>
+    formula = xml.find(".//akn:preface/akn:formula", ns)
+    assert formula is None
+    p = xml.find(".//akn:preface/akn:p", ns)
+    assert p is not None
+    assert p.text == "This is a normal preface paragraph."

@@ -45,6 +45,8 @@ _ROMAN_CHARS = frozenset("ivxlcdm")
 _TOC_HEADING_STYLE = "TOC Heading"
 _TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
 _SCHEDULE_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGNORECASE)
+_ENACTING_RE = re.compile(r'\benacts?\s*:', re.IGNORECASE)
+_WHEREAS_RE  = re.compile(r'^WHEREAS\b', re.IGNORECASE)
 _STRUCTURAL = frozenset({
     ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
     ElementType.SUBDIVISION, ElementType.SECTION,
@@ -121,9 +123,10 @@ def _split_stream(
 def _build_preface(
     preface_paras: list[ParsedParagraph],
     meta: ActMetadata | None = None,
-) -> etree._Element | None:
+) -> tuple[etree._Element | None, etree._Element | None]:
+    """Returns (preface_el, preamble_el). preamble_el must be inserted as a sibling of preface_el under <act>."""
     if not preface_paras and (meta is None or not meta.long_title):
-        return None
+        return None, None
     preface_el = etree.Element(f"{{{AKN_NS}}}preface")
 
     # Emit <longTitle> as first child if available
@@ -133,6 +136,9 @@ def _build_preface(
         p_el.text = meta.long_title
 
     toc_el: etree._Element | None = None
+    preamble_el: etree._Element | None = None
+    recitals_el: etree._Element | None = None
+
     for p in preface_paras:
         if p.raw_style == _TOC_HEADING_STYLE:
             toc_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}toc")
@@ -140,10 +146,24 @@ def _build_preface(
             parent = toc_el if toc_el is not None else preface_el
             item = etree.SubElement(parent, f"{{{AKN_NS}}}tocItem")
             item.text = p.text
+        elif _ENACTING_RE.search(p.text or ""):
+            formula_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}formula")
+            formula_el.set("name", "enacting")
+            p_el = etree.SubElement(formula_el, f"{{{AKN_NS}}}p")
+            p_el.text = p.text
+        elif _WHEREAS_RE.match(p.text or ""):
+            # <preamble> is a sibling of <preface> under <act> — build separately
+            if preamble_el is None:
+                preamble_el = etree.Element(f"{{{AKN_NS}}}preamble")
+                recitals_el = etree.SubElement(preamble_el, f"{{{AKN_NS}}}recitals")
+            recital_el = etree.SubElement(recitals_el, f"{{{AKN_NS}}}recital")
+            p_el = etree.SubElement(recital_el, f"{{{AKN_NS}}}p")
+            p_el.text = p.text
         else:
             p_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}p")
             p_el.text = p.text
-    return preface_el
+
+    return preface_el, preamble_el
 
 
 def _build_schedule_content(
@@ -318,11 +338,14 @@ class AknBuilder:
         act_el = root.find(".//akn:act", ns)
         body = root.find(".//akn:body", ns)
 
-        # Insert <preface> before <body>
-        preface_el = _build_preface(preface_paras, self._meta)
+        # Insert <preface> and optionally <preamble> before <body>
+        preface_el, preamble_el = _build_preface(preface_paras, self._meta)
+        body_index = list(act_el).index(body)
         if preface_el is not None:
-            body_index = list(act_el).index(body)
             act_el.insert(body_index, preface_el)
+            body_index += 1
+        if preamble_el is not None:
+            act_el.insert(body_index, preamble_el)
 
         # Stack entries: (element_type, num, lxml_element)
         stack: list[tuple[ElementType, str, etree._Element]] = []
