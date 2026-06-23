@@ -1,0 +1,102 @@
+from __future__ import annotations
+
+import re
+from lxml import etree
+
+AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+AKN_TAG = f"{{{AKN_NS}}}"
+
+_P_TAG       = f"{AKN_TAG}p"
+_HEADING_TAG = f"{AKN_TAG}heading"
+_SECTION_TAG = f"{AKN_TAG}section"
+
+# Sections whose heading contains these words are definition sections.
+_DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning)\b', re.IGNORECASE)
+
+# Definition patterns (applied to p.text only — not mixed content).
+# Group 1: definiendum (the term being defined, without surrounding quotes)
+# Group 2: connector word ("means" / "includes" / etc.)
+# Group 3: definiens (the definition body)
+#
+# Quoted patterns first (more reliable — match exactly). Unquoted patterns last
+# (broader — require 2-40 char definiendum to suppress false positives on body text).
+# In real AU Acts (Privacy Act s.6, Fair Work Act s.12), terms are italicised in DOCX
+# and become plain text after parsing — so unquoted forms are the dominant real-world case.
+_DEF_PATTERNS = [
+    # "X" means/includes Y  — quoted definiendum
+    re.compile(r'^"([^"]+)"\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
+    # "X" has the meaning given by / has the same meaning as
+    re.compile(r'^"([^"]+)"\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
+    # X means/includes Y — unquoted definiendum (italicised in DOCX -> plain text)
+    # Require 2-40 chars to avoid matching arbitrary sentence-start phrases.
+    re.compile(r'^([A-Za-z][A-Za-z\s\-]{1,39}?)\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
+    # X has the meaning given by / has the same meaning as — unquoted form
+    re.compile(r'^([A-Za-z][A-Za-z\s\-]{1,39}?)\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
+]
+
+
+def _term_eid(show_as: str) -> str:
+    """Derive TLCTerm eId from showAs text: lowercase, kebab-case, strip punctuation."""
+    slug = re.sub(r'[^a-z0-9]+', '-', show_as.lower()).strip('-')
+    return f"term-{slug}"
+
+
+def _is_definition_section(section_el: etree._Element) -> bool:
+    for heading in section_el.findall(f"{AKN_TAG}heading"):
+        if _DEF_HEADING_RE.search("".join(heading.itertext())):
+            return True
+    return False
+
+
+def _process_p(
+    p_el: etree._Element,
+    registry: dict[str, str],
+) -> int:
+    """Try to inject <term> + <def> into a single <p>. Returns 1 if injected, 0 otherwise."""
+    # Only process raw text nodes — skip if already mixed content (reflinks ran first).
+    text = p_el.text
+    if not text or len(list(p_el)) > 0:
+        return 0
+
+    for pattern in _DEF_PATTERNS:
+        m = pattern.match(text.strip())
+        if m:
+            show_as = m.group(1).strip()
+            connector = m.group(2).strip()
+            definiens = m.group(3).strip()
+            eid = _term_eid(show_as)
+            registry[eid] = show_as
+
+            # Preserve surrounding quotes if they were in the original text
+            original = m.group(0)
+            quoted = original.startswith('"')
+            p_el.text = None
+            term_el = etree.SubElement(p_el, f"{AKN_TAG}term")
+            term_el.set("refersTo", f"#{eid}")
+            term_el.text = f'"{show_as}"' if quoted else show_as
+            term_el.tail = f" {connector} "
+            def_el = etree.SubElement(p_el, f"{AKN_TAG}def")
+            def_el.text = definiens
+            return 1
+
+    return 0
+
+
+def inject_terms(root: etree._Element) -> tuple[dict[str, str], int]:
+    """Walk definition sections; inject <term>/<def>; return (registry, count).
+
+    Must be called BEFORE inject_refs so p_el.text is still a raw string.
+    """
+    registry: dict[str, str] = {}
+    count = 0
+
+    for section_el in root.iter(_SECTION_TAG):
+        if not _is_definition_section(section_el):
+            continue
+        for p_el in section_el.iter(_P_TAG):
+            parent = p_el.getparent()
+            if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
+                continue
+            count += _process_p(p_el, registry)
+
+    return registry, count
