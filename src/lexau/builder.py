@@ -489,6 +489,12 @@ class AknBuilder:
                             AKN.FRBRuri(value=work_uri),
                             AKN.FRBRdate(date=f"{meta.year}-01-01", name="Generation"),
                             AKN.FRBRauthor(href="#parliament"),
+                            AKN.FRBRcountry(value="au"),
+                            AKN.FRBRsubtype(value="act"),
+                            AKN.FRBRnumber(value=str(meta.number)),
+                            AKN.FRBRname(value=meta.safe_name),
+                            AKN.FRBRprescriptive(value="true"),
+                            AKN.FRBRauthoritative(value="true"),
                         ),
                         AKN.FRBRExpression(
                             AKN.FRBRthis(value=f"{expr_uri}/!main"),

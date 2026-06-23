@@ -373,3 +373,51 @@ def test_level4_emitted_with_lowercase_eid(meta):
     assert num is not None and num.text == "A"
     p = level4.find("akn:content/akn:p", ns)
     assert p is not None and "comply" in p.text
+
+
+def test_frbr_work_has_country(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRcountry", ns)
+    assert el is not None
+    assert el.get("value") == "au"
+
+
+def test_frbr_work_has_subtype(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRsubtype", ns)
+    assert el is not None
+    assert el.get("value") == "act"
+
+
+def test_frbr_work_has_number(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRnumber", ns)
+    assert el is not None
+    assert el.get("value") == "119"  # privacy_meta.number
+
+
+def test_frbr_work_has_name(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRname", ns)
+    assert el is not None
+    assert el.get("value") == "privacy-act-1988"
+
+
+def test_frbr_work_is_prescriptive(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRprescriptive", ns)
+    assert el is not None
+    assert el.get("value") == "true"
+
+
+def test_frbr_work_is_authoritative(meta):
+    xml, _ = build_xml(meta, [])
+    ns = {"akn": AKN_NS}
+    el = xml.find(".//akn:FRBRWork/akn:FRBRauthoritative", ns)
+    assert el is not None
+    assert el.get("value") == "true"
