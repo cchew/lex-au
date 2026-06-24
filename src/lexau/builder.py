@@ -438,7 +438,7 @@ class AknBuilder:
                 parent_elem = stack[-1][2] if stack else body
                 note_el = etree.SubElement(
                     parent_elem, f"{{{AKN_NS}}}authorialNote",
-                    placement="end", marker="*",
+                    placement="end",
                 )
                 content_el = etree.SubElement(note_el, f"{{{AKN_NS}}}content")
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
