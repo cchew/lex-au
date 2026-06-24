@@ -426,7 +426,6 @@ def test_frbr_work_is_authoritative(meta):
 
 
 def _meta_with_keywords():
-    from lexau.models import ActMetadata
     return ActMetadata(
         name="Privacy Act 1988",
         title_id="C2004A03712",
@@ -478,7 +477,6 @@ def test_classification_before_references(meta):
 
 
 def _meta_with_long_title():
-    from lexau.models import ActMetadata
     m = ActMetadata(
         name="Privacy Act 1988",
         title_id="C2004A03712",
@@ -511,7 +509,6 @@ def test_no_long_title_no_long_title_element(meta):
 
 
 def test_enacting_formula_detected(meta):
-    from lexau.models import ActMetadata
     b = AknBuilder(meta)
     b.add(ParsedParagraph(ElementType.BODY, text="The Parliament of Australia enacts:"))
     b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
