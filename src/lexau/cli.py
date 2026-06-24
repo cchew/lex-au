@@ -82,15 +82,18 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
         click.echo(
             f"{'Act':<40} {'Vols':>4} {'Subsecs':>7} {'Paras':>6} "
             f"{'Sched':>5} {'Claus':>5} {'Notes':>5} {'Pens':>4} {'Tabs':>4} "
-            f"{'Refs':>5} {'Unres':>5} {'Fallbk':>6}"
+            f"{'Refs':>5} {'Unres':>5} {'Fallbk':>6} "
+            f"{'Terms':>5} {'DupT':>4} {'Qtys':>4} {'Roles':>5} {'NtRef':>5}"
         )
-        click.echo("-" * 105)
+        click.echo("-" * 130)
         for r in report_rows:
             click.echo(
                 f"{r.act_name:<40} {r.volumes_fetched:>4} {r.subsections_parsed:>7} "
                 f"{r.paragraphs_parsed:>6} {r.schedules_found:>5} {r.schedule_clauses_found:>5} "
                 f"{r.notes_found:>5} {r.penalties_found:>4} {r.tables_found:>4} "
-                f"{r.refs_resolved:>5} {r.refs_unresolved:>5} {r.style_fallbacks:>6}"
+                f"{r.refs_resolved:>5} {r.refs_unresolved:>5} {r.style_fallbacks:>6} "
+                f"{r.terms_found:>5} {r.duplicate_terms:>4} {r.quantities_found:>4} "
+                f"{r.roles_found:>5} {r.note_refs_injected:>5}"
             )
 
     click.echo("\nDone.")

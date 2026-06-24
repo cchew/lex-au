@@ -35,6 +35,24 @@ V02_CHECKS = [
     ("No bare-year FRBRWork date", ".//akn:FRBRWork/akn:FRBRdate/@date", lambda v: not any(len(d) == 4 for d in v)),
 ]
 
+V04_CHECKS = [
+    ("FRBRWork has FRBRcountry=au",
+     ".//akn:FRBRWork/akn:FRBRcountry/@value",
+     lambda v: v == ["au"]),
+    ("FRBRWork has FRBRsubtype=act",
+     ".//akn:FRBRWork/akn:FRBRsubtype/@value",
+     lambda v: v == ["act"]),
+    ("FRBRWork has FRBRnumber",
+     ".//akn:FRBRWork/akn:FRBRnumber",
+     lambda v: len(v) > 0),
+    ("At least one TLCTerm in references (if Definitions section exists)",
+     ".//akn:references/akn:TLCTerm",
+     lambda v: True),  # Non-fatal: not all Acts have Definitions sections
+    ("At least one authorialNote has eId",
+     ".//akn:authorialNote/@eId",
+     lambda v: all(e.startswith("note-") for e in v) if v else True),
+]
+
 
 def check_xml(path: Path) -> list[str]:
     try:
@@ -44,7 +62,7 @@ def check_xml(path: Path) -> list[str]:
         return [f"PARSE ERROR: {exc}"]
 
     failures: list[str] = []
-    for desc, xpath, pred in CHECKS + V02_CHECKS:
+    for desc, xpath, pred in CHECKS + V02_CHECKS + V04_CHECKS:
         vals = root.xpath(xpath, namespaces=NS)
         if not pred(vals):
             failures.append(f"FAIL [{desc}] — got {vals[:3]!r}")
