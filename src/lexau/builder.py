@@ -12,6 +12,7 @@ from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms
+from lexau.quantlinks import inject_quantities
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -511,7 +512,11 @@ class AknBuilder:
         report.refs_resolved = resolved
         report.refs_unresolved = unresolved
 
-        # 3. Populate <references> with TLCTerm entries
+        # 3. Inject <quantity> markup for penalty units, imprisonment, deadlines
+        quantities_found = inject_quantities(root)
+        report.quantities_found = quantities_found
+
+        # 4. Populate <references> with TLCTerm entries
         # TLCTerm href uses /ontology/term/au/ (not /ontology/concept/au/ — that is for TLCConcept)
         if term_registry:
             ns = {"akn": AKN_NS}

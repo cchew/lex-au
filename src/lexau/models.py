@@ -61,3 +61,4 @@ class ParseReport:
     # v0.4.0 additions
     terms_found: int = 0
     duplicate_terms: int = 0  # terms whose eId was overwritten (same term defined in 2+ sections)
+    quantities_found: int = 0
