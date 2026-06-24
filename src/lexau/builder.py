@@ -12,7 +12,7 @@ from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms
-from lexau.quantlinks import inject_quantities
+from lexau.quantlinks import inject_quantities, inject_roles
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -516,7 +516,11 @@ class AknBuilder:
         quantities_found = inject_quantities(root)
         report.quantities_found = quantities_found
 
-        # 4. Populate <references> with TLCTerm entries
+        # 4. Inject <role> markup for known Commonwealth roles
+        roles_found = inject_roles(root)
+        report.roles_found = roles_found
+
+        # 5. Populate <references> with TLCTerm entries
         # TLCTerm href uses /ontology/term/au/ (not /ontology/concept/au/ — that is for TLCConcept)
         if term_registry:
             ns = {"akn": AKN_NS}

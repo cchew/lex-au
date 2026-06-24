@@ -1,5 +1,5 @@
 from lxml import etree
-from lexau.quantlinks import inject_quantities
+from lexau.quantlinks import inject_quantities, inject_roles
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN_TAG = f"{{{AKN_NS}}}"
@@ -114,3 +114,46 @@ def test_not_more_than_penalty_phrase():
     qty = root.find(f".//{AKN_TAG}quantity")
     assert qty is not None
     assert qty.get("refersTo") == "#penaltyUnit"
+
+
+def test_commissioner_role_injected():
+    root = _make_root_with_p("The Commissioner must publish an annual report.")
+    count = inject_roles(root)
+    assert count == 1
+    p = root.find(f".//{AKN_TAG}p")
+    role_el = p.find(f"{AKN_TAG}role")
+    assert role_el is not None
+    assert "commissioner" in role_el.get("refersTo", "")
+
+
+def test_minister_role_injected():
+    root = _make_root_with_p("The Minister may by legislative instrument determine criteria.")
+    count = inject_roles(root)
+    assert count == 1
+    p = root.find(f".//{AKN_TAG}p")
+    role_el = p.find(f"{AKN_TAG}role")
+    assert role_el is not None
+
+
+def test_no_known_role_no_injection():
+    root = _make_root_with_p("A person must not disclose the information.")
+    count = inject_roles(root)
+    assert count == 0
+
+
+def test_tlcrole_registered_in_references():
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    meta_el = etree.SubElement(act, f"{AKN_TAG}meta")
+    refs_el = etree.SubElement(meta_el, f"{AKN_TAG}references")
+    refs_el.set("source", "#lex-au")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section")
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    p.text = "The Secretary must notify the Commissioner."
+    inject_roles(root)
+    # Both Secretary and Commissioner should be registered
+    tlc_ids = {el.get("eId") for el in refs_el.findall(f"{AKN_TAG}TLCRole")}
+    assert "secretary" in tlc_ids
+    assert "commissioner" in tlc_ids

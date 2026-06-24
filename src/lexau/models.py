@@ -62,3 +62,4 @@ class ParseReport:
     terms_found: int = 0
     duplicate_terms: int = 0  # terms whose eId was overwritten (same term defined in 2+ sections)
     quantities_found: int = 0
+    roles_found: int = 0
