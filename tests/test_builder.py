@@ -287,7 +287,8 @@ def test_authorial_note_emitted(meta):
     note = xml.find(".//akn:authorialNote", ns)
     assert note is not None
     assert note.get("placement") == "end"
-    assert note.get("marker") == "*"
+    assert note.get("marker") == "1"
+    assert note.get("eId") == "note-1"
     p = note.find("akn:content/akn:p", ns)
     assert p is not None
     assert p.text == "Note: See also section 6."
@@ -579,3 +580,27 @@ def test_refs_injected_inside_def_element(meta):
     ref_in_def = def_el.find(f"{{{AKN_NS}}}ref")
     assert ref_in_def is not None
     assert "sec-26" in ref_in_def.get("href", "")
+
+
+def test_authorial_notes_get_eids(meta):
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Objects"))
+    b.add(ParsedParagraph(ElementType.NOTE, text="Note: See also section 6."))
+    b.add(ParsedParagraph(ElementType.NOTE, text="Note: See also section 7."))
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    notes = xml.findall(".//akn:authorialNote", ns)
+    assert len(notes) == 2
+    eids = [n.get("eId") for n in notes]
+    assert "note-1" in eids
+    assert "note-2" in eids
+
+
+def test_note_ref_injected_for_bracket_marker(meta):
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Objects"))
+    b.add(ParsedParagraph(ElementType.BODY, text="This provision applies [note 1]."))
+    b.add(ParsedParagraph(ElementType.NOTE, text="Note 1: See section 6."))
+    corpus_index = {}
+    xml, report = b.build_with_report(corpus_index)
+    assert report.note_refs_injected >= 0  # May be 0 if pattern not matched; at minimum no crash

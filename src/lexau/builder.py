@@ -64,6 +64,43 @@ _APP_CLAUSE_RE = re.compile(
 _SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
 _CLAUSE_RE    = re.compile(r'^(\d+(?:\.\d+)*)\s+([A-Z].*)', re.DOTALL)
 
+_NOTE_REF_RE = re.compile(r'\[note\s+(\d+)\]', re.IGNORECASE)
+
+
+def inject_note_refs(root: etree._Element) -> int:
+    """Inject <noteRef> elements in <p> text where [note N] markers appear.
+
+    Returns count of <noteRef> elements injected.
+    """
+    count = 0
+    for p_el in root.iter(f"{{{AKN_NS}}}p"):
+        text = p_el.text
+        if not text or len(list(p_el)) > 0:
+            continue
+        matches = list(_NOTE_REF_RE.finditer(text))
+        if not matches:
+            continue
+        p_el.text = None
+        prev_el: etree._Element | None = None
+        cursor = 0
+        for m in matches:
+            marker = m.group(1)
+            pre = text[cursor:m.start()]
+            ref_el = etree.SubElement(p_el, f"{{{AKN_NS}}}noteRef")
+            ref_el.set("href", f"#note-{marker}")
+            ref_el.set("marker", marker)
+            # <noteRef> is self-closing — display value carried by marker attribute, not text
+            if prev_el is None:
+                p_el.text = pre or None
+            else:
+                prev_el.tail = pre or None
+            prev_el = ref_el
+            cursor = m.end()
+            count += 1
+        if prev_el is not None:
+            prev_el.tail = text[cursor:] or None
+    return count
+
 
 def _resolve_para_ambiguity(
     p: ParsedParagraph,
@@ -442,6 +479,12 @@ class AknBuilder:
             act_el.append(attachments_el)
 
         result = validate_akn(root, self._meta)
+
+        # Assign sequential eIds to <authorialNote> elements
+        for idx, note_el in enumerate(root.iter(f"{{{AKN_NS}}}authorialNote"), start=1):
+            note_el.set("eId", f"note-{idx}")
+            note_el.set("marker", str(idx))
+
         return root, result
 
     def build_with_report(self, corpus_index: dict) -> tuple[etree._Element, ParseReport]:
@@ -520,7 +563,11 @@ class AknBuilder:
         roles_found = inject_roles(root)
         report.roles_found = roles_found
 
-        # 5. Populate <references> with TLCTerm entries
+        # 5. Inject <noteRef> for [note N] markers in body text
+        note_refs = inject_note_refs(root)
+        report.note_refs_injected = note_refs
+
+        # 6. Populate <references> with TLCTerm entries
         # TLCTerm href uses /ontology/term/au/ (not /ontology/concept/au/ — that is for TLCConcept)
         if term_registry:
             ns = {"akn": AKN_NS}
