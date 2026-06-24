@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import Callable
+
 from lxml import etree
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
@@ -50,7 +55,6 @@ def _rebuild_p_with_inline(
     make_element: "Callable[[str, str, re.Match], etree._Element]",
 ) -> int:
     """Rebuild p_el text, inserting inline elements at each match position. Returns len(filtered)."""
-    from typing import Callable  # local import to avoid circular; Callable used only as annotation
     p_el.text = None
     prev_el: etree._Element | None = None
     cursor = 0

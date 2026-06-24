@@ -150,6 +150,25 @@ def test_nested_p_in_subsection_processed():
     assert "term-eligible-data-breach" in registry
 
 
+def test_meaning_and_operation_not_a_definition_section():
+    root = _make_section(
+        "Meaning and operation of orders",
+        '"term" means something.',
+    )
+    registry, count = inject_terms(root)
+    assert count == 0, "Heading 'Meaning and operation of orders' must not trigger term injection"
+
+
+def test_this_act_means_not_a_term():
+    root = _make_section(
+        "Definitions",
+        "This Act means the Privacy Act 1988 as in force from time to time.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+    assert "term-this-act" not in registry
+
+
 def test_duplicate_term_eids_last_write_wins():
     # Same term defined twice — registry keeps last definition; both <p> elements get markup
     root = etree.Element(f"{AKN_TAG}akomaNtoso")

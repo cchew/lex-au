@@ -11,7 +11,7 @@ _HEADING_TAG = f"{AKN_TAG}heading"
 _SECTION_TAG = f"{AKN_TAG}section"
 
 # Sections whose heading contains these words are definition sections.
-_DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning)\b', re.IGNORECASE)
+_DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning\s+of)\b', re.IGNORECASE)
 
 # Definition patterns (applied to p.text only — not mixed content).
 # Group 1: definiendum (the term being defined, without surrounding quotes)
@@ -22,6 +22,11 @@ _DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning)\b', re.
 # (broader — require 2-40 char definiendum to suppress false positives on body text).
 # In real AU Acts (Privacy Act s.6, Fair Work Act s.12), terms are italicised in DOCX
 # and become plain text after parsing — so unquoted forms are the dominant real-world case.
+_STOP_DEFINIENDUM = re.compile(
+    r'^(this\s+act|this\s+part|this\s+division|these\s+regulations?|this\s+schedule)\s+(means|includes?)',
+    re.IGNORECASE
+)
+
 _DEF_PATTERNS = [
     # "X" means/includes Y  — quoted definiendum
     re.compile(r'^"([^"]+)"\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
@@ -56,6 +61,9 @@ def _process_p(
     # Only process raw text nodes — skip if already mixed content (reflinks ran first).
     text = p_el.text
     if not text or len(list(p_el)) > 0:
+        return 0
+
+    if _STOP_DEFINIENDUM.match(text.strip()):
         return 0
 
     for pattern in _DEF_PATTERNS:

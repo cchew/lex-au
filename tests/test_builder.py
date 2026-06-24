@@ -1,6 +1,7 @@
 import pytest
 from lxml import etree
 from datetime import date
+from datetime import date as _date
 from lexau.models import ActMetadata
 from lexau.parser import ParsedParagraph, ElementType
 from lexau.builder import AknBuilder
@@ -424,9 +425,6 @@ def test_frbr_work_is_authoritative(meta):
     assert el.get("value") == "true"
 
 
-from datetime import date as _date
-
-
 def _meta_with_keywords():
     from lexau.models import ActMetadata
     return ActMetadata(
@@ -551,7 +549,7 @@ def test_ordinary_preface_para_unaffected(meta):
     assert p.text == "This is a normal preface paragraph."
 
 
-def test_tlcterm_in_references_after_build_with_report(meta, tmp_path):
+def test_tlcterm_in_references_after_build_with_report(meta):
     b = AknBuilder(meta)
     # Simulate a Definitions section
     b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
@@ -603,4 +601,8 @@ def test_note_ref_injected_for_bracket_marker(meta):
     b.add(ParsedParagraph(ElementType.NOTE, text="Note 1: See section 6."))
     corpus_index = {}
     xml, report = b.build_with_report(corpus_index)
-    assert report.note_refs_injected >= 0  # May be 0 if pattern not matched; at minimum no crash
+    assert report.note_refs_injected == 1
+    ns = {"akn": AKN_NS}
+    note_ref = xml.find(".//akn:noteRef[@href='#note-1']", ns)
+    assert note_ref is not None
+    assert note_ref.get("marker") == "1"

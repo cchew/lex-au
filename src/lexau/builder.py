@@ -550,18 +550,21 @@ class AknBuilder:
         # Surface via ParseReport for corpus validation.
         report.duplicate_terms = terms_found - len(term_registry)
 
-        # 2. Inject <ref> links (also processes <def> text after termlinks ran)
-        resolved, unresolved = inject_refs(root, corpus_index)
-        report.refs_resolved = resolved
-        report.refs_unresolved = unresolved
-
-        # 3. Inject <quantity> markup for penalty units, imprisonment, deadlines
+        # 2. Inject <quantity> markup for penalty units, imprisonment, deadlines
+        # Must run BEFORE inject_refs: once inject_refs writes <ref> children into a <p>,
+        # inject_quantities sees len(list(p_el)) > 0 and skips that paragraph.
         quantities_found = inject_quantities(root)
         report.quantities_found = quantities_found
 
-        # 4. Inject <role> markup for known Commonwealth roles
+        # 3. Inject <role> markup for known Commonwealth roles
+        # Same ordering constraint as inject_quantities — must precede inject_refs.
         roles_found = inject_roles(root)
         report.roles_found = roles_found
+
+        # 4. Inject <ref> links (also processes <def> text produced by inject_terms)
+        resolved, unresolved = inject_refs(root, corpus_index)
+        report.refs_resolved = resolved
+        report.refs_unresolved = unresolved
 
         # 5. Inject <noteRef> for [note N] markers in body text
         note_refs = inject_note_refs(root)
