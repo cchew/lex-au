@@ -18,6 +18,7 @@ class ElementType(Enum):
     EXAMPLE     = "example"
     PENALTY     = "penalty"
     LEVEL4      = "level4"
+    LIST_ITEM   = "list-item"
     TABLE       = "table"
     BODY        = "body"
     SKIP        = "skip"

@@ -603,3 +603,71 @@ def test_note_ref_injected_for_bracket_marker(meta):
     note_ref = xml.find(".//akn:noteRef[@href='#note-1']", ns)
     assert note_ref is not None
     assert note_ref.get("marker") == "1"
+
+
+# --- blockList tests ---
+
+def test_blocklist_basic(meta):
+    """Two consecutive LIST_ITEM paragraphs at level 0 produce one <blockList> with two <item> children."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="4", heading="Obligations"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="0", text="First item"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="0", text="Second item"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    blocklists = xml.findall(".//akn:blockList", ns)
+    assert len(blocklists) == 1
+    items = blocklists[0].findall("akn:item", ns)
+    assert len(items) == 2
+    assert items[0].get("eId") == "sec-4__list-1__item-1"
+    assert items[1].get("eId") == "sec-4__list-1__item-2"
+
+
+def test_blocklist_level_change(meta):
+    """Level 0 item followed by level 1 item produces two separate <blockList> elements."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="5", heading="Requirements"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="0", text="Top level item"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="1", text="Nested item"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    blocklists = xml.findall(".//akn:blockList", ns)
+    assert len(blocklists) == 2
+    assert blocklists[0].get("eId") == "sec-5__list-1"
+    assert blocklists[1].get("eId") == "sec-5__list-2"
+
+
+def test_blocklist_flush_on_subsection(meta):
+    """LIST_ITEM followed by SUBSECTION: <blockList> is closed, <subsection> is a sibling."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="6", heading="Powers"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="0", text="An item in the list"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="A subsection follows"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    section = xml.find(".//akn:section", ns)
+    assert section is not None
+    # blockList and subsection should both be direct children of the section
+    blocklist = section.find("akn:blockList", ns)
+    subsection = section.find("akn:subsection", ns)
+    assert blocklist is not None
+    assert subsection is not None
+
+
+def test_blocklist_num_extraction(meta):
+    """Text '(a) the person is a resident' produces <num>(a)</num><p>the person is a resident</p>."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="7", heading="Conditions"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="0", text="(a) the person is a resident"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    item = xml.find(".//akn:blockList/akn:item", ns)
+    assert item is not None
+    num = item.find("akn:num", ns)
+    assert num is not None and num.text == "(a)"
+    p = item.find("akn:p", ns)
+    assert p is not None and p.text == "the person is a resident"

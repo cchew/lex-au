@@ -1,5 +1,6 @@
 import pytest
 from docx import Document
+from docx.oxml import parse_xml
 from lexau.docx_reader import iter_paragraphs
 from lexau.parser import ElementType
 
@@ -44,3 +45,45 @@ def test_empty_paragraph_yields_skip():
     results = list(iter_paragraphs(doc))
     skip_results = [p for p in results if p.element_type == ElementType.SKIP]
     assert len(skip_results) >= 1
+
+
+def test_list_level_detection():
+    """A DOCX paragraph with numPr at ilvl=0 yields LIST_ITEM with number='0'."""
+    doc = Document()
+    p = doc.add_paragraph("Plain list item text")
+    # Inject numPr to mark paragraph as a list item at level 0
+    pPr_xml = (
+        '<w:pPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:numPr>'
+        '<w:ilvl w:val="0"/>'
+        '<w:numId w:val="1"/>'
+        '</w:numPr>'
+        '</w:pPr>'
+    )
+    p._element.insert(0, parse_xml(pPr_xml))
+
+    results = list(iter_paragraphs(doc))
+    list_items = [r for r in results if r.element_type == ElementType.LIST_ITEM]
+    assert len(list_items) == 1
+    assert list_items[0].number == "0"
+    assert list_items[0].text == "Plain list item text"
+
+
+def test_list_level_detection_nested():
+    """A list paragraph at ilvl=1 yields LIST_ITEM with number='1'."""
+    doc = Document()
+    p = doc.add_paragraph("Nested list item")
+    pPr_xml = (
+        '<w:pPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:numPr>'
+        '<w:ilvl w:val="1"/>'
+        '<w:numId w:val="1"/>'
+        '</w:numPr>'
+        '</w:pPr>'
+    )
+    p._element.insert(0, parse_xml(pPr_xml))
+
+    results = list(iter_paragraphs(doc))
+    list_items = [r for r in results if r.element_type == ElementType.LIST_ITEM]
+    assert len(list_items) == 1
+    assert list_items[0].number == "1"

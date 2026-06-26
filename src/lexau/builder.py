@@ -39,6 +39,7 @@ _DEPTH = {
     ElementType.SECTION:      4,
     ElementType.SUBSECTION:   5,
     ElementType.PARAGRAPH:    6,
+    ElementType.LIST_ITEM:    6,
     ElementType.SUBPARAGRAPH: 7,
     ElementType.LEVEL4:       8,
 }
@@ -391,6 +392,18 @@ class AknBuilder:
         stack: list[tuple[ElementType, str, etree._Element]] = []
         current_content: etree._Element | None = None
 
+        # State for blockList accumulation
+        _blocklist_el: etree._Element | None = None
+        _blocklist_level: int = -1
+        _blocklist_count: int = 0
+
+        def _flush_blocklist(reset_count: bool = False) -> None:
+            nonlocal _blocklist_el, _blocklist_level, _blocklist_count
+            _blocklist_el = None
+            _blocklist_level = -1
+            if reset_count:
+                _blocklist_count = 0
+
         def _current_parent(for_type: ElementType) -> tuple[str, etree._Element]:
             """Pop stack until a valid parent exists for for_type; return (eid_prefix, parent_elem)."""
             target_depth = _DEPTH.get(for_type, 99)
@@ -403,6 +416,8 @@ class AknBuilder:
         for p in body_paras:
             p = _resolve_para_ambiguity(p, stack)
             if p.element_type in _AKN_TAG:
+                _flush_blocklist(reset_count=True)
+                current_content = None
                 prefix, parent = _current_parent(p.element_type)
                 leaf_eid = make_eid(p.element_type.value, p.number)
                 full_eid = f"{prefix}__{leaf_eid}" if prefix else leaf_eid
@@ -420,13 +435,42 @@ class AknBuilder:
                     h_el = etree.SubElement(elem, f"{{{AKN_NS}}}heading")
                     h_el.text = p.heading
                 stack.append((p.element_type, p.number, elem))
-                current_content = None
                 if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH, ElementType.LEVEL4} and p.text:
                     content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
                     p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                     p_el.text = p.text
 
+            elif p.element_type == ElementType.LIST_ITEM:
+                level = int(p.number) if p.number.isdigit() else 0
+                parent_elem = stack[-1][2] if stack else body
+                current_section_eid = stack[-1][1] if stack else ""
+                # Build a full eId prefix from the stack for the section context
+                section_eid_prefix = "__".join(
+                    make_eid(et.value, num) for et, num, _ in stack
+                ) if stack else ""
+                if _blocklist_el is None or level != _blocklist_level:
+                    _flush_blocklist()
+                    _blocklist_count += 1
+                    _blocklist_level = level
+                    bl_eid = f"{section_eid_prefix}__list-{_blocklist_count}" if section_eid_prefix else f"list-{_blocklist_count}"
+                    _blocklist_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}blockList")
+                    _blocklist_el.set("eId", bl_eid)
+                item_idx = len(list(_blocklist_el)) + 1
+                item_eid = f"{_blocklist_el.get('eId')}__item-{item_idx}"
+                item_el = etree.SubElement(_blocklist_el, f"{{{AKN_NS}}}item")
+                item_el.set("eId", item_eid)
+                num_m = re.match(r'^(\([^)]+\))\s+(.*)', p.text, re.DOTALL)
+                if num_m:
+                    etree.SubElement(item_el, f"{{{AKN_NS}}}num").text = num_m.group(1)
+                    p_el = etree.SubElement(item_el, f"{{{AKN_NS}}}p")
+                    p_el.text = num_m.group(2)
+                else:
+                    p_el = etree.SubElement(item_el, f"{{{AKN_NS}}}p")
+                    p_el.text = p.text
+                current_content = None
+
             elif p.element_type == ElementType.BODY and p.text:
+                _flush_blocklist()
                 # Attach body text to the current section's <content>
                 parent_elem = stack[-1][2] if stack else body
                 if current_content is None:
@@ -435,6 +479,7 @@ class AknBuilder:
                 p_el.text = p.text
 
             elif p.element_type == ElementType.NOTE:
+                _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body
                 note_el = etree.SubElement(
                     parent_elem, f"{{{AKN_NS}}}authorialNote",
@@ -444,6 +489,7 @@ class AknBuilder:
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
             elif p.element_type == ElementType.EXAMPLE:
+                _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body
                 ex_el = etree.SubElement(
                     parent_elem, f"{{{AKN_NS}}}hcontainer", name="example"
@@ -452,6 +498,7 @@ class AknBuilder:
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
             elif p.element_type == ElementType.PENALTY:
+                _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body
                 pen_el = etree.SubElement(
                     parent_elem, f"{{{AKN_NS}}}hcontainer", name="penalty"
@@ -460,6 +507,7 @@ class AknBuilder:
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
 
             elif p.element_type == ElementType.TABLE:
+                _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body
                 table_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}table")
                 if p.table_rows:
