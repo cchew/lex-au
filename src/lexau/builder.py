@@ -424,12 +424,105 @@ def inject_temporal_data(root: etree._Element, events: list[AmendmentEvent]) -> 
     meta_el.insert(insert_idx, td_el)
 
 
+def _collect_eids(root: etree._Element) -> set[str]:
+    eids: set[str] = set()
+    for el in root.iter():
+        eid = el.get("eId")
+        if eid:
+            eids.add(eid)
+    return eids
+
+
+_SECTION_PROVISION = re.compile(
+    r'^s\.?\s*(?P<num>\w[\w.]*)',
+    re.IGNORECASE,
+)
+
+
+def _resolve_provision_eid(provision: str, known_eids: set[str]) -> str | None:
+    """Attempt to resolve a provision string like 's 6' to an AKN eId like 'sec-6'."""
+    m = _SECTION_PROVISION.match(provision)
+    if m:
+        candidate = f"sec-{m.group('num')}"
+        if candidate in known_eids:
+            return candidate
+        # Try case variants
+        candidate_lower = candidate.lower()
+        for eid in known_eids:
+            if eid.lower() == candidate_lower:
+                return eid
+    return None
+
+
 def inject_passive_mods(
     root: etree._Element,
     events: list[AmendmentEvent],
     report: ParseReport | None = None,
 ) -> None:
-    pass  # Task 7 will replace this stub
+    """Insert <analysis><passiveModifications> into <meta>."""
+    ns = {"akn": AKN_NS}
+    meta_el = root.find(".//akn:meta", ns)
+    known_eids = _collect_eids(root)
+
+    # Build a map: (act_number, act_year) → evt-amd-N eId from <lifecycle>
+    lifecycle_el = meta_el.find(f"{{{AKN_NS}}}lifecycle")
+    evt_map: dict[tuple[int, int], str] = {}
+    if lifecycle_el is not None:
+        for evt in lifecycle_el:
+            eid = evt.get("eId", "")
+            if eid.startswith("evt-amd-"):
+                src = evt.get("source", "")
+                # source = "/akn/au/act/YEAR/NUMBER"
+                parts = src.rstrip("/").rsplit("/", 2)
+                if len(parts) == 3:
+                    try:
+                        year, num = int(parts[-2]), int(parts[-1])
+                        evt_map[(num, year)] = eid
+                    except ValueError:
+                        pass
+
+    analysis_el = etree.Element(f"{{{AKN_NS}}}analysis")
+    analysis_el.set("source", "#lex-au")
+    passive_el = etree.SubElement(analysis_el, f"{{{AKN_NS}}}passiveModifications")
+
+    mod_idx = 0
+    resolved = 0
+    unresolved = 0
+
+    _EFFECT_TO_TYPE = {
+        "am": "substitution",
+        "ad": "insertion",
+        "rep": "repeal",
+        "rs": "substitution",
+    }
+
+    for event in events:
+        if not event.applied:
+            continue
+        dest_eid = _resolve_provision_eid(event.provision, known_eids)
+        evt_eid = evt_map.get((event.act_number, event.act_year))
+
+        if dest_eid is None or evt_eid is None:
+            unresolved += 1
+            continue
+
+        mod_idx += 1
+        mod_type = _EFFECT_TO_TYPE.get(event.effect, "amendment")
+        mod_el = etree.SubElement(passive_el, f"{{{AKN_NS}}}textualMod")
+        mod_el.set("type", mod_type)
+        mod_el.set("eId", f"mod-{mod_idx}")
+        etree.SubElement(mod_el, f"{{{AKN_NS}}}source").set("href", f"#{evt_eid}")
+        etree.SubElement(mod_el, f"{{{AKN_NS}}}destination").set("href", f"#{dest_eid}")
+        resolved += 1
+
+    if report:
+        report.mods_resolved = resolved
+        report.mods_unresolved = unresolved
+
+    if mod_idx > 0:
+        td_el = meta_el.find(f"{{{AKN_NS}}}temporalData")
+        insert_idx = list(meta_el).index(td_el) + 1 if td_el is not None else len(list(meta_el))
+        meta_el.insert(insert_idx, analysis_el)
 
 
 class AknBuilder:

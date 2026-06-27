@@ -835,3 +835,117 @@ def test_time_interval_open(meta):
     ti = xml.find(".//akn:temporalGroup/akn:timeInterval[@start='#evt-creation']", ns)
     assert ti is not None
     assert ti.get("end") is None
+
+
+# --- passiveModifications tests (Task 7) ---
+
+def _build_tree_with_section(meta, section_num: str = "6"):
+    """Build a minimal AKN tree containing a section with eId sec-{section_num}."""
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number=section_num, heading="Definitions"))
+    xml, _ = b.build()
+    return xml
+
+
+def test_passive_mod_emitted(meta):
+    """A resolved provision + known lifecycle evt → <textualMod> inside <passiveModifications>."""
+    from pathlib import Path
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+
+    events = [AmendmentEvent(provision="s 6", effect="am", act_number=99, act_year=2010)]
+    xml = _build_tree_with_section(meta, "6")
+
+    # Inject lifecycle so evt_map can resolve the event
+    inject_lifecycle(xml, meta, events)
+    inject_temporal_data(xml, events)
+    inject_passive_mods(xml, events)
+
+    ns = {"akn": AKN_NS}
+    pm = xml.find(".//akn:meta/akn:analysis/akn:passiveModifications", ns)
+    assert pm is not None, "<passiveModifications> not found"
+    mods = pm.findall("akn:textualMod", ns)
+    assert len(mods) == 1
+    mod = mods[0]
+    assert mod.get("eId") == "mod-1"
+    src = mod.find("akn:source", ns)
+    assert src is not None and src.get("href") == "#evt-amd-1"
+    dest = mod.find("akn:destination", ns)
+    assert dest is not None and dest.get("href") == "#sec-6"
+
+
+def test_passive_mod_type_mapping(meta):
+    """effect='am' → type='substitution', 'ad' → 'insertion', 'rep' → 'repeal'."""
+    from pathlib import Path
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+
+    events = [
+        AmendmentEvent(provision="s 6", effect="am", act_number=10, act_year=2010),
+        AmendmentEvent(provision="s 6", effect="ad", act_number=20, act_year=2011),
+        AmendmentEvent(provision="s 6", effect="rep", act_number=30, act_year=2012),
+    ]
+    xml = _build_tree_with_section(meta, "6")
+    inject_lifecycle(xml, meta, events)
+    inject_temporal_data(xml, events)
+    inject_passive_mods(xml, events)
+
+    ns = {"akn": AKN_NS}
+    mods = xml.findall(".//akn:passiveModifications/akn:textualMod", ns)
+    assert len(mods) == 3
+    types = [m.get("type") for m in mods]
+    assert "substitution" in types
+    assert "insertion" in types
+    assert "repeal" in types
+
+
+def test_passive_mod_unresolved_skip(meta):
+    """Unknown provision (no matching eId) → no <textualMod>, mods_unresolved incremented."""
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+    from lexau.models import ParseReport
+
+    # Only sec-6 exists in the tree; provision "s 99" won't resolve
+    events = [AmendmentEvent(provision="s 99", effect="am", act_number=99, act_year=2010)]
+    xml = _build_tree_with_section(meta, "6")
+    inject_lifecycle(xml, meta, events)
+    inject_temporal_data(xml, events)
+
+    report = ParseReport(act_name="Test")
+    inject_passive_mods(xml, events, report=report)
+
+    ns = {"akn": AKN_NS}
+    # <analysis> must not be emitted (zero resolved)
+    analysis = xml.find(".//akn:meta/akn:analysis", ns)
+    assert analysis is None
+    assert report.mods_unresolved == 1
+    assert report.mods_resolved == 0
+
+
+def test_passive_mod_not_applied(meta):
+    """applied=False → event is skipped, no <textualMod> emitted."""
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+    from lexau.models import ParseReport
+
+    events = [AmendmentEvent(provision="s 6", effect="am", act_number=99, act_year=2010, applied=False)]
+    xml = _build_tree_with_section(meta, "6")
+    inject_lifecycle(xml, meta, events)
+    inject_temporal_data(xml, events)
+
+    report = ParseReport(act_name="Test")
+    inject_passive_mods(xml, events, report=report)
+
+    ns = {"akn": AKN_NS}
+    analysis = xml.find(".//akn:meta/akn:analysis", ns)
+    assert analysis is None
+    assert report.mods_resolved == 0
+
+
+def test_passive_mod_empty_omitted(meta):
+    """Zero resolved events → <analysis> element is NOT inserted into <meta>."""
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+
+    # No events at all
+    xml = _build_tree_with_section(meta, "6")
+    inject_passive_mods(xml, [])
+
+    ns = {"akn": AKN_NS}
+    analysis = xml.find(".//akn:meta/akn:analysis", ns)
+    assert analysis is None
