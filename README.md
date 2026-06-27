@@ -109,7 +109,7 @@ corpus/
 
 - [AU Legislative Conventions](docs/au-legislative-conventions.md) — DOCX style map, nesting hierarchy, notes/examples/penalties, schedule patterns, citation forms, FRBR URI construction.
 
-## Known limits (v0.4.0)
+## Known limits (v0.5.0)
 
 - `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
 - Role dictionary is global (not Act-specific); "the Minister" refers to different ministers in different Acts.
