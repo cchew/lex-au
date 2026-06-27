@@ -77,6 +77,9 @@ def check_xml(path: Path) -> list[str]:
         vals = root.xpath(xpath, namespaces=NS)
         if not pred(vals):
             failures.append(f"FAIL [{desc}] — got {vals[:3]!r}")
+    for desc, fn in V05_CHECKS:
+        if not fn(root, NS):
+            failures.append(f"FAIL [{desc}]")
     return failures
 
 
