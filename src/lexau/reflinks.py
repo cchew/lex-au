@@ -13,6 +13,27 @@ _NUM_TAG = f"{AKN_TAG}num"
 
 _SKIP_PARENT_TAGS = {_HEADING_TAG, _NUM_TAG}
 
+# Range reference pattern: "sections 7 to 12", "Parts II to IV", "ss 3 to 8"
+# The keyword prefix (sections/parts/divisions) already excludes date ranges like
+# "from 1 July to 30 June" which do not begin with a legislation structural keyword.
+_RANGE_RE = re.compile(
+    r'\b(sections?|ss\.?|parts?|divisions?)\s+'
+    r'(\w+)\s+to\s+(\w+)',
+    re.IGNORECASE,
+)
+
+# Prefix map: keyword (lower) → AKN eId prefix
+_RANGE_PREFIX: dict[str, str] = {
+    "section": "sec",
+    "sections": "sec",
+    "ss": "sec",
+    "ss.": "sec",
+    "part": "part",
+    "parts": "part",
+    "division": "dvs",
+    "divisions": "dvs",
+}
+
 _PATTERNS = [
     # 3-level inline: s 6(1)(a) → #sec-6__subsec-1__para-a  [most specific first]
     (re.compile(r'\bs\s*(\d+[A-Z]?)\((\d+[A-Z]?)\)\(([a-z]+)\)'), "sec_subsec_para"),
@@ -183,23 +204,121 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
     return resolved[0], unresolved[0]
 
 
-def inject_refs(root: etree._Element, corpus_index: dict) -> tuple[int, int]:
+def _process_rref(
+    p_el: etree._Element,
+    known_eids: set[str],
+) -> tuple[int, int]:
+    """Inject <rref> elements for range references in a plain-text <p>.
+
+    Only runs on elements with no child elements (plain text paragraphs).
+    Returns (range_resolved, range_unresolved).
+    """
+    # Only process paragraphs that are still plain text (no child elements)
+    if len(p_el) > 0:
+        return 0, 0
+
+    text = p_el.text or ""
+    if not text:
+        return 0, 0
+
+    matches = list(_RANGE_RE.finditer(text))
+    if not matches:
+        return 0, 0
+
+    range_resolved = 0
+    range_unresolved = 0
+
+    # Collect non-overlapping matches, process right-to-left to preserve offsets
+    # when we manipulate the element tree
+    valid_matches: list[tuple[int, int, str, str, str]] = []
+    last_start = len(text)
+    for m in reversed(matches):
+        if m.end() > last_start:
+            continue  # overlapping — skip
+        keyword = m.group(1).lower().rstrip(".")
+        from_tok = m.group(2)
+        to_tok = m.group(3)
+
+        prefix = _RANGE_PREFIX.get(keyword, "sec")
+        from_eid = f"{prefix}-{from_tok}"
+        to_eid = f"{prefix}-{to_tok}"
+
+        if from_eid in known_eids and to_eid in known_eids:
+            valid_matches.append((m.start(), m.end(), from_eid, to_eid, m.group(0)))
+            last_start = m.start()
+            range_resolved += 1
+        else:
+            range_unresolved += 1
+
+    if not valid_matches:
+        return 0, range_unresolved
+
+    # Sort by start position ascending to rebuild element content
+    valid_matches.sort(key=lambda x: x[0])
+
+    # Rebuild p_el content with <rref> elements inserted
+    original_text = text
+    p_el.text = None
+
+    prev_el: etree._Element | None = None
+    cursor = 0
+
+    for start, end, from_eid, to_eid, match_text in valid_matches:
+        pre_text = original_text[cursor:start]
+
+        if prev_el is None:
+            p_el.text = pre_text or None
+        else:
+            prev_el.tail = pre_text or None
+
+        rref_el = etree.SubElement(p_el, f"{AKN_TAG}rref")
+        rref_el.set("from", f"#{from_eid}")
+        rref_el.set("upTo", f"#{to_eid}")
+        rref_el.text = match_text
+
+        prev_el = rref_el
+        cursor = end
+
+    suffix = original_text[cursor:]
+    if prev_el is not None:
+        prev_el.tail = suffix or None
+
+    return range_resolved, range_unresolved
+
+
+def inject_refs(root: etree._Element, corpus_index: dict) -> tuple[int, int, int, int]:
     """Walk XML tree and inject <ref> elements into <p> and <def> text nodes.
 
-    Returns (resolved_count, unresolved_count).
+    Also injects <rref> elements for range references (e.g. "sections 7 to 12").
+
+    Returns (resolved_count, unresolved_count, range_resolved, range_unresolved).
     """
     if root is None:
-        return 0, 0
+        return 0, 0, 0, 0
 
     total_resolved = 0
     total_unresolved = 0
+    total_range_resolved = 0
+    total_range_unresolved = 0
+
+    # Collect known eIds from the document for rref endpoint resolution
+    known_eids: set[str] = set()
+    for el in root.iter():
+        eid = el.get("eId")
+        if eid:
+            known_eids.add(eid)
 
     for elem in root.iter(_P_TAG, _DEF_TAG):
         parent = elem.getparent()
         if parent is not None and parent.tag in _SKIP_PARENT_TAGS:
             continue
+        # Run rref injection BEFORE single-ref injection (rref needs plain text)
+        rr, ru = _process_rref(elem, known_eids)
+        total_range_resolved += rr
+        total_range_unresolved += ru
+        # Single-ref injection (operates on p_el.text of plain-text paragraphs)
         r, u = _process_p(elem, corpus_index)
         total_resolved += r
         total_unresolved += u
 
-    return total_resolved, total_unresolved
+    return total_resolved, total_unresolved, total_range_resolved, total_range_unresolved

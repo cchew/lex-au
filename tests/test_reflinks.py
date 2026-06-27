@@ -29,7 +29,7 @@ CORPUS_INDEX = {
 
 def test_same_act_section_ref():
     root = _make_p("as defined in section 6 of this Act")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -40,7 +40,7 @@ def test_same_act_section_ref():
 
 def test_abbreviated_section_ref():
     root = _make_p("under s 16 of this Act")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -49,7 +49,7 @@ def test_abbreviated_section_ref():
 
 def test_subsection_ref():
     root = _make_p("as provided in s 6(1) of this Act")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -58,7 +58,7 @@ def test_subsection_ref():
 
 def test_cross_act_ref():
     root = _make_p("within the meaning of the Privacy Act 1988")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -68,7 +68,7 @@ def test_cross_act_ref():
 
 def test_unresolved_ref_has_no_href():
     root = _make_p("as defined in the Nonexistent Act 1999")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -79,13 +79,13 @@ def test_unresolved_ref_has_no_href():
 
 def test_quoted_text_skipped():
     root = _make_p('the term "section 6 means" is not a reference')
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     assert resolved == 0
 
 
 def test_three_level_inline_ref():
     root = _make_p("as provided in s 6(1)(a) of this Act")
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -95,7 +95,7 @@ def test_three_level_inline_ref():
 
 def test_part_intra_act_ref():
     root = _make_p("as set out in Part III")
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -105,7 +105,7 @@ def test_part_intra_act_ref():
 
 def test_division_intra_act_ref():
     root = _make_p("as defined in Division 3")
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -116,7 +116,7 @@ def test_division_intra_act_ref():
 def test_part_of_another_act_not_matched():
     # "Part III of the Criminal Code Act 1995" — part_div should NOT match
     root = _make_p("under Part III of the Criminal Code Act 1995")
-    _, _ = inject_refs(root, CORPUS_INDEX)
+    inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     refs = root.findall(".//akn:ref", ns)
     hrefs = [r.get("href", "") for r in refs]
@@ -125,7 +125,7 @@ def test_part_of_another_act_not_matched():
 
 def test_subsidiary_legislation_unresolved():
     root = _make_p("under the Privacy Regulation 2013")
-    resolved, unresolved = inject_refs(root, CORPUS_INDEX)
+    resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -135,7 +135,7 @@ def test_subsidiary_legislation_unresolved():
 
 def test_definitional_ref_subsection():
     root = _make_p("as defined in subsection 6(1)")
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -145,7 +145,7 @@ def test_definitional_ref_subsection():
 
 def test_definitional_ref_section_only():
     root = _make_p("within the meaning of section 6 of this Act")
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
@@ -163,5 +163,60 @@ def test_heading_text_skipped():
         f'  </body></act>'
         f'</akomaNtoso>'
     )
-    resolved, _ = inject_refs(root, CORPUS_INDEX)
+    resolved, *_ = inject_refs(root, CORPUS_INDEX)
     assert resolved == 0
+
+
+# ---------------------------------------------------------------------------
+# Task 10: <rref> range reference tests
+# ---------------------------------------------------------------------------
+
+def _make_p_with_sections(text: str, section_eids: list[str]) -> etree._Element:
+    """Build a document with explicit section eIds so rref can resolve endpoints."""
+    sections_xml = "".join(
+        f'<section eId="{eid}"><content><p>.</p></content></section>'
+        for eid in section_eids
+    )
+    return etree.fromstring(
+        f'<akomaNtoso xmlns="{AKN_NS}">'
+        f'  <act name="act"><body>'
+        f'    {sections_xml}'
+        f'    <section eId="sec-99"><content><p>{text}</p></content></section>'
+        f'  </body></act>'
+        f'</akomaNtoso>'
+    )
+
+
+def test_rref_emitted():
+    """'sections 7 to 12' with both eIds in corpus → <rref from="#sec-7" upTo="#sec-12">"""
+    root = _make_p_with_sections("see sections 7 to 12 for details", ["sec-7", "sec-12"])
+    resolved, unresolved, range_resolved, range_unresolved = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    rref = root.find(".//akn:rref", ns)
+    assert rref is not None, "Expected <rref> element to be emitted"
+    assert rref.get("from") == "#sec-7"
+    assert rref.get("upTo") == "#sec-12"
+    assert rref.text == "sections 7 to 12"
+    assert range_resolved == 1
+    assert range_unresolved == 0
+
+
+def test_rref_unresolvable():
+    """Endpoint not in corpus → no <rref>, range_unresolved counter incremented."""
+    # sec-99 exists (the wrapping section), but sec-999 does not
+    root = _make_p_with_sections("see sections 99 to 999 for details", ["sec-99"])
+    resolved, unresolved, range_resolved, range_unresolved = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    rref = root.find(".//akn:rref", ns)
+    assert rref is None, "Expected no <rref> when an endpoint is unresolvable"
+    assert range_unresolved == 1
+    assert range_resolved == 0
+
+
+def test_rref_not_date():
+    """'from 1 July to 30 June' must NOT produce an <rref> (it is a date range)."""
+    root = _make_p_with_sections("from 1 July to 30 June", [])
+    resolved, unresolved, range_resolved, range_unresolved = inject_refs(root, CORPUS_INDEX)
+    ns = {"akn": AKN_NS}
+    rref = root.find(".//akn:rref", ns)
+    assert rref is None, "Date ranges must not produce <rref>"

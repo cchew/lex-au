@@ -919,9 +919,11 @@ class AknBuilder:
         report.roles_found = roles_found
 
         # 4. Inject <ref> links (also processes <def> text produced by inject_terms)
-        resolved, unresolved = inject_refs(root, corpus_index)
+        resolved, unresolved, range_resolved, range_unresolved = inject_refs(root, corpus_index)
         report.refs_resolved = resolved
         report.refs_unresolved = unresolved
+        report.range_refs_resolved = range_resolved
+        report.range_refs_unresolved = range_unresolved
 
         # 5. Inject <noteRef> for [note N] markers in body text
         note_refs = inject_note_refs(root)

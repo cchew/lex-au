@@ -74,3 +74,5 @@ class ParseReport:
     quoted_structures_found: int = 0
     quoted_structures_unhandled: int = 0
     figures_found: int = 0
+    range_refs_resolved: int = 0
+    range_refs_unresolved: int = 0
