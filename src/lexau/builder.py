@@ -402,7 +402,26 @@ def inject_lifecycle(root: etree._Element, meta: ActMetadata, events: list[Amend
 
 
 def inject_temporal_data(root: etree._Element, events: list[AmendmentEvent]) -> None:
-    pass  # Task 6 will replace this stub
+    """Insert <temporalData> into <meta> after <lifecycle>."""
+    ns = {"akn": AKN_NS}
+    meta_el = root.find(".//akn:meta", ns)
+    lifecycle_el = meta_el.find(f"{{{AKN_NS}}}lifecycle")
+    if lifecycle_el is None:
+        return
+    insert_idx = list(meta_el).index(lifecycle_el) + 1
+
+    td_el = etree.Element(f"{{{AKN_NS}}}temporalData")
+    td_el.set("source", "#parliament")
+
+    tg_el = etree.SubElement(td_el, f"{{{AKN_NS}}}temporalGroup")
+    tg_el.set("eId", "tg-1")
+
+    # Minimal: open-ended interval from creation to present
+    ti_el = etree.SubElement(tg_el, f"{{{AKN_NS}}}timeInterval")
+    ti_el.set("start", "#evt-creation")
+    # No end attribute = open-ended (current version)
+
+    meta_el.insert(insert_idx, td_el)
 
 
 def inject_passive_mods(

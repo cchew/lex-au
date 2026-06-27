@@ -781,3 +781,57 @@ def test_lifecycle_skipped_no_path(meta):
     lifecycle = xml.find(".//akn:lifecycle", ns)
     assert lifecycle is None
     assert report.amendment_events_parsed == 0
+
+
+# --- temporalData tests (Task 6) ---
+
+def test_temporal_data_emitted(meta):
+    """<temporalData> is present inside <meta> when lifecycle is present."""
+    from pathlib import Path
+
+    events = _make_events(("s 6", "am", 99, 2010))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    td = xml.find(".//akn:meta/akn:temporalData", ns)
+    assert td is not None
+
+
+def test_temporal_group_exists(meta):
+    """<temporalGroup eId='tg-1'> is a child of <temporalData>."""
+    from pathlib import Path
+
+    events = _make_events(("s 6", "am", 99, 2010))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    tg = xml.find(".//akn:temporalData/akn:temporalGroup[@eId='tg-1']", ns)
+    assert tg is not None
+
+
+def test_time_interval_open(meta):
+    """<timeInterval start='#evt-creation'> has no end attribute (open-ended)."""
+    from pathlib import Path
+
+    events = _make_events(("s 6", "am", 99, 2010))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    ti = xml.find(".//akn:temporalGroup/akn:timeInterval[@start='#evt-creation']", ns)
+    assert ti is not None
+    assert ti.get("end") is None
