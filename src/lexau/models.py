@@ -71,3 +71,5 @@ class ParseReport:
     amendment_events_resolved: int = 0
     mods_resolved: int = 0
     mods_unresolved: int = 0
+    quoted_structures_found: int = 0
+    quoted_structures_unhandled: int = 0

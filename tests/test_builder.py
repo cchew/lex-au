@@ -949,3 +949,68 @@ def test_passive_mod_empty_omitted(meta):
     ns = {"akn": AKN_NS}
     analysis = xml.find(".//akn:meta/akn:analysis", ns)
     assert analysis is None
+
+
+# ---------------------------------------------------------------------------
+# Task 8: <quotedStructure> detection
+# ---------------------------------------------------------------------------
+
+def test_quoted_structure_detected(meta):
+    """BODY('"') SECTION BODY('"') → <quotedStructure> wrapping <section>."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="5", heading="Amendments"),
+        ParsedParagraph(ElementType.BODY, text='"'),
+        ParsedParagraph(ElementType.SECTION, number="3A", heading="New provision"),
+        ParsedParagraph(ElementType.BODY, text='"'),
+    ]
+    b = AknBuilder(meta)
+    for p in paragraphs:
+        b.add(p)
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    qs = xml.find(".//akn:quotedStructure", ns)
+    assert qs is not None, "<quotedStructure> not found"
+    inner_section = qs.find("akn:section", ns)
+    assert inner_section is not None, "<section> not found inside <quotedStructure>"
+
+
+def test_quoted_structure_content(meta):
+    """Inner content of <quotedStructure> is valid AKN — has correct attributes."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="10", heading="Modification"),
+        ParsedParagraph(ElementType.BODY, text="'"),
+        ParsedParagraph(ElementType.SECTION, number="10A", heading="Inserted section"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="Content here."),
+        ParsedParagraph(ElementType.BODY, text="'"),
+    ]
+    b = AknBuilder(meta)
+    for p in paragraphs:
+        b.add(p)
+    xml, _ = b.build()
+    ns = {"akn": AKN_NS}
+    qs = xml.find(".//akn:quotedStructure", ns)
+    assert qs is not None, "<quotedStructure> not found"
+    assert qs.get("startQuote") == "“"
+    assert qs.get("endQuote") == "”"
+    inner_sec = qs.find("akn:section", ns)
+    assert inner_sec is not None
+    subsec = inner_sec.find("akn:subsection", ns)
+    assert subsec is not None
+    p_el = subsec.find(".//akn:p", ns)
+    assert p_el is not None and p_el.text == "Content here."
+
+
+def test_quoted_structure_skipped(meta):
+    """Multi-provision quote (SECTION SECTION between markers) → quoted_structures_unhandled incremented."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="5", heading="Amendments"),
+        ParsedParagraph(ElementType.BODY, text='"'),
+        ParsedParagraph(ElementType.SECTION, number="3A", heading="First inserted"),
+        ParsedParagraph(ElementType.SECTION, number="3B", heading="Second inserted"),
+        ParsedParagraph(ElementType.BODY, text='"'),
+    ]
+    b = AknBuilder(meta)
+    for p in paragraphs:
+        b.add(p)
+    xml, report = b.build_with_report({})
+    assert report.quoted_structures_unhandled >= 1

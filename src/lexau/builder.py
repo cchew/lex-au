@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from dataclasses import replace
+from dataclasses import replace, dataclass
 from datetime import date
 from pathlib import Path
 from lxml import etree
@@ -70,6 +70,93 @@ _SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
 _CLAUSE_RE    = re.compile(r'^(\d+(?:\.\d+)*)\s+([A-Z].*)', re.DOTALL)
 
 _NOTE_REF_RE = re.compile(r'\[note\s+(\d+)\]', re.IGNORECASE)
+
+# Single-character quote markers that delimit quoted structures in amendments
+_QUOTE_MARKERS = frozenset({'"', "'", "“", "”", "‘", "’"})
+
+# Structural element types that can appear inside a quotedStructure
+_QUOTED_STRUCTURAL = frozenset({
+    ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
+    ElementType.SUBDIVISION, ElementType.SECTION, ElementType.SUBSECTION,
+})
+
+
+@dataclass
+class _QuotedSpan:
+    """Sentinel inserted into a preprocessed paragraph stream to represent a single-provision quoted structure."""
+    inner_paras: list[ParsedParagraph]
+
+
+def _preprocess_quoted_structures(
+    body_paras: list[ParsedParagraph],
+) -> tuple[list[ParsedParagraph | _QuotedSpan], int, int]:
+    """Scan body_paras for single-quote-marker spans and replace with _QuotedSpan sentinels.
+
+    Returns (new_stream, found_count, unhandled_count).
+
+    Rules:
+    - Opening marker: BODY paragraph whose stripped text is a single quote character.
+    - Closing marker: same (any single quote char).
+    - Single-provision: exactly one top-level structural element between markers → emit as _QuotedSpan.
+    - Multi-provision: 2+ top-level structural elements between markers → unhandled, emit inner content as-is (drop markers).
+    """
+    found = 0
+    unhandled = 0
+    result: list[ParsedParagraph | _QuotedSpan] = []
+    i = 0
+    n = len(body_paras)
+
+    while i < n:
+        p = body_paras[i]
+        # Detect opening quote marker
+        if (
+            p.element_type == ElementType.BODY
+            and p.text is not None
+            and p.text.strip() in _QUOTE_MARKERS
+        ):
+            # Search for closing marker
+            close_idx = None
+            for j in range(i + 1, n):
+                q = body_paras[j]
+                if (
+                    q.element_type == ElementType.BODY
+                    and q.text is not None
+                    and q.text.strip() in _QUOTE_MARKERS
+                ):
+                    close_idx = j
+                    break
+
+            if close_idx is not None:
+                inner = body_paras[i + 1 : close_idx]
+                # Count top-level structural elements in inner.
+                # "Top-level" = the minimum depth seen among structural elements;
+                # only elements at that exact depth level count as provisions.
+                structural_depths = [
+                    _DEPTH[ip.element_type]
+                    for ip in inner
+                    if ip.element_type in _QUOTED_STRUCTURAL
+                ]
+                if structural_depths:
+                    min_depth = min(structural_depths)
+                    top_level_structural = sum(
+                        1 for d in structural_depths if d == min_depth
+                    )
+                else:
+                    top_level_structural = 0
+                if top_level_structural == 1:
+                    found += 1
+                    result.append(_QuotedSpan(inner_paras=inner))
+                else:
+                    # Multi-provision or empty — drop markers, emit inner as-is
+                    unhandled += 1
+                    result.extend(inner)
+                i = close_idx + 1
+                continue
+
+        result.append(p)
+        i += 1
+
+    return result, found, unhandled
 
 
 def inject_note_refs(root: etree._Element) -> int:
@@ -529,6 +616,8 @@ class AknBuilder:
     def __init__(self, meta: ActMetadata) -> None:
         self._meta = meta
         self._paragraphs: list[ParsedParagraph] = []
+        self._quoted_structures_found: int = 0
+        self._quoted_structures_unhandled: int = 0
 
     def add(self, paragraph: ParsedParagraph) -> None:
         if paragraph.element_type != ElementType.SKIP:
@@ -576,7 +665,39 @@ class AknBuilder:
             parent = stack[-1][2] if stack else body
             return prefix, parent
 
-        for p in body_paras:
+        # Preprocess body_paras: detect single-provision quoted structures
+        processed_body, qs_found, qs_unhandled = _preprocess_quoted_structures(body_paras)
+        self._quoted_structures_found += qs_found
+        self._quoted_structures_unhandled += qs_unhandled
+
+        for item in processed_body:
+            # Handle quoted structure sentinels
+            if isinstance(item, _QuotedSpan):
+                _flush_blocklist()
+                current_content = None
+                parent_elem = stack[-1][2] if stack else body
+                qs_el = etree.SubElement(
+                    parent_elem,
+                    f"{{{AKN_NS}}}quotedStructure",
+                )
+                qs_el.set("startQuote", "“")
+                qs_el.set("endQuote", "”")
+                qs_el.set("from", "#")
+                qs_el.set("to", "#")
+                # Build inner content via sub-AknBuilder
+                sub = AknBuilder(self._meta)
+                for ip in item.inner_paras:
+                    sub.add(ip)
+                sub_root, _ = sub.build()
+                sub_ns = {"akn": AKN_NS}
+                sub_body = sub_root.find(".//akn:body", sub_ns)
+                if sub_body is not None:
+                    for child in list(sub_body):
+                        sub_body.remove(child)
+                        qs_el.append(child)
+                continue
+
+            p = item
             p = _resolve_para_ambiguity(p, stack)
             if p.element_type in _AKN_TAG:
                 _flush_blocklist(reset_count=True)
@@ -757,6 +878,10 @@ class AknBuilder:
         report.schedule_clauses_found = _count_schedule_clauses(schedule_groups)
 
         root, _validation = self.build()
+
+        # Capture quoted structure counts set during build()
+        report.quoted_structures_found = self._quoted_structures_found
+        report.quoted_structures_unhandled = self._quoted_structures_unhandled
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
         term_registry, terms_found = inject_terms(root)
