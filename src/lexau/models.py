@@ -15,11 +15,12 @@ class ActMetadata:
     effective_date: date
     long_title: str = ""
     subject_keywords: list[str] = field(default_factory=list)
+    doc_type: str = "act"   # "act" | "regulation" | "instrument"
 
     @property
     def _cobalt_uri(self) -> CobaltFrbrUri:
         return CobaltFrbrUri(
-            "au", None, "act", None, None,
+            "au", None, self.doc_type, None, None,
             str(self.year), str(self.number),
             language="eng",
             expression_date=f"@{self.effective_date.isoformat()}",

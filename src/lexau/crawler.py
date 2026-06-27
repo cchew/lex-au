@@ -10,6 +10,8 @@ from lexau.models import ActMetadata
 API_BASE = "https://api.prod.legislation.gov.au/v1"
 
 _TITLE_ID_RE = re.compile(r"C\d{4}A(\d+)")
+_INSTRUMENT_RE = re.compile(r"F\d{4}[A-Z](\d+)")  # F-prefixed = legislative instruments
+_REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations
 
 
 def _odata_escape(s: str) -> str:
@@ -49,7 +51,7 @@ class Crawler:
         r.raise_for_status()
         return r.json()
 
-    def fetch_metadata(self, act_name: str) -> ActMetadata | None:
+    def fetch_metadata(self, act_name: str, doc_type: str = "act") -> ActMetadata | None:
         # Step 1: resolve series title ID
         titles = self._get(
             "Titles",
@@ -99,6 +101,7 @@ class Crawler:
             effective_date=date.fromisoformat(v["start"][:10]),
             long_title=t.get("longTitle") or "",
             subject_keywords=subject_keywords,
+            doc_type=doc_type,
         )
 
     def fetch_docx_volumes(self, meta: ActMetadata, dest_dir: Path) -> list[Path]:
@@ -177,6 +180,34 @@ class Crawler:
                 break
             for item in page:
                 if _TITLE_ID_RE.match(item.get("id", "")):
+                    names.append(item["name"])
+            skip += page_size
+            if len(page) < page_size:
+                break
+            time.sleep(0.5)
+        return sorted(names)
+
+    def list_instruments(self, page_size: int = 200) -> list[str]:
+        """Return names of all in-force Commonwealth legislative instruments."""
+        names: list[str] = []
+        skip = 0
+        while True:
+            resp = self._get(
+                "Titles",
+                {
+                    "$filter": "isInForce eq true",
+                    "$select": "id,name",
+                    "$top": page_size,
+                    "$skip": skip,
+                    "$orderby": "name asc",
+                },
+            )
+            page = resp.get("value", [])
+            if not page:
+                break
+            for item in page:
+                tid = item.get("id", "")
+                if not _TITLE_ID_RE.match(tid):  # exclude Acts
                     names.append(item["name"])
             skip += page_size
             if len(page) < page_size:

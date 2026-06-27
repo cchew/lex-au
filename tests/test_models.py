@@ -111,3 +111,77 @@ def test_parse_report_has_required_fields():
     assert r.act_name == "Privacy Act 1988"
     assert r.schedules_found == 1
     assert r.refs_unresolved == 3
+
+
+# Task 3: doc_type tests
+
+def test_actmetadata_default_doc_type():
+    meta = ActMetadata(
+        name="Privacy Act 1988",
+        title_id="C2004A03712",
+        comp_id="C2024C00280",
+        comp_num="52",
+        year=1988,
+        number=119,
+        effective_date=date(2024, 1, 1),
+    )
+    assert meta.doc_type == "act"
+
+
+def test_actmetadata_regulation_doc_type_frbr_work_uri():
+    meta = ActMetadata(
+        name="Therapeutic Goods (Medical Devices) Regulations 2002",
+        title_id="F2002B00238",
+        comp_id="F2024C00100",
+        comp_num="10",
+        year=2002,
+        number=34,
+        effective_date=date(2024, 1, 1),
+        doc_type="regulation",
+    )
+    assert "regulation" in meta.frbr_work_uri
+    assert meta.frbr_work_uri == "/akn/au/regulation/2002/34"
+
+
+def test_actmetadata_regulation_doc_type_frbr_expression_uri():
+    meta = ActMetadata(
+        name="Therapeutic Goods (Medical Devices) Regulations 2002",
+        title_id="F2002B00238",
+        comp_id="F2024C00100",
+        comp_num="10",
+        year=2002,
+        number=34,
+        effective_date=date(2024, 1, 1),
+        doc_type="regulation",
+    )
+    assert "regulation" in meta.frbr_expression_uri
+    assert meta.frbr_expression_uri == "/akn/au/regulation/2002/34/eng@2024-01-01"
+
+
+def test_actmetadata_instrument_doc_type_frbr_work_uri():
+    meta = ActMetadata(
+        name="Some Instrument 2020",
+        title_id="F2020L00001",
+        comp_id="F2024C00200",
+        comp_num="1",
+        year=2020,
+        number=1,
+        effective_date=date(2024, 1, 1),
+        doc_type="instrument",
+    )
+    assert "instrument" in meta.frbr_work_uri
+
+
+def test_actmetadata_act_doc_type_frbr_work_uri_unchanged():
+    """Existing act behaviour is unchanged when doc_type='act'."""
+    meta = ActMetadata(
+        name="Privacy Act 1988",
+        title_id="C2004A03712",
+        comp_id="C2024C00280",
+        comp_num="52",
+        year=1988,
+        number=119,
+        effective_date=date(2024, 1, 1),
+        doc_type="act",
+    )
+    assert meta.frbr_work_uri == "/akn/au/act/1988/119"

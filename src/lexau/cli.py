@@ -20,7 +20,7 @@ def cli() -> None:
     """lex-au: Commonwealth Acts as AKN 3.0 XML."""
 
 
-def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
+def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act") -> None:
     """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
@@ -42,7 +42,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
     for act_name in act_names:
         try:
             click.echo(f"[fetch ] {act_name}")
-            meta = crawler.fetch_metadata(act_name)
+            meta = crawler.fetch_metadata(act_name, doc_type=doc_type)
             if meta is None:
                 click.echo(f"  SKIP -- not found in legislation.gov.au", err=True)
                 continue
@@ -114,12 +114,20 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool) -> None:
     show_default=True,
 )
 @click.option("--force", is_flag=True, help="Re-convert even if compilation is current")
+@click.option(
+    "--type", "doc_type",
+    default="act",
+    type=click.Choice(["act", "regulation", "instrument"]),
+    show_default=True,
+    help="Document type (act, regulation, or instrument)",
+)
 def build(
     acts: tuple[str, ...],
     list_file: Path | None,
     build_all: bool,
     corpus_dir: Path,
     force: bool,
+    doc_type: str,
 ) -> None:
     """Download DOCX and convert to AKN XML."""
     act_names = list(acts)
@@ -134,7 +142,7 @@ def build(
             sys.exit(1)
         act_names += [ln.strip() for ln in default_list.read_text().splitlines() if ln.strip()]
 
-    _build_acts(act_names, corpus_dir, force)
+    _build_acts(act_names, corpus_dir, force, doc_type=doc_type)
 
 
 @cli.command()
@@ -197,6 +205,29 @@ def list_acts(output: Path | None, page_size: int) -> None:
     click.echo("Fetching Act list from legislation.gov.au…", err=True)
     names = crawler.list_acts(page_size=page_size)
     click.echo(f"Found {len(names)} Acts.", err=True)
+    text = "\n".join(names) + "\n"
+    if output:
+        output.write_text(text)
+        click.echo(f"Written to {output}", err=True)
+    else:
+        click.echo(text, nl=False)
+
+
+@cli.command("list-instruments")
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Write to file instead of stdout (e.g. instruments.txt)",
+)
+@click.option("--page-size", default=200, show_default=True, help="OData page size per request")
+def list_instruments(output: Path | None, page_size: int) -> None:
+    """List all in-force Commonwealth legislative instruments from legislation.gov.au."""
+    crawler = Crawler()
+    click.echo("Fetching instrument list from legislation.gov.au…", err=True)
+    names = crawler.list_instruments(page_size=page_size)
+    click.echo(f"Found {len(names)} instruments.", err=True)
     text = "\n".join(names) + "\n"
     if output:
         output.write_text(text)

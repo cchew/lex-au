@@ -235,3 +235,116 @@ def test_fetch_docx_volumes_returns_empty_on_bad_response(tmp_path: Path):
     paths = crawler.fetch_docx_volumes(meta, tmp_path)
 
     assert paths == []
+
+
+# Task 3: doc_type and list_instruments tests
+
+REGULATION_TITLES_RESPONSE = {
+    "value": [{
+        "id": "F2002B00238",
+        "name": "Therapeutic Goods (Medical Devices) Regulations 2002",
+        "year": "2002",
+        "number": "34",
+    }]
+}
+
+REGULATION_VERSIONS_RESPONSE = {
+    "value": [{
+        "titleId": "F2002B00238",
+        "registerId": "F2024C00100",
+        "compilationNumber": "10",
+        "start": "2024-01-01",
+    }]
+}
+
+
+@resp_lib.activate
+def test_fetch_metadata_with_doc_type_regulation():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=REGULATION_TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=REGULATION_VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata(
+        "Therapeutic Goods (Medical Devices) Regulations 2002",
+        doc_type="regulation",
+    )
+
+    assert meta is not None
+    assert meta.doc_type == "regulation"
+    assert "regulation" in meta.frbr_work_uri
+
+
+@resp_lib.activate
+def test_fetch_metadata_default_doc_type_is_act():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta is not None
+    assert meta.doc_type == "act"
+
+
+@resp_lib.activate
+def test_list_instruments_returns_non_act_names():
+    # Mix of Act (C-prefix A-infix) and instrument/regulation (F-prefix) titleIds
+    page = {
+        "value": [
+            {"id": "C2004A03712", "name": "Privacy Act 1988"},       # Act — exclude
+            {"id": "F2002B00238", "name": "Therapeutic Goods (Medical Devices) Regulations 2002"},  # instrument — include
+            {"id": "F2020L00100", "name": "Some Instrument 2020"},    # instrument — include
+        ]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page)
+
+    crawler = Crawler()
+    names = crawler.list_instruments()
+
+    assert "Privacy Act 1988" not in names
+    assert "Therapeutic Goods (Medical Devices) Regulations 2002" in names
+    assert "Some Instrument 2020" in names
+
+
+@resp_lib.activate
+def test_list_instruments_returns_sorted():
+    page = {
+        "value": [
+            {"id": "F2020L00200", "name": "Zoo Regulations 2020"},
+            {"id": "F2020L00100", "name": "Alpha Instrument 2020"},
+        ]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page)
+
+    crawler = Crawler()
+    names = crawler.list_instruments()
+
+    assert names == sorted(names)
+
+
+@resp_lib.activate
+def test_list_instruments_paginates():
+    page1 = {
+        "value": [{"id": f"F2020L{i:05d}", "name": f"Instrument {i}"} for i in range(200)]
+    }
+    page2 = {
+        "value": [{"id": "F2020L99999", "name": "Last Instrument"}]
+    }
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page1)
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page2)
+
+    crawler = Crawler()
+    names = crawler.list_instruments(page_size=200)
+
+    assert len(names) == 201
+    assert "Last Instrument" in names
+
+
+@resp_lib.activate
+def test_list_instruments_empty():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": []})
+
+    crawler = Crawler()
+    names = crawler.list_instruments()
+
+    assert names == []
