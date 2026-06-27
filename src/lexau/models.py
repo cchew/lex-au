@@ -64,3 +64,5 @@ class ParseReport:
     quantities_found: int = 0
     roles_found: int = 0
     note_refs_injected: int = 0
+    # v0.5.0 additions
+    dates_found: int = 0

@@ -13,6 +13,7 @@ from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms
 from lexau.quantlinks import inject_quantities, inject_roles
+from lexau.datelinks import inject_dates
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -603,6 +604,10 @@ class AknBuilder:
         # inject_quantities sees len(list(p_el)) > 0 and skips that paragraph.
         quantities_found = inject_quantities(root)
         report.quantities_found = quantities_found
+
+        # 2b. Inject <date> calendar date markup
+        dates_found = inject_dates(root)
+        report.dates_found = dates_found
 
         # 3. Inject <role> markup for known Commonwealth roles
         # Same ordering constraint as inject_quantities — must precede inject_refs.
