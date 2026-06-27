@@ -63,7 +63,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
                 for p in iter_paragraphs(doc):
                     builder.add(p)
 
-            xml, report = builder.build_with_report(corpus_index)
+            xml, report = builder.build_with_report(corpus_index, last_volume_path=docx_paths[-1])
             report.volumes_fetched = len(docx_paths)
 
             saved = corpus.save(meta, xml)

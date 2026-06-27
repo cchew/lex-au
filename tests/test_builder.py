@@ -2,9 +2,11 @@ import pytest
 from lxml import etree
 from datetime import date
 from datetime import date as _date
+from unittest.mock import patch, MagicMock
 from lexau.models import ActMetadata
 from lexau.parser import ParsedParagraph, ElementType
-from lexau.builder import AknBuilder
+from lexau.builder import AknBuilder, inject_lifecycle
+from lexau.endnote_parser import AmendmentEvent, EndnoteResult
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 
@@ -671,3 +673,111 @@ def test_blocklist_num_extraction(meta):
     assert num is not None and num.text == "(a)"
     p = item.find("akn:p", ns)
     assert p is not None and p.text == "the person is a resident"
+
+
+# --- lifecycle / eventRef tests (Task 5) ---
+
+def _make_events(*args) -> list[AmendmentEvent]:
+    """Helper: build AmendmentEvent list from (provision, effect, act_number, act_year) tuples."""
+    return [
+        AmendmentEvent(provision=prov, effect=eff, act_number=num, act_year=yr)
+        for prov, eff, num, yr in args
+    ]
+
+
+def test_lifecycle_emitted(meta):
+    """build_with_report with mocked endnote events emits <lifecycle> inside <meta>."""
+    from pathlib import Path
+
+    events = _make_events(("s 6", "am", 99, 2010))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, report = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    lifecycle = xml.find(".//akn:meta/akn:lifecycle", ns)
+    assert lifecycle is not None
+    assert report.amendment_events_parsed == 1
+
+
+def test_lifecycle_creation_event(meta):
+    """<eventRef type='generation' eId='evt-creation'> is always present when lifecycle is emitted."""
+    from pathlib import Path
+
+    events = _make_events(("s 6", "am", 42, 2005))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    creation = xml.find(
+        ".//akn:lifecycle/akn:eventRef[@eId='evt-creation'][@type='generation']", ns
+    )
+    assert creation is not None
+    assert creation.get("date") == "1988-01-01"  # meta.year = 1988
+
+
+def test_lifecycle_amendment_events(meta):
+    """Two unique amending Acts produce two <eventRef type='amendment'>."""
+    from pathlib import Path
+
+    events = _make_events(
+        ("s 6", "am", 70, 2009),
+        ("s 7", "am", 109, 2004),
+    )
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    amd_events = xml.findall(
+        ".//akn:lifecycle/akn:eventRef[@type='amendment']", ns
+    )
+    assert len(amd_events) == 2
+    sources = {e.get("source") for e in amd_events}
+    assert "/akn/au/act/2009/70" in sources
+    assert "/akn/au/act/2004/109" in sources
+
+
+def test_lifecycle_dedup(meta):
+    """Same act_number/act_year in multiple rows produces only one <eventRef type='amendment'>."""
+    from pathlib import Path
+
+    events = _make_events(
+        ("s 6", "am", 70, 2009),
+        ("s 8", "rep", 70, 2009),  # same Act — should be deduped
+        ("s 9", "ad", 70, 2009),   # same Act again
+    )
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    amd_events = xml.findall(
+        ".//akn:lifecycle/akn:eventRef[@type='amendment']", ns
+    )
+    assert len(amd_events) == 1
+    assert amd_events[0].get("source") == "/akn/au/act/2009/70"
+
+
+def test_lifecycle_skipped_no_path(meta):
+    """last_volume_path=None → no <lifecycle> emitted."""
+    b = AknBuilder(meta)
+    xml, report = b.build_with_report({}, last_volume_path=None)
+
+    ns = {"akn": AKN_NS}
+    lifecycle = xml.find(".//akn:lifecycle", ns)
+    assert lifecycle is None
+    assert report.amendment_events_parsed == 0

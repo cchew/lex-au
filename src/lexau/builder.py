@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from dataclasses import replace
 from datetime import date
+from pathlib import Path
 from lxml import etree
 from lxml.builder import ElementMaker
 
@@ -14,6 +15,8 @@ from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms
 from lexau.quantlinks import inject_quantities, inject_roles
 from lexau.datelinks import inject_dates
+from docx import Document as DocxDocument
+from lexau.endnote_parser import parse_endnotes, AmendmentEvent, EndnoteResult
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -363,6 +366,53 @@ def _build_attachments(
     return attachments_el, total_clauses
 
 
+def inject_lifecycle(root: etree._Element, meta: ActMetadata, events: list[AmendmentEvent]) -> None:
+    """Insert <lifecycle> into <meta> after <identification>."""
+    ns = {"akn": AKN_NS}
+    meta_el = root.find(".//akn:meta", ns)
+    identification_el = meta_el.find(f"{{{AKN_NS}}}identification")
+    insert_idx = list(meta_el).index(identification_el) + 1
+
+    lifecycle_el = etree.Element(f"{{{AKN_NS}}}lifecycle")
+    lifecycle_el.set("source", "#parliament")
+
+    # Creation event (always present)
+    creation = etree.SubElement(lifecycle_el, f"{{{AKN_NS}}}eventRef")
+    creation.set("date", f"{meta.year}-01-01")
+    creation.set("type", "generation")
+    creation.set("eId", "evt-creation")
+    creation.set("source", f"#{meta.safe_name}")
+
+    # Amendment events (one per unique amending Act, ordered by act_year/act_number)
+    seen: set[tuple[int, int]] = set()
+    amd_idx = 0
+    for event in sorted(events, key=lambda e: (e.act_year, e.act_number)):
+        key = (event.act_number, event.act_year)
+        if key in seen:
+            continue
+        seen.add(key)
+        amd_idx += 1
+        amd_uri = f"/akn/au/act/{event.act_year}/{event.act_number}"
+        evt = etree.SubElement(lifecycle_el, f"{{{AKN_NS}}}eventRef")
+        evt.set("type", "amendment")
+        evt.set("eId", f"evt-amd-{amd_idx}")
+        evt.set("source", amd_uri)
+
+    meta_el.insert(insert_idx, lifecycle_el)
+
+
+def inject_temporal_data(root: etree._Element, events: list[AmendmentEvent]) -> None:
+    pass  # Task 6 will replace this stub
+
+
+def inject_passive_mods(
+    root: etree._Element,
+    events: list[AmendmentEvent],
+    report: ParseReport | None = None,
+) -> None:
+    pass  # Task 7 will replace this stub
+
+
 class AknBuilder:
     def __init__(self, meta: ActMetadata) -> None:
         self._meta = meta
@@ -536,7 +586,11 @@ class AknBuilder:
 
         return root, result
 
-    def build_with_report(self, corpus_index: dict) -> tuple[etree._Element, ParseReport]:
+    def build_with_report(
+        self,
+        corpus_index: dict,
+        last_volume_path: Path | None = None,
+    ) -> tuple[etree._Element, ParseReport]:
         """Run all build phases and return (xml_root, ParseReport)."""
         preface_paras, body_paras, schedule_groups = _split_stream(self._paragraphs)
 
@@ -634,6 +688,15 @@ class AknBuilder:
                     tlc.set("eId", eid)
                     tlc.set("href", f"/ontology/term/au/{eid}")
                     tlc.set("showAs", show_as)
+
+        # 7. Parse endnotes and inject amendment history metadata
+        if last_volume_path is not None:
+            endnote_result = parse_endnotes(DocxDocument(str(last_volume_path)))
+            report.amendment_events_parsed = len(endnote_result.amendment_events)
+            if endnote_result.amendment_events:
+                inject_lifecycle(root, self._meta, endnote_result.amendment_events)
+                inject_temporal_data(root, endnote_result.amendment_events)
+                inject_passive_mods(root, endnote_result.amendment_events)
 
         return root, report
 
