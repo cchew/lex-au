@@ -68,7 +68,6 @@ class ParseReport:
     # v0.5.0 additions
     dates_found: int = 0
     amendment_events_parsed: int = 0
-    amendment_events_resolved: int = 0
     mods_resolved: int = 0
     mods_unresolved: int = 0
     quoted_structures_found: int = 0

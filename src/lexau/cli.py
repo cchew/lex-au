@@ -69,7 +69,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             saved = corpus.save(meta, xml)
             click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
 
-            report_path = reports_dir / f"{meta.safe_name}-v0.3.0.json"
+            report_path = reports_dir / f"{meta.safe_name}-v0.5.0.json"
             report_path.write_text(json.dumps(asdict(report), ensure_ascii=False, indent=2))
             report_rows.append(report)
 

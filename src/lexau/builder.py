@@ -728,7 +728,6 @@ class AknBuilder:
             elif p.element_type == ElementType.LIST_ITEM:
                 level = int(p.number) if p.number.isdigit() else 0
                 parent_elem = stack[-1][2] if stack else body
-                current_section_eid = stack[-1][1] if stack else ""
                 # Build a full eId prefix from the stack for the section context
                 section_eid_prefix = "__".join(
                     make_eid(et.value, num) for et, num, _ in stack
@@ -877,8 +876,6 @@ class AknBuilder:
                 report.level4_found += 1
             elif p_type == ElementType.TABLE:
                 report.tables_found += 1
-            elif p_type == ElementType.FIGURE:
-                report.figures_found += 1
 
             if p_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
                 if p.raw_style not in {"Body Text", "List Paragraph"}:
@@ -948,7 +945,7 @@ class AknBuilder:
             if endnote_result.amendment_events:
                 inject_lifecycle(root, self._meta, endnote_result.amendment_events)
                 inject_temporal_data(root, endnote_result.amendment_events)
-                inject_passive_mods(root, endnote_result.amendment_events)
+                inject_passive_mods(root, endnote_result.amendment_events, report=report)
 
         return root, report
 

@@ -10,8 +10,8 @@ from lexau.models import ActMetadata
 API_BASE = "https://api.prod.legislation.gov.au/v1"
 
 _TITLE_ID_RE = re.compile(r"C\d{4}A(\d+)")
-_INSTRUMENT_RE = re.compile(r"F\d{4}[A-Z](\d+)")  # F-prefixed = legislative instruments
-_REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations
+_INSTRUMENT_RE = re.compile(r"F\d{4}[A-Z](\d+)")  # F-prefixed = legislative instruments; reserved for future filter-by-type logic
+_REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations; reserved for future filter-by-type logic
 
 
 def _odata_escape(s: str) -> str:

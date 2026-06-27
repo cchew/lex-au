@@ -2,6 +2,7 @@ import pytest
 from lxml import etree
 from datetime import date
 from datetime import date as _date
+from pathlib import Path
 from unittest.mock import patch, MagicMock
 from lexau.models import ActMetadata
 from lexau.parser import ParsedParagraph, ElementType
@@ -687,8 +688,6 @@ def _make_events(*args) -> list[AmendmentEvent]:
 
 def test_lifecycle_emitted(meta):
     """build_with_report with mocked endnote events emits <lifecycle> inside <meta>."""
-    from pathlib import Path
-
     events = _make_events(("s 6", "am", 99, 2010))
     fake_result = EndnoteResult(amendment_events=events)
 
@@ -705,8 +704,6 @@ def test_lifecycle_emitted(meta):
 
 def test_lifecycle_creation_event(meta):
     """<eventRef type='generation' eId='evt-creation'> is always present when lifecycle is emitted."""
-    from pathlib import Path
-
     events = _make_events(("s 6", "am", 42, 2005))
     fake_result = EndnoteResult(amendment_events=events)
 
@@ -725,8 +722,6 @@ def test_lifecycle_creation_event(meta):
 
 def test_lifecycle_amendment_events(meta):
     """Two unique amending Acts produce two <eventRef type='amendment'>."""
-    from pathlib import Path
-
     events = _make_events(
         ("s 6", "am", 70, 2009),
         ("s 7", "am", 109, 2004),
@@ -750,8 +745,6 @@ def test_lifecycle_amendment_events(meta):
 
 def test_lifecycle_dedup(meta):
     """Same act_number/act_year in multiple rows produces only one <eventRef type='amendment'>."""
-    from pathlib import Path
-
     events = _make_events(
         ("s 6", "am", 70, 2009),
         ("s 8", "rep", 70, 2009),  # same Act — should be deduped
@@ -787,8 +780,6 @@ def test_lifecycle_skipped_no_path(meta):
 
 def test_temporal_data_emitted(meta):
     """<temporalData> is present inside <meta> when lifecycle is present."""
-    from pathlib import Path
-
     events = _make_events(("s 6", "am", 99, 2010))
     fake_result = EndnoteResult(amendment_events=events)
 
@@ -804,8 +795,6 @@ def test_temporal_data_emitted(meta):
 
 def test_temporal_group_exists(meta):
     """<temporalGroup eId='tg-1'> is a child of <temporalData>."""
-    from pathlib import Path
-
     events = _make_events(("s 6", "am", 99, 2010))
     fake_result = EndnoteResult(amendment_events=events)
 
@@ -821,8 +810,6 @@ def test_temporal_group_exists(meta):
 
 def test_time_interval_open(meta):
     """<timeInterval start='#evt-creation'> has no end attribute (open-ended)."""
-    from pathlib import Path
-
     events = _make_events(("s 6", "am", 99, 2010))
     fake_result = EndnoteResult(amendment_events=events)
 
@@ -849,7 +836,6 @@ def _build_tree_with_section(meta, section_num: str = "6"):
 
 def test_passive_mod_emitted(meta):
     """A resolved provision + known lifecycle evt → <textualMod> inside <passiveModifications>."""
-    from pathlib import Path
     from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
 
     events = [AmendmentEvent(provision="s 6", effect="am", act_number=99, act_year=2010)]
@@ -875,7 +861,6 @@ def test_passive_mod_emitted(meta):
 
 def test_passive_mod_type_mapping(meta):
     """effect='am' → type='substitution', 'ad' → 'insertion', 'rep' → 'repeal'."""
-    from pathlib import Path
     from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
 
     events = [
