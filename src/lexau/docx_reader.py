@@ -4,10 +4,16 @@ from collections.abc import Iterator
 from dataclasses import replace
 
 from docx import Document
+from docx.oxml.ns import qn
 from docx.table import Table
 from docx.text.paragraph import Paragraph
 
 from lexau.parser import ElementType, ParsedParagraph, parse_paragraph
+
+
+def _has_inline_image(para: Paragraph) -> bool:
+    """Return True if the paragraph contains at least one DrawingML inline image."""
+    return bool(para._element.findall(f".//{qn('a:blip')}"))
 
 
 def _list_level(para: Paragraph) -> int | None:
@@ -31,6 +37,9 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     """
     for block in doc.iter_inner_content():
         if isinstance(block, Paragraph):
+            if _has_inline_image(block):
+                yield ParsedParagraph(ElementType.FIGURE, text=block.text)
+                continue
             style = block.style.name if block.style else "Default"
             parsed = parse_paragraph(style, block.text)
             level = _list_level(block)

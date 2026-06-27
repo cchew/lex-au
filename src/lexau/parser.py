@@ -20,6 +20,7 @@ class ElementType(Enum):
     LEVEL4      = "level4"
     LIST_ITEM   = "list-item"
     TABLE       = "table"
+    FIGURE      = "figure"
     BODY        = "body"
     SKIP        = "skip"
 

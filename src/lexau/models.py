@@ -73,3 +73,4 @@ class ParseReport:
     mods_unresolved: int = 0
     quoted_structures_found: int = 0
     quoted_structures_unhandled: int = 0
+    figures_found: int = 0

@@ -87,3 +87,29 @@ def test_list_level_detection_nested():
     list_items = [r for r in results if r.element_type == ElementType.LIST_ITEM]
     assert len(list_items) == 1
     assert list_items[0].number == "1"
+
+
+def test_figure_element_type():
+    """A paragraph containing an a:blip DrawingML element yields FIGURE element type."""
+    doc = Document()
+    p = doc.add_paragraph("Figure caption text")
+    # Inject a DrawingML inline image blip into the paragraph element
+    blip_xml = (
+        '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:drawing>'
+        '<wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">'
+        '<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
+        '<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+        '<a:blip r:embed="rId1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>'
+        '</a:graphicData>'
+        '</a:graphic>'
+        '</wp:inline>'
+        '</w:drawing>'
+        '</w:r>'
+    )
+    p._element.append(parse_xml(blip_xml))
+
+    results = list(iter_paragraphs(doc))
+    figures = [r for r in results if r.element_type == ElementType.FIGURE]
+    assert len(figures) == 1
+    assert figures[0].text == "Figure caption text"

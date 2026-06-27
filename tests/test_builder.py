@@ -1014,3 +1014,50 @@ def test_quoted_structure_skipped(meta):
         b.add(p)
     xml, report = b.build_with_report({})
     assert report.quoted_structures_unhandled >= 1
+
+
+def test_figure_emitted(meta):
+    """A FIGURE paragraph produces <figure><img> in the AKN output."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"),
+        ParsedParagraph(ElementType.FIGURE, text=""),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    fig = xml.find(".//akn:figure", ns)
+    assert fig is not None
+    img = fig.find("akn:img", ns)
+    assert img is not None
+    src = img.get("src", "")
+    assert src.startswith("corpus/images/privacy-act-1988-fig-")
+    assert src.endswith(".png")
+    assert img.get("alt") == ""
+
+
+def test_figure_src_increments(meta):
+    """Multiple FIGURE paragraphs produce sequentially numbered img src attributes."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"),
+        ParsedParagraph(ElementType.FIGURE, text=""),
+        ParsedParagraph(ElementType.FIGURE, text=""),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    imgs = xml.findall(".//akn:figure/akn:img", ns)
+    assert len(imgs) == 2
+    assert imgs[0].get("src") == "corpus/images/privacy-act-1988-fig-1.png"
+    assert imgs[1].get("src") == "corpus/images/privacy-act-1988-fig-2.png"
+
+
+def test_figures_found_in_report(meta):
+    """figures_found in ParseReport counts FIGURE paragraphs."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"),
+        ParsedParagraph(ElementType.FIGURE, text=""),
+        ParsedParagraph(ElementType.FIGURE, text=""),
+    ]
+    b = AknBuilder(meta)
+    for p in paragraphs:
+        b.add(p)
+    _, report = b.build_with_report({})
+    assert report.figures_found == 2

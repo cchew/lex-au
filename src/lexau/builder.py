@@ -618,6 +618,7 @@ class AknBuilder:
         self._paragraphs: list[ParsedParagraph] = []
         self._quoted_structures_found: int = 0
         self._quoted_structures_unhandled: int = 0
+        self._figures_found: int = 0
 
     def add(self, paragraph: ParsedParagraph) -> None:
         if paragraph.element_type != ElementType.SKIP:
@@ -805,6 +806,15 @@ class AknBuilder:
                             etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
                 current_content = None
 
+            elif p.element_type == ElementType.FIGURE:
+                _flush_blocklist()
+                parent_elem = stack[-1][2] if stack else body
+                self._figures_found += 1
+                fig_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}figure")
+                img_src = f"corpus/images/{self._meta.safe_name}-fig-{self._figures_found}.png"
+                etree.SubElement(fig_el, f"{{{AKN_NS}}}img", src=img_src, alt="")
+                current_content = None
+
         # Append <attachments> after <body>
         attachments_el, _ = _build_attachments(schedule_groups)
         if attachments_el is not None:
@@ -867,6 +877,8 @@ class AknBuilder:
                 report.level4_found += 1
             elif p_type == ElementType.TABLE:
                 report.tables_found += 1
+            elif p_type == ElementType.FIGURE:
+                report.figures_found += 1
 
             if p_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH}:
                 if p.raw_style not in {"Body Text", "List Paragraph"}:
@@ -882,6 +894,7 @@ class AknBuilder:
         # Capture quoted structure counts set during build()
         report.quoted_structures_found = self._quoted_structures_found
         report.quoted_structures_unhandled = self._quoted_structures_unhandled
+        report.figures_found = self._figures_found
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
         term_registry, terms_found = inject_terms(root)
