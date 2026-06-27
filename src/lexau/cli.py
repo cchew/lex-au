@@ -15,6 +15,16 @@ from lexau.builder import AknBuilder
 from lexau.docx_reader import iter_paragraphs
 
 
+def _find_endnote_volume(docx_paths: list[Path]) -> Path | None:
+    """Return the volume containing 'Endnotes' (ENotesHeading 1), scanning from last."""
+    for path in reversed(docx_paths):
+        doc = Document(str(path))
+        for para in doc.paragraphs:
+            if para.style and para.style.name == "ENotesHeading 1" and para.text.strip() == "Endnotes":
+                return path
+    return None
+
+
 @click.group()
 def cli() -> None:
     """lex-au: Commonwealth Acts as AKN 3.0 XML."""
@@ -63,7 +73,8 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
                 for p in iter_paragraphs(doc):
                     builder.add(p)
 
-            xml, report = builder.build_with_report(corpus_index, last_volume_path=docx_paths[-1])
+            endnote_vol = _find_endnote_volume(docx_paths)
+            xml, report = builder.build_with_report(corpus_index, last_volume_path=endnote_vol)
             report.volumes_fetched = len(docx_paths)
 
             saved = corpus.save(meta, xml)

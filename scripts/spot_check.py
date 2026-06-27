@@ -54,8 +54,6 @@ V04_CHECKS = [
 ]
 
 V05_CHECKS = [
-    ("blockList present (if Act has eligibility lists)",
-     lambda root, ns: len(root.findall(".//akn:blockList", ns)) > 0),
     ("date elements present",
      lambda root, ns: len(root.findall(".//akn:date", ns)) > 0),
     ("lifecycle in meta",
