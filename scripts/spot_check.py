@@ -53,6 +53,17 @@ V04_CHECKS = [
      lambda v: all(e.startswith("note-") for e in v) if v else True),
 ]
 
+V05_CHECKS = [
+    ("blockList present (if Act has eligibility lists)",
+     lambda root, ns: len(root.findall(".//akn:blockList", ns)) > 0),
+    ("date elements present",
+     lambda root, ns: len(root.findall(".//akn:date", ns)) > 0),
+    ("lifecycle in meta",
+     lambda root, ns: root.find(".//akn:lifecycle", ns) is not None),
+    ("temporalData in meta",
+     lambda root, ns: root.find(".//akn:temporalData", ns) is not None),
+]
+
 
 def check_xml(path: Path) -> list[str]:
     try:
