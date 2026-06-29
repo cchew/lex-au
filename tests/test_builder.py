@@ -267,6 +267,75 @@ def test_schedule_numeric_clause(meta):
     assert clause.get("eId") == "schedule-1__clause-1"
 
 
+def test_schedule_alphanumeric_clause(meta):
+    # TG Regs use clause numbers like "1A", "2B" — _CLAUSE_RE must match \d+[A-Z]?
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test"),
+        ParsedParagraph(ElementType.BODY, text="1A  Alpha clause heading"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-1A"
+
+
+def test_schedule_section_typed_clause(meta):
+    # TG Regs: clause headings parsed as SECTION elements (not BODY text) with num+heading fields
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
+        ParsedParagraph(ElementType.BODY, text="A device must be designed to minimise risk."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-7"
+    heading = clause.find("akn:heading", ns)
+    assert heading is not None and heading.text == "Chemical properties"
+
+
+def test_schedule_section_typed_dotted_subclause(meta):
+    # TG Regs: dotted clause numbers (7.1) parsed as SECTION → subclause under current clause
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
+        ParsedParagraph(ElementType.SECTION, number="7.1", heading="Choice of materials"),
+        ParsedParagraph(ElementType.BODY, text="Materials must be biocompatible."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    subclause = xml.find(".//akn:hcontainer[@name='subclause']", ns)
+    assert subclause is not None
+    assert subclause.get("eId") == "schedule-1__clause-7__subclause-7-1"
+    heading = subclause.find("akn:heading", ns)
+    assert heading is not None and heading.text == "Choice of materials"
+
+
+def test_schedule_subsection_typed_subclause(meta):
+    # TG Regs: SUBSECTION paragraphs with num inside a schedule clause → numbered subclause
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.SECTION, number="2", heading="Design principles"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="The manufacturer must adopt safe design solutions."),
+        ParsedParagraph(ElementType.SUBSECTION, number="2", text="Without limiting subclause (1), solutions must..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    assert clause is not None
+    assert clause.get("eId") == "schedule-1__clause-2"
+    subclauses = clause.findall("akn:hcontainer[@name='subclause']", ns)
+    assert len(subclauses) == 2
+    assert subclauses[0].get("eId") == "schedule-1__clause-2__subclause-1"
+    assert subclauses[1].get("eId") == "schedule-1__clause-2__subclause-2"
+
+
 def test_build_attachments_returns_tuple(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),

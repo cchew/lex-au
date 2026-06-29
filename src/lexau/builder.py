@@ -67,7 +67,7 @@ _APP_CLAUSE_RE = re.compile(
     re.DOTALL,
 )
 _SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
-_CLAUSE_RE    = re.compile(r'^(\d+(?:\.\d+)*)\s+([A-Z].*)', re.DOTALL)
+_CLAUSE_RE    = re.compile(r'^(\d+[A-Z]?(?:\.\d+[A-Z]?)*)\s+([A-Z].*)', re.DOTALL)
 
 _NOTE_REF_RE = re.compile(r'\[note\s+(\d+)\]', re.IGNORECASE)
 
@@ -307,7 +307,7 @@ def _build_schedule_content(
     clause_count = 0
     clause_idx = 0
     current_clause: etree._Element | None = None
-    current_subclause: etree._Element | None = None
+    current_subclause: etree._Element | None = None  # dotted subclause (e.g. 7.1) from SECTION
     current_para: etree._Element | None = None
 
     def _get_or_create_content(parent: etree._Element) -> etree._Element:
@@ -360,7 +360,7 @@ def _build_schedule_content(
                 clause_count += 1
                 num_str = m.group(1)
                 heading_str = m.group(2).strip()
-                eid = f"{schedule_eid}__clause-{clause_idx}"
+                eid = f"{schedule_eid}__clause-{num_str}"
                 current_clause = etree.SubElement(
                     hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                 )
@@ -384,6 +384,55 @@ def _build_schedule_content(
             if p.text:
                 content_el = etree.SubElement(current_para, f"{{{AKN_NS}}}content")
                 etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+
+        elif p.element_type == ElementType.SECTION and p.number:
+            # SECTION-typed paragraphs inside a schedule (e.g. TG Regs Essential Principles).
+            # Dotted numbers (7.1, 7.2) are subclauses; plain numbers (7, 8) are top-level clauses.
+            num_str = p.number
+            heading_str = p.heading or ""
+            if "." in num_str:
+                parent = current_clause if current_clause is not None else hcontainer
+                parent_eid = parent.get("eId", schedule_eid)
+                eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
+                current_subclause = etree.SubElement(
+                    parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
+                )
+                etree.SubElement(current_subclause, f"{{{AKN_NS}}}num").text = num_str
+                if heading_str:
+                    etree.SubElement(current_subclause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_para = None
+            else:
+                clause_idx += 1
+                clause_count += 1
+                eid = f"{schedule_eid}__clause-{num_str}"
+                current_clause = etree.SubElement(
+                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                )
+                etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
+                if heading_str:
+                    etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_subclause = None
+                current_para = None
+
+        elif p.element_type == ElementType.SUBSECTION and p.number:
+            # Numbered subclauses (1, 2, 3) within a schedule clause or dotted subclause.
+            # Always sibling under the nearest dotted subclause or top-level clause — never
+            # nested inside a previous numbered subclause.
+            num_str = p.number
+            parent = current_subclause if current_subclause is not None else (
+                current_clause if current_clause is not None else hcontainer
+            )
+            parent_eid = parent.get("eId", schedule_eid)
+            eid = f"{parent_eid}__subclause-{num_str}"
+            sub_el = etree.SubElement(
+                parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
+            )
+            etree.SubElement(sub_el, f"{{{AKN_NS}}}num").text = num_str
+            if p.text:
+                content_el = etree.SubElement(sub_el, f"{{{AKN_NS}}}content")
+                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+            # Do NOT update current_subclause — numbered subclauses are siblings, not a new nesting level
+            current_para = None
 
         elif p.element_type == ElementType.SUBPARAGRAPH:
             if current_para is not None:
@@ -422,6 +471,8 @@ def _count_schedule_clauses(schedule_groups: list[list[ParsedParagraph]]) -> int
                     count += 1
                 elif not _SUBCLAUSE_RE.match(text) and _CLAUSE_RE.match(text):
                     count += 1
+            elif p.element_type == ElementType.SECTION and p.number and "." not in p.number:
+                count += 1
     return count
 
 
