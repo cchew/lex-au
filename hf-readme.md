@@ -18,10 +18,11 @@ pretty_name: lex-au — Commonwealth Acts as AKN 3.0 XML
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads but no structured XML, no section-level addressing, and no AKN. This dataset fills that gap for Commonwealth Acts in force.
 
-**Version: v0.5.0** — 11 Acts, published 2026-06-27. Source code and CLI at [github.com/cchew/lex-au](https://github.com/cchew/lex-au).
+**Version: v0.5.2** — 12 Acts, published 2026-07-01. Source code and CLI at [github.com/cchew/lex-au](https://github.com/cchew/lex-au).
 
 ## Versions
 
+- **v0.5.2** — 2026-07-01: Added Therapeutic Goods Act 1989 (12 Acts).
 - **v0.5.0** — 2026-06-27: Navigator prerequisites — `<blockList>`/`<item>`, `<date>`, subsidiary legislation support, amendment history (`<lifecycle>`, `<temporalData>`, `<passiveModifications>`), `<quotedStructure>`, `<figure>`/`<img>`, `<rref>` range references. 225 tests. AKN compliance ~91-100% of applicable elements.
 - **v0.4.0** — 2026-06-26: AKN semantic layer — `<term>`/`<def>`/`<TLCTerm>`, FRBR completeness (country/subtype/number/name/prescriptive/authoritative), `<longTitle>`, `<classification>/<keyword>`, `<preamble>`/`<formula>`, `<quantity>` (penalty units/imprisonment/deadlines), `<role>`/`<TLCRole>`, `<authorialNote>` eIds, `<noteRef>`. 11 Acts. AKN compliance ~68-72%.
 - **v0.3.0** — 2026-06-23: Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level `(A)(B)(C)`, extended `<ref>` patterns. 11 Acts.
@@ -48,7 +49,7 @@ Each Act is a single AKN 3.0 XML file with:
 - `<quotedStructure>` for single-provision amendment inserts; `<figure>`/`<img>` for embedded images; `<rref>` for section range references
 - Corpus index at `index.json`; parse report per Act in `reports/`
 
-## Current corpus (v0.5.0)
+## Current corpus (v0.5.2)
 
 | Act | Year | Compilation |
 |---|---|---|
@@ -56,6 +57,7 @@ Each Act is a single AKN 3.0 XML file with:
 | National Health Act | 1953 | C2026C00164 |
 | Freedom of Information Act | 1982 | C2026C00020 |
 | Privacy Act | 1988 | C2026C00227 |
+| Therapeutic Goods Act | 1989 | C2025C00525 |
 | Social Security Act | 1991 | C2026C00160 |
 | Criminal Code Act | 1995 | C2026C00098 |
 | Superannuation Industry (Supervision) Act | 1993 | C2026C00212 |
