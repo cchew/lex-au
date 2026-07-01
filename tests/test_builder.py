@@ -1272,3 +1272,45 @@ def test_build_with_report_inline_formatted_count(meta):
         _, report = b.build_with_report(corpus_index, last_volume_path=None)
 
     assert report.inline_formatted >= 1
+
+
+def test_list_item_inline_formatting_not_emitted_known_limitation(meta):
+    """v0.6.0: LIST_ITEM <p> body is plain text even when spans carry formatting.
+    _emit_p_inline is not called in the LIST_ITEM branch of build() — known limitation."""
+    from lexau.parser import InlineSpan
+    from lexau.builder import _emit_p_inline
+    # _emit_p_inline itself works fine for any paragraph type
+    p_with_bold = ParsedParagraph(
+        ElementType.LIST_ITEM,
+        number="1",
+        text="bold text",
+        spans=[InlineSpan(text="bold text", bold=True)],
+    )
+    p_el = etree.Element(f"{{{AKN_NS}}}p")
+    _emit_p_inline(p_el, p_with_bold)
+    # _emit_p_inline correctly emits <b> — but the LIST_ITEM branch in build() never calls this
+    assert p_el.find(f"{{{AKN_NS}}}b") is not None
+    # The actual limitation: build() assigns p_el.text directly for LIST_ITEM
+    p_el_direct = etree.Element(f"{{{AKN_NS}}}p")
+    p_el_direct.text = p_with_bold.text  # what build() actually does
+    assert p_el_direct.find(f"{{{AKN_NS}}}b") is None, "LIST_ITEM branch uses .text, not _emit_p_inline"
+
+
+def test_bold_superscript_span_emits_b_only_known_limitation(meta):
+    """v0.6.0: bold+superscript span emits <b> only — superscript is dropped.
+    Only bold+italic nesting is handled; other combinations are not spec'd."""
+    from lexau.parser import InlineSpan
+    from lexau.builder import _emit_p_inline
+    p = ParsedParagraph(
+        ElementType.SECTION,
+        number="1",
+        text="CO2",
+        spans=[InlineSpan(text="CO2", bold=True, superscript=True)],
+    )
+    p_el = etree.Element(f"{{{AKN_NS}}}p")
+    _emit_p_inline(p_el, p)
+    b_el = p_el.find(f"{{{AKN_NS}}}b")
+    assert b_el is not None, "bold wins over superscript"
+    assert b_el.text == "CO2"
+    # superscript is dropped — known v0.6.0 limitation (plan only spec'd bold+italic nesting)
+    assert p_el.find(f"{{{AKN_NS}}}sup") is None, "superscript not emitted when bold also set (v0.6.0 limitation)"

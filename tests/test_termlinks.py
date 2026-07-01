@@ -357,3 +357,30 @@ def test_inject_list_defs_stop_words_skipped():
     registry = {}
     count = inject_list_defs(root, registry)
     assert count == 0
+
+
+def test_process_p_formatted_definiens_flattened_known_limitation():
+    """v0.6.0: formatted content inside the definiens is lost when _process_p
+    handles a mixed-content <p>. The <def> element gets plain itertext() only."""
+    from lexau.termlinks import _process_p
+    # Build <p>term<i> means </i><b>body corporate</b></p>
+    p_el = etree.Element(f"{AKN_TAG}p")
+    p_el.text = "term"
+    i_el = etree.SubElement(p_el, f"{AKN_TAG}i")
+    i_el.text = " means "
+    b_el = etree.SubElement(p_el, f"{AKN_TAG}b")
+    b_el.text = "body corporate"
+
+    registry = {}
+    _process_p(p_el, registry)
+
+    # <term> is injected
+    term_el = p_el.find(f"{AKN_TAG}term")
+    assert term_el is not None
+    assert term_el.text == "term"
+
+    # <def> gets plain text — the <b> inside definiens is flattened (known v0.6.0 limitation)
+    def_el = p_el.find(f"{AKN_TAG}def")
+    assert def_el is not None
+    assert def_el.find(f"{AKN_TAG}b") is None, "formatted definiens flattened to plain text (v0.6.0 limitation)"
+    assert "body corporate" in (def_el.text or "")
