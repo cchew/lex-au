@@ -1156,6 +1156,7 @@ def test_bold_span_emits_b_element(meta):
     ns = {"akn": AKN_NS}
     p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
     assert p_el.find(f"{{{AKN_NS}}}b") is not None
+    assert p_el.find(f"{{{AKN_NS}}}b").text == "Important note"
 
 
 def test_plain_spans_no_children(meta):

@@ -8,7 +8,7 @@ from lxml import etree
 from lxml.builder import ElementMaker
 
 from lexau.models import ActMetadata, ParseReport
-from lexau.parser import ParsedParagraph, ElementType
+from lexau.parser import ParsedParagraph, ElementType, InlineSpan
 from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
