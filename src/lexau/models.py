@@ -75,3 +75,6 @@ class ParseReport:
     figures_found: int = 0
     range_refs_resolved: int = 0
     range_refs_unresolved: int = 0
+    # v0.6.0 additions
+    inline_formatted: int = 0   # count of <p> elements with <b>/<i>/<sup>/<sub> children
+    list_defs_found: int = 0    # count of list-form 'X means:' definitions identified

@@ -1229,3 +1229,46 @@ def test_bold_italic_span_emits_nested_b_i(meta):
     i_el = b_el.find(f"{{{AKN_NS}}}i")
     assert i_el is not None
     assert i_el.text == "critical term"
+
+
+def test_build_with_report_list_defs_found(meta):
+    """build_with_report counts list-form definitions in list_defs_found."""
+    from unittest.mock import patch, MagicMock
+    from lexau.endnote_parser import EndnoteResult
+    from lexau.parser import InlineSpan
+
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
+    b.add(ParsedParagraph(ElementType.SUBSECTION, number="1", text=""))
+    # List-form definition paragraph
+    b.add(ParsedParagraph(ElementType.BODY, text="agency means:"))
+    # Followed by paragraph items
+    b.add(ParsedParagraph(ElementType.PARAGRAPH, number="a", text="a body corporate; or"))
+    b.add(ParsedParagraph(ElementType.PARAGRAPH, number="b", text="a natural person."))
+
+    corpus_index: dict = {}
+    with patch("lexau.builder.parse_endnotes", return_value=EndnoteResult([], [])):
+        _, report = b.build_with_report(corpus_index, last_volume_path=None)
+
+    assert report.list_defs_found >= 1
+
+
+def test_build_with_report_inline_formatted_count(meta):
+    """build_with_report counts <p> elements with inline markup in inline_formatted."""
+    from lexau.parser import InlineSpan
+
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
+    b.add(ParsedParagraph(
+        ElementType.BODY,
+        text="personal information means something",
+        spans=[
+            InlineSpan(text="personal information", italic=True),
+            InlineSpan(text=" means something"),
+        ],
+    ))
+    corpus_index: dict = {}
+    with patch("lexau.builder.parse_endnotes", return_value=EndnoteResult([], [])):
+        _, report = b.build_with_report(corpus_index, last_volume_path=None)
+
+    assert report.inline_formatted >= 1

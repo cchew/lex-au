@@ -185,3 +185,9 @@ def test_actmetadata_act_doc_type_frbr_work_uri_unchanged():
         doc_type="act",
     )
     assert meta.frbr_work_uri == "/akn/au/act/1988/119"
+
+
+def test_parse_report_v0_6_0_fields():
+    r = ParseReport(act_name="Test")
+    assert r.inline_formatted == 0
+    assert r.list_defs_found == 0

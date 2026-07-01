@@ -12,7 +12,7 @@ from lexau.parser import ParsedParagraph, ElementType, InlineSpan
 from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
-from lexau.termlinks import inject_terms
+from lexau.termlinks import inject_terms, inject_list_defs
 from lexau.quantlinks import inject_quantities, inject_roles
 from lexau.datelinks import inject_dates
 from docx import Document as DocxDocument
@@ -999,12 +999,26 @@ class AknBuilder:
         report.quoted_structures_unhandled = self._quoted_structures_unhandled
         report.figures_found = self._figures_found
 
+        # Count <p> elements with inline formatting children
+        _INLINE_TAGS = {
+            f"{{{AKN_NS}}}b", f"{{{AKN_NS}}}i",
+            f"{{{AKN_NS}}}sup", f"{{{AKN_NS}}}sub",
+        }
+        report.inline_formatted = sum(
+            1 for p_el in root.iter(f"{{{AKN_NS}}}p")
+            if any(c.tag in _INLINE_TAGS for c in p_el)
+        )
+
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
         term_registry, terms_found = inject_terms(root)
         report.terms_found = terms_found
         # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
         # Surface via ParseReport for corpus validation.
         report.duplicate_terms = terms_found - len(term_registry)
+
+        # 1b. Inject list-form definitions (X means: + block list)
+        list_defs_count = inject_list_defs(root, term_registry)
+        report.list_defs_found = list_defs_count
 
         # 2. Inject <quantity> markup for penalty units, imprisonment, deadlines
         # Must run BEFORE inject_refs: once inject_refs writes <ref> children into a <p>,
