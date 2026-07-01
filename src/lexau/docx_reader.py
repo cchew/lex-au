@@ -8,7 +8,7 @@ from docx.oxml.ns import qn
 from docx.table import Table
 from docx.text.paragraph import Paragraph
 
-from lexau.parser import ElementType, ParsedParagraph, parse_paragraph
+from lexau.parser import ElementType, InlineSpan, ParsedParagraph, parse_paragraph
 
 
 def _has_inline_image(para: Paragraph) -> bool:
@@ -34,6 +34,8 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     Uses doc.iter_inner_content() (python-docx 1.2.0) to preserve document order.
     Tables are yielded as ParsedParagraph(TABLE, table_rows=[[cell, ...], ...]).
     cell.text concatenates all paragraph text in the cell; nested tables are flattened.
+    FIGURE paragraphs (inline image) yield with empty spans.
+    All other paragraphs populate spans from paragraph.runs.
     """
     for block in doc.iter_inner_content():
         if isinstance(block, Paragraph):
@@ -41,10 +43,24 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
                 yield ParsedParagraph(ElementType.FIGURE, text=block.text)
                 continue
             style = block.style.name if block.style else "Default"
-            parsed = parse_paragraph(style, block.text)
+            spans = [
+                InlineSpan(
+                    text=run.text,
+                    bold=bool(run.bold),
+                    italic=bool(run.italic),
+                    superscript=bool(run.font.superscript),
+                    subscript=bool(run.font.subscript),
+                )
+                for run in block.runs
+                if run.text
+            ]
+            full_text = "".join(s.text for s in spans)
+            parsed = parse_paragraph(style, full_text)
             level = _list_level(block)
             if level is not None and parsed.element_type == ElementType.BODY:
-                parsed = replace(parsed, element_type=ElementType.LIST_ITEM, number=str(level))
+                parsed = replace(parsed, element_type=ElementType.LIST_ITEM, number=str(level), spans=spans)
+            else:
+                parsed = replace(parsed, spans=spans)
             yield parsed
         elif isinstance(block, Table):
             rows = [

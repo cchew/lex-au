@@ -113,3 +113,97 @@ def test_figure_element_type():
     figures = [r for r in results if r.element_type == ElementType.FIGURE]
     assert len(figures) == 1
     assert figures[0].text == "Figure caption text"
+
+
+from lexau.parser import InlineSpan
+
+
+def test_italic_run_populates_spans():
+    """A paragraph with one italic run yields ParsedParagraph with spans."""
+    doc = Document()
+    p = doc.add_paragraph()
+    run = p.add_run("personal information")
+    run.italic = True
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if r.text.strip() == "personal information"]
+    assert len(body) == 1
+    pp = body[0]
+    assert len(pp.spans) == 1
+    assert pp.spans[0].text == "personal information"
+    assert pp.spans[0].italic is True
+    assert pp.spans[0].bold is False
+
+
+def test_bold_run_populates_spans():
+    doc = Document()
+    p = doc.add_paragraph()
+    run = p.add_run("important")
+    run.bold = True
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if r.text.strip() == "important"]
+    assert len(body) == 1
+    assert body[0].spans[0].bold is True
+
+
+def test_mixed_runs_populate_spans():
+    """Italic run followed by plain run yields two spans."""
+    doc = Document()
+    p = doc.add_paragraph()
+    r1 = p.add_run("term")
+    r1.italic = True
+    r2 = p.add_run(" means something")
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if "term" in r.text]
+    assert len(body) == 1
+    pp = body[0]
+    assert len(pp.spans) == 2
+    assert pp.spans[0].italic is True
+    assert pp.spans[0].text == "term"
+    assert pp.spans[1].italic is False
+    assert pp.spans[1].text == " means something"
+
+
+def test_plain_runs_span_not_formatted():
+    doc = Document()
+    p = doc.add_paragraph("hello world")
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if r.text.strip() == "hello world"]
+    assert len(body) == 1
+    pp = body[0]
+    # spans may be populated but none should be formatted
+    assert all(not (s.bold or s.italic or s.superscript or s.subscript) for s in pp.spans)
+
+
+def test_superscript_run_populates_spans():
+    doc = Document()
+    p = doc.add_paragraph()
+    r = p.add_run("2")
+    r.font.superscript = True
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if r.text.strip() == "2"]
+    assert len(body) == 1
+    assert body[0].spans[0].superscript is True
+
+
+def test_image_paragraph_spans_empty():
+    """FIGURE paragraphs (inline image) still have empty spans."""
+    doc = Document()
+    p = doc.add_paragraph("Figure caption")
+    blip_xml = (
+        '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:drawing>'
+        '<wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">'
+        '<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
+        '<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+        '<a:blip r:embed="rId1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>'
+        '</a:graphicData>'
+        '</a:graphic>'
+        '</wp:inline>'
+        '</w:drawing>'
+        '</w:r>'
+    )
+    p._element.append(parse_xml(blip_xml))
+    results = list(iter_paragraphs(doc))
+    figures = [r for r in results if r.element_type.value == "figure"]
+    assert len(figures) == 1
+    assert figures[0].spans == []
