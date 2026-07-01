@@ -185,3 +185,50 @@ def test_duplicate_term_eids_last_write_wins():
     registry, count = inject_terms(root)
     assert count == 2  # both <p> elements get markup
     assert "term-personal-information" in registry  # last definition wins
+
+
+def test_process_p_handles_italic_mixed_content():
+    """inject_terms processes <p><i>personal information</i> means ...</p> correctly."""
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-6")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    # Simulate what builder emits when a run is italic
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    i_el = etree.SubElement(p, f"{AKN_TAG}i")
+    i_el.text = "personal information"
+    i_el.tail = " means information about an identified individual."
+
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert "term-personal-information" in registry
+    # After injection, <p> should have <term> and <def> children
+    term_el = p.find(f"{AKN_TAG}term")
+    assert term_el is not None
+    assert term_el.get("refersTo") == "#term-personal-information"
+    def_el = p.find(f"{AKN_TAG}def")
+    assert def_el is not None
+    assert "identified individual" in def_el.text
+
+
+def test_process_p_mixed_content_clears_inline_markup():
+    """After injection, original <i> child should be gone."""
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-6")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    i_el = etree.SubElement(p, f"{AKN_TAG}i")
+    i_el.text = "document"
+    i_el.tail = " includes a map."
+
+    inject_terms(root)
+    # <i> child should be replaced by <term> + <def>
+    assert p.find(f"{AKN_TAG}i") is None
+    assert p.find(f"{AKN_TAG}term") is not None

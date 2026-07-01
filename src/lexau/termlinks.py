@@ -57,10 +57,18 @@ def _process_p(
     p_el: etree._Element,
     registry: dict[str, str],
 ) -> int:
-    """Try to inject <term> + <def> into a single <p>. Returns 1 if injected, 0 otherwise."""
-    # Only process raw text nodes — skip if already mixed content (reflinks ran first).
-    text = p_el.text
-    if not text or len(list(p_el)) > 0:
+    """Try to inject <term> + <def> into a single <p>. Returns 1 if injected, 0 otherwise.
+
+    Handles both plain-text <p> and mixed-content <p> (e.g. with <i>/<b> children from
+    inline formatting). For mixed content, text is reconstructed via itertext(); on match,
+    inline children are cleared before rebuilding with <term>/<def>.
+    """
+    children = list(p_el)
+    if children:
+        text = "".join(p_el.itertext()).strip()
+    else:
+        text = p_el.text
+    if not text:
         return 0
 
     if _STOP_DEFINIENDUM.match(text.strip()):
@@ -75,10 +83,14 @@ def _process_p(
             eid = _term_eid(show_as)
             registry[eid] = show_as
 
-            # Preserve surrounding quotes if they were in the original text
             original = m.group(0)
             quoted = original.startswith('"')
+
+            # Clear element (works for both plain text and mixed content)
             p_el.text = None
+            for child in list(p_el):
+                p_el.remove(child)
+
             term_el = etree.SubElement(p_el, f"{AKN_TAG}term")
             term_el.set("refersTo", f"#{eid}")
             term_el.text = f'"{show_as}"' if quoted else show_as
