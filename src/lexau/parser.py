@@ -63,6 +63,15 @@ _LEVEL4_RE = re.compile(r'^\(([A-Z]+)\)\s+(.*)', re.DOTALL)
 
 
 @dataclass
+class InlineSpan:
+    text: str
+    bold: bool = False
+    italic: bool = False
+    superscript: bool = False
+    subscript: bool = False
+
+
+@dataclass
 class ParsedParagraph:
     element_type: ElementType
     number: str = ""
@@ -70,6 +79,7 @@ class ParsedParagraph:
     text: str = ""
     raw_style: str = ""
     table_rows: list[list[str]] = field(default_factory=list)
+    spans: list[InlineSpan] = field(default_factory=list)
 
 
 def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:

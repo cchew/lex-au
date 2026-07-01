@@ -1,5 +1,5 @@
 import pytest
-from lexau.parser import parse_paragraph, ElementType
+from lexau.parser import parse_paragraph, ElementType, InlineSpan, ParsedParagraph
 
 
 def test_parse_part_with_roman_number():
@@ -174,3 +174,24 @@ def test_parse_level4_not_triggered_for_unknown_style_lowercase():
     # (a) in unknown style should be PARAGRAPH, not LEVEL4
     p = parse_paragraph("Unknown", "(a) some text")
     assert p.element_type == ElementType.PARAGRAPH
+
+
+def test_inline_span_defaults():
+    span = InlineSpan(text="hello")
+    assert span.bold is False
+    assert span.italic is False
+    assert span.superscript is False
+    assert span.subscript is False
+
+
+def test_parsed_paragraph_spans_default_empty():
+    p = ParsedParagraph(ElementType.BODY, text="hello")
+    assert p.spans == []
+
+
+def test_parsed_paragraph_spans_field():
+    spans = [InlineSpan(text="hello", italic=True), InlineSpan(text=" world")]
+    p = ParsedParagraph(ElementType.BODY, text="hello world", spans=spans)
+    assert len(p.spans) == 2
+    assert p.spans[0].italic is True
+    assert p.spans[1].italic is False
