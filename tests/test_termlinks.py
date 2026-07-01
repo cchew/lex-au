@@ -1,5 +1,5 @@
 from lxml import etree
-from lexau.termlinks import inject_terms
+from lexau.termlinks import inject_terms, inject_list_defs
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN_TAG = f"{{{AKN_NS}}}"
@@ -232,3 +232,128 @@ def test_process_p_mixed_content_clears_inline_markup():
     # <i> child should be replaced by <term> + <def>
     assert p.find(f"{AKN_TAG}i") is None
     assert p.find(f"{AKN_TAG}term") is not None
+
+
+# ---------------------------------------------------------------------------
+# inject_list_defs tests
+# ---------------------------------------------------------------------------
+
+def _make_list_def_section(term_text: str, list_items: list[str]) -> etree._Element:
+    """Build AKN <section> with a list-form definition (X means: followed by <paragraph> items)."""
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-6")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-6__subsec-1")
+    content = etree.SubElement(subsec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    p.text = term_text
+    for i, item_text in enumerate(list_items, start=1):
+        para = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId=f"sec-6__subsec-1__para-{i}")
+        num = etree.SubElement(para, f"{AKN_TAG}num")
+        num.text = str(i)
+        c = etree.SubElement(para, f"{AKN_TAG}content")
+        ip = etree.SubElement(c, f"{AKN_TAG}p")
+        ip.text = item_text
+    return root
+
+
+def test_inject_list_defs_simple():
+    """'sensitive information means:' with following paragraphs gets <term> + <intro>."""
+    root = _make_list_def_section(
+        "sensitive information means:",
+        ["racial or ethnic origin; or", "political opinions; or"],
+    )
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 1
+    assert "term-sensitive-information" in registry
+    assert registry["term-sensitive-information"] == "sensitive information"
+
+
+def test_inject_list_defs_converts_content_to_intro():
+    """The <content> element is renamed to <intro> after injection."""
+    root = _make_list_def_section(
+        "agency means:",
+        ["a body corporate; or", "a natural person."],
+    )
+    registry = {}
+    inject_list_defs(root, registry)
+    subsec = root.find(f".//{AKN_TAG}subsection")
+    # <content> should no longer exist; <intro> should
+    assert subsec.find(f"{AKN_TAG}content") is None
+    intro = subsec.find(f"{AKN_TAG}intro")
+    assert intro is not None
+
+
+def test_inject_list_defs_injects_term_element():
+    """The lead <p> gets <term> element after injection."""
+    root = _make_list_def_section(
+        "enforcement body means:",
+        ["the Australian Federal Police."],
+    )
+    registry = {}
+    inject_list_defs(root, registry)
+    intro = root.find(f".//{AKN_TAG}intro")
+    p = intro.find(f"{AKN_TAG}p")
+    term_el = p.find(f"{AKN_TAG}term")
+    assert term_el is not None
+    assert term_el.get("refersTo") == "#term-enforcement-body"
+    assert term_el.text == "enforcement body"
+    assert term_el.tail == " means:"
+
+
+def test_inject_list_defs_qualifier_trimmed():
+    """'contracted service provider, for a government contract, means:' uses text before first comma."""
+    root = _make_list_def_section(
+        "contracted service provider, for a government contract, means:",
+        ["a person contracted to provide services to the government."],
+    )
+    registry = {}
+    inject_list_defs(root, registry)
+    assert "term-contracted-service-provider" in registry
+    assert registry["term-contracted-service-provider"] == "contracted service provider"
+
+
+def test_inject_list_defs_no_following_siblings_skipped():
+    """A 'X means:' paragraph with no following <paragraph> siblings is not processed."""
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-6")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    p.text = "agency means:"
+    # No following siblings
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 0
+
+
+def test_inject_list_defs_non_def_section_skipped():
+    """inject_list_defs respects _is_definition_section — skips non-definition sections."""
+    root = _make_list_def_section(
+        "agency means:",
+        ["a body corporate."],
+    )
+    # Change heading to non-definition
+    heading = root.find(f".//{AKN_TAG}heading")
+    heading.text = "Objects of this Act"
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 0
+
+
+def test_inject_list_defs_stop_words_skipped():
+    """'This Act means:' is not treated as a term definition."""
+    root = _make_list_def_section(
+        "This Act means:",
+        ["the Privacy Act 1988."],
+    )
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 0

@@ -27,6 +27,15 @@ _STOP_DEFINIENDUM = re.compile(
     re.IGNORECASE
 )
 
+# List-form definition: "X means:" (definition body in following block elements)
+# Captures everything before the trailing "means:" as the definiendum.
+_LIST_DEF_COLON_RE = re.compile(r'^(.+?)\s+means\s*:$', re.IGNORECASE)
+
+_CONTENT_TAG   = f"{AKN_TAG}content"
+_INTRO_TAG     = f"{AKN_TAG}intro"
+_PARA_TAG      = f"{AKN_TAG}paragraph"
+_BLOCKLIST_TAG = f"{AKN_TAG}blockList"
+
 _DEF_PATTERNS = [
     # "X" means/includes Y  — quoted definiendum
     re.compile(r'^"([^"]+)"\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
@@ -120,3 +129,77 @@ def inject_terms(root: etree._Element) -> tuple[dict[str, str], int]:
             count += _process_p(p_el, registry)
 
     return registry, count
+
+
+def inject_list_defs(
+    root: etree._Element,
+    registry: dict[str, str],
+) -> int:
+    """Detect 'X means:' list-form definitions and inject <term> + convert <content> to <intro>.
+
+    Processes only definition sections (same gate as inject_terms).
+    Mutates registry in place. Returns count of injected terms.
+    """
+    count = 0
+
+    for section_el in root.iter(_SECTION_TAG):
+        if not _is_definition_section(section_el):
+            continue
+
+        # Walk all <content> elements inside this section
+        for content_el in list(section_el.iter(_CONTENT_TAG)):
+            # Must have exactly one <p> child
+            p_children = list(content_el)
+            if len(p_children) != 1 or p_children[0].tag != _P_TAG:
+                continue
+            p_el = p_children[0]
+
+            # Get text (handles plain or mixed content from inline formatting)
+            if list(p_el):
+                text = "".join(p_el.itertext()).strip()
+            else:
+                text = (p_el.text or "").strip()
+
+            if not text:
+                continue
+            if _STOP_DEFINIENDUM.match(text):
+                continue
+
+            m = _LIST_DEF_COLON_RE.match(text)
+            if not m:
+                continue
+
+            # Check parent has at least one following <paragraph> or <blockList> sibling
+            parent = content_el.getparent()
+            if parent is None:
+                continue
+            siblings = list(parent)
+            try:
+                idx = siblings.index(content_el)
+            except ValueError:
+                continue
+            following = siblings[idx + 1:]
+            if not any(c.tag in {_PARA_TAG, _BLOCKLIST_TAG} for c in following):
+                continue
+
+            # Extract definiendum — trim at first comma to strip qualifiers
+            raw_definiendum = m.group(1).strip()
+            show_as = raw_definiendum.split(",")[0].strip()
+            eid = _term_eid(show_as)
+            registry[eid] = show_as
+
+            # Rename <content> -> <intro>
+            content_el.tag = _INTRO_TAG
+
+            # Rebuild <p>: inject <term> + keep " means:" as tail
+            p_el.text = None
+            for child in list(p_el):
+                p_el.remove(child)
+            term_el = etree.SubElement(p_el, f"{AKN_TAG}term")
+            term_el.set("refersTo", f"#{eid}")
+            term_el.text = show_as
+            term_el.tail = " means:"
+
+            count += 1
+
+    return count
