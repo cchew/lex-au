@@ -1115,3 +1115,116 @@ def test_figures_found_in_report(meta):
         b.add(p)
     _, report = b.build_with_report({})
     assert report.figures_found == 2
+
+
+def test_italic_span_emits_i_element(meta):
+    """A ParsedParagraph with an italic span produces <p><i>...</i>...</p>."""
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="personal information means something",
+        spans=[
+            InlineSpan(text="personal information", italic=True),
+            InlineSpan(text=" means something"),
+        ],
+    )
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"),
+        p,
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    assert p_el is not None
+    i_el = p_el.find(f"{{{AKN_NS}}}i")
+    assert i_el is not None
+    assert i_el.text == "personal information"
+    assert i_el.tail == " means something"
+
+
+def test_bold_span_emits_b_element(meta):
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="Important note",
+        spans=[InlineSpan(text="Important note", bold=True)],
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    assert p_el.find(f"{{{AKN_NS}}}b") is not None
+
+
+def test_plain_spans_no_children(meta):
+    """Unformatted spans produce plain p.text, no children."""
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="This Act is the Privacy Act 1988.",
+        spans=[InlineSpan(text="This Act is the Privacy Act 1988.")],
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    assert len(list(p_el)) == 0
+    assert p_el.text == "This Act is the Privacy Act 1988."
+
+
+def test_no_spans_falls_back_to_plain_text(meta):
+    """ParsedParagraph with empty spans list behaves exactly as before."""
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="This Act is the Privacy Act 1988.",
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    assert len(list(p_el)) == 0
+    assert p_el.text == "This Act is the Privacy Act 1988."
+
+
+def test_superscript_span_emits_sup_element(meta):
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="CO2",
+        spans=[InlineSpan(text="CO"), InlineSpan(text="2", superscript=True)],
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Formula"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    sup_el = p_el.find(f"{{{AKN_NS}}}sup")
+    assert sup_el is not None
+    assert sup_el.text == "2"
+
+
+def test_bold_italic_span_emits_nested_b_i(meta):
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="critical term",
+        spans=[InlineSpan(text="critical term", bold=True, italic=True)],
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Definitions"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    b_el = p_el.find(f"{{{AKN_NS}}}b")
+    assert b_el is not None
+    i_el = b_el.find(f"{{{AKN_NS}}}i")
+    assert i_el is not None
+    assert i_el.text == "critical term"

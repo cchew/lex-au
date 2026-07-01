@@ -194,6 +194,53 @@ def inject_note_refs(root: etree._Element) -> int:
     return count
 
 
+def _emit_p_inline(p_el: etree._Element, p: "ParsedParagraph") -> None:
+    """Emit p.text or inline children into p_el, preserving run-level formatting.
+
+    If p.spans is empty or all spans are unformatted, falls back to p_el.text = p.text
+    (same behaviour as before v0.6.0). Otherwise emits <b>, <i>, <sup>, <sub> children.
+    Bold+italic is rendered as <b><i>text</i></b>.
+    """
+    if not p.spans or not any(
+        s.bold or s.italic or s.superscript or s.subscript for s in p.spans
+    ):
+        p_el.text = p.text
+        return
+
+    prev: etree._Element | None = None
+    for span in p.spans:
+        if not span.text:
+            continue
+        if span.bold or span.italic or span.superscript or span.subscript:
+            if span.bold and span.italic:
+                outer = etree.SubElement(p_el, f"{{{AKN_NS}}}b")
+                child = etree.SubElement(outer, f"{{{AKN_NS}}}i")
+                child.text = span.text
+                prev = outer
+            elif span.bold:
+                child = etree.SubElement(p_el, f"{{{AKN_NS}}}b")
+                child.text = span.text
+                prev = child
+            elif span.italic:
+                child = etree.SubElement(p_el, f"{{{AKN_NS}}}i")
+                child.text = span.text
+                prev = child
+            elif span.superscript:
+                child = etree.SubElement(p_el, f"{{{AKN_NS}}}sup")
+                child.text = span.text
+                prev = child
+            else:  # subscript
+                child = etree.SubElement(p_el, f"{{{AKN_NS}}}sub")
+                child.text = span.text
+                prev = child
+        else:
+            # Plain span — append as tail of last element, or text of p_el
+            if prev is None:
+                p_el.text = (p_el.text or "") + span.text
+            else:
+                prev.tail = (prev.tail or "") + span.text
+
+
 def _resolve_para_ambiguity(
     p: ParsedParagraph,
     stack: list[tuple[ElementType, str, etree._Element]],
@@ -282,7 +329,7 @@ def _build_preface(
             formula_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}formula")
             formula_el.set("name", "enacting")
             p_el = etree.SubElement(formula_el, f"{{{AKN_NS}}}p")
-            p_el.text = p.text
+            _emit_p_inline(p_el, p)
         elif _WHEREAS_RE.match(p.text or ""):
             # <preamble> is a sibling of <preface> under <act> — build separately
             if preamble_el is None:
@@ -290,10 +337,10 @@ def _build_preface(
                 recitals_el = etree.SubElement(preamble_el, f"{{{AKN_NS}}}recitals")
             recital_el = etree.SubElement(recitals_el, f"{{{AKN_NS}}}recital")
             p_el = etree.SubElement(recital_el, f"{{{AKN_NS}}}p")
-            p_el.text = p.text
+            _emit_p_inline(p_el, p)
         else:
             p_el = etree.SubElement(preface_el, f"{{{AKN_NS}}}p")
-            p_el.text = p.text
+            _emit_p_inline(p_el, p)
 
     return preface_el, preamble_el
 
@@ -373,7 +420,8 @@ def _build_schedule_content(
             # Plain body text
             parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
             content_el = _get_or_create_content(parent)
-            etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = text
+            _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+            _emit_p_inline(_p_el, p)
 
         elif p.element_type == ElementType.PARAGRAPH:
             parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
@@ -383,7 +431,8 @@ def _build_schedule_content(
             etree.SubElement(current_para, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
                 content_el = etree.SubElement(current_para, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p_el, p)
 
         elif p.element_type == ElementType.SECTION and p.number:
             # SECTION-typed paragraphs inside a schedule (e.g. TG Regs Essential Principles).
@@ -430,7 +479,8 @@ def _build_schedule_content(
             etree.SubElement(sub_el, f"{{{AKN_NS}}}num").text = num_str
             if p.text:
                 content_el = etree.SubElement(sub_el, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p_el, p)
             # Do NOT update current_subclause — numbered subclauses are siblings, not a new nesting level
             current_para = None
 
@@ -449,13 +499,15 @@ def _build_schedule_content(
             etree.SubElement(subpara_el, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
                 content_el = etree.SubElement(subpara_el, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p_el, p)
 
         elif p.text:
             # TABLE/NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
             parent = current_clause if current_clause is not None else hcontainer
             content_el = _get_or_create_content(parent)
-            etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+            _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+            _emit_p_inline(_p_el, p)
 
     return clause_count
 
@@ -774,7 +826,7 @@ class AknBuilder:
                 if p.element_type in {ElementType.SUBSECTION, ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH, ElementType.LEVEL4} and p.text:
                     content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
                     p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
-                    p_el.text = p.text
+                    _emit_p_inline(p_el, p)
 
             elif p.element_type == ElementType.LIST_ITEM:
                 level = int(p.number) if p.number.isdigit() else 0
@@ -811,7 +863,7 @@ class AknBuilder:
                 if current_content is None:
                     current_content = etree.SubElement(parent_elem, f"{{{AKN_NS}}}content")
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
-                p_el.text = p.text
+                _emit_p_inline(p_el, p)
 
             elif p.element_type == ElementType.NOTE:
                 _flush_blocklist()
@@ -821,7 +873,8 @@ class AknBuilder:
                     placement="end",
                 )
                 content_el = etree.SubElement(note_el, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p, p)
 
             elif p.element_type == ElementType.EXAMPLE:
                 _flush_blocklist()
@@ -830,7 +883,8 @@ class AknBuilder:
                     parent_elem, f"{{{AKN_NS}}}hcontainer", name="example"
                 )
                 content_el = etree.SubElement(ex_el, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p, p)
 
             elif p.element_type == ElementType.PENALTY:
                 _flush_blocklist()
@@ -839,7 +893,8 @@ class AknBuilder:
                     parent_elem, f"{{{AKN_NS}}}hcontainer", name="penalty"
                 )
                 content_el = etree.SubElement(pen_el, f"{{{AKN_NS}}}content")
-                etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = p.text
+                _p = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(_p, p)
 
             elif p.element_type == ElementType.TABLE:
                 _flush_blocklist()
