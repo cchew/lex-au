@@ -265,6 +265,20 @@ def _resolve_para_ambiguity(
     return p
 
 
+def _is_schedule_heading(p: ParsedParagraph) -> bool:
+    """True if p is an actual schedule heading, not body prose that happens to start with
+    "Schedule N" (e.g. a cross-reference like "Schedule 1 to the Taxation Administration Act
+    1953 contains provisions relating to..."). Confirmed live across Privacy Act, Fair Work
+    Act, TG(MD)R 2002, and Corporations Act: genuine schedule headings are always styled
+    "ActHead N"; false-positive body prose is styled "subsection", "Definition", etc.
+    """
+    return (
+        p.element_type == ElementType.BODY
+        and p.raw_style.startswith("ActHead")
+        and bool(_SCHEDULE_RE.match(p.text))
+    )
+
+
 def _split_stream(
     paragraphs: list[ParsedParagraph],
 ) -> tuple[list[ParsedParagraph], list[ParsedParagraph], list[list[ParsedParagraph]]]:
@@ -277,8 +291,7 @@ def _split_stream(
     rest = paragraphs[first_structural:]
 
     schedule_start = next(
-        (i for i, p in enumerate(rest)
-         if p.element_type == ElementType.BODY and _SCHEDULE_RE.match(p.text)),
+        (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
         len(rest),
     )
     body = rest[:schedule_start]
@@ -287,7 +300,7 @@ def _split_stream(
     schedules: list[list[ParsedParagraph]] = []
     current: list[ParsedParagraph] = []
     for p in schedule_paras:
-        if p.element_type == ElementType.BODY and _SCHEDULE_RE.match(p.text):
+        if _is_schedule_heading(p):
             if current:
                 schedules.append(current)
             current = [p]

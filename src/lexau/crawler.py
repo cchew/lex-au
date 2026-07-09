@@ -17,10 +17,14 @@ _REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations; reserv
 def _odata_escape(s: str) -> str:
     """Escape a string literal for use inside an OData $filter value.
 
-    OData escapes a single quote by doubling it, e.g.
-    "Children's Education Act" -> "Children''s Education Act".
+    The OData spec escapes a single quote by doubling it, but
+    api.prod.legislation.gov.au's implementation does not follow this:
+    a doubled quote returns zero results (confirmed live 2026-07-09 against
+    "Veterans' Entitlements Act 1986"), while an unescaped single quote inside
+    the filter value round-trips correctly through requests' URL encoding and
+    matches. Pass the value through unchanged rather than spec-escaping it.
     """
-    return s.replace("'", "''")
+    return s
 
 
 def _parse_year_from_name(name: str) -> int:

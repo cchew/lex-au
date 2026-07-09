@@ -190,7 +190,7 @@ def test_schedule_emitted_as_attachment(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
         ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="APP 1  Open and transparent management"),
     ]
     xml, _ = build_xml(meta, paragraphs)
@@ -206,9 +206,9 @@ def test_schedule_emitted_as_attachment(meta):
 def test_multiple_schedules(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="Content of first schedule."),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Second Schedule"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Second Schedule", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="Content of second schedule."),
     ]
     xml, _ = build_xml(meta, paragraphs)
@@ -233,7 +233,7 @@ def test_schedule_app_clause_hierarchy(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
         ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="APP 1 — Open and transparent management"),
         ParsedParagraph(ElementType.BODY, text="1.1 The object of this APP is to ensure..."),
         ParsedParagraph(ElementType.PARAGRAPH, number="a", text="have an up-to-date APP privacy policy"),
@@ -256,7 +256,7 @@ def test_schedule_app_clause_hierarchy(meta):
 def test_schedule_numeric_clause(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Definitions"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Definitions", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="1  General definitions"),
         ParsedParagraph(ElementType.BODY, text="1.1 In this Schedule..."),
     ]
@@ -271,7 +271,7 @@ def test_schedule_alphanumeric_clause(meta):
     # TG Regs use clause numbers like "1A", "2B" — _CLAUSE_RE must match \d+[A-Z]?
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="1A  Alpha clause heading"),
     ]
     xml, _ = build_xml(meta, paragraphs)
@@ -285,7 +285,7 @@ def test_schedule_section_typed_clause(meta):
     # TG Regs: clause headings parsed as SECTION elements (not BODY text) with num+heading fields
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
         ParsedParagraph(ElementType.BODY, text="A device must be designed to minimise risk."),
     ]
@@ -302,7 +302,7 @@ def test_schedule_section_typed_dotted_subclause(meta):
     # TG Regs: dotted clause numbers (7.1) parsed as SECTION → subclause under current clause
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
         ParsedParagraph(ElementType.SECTION, number="7.1", heading="Choice of materials"),
         ParsedParagraph(ElementType.BODY, text="Materials must be biocompatible."),
@@ -320,7 +320,7 @@ def test_schedule_subsection_typed_subclause(meta):
     # TG Regs: SUBSECTION paragraphs with num inside a schedule clause → numbered subclause
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.SECTION, number="2", heading="Design principles"),
         ParsedParagraph(ElementType.SUBSECTION, number="1", text="The manufacturer must adopt safe design solutions."),
         ParsedParagraph(ElementType.SUBSECTION, number="2", text="Without limiting subclause (1), solutions must..."),
@@ -339,7 +339,7 @@ def test_schedule_subsection_typed_subclause(meta):
 def test_build_attachments_returns_tuple(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
         ParsedParagraph(ElementType.BODY, text="1  First Clause"),
         ParsedParagraph(ElementType.BODY, text="2  Second Clause"),
     ]
