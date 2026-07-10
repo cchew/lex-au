@@ -4,10 +4,11 @@ Commonwealth Acts as AKN 3.0 XML.
 
 Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
 
-**Status: v0.6.1** — 20 Acts + TG(MD)R 2002; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) pending republish.
+**Status: v0.6.2** — 71 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) pending republish.
 
 ## Versions
 
+- **v0.6.2** — 2026-07-10: Corpus expansion to 71 Acts + 2 Regulations (from 20 + 1). 49 Acts + 1 Regulation added, sourced from a lex-au-graph cross-Act citation-candidate scan (Acts cited 5+ times from within the existing corpus but not yet ingested). 1 candidate ("Family Court Act 1997") skipped — not found on legislation.gov.au, a state Act rather than Commonwealth.
 - **v0.6.1** — 2026-07-09: Corpus expansion to 20 Acts + TG(MD)R 2002 — Social Security (Administration) Act 1999, Veterans' Entitlements Act 1986, Aged Care Act 2024, Family Law Act 1975 (Bereavement Navigator prerequisites); A New Tax System (GST) Act 1999, Competition and Consumer Act 2010, Migration Act 1958, Copyright Act 1968 (adoption breadth). Two bug fixes: `_split_stream` schedule-boundary misclassification (a stray "Schedule N to the..." sentence in body prose could misfile an entire Act's sections as schedule clauses — found via GST Act, now requires an actual schedule-heading style); `_odata_escape` apostrophe handling (the live legislation.gov.au API rejects the OData-spec doubled-quote escaping — found via Veterans' Entitlements Act). 269 tests.
 - **v0.6.0** — 2026-07-01: Inline formatting (`<b>/<i>/<sup>/<sub>`) from DOCX runs; list-form term/def injection (`X means:` + `<intro>` conversion). AKN compliance ~96-100% of applicable elements (self-assessed) — closes the inline-formatting gap deferred from v0.5.0.
 - **v0.5.0** — 2026-06-27: Amendment history and navigator prerequisites — `<blockList>`/`<item>`, `<date>` inline tagging, subsidiary legislation support (`--type regulation`, `list-instruments`), endnote parser, `<lifecycle>`/`<eventRef>`, `<temporalData>`, `<passiveModifications>`, `<quotedStructure>`, `<figure>`/`<img>`, `<rref>` range references. 11 Acts + TG(MD)R 2002. AKN compliance ~91-96% of applicable elements (self-assessed; inline formatting excluded, deferred to v0.6.0).
@@ -83,19 +84,7 @@ Raw DOCX files are excluded from the upload (`docx/` directory is ignored).
 
 ## Acts
 
-Acts are listed in `acts.txt`, one per line. Current corpus:
-
-- Privacy Act 1988
-- Fair Work Act 2009
-- Corporations Act 2001
-- Acts Interpretation Act 1901
-- Criminal Code Act 1995
-- Freedom of Information Act 1982
-- National Disability Insurance Scheme Act 2013
-- National Health Act 1953
-- Social Security Act 1991
-- Superannuation Industry (Supervision) Act 1993
-- Income Tax Assessment Act 1997
+Acts are listed in [`acts.txt`](acts.txt), one per line — 71 Acts as of v0.6.2, plus 2 Regulations (TG(MD)R 2002, Superannuation Industry (Supervision) Regulations 1994) built separately with `--type regulation`.
 
 ## Corpus layout
 
