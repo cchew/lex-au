@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 from lxml import etree
+from markupsafe import Markup, escape
 
 from lexau.corpus import Corpus
 from lexau.models import ActMetadata
@@ -15,6 +17,15 @@ NS = {"akn": AKN_NS}
 # Structural container elements that may nest other containers and sections.
 _CONTAINER_TAGS = ("chapter", "part", "division", "subDivision")
 
+# Inline elements that map directly onto an HTML tag of the same name and
+# should render as actual styling. Every other inline element lex-au emits
+# inside a <p> (ref, term, def, date, quantity, role, TLCTerm-referencing
+# spans, noteRef, ...) is treated as a transparent wrapper: its own text and
+# its children's text are kept, just without special styling — a static
+# browse page doesn't need live jump-to-definition links, but it must not
+# silently drop the words inside those elements.
+_INLINE_HTML_TAGS = {"b", "i", "sup", "sub"}
+
 
 @dataclass
 class SectionNode:
@@ -22,17 +33,37 @@ class SectionNode:
     num: str
     heading: str
     tag: str
-    paragraphs: list[str] = field(default_factory=list)
+    paragraphs: list[Markup] = field(default_factory=list)
     children: list["SectionNode"] = field(default_factory=list)
 
 
-def _direct_paragraphs(elem: etree._Element) -> list[str]:
+def _render_inline(elem: etree._Element) -> Markup:
+    """Serialise a <p> (or any inline element)'s full mixed content to safe HTML.
+
+    Using `elem.text` alone only returns the text *before* the first child
+    element, silently truncating or dropping any paragraph containing a
+    <ref>, <term>, <b>, etc. This walks the whole subtree instead.
+    """
+    parts = [escape(elem.text or "")]
+    for child in elem:
+        local = child.tag.split("}")[-1]
+        inner = _render_inline(child)
+        if local in _INLINE_HTML_TAGS:
+            parts.append(Markup(f"<{local}>{inner}</{local}>"))
+        else:
+            parts.append(inner)
+        parts.append(escape(child.tail or ""))
+    return Markup("").join(parts)
+
+
+def _direct_paragraphs(elem: etree._Element) -> list[Markup]:
     """Collect text of <p> elements under this element's own <content>, not nested sections."""
-    paras: list[str] = []
+    paras: list[Markup] = []
     for content in elem.findall("akn:content", NS):
         for p in content.iter(f"{{{AKN_NS}}}p"):
-            if p.text:
-                paras.append(p.text)
+            rendered = _render_inline(p)
+            if rendered.strip():
+                paras.append(rendered)
     return paras
 
 
@@ -49,8 +80,9 @@ def _make_node(elem: etree._Element) -> SectionNode:
     if local == "section":
         # Sections are leaves: pull every descendant <p>.
         for p in elem.iter(f"{{{AKN_NS}}}p"):
-            if p.text:
-                node.paragraphs.append(p.text)
+            rendered = _render_inline(p)
+            if rendered.strip():
+                node.paragraphs.append(rendered)
         return node
 
     # Container: collect its own direct content paragraphs, then recurse into
@@ -83,7 +115,7 @@ class SiteGenerator:
 
     def generate(self) -> None:
         self._site_dir.mkdir(parents=True, exist_ok=True)
-        all_meta = self._corpus.all_metadata()
+        all_meta = sorted(self._corpus.all_metadata(), key=lambda m: m.name)
 
         act_list = [
             {
@@ -109,6 +141,10 @@ class SiteGenerator:
                 self._site_dir / "akn" / "au" / "act" / str(meta.year) / str(meta.number)
             )
             out_dir.mkdir(parents=True, exist_ok=True)
+
+            # Serve the raw AKN XML alongside the rendered page, so the source
+            # is reachable without a separate download from Hugging Face.
+            shutil.copyfile(xml_path, out_dir / "source.xml")
 
             act_tmpl = self._env.get_template("act.html.j2")
             (out_dir / "index.html").write_text(

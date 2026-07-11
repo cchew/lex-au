@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"><title>lex-au — Commonwealth Acts as AKN XML</title></head>
 <body>
 <h1>lex-au</h1>
-<p>Commonwealth Acts in force as Akoma Ntoso 3.0 XML.</p>
+<p>Browse the lex-au corpus — Commonwealth Acts in force, rendered from AKN 3.0 XML. Each Act page links to its raw XML source. Full dataset: <a href="https://github.com/cchew/lex-au">GitHub</a> / <a href="https://huggingface.co/datasets/cchew/lex-au">Hugging Face</a>.</p>
 <ul>
 {% for act in acts %}
   <li><a href="{{ act.site_path }}">{{ act.name }}</a> ({{ act.effective_date }})</li>
