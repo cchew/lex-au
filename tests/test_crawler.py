@@ -348,3 +348,112 @@ def test_list_instruments_empty():
     names = crawler.list_instruments()
 
     assert names == []
+
+
+@resp_lib.activate
+def test_fetch_metadata_falls_back_to_contains_on_400():
+    # eq query 400s (e.g. an apostrophe followed by a parenthesized clause
+    # breaks the server's OData string-literal parser -- confirmed live
+    # 2026-07-10 against "Veterans' Entitlements (Transitional Provisions
+    # and Consequential Amendments) Act 1986"). Fallback drops the leading
+    # word and retries via contains(), then confirms an exact name match.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=400)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [{
+            "id": "C2004A03269",
+            "name": "Veterans' Entitlements (Transitional Provisions and Consequential Amendments) Act 1986",
+            "year": "1986",
+            "number": "27",
+        }]},
+    )
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata(
+        "Veterans' Entitlements (Transitional Provisions and Consequential Amendments) Act 1986"
+    )
+
+    assert meta is not None
+    assert meta.title_id == "C2004A03269"
+
+
+@resp_lib.activate
+def test_fetch_metadata_falls_back_to_contains_on_403():
+    # eq query 403s (WAF false-positive on a specific multi-word phrase --
+    # confirmed live 2026-07-10 against "Foreign Acquisitions and Takeovers
+    # Act 1975", not a general API outage). Same fallback as the 400 case.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=403)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [{
+            "id": "C2004A01402",
+            "name": "Foreign Acquisitions and Takeovers Act 1975",
+            "year": "1975",
+            "number": "92",
+        }]},
+    )
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Foreign Acquisitions and Takeovers Act 1975")
+
+    assert meta is not None
+    assert meta.title_id == "C2004A01402"
+
+
+@resp_lib.activate
+def test_fetch_metadata_fallback_rejects_ambiguous_contains_match():
+    # If the contains() fallback's fragment matches more than one title
+    # exactly (case-insensitive), don't guess -- fail closed.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=400)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [
+            {"id": "C2004A01402", "name": "Ambiguous Act 1975"},
+            {"id": "C2004A01403", "name": "Ambiguous Act 1975"},
+        ]},
+    )
+
+    crawler = Crawler()
+    assert crawler.fetch_metadata("Ambiguous Act 1975") is None
+
+
+@resp_lib.activate
+def test_fetch_metadata_parses_number_from_f_prefixed_instrument_id():
+    # Some post-2015-framework instruments return null year/number from the
+    # API (confirmed live 2026-07-11: "Family Law (Superannuation)
+    # Regulations 2025" = F2025L00178, year=None, number=None). Both must
+    # fall back to parsing from the name/titleId rather than raising.
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [{
+            "id": "F2025L00178",
+            "name": "Family Law (Superannuation) Regulations 2025",
+            "year": None,
+            "number": None,
+        }]},
+    )
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Versions",
+        json={"value": [{
+            "titleId": "F2025L00178",
+            "registerId": "F2025C00200",
+            "compilationNumber": "1",
+            "start": "2025-01-01",
+        }]},
+    )
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata(
+        "Family Law (Superannuation) Regulations 2025", doc_type="regulation"
+    )
+
+    assert meta is not None
+    assert meta.year == 2025
+    assert meta.number == 178

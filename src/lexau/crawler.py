@@ -36,11 +36,19 @@ def _parse_year_from_name(name: str) -> int:
 
 
 def _parse_number_from_title_id(title_id: str) -> int:
-    """Parse Act number from titleId format C{year}A{number}, e.g. C2004A03712 -> 3712."""
-    m = _TITLE_ID_RE.match(title_id)
-    if not m:
-        raise ValueError(f"Cannot parse number from titleId: {title_id!r}")
-    return int(m.group(1))
+    """Parse the trailing numeric id from a titleId, e.g. C2004A03712 -> 3712.
+
+    Tried in order: legacy Act (C{year}A{number}), legacy Regulation
+    (C{year}R{number}), then modern F-prefixed instrument (F{year}{letter}
+    {number} -- the API returns null `number` for some post-2015-framework
+    instruments, e.g. "Family Law (Superannuation) Regulations 2025" =
+    F2025L00178, confirmed live 2026-07-11).
+    """
+    for pattern in (_TITLE_ID_RE, _REG_RE, _INSTRUMENT_RE):
+        m = pattern.match(title_id)
+        if m:
+            return int(m.group(1))
+    raise ValueError(f"Cannot parse number from titleId: {title_id!r}")
 
 
 class Crawler:
@@ -55,19 +63,71 @@ class Crawler:
         r.raise_for_status()
         return r.json()
 
+    def _resolve_title(self, act_name: str) -> dict | None:
+        """Resolve an Act/Regulation name to its Titles record, tolerating two
+        OData quirks discovered during the 2026-07-10 corpus expansion:
+
+        1. A literal apostrophe followed later in the same string by a
+           parenthesized clause breaks the server's OData string-literal
+           parser with a 400 (e.g. "Veterans' Entitlements (Transitional
+           Provisions and Consequential Amendments) Act 1986") -- confirmed
+           independent of eq vs contains(), and independent of spec-compliant
+           quote-doubling (which the API's implementation doesn't honour;
+           see _odata_escape). Some shorter apostrophe titles happen to parse
+           fine unescaped, so this can't be handled by escaping alone.
+        2. The API's edge/WAF blocks specific multi-word phrases outright
+           with a 403 HTML error page (not the API's JSON error format),
+           e.g. any query containing "Foreign Acquisitions and Takeovers"
+           regardless of filter shape -- confirmed not a general outage,
+           other queries succeed in parallel.
+
+        Both are dodged the same way: drop the leading word(s) and retry via
+        contains(), then confirm an exact case-insensitive full-name match
+        before accepting -- a trimmed fragment doesn't reconstruct the exact
+        title on its own.
+        """
+        try:
+            titles = self._get(
+                "Titles",
+                {
+                    "$filter": f"name eq '{_odata_escape(act_name)}' and isInForce eq true",
+                    "$top": 1,
+                    "$select": "id,name,year,number",
+                },
+            ).get("value", [])
+            if titles:
+                return titles[0]
+            return None
+        except requests.HTTPError:
+            pass
+
+        words = act_name.split()
+        for drop in range(1, min(4, len(words))):
+            frag = " ".join(words[drop:])
+            if len(frag) < 6:
+                continue
+            time.sleep(0.3)
+            try:
+                candidates = self._get(
+                    "Titles",
+                    {
+                        "$filter": f"contains(name,'{frag}') and isInForce eq true",
+                        "$top": 10,
+                        "$select": "id,name,year,number",
+                    },
+                ).get("value", [])
+            except requests.HTTPError:
+                continue
+            exact = [c for c in candidates if c["name"].lower() == act_name.lower()]
+            if len(exact) == 1:
+                return exact[0]
+        return None
+
     def fetch_metadata(self, act_name: str, doc_type: str = "act") -> ActMetadata | None:
         # Step 1: resolve series title ID
-        titles = self._get(
-            "Titles",
-            {
-                "$filter": f"name eq '{_odata_escape(act_name)}' and isInForce eq true",
-                "$top": 1,
-                "$select": "id,name,year,number",
-            },
-        ).get("value", [])
-        if not titles:
+        t = self._resolve_title(act_name)
+        if t is None:
             return None
-        t = titles[0]
         title_id: str = t["id"]
 
         # year/number may be absent from the API response — fall back if needed
