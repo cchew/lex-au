@@ -1,23 +1,63 @@
 # lex-au
 
-Commonwealth Acts as AKN 3.0 XML.
+Commonwealth Acts as [AKN 3.0 XML](https://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part1-vocabulary/akn-core-v1.0-os-part1-vocabulary.html) - the OASIS LegalDocML standard for machine-readable legislation. 
 
-Crawls legislation.gov.au, converts DOCX to Akoma Ntoso 3.0 XML with FRBR URIs and section-level eIds, tracks corpus state for delta updates, generates a static browsable site, and exports the corpus to Hugging Face.
+The UK publishes its legislation the same way: every Act on [legislation.gov.uk](https://www.legislation.gov.uk) is available as AKN XML via a `/data.akn` suffix.
 
-**Status: v0.6.2** — 71 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) pending republish.
+```xml
+<!-- Privacy Act 1988, s.81 - real output, definitions recovered from plain prose -->
+<section eId="part-VII__sec-81">
+  <num>81</num>
+  <heading>Interpretation</heading>
+  <content>
+    <p>In this Part, unless the contrary intention appears:</p>
+    <p><term refersTo="#term-advisory-committee">Advisory Committee</term> means
+       <def>the Privacy Advisory Committee established by subsection 82(1).</def></p>
+    <p><term refersTo="#term-member">member</term> means
+       <def>a member of the Advisory Committee.</def></p>
+  </content>
+</section>
+```
+
+Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AKN 3.0 XML with [FRBR URIs](https://interoperable-europe.ec.europa.eu/sites/default/files/news/2019-11/FRBR-ShortIntro.pdf) and section-level eIds, tracks corpus state for delta updates, generates a [static browsable site](https://lex-au.netlify.app), and exports the corpus to Hugging Face.
+
+**If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
+
+<!-- SYNC-CHECK (2026-07-11): corpus expansion finished, 539 Acts + 2 Regulations, committed and
+     pushed to GitHub (dffebdb). Netlify (lex-au.netlify.app) rebuilt from this corpus and matches.
+     Still outstanding: no version tag cut for this size yet (pyproject.toml still says 0.6.2 -
+     proposed v0.6.3 below, pending confirmation); HF dataset still at v0.6.1 (20 Acts + 1 regulation),
+     needs `lexau export-hf` re-run before this comment can come out. -->
+**Status: v0.6.3** - 539 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0); live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
+
+## Why AKN XML
+
+- **Machine-readable, not just marked-up** - defined terms are extracted even where source DOCX carries no distinguishing markup (apart from italics, which is lost entirely in DOCX→text conversion) for them.
+- **Point citation, not full-text dumps** - every section, subsection, and schedule clause carries a stable `eId` (e.g. `sec-54__subsec-2`), enough to cite "s.54(2)" precisely instead of returning or re-parsing a whole Act.
+- **Deterministic versioning** - FRBR separates Work / Expression / Manifestation, so a citation always points at one specific compiled version of an Act, not "whatever's live today".
+
+## Used by these projects
+
+- [lex-au-search](https://github.com/cchew/lex-au-search) - hybrid dense + BM25 search API and MCP server over the corpus
+- [lex-au-graph](https://github.com/cchew/lex-au-graph) - cross-reference graph and definition resolution across Acts
+- [ClauseKit](https://github.com/cchew/clause-kit) - LLM extraction of evaluatable rules (JSON Logic) from the corpus
+- term-comparison - IM2026 "Build a Bureaucrat Bot" entry comparing term definitions across Acts
 
 ## Versions
 
-- **v0.6.2** — 2026-07-10: Corpus expansion to 71 Acts + 2 Regulations (from 20 + 1). 49 Acts + 1 Regulation added, sourced from a lex-au-graph cross-Act citation-candidate scan (Acts cited 5+ times from within the existing corpus but not yet ingested). 1 candidate ("Family Court Act 1997") skipped — not found on legislation.gov.au, a state Act rather than Commonwealth.
-- **v0.6.1** — 2026-07-09: Corpus expansion to 20 Acts + TG(MD)R 2002 — Social Security (Administration) Act 1999, Veterans' Entitlements Act 1986, Aged Care Act 2024, Family Law Act 1975 (Bereavement Navigator prerequisites); A New Tax System (GST) Act 1999, Competition and Consumer Act 2010, Migration Act 1958, Copyright Act 1968 (adoption breadth). Two bug fixes: `_split_stream` schedule-boundary misclassification (a stray "Schedule N to the..." sentence in body prose could misfile an entire Act's sections as schedule clauses — found via GST Act, now requires an actual schedule-heading style); `_odata_escape` apostrophe handling (the live legislation.gov.au API rejects the OData-spec doubled-quote escaping — found via Veterans' Entitlements Act). 269 tests.
-- **v0.6.0** — 2026-07-01: Inline formatting (`<b>/<i>/<sup>/<sub>`) from DOCX runs; list-form term/def injection (`X means:` + `<intro>` conversion). AKN compliance ~96-100% of applicable elements (self-assessed) — closes the inline-formatting gap deferred from v0.5.0.
-- **v0.5.0** — 2026-06-27: Amendment history and navigator prerequisites — `<blockList>`/`<item>`, `<date>` inline tagging, subsidiary legislation support (`--type regulation`, `list-instruments`), endnote parser, `<lifecycle>`/`<eventRef>`, `<temporalData>`, `<passiveModifications>`, `<quotedStructure>`, `<figure>`/`<img>`, `<rref>` range references. 11 Acts + TG(MD)R 2002. AKN compliance ~91-96% of applicable elements (self-assessed; inline formatting excluded, deferred to v0.6.0).
-- **v0.4.0** — 2026-06-23: AKN semantic layer — `<term>`/`<def>`/`<TLCTerm>`, FRBR completeness (country/subtype/number/name/prescriptive/authoritative), `<longTitle>`, `<classification>/<keyword>`, `<preamble>`/`<formula>`, `<quantity>` (penalty units/imprisonment/deadlines), `<role>`/`<TLCRole>`, `<authorialNote>` eIds, `<noteRef>`. 11 Acts. AKN compliance ~68-72%.
-- **v0.3.0** — 2026-06-23: Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level `(A)(B)(C)`, extended `<ref>` patterns. 11 Acts.
-- **v0.2.0** — 2026-06-22: Intra-section hierarchy (`<subsection>`, `<paragraph>`, `<subparagraph>` with nested eIds), `<ref>` cross-reference markup, `<preface>`/TOC, schedules as `<attachments>`, multi-volume Acts (Corporations 7 vols, Fair Work 4, Criminal Code 3), ISO FRBRdate. 11 Acts. Parse report per Act.
-- **v0.1.0** — 2026-06-19: Structural skeleton (part/division/section, basic FRBR). 8 Acts.
+- **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
+- **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations
+- **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping. 269 tests.
+- **v0.6.0** - Inline formatting (`<b>/<i>/<sup>/<sub>`) and list-form term/def injection. AKN compliance ~96-100% of applicable elements (self-assessed, see [this](docs/akn-conformance.md)).
+- **v0.5.0** - Amendment history and navigator prerequisites: `<blockList>`, subsidiary legislation support, `<lifecycle>`/`<temporalData>`, `<quotedStructure>`, `<figure>`/`<img>`, range references. 11 Acts + TG(MD)R 2002.
+- **v0.4.0** - AKN semantic layer: `<term>`/`<def>`/`<TLCTerm>`, full FRBR, `<quantity>`, `<role>`/`<TLCRole>`.
+- **v0.3.0** - Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level.
+- **v0.2.0** - Intra-section hierarchy, `<ref>` cross-references, `<preface>`/TOC, schedules, multi-volume Acts, ISO FRBRdate. 11 Acts.
+- **v0.1.0** - Structural skeleton (part/division/section, basic FRBR). 8 Acts.
 
 ## Install
+
+Only needed if you're building or modifying the corpus. To just read the XML, use the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au) instead.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
@@ -70,7 +110,7 @@ lexau update --since 2026-01-01 --corpus-dir corpus/
 lexau site --corpus-dir corpus/ --site-dir site/
 ```
 
-Opens `site/index.html` for local browsing.
+Opens `site/index.html` for local browsing, or see the hosted copy at [lex-au.netlify.app](https://lex-au.netlify.app). <!-- TODO: no CI hook yet - Netlify site was deployed manually via `netlify deploy --prod`; wire up a rebuild on every corpus update alongside the GitHub tag and HF republish -->
 
 ### Export to Hugging Face
 
@@ -84,7 +124,7 @@ Raw DOCX files are excluded from the upload (`docx/` directory is ignored).
 
 ## Acts
 
-Acts are listed in [`acts.txt`](acts.txt), one per line — 71 Acts as of v0.6.2, plus 2 Regulations (TG(MD)R 2002, Superannuation Industry (Supervision) Regulations 1994) built separately with `--type regulation`.
+Acts are listed in [`acts.txt`](acts.txt), one per line. Regulations built separately with `--type regulation`.
 
 ## Corpus layout
 
@@ -98,10 +138,14 @@ corpus/
 
 ## Documentation
 
-- [AU Legislative Conventions](docs/au-legislative-conventions.md) — DOCX style map, nesting hierarchy, notes/examples/penalties, schedule patterns, citation forms, FRBR URI construction.
+- [AU Legislative Conventions](docs/au-legislative-conventions.md) - DOCX style map, nesting hierarchy, notes/examples/penalties, schedule patterns, citation forms, FRBR URI construction.
+- [AKN Element Conformance](docs/akn-conformance.md) - every AKN 3.0 element lex-au emits, grouped by spec chapter, with the OASIS section reference and where it's populated in this corpus.
 
-## Known limits (v0.5.0)
+## Known limits
 
+- Defined terms are missed when the definiendum is bold/italic-formatted (e.g. `<b><i>ABN (Australian Business Number)</i></b> for an *entity means ...` in A New Tax System (Australian Business Number) Act 1999 s.41)
+- Asterisk-prefixed terms (`*entity`, `*Australian Business Register` - the OPC drafting convention marking a word as having its own Dictionary entry elsewhere in the Act) are preserved as literal `*` characters; not converted to a cross-reference or otherwise interpreted.
 - `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
 - Role dictionary is global (not Act-specific); "the Minister" refers to different ministers in different Acts.
 - `<noteRef>` injection handles `[note N]` bracket markers only; superscript and `(note N)` patterns are not handled.
+- Formatting inside a definiens is flattened to plain text when the source paragraph is mixed content (e.g. `<b>` inside a `means` definition); the `<term>`/`<def>` split itself is still detected correctly.
