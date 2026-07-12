@@ -359,6 +359,34 @@ def test_inject_list_defs_stop_words_skipped():
     assert count == 0
 
 
+def test_dictionary_heading_is_a_definition_section():
+    root = _make_section(
+        "Dictionary",
+        '"disclosure" means the act of making information available.',
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert "term-disclosure" in registry
+
+
+def test_the_dictionary_heading_is_a_definition_section():
+    root = _make_section(
+        "The Dictionary",
+        '"disclosure" means the act of making information available.',
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+
+
+def test_defined_terms_heading_is_a_definition_section():
+    root = _make_section(
+        "Defined terms",
+        '"disclosure" means the act of making information available.',
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+
+
 def test_process_p_formatted_definiens_flattened_known_limitation():
     """v0.6.0: formatted content inside the definiens is lost when _process_p
     handles a mixed-content <p>. The <def> element gets plain itertext() only."""

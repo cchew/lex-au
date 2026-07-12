@@ -11,7 +11,7 @@ _HEADING_TAG = f"{AKN_TAG}heading"
 _SECTION_TAG = f"{AKN_TAG}section"
 
 # Sections whose heading contains these words are definition sections.
-_DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning\s+of)\b', re.IGNORECASE)
+_DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning\s+of|dictionary|defined\s+terms)\b', re.IGNORECASE)
 
 # Definition patterns (applied to p.text only — not mixed content).
 # Group 1: definiendum (the term being defined, without surrounding quotes)
