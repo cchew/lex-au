@@ -422,3 +422,23 @@ def test_parenthetical_and_asterisk_in_definiendum():
     registry, count = inject_terms(root)
     assert count == 1
     assert "term-abn-australian-business-number-for-an-entity" in registry
+
+
+def test_relational_definition_in_relation_to():
+    root = _make_section(
+        "Dictionary",
+        "Court, in relation to a matter, means any court having jurisdiction in the matter.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-court"] == "Court"
+
+
+def test_relational_definition_with_parenthetical_qualifier():
+    root = _make_section(
+        "Dictionary",
+        "index number, in relation to an index year, means the All Groups Consumer Price Index number.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert "term-index-number" in registry

@@ -50,6 +50,11 @@ _DEF_PATTERNS = [
     re.compile(r'^"([^"]+)"\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
     # "X" has the meaning given by / has the same meaning as
     re.compile(r'^"([^"]+)"\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
+    # X, in relation to Y, means/includes Z — relational definition (DD 1.5 form)
+    re.compile(
+        rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?),\s+in relation to\s+[^,]{{1,60}},\s+(means|includes?)\s+(.*)',
+        re.DOTALL | re.IGNORECASE
+    ),
     # X means/includes Y — unquoted definiendum (italicised in DOCX -> plain text)
     re.compile(rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
     # X has the meaning given by / has the same meaning as — unquoted form
