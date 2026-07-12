@@ -467,3 +467,79 @@ def test_does_not_include_inside_definiens_still_extracted():
     # confirm the full definiens (including "but does not include...") survived intact
     body = root.find(f".//{AKN_TAG}def")
     assert "does not include a human being" in body.text
+
+
+def test_embedded_connector_falls_through_to_clean_match():
+    # "lease" is genuinely defined twice in one compound sentence (plain +
+    # relational). The relational pattern's non-greedy capture would otherwise
+    # swallow "lease includes a sublease and" as if it were the definiendum,
+    # because that clause itself contains the word "includes". Guard 1 rejects
+    # that match; the loop's existing `continue` falls through to the plain
+    # unquoted pattern, which correctly captures just "lease".
+    root = _make_section(
+        "Dictionary",
+        "lease includes a sublease and, in relation to a company title interest in land, "
+        "includes an agreement similar to a lease or sublease.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-lease"] == "lease"
+
+
+def test_embedded_relative_clause_rejected():
+    root = _make_section(
+        "Dictionary",
+        "a person (who may include the trustee) is empowered to exercise any power of appointment.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+    assert not any("who may" in v for v in registry.values())
+
+
+def test_dangling_function_word_rejected():
+    root = _make_section(
+        "Dictionary",
+        "Some provisions of this Subdivision say that a payment can include giving property.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+
+
+def test_dangling_function_word_single_word_exemption_preserved():
+    # Regression guard: "will" is a real single-word term in the actual corpus
+    # (Corporations Act 2001, Copyright Act 1968) meaning a testamentary
+    # document. Guard 3 must not fire on single-word definienda.
+    root = _make_section(
+        "Dictionary",
+        "will includes a codicil and any other testamentary writing.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-will"] == "will"
+
+
+def test_stop_opener_reference_clause_rejected():
+    root = _make_section(
+        "Dictionary",
+        "A reference in subsection (5) to successive arrangements includes a reference to:",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+
+
+def test_stop_opener_some_provisions_rejected():
+    root = _make_section(
+        "Dictionary",
+        "Some provisions of this Subdivision say that a payment can include giving property.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+
+
+def test_stop_opener_for_the_purposes_of_rejected():
+    root = _make_section(
+        "Dictionary",
+        "For the purposes of this section a reference includes a reference to a subsidiary.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0

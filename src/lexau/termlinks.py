@@ -36,6 +36,57 @@ _STOP_DEFINIENDUM = re.compile(
 # connector), is untouched by this check and continues to extract correctly.
 _FALSE_CONNECTOR_TAIL_RE = re.compile(r'does\s+not\s*$', re.IGNORECASE)
 
+# Narrative-prose false-positive guards. The broadened character class and
+# widened length cap above (needed for real parenthetical/asterisk-marked
+# definienda) also let ordinary narrative prose -- "includes"/"may include"
+# used as an ordinary verb, not a definitional connector -- get captured as a
+# fake definiendum. Confirmed against the live corpus 2026-07-13 across 4
+# large Acts (1,721 real terms sampled): ~35 false positives, one root cause
+# in each of four shapes, covered by the four checks below. All four are
+# checked against the *captured* definiendum (`show_as`), not the whole
+# paragraph, so a rejection can never suppress unrelated valid content
+# elsewhere in the same paragraph.
+_EMBEDDED_CONNECTOR_RE = re.compile(r'\b(means|includes?)\b', re.IGNORECASE)
+_EMBEDDED_RELATIVE_RE = re.compile(r'\((who|which|that)\b', re.IGNORECASE)
+_STOP_OPENER_RE = re.compile(
+    r'^(a\s+reference|some\s+provisions|in\s+this\s+(division|chapter|part)|'
+    r'before\s+the|there\s+is|for\s+the\s+purposes\s+of)\b',
+    re.IGNORECASE
+)
+_DANGLING_FUNCTION_WORDS = {
+    'and', 'or', 'but', 'by', 'to', 'of', 'in', 'on', 'at', 'for', 'with', 'from', 'as',
+    'that', 'which', 'who', 'whom', 'whose', 'can', 'may', 'must', 'shall', 'will',
+    'through', 'the', 'a', 'an', 'is', 'are', 'be', 'been', 'not', 'than', 'so',
+}
+
+
+def _is_narrative_false_positive(show_as: str) -> str | None:
+    """Return a reason string if `show_as` looks like narrative prose, not a
+    genuine definiendum; None if it's an acceptable candidate.
+
+    Checks, in order: an embedded connector word (a real definiendum is a
+    noun phrase, never containing its own "means"/"includes"); an embedded
+    parenthetical relative clause (real OPC parenthetical glosses are
+    appositive noun/abbreviation phrases, e.g. "OBU (offshore banking
+    unit)", never relative clauses); a known non-term opening phrase; and a
+    dangling function-word ending on multi-word candidates only -- single-word
+    candidates are exempt because real single-word terms in this corpus
+    ("will", "and", "for") would otherwise be rejected.
+    """
+    if _EMBEDDED_CONNECTOR_RE.search(show_as):
+        return 'embedded-connector'
+    if _EMBEDDED_RELATIVE_RE.search(show_as):
+        return 'embedded-relative'
+    if _STOP_OPENER_RE.match(show_as):
+        return 'stop-opener'
+    tokens = show_as.split()
+    if len(tokens) >= 2:
+        last_tok = tokens[-1].strip('()[]{}.,;:').lower()
+        if last_tok.isalpha() and last_tok in _DANGLING_FUNCTION_WORDS:
+            return f'dangling:{last_tok}'
+    return None
+
+
 # Character class for an unquoted definiendum. Real OPC definienda routinely
 # contain parenthetical glosses ("ABN (Australian Business Number)") and
 # asterisk-marked cross-referenced terms ("*entity") -- confirmed against the
@@ -113,6 +164,8 @@ def _process_p(
             if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
                 continue  # "does not include/mean" -- not a real definition
             show_as = m.group(1).strip()
+            if _is_narrative_false_positive(show_as):
+                continue  # narrative prose, not a real definiendum
             connector = m.group(2).strip()
             definiens = m.group(3).strip()
             eid = _term_eid(show_as)
