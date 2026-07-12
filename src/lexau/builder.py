@@ -13,7 +13,7 @@ from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms, inject_list_defs
-from lexau.quantlinks import inject_quantities, inject_roles
+from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_refs
 from lexau.datelinks import inject_dates
 from docx import Document as DocxDocument
 from lexau.endnote_parser import parse_endnotes, AmendmentEvent, EndnoteResult
@@ -1032,6 +1032,13 @@ class AknBuilder:
         # 1b. Inject list-form definitions (X means: + block list)
         list_defs_count = inject_list_defs(root, term_registry)
         report.list_defs_found = list_defs_count
+
+        # 1c. Inject <ref> links for asterisk-prefixed term usages (OPC DD 1.6).
+        # Must precede inject_quantities/inject_dates/inject_roles/inject_refs --
+        # same skip-if-already-has-children hazard those passes share with each other.
+        asterisk_resolved, asterisk_unresolved = inject_asterisk_refs(root, term_registry)
+        report.asterisk_resolved = asterisk_resolved
+        report.asterisk_unresolved = asterisk_unresolved
 
         # 2. Inject <quantity> markup for penalty units, imprisonment, deadlines
         # Must run BEFORE inject_refs: once inject_refs writes <ref> children into a <p>,

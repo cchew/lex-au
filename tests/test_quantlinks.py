@@ -1,5 +1,5 @@
 from lxml import etree
-from lexau.quantlinks import inject_quantities, inject_roles
+from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_refs
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN_TAG = f"{{{AKN_NS}}}"
@@ -157,3 +157,63 @@ def test_tlcrole_registered_in_references():
     tlc_ids = {el.get("eId") for el in refs_el.findall(f"{AKN_TAG}TLCRole")}
     assert "secretary" in tlc_ids
     assert "commissioner" in tlc_ids
+
+
+def test_asterisk_ref_resolves_known_term():
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    body = etree.SubElement(root, f"{AKN_TAG}body")
+    p = etree.SubElement(body, f"{AKN_TAG}p")
+    p.text = "The *entity must comply with this section."
+    registry = {"term-entity": "entity"}
+
+    resolved, unresolved = inject_asterisk_refs(root, registry)
+
+    assert resolved == 1
+    assert unresolved == 0
+    ref = p.find(f"{AKN_TAG}ref")
+    assert ref is not None
+    assert ref.get("href") == "#term-entity"
+    assert ref.text == "entity"
+
+
+def test_asterisk_ref_multi_word_term():
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    body = etree.SubElement(root, f"{AKN_TAG}body")
+    p = etree.SubElement(body, f"{AKN_TAG}p")
+    p.text = "shown in the *Australian Business Register."
+    registry = {"term-australian-business-register": "Australian Business Register"}
+
+    resolved, unresolved = inject_asterisk_refs(root, registry)
+
+    assert resolved == 1
+    ref = p.find(f"{AKN_TAG}ref")
+    assert ref.get("href") == "#term-australian-business-register"
+    assert ref.text == "Australian Business Register"
+    assert ref.tail == "."
+
+
+def test_asterisk_unresolved_when_no_matching_term():
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    body = etree.SubElement(root, f"{AKN_TAG}body")
+    p = etree.SubElement(body, f"{AKN_TAG}p")
+    p.text = "The *nonexistent must comply."
+    registry = {"term-entity": "entity"}  # doesn't match "nonexistent"
+
+    resolved, unresolved = inject_asterisk_refs(root, registry)
+
+    assert resolved == 0
+    assert unresolved == 1
+    assert p.find(f"{AKN_TAG}ref") is None
+    assert p.text == "The *nonexistent must comply."  # left as literal, unchanged
+
+
+def test_asterisk_ref_empty_registry_no_op():
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    body = etree.SubElement(root, f"{AKN_TAG}body")
+    p = etree.SubElement(body, f"{AKN_TAG}p")
+    p.text = "The *entity must comply."
+
+    resolved, unresolved = inject_asterisk_refs(root, {})
+
+    assert resolved == 0
+    assert unresolved == 0

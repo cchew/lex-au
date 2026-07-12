@@ -204,3 +204,73 @@ def inject_roles(root: etree._Element) -> int:
                     tlc.set("showAs", show_as)
 
     return total
+
+
+def inject_asterisk_refs(root: etree._Element, registry: dict[str, str]) -> tuple[int, int]:
+    """Convert *term usage markers to <ref> links for terms already in the registry.
+
+    OPC drafting convention (Drafting Direction 1.6): an asterisk immediately
+    before a word or phrase marks a usage of a term that has its own
+    Dictionary entry elsewhere in the Act, footnote-signposted to that entry.
+    Resolves against known registry showAs values only (not generic
+    asterisk-phrase detection) -- an asterisk by definition marks a usage of
+    an *existing* defined term, so matching directly against the finite,
+    already-known term set sidesteps ambiguous multi-word phrase-boundary
+    detection entirely.
+
+    Must run after inject_terms/inject_list_defs (registry must be fully
+    populated) and before inject_quantities/inject_dates/inject_roles/
+    inject_refs (same skip-if-already-has-children hazard those four passes
+    share with each other and with inject_refs specifically).
+
+    Returns (resolved_count, unresolved_count). Unresolved count is a
+    heuristic (any remaining "*" + letter not consumed by a resolved match),
+    mirroring the existing mods_unresolved diagnostic-counter convention.
+    """
+    if not registry:
+        return 0, 0
+
+    # Longest showAs first: when two registered terms could both match at the
+    # same start position, _deoverlap keeps whichever candidate sorts first
+    # at a tied position -- generating longer terms first ensures they win,
+    # same precedence rule _AU_ROLES documents above.
+    by_length = sorted(registry.items(), key=lambda kv: -len(kv[1]))
+    asterisk_patterns = [
+        (re.compile(r'\*(' + re.escape(show_as) + r')\b'), eid, show_as)
+        for eid, show_as in by_length
+    ]
+    unresolved_re = re.compile(r'\*[A-Za-z]')
+
+    resolved = 0
+    unresolved = 0
+
+    for p_el in root.iter(_P_TAG):
+        parent = p_el.getparent()
+        if parent is not None and parent.tag in _SKIP_PARENT_TAGS:
+            continue
+        text = p_el.text
+        if not text or len(list(p_el)) > 0 or "*" not in text:
+            continue
+
+        candidates = [
+            (m.start(), m.end(), m, eid, show_as)
+            for pattern, eid, show_as in asterisk_patterns
+            for m in pattern.finditer(text)
+        ]
+        filtered = _deoverlap(candidates) if candidates else []
+
+        if filtered:
+            def make_ref(eid: str, show_as: str, m: re.Match) -> etree._Element:
+                el = etree.Element(f"{AKN_TAG}ref")
+                el.set("href", f"#{eid}")
+                el.text = show_as
+                return el
+
+            resolved += _rebuild_p_with_inline(p_el, text, filtered, make_ref)
+            remaining_text = (p_el.text or "") + "".join(child.tail or "" for child in p_el)
+        else:
+            remaining_text = text
+
+        unresolved += len(unresolved_re.findall(remaining_text))
+
+    return resolved, unresolved

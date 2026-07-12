@@ -1253,6 +1253,22 @@ def test_build_with_report_list_defs_found(meta):
     assert report.list_defs_found >= 1
 
 
+def test_asterisk_ref_injected_end_to_end(meta):
+    """build_with_report resolves *term usages against the term registry into <ref> links."""
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Dictionary"))
+    b.add(ParsedParagraph(ElementType.BODY, text='"entity" means a person or organisation.'))
+    b.add(ParsedParagraph(ElementType.SECTION, number="2", heading="Obligations"))
+    b.add(ParsedParagraph(ElementType.BODY, text="The *entity must comply with this Act."))
+    corpus_index: dict = {}
+    xml, report = b.build_with_report(corpus_index)
+
+    assert report.asterisk_resolved == 1
+    assert report.asterisk_unresolved == 0
+    refs = xml.findall(f".//{{{AKN_NS}}}ref")
+    assert any(r.get("href") == "#term-entity" for r in refs)
+
+
 def test_build_with_report_inline_formatted_count(meta):
     """build_with_report counts <p> elements with inline markup in inline_formatted."""
     from lexau.parser import InlineSpan

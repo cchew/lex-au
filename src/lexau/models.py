@@ -78,3 +78,6 @@ class ParseReport:
     # v0.6.0 additions
     inline_formatted: int = 0   # count of <p> elements with <b>/<i>/<sup>/<sub> children
     list_defs_found: int = 0    # count of list-form 'X means:' definitions identified
+    # v0.7.0 additions
+    asterisk_resolved: int = 0
+    asterisk_unresolved: int = 0
