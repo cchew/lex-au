@@ -220,11 +220,13 @@ class Crawler:
         paths = self.fetch_docx_volumes(meta, dest_dir)
         return paths[0] if paths else None
 
-    def list_acts(self, page_size: int = 200) -> list[str]:
+    def list_acts(self, page_size: int = 100) -> list[str]:
         """Return names of all in-force Commonwealth Acts, sorted alphabetically.
 
-        Paginates the Titles endpoint and filters by titleId pattern (C{year}A{number})
-        to exclude legislative instruments and other non-Act titles.
+        Filters server-side on collection eq 'Act' (confirmed live 2026-07-12:
+        returns exactly the ~4,747 real Acts directly, vs. the previous
+        isInForce-only filter which walked all 51,246 titles of every type).
+        _TITLE_ID_RE is kept as a defensive secondary check.
         """
         names: list[str] = []
         skip = 0
@@ -232,7 +234,7 @@ class Crawler:
             resp = self._get(
                 "Titles",
                 {
-                    "$filter": "isInForce eq true",
+                    "$filter": "isInForce eq true and collection eq 'Act'",
                     "$select": "id,name",
                     "$top": page_size,
                     "$skip": skip,
@@ -248,10 +250,10 @@ class Crawler:
             skip += page_size
             if len(page) < page_size:
                 break
-            time.sleep(0.5)
+            time.sleep(self._delay)
         return sorted(names)
 
-    def list_instruments(self, page_size: int = 200) -> list[str]:
+    def list_instruments(self, page_size: int = 100) -> list[str]:
         """Return names of all in-force Commonwealth legislative instruments."""
         names: list[str] = []
         skip = 0

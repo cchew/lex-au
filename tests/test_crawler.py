@@ -457,3 +457,39 @@ def test_fetch_metadata_parses_number_from_f_prefixed_instrument_id():
     assert meta is not None
     assert meta.year == 2025
     assert meta.number == 178
+
+
+@resp_lib.activate
+def test_list_acts_filters_by_collection():
+    page = {"value": [{"id": "C2004A03712", "name": "Privacy Act 1988"}]}
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page)
+
+    crawler = Crawler()
+    crawler.list_acts()
+
+    request_url = resp_lib.calls[0].request.url
+    assert "collection+eq+%27Act%27" in request_url or "collection eq 'Act'" in request_url.replace("+", " ")
+
+
+@resp_lib.activate
+def test_list_acts_default_page_size_is_100():
+    page = {"value": [{"id": "C2004A03712", "name": "Privacy Act 1988"}]}
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page)
+
+    crawler = Crawler()
+    crawler.list_acts()
+
+    request_url = resp_lib.calls[0].request.url
+    assert "%24top=100" in request_url
+
+
+@resp_lib.activate
+def test_list_instruments_default_page_size_is_100():
+    page = {"value": [{"id": "F2020L00100", "name": "Some Instrument 2020"}]}
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=page)
+
+    crawler = Crawler()
+    crawler.list_instruments()
+
+    request_url = resp_lib.calls[0].request.url
+    assert "%24top=100" in request_url

@@ -246,7 +246,7 @@ def export_jsonl(corpus_dir: Path) -> None:
     default=None,
     help="Write to file instead of stdout (e.g. acts.txt)",
 )
-@click.option("--page-size", default=200, show_default=True, help="OData page size per request")
+@click.option("--page-size", default=100, show_default=True, help="OData page size per request")
 def list_acts(output: Path | None, page_size: int) -> None:
     """List all in-force Commonwealth Acts from legislation.gov.au."""
     crawler = Crawler()
@@ -269,7 +269,7 @@ def list_acts(output: Path | None, page_size: int) -> None:
     default=None,
     help="Write to file instead of stdout (e.g. instruments.txt)",
 )
-@click.option("--page-size", default=200, show_default=True, help="OData page size per request")
+@click.option("--page-size", default=100, show_default=True, help="OData page size per request")
 def list_instruments(output: Path | None, page_size: int) -> None:
     """List all in-force Commonwealth legislative instruments from legislation.gov.au."""
     crawler = Crawler()
