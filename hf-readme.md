@@ -10,6 +10,11 @@ tags:
 - xml
 - akoma-ntoso
 pretty_name: lex-au - Commonwealth Acts as AKN 3.0 XML
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/train.jsonl
 ---
 
 # lex-au

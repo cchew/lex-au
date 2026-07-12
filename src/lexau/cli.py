@@ -201,6 +201,43 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
     click.echo("Upload complete.")
 
 
+@cli.command("export-jsonl")
+@click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
+def export_jsonl(corpus_dir: Path) -> None:
+    """Write corpus/data/train.jsonl — one row per Act, from index.json.
+
+    HF's auto-parquet-conversion / Data Viewer can't parse .xml (skipped
+    entirely) or a single-dict index.json (not row-shaped), and falls back to
+    inferring a schema from reports/*.json, which drifts across pipeline
+    versions. This gives it a proper tabular file to key off instead —
+    referenced explicitly via hf-readme.md's `configs:` block.
+    """
+    index_path = corpus_dir / "index.json"
+    index = json.loads(index_path.read_text())
+    data_dir = corpus_dir / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    out_path = data_dir / "train.jsonl"
+
+    rows = 0
+    with out_path.open("w") as f:
+        for slug, entry in sorted(index["acts"].items()):
+            row = {
+                "slug": slug,
+                "name": entry["name"],
+                "title_id": entry["title_id"],
+                "comp_id": entry["comp_id"],
+                "comp_num": entry["comp_num"],
+                "year": entry["year"],
+                "number": entry["number"],
+                "effective_date": entry["effective_date"],
+                "xml_path": entry["xml_path"],
+            }
+            f.write(json.dumps(row) + "\n")
+            rows += 1
+
+    click.echo(f"Wrote {rows} rows -> {out_path}")
+
+
 @cli.command("list-acts")
 @click.option(
     "--output",
