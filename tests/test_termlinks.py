@@ -412,3 +412,13 @@ def test_process_p_formatted_definiens_flattened_known_limitation():
     assert def_el is not None
     assert def_el.find(f"{AKN_TAG}b") is None, "formatted definiens flattened to plain text (v0.6.0 limitation)"
     assert "body corporate" in (def_el.text or "")
+
+
+def test_parenthetical_and_asterisk_in_definiendum():
+    root = _make_section(
+        "Dictionary",
+        "ABN (Australian Business Number) for an *entity means the entity's ABN as shown in the *Australian Business Register.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert "term-abn-australian-business-number-for-an-entity" in registry

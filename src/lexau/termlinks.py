@@ -19,13 +19,22 @@ _DEF_HEADING_RE = re.compile(r'\b(definitions?|interpretations?|meaning\s+of|dic
 # Group 3: definiens (the definition body)
 #
 # Quoted patterns first (more reliable — match exactly). Unquoted patterns last
-# (broader — require 2-40 char definiendum to suppress false positives on body text).
+# (broader — require 2-60 char definiendum to suppress false positives on body text).
 # In real AU Acts (Privacy Act s.6, Fair Work Act s.12), terms are italicised in DOCX
 # and become plain text after parsing — so unquoted forms are the dominant real-world case.
 _STOP_DEFINIENDUM = re.compile(
     r'^(this\s+act|this\s+part|this\s+division|these\s+regulations?|this\s+schedule)\s+(means|includes?)',
     re.IGNORECASE
 )
+
+# Character class for an unquoted definiendum. Real OPC definienda routinely
+# contain parenthetical glosses ("ABN (Australian Business Number)") and
+# asterisk-marked cross-referenced terms ("*entity") -- confirmed against the
+# live corpus 2026-07-12 (A New Tax System (Australian Business Number) Act
+# 1999 s.41). Digits included for definienda like "Part 4A". No enclosing
+# brackets here -- each usage site wraps this in [...] so Task 4's relational
+# pattern can reuse it verbatim.
+_DEFINIENDUM_CHARS = r"A-Za-z0-9\s\-\(\)\*"
 
 # List-form definition: "X means:" (definition body in following block elements)
 # Captures everything before the trailing "means:" as the definiendum.
@@ -42,10 +51,9 @@ _DEF_PATTERNS = [
     # "X" has the meaning given by / has the same meaning as
     re.compile(r'^"([^"]+)"\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
     # X means/includes Y — unquoted definiendum (italicised in DOCX -> plain text)
-    # Require 2-40 chars to avoid matching arbitrary sentence-start phrases.
-    re.compile(r'^([A-Za-z][A-Za-z\s\-]{1,39}?)\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
+    re.compile(rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
     # X has the meaning given by / has the same meaning as — unquoted form
-    re.compile(r'^([A-Za-z][A-Za-z\s\-]{1,39}?)\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
+    re.compile(rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
 ]
 
 
