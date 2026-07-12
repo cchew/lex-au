@@ -27,6 +27,15 @@ _STOP_DEFINIENDUM = re.compile(
     re.IGNORECASE
 )
 
+# A candidate connector match ("means"/"includes") immediately preceded by
+# "does not" is a false positive -- the non-greedy definiendum group swallowed
+# "does not" into itself (e.g. "Act does not include X" -> definiendum="Act
+# does not", connector="include"). Checked against the text *before the
+# matched connector only* -- a legitimate "...but does not include..."
+# exclusion clause appearing later, inside the definiens (group 3, after the
+# connector), is untouched by this check and continues to extract correctly.
+_FALSE_CONNECTOR_TAIL_RE = re.compile(r'does\s+not\s*$', re.IGNORECASE)
+
 # Character class for an unquoted definiendum. Real OPC definienda routinely
 # contain parenthetical glosses ("ABN (Australian Business Number)") and
 # asterisk-marked cross-referenced terms ("*entity") -- confirmed against the
@@ -96,9 +105,13 @@ def _process_p(
     if _STOP_DEFINIENDUM.match(text.strip()):
         return 0
 
+    stripped = text.strip()
     for pattern in _DEF_PATTERNS:
-        m = pattern.match(text.strip())
+        m = pattern.match(stripped)
         if m:
+            prefix_before_connector = stripped[:m.start(2)]
+            if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
+                continue  # "does not include/mean" -- not a real definition
             show_as = m.group(1).strip()
             connector = m.group(2).strip()
             definiens = m.group(3).strip()

@@ -442,3 +442,28 @@ def test_relational_definition_with_parenthetical_qualifier():
     registry, count = inject_terms(root)
     assert count == 1
     assert "term-index-number" in registry
+
+
+def test_does_not_include_is_not_a_definition():
+    root = _make_section(
+        "Definitions",
+        "Act does not include regulations, etc.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+    assert "term-act-does-not" not in registry
+
+
+def test_does_not_include_inside_definiens_still_extracted():
+    # Regression guard: "does not include" appearing AFTER the real connector,
+    # as a legitimate exclusion clause, must NOT be treated as a false match.
+    root = _make_section(
+        "Definitions",
+        "animal includes a dead animal and any part of an animal, but does not include a human being at any stage of development.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-animal"] == "animal"
+    # confirm the full definiens (including "but does not include...") survived intact
+    body = root.find(f".//{AKN_TAG}def")
+    assert "does not include a human being" in body.text
