@@ -444,6 +444,24 @@ def test_relational_definition_with_parenthetical_qualifier():
     assert "term-index-number" in registry
 
 
+def test_relational_definition_comma_in_y_falls_through_unmatched():
+    # Regression guard: the relational pattern's Y clause is [^,]{1,60} and
+    # cannot match if Y itself contains a comma. The loop then falls through
+    # to the plain unquoted pattern (index 3) -- but that pattern's
+    # definiendum group excludes commas too (_DEFINIENDUM_CHARS has no ","),
+    # so it also cannot span past the same internal comma. Net effect,
+    # verified by running inject_terms directly: neither pattern matches and
+    # no term is injected at all. This documents that actual behavior rather
+    # than assuming the plain pattern silently "recovers" the term.
+    root = _make_section(
+        "Dictionary",
+        "X, in relation to Y with a comma, and more, means Z.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 0
+    assert registry == {}
+
+
 def test_does_not_include_is_not_a_definition():
     root = _make_section(
         "Definitions",

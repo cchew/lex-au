@@ -278,7 +278,7 @@ class Crawler:
             skip += page_size
             if len(page) < page_size:
                 break
-            time.sleep(0.5)
+            time.sleep(self._delay)
         return sorted(names)
 
     def list_modified_since(self, since: date) -> list[str]:

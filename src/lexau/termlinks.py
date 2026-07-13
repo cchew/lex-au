@@ -94,6 +94,13 @@ def _is_narrative_false_positive(show_as: str) -> str | None:
 # 1999 s.41). Digits included for definienda like "Part 4A". No enclosing
 # brackets here -- each usage site wraps this in [...] so Task 4's relational
 # pattern can reuse it verbatim.
+#
+# NOTE: the {1,60}? length cap applied to this class everywhere it's used is
+# now doing double duty -- it suppresses false positives on body text AND
+# bounds regex backtracking cost across the 541-file corpus (this class
+# includes \s, and the connector separator is also \s+, so whitespace is
+# matchable by both the definiendum group and the separator). Don't widen
+# the cap (e.g. to {1,120}) without weighing both effects.
 _DEFINIENDUM_CHARS = r"A-Za-z0-9\s\-\(\)\*"
 
 # List-form definition: "X means:" (definition body in following block elements)

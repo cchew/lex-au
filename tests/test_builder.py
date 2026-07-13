@@ -1269,6 +1269,38 @@ def test_asterisk_ref_injected_end_to_end(meta):
     assert any(r.get("href") == "#term-entity" for r in refs)
 
 
+def test_asterisk_ref_and_narrative_guard_combined_end_to_end(meta):
+    """Both features exercised in one builder run within one definitions section:
+    a genuine quoted definition resolves an *entity usage into a <ref>, while a
+    narrative-prose candidate in the same section (an embedded relative clause,
+    "(who may include ...)") is correctly rejected by the narrative guard and
+    injects no spurious <term>."""
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Dictionary"))
+    b.add(ParsedParagraph(ElementType.BODY, text='"entity" means a person or organisation.'))
+    b.add(ParsedParagraph(
+        ElementType.BODY,
+        text="a person (who may include the trustee) is empowered to exercise any power of appointment.",
+    ))
+    b.add(ParsedParagraph(ElementType.SECTION, number="2", heading="Obligations"))
+    b.add(ParsedParagraph(ElementType.BODY, text="The *entity must comply with this Act."))
+    corpus_index: dict = {}
+    xml, report = b.build_with_report(corpus_index)
+
+    # Genuine usage: asterisk-ref resolved against the registry.
+    assert report.asterisk_resolved == 1
+    assert report.asterisk_unresolved == 0
+    refs = xml.findall(f".//{{{AKN_NS}}}ref")
+    assert any(r.get("href") == "#term-entity" for r in refs)
+
+    # Rejected narrative candidate: no spurious second <term> injected.
+    assert report.terms_found == 1
+    term_els = xml.findall(f".//{{{AKN_NS}}}term")
+    assert len(term_els) == 1
+    assert term_els[0].get("refersTo") == "#term-entity"
+    assert not any("who may" in (t.text or "") for t in term_els)
+
+
 def test_build_with_report_inline_formatted_count(meta):
     """build_with_report counts <p> elements with inline markup in inline_formatted."""
     from lexau.parser import InlineSpan
