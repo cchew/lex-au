@@ -234,6 +234,74 @@ def test_process_p_mixed_content_clears_inline_markup():
     assert p.find(f"{AKN_TAG}term") is not None
 
 
+def test_process_p_structural_boundary_beats_greedy_relational_capture():
+    """Real case (Corporations Act 2001): <b><i>lawyer</i></b> means a duly
+    qualified legal practitioner and, in relation to a person, means such a
+    practitioner acting for the person.
+
+    The relational _DEF_PATTERNS entry would greedily capture "lawyer means a
+    duly qualified legal practitioner and" as the definiendum (that clause itself
+    contains "means"). Anchoring to the <b><i>lawyer</i></b> run instead must
+    capture exactly "lawyer" as the term, AND the full remaining sentence as the
+    definiens -- not just the tail after the second "means" (that would silently
+    truncate the definition).
+    """
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-9")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    b_el = etree.SubElement(p, f"{AKN_TAG}b")
+    i_el = etree.SubElement(b_el, f"{AKN_TAG}i")
+    i_el.text = "lawyer"
+    b_el.tail = (
+        " means a duly qualified legal practitioner and, in relation to a "
+        "person, means such a practitioner acting for the person."
+    )
+
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-lawyer"] == "lawyer"
+    term_el = p.find(f"{AKN_TAG}term")
+    assert term_el.text == "lawyer"
+    def_el = p.find(f"{AKN_TAG}def")
+    assert def_el.text == (
+        "a duly qualified legal practitioner and, in relation to a person, "
+        "means such a practitioner acting for the person."
+    )
+
+
+def test_process_p_structural_boundary_skips_exclusion_clause():
+    """Real case (Corporations Act 2001): <i>lease</i> does not include a lease
+    of goods that gives rise to a PPSA security interest in the goods.
+
+    Not a new definition -- an exclusion clarifying an already-defined term. "does
+    not" between the italic run and "include" breaks the immediate-adjacency
+    requirement, so the structural path must decline (same outcome as the existing
+    _FALSE_CONNECTOR_TAIL_RE guard for the non-structural case), leaving the
+    paragraph untouched.
+    """
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-9")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    i_el = etree.SubElement(p, f"{AKN_TAG}i")
+    i_el.text = "lease"
+    i_el.tail = " does not include a lease of goods that gives rise to a PPSA security interest in the goods."
+
+    registry, count = inject_terms(root)
+    assert count == 0
+    assert registry == {}
+    assert p.find(f"{AKN_TAG}term") is None
+
+
 # ---------------------------------------------------------------------------
 # inject_list_defs tests
 # ---------------------------------------------------------------------------
@@ -317,6 +385,29 @@ def test_inject_list_defs_qualifier_trimmed():
     assert registry["term-contracted-service-provider"] == "contracted service provider"
 
 
+def test_inject_list_defs_long_qualifier_not_capped():
+    """Real case (ITAA 1936): a qualifier-style list definiendum whose full span
+    (term + qualifier clause) exceeds 60 chars, but whose actual term (before the
+    first comma) does not. The definiendum-length cap must apply only to the part
+    before the first comma -- capping the whole span (term + qualifier) rejected
+    this real, legitimate definition when first tried.
+    """
+    root = _make_list_def_section(
+        "the relevant holding company or holding companies, in relation to "
+        "another company in relation to a year of income of that other "
+        "company, means:",
+        ["something."],
+    )
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 1
+    assert "term-the-relevant-holding-company-or-holding-companies" in registry
+    assert (
+        registry["term-the-relevant-holding-company-or-holding-companies"]
+        == "the relevant holding company or holding companies"
+    )
+
+
 def test_inject_list_defs_no_following_siblings_skipped():
     """A 'X means:' paragraph with no following <paragraph> siblings is not processed."""
     root = etree.Element(f"{AKN_TAG}akomaNtoso")
@@ -357,6 +448,38 @@ def test_inject_list_defs_stop_words_skipped():
     registry = {}
     count = inject_list_defs(root, registry)
     assert count == 0
+
+
+def test_inject_list_defs_rejects_leading_subsection_number():
+    """Real case (Corporations Act 2001): '(2A)\tIn Part 1.2A means:' -- a
+    subsection-number artifact, not a definiendum. _LIST_DEF_COLON_RE previously
+    had no character-class restriction (unlike _DEF_PATTERNS), so it accepted
+    this. Requiring the definiendum to start with a letter rejects it outright.
+    """
+    root = _make_list_def_section(
+        "(2A)\tIn Part 1.2A means:",
+        ["something."],
+    )
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 0
+    assert registry == {}
+
+
+def test_inject_list_defs_rejects_narrative_scoping_clause():
+    """Real case (Corporations Act 2001): 'In this Division and Division 4
+    transfer of a financial product means:' -- a scoping clause, not a
+    definiendum. Caught by the same _is_narrative_false_positive guard used in
+    _process_p (stop-opener: 'in this division').
+    """
+    root = _make_list_def_section(
+        "In this Division transfer of a financial product means:",
+        ["something."],
+    )
+    registry = {}
+    count = inject_list_defs(root, registry)
+    assert count == 0
+    assert registry == {}
 
 
 def test_dictionary_heading_is_a_definition_section():
