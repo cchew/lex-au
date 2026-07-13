@@ -23,7 +23,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
-**Status: v0.6.3** - 539 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0); live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
+**Status: v0.7.0** - 539 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0); live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
 
 ## Why AKN XML
 
@@ -40,6 +40,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
+- **v0.7.0** - Term/def extraction recall: broadened definiendum character class (parens/digits/asterisk), relational definitions (`X, in relation to Y, means Z`), asterisk-marked term usages resolved to `<ref>`, Dictionary/Defined-terms heading recognition, does-not-include false-connector guard, narrative-prose false-positive guards. list-acts/list-instruments crawler fix (`collection` filter, `$top` ceiling). 23,889 terms across the corpus, up from 19,021 pre-fix.
 - **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
 - **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations
 - **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping. 269 tests.
