@@ -131,6 +131,7 @@ _CONTENT_TAG   = f"{AKN_TAG}content"
 _INTRO_TAG     = f"{AKN_TAG}intro"
 _PARA_TAG      = f"{AKN_TAG}paragraph"
 _BLOCKLIST_TAG = f"{AKN_TAG}blockList"
+_DEF_TAG       = f"{AKN_TAG}def"
 
 _DEF_PATTERNS = [
     # "X" means/includes Y  — quoted definiendum
@@ -394,3 +395,36 @@ def inject_list_defs(
             count += 1
 
     return count
+
+
+def _find_qualifying_anchor(def_el: etree._Element) -> etree._Element | None:
+    """Walk up from def_el's <p>'s <content> parent until a level is found
+    whose immediate following siblings include a <paragraph> or <blockList>.
+
+    Real corpus definitions nest at different depths -- some colon-terminated
+    <def>s have their orphaned list content as direct siblings of their own
+    <content> (level 0), others need one more level up to the enclosing
+    <paragraph>'s siblings (level 1, the majority shape in the corpus --
+    confirmed 2,649 of 3,136 real cases). The walk is not capped at level 1;
+    it continues until it hits the enclosing <section> boundary.
+
+    Returns the qualifying ancestor element (the node to walk forward from),
+    or None if no such level exists.
+    """
+    p_el = def_el.getparent()
+    if p_el is None or p_el.tag != _P_TAG:
+        return None
+    node = p_el.getparent()
+    if node is None or node.tag != _CONTENT_TAG:
+        return None
+    while node is not None and node.tag != _SECTION_TAG:
+        parent = node.getparent()
+        if parent is None:
+            return None
+        siblings = list(parent)
+        idx = siblings.index(node)
+        following = siblings[idx + 1:]
+        if any(c.tag in {_PARA_TAG, _BLOCKLIST_TAG} for c in following):
+            return node
+        node = parent
+    return None

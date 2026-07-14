@@ -684,3 +684,94 @@ def test_stop_opener_for_the_purposes_of_rejected():
     )
     registry, count = inject_terms(root)
     assert count == 0
+
+
+def _make_level0_def(show_as: str, eid: str, def_text: str, list_items: list[str]) -> etree._Element:
+    """Build a <section> with an already-injected <term>+<def> pair (the
+    truncated shape _process_p produces today) directly followed, at the
+    same tree level, by <paragraph> list items -- the level-0 shape."""
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-6")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Definitions"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-6__subsec-1")
+    content = etree.SubElement(subsec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p, f"{AKN_TAG}term")
+    term_el.set("refersTo", f"#{eid}")
+    term_el.text = show_as
+    term_el.tail = " means "
+    def_el = etree.SubElement(p, f"{AKN_TAG}def")
+    def_el.text = def_text
+    for i, item_text in enumerate(list_items, start=1):
+        para = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId=f"sec-6__subsec-1__para-{i}")
+        c = etree.SubElement(para, f"{AKN_TAG}content")
+        ip = etree.SubElement(c, f"{AKN_TAG}p")
+        ip.text = item_text
+    return root
+
+
+def test_find_qualifying_anchor_level_0():
+    """When the <def>'s own <content> is immediately followed by a
+    <paragraph>, that <content> itself is the anchor (level 0)."""
+    from lexau.termlinks import _find_qualifying_anchor
+
+    root = _make_level0_def(
+        "collective work", "term-collective-work", "any of the following:",
+        ["an encyclopaedia;", "a newspaper;"],
+    )
+    def_el = root.find(f".//{AKN_TAG}def")
+    anchor = _find_qualifying_anchor(def_el)
+    assert anchor is not None
+    assert anchor.tag == f"{AKN_TAG}content"
+
+
+def test_find_qualifying_anchor_level_1_nested():
+    """When the <def>'s <content> is nested inside an outer <paragraph> with
+    no following siblings of its own, walk up one level to find the outer
+    <paragraph>'s following siblings (mirrors bankruptcy-act-1966.xml's
+    'related entity' shape)."""
+    from lexau.termlinks import _find_qualifying_anchor
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-5")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Interpretation"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
+
+    outer = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-b")
+    c1 = etree.SubElement(outer, f"{AKN_TAG}content")
+    p1 = etree.SubElement(c1, f"{AKN_TAG}p")
+    p1.text = "a Registrar of the Court."
+    c2 = etree.SubElement(outer, f"{AKN_TAG}content")
+    p2 = etree.SubElement(c2, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p2, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p2, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
+
+    etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+
+    anchor = _find_qualifying_anchor(def_el)
+    assert anchor is not None
+    assert anchor.tag == f"{AKN_TAG}paragraph"
+    assert anchor.get("eId") == "sec-5__subsec-1__para-b"
+
+
+def test_find_qualifying_anchor_no_following_list_returns_none():
+    """A colon-terminated <def> with genuinely no following list content
+    anywhere returns None."""
+    from lexau.termlinks import _find_qualifying_anchor
+
+    root = _make_level0_def(
+        "class", "term-class", "any of these:", [],
+    )
+    def_el = root.find(f".//{AKN_TAG}def")
+    anchor = _find_qualifying_anchor(def_el)
+    assert anchor is None
