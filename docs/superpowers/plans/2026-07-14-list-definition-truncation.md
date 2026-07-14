@@ -331,6 +331,14 @@ Expected: FAIL with `ImportError: cannot import name '_collect_and_append_list_c
 
 ### Step 3: Write the implementation
 
+Add `import copy` to `src/lexau/termlinks.py`'s existing import block (currently just `import re` / `from lxml import etree` at the top of the file):
+
+```python
+import copy
+import re
+from lxml import etree
+```
+
 Add to `src/lexau/termlinks.py`, after `_find_qualifying_anchor`:
 
 ```python
@@ -351,8 +359,7 @@ def _append_list_item_content(def_el: etree._Element, p_el: etree._Element) -> N
     else:
         def_el.text = (def_el.text or "") + " " + (p_el.text or "")
     for child in p_el:
-        copy_el = etree.fromstring(etree.tostring(child))
-        def_el.append(copy_el)
+        def_el.append(copy.deepcopy(child))
 
 
 def _collect_and_append_list_content(
