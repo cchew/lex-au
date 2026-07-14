@@ -40,6 +40,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
+- **v0.7.2** - List-form definition completeness: folds orphaned list content into truncated `<def>` elements (~3,125 defs fixed corpus-wide).
 - **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations, 28,662 terms. List-def false-positive guard, italic-run anchoring for definienda.
 - **v0.7.0** - Term/def extraction recall: broadened definiendum character class, relational definitions, asterisk-marked term usages, Dictionary heading recognition, false-positive guards. list-acts/list-instruments crawler fix.
 - **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
