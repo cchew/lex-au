@@ -40,8 +40,8 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
-- **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations (up from 539 + 2), 28,662 terms (up from 23,889). List-def false-positive guard, italic-run anchoring for definienda. Known gap: ~1,796 Acts not yet fetchable — legacy `.doc` (pre-OOXML) compilations on legislation.gov.au, tracked in `FUTURE.md`.
-- **v0.7.0** - Term/def extraction recall: broadened definiendum character class (parens/digits/asterisk), relational definitions (`X, in relation to Y, means Z`), asterisk-marked term usages resolved to `<ref>`, Dictionary/Defined-terms heading recognition, does-not-include false-connector guard, narrative-prose false-positive guards. list-acts/list-instruments crawler fix (`collection` filter, `$top` ceiling). 23,889 terms across the corpus, up from 19,021 pre-fix.
+- **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations, 28,662 terms. List-def false-positive guard, italic-run anchoring for definienda.
+- **v0.7.0** - Term/def extraction recall: broadened definiendum character class, relational definitions, asterisk-marked term usages, Dictionary heading recognition, false-positive guards. list-acts/list-instruments crawler fix.
 - **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
 - **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations
 - **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping. 269 tests.
@@ -146,3 +146,4 @@ corpus/
 - Role dictionary is global (not Act-specific); "the Minister" refers to different ministers in different Acts.
 - `<noteRef>` injection handles `[note N]` bracket markers only; superscript and `(note N)` patterns are not handled.
 - Formatting inside a definiens is flattened to plain text when the source paragraph is mixed content (e.g. `<b>` inside a `means` definition); the `<term>`/`<def>` split itself is still detected correctly.
+- ~1,796 in-force Acts aren't yet fetchable — legislation.gov.au serves a legacy `.doc` (pre-OOXML) compilation for them instead of `.docx`, tracked in `FUTURE.md`.
