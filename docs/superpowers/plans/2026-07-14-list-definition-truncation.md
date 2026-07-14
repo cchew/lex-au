@@ -15,8 +15,9 @@
 - Existing tests must pass at every commit (`python -m pytest -q` from repo root) — baseline going into this plan is 3,236 passed.
 - Commit after every task using `caveman-commit` conventions (Conventional Commits, imperative subject ≤50 chars).
 - Full spec: `docs/superpowers/specs/2026-07-14-list-definition-truncation-design.md`.
-- `complete_list_definitions` must be the **last** call in `builder.py`'s injection pipeline — after `inject_asterisk_refs`, `inject_quantities`, `inject_dates`, `inject_roles`, `inject_refs`, and `inject_note_refs`. This ordering is load-bearing: it's what makes every `<def>`'s collected list content already carry any `<ref>`/`<quantity>`/`<date>`/`<role>` tags those passes add, and what makes every sibling definition (list-form or not) already carry `<term refersTo>` by the time the term-boundary stop condition checks for it. Do not move it earlier.
+- `complete_list_definitions` must be the **last** call in `builder.py`'s injection pipeline — after `inject_asterisk_refs`, `inject_quantities`, `inject_dates`, `inject_roles`, `inject_refs`, and `inject_note_refs`. This ordering is load-bearing: it's what makes every `<def>`'s collected list content already carry any `<ref>`/`<quantity>`/`<date>`/`<role>` tags those passes add, and what makes every sibling definition that inject_terms/inject_list_defs *did* tag already carry `<term refersTo>` by the time the term-boundary stop condition checks for it. Do not move it earlier.
 - No new AKN element nesting — `<def>` accumulates flat mixed content (text + copied inline elements), matching how `<def>` already carries nested `<ref>` elsewhere in the corpus (e.g. `age-discrimination-act-2004.xml`'s `Commissioner` definition). Do not attempt to nest `<blockList>` inside `<def>` — that has an open, unresolved AKN schema-validity question from v0.6.0, out of scope here.
+- **`inject_list_defs`'s "exactly one `<p>` per `<content>`" gate is a real, separate, out-of-scope gap** (confirmed 2026-07-14, found by independent plan review against `bankruptcy-act-1966.xml`): a definition lead-in sharing its `<content>` with an unrelated sentence is never tagged with `<term>` at all, regardless of pipeline position. `_looks_like_new_definition` (Task 2) exists specifically to make the term-boundary stop condition robust to this — it does NOT fix the underlying gate, and this plan does not widen `inject_list_defs` to catch these cases. If a future plan does widen that gate, `_looks_like_new_definition` becomes redundant for the cases it starts catching (harmless — it'd just never trigger for an already-tagged `<p>`, since the `<term refersTo>` check comes first) but should not be removed, since other untagged shapes may still exist.
 - **Do not run `lexau export-hf`, `lexau site`, or create a git tag** — those are gated on explicit user go-ahead, past this plan's scope (see Task 5's stop point).
 
 ---
@@ -322,6 +323,59 @@ def test_collect_and_append_list_content_no_list_returns_false():
     assert result is False
     assert def_el.text == "any of these:"
     assert len(def_el) == 0
+
+
+def test_collect_and_append_list_content_stops_at_untagged_lookalike():
+    """Mirrors bankruptcy-act-1966.xml's REAL related-entity -> relative
+    boundary: relative is never tagged with <term> at all, because its
+    <content> has two <p> siblings (an unrelated sentence, then relative's
+    own lead-in) -- inject_list_defs's "exactly one <p> per <content>" gate
+    skips it. _looks_like_new_definition must still catch this as a
+    boundary. Also exercises the multi-<p>-per-<content> iteration fix:
+    the unrelated sentence and relative's lead-in are BOTH <p> children of
+    the SAME <content> (ci below) -- a plain .find() would only ever see
+    the first one and miss the boundary entirely."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-5")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Interpretation"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
+
+    content = etree.SubElement(subsec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
+
+    item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    ca = etree.SubElement(item_a, f"{AKN_TAG}content")
+    etree.SubElement(ca, f"{AKN_TAG}p").text = "a relative of the person;"
+
+    # Real shape: ONE <content> with TWO <p> children.
+    item_i = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-i")
+    ci = etree.SubElement(item_i, f"{AKN_TAG}content")
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "a member of a partnership of which the person is a member;"
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "relative, in relation to a person, means:"
+
+    # relative's own following list -- must not be swallowed either.
+    r_item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    rca = etree.SubElement(r_item_a, f"{AKN_TAG}content")
+    etree.SubElement(rca, f"{AKN_TAG}p").text = "the spouse of the person; or"
+
+    result = _collect_and_append_list_content(def_el, content)
+    assert result is True
+    text = "".join(def_el.itertext())
+    assert "a relative of the person" in text
+    assert "a member of a partnership" in text
+    assert "relative, in relation to a person" not in text
+    assert "the spouse of the person" not in text
 ```
 
 ### Step 2: Run tests to verify they fail
@@ -362,17 +416,62 @@ def _append_list_item_content(def_el: etree._Element, p_el: etree._Element) -> N
         def_el.append(copy.deepcopy(child))
 
 
+def _looks_like_new_definition(item_p: etree._Element) -> bool:
+    """True if item_p's own text matches a definition-start pattern, even
+    though it hasn't been tagged with <term> yet.
+
+    Real corpus gap, confirmed 2026-07-14 against bankruptcy-act-1966.xml:
+    inject_list_defs requires exactly one <p> child per <content> before it
+    will convert anything. When a definition's lead-in shares its <content>
+    with an unrelated preceding sentence -- confirmed real case, 'relative,
+    in relation to a person, means:' sits in the same <content> as 'For the
+    purposes of paragraph (c)...' -- inject_list_defs skips it entirely, and
+    it's never tagged. _collect_and_append_list_content's <term refersTo>
+    check alone can't see this as a boundary, so this function re-applies
+    inject_terms/inject_list_defs's own patterns and false-positive guards
+    here, purely as a stop signal -- nothing gets tagged by this check, nor
+    does it fix the underlying inject_list_defs gap (out of scope here; see
+    the plan's Global Constraints).
+    """
+    text = "".join(item_p.itertext()).strip()
+
+    list_def_match = _LIST_DEF_COLON_RE.match(text)
+    if list_def_match and not _is_narrative_false_positive(list_def_match.group(1).strip()):
+        return True
+
+    for pattern in _DEF_PATTERNS:
+        m = pattern.match(text)
+        if not m:
+            continue
+        prefix_before_connector = text[:m.start(2)]
+        if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
+            continue
+        if _is_narrative_false_positive(m.group(1).strip()):
+            continue
+        return True
+
+    return False
+
+
 def _collect_and_append_list_content(
     def_el: etree._Element, anchor_el: etree._Element
 ) -> bool:
     """Walk anchor_el's following <paragraph>/<blockList> siblings in document
-    order, appending each <content>'s rendered text to def_el via
-    _append_list_item_content, until a <content> is found whose <p> contains
-    a <term refersTo> element -- the start of the next definition, not more
-    list content for this one. That boundary check is only reliable because
-    this function is called after every definition in the document (list-
-    form or not) already carries its <term> tag -- see complete_list_definitions'
-    docstring (Task 3) for why pipeline position matters here.
+    order, appending each <content>'s <p> children (there can be more than
+    one per <content> -- see the multi-<p> shape below) to def_el via
+    _append_list_item_content, until a <p> is found that's either already
+    tagged with <term refersTo> (the common case -- reliable because this
+    function runs after inject_terms/inject_list_defs have swept the whole
+    document, see complete_list_definitions' docstring in Task 3) OR looks
+    like an untagged definition start per _looks_like_new_definition (the
+    fallback for definitions inject_list_defs's own gate missed -- see that
+    function's docstring).
+
+    Iterates content_el.findall(_P_TAG), not .find() -- a single <content>
+    can hold more than one <p> (confirmed real shape: bankruptcy-act-1966.xml's
+    'relative' lead-in shares a <content> with an unrelated preceding
+    sentence). Using .find() would silently see only the first <p> and miss
+    a boundary sitting in the second.
 
     Returns True if any content was appended.
     """
@@ -385,14 +484,14 @@ def _collect_and_append_list_content(
             break
         stop = False
         for content_el in sib.findall(_CONTENT_TAG):
-            item_p = content_el.find(_P_TAG)
-            if item_p is None:
-                continue
-            if item_p.find(f"{AKN_TAG}term") is not None:
-                stop = True
+            for item_p in content_el.findall(_P_TAG):
+                if item_p.find(f"{AKN_TAG}term") is not None or _looks_like_new_definition(item_p):
+                    stop = True
+                    break
+                _append_list_item_content(def_el, item_p)
+                appended = True
+            if stop:
                 break
-            _append_list_item_content(def_el, item_p)
-            appended = True
         if stop:
             break
     return appended
@@ -401,12 +500,12 @@ def _collect_and_append_list_content(
 ### Step 4: Run tests to verify they pass
 
 Run: `python -m pytest tests/test_termlinks.py -k collect_and_append_list_content -v`
-Expected: PASS (4 tests)
+Expected: PASS (all tests in this task, including the two new ones added below)
 
 ### Step 5: Run full suite, then commit
 
 Run: `python -m pytest -q`
-Expected: 3,243 passed (3,239 + 4 new)
+Expected: all tests pass, including the new ones added in this task
 
 ```bash
 git add src/lexau/termlinks.py tests/test_termlinks.py
@@ -473,10 +572,18 @@ def test_complete_list_definitions_non_colon_def_untouched():
 
 
 def test_complete_list_definitions_stops_at_next_term_reused_eids():
-    """Mirrors bankruptcy-act-1966.xml's real related-entity -> relative
-    pair: two colon-terminated definitions back to back, sharing reused
-    para-a/para-b eId suffixes. related-entity's <def> must be completed
-    with exactly its own 2 list items, not swallow relative's."""
+    """Mirrors bankruptcy-act-1966.xml's REAL related-entity -> relative
+    pair exactly, including the real (and initially surprising) fact that
+    relative is NEVER tagged with <term> at all -- inject_list_defs's
+    "exactly one <p> per <content>" gate skips it, because its <content>
+    holds relative's lead-in alongside an unrelated preceding sentence.
+    related-entity's <def> must be completed with exactly its own list
+    items; relative's list must not be swallowed, and relative itself must
+    NOT be spuriously completed (it has no <def> to complete -- being
+    untagged is a separate, out-of-scope gap, not something this function
+    fixes). Also reuses the reused-eId-suffix pattern (para-a repeats) from
+    the real corpus, confirming eId collisions don't confuse the tree-
+    position-based walk."""
     from lexau.termlinks import complete_list_definitions
 
     root = etree.Element(f"{AKN_TAG}akomaNtoso")
@@ -487,52 +594,49 @@ def test_complete_list_definitions_stops_at_next_term_reused_eids():
     h.text = "Interpretation"
     subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
 
-    def _nested_def_paragraph(eid, other_text, show_as, eid_term, def_text):
-        para = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId=eid)
-        c1 = etree.SubElement(para, f"{AKN_TAG}content")
-        p1 = etree.SubElement(c1, f"{AKN_TAG}p")
-        p1.text = other_text
-        c2 = etree.SubElement(para, f"{AKN_TAG}content")
-        p2 = etree.SubElement(c2, f"{AKN_TAG}p")
-        term_el = etree.SubElement(p2, f"{AKN_TAG}term")
-        term_el.set("refersTo", f"#{eid_term}")
-        term_el.text = show_as
-        term_el.tail = " means "
-        etree.SubElement(p2, f"{AKN_TAG}def").text = def_text
-        return para
+    # related-entity's truncated <term>+<def>, nested in an outer paragraph
+    # alongside unrelated prior content (level-1 shape, as in Task 1/2).
+    outer = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-b")
+    c1 = etree.SubElement(outer, f"{AKN_TAG}content")
+    etree.SubElement(c1, f"{AKN_TAG}p").text = "a Registrar of the Court."
+    c2 = etree.SubElement(outer, f"{AKN_TAG}content")
+    p2 = etree.SubElement(c2, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p2, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p2, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
 
-    def _list_paragraph(eid, text):
-        para = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId=eid)
-        c = etree.SubElement(para, f"{AKN_TAG}content")
-        etree.SubElement(c, f"{AKN_TAG}p").text = text
-        return para
+    # related-entity's own list: one plain item, then a paragraph whose
+    # <content> holds TWO <p> children -- the last list item, and relative's
+    # UNTAGGED lead-in. Real shape, confirmed 2026-07-14.
+    item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    ca = etree.SubElement(item_a, f"{AKN_TAG}content")
+    etree.SubElement(ca, f"{AKN_TAG}p").text = "a relative of the person;"
 
-    _nested_def_paragraph(
-        "sec-5__subsec-1__para-b", "a Registrar of the Court.",
-        "related entity", "term-related-entity", "any of the following:",
-    )
-    _list_paragraph("sec-5__subsec-1__para-a", "a relative of the person;")
-    _nested_def_paragraph(
-        "sec-5__subsec-1__para-b", "a body corporate of which the person is a director;",
-        "relative", "term-relative", "in relation to a person, means:",
-    )
-    _list_paragraph("sec-5__subsec-1__para-a", "the spouse of the person; or")
-    _list_paragraph("sec-5__subsec-1__para-b", "a parent of the person; or")
+    item_i = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-i")
+    ci = etree.SubElement(item_i, f"{AKN_TAG}content")
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "a member of a partnership of which the person is a member;"
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "relative, in relation to a person, means:"
+
+    # relative's own list item, following -- reuses eId "para-a" (real
+    # corpus does this too). Must not be swallowed into related-entity's def.
+    r_item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    rca = etree.SubElement(r_item_a, f"{AKN_TAG}content")
+    etree.SubElement(rca, f"{AKN_TAG}p").text = "the spouse of the person; or"
 
     count = complete_list_definitions(root)
-    assert count == 2
+    assert count == 1  # only related-entity has a <def> to complete
 
     def_els = root.findall(f".//{AKN_TAG}def")
+    assert len(def_els) == 1
     related_text = "".join(def_els[0].itertext())
-    relative_text = "".join(def_els[1].itertext())
 
     assert "a relative of the person" in related_text
-    assert "a body corporate of which the person is a director" in related_text
+    assert "a member of a partnership of which the person is a member" in related_text
+    assert "relative, in relation to a person" not in related_text
     assert "the spouse of the person" not in related_text
-
-    assert "the spouse of the person" in relative_text
-    assert "a parent of the person" in relative_text
-    assert "a relative of the person" not in relative_text
 ```
 
 ### Step 2: Run tests to verify they fail
@@ -560,13 +664,19 @@ def complete_list_definitions(root: etree._Element) -> int:
        first would give <def> children before those passes see it, and they'd
        silently skip it.
     2. _collect_and_append_list_content's term-boundary stop condition checks
-       for <term refersTo> on the *next* definition. That's only reliable if
-       every definition in the document -- list-form or not -- already has
-       its <term> tag, which is true once inject_terms/inject_list_defs have
-       swept the whole document, but NOT true mid-sweep (a list-form
-       definition immediately following another list-form definition, like
-       bankruptcy-act-1966.xml's related-entity -> relative pair, would not
-       yet be tagged if this ran inline during that same sweep).
+       for <term refersTo> on the *next* definition. That's only reliable for
+       definitions inject_terms/inject_list_defs actually tagged, which is
+       true once they've swept the whole document, but NOT true mid-sweep (a
+       list-form definition immediately following another list-form
+       definition would not yet be tagged if this ran inline during that
+       same sweep). Some real definitions are never tagged at all, for a
+       separate reason unrelated to pipeline position -- confirmed real case,
+       bankruptcy-act-1966.xml's "relative" sits in a <content> alongside an
+       unrelated sentence, and inject_list_defs's "exactly one <p> per
+       <content>" gate skips it regardless of when anything runs.
+       _looks_like_new_definition (Task 2) is the fallback for that case --
+       it doesn't depend on pipeline position at all, only on the untagged
+       text itself looking like a definition start.
 
     Returns count of <def> elements completed.
     """
@@ -675,7 +785,7 @@ Expected: PASS (1 test)
 ### Step 6: Run full suite, then commit
 
 Run: `python -m pytest -q`
-Expected: 3,248 passed (3,243 + 4 termlinks + 1 builder)
+Expected: all tests pass — baseline (3,236) plus every test added across Tasks 1-3 (3 from Task 1, 6 from Task 2, 4 from Task 3's termlinks tests, 1 builder end-to-end test)
 
 ```bash
 git add src/lexau/termlinks.py src/lexau/builder.py src/lexau/models.py src/lexau/cli.py tests/test_termlinks.py tests/test_builder.py
@@ -741,22 +851,33 @@ def main() -> None:
     print()
     print("Spot-check: bankruptcy-act-1966.xml related-entity / relative pair")
     root = etree.parse("corpus/xml/bankruptcy-act-1966.xml").getroot()
-    before = {}
-    for def_el in root.iter(f"{AKN}def"):
-        text = "".join(def_el.itertext()).strip()
-        if "related entity" in "".join(def_el.getparent().itertext()):
-            before["related_entity_before"] = text
     complete_list_definitions(root)
+
+    related_entity_def = None
     for def_el in root.iter(f"{AKN}def"):
         p_text = "".join(def_el.getparent().itertext())
         if p_text.startswith("related entity"):
-            print(f"  related-entity <def> length after: {len(''.join(def_el.itertext()))} chars")
-            assert "spouse of the person" not in "".join(def_el.itertext()), \
-                "REGRESSION: related-entity swallowed relative's list"
-        if p_text.startswith("relative"):
-            print(f"  relative <def> length after: {len(''.join(def_el.itertext()))} chars")
-            assert "relative of the person" not in "".join(def_el.itertext()).replace("in relation to", ""), \
-                "REGRESSION: relative's def contains unexpected content"
+            related_entity_def = def_el
+            break
+
+    assert related_entity_def is not None, "related-entity <def> not found -- corpus structure may have changed"
+    related_text = "".join(related_entity_def.itertext())
+    print(f"  related-entity <def> length after: {len(related_text)} chars")
+    assert "spouse of the person" not in related_text, \
+        "REGRESSION: related-entity swallowed relative's list"
+    assert "relative, in relation to a person" not in related_text, \
+        "REGRESSION: related-entity swallowed relative's own untagged lead-in text"
+
+    # "relative" is expected to remain untagged (no <term>/<def> at all) --
+    # a separate, known, out-of-scope gap in inject_list_defs (see Global
+    # Constraints). This spot-check confirms that gap wasn't papered over by
+    # accidentally absorbing relative's content into related-entity instead.
+    relative_tagged = any(
+        "relative" == (t.text or "").strip()
+        for t in root.iter(f"{AKN}term")
+    )
+    print(f"  'relative' tagged as its own <term>: {relative_tagged} (expected: False -- known separate gap)")
+
     print("  Spot-check passed: no cross-contamination between the two definitions.")
 
 
