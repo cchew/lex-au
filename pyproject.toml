@@ -9,10 +9,6 @@ description = "Commonwealth Acts as AKN 3.0 XML — crawler, converter, static s
 authors = [{name = "Ching Chew", email = "ching.chew@gmail.com"}]
 license = {text = "MIT"}
 requires-python = ">=3.12"
-
-[project.urls]
-Repository = "https://github.com/cchew/lex-au"
-Dataset = "https://huggingface.co/datasets/cchew/lex-au"
 dependencies = [
     "requests>=2.32",
     "python-docx>=1.1",
@@ -22,6 +18,10 @@ dependencies = [
     "jinja2>=3.1",
     "huggingface-hub>=0.23",
 ]
+
+[project.urls]
+Repository = "https://github.com/cchew/lex-au"
+Dataset = "https://huggingface.co/datasets/cchew/lex-au"
 
 [project.scripts]
 lexau = "lexau.cli:cli"
