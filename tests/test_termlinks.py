@@ -775,3 +775,172 @@ def test_find_qualifying_anchor_no_following_list_returns_none():
     def_el = root.find(f".//{AKN_TAG}def")
     anchor = _find_qualifying_anchor(def_el)
     assert anchor is None
+
+
+def test_collect_and_append_list_content_simple():
+    """Two plain-text list items get appended to <def> in order."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = _make_level0_def(
+        "collective work", "term-collective-work", "any of the following:",
+        ["an encyclopaedia, dictionary or similar work;", "a newspaper or periodical."],
+    )
+    def_el = root.find(f".//{AKN_TAG}def")
+    anchor = def_el.getparent().getparent()  # <content>, level 0
+    result = _collect_and_append_list_content(def_el, anchor)
+    assert result is True
+    text = "".join(def_el.itertext())
+    assert "an encyclopaedia, dictionary or similar work;" in text
+    assert "a newspaper or periodical." in text
+    # Order preserved
+    assert text.index("encyclopaedia") < text.index("newspaper")
+
+
+def test_collect_and_append_list_content_stops_at_next_term():
+    """Collection stops at the first <content> whose <p> contains a
+    <term refersTo> element -- it does not swallow the next definition."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-5")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Interpretation"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
+
+    content = etree.SubElement(subsec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
+
+    item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    ca = etree.SubElement(item_a, f"{AKN_TAG}content")
+    pa = etree.SubElement(ca, f"{AKN_TAG}p")
+    pa.text = "a relative of the person;"
+
+    # This paragraph carries BOTH the last list item AND the start of the
+    # next term's definition, in a second <content> -- the confirmed real shape.
+    item_b = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-b")
+    cb1 = etree.SubElement(item_b, f"{AKN_TAG}content")
+    pb1 = etree.SubElement(cb1, f"{AKN_TAG}p")
+    pb1.text = "a body corporate of which the person is a director;"
+    cb2 = etree.SubElement(item_b, f"{AKN_TAG}content")
+    pb2 = etree.SubElement(cb2, f"{AKN_TAG}p")
+    next_term_el = etree.SubElement(pb2, f"{AKN_TAG}term")
+    next_term_el.set("refersTo", "#term-relative")
+    next_term_el.text = "relative"
+    next_term_el.tail = " means "
+    etree.SubElement(pb2, f"{AKN_TAG}def").text = "in relation to a person:"
+
+    result = _collect_and_append_list_content(def_el, content)
+    assert result is True
+    text = "".join(def_el.itertext())
+    assert "a relative of the person" in text
+    assert "a body corporate of which the person is a director" in text
+    assert "relative" not in text.replace("a relative of the person", "")
+
+
+def test_collect_and_append_list_content_preserves_inline_markup():
+    """Child elements (<ref>, etc.) inside a list item are deep-copied into
+    <def>, not flattened to text."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = _make_level0_def(
+        "related entity", "term-related-entity", "any of the following:", [],
+    )
+    subsec = root.find(f".//{AKN_TAG}subsection")
+    def_el = root.find(f".//{AKN_TAG}def")
+    anchor = def_el.getparent().getparent()
+
+    item = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-6__subsec-1__para-a")
+    item_content = etree.SubElement(item, f"{AKN_TAG}content")
+    item_p = etree.SubElement(item_content, f"{AKN_TAG}p")
+    item_p.text = "a Registrar of the Court ("
+    ref_el = etree.SubElement(item_p, f"{AKN_TAG}ref", href="#dvs-2")
+    ref_el.text = "Division 2"
+    ref_el.tail = ")."
+
+    result = _collect_and_append_list_content(def_el, anchor)
+    assert result is True
+    ref_in_def = def_el.find(f"{AKN_TAG}ref")
+    assert ref_in_def is not None
+    assert ref_in_def.get("href") == "#dvs-2"
+    assert ref_in_def.text == "Division 2"
+    assert ref_in_def.tail == ")."
+    assert "a Registrar of the Court (" in (def_el.text or "")
+
+
+def test_collect_and_append_list_content_no_list_returns_false():
+    """anchor with no following <paragraph>/<blockList> sibling returns False,
+    and def_el is left unmodified."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    sec = etree.SubElement(root, f"{AKN_TAG}section", eId="sec-1")
+    content = etree.SubElement(sec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    def_el = etree.SubElement(p, f"{AKN_TAG}def")
+    def_el.text = "any of these:"
+
+    result = _collect_and_append_list_content(def_el, content)
+    assert result is False
+    assert def_el.text == "any of these:"
+    assert len(def_el) == 0
+
+
+def test_collect_and_append_list_content_stops_at_untagged_lookalike():
+    """Mirrors bankruptcy-act-1966.xml's REAL related-entity -> relative
+    boundary: relative is never tagged with <term> at all, because its
+    <content> has two <p> siblings (an unrelated sentence, then relative's
+    own lead-in) -- inject_list_defs's "exactly one <p> per <content>" gate
+    skips it. _looks_like_new_definition must still catch this as a
+    boundary. Also exercises the multi-<p>-per-<content> iteration fix:
+    the unrelated sentence and relative's lead-in are BOTH <p> children of
+    the SAME <content> (ci below) -- a plain .find() would only ever see
+    the first one and miss the boundary entirely."""
+    from lexau.termlinks import _collect_and_append_list_content
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-5")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Interpretation"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
+
+    content = etree.SubElement(subsec, f"{AKN_TAG}content")
+    p = etree.SubElement(content, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
+
+    item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    ca = etree.SubElement(item_a, f"{AKN_TAG}content")
+    etree.SubElement(ca, f"{AKN_TAG}p").text = "a relative of the person;"
+
+    # Real shape: ONE <content> with TWO <p> children.
+    item_i = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-i")
+    ci = etree.SubElement(item_i, f"{AKN_TAG}content")
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "a member of a partnership of which the person is a member;"
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "relative, in relation to a person, means:"
+
+    # relative's own following list -- must not be swallowed either.
+    r_item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    rca = etree.SubElement(r_item_a, f"{AKN_TAG}content")
+    etree.SubElement(rca, f"{AKN_TAG}p").text = "the spouse of the person; or"
+
+    result = _collect_and_append_list_content(def_el, content)
+    assert result is True
+    text = "".join(def_el.itertext())
+    assert "a relative of the person" in text
+    assert "a member of a partnership" in text
+    assert "relative, in relation to a person" not in text
+    assert "the spouse of the person" not in text

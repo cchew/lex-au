@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import re
 from lxml import etree
 
@@ -428,3 +429,104 @@ def _find_qualifying_anchor(def_el: etree._Element) -> etree._Element | None:
             return node
         node = parent
     return None
+
+
+def _append_list_item_content(def_el: etree._Element, p_el: etree._Element) -> None:
+    """Append one list item's rendered content (mixed text + inline markup)
+    to def_el, deep-copying any child elements (<ref>, <i>, etc.) so already-
+    applied markup from upstream passes survives.
+
+    No synthetic numbering ("(a) ") is added -- real corpus list items already
+    carry their own trailing punctuation ("; or", "; and", ".") and some (not
+    all) embed their own inline numbering, so a <num>-derived prefix risks
+    doubling it. A single space separates each item from what precedes it.
+    """
+    children = list(def_el)
+    if children:
+        last = children[-1]
+        last.tail = (last.tail or "") + " " + (p_el.text or "")
+    else:
+        def_el.text = (def_el.text or "") + " " + (p_el.text or "")
+    for child in p_el:
+        def_el.append(copy.deepcopy(child))
+
+
+def _looks_like_new_definition(item_p: etree._Element) -> bool:
+    """True if item_p's own text matches a definition-start pattern, even
+    though it hasn't been tagged with <term> yet.
+
+    Real corpus gap, confirmed 2026-07-14 against bankruptcy-act-1966.xml:
+    inject_list_defs requires exactly one <p> child per <content> before it
+    will convert anything. When a definition's lead-in shares its <content>
+    with an unrelated preceding sentence -- confirmed real case, 'relative,
+    in relation to a person, means:' sits in the same <content> as 'For the
+    purposes of paragraph (c)...' -- inject_list_defs skips it entirely, and
+    it's never tagged. _collect_and_append_list_content's <term refersTo>
+    check alone can't see this as a boundary, so this function re-applies
+    inject_terms/inject_list_defs's own patterns and false-positive guards
+    here, purely as a stop signal -- nothing gets tagged by this check, nor
+    does it fix the underlying inject_list_defs gap (out of scope here; see
+    the plan's Global Constraints).
+    """
+    text = "".join(item_p.itertext()).strip()
+
+    list_def_match = _LIST_DEF_COLON_RE.match(text)
+    if list_def_match and not _is_narrative_false_positive(list_def_match.group(1).strip()):
+        return True
+
+    for pattern in _DEF_PATTERNS:
+        m = pattern.match(text)
+        if not m:
+            continue
+        prefix_before_connector = text[:m.start(2)]
+        if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
+            continue
+        if _is_narrative_false_positive(m.group(1).strip()):
+            continue
+        return True
+
+    return False
+
+
+def _collect_and_append_list_content(
+    def_el: etree._Element, anchor_el: etree._Element
+) -> bool:
+    """Walk anchor_el's following <paragraph>/<blockList> siblings in document
+    order, appending each <content>'s <p> children (there can be more than
+    one per <content> -- see the multi-<p> shape below) to def_el via
+    _append_list_item_content, until a <p> is found that's either already
+    tagged with <term refersTo> (the common case -- reliable because this
+    function runs after inject_terms/inject_list_defs have swept the whole
+    document, see complete_list_definitions' docstring in Task 3) OR looks
+    like an untagged definition start per _looks_like_new_definition (the
+    fallback for definitions inject_list_defs's own gate missed -- see that
+    function's docstring).
+
+    Iterates content_el.findall(_P_TAG), not .find() -- a single <content>
+    can hold more than one <p> (confirmed real shape: bankruptcy-act-1966.xml's
+    'relative' lead-in shares a <content> with an unrelated preceding
+    sentence). Using .find() would silently see only the first <p> and miss
+    a boundary sitting in the second.
+
+    Returns True if any content was appended.
+    """
+    parent = anchor_el.getparent()
+    siblings = list(parent)
+    idx = siblings.index(anchor_el)
+    appended = False
+    for sib in siblings[idx + 1:]:
+        if sib.tag not in {_PARA_TAG, _BLOCKLIST_TAG}:
+            break
+        stop = False
+        for content_el in sib.findall(_CONTENT_TAG):
+            for item_p in content_el.findall(_P_TAG):
+                if item_p.find(f"{AKN_TAG}term") is not None or _looks_like_new_definition(item_p):
+                    stop = True
+                    break
+                _append_list_item_content(def_el, item_p)
+                appended = True
+            if stop:
+                break
+        if stop:
+            break
+    return appended
