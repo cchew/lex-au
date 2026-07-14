@@ -12,7 +12,7 @@ from lexau.parser import ParsedParagraph, ElementType, InlineSpan
 from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
-from lexau.termlinks import inject_terms, inject_list_defs
+from lexau.termlinks import inject_terms, inject_list_defs, complete_list_definitions
 from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_refs
 from lexau.datelinks import inject_dates
 from docx import Document as DocxDocument
@@ -1065,6 +1065,12 @@ class AknBuilder:
         # 5. Inject <noteRef> for [note N] markers in body text
         note_refs = inject_note_refs(root)
         report.note_refs_injected = note_refs
+
+        # 4b. Complete truncated list-form <def>s (colon-terminated definiens
+        # with orphaned list content in sibling <paragraph>/<blockList>
+        # elements). MUST run last -- see complete_list_definitions' docstring.
+        list_defs_completed = complete_list_definitions(root)
+        report.list_defs_completed = list_defs_completed
 
         # 6. Populate <references> with TLCTerm entries
         # TLCTerm href uses /ontology/term/au/ (not /ontology/concept/au/ — that is for TLCConcept)

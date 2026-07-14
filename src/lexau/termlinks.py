@@ -530,3 +530,47 @@ def _collect_and_append_list_content(
         if stop:
             break
     return appended
+
+
+def complete_list_definitions(root: etree._Element) -> int:
+    """Find colon-terminated <def> elements and fold in their orphaned list
+    content from following AKN siblings.
+
+    Must run as the LAST step in builder.py's injection pipeline -- after
+    inject_asterisk_refs, inject_quantities, inject_dates, inject_roles,
+    inject_refs, and inject_note_refs. Two reasons, both load-bearing:
+
+    1. Those five passes skip any element that already has child nodes (how
+       each detects "not yet processed" -- see quantlinks.py/reflinks.py).
+       Running this pass last means the list-item content it copies into
+       <def> already carries whatever markup those passes added; running it
+       first would give <def> children before those passes see it, and they'd
+       silently skip it.
+    2. _collect_and_append_list_content's term-boundary stop condition checks
+       for <term refersTo> on the *next* definition. That's only reliable for
+       definitions inject_terms/inject_list_defs actually tagged, which is
+       true once they've swept the whole document, but NOT true mid-sweep (a
+       list-form definition immediately following another list-form
+       definition would not yet be tagged if this ran inline during that
+       same sweep). Some real definitions are never tagged at all, for a
+       separate reason unrelated to pipeline position -- confirmed real case,
+       bankruptcy-act-1966.xml's "relative" sits in a <content> alongside an
+       unrelated sentence, and inject_list_defs's "exactly one <p> per
+       <content>" gate skips it regardless of when anything runs.
+       _looks_like_new_definition (Task 2) is the fallback for that case --
+       it doesn't depend on pipeline position at all, only on the untagged
+       text itself looking like a definition start.
+
+    Returns count of <def> elements completed.
+    """
+    count = 0
+    for def_el in list(root.iter(_DEF_TAG)):
+        text = "".join(def_el.itertext()).strip()
+        if not text.endswith(":"):
+            continue
+        anchor = _find_qualifying_anchor(def_el)
+        if anchor is None:
+            continue
+        if _collect_and_append_list_content(def_el, anchor):
+            count += 1
+    return count

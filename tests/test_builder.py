@@ -1253,6 +1253,32 @@ def test_build_with_report_list_defs_found(meta):
     assert report.list_defs_found >= 1
 
 
+def test_build_with_report_list_defs_completed(meta):
+    """build_with_report folds orphaned list content into a truncated <def>
+    via complete_list_definitions, and reports the count."""
+    from unittest.mock import patch
+    from lexau.endnote_parser import EndnoteResult
+
+    b = AknBuilder(meta)
+    b.add(ParsedParagraph(ElementType.SECTION, number="6", heading="Definitions"))
+    b.add(ParsedParagraph(ElementType.SUBSECTION, number="1", text=""))
+    b.add(ParsedParagraph(ElementType.BODY, text="eligible entity means any of the following:"))
+    b.add(ParsedParagraph(ElementType.PARAGRAPH, number="a", text="a body corporate; or"))
+    b.add(ParsedParagraph(ElementType.PARAGRAPH, number="b", text="a natural person."))
+
+    corpus_index: dict = {}
+    with patch("lexau.builder.parse_endnotes", return_value=EndnoteResult([], [])):
+        xml, report = b.build_with_report(corpus_index, last_volume_path=None)
+
+    assert report.list_defs_completed >= 1
+    ns = {"akn": AKN_NS}
+    def_el = xml.find(".//akn:def", ns)
+    assert def_el is not None
+    text = "".join(def_el.itertext())
+    assert "a body corporate" in text
+    assert "a natural person" in text
+
+
 def test_asterisk_ref_injected_end_to_end(meta):
     """build_with_report resolves *term usages against the term registry into <ref> links."""
     b = AknBuilder(meta)

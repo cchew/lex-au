@@ -81,3 +81,5 @@ class ParseReport:
     # v0.7.0 additions
     asterisk_resolved: int = 0
     asterisk_unresolved: int = 0
+    # v0.7.2 additions
+    list_defs_completed: int = 0

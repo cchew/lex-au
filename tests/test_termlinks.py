@@ -944,3 +944,111 @@ def test_collect_and_append_list_content_stops_at_untagged_lookalike():
     assert "a member of a partnership" in text
     assert "relative, in relation to a person" not in text
     assert "the spouse of the person" not in text
+
+
+def test_complete_list_definitions_level_0():
+    from lexau.termlinks import complete_list_definitions
+
+    root = _make_level0_def(
+        "collective work", "term-collective-work", "any of the following:",
+        ["an encyclopaedia;", "a newspaper;"],
+    )
+    count = complete_list_definitions(root)
+    assert count == 1
+    def_el = root.find(f".//{AKN_TAG}def")
+    text = "".join(def_el.itertext())
+    assert "an encyclopaedia" in text
+    assert "a newspaper" in text
+
+
+def test_complete_list_definitions_no_following_list_left_untouched():
+    from lexau.termlinks import complete_list_definitions
+
+    root = _make_level0_def("class", "term-class", "any of these:", [])
+    count = complete_list_definitions(root)
+    assert count == 0
+    def_el = root.find(f".//{AKN_TAG}def")
+    assert def_el.text == "any of these:"
+
+
+def test_complete_list_definitions_non_colon_def_untouched():
+    """A <def> that doesn't end in a colon is never touched, regardless of
+    what paragraphs happen to follow it."""
+    from lexau.termlinks import complete_list_definitions
+
+    root = _make_level0_def(
+        "commission", "term-commission", "the Australian Human Rights Commission.",
+        ["some unrelated following paragraph."],
+    )
+    count = complete_list_definitions(root)
+    assert count == 0
+    def_el = root.find(f".//{AKN_TAG}def")
+    assert def_el.text == "the Australian Human Rights Commission."
+
+
+def test_complete_list_definitions_stops_at_next_term_reused_eids():
+    """Mirrors bankruptcy-act-1966.xml's REAL related-entity -> relative
+    pair exactly, including the real (and initially surprising) fact that
+    relative is NEVER tagged with <term> at all -- inject_list_defs's
+    "exactly one <p> per <content>" gate skips it, because its <content>
+    holds relative's lead-in alongside an unrelated preceding sentence.
+    related-entity's <def> must be completed with exactly its own list
+    items; relative's list must not be swallowed, and relative itself must
+    NOT be spuriously completed (it has no <def> to complete -- being
+    untagged is a separate, out-of-scope gap, not something this function
+    fixes). Also reuses the reused-eId-suffix pattern (para-a repeats) from
+    the real corpus, confirming eId collisions don't confuse the tree-
+    position-based walk."""
+    from lexau.termlinks import complete_list_definitions
+
+    root = etree.Element(f"{AKN_TAG}akomaNtoso")
+    act = etree.SubElement(root, f"{AKN_TAG}act")
+    body = etree.SubElement(act, f"{AKN_TAG}body")
+    sec = etree.SubElement(body, f"{AKN_TAG}section", eId="sec-5")
+    h = etree.SubElement(sec, f"{AKN_TAG}heading")
+    h.text = "Interpretation"
+    subsec = etree.SubElement(sec, f"{AKN_TAG}subsection", eId="sec-5__subsec-1")
+
+    # related-entity's truncated <term>+<def>, nested in an outer paragraph
+    # alongside unrelated prior content (level-1 shape, as in Task 1/2).
+    outer = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-b")
+    c1 = etree.SubElement(outer, f"{AKN_TAG}content")
+    etree.SubElement(c1, f"{AKN_TAG}p").text = "a Registrar of the Court."
+    c2 = etree.SubElement(outer, f"{AKN_TAG}content")
+    p2 = etree.SubElement(c2, f"{AKN_TAG}p")
+    term_el = etree.SubElement(p2, f"{AKN_TAG}term")
+    term_el.set("refersTo", "#term-related-entity")
+    term_el.text = "related entity"
+    term_el.tail = " means "
+    def_el = etree.SubElement(p2, f"{AKN_TAG}def")
+    def_el.text = "any of the following:"
+
+    # related-entity's own list: one plain item, then a paragraph whose
+    # <content> holds TWO <p> children -- the last list item, and relative's
+    # UNTAGGED lead-in. Real shape, confirmed 2026-07-14.
+    item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    ca = etree.SubElement(item_a, f"{AKN_TAG}content")
+    etree.SubElement(ca, f"{AKN_TAG}p").text = "a relative of the person;"
+
+    item_i = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-i")
+    ci = etree.SubElement(item_i, f"{AKN_TAG}content")
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "a member of a partnership of which the person is a member;"
+    etree.SubElement(ci, f"{AKN_TAG}p").text = "relative, in relation to a person, means:"
+
+    # relative's own list item, following -- reuses eId "para-a" (real
+    # corpus does this too). Must not be swallowed into related-entity's def.
+    r_item_a = etree.SubElement(subsec, f"{AKN_TAG}paragraph", eId="sec-5__subsec-1__para-a")
+    rca = etree.SubElement(r_item_a, f"{AKN_TAG}content")
+    etree.SubElement(rca, f"{AKN_TAG}p").text = "the spouse of the person; or"
+
+    count = complete_list_definitions(root)
+    assert count == 1  # only related-entity has a <def> to complete
+
+    def_els = root.findall(f".//{AKN_TAG}def")
+    assert len(def_els) == 1
+    related_text = "".join(def_els[0].itertext())
+
+    assert "a relative of the person" in related_text
+    assert "a member of a partnership of which the person is a member" in related_text
+    assert "relative, in relation to a person" not in related_text
+    assert "the spouse of the person" not in related_text
