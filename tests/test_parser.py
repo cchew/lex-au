@@ -1,6 +1,7 @@
 import pytest
 from lexau.parser import parse_paragraph, ElementType, InlineSpan, ParsedParagraph
 from lexau.parser import is_legacy_document, parse_paragraph_legacy
+from lexau.parser import classify_legacy_stream
 
 
 def test_parse_part_with_roman_number():
@@ -253,3 +254,77 @@ def test_legacy_penalty_text_still_detected():
     # Style-agnostic annotation detection must still work in the legacy path
     result = parse_paragraph_legacy("Penalty: 60 penalty units.")
     assert result[0].element_type == ElementType.PENALTY
+
+
+def test_classify_legacy_stream_shape1_heading_plus_numbered_body():
+    # Mirrors the loan-act-1976 fixture: bold heading paragraph, then a
+    # tab-separated numbered paragraph with no separate subsection.
+    stream = [
+        ("Short title.", True),
+        ("1.\tThis Act may be cited as the Loan Act (No. 2) 1976.", False),
+        ("Commencement.", True),
+        ("2.\tThis Act shall come into operation on the day of Royal Assent.", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert len(results) == 4
+    assert results[0] == []  # heading donor consumed
+    assert results[1][0].element_type == ElementType.SECTION
+    assert results[1][0].number == "1"
+    assert results[1][0].heading == "Short title."
+    assert results[1][1].element_type == ElementType.BODY
+    assert results[1][1].text == "This Act may be cited as the Loan Act (No. 2) 1976."
+    assert results[2] == []
+    assert results[3][0].heading == "Commencement."
+
+
+def test_classify_legacy_stream_ignores_non_bold_candidate():
+    # A plain (non-bold) sentence immediately before a numbered paragraph
+    # must NOT be swallowed as a heading — only fully-bold paragraphs qualify.
+    stream = [
+        ("This concludes the previous section's body text.", False),
+        ("3.\tShort title for this new section.", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY
+    assert results[1][0].element_type == ElementType.BODY  # no digit-prefixed structural match; stays BODY
+
+
+def test_classify_legacy_stream_bold_heading_not_consumed_without_numbered_follower():
+    # A bold paragraph not followed by a numbered paragraph is left as-is
+    # (falls through to parse_paragraph_legacy, i.e. plain BODY here).
+    stream = [("Some Bold Standalone Text", True)]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY
+
+
+def test_classify_legacy_stream_defers_structural_and_fused_to_parse_paragraph_legacy():
+    # A bold Part heading must classify as PART, not be consumed as a
+    # shape-1 donor, even if immediately followed by a numbered paragraph.
+    stream = [
+        ("Part\xa01—Preliminary", True),
+        ("1.\tShort title.", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.PART
+    assert results[1][0].element_type == ElementType.BODY  # "1.\tShort title." has no further body para in this stream; matches _LEGACY_NUMBERED_RE fallback as plain text here is fine since it's exercised in isolation
+
+
+def test_classify_legacy_stream_bold_heading_before_fused_defers_to_fused_shape():
+    # Mirrors the albury-wodonga-1982 fixture: a bold heading paragraph
+    # ("Short title, &c.") immediately precedes a fused section+subsection
+    # paragraph ("1. (1) ..."). _LEGACY_NUMBERED_RE would also match the
+    # fused text, so without the next-paragraph fused-shape exclusion the
+    # heading would be wrongly consumed as a shape-1 donor, collapsing the
+    # SUBSECTION structure into plain BODY text.
+    stream = [
+        ("Short title, &c.", True),
+        ("1. (1) This Act may be cited as the Test Act 1982.", False),
+        ("(2) The Principal Act is in this Act referred to as the Principal Act.", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY  # heading NOT consumed
+    assert results[0][0].text == "Short title, &c."
+    assert results[1][0].element_type == ElementType.SECTION
+    assert results[1][0].number == "1"
+    assert results[1][1].element_type == ElementType.SUBSECTION
+    assert results[1][1].number == "1"

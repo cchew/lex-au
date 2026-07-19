@@ -12,6 +12,7 @@ from lexau.parser import (
     ElementType,
     InlineSpan,
     ParsedParagraph,
+    classify_legacy_stream,
     is_legacy_document,
     parse_paragraph,
 )
@@ -34,6 +35,12 @@ def _list_level(para: Paragraph) -> int | None:
     return int(ilvl.val) if ilvl is not None else 0
 
 
+def _all_bold(spans: list[InlineSpan]) -> bool:
+    """True iff every span with non-whitespace text is bold."""
+    non_ws = [s for s in spans if s.text.strip()]
+    return bool(non_ws) and all(s.bold for s in non_ws)
+
+
 def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     """Yield ParsedParagraph for each Paragraph and Table in document order.
 
@@ -44,42 +51,66 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     All other paragraphs populate spans from paragraph.runs.
 
     Acts whose DOCX has no ActHead*-styled paragraph anywhere ("legacy"
-    documents) route through parse_paragraph unchanged for now — legacy
-    classification is added in Task 3/4.
+    documents, ~550 of 2,944 in the corpus) route through
+    classify_legacy_stream instead of parse_paragraph, since legacy Acts
+    have no reliable style signal and must be classified from paragraph
+    text and bold-run shape instead.
     """
     blocks = list(doc.iter_inner_content())
 
-    styles: list[str] = []
-    for block in blocks:
-        if isinstance(block, Paragraph) and not _has_inline_image(block):
-            styles.append(block.style.name if block.style else "Default")
-    is_legacy_document(styles)  # detection wired in; not yet acted on (Task 3/4)
+    para_blocks: list[Paragraph] = [
+        b for b in blocks if isinstance(b, Paragraph) and not _has_inline_image(b)
+    ]
+    styles = [b.style.name if b.style else "Default" for b in para_blocks]
+    legacy = is_legacy_document(styles)
 
+    para_spans: list[list[InlineSpan]] = []
+    para_texts: list[str] = []
+    for block in para_blocks:
+        spans = [
+            InlineSpan(
+                text=run.text,
+                bold=bool(run.bold),
+                italic=bool(run.italic),
+                superscript=bool(run.font.superscript),
+                subscript=bool(run.font.subscript),
+            )
+            for run in block.runs
+            if run.text
+        ]
+        para_spans.append(spans)
+        para_texts.append("".join(s.text for s in spans))
+
+    if legacy:
+        stream_input = [(text, _all_bold(spans)) for text, spans in zip(para_texts, para_spans)]
+        legacy_results = classify_legacy_stream(stream_input)
+    else:
+        legacy_results = None
+
+    para_pos = 0
     for block in blocks:
         if isinstance(block, Paragraph):
             if _has_inline_image(block):
                 yield ParsedParagraph(ElementType.FIGURE, text=block.text)
                 continue
-            style = block.style.name if block.style else "Default"
-            spans = [
-                InlineSpan(
-                    text=run.text,
-                    bold=bool(run.bold),
-                    italic=bool(run.italic),
-                    superscript=bool(run.font.superscript),
-                    subscript=bool(run.font.subscript),
-                )
-                for run in block.runs
-                if run.text
-            ]
-            full_text = "".join(s.text for s in spans)
-            parsed = parse_paragraph(style, full_text)
+            style = styles[para_pos]
+            full_text = para_texts[para_pos]
+            spans = para_spans[para_pos]
             level = _list_level(block)
-            if level is not None and parsed.element_type == ElementType.BODY:
-                parsed = replace(parsed, element_type=ElementType.LIST_ITEM, number=str(level), spans=spans)
+
+            if legacy:
+                parsed_list = legacy_results[para_pos]
             else:
-                parsed = replace(parsed, spans=spans)
-            yield parsed
+                parsed_list = [parse_paragraph(style, full_text)]
+
+            for parsed in parsed_list:
+                if level is not None and parsed.element_type == ElementType.BODY:
+                    parsed = replace(parsed, element_type=ElementType.LIST_ITEM, number=str(level), spans=spans)
+                else:
+                    parsed = replace(parsed, spans=spans)
+                yield parsed
+
+            para_pos += 1
         elif isinstance(block, Table):
             rows = [
                 [cell.text.strip() for cell in row.cells]

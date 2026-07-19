@@ -116,6 +116,65 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
     return [ParsedParagraph(ElementType.BODY, text=stripped)]
 
 
+# Legacy shape 1's numbered paragraph, e.g. "1.\tThis Act may be cited as..."
+# (single tab or space after the number+dot — not the 2+ whitespace _SECTION_RE requires)
+_LEGACY_NUMBERED_RE = re.compile(r'^(\w[\w.\-]*)\.[ \t]+(.+)$', re.DOTALL)
+
+
+def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[ParsedParagraph]]:
+    """Classify a full legacy-Act paragraph stream, applying shape-1 lookback.
+
+    `paragraphs` is (text, all_bold) per DOCX paragraph, in document order,
+    where all_bold is True iff every non-whitespace run in that paragraph is
+    bold — the signal that distinguishes a shape-1 heading paragraph (e.g.
+    "Short title.") from an ordinary body sentence.
+
+    Returns one list of ParsedParagraph per input paragraph, aligned by
+    index, so callers can still attach that paragraph's InlineSpans. A
+    paragraph consumed as a shape-1 heading donor returns [] (its text
+    becomes the following SECTION's heading instead of standalone BODY).
+
+    A bold heading is NOT consumed as a shape-1 donor if the following
+    paragraph is itself a fused section+subsection (shape 2, e.g.
+    "1. (1) text") — that paragraph defers to parse_paragraph_legacy's
+    fused handling instead, preserving the SUBSECTION structure that a
+    shape-1 collapse would otherwise discard.
+    """
+    n = len(paragraphs)
+    results: list[list[ParsedParagraph]] = [[] for _ in range(n)]
+    i = 0
+    while i < n:
+        text, all_bold = paragraphs[i]
+        stripped = text.strip()
+
+        if not stripped:
+            results[i] = [ParsedParagraph(ElementType.SKIP)]
+            i += 1
+            continue
+
+        if all_bold and i + 1 < n:
+            next_stripped = paragraphs[i + 1][0].strip()
+            m = _LEGACY_NUMBERED_RE.match(next_stripped)
+            if (
+                m
+                and not _HEADING_RE.match(stripped)
+                and not _LEGACY_FUSED_RE.match(stripped)
+                and not _LEGACY_FUSED_RE.match(next_stripped)
+            ):
+                results[i] = []  # consumed into next section's heading
+                results[i + 1] = [
+                    ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=stripped),
+                    ParsedParagraph(ElementType.BODY, text=m.group(2).strip()),
+                ]
+                i += 2
+                continue
+
+        results[i] = parse_paragraph_legacy(text)
+        i += 1
+
+    return results
+
+
 @dataclass
 class InlineSpan:
     text: str
