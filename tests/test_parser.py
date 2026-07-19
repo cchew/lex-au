@@ -220,6 +220,27 @@ def test_legacy_part_heading_no_style_gate():
     assert result[0].heading == "Preliminary"
 
 
+def test_legacy_part_heading_uppercase_plain_space():
+    # Mirrors a.c.t.-supreme-court-1992's real DOCX text: uppercase prefix,
+    # plain ASCII space (0x20) instead of \xa0 — confirmed by byte
+    # inspection, not the \xa0 the plan originally assumed for this path.
+    result = parse_paragraph_legacy("PART 1—PRELIMINARY")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.PART
+    assert result[0].number == "1"
+    assert result[0].heading == "PRELIMINARY"
+
+
+def test_legacy_standalone_subsection_continuation():
+    # Mirrors albury-wodonga-1982: the subsection AFTER the first fused one
+    # in a section has no section-number prefix at all — just "(N) text".
+    result = parse_paragraph_legacy("(2) The Principal Act is in this Act referred to as the Principal Act.")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.SUBSECTION
+    assert result[0].number == "2"
+    assert result[0].text == "The Principal Act is in this Act referred to as the Principal Act."
+
+
 def test_legacy_fused_section_subsection():
     # Confirmed shape 2: "1. (1) This Act may be cited..." — no separate heading paragraph
     result = parse_paragraph_legacy("1. (1) This Act may be cited as the Test Act 1982.")
@@ -328,3 +349,34 @@ def test_classify_legacy_stream_bold_heading_before_fused_defers_to_fused_shape(
     assert results[1][0].number == "1"
     assert results[1][1].element_type == ElementType.SUBSECTION
     assert results[1][1].number == "1"
+
+
+def test_classify_legacy_stream_bold_title_before_act_citation_line_not_shape1():
+    # Mirrors the loan-act-1976 fixture: the bold Act-title paragraph
+    # ("LOAN ACT (No. 2) 1976") is immediately followed by the Act-citation
+    # line ("No. 7 of 1976"), which is NOT a numbered clause. Before the
+    # digit-only _LEGACY_NUMBERED_RE fix, "No" matched the old \w[\w.\-]*
+    # number group, producing a spurious SECTION(number="No").
+    stream = [
+        ("LOAN ACT (No. 2) 1976", True),
+        ("No. 7 of 1976", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY  # title NOT consumed as heading donor
+    assert results[1][0].element_type == ElementType.BODY  # citation line NOT parsed as SECTION
+
+
+def test_classify_legacy_stream_uppercase_part_heading_not_consumed_as_shape1():
+    # Mirrors a.c.t.-supreme-court-1992: an uppercase, plain-space Part
+    # heading ("PART 1—PRELIMINARY") is bold in this fixture. The shared
+    # _HEADING_RE (title-case, \xa0-only) would miss this and wrongly let the
+    # shape-1 lookback consume it if it were immediately followed by a
+    # numbered paragraph. _LEGACY_HEADING_RE (case-insensitive, tolerates a
+    # plain space) must exclude it correctly.
+    stream = [
+        ("PART 1—PRELIMINARY", True),
+        ("1.\tShort title.", False),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.PART
+    assert results[0][0].number == "1"

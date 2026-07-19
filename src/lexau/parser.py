@@ -77,6 +77,30 @@ def is_legacy_document(styles: Iterable[str]) -> bool:
 # Legacy shape 2: fused section+subsection, e.g. "1. (1) This Act may be cited as..."
 _LEGACY_FUSED_RE = re.compile(r'^(\w[\w.\-]*)\.\s+\((\d+[A-Z]?)\)\s+(.+)$', re.DOTALL)
 
+# Legacy-only heading match. Reuses _HEADING_RE's prefix/heading grouping but
+# tolerates BOTH a plain space and \xa0 between the prefix and the number, and
+# matches case-insensitively. The plan's original assumption — "reuses
+# _HEADING_RE unchanged, the pattern was never the problem" — does not hold
+# for real legacy corpus text: a.c.t.-supreme-court-(transfer)-act-1992 (the
+# Task 5 style-less-heading fixture) has "PART 1—PRELIMINARY" using a plain
+# ASCII space (0x20, confirmed by byte inspection) and all-uppercase "PART",
+# neither of which the shared _HEADING_RE (used by the ActHead-styled,
+# non-legacy path in parse_paragraph) matches. A separate constant is used —
+# not a change to _HEADING_RE itself — so the non-legacy path's behavior for
+# the 2,394 already-indexed Acts is completely unaffected.
+_LEGACY_HEADING_RE = re.compile(
+    r'^(Chapter|Part|Division|Subdivision)[\xa0 ]([^—]+?)(?:—(.*))?$', re.IGNORECASE
+)
+# Caveat inherited from the original _HEADING_RE design (not newly introduced
+# here): the "number" group is unconstrained text, not digits-only, matching
+# the whole rest of the paragraph when there's no em-dash. In the non-legacy
+# path this is safe because _HEADING_RE only runs behind the ActHead style
+# gate. In the legacy path there is no style gate at all, so a one-line body
+# paragraph that happens to start with "part "/"chapter "/etc. (now also
+# case-insensitively) could false-positive as a heading. Not observed in the
+# three Task 5 fixtures; worth a spot-check against Task 6's full corpus
+# rebuild if the empty-<section> residual is unexpectedly high afterward.
+
 
 def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
     """Style-agnostic classification for a single legacy-Act paragraph.
@@ -84,21 +108,25 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
     Returns a list because the fused shape below yields two elements (a
     SECTION containing a SUBSECTION) from one DOCX paragraph.
 
-    Handles Chapter/Part/Division/Subdivision headings (reuses _HEADING_RE
-    unchanged — the pattern was never the problem, only the ActHead style
-    gate blocking it from running) and fused section+subsection ("1. (1)
-    text"). Does NOT handle the separate-heading-plus-numbered-body shape
-    (a bold heading paragraph followed by "1.\ttext") — that needs the
-    preceding paragraph's text and bold-run info, so it's handled by
-    classify_legacy_stream instead.
+    Handles Chapter/Part/Division/Subdivision headings (via the legacy-only
+    _LEGACY_HEADING_RE — see its comment for why this differs from the
+    shared _HEADING_RE), fused section+subsection ("1. (1) text"), and
+    standalone continuation subsections ("(2) text" with no section-number
+    prefix — the shape every subsection after the first one in a Shape-2
+    section actually takes; confirmed against the albury-wodonga-1982 Task 5
+    fixture, whose second subsection is exactly this shape). Does NOT handle
+    the separate-heading-plus-numbered-body shape (a bold heading paragraph
+    followed by "1.\ttext") — that needs the preceding paragraph's text and
+    bold-run info, so it's handled by classify_legacy_stream instead.
     """
     stripped = text.strip()
     if not stripped:
         return [ParsedParagraph(ElementType.SKIP)]
 
-    m = _HEADING_RE.match(stripped)
+    m = _LEGACY_HEADING_RE.match(stripped)
     if m:
-        prefix, number, heading = m.group(1), m.group(2).strip(), (m.group(3) or "").strip()
+        prefix = m.group(1).capitalize()
+        number, heading = m.group(2).strip(), (m.group(3) or "").strip()
         return [ParsedParagraph(_PREFIX_TO_ELEMENT[prefix], number=number, heading=heading)]
 
     m = _LEGACY_FUSED_RE.match(stripped)
@@ -109,6 +137,10 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
             ParsedParagraph(ElementType.SUBSECTION, number=subsec_num, text=subsec_text.strip()),
         ]
 
+    m = _SUBSEC_RE.match(stripped)
+    if m:
+        return [ParsedParagraph(ElementType.SUBSECTION, number=m.group(1), text=m.group(2).strip())]
+
     annotation = _classify_annotation("", stripped)
     if annotation is not None:
         return [annotation]
@@ -118,7 +150,12 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
 
 # Legacy shape 1's numbered paragraph, e.g. "1.\tThis Act may be cited as..."
 # (single tab or space after the number+dot — not the 2+ whitespace _SECTION_RE requires)
-_LEGACY_NUMBERED_RE = re.compile(r'^(\w[\w.\-]*)\.[ \t]+(.+)$', re.DOTALL)
+# Number group is digits + optional uppercase-letter suffix (e.g. "26WA") — NOT
+# \w[\w.\-]*, because that also matches "No" in an Act-citation line like
+# "No. 7 of 1976" (real corpus text: the loan-act-(no.-2)-1976 fixture has this
+# line immediately after the bold Act-title paragraph, producing a spurious
+# extra SECTION before this fix — confirmed against the Task 5 fixture).
+_LEGACY_NUMBERED_RE = re.compile(r'^(\d+[A-Z]*)\.[ \t]+(.+)$', re.DOTALL)
 
 
 def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[ParsedParagraph]]:
@@ -157,7 +194,7 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[Pars
             m = _LEGACY_NUMBERED_RE.match(next_stripped)
             if (
                 m
-                and not _HEADING_RE.match(stripped)
+                and not _LEGACY_HEADING_RE.match(stripped)
                 and not _LEGACY_FUSED_RE.match(stripped)
                 and not _LEGACY_FUSED_RE.match(next_stripped)
             ):
