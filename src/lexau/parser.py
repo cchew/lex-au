@@ -74,6 +74,48 @@ def is_legacy_document(styles: Iterable[str]) -> bool:
     return not any(s.startswith("ActHead") for s in styles)
 
 
+# Legacy shape 2: fused section+subsection, e.g. "1. (1) This Act may be cited as..."
+_LEGACY_FUSED_RE = re.compile(r'^(\w[\w.\-]*)\.\s+\((\d+[A-Z]?)\)\s+(.+)$', re.DOTALL)
+
+
+def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
+    """Style-agnostic classification for a single legacy-Act paragraph.
+
+    Returns a list because the fused shape below yields two elements (a
+    SECTION containing a SUBSECTION) from one DOCX paragraph.
+
+    Handles Chapter/Part/Division/Subdivision headings (reuses _HEADING_RE
+    unchanged — the pattern was never the problem, only the ActHead style
+    gate blocking it from running) and fused section+subsection ("1. (1)
+    text"). Does NOT handle the separate-heading-plus-numbered-body shape
+    (a bold heading paragraph followed by "1.\ttext") — that needs the
+    preceding paragraph's text and bold-run info, so it's handled by
+    classify_legacy_stream instead.
+    """
+    stripped = text.strip()
+    if not stripped:
+        return [ParsedParagraph(ElementType.SKIP)]
+
+    m = _HEADING_RE.match(stripped)
+    if m:
+        prefix, number, heading = m.group(1), m.group(2).strip(), (m.group(3) or "").strip()
+        return [ParsedParagraph(_PREFIX_TO_ELEMENT[prefix], number=number, heading=heading)]
+
+    m = _LEGACY_FUSED_RE.match(stripped)
+    if m:
+        section_num, subsec_num, subsec_text = m.group(1), m.group(2), m.group(3)
+        return [
+            ParsedParagraph(ElementType.SECTION, number=section_num),
+            ParsedParagraph(ElementType.SUBSECTION, number=subsec_num, text=subsec_text.strip()),
+        ]
+
+    annotation = _classify_annotation("", stripped)
+    if annotation is not None:
+        return [annotation]
+
+    return [ParsedParagraph(ElementType.BODY, text=stripped)]
+
+
 @dataclass
 class InlineSpan:
     text: str

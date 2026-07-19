@@ -1,6 +1,6 @@
 import pytest
 from lexau.parser import parse_paragraph, ElementType, InlineSpan, ParsedParagraph
-from lexau.parser import is_legacy_document
+from lexau.parser import is_legacy_document, parse_paragraph_legacy
 
 
 def test_parse_part_with_roman_number():
@@ -208,3 +208,48 @@ def test_is_legacy_document_false_when_any_acthead_style():
 
 def test_is_legacy_document_true_for_empty_list():
     assert is_legacy_document([]) is True
+
+
+def test_legacy_part_heading_no_style_gate():
+    # Same pattern as ActHead-styled Parts, but reached without a style check
+    result = parse_paragraph_legacy("Part\xa01—Preliminary")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.PART
+    assert result[0].number == "1"
+    assert result[0].heading == "Preliminary"
+
+
+def test_legacy_fused_section_subsection():
+    # Confirmed shape 2: "1. (1) This Act may be cited..." — no separate heading paragraph
+    result = parse_paragraph_legacy("1. (1) This Act may be cited as the Test Act 1982.")
+    assert len(result) == 2
+    assert result[0].element_type == ElementType.SECTION
+    assert result[0].number == "1"
+    assert result[0].heading == ""
+    assert result[1].element_type == ElementType.SUBSECTION
+    assert result[1].number == "1"
+    assert result[1].text == "This Act may be cited as the Test Act 1982."
+
+
+def test_legacy_fused_section_subsection_alnum_number():
+    result = parse_paragraph_legacy("2A. (1) Objects of this Act.")
+    assert result[1].number == "1"
+    assert result[0].number == "2A"
+
+
+def test_legacy_plain_body_falls_through():
+    result = parse_paragraph_legacy("This is ordinary continuing body text.")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.BODY
+    assert result[0].text == "This is ordinary continuing body text."
+
+
+def test_legacy_empty_paragraph_is_skip():
+    result = parse_paragraph_legacy("   ")
+    assert result == [ParsedParagraph(ElementType.SKIP)]
+
+
+def test_legacy_penalty_text_still_detected():
+    # Style-agnostic annotation detection must still work in the legacy path
+    result = parse_paragraph_legacy("Penalty: 60 penalty units.")
+    assert result[0].element_type == ElementType.PENALTY
