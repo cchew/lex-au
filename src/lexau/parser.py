@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -60,6 +61,17 @@ _PENALTY_RE = re.compile(r'^Penalty[\xa0: ]', re.IGNORECASE)
 
 # Level4: uppercase alpha (A)(B)(C) in List Paragraph
 _LEVEL4_RE = re.compile(r'^\(([A-Z]+)\)\s+(.*)', re.DOTALL)
+
+
+def is_legacy_document(styles: Iterable[str]) -> bool:
+    """True if no paragraph style in the document starts with 'ActHead'.
+
+    Acts authored outside the modern Word template have no ActHead* styles
+    anywhere; `parse_paragraph`'s style gate then leaves every paragraph
+    unclassified, so `_split_stream` never finds a structural boundary and
+    the whole Act ends up in <preface> with an empty <body>.
+    """
+    return not any(s.startswith("ActHead") for s in styles)
 
 
 @dataclass

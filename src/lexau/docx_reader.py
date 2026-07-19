@@ -8,7 +8,13 @@ from docx.oxml.ns import qn
 from docx.table import Table
 from docx.text.paragraph import Paragraph
 
-from lexau.parser import ElementType, InlineSpan, ParsedParagraph, parse_paragraph
+from lexau.parser import (
+    ElementType,
+    InlineSpan,
+    ParsedParagraph,
+    is_legacy_document,
+    parse_paragraph,
+)
 
 
 def _has_inline_image(para: Paragraph) -> bool:
@@ -36,8 +42,20 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     cell.text concatenates all paragraph text in the cell; nested tables are flattened.
     FIGURE paragraphs (inline image) yield with empty spans.
     All other paragraphs populate spans from paragraph.runs.
+
+    Acts whose DOCX has no ActHead*-styled paragraph anywhere ("legacy"
+    documents) route through parse_paragraph unchanged for now — legacy
+    classification is added in Task 3/4.
     """
-    for block in doc.iter_inner_content():
+    blocks = list(doc.iter_inner_content())
+
+    styles: list[str] = []
+    for block in blocks:
+        if isinstance(block, Paragraph) and not _has_inline_image(block):
+            styles.append(block.style.name if block.style else "Default")
+    is_legacy_document(styles)  # detection wired in; not yet acted on (Task 3/4)
+
+    for block in blocks:
         if isinstance(block, Paragraph):
             if _has_inline_image(block):
                 yield ParsedParagraph(ElementType.FIGURE, text=block.text)

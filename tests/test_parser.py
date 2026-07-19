@@ -1,5 +1,6 @@
 import pytest
 from lexau.parser import parse_paragraph, ElementType, InlineSpan, ParsedParagraph
+from lexau.parser import is_legacy_document
 
 
 def test_parse_part_with_roman_number():
@@ -195,3 +196,15 @@ def test_parsed_paragraph_spans_field():
     assert len(p.spans) == 2
     assert p.spans[0].italic is True
     assert p.spans[1].italic is False
+
+
+def test_is_legacy_document_true_when_no_acthead_style():
+    assert is_legacy_document(["Normal", "Body Text2", "Body text (3)"]) is True
+
+
+def test_is_legacy_document_false_when_any_acthead_style():
+    assert is_legacy_document(["Normal", "ActHead 5", "Body Text"]) is False
+
+
+def test_is_legacy_document_true_for_empty_list():
+    assert is_legacy_document([]) is True
