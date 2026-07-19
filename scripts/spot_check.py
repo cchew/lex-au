@@ -137,7 +137,17 @@ def main() -> int:
             print(f"        {issue}")
         total_failures += len(issues)
 
+    empty_body_count = 0
+    for xml_path in xml_files:
+        try:
+            root = etree.parse(str(xml_path)).getroot()
+        except Exception:
+            continue
+        if len(root.findall(".//akn:section", NS)) == 0:
+            empty_body_count += 1
+
     print(f"\n{'='*60}")
+    print(f"Acts with zero <section> elements: {empty_body_count} / {len(xml_files)}")
     if total_failures == 0:
         print(f"All checks passed ({len(xml_files)} Acts)")
         return 0
