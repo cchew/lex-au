@@ -1,8 +1,11 @@
 import pytest
+from pathlib import Path
 from docx import Document
 from docx.oxml import parse_xml
 from lexau.docx_reader import iter_paragraphs
 from lexau.parser import ElementType
+
+CORPUS_DOCX = Path(__file__).parent.parent / "corpus" / "docx"
 
 
 def test_paragraph_passthrough():
@@ -207,3 +210,44 @@ def test_image_paragraph_spans_empty():
     figures = [r for r in results if r.element_type.value == "figure"]
     assert len(figures) == 1
     assert figures[0].spans == []
+
+
+def test_loan_act_1976_shape1_fixture():
+    # Shape 1: separate bold heading + single-tab numbered body.
+    # Expect 5 sections (Short title, Commencement, Authority to borrow,
+    # Application of moneys borrowed, Expenses of borrowing), 0 subsections.
+    doc = Document(str(CORPUS_DOCX / "loan-act-(no.-2)-1976-vol0.docx"))
+    paras = list(iter_paragraphs(doc))
+    sections = [p for p in paras if p.element_type == ElementType.SECTION]
+    subsections = [p for p in paras if p.element_type == ElementType.SUBSECTION]
+    assert len(sections) == 5
+    assert len(subsections) == 0
+    assert sections[0].heading == "Short title."
+    assert sections[1].heading == "Commencement."
+
+
+def test_albury_wodonga_1982_shape2_fixture():
+    # Shape 2: fused section+subsection, "1. (1) ...".
+    # Expect section 1 containing subsection (1) and subsection (2).
+    doc = Document(str(
+        CORPUS_DOCX / "albury-wodonga-development-(financial-assistance)-amendment-act-1982-vol0.docx"
+    ))
+    paras = list(iter_paragraphs(doc))
+    sections = [p for p in paras if p.element_type == ElementType.SECTION]
+    subsections = [p for p in paras if p.element_type == ElementType.SUBSECTION]
+    assert any(s.number == "1" for s in sections)
+    subsec_numbers = {s.number for s in subsections}
+    assert "1" in subsec_numbers
+    assert "2" in subsec_numbers
+
+
+def test_act_supreme_court_1992_heading_without_style():
+    # PART 1—PRELIMINARY styled as plain bold Normal text, no ActHead
+    # paragraphs anywhere; tests _HEADING_RE running without the style gate.
+    doc = Document(str(
+        CORPUS_DOCX / "a.c.t.-supreme-court-(transfer)-act-1992-vol0.docx"
+    ))
+    paras = list(iter_paragraphs(doc))
+    parts = [p for p in paras if p.element_type == ElementType.PART]
+    assert len(parts) >= 1
+    assert any("PRELIMINARY" in p.heading.upper() for p in parts)
