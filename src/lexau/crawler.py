@@ -5,6 +5,7 @@ from pathlib import Path
 
 import requests
 
+from lexau.doc_convert import convert_doc_to_docx
 from lexau.models import ActMetadata
 
 API_BASE = "https://api.prod.legislation.gov.au/v1"
@@ -12,6 +13,7 @@ API_BASE = "https://api.prod.legislation.gov.au/v1"
 _TITLE_ID_RE = re.compile(r"C\d{4}A(\d+)")
 _INSTRUMENT_RE = re.compile(r"F\d{4}[A-Z](\d+)")  # F-prefixed = legislative instruments; reserved for future filter-by-type logic
 _REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations; reserved for future filter-by-type logic
+_OLE2_MAGIC = b"\xd0\xcf\x11\xe0"  # legacy Word 97-2003 .doc (OLE2/CFB)
 
 
 def _odata_escape(s: str) -> str:
@@ -193,24 +195,20 @@ class Crawler:
         for vol in volumes:
             dest = dest_dir / f"{meta.safe_name}-vol{vol}.docx"
             if not dest.exists():
-                time.sleep(self._delay)
-                url = (
-                    f"{API_BASE}/documents/find("
-                    f"registerId='{meta.comp_id}',"
-                    f"type='Primary',"
-                    f"format='Word',"
-                    f"uniqueTypeNumber=0,"
-                    f"volumeNumber={vol},"
-                    f"rectificationVersionNumber=0)"
-                )
-                r = self._session.get(
-                    url,
-                    headers={"Accept": "application/octet-stream"},
-                    timeout=self._timeout,
-                )
-                if r.status_code != 200 or not r.content.startswith(b"PK"):
+                content = self.fetch_volume_bytes(meta, vol)
+                if content is None:
                     return []
-                dest.write_bytes(r.content)
+                if content.startswith(b"PK"):
+                    dest.write_bytes(content)
+                elif content.startswith(_OLE2_MAGIC):
+                    doc_path = dest_dir / f"{meta.safe_name}-vol{vol}.doc"
+                    doc_path.write_bytes(content)
+                    converted = convert_doc_to_docx(doc_path, dest_dir)
+                    if converted is None:
+                        return []
+                    converted.rename(dest)
+                else:
+                    return []
             paths.append(dest)
 
         return paths

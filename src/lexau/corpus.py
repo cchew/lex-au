@@ -24,14 +24,14 @@ class Corpus:
     def _write_index(self, data: dict) -> None:
         self._index_path.write_text(json.dumps(data, indent=2, default=str))
 
-    def save(self, meta: ActMetadata, xml: etree._Element) -> Path:
+    def save(self, meta: ActMetadata, xml: etree._Element, source_format: str | None = None) -> Path:
         xml_path = self._xml_dir / f"{meta.safe_name}.xml"
         xml_path.write_bytes(
             etree.tostring(xml, pretty_print=True, xml_declaration=True, encoding="UTF-8")
         )
 
         index = self._read_index()
-        index["acts"][meta.safe_name] = {
+        entry = {
             "name": meta.name,
             "title_id": meta.title_id,
             "comp_id": meta.comp_id,
@@ -41,6 +41,9 @@ class Corpus:
             "effective_date": meta.effective_date.isoformat(),
             "xml_path": str(xml_path.relative_to(self.root)),
         }
+        if source_format is not None:
+            entry["source_format"] = source_format
+        index["acts"][meta.safe_name] = entry
         index["updated_at"] = datetime.now(timezone.utc).isoformat()
         self._write_index(index)
         return xml_path

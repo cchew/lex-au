@@ -65,6 +65,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             if not docx_paths:
                 click.echo(f"  SKIP -- DOCX download failed", err=True)
                 continue
+            source_format = "doc-converted" if any(docx_dir.glob(f"{meta.safe_name}-vol*.doc")) else None
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             builder = AknBuilder(meta)
@@ -77,7 +78,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             xml, report = builder.build_with_report(corpus_index, last_volume_path=endnote_vol)
             report.volumes_fetched = len(docx_paths)
 
-            saved = corpus.save(meta, xml)
+            saved = corpus.save(meta, xml, source_format=source_format)
             click.echo(f"  saved -> {saved.relative_to(corpus_dir)}")
 
             report_path = reports_dir / f"{meta.safe_name}-v0.5.0.json"

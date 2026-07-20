@@ -36,6 +36,18 @@ def test_save_updates_index(corpus, privacy_meta, minimal_xml):
     assert entry["year"] == 1988
 
 
+def test_save_records_source_format_when_provided(corpus, privacy_meta, minimal_xml):
+    corpus.save(privacy_meta, minimal_xml, source_format="doc-converted")
+    index = json.loads((corpus.root / "index.json").read_text())
+    assert index["acts"]["privacy-act-1988"]["source_format"] == "doc-converted"
+
+
+def test_save_omits_source_format_by_default(corpus, privacy_meta, minimal_xml):
+    corpus.save(privacy_meta, minimal_xml)
+    index = json.loads((corpus.root / "index.json").read_text())
+    assert "source_format" not in index["acts"]["privacy-act-1988"]
+
+
 def test_is_current_true_when_comp_num_matches(corpus, privacy_meta, minimal_xml):
     corpus.save(privacy_meta, minimal_xml)
     assert corpus.is_current(privacy_meta) is True
