@@ -215,6 +215,34 @@ class Crawler:
 
         return paths
 
+    def fetch_volume_bytes(self, meta: ActMetadata, vol: int) -> bytes | None:
+        """Fetch one volume's raw response bytes, whatever the underlying format.
+
+        Unlike fetch_docx_volumes, does not filter on the DOCX ("PK") magic
+        bytes -- used by the .doc-conversion spike (and, if it clears the
+        go/no-go gate, the production doc-conversion path) to capture legacy
+        OLE2/CFB ("\\xd0\\xcf\\x11\\xe0") binaries that fetch_docx_volumes
+        silently discards.
+        """
+        time.sleep(self._delay)
+        url = (
+            f"{API_BASE}/documents/find("
+            f"registerId='{meta.comp_id}',"
+            f"type='Primary',"
+            f"format='Word',"
+            f"uniqueTypeNumber=0,"
+            f"volumeNumber={vol},"
+            f"rectificationVersionNumber=0)"
+        )
+        r = self._session.get(
+            url,
+            headers={"Accept": "application/octet-stream"},
+            timeout=self._timeout,
+        )
+        if r.status_code != 200:
+            return None
+        return r.content
+
     def fetch_docx(self, meta: ActMetadata, dest_dir: Path) -> Path | None:
         """Backward-compat alias. cli.py switches to fetch_docx_volumes in Task 7."""
         paths = self.fetch_docx_volumes(meta, dest_dir)

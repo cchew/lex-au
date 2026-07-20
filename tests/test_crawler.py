@@ -26,6 +26,7 @@ VERSIONS_RESPONSE = {
 }
 
 DOCX_BYTES = b"PK\x03\x04" + b"\x00" * 100  # fake ZIP/DOCX magic bytes
+OLE2_BYTES = b"\xd0\xcf\x11\xe0" + b"\x00" * 100  # legacy .doc magic bytes
 
 
 @resp_lib.activate
@@ -235,6 +236,41 @@ def test_fetch_docx_volumes_returns_empty_on_bad_response(tmp_path: Path):
     paths = crawler.fetch_docx_volumes(meta, tmp_path)
 
     assert paths == []
+
+
+@resp_lib.activate
+def test_fetch_volume_bytes_returns_raw_content_any_format():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=OLE2_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    content = crawler.fetch_volume_bytes(meta, 0)
+
+    assert content == OLE2_BYTES
+
+
+@resp_lib.activate
+def test_fetch_volume_bytes_returns_none_on_bad_status():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        status=404,
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    content = crawler.fetch_volume_bytes(meta, 0)
+
+    assert content is None
 
 
 # Task 3: doc_type and list_instruments tests
