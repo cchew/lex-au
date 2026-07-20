@@ -63,6 +63,18 @@ python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
+### LibreOffice (optional, for legacy `.doc` Acts)
+
+Some older Acts are served by legislation.gov.au as legacy `.doc` (pre-OOXML) rather than `.docx`. lex-au converts these via LibreOffice headless before parsing — install it if you're building the full corpus or any Act still on `.doc`:
+
+```bash
+brew install --cask libreoffice   # macOS
+# Debian/Ubuntu, incl. GitHub Actions runners:
+sudo apt-get install --no-install-recommends libreoffice
+```
+
+Verify with `soffice --version`. No Python dependency is added - `lexau` invokes the `soffice` binary directly via `subprocess`. Not required if you only build Acts already served as `.docx`.
+
 ## CLI Usage
 
 ### Generate Act list
