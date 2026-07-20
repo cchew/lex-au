@@ -21,7 +21,7 @@ def small_corpus(tmp_path, privacy_meta):
     return tmp_path / "corpus"
 
 
-def test_export_hf_calls_upload_folder(small_corpus):
+def test_export_hf_calls_upload_large_folder(small_corpus):
     runner = CliRunner()
     with patch("lexau.cli.HfApi") as mock_api_cls:
         mock_api = MagicMock()
@@ -34,10 +34,12 @@ def test_export_hf_calls_upload_folder(small_corpus):
         ])
 
         assert result.exit_code == 0, result.output
-        mock_api.upload_folder.assert_called_once()
-        call_kwargs = mock_api.upload_folder.call_args.kwargs
+        mock_api.upload_large_folder.assert_called_once()
+        call_kwargs = mock_api.upload_large_folder.call_args.kwargs
         assert call_kwargs["repo_id"] == "cchew/lex-au"
         assert call_kwargs["repo_type"] == "dataset"
+        assert call_kwargs["ignore_patterns"] == ["docx/**"]
+        mock_api.upload_folder.assert_not_called()
 
 
 def test_export_jsonl_writes_one_row_per_act(small_corpus):

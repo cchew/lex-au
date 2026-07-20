@@ -183,11 +183,13 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
     """Push corpus XML + index + dataset card to a Hugging Face dataset."""
     api = HfApi()
     click.echo(f"Uploading corpus to {repo}…")
-    api.upload_folder(
+    # upload_large_folder (not upload_folder) hashes files first and skips
+    # ones unchanged since the last commit, and avoided a reproducible
+    # SSLError upload_folder hit on this dataset's file count (2026-07-20).
+    api.upload_large_folder(
         folder_path=str(corpus_dir),
         repo_id=repo,
         repo_type="dataset",
-        commit_message="lex-au corpus update",
         ignore_patterns=["docx/**"],
     )
     click.echo(f"Uploading dataset card from {readme}…")
