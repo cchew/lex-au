@@ -75,6 +75,12 @@ def is_legacy_document(styles: Iterable[str]) -> bool:
 
 
 # Legacy shape 2: fused section+subsection, e.g. "1. (1) This Act may be cited as..."
+# Section-number group is intentionally left loose (\w[\w.\-]*, unlike
+# _LEGACY_NUMBERED_RE's tightened \d+[A-Z]*) — the trailing "(\d+[A-Z]?) "
+# anchor requires an actual parenthesised subsection number immediately
+# after, which ordinary prose or citation lines (e.g. "No. 7 of 1976") won't
+# satisfy. That anchor is what _LEGACY_NUMBERED_RE lacks, which is why only
+# the latter needed tightening against real corpus false positives.
 _LEGACY_FUSED_RE = re.compile(r'^(\w[\w.\-]*)\.\s+\((\d+[A-Z]?)\)\s+(.+)$', re.DOTALL)
 
 # Legacy-only heading match. Reuses _HEADING_RE's prefix/heading grouping but
