@@ -23,7 +23,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
-**Status: v0.7.3** - 2,942 Acts + 2 Regulations; dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0); live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
+**Status: v0.7.4** (unpublished) - 3,066 Acts + 2 Regulations locally; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) is still v0.7.3 (2,942 Acts + 2 Regulations) pending re-export; live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app) likewise pending redeploy.
 
 ## Why AKN XML
 
@@ -40,6 +40,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
+- **v0.7.4** (unpublished) - Legacy `.doc` (pre-OOXML) Act conversion via LibreOffice headless, gated on a 30-Act spike (90% non-empty-`<body>` rate, GO). 124 of a 128-Act relevance-skimmed batch converted and ingested (76.6%→ now 3,066 Acts + 2 Regulations locally); `source_format: doc-converted` provenance tracked in `index.json`. 4 conversion failures, 82 relevance-skimmed drops, and ~1,586 low-value titles remain unconverted.
 - **v0.7.3** - Style-agnostic legacy-Act parsing for DOCX with no `ActHead*` style: 422 of 551 previously-empty-body Acts now parse (76.6%). 129 residual (58 with an additional unimplemented paragraph shape, 71 fragmented one-off historical formats) documented as future work.
 - **v0.7.2** - List-form definition completeness: folds orphaned list content into truncated `<def>` elements (~3,125 defs fixed corpus-wide).
 - **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations, 28,662 terms. List-def false-positive guard, italic-run anchoring for definienda.
@@ -160,5 +161,5 @@ corpus/
 - Role dictionary is global (not Act-specific); "the Minister" refers to different ministers in different Acts.
 - `<noteRef>` injection handles `[note N]` bracket markers only; superscript and `(note N)` patterns are not handled.
 - Formatting inside a definiens is flattened to plain text when the source paragraph is mixed content (e.g. `<b>` inside a `means` definition); the `<term>`/`<def>` split itself is still detected correctly.
-- ~1,796 in-force Acts aren't yet fetchable — legislation.gov.au serves a legacy `.doc` (pre-OOXML) compilation for them instead of `.docx`, tracked in `FUTURE.md`.
+- ~1,672 in-force Acts still aren't fetchable — legislation.gov.au serves a legacy `.doc` (pre-OOXML) compilation for them instead of `.docx`. 124 of a 128-Act relevance-skimmed sample converted successfully via LibreOffice headless (v0.7.4); the remainder (1,586 low-value/amendment-only titles never assessed, 82 relevance-skimmed drops, 4 conversion failures) is future work.
 - 129 Acts with no `ActHead*`-styled DOCX still have an empty `<body>`: 58 use an unimplemented third paragraph shape (`Heading 5`/`subsection` Word styles), 71 are a fragmented long tail of one-off historical formats with no single addressable pattern.

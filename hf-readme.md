@@ -23,7 +23,7 @@ configs:
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads. This dataset provides structured XML, section-level addressing and AKN for Commonwealth Acts in force.
 
-**Version: v0.7.2** - 2,942 Acts + 2 Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+**Version: v0.7.4** - 3,066 Acts + 2 Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
 
 See [github.com/cchew/lex-au](https://github.com/cchew/lex-au) for source code and CLI (if you want to change the AKN mapping), version history and known limits.
 
