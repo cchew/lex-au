@@ -57,7 +57,7 @@ of the long tail as fragmented one-offs, not a second addressable pattern.
 
 Original long-tail estimate: ~16 Acts. Post-Task-3 residual: 16 genuine
 long-tail Acts (unchanged — the Heading-5 fix in Task 2 targeted only the
-58-Act third-shape group and correctly left the long tail untouched).
+118-Act third-shape group and correctly left the long tail untouched).
 
 Per the spec's Phase 1b stopping rule: the rule triggers when post-Task-3
 residual resolves fewer than half of the original ~16-Act long-tail estimate
