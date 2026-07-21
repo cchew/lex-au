@@ -148,6 +148,16 @@ corpus/
   docx/               # raw DOCX downloads (excluded from HF export)
 ```
 
+## Linking to legislation.gov.au
+
+Every `index.json` entry (and every row of the exported `train.jsonl`) carries `title_id` (e.g. `C2004A03712` for the Privacy Act, `F2002B00237` for an instrument) and `comp_id`. `title_id` is an opaque register ID from legislation.gov.au's own Titles API — it is **not** derivable from the AKN FRBR work URI (e.g. `/akn/au/act/1988/119`); the two numbering schemes are unrelated. Combine it into a working page link:
+
+```
+https://www.legislation.gov.au/{title_id}/latest/text
+```
+
+Confirmed live (2026-07-21) for both Acts and legislative instruments. Act-level only — legislation.gov.au has no stable per-section anchor scheme (the site renders Act text in a client-side EPUB view with auto-generated, unstable Word bookmark ids, not semantic `#eId`-style anchors), so there's no equivalent way to deep-link a specific section.
+
 ## Documentation
 
 - [AU Legislative Conventions](docs/au-legislative-conventions.md) - DOCX style map, nesting hierarchy, notes/examples/penalties, schedule patterns, citation forms, FRBR URI construction.
