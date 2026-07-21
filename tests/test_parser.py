@@ -281,10 +281,10 @@ def test_classify_legacy_stream_shape1_heading_plus_numbered_body():
     # Mirrors the loan-act-1976 fixture: bold heading paragraph, then a
     # tab-separated numbered paragraph with no separate subsection.
     stream = [
-        ("Short title.", True),
-        ("1.\tThis Act may be cited as the Loan Act (No. 2) 1976.", False),
-        ("Commencement.", True),
-        ("2.\tThis Act shall come into operation on the day of Royal Assent.", False),
+        ("Short title.", True, ""),
+        ("1.\tThis Act may be cited as the Loan Act (No. 2) 1976.", False, ""),
+        ("Commencement.", True, ""),
+        ("2.\tThis Act shall come into operation on the day of Royal Assent.", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert len(results) == 4
@@ -302,8 +302,8 @@ def test_classify_legacy_stream_ignores_non_bold_candidate():
     # A plain (non-bold) sentence immediately before a numbered paragraph
     # must NOT be swallowed as a heading — only fully-bold paragraphs qualify.
     stream = [
-        ("This concludes the previous section's body text.", False),
-        ("3.\tShort title for this new section.", False),
+        ("This concludes the previous section's body text.", False, ""),
+        ("3.\tShort title for this new section.", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.BODY
@@ -313,7 +313,7 @@ def test_classify_legacy_stream_ignores_non_bold_candidate():
 def test_classify_legacy_stream_bold_heading_not_consumed_without_numbered_follower():
     # A bold paragraph not followed by a numbered paragraph is left as-is
     # (falls through to parse_paragraph_legacy, i.e. plain BODY here).
-    stream = [("Some Bold Standalone Text", True)]
+    stream = [("Some Bold Standalone Text", True, "")]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.BODY
 
@@ -322,8 +322,8 @@ def test_classify_legacy_stream_defers_structural_and_fused_to_parse_paragraph_l
     # A bold Part heading must classify as PART, not be consumed as a
     # shape-1 donor, even if immediately followed by a numbered paragraph.
     stream = [
-        ("Part\xa01—Preliminary", True),
-        ("1.\tShort title.", False),
+        ("Part\xa01—Preliminary", True, ""),
+        ("1.\tShort title.", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.PART
@@ -338,9 +338,9 @@ def test_classify_legacy_stream_bold_heading_before_fused_defers_to_fused_shape(
     # heading would be wrongly consumed as a shape-1 donor, collapsing the
     # SUBSECTION structure into plain BODY text.
     stream = [
-        ("Short title, &c.", True),
-        ("1. (1) This Act may be cited as the Test Act 1982.", False),
-        ("(2) The Principal Act is in this Act referred to as the Principal Act.", False),
+        ("Short title, &c.", True, ""),
+        ("1. (1) This Act may be cited as the Test Act 1982.", False, ""),
+        ("(2) The Principal Act is in this Act referred to as the Principal Act.", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.BODY  # heading NOT consumed
@@ -358,8 +358,8 @@ def test_classify_legacy_stream_bold_title_before_act_citation_line_not_shape1()
     # digit-only _LEGACY_NUMBERED_RE fix, "No" matched the old \w[\w.\-]*
     # number group, producing a spurious SECTION(number="No").
     stream = [
-        ("LOAN ACT (No. 2) 1976", True),
-        ("No. 7 of 1976", False),
+        ("LOAN ACT (No. 2) 1976", True, ""),
+        ("No. 7 of 1976", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.BODY  # title NOT consumed as heading donor
@@ -374,9 +374,65 @@ def test_classify_legacy_stream_uppercase_part_heading_not_consumed_as_shape1():
     # numbered paragraph. _LEGACY_HEADING_RE (case-insensitive, tolerates a
     # plain space) must exclude it correctly.
     stream = [
-        ("PART 1—PRELIMINARY", True),
-        ("1.\tShort title.", False),
+        ("PART 1—PRELIMINARY", True, ""),
+        ("1.\tShort title.", False, ""),
     ]
     results = classify_legacy_stream(stream)
     assert results[0][0].element_type == ElementType.PART
     assert results[0][0].number == "1"
+
+
+def test_legacy_style_heading5_short_title():
+    # Shape 3: style-driven section heading. Confirmed against
+    # agricultural-and-veterinary-chemical-products-levy-imposition-
+    # (customs)-act-1994's real DOCX: "1  Short title" styled "Heading 5",
+    # no separate bold-heading paragraph, no fused "N. (M)" pattern.
+    result = parse_paragraph_legacy("1  Short title", style="Heading 5")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.SECTION
+    assert result[0].number == "1"
+    assert result[0].heading == "Short title"
+
+
+def test_legacy_style_heading5_alnum_section_number():
+    # Confirmed against us-free-trade-agreement-implementation-act-2004:
+    # "153Y  Simplified outline" styled Heading 5, deep in a Division.
+    result = parse_paragraph_legacy("153Y  Simplified outline", style="Heading 5")
+    assert result[0].number == "153Y"
+    assert result[0].heading == "Simplified outline"
+
+
+def test_legacy_style_heading5_requires_section_re_shape():
+    # A Heading-5-styled paragraph that doesn't match "N<2+ spaces>text"
+    # (no number prefix) falls through to ordinary classification, same as
+    # the non-legacy path's ActHead-gated _SECTION_RE behaves today.
+    result = parse_paragraph_legacy("Preliminary", style="Heading 5")
+    assert result[0].element_type == ElementType.BODY
+
+
+def test_legacy_style_heading5_does_not_override_structural_heading():
+    # Belt-and-braces: even if a Part/Division heading were ever styled
+    # Heading 5, _LEGACY_HEADING_RE must still win (checked first) so a
+    # genuine "Part 1—Preliminary" line is never misread as a SECTION.
+    result = parse_paragraph_legacy("Part\xa01—Preliminary", style="Heading 5")
+    assert result[0].element_type == ElementType.PART
+
+
+def test_classify_legacy_stream_threads_style_for_heading5_shape():
+    # End-to-end through classify_legacy_stream: Heading-5 section headings
+    # interleaved with "subsection"-styled body/numbered-subsection text.
+    stream = [
+        ("1  Short title", False, "Heading 5"),
+        ("This Act may be cited as the Test Act 1994.", False, "subsection"),
+        ("2  Commencement", False, "Heading 5"),
+        ("(1)\tThis section commences on Royal Assent.", False, "subsection"),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.SECTION
+    assert results[0][0].number == "1"
+    assert results[0][0].heading == "Short title"
+    assert results[1][0].element_type == ElementType.BODY
+    assert results[2][0].element_type == ElementType.SECTION
+    assert results[2][0].number == "2"
+    assert results[3][0].element_type == ElementType.SUBSECTION
+    assert results[3][0].number == "1"

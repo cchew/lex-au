@@ -108,22 +108,37 @@ _LEGACY_HEADING_RE = re.compile(
 # rebuild if the empty-<section> residual is unexpectedly high afterward.
 
 
-def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
+# Legacy shape 3: style-driven section heading. A "Heading 5"-styled
+# paragraph carries the section number+heading on one line, in the same
+# "N<2+ spaces>text" shape _SECTION_RE already recognises for the
+# ActHead-styled non-legacy path (e.g. "1  Short title"). Confirmed
+# against agricultural-and-veterinary-chemical-products-levy-imposition-
+# (customs)-act-1994, northern-territory-(commonwealth-lands)-act-1980, and
+# loan-(war-service-land-settlement)-act-1970 (real corpus fixtures,
+# 2026-07-21 residual). Reuses _SECTION_RE rather than a new pattern since
+# the text shape is identical to the non-legacy path's — only the trigger
+# (style, not an ActHead* gate) differs. Confirmed safe across 20+
+# multi-heading-level fixtures (e.g. anti-terrorism-act-(no.-2)-2004, where
+# "Heading 6"/"Heading 9" carry Schedule/related-Act headings using \xa0 or
+# em-dash separators that don't satisfy _SECTION_RE's 2-space-or-tab
+# requirement, so they're untouched by this branch).
+_LEGACY_SECTION_HEADING_STYLES = frozenset({"Heading 5"})
+
+
+def parse_paragraph_legacy(text: str, style: str = "") -> list[ParsedParagraph]:
     """Style-agnostic classification for a single legacy-Act paragraph.
 
     Returns a list because the fused shape below yields two elements (a
     SECTION containing a SUBSECTION) from one DOCX paragraph.
 
     Handles Chapter/Part/Division/Subdivision headings (via the legacy-only
-    _LEGACY_HEADING_RE — see its comment for why this differs from the
-    shared _HEADING_RE), fused section+subsection ("1. (1) text"), and
-    standalone continuation subsections ("(2) text" with no section-number
-    prefix — the shape every subsection after the first one in a Shape-2
-    section actually takes; confirmed against the albury-wodonga-1982 Task 5
-    fixture, whose second subsection is exactly this shape). Does NOT handle
-    the separate-heading-plus-numbered-body shape (a bold heading paragraph
-    followed by "1.\ttext") — that needs the preceding paragraph's text and
-    bold-run info, so it's handled by classify_legacy_stream instead.
+    _LEGACY_HEADING_RE), a style-driven section heading ("Heading 5" style
+    + "N  Heading" text — shape 3), fused section+subsection
+    ("1. (1) text"), and standalone continuation subsections ("(2) text"
+    with no section-number prefix). Does NOT handle the separate-heading-
+    plus-numbered-body shape (a bold heading paragraph followed by
+    "1.\ttext") — that needs the preceding paragraph's bold-run info, so
+    it's handled by classify_legacy_stream instead.
     """
     stripped = text.strip()
     if not stripped:
@@ -134,6 +149,11 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
         prefix = m.group(1).capitalize()
         number, heading = m.group(2).strip(), (m.group(3) or "").strip()
         return [ParsedParagraph(_PREFIX_TO_ELEMENT[prefix], number=number, heading=heading)]
+
+    if style in _LEGACY_SECTION_HEADING_STYLES:
+        m = _SECTION_RE.match(stripped)
+        if m:
+            return [ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=m.group(2).strip())]
 
     m = _LEGACY_FUSED_RE.match(stripped)
     if m:
@@ -164,13 +184,13 @@ def parse_paragraph_legacy(text: str) -> list[ParsedParagraph]:
 _LEGACY_NUMBERED_RE = re.compile(r'^(\d+[A-Z]*)\.[ \t]+(.+)$', re.DOTALL)
 
 
-def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[ParsedParagraph]]:
+def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list[ParsedParagraph]]:
     """Classify a full legacy-Act paragraph stream, applying shape-1 lookback.
 
-    `paragraphs` is (text, all_bold) per DOCX paragraph, in document order,
-    where all_bold is True iff every non-whitespace run in that paragraph is
-    bold — the signal that distinguishes a shape-1 heading paragraph (e.g.
-    "Short title.") from an ordinary body sentence.
+    `paragraphs` is (text, all_bold, style) per DOCX paragraph, in document
+    order, where all_bold is True iff every non-whitespace run in that
+    paragraph is bold, and style is the paragraph's DOCX style name (used
+    for shape 3's Heading-5 detection; irrelevant to shapes 1/2 lookback).
 
     Returns one list of ParsedParagraph per input paragraph, aligned by
     index, so callers can still attach that paragraph's InlineSpans. A
@@ -187,7 +207,7 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[Pars
     results: list[list[ParsedParagraph]] = [[] for _ in range(n)]
     i = 0
     while i < n:
-        text, all_bold = paragraphs[i]
+        text, all_bold, style = paragraphs[i]
         stripped = text.strip()
 
         if not stripped:
@@ -212,7 +232,7 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool]]) -> list[list[Pars
                 i += 2
                 continue
 
-        results[i] = parse_paragraph_legacy(text)
+        results[i] = parse_paragraph_legacy(text, style)
         i += 1
 
     return results

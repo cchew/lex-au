@@ -82,7 +82,10 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
         para_texts.append("".join(s.text for s in spans))
 
     if legacy:
-        stream_input = [(text, _all_bold(spans)) for text, spans in zip(para_texts, para_spans)]
+        stream_input = [
+            (text, _all_bold(spans), style)
+            for text, spans, style in zip(para_texts, para_spans, styles)
+        ]
         legacy_results = classify_legacy_stream(stream_input)
     else:
         legacy_results = None

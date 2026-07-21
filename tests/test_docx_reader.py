@@ -251,3 +251,51 @@ def test_act_supreme_court_1992_heading_without_style():
     parts = [p for p in paras if p.element_type == ElementType.PART]
     assert len(parts) >= 1
     assert any("PRELIMINARY" in p.heading.upper() for p in parts)
+
+
+def test_agricultural_chemical_levy_1994_shape3_fixture():
+    # Shape 3: style-driven section heading ("Heading 5" style, "N  Heading"
+    # text) + "subsection"-styled body/numbered-subsection paragraphs.
+    # Expect 4 sections (Short title, Commencement, Imposition, Act does
+    # not impose levy on property of a State); sections 3 and 4 each have
+    # 2 numbered subsections, sections 1 and 2 have none.
+    doc = Document(str(
+        CORPUS_DOCX / "agricultural-and-veterinary-chemical-products-levy-imposition-(customs)-act-1994-vol0.docx"
+    ))
+    paras = list(iter_paragraphs(doc))
+    sections = [p for p in paras if p.element_type == ElementType.SECTION]
+    subsections = [p for p in paras if p.element_type == ElementType.SUBSECTION]
+    assert len(sections) == 4
+    assert sections[0].heading == "Short title"
+    assert sections[2].heading == "Imposition"
+    assert {s.number for s in subsections} >= {"1", "2"}
+
+
+def test_northern_territory_commonwealth_lands_1980_shape3_fixture():
+    # Expect 3 sections (Short title, Commencement, Notification of
+    # acquisition of certain interests in land); section 3 has 3 numbered
+    # subsections.
+    doc = Document(str(
+        CORPUS_DOCX / "northern-territory-(commonwealth-lands)-act-1980-vol0.docx"
+    ))
+    paras = list(iter_paragraphs(doc))
+    sections = [p for p in paras if p.element_type == ElementType.SECTION]
+    subsections = [p for p in paras if p.element_type == ElementType.SUBSECTION]
+    assert len(sections) == 3
+    assert sections[0].heading == "Short title"
+    assert sections[2].heading == "Notification of acquisition of certain interests in land"
+    assert {s.number for s in subsections} >= {"1", "2", "3"}
+
+
+def test_loan_war_service_land_settlement_1970_shape3_fixture():
+    # Expect 4 sections (Short title, Commencement, Authority to borrow
+    # $4,500,000, Application of moneys), 0 subsections (all bodies are
+    # plain "subsection"-styled prose with no "(N)" numbering).
+    doc = Document(str(
+        CORPUS_DOCX / "loan-(war-service-land-settlement)-act-1970-vol0.docx"
+    ))
+    paras = list(iter_paragraphs(doc))
+    sections = [p for p in paras if p.element_type == ElementType.SECTION]
+    assert len(sections) == 4
+    assert sections[0].heading == "Short title"
+    assert sections[3].heading == "Application of moneys"
