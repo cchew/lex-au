@@ -66,7 +66,7 @@ Each Act is a single AKN 3.0 XML file with:
 - `<blockList>`/`<item>` for unnumbered list structures
 - `<lifecycle>`, `<temporalData>`, `<passiveModifications>` populated from Endnote 3-4 amendment history
 - `<quotedStructure>` for single-provision amendment inserts; `<figure>`/`<img>` for embedded images; `<rref>` for section range references
-- Corpus index at `index.json`; parse report per Act in `reports/`
+- Corpus index at `index.json` (also mirrored as `title_id`/`comp_id` columns in `data/train.jsonl`) — combine `title_id` with `https://www.legislation.gov.au/{title_id}/latest/text` for a working link back to the Act's real page on legislation.gov.au (Act-level only; the site has no stable per-section anchor scheme). Parse report per Act in `reports/`.
 
 Full element-by-element conformance detail, organised by AKN 3.0 spec chapter: [`docs/akn-conformance.md`](https://github.com/cchew/lex-au/blob/main/docs/akn-conformance.md) in the source repo.
 
