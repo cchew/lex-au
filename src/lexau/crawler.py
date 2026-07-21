@@ -14,6 +14,7 @@ _TITLE_ID_RE = re.compile(r"C\d{4}A(\d+)")
 _INSTRUMENT_RE = re.compile(r"F\d{4}[A-Z](\d+)")  # F-prefixed = legislative instruments; reserved for future filter-by-type logic
 _REG_RE = re.compile(r"C\d{4}R(\d+)")  # C-prefixed with R = regulations; reserved for future filter-by-type logic
 _OLE2_MAGIC = b"\xd0\xcf\x11\xe0"  # legacy Word 97-2003 .doc (OLE2/CFB)
+_RTF_MAGIC = b"{\\rt"  # RTF payload served in place of a .doc/.docx compilation
 
 
 def _odata_escape(s: str) -> str:
@@ -200,7 +201,7 @@ class Crawler:
                     return []
                 if content.startswith(b"PK"):
                     dest.write_bytes(content)
-                elif content.startswith(_OLE2_MAGIC):
+                elif content.startswith(_OLE2_MAGIC) or content.startswith(_RTF_MAGIC):
                     doc_path = dest_dir / f"{meta.safe_name}-vol{vol}.doc"
                     doc_path.write_bytes(content)
                     converted = convert_doc_to_docx(doc_path, dest_dir)

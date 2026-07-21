@@ -28,6 +28,7 @@ VERSIONS_RESPONSE = {
 
 DOCX_BYTES = b"PK\x03\x04" + b"\x00" * 100  # fake ZIP/DOCX magic bytes
 OLE2_BYTES = b"\xd0\xcf\x11\xe0" + b"\x00" * 100  # legacy .doc magic bytes
+RTF_BYTES = b"{\\rtf1\\ansi" + b"\x00" * 100  # RTF payload masquerading as .doc
 
 
 @resp_lib.activate
@@ -276,6 +277,54 @@ def test_fetch_docx_volumes_returns_empty_when_conversion_fails(tmp_path: Path):
         resp_lib.GET,
         f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
         body=OLE2_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    with patch("lexau.crawler.convert_doc_to_docx", return_value=None):
+        paths = crawler.fetch_docx_volumes(meta, tmp_path)
+
+    assert paths == []
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_converts_rtf_response(tmp_path: Path):
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=RTF_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    def fake_convert(doc_path, out_dir, timeout=120):
+        converted = out_dir / f"{doc_path.stem}.docx"
+        converted.write_bytes(b"PK\x03\x04converted")
+        return converted
+
+    crawler = Crawler(crawl_delay=0)
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+    with patch("lexau.crawler.convert_doc_to_docx", side_effect=fake_convert):
+        paths = crawler.fetch_docx_volumes(meta, tmp_path)
+
+    assert len(paths) == 1
+    assert paths[0].name.endswith("vol0.docx")
+    assert paths[0].read_bytes() == b"PK\x03\x04converted"
+    assert (tmp_path / f"{meta.safe_name}-vol0.doc").exists()  # raw payload kept as provenance signal
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_returns_empty_when_rtf_conversion_fails(tmp_path: Path):
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=RTF_BYTES,
         content_type="application/octet-stream",
     )
 
