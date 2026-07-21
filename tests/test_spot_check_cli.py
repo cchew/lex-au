@@ -1,3 +1,4 @@
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -37,3 +38,28 @@ def test_dump_empty_body_writes_sorted_slugs(tmp_path: Path):
     lines = out_path.read_text().splitlines()
     assert lines == ["aaa-empty-act", "zzz-empty-act"]
     assert "has-sections-act" not in lines
+
+
+def test_only_source_format_filters_to_matching_acts(tmp_path: Path):
+    corpus_dir = tmp_path / "corpus"
+    xml_dir = corpus_dir / "xml"
+    xml_dir.mkdir(parents=True)
+    _write_act_xml(xml_dir, "doc-converted-act", has_section=True)
+    _write_act_xml(xml_dir, "docx-native-act", has_section=True)
+    (corpus_dir / "index.json").write_text(json.dumps({
+        "acts": {
+            "doc-converted-act": {"source_format": "doc-converted"},
+            "docx-native-act": {},
+        }
+    }))
+
+    result = subprocess.run(
+        [sys.executable, "scripts/spot_check.py",
+         "--corpus-dir", str(corpus_dir),
+         "--only-source-format", "doc-converted"],
+        capture_output=True, text=True,
+    )
+
+    assert "doc-converted-act" in result.stdout
+    assert "docx-native-act" not in result.stdout
+    assert "Checking 1 Acts" in result.stdout

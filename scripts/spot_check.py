@@ -100,6 +100,10 @@ def main() -> int:
         "--dump-empty-body", type=Path, default=None,
         help="Write the sorted list of empty-<body> Act slugs to this path, one per line",
     )
+    parser.add_argument(
+        "--only-source-format", default=None,
+        help="Only check Acts whose index.json entry has this source_format value",
+    )
     args = parser.parse_args()
 
     corpus_dir: Path = args.corpus_dir
@@ -111,6 +115,14 @@ def main() -> int:
         return 1
 
     xml_files = sorted(xml_dir.glob("*.xml"))
+    if args.only_source_format:
+        index_path = corpus_dir / "index.json"
+        index = json.loads(index_path.read_text())
+        matching_slugs = {
+            slug for slug, entry in index["acts"].items()
+            if entry.get("source_format") == args.only_source_format
+        }
+        xml_files = [p for p in xml_files if p.stem in matching_slugs]
     if not xml_files:
         print("ERROR: no XML files found in corpus/xml/", file=sys.stderr)
         return 1
