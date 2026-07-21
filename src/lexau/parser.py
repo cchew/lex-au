@@ -122,7 +122,18 @@ _LEGACY_HEADING_RE = re.compile(
 # "Heading 6"/"Heading 9" carry Schedule/related-Act headings using \xa0 or
 # em-dash separators that don't satisfy _SECTION_RE's 2-space-or-tab
 # requirement, so they're untouched by this branch).
-_LEGACY_SECTION_HEADING_STYLES = frozenset({"Heading 5"})
+_LEGACY_SECTION_HEADING_STYLES = frozenset({"heading 5"})
+
+
+def _normalize_style_name(style: str) -> str:
+    """Fold a docx style name to its base form for legacy-shape matching.
+
+    LibreOffice serializes the same conceptual style differently depending
+    on whether the source was OLE2 .doc ("Heading 5") or RTF ("heading 5,s"
+    — lowercase, comma-appended alias suffix). Comparing on text-before-
+    first-comma, lowercased, treats both as the same style.
+    """
+    return style.split(",", 1)[0].strip().lower()
 
 
 def parse_paragraph_legacy(text: str, style: str = "") -> list[ParsedParagraph]:
@@ -150,7 +161,7 @@ def parse_paragraph_legacy(text: str, style: str = "") -> list[ParsedParagraph]:
         number, heading = m.group(2).strip(), (m.group(3) or "").strip()
         return [ParsedParagraph(_PREFIX_TO_ELEMENT[prefix], number=number, heading=heading)]
 
-    if style in _LEGACY_SECTION_HEADING_STYLES:
+    if _normalize_style_name(style) in _LEGACY_SECTION_HEADING_STYLES:
         m = _SECTION_RE.match(stripped)
         if m:
             return [ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=m.group(2).strip())]

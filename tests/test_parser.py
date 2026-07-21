@@ -402,6 +402,28 @@ def test_legacy_style_heading5_alnum_section_number():
     assert result[0].heading == "Simplified outline"
 
 
+def test_legacy_style_heading5_rtf_alias_suffix():
+    # RTF-sourced Acts (australian-national-railways-commission-sale-act-1997,
+    # corporate-law-economic-reform-program-act-1999) serialize the same
+    # conceptual style as "heading 5,s" (lowercase, comma-appended alias)
+    # rather than OLE2 LibreOffice's "Heading 5". Must match identically.
+    result = parse_paragraph_legacy("1  Short title", style="heading 5,s")
+    assert len(result) == 1
+    assert result[0].element_type == ElementType.SECTION
+    assert result[0].number == "1"
+    assert result[0].heading == "Short title"
+
+
+def test_legacy_style_heading5_normalization_no_false_positive():
+    # Normalization (before-first-comma, lowercased) must not cause an
+    # unrelated style like "Heading 50" or "Normal" to match "Heading 5".
+    result = parse_paragraph_legacy("1  Short title", style="heading 50")
+    assert result[0].element_type == ElementType.BODY
+
+    result = parse_paragraph_legacy("1  Short title", style="Normal")
+    assert result[0].element_type == ElementType.BODY
+
+
 def test_legacy_style_heading5_requires_section_re_shape():
     # A Heading-5-styled paragraph that doesn't match "N<2+ spaces>text"
     # (no number prefix) falls through to ordinary classification, same as
