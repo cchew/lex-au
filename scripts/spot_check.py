@@ -96,6 +96,10 @@ def check_report(path: Path) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpus-dir", default="corpus", type=Path)
+    parser.add_argument(
+        "--dump-empty-body", type=Path, default=None,
+        help="Write the sorted list of empty-<body> Act slugs to this path, one per line",
+    )
     args = parser.parse_args()
 
     corpus_dir: Path = args.corpus_dir
@@ -138,6 +142,7 @@ def main() -> int:
         total_failures += len(issues)
 
     empty_body_count = 0
+    empty_body_slugs: list[str] = []
     for xml_path in xml_files:
         try:
             root = etree.parse(str(xml_path)).getroot()
@@ -145,6 +150,11 @@ def main() -> int:
             continue
         if len(root.findall(".//akn:section", NS)) == 0:
             empty_body_count += 1
+            empty_body_slugs.append(xml_path.stem)
+
+    if args.dump_empty_body:
+        args.dump_empty_body.write_text("\n".join(sorted(empty_body_slugs)) + "\n")
+        print(f"Wrote {len(empty_body_slugs)} empty-<body> Act slugs -> {args.dump_empty_body}")
 
     print(f"\n{'='*60}")
     print(f"Acts with zero <section> elements: {empty_body_count} / {len(xml_files)}")
