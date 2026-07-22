@@ -38,7 +38,7 @@ def test_export_hf_calls_upload_large_folder(small_corpus):
         call_kwargs = mock_api.upload_large_folder.call_args.kwargs
         assert call_kwargs["repo_id"] == "cchew/lex-au"
         assert call_kwargs["repo_type"] == "dataset"
-        assert call_kwargs["ignore_patterns"] == ["docx/**"]
+        assert call_kwargs["ignore_patterns"] == ["docx/**", "doc_spike/**"]
         mock_api.upload_folder.assert_not_called()
 
 
