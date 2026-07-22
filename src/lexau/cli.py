@@ -191,7 +191,7 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
         folder_path=str(corpus_dir),
         repo_id=repo,
         repo_type="dataset",
-        ignore_patterns=["docx/**"],
+        ignore_patterns=["docx/**", "doc_spike/**"],
     )
     click.echo(f"Uploading dataset card from {readme}…")
     api.upload_file(
