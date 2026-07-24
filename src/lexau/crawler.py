@@ -194,7 +194,10 @@ class Crawler:
 
         paths: list[Path] = []
         for vol in volumes:
-            dest = dest_dir / f"{meta.safe_name}-vol{vol}.docx"
+            # Filename must include comp_num: without it, a docx cached from an
+            # earlier compilation collides with a later one on disk and this
+            # exists-check silently serves the stale bytes under new metadata.
+            dest = dest_dir / f"{meta.safe_name}-c{meta.comp_num}-vol{vol}.docx"
             if not dest.exists():
                 content = self.fetch_volume_bytes(meta, vol)
                 if content is None:
@@ -202,7 +205,7 @@ class Crawler:
                 if content.startswith(b"PK"):
                     dest.write_bytes(content)
                 elif content.startswith(_OLE2_MAGIC) or content.startswith(_RTF_MAGIC):
-                    doc_path = dest_dir / f"{meta.safe_name}-vol{vol}.doc"
+                    doc_path = dest_dir / f"{meta.safe_name}-c{meta.comp_num}-vol{vol}.doc"
                     doc_path.write_bytes(content)
                     converted = convert_doc_to_docx(doc_path, dest_dir)
                     if converted is None:

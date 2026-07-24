@@ -65,7 +65,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             if not docx_paths:
                 click.echo(f"  SKIP -- DOCX download failed", err=True)
                 continue
-            source_format = "doc-converted" if any(docx_dir.glob(f"{meta.safe_name}-vol*.doc")) else None
+            source_format = "doc-converted" if any(docx_dir.glob(f"{meta.safe_name}-c{meta.comp_num}-vol*.doc")) else None
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             builder = AknBuilder(meta)

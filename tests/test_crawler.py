@@ -265,7 +265,7 @@ def test_fetch_docx_volumes_converts_legacy_doc_response(tmp_path: Path):
     assert len(paths) == 1
     assert paths[0].name.endswith("vol0.docx")
     assert paths[0].read_bytes() == b"PK\x03\x04converted"
-    assert (tmp_path / f"{meta.safe_name}-vol0.doc").exists()  # raw .doc kept as provenance signal
+    assert (tmp_path / f"{meta.safe_name}-c{meta.comp_num}-vol0.doc").exists()  # raw .doc kept as provenance signal
 
 
 @resp_lib.activate
@@ -313,7 +313,51 @@ def test_fetch_docx_volumes_converts_rtf_response(tmp_path: Path):
     assert len(paths) == 1
     assert paths[0].name.endswith("vol0.docx")
     assert paths[0].read_bytes() == b"PK\x03\x04converted"
-    assert (tmp_path / f"{meta.safe_name}-vol0.doc").exists()  # raw payload kept as provenance signal
+    assert (tmp_path / f"{meta.safe_name}-c{meta.comp_num}-vol0.doc").exists()  # raw payload kept as provenance signal
+
+
+@resp_lib.activate
+def test_fetch_docx_volumes_refetches_when_compilation_changes(tmp_path: Path):
+    """A later compilation must not silently reuse an earlier compilation's cached docx."""
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2024C00280',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=DOCX_BYTES,
+        content_type="application/octet-stream",
+    )
+
+    crawler = Crawler(crawl_delay=0)
+    meta_old = crawler.fetch_metadata("Privacy Act 1988")
+    paths_old = crawler.fetch_docx_volumes(meta_old, tmp_path)
+    assert paths_old[0].read_bytes() == DOCX_BYTES
+
+    new_versions_response = {
+        "value": [{
+            "titleId": "C2004A03712",
+            "registerId": "C2026C00999",
+            "compilationNumber": "53",
+            "start": "2026-07-01",
+        }]
+    }
+    new_docx_bytes = b"PK\x03\x04" + b"\x11" * 100
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=new_versions_response)
+    resp_lib.add(resp_lib.GET, f"{API}/Documents", json={"value": [{"volumeNumber": 0}]})
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/documents/find(registerId='C2026C00999',type='Primary',format='Word',uniqueTypeNumber=0,volumeNumber=0,rectificationVersionNumber=0)",
+        body=new_docx_bytes,
+        content_type="application/octet-stream",
+    )
+
+    meta_new = crawler.fetch_metadata("Privacy Act 1988")
+    paths_new = crawler.fetch_docx_volumes(meta_new, tmp_path)
+
+    assert paths_new[0] != paths_old[0]
+    assert paths_new[0].read_bytes() == new_docx_bytes
 
 
 @resp_lib.activate
