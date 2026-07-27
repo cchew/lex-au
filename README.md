@@ -48,7 +48,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 - **v0.7.0** - Term/def extraction recall: broadened definiendum character class, relational definitions, asterisk-marked term usages, Dictionary heading recognition, false-positive guards. list-acts/list-instruments crawler fix.
 - **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
 - **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations
-- **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping. 269 tests.
+- **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping.
 - **v0.6.0** - Inline formatting (`<b>/<i>/<sup>/<sub>`) and list-form term/def injection. AKN compliance ~96-100% of applicable elements (self-assessed, see [this](docs/akn-conformance.md)).
 - **v0.5.0** - Amendment history and navigator prerequisites: `<blockList>`, subsidiary legislation support, `<lifecycle>`/`<temporalData>`, `<quotedStructure>`, `<figure>`/`<img>`, range references. 11 Acts + TG(MD)R 2002.
 - **v0.4.0** - AKN semantic layer: `<term>`/`<def>`/`<TLCTerm>`, full FRBR, `<quantity>`, `<role>`/`<TLCRole>`.
