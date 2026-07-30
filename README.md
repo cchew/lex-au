@@ -21,6 +21,8 @@ The UK publishes its legislation the same way: every Act on [legislation.gov.uk]
 
 Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AKN 3.0 XML with [FRBR URIs](https://interoperable-europe.ec.europa.eu/sites/default/files/news/2019-11/FRBR-ShortIntro.pdf) and section-level eIds, tracks corpus state for delta updates, generates a [static browsable site](https://lex-au.netlify.app), and exports the corpus to Hugging Face.
 
+The Department of Finance's GovCMS DXP team is building the whole-of-government version of this: [search.gov.au](https://search.gov.au) (alpha) ingests all in-force AU legislation into an internal, authority-graphed corpus, and is working with OPC on a legislative XML standard in the same territory as this repo's AKN mapping. (See [Government content is AI food](https://www.youtube.com/watch?v=X5UAWFl7-FE), APS Digital Profession Innovation Month, July 2026)
+
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
 **Status: v0.7.5** - 3,078 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
