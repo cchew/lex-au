@@ -68,3 +68,22 @@ def test_diff_writes_empty_file_when_nothing_new(tmp_path: Path):
     assert result.returncode == 0
     assert output.read_text() == ""
     assert "Found 0 new Act(s)" in result.stdout
+
+
+def test_diff_respects_limit(tmp_path: Path):
+    live_acts = tmp_path / "live.txt"
+    live_acts.write_text("C Act 2026\nA Act 2026\nB Act 2026\n")
+    corpus_dir = tmp_path / "corpus"
+    corpus_dir.mkdir()
+    output = tmp_path / "new-acts.txt"
+
+    result = subprocess.run(
+        [sys.executable, "scripts/diff_new_acts.py",
+         "--live-acts", str(live_acts), "--corpus-dir", str(corpus_dir),
+         "--output", str(output), "--limit", "2"],
+        capture_output=True, text=True,
+    )
+
+    assert result.returncode == 0
+    assert output.read_text().splitlines() == ["A Act 2026", "B Act 2026"]
+    assert "Found 2 new Act(s)" in result.stdout

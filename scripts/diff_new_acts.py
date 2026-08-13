@@ -13,7 +13,9 @@ import sys
 from pathlib import Path
 
 
-def compute_new_acts(live_acts_path: Path, corpus_dir: Path) -> list[str]:
+def compute_new_acts(
+    live_acts_path: Path, corpus_dir: Path, limit: int | None = None
+) -> list[str]:
     live_names = {
         line.strip() for line in live_acts_path.read_text().splitlines() if line.strip()
     }
@@ -22,7 +24,10 @@ def compute_new_acts(live_acts_path: Path, corpus_dir: Path) -> list[str]:
     if index_path.exists():
         index = json.loads(index_path.read_text())
         corpus_names = {entry["name"] for entry in index.get("acts", {}).values()}
-    return sorted(live_names - corpus_names)
+    new_acts = sorted(live_names - corpus_names)
+    if limit is not None:
+        new_acts = new_acts[:limit]
+    return new_acts
 
 
 def main() -> int:
@@ -32,9 +37,13 @@ def main() -> int:
     parser.add_argument("--corpus-dir", type=Path, default=Path("corpus"))
     parser.add_argument("--output", type=Path, required=True,
                          help="Where to write new candidate Act names, one per line")
+    parser.add_argument("--limit", type=int, default=None,
+                         help="Cap the number of candidate Act names returned (no cap "
+                              "unless set; growth-check.yml's pre-build candidate diff "
+                              "passes --limit 20)")
     args = parser.parse_args()
 
-    new_acts = compute_new_acts(args.live_acts, args.corpus_dir)
+    new_acts = compute_new_acts(args.live_acts, args.corpus_dir, limit=args.limit)
     args.output.write_text("\n".join(new_acts) + "\n" if new_acts else "")
     print(f"Found {len(new_acts)} new Act(s) not yet in the corpus.")
     return 0
