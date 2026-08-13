@@ -1,0 +1,78 @@
+# .github/actions/publish-corpus/action.yml
+name: "Publish corpus"
+description: >
+  Runs the verify gate (pytest + full-corpus spot_check.py) and, if clean,
+  publishes the local corpus/ to Hugging Face and the Netlify site. Assumes
+  corpus/ already reflects the desired state before this action runs.
+
+inputs:
+  run-label:
+    description: "Human-readable label for this run, used in issue bodies"
+    required: true
+  hf-token:
+    required: true
+  netlify-auth-token:
+    required: true
+  netlify-site-id:
+    required: true
+  gh-token:
+    description: "Token gh CLI uses to open/update the verify-failure tracking issue"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run test suite
+      id: pytest
+      shell: bash
+      run: pytest -q
+      continue-on-error: true
+
+    - name: Run full-corpus spot check
+      id: spotcheck
+      if: steps.pytest.outcome == 'success'
+      shell: bash
+      run: python scripts/spot_check.py --corpus-dir corpus
+      continue-on-error: true
+
+    - name: Report verify-gate failure
+      if: steps.pytest.outcome != 'success' || steps.spotcheck.outcome != 'success'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+      run: |
+        {
+          echo "Verify gate failed for **${{ inputs.run-label }}** run."
+          echo ""
+          echo "- pytest: ${{ steps.pytest.outcome }}"
+          echo "- spot_check.py: ${{ steps.spotcheck.outcome }}"
+          echo ""
+          echo "See the [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+        } > /tmp/verify-failure-body.md
+        python scripts/report_pipeline_issue.py \
+          --repo "${{ github.repository }}" \
+          --label pipeline-verify-failure \
+          --title "Corpus pipeline: verify gate failing" \
+          --body-file /tmp/verify-failure-body.md
+
+    - name: Fail if verify gate failed
+      if: steps.pytest.outcome != 'success' || steps.spotcheck.outcome != 'success'
+      shell: bash
+      run: exit 1
+
+    - name: Export to Hugging Face
+      shell: bash
+      env:
+        HF_TOKEN: ${{ inputs.hf-token }}
+      run: lexau export-hf --repo cchew/lex-au --corpus-dir corpus
+
+    - name: Build static site
+      shell: bash
+      run: lexau site --corpus-dir corpus --site-dir site
+
+    - name: Deploy to Netlify
+      shell: bash
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
+        NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
+      run: npx --yes netlify-cli deploy --prod --dir=site
