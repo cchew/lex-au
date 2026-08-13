@@ -52,7 +52,8 @@ def test_creates_new_issue_when_none_open(tmp_path: Path):
     assert result.returncode == 0, result.stderr
     calls = log_path.read_text().splitlines()
     assert calls[0].startswith("issue list --repo owner/repo --label pipeline-verify-failure")
-    assert calls[1].startswith("issue create --repo owner/repo")
+    assert calls[1].startswith("label create pipeline-verify-failure --repo owner/repo")
+    assert calls[2].startswith("issue create --repo owner/repo")
     assert "Created new issue" in result.stdout
 
 

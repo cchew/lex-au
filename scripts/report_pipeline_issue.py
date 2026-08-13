@@ -27,6 +27,15 @@ def find_open_issue(repo: str, label: str) -> int | None:
     return issues[0]["number"] if issues else None
 
 
+def ensure_label(repo: str, label: str) -> None:
+    subprocess.run(
+        ["gh", "label", "create", label, "--repo", repo,
+         "--color", "d73a4a", "--description", "Automated corpus pipeline tracking issue",
+         "--force"],
+        capture_output=True, check=False,
+    )
+
+
 def report(repo: str, label: str, title: str, body_file: Path) -> int:
     existing = find_open_issue(repo, label)
     if existing is not None:
@@ -38,6 +47,7 @@ def report(repo: str, label: str, title: str, body_file: Path) -> int:
         print(f"Updated existing issue #{existing} (label: {label}).")
         return existing
 
+    ensure_label(repo, label)
     result = subprocess.run(
         ["gh", "issue", "create", "--repo", repo, "--title", title,
          "--label", label, "--body-file", str(body_file)],
