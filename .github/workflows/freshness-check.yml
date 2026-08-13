@@ -1,0 +1,60 @@
+# .github/workflows/freshness-check.yml
+name: Freshness check
+
+on:
+  schedule:
+    # Weekly, Sunday 19:00 UTC -- one hour after growth-check; the shared
+    # corpus-publish concurrency group serializes them regardless.
+    - cron: "0 19 * * 0"
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Optional ISO date override (e.g. 2026-08-01) for catch-up after a longer gap"
+        required: false
+        default: ""
+
+concurrency:
+  group: corpus-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  freshness-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lexau
+        run: pip install -e ".[dev]"
+
+      - name: Restore corpus from Hugging Face
+        run: python scripts/restore_corpus_from_hf.py --repo cchew/lex-au --local-dir corpus
+
+      - name: Compute lookback window
+        id: window
+        run: |
+          if [ -n "${{ github.event.inputs.since }}" ]; then
+            since="${{ github.event.inputs.since }}"
+          else
+            since=$(date -u -d "-8 days" +%F)
+          fi
+          echo "since=$since" >> "$GITHUB_OUTPUT"
+
+      - name: Update changed Acts
+        run: lexau update --since "${{ steps.window.outputs.since }}" --corpus-dir corpus
+
+      - name: Publish corpus
+        uses: ./.github/actions/publish-corpus
+        with:
+          run-label: freshness-check
+          hf-token: ${{ secrets.HF_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          gh-token: ${{ github.token }}
