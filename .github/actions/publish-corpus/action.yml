@@ -22,10 +22,20 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Verify corpus size floor
+      shell: bash
+      run: |
+        count=$(python -c "import json; print(len(json.load(open('corpus/index.json'))['acts']))")
+        echo "Corpus has $count Acts."
+        if [ "$count" -lt 2500 ]; then
+          echo "::error::Corpus size ($count) is below the safety floor (2500) — refusing to publish a possibly-partial corpus."
+          exit 1
+        fi
+
     - name: Run test suite
       id: pytest
       shell: bash
-      run: pytest -q
+      run: pytest -q tests/
       continue-on-error: true
 
     - name: Run full-corpus spot check
@@ -59,6 +69,10 @@ runs:
       if: steps.pytest.outcome != 'success' || steps.spotcheck.outcome != 'success'
       shell: bash
       run: exit 1
+
+    - name: Export train.jsonl
+      shell: bash
+      run: lexau export-jsonl --corpus-dir corpus
 
     - name: Export to Hugging Face
       shell: bash

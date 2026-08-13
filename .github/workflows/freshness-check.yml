@@ -24,6 +24,7 @@ permissions:
 jobs:
   freshness-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -39,9 +40,11 @@ jobs:
 
       - name: Compute lookback window
         id: window
+        env:
+          SINCE_INPUT: ${{ github.event.inputs.since }}
         run: |
-          if [ -n "${{ github.event.inputs.since }}" ]; then
-            since="${{ github.event.inputs.since }}"
+          if [ -n "$SINCE_INPUT" ]; then
+            since="$SINCE_INPUT"
           else
             since=$(date -u -d "-8 days" +%F)
           fi

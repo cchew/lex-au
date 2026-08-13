@@ -18,6 +18,7 @@ permissions:
 jobs:
   growth-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -35,7 +36,7 @@ jobs:
         run: lexau list-acts --output /tmp/live-acts.txt
 
       - name: Diff against corpus
-        run: python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt
+        run: python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt --limit 20
 
       - name: Build new Acts
         run: |
@@ -46,15 +47,21 @@ jobs:
           fi
 
       - name: Report unresolved growth failures
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/still-missing.txt
           if [ -s /tmp/still-missing.txt ]; then
+            total=$(wc -l < /tmp/still-missing.txt)
             {
               echo "Acts that failed to build during this growth-check run and remain outside the corpus:"
               echo ""
-              sed 's/^/- /' /tmp/still-missing.txt
+              head -50 /tmp/still-missing.txt | sed 's/^/- /'
+              if [ "$total" -gt 50 ]; then
+                echo ""
+                echo "(showing first 50 of $total total)"
+              fi
               echo ""
               echo "These are retried automatically next scheduled run. See the [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
             } > /tmp/growth-failure-body.md
