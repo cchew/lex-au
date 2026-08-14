@@ -313,11 +313,17 @@ class Crawler:
 
     def list_modified_since(self, since: date) -> list[str]:
         """Return Act names whose latest compilation started after `since`."""
-        since_str = since.isoformat()
+        # `start` is Edm.DateTimeOffset in the API's schema, not a string --
+        # a quoted '...' literal 400s ("incompatible types ... DateTimeOffset
+        # and String"). OData DateTimeOffset literals are unquoted and must
+        # include a time component, with no trailing offset/Z suffix
+        # (confirmed live: a 'Z' suffix also 400s -- exact format the API
+        # accepts is bare 'yyyy-mm-ddThh:mm:ss').
+        since_str = f"{since.isoformat()}T00:00:00"
         versions = self._get(
             "Versions",
             {
-                "$filter": f"isLatest eq true and start gt '{_odata_escape(since_str)}'",
+                "$filter": f"isLatest eq true and start gt {since_str}",
                 "$select": "titleId",
             },
         ).get("value", [])

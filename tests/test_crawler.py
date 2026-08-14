@@ -97,6 +97,28 @@ def test_list_modified_since_returns_act_names():
 
 
 @resp_lib.activate
+def test_list_modified_since_sends_unquoted_datetimeoffset_filter():
+    # `start` is Edm.DateTimeOffset in the live API's schema -- a quoted
+    # string literal 400s with "incompatible types ... DateTimeOffset and
+    # String" (confirmed against the real API). Mocked responses don't
+    # validate this server-side, so assert on the actual request query
+    # string sent, not just that a response gets parsed.
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Versions",
+        json={"value": []},
+    )
+
+    crawler = Crawler()
+    crawler.list_modified_since(date(2026, 8, 6))
+
+    sent_url = resp_lib.calls[0].request.url
+    assert "start+gt+2026-08-06T00%3A00%3A00" in sent_url or "start%20gt%202026-08-06T00%3A00%3A00" in sent_url
+    assert "start+gt+%272026-08-06" not in sent_url
+    assert "start%20gt%20%272026-08-06" not in sent_url
+
+
+@resp_lib.activate
 def test_fetch_docx_volumes_single_volume(tmp_path: Path):
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
