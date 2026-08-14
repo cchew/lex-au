@@ -43,21 +43,21 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
-- **v0.8.0** - Automated weekly growth/freshness ingest pipeline (GitHub Actions): detects new in-force Acts and Acts whose live compilation has moved on, verifies, and publishes to Hugging Face and Netlify automatically, replacing the prior manual-only process. Low-value-title exclusion policy (amending/repeal Acts) enforced dynamically in the growth diff.
-- **v0.7.5** - Both doc-conversion exclusion categories (1,586 low-value titles, 82 individually-reviewed drops) re-verified live against the legislation.gov.au API and confirmed durable exclusions; 4 previously-failed keep-list Acts ingested. RTF-payload `.doc` detection and legacy-template style-name normalisation closed the remaining doc-conversion stragglers. Corpus at 3,078 Acts + 2 Regulations.
-- **v0.7.4** - Legacy `.doc` (pre-OOXML) Act conversion via LibreOffice headless, gated on a 30-Act spike (90% non-empty-`<body>` rate, GO). 124 of a 128-Act relevance-skimmed batch converted and ingested; `source_format: doc-converted` provenance tracked in `index.json`.
-- **v0.7.3** - Style-agnostic legacy-Act parsing for DOCX with no `ActHead*` style: 422 of 551 previously-empty-body Acts now parse (76.6%). 129 residual (58 with an additional unimplemented paragraph shape, 71 fragmented one-off historical formats) documented as future work.
-- **v0.7.2** - List-form definition completeness: folds orphaned list content into truncated `<def>` elements (~3,125 defs fixed corpus-wide).
-- **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations, 28,662 terms. List-def false-positive guard, italic-run anchoring for definienda.
-- **v0.7.0** - Term/def extraction recall: broadened definiendum character class, relational definitions, asterisk-marked term usages, Dictionary heading recognition, false-positive guards. list-acts/list-instruments crawler fix.
-- **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping for titles with an apostrophe plus a parenthesised clause, a WAF false-positive retry via progressively-trimmed title fragments, and F-prefixed instrument ID parsing.
-- **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations
-- **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Two parser bug fixes: schedule-boundary misclassification, OData apostrophe escaping.
-- **v0.6.0** - Inline formatting (`<b>/<i>/<sup>/<sub>`) and list-form term/def injection. AKN compliance ~96-100% of applicable elements (self-assessed, see [this](docs/akn-conformance.md)).
-- **v0.5.0** - Amendment history and navigator prerequisites: `<blockList>`, subsidiary legislation support, `<lifecycle>`/`<temporalData>`, `<quotedStructure>`, `<figure>`/`<img>`, range references. 11 Acts + TG(MD)R 2002.
+- **v0.8.0** - Automated growth/freshness ingest pipeline (GitHub Actions), dynamic low-value-title exclusion filtering.
+- **v0.7.5** - Doc-conversion exclusions re-verified live, RTF detection, legacy-template style normalisation. 3,078 Acts + 2 Regulations.
+- **v0.7.4** - Legacy `.doc` conversion via LibreOffice headless, `source_format` provenance tracking.
+- **v0.7.3** - Style-agnostic legacy-Act parsing for DOCX with no `ActHead*` style.
+- **v0.7.2** - List-form definition completeness, folds orphaned list content into truncated `<def>` elements.
+- **v0.7.1** - Corpus expansion to 2,942 Acts + 2 Regulations. List-def false-positive guard, italic-run anchoring.
+- **v0.7.0** - Term/def extraction recall improvements, relational definitions, Dictionary heading recognition. Crawler list-acts fix.
+- **v0.6.3** - Corpus expansion to 539 Acts + 2 Regulations. Three crawler fixes: OData escaping, WAF retry, instrument ID parsing.
+- **v0.6.2** - Corpus expansion to 71 Acts + 2 Regulations.
+- **v0.6.1** - Corpus expansion to 20 Acts + TG(MD)R 2002. Schedule-boundary and OData-escaping parser fixes.
+- **v0.6.0** - Inline formatting (`<b>/<i>/<sup>/<sub>`), list-form term/def injection. AKN compliance ~96-100% (self-assessed).
+- **v0.5.0** - Amendment history, `<blockList>`, subsidiary legislation, `<lifecycle>`/`<temporalData>`, `<quotedStructure>`. 11 Acts + TG(MD)R 2002.
 - **v0.4.0** - AKN semantic layer: `<term>`/`<def>`/`<TLCTerm>`, full FRBR, `<quantity>`, `<role>`/`<TLCRole>`.
 - **v0.3.0** - Schedule clause hierarchy, DOCX tables, notes/examples/penalties, 4th nesting level.
-- **v0.2.0** - Intra-section hierarchy, `<ref>` cross-references, `<preface>`/TOC, schedules, multi-volume Acts, ISO FRBRdate. 11 Acts.
+- **v0.2.0** - Intra-section hierarchy, `<ref>` cross-references, `<preface>`/TOC, schedules, multi-volume Acts. 11 Acts.
 - **v0.1.0** - Structural skeleton (part/division/section, basic FRBR). 8 Acts.
 
 ## Install
