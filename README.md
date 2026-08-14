@@ -26,7 +26,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
-**Status: v0.7.5** - 3,078 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
+**Status: v0.8.0** - 3,078 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
 
 ## Why AKN XML
 
@@ -43,6 +43,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
+- **v0.8.0** - Automated weekly growth/freshness ingest pipeline (GitHub Actions): detects new in-force Acts and Acts whose live compilation has moved on, verifies, and publishes to Hugging Face and Netlify automatically, replacing the prior manual-only process. Low-value-title exclusion policy (amending/repeal Acts) enforced dynamically in the growth diff.
 - **v0.7.5** - Both doc-conversion exclusion categories (1,586 low-value titles, 82 individually-reviewed drops) re-verified live against the legislation.gov.au API and confirmed durable exclusions; 4 previously-failed keep-list Acts ingested. RTF-payload `.doc` detection and legacy-template style-name normalisation closed the remaining doc-conversion stragglers. Corpus at 3,078 Acts + 2 Regulations.
 - **v0.7.4** - Legacy `.doc` (pre-OOXML) Act conversion via LibreOffice headless, gated on a 30-Act spike (90% non-empty-`<body>` rate, GO). 124 of a 128-Act relevance-skimmed batch converted and ingested; `source_format: doc-converted` provenance tracked in `index.json`.
 - **v0.7.3** - Style-agnostic legacy-Act parsing for DOCX with no `ActHead*` style: 422 of 551 previously-empty-body Acts now parse (76.6%). 129 residual (58 with an additional unimplemented paragraph shape, 71 fragmented one-off historical formats) documented as future work.
