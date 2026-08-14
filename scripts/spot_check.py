@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Automated spot-check for lex-au v0.2.0 corpus.
+"""Automated spot-check for the lex-au corpus.
 
 Run after `lexau build --all` to verify structural requirements are met.
 Exit code 0 = all checks passed. Exit code 1 = one or more failures.
@@ -24,13 +24,9 @@ CHECKS = [
     ("FRBRWork date is ISO (YYYY-MM-DD)",
      ".//akn:FRBRWork/akn:FRBRdate/@date",
      lambda v: len(v) > 0 and all(len(d) == 10 and d[4] == "-" and d[7] == "-" for d in v)),
-    ("At least one section with eId",
-     ".//akn:section/@eId",
-     lambda v: len(v) > 0),
 ]
 
 V02_CHECKS = [
-    ("Subsections present",       ".//akn:subsection", lambda v: len(v) > 0),
     ("Subsection eId nested",     ".//akn:subsection/@eId", lambda v: all("__subsec-" in e for e in v)),
     ("No bare-year FRBRWork date", ".//akn:FRBRWork/akn:FRBRdate/@date", lambda v: not any(len(d) == 4 for d in v)),
 ]
@@ -53,13 +49,16 @@ V04_CHECKS = [
      lambda v: all(e.startswith("note-") for e in v) if v else True),
 ]
 
-V05_CHECKS = [
-    ("date elements present",
-     lambda root, ns: len(root.findall(".//akn:date", ns)) > 0),
-    ("lifecycle in meta",
-     lambda root, ns: root.find(".//akn:lifecycle", ns) is not None),
-    ("temporalData in meta",
-     lambda root, ns: root.find(".//akn:temporalData", ns) is not None),
+# Elements the builder only emits conditionally, based on real Act content
+# (e.g. an Act with no amendment history legitimately has no <lifecycle>).
+# Each is only checked when the Act's own report confirms the underlying
+# content was actually found -- otherwise absence in the XML is correct,
+# not a defect. (report field, xpath/finder, description)
+REPORT_CONDITIONAL_CHECKS = [
+    ("subsections_parsed", ".//akn:subsection", "Subsections present given subsections_parsed>0 in report"),
+    ("dates_found", ".//akn:date", "date elements present given dates_found>0 in report"),
+    ("amendment_events_parsed", ".//akn:lifecycle", "lifecycle in meta given amendment_events_parsed>0 in report"),
+    ("amendment_events_parsed", ".//akn:temporalData", "temporalData in meta given amendment_events_parsed>0 in report"),
 ]
 
 
@@ -75,9 +74,6 @@ def check_xml(path: Path) -> list[str]:
         vals = root.xpath(xpath, namespaces=NS)
         if not pred(vals):
             failures.append(f"FAIL [{desc}] — got {vals[:3]!r}")
-    for desc, fn in V05_CHECKS:
-        if not fn(root, NS):
-            failures.append(f"FAIL [{desc}]")
     return failures
 
 
@@ -93,6 +89,38 @@ def check_report(path: Path) -> list[str]:
     return failures
 
 
+def check_conditional(xml_path: Path, report_data: dict) -> list[str]:
+    """Checks that only apply when the report confirms the underlying content
+    was actually produced -- see REPORT_CONDITIONAL_CHECKS."""
+    try:
+        root = etree.parse(str(xml_path)).getroot()
+    except Exception:
+        return []  # already reported as a PARSE ERROR by check_xml
+
+    failures: list[str] = []
+    for field, xpath, desc in REPORT_CONDITIONAL_CHECKS:
+        if report_data.get(field, 0) > 0 and not root.xpath(xpath, namespaces=NS):
+            failures.append(f"FAIL [{desc}]")
+    return failures
+
+
+def check_has_sections(xml_path: Path, act_name: str, baseline_empty_body: set[str]) -> list[str]:
+    """Every Act should have at least one <section> -- except the small,
+    already-documented set of legacy-format Acts in baseline_empty_body,
+    accepted as a permanent Known Limitation (not something this gate should
+    keep re-flagging). An Act NOT on that list with zero sections is a real,
+    new regression and still fails."""
+    if act_name in baseline_empty_body:
+        return []
+    try:
+        root = etree.parse(str(xml_path)).getroot()
+    except Exception:
+        return []  # already reported as a PARSE ERROR by check_xml
+    if not root.xpath(".//akn:section/@eId", namespaces=NS):
+        return ["FAIL [At least one section with eId] — got []"]
+    return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpus-dir", default="corpus", type=Path)
@@ -104,11 +132,23 @@ def main() -> int:
         "--only-source-format", default=None,
         help="Only check Acts whose index.json entry has this source_format value",
     )
+    parser.add_argument(
+        "--baseline-empty-body", type=Path,
+        default=Path("docs/known-limitations-empty-body.txt"),
+        help="Act slugs already accepted as permanent zero-<section> Known "
+             "Limitations -- excluded from the section-presence check so "
+             "the gate only fails on new regressions, not this known set",
+    )
     args = parser.parse_args()
 
     corpus_dir: Path = args.corpus_dir
     xml_dir = corpus_dir / "xml"
     reports_dir = corpus_dir / "reports"
+    baseline_empty_body: set[str] = set()
+    if args.baseline_empty_body.exists():
+        baseline_empty_body = {
+            line.strip() for line in args.baseline_empty_body.read_text().splitlines() if line.strip()
+        }
 
     if not xml_dir.exists():
         print(f"ERROR: {xml_dir} not found — run `lexau build --all` first", file=sys.stderr)
@@ -133,11 +173,17 @@ def main() -> int:
     for xml_path in xml_files:
         act_name = xml_path.stem
         issues = check_xml(xml_path)
+        issues += check_has_sections(xml_path, act_name, baseline_empty_body)
 
-        report_path = reports_dir / f"{act_name}-v0.2.0.json"
-        if report_path.exists():
+        # Report filenames carry a version suffix (e.g. "-v0.5.0.json") that
+        # bumps with the builder; glob rather than hardcode so this doesn't
+        # silently stop matching reports at the next version bump.
+        report_matches = sorted(reports_dir.glob(f"{act_name}-v*.json"))
+        report_path = report_matches[-1] if report_matches else None
+        if report_path is not None and report_path.exists():
             issues += check_report(report_path)
             report_data = json.loads(report_path.read_text())
+            issues += check_conditional(xml_path, report_data)
             subsecs = report_data.get("subsections_parsed", 0)
             paras   = report_data.get("paragraphs_parsed", 0)
             sched   = report_data.get("schedules_found", 0)
