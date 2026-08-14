@@ -5,7 +5,7 @@ from docx.oxml import parse_xml
 from lexau.docx_reader import iter_paragraphs
 from lexau.parser import ElementType
 
-CORPUS_DOCX = Path(__file__).parent.parent / "corpus" / "docx"
+CORPUS_DOCX = Path(__file__).parent / "fixtures" / "docx"
 
 
 def test_paragraph_passthrough():
