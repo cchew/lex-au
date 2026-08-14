@@ -36,7 +36,7 @@ jobs:
         run: lexau list-acts --output /tmp/live-acts.txt
 
       - name: Diff against corpus
-        run: python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt --limit 20
+        run: python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt --exclude-titles docs/corpus-exclusions-drop-titles.txt --limit 20
 
       - name: Build new Acts
         run: |
@@ -51,7 +51,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/still-missing.txt
+          python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/still-missing.txt --exclude-titles docs/corpus-exclusions-drop-titles.txt
           if [ -s /tmp/still-missing.txt ]; then
             total=$(wc -l < /tmp/still-missing.txt)
             {
