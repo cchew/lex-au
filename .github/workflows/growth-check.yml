@@ -84,7 +84,6 @@ jobs:
           fi
 
       - name: Publish corpus
-        if: steps.diff.outputs.found == 'true'
         uses: ./.github/actions/publish-corpus
         with:
           run-label: growth-check
@@ -92,6 +91,7 @@ jobs:
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           gh-token: ${{ github.token }}
+          has-changes: ${{ steps.diff.outputs.found }}
 
       - name: Regenerate and commit acts.txt
         if: steps.diff.outputs.found == 'true'

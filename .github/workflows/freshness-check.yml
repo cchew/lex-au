@@ -64,7 +64,6 @@ jobs:
           fi
 
       - name: Publish corpus
-        if: steps.update.outputs.found == 'true'
         uses: ./.github/actions/publish-corpus
         with:
           run-label: freshness-check
@@ -72,3 +71,4 @@ jobs:
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           gh-token: ${{ github.token }}
+          has-changes: ${{ steps.update.outputs.found }}

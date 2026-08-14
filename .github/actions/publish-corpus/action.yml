@@ -18,6 +18,15 @@ inputs:
   gh-token:
     description: "Token gh CLI uses to open/update the verify-failure tracking issue"
     required: true
+  has-changes:
+    description: >
+      "true" if the caller found something to publish this run, "false"
+      otherwise. The verify gate (test suite + spot check) always runs
+      regardless -- it's the only thing that catches a code-level
+      regression on a run with nothing new, so it must not be skipped
+      just because there's nothing to publish. Only the actual publish
+      steps (HF export, Netlify deploy) are skipped when this is "false".
+    required: true
 
 runs:
   using: "composite"
@@ -71,20 +80,24 @@ runs:
       run: exit 1
 
     - name: Export train.jsonl
+      if: inputs.has-changes == 'true'
       shell: bash
       run: lexau export-jsonl --corpus-dir corpus
 
     - name: Export to Hugging Face
+      if: inputs.has-changes == 'true'
       shell: bash
       env:
         HF_TOKEN: ${{ inputs.hf-token }}
       run: lexau export-hf --repo cchew/lex-au --corpus-dir corpus
 
     - name: Build static site
+      if: inputs.has-changes == 'true'
       shell: bash
       run: lexau site --corpus-dir corpus --site-dir site
 
     - name: Deploy to Netlify
+      if: inputs.has-changes == 'true'
       shell: bash
       env:
         NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
