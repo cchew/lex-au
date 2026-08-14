@@ -53,9 +53,18 @@ jobs:
           echo "since=$since" >> "$GITHUB_OUTPUT"
 
       - name: Update changed Acts
-        run: lexau update --since "${{ steps.window.outputs.since }}" --corpus-dir corpus
+        id: update
+        run: |
+          output=$(lexau update --since "${{ steps.window.outputs.since }}" --corpus-dir corpus)
+          echo "$output"
+          if echo "$output" | grep -q "modified corpus Act"; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Publish corpus
+        if: steps.update.outputs.found == 'true'
         uses: ./.github/actions/publish-corpus
         with:
           run-label: freshness-check

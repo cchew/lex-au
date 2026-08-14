@@ -38,7 +38,14 @@ jobs:
         run: lexau list-acts --output /tmp/live-acts.txt
 
       - name: Diff against corpus
-        run: python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt --exclude-titles docs/corpus-exclusions-drop-titles.txt --limit 20
+        id: diff
+        run: |
+          python scripts/diff_new_acts.py --live-acts /tmp/live-acts.txt --corpus-dir corpus --output /tmp/new-acts.txt --exclude-titles docs/corpus-exclusions-drop-titles.txt --limit 20
+          if [ -s /tmp/new-acts.txt ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Build new Acts
         run: |
@@ -77,6 +84,7 @@ jobs:
           fi
 
       - name: Publish corpus
+        if: steps.diff.outputs.found == 'true'
         uses: ./.github/actions/publish-corpus
         with:
           run-label: growth-check
@@ -86,6 +94,7 @@ jobs:
           gh-token: ${{ github.token }}
 
       - name: Regenerate and commit acts.txt
+        if: steps.diff.outputs.found == 'true'
         run: |
           python scripts/regenerate_acts_txt.py --corpus-dir corpus --output acts.txt
           git config user.name "lex-au-bot"
