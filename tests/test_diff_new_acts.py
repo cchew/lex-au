@@ -21,7 +21,7 @@ def test_diff_finds_acts_missing_from_corpus(tmp_path: Path):
     result = subprocess.run(
         [sys.executable, "scripts/diff_new_acts.py",
          "--live-acts", str(live_acts), "--corpus-dir", str(corpus_dir),
-         "--output", str(output)],
+         "--output", str(output), "--exclude-titles", str(tmp_path / "no-such-file.txt")],
         capture_output=True, text=True,
     )
 
@@ -40,7 +40,7 @@ def test_diff_handles_missing_index_json(tmp_path: Path):
     result = subprocess.run(
         [sys.executable, "scripts/diff_new_acts.py",
          "--live-acts", str(live_acts), "--corpus-dir", str(corpus_dir),
-         "--output", str(output)],
+         "--output", str(output), "--exclude-titles", str(tmp_path / "no-such-file.txt")],
         capture_output=True, text=True,
     )
 
@@ -61,7 +61,7 @@ def test_diff_writes_empty_file_when_nothing_new(tmp_path: Path):
     result = subprocess.run(
         [sys.executable, "scripts/diff_new_acts.py",
          "--live-acts", str(live_acts), "--corpus-dir", str(corpus_dir),
-         "--output", str(output)],
+         "--output", str(output), "--exclude-titles", str(tmp_path / "no-such-file.txt")],
         capture_output=True, text=True,
     )
 
@@ -80,7 +80,8 @@ def test_diff_respects_limit(tmp_path: Path):
     result = subprocess.run(
         [sys.executable, "scripts/diff_new_acts.py",
          "--live-acts", str(live_acts), "--corpus-dir", str(corpus_dir),
-         "--output", str(output), "--limit", "2"],
+         "--output", str(output), "--limit", "2",
+         "--exclude-titles", str(tmp_path / "no-such-file.txt")],
         capture_output=True, text=True,
     )
 
