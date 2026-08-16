@@ -229,6 +229,47 @@ def test_body_outside_schedule_not_in_attachments(meta):
     assert xml.find(".//akn:attachments", ns) is None
 
 
+def test_multi_volume_schedule_before_body_splits_correctly(meta):
+    # Mirrors Superannuation Industry (Supervision) Regulations 1994's real
+    # shape: Volume 0 is entirely Schedule content, Volume 1 is the real
+    # body. Without volume-scoping, the Volume-0 schedule heading would
+    # permanently flip _split_stream into schedule mode, silently
+    # swallowing Volume 1's section into schedule_paras instead of body.
+    paragraphs = [
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule", raw_style="ActHead 1", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Content of first schedule.", volume_index=0),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="This Regulation is the Test Regulations 1994.", volume_index=1),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    section = xml.find(".//akn:body/akn:section", ns)
+    assert section is not None
+    assert section.get("eId") == "sec-1"
+    hcontainer = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert hcontainer is not None
+    assert hcontainer.get("eId") == "schedule-1"
+
+
+def test_single_volume_schedule_after_body_unaffected_by_volume_scoping(meta):
+    # Regression guard: every paragraph defaults to volume_index=0, so a
+    # single-volume Act's existing schedule-after-body shape must produce
+    # byte-identical classification to the pre-volume-scoping behaviour.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="APP 1  Open and transparent management"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    section = xml.find(".//akn:body/akn:section", ns)
+    assert section is not None
+    hcontainer = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert hcontainer is not None
+    assert hcontainer.get("eId") == "schedule-1"
+
+
 def test_schedule_app_clause_hierarchy(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),

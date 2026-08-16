@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from pathlib import Path
 
 import click
@@ -69,10 +69,10 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             builder = AknBuilder(meta)
-            for docx_path in docx_paths:
+            for vol_idx, docx_path in enumerate(docx_paths):
                 doc = Document(docx_path)
                 for p in iter_paragraphs(doc):
-                    builder.add(p)
+                    builder.add(replace(p, volume_index=vol_idx))
 
             endnote_vol = _find_endnote_volume(docx_paths)
             xml, report = builder.build_with_report(corpus_index, last_volume_path=endnote_vol)

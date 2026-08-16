@@ -6,6 +6,7 @@ from datetime import date
 from pathlib import Path
 from lxml import etree
 from lxml.builder import ElementMaker
+from itertools import groupby
 
 from lexau.models import ActMetadata, ParseReport
 from lexau.parser import ParsedParagraph, ElementType, InlineSpan
@@ -282,32 +283,66 @@ def _is_schedule_heading(p: ParsedParagraph) -> bool:
 def _split_stream(
     paragraphs: list[ParsedParagraph],
 ) -> tuple[list[ParsedParagraph], list[ParsedParagraph], list[list[ParsedParagraph]]]:
-    """Return (preface_paras, body_paras, list_of_schedule_para_groups)."""
-    first_structural = next(
-        (i for i, p in enumerate(paragraphs) if p.element_type in _STRUCTURAL),
-        len(paragraphs),
-    )
-    preface = paragraphs[:first_structural]
-    rest = paragraphs[first_structural:]
+    """Return (preface_paras, body_paras, list_of_schedule_para_groups).
 
-    schedule_start = next(
-        (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
-        len(rest),
-    )
-    body = rest[:schedule_start]
-    schedule_paras = rest[schedule_start:]
+    Paragraphs are grouped by volume_index (the DOCX volume of origin) and
+    each volume's body/schedule split is computed independently, then
+    concatenated in volume order. Without this, the *first* schedule
+    heading anywhere in a multi-volume Act's flattened paragraph stream
+    would permanently flip classification into schedule mode -- correct
+    when schedules trail the body (the near-universal case), wrong when a
+    Regulation's schedules precede its body across a volume boundary (e.g.
+    Superannuation Industry (Supervision) Regulations 1994). For a
+    single-volume Act (every paragraph defaults to volume_index=0) this
+    groups into exactly one group and is a no-op: identical output to the
+    pre-volume-scoping behaviour.
 
+    The preface cut only ever runs against the first volume's own slice --
+    a preface only makes sense at the very start of an Act, never partway
+    through a later volume.
+    """
+    volumes: list[list[ParsedParagraph]] = [
+        list(group) for _, group in groupby(paragraphs, key=lambda p: p.volume_index)
+    ]
+
+    preface: list[ParsedParagraph] = []
+    body: list[ParsedParagraph] = []
     schedules: list[list[ParsedParagraph]] = []
-    current: list[ParsedParagraph] = []
-    for p in schedule_paras:
-        if _is_schedule_heading(p):
-            if current:
-                schedules.append(current)
-            current = [p]
+
+    for vol_num, volume_paragraphs in enumerate(volumes):
+        if vol_num == 0:
+            # Preface ends at the first structural element or first schedule, whichever is first
+            first_structural = next(
+                (i for i, p in enumerate(volume_paragraphs) if p.element_type in _STRUCTURAL),
+                len(volume_paragraphs),
+            )
+            first_schedule = next(
+                (i for i, p in enumerate(volume_paragraphs) if _is_schedule_heading(p)),
+                len(volume_paragraphs),
+            )
+            preface_end = min(first_structural, first_schedule)
+            preface = volume_paragraphs[:preface_end]
+            rest = volume_paragraphs[preface_end:]
         else:
-            current.append(p)
-    if current:
-        schedules.append(current)
+            rest = volume_paragraphs
+
+        schedule_start = next(
+            (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
+            len(rest),
+        )
+        body.extend(rest[:schedule_start])
+        schedule_paras = rest[schedule_start:]
+
+        current: list[ParsedParagraph] = []
+        for p in schedule_paras:
+            if _is_schedule_heading(p):
+                if current:
+                    schedules.append(current)
+                current = [p]
+            else:
+                current.append(p)
+        if current:
+            schedules.append(current)
 
     return preface, body, schedules
 

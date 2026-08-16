@@ -267,6 +267,7 @@ class ParsedParagraph:
     raw_style: str = ""
     table_rows: list[list[str]] = field(default_factory=list)
     spans: list[InlineSpan] = field(default_factory=list)
+    volume_index: int = 0
 
 
 def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:
