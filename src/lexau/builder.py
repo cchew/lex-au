@@ -285,17 +285,36 @@ def _split_stream(
 ) -> tuple[list[ParsedParagraph], list[ParsedParagraph], list[list[ParsedParagraph]]]:
     """Return (preface_paras, body_paras, list_of_schedule_para_groups).
 
-    Paragraphs are grouped by volume_index (the DOCX volume of origin) and
-    each volume's body/schedule split is computed independently, then
-    concatenated in volume order. Without this, the *first* schedule
-    heading anywhere in a multi-volume Act's flattened paragraph stream
-    would permanently flip classification into schedule mode -- correct
-    when schedules trail the body (the near-universal case), wrong when a
-    Regulation's schedules precede its body across a volume boundary (e.g.
-    Superannuation Industry (Supervision) Regulations 1994). For a
-    single-volume Act (every paragraph defaults to volume_index=0) this
-    groups into exactly one group and is a no-op: identical output to the
-    pre-volume-scoping behaviour.
+    Paragraphs are grouped by volume_index (the DOCX volume of origin, set
+    by the CLI's volume loop; `groupby` therefore requires the input stream
+    to be volume-contiguous, which that loop guarantees by construction).
+
+    A schedule heading found before any body content has appeared does NOT
+    permanently flip classification into schedule mode -- the search for a
+    schedule heading restarts in the next volume. This handles the
+    schedule-first shape where a Regulation's schedules precede its body
+    across a volume boundary (e.g. Superannuation Industry (Supervision)
+    Regulations 1994, whose volume 1 is entirely Schedule content and
+    volume 2 the real body).
+
+    Once body content HAS been seen (`body_seen`), the classification is
+    one-directional: from the schedule cut point onward every remaining
+    paragraph, in this and every later volume, is schedule content. Later
+    volumes are therefore not re-searched for a schedule heading -- they
+    continue the still-open schedule group. This handles the common shape
+    where a body-first Act's schedules begin partway through one volume
+    and run on into the next with no repeated "Schedule N" heading at that
+    volume's start (e.g. Customs Tariff Act 1995, whose final volume is
+    pure Schedule 3 continuation). A genuine new schedule heading anywhere
+    in those later volumes still starts a new schedule group.
+
+    For a single-volume Act (every paragraph defaults to volume_index=0)
+    this groups into exactly one group. Output is identical to the
+    pre-volume-scoping behaviour for every Act in the current corpus; it is
+    not identical in general, because the volume-0 preface cut also ends
+    the preface at a leading schedule heading, so a single-volume Act whose
+    preface region contains an `_is_schedule_heading()` match before its
+    first `_STRUCTURAL` element would classify differently.
 
     The preface cut only ever runs against the first volume's own slice --
     a preface only makes sense at the very start of an Act, never partway
@@ -308,6 +327,9 @@ def _split_stream(
     preface: list[ParsedParagraph] = []
     body: list[ParsedParagraph] = []
     schedules: list[list[ParsedParagraph]] = []
+
+    body_seen = False
+    current: list[ParsedParagraph] = []
 
     for vol_num, volume_paragraphs in enumerate(volumes):
         if vol_num == 0:
@@ -326,14 +348,24 @@ def _split_stream(
         else:
             rest = volume_paragraphs
 
-        schedule_start = next(
-            (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
-            len(rest),
-        )
-        body.extend(rest[:schedule_start])
-        schedule_paras = rest[schedule_start:]
+        if not body_seen:
+            # No body content anywhere yet -- this volume may still open with
+            # body content (schedule-first Act), so search it for the cut point.
+            schedule_start = next(
+                (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
+                len(rest),
+            )
+            new_body = rest[:schedule_start]
+            if new_body:
+                body_seen = True
+            body.extend(new_body)
+            schedule_paras = rest[schedule_start:]
+        else:
+            # Body already appeared and the previous volume ended in schedule
+            # mode, so this whole volume continues the currently-open schedule
+            # group -- unless a genuine schedule heading below starts a new one.
+            schedule_paras = rest
 
-        current: list[ParsedParagraph] = []
         for p in schedule_paras:
             if _is_schedule_heading(p):
                 if current:
@@ -341,8 +373,9 @@ def _split_stream(
                 current = [p]
             else:
                 current.append(p)
-        if current:
-            schedules.append(current)
+
+    if current:
+        schedules.append(current)
 
     return preface, body, schedules
 

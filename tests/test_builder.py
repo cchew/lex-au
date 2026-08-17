@@ -270,6 +270,98 @@ def test_single_volume_schedule_after_body_unaffected_by_volume_scoping(meta):
     assert hcontainer.get("eId") == "schedule-1"
 
 
+def test_multi_volume_schedule_continues_across_boundary_without_repeated_heading(meta):
+    # Mirrors Customs Tariff Act 1995's real shape: volume 0 is body then a
+    # Schedule heading near the end, volume 1 is pure continuation of that
+    # same schedule with NO repeated "Schedule N" heading at its start.
+    # Searching each volume independently for a schedule heading finds none
+    # in volume 1 and silently promotes the whole continuation into <body>.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Test Tariff Act 1995.", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa03—Classification of goods", raw_style="ActHead 1", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Chapter 1—Live animals", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="0101.21.00 Pure-bred breeding horses", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="0102.29.00 Other live bovine animals", volume_index=1),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    body = xml.find(".//akn:body", ns)
+    assert body is not None
+    body_text = "".join(body.itertext())
+    assert "Test Tariff Act 1995" in body_text
+    assert "Pure-bred breeding horses" not in body_text
+    assert "Other live bovine animals" not in body_text
+
+    hcontainers = xml.findall(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert len(hcontainers) == 1
+    # eIds are sequential over schedule groups, not derived from the schedule number
+    assert hcontainers[0].get("eId") == "schedule-1"
+    schedule_text = "".join(hcontainers[0].itertext())
+    assert "Pure-bred breeding horses" in schedule_text
+    assert "Other live bovine animals" in schedule_text
+
+
+def test_multi_volume_new_schedule_heading_in_later_volume_starts_new_group(meta):
+    # The continuation carry-over must not swallow a genuine new schedule
+    # heading that does appear at/after a later volume's start.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Test Act 1995.", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule", raw_style="ActHead 1", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Content of first schedule.", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Second Schedule", raw_style="ActHead 1", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="Content of second schedule.", volume_index=1),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    hcontainers = xml.findall(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert [h.get("eId") for h in hcontainers] == ["schedule-1", "schedule-2"]
+
+
+def test_leading_schedule_heading_ends_preface_in_first_volume(meta):
+    # Volume 0 opens directly with a Schedule heading (no top-level Part/
+    # Division before it) -- mirrors SIS Regs 1994's Schedule 1AAA, whose
+    # own internal "Part 1" would otherwise wrongly end the preface first.
+    paragraphs = [
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01AAA—First Schedule", raw_style="ActHead 1", volume_index=0),
+        ParsedParagraph(ElementType.PART, number="1", heading="Preliminary", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="Content of schedule Part 1.", volume_index=0),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="This Regulation is the Test Regulations 1994.", volume_index=1),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    preface = xml.find(".//akn:preface", ns)
+    assert preface is None or not preface.findall(".//akn:p", ns)
+    hcontainer = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert hcontainer is not None
+    # Deviation from the plan's draft, which asserted eId == "schedule-1AAA":
+    # schedule eIds are sequential over schedule groups (_build_attachments),
+    # never derived from the schedule number. Assert the heading instead --
+    # that is what actually pins "Schedule 1AAA ended the preface".
+    assert hcontainer.get("eId") == "schedule-1"
+    heading = hcontainer.find("akn:heading", ns)
+    assert heading is not None and "First Schedule" in "".join(heading.itertext())
+
+
+def test_leading_part_before_schedule_heading_still_ends_preface_normally(meta):
+    # Belt-and-braces regression guard: if a genuine top-level Part appears
+    # in volume 0 BEFORE any schedule heading, the existing (unwidened)
+    # behaviour must still win -- this is not a schedule-first Act.
+    paragraphs = [
+        ParsedParagraph(ElementType.PART, number="I", heading="Preliminary", volume_index=0),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Test Act 1994.", volume_index=0),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    part = xml.find(".//akn:body/akn:part", ns)
+    assert part is not None
+    assert part.get("eId") == "part-I"
+
+
 def test_schedule_app_clause_hierarchy(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),

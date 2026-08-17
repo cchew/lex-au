@@ -69,6 +69,9 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             builder = AknBuilder(meta)
+            # Sole producer of volume_index. _split_stream's groupby() requires
+            # paragraphs to be volume-contiguous; this loop guarantees it by
+            # adding all of volume N before volume N+1's first paragraph.
             for vol_idx, docx_path in enumerate(docx_paths):
                 doc = Document(docx_path)
                 for p in iter_paragraphs(doc):
