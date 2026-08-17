@@ -320,6 +320,50 @@ def test_multi_volume_new_schedule_heading_in_later_volume_starts_new_group(meta
     assert [h.get("eId") for h in hcontainers] == ["schedule-1", "schedule-2"]
 
 
+def test_multi_volume_body_spanning_volumes_with_no_schedules_stays_body(meta):
+    # Guard against over-correcting the continuation carry-over: an Act whose
+    # body simply spans several volumes and has no schedules at all (e.g.
+    # Income Tax Assessment Act 1997, 12 volumes, zero attachments) must keep
+    # every volume in <body>. Carrying schedule mode on `body_seen` alone
+    # would swallow every volume after the first into a schedule.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Test Act 1997.", volume_index=0),
+        ParsedParagraph(ElementType.SECTION, number="2", heading="Commencement", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="This Act commences on Royal Assent.", volume_index=1),
+        ParsedParagraph(ElementType.SECTION, number="3", heading="Objects", volume_index=2),
+        ParsedParagraph(ElementType.BODY, text="The objects of this Act are as follows.", volume_index=2),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    sections = xml.findall(".//akn:body/akn:section", ns)
+    assert [s.get("eId") for s in sections] == ["sec-1", "sec-2", "sec-3"]
+    assert xml.find(".//akn:attachments", ns) is None
+
+
+def test_multi_volume_body_spanning_volumes_before_schedules_stays_body(meta):
+    # Same guard, mixed shape: body spans volumes 0 and 1, schedules only
+    # begin in volume 2. Volume 1 must stay body, volume 2 must be schedule.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title", volume_index=0),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Test Act 1901.", volume_index=0),
+        ParsedParagraph(ElementType.SECTION, number="2", heading="Commencement", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="This Act commences on Royal Assent.", volume_index=1),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Prescribed goods", raw_style="ActHead 1", volume_index=2),
+        ParsedParagraph(ElementType.BODY, text="Content of the schedule.", volume_index=2),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    sections = xml.findall(".//akn:body/akn:section", ns)
+    assert [s.get("eId") for s in sections] == ["sec-1", "sec-2"]
+    body_text = "".join(xml.find(".//akn:body", ns).itertext())
+    assert "commences on Royal Assent" in body_text
+    assert "Content of the schedule" not in body_text
+    hcontainers = xml.findall(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert len(hcontainers) == 1
+    assert "Content of the schedule" in "".join(hcontainers[0].itertext())
+
+
 def test_leading_schedule_heading_ends_preface_in_first_volume(meta):
     # Volume 0 opens directly with a Schedule heading (no top-level Part/
     # Division before it) -- mirrors SIS Regs 1994's Schedule 1AAA, whose

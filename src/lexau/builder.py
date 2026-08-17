@@ -297,16 +297,23 @@ def _split_stream(
     Regulations 1994, whose volume 1 is entirely Schedule content and
     volume 2 the real body).
 
-    Once body content HAS been seen (`body_seen`), the classification is
-    one-directional: from the schedule cut point onward every remaining
-    paragraph, in this and every later volume, is schedule content. Later
-    volumes are therefore not re-searched for a schedule heading -- they
+    Once body content HAS been seen AND a schedule cut point has been
+    crossed, the classification is one-directional: every remaining
+    paragraph, in this and every later volume, is schedule content. Those
+    later volumes are not re-searched for a schedule heading -- they
     continue the still-open schedule group. This handles the common shape
     where a body-first Act's schedules begin partway through one volume
     and run on into the next with no repeated "Schedule N" heading at that
-    volume's start (e.g. Customs Tariff Act 1995, whose final volume is
+    volume's start (e.g. Customs Tariff Act 1995, whose later volumes are
     pure Schedule 3 continuation). A genuine new schedule heading anywhere
     in those later volumes still starts a new schedule group.
+
+    A volume that ends in body mode (no schedule heading found in it at
+    all) does not trigger that carry-over -- the next volume is searched
+    afresh. Otherwise a body-first Act whose body merely spans several
+    volumes before its schedules begin, or that has no schedules at all
+    (e.g. Income Tax Assessment Act 1997), would have every volume after
+    the first swallowed into a schedule.
 
     For a single-volume Act (every paragraph defaults to volume_index=0)
     this groups into exactly one group. Output is identical to the
@@ -328,7 +335,14 @@ def _split_stream(
     body: list[ParsedParagraph] = []
     schedules: list[list[ParsedParagraph]] = []
 
+    # body_seen: has any body content been emitted yet, in any volume?
+    # in_schedule: did the volume just processed END in schedule mode?
+    # Both are needed. body_seen alone would treat every volume after the
+    # first as schedule continuation for a body-first Act whose body simply
+    # spans several volumes before its schedules begin (or that has no
+    # schedules at all, e.g. Income Tax Assessment Act 1997).
     body_seen = False
+    in_schedule = False
     current: list[ParsedParagraph] = []
 
     for vol_num, volume_paragraphs in enumerate(volumes):
@@ -348,9 +362,17 @@ def _split_stream(
         else:
             rest = volume_paragraphs
 
-        if not body_seen:
-            # No body content anywhere yet -- this volume may still open with
-            # body content (schedule-first Act), so search it for the cut point.
+        if in_schedule and body_seen:
+            # Body has already appeared AND the previous volume ended in
+            # schedule mode, so this whole volume continues the currently-open
+            # schedule group -- unless a genuine schedule heading below starts
+            # a new one. No fresh search: a later volume of a body-first Act
+            # routinely carries schedule content with no repeated heading.
+            schedule_paras = rest
+        else:
+            # Either no body content anywhere yet (schedule-first Act, whose
+            # later volume may still hold the real body), or the previous
+            # volume ended in body mode. Search this volume for the cut point.
             schedule_start = next(
                 (i for i, p in enumerate(rest) if _is_schedule_heading(p)),
                 len(rest),
@@ -360,11 +382,7 @@ def _split_stream(
                 body_seen = True
             body.extend(new_body)
             schedule_paras = rest[schedule_start:]
-        else:
-            # Body already appeared and the previous volume ended in schedule
-            # mode, so this whole volume continues the currently-open schedule
-            # group -- unless a genuine schedule heading below starts a new one.
-            schedule_paras = rest
+            in_schedule = bool(schedule_paras)
 
         for p in schedule_paras:
             if _is_schedule_heading(p):
