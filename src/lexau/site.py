@@ -37,6 +37,33 @@ class SectionNode:
     children: list["SectionNode"] = field(default_factory=list)
 
 
+def _assign_site_paths(all_meta: list[ActMetadata]) -> dict[str, str]:
+    """Map each Act's safe_name to its site path, disambiguating (year, number)
+    collisions.
+
+    `number` is an Act's number *within its enactment year* per
+    legislation.gov.au's own scheme, not a globally unique identifier -- it
+    isn't unique across collection/subCollection types (Act vs Regulation)
+    or an old/new numbering-scheme mismatch, so two different Acts can
+    legitimately share the same (year, number) pair. Acts in a colliding
+    group get a title_id-sorted, deterministic numeric suffix so which Act
+    owns which URL never depends on iteration order and can't silently flip
+    between rebuilds; every other Act's path is untouched.
+    """
+    groups: dict[tuple[int, int], list[ActMetadata]] = {}
+    for m in all_meta:
+        groups.setdefault((m.year, m.number), []).append(m)
+
+    paths: dict[str, str] = {}
+    for (year, number), members in groups.items():
+        if len(members) == 1:
+            paths[members[0].safe_name] = f"/akn/au/act/{year}/{number}/"
+        else:
+            for n, m in enumerate(sorted(members, key=lambda m: m.title_id)):
+                paths[m.safe_name] = f"/akn/au/act/{year}/{number}-{n}/"
+    return paths
+
+
 def _render_inline(elem: etree._Element) -> Markup:
     """Serialise a <p> (or any inline element)'s full mixed content to safe HTML.
 
@@ -116,11 +143,12 @@ class SiteGenerator:
     def generate(self) -> None:
         self._site_dir.mkdir(parents=True, exist_ok=True)
         all_meta = sorted(self._corpus.all_metadata(), key=lambda m: m.name)
+        site_paths = _assign_site_paths(all_meta)
 
         act_list = [
             {
                 "name": m.name,
-                "site_path": f"/akn/au/act/{m.year}/{m.number}/",
+                "site_path": site_paths[m.safe_name],
                 "effective_date": m.effective_date.isoformat(),
             }
             for m in all_meta
@@ -137,9 +165,7 @@ class SiteGenerator:
             xml_root = etree.parse(xml_path).getroot()
             body_nodes = _parse_body(xml_root)
 
-            out_dir = (
-                self._site_dir / "akn" / "au" / "act" / str(meta.year) / str(meta.number)
-            )
+            out_dir = self._site_dir / site_paths[meta.safe_name].strip("/")
             out_dir.mkdir(parents=True, exist_ok=True)
 
             # Serve the raw AKN XML alongside the rendered page, so the source

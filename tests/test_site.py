@@ -9,6 +9,44 @@ from lexau.builder import AknBuilder
 from lexau.parser import ParsedParagraph, ElementType
 
 
+def test_assign_site_paths_no_collision_keeps_bare_path():
+    from lexau.site import _assign_site_paths
+    meta = ActMetadata(
+        name="Privacy Act 1988", title_id="C2004A03712", comp_id="C1",
+        comp_num="1", year=1988, number=119, effective_date=date(2024, 1, 1),
+    )
+    paths = _assign_site_paths([meta])
+    assert paths[meta.safe_name] == "/akn/au/act/1988/119/"
+
+
+def test_assign_site_paths_collision_sorted_by_title_id():
+    from lexau.site import _assign_site_paths
+    a = ActMetadata(
+        name="Training Guarantee (Administration) Amendment Act 1994", title_id="T2",
+        comp_id="C1", comp_num="1", year=1994, number=57, effective_date=date(2024, 1, 1),
+    )
+    b = ActMetadata(
+        name="Superannuation Industry (Supervision) Regulations 1994", title_id="T1",
+        comp_id="C2", comp_num="1", year=1994, number=57, effective_date=date(2024, 1, 1),
+    )
+    paths = _assign_site_paths([a, b])
+    assert paths[b.safe_name] == "/akn/au/act/1994/57-0/"  # T1 sorts first
+    assert paths[a.safe_name] == "/akn/au/act/1994/57-1/"  # T2 sorts second
+
+
+def test_assign_site_paths_three_way_collision():
+    from lexau.site import _assign_site_paths
+    members = [
+        ActMetadata(name=f"Act {t}", title_id=t, comp_id=f"C{t}", comp_num="1",
+                    year=2000, number=1, effective_date=date(2024, 1, 1))
+        for t in ("T3", "T1", "T2")
+    ]
+    paths = _assign_site_paths(members)
+    assert paths["act-t1"] == "/akn/au/act/2000/1-0/"
+    assert paths["act-t2"] == "/akn/au/act/2000/1-1/"
+    assert paths["act-t3"] == "/akn/au/act/2000/1-2/"
+
+
 def _p(inner_xml: str) -> etree._Element:
     """Build a standalone <p> element from inner AKN markup for _render_inline tests."""
     return etree.fromstring(f'<p xmlns="{AKN_NS}">{inner_xml}</p>')
@@ -142,3 +180,39 @@ def test_index_sorted_alphabetically(tmp_path):
 
     positions = {name: content.index(name) for name, *_ in entries}
     assert positions["Acts Interpretation Act 1901"] < positions["Migration Act 1958"] < positions["Zoo Act 1999"]
+
+
+def test_collision_disambiguates_paths_and_generates_distinct_pages(tmp_path):
+    corpus = Corpus(tmp_path / "corpus")
+    entries = [
+        # (name, title_id, year, number)
+        ("Training Guarantee (Administration) Amendment Act 1994", "T2", 1994, 57),
+        ("Superannuation Industry (Supervision) Regulations 1994", "T1", 1994, 57),
+        ("Privacy Act 1988", "T3", 1988, 119),
+    ]
+    for name, title_id, year, number in entries:
+        meta = ActMetadata(
+            name=name, title_id=title_id, comp_id=f"C{title_id}",
+            comp_num="1", year=year, number=number,
+            effective_date=date(2024, 1, 1),
+        )
+        builder = AknBuilder(meta)
+        builder.add(ParsedParagraph(ElementType.SECTION, number="1", heading="H"))
+        xml, _ = builder.build()
+        corpus.save(meta, xml)
+
+    site_dir = tmp_path / "site"
+    gen = SiteGenerator(corpus, site_dir, templates_dir=Path("templates"))
+    gen.generate()
+
+    # Colliding pair: title_id "T1" sorts before "T2", so T1 gets -0, T2 gets -1.
+    assert (site_dir / "akn" / "au" / "act" / "1994" / "57-0" / "index.html").exists()
+    assert (site_dir / "akn" / "au" / "act" / "1994" / "57-1" / "index.html").exists()
+    assert not (site_dir / "akn" / "au" / "act" / "1994" / "57").exists()
+
+    # Non-colliding Act keeps its bare path, unchanged.
+    assert (site_dir / "akn" / "au" / "act" / "1988" / "119" / "index.html").exists()
+
+    index_content = (site_dir / "index.html").read_text()
+    assert "/akn/au/act/1994/57-0/" in index_content
+    assert "/akn/au/act/1994/57-1/" in index_content
