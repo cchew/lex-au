@@ -19,7 +19,7 @@ def test_assign_site_paths_no_collision_keeps_bare_path():
     assert paths[meta.safe_name] == "/akn/au/act/1988/119/"
 
 
-def test_assign_site_paths_collision_sorted_by_title_id():
+def test_assign_site_paths_collision_uses_intrinsic_suffix():
     from lexau.site import _assign_site_paths
     a = ActMetadata(
         name="Training Guarantee (Administration) Amendment Act 1994", title_id="T2",
@@ -29,9 +29,13 @@ def test_assign_site_paths_collision_sorted_by_title_id():
         name="Superannuation Industry (Supervision) Regulations 1994", title_id="T1",
         comp_id="C2", comp_num="1", year=1994, number=57, effective_date=date(2024, 1, 1),
     )
+    # Suffix = lowercased title_id + blake2b-4 digest of safe_name: intrinsic to
+    # each Act, so neither the group's composition nor its ordering can move it.
     paths = _assign_site_paths([a, b])
-    assert paths[b.safe_name] == "/akn/au/act/1994/57-0/"  # T1 sorts first
-    assert paths[a.safe_name] == "/akn/au/act/1994/57-1/"  # T2 sorts second
+    assert paths[a.safe_name] == "/akn/au/act/1994/57-t2-f086ea4d/"
+    assert paths[b.safe_name] == "/akn/au/act/1994/57-t1-ba01e2a0/"
+    # Reversing the input must produce an identical mapping.
+    assert _assign_site_paths([b, a]) == paths
 
 
 def test_assign_site_paths_three_way_collision():
@@ -42,9 +46,62 @@ def test_assign_site_paths_three_way_collision():
         for t in ("T3", "T1", "T2")
     ]
     paths = _assign_site_paths(members)
-    assert paths["act-t1"] == "/akn/au/act/2000/1-0/"
-    assert paths["act-t2"] == "/akn/au/act/2000/1-1/"
-    assert paths["act-t3"] == "/akn/au/act/2000/1-2/"
+    assert paths["act-t1"] == "/akn/au/act/2000/1-t1-a2134542/"
+    assert paths["act-t2"] == "/akn/au/act/2000/1-t2-dbad39bc/"
+    assert paths["act-t3"] == "/akn/au/act/2000/1-t3-f0aaa1ef/"
+
+
+def test_assign_site_paths_identical_title_id_still_disambiguates():
+    """Two corpus entries can share a title_id outright.
+
+    Real case, live corpus: Human Services (Medicare) Act 1973 and Health
+    Insurance Commission Act 1973 both carry title_id C2004A00100 (and the
+    same comp_id, comp_num and effective_date) -- the same composition
+    ingested twice under an old and a new title. title_id alone therefore
+    cannot separate them, and a sort on it would leave the outcome to input
+    order.
+    """
+    from lexau.site import _assign_site_paths
+    a = ActMetadata(
+        name="Human Services (Medicare) Act 1973", title_id="C2004A00100",
+        comp_id="C2025C00609", comp_num="51", year=1974, number=41,
+        effective_date=date(2025, 11, 1),
+    )
+    b = ActMetadata(
+        name="Health Insurance Commission Act 1973", title_id="C2004A00100",
+        comp_id="C2025C00609", comp_num="51", year=1974, number=41,
+        effective_date=date(2025, 11, 1),
+    )
+    paths = _assign_site_paths([a, b])
+    assert paths[a.safe_name] == "/akn/au/act/1974/41-c2004a00100-bd8f6b96/"
+    assert paths[b.safe_name] == "/akn/au/act/1974/41-c2004a00100-7a8d488c/"
+    assert paths[a.safe_name] != paths[b.safe_name]
+    # Order-independent: reversed input yields the identical mapping.
+    assert _assign_site_paths(list(reversed([a, b]))) == paths
+
+
+def test_assign_site_paths_existing_member_survives_group_growth():
+    """A new Act joining a collision group must not move an existing member's URL.
+
+    An ordinal suffix fails here: a third member sorting ahead of an
+    existing one renumbers it, silently repointing an already-published URL
+    at different Act content.
+    """
+    from lexau.site import _assign_site_paths
+    a = ActMetadata(name="Act B", title_id="T5", comp_id="C1", comp_num="1",
+                    year=2000, number=1, effective_date=date(2024, 1, 1))
+    b = ActMetadata(name="Act C", title_id="T9", comp_id="C2", comp_num="1",
+                    year=2000, number=1, effective_date=date(2024, 1, 1))
+    before = _assign_site_paths([a, b])
+
+    # New arrival sorts ahead of both existing members on every field.
+    newcomer = ActMetadata(name="Act A", title_id="T0", comp_id="C0", comp_num="1",
+                           year=2000, number=1, effective_date=date(2024, 1, 1))
+    after = _assign_site_paths([newcomer, a, b])
+
+    assert after[a.safe_name] == before[a.safe_name]
+    assert after[b.safe_name] == before[b.safe_name]
+    assert after[newcomer.safe_name] not in (before[a.safe_name], before[b.safe_name])
 
 
 def _p(inner_xml: str) -> etree._Element:
@@ -205,14 +262,16 @@ def test_collision_disambiguates_paths_and_generates_distinct_pages(tmp_path):
     gen = SiteGenerator(corpus, site_dir, templates_dir=Path("templates"))
     gen.generate()
 
-    # Colliding pair: title_id "T1" sorts before "T2", so T1 gets -0, T2 gets -1.
-    assert (site_dir / "akn" / "au" / "act" / "1994" / "57-0" / "index.html").exists()
-    assert (site_dir / "akn" / "au" / "act" / "1994" / "57-1" / "index.html").exists()
-    assert not (site_dir / "akn" / "au" / "act" / "1994" / "57").exists()
+    # Colliding pair: each member gets its own title_id + safe_name-digest suffix.
+    act_dir = site_dir / "akn" / "au" / "act" / "1994"
+    assert (act_dir / "57-t1-ba01e2a0" / "index.html").exists()
+    assert (act_dir / "57-t2-f086ea4d" / "index.html").exists()
+    assert not (act_dir / "57").exists()
 
     # Non-colliding Act keeps its bare path, unchanged.
     assert (site_dir / "akn" / "au" / "act" / "1988" / "119" / "index.html").exists()
 
     index_content = (site_dir / "index.html").read_text()
-    assert "/akn/au/act/1994/57-0/" in index_content
-    assert "/akn/au/act/1994/57-1/" in index_content
+    assert "/akn/au/act/1994/57-t1-ba01e2a0/" in index_content
+    assert "/akn/au/act/1994/57-t2-f086ea4d/" in index_content
+

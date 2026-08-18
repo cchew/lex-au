@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -37,6 +38,46 @@ class SectionNode:
     children: list["SectionNode"] = field(default_factory=list)
 
 
+def _instance_suffix(m: ActMetadata) -> str:
+    """Intrinsic, per-Act disambiguating path segment for a colliding Act.
+
+    Pure function of the Act's own identity: it reads no other Act, so two
+    Acts can never be assigned the same suffix by accident and no Act's
+    suffix can change because a different Act joined or left its collision
+    group.
+
+    Two components, both always emitted:
+
+    - `title_id` (lowercased) -- legislation.gov.au's own Titles-API id
+      (e.g. `C2004A04733`), the FRBR-identity field for the Act, and
+      directly searchable back on legislation.gov.au.
+    - a short digest of `safe_name` -- because `title_id` is *not* in fact
+      unique per corpus entry. Verified against the live 3,078-Act corpus
+      (2026-08-16): two pairs share a title_id outright --
+      `C2004A00100` (Human Services (Medicare) Act 1973 / Health Insurance
+      Commission Act 1973) and `C2004A03679` (Fair Work (Registered
+      Organisations) Act 2009 / Workplace Relations Act 1996). Those pairs
+      are the same legislative composition ingested twice under an old and
+      a new Act title, so `comp_id`, `comp_num`, `effective_date`, `year`
+      and `number` all tie too; `name` is the only differing field. Its
+      derived `safe_name` is the corpus index key, hence unique per corpus
+      entry by construction. It is hashed rather than inlined because raw
+      safe_names are long and contain URL-awkward characters (parentheses,
+      commas).
+
+    The digest component is emitted even when the group's title_ids already
+    differ. Making it conditional would reintroduce exactly the instability
+    this replaces: a later Act arriving with a title_id matching an
+    existing member would force that existing member's already-published
+    URL to grow a digest.
+
+    blake2b (not the builtin `hash()`) so the value is stable across
+    processes and Python versions regardless of PYTHONHASHSEED.
+    """
+    digest = hashlib.blake2b(m.safe_name.encode("utf-8"), digest_size=4).hexdigest()
+    return f"{m.title_id.lower()}-{digest}"
+
+
 def _assign_site_paths(all_meta: list[ActMetadata]) -> dict[str, str]:
     """Map each Act's safe_name to its site path, disambiguating (year, number)
     collisions.
@@ -45,10 +86,27 @@ def _assign_site_paths(all_meta: list[ActMetadata]) -> dict[str, str]:
     legislation.gov.au's own scheme, not a globally unique identifier -- it
     isn't unique across collection/subCollection types (Act vs Regulation)
     or an old/new numbering-scheme mismatch, so two different Acts can
-    legitimately share the same (year, number) pair. Acts in a colliding
-    group get a title_id-sorted, deterministic numeric suffix so which Act
-    owns which URL never depends on iteration order and can't silently flip
-    between rebuilds; every other Act's path is untouched.
+    legitimately share the same (year, number) pair.
+
+    Acts in a group of one keep the bare `/akn/au/act/{year}/{number}/`
+    path, byte-identical to what is published today (3,072 of 3,078 Acts in
+    the live corpus). Every member of a colliding group instead gets
+    `/akn/au/act/{year}/{number}-{suffix}/`, where the suffix is
+    `_instance_suffix(m)` -- derived only from that Act's own identity, so:
+
+    - No tie is possible and no ordering is consulted, so the mapping does
+      not depend on `all_meta`'s iteration or sort order, and cannot flip if
+      that order ever changes.
+    - A new Act joining an existing collision group cannot move any
+      existing member's URL onto different content -- the failure mode of
+      an ordinal `-0`/`-1` suffix, which renumbers earlier members whenever
+      a lower-sorting one arrives.
+
+    Residual, accepted per the design spec: an Act that is *currently*
+    alone in its group does move from the bare path to a suffixed one if a
+    second Act later collides with it. Avoiding that would mean suffixing
+    all 3,078 Acts, changing every already-published URL to fix a problem
+    affecting six.
     """
     groups: dict[tuple[int, int], list[ActMetadata]] = {}
     for m in all_meta:
@@ -59,8 +117,8 @@ def _assign_site_paths(all_meta: list[ActMetadata]) -> dict[str, str]:
         if len(members) == 1:
             paths[members[0].safe_name] = f"/akn/au/act/{year}/{number}/"
         else:
-            for n, m in enumerate(sorted(members, key=lambda m: m.title_id)):
-                paths[m.safe_name] = f"/akn/au/act/{year}/{number}-{n}/"
+            for m in members:
+                paths[m.safe_name] = f"/akn/au/act/{year}/{number}-{_instance_suffix(m)}/"
     return paths
 
 
