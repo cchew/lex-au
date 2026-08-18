@@ -199,6 +199,11 @@ class SiteGenerator:
         self._env = Environment(loader=FileSystemLoader(str(templates_dir)), autoescape=True)
 
     def generate(self) -> None:
+        # Full regeneration, not an incremental write: an Act that has left
+        # the corpus, been renamed, or moved between a bare and a
+        # disambiguated path would otherwise leave its previous page on
+        # disk, published and stale, with nothing to overwrite it.
+        shutil.rmtree(self._site_dir, ignore_errors=True)
         self._site_dir.mkdir(parents=True, exist_ok=True)
         all_meta = sorted(self._corpus.all_metadata(), key=lambda m: m.name)
         site_paths = _assign_site_paths(all_meta)

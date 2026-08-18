@@ -275,3 +275,39 @@ def test_collision_disambiguates_paths_and_generates_distinct_pages(tmp_path):
     assert "/akn/au/act/1994/57-t1-ba01e2a0/" in index_content
     assert "/akn/au/act/1994/57-t2-f086ea4d/" in index_content
 
+
+def test_generate_removes_pages_for_acts_no_longer_in_corpus(tmp_path):
+    import json
+
+    corpus = Corpus(tmp_path / "corpus")
+    entries = [("Privacy Act 1988", 1988, 119), ("Zoo Act 1999", 1999, 1)]
+    for name, year, number in entries:
+        meta = ActMetadata(
+            name=name, title_id=f"T{number}", comp_id=f"C{number}", comp_num="1",
+            year=year, number=number, effective_date=date(2024, 1, 1),
+        )
+        builder = AknBuilder(meta)
+        builder.add(ParsedParagraph(ElementType.SECTION, number="1", heading="H"))
+        xml, _ = builder.build()
+        corpus.save(meta, xml)
+
+    site_dir = tmp_path / "site"
+    gen = SiteGenerator(corpus, site_dir, templates_dir=Path("templates"))
+    gen.generate()
+    stale_page = site_dir / "akn" / "au" / "act" / "1999" / "1" / "index.html"
+    assert stale_page.exists()
+
+    # Drop one Act from the corpus, then regenerate.
+    index_path = tmp_path / "corpus" / "index.json"
+    index = json.loads(index_path.read_text())
+    del index["acts"]["zoo-act-1999"]
+    index_path.write_text(json.dumps(index, indent=2))
+    (tmp_path / "corpus" / "xml" / "zoo-act-1999.xml").unlink()
+
+    gen.generate()
+
+    assert not stale_page.exists()
+    assert not (site_dir / "akn" / "au" / "act" / "1999").exists()
+    # The surviving Act is still published.
+    assert (site_dir / "akn" / "au" / "act" / "1988" / "119" / "index.html").exists()
+    assert "Zoo Act 1999" not in (site_dir / "index.html").read_text()
