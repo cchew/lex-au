@@ -26,7 +26,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
-**Status: v0.8.0** - 3,078 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
+**Status: v0.8.1** - 3,078 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
 
 ## Why AKN XML
 
@@ -43,6 +43,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 ## Versions
 
+- **v0.8.1** - Fixed multi-volume schedule/body misclassification (closed the corpus's last empty-`<body>` gap) and static-site FRBR path collisions for 3 Acts.
 - **v0.8.0** - Automated growth/freshness ingest pipeline (GitHub Actions), dynamic low-value-title exclusion filtering.
 - **v0.7.5** - Doc-conversion exclusions re-verified live, RTF detection, legacy-template style normalisation. 3,078 Acts + 2 Regulations.
 - **v0.7.4** - Legacy `.doc` conversion via LibreOffice headless, `source_format` provenance tracking.
