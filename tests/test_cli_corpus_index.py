@@ -48,5 +48,19 @@ def test_load_corpus_index_canonical_name_wins_over_alias_collision(tmp_path):
     assert corpus_index["Act B 2000"] == {"frbr_uri": "/akn/au/act/2000/2"}
 
 
+def test_load_corpus_index_canonical_wins_regardless_of_insertion_order(tmp_path):
+    index_path = tmp_path / "index.json"
+    index_path.write_text(json.dumps({
+        "acts": {
+            "act-b": {"name": "Act B 2000", "frbr_uri": "/akn/au/act/2000/2", "aliases": []},
+            "act-a": {"name": "Act A 2000", "frbr_uri": "/akn/au/act/2000/1", "aliases": ["Act B 2000"]},
+        },
+    }))
+    corpus_index = _load_corpus_index(index_path)
+    # Act B's canonical entry is inserted first here; a buggy direct-assignment
+    # alias implementation would let Act A's alias clobber it afterward.
+    assert corpus_index["Act B 2000"] == {"frbr_uri": "/akn/au/act/2000/2"}
+
+
 def test_load_corpus_index_empty_when_no_index_file(tmp_path):
     assert _load_corpus_index(tmp_path / "missing.json") == {}
