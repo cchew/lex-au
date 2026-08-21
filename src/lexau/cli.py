@@ -237,6 +237,7 @@ def export_jsonl(corpus_dir: Path) -> None:
                 "number": entry["number"],
                 "effective_date": entry["effective_date"],
                 "xml_path": entry["xml_path"],
+                "aliases": entry.get("aliases", []),
             }
             f.write(json.dumps(row) + "\n")
             rows += 1

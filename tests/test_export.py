@@ -60,7 +60,7 @@ def test_export_jsonl_writes_one_row_per_act(small_corpus):
     assert row["xml_path"] == "xml/privacy-act-1988.xml"
     assert set(row.keys()) == {
         "slug", "name", "title_id", "comp_id", "comp_num",
-        "year", "number", "effective_date", "xml_path",
+        "year", "number", "effective_date", "xml_path", "aliases",
     }
 
 
@@ -92,3 +92,26 @@ def test_export_jsonl_multiple_acts_sorted_by_slug(small_corpus, tmp_path):
     assert len(lines) == 2
     slugs = [json.loads(line)["slug"] for line in lines]
     assert slugs == sorted(slugs)  # sorted by slug, deterministic output
+
+
+def test_export_jsonl_includes_aliases(tmp_path, privacy_meta):
+    import json
+    from dataclasses import replace
+    from lexau.corpus import Corpus
+    from lexau.builder import AknBuilder
+    from lexau.parser import ParsedParagraph, ElementType
+
+    corpus_dir = tmp_path / "corpus"
+    corpus = Corpus(corpus_dir)
+    meta = replace(privacy_meta, aliases=["Old Privacy Act Name 1988"])
+    builder = AknBuilder(meta)
+    builder.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"))
+    xml, _validation = builder.build()
+    corpus.save(meta, xml)
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["export-jsonl", "--corpus-dir", str(corpus_dir)])
+    assert result.exit_code == 0, result.output
+
+    row = json.loads((corpus_dir / "data" / "train.jsonl").read_text().strip())
+    assert row["aliases"] == ["Old Privacy Act Name 1988"]
