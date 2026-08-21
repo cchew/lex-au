@@ -35,13 +35,18 @@ def test_dedupe_collapses_duplicate_title_id():
         assert title_id == "C2004A00100"
         return "Human Services (Medicare) Act 1973"
 
-    result, to_delete = dedupe_by_title_id(index, resolve)
+    result, to_delete, to_delete_globs = dedupe_by_title_id(index, resolve)
 
     assert list(result["acts"].keys()) == ["human-services-(medicare)-act-1973"]
     assert result["acts"]["human-services-(medicare)-act-1973"]["aliases"] == [
         "Health Insurance Commission Act 1973"
     ]
     assert to_delete == ["xml/health-insurance-commission-act-1973.xml"]
+    assert to_delete_globs == [
+        "reports/health-insurance-commission-act-1973-v[0-9]*.json",
+        "docx/health-insurance-commission-act-1973-c[0-9]*-vol*.docx",
+        "docx/health-insurance-commission-act-1973-vol[0-9]*.docx",
+    ]
 
 
 def test_dedupe_leaves_single_entry_groups_untouched():
@@ -57,10 +62,11 @@ def test_dedupe_leaves_single_entry_groups_untouched():
     def resolve(title_id: str) -> str:
         raise AssertionError("should not be called for a non-duplicated title_id")
 
-    result, to_delete = dedupe_by_title_id(index, resolve)
+    result, to_delete, to_delete_globs = dedupe_by_title_id(index, resolve)
 
     assert result == index
     assert to_delete == []
+    assert to_delete_globs == []
 
 
 def test_dedupe_merges_preexisting_aliases_from_both_sides():
@@ -77,8 +83,13 @@ def test_dedupe_merges_preexisting_aliases_from_both_sides():
         },
     })
 
-    result, _ = dedupe_by_title_id(index, lambda tid: "Current Name Act 1973")
+    result, _, to_delete_globs = dedupe_by_title_id(index, lambda tid: "Current Name Act 1973")
 
     assert sorted(result["acts"]["current-name-act-1973"]["aliases"]) == [
         "Even Older Name Act 1973", "Old Name Act 1973",
+    ]
+    assert to_delete_globs == [
+        "reports/old-name-act-1973-v[0-9]*.json",
+        "docx/old-name-act-1973-c[0-9]*-vol*.docx",
+        "docx/old-name-act-1973-vol[0-9]*.docx",
     ]

@@ -9,6 +9,29 @@ from lxml import etree
 from lexau.models import ActMetadata
 
 
+def orphan_asset_globs(key: str) -> tuple[str, list[str]]:
+    """(report_glob, docx_globs) filename patterns for a corpus key's
+    report/docx files -- e.g. the entry a title_id-merge or dedup migration
+    just collapsed away, whose XML is already deleted via its exact
+    `xml_path` but whose report/docx were never recorded as a single path.
+
+    Report filenames are `{key}-v{version}.json` (cli.py's `_build_acts`);
+    docx filenames are `{key}-c{comp_num}-vol{vol}.docx`, or, for downloads
+    predating comp_num-in-filename, `{key}-vol{vol}.docx`
+    (crawler.py's `fetch_docx_volumes`) -- an Act can have multiple volumes,
+    hence a glob rather than one exact name.
+
+    Patterns are anchored on the literal marker (-v, -c, -vol) immediately
+    after `key`, not a bare f"{key}-*" wildcard, so a key that happens to be
+    a string-prefix of a different Act's safe_name (e.g. "act-1996" vs.
+    "act-1996-amendment-act-2020") can't accidentally match that other Act's
+    files.
+    """
+    report_glob = f"{key}-v[0-9]*.json"
+    docx_globs = [f"{key}-c[0-9]*-vol*.docx", f"{key}-vol[0-9]*.docx"]
+    return report_glob, docx_globs
+
+
 class Corpus:
     def __init__(self, root: Path) -> None:
         self.root = root
@@ -40,6 +63,12 @@ class Corpus:
                 old_xml_path = self.root / existing["xml_path"]
                 if old_xml_path.exists():
                     old_xml_path.unlink()
+                report_glob, docx_globs = orphan_asset_globs(key)
+                for old_report in (self.root / "reports").glob(report_glob):
+                    old_report.unlink()
+                for docx_glob in docx_globs:
+                    for old_docx in (self.root / "docx").glob(docx_glob):
+                        old_docx.unlink()
                 del index["acts"][key]
         aliases.discard(meta.name)
 

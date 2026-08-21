@@ -107,6 +107,80 @@ def test_save_merges_into_existing_entry_on_title_id_match(corpus, minimal_xml):
     assert not (corpus.root / "xml" / "health-insurance-commission-act-1973.xml").exists()
 
 
+def test_save_merge_deletes_old_key_report_and_docx(corpus, minimal_xml):
+    old_meta = ActMetadata(
+        name="Health Insurance Commission Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+    )
+    corpus.save(old_meta, minimal_xml)
+
+    reports_dir = corpus.root / "reports"
+    docx_dir = corpus.root / "docx"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    docx_dir.mkdir(parents=True, exist_ok=True)
+    old_report = reports_dir / "health-insurance-commission-act-1973-v0.5.0.json"
+    old_docx = docx_dir / "health-insurance-commission-act-1973-c51-vol0.docx"
+    old_report.write_text("{}")
+    old_docx.write_bytes(b"")
+
+    # A different, unrelated Act whose safe_name happens to share the old
+    # key as a string prefix -- must survive the glob-based cleanup.
+    unrelated_report = reports_dir / "health-insurance-commission-act-1973-amendment-v0.5.0.json"
+    unrelated_docx = docx_dir / "health-insurance-commission-act-1973-amendment-c1-vol0.docx"
+    unrelated_report.write_text("{}")
+    unrelated_docx.write_bytes(b"")
+
+    new_meta = ActMetadata(
+        name="Human Services (Medicare) Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+        aliases=["Health Insurance Commission Act 1973"],
+    )
+    corpus.save(new_meta, minimal_xml)
+
+    assert not old_report.exists()
+    assert not old_docx.exists()
+    assert unrelated_report.exists()
+    assert unrelated_docx.exists()
+
+
+def test_save_merge_leaves_index_untouched_when_old_key_has_no_report_or_docx(corpus, minimal_xml):
+    old_meta = ActMetadata(
+        name="Health Insurance Commission Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+    )
+    corpus.save(old_meta, minimal_xml)  # no report/docx ever written for this key
+
+    new_meta = ActMetadata(
+        name="Human Services (Medicare) Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+        aliases=["Health Insurance Commission Act 1973"],
+    )
+    corpus.save(new_meta, minimal_xml)  # must not raise
+
+    index = json.loads((corpus.root / "index.json").read_text())
+    assert "human-services-(medicare)-act-1973" in index["acts"]
+
+
 def test_save_merge_deduplicates_aliases(corpus, minimal_xml):
     old_meta = ActMetadata(
         name="Old Name Act 1973", title_id="T1", comp_id="C1", comp_num="1",
