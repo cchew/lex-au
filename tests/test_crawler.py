@@ -49,6 +49,50 @@ def test_fetch_metadata_returns_act_metadata():
     assert meta.effective_date.isoformat() == "2024-01-01"
 
 
+RENAMED_TITLES_RESPONSE = {
+    "value": [{
+        "id": "C2004A00100",
+        "name": "Human Services (Medicare) Act 1973",
+        "year": "1974",
+        "number": "41",
+    }]
+}
+
+RENAMED_VERSIONS_RESPONSE = {
+    "value": [{
+        "titleId": "C2004A00100",
+        "registerId": "C2025C00609",
+        "compilationNumber": "51",
+        "start": "2025-11-01",
+    }]
+}
+
+
+@resp_lib.activate
+def test_fetch_metadata_canonicalises_superseded_name():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=RENAMED_TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=RENAMED_VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Health Insurance Commission Act 1973")
+
+    assert meta is not None
+    assert meta.name == "Human Services (Medicare) Act 1973"
+    assert meta.aliases == ["Health Insurance Commission Act 1973"]
+
+
+@resp_lib.activate
+def test_fetch_metadata_no_alias_when_name_already_canonical():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata("Privacy Act 1988")
+
+    assert meta.name == "Privacy Act 1988"
+    assert meta.aliases == []
+
+
 @resp_lib.activate
 def test_fetch_metadata_returns_none_for_unknown_act():
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": []})

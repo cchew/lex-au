@@ -158,9 +158,13 @@ class Crawler:
         raw_subjects = t.get("subjects") or []
         subject_keywords = raw_subjects if isinstance(raw_subjects, list) else [s.strip() for s in raw_subjects.split(",") if s.strip()]
 
+        canonical_name = t.get("name", act_name)
+        aliases = [act_name] if canonical_name.lower() != act_name.lower() else []
+
         return ActMetadata(
-            name=act_name,
+            name=canonical_name,
             title_id=title_id,
+            aliases=aliases,
             comp_id=v["registerId"],
             comp_num=v["compilationNumber"],
             year=year,
