@@ -191,3 +191,30 @@ def test_parse_report_v0_6_0_fields():
     r = ParseReport(act_name="Test")
     assert r.inline_formatted == 0
     assert r.list_defs_found == 0
+
+
+def test_actmetadata_aliases_defaults_to_empty_list():
+    meta = ActMetadata(
+        name="Human Services (Medicare) Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+    )
+    assert meta.aliases == []
+
+
+def test_actmetadata_aliases_accepts_explicit_list():
+    meta = ActMetadata(
+        name="Human Services (Medicare) Act 1973",
+        title_id="C2004A00100",
+        comp_id="C2025C00609",
+        comp_num="51",
+        year=1974,
+        number=41,
+        effective_date=date(2025, 11, 1),
+        aliases=["Health Insurance Commission Act 1973"],
+    )
+    assert meta.aliases == ["Health Insurance Commission Act 1973"]

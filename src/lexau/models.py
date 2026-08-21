@@ -15,6 +15,7 @@ class ActMetadata:
     effective_date: date
     long_title: str = ""
     subject_keywords: list[str] = field(default_factory=list)
+    aliases: list[str] = field(default_factory=list)
     doc_type: str = "act"   # "act" | "regulation" | "instrument"
 
     @property
