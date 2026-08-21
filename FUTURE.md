@@ -10,7 +10,11 @@ Result: all three colliding pairs produce identical work URIs. Superannuation In
 
 Deferred explicitly by the design spec's Non-goals (`docs/superpowers/specs/2026-08-16-site-frbr-path-collision-design.md` in the EA project wrapper, Non-goals, final bullet): the site fix derives its own paths at generate-time and never reads a stored FRBR URI, so the two are independent. This one is not: `act_frbr_uri` is the identifier lex-au-graph's MCP tools take as input, so the collision likely affects graph-side Act identity too, and a fix has to cross repos. Tracked as a known bug, not an identifier that has been confirmed safe.
 
-## Two Acts are ingested twice — same composition, old and new title
+## Two Acts are ingested twice — same composition, old and new title (RESOLVED v0.8.2)
+
+Fixed 2026-08-21: `Crawler.fetch_metadata()` now returns the API's canonical name instead of the caller's raw query string (`src/lexau/crawler.py`), and `Corpus.save()` enforces `title_id` uniqueness at write time, merging into the existing entry and retaining the superseded name in a new `ActMetadata.aliases` field (`src/lexau/corpus.py`) instead of creating a duplicate. `scripts/dedupe_renamed_acts.py` collapsed the 2 known live pairs below, dropping the corpus to 3,076 entries and leaving `(1994, 57)` as the sole remaining genuine `(year, number)` collision (see the entry above). Full design: `docs/superpowers/specs/2026-08-21-duplicate-act-ingest-dedup-design.md` (EA project wrapper).
+
+Original write-up, preserved for context:
 
 Two pairs in the 3,078-Act corpus are the *same* legislative composition stored under two different Act names. Verified against `corpus/index.json` on 2026-08-16:
 
