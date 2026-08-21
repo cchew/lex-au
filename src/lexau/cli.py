@@ -30,6 +30,23 @@ def cli() -> None:
     """lex-au: Commonwealth Acts as AKN 3.0 XML."""
 
 
+def _load_corpus_index(index_path: Path) -> dict:
+    """Build the name -> {frbr_uri} lookup reflinks.inject_refs resolves
+    citations against, including alias names so a citation to a superseded
+    Act name (see Corpus.save()'s title_id-merge) still resolves.
+    """
+    if not index_path.exists():
+        return {}
+    raw = json.loads(index_path.read_text())
+    corpus_index: dict = {}
+    for entry in raw.get("acts", {}).values():
+        value = {"frbr_uri": entry.get("frbr_uri", "")}
+        corpus_index[entry["name"]] = value
+        for alias in entry.get("aliases", []):
+            corpus_index.setdefault(alias, value)
+    return corpus_index
+
+
 def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act") -> None:
     """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
@@ -39,13 +56,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
     reports_dir.mkdir(parents=True, exist_ok=True)
 
     index_path = corpus_dir / "index.json"
-    corpus_index: dict = {}
-    if index_path.exists():
-        raw = json.loads(index_path.read_text())
-        corpus_index = {
-            entry["name"]: {"frbr_uri": entry.get("frbr_uri", "")}
-            for entry in raw.get("acts", {}).values()
-        }
+    corpus_index = _load_corpus_index(index_path)
 
     report_rows: list = []
 
