@@ -51,19 +51,28 @@ def _instance_suffix(m: ActMetadata) -> str:
     - `title_id` (lowercased) -- legislation.gov.au's own Titles-API id
       (e.g. `C2004A04733`), the FRBR-identity field for the Act, and
       directly searchable back on legislation.gov.au.
-    - a short digest of `safe_name` -- because `title_id` is *not* in fact
-      unique per corpus entry. Verified against the live 3,078-Act corpus
-      (2026-08-16): two pairs share a title_id outright --
-      `C2004A00100` (Human Services (Medicare) Act 1973 / Health Insurance
-      Commission Act 1973) and `C2004A03679` (Fair Work (Registered
-      Organisations) Act 2009 / Workplace Relations Act 1996). Those pairs
-      are the same legislative composition ingested twice under an old and
-      a new Act title, so `comp_id`, `comp_num`, `effective_date`, `year`
-      and `number` all tie too; `name` is the only differing field. Its
-      derived `safe_name` is the corpus index key, hence unique per corpus
-      entry by construction. It is hashed rather than inlined because raw
-      safe_names are long and contain URL-awkward characters (parentheses,
-      commas).
+    - a short digest of `safe_name` -- kept even though the `title_id`
+      collision this originally guarded against is now closed at the
+      source: v0.8.2 canonicalises Act names at fetch time and has
+      Corpus.save() merge, rather than duplicate, any two entries that
+      share a `title_id`, so the corpus index can no longer accumulate two
+      *live* entries with the same `title_id`. (It used to: two pairs, the
+      same legislative composition ingested once under an old Act title and
+      once under its renamed current one, shared a title_id outright --
+      `C2004A00100` and `C2004A03679` -- until the migration that shipped
+      alongside the fix collapsed both.) `_instance_suffix` has no way to
+      confirm that invariant holds, though -- per above, it is a pure
+      function of one Act's own metadata with no visibility into the rest
+      of the corpus, so it cannot itself detect a collision even if one
+      existed. The digest is retained as a standing defensive measure
+      against that blind spot: a future bug, a hand-edited index.json, or a
+      caller that bypasses Corpus.save()'s merge logic could reintroduce a
+      shared title_id, and the digest is what keeps that scenario a
+      cosmetic path segment change rather than a silent URL clash. Its
+      source, `safe_name`, is the corpus index key and therefore unique per
+      corpus entry by construction. It is hashed rather than inlined
+      because raw safe_names are long and contain URL-awkward characters
+      (parentheses, commas).
 
     The digest component is emitted even when the group's title_ids already
     differ. Making it conditional would reintroduce exactly the instability
