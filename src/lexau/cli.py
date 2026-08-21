@@ -8,11 +8,18 @@ from pathlib import Path
 import click
 from docx import Document
 from huggingface_hub import HfApi
+from huggingface_hub.utils import filter_repo_objects
 
 from lexau.corpus import Corpus
 from lexau.crawler import Crawler
 from lexau.builder import AknBuilder
 from lexau.docx_reader import iter_paragraphs
+
+# Files list_repo_files() returns that export_hf never derives from
+# corpus_dir -- the dataset card (uploaded separately, from --readme) and
+# HF-repo-internal metadata it manages itself -- so the reconcile step must
+# never propose deleting them, however "orphaned" they'd otherwise look.
+_HF_MANAGED_FILES = {"README.md", ".gitattributes"}
 
 
 def _find_endnote_volume(docx_paths: list[Path]) -> Path | None:
@@ -184,6 +191,47 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
     click.echo(f"Site generated -> {site_dir}/")
 
 
+def _reconcile_deleted_files(
+    api: HfApi, repo: str, corpus_dir: Path, ignore_patterns: list[str]
+) -> list[str]:
+    """Delete remote dataset files that no longer exist locally.
+
+    upload_large_folder only adds/updates files -- it has no delete
+    capability (no delete_patterns param, unlike upload_folder), so a file
+    removed from corpus_dir (e.g. a title_id-merge collapsing a duplicate
+    Act) stays on the HF repo forever unless something explicitly removes
+    it. This diffs the remote file list against corpus_dir and issues one
+    batched delete for whatever's left over on the remote side only.
+
+    ignore_patterns is applied on both sides of the diff: once to decide
+    which local files are actually managed (mirrors what upload_large_folder
+    would have uploaded), and again as a safety net on the orphan
+    candidates themselves, so a path under docx/** or doc_spike/** -- never
+    uploaded, hence not this function's responsibility to delete either --
+    can never be proposed for deletion even if it's genuinely absent
+    locally.
+
+    Returns the list of remote paths deleted (empty if none).
+    """
+    remote_files = set(api.list_repo_files(repo_id=repo, repo_type="dataset"))
+
+    local_files = {
+        p.relative_to(corpus_dir).as_posix()
+        for p in corpus_dir.rglob("*")
+        if p.is_file()
+    }
+    local_managed = set(filter_repo_objects(local_files, ignore_patterns=ignore_patterns))
+
+    candidates = remote_files - local_managed
+    candidates = set(filter_repo_objects(candidates, ignore_patterns=ignore_patterns))
+    orphans = sorted(f for f in candidates if f not in _HF_MANAGED_FILES)
+
+    if orphans:
+        api.delete_files(repo_id=repo, repo_type="dataset", delete_patterns=orphans)
+
+    return orphans
+
+
 @cli.command("export-hf")
 @click.option("--repo", required=True, help="HF dataset repo, e.g. cchew/lex-au")
 @click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
@@ -197,6 +245,7 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
 def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
     """Push corpus XML + index + dataset card to a Hugging Face dataset."""
     api = HfApi()
+    ignore_patterns = ["docx/**", "doc_spike/**"]
     click.echo(f"Uploading corpus to {repo}…")
     # upload_large_folder (not upload_folder) hashes files first and skips
     # ones unchanged since the last commit, and avoided a reproducible
@@ -205,7 +254,7 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
         folder_path=str(corpus_dir),
         repo_id=repo,
         repo_type="dataset",
-        ignore_patterns=["docx/**", "doc_spike/**"],
+        ignore_patterns=ignore_patterns,
     )
     click.echo(f"Uploading dataset card from {readme}…")
     api.upload_file(
@@ -215,6 +264,14 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
         repo_type="dataset",
         commit_message="lex-au dataset card update",
     )
+    click.echo("Reconciling deleted files…")
+    deleted = _reconcile_deleted_files(api, repo, corpus_dir, ignore_patterns)
+    if deleted:
+        click.echo("Deleted orphaned remote files:")
+        for path in deleted:
+            click.echo(f"  - {path}")
+    else:
+        click.echo("No orphaned remote files to delete.")
     click.echo("Upload complete.")
 
 

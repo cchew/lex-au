@@ -42,6 +42,104 @@ def test_export_hf_calls_upload_large_folder(small_corpus):
         mock_api.upload_folder.assert_not_called()
 
 
+def test_export_hf_deletes_remote_file_absent_locally(small_corpus):
+    runner = CliRunner()
+    with patch("lexau.cli.HfApi") as mock_api_cls:
+        mock_api = MagicMock()
+        mock_api_cls.return_value = mock_api
+        mock_api.list_repo_files.return_value = [
+            "index.json",
+            "xml/privacy-act-1988.xml",
+            "xml/health-insurance-commission-act-1973.xml",  # orphan: no longer local
+        ]
+
+        result = runner.invoke(cli, [
+            "export-hf",
+            "--repo", "cchew/lex-au",
+            "--corpus-dir", str(small_corpus),
+        ])
+
+        assert result.exit_code == 0, result.output
+        mock_api.delete_files.assert_called_once()
+        call_kwargs = mock_api.delete_files.call_args.kwargs
+        assert call_kwargs["repo_id"] == "cchew/lex-au"
+        assert call_kwargs["repo_type"] == "dataset"
+        assert call_kwargs["delete_patterns"] == ["xml/health-insurance-commission-act-1973.xml"]
+        assert "Deleted orphaned remote files:" in result.output
+        assert "xml/health-insurance-commission-act-1973.xml" in result.output
+
+
+def test_export_hf_leaves_remote_file_present_locally_alone(small_corpus):
+    runner = CliRunner()
+    with patch("lexau.cli.HfApi") as mock_api_cls:
+        mock_api = MagicMock()
+        mock_api_cls.return_value = mock_api
+        mock_api.list_repo_files.return_value = [
+            "index.json",
+            "xml/privacy-act-1988.xml",
+        ]
+
+        result = runner.invoke(cli, [
+            "export-hf",
+            "--repo", "cchew/lex-au",
+            "--corpus-dir", str(small_corpus),
+        ])
+
+        assert result.exit_code == 0, result.output
+        mock_api.delete_files.assert_not_called()
+        assert "No orphaned remote files to delete." in result.output
+
+
+def test_export_hf_never_deletes_readme(small_corpus):
+    runner = CliRunner()
+    with patch("lexau.cli.HfApi") as mock_api_cls:
+        mock_api = MagicMock()
+        mock_api_cls.return_value = mock_api
+        # README.md is uploaded separately from --readme, never present under
+        # corpus_dir, so a naive local-vs-remote diff would flag it.
+        mock_api.list_repo_files.return_value = [
+            "index.json",
+            "xml/privacy-act-1988.xml",
+            "README.md",
+        ]
+
+        result = runner.invoke(cli, [
+            "export-hf",
+            "--repo", "cchew/lex-au",
+            "--corpus-dir", str(small_corpus),
+        ])
+
+        assert result.exit_code == 0, result.output
+        mock_api.delete_files.assert_not_called()
+        assert "No orphaned remote files to delete." in result.output
+
+
+def test_export_hf_never_deletes_ignore_pattern_paths(small_corpus):
+    # A docx/** path that's genuinely absent locally (and would never have
+    # been uploaded even if present, since export_hf ignore_patterns it) --
+    # the reconcile step must not treat this as an orphan.
+    runner = CliRunner()
+    with patch("lexau.cli.HfApi") as mock_api_cls:
+        mock_api = MagicMock()
+        mock_api_cls.return_value = mock_api
+        mock_api.list_repo_files.return_value = [
+            "index.json",
+            "xml/privacy-act-1988.xml",
+            "docx/some-old-act-c1-vol0.docx",
+            "doc_spike/scratch.docx",
+        ]
+
+        result = runner.invoke(cli, [
+            "export-hf",
+            "--repo", "cchew/lex-au",
+            "--corpus-dir", str(small_corpus),
+        ])
+
+        assert result.exit_code == 0, result.output
+        mock_api.delete_files.assert_not_called()
+        assert "No orphaned remote files to delete." in result.output
+
+
 def test_export_jsonl_writes_one_row_per_act(small_corpus):
     import json
 
