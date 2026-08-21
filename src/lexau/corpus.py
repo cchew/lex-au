@@ -25,12 +25,29 @@ class Corpus:
         self._index_path.write_text(json.dumps(data, indent=2, default=str))
 
     def save(self, meta: ActMetadata, xml: etree._Element, source_format: str | None = None) -> Path:
+        index = self._read_index()
+
+        # Trusts meta.name as canonical without re-verifying against the API --
+        # safe because fetch_metadata() (crawler.py) always resolves the
+        # canonical name before save() is ever called; the CLI's build command
+        # is the only caller. If a future caller can pass an unverified name,
+        # this merge logic would need its own canonical-name check.
+        aliases = set(meta.aliases)
+        for key, existing in list(index["acts"].items()):
+            if existing["title_id"] == meta.title_id and key != meta.safe_name:
+                aliases.add(existing["name"])
+                aliases.update(existing.get("aliases", []))
+                old_xml_path = self.root / existing["xml_path"]
+                if old_xml_path.exists():
+                    old_xml_path.unlink()
+                del index["acts"][key]
+        aliases.discard(meta.name)
+
         xml_path = self._xml_dir / f"{meta.safe_name}.xml"
         xml_path.write_bytes(
             etree.tostring(xml, pretty_print=True, xml_declaration=True, encoding="UTF-8")
         )
 
-        index = self._read_index()
         entry = {
             "name": meta.name,
             "title_id": meta.title_id,
@@ -40,6 +57,7 @@ class Corpus:
             "number": meta.number,
             "effective_date": meta.effective_date.isoformat(),
             "xml_path": str(xml_path.relative_to(self.root)),
+            "aliases": sorted(aliases),
         }
         if source_format is not None:
             entry["source_format"] = source_format
@@ -68,6 +86,7 @@ class Corpus:
                     year=entry["year"],
                     number=entry["number"],
                     effective_date=date.fromisoformat(entry["effective_date"]),
+                    aliases=entry.get("aliases", []),
                 )
             )
         return result
