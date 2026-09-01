@@ -132,6 +132,45 @@ def test_docx_paragraphs_preserves_order_across_files(tmp_path):
     ]
 
 
+def test_docx_paragraphs_keeps_non_breaking_hyphen(tmp_path):
+    # Federal Register compilation DOCX encodes compound-word hyphens as
+    # <w:noBreakHyphen/>, which carries no <w:t> text. Without explicit
+    # handling "non-operative" collapses to "nonoperative" and every
+    # hyphenated compound reads as a divergence against the AKN text.
+    import zipfile
+
+    W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    document_xml = (
+        f'<w:document xmlns:w="{W}"><w:body>'
+        f"<w:p><w:r><w:t>non</w:t></w:r>"
+        f"<w:r><w:noBreakHyphen/></w:r>"
+        f"<w:r><w:t>operative material</w:t></w:r></w:p>"
+        f"</w:body></w:document>"
+    )
+    content_types = (
+        '<?xml version="1.0"?>'
+        '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
+        '<Default Extension="xml" ContentType="application/xml"/>'
+        '<Override PartName="/word/document.xml" ContentType="application/'
+        'vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
+        "</Types>"
+    )
+    rels = (
+        '<?xml version="1.0"?>'
+        '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+        '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/'
+        'officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>'
+        "</Relationships>"
+    )
+    path = tmp_path / "nbh.docx"
+    with zipfile.ZipFile(path, "w") as z:
+        z.writestr("[Content_Types].xml", content_types)
+        z.writestr("_rels/.rels", rels)
+        z.writestr("word/document.xml", document_xml)
+
+    assert docx_paragraphs([path]) == ["non-operative material"]
+
+
 def test_docx_paragraphs_reads_real_fixture_in_document_order():
     paras = docx_paragraphs([FIXTURE_DOCX])
     assert paras[0] == "LOAN ACT (No. 2) 1976"

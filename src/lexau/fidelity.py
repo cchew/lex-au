@@ -66,6 +66,7 @@ def akn_paragraphs(root: etree._Element) -> list[str]:
 
 def docx_paragraphs(paths: list[Path]) -> list[str]:
     w_t, w_tab, w_br = f"{_W_NS}t", f"{_W_NS}tab", f"{_W_NS}br"
+    w_nbh = f"{_W_NS}noBreakHyphen"
     out: list[str] = []
     for path in paths:
         with zipfile.ZipFile(path) as z:
@@ -75,6 +76,12 @@ def docx_paragraphs(paths: list[Path]) -> list[str]:
             for node in p.iter():
                 if node.tag == w_t:
                     parts.append(node.text or "")
+                elif node.tag == w_nbh:
+                    # non-breaking hyphen carries no <w:t> text; without this it
+                    # is dropped and "non-operative" collapses to "nonoperative",
+                    # merging two tokens. AKN keeps the hyphen, so every
+                    # hyphenated compound would otherwise read as a divergence.
+                    parts.append("-")
                 elif node.tag in (w_tab, w_br):
                     # tabs and line breaks are word boundaries; emit a space so
                     # "1.<tab>This" does not collapse to "1.This" and a <br/>
