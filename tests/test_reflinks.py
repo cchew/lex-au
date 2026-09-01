@@ -220,3 +220,41 @@ def test_rref_not_date():
     ns = {"akn": AKN_NS}
     rref = root.find(".//akn:rref", ns)
     assert rref is None, "Date ranges must not produce <rref>"
+
+
+# ---------------------------------------------------------------------------
+# Task 1: Paragraph-reorder bug reproduction
+# ---------------------------------------------------------------------------
+
+def _p(xml_inner: str) -> etree._Element:
+    """Build a minimal AKN document with a paragraph containing xml_inner."""
+    return etree.fromstring(
+        f'<akomaNtoso xmlns="{AKN_NS}"><act><body><section eId="sec-3">'
+        f'<content><p>{xml_inner}</p></content>'
+        f'</section></body></act></akomaNtoso>'
+    )
+
+
+@pytest.mark.xfail(reason="fixed in Task 5", strict=True)
+def test_process_p_keeps_reference_in_place_with_preceding_child():
+    """Mixed content: a reference sits in the leading text node, BEFORE an
+    existing <i> child. The ref must stay where the words are, not move
+    to the end of the paragraph.
+    """
+    root = _p(
+        "Despite section 2H of the <i>Acts Interpretation Act 1901</i>, "
+        "this Act as applying in those Territories is a law of the Commonwealth."
+    )
+    inject_refs(root, {})
+    p = root.find(f".//{{{AKN_NS}}}p")
+    flat = "".join(p.itertext())
+    assert flat == (
+        "Despite section 2H of the Acts Interpretation Act 1901, "
+        "this Act as applying in those Territories is a law of the Commonwealth."
+    )
+    # the <ref> must come before the <i>, not after it
+    kids = [etree.QName(c).localname for c in p]
+    assert kids == ["ref", "i"], kids
+    ref = p.find(f"{{{AKN_NS}}}ref")
+    assert ref.text == "section 2H"
+    assert (ref.tail or "").startswith(" of the ")
