@@ -56,6 +56,31 @@ def test_compare_minor_divergence_below_reorder_threshold():
     assert divs and divs[0].kind == "minor"
 
 
+# --- Added: total-rewrite paragraphs must not hide in "minor" -------------
+
+
+def test_compare_total_rewrite_is_not_minor():
+    divs = compare(["alpha beta gamma delta"], ["zulu yankee xray whiskey"])
+    assert divs
+    assert divs[0].kind != "minor"
+    assert divs[0].kind == "drop_text"
+
+
+# --- Added: regression pin for the concern-1 guard ----------------------
+
+
+def test_compare_identical_token_sequence_stays_minor_not_reorder():
+    # A `replace` opcode whose two sides share an identical lowercased \w+ token
+    # sequence differs only in punctuation/whitespace. Nothing was reordered, so
+    # it must be "minor", never "reorder". Pins the concern-1 guard against a
+    # future refactor silently reverting to the brief's same-multiset rule.
+    docx = ["Payment of the levy, and any penalty, is due; on 30 June."]
+    akn = ["Payment of the levy and any penalty is due on 30 June"]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    assert divs[0].kind == "minor"
+
+
 # --- Added: akn_paragraphs excludes <meta> content ------------------------
 
 
@@ -111,7 +136,8 @@ def test_docx_paragraphs_reads_real_fixture_in_document_order():
     paras = docx_paragraphs([FIXTURE_DOCX])
     assert paras[0] == "LOAN ACT (No. 2) 1976"
     assert "Short title." in paras
+    # tab between the section number and the body text is emitted as a space
     assert paras.index(
-        "1.This Act may be cited as the Loan Act (No. 2) 1976."
+        "1. This Act may be cited as the Loan Act (No. 2) 1976."
     ) == paras.index("Short title.") + 1
     assert all(p == normalise(p) for p in paras)

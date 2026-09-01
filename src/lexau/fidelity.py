@@ -65,12 +65,22 @@ def akn_paragraphs(root: etree._Element) -> list[str]:
 
 
 def docx_paragraphs(paths: list[Path]) -> list[str]:
+    w_t, w_tab, w_br = f"{_W_NS}t", f"{_W_NS}tab", f"{_W_NS}br"
     out: list[str] = []
     for path in paths:
         with zipfile.ZipFile(path) as z:
             doc = ET.fromstring(z.read("word/document.xml"))
         for p in doc.iter(f"{_W_NS}p"):
-            text = normalise("".join(t.text or "" for t in p.iter(f"{_W_NS}t")))
+            parts: list[str] = []
+            for node in p.iter():
+                if node.tag == w_t:
+                    parts.append(node.text or "")
+                elif node.tag in (w_tab, w_br):
+                    # tabs and line breaks are word boundaries; emit a space so
+                    # "1.<tab>This" does not collapse to "1.This" and a <br/>
+                    # between words does not merge tokens
+                    parts.append(" ")
+            text = normalise("".join(parts))
             if text:
                 out.append(text)
     return out
@@ -83,6 +93,50 @@ class Divergence:
     akn_span: tuple[int, int]
     docx_text: str
     akn_text: str
+
+
+def _classify_replace(dtext: str, atext: str) -> str:
+    """Classify a difflib `replace` opcode into a divergence kind.
+
+    Order is load-bearing:
+
+    1. Identical lowercased ``\\w+`` token *sequence* => ``minor``. The two sides
+       differ only in punctuation or whitespace; nothing was reordered or lost.
+       (Deviation from the task-2 brief reference, which labelled every
+       same-multiset replace ``reorder`` and so failed
+       ``test_compare_minor_divergence_below_reorder_threshold``. Judged correct
+       at review; kept.)
+    2. Identical token multiset (different sequence) => ``reorder``.
+    3. Strict token-subset (every AKN token present in the DOCX with at least the
+       same count, and strictly fewer tokens overall) => ``drop_text``. Checked
+       ahead of the overlap thresholds so a small real text loss is not scattered
+       into ``minor``/``reorder``; ``drop_text`` is the audit's highest-stakes
+       category (feeds the Task 4 go/no-go).
+    4. Overlap >= ``_REORDER_MIN_OVERLAP`` => ``reorder``.
+    5. Overlap >= ``_MINOR_MIN_OVERLAP`` => ``minor`` (punctuation/artefact noise).
+    6. Otherwise (low overlap, no subset relationship) => ``drop_text``: garbled,
+       substituted or wholesale-rewritten text, surfaced rather than buried in
+       ``minor``.
+    """
+    from collections import Counter
+
+    dt, at = _tokens(dtext), _tokens(atext)
+    if dt == at:
+        return "minor"
+
+    cd, ca = Counter(dt), Counter(at)
+    if cd == ca:
+        return "reorder"
+
+    if ca and all(ca[t] <= cd[t] for t in ca) and sum(ca.values()) < sum(cd.values()):
+        return "drop_text"
+
+    ov = _overlap(dtext, atext)
+    if ov >= _REORDER_MIN_OVERLAP:
+        return "reorder"
+    if ov >= _MINOR_MIN_OVERLAP:
+        return "minor"
+    return "drop_text"
 
 
 def compare(docx_paras: list[str], akn_paras: list[str]) -> list[Divergence]:
@@ -98,28 +152,6 @@ def compare(docx_paras: list[str], akn_paras: list[str]) -> list[Divergence]:
         elif tag == "insert":
             divs.append(Divergence("spurious_para", (i1, i2), (j1, j2), "", atext))
         else:  # replace
-            # Deviation from the task-2 brief reference snippet: the brief's
-            # `compare()` classified any same-multiset replace as "reorder",
-            # which makes brief test
-            # `test_compare_minor_divergence_below_reorder_threshold` fail
-            # (a punctuation-only rewrite has an identical token multiset but
-            # is not a reorder). Guard first on an identical token *sequence*
-            # so a pure punctuation/whitespace change is classified "minor".
-            # Thresholds and the difflib opcode mapping are unchanged.
-            # Flagged for Task 4 review.
-            if _tokens(dtext) == _tokens(atext):
-                kind = "minor"
-            elif _same_multiset(dtext, atext):
-                kind = "reorder"
-            else:
-                ov = _overlap(dtext, atext)
-                if ov >= _REORDER_MIN_OVERLAP:
-                    kind = "reorder"
-                elif ov >= _MINOR_MIN_OVERLAP:
-                    kind = "minor"
-                elif _tokens(atext) and set(_tokens(atext)) <= set(_tokens(dtext)):
-                    kind = "drop_text"
-                else:
-                    kind = "minor"
+            kind = _classify_replace(dtext, atext)
             divs.append(Divergence(kind, (i1, i2), (j1, j2), dtext, atext))
     return divs
