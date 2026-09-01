@@ -1,11 +1,27 @@
-# DOCX-to-AKN Fidelity Audit — Summary
+# DOCX-to-AKN Fidelity Audit: Summary
 
-Generated: 2026-09-01T20:22:56+1000
-Wall-clock: 340.0s
+Generated: 2026-09-02T07:54:06+1000
+Wall-clock: 403.4s
 
 - Acts scanned: 3076
-- Acts skipped (no usable docx or xml): 0
-- Acts with at least one non-minor divergence: 2927
+- Acts skipped (no docx, no xml, or read error): 0
+- Acts with at least one non-minor divergence: 2931
+
+> How to read this. Both sides are paragraph text: DOCX `<w:p>` runs
+> against AKN `<p>`, `<heading>` and `<td>`. `reorder` (same tokens, new
+> order) is the one clean signal: it isolates the `_process_p`
+> cross-reference bug. `drop_text`, `drop_para` and `spurious_para` are NOT
+> resolvable from these totals and must not be read as a conversion-loss
+> count. Each combines, in unknown proportion: genuine loss; whole schedules
+> the AKN omits (in the worst-20 the tariff, appropriation, supply and
+> repeal Acts lose their entire operative schedule this way, and `<td>`
+> inclusion does not recover them because the cells are absent from the XML,
+> not just uncompared); AKN front-matter and per-volume residue repeated as
+> `spurious_para`; and difflib splitting one moved paragraph into a delete
+> plus an insert. AKN content with no paragraph or cell text (nested tables,
+> `<foreign>`, math) stays invisible to the diff. Per-Act genuineness needs
+> the per-Act JSON plus an XML content probe; the audit report carries that
+> read for the worst-20.
 
 ## DOCX resolution modes (scanned acts)
 
@@ -16,41 +32,41 @@ Wall-clock: 340.0s
 
 Paragraphs affected, summed across acts (wider side of each divergence).
 
-- reorder: 18998 paragraphs
-- drop_text: 305192 paragraphs
-- drop_para: 513003 paragraphs
-- spurious_para: 99124 paragraphs
-- minor: 17454 paragraphs
+- reorder: 20096 paragraphs
+- drop_text: 115344 paragraphs
+- drop_para: 342983 paragraphs
+- spurious_para: 114042 paragraphs
+- minor: 34680 paragraphs
 
 ## Acts affected by mode
 
-- reorder: 1857 acts
-- drop_text: 2378 acts
-- drop_para: 2448 acts
-- spurious_para: 1844 acts
-- minor: 1085 acts
+- reorder: 1868 acts
+- drop_text: 2397 acts
+- drop_para: 2491 acts
+- spurious_para: 1891 acts
+- minor: 1579 acts
 
 ## Worst 20 acts (non-minor divergent paragraphs)
 
 | rank | slug | non-minor paras | reorder | drop_text | drop_para | spurious_para | docx mode |
 |---|---|---|---|---|---|---|---|
-| 1 | customs-tariff-act-1995 | 75179 | 23 | 25155 | 48641 | 1360 | comp-vol |
-| 2 | income-tax-assessment-act-1997 | 45375 | 1124 | 29759 | 11122 | 3370 | comp-vol |
-| 3 | migration-regulations-1994 | 45011 | 68 | 26136 | 11446 | 7361 | comp-vol |
-| 4 | civil-aviation-safety-regulations-1998 | 39218 | 19 | 24525 | 13585 | 1089 | comp-vol |
-| 5 | social-security-act-1991 | 28472 | 164 | 22463 | 3789 | 2056 | comp-vol |
-| 6 | corporations-act-2001 | 25574 | 319 | 2137 | 17683 | 5435 | comp-vol |
-| 7 | income-tax-assessment-act-1936 | 22149 | 288 | 19109 | 1100 | 1652 | comp-vol |
-| 8 | taxation-administration-act-1953 | 15630 | 218 | 9965 | 3520 | 1927 | comp-vol |
-| 9 | offshore-petroleum-and-greenhouse-gas-storage-act-2006 | 13907 | 67 | 11879 | 1462 | 499 | comp-vol |
-| 10 | corporations-regulations-2001 | 13165 | 51 | 8961 | 2417 | 1736 | comp-vol |
-| 11 | family-law-(superannuation)-regulations-2025 | 12642 | 22 | 499 | 12044 | 77 | legacy-vol |
-| 12 | veterans'-entitlements-act-1986 | 11048 | 92 | 627 | 9328 | 1001 | comp-vol |
-| 13 | customs-tariff-amendment-(regional-comprehensive-economic-partnership-agreement-implementation)-act-2021 | 10852 | 0 | 15 | 10832 | 5 | legacy-vol |
-| 14 | customs-tariff-amendment-(thailand-australia-free-trade-agreement-implementation)-act-2004 | 10851 | 5 | 38 | 10778 | 30 | legacy-vol |
-| 15 | criminal-code-act-1995 | 10462 | 50 | 9964 | 109 | 339 | comp-vol |
-| 16 | customs-act-1901 | 9045 | 126 | 7471 | 154 | 1294 | comp-vol |
-| 17 | fair-work-act-2009 | 8826 | 77 | 1218 | 5169 | 2362 | comp-vol |
-| 18 | superannuation-act-1922 | 6058 | 42 | 1086 | 4672 | 258 | legacy-vol |
-| 19 | superannuation-act-(no.-2)-1965 | 5804 | 1 | 6 | 5797 | 0 | legacy-vol |
-| 20 | appropriation-act-(no.-1)-2026‑2027 | 5792 | 3 | 4 | 5785 | 0 | legacy-vol |
+| 1 | customs-tariff-act-1995 | 53892 | 23 | 3979 | 48530 | 1360 | comp-vol |
+| 2 | migration-regulations-1994 | 20189 | 68 | 1659 | 11064 | 7398 | comp-vol |
+| 3 | social-security-act-1991 | 13607 | 166 | 10721 | 382 | 2338 | comp-vol |
+| 4 | family-law-(superannuation)-regulations-2025 | 12534 | 24 | 499 | 11934 | 77 | legacy-vol |
+| 5 | income-tax-assessment-act-1997 | 12077 | 1275 | 5992 | 654 | 4156 | comp-vol |
+| 6 | customs-tariff-amendment-(regional-comprehensive-economic-partnership-agreement-implementation)-act-2021 | 10834 | 0 | 15 | 10814 | 5 | legacy-vol |
+| 7 | customs-tariff-amendment-(thailand-australia-free-trade-agreement-implementation)-act-2004 | 10801 | 5 | 38 | 10728 | 30 | legacy-vol |
+| 8 | corporations-act-2001 | 10198 | 329 | 1948 | 2348 | 5573 | comp-vol |
+| 9 | civil-aviation-safety-regulations-1998 | 8069 | 32 | 4157 | 133 | 3747 | comp-vol |
+| 10 | taxation-administration-act-1953 | 7657 | 218 | 2273 | 3210 | 1956 | comp-vol |
+| 11 | corporations-regulations-2001 | 6171 | 67 | 2674 | 1648 | 1782 | comp-vol |
+| 12 | appropriation-act-(no.-1)-2026‑2027 | 5785 | 3 | 9 | 5773 | 0 | legacy-vol |
+| 13 | appropriation-act-(no.-1)-2025-2026 | 5682 | 3 | 4 | 5675 | 0 | legacy-vol |
+| 14 | supply-act-(no.-1)-2025-2026 | 5612 | 3 | 7 | 5602 | 0 | legacy-vol |
+| 15 | amending-acts-1901-to-1969-repeal-act-2014 | 5607 | 0 | 0 | 5607 | 0 | legacy-vol |
+| 16 | appropriation-act-(no.-1)-2024-2025 | 5604 | 3 | 9 | 5592 | 0 | legacy-vol |
+| 17 | income-tax-assessment-act-1936 | 5564 | 354 | 2999 | 471 | 1740 | comp-vol |
+| 18 | appropriation-act-(no.-1)-2023-2024 | 5533 | 3 | 7 | 5523 | 0 | legacy-vol |
+| 19 | us-free-trade-agreement-implementation-(customs-tariff)-act-2004 | 4633 | 2 | 16 | 4610 | 5 | legacy-vol |
+| 20 | customs-tariff-amendment-(japan-australia-economic-partnership-agreement-implementation)-act-2014 | 4456 | 1 | 10 | 4437 | 8 | legacy-vol |

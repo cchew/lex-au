@@ -38,10 +38,56 @@ from pathlib import Path
 
 from lxml import etree
 
-from lexau.fidelity import Divergence, akn_paragraphs, compare, docx_paragraphs
+from lexau.fidelity import AKN_NS, Divergence, compare, docx_paragraphs, normalise
 
 NON_MINOR_KINDS = ("reorder", "drop_text", "drop_para", "spurious_para")
 ALL_KINDS = ("reorder", "drop_text", "drop_para", "spurious_para", "minor")
+
+_AKN_META = f"{{{AKN_NS}}}meta"
+_AKN_P = f"{{{AKN_NS}}}p"
+_AKN_HEADING = f"{{{AKN_NS}}}heading"
+_AKN_TD = f"{{{AKN_NS}}}td"
+_AKN_BLOCK = f"{{{AKN_NS}}}block"
+_AKN_COLLECT = (_AKN_P, _AKN_HEADING, _AKN_TD, _AKN_BLOCK)
+_AKN_FINE = (_AKN_P, _AKN_HEADING)
+
+
+def akn_paragraphs(root: etree._Element) -> list[str]:
+    """Visible paragraph text of an AKN body, table cells included.
+
+    ``lexau.fidelity.akn_paragraphs`` collects only ``<p>`` and ``<heading>``.
+    Federal Register AKN also carries operative content in ``<td>`` (rate
+    tables, commencement tables, tariff and dose schedules). Without ``<td>``
+    every converted table row scores ``drop_para`` against the DOCX whether or
+    not the conversion kept it, so this audit cannot tell "table represented as
+    cells" from "table dropped".
+
+    Corpus check (3076 XML): 425,995 ``<td>`` elements, none with element
+    children, and zero ``<block>`` elements. A ``<td>``/``<block>`` that does
+    contain a ``<p>`` or ``<heading>`` is skipped so its text is taken once from
+    the finer element, not twice.
+    """
+    out: list[str] = []
+    for el in root.iter():
+        if el.tag not in _AKN_COLLECT:
+            continue
+        if el.tag in (_AKN_TD, _AKN_BLOCK) and any(
+            d.tag in _AKN_FINE for d in el.iterdescendants()
+        ):
+            continue
+        anc = el.getparent()
+        skip = False
+        while anc is not None:
+            if anc.tag == _AKN_META:
+                skip = True
+                break
+            anc = anc.getparent()
+        if skip:
+            continue
+        text = normalise("".join(el.itertext()))
+        if text:
+            out.append(text)
+    return out
 
 # --- Comparison-basis normalisation --------------------------------------------
 #
@@ -49,13 +95,18 @@ ALL_KINDS = ("reorder", "drop_text", "drop_para", "spurious_para", "minor")
 # artefacts of Federal Register compilation DOCX otherwise swamp the real
 # conversion divergences, so the audit strips them before diffing:
 #
-#   1. Front matter and endnotes. The DOCX carries a "Contents" table of
-#      provisions (every heading repeated with a trailing page number) and,
-#      after the operative text, an endnote apparatus (legislation history,
-#      amendment history) that runs to hundreds or thousands of paragraphs.
-#      The AKN body contains neither. `_body_slice` drops the Contents block and
-#      everything from the apparatus heading onward -- "Endnotes" in the modern
-#      Federal Register format, "Notes to the <Act>" in the pre-2016 format.
+#   1. Front matter and endnotes. Each DOCX volume carries a "Contents"
+#      table of provisions (every heading repeated with a trailing page number)
+#      and, after the operative text, an endnote apparatus (legislation history,
+#      amendment history) running to hundreds or thousands of paragraphs. The
+#      generated AKN carries neither as operative body (it does repeat a short
+#      compilation-description block). `_body_slice` drops the Contents block and
+#      everything from the apparatus heading onward. The heading is a bare
+#      "Endnotes" (modern format) or "Notes to the <Act>" (pre-2016); both also
+#      occur in the volume list, so the real one is confirmed by its first item
+#      ("Endnote 1" / "Note 1"). `_body_slice` runs once per DOCX volume, since
+#      each volume has its own Contents and (for the last volume) its own
+#      apparatus.
 #   2. Enumerators and structural labels. The DOCX embeds "(1)", "(a)", the
 #      section number ("3", "1-1", "15AB") and the "Part 1-1-", "Division 2-"
 #      label in the paragraph text; AKN holds these in sibling <num> elements
@@ -93,14 +144,28 @@ def _strip_markers(s: str) -> str:
     return s.strip()
 
 
-_APPARATUS = re.compile(r"(?i)^(?:endnotes?|notes? to the(?:\s.*)?)$")
+# Heading that starts the endnote apparatus at the end of a volume: a bare
+# "Endnotes" (modern Federal Register format) or "Notes to the <Act title>"
+# (pre-2016 format). Both also appear in the compilation front matter, where a
+# bare "Endnotes" sits in the volume list; the earlier pattern also matched any
+# line reading "note to the ..." (a provision such as "Notes to the accounts"),
+# and a fixed 30% offset skipped the real heading in the schedules-and-endnotes
+# final volume of large compilations while still catching front-matter copies.
+# The real apparatus is disambiguated by its first item: "Endnote 1" / "Note 1".
+_APPARATUS_HEAD = re.compile(r"(?i)^(?:endnotes|notes to the .+)$")
+_APPARATUS_FIRST_ITEM = re.compile(r"(?i)^(?:endnote|note) \d")
 
 
 def _body_slice(paras: list[str]) -> list[str]:
     n = len(paras)
     hi = n
-    for i in range(max(1, int(n * 0.3)), n):
-        if _APPARATUS.match(paras[i].strip().rstrip(".")):
+    for i in range(n - 1):
+        if not _APPARATUS_HEAD.match(paras[i].strip().rstrip(".")):
+            continue
+        j = i + 1
+        while j < n and not paras[j].strip():
+            j += 1
+        if j < n and _APPARATUS_FIRST_ITEM.match(paras[j].strip()):
             hi = i
             break
     lo = 0
@@ -204,6 +269,25 @@ def _audit_act(xml_path: Path, docx_paths: list[Path]) -> tuple[list[Divergence]
     return compare(docx_paras, akn_paras), len(docx_paras), len(akn_paras)
 
 
+_CAVEAT = (
+    "> How to read this. Both sides are paragraph text: DOCX `<w:p>` runs\n"
+    "> against AKN `<p>`, `<heading>` and `<td>`. `reorder` (same tokens, new\n"
+    "> order) is the one clean signal: it isolates the `_process_p`\n"
+    "> cross-reference bug. `drop_text`, `drop_para` and `spurious_para` are NOT\n"
+    "> resolvable from these totals and must not be read as a conversion-loss\n"
+    "> count. Each combines, in unknown proportion: genuine loss; whole schedules\n"
+    "> the AKN omits (in the worst-20 the tariff, appropriation, supply and\n"
+    "> repeal Acts lose their entire operative schedule this way, and `<td>`\n"
+    "> inclusion does not recover them because the cells are absent from the XML,\n"
+    "> not just uncompared); AKN front-matter and per-volume residue repeated as\n"
+    "> `spurious_para`; and difflib splitting one moved paragraph into a delete\n"
+    "> plus an insert. AKN content with no paragraph or cell text (nested tables,\n"
+    "> `<foreign>`, math) stays invisible to the diff. Per-Act genuineness needs\n"
+    "> the per-Act JSON plus an XML content probe; the audit report carries that\n"
+    "> read for the worst-20."
+)
+
+
 def _render_md(s: dict) -> str:
     def _table(pairs: list[tuple[str, int]], unit: str) -> list[str]:
         return [f"- {k}: {v} {unit}".rstrip() for k, v in pairs]
@@ -211,14 +295,16 @@ def _render_md(s: dict) -> str:
     totals = s["paragraph_totals_by_mode"]
     affected = s["acts_affected_by_mode"]
     lines = [
-        "# DOCX-to-AKN Fidelity Audit — Summary",
+        "# DOCX-to-AKN Fidelity Audit: Summary",
         "",
         f"Generated: {s['generated_at']}",
         f"Wall-clock: {s['wall_clock_seconds']}s",
         "",
         f"- Acts scanned: {s['acts_scanned']}",
-        f"- Acts skipped (no usable docx or xml): {s['acts_skipped_no_docx']}",
+        f"- Acts skipped (no docx, no xml, or read error): {s['acts_skipped']}",
         f"- Acts with at least one non-minor divergence: {s['acts_with_nonminor']}",
+        "",
+        _CAVEAT,
         "",
         "## DOCX resolution modes (scanned acts)",
         "",
@@ -292,7 +378,14 @@ def main() -> int:
             skipped.append({"slug": slug, "reason": reason, "docx_mode": mode})
             continue
 
-        divs, n_docx_paras, n_akn_paras = _audit_act(xml_path, docx_paths)
+        try:
+            divs, n_docx_paras, n_akn_paras = _audit_act(xml_path, docx_paths)
+        except Exception as e:  # noqa: BLE001 - one unreadable Act must not abort the run
+            skipped.append(
+                {"slug": slug, "reason": f"error:{type(e).__name__}", "docx_mode": mode}
+            )
+            print(f"  ! {slug}: {type(e).__name__}: {e}", flush=True)
+            continue
         scanned += 1
         docx_modes[mode] += 1
 
@@ -349,7 +442,7 @@ def main() -> int:
         "wall_clock_seconds": wall,
         "acts_in_scope": len(items),
         "acts_scanned": scanned,
-        "acts_skipped_no_docx": len(skipped),
+        "acts_skipped": len(skipped),
         "acts_with_nonminor": acts_with_nonminor,
         "acts_clean_nonminor": scanned - acts_with_nonminor,
         "docx_modes": dict(docx_modes),
