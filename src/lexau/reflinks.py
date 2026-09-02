@@ -163,44 +163,70 @@ def _make_ref(
 
 
 def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
-    """Inject <ref> elements into a single <p> element. Returns (resolved, unresolved)."""
-    text = p_el.text or ""
-    if not text:
-        return 0, 0
+    """Inject <ref> elements into a <p>, matching references in the leading
+    text node AND in every child element's tail.
 
-    quoted = _quoted_ranges(text)
-    matches = _collect_matches(text, quoted)
+    References are spliced at their true document position via
+    ``p_el.insert(idx, ref_el)`` with tail-splitting; existing children
+    (emphasis, <date>, <quantity>, prior <ref> from earlier passes) keep
+    their order and their text is never moved across an element boundary.
 
-    if not matches:
-        return 0, 0
-
+    Returns (resolved, unresolved).
+    """
     resolved = [0]
     unresolved = [0]
 
-    # Clear existing text; we will rebuild content
-    p_el.text = None
+    # Snapshot the text segments we will re-match, in document order:
+    #   seg_idx -1  -> p_el.text (before the first child)
+    #   seg_idx  k  -> children[k].tail (text after child k)
+    children = list(p_el)
+    segments: list[tuple[int, str]] = [(-1, p_el.text or "")]
+    for k in range(len(children)):
+        segments.append((k, children[k].tail or ""))
 
-    prev_ref: etree._Element | None = None
-    cursor = 0
+    made_any = False
+    # Process segments back-to-front so element indices stay valid as we
+    # insert new <ref> nodes (an insertion only shifts elements that come
+    # after it, and later segments sit after earlier ones).
+    for seg_idx, text in reversed(segments):
+        if not text:
+            continue
 
-    for start, end, m, kind in matches:
-        pre_text = text[cursor:start]
-        ref_el = _make_ref(m, kind, corpus_index, resolved, unresolved)
+        quoted = _quoted_ranges(text)
+        matches = _collect_matches(text, quoted)
+        if not matches:
+            continue
+        # _collect_matches already returns non-overlapping matches sorted by
+        # start; sort defensively in case that contract changes.
+        matches = sorted(matches, key=lambda x: x[0])
+        made_any = True
 
-        if prev_ref is None:
-            p_el.text = pre_text or None
+        # Text before the first match stays attached to whatever precedes
+        # this segment (p_el.text, or the anchor child's tail).
+        lead = text[: matches[0][0]]
+
+        # Build the <ref> nodes; each carries the text that runs from its
+        # own end up to the next match (or the end of the segment) as .tail.
+        new_refs: list[etree._Element] = []
+        for n, (start, end, m, kind) in enumerate(matches):
+            ref_el = _make_ref(m, kind, corpus_index, resolved, unresolved)
+            nxt = matches[n + 1][0] if n + 1 < len(matches) else len(text)
+            ref_el.tail = text[end:nxt] or None
+            new_refs.append(ref_el)
+
+        if seg_idx == -1:
+            p_el.text = lead or None
+            for offset, ref_el in enumerate(new_refs):
+                p_el.insert(offset, ref_el)
         else:
-            prev_ref.tail = pre_text or None
+            anchor = children[seg_idx]
+            anchor.tail = lead or None
+            pos = list(p_el).index(anchor) + 1
+            for offset, ref_el in enumerate(new_refs):
+                p_el.insert(pos + offset, ref_el)
 
-        p_el.append(ref_el)
-        prev_ref = ref_el
-        cursor = end
-
-    # Remaining suffix
-    suffix = text[cursor:]
-    if prev_ref is not None:
-        prev_ref.tail = suffix or None
-
+    if not made_any:
+        return 0, 0
     return resolved[0], unresolved[0]
 
 

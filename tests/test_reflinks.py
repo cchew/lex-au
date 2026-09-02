@@ -235,7 +235,6 @@ def _p(xml_inner: str) -> etree._Element:
     )
 
 
-@pytest.mark.xfail(reason="fixed in Task 5", strict=True)
 def test_process_p_keeps_reference_in_place_with_preceding_child():
     """Mixed content: a reference sits in the leading text node, BEFORE an
     existing <i> child. The ref must stay where the words are, not move
@@ -258,3 +257,49 @@ def test_process_p_keeps_reference_in_place_with_preceding_child():
     ref = p.find(f"{{{AKN_NS}}}ref")
     assert ref.text == "section 2H"
     assert (ref.tail or "").startswith(" of the ")
+
+
+# ---------------------------------------------------------------------------
+# Task 5: mixed-content walk (fix option A)
+# ---------------------------------------------------------------------------
+
+def test_process_p_injects_ref_from_child_tail():
+    root = _p('The <i>Minister</i> may act under section 40 of this Act.')
+    inject_refs(root, {})
+    p = root.find(f".//{AKN}p")
+    assert "".join(p.itertext()) == "The Minister may act under section 40 of this Act."
+    refs = p.findall(f"{AKN}ref")
+    assert len(refs) == 1 and refs[0].text == "section 40"
+    # ref lives in the <i> tail region, after <i>, not appended past later text
+    assert (refs[0].tail or "").startswith(" of this Act")
+    kids = [etree.QName(c).localname for c in p]
+    assert kids == ["i", "ref"], kids
+
+
+def test_process_p_plain_text_paragraph_unchanged_behaviour():
+    root = _p("See section 12 and section 13.")
+    inject_refs(root, {})
+    p = root.find(f".//{AKN}p")
+    assert [c.text for c in p.findall(f"{AKN}ref")] == ["section 12", "section 13"]
+    assert "".join(p.itertext()) == "See section 12 and section 13."
+
+
+def test_process_p_no_references_leaves_p_untouched():
+    root = _p("This paragraph mentions no provisions at all.")
+    before = etree.tostring(root)
+    inject_refs(root, {})
+    assert etree.tostring(root) == before
+
+
+def test_process_p_ref_in_middle_child_tail_lands_between_children():
+    """Two existing children, a reference in the middle child's tail: the
+    <ref> must splice between the two children, not jump to either end."""
+    root = _p('Text <i>one</i> then see section 5 of it <b>two</b> end.')
+    inject_refs(root, {})
+    p = root.find(f".//{AKN}p")
+    kids = [etree.QName(c).localname for c in p]
+    assert kids == ["i", "ref", "b"], kids
+    ref = p.find(f"{AKN}ref")
+    assert ref.text == "section 5"
+    assert (ref.tail or "").startswith(" of it ")
+    assert "".join(p.itertext()) == "Text one then see section 5 of it two end."
