@@ -184,7 +184,6 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
     for k in range(len(children)):
         segments.append((k, children[k].tail or ""))
 
-    made_any = False
     # Process segments back-to-front so element indices stay valid as we
     # insert new <ref> nodes (an insertion only shifts elements that come
     # after it, and later segments sit after earlier ones).
@@ -199,7 +198,6 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
         # _collect_matches already returns non-overlapping matches sorted by
         # start; sort defensively in case that contract changes.
         matches = sorted(matches, key=lambda x: x[0])
-        made_any = True
 
         # Text before the first match stays attached to whatever precedes
         # this segment (p_el.text, or the anchor child's tail).
@@ -225,8 +223,6 @@ def _process_p(p_el: etree._Element, corpus_index: dict) -> tuple[int, int]:
             for offset, ref_el in enumerate(new_refs):
                 p_el.insert(pos + offset, ref_el)
 
-    if not made_any:
-        return 0, 0
     return resolved[0], unresolved[0]
 
 
@@ -342,7 +338,7 @@ def inject_refs(root: etree._Element, corpus_index: dict) -> tuple[int, int, int
         rr, ru = _process_rref(elem, known_eids)
         total_range_resolved += rr
         total_range_unresolved += ru
-        # Single-ref injection (operates on p_el.text of plain-text paragraphs)
+        # Single-ref injection (matches p_el.text and every child element's tail)
         r, u = _process_p(elem, corpus_index)
         total_resolved += r
         total_unresolved += u
