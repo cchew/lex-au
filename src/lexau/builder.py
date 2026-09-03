@@ -601,6 +601,21 @@ def _build_schedule_content(
                 _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                 _emit_p_inline(_p_el, p)
 
+        elif p.element_type == ElementType.TABLE:
+            # Schedule rate/classification/repeal tables (Word <w:tbl>). Mirrors the
+            # body-path TABLE handler, emitted directly under the nearest clause
+            # context. Legislation schedule tables generally have no header row, so
+            # every row is a <td> (no <th>/<thead>) rather than promoting row 0.
+            parent = current_subclause if current_subclause is not None else (
+                current_clause if current_clause is not None else hcontainer
+            )
+            table_el = etree.SubElement(parent, f"{{{AKN_NS}}}table")
+            for row in p.table_rows:
+                tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                for cell in row:
+                    etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
+            current_para = None
+
         elif p.text:
             # TABLE/NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
             parent = current_clause if current_clause is not None else hcontainer

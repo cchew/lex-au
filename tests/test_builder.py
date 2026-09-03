@@ -607,6 +607,85 @@ def test_empty_table_rows_skipped(meta):
     assert len(rows) == 0
 
 
+def test_schedule_table_emitted_as_akn_table(meta):
+    # A TABLE ParsedParagraph routed into a schedule group must reach the AKN
+    # <schedule> hcontainer as a real <table> with <tr>/<td> and cell text.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa03—Rates of duty", raw_style="ActHead 1"),
+        ParsedParagraph(
+            ElementType.TABLE,
+            table_rows=[
+                ["2710.19", "Petroleum oils", "$0.442 per litre"],
+                ["2710.20", "Biodiesel", "Free"],
+            ],
+        ),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(
+        ".//akn:attachments//akn:hcontainer[@name='schedule']//akn:table", ns
+    )
+    assert table is not None
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 2
+    assert [td.text for td in rows[0].findall("akn:td", ns)] == [
+        "2710.19",
+        "Petroleum oils",
+        "$0.442 per litre",
+    ]
+    assert rows[1].findall("akn:td", ns)[1].text == "Biodiesel"
+
+
+def test_schedule_headerless_table_renders_all_td(meta):
+    # Legislation rate/repeal tables usually have no header row. The schedule
+    # branch must emit every row as <td> (no <th>, no <thead>) without crashing.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Repeal of Acts", raw_style="ActHead 1"),
+        ParsedParagraph(
+            ElementType.TABLE,
+            table_rows=[
+                ["Customs Act 1901", "No. 6, 1901"],
+                ["Excise Act 1901", "No. 9, 1901"],
+                ["Sales Tax Act 1930", "No. 25, 1930"],
+            ],
+        ),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(
+        ".//akn:attachments//akn:hcontainer[@name='schedule']//akn:table", ns
+    )
+    assert table is not None
+    assert table.findall(".//akn:th", ns) == []
+    rows = table.findall("akn:tr", ns)
+    assert len(rows) == 3
+    assert all(len(r.findall("akn:td", ns)) == 2 for r in rows)
+    assert rows[0].findall("akn:td", ns)[0].text == "Customs Act 1901"
+    assert rows[2].findall("akn:td", ns)[1].text == "No. 25, 1930"
+
+
+def test_schedule_prose_only_has_no_spurious_table(meta):
+    # Regression: a schedule with only prose must be unchanged by the TABLE
+    # branch -- no <table> emitted, prose <p> still present.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="This Act is the Privacy Act 1988."),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Australian Privacy Principles", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="APP 1  Open and transparent management"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert schedule is not None
+    assert schedule.find(".//akn:table", ns) is None
+    assert b"<table" not in etree.tostring(schedule)
+    text = "".join(schedule.itertext())
+    assert "Open and transparent management" in text
+
+
 def test_level4_emitted_with_lowercase_eid(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),
