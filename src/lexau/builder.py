@@ -462,7 +462,14 @@ def _build_schedule_content(
 
     def _content_for(parent: etree._Element) -> etree._Element:
         nonlocal current_content
-        if current_content is None:
+        # Reuse the running pointer only when it already sits under the requested
+        # parent. Two call sites pass different parents (BODY prose resolves to the
+        # subclause; the NOTE/EXAMPLE/PENALTY catch-all resolves to the clause), so
+        # without the parent-affinity check a catch-all <content> under the clause
+        # would swallow the next subclause-scoped prose paragraph and strip its eId
+        # association. The `is None` arm still lets fresh prose after a <table> open
+        # a new <content> in document order.
+        if current_content is None or current_content.getparent() is not parent:
             current_content = etree.SubElement(parent, f"{{{AKN_NS}}}content")
         return current_content
 

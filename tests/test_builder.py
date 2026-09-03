@@ -493,6 +493,33 @@ def test_schedule_section_typed_dotted_subclause(meta):
     assert heading is not None and heading.text == "Choice of materials"
 
 
+def test_schedule_prose_after_note_stays_under_subclause(meta):
+    # C1 regression: a NOTE catch-all element runs first and opens a <content>
+    # under the clause; the following BODY prose asked for the subclause. Without
+    # parent affinity in _content_for the prose was appended into the clause-level
+    # <content> and lost its subclause eId association.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
+        ParsedParagraph(ElementType.SECTION, number="7.1", heading="Choice of materials"),
+        ParsedParagraph(ElementType.NOTE, text="Note: biocompatibility is assessed under clause 8."),
+        ParsedParagraph(ElementType.BODY, text="Materials must not degrade in service."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    subclause = xml.find(".//akn:hcontainer[@name='subclause']", ns)
+    assert subclause is not None
+    assert subclause.get("eId") == "schedule-1__clause-7__subclause-7-1"
+    # The trailing prose paragraph must live under the subclause, not the clause.
+    sub_ps = subclause.findall("akn:content/akn:p", ns)
+    sub_texts = [p.text for p in sub_ps]
+    assert "Materials must not degrade in service." in sub_texts
+    clause = xml.find(".//akn:hcontainer[@name='clause']", ns)
+    clause_ps = clause.findall("akn:content/akn:p", ns)
+    assert "Materials must not degrade in service." not in [p.text for p in clause_ps]
+
+
 def test_schedule_subsection_typed_subclause(meta):
     # TG Regs: SUBSECTION paragraphs with num inside a schedule clause → numbered subclause
     paragraphs = [
