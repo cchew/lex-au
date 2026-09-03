@@ -45,3 +45,27 @@ counted. A ParseReport showing `tables_found: 0` for an Act that in fact has
 schedule rate/tariff/repeal tables is expected, not a conversion loss. The audit
 (`scripts/audit_conversion_fidelity.py`) measures rendered <td>/<th> cells
 directly and is the authoritative count for schedule-table content.
+
+
+(d) v0.9.0 corpus XML predates the _content_for parent-affinity fix
+------------------------------------------------------------------
+The C1 fix in `builder.py` `_build_schedule_content._content_for` (guard:
+`current_content.getparent() is not parent`) landed AFTER the v0.9.0 `--force`
+re-ingest. The committed v0.9.0 corpus XML was therefore built with the pre-fix
+builder: in an as-yet unenumerated set of Acts, schedule `Note:` lines and block
+headings sit under a clause-level <content> where they should be subclause-level
+(or vice versa). Only the cite-eId of those notes/headings is wrong; no operative
+subclause or paragraph text is affected and no text is lost or duplicated
+(`prose_set_same` held on every measured Act).
+
+Incidence sample: 1 of 13 schedule-bearing Acts (fast-path measurement, 15 Acts
+sampled, `corporations-act-2001` not measured due to an unrelated lxml xpath
+stall) -- `anti-terrorism-act-(no.-2)-2005`, 34 paragraphs in Schedule 4
+clause 24. Extrapolates to low-thousands of schedule note/heading <p> elements
+corpus-wide.
+
+Fix path (not run at v0.9.0 tag time): run the fast-path detector over all
+`hcontainer name="subclause"` Acts to produce the affected-Act list, then a
+targeted `lexau build --acts "<name>" --force` re-convert of that set, or fold it
+into the next scheduled growth/freshness re-ingest. The 1-line guard is committed
+and regression-tested, so every future build is correct.
