@@ -81,6 +81,36 @@ def test_compare_identical_token_sequence_stays_minor_not_reorder():
     assert divs[0].kind == "minor"
 
 
+# --- Added: near-identical replace with a stray token is minor, not reorder ---
+
+
+def test_compare_stray_enumerator_token_is_minor_not_reorder():
+    # One extra enumerator token ("2") against an otherwise near-identical line.
+    # The multisets differ and nothing is transposed, so this must be "minor".
+    # The old "overlap >= 0.98 => reorder" fallback mislabelled every case of
+    # this shape as "reorder" (the entire corpus-wide residual).
+    docx = [
+        "The applicant must give the Secretary the information mentioned in "
+        "subsection (1) within 14 days after the notice is given to the applicant."
+    ]
+    akn = [
+        "2 The applicant must give the Secretary the information mentioned in "
+        "subsection (1) within 14 days after the notice is given to the applicant."
+    ]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    assert divs[0].kind == "minor"
+
+
+def test_compare_genuine_transposition_still_reorder():
+    # Exact same token multiset, different order => still "reorder".
+    docx = ["alpha beta gamma delta epsilon zeta eta theta"]
+    akn = ["theta eta zeta epsilon delta gamma beta alpha"]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    assert divs[0].kind == "reorder"
+
+
 # --- Added: akn_paragraphs excludes <meta> content ------------------------
 
 

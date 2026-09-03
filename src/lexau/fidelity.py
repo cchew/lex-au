@@ -14,8 +14,7 @@ _WS = re.compile(r"\s+")
 _TOKEN = re.compile(r"\w+")
 _W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-_REORDER_MIN_OVERLAP = 0.98   # same token multiset => reorder
-_MINOR_MIN_OVERLAP = 0.90     # near-identical => punctuation/artifact noise
+_MINOR_MIN_OVERLAP = 0.90     # near-identical => punctuation/artefact noise
 
 
 def normalise(s: str) -> str:
@@ -119,11 +118,18 @@ def _classify_replace(dtext: str, atext: str) -> str:
        ahead of the overlap thresholds so a small real text loss is not scattered
        into ``minor``/``reorder``; ``drop_text`` is the audit's highest-stakes
        category (feeds the Task 4 go/no-go).
-    4. Overlap >= ``_REORDER_MIN_OVERLAP`` => ``reorder``.
-    5. Overlap >= ``_MINOR_MIN_OVERLAP`` => ``minor`` (punctuation/artefact noise).
-    6. Otherwise (low overlap, no subset relationship) => ``drop_text``: garbled,
+    4. Overlap >= ``_MINOR_MIN_OVERLAP`` => ``minor`` (punctuation/artefact noise,
+       or one stray enumerator token against an otherwise near-identical line).
+    5. Otherwise (low overlap, no subset relationship) => ``drop_text``: garbled,
        substituted or wholesale-rewritten text, surfaced rather than buried in
        ``minor``.
+
+    ``reorder`` is only ever returned from step 2 (exact same token multiset).
+    The former "overlap >= 0.98 => reorder" fallback classified as ``reorder``
+    when the two sides had *different* multisets and nothing was actually
+    transposed -- a single stray enumerator token in ~200 was enough. Every
+    corpus-wide residual ``reorder`` arrived that way, so the fallback now routes
+    to ``minor`` (real losses are already caught by the step-3 subset check).
     """
     from collections import Counter
 
@@ -139,8 +145,6 @@ def _classify_replace(dtext: str, atext: str) -> str:
         return "drop_text"
 
     ov = _overlap(dtext, atext)
-    if ov >= _REORDER_MIN_OVERLAP:
-        return "reorder"
     if ov >= _MINOR_MIN_OVERLAP:
         return "minor"
     return "drop_text"
