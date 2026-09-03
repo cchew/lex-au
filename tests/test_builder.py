@@ -686,6 +686,49 @@ def test_schedule_prose_only_has_no_spurious_table(meta):
     assert "Open and transparent management" in text
 
 
+def test_schedule_prose_after_table_keeps_document_order(meta):
+    # prose / TABLE / prose in one schedule context: the trailing prose must
+    # open a FRESH <content> that sits AFTER the <table> in document order, not
+    # merge into the pre-table <content> (which would reorder it above the table).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Method", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Use the factor from the table below."),
+        ParsedParagraph(ElementType.TABLE, table_rows=[["Age", "Factor"], ["55", "1.20"]]),
+        ParsedParagraph(ElementType.BODY, text="Round the result to two decimal places."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert schedule is not None
+    kids = [etree.QName(c).localname for c in schedule]
+    assert kids == ["heading", "content", "table", "content"]
+    contents = schedule.findall("akn:content", ns)
+    assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."
+    assert "".join(contents[1].itertext()).strip() == "Round the result to two decimal places."
+    table = schedule.find("akn:table", ns)
+    after = table.getnext()
+    assert after is not None and etree.QName(after).localname == "content"
+    assert "Round the result" in "".join(after.itertext())
+
+
+def test_schedule_empty_table_rows_no_crash(meta):
+    # Mirror of the body path's test_empty_table_rows_skipped: an empty
+    # table_rows list in a schedule emits a bare <table> and does not crash.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Empty", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.TABLE, table_rows=[]),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    table = xml.find(
+        ".//akn:attachments//akn:hcontainer[@name='schedule']//akn:table", ns
+    )
+    assert table is not None
+    assert table.findall("akn:tr", ns) == []
+
+
 def test_level4_emitted_with_lowercase_eid(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),

@@ -455,12 +455,16 @@ def _build_schedule_content(
     current_clause: etree._Element | None = None
     current_subclause: etree._Element | None = None  # dotted subclause (e.g. 7.1) from SECTION
     current_para: etree._Element | None = None
+    # Mirrors the body builder's `current_content` pointer: prose accumulates into
+    # this <content> until a structural sibling (clause/subclause boundary, table)
+    # forces a fresh one. Preserves document order when prose follows a <table>.
+    current_content: etree._Element | None = None
 
-    def _get_or_create_content(parent: etree._Element) -> etree._Element:
-        for child in parent:
-            if child.tag == f"{{{AKN_NS}}}content":
-                return child
-        return etree.SubElement(parent, f"{{{AKN_NS}}}content")
+    def _content_for(parent: etree._Element) -> etree._Element:
+        nonlocal current_content
+        if current_content is None:
+            current_content = etree.SubElement(parent, f"{{{AKN_NS}}}content")
+        return current_content
 
     for p in paragraphs:
         if p.element_type == ElementType.BODY and p.text:
@@ -481,6 +485,7 @@ def _build_schedule_content(
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
                 current_subclause = None
                 current_para = None
+                current_content = None
                 continue
 
             m = _SUBCLAUSE_RE.match(text)
@@ -494,10 +499,11 @@ def _build_schedule_content(
                     parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
                 )
                 etree.SubElement(current_subclause, f"{{{AKN_NS}}}num").text = num_str
-                if content_text:
-                    content_el = etree.SubElement(current_subclause, f"{{{AKN_NS}}}content")
-                    etree.SubElement(content_el, f"{{{AKN_NS}}}p").text = content_text
                 current_para = None
+                current_content = None
+                if content_text:
+                    current_content = etree.SubElement(current_subclause, f"{{{AKN_NS}}}content")
+                    etree.SubElement(current_content, f"{{{AKN_NS}}}p").text = content_text
                 continue
 
             m = _CLAUSE_RE.match(text)
@@ -514,11 +520,12 @@ def _build_schedule_content(
                 etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
                 current_subclause = None
                 current_para = None
+                current_content = None
                 continue
 
             # Plain body text
             parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
-            content_el = _get_or_create_content(parent)
+            content_el = _content_for(parent)
             _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
             _emit_p_inline(_p_el, p)
 
@@ -549,6 +556,7 @@ def _build_schedule_content(
                 if heading_str:
                     etree.SubElement(current_subclause, f"{{{AKN_NS}}}heading").text = heading_str
                 current_para = None
+                current_content = None
             else:
                 clause_idx += 1
                 clause_count += 1
@@ -561,6 +569,7 @@ def _build_schedule_content(
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
                 current_subclause = None
                 current_para = None
+                current_content = None
 
         elif p.element_type == ElementType.SUBSECTION and p.number:
             # Numbered subclauses (1, 2, 3) within a schedule clause or dotted subclause.
@@ -582,6 +591,7 @@ def _build_schedule_content(
                 _emit_p_inline(_p_el, p)
             # Do NOT update current_subclause — numbered subclauses are siblings, not a new nesting level
             current_para = None
+            current_content = None
 
         elif p.element_type == ElementType.SUBPARAGRAPH:
             if current_para is not None:
@@ -604,8 +614,9 @@ def _build_schedule_content(
         elif p.element_type == ElementType.TABLE:
             # Schedule rate/classification/repeal tables (Word <w:tbl>). Mirrors the
             # body-path TABLE handler, emitted directly under the nearest clause
-            # context. Legislation schedule tables generally have no header row, so
-            # every row is a <td> (no <th>/<thead>) rather than promoting row 0.
+            # context. Header-row position is inconsistent across schedule tables
+            # (multi-row banners, blank spacer rows), so no row is promoted to
+            # <th> — every row is a <td>, avoiding a false header signal.
             parent = current_subclause if current_subclause is not None else (
                 current_clause if current_clause is not None else hcontainer
             )
@@ -615,11 +626,14 @@ def _build_schedule_content(
                 for cell in row:
                     etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
             current_para = None
+            # Reset so any prose after the table opens a fresh <content> that
+            # sits AFTER the <table> in document order (matches body builder).
+            current_content = None
 
         elif p.text:
-            # TABLE/NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
+            # NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
             parent = current_clause if current_clause is not None else hcontainer
-            content_el = _get_or_create_content(parent)
+            content_el = _content_for(parent)
             _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
             _emit_p_inline(_p_el, p)
 
