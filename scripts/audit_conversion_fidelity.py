@@ -47,31 +47,33 @@ _AKN_META = f"{{{AKN_NS}}}meta"
 _AKN_P = f"{{{AKN_NS}}}p"
 _AKN_HEADING = f"{{{AKN_NS}}}heading"
 _AKN_TD = f"{{{AKN_NS}}}td"
+_AKN_TH = f"{{{AKN_NS}}}th"
 _AKN_BLOCK = f"{{{AKN_NS}}}block"
-_AKN_COLLECT = (_AKN_P, _AKN_HEADING, _AKN_TD, _AKN_BLOCK)
+_AKN_COLLECT = (_AKN_P, _AKN_HEADING, _AKN_TD, _AKN_TH, _AKN_BLOCK)
 _AKN_FINE = (_AKN_P, _AKN_HEADING)
+_AKN_CELLISH = (_AKN_TD, _AKN_TH, _AKN_BLOCK)
 
 
 def akn_paragraphs(root: etree._Element) -> list[str]:
     """Visible paragraph text of an AKN body, table cells included.
 
     ``lexau.fidelity.akn_paragraphs`` collects only ``<p>`` and ``<heading>``.
-    Federal Register AKN also carries operative content in ``<td>`` (rate
-    tables, commencement tables, tariff and dose schedules). Without ``<td>``
-    every converted table row scores ``drop_para`` against the DOCX whether or
-    not the conversion kept it, so this audit cannot tell "table represented as
-    cells" from "table dropped".
+    Federal Register AKN also carries operative content in ``<td>`` and ``<th>``
+    (rate tables, commencement tables, tariff and dose schedules; body-path
+    tables promote row 0 to ``<th>``). Without them every converted table row
+    scores ``drop_para`` against the DOCX whether or not the conversion kept it,
+    so this audit cannot tell "table represented as cells" from "table dropped".
 
-    Corpus check (3076 XML): 425,995 ``<td>`` elements, none with element
-    children, and zero ``<block>`` elements. A ``<td>``/``<block>`` that does
-    contain a ``<p>`` or ``<heading>`` is skipped so its text is taken once from
-    the finer element, not twice.
+    Nearly every ``<td>``/``<th>``/``<block>`` in the corpus holds text directly
+    with no element children; the small number that wrap a ``<p>`` or
+    ``<heading>`` are skipped here so their text is taken once from the finer
+    element, not twice.
     """
     out: list[str] = []
     for el in root.iter():
         if el.tag not in _AKN_COLLECT:
             continue
-        if el.tag in (_AKN_TD, _AKN_BLOCK) and any(
+        if el.tag in _AKN_CELLISH and any(
             d.tag in _AKN_FINE for d in el.iterdescendants()
         ):
             continue
@@ -229,10 +231,17 @@ def _docx_paths(corpus_dir: Path, slug: str, entry: dict) -> tuple[list[Path], s
         if hits:
             return _sorted_by_vol(hits), "comp-vol"
 
-    any_comp = re.compile(rf"^{esc}-c\d+-vol\d+\.docx$")
-    hits = [p for p in docx_dir.glob(f"{slug}-c*-vol*.docx") if any_comp.match(p.name)]
-    if hits:
-        return _sorted_by_vol(hits), "othercomp-vol"
+    any_comp = re.compile(rf"^{esc}-c(\d+)-vol\d+\.docx$")
+    comp_hits: dict[int, list[Path]] = {}
+    for p in docx_dir.glob(f"{slug}-c*-vol*.docx"):
+        m = any_comp.match(p.name)
+        if m:
+            comp_hits.setdefault(int(m.group(1)), []).append(p)
+    if comp_hits:
+        # Cache may hold volumes from several compilations; never mix them.
+        # Take the single highest compilation number's volume set.
+        highest = max(comp_hits)
+        return _sorted_by_vol(comp_hits[highest]), "othercomp-vol"
 
     legacy = re.compile(rf"^{esc}-vol\d+\.docx$")
     hits = [p for p in docx_dir.glob(f"{slug}-vol*.docx") if legacy.match(p.name)]
@@ -458,7 +467,9 @@ def main() -> int:
         "worst_20": worst[:20],
         "skipped": skipped[:200],
     }
-    (out_dir / "SUMMARY.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+    (out_dir / "SUMMARY.json").write_text(
+        json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     (out_dir / "SUMMARY.md").write_text(_render_md(summary), encoding="utf-8")
     print(json.dumps({k: summary[k] for k in summary if k not in ("worst_20", "skipped")}, indent=2))
     print(f"worst 5: {[w['slug'] for w in worst[:5]]}")
