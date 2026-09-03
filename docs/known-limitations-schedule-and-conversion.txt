@@ -1,0 +1,47 @@
+Known limitations: schedule rendering and DOCX-to-AKN conversion
+===============================================================
+
+Companion to docs/known-limitations-empty-body.txt. Each entry is a standing,
+accepted limitation in the v0.9.0 pipeline, not a regression the spot-check or
+fidelity audit should keep re-flagging.
+
+
+(a) Two Acts retain pre-v0.9.0 XML (stale _resolve_title apostrophe fallback)
+---------------------------------------------------------------------------
+Slugs:
+  industrial-relations-court-(judges'-remuneration)-act-1993
+  royal-australian-air-force-veterans'-residences-act-1953
+
+The v0.9.0 `--force` re-ingest did not re-convert these two Acts. `_resolve_title`
+has an apostrophe-handling fallback that fails to match the canonical
+legislation.gov.au title for names containing a typographic apostrophe, so the
+fetch step resolved no compilation and the build was skipped. Their committed XML
+is therefore the pre-v0.9.0 output: no schedule tables, older reflinks placement.
+Fixing `_resolve_title` needs its own patch (tracked separately); until then a
+targeted re-convert of these two Acts is blocked.
+
+
+(b) Prose after a schedule <paragraph>/<subparagraph> can attach above it
+-----------------------------------------------------------------------
+`_build_schedule_content` (src/lexau/builder.py) resets the running
+`current_content` pointer to None after a clause boundary, a subclause boundary
+and a TABLE element, so prose that follows those opens a fresh <content> in the
+correct document position. The PARAGRAPH and SUBPARAGRAPH branches do NOT reset
+`current_content`. If a schedule emits a <paragraph> (or <subparagraph>) and is
+then followed by loose BODY prose, that prose is appended to the <content> that
+was open before the <paragraph>, so it renders above the <paragraph> in document
+order instead of after it.
+
+Pre-existing, low incidence (schedules rarely interleave numbered paragraphs with
+trailing loose prose), and distinct from the TABLE-reset path, which IS fixed.
+Deferred; not addressed in the v0.9.0 fix wave.
+
+
+(c) ParseReport.tables_found counts body tables only
+---------------------------------------------------
+`ParseReport.tables_found` is incremented only on the body-path TABLE handler.
+Schedule tables, rendered by `_build_schedule_content` since v0.9.0, are not
+counted. A ParseReport showing `tables_found: 0` for an Act that in fact has
+schedule rate/tariff/repeal tables is expected, not a conversion loss. The audit
+(`scripts/audit_conversion_fidelity.py`) measures rendered <td>/<th> cells
+directly and is the authoritative count for schedule-table content.
