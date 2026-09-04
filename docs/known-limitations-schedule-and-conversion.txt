@@ -20,6 +20,38 @@ is therefore the pre-v0.9.0 output: no schedule tables, older reflinks placement
 Fixing `_resolve_title` needs its own patch (tracked separately); until then a
 targeted re-convert of these two Acts is blocked.
 
+Live probe 2026-09-04 (api.prod.legislation.gov.au/v1), and DESCOPED from v0.9.1.
+The v0.9.1 design (unit A1) proposed a glyph-swap `name eq` retry -- replace the
+U+0027 apostrophe with U+2019 and re-query -- on the premise that the stored
+title uses a typographic apostrophe. The probe disproves that premise:
+
+  - Both Acts exist and are isInForce == true:
+      C2004A04659  Industrial Relations Court (Judges' Remuneration) Act 1993
+                   (year 1993, number 104)
+      C1953A00092  Royal Australian Air Force Veterans' Residences Act 1953
+                   (year 1953, number 92)
+  - The stored `name` uses U+0027 (straight ASCII apostrophe), not U+2019:
+    `contains(name,'Judges' Remuneration')` / `contains(name,'Veterans' Residences')`
+    with a curly apostrophe return 0 rows; the same `contains()` on an
+    apostrophe-free fragment ("Remuneration) Act 1993", "Residences Act 1953",
+    "Industrial Relations Court (Judges") returns the record.
+  - `name eq '<straight apostrophe>'` returns HTTP 400 -- an OData
+    string-literal syntax error at the apostrophe position -- with or without
+    the `and isInForce eq true` clause, and for the RAAF Act, which has no
+    parenthesis at all. The break is the bare unescaped U+0027, not an
+    "apostrophe-then-parenthesis" interaction.
+  - `name eq '<curly apostrophe>'` (the proposed glyph swap) returns HTTP 200
+    but an empty result set: the stored name is straight, so the swapped query
+    matches nothing.
+
+So the glyph-swap `eq` retry is inert for these two Acts, and the existing
+`contains()` fallback still fails because every trimmed fragment it builds
+retains the U+0027 and re-triggers the 400. A working fix must neutralise the
+apostrophe inside the `contains()` fragment (or select an apostrophe-free
+distinctive fragment) and confirm with a glyph-insensitive exact match -- larger
+than the v0.9.1 branch table allows. Deferred to a future patch. The 2 Acts
+(0.065% of the corpus) stay on pre-v0.9.0 XML, as disclosed above.
+
 
 (b) Prose after a schedule <paragraph>/<subparagraph> can attach above it
 -----------------------------------------------------------------------
