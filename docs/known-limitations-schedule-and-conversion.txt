@@ -109,7 +109,7 @@ re-converted Act the on-disk schedule <content>/<p> placement now matches the
 fixed HEAD builder and differs from the pre-fix (a5ad3c2) builder in the
 expected clause <-> subclause direction for the affected Note/Penalty/Example
 and short-heading lines. corpus/index.json and the on-disk XML carry the
-corrected eIds; the HF dataset picks them up on the next `lexau export-hf`.
+corrected eIds; the v0.9.1 export pushed them to the HF dataset.
 
 `scripts/detect_c1_schedule_reattach.py` enumerates the affected set by diffing
 the pre-fix (a5ad3c2) and HEAD `_build_attachments` output per Act; it does not
@@ -121,3 +121,32 @@ the fixed builder.
 The 1-line guard is committed and regression-tested
 (tests/test_builder.py::test_schedule_prose_after_note_stays_under_subclause),
 so every future build is correct.
+
+
+(e) DOCX figure extraction: vector backlog, static-site gap, quotedStructure edge
+-------------------------------------------------------------------------------
+DOCX `<figure>` images are extracted to `corpus/images/` as of v0.9.1. Of the
+284 `<figure>`-bearing Acts, 225 were re-converted in the v0.9.1 sweep; the
+figure reports for those Acts record 156 raster / 376 soffice-converted / 0
+placeholder images.
+
+59 vector-bearing Acts remain on placeholder `<figure>` elements pending a
+follow-up conversion sweep. These include 5 ITAA-scale giants whose source
+DOCX runs 8.8-27.9 MB. Such Acts degrade to a placeholder `<figure>` (the
+computed `corpus/images/<slug>-fig-N.png` src with no file on disk), not to
+broken markup.
+
+`lexau site`, the static-site generator, does not copy `corpus/images/`, so
+figures are unresolved in static-site output. The lex-au-explorer reader
+consumes the images directly and resolves them by basename.
+
+A `<figure>` with resolvable image blobs nested inside a `<quotedStructure>`
+sub-builder currently restarts figure numbering at `-fig-1` and can point at
+the parent Act's `-fig-1` image. 0 corpus cases today; the spec design (§D10)
+scoped this out.
+
+(v0.9.2) 15 orphan duplicate `-fig-N<letter>` images were removed and the
+capture was fixed. They came from an over-collecting `a:blip` search that
+pulled a second inline image off FIGURE paragraphs in two Acts
+(excise-tariff-act-1921, corporate-law-economic-reform-program-act-1999);
+`_figure_blobs` now takes only the first blob per FIGURE paragraph.

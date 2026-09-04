@@ -6,6 +6,8 @@ from docx.oxml.ns import qn
 import os
 from lexau.figures import materialise_figures, FigureResult
 
+_FIX = Path(__file__).parent / "fixtures" / "figures"
+
 _PNG_1x1 = bytes.fromhex(
   "89504e470d0a1a0a0000000d494844520000000100000001080600000"
   "01f15c4890000000a49444154789c6300010000050001"
@@ -25,7 +27,7 @@ def _blobs(docx_path):
     return out
 
 def test_raster_png_written_with_dims(tmp_path):
-    res = materialise_figures("demo-act", "demo_act", _blobs("tests/fixtures/figures/one_png.docx"), tmp_path)
+    res = materialise_figures("demo-act", "demo_act", _blobs(_FIX / "one_png.docx"), tmp_path)
     fr = res[0][0]
     assert fr.kind == "raster"
     assert fr.src == "corpus/images/demo_act-fig-1.png"  # flat
@@ -36,14 +38,14 @@ def test_raster_png_written_with_dims(tmp_path):
 def test_vector_converted_when_soffice_present(tmp_path, fx):
     if not __import__("shutil").which("soffice"):
         pytest.skip("no soffice")
-    res = materialise_figures("v-act", "v_act", _blobs(f"tests/fixtures/figures/{fx}"), tmp_path)
+    res = materialise_figures("v-act", "v_act", _blobs(_FIX / fx), tmp_path)
     fr = res[0][0]
     assert fr.kind == "converted"
     assert (tmp_path / "v_act-fig-1.png").exists()
 
 def test_vector_placeholder_without_soffice(tmp_path, monkeypatch):
     monkeypatch.setattr("lexau.figures.shutil.which", lambda _: None)
-    res = materialise_figures("v-act", "v_act", _blobs("tests/fixtures/figures/one_emf.docx"), tmp_path)
+    res = materialise_figures("v-act", "v_act", _blobs(_FIX / "one_emf.docx"), tmp_path)
     fr = res[0][0]
     assert fr.kind == "placeholder"
     assert fr.src == "corpus/images/v_act-fig-1.png"  # flat

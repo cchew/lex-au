@@ -870,6 +870,14 @@ class AknBuilder:
             self._paragraphs.append(paragraph)
 
     def build(self) -> tuple[etree._Element, ValidationResult]:
+        # build() is public and may run before build_with_report() (which calls
+        # it): reset the figure counters so a second pass does not double-count
+        # and trip the spec-mandated lockstep assert below.
+        self._figures_found = 0
+        self._figures_raster = 0
+        self._figures_converted = 0
+        self._figures_placeholder = 0
+
         preface_paras, body_paras, schedule_groups = _split_stream(self._paragraphs)
 
         root = self._make_skeleton()
@@ -1090,9 +1098,14 @@ class AknBuilder:
             else []
         )
         for idx, img_el in enumerate(fig_img_els):
+            # _figure_blobs caps capture at one blob per FIGURE paragraph, so
+            # every row holds at most one image. Two Acts (excise-tariff-act-1921,
+            # corporate-law-economic-reform-program-act-1999) do carry two inline
+            # <a:blip> in a single FIGURE <w:p>; the second is a byte-identical
+            # duplicate of the next figure and is dropped in the reader.
             row = fig_results[idx] if idx < len(fig_results) else []
             if row:
-                fr = row[0]  # corpus has no multi-image FIGURE; consume the first
+                fr = row[0]
                 img_el.set("src", fr.src)
                 if fr.width is not None:
                     img_el.set("width", str(fr.width))

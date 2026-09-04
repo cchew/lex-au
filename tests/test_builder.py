@@ -1718,6 +1718,9 @@ def test_bold_superscript_span_emits_b_only_known_limitation(meta):
 
 # --- v0.9.1: real figure src + dimensions from captured blobs -----------------
 
+_FIG_FIXTURES = Path(__file__).parent / "fixtures" / "figures"
+
+
 def _figure_meta(name: str) -> ActMetadata:
     # ActMetadata.safe_name = name.lower with spaces/slashes -> '-', so a name
     # with no spaces/slashes passes through verbatim.
@@ -1754,7 +1757,7 @@ def _convert_figure_volumes(docx_paths, meta, images_out):
 def test_builder_writes_real_figure_src(tmp_path):
     meta = _figure_meta("demo_act")
     report, xml = _convert_figure_volumes(
-        ["tests/fixtures/figures/one_png.docx"], meta, tmp_path
+        [str(_FIG_FIXTURES / "one_png.docx")], meta, tmp_path
     )
     assert 'src="corpus/images/demo_act-fig-1.png"' in xml
     assert "width=" in xml and "height=" in xml
@@ -1775,7 +1778,7 @@ def test_builder_figure_src_verbatim_not_forced_png(tmp_path):
     fake = [[FigureResult("corpus/images/gif_act-fig-1.gif", "raster", 12, 34)]]
     with patch("lexau.builder.materialise_figures", return_value=fake) as m:
         report, xml = _convert_figure_volumes(
-            ["tests/fixtures/figures/one_png.docx"], meta, tmp_path
+            [str(_FIG_FIXTURES / "one_png.docx")], meta, tmp_path
         )
     assert m.call_count == 1
     assert 'src="corpus/images/gif_act-fig-1.gif"' in xml
@@ -1801,8 +1804,8 @@ def test_builder_materialises_figures_once_across_volumes(tmp_path, monkeypatch)
     meta = _figure_meta("two_vol_act")
     report, xml = _convert_figure_volumes(
         [
-            "tests/fixtures/figures/one_png.docx",
-            "tests/fixtures/figures/one_png.docx",
+            str(_FIG_FIXTURES / "one_png.docx"),
+            str(_FIG_FIXTURES / "one_png.docx"),
         ],
         meta,
         tmp_path,
@@ -1831,3 +1834,46 @@ def test_builder_empty_blob_figure_is_placeholder(tmp_path):
     assert report.figures_placeholder == 1
     assert report.figures_raster == 0
     assert not (tmp_path / "ph_act-fig-1.png").exists()
+
+
+def test_figure_paragraph_with_two_blips_captures_only_first(tmp_path):
+    """A FIGURE <w:p> that carries two inline images (the
+    excise-tariff-act-1921 / corporate-law-economic-reform-program-act-1999
+    pattern, where the 2nd blob is a byte-identical preview of the next
+    figure) must yield exactly one blob per FIGURE paragraph, so no orphan
+    ``-fig-1b`` file is written."""
+    import io
+    from docx import Document as _Document
+    from lexau.docx_reader import iter_paragraphs as _iter
+
+    png = bytes.fromhex(
+        "89504e470d0a1a0a0000000d494844520000000100000001080600000"
+        "01f15c4890000000a49444154789c6300010000050001"
+        "0d0a2db40000000049454e44ae426082"
+    )
+    src = tmp_path / "two_blip.docx"
+    doc = _Document()
+    doc.add_paragraph("Intro prose so the doc has a non-figure paragraph.")
+    para = doc.add_paragraph()
+    para.add_run().add_picture(io.BytesIO(png))
+    para.add_run().add_picture(io.BytesIO(png))
+    doc.save(src)
+
+    figs = [
+        p for p in _iter(_Document(str(src)))
+        if p.element_type == ElementType.FIGURE
+    ]
+    assert len(figs) == 1
+    assert len(figs[0].image_blobs) == 1
+
+    meta = _figure_meta("two_blip_act")
+    images_out = tmp_path / "images"
+    b = AknBuilder(meta, images_out=images_out)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"))
+    for p in _iter(_Document(str(src))):
+        b.add(p)
+    root, report = b.build_with_report({})
+
+    assert report.figures_found == 1
+    assert (images_out / "two_blip_act-fig-1.png").exists()
+    assert not (images_out / "two_blip_act-fig-1b.png").exists()

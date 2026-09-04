@@ -66,7 +66,7 @@ Each Act is a single AKN 3.0 XML file with:
 - `<blockList>`/`<item>` for unnumbered list structures
 - `<lifecycle>`, `<temporalData>`, `<passiveModifications>` populated from Endnote 3-4 amendment history
 - `<quotedStructure>` for single-provision amendment inserts; `<figure>`/`<img>` for embedded images; `<rref>` for section range references
-- Embedded figures extracted to `images/` as PNG (raster blobs plus LibreOffice-converted EMF/WMF vector art), referenced from `<figure>`/`<img>` with real `src` and pixel dimensions; some vector-heavy Acts retain placeholder `<figure>` elements pending a follow-up sweep
+- Embedded figures extracted to `images/` (PNG, plus JPEG where the source blob was JPEG; EMF/WMF vector art rasterised to PNG via LibreOffice), referenced from `<figure>`/`<img>` with pixel dimensions. The `src` attribute carries a `corpus/` prefix from the source-repo layout, so resolve figures by basename against `images/`. Some vector-bearing Acts still carry placeholder `<figure>` elements pending a follow-up conversion sweep
 - Corpus index at `index.json` (also mirrored as `title_id`/`comp_id`/`aliases` columns in `data/train.jsonl`) — combine `title_id` with `https://www.legislation.gov.au/{title_id}/latest/text` for a working link back to the Act's real page on legislation.gov.au (Act-level only; the site has no stable per-section anchor scheme). `aliases` lists any superseded name(s) legislation.gov.au previously served the same Act under (empty for most Acts). Parse report per Act in `reports/`.
 
 Full element-by-element conformance detail, organised by AKN 3.0 spec chapter: [`docs/akn-conformance.md`](https://github.com/cchew/lex-au/blob/main/docs/akn-conformance.md) in the source repo.

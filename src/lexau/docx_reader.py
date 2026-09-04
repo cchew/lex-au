@@ -25,16 +25,23 @@ def _has_inline_image(para: Paragraph) -> bool:
 
 
 def _figure_blobs(para: Paragraph) -> list[tuple[str, bytes]]:
-    """Return (dotted-lowercase ext, bytes) for each embedded image in a FIGURE paragraph.
+    """Return the first embedded image of a FIGURE paragraph as ``[(ext, bytes)]``.
 
-    One entry per ``a:blip`` with a resolvable ``r:embed`` relationship, in
-    document order. The extension is taken from the image part name in its
-    *dotted* form (``.wmf``, not ``wmf``) so downstream vector/raster
-    routing works. A blip that only carries ``r:link`` (external image) or
-    an unresolvable rId is skipped, so a FIGURE with no usable image yields
-    an empty list.
+    At most one entry: the first ``a:blip`` with a resolvable ``r:embed``
+    relationship, in document order. The extension is taken from the image
+    part name in its *dotted* form (``.wmf``, not ``wmf``) so downstream
+    vector/raster routing works. A blip that only carries ``r:link``
+    (external image) or an unresolvable rId is skipped; a FIGURE with no
+    usable image yields an empty list.
+
+    Capture is capped at one blob because the builder consumes only
+    ``image_blobs[0]`` per FIGURE (spec design §A2). Two Acts
+    (``excise-tariff-act-1921``, ``corporate-law-economic-reform-program-act-1999``)
+    carry two inline ``a:blip`` in a single FIGURE ``<w:p>`` where the
+    second blob is a byte-identical preview of the following figure; keeping
+    only the first here stops an unreferenced ``-fig-N<letter>`` orphan file
+    being written for those paragraphs.
     """
-    blobs: list[tuple[str, bytes]] = []
     for blip in para._element.findall(f".//{qn('a:blip')}"):
         rid = blip.get(qn("r:embed"))
         if not rid:
@@ -44,8 +51,8 @@ def _figure_blobs(para: Paragraph) -> list[tuple[str, bytes]]:
         except KeyError:
             continue
         ext = Path(str(part.partname)).suffix.lower()
-        blobs.append((ext, part.blob))
-    return blobs
+        return [(ext, part.blob)]
+    return []
 
 
 def _list_level(para: Paragraph) -> int | None:
