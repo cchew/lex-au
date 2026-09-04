@@ -52,20 +52,51 @@ directly and is the authoritative count for schedule-table content.
 The C1 fix in `builder.py` `_build_schedule_content._content_for` (guard:
 `current_content.getparent() is not parent`) landed AFTER the v0.9.0 `--force`
 re-ingest. The committed v0.9.0 corpus XML was therefore built with the pre-fix
-builder: in an as-yet unenumerated set of Acts, schedule `Note:` lines and block
+builder: in the affected Acts, schedule `Note:`/`Penalty:` lines and short block
 headings sit under a clause-level <content> where they should be subclause-level
-(or vice versa). Only the cite-eId of those notes/headings is wrong; no operative
-subclause or paragraph text is affected and no text is lost or duplicated
-(`prose_set_same` held on every measured Act).
+(or schedule-level), or vice versa. Only the cite-eId of those notes/headings is
+wrong; no operative subclause or paragraph text is affected and no text is lost
+or duplicated (`prose_set_same` held on every affected Act).
 
-Incidence sample: 1 of 13 schedule-bearing Acts (fast-path measurement, 15 Acts
-sampled, `corporations-act-2001` not measured due to an unrelated lxml xpath
-stall) -- `anti-terrorism-act-(no.-2)-2005`, 34 paragraphs in Schedule 4
-clause 24. Extrapolates to low-thousands of schedule note/heading <p> elements
-corpus-wide.
+Full incidence (enumerated 2026-09-04 by `scripts/detect_c1_schedule_reattach.py`
+over all 1,429 `hcontainer name="subclause"` Acts): 45 Acts affected, 1,383
+clean, `corporations-act-2001` not measured (detector's 90s per-Act cap;
+re-converted anyway, see below). Every affected Act had 1-48 schedule <p>
+re-parented with `prose_set_same=True`. Largest: national-security-legislation-
+amendment-(espionage-and-foreign-interference)-act-2018 (48),
+anti-terrorism-act-(no.-2)-2005 (35), defence-service-homes-act-1918 (27).
 
-Fix path (not run at v0.9.0 tag time): run the fast-path detector over all
-`hcontainer name="subclause"` Acts to produce the affected-Act list, then a
-targeted `lexau build --acts "<name>" --force` re-convert of that set, or fold it
-into the next scheduled growth/freshness re-ingest. The 1-line guard is committed
-and regression-tested, so every future build is correct.
+Resolved (this commit): the 25 highest-incidence affected Acts, plus
+`corporations-act-2001`, were re-converted on disk against the fixed builder --
+a targeted `lexau build --acts "<name>" --force` per Act. No compilation
+changed (all `comp_num` before == after); `corporations-act-2001` schedule <td>
+count is 17127 before and after (C1 only re-parents note/heading <p>, never
+touches table cells). corpus/index.json and the on-disk XML now carry the
+corrected eIds; the HF dataset picks them up on the next `lexau export-hf`.
+
+Deferred to the next growth/freshness re-ingest -- 20 Acts, 1-2 re-parented <p>
+each: combatting-antisemitism,-hate-and-extremism-(criminal-and-migration-laws)-
+act-2026, coronavirus-economic-response-package-omnibus-act-2020, criminal-code-
+amendment-(deepfake-sexual-material)-act-2024, criminal-code-amendment-
+(protecting-minors-online)-act-2017, criminal-code-amendment-(state-sponsors-of-
+terrorism)-act-2025, counter-terrorism-legislation-amendment-act-(no.-1)-2014,
+counter-terrorism-legislation-amendment-act-(no.-1)-2016, crimes-legislation-
+amendment-(combatting-foreign-bribery)-act-2024, crimes-legislation-amendment-
+(international-crime-cooperation-and-other-measures)-act-2018, crimes-legislation-
+amendment-(law-enforcement-integrity,-vulnerable-witness-protection-and-other-
+measures)-act-2013, crimes-legislation-amendment-(powers,-offences-and-other-
+measures)-act-2015, crimes-legislation-amendment-(sexual-crimes-against-children-
+and-community-protection-measures)-act-2020, criminal-code-amendment-
+(agricultural-protection)-act-2019, criminal-code-amendment-(hate-crimes)-act-
+2025, criminal-code-amendment-(impersonating-a-commonwealth-body)-act-2018,
+enhancing-online-safety-(non-consensual-sharing-of-intimate-images)-act-2018,
+passports-legislation-amendment-(overseas-travel-by-child-sex-offenders)-act-
+2017, privacy-and-other-legislation-amendment-act-2024, strengthening-oversight-
+of-the-national-intelligence-community-act-2025, water-amendment-(restoring-our-
+rivers)-act-2023. The growth-check bot re-runs `lexau build` on this repo
+(commit 729e21e is one such run) and will propagate the committed guard to these
+automatically.
+
+The 1-line guard is committed and regression-tested
+(tests/test_builder.py::test_schedule_prose_after_note_stays_under_subclause),
+so every future build is correct.
