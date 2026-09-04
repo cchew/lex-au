@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from dataclasses import replace
+from pathlib import Path
 
 from docx import Document
 from docx.oxml.ns import qn
@@ -21,6 +22,30 @@ from lexau.parser import (
 def _has_inline_image(para: Paragraph) -> bool:
     """Return True if the paragraph contains at least one DrawingML inline image."""
     return bool(para._element.findall(f".//{qn('a:blip')}"))
+
+
+def _figure_blobs(para: Paragraph) -> list[tuple[str, bytes]]:
+    """Return (dotted-lowercase ext, bytes) for each embedded image in a FIGURE paragraph.
+
+    One entry per ``a:blip`` with a resolvable ``r:embed`` relationship, in
+    document order. The extension is taken from the image part name in its
+    *dotted* form (``.wmf``, not ``wmf``) so downstream vector/raster
+    routing works. A blip that only carries ``r:link`` (external image) or
+    an unresolvable rId is skipped, so a FIGURE with no usable image yields
+    an empty list.
+    """
+    blobs: list[tuple[str, bytes]] = []
+    for blip in para._element.findall(f".//{qn('a:blip')}"):
+        rid = blip.get(qn("r:embed"))
+        if not rid:
+            continue
+        try:
+            part = para.part.related_parts[rid]
+        except KeyError:
+            continue
+        ext = Path(str(part.partname)).suffix.lower()
+        blobs.append((ext, part.blob))
+    return blobs
 
 
 def _list_level(para: Paragraph) -> int | None:
@@ -94,7 +119,11 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     for block in blocks:
         if isinstance(block, Paragraph):
             if _has_inline_image(block):
-                yield ParsedParagraph(ElementType.FIGURE, text=block.text)
+                yield ParsedParagraph(
+                    ElementType.FIGURE,
+                    text=block.text,
+                    image_blobs=_figure_blobs(block),
+                )
                 continue
             style = styles[para_pos]
             full_text = para_texts[para_pos]

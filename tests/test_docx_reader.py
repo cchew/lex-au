@@ -299,3 +299,34 @@ def test_loan_war_service_land_settlement_1970_shape3_fixture():
     assert len(sections) == 4
     assert sections[0].heading == "Short title"
     assert sections[3].heading == "Application of moneys"
+
+
+FIGURES_DOCX = Path(__file__).parent / "fixtures" / "figures"
+
+
+def test_figure_paragraph_carries_dotted_ext_blobs():
+    figs = [
+        p
+        for p in iter_paragraphs(Document(str(FIGURES_DOCX / "one_wmf.docx")))
+        if p.element_type == ElementType.FIGURE
+    ]
+    assert len(figs) == 1 and len(figs[0].image_blobs) == 1
+    ext, blob = figs[0].image_blobs[0]
+    assert ext == ".wmf" and isinstance(blob, bytes) and blob
+
+
+def test_figure_paragraph_png_blob_dotted_ext():
+    figs = [
+        p
+        for p in iter_paragraphs(Document(str(FIGURES_DOCX / "one_png.docx")))
+        if p.element_type == ElementType.FIGURE
+    ]
+    assert len(figs) == 1
+    assert [ext for ext, _ in figs[0].image_blobs] == [".png"]
+
+
+def test_non_figure_paragraph_has_empty_image_blobs():
+    doc = Document()
+    doc.add_paragraph("plain text")
+    paras = list(iter_paragraphs(doc))
+    assert paras and all(p.image_blobs == [] for p in paras)

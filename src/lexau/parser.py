@@ -268,6 +268,10 @@ class ParsedParagraph:
     table_rows: list[list[str]] = field(default_factory=list)
     spans: list[InlineSpan] = field(default_factory=list)
     volume_index: int = 0
+    # For FIGURE paragraphs: (dotted-lowercase ext, image bytes) per embedded
+    # image, in document order. Empty for every other element type and for a
+    # FIGURE whose blips have no resolvable embed relationship.
+    image_blobs: list[tuple[str, bytes]] = field(default_factory=list)
 
 
 def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:

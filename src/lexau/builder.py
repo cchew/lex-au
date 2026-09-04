@@ -16,6 +16,7 @@ from lexau.reflinks import inject_refs
 from lexau.termlinks import inject_terms, inject_list_defs, complete_list_definitions
 from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_refs
 from lexau.datelinks import inject_dates
+from lexau.figures import materialise_figures
 from docx import Document as DocxDocument
 from lexau.endnote_parser import parse_endnotes, AmendmentEvent, EndnoteResult
 
@@ -851,12 +852,18 @@ def inject_passive_mods(
 
 
 class AknBuilder:
-    def __init__(self, meta: ActMetadata) -> None:
+    def __init__(
+        self, meta: ActMetadata, images_out: Path = Path("corpus/images")
+    ) -> None:
         self._meta = meta
+        self._images_out = Path(images_out)
         self._paragraphs: list[ParsedParagraph] = []
         self._quoted_structures_found: int = 0
         self._quoted_structures_unhandled: int = 0
         self._figures_found: int = 0
+        self._figures_raster: int = 0
+        self._figures_converted: int = 0
+        self._figures_placeholder: int = 0
 
     def add(self, paragraph: ParsedParagraph) -> None:
         if paragraph.element_type != ElementType.SKIP:
@@ -882,6 +889,13 @@ class AknBuilder:
         # Stack entries: (element_type, num, lxml_element)
         stack: list[tuple[ElementType, str, etree._Element]] = []
         current_content: etree._Element | None = None
+
+        # Figure image blobs collected in the body loop, one inner list per
+        # FIGURE paragraph, in global document order across every volume.
+        # Kept lockstep with self._figures_found and with fig_img_els so the
+        # once-per-Act materialise_figures pass below can write a real src.
+        fig_blobs: list[list[tuple[str, bytes]]] = []
+        fig_img_els: list[etree._Element] = []
 
         # State for blockList accumulation
         _blocklist_el: etree._Element | None = None
@@ -924,7 +938,7 @@ class AknBuilder:
                 qs_el.set("from", "#")
                 qs_el.set("to", "#")
                 # Build inner content via sub-AknBuilder
-                sub = AknBuilder(self._meta)
+                sub = AknBuilder(self._meta, self._images_out)
                 for ip in item.inner_paras:
                     sub.add(ip)
                 sub_root, _ = sub.build()
@@ -1050,10 +1064,49 @@ class AknBuilder:
                 _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body
                 self._figures_found += 1
+                fig_blobs.append(list(p.image_blobs))
                 fig_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}figure")
+                # Provisional placeholder src; overwritten below from the
+                # FigureResult unless this FIGURE carried no resolvable image.
                 img_src = f"corpus/images/{self._meta.safe_name}-fig-{self._figures_found}.png"
-                etree.SubElement(fig_el, f"{{{AKN_NS}}}img", src=img_src, alt="")
+                img_el = etree.SubElement(fig_el, f"{{{AKN_NS}}}img", src=img_src, alt="")
+                fig_img_els.append(img_el)
                 current_content = None
+
+        # Materialise figure image blobs once per Act (over every volume's
+        # FIGURE paragraphs concatenated in document order) and write the real
+        # src + pixel dimensions back into the <img> elements emitted above.
+        # The assert is spec-mandated (design §A2 "Wiring"): a desync between
+        # the blob list and the figure counter must raise, not slip through.
+        assert len(fig_blobs) == self._figures_found == len(fig_img_els)
+        fig_results = (
+            materialise_figures(
+                self._meta.safe_name,
+                self._meta.safe_name,
+                fig_blobs,
+                self._images_out,
+            )
+            if fig_blobs
+            else []
+        )
+        for idx, img_el in enumerate(fig_img_els):
+            row = fig_results[idx] if idx < len(fig_results) else []
+            if row:
+                fr = row[0]  # corpus has no multi-image FIGURE; consume the first
+                img_el.set("src", fr.src)
+                if fr.width is not None:
+                    img_el.set("width", str(fr.width))
+                if fr.height is not None:
+                    img_el.set("height", str(fr.height))
+                kind = fr.kind
+            else:
+                kind = "placeholder"  # no resolvable image; keep provisional src
+            if kind == "raster":
+                self._figures_raster += 1
+            elif kind == "converted":
+                self._figures_converted += 1
+            else:
+                self._figures_placeholder += 1
 
         # Append <attachments> after <body>
         attachments_el, _ = _build_attachments(schedule_groups)
@@ -1133,6 +1186,9 @@ class AknBuilder:
         report.quoted_structures_found = self._quoted_structures_found
         report.quoted_structures_unhandled = self._quoted_structures_unhandled
         report.figures_found = self._figures_found
+        report.figures_raster = self._figures_raster
+        report.figures_converted = self._figures_converted
+        report.figures_placeholder = self._figures_placeholder
 
         # Count <p> elements with inline formatting children
         _INLINE_TAGS = {

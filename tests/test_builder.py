@@ -1714,3 +1714,120 @@ def test_bold_superscript_span_emits_b_only_known_limitation(meta):
     assert b_el.text == "CO2"
     # superscript is dropped — known v0.6.0 limitation (plan only spec'd bold+italic nesting)
     assert p_el.find(f"{{{AKN_NS}}}sup") is None, "superscript not emitted when bold also set (v0.6.0 limitation)"
+
+
+# --- v0.9.1: real figure src + dimensions from captured blobs -----------------
+
+def _figure_meta(name: str) -> ActMetadata:
+    # ActMetadata.safe_name = name.lower with spaces/slashes -> '-', so a name
+    # with no spaces/slashes passes through verbatim.
+    return ActMetadata(
+        name=name,
+        title_id="C0000A00000",
+        comp_id="C0000C00000",
+        comp_num="1",
+        year=2000,
+        number=1,
+        effective_date=_date(2020, 1, 1),
+    )
+
+
+def _convert_figure_volumes(docx_paths, meta, images_out):
+    """Feed one or more figure fixture DOCX volumes through the real
+    docx_reader -> AknBuilder path and return (report, xml_string)."""
+    from dataclasses import replace as _replace
+    from docx import Document as _Document
+    from lexau.docx_reader import iter_paragraphs as _iter
+
+    b = AknBuilder(meta, images_out=images_out)
+    # A leading SECTION so the figure lands in <body>, not <preface>
+    # (_split_stream routes everything before the first structural element to
+    # the preface, where _figures_found never advances).
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"))
+    for vol_idx, path in enumerate(docx_paths):
+        for p in _iter(_Document(str(path))):
+            b.add(_replace(p, volume_index=vol_idx))
+    root, report = b.build_with_report({})
+    return report, etree.tostring(root, encoding="unicode")
+
+
+def test_builder_writes_real_figure_src(tmp_path):
+    meta = _figure_meta("demo_act")
+    report, xml = _convert_figure_volumes(
+        ["tests/fixtures/figures/one_png.docx"], meta, tmp_path
+    )
+    assert 'src="corpus/images/demo_act-fig-1.png"' in xml
+    assert "width=" in xml and "height=" in xml
+    assert report.figures_found == 1
+    assert report.figures_raster == 1
+    assert report.figures_converted == 0
+    assert report.figures_placeholder == 0
+    assert (tmp_path / "demo_act-fig-1.png").exists()
+
+
+def test_builder_figure_src_verbatim_not_forced_png(tmp_path):
+    """The <img src> is whatever FigureResult.src says. A .gif raster keeps
+    its .gif extension; the builder must not hardcode .png."""
+    from unittest.mock import patch
+    from lexau.figures import FigureResult
+
+    meta = _figure_meta("gif_act")
+    fake = [[FigureResult("corpus/images/gif_act-fig-1.gif", "raster", 12, 34)]]
+    with patch("lexau.builder.materialise_figures", return_value=fake) as m:
+        report, xml = _convert_figure_volumes(
+            ["tests/fixtures/figures/one_png.docx"], meta, tmp_path
+        )
+    assert m.call_count == 1
+    assert 'src="corpus/images/gif_act-fig-1.gif"' in xml
+    assert 'width="12"' in xml and 'height="34"' in xml
+    assert report.figures_raster == 1
+
+
+def test_builder_materialises_figures_once_across_volumes(tmp_path, monkeypatch):
+    """ITAA-style multi-volume: materialise_figures is called ONCE over the
+    concatenated blob list in global order, so volume 2's image is fig-2 and
+    volume 1's fig-1 is not overwritten by a per-volume restart."""
+    import lexau.builder as builder_mod
+
+    calls: list = []
+    real = builder_mod.materialise_figures
+
+    def spy(slug, safe_name, figures, out_dir):
+        calls.append([list(row) for row in figures])
+        return real(slug, safe_name, figures, out_dir)
+
+    monkeypatch.setattr(builder_mod, "materialise_figures", spy)
+
+    meta = _figure_meta("two_vol_act")
+    report, xml = _convert_figure_volumes(
+        [
+            "tests/fixtures/figures/one_png.docx",
+            "tests/fixtures/figures/one_png.docx",
+        ],
+        meta,
+        tmp_path,
+    )
+    assert len(calls) == 1, "one materialise call per Act, not per volume"
+    assert len(calls[0]) == 2, "both volumes' figures in one concatenated list"
+    assert report.figures_found == 2
+    assert report.figures_raster == 2
+    assert 'src="corpus/images/two_vol_act-fig-1.png"' in xml
+    assert 'src="corpus/images/two_vol_act-fig-2.png"' in xml
+    assert (tmp_path / "two_vol_act-fig-1.png").exists()
+    assert (tmp_path / "two_vol_act-fig-2.png").exists()
+
+
+def test_builder_empty_blob_figure_is_placeholder(tmp_path):
+    """A FIGURE paragraph with no captured image keeps the computed
+    placeholder src and counts as figures_placeholder."""
+    meta = _figure_meta("ph_act")
+    b = AknBuilder(meta, images_out=tmp_path)
+    b.add(ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"))
+    b.add(ParsedParagraph(ElementType.FIGURE, text=""))
+    root, report = b.build_with_report({})
+    xml = etree.tostring(root, encoding="unicode")
+    assert 'src="corpus/images/ph_act-fig-1.png"' in xml
+    assert report.figures_found == 1
+    assert report.figures_placeholder == 1
+    assert report.figures_raster == 0
+    assert not (tmp_path / "ph_act-fig-1.png").exists()

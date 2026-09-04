@@ -84,3 +84,7 @@ class ParseReport:
     asterisk_unresolved: int = 0
     # v0.7.2 additions
     list_defs_completed: int = 0
+    # v0.9.1 additions — figure image extraction outcomes (sum == figures_found)
+    figures_raster: int = 0
+    figures_converted: int = 0
+    figures_placeholder: int = 0
