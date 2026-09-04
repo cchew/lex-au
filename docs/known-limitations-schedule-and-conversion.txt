@@ -98,36 +98,25 @@ re-parented with `prose_set_same=True`. Largest: national-security-legislation-
 amendment-(espionage-and-foreign-interference)-act-2018 (48),
 anti-terrorism-act-(no.-2)-2005 (35), defence-service-homes-act-1918 (27).
 
-Resolved (this commit): the 25 highest-incidence affected Acts, plus
-`corporations-act-2001`, were re-converted on disk against the fixed builder --
-a targeted `lexau build --acts "<name>" --force` per Act. No compilation
-changed (all `comp_num` before == after); `corporations-act-2001` schedule <td>
-count is 17127 before and after (C1 only re-parents note/heading <p>, never
-touches table cells). corpus/index.json and the on-disk XML now carry the
+Resolved: all 45 affected Acts have been re-converted on disk against the fixed
+builder -- a targeted `lexau build --acts "<name>" --force` per Act. The 25
+highest-incidence Acts, plus `corporations-act-2001`, were re-converted during
+the v0.9.0 fix wave; the remaining 20 (1-2 re-parented <p> each) were
+re-converted for `v0.9.1`. No compilation changed on any Act (`comp_num` before
+== after); `corporations-act-2001` schedule <td> count is 17127 before and after
+(C1 only re-parents note/heading <p>, never touches table cells). For every
+re-converted Act the on-disk schedule <content>/<p> placement now matches the
+fixed HEAD builder and differs from the pre-fix (a5ad3c2) builder in the
+expected clause <-> subclause direction for the affected Note/Penalty/Example
+and short-heading lines. corpus/index.json and the on-disk XML carry the
 corrected eIds; the HF dataset picks them up on the next `lexau export-hf`.
 
-Deferred to the next growth/freshness re-ingest -- 20 Acts, 1-2 re-parented <p>
-each: combatting-antisemitism,-hate-and-extremism-(criminal-and-migration-laws)-
-act-2026, coronavirus-economic-response-package-omnibus-act-2020, criminal-code-
-amendment-(deepfake-sexual-material)-act-2024, criminal-code-amendment-
-(protecting-minors-online)-act-2017, criminal-code-amendment-(state-sponsors-of-
-terrorism)-act-2025, counter-terrorism-legislation-amendment-act-(no.-1)-2014,
-counter-terrorism-legislation-amendment-act-(no.-1)-2016, crimes-legislation-
-amendment-(combatting-foreign-bribery)-act-2024, crimes-legislation-amendment-
-(international-crime-cooperation-and-other-measures)-act-2018, crimes-legislation-
-amendment-(law-enforcement-integrity,-vulnerable-witness-protection-and-other-
-measures)-act-2013, crimes-legislation-amendment-(powers,-offences-and-other-
-measures)-act-2015, crimes-legislation-amendment-(sexual-crimes-against-children-
-and-community-protection-measures)-act-2020, criminal-code-amendment-
-(agricultural-protection)-act-2019, criminal-code-amendment-(hate-crimes)-act-
-2025, criminal-code-amendment-(impersonating-a-commonwealth-body)-act-2018,
-enhancing-online-safety-(non-consensual-sharing-of-intimate-images)-act-2018,
-passports-legislation-amendment-(overseas-travel-by-child-sex-offenders)-act-
-2017, privacy-and-other-legislation-amendment-act-2024, strengthening-oversight-
-of-the-national-intelligence-community-act-2025, water-amendment-(restoring-our-
-rivers)-act-2023. The growth-check bot re-runs `lexau build` on this repo
-(commit 729e21e is one such run) and will propagate the committed guard to these
-automatically.
+`scripts/detect_c1_schedule_reattach.py` enumerates the affected set by diffing
+the pre-fix (a5ad3c2) and HEAD `_build_attachments` output per Act; it does not
+read the on-disk corpus XML, so it still reports all 45 as "affected" -- that is
+its purpose (identify which Acts need the fixed builder), not a remediation
+gate. Re-conversion is confirmed by rebuilding and diffing the saved XML against
+the fixed builder.
 
 The 1-line guard is committed and regression-tested
 (tests/test_builder.py::test_schedule_prose_after_note_stays_under_subclause),
