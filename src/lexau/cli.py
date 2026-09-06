@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import sys
 from dataclasses import asdict, replace
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import click
@@ -20,6 +21,20 @@ from lexau.docx_reader import iter_paragraphs
 # HF-repo-internal metadata it manages itself -- so the reconcile step must
 # never propose deleting them, however "orphaned" they'd otherwise look.
 _HF_MANAGED_FILES = {"README.md", ".gitattributes"}
+
+# Written into the corpus dir by scripts/restore_corpus_from_hf.py right
+# after a snapshot_download. Its presence + freshness is what tells
+# export-hf the local corpus is a faithful mirror of the remote and is
+# therefore safe to reconcile deletions against. Kept out of the upload
+# (it is local sync state, not corpus content).
+_HF_SYNC_STAMP = ".hf-sync-stamp.json"
+
+# How stale the sync stamp may be before export-hf stops trusting the
+# local corpus to drive remote deletions. A scheduled run restores then
+# publishes within the same job (90-min timeout), so any real gap here
+# means someone is exporting a corpus they hydrated hours or days ago,
+# which may be missing Acts the pipeline has since added straight to HF.
+_HF_SYNC_STAMP_MAX_AGE = timedelta(hours=24)
 
 
 def _find_endnote_volume(docx_paths: list[Path]) -> Path | None:
@@ -191,6 +206,42 @@ def site(corpus_dir: Path, site_dir: Path, templates_dir: Path) -> None:
     click.echo(f"Site generated -> {site_dir}/")
 
 
+def _stale_sync_reason(corpus_dir: Path, repo: str) -> str | None:
+    """Return why the local corpus can't be trusted to drive remote
+    deletions, or None if it can.
+
+    The reconcile step only removes remote files "missing locally". If the
+    local corpus was hydrated from a different repo, or long enough ago
+    that the pipeline has since added Acts straight to HF, those Acts look
+    "missing locally" and get deleted -- exactly the 2026-09-04 incident
+    where a stale local `export-hf` wiped 6 freshly-ingested Acts off the
+    dataset. A valid, fresh sync stamp (written by
+    scripts/restore_corpus_from_hf.py) is the evidence that neither is the
+    case.
+    """
+    stamp_path = corpus_dir / _HF_SYNC_STAMP
+    if not stamp_path.exists():
+        return f"{stamp_path} not found (corpus was never restored from Hugging Face)"
+    try:
+        stamp = json.loads(stamp_path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        return f"{stamp_path} is unreadable ({exc})"
+    if stamp.get("repo") != repo:
+        return f"{stamp_path} was written for repo {stamp.get('repo')!r}, not {repo!r}"
+    raw = stamp.get("restored_at")
+    try:
+        restored_at = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+    except ValueError:
+        return f"{stamp_path} has an unparseable restored_at ({raw!r})"
+    if restored_at.tzinfo is None:
+        restored_at = restored_at.replace(tzinfo=timezone.utc)
+    age = datetime.now(timezone.utc) - restored_at
+    if age > _HF_SYNC_STAMP_MAX_AGE:
+        limit_h = int(_HF_SYNC_STAMP_MAX_AGE.total_seconds() // 3600)
+        return f"{stamp_path} is {age.total_seconds() / 3600:.0f}h old (limit {limit_h}h)"
+    return None
+
+
 def _reconcile_deleted_files(
     api: HfApi, repo: str, corpus_dir: Path, ignore_patterns: list[str]
 ) -> list[str]:
@@ -242,10 +293,20 @@ def _reconcile_deleted_files(
     show_default=True,
     help="Dataset card to upload as README.md",
 )
-def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
+@click.option(
+    "--allow-deletes",
+    is_flag=True,
+    default=False,
+    help=(
+        "Reconcile remote deletions even when the local corpus has no fresh "
+        f"{_HF_SYNC_STAMP} proving it mirrors the dataset. Only use this when the "
+        "local corpus is deliberately authoritative."
+    ),
+)
+def export_hf(repo: str, corpus_dir: Path, readme: Path, allow_deletes: bool) -> None:
     """Push corpus XML + index + dataset card to a Hugging Face dataset."""
     api = HfApi()
-    ignore_patterns = ["docx/**", "doc_spike/**"]
+    ignore_patterns = ["docx/**", "doc_spike/**", _HF_SYNC_STAMP]
     click.echo(f"Uploading corpus to {repo}…")
     # upload_large_folder (not upload_folder) hashes files first and skips
     # ones unchanged since the last commit, and avoided a reproducible
@@ -265,6 +326,16 @@ def export_hf(repo: str, corpus_dir: Path, readme: Path) -> None:
         commit_message="lex-au dataset card update",
     )
     click.echo("Reconciling deleted files…")
+    stale_reason = None if allow_deletes else _stale_sync_reason(corpus_dir, repo)
+    if stale_reason is not None:
+        click.echo(f"WARNING: skipping remote-deletion reconcile -- {stale_reason}.")
+        click.echo(
+            "  Additions and updates were uploaded, but nothing was deleted. Re-run "
+            "scripts/restore_corpus_from_hf.py against this corpus, or pass "
+            "--allow-deletes if the local corpus is deliberately authoritative."
+        )
+        click.echo("Upload complete.")
+        return
     deleted = _reconcile_deleted_files(api, repo, corpus_dir, ignore_patterns)
     if deleted:
         click.echo("Deleted orphaned remote files:")
