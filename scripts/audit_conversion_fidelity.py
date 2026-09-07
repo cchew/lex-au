@@ -34,6 +34,7 @@ import json
 import re
 import time
 from collections import Counter
+from dataclasses import asdict
 from pathlib import Path
 
 from lxml import etree
@@ -42,6 +43,15 @@ from lexau.fidelity import AKN_NS, Divergence, compare, docx_paragraphs, normali
 
 NON_MINOR_KINDS = ("reorder", "drop_text", "drop_para", "spurious_para")
 ALL_KINDS = ("reorder", "drop_text", "drop_para", "spurious_para", "minor")
+WP_KINDS = (
+    "wp_clean",
+    "wp_punct",
+    "wp_word_drop",
+    "wp_word_insert",
+    "wp_word_reorder",
+    "wp_garble",
+    "wp_skipped",
+)
 
 _AKN_META = f"{{{AKN_NS}}}meta"
 _AKN_P = f"{{{AKN_NS}}}p"
@@ -377,6 +387,50 @@ def _render_md(s: dict) -> str:
             f"{bm.get('drop_para', 0)} | {bm.get('spurious_para', 0)} | {w['docx_mode']} |"
         )
     lines.append("")
+
+    if "within_para" in s:
+        wp = s["within_para"]
+        cov = wp["coverage"]
+        total_mass = cov["equal_len_para_mass"] + cov["unequal_len_para_mass"]
+        pct = (100.0 * cov["equal_len_para_mass"] / total_mass) if total_mass else 0.0
+        minor_row = wp["by_outer_kind"].get("minor", {})
+        lines += [
+            "## Within-paragraph classification (§7)",
+            "",
+            "Only `replace` opcodes whose two sides span an equal number of "
+            "paragraphs are classified per positional pair; unequal-length blocks "
+            "are still netted into one string by `compare()` and are out of scope "
+            "here.",
+            "",
+            f"- replace opcodes: {cov['replace_opcodes']}",
+            f"- equal-length (classified): {cov['equal_len']} "
+            f"({cov['equal_len_para_mass']} paragraph-pairs)",
+            f"- unequal-length (not classified): {cov['unequal_len']} "
+            f"({cov['unequal_len_para_mass']} paragraph-pairs)",
+            f"- coverage: {pct:.1f}% of replace paragraph mass",
+            "",
+            "### Paragraph-pair counts by within-paragraph kind",
+            "",
+            *_table(sorted(wp["totals"].items()), "pairs"),
+            "",
+            "### Within outer kind `minor` (the headline)",
+            "",
+            *(_table(sorted(minor_row.items()), "pairs") or ["- (none)"]),
+            "",
+            "### Worst 20 acts by (wp_garble + wp_word_drop)",
+            "",
+            "| rank | slug | wp_garble | wp_word_drop | wp_word_insert | "
+            "wp_word_reorder | wp_punct | docx mode |",
+            "|---|---|---|---|---|---|---|---|",
+        ]
+        for i, w in enumerate(wp.get("worst_20", []), 1):
+            lines.append(
+                f"| {i} | {w['slug']} | {w['wp_garble']} | {w['wp_word_drop']} | "
+                f"{w.get('wp_word_insert', 0)} | {w.get('wp_word_reorder', 0)} | "
+                f"{w.get('wp_punct', 0)} | {w['docx_mode']} |"
+            )
+        lines.append("")
+
     return "\n".join(lines)
 
 
@@ -386,6 +440,17 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--slug", default=None)
     ap.add_argument("--progress-every", type=int, default=100)
+    ap.add_argument(
+        "--no-within-para",
+        action="store_false",
+        dest="within_para",
+        default=True,
+        help=(
+            "suppress only the SUMMARY within-paragraph aggregation and the "
+            "SUMMARY.md §7 section; compare() still populates "
+            "Divergence.within_para and the per-Act JSON still serialises it"
+        ),
+    )
     args = ap.parse_args()
 
     corpus_dir: Path = args.corpus_dir
@@ -411,6 +476,17 @@ def main() -> int:
     scanned = 0
     acts_with_nonminor = 0
     start = time.time()
+
+    # --- §7 within-paragraph aggregation (equal-length replace blocks only) ---
+    wp_totals: Counter = Counter()               # per within_para.kind, 1 per pair
+    wp_by_outer: dict[str, Counter] = {}         # outer Divergence.kind -> Counter
+    wp_worst: list[dict] = []                    # per-Act, for the worst-20 table
+    replace_opcode_total = 0
+    replace_equal_len = 0
+    replace_unequal_len = 0
+    replace_equal_len_para_mass = 0
+    replace_unequal_len_para_mass = 0
+    _REPLACE_KINDS = ("minor", "reorder", "drop_text")
 
     for n, (slug, entry) in enumerate(items, 1):
         xml_rel = entry.get("xml_path", f"xml/{slug}.xml")
@@ -453,6 +529,43 @@ def main() -> int:
                 }
             )
 
+        if args.within_para:
+            act_wp: Counter = Counter()
+            for d in divs:
+                if d.kind not in _REPLACE_KINDS:
+                    continue  # a delete/insert opcode is never a replace
+                replace_opcode_total += 1
+                span_mass = d.docx_span[1] - d.docx_span[0]
+                equal_len = (d.docx_span[1] - d.docx_span[0]) == (
+                    d.akn_span[1] - d.akn_span[0]
+                )
+                if equal_len:
+                    replace_equal_len += 1
+                    replace_equal_len_para_mass += span_mass
+                    for w in d.within_para:
+                        wp_totals[w.kind] += 1
+                        wp_by_outer.setdefault(d.kind, Counter())[w.kind] += 1
+                        act_wp[w.kind] += 1
+                else:
+                    replace_unequal_len += 1
+                    replace_unequal_len_para_mass += span_mass
+            wp_score = act_wp["wp_garble"] + act_wp["wp_word_drop"]
+            if wp_score:
+                wp_worst.append(
+                    {
+                        "slug": slug,
+                        "wp_garble": act_wp["wp_garble"],
+                        "wp_word_drop": act_wp["wp_word_drop"],
+                        "wp_word_insert": act_wp["wp_word_insert"],
+                        "wp_word_reorder": act_wp["wp_word_reorder"],
+                        "wp_punct": act_wp["wp_punct"],
+                        "wp_clean": act_wp["wp_clean"],
+                        "wp_skipped": act_wp["wp_skipped"],
+                        "score": wp_score,
+                        "docx_mode": mode,
+                    }
+                )
+
         (out_dir / f"{slug}.json").write_text(
             json.dumps(
                 {
@@ -466,7 +579,13 @@ def main() -> int:
                     "divergence_count": len(divs),
                     "paragraphs_by_mode": {k: by_mode_paras[k] for k in ALL_KINDS if by_mode_paras[k]},
                     "nonminor_paragraphs": nonminor_paras,
-                    "divergences": [d.__dict__ for d in divs],
+                    "divergences": [
+                        {
+                            **{k: v for k, v in d.__dict__.items() if k != "within_para"},
+                            "within_para": [asdict(w) for w in d.within_para],
+                        }
+                        for d in divs
+                    ],
                 },
                 indent=2,
                 ensure_ascii=False,
@@ -495,6 +614,22 @@ def main() -> int:
         "worst_20": worst[:20],
         "skipped": skipped[:200],
     }
+    if args.within_para:
+        wp_worst.sort(key=lambda w: (-w["score"], w["slug"]))
+        summary["within_para"] = {
+            "totals": {k: wp_totals.get(k, 0) for k in WP_KINDS},
+            "by_outer_kind": {
+                k: {wk: v[wk] for wk in sorted(v)} for k, v in sorted(wp_by_outer.items())
+            },
+            "coverage": {
+                "replace_opcodes": replace_opcode_total,
+                "equal_len": replace_equal_len,
+                "unequal_len": replace_unequal_len,
+                "equal_len_para_mass": replace_equal_len_para_mass,
+                "unequal_len_para_mass": replace_unequal_len_para_mass,
+            },
+            "worst_20": wp_worst[:20],
+        }
     (out_dir / "SUMMARY.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )

@@ -196,3 +196,53 @@ def test_main_skips_unreadable_docx_without_aborting_run(tmp_path, monkeypatch):
     assert summary["acts_skipped"] == 1
     assert summary["skipped"][0]["slug"] == "bad-act-2000"
     assert summary["skipped"][0]["reason"].startswith("error:")
+
+
+def test_main_writes_valid_json_with_within_para(tmp_path, monkeypatch):
+    # One Act whose DOCX/AKN differ by a single 1:1 operative-word substitution
+    # ("must" -> "may"): compare() yields one equal-length replace opcode, so the
+    # Divergence carries a populated within_para list. The per-Act JSON write must
+    # serialise those WithinParaResult objects rather than raising TypeError.
+    corpus = tmp_path / "corpus"
+    (corpus / "xml").mkdir(parents=True)
+    (corpus / "docx").mkdir()
+
+    slug = "notice-act-2000"
+    akn = (
+        '<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">'
+        "<act><body><p>The applicant may give the Secretary written notice "
+        "within fourteen days after the original notice.</p></body></act>"
+        "</akomaNtoso>"
+    )
+    (corpus / "xml" / f"{slug}.xml").write_text(akn, encoding="utf-8")
+    doc = Document()
+    doc.add_paragraph(
+        "The applicant must give the Secretary written notice "
+        "within fourteen days after the original notice."
+    )
+    doc.save(str(corpus / "docx" / f"{slug}-vol0.docx"))
+
+    index = {"acts": {slug: {"xml_path": f"xml/{slug}.xml", "comp_num": None}}}
+    (corpus / "index.json").write_text(json.dumps(index), encoding="utf-8")
+
+    monkeypatch.setattr(sys, "argv", ["audit", "--corpus-dir", str(corpus)])
+    assert audit.main() == 0
+
+    report = json.loads(
+        (corpus / "reports" / "fidelity" / f"{slug}.json").read_text()
+    )
+    divs = report["divergences"]
+    assert any(d.get("within_para") for d in divs)
+    for d in divs:
+        for w in d.get("within_para", []):
+            assert set(w) >= {
+                "kind",
+                "docx_word_tokens",
+                "akn_word_tokens",
+                "dropped",
+                "inserted",
+            }
+
+    summary = json.loads((corpus / "reports" / "fidelity" / "SUMMARY.json").read_text())
+    assert "within_para" in summary
+    assert summary["within_para"]["by_outer_kind"].get("minor", {}).get("wp_garble") == 1

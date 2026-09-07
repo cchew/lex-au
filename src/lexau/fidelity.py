@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 import zipfile
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -15,6 +15,70 @@ _TOKEN = re.compile(r"\w+")
 _W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
 _MINOR_MIN_OVERLAP = 0.90     # near-identical => punctuation/artefact noise
+
+_WP_MIN_TOKENS = 4  # \w-token minimum on either side; below -> wp_skipped
+_WP_TOKEN = re.compile(r"\w+|[^\w\s]")
+_WP_WORD = re.compile(r"\w+")
+
+
+@dataclass
+class WithinParaResult:
+    kind: str
+    docx_word_tokens: int
+    akn_word_tokens: int
+    dropped: list[str]
+    inserted: list[str]
+
+
+def _wp_diff_words(dw: list[str], aw: list[str]) -> tuple[list[str], list[str]]:
+    """\\w tokens on one side and not the other -- original case, document order.
+
+    Matching is casefolded so "Minister"/"minister" is not reported as a diff.
+    """
+    sm = SequenceMatcher(
+        a=[t.casefold() for t in dw], b=[t.casefold() for t in aw], autojunk=False
+    )
+    dropped: list[str] = []
+    inserted: list[str] = []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag in ("delete", "replace"):
+            dropped.extend(dw[i1:i2])
+        if tag in ("insert", "replace"):
+            inserted.extend(aw[j1:j2])
+    return dropped, inserted
+
+
+def within_para_classify(dtext: str, atext: str) -> WithinParaResult:
+    from collections import Counter
+
+    dt = _WP_TOKEN.findall(dtext)
+    at = _WP_TOKEN.findall(atext)
+    dw = [t for t in dt if _WP_WORD.fullmatch(t)]
+    aw = [t for t in at if _WP_WORD.fullmatch(t)]
+    n_dw, n_aw = len(dw), len(aw)
+
+    if n_dw < _WP_MIN_TOKENS or n_aw < _WP_MIN_TOKENS:
+        return WithinParaResult("wp_skipped", n_dw, n_aw, [], [])
+
+    if [t.casefold() for t in dt] == [t.casefold() for t in at]:
+        return WithinParaResult("wp_clean", n_dw, n_aw, [], [])
+
+    cd = Counter(t.casefold() for t in dw)
+    ca = Counter(t.casefold() for t in aw)
+    dropped, inserted = _wp_diff_words(dw, aw)
+
+    if cd == ca:
+        # identical \w multiset: either only punctuation/whitespace tokens
+        # differ, or the \w tokens are in a different order.
+        if [t.casefold() for t in dw] == [t.casefold() for t in aw]:
+            return WithinParaResult("wp_punct", n_dw, n_aw, [], [])
+        return WithinParaResult("wp_word_reorder", n_dw, n_aw, [], [])
+
+    if all(ca[t] <= cd[t] for t in ca) and sum(ca.values()) < sum(cd.values()):
+        return WithinParaResult("wp_word_drop", n_dw, n_aw, dropped, [])
+    if all(cd[t] <= ca[t] for t in cd) and sum(cd.values()) < sum(ca.values()):
+        return WithinParaResult("wp_word_insert", n_dw, n_aw, [], inserted)
+    return WithinParaResult("wp_garble", n_dw, n_aw, dropped, inserted)
 
 
 def normalise(s: str) -> str:
@@ -99,6 +163,7 @@ class Divergence:
     akn_span: tuple[int, int]
     docx_text: str
     akn_text: str
+    within_para: list[WithinParaResult] = field(default_factory=list)
 
 
 def _classify_replace(dtext: str, atext: str) -> str:
@@ -164,5 +229,11 @@ def compare(docx_paras: list[str], akn_paras: list[str]) -> list[Divergence]:
             divs.append(Divergence("spurious_para", (i1, i2), (j1, j2), "", atext))
         else:  # replace
             kind = _classify_replace(dtext, atext)
-            divs.append(Divergence(kind, (i1, i2), (j1, j2), dtext, atext))
+            div = Divergence(kind, (i1, i2), (j1, j2), dtext, atext)
+            if i2 - i1 == j2 - j1:
+                div.within_para = [
+                    within_para_classify(docx_paras[i1 + k], akn_paras[j1 + k])
+                    for k in range(i2 - i1)
+                ]
+            divs.append(div)
     return divs

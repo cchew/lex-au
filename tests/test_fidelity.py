@@ -210,3 +210,82 @@ def test_docx_paragraphs_reads_real_fixture_in_document_order():
         "1. This Act may be cited as the Loan Act (No. 2) 1976."
     ) == paras.index("Short title.") + 1
     assert all(p == normalise(p) for p in paras)
+
+
+# --- P6: within-paragraph audit mode -------------------------------------
+
+from lexau.fidelity import within_para_classify, WithinParaResult, compare, Divergence
+
+
+def _wp(d, a):
+    return within_para_classify(d, a)
+
+
+def test_wp_clean_identical():
+    r = _wp("the quick brown fox jumps far", "the quick brown fox jumps far")
+    assert r.kind == "wp_clean" and r.dropped == [] and r.inserted == []
+
+
+def test_wp_punct_only():
+    r = _wp("the quick, brown fox; jumps far", "the quick brown fox jumps far")
+    assert r.kind == "wp_punct" and r.dropped == [] and r.inserted == []
+
+
+def test_wp_word_drop():
+    r = _wp("the quick brown fox jumps far", "the quick fox jumps far")
+    assert r.kind == "wp_word_drop" and r.dropped == ["brown"] and r.inserted == []
+
+
+def test_wp_word_insert():
+    r = _wp("the quick fox jumps far", "the quick brown fox jumps far")
+    assert r.kind == "wp_word_insert" and r.inserted == ["brown"] and r.dropped == []
+
+
+def test_wp_word_reorder():
+    r = _wp("the brown quick fox jumps far", "the quick brown fox jumps far")
+    assert r.kind == "wp_word_reorder" and r.dropped == [] and r.inserted == []
+
+
+def test_wp_garble_substitution():
+    r = _wp("the quick brown fox jumps far", "the quick brown dog runs far")
+    assert r.kind == "wp_garble"
+    assert r.dropped == ["fox", "jumps"] and r.inserted == ["dog", "runs"]
+
+
+def test_wp_skipped_below_min_tokens():
+    r = _wp("a b c", "a b d")
+    assert r.kind == "wp_skipped"
+    assert r.kind != "wp_clean" and r.kind != "wp_garble"
+
+
+def test_wp_casefold_matches_outer_tokeniser():
+    r = _wp("The Minister may act here", "the minister may act here")
+    assert r.kind == "wp_clean"
+
+
+def test_compare_k1_substitution_attaches_within_para():
+    docx = ["alpha", "the quick brown fox must jump over the lazy sleeping dog today", "omega"]
+    akn  = ["alpha", "the quick brown fox may jump over the lazy sleeping dog today", "omega"]
+    divs = compare(docx, akn)
+    d = next(x for x in divs if x.within_para)
+    assert d.kind == "minor"
+    assert len(d.within_para) == 1
+    assert d.within_para[0].kind == "wp_garble"
+    assert "must" in d.within_para[0].dropped and "may" in d.within_para[0].inserted
+
+
+def test_compare_k3_equal_length_replace_block():
+    docx = ["p one alpha beta gamma", "p two delta epsilon zeta", "p three eta theta iota"]
+    akn  = ["p one alpha beta gamma X", "p two delta epsilon ZETA", "p three eta theta MISSING"]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    d = next(x for x in divs if x.within_para)
+    assert len(d.within_para) == 3
+
+
+def test_compare_unequal_replace_block_has_no_within_para():
+    docx = ["keep", "aaa bbb ccc ddd", "eee fff ggg hhh"]
+    akn  = ["keep", "aaa bbb ccc ddd eee", "fff ggg", "hhh iii jjj"]
+    divs = compare(docx, akn)
+    for d in divs:
+        assert d.within_para == []
