@@ -1,7 +1,7 @@
 # DOCX-to-AKN Fidelity Audit: Summary
 
-Generated: 2026-09-03T20:26:54+1000
-Wall-clock: 317.9s
+Generated: 2026-09-08T09:25:11+1000
+Wall-clock: 333.7s
 
 - Acts scanned: 3076
 - Acts skipped (no docx, no xml, or read error): 0
@@ -68,16 +68,16 @@ Wall-clock: 317.9s
 Paragraphs affected, summed across acts (wider side of each divergence).
 
 - reorder: 0 paragraphs
-- drop_text: 108339 paragraphs
-- drop_para: 45224 paragraphs
-- spurious_para: 78466 paragraphs
-- minor: 72385 paragraphs
+- drop_text: 108294 paragraphs
+- drop_para: 45122 paragraphs
+- spurious_para: 78426 paragraphs
+- minor: 72380 paragraphs
 
 ## Acts affected by mode
 
 - reorder: 0 acts
 - drop_text: 2342 acts
-- drop_para: 1861 acts
+- drop_para: 1860 acts
 - spurious_para: 2367 acts
 - minor: 1274 acts
 
@@ -92,7 +92,7 @@ Paragraphs affected, summed across acts (wider side of each divergence).
 | 5 | corporations-act-2001 | 7466 | 0 | 1792 | 202 | 5472 | comp-vol |
 | 6 | customs-tariff-amendment-(thailand-australia-free-trade-agreement-implementation)-act-2004 | 5827 | 0 | 5511 | 7 | 309 | comp-vol |
 | 7 | migration-regulations-1994 | 4931 | 0 | 910 | 1506 | 2515 | comp-vol |
-| 8 | corporations-regulations-2001 | 4698 | 0 | 2471 | 139 | 2088 | comp-vol |
+| 8 | corporations-regulations-2001 | 4706 | 0 | 2471 | 143 | 2092 | comp-vol |
 | 9 | income-tax-assessment-act-1936 | 4308 | 0 | 2731 | 154 | 1423 | comp-vol |
 | 10 | customs-tariff-act-1995 | 3732 | 0 | 1666 | 676 | 1390 | comp-vol |
 | 11 | competition-and-consumer-act-2010 | 3361 | 0 | 786 | 280 | 2295 | comp-vol |
@@ -105,3 +105,55 @@ Paragraphs affected, summed across acts (wider side of each divergence).
 | 18 | veterans'-entitlements-act-1986 | 1844 | 0 | 498 | 160 | 1186 | comp-vol |
 | 19 | customs-act-1901 | 1836 | 0 | 403 | 100 | 1333 | comp-vol |
 | 20 | telecommunications-act-1997 | 1628 | 0 | 231 | 176 | 1221 | comp-vol |
+
+## Within-paragraph classification (§7)
+
+Only `replace` opcodes whose two sides span an equal number of paragraphs are classified per positional pair; unequal-length blocks are still netted into one string by `compare()` and are out of scope here.
+
+- replace opcodes: 83956
+- equal-length (classified): 62727 (72127 paragraph-pairs)
+- unequal-length (not classified): 21229 (94811 paragraph-pairs)
+- coverage: 43.2% of replace paragraph mass
+
+### Paragraph-pair counts by within-paragraph kind
+
+- wp_clean: 1442 pairs
+- wp_garble: 1322 pairs
+- wp_punct: 12514 pairs
+- wp_skipped: 6704 pairs
+- wp_word_drop: 45054 pairs
+- wp_word_insert: 5091 pairs
+
+### Within outer kind `minor` (the headline)
+
+- wp_clean: 1414 pairs
+- wp_garble: 65 pairs
+- wp_punct: 11463 pairs
+- wp_skipped: 299 pairs
+- wp_word_drop: 67 pairs
+- wp_word_insert: 96 pairs
+
+### Worst 20 acts by (wp_garble + wp_word_drop)
+
+| rank | slug | wp_garble | wp_word_drop | wp_word_insert | wp_word_reorder | wp_punct | docx mode |
+|---|---|---|---|---|---|---|---|
+| 1 | civil-aviation-safety-regulations-1998 | 16 | 2901 | 67 | 0 | 0 | comp-vol |
+| 2 | corporations-regulations-2001 | 7 | 1404 | 57 | 0 | 0 | comp-vol |
+| 3 | corporations-act-2001 | 12 | 1299 | 97 | 0 | 0 | comp-vol |
+| 4 | income-tax-assessment-act-1997 | 6 | 1075 | 80 | 0 | 8708 | comp-vol |
+| 5 | criminal-code-act-1995 | 3 | 949 | 56 | 0 | 0 | comp-vol |
+| 6 | agricultural-and-veterinary-chemicals-legislation-amendment-act-2013 | 0 | 624 | 1 | 0 | 0 | comp-vol |
+| 7 | competition-and-consumer-act-2010 | 5 | 615 | 44 | 0 | 0 | comp-vol |
+| 8 | migration-regulations-1994 | 2 | 505 | 68 | 0 | 0 | comp-vol |
+| 9 | social-security-act-1991 | 10 | 494 | 37 | 0 | 0 | comp-vol |
+| 10 | aviation-transport-security-regulations-2005 | 5 | 494 | 14 | 0 | 0 | comp-vol |
+| 11 | fair-work-act-2009 | 0 | 423 | 16 | 0 | 0 | comp-vol |
+| 12 | income-tax-assessment-act-1936 | 13 | 406 | 34 | 0 | 0 | comp-vol |
+| 13 | environment-protection-and-biodiversity-conservation-act-1999 | 0 | 372 | 13 | 0 | 0 | comp-vol |
+| 14 | offshore-petroleum-and-greenhouse-gas-storage-act-2006 | 1 | 344 | 36 | 0 | 0 | comp-vol |
+| 15 | crimes-act-1914 | 4 | 330 | 47 | 0 | 0 | comp-vol |
+| 16 | customs-act-1901 | 11 | 312 | 42 | 0 | 0 | comp-vol |
+| 17 | therapeutic-goods-(medical-devices)-regulations-2002 | 1 | 314 | 9 | 0 | 0 | comp-vol |
+| 18 | family-law-act-1975 | 1 | 284 | 23 | 0 | 0 | comp-vol |
+| 19 | income-tax-(transitional-provisions)-act-1997 | 0 | 251 | 8 | 0 | 0 | comp-vol |
+| 20 | migration-act-1958 | 3 | 248 | 23 | 0 | 0 | comp-vol |
