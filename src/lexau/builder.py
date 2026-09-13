@@ -547,6 +547,7 @@ def _build_schedule_content(
                 content_el = etree.SubElement(current_para, f"{{{AKN_NS}}}content")
                 _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                 _emit_p_inline(_p_el, p)
+            current_content = None
 
         elif p.element_type == ElementType.SECTION and p.number:
             # SECTION-typed paragraphs inside a schedule (e.g. TG Regs Essential Principles).
@@ -618,6 +619,7 @@ def _build_schedule_content(
                 content_el = etree.SubElement(subpara_el, f"{{{AKN_NS}}}content")
                 _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                 _emit_p_inline(_p_el, p)
+            current_content = None
 
         elif p.element_type == ElementType.TABLE:
             # Schedule rate/classification/repeal tables (Word <w:tbl>). Mirrors the

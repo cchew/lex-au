@@ -756,6 +756,60 @@ def test_schedule_empty_table_rows_no_crash(meta):
     assert table.findall("akn:tr", ns) == []
 
 
+def test_schedule_prose_after_paragraph_keeps_document_order(meta):
+    # prose / PARAGRAPH / prose in one schedule context: the trailing prose must
+    # open a FRESH <content> that sits AFTER the <paragraph> in document order, not
+    # merge into the pre-paragraph <content> (which would reorder it above the paragraph).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Method", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Use the factor from the table below."),
+        ParsedParagraph(ElementType.PARAGRAPH, number="1", text="The paragraph content."),
+        ParsedParagraph(ElementType.BODY, text="Round the result to two decimal places."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert schedule is not None
+    kids = [etree.QName(c).localname for c in schedule]
+    assert kids == ["heading", "content", "paragraph", "content"]
+    contents = schedule.findall("akn:content", ns)
+    assert len(contents) == 2
+    assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."
+    assert "".join(contents[1].itertext()).strip() == "Round the result to two decimal places."
+    paragraph = schedule.find("akn:paragraph", ns)
+    after = paragraph.getnext()
+    assert after is not None and etree.QName(after).localname == "content"
+    assert "Round the result" in "".join(after.itertext())
+
+
+def test_schedule_prose_after_subparagraph_keeps_document_order(meta):
+    # prose / SUBPARAGRAPH / prose in one schedule context: the trailing prose must
+    # open a FRESH <content> that sits AFTER the <subparagraph> in document order, not
+    # merge into the pre-subparagraph <content> (which would reorder it above the subparagraph).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Method", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Use the factor from the table below."),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text="The subparagraph content."),
+        ParsedParagraph(ElementType.BODY, text="Round the result to two decimal places."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
+    assert schedule is not None
+    kids = [etree.QName(c).localname for c in schedule]
+    assert kids == ["heading", "content", "subparagraph", "content"]
+    contents = schedule.findall("akn:content", ns)
+    assert len(contents) == 2
+    assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."
+    assert "".join(contents[1].itertext()).strip() == "Round the result to two decimal places."
+    subpara = schedule.find("akn:subparagraph", ns)
+    after = subpara.getnext()
+    assert after is not None and etree.QName(after).localname == "content"
+    assert "Round the result" in "".join(after.itertext())
+
+
 def test_level4_emitted_with_lowercase_eid(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="45", heading="Tests"),
