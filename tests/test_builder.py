@@ -554,6 +554,78 @@ def test_build_attachments_returns_tuple(meta):
     assert len(clauses) == 2
 
 
+def test_schedule_gazetted_num_emitted_and_ordered(meta):
+    # Task 3: emit gazetted schedule `<num>` child in schedule hcontainers,
+    # preserving the gazetted number verbatim even when schedule sequence skips.
+    # Case 1: numeric skip (1, 2, 5) — third schedule has <num>5</num>, eId=schedule-3
+    # Case 2: roman numeral (Schedule IV -> <num>IV</num>)
+    # Case 3: malformed number (not matching regex -> no <num>, <heading> unchanged)
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—First Schedule", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content 1"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Second Schedule", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content 2"),
+        # Skip Schedule 3, 4 — jump to 5 (case 1: numeric skip)
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa05—Fifth Schedule", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content 5"),
+        # Roman numeral (case 2)
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa0IV—Roman Schedule", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content IV"),
+        # Malformed heading (case 3: no-match on regex, treated as schedule but no <num>)
+        # Note: "Schedule One" (spelled out) doesn't match _SCHEDULE_RE, but if it somehow
+        # gets here, the heading should remain unchanged
+        ParsedParagraph(ElementType.BODY, text="Schedule One—Spelled Out Schedule", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Spelled out content"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    # Find all schedule hcontainers
+    hcontainers = xml.findall(".//akn:hcontainer[@name='schedule']", ns)
+    # Note: "Schedule One" won't match _SCHEDULE_RE, so it won't be recognized as a schedule
+    # heading. We'll only have 4 schedules: 1, 2, 5, IV
+    assert len(hcontainers) == 4, f"Expected 4 schedules, got {len(hcontainers)}"
+
+    # Case 1: First schedule — numeric 1
+    assert hcontainers[0].get("eId") == "schedule-1"
+    num1 = hcontainers[0].find("akn:num", ns)
+    assert num1 is not None
+    assert num1.text == "1"
+    heading1 = hcontainers[0].find("akn:heading", ns)
+    assert heading1 is not None
+    # <num> must precede <heading> in XML
+    num1_idx = list(hcontainers[0]).index(num1)
+    heading1_idx = list(hcontainers[0]).index(heading1)
+    assert num1_idx < heading1_idx, "<num> must come before <heading>"
+
+    # Case 1b: Second schedule — numeric 2
+    assert hcontainers[1].get("eId") == "schedule-2"
+    num2 = hcontainers[1].find("akn:num", ns)
+    assert num2 is not None
+    assert num2.text == "2"
+
+    # Case 1c: Third schedule — gazetted number is 5, but eId is schedule-3
+    assert hcontainers[2].get("eId") == "schedule-3"
+    num5 = hcontainers[2].find("akn:num", ns)
+    assert num5 is not None
+    assert num5.text == "5", "gazetted number should be preserved as-is"
+    heading5 = hcontainers[2].find("akn:heading", ns)
+    assert heading5 is not None and "Fifth Schedule" in heading5.text
+    # Verify element order again
+    num5_idx = list(hcontainers[2]).index(num5)
+    heading5_idx = list(hcontainers[2]).index(heading5)
+    assert num5_idx < heading5_idx, "<num> must come before <heading>"
+
+    # Case 2: Roman numeral — Schedule IV
+    assert hcontainers[3].get("eId") == "schedule-4"
+    numRom = hcontainers[3].find("akn:num", ns)
+    assert numRom is not None
+    assert numRom.text == "IV", "roman numeral should be preserved verbatim"
+    headingRom = hcontainers[3].find("akn:heading", ns)
+    assert headingRom is not None and "Roman Schedule" in headingRom.text
+
+
 def test_authorial_note_emitted(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="16", heading="Notification"),
@@ -729,7 +801,7 @@ def test_schedule_prose_after_table_keeps_document_order(meta):
     schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
     assert schedule is not None
     kids = [etree.QName(c).localname for c in schedule]
-    assert kids == ["heading", "content", "table", "content"]
+    assert kids == ["num", "heading", "content", "table", "content"]
     contents = schedule.findall("akn:content", ns)
     assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."
     assert "".join(contents[1].itertext()).strip() == "Round the result to two decimal places."
@@ -772,7 +844,7 @@ def test_schedule_prose_after_paragraph_keeps_document_order(meta):
     schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
     assert schedule is not None
     kids = [etree.QName(c).localname for c in schedule]
-    assert kids == ["heading", "content", "paragraph", "content"]
+    assert kids == ["num", "heading", "content", "paragraph", "content"]
     contents = schedule.findall("akn:content", ns)
     assert len(contents) == 2
     assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."
@@ -799,7 +871,7 @@ def test_schedule_prose_after_subparagraph_keeps_document_order(meta):
     schedule = xml.find(".//akn:attachments//akn:hcontainer[@name='schedule']", ns)
     assert schedule is not None
     kids = [etree.QName(c).localname for c in schedule]
-    assert kids == ["heading", "content", "subparagraph", "content"]
+    assert kids == ["num", "heading", "content", "subparagraph", "content"]
     contents = schedule.findall("akn:content", ns)
     assert len(contents) == 2
     assert "".join(contents[0].itertext()).strip() == "Use the factor from the table below."

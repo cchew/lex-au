@@ -686,6 +686,8 @@ def _build_attachments(
         if group:
             heading_text = group[0].text
             m = _SCHEDULE_RE.match(heading_text)
+            if m and m.group(1):
+                etree.SubElement(hcontainer, f"{{{AKN_NS}}}num").text = m.group(1)
             heading_val = heading_text[m.end():].lstrip("—–- ") if m else heading_text
             h_el = etree.SubElement(hcontainer, f"{{{AKN_NS}}}heading")
             h_el.text = heading_val or heading_text
