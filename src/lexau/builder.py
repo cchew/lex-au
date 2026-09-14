@@ -84,7 +84,6 @@ _QUOTED_STRUCTURAL = frozenset({
     ElementType.SUBDIVISION, ElementType.SECTION, ElementType.SUBSECTION,
 })
 
-
 @dataclass
 class _QuotedSpan:
     """Sentinel inserted into a preprocessed paragraph stream to represent a single-provision quoted structure."""
@@ -161,6 +160,315 @@ def _preprocess_quoted_structures(
         i += 1
 
     return result, found, unhandled
+
+
+# --- Schedule structure (spec §3 B4 + the B1 grouping-wrapper increment) ----
+#
+# DOCX paragraph *style names* (as python-docx reports them, not styleIds) that
+# mark the two independent numbering spaces inside an amending schedule:
+#   ItemHead / Item — the amendment-instruction list ("30  Section 9 ...",
+#                     "Repeal the section, substitute:")
+#   ActHead 1-5     — the amended Act's OWN hierarchy; inside a schedule these
+#                     only ever appear as *quoted* replacement law
+#   ActHead 6/7/8   — the schedule's own Schedule/Part/Division headings
+#   ActHead 9       — the amended-Act citation heading that groups items
+# Before B4 both numbering spaces collapsed into one flat
+# `schedule-N__clause-<num>` namespace (P1 note, mechanisms M3b/M3bt/M2/M1).
+_ITEM_HEAD_STYLE = "ItemHead"
+_INSTRUCTION_STYLE_PREFIXES = ("Item", "Subitem")
+_SCHEDULE_HEAD_STYLES = frozenset({"ActHead 6", "ActHead 7", "ActHead 8"})
+_AMENDED_ACT_STYLE = "ActHead 9"
+# Editorial marginal note about an amendment item ("Note: This item fixes a
+# misdescribed amendment."). Never part of the quoted replacement text.
+_MARGIN_NOTE_STYLE = "note(margin)"
+# Rendered table-of-contents lines inside schedule content. The schedule's own
+# sections already carry these headings, so the TOC line is pure duplication
+# (P1 note mechanism M3bt).
+_TOC_STYLE_RE = re.compile(r'^(?:Special\s+TOC|Schedule\s+TOC|TOC)\b')
+# "1  Section 12" -> ("1", "Section 12"). Same two-or-more-separator shape the
+# parser's _SECTION_RE uses, widened to accept \xa0 as a separator.
+_ITEM_HEAD_RE = re.compile(r'^(\S+)[ \t\xa0]{2,}(.+)$', re.DOTALL)
+_ITEM_NUM_RE = re.compile(r'^\d+[A-Z]*$')
+# Element types that get a schedule-scoped grouping wrapper.
+_SCHEDULE_GROUPING = (
+    ElementType.CHAPTER, ElementType.PART,
+    ElementType.DIVISION, ElementType.SUBDIVISION,
+)
+
+
+@dataclass
+class _ScheduleItem:
+    """One amendment-instruction item: an `ItemHead` line plus everything up to
+    the next schedule-level structural break, with quoted replacement provisions
+    already isolated as `_QuotedSpan` sentinels."""
+    num: str
+    heading: str
+    body: list["ParsedParagraph | _QuotedSpan"]
+
+
+def _is_toc_paragraph(p: ParsedParagraph) -> bool:
+    return bool(_TOC_STYLE_RE.match(p.raw_style.strip()))
+
+
+def _is_item_head(p: ParsedParagraph) -> bool:
+    return (
+        p.element_type == ElementType.BODY
+        and p.raw_style == _ITEM_HEAD_STYLE
+        and bool(p.text)
+    )
+
+
+def _is_instruction_paragraph(p: ParsedParagraph) -> bool:
+    return (
+        p.element_type == ElementType.BODY
+        and p.raw_style.startswith(_INSTRUCTION_STYLE_PREFIXES)
+        and bool(p.text)
+    )
+
+
+def _is_amended_act_heading(p: ParsedParagraph) -> bool:
+    return (
+        p.element_type == ElementType.BODY
+        and p.raw_style == _AMENDED_ACT_STYLE
+        and bool(p.text)
+    )
+
+
+def _is_schedule_structural_break(p: ParsedParagraph) -> bool:
+    """A heading that closes any open amendment item (and any quoted run inside it).
+
+    Deliberately style-gated on ActHead 6/7/8 rather than on ElementType alone:
+    a PART/DIVISION paragraph styled ActHead 2/3 inside an amending schedule is
+    the *amended Act's* Part being re-enacted (quoted law), not a boundary in the
+    schedule's own structure.
+    """
+    return (
+        _is_item_head(p)
+        or _is_amended_act_heading(p)
+        or (p.element_type in _STRUCTURAL and p.raw_style in _SCHEDULE_HEAD_STYLES)
+        or _is_schedule_heading(p)
+    )
+
+
+def _ends_quoted_run(p: ParsedParagraph) -> bool:
+    return _is_schedule_structural_break(p) or p.raw_style == _MARGIN_NOTE_STYLE
+
+
+def _split_item_head(text: str) -> tuple[str, str]:
+    """Split "30  Section 9 of the Code" into ("30", "Section 9 of the Code")."""
+    stripped = text.strip()
+    m = _ITEM_HEAD_RE.match(stripped)
+    if m:
+        return m.group(1), m.group(2).strip()
+    m = re.match(r'^(\S+)\s+(.+)$', stripped, re.DOTALL)
+    if m and _ITEM_NUM_RE.match(m.group(1)):
+        return m.group(1), m.group(2).strip()
+    return "", stripped
+
+
+def _preprocess_schedule_group(
+    paragraphs: list[ParsedParagraph],
+) -> list[ParsedParagraph | _ScheduleItem]:
+    """Segment a schedule's paragraph stream before any clause fabrication runs.
+
+    Three transforms, all confined to the schedule subtree:
+      1. `Special TOC *` / `Schedule TOC` / `TOC *` paragraphs are dropped (M3bt).
+      2. An `ItemHead` line and everything up to the next schedule-level
+         structural break become one `_ScheduleItem` (M3b half a).
+      3. Inside an item, the run following an instruction line that ends in a
+         colon ("Insert:", "Repeal the section, substitute:") is the quoted
+         replacement provision and becomes a `_QuotedSpan` (M3b half b).
+
+    A schedule with no `ItemHead` anywhere round-trips unchanged apart from
+    TOC removal, which is what keeps plain non-amending schedules byte-identical.
+    """
+    out: list[ParsedParagraph | _ScheduleItem] = []
+    i = 0
+    n = len(paragraphs)
+    while i < n:
+        p = paragraphs[i]
+        if _is_toc_paragraph(p):
+            i += 1
+            continue
+        if not _is_item_head(p):
+            out.append(p)
+            i += 1
+            continue
+
+        num, heading = _split_item_head(p.text)
+        item = _ScheduleItem(num=num, heading=heading, body=[])
+        i += 1
+        while i < n and not _is_schedule_structural_break(paragraphs[i]):
+            q = paragraphs[i]
+            i += 1
+            if _is_toc_paragraph(q):
+                continue
+            item.body.append(q)
+            if not (_is_instruction_paragraph(q) and q.text.rstrip().endswith(":")):
+                continue
+            j = i
+            while j < n and not _ends_quoted_run(paragraphs[j]):
+                j += 1
+            inner = [x for x in paragraphs[i:j] if not _is_toc_paragraph(x)]
+            if inner:
+                item.body.append(_QuotedSpan(inner_paras=inner))
+            i = j
+        out.append(item)
+    return out
+
+
+def _build_quoted_content(
+    container: etree._Element,
+    eid_prefix: str,
+    paragraphs: list[ParsedParagraph],
+) -> None:
+    """Build a body-shaped hierarchy under `container`, with every eId rooted at
+    `eid_prefix`.
+
+    Used for the inside of a schedule `<quotedStructure>` and for an amendment
+    item's own instruction prose. Mirrors the body loop in `AknBuilder.build()`
+    but is a separate function on purpose: `eid_prefix` is always a
+    `schedule-*` string, so nothing here can shift a body-level `@eId`.
+    `make_eid` is only *read* — the body eId generator is untouched.
+    """
+    stack: list[tuple[ElementType, str, etree._Element]] = []
+    current_content: etree._Element | None = None
+    blocklist_el: etree._Element | None = None
+    blocklist_level: int = -1
+    blocklist_count: int = 0
+
+    def _join(*parts: str) -> str:
+        return "__".join(x for x in parts if x)
+
+    for p in paragraphs:
+        p = _resolve_para_ambiguity(p, stack)
+
+        if p.element_type in _AKN_TAG:
+            blocklist_el = None
+            blocklist_level = -1
+            blocklist_count = 0
+            current_content = None
+            target_depth = _DEPTH.get(p.element_type, 99)
+            while stack and _DEPTH.get(stack[-1][0], -1) >= target_depth:
+                stack.pop()
+            parent = stack[-1][2] if stack else container
+            prefix = _join(eid_prefix, *(make_eid(et.value, num) for et, num, _ in stack))
+            full_eid = _join(prefix, make_eid(p.element_type.value, p.number))
+            if p.element_type == ElementType.LEVEL4:
+                elem = etree.SubElement(
+                    parent, f"{{{AKN_NS}}}hcontainer", name="level4", eId=full_eid
+                )
+            else:
+                tag = _AKN_TAG[p.element_type]
+                elem = etree.SubElement(parent, f"{{{AKN_NS}}}{tag}", eId=full_eid)
+            etree.SubElement(elem, f"{{{AKN_NS}}}num").text = p.number
+            if p.heading:
+                etree.SubElement(elem, f"{{{AKN_NS}}}heading").text = p.heading
+            stack.append((p.element_type, p.number, elem))
+            if p.element_type in {
+                ElementType.SUBSECTION, ElementType.PARAGRAPH,
+                ElementType.SUBPARAGRAPH, ElementType.LEVEL4,
+            } and p.text:
+                content_el = etree.SubElement(elem, f"{{{AKN_NS}}}content")
+                p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
+                _emit_p_inline(p_el, p)
+
+        elif p.element_type == ElementType.LIST_ITEM:
+            level = int(p.number) if p.number.isdigit() else 0
+            parent = stack[-1][2] if stack else container
+            section_prefix = _join(
+                eid_prefix, *(make_eid(et.value, num) for et, num, _ in stack)
+            )
+            if blocklist_el is None or level != blocklist_level:
+                blocklist_count += 1
+                blocklist_level = level
+                blocklist_el = etree.SubElement(parent, f"{{{AKN_NS}}}blockList")
+                blocklist_el.set("eId", _join(section_prefix, f"list-{blocklist_count}"))
+            item_el = etree.SubElement(blocklist_el, f"{{{AKN_NS}}}item")
+            item_el.set(
+                "eId", f"{blocklist_el.get('eId')}__item-{len(list(blocklist_el))}"
+            )
+            num_m = re.match(r'^(\([^)]+\))\s+(.*)', p.text, re.DOTALL)
+            if num_m:
+                etree.SubElement(item_el, f"{{{AKN_NS}}}num").text = num_m.group(1)
+                etree.SubElement(item_el, f"{{{AKN_NS}}}p").text = num_m.group(2)
+            else:
+                etree.SubElement(item_el, f"{{{AKN_NS}}}p").text = p.text
+            current_content = None
+
+        elif p.element_type == ElementType.NOTE:
+            blocklist_el = None
+            blocklist_level = -1
+            parent = stack[-1][2] if stack else container
+            note_el = etree.SubElement(
+                parent, f"{{{AKN_NS}}}authorialNote", placement="end"
+            )
+            content_el = etree.SubElement(note_el, f"{{{AKN_NS}}}content")
+            _emit_p_inline(etree.SubElement(content_el, f"{{{AKN_NS}}}p"), p)
+            # Reset so prose following the note opens a fresh <content> AFTER it
+            # in document order. The body loop omits this reset (same class as
+            # the P1 note's §6 PARAGRAPH/SUBPARAGRAPH finding); without it the
+            # trailing prose is appended back into the <content> opened before
+            # the note and renders above it.
+            current_content = None
+
+        elif p.element_type in {ElementType.EXAMPLE, ElementType.PENALTY}:
+            blocklist_el = None
+            blocklist_level = -1
+            parent = stack[-1][2] if stack else container
+            name = "example" if p.element_type == ElementType.EXAMPLE else "penalty"
+            wrap_el = etree.SubElement(parent, f"{{{AKN_NS}}}hcontainer", name=name)
+            content_el = etree.SubElement(wrap_el, f"{{{AKN_NS}}}content")
+            _emit_p_inline(etree.SubElement(content_el, f"{{{AKN_NS}}}p"), p)
+            current_content = None
+
+        elif p.element_type == ElementType.TABLE:
+            blocklist_el = None
+            blocklist_level = -1
+            parent = stack[-1][2] if stack else container
+            table_el = etree.SubElement(parent, f"{{{AKN_NS}}}table")
+            for row in p.table_rows:
+                tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")
+                for cell in row:
+                    etree.SubElement(tr_el, f"{{{AKN_NS}}}td").text = cell
+            current_content = None
+
+        elif p.text:
+            blocklist_el = None
+            blocklist_level = -1
+            parent = stack[-1][2] if stack else container
+            if current_content is None or current_content.getparent() is not parent:
+                current_content = etree.SubElement(parent, f"{{{AKN_NS}}}content")
+            _emit_p_inline(etree.SubElement(current_content, f"{{{AKN_NS}}}p"), p)
+
+
+def _build_item_body(
+    item_el: etree._Element,
+    item_eid: str,
+    body: list[ParsedParagraph | _QuotedSpan],
+) -> None:
+    """Emit an amendment item's instruction prose and its quoted provisions."""
+    qs_idx = 0
+    chunk: list[ParsedParagraph] = []
+    for entry in body:
+        if isinstance(entry, _QuotedSpan):
+            if chunk:
+                _build_quoted_content(item_el, item_eid, chunk)
+                chunk = []
+            qs_idx += 1
+            qs_eid = f"{item_eid}__qstr-{qs_idx}"
+            qs_el = etree.SubElement(
+                item_el, f"{{{AKN_NS}}}quotedStructure", eId=qs_eid
+            )
+            qs_el.set("startQuote", "“")
+            qs_el.set("endQuote", "”")
+            qs_el.set("from", "#")
+            qs_el.set("to", "#")
+            _build_quoted_content(qs_el, qs_eid, entry.inner_paras)
+        else:
+            chunk.append(entry)
+    if chunk:
+        _build_quoted_content(item_el, item_eid, chunk)
 
 
 def inject_note_refs(root: etree._Element) -> int:
@@ -452,7 +760,17 @@ def _build_schedule_content(
     schedule_eid: str,
     paragraphs: list[ParsedParagraph],
 ) -> int:
-    """Build clause hierarchy inside a schedule hcontainer. Returns count of top-level clauses."""
+    """Build clause hierarchy inside a schedule hcontainer. Returns count of top-level clauses.
+
+    Since §3 B4 the stream is segmented first (`_preprocess_schedule_group`), so
+    amendment-instruction items and quoted replacement provisions no longer share
+    the flat `schedule-N__clause-*` namespace, and genuine Part/Division/
+    amended-Act boundaries carry a grouping wrapper. Every eId minted here is
+    rooted at `schedule_eid`; the body Part/Division/section eId generator is not
+    reached from this function.
+    """
+    stream = _preprocess_schedule_group(paragraphs)
+
     clause_count = 0
     clause_idx = 0
     current_clause: etree._Element | None = None
@@ -462,6 +780,31 @@ def _build_schedule_content(
     # this <content> until a structural sibling (clause/subclause boundary, table)
     # forces a fresh one. Preserves document order when prose follows a <table>.
     current_content: etree._Element | None = None
+
+    # Schedule-scoped grouping wrappers (the B1 increment folded into B4).
+    group_stack: list[tuple[ElementType, etree._Element]] = []
+    amdact_el: etree._Element | None = None
+    amdact_idx = 0
+    item_idx = 0
+    seen_eids: set[str] = set()
+
+    def _unique(eid: str) -> str:
+        if eid not in seen_eids:
+            seen_eids.add(eid)
+            return eid
+        n = 2
+        while f"{eid}-{n}" in seen_eids:
+            n += 1
+        seen_eids.add(f"{eid}-{n}")
+        return f"{eid}-{n}"
+
+    def _container() -> etree._Element:
+        if amdact_el is not None:
+            return amdact_el
+        return group_stack[-1][1] if group_stack else hcontainer
+
+    def _container_eid() -> str:
+        return _container().get("eId", schedule_eid)
 
     def _content_for(parent: etree._Element) -> etree._Element:
         nonlocal current_content
@@ -476,7 +819,69 @@ def _build_schedule_content(
             current_content = etree.SubElement(parent, f"{{{AKN_NS}}}content")
         return current_content
 
-    for p in paragraphs:
+    for entry in stream:
+        # --- amendment-instruction item (§3 B4 item 2) ----------------------
+        if isinstance(entry, _ScheduleItem):
+            parent = _container()
+            item_idx += 1
+            item_eid = _unique(f"{_container_eid()}__item-{item_idx}")
+            item_el = etree.SubElement(
+                parent, f"{{{AKN_NS}}}hcontainer", name="item", eId=item_eid
+            )
+            if entry.num:
+                etree.SubElement(item_el, f"{{{AKN_NS}}}num").text = entry.num
+            if entry.heading:
+                etree.SubElement(item_el, f"{{{AKN_NS}}}heading").text = entry.heading
+            _build_item_body(item_el, item_eid, entry.body)
+            current_clause = None
+            current_subclause = None
+            current_para = None
+            current_content = None
+            continue
+
+        p = entry
+
+        # --- grouping wrappers (the B1 increment) --------------------------
+        if p.element_type in _SCHEDULE_GROUPING:
+            target_depth = _DEPTH[p.element_type]
+            while group_stack and _DEPTH[group_stack[-1][0]] >= target_depth:
+                group_stack.pop()
+            parent = group_stack[-1][1] if group_stack else hcontainer
+            eid = _unique(
+                f"{parent.get('eId', schedule_eid)}__"
+                f"{make_eid(p.element_type.value, p.number)}"
+            )
+            group_el = etree.SubElement(
+                parent, f"{{{AKN_NS}}}hcontainer",
+                name=_AKN_TAG[p.element_type], eId=eid,
+            )
+            etree.SubElement(group_el, f"{{{AKN_NS}}}num").text = p.number
+            if p.heading:
+                etree.SubElement(group_el, f"{{{AKN_NS}}}heading").text = p.heading
+            group_stack.append((p.element_type, group_el))
+            amdact_el = None
+            item_idx = 0
+            current_clause = None
+            current_subclause = None
+            current_para = None
+            current_content = None
+            continue
+
+        if _is_amended_act_heading(p):
+            parent = group_stack[-1][1] if group_stack else hcontainer
+            amdact_idx += 1
+            eid = _unique(f"{parent.get('eId', schedule_eid)}__amdact-{amdact_idx}")
+            amdact_el = etree.SubElement(
+                parent, f"{{{AKN_NS}}}hcontainer", name="amendedAct", eId=eid
+            )
+            etree.SubElement(amdact_el, f"{{{AKN_NS}}}heading").text = p.text.strip()
+            item_idx = 0
+            current_clause = None
+            current_subclause = None
+            current_para = None
+            current_content = None
+            continue
+
         if p.element_type == ElementType.BODY and p.text:
             text = p.text.strip()
 
@@ -486,9 +891,12 @@ def _build_schedule_content(
                 clause_count += 1
                 num_str = m.group(1)
                 heading_str = (m.group(2) or "").strip()
-                eid = f"{schedule_eid}__clause-{clause_idx}"
+                # Clause eIds are deliberately NOT run through `_unique`: B4 is a
+                # structural fix, not B2's identifier-uniquifier, so any residual
+                # clause collision must stay visible in the eId diff.
+                eid = f"{_container_eid()}__clause-{clause_idx}"
                 current_clause = etree.SubElement(
-                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                    _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                 )
                 etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                 if heading_str:
@@ -502,7 +910,7 @@ def _build_schedule_content(
             if m:
                 num_str = m.group(1)
                 content_text = m.group(2).strip()
-                parent = current_clause if current_clause is not None else hcontainer
+                parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
                 eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
                 current_subclause = etree.SubElement(
@@ -533,9 +941,9 @@ def _build_schedule_content(
                 else:
                     clause_idx += 1
                     clause_count += 1
-                    eid = f"{schedule_eid}__clause-{num_str}"
+                    eid = f"{_container_eid()}__clause-{num_str}"
                     current_clause = etree.SubElement(
-                        hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                        _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                     )
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
@@ -545,13 +953,13 @@ def _build_schedule_content(
                     continue
 
             # Plain body text
-            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else _container())
             content_el = _content_for(parent)
             _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
             _emit_p_inline(_p_el, p)
 
         elif p.element_type == ElementType.PARAGRAPH:
-            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)
+            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else _container())
             parent_eid = parent.get("eId", schedule_eid)
             eid = f"{parent_eid}__para-{p.number}"
             current_para = etree.SubElement(parent, f"{{{AKN_NS}}}paragraph", eId=eid)
@@ -568,7 +976,7 @@ def _build_schedule_content(
             num_str = p.number
             heading_str = p.heading or ""
             if "." in num_str:
-                parent = current_clause if current_clause is not None else hcontainer
+                parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
                 eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
                 current_subclause = etree.SubElement(
@@ -582,9 +990,9 @@ def _build_schedule_content(
             else:
                 clause_idx += 1
                 clause_count += 1
-                eid = f"{schedule_eid}__clause-{num_str}"
+                eid = f"{_container_eid()}__clause-{num_str}"
                 current_clause = etree.SubElement(
-                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                    _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                 )
                 etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                 if heading_str:
@@ -599,7 +1007,7 @@ def _build_schedule_content(
             # nested inside a previous numbered subclause.
             num_str = p.number
             parent = current_subclause if current_subclause is not None else (
-                current_clause if current_clause is not None else hcontainer
+                current_clause if current_clause is not None else _container()
             )
             parent_eid = parent.get("eId", schedule_eid)
             eid = f"{parent_eid}__subclause-{num_str}"
@@ -623,7 +1031,7 @@ def _build_schedule_content(
             elif current_clause is not None:
                 parent = current_clause
             else:
-                parent = hcontainer
+                parent = _container()
             parent_eid = parent.get("eId", schedule_eid)
             eid = f"{parent_eid}__subpara-{p.number}"
             subpara_el = etree.SubElement(parent, f"{{{AKN_NS}}}subparagraph", eId=eid)
@@ -641,7 +1049,7 @@ def _build_schedule_content(
             # (multi-row banners, blank spacer rows), so no row is promoted to
             # <th> — every row is a <td>, avoiding a false header signal.
             parent = current_subclause if current_subclause is not None else (
-                current_clause if current_clause is not None else hcontainer
+                current_clause if current_clause is not None else _container()
             )
             table_el = etree.SubElement(parent, f"{{{AKN_NS}}}table")
             for row in p.table_rows:
@@ -655,7 +1063,7 @@ def _build_schedule_content(
 
         elif p.text:
             # NOTE/EXAMPLE/PENALTY inside schedule — emit as plain content
-            parent = current_clause if current_clause is not None else hcontainer
+            parent = current_clause if current_clause is not None else _container()
             content_el = _content_for(parent)
             _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
             _emit_p_inline(_p_el, p)
@@ -664,16 +1072,29 @@ def _build_schedule_content(
 
 
 def _count_schedule_clauses(schedule_groups: list[list[ParsedParagraph]]) -> int:
-    """Count top-level clause hcontainers across all schedule groups (for ParseReport)."""
+    """Count top-level clause hcontainers across all schedule groups (for ParseReport).
+
+    Runs the same B4 segmentation the builder runs, so amendment-instruction
+    items, quoted replacement provisions and TOC lines are excluded — this is the
+    count of genuine schedule clauses, not of everything that starts with a digit.
+    """
     count = 0
     for group in schedule_groups:
-        for p in group[1:]:  # skip schedule heading
+        for entry in _preprocess_schedule_group(group[1:]):  # skip schedule heading
+            if isinstance(entry, _ScheduleItem):
+                continue
+            p = entry
             if p.element_type == ElementType.BODY and p.text:
                 text = p.text.strip()
                 if _APP_CLAUSE_RE.match(text):
                     count += 1
-                elif not _SUBCLAUSE_RE.match(text) and _CLAUSE_RE.match(text):
-                    count += 1
+                elif not _SUBCLAUSE_RE.match(text):
+                    m = _CLAUSE_RE.match(text)
+                    if m and not (
+                        _DATE_PREFIX_RE.match(m.group(2).strip())
+                        or _DATE_PATTERN_RE.match(text)
+                    ):
+                        count += 1
             elif p.element_type == ElementType.SECTION and p.number and "." not in p.number:
                 count += 1
     return count

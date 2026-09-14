@@ -2070,3 +2070,271 @@ def test_schedule_date_line_not_clause_heading(meta):
     prose_paras = xml.findall(".//akn:hcontainer[@name='schedule']/akn:content/akn:p", ns)
     date_prose = [p for p in prose_paras if "June 2000" in (p.text or "")]
     assert len(date_prose) > 0, "Date line should appear as prose in schedule content"
+
+
+# ---------------------------------------------------------------------------
+# Task 6 / §3 B4 — schedule quoted-structure + amendment-instruction awareness
+#
+# Four collision mechanisms from the P1 note
+# (docs/superpowers/notes/2026-09-07-p1-schedule-structure.md):
+#   M3b  — ItemHead instruction number vs a quoted provision's own section number
+#   M3bt — an embedded schedule TOC line vs the real section it indexes
+#   M2   — schedule Part boundary resets the item numbering, no grouping kept
+#   M1   — amended-Act citation heading resets the item numbering
+# Shapes below are taken verbatim from the real DOCX paragraph streams of the
+# Acts the brief names (verified via docx_reader against corpus/docx).
+# ---------------------------------------------------------------------------
+
+
+def _all_eids(xml):
+    return [el.get("eId") for el in xml.iter() if el.get("eId")]
+
+
+def test_m3b_item_head_and_quoted_section_do_not_collide(meta):
+    # agricultural-and-veterinary-chemicals-legislation-amendment-act-2013,
+    # schedule 1. Real stream: ItemHead "9  Subsection 3(1) ..." earlier, and
+    # later ItemHead "30  Section 9 ..." + Item "Repeal the section, substitute:"
+    # + ActHead 5 SECTION 9 "Explanation of Part" (quoted replacement law).
+    # Today both write schedule-1__clause-9.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Approvals", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Agricultural and Veterinary Chemicals Code Act 1994", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="9  Subsection\xa03(1) of the Code set out in the Schedule (definition of established standard)", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Repeal the definition, substitute:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="established standard has the meaning given by subsection\xa08U(7).", raw_style="Definition"),
+        ParsedParagraph(ElementType.BODY, text="30  Section\xa09 of the Code set out in the Schedule", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Repeal the section, substitute:", raw_style="Item"),
+        ParsedParagraph(ElementType.SECTION, number="9", heading="Explanation of Part", raw_style="ActHead 5"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="This Part contains provisions relating to:", raw_style="subsection"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    # The two ItemHead lines are amendment items, not schedule clauses.
+    items = xml.findall(".//akn:hcontainer[@name='item']", ns)
+    assert len(items) == 2, f"expected 2 <hcontainer name='item'>, got {len(items)}"
+    assert items[0].find("akn:num", ns).text == "9"
+    assert items[1].find("akn:num", ns).text == "30"
+    # Keyed on a monotonic index, not the literal instruction number (P1 B4 item 2).
+    assert items[0].get("eId").endswith("__item-1")
+    assert items[1].get("eId").endswith("__item-2")
+
+    # No fabricated schedule clause anywhere.
+    assert xml.findall(".//akn:hcontainer[@name='clause']", ns) == []
+
+    # The quoted replacement provision keeps its own hierarchy inside a
+    # <quotedStructure>, scoped under item 2 — never schedule-1__clause-9.
+    qs = xml.findall(".//akn:quotedStructure", ns)
+    assert len(qs) == 2, f"expected 2 <quotedStructure>, got {len(qs)}"
+    inner_section = qs[1].find("akn:section", ns)
+    assert inner_section is not None, "<section> not found inside <quotedStructure>"
+    assert inner_section.find("akn:num", ns).text == "9"
+    assert inner_section.get("eId").startswith(items[1].get("eId") + "__")
+    assert "clause-9" not in inner_section.get("eId")
+    assert xml.find(".//akn:hcontainer[@eId='schedule-1__clause-9']", ns) is None
+
+    # Word-for-word: every source line still present.
+    text = " ".join(" ".join(xml.itertext()).split())
+    assert "Explanation of Part" in text
+    assert "established standard has the meaning given by subsection 8U(7)." in text
+    assert "This Part contains provisions relating to:" in text
+
+
+def test_m3bt_schedule_toc_lines_are_skipped(meta):
+    # competition-and-consumer-act-2010 schedule 2 (the Australian Consumer Law):
+    # a rendered schedule TOC (Special TOC 1/2/5) precedes the real Chapter /
+    # Part / section headings. Today every TOC line fabricates a clause that
+    # collides with the section it indexes.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—The Australian Consumer Law", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Chapter\xa01—Introduction", raw_style="Special TOC 1"),
+        ParsedParagraph(ElementType.BODY, text="1\tApplication of this Schedule", raw_style="Special TOC 5"),
+        ParsedParagraph(ElementType.BODY, text="2\tDefinitions", raw_style="Special TOC 5"),
+        ParsedParagraph(ElementType.CHAPTER, number="1", heading="Introduction", raw_style="ActHead 2"),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Application of this Schedule", raw_style="ActHead 5"),
+        ParsedParagraph(ElementType.BODY, text="This Schedule applies to the extent provided by:", raw_style="subsection"),
+        ParsedParagraph(ElementType.SECTION, number="2", heading="Definitions", raw_style="ActHead 5"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    # The TOC lines produce no element at all.
+    sched = xml.find(".//akn:hcontainer[@name='schedule']", ns)
+    text = " ".join(" ".join(sched.itertext()).split())
+    assert "1\tApplication of this Schedule" not in "".join(sched.itertext())
+    assert text.count("Application of this Schedule") == 1, text
+    assert text.count("Definitions") == 1, text
+
+    clauses = sched.findall(".//akn:hcontainer[@name='clause']", ns)
+    assert len(clauses) == 2, f"expected exactly 2 clauses (sections 1 and 2), got {len(clauses)}"
+    assert [c.find("akn:num", ns).text for c in clauses] == ["1", "2"]
+
+
+def test_m2_part_boundary_gives_repeated_item_numbers_distinct_eids(meta):
+    # fair-work-amendment-(protecting-vulnerable-workers)-act-2017 schedule 1:
+    # Part 1 instruction items run 1..13, Part 8 restarts at 1. Today both
+    # write schedule-1__clause-1.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.PART, number="1", heading="Increasing maximum penalties", raw_style="ActHead 7"),
+        ParsedParagraph(ElementType.BODY, text="Fair Work Act 2009", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  Section\xa012", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="serious contravention has the meaning given by section\xa0557A.", raw_style="Definition"),
+        ParsedParagraph(ElementType.PART, number="8", heading="Records", raw_style="ActHead 7"),
+        ParsedParagraph(ElementType.BODY, text="Fair Work Act 2009", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  At the end of subsection\xa0535(3)", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Add:", raw_style="Item"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    # Both Part headings survive as grouping wrappers.
+    parts = xml.findall(".//akn:hcontainer[@name='schedule']//akn:hcontainer[@name='part']", ns)
+    assert len(parts) == 2, f"expected 2 schedule part wrappers, got {len(parts)}"
+    assert parts[0].get("eId") == "schedule-1__part-1"
+    assert parts[1].get("eId") == "schedule-1__part-8"
+
+    items = xml.findall(".//akn:hcontainer[@name='item']", ns)
+    assert len(items) == 2
+    a, b = items[0].get("eId"), items[1].get("eId")
+    assert a != b, f"item-1 of Part 1 and item-1 of Part 8 still collide on {a}"
+    assert a.startswith("schedule-1__part-1__"), a
+    assert b.startswith("schedule-1__part-8__"), b
+    # The literal instruction number is preserved in <num> either way.
+    assert [i.find("akn:num", ns).text for i in items] == ["1", "1"]
+
+
+def test_m1_amended_act_boundary_gives_repeated_item_numbers_distinct_eids(meta):
+    # statute-law-revision-act-2012 schedule 2: a flat list of typographical
+    # corrections grouped under ActHead 9 amended-Act name headings, the item
+    # count restarting per Act. Today both write schedule-1__clause-1 and the
+    # Act-name line is buried as a <p> inside the first one's <content>.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Amendment of amending Acts", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Electoral and Referendum Amendment (Enrolment) Act 2011", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  After subparagraph\xa0110(4)(b)(iv)", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Insert “and”.", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="Fair Work (State Referral) Act 2009", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  Item\xa0215 of Schedule\xa01", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Omit “DPP”, substitute “Director”.", raw_style="Item"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    acts = xml.findall(".//akn:hcontainer[@name='amendedAct']", ns)
+    assert len(acts) == 2, f"expected 2 amended-Act wrappers, got {len(acts)}"
+    assert acts[0].get("eId") == "schedule-1__amdact-1"
+    assert acts[1].get("eId") == "schedule-1__amdact-2"
+    # The Act-name line becomes the wrapper's heading, not buried prose.
+    assert acts[0].find("akn:heading", ns).text == "Electoral and Referendum Amendment (Enrolment) Act 2011"
+
+    items = xml.findall(".//akn:hcontainer[@name='item']", ns)
+    assert len(items) == 2
+    a, b = items[0].get("eId"), items[1].get("eId")
+    assert a != b, f"item 1 of each amended Act still collide on {a}"
+    assert a.startswith("schedule-1__amdact-1__"), a
+    assert b.startswith("schedule-1__amdact-2__"), b
+
+
+_PLAIN_SCHEDULE_BASELINE = """<attachments xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <attachment>
+    <hcontainer name="schedule" eId="schedule-1">
+      <num>1</num>
+      <heading>Essential principles</heading>
+      <hcontainer name="clause" eId="schedule-1__clause-1">
+        <num>1</num>
+        <heading>General requirements</heading>
+        <content>
+          <p>A device must be designed to be safe.</p>
+        </content>
+      </hcontainer>
+      <hcontainer name="clause" eId="schedule-1__clause-7">
+        <num>7</num>
+        <heading>Chemical properties</heading>
+        <hcontainer name="subclause" eId="schedule-1__clause-7__subclause-7-1">
+          <num>7.1</num>
+          <heading>Choice of materials</heading>
+          <content>
+            <p>Materials must be biocompatible.</p>
+          </content>
+          <paragraph eId="schedule-1__clause-7__subclause-7-1__para-a">
+            <num>a</num>
+            <content>
+              <p>toxicity of materials</p>
+            </content>
+            <subparagraph eId="schedule-1__clause-7__subclause-7-1__para-a__subpara-i">
+              <num>i</num>
+              <content>
+                <p>acute toxicity</p>
+              </content>
+            </subparagraph>
+          </paragraph>
+          <hcontainer name="subclause" eId="schedule-1__clause-7__subclause-7-1__subclause-2">
+            <num>2</num>
+            <content>
+              <p>The manufacturer must document this.</p>
+            </content>
+          </hcontainer>
+          <table>
+            <tr>
+              <td>Item</td>
+              <td>Requirement</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Sterility</td>
+            </tr>
+          </table>
+          <content>
+            <p>Trailing prose after the table.</p>
+          </content>
+        </hcontainer>
+        <content>
+          <p>Note: see clause 8.</p>
+        </content>
+      </hcontainer>
+    </hcontainer>
+  </attachment>
+</attachments>
+"""
+
+
+def test_b4_leaves_plain_non_amending_schedule_byte_identical(meta):
+    # Regression gate: a schedule with no amendment instructions, no quoted
+    # structure and no TOC must serialise exactly as it did at b88624a.
+    # Baseline string captured from the pre-B4 builder.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Essential principles", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1  General requirements"),
+        ParsedParagraph(ElementType.BODY, text="A device must be designed to be safe."),
+        ParsedParagraph(ElementType.SECTION, number="7", heading="Chemical properties"),
+        ParsedParagraph(ElementType.SECTION, number="7.1", heading="Choice of materials"),
+        ParsedParagraph(ElementType.BODY, text="Materials must be biocompatible."),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="toxicity of materials"),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text="acute toxicity"),
+        ParsedParagraph(ElementType.SUBSECTION, number="2", text="The manufacturer must document this."),
+        ParsedParagraph(ElementType.TABLE, table_rows=[["Item", "Requirement"], ["1", "Sterility"]]),
+        ParsedParagraph(ElementType.BODY, text="Trailing prose after the table."),
+        ParsedParagraph(ElementType.NOTE, text="Note: see clause 8."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    att = xml.find(f".//{{{AKN_NS}}}attachments")
+    assert etree.tostring(att, pretty_print=True).decode() == _PLAIN_SCHEDULE_BASELINE
