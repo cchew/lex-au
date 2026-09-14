@@ -17,6 +17,37 @@ _OLE2_MAGIC = b"\xd0\xcf\x11\xe0"  # legacy Word 97-2003 .doc (OLE2/CFB)
 _RTF_MAGIC = b"{\\rt"  # RTF payload served in place of a .doc/.docx compilation
 
 
+_APOS_FOLD = str.maketrans({
+    "’": "'",  # RIGHT SINGLE QUOTATION MARK
+    "ʼ": "'",  # MODIFIER LETTER APOSTROPHE
+    "＇": "'",  # FULLWIDTH APOSTROPHE
+})
+_APOS_CHARS = ("'", "’", "ʼ", "＇")
+
+
+def _norm_apos(s: str) -> str:
+    """Fold apostrophe-like glyphs (U+2019, U+02BC, U+FF07) to a plain
+    U+0027 and casefold, for glyph-insensitive title comparison."""
+    return s.translate(_APOS_FOLD).casefold()
+
+
+def _apostrophe_free_runs(act_name: str) -> list[str]:
+    """Split act_name into maximal contiguous runs of words containing none
+    of the apostrophe-like glyphs folded by _norm_apos."""
+    runs: list[str] = []
+    cur: list[str] = []
+    for w in act_name.split():
+        if any(ch in w for ch in _APOS_CHARS):
+            if cur:
+                runs.append(" ".join(cur))
+                cur = []
+        else:
+            cur.append(w)
+    if cur:
+        runs.append(" ".join(cur))
+    return runs
+
+
 def _odata_escape(s: str) -> str:
     """Escape a string literal for use inside an OData $filter value.
 
@@ -67,8 +98,9 @@ class Crawler:
         return r.json()
 
     def _resolve_title(self, act_name: str) -> dict | None:
-        """Resolve an Act/Regulation name to its Titles record, tolerating two
-        OData quirks discovered during the 2026-07-10 corpus expansion:
+        """Resolve an Act/Regulation name to its Titles record, tolerating
+        OData quirks discovered during the 2026-07-10 corpus expansion and
+        the 2026-09-08 apostrophe-title fix:
 
         1. A literal apostrophe followed later in the same string by a
            parenthesized clause breaks the server's OData string-literal
@@ -78,16 +110,31 @@ class Crawler:
            quote-doubling (which the API's implementation doesn't honour;
            see _odata_escape). Some shorter apostrophe titles happen to parse
            fine unescaped, so this can't be handled by escaping alone.
+
+           Stage 1 below resolves this: it splits the title into maximal
+           runs of apostrophe-free words, queries contains() on each run
+           (longest first, $top raised to 50 -- contains() result ordering
+           isn't stable and 10 can truncate the exact row out of the
+           window), and accepts a candidate only on a glyph-insensitive
+           exact full-name match (_norm_apos). Stage 2 below can't dodge
+           this on its own: it only trims *leading* words, so every
+           fragment it builds still carries the apostrophe and would
+           re-trigger the 400.
         2. The API's edge/WAF blocks specific multi-word phrases outright
            with a 403 HTML error page (not the API's JSON error format),
            e.g. any query containing "Foreign Acquisitions and Takeovers"
            regardless of filter shape -- confirmed not a general outage,
-           other queries succeed in parallel.
+           other queries succeed in parallel. Stage 1 doesn't cover this (a
+           403-blocked phrase can be entirely apostrophe-free); Stage 2
+           does: drop the leading word(s) and retry via contains(), then
+           confirm an exact case-insensitive full-name match before
+           accepting -- a trimmed fragment doesn't reconstruct the exact
+           title on its own.
 
-        Both are dodged the same way: drop the leading word(s) and retry via
-        contains(), then confirm an exact case-insensitive full-name match
-        before accepting -- a trimmed fragment doesn't reconstruct the exact
-        title on its own.
+        Stage 1 runs first only when the name contains an apostrophe-like
+        glyph; otherwise it's skipped and Stage 2 runs unchanged. Either
+        stage, on exhaustion, falls through -- ultimately to None. Never
+        returns a fuzzy/partial match.
         """
         try:
             titles = self._get(
@@ -103,6 +150,33 @@ class Crawler:
             return None
         except requests.HTTPError:
             pass
+
+        # Stage 1: an apostrophe in the name makes `name eq` an
+        # unrecoverable HTTP 400, and the Stage 2 loop below only trims
+        # *leading* words, so every fragment it builds still carries the
+        # apostrophe and would re-trigger the 400. Resolve via contains()
+        # on the longest apostrophe-free run of words instead, confirmed by
+        # a glyph-insensitive exact-name match.
+        if any(ch in act_name for ch in _APOS_CHARS):
+            target = _norm_apos(act_name)
+            for frag in sorted(_apostrophe_free_runs(act_name), key=len, reverse=True):
+                if len(frag) < 6:
+                    continue
+                time.sleep(0.3)
+                try:
+                    candidates = self._get(
+                        "Titles",
+                        {
+                            "$filter": f"contains(name,'{frag}') and isInForce eq true",
+                            "$top": 50,
+                            "$select": "id,name,year,number",
+                        },
+                    ).get("value", [])
+                except requests.HTTPError:
+                    continue
+                exact = [c for c in candidates if _norm_apos(c["name"]) == target]
+                if len(exact) == 1:
+                    return exact[0]
 
         words = act_name.split()
         for drop in range(1, min(4, len(words))):

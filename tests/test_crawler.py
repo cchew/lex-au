@@ -667,6 +667,100 @@ def test_fetch_metadata_fallback_rejects_ambiguous_contains_match():
 
 
 @resp_lib.activate
+def test_resolve_title_apostrophe_resolves_via_apostrophe_free_run():
+    # A straight apostrophe inside a parenthesized clause breaks the eq
+    # query (400), and the pre-fix words[drop:] fallback only trims leading
+    # words -- every fragment it builds still carries the apostrophe and
+    # would 400 again. Stage 1 instead queries on the longest contiguous
+    # run of apostrophe-free words ("Industrial Relations Court", longer
+    # than the other run "Remuneration) Act 1993"), which resolves cleanly.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=400)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [{
+            "id": "C2004A04659",
+            "name": "Industrial Relations Court (Judges' Remuneration) Act 1993",
+            "year": "1993",
+            "number": "104",
+        }]},
+    )
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata(
+        "Industrial Relations Court (Judges' Remuneration) Act 1993"
+    )
+
+    assert meta is not None
+    assert meta.title_id == "C2004A04659"
+    assert meta.name == "Industrial Relations Court (Judges' Remuneration) Act 1993"
+    assert meta.year == 1993
+    assert meta.number == 104
+
+    # Regression guard: the Stage 1 contains() call must carry the
+    # apostrophe-free fragment, not a fragment that still retains the
+    # apostrophe (which would just re-trigger the 400 today).
+    # (the %27s present are just the OData string-literal delimiters around
+    # the fragment -- the fragment content itself must carry no apostrophe)
+    stage1_request_url = resp_lib.calls[1].request.url
+    assert "Industrial+Relations+Court" in stage1_request_url
+    assert "Judges" not in stage1_request_url
+
+
+@resp_lib.activate
+def test_resolve_title_apostrophe_glyph_insensitive_exact_match():
+    # The stored record's name may use a curly apostrophe (U+2019) while
+    # the lookup title uses a straight one (U+0027) -- _norm_apos must fold
+    # both before the exact-match compare. The contains() fragment is not
+    # unique on its own ("Royal Australian Air Force" also matches a
+    # near-miss Determination), so this also exercises the exact-match
+    # filter picking exactly one candidate out of several.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=400)
+    resp_lib.add(
+        resp_lib.GET,
+        f"{API}/Titles",
+        json={"value": [
+            {
+                "id": "F2019L00001",
+                "name": "Royal Australian Air Force Base Richmond Determination 2019",
+                "year": "2019",
+                "number": "1",
+            },
+            {
+                "id": "C1953A00092",
+                "name": "Royal Australian Air Force Veterans’ Residences Act 1953",
+                "year": "1953",
+                "number": "92",
+            },
+        ]},
+    )
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    crawler = Crawler()
+    meta = crawler.fetch_metadata(
+        "Royal Australian Air Force Veterans' Residences Act 1953"
+    )
+
+    assert meta is not None
+    assert meta.title_id == "C1953A00092"
+
+
+@resp_lib.activate
+def test_resolve_title_apostrophe_absent_title_returns_none():
+    # Neither Stage 1 (apostrophe-free run contains()) nor Stage 2
+    # (words[drop:] contains()) find a match -- must fail safe to None,
+    # never guess. Register enough empty stubs to cover every contains()
+    # call either stage might issue.
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", status=400)
+    for _ in range(5):
+        resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": []})
+
+    crawler = Crawler()
+    assert crawler.fetch_metadata("Nonexistent (Ghost') Act 9999") is None
+
+
+@resp_lib.activate
 def test_fetch_metadata_parses_number_from_f_prefixed_instrument_id():
     # Some post-2015-framework instruments return null year/number from the
     # API (confirmed live 2026-07-11: "Family Law (Superannuation)
