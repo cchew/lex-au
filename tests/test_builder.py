@@ -626,6 +626,45 @@ def test_schedule_gazetted_num_emitted_and_ordered(meta):
     assert headingRom is not None and "Roman Schedule" in headingRom.text
 
 
+def test_schedule_num_guard_on_non_matching_heading():
+    # Task 3, Case 3 (refined): verify the no-match guard handles a schedule heading
+    # that doesn't match _SCHEDULE_RE. This tests that if a heading like "Schedule L"
+    # (roman numeral outside [IVX] range) somehow makes it to _build_attachments,
+    # the code handles it gracefully: no <num> emitted, heading text unchanged.
+    from lxml import etree
+    from lexau.builder import _build_attachments, AKN_NS
+
+    ns = {"akn": AKN_NS}
+
+    # Manually construct a schedule group with a heading that doesn't match the regex.
+    # "Schedule L" (50 in roman numerals) won't match _SCHEDULE_RE because L is not
+    # in the [IVX] character class.
+    heading_text = "Schedule L—Numbering"
+    schedule_group = [
+        ParsedParagraph(ElementType.BODY, text=heading_text, raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content of schedule."),
+    ]
+    schedule_groups = [schedule_group]
+
+    # Call _build_attachments directly
+    attachments_el, clause_count = _build_attachments(schedule_groups)
+
+    assert attachments_el is not None
+    hcontainer = attachments_el.find(".//akn:hcontainer[@name='schedule']", ns)
+    assert hcontainer is not None, "schedule hcontainer must be created"
+    assert hcontainer.get("eId") == "schedule-1"
+
+    # Verify no <num> element (regex didn't match)
+    num_el = hcontainer.find("akn:num", ns)
+    assert num_el is None, "no <num> should be emitted when heading doesn't match _SCHEDULE_RE"
+
+    # Verify heading is byte-identical to input (no slicing or stripping applied)
+    heading_el = hcontainer.find("akn:heading", ns)
+    assert heading_el is not None
+    assert heading_el.text == heading_text, \
+        f"heading should be unchanged when regex doesn't match. Expected {heading_text!r}, got {heading_el.text!r}"
+
+
 def test_authorial_note_emitted(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="16", heading="Notification"),
