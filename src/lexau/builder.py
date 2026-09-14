@@ -70,6 +70,8 @@ _APP_CLAUSE_RE = re.compile(
 )
 _SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
 _CLAUSE_RE    = re.compile(r'^(\d+[A-Z]?(?:\.\d+[A-Z]?)*)\s+([A-Z].*)', re.DOTALL)
+_DATE_PREFIX_RE = re.compile(r'^(?:January|February|March|April|May|June|July|August|September|October|November|December)\b', re.IGNORECASE)
+_DATE_PATTERN_RE = re.compile(r'^\d{1,2}\s+\w+\s+\d{4}')
 
 _NOTE_REF_RE = re.compile(r'\[note\s+(\d+)\]', re.IGNORECASE)
 
@@ -516,20 +518,31 @@ def _build_schedule_content(
 
             m = _CLAUSE_RE.match(text)
             if m:
-                clause_idx += 1
-                clause_count += 1
                 num_str = m.group(1)
                 heading_str = m.group(2).strip()
-                eid = f"{schedule_eid}__clause-{num_str}"
-                current_clause = etree.SubElement(
-                    hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
-                )
-                etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
-                etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
-                current_subclause = None
-                current_para = None
-                current_content = None
-                continue
+
+                # Guard: skip clause fabrication if this looks like a date-leading line
+                # ("30 June 2000 rate, ..." or "June 2000 rate" heading)
+                if _DATE_PREFIX_RE.match(heading_str) or _DATE_PATTERN_RE.match(text):
+                    # Fall through to plain body text handling
+                    # (reset clause state so prose goes to schedule content, not current clause)
+                    current_clause = None
+                    current_subclause = None
+                    current_para = None
+                    current_content = None
+                else:
+                    clause_idx += 1
+                    clause_count += 1
+                    eid = f"{schedule_eid}__clause-{num_str}"
+                    current_clause = etree.SubElement(
+                        hcontainer, f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
+                    )
+                    etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
+                    etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                    current_subclause = None
+                    current_para = None
+                    current_content = None
+                    continue
 
             # Plain body text
             parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else hcontainer)

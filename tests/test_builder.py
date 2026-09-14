@@ -2042,3 +2042,31 @@ def test_figure_paragraph_with_two_blips_captures_only_first(tmp_path):
     assert report.figures_found == 1
     assert (images_out / "two_blip_act-fig-1.png").exists()
     assert not (images_out / "two_blip_act-fig-1b.png").exists()
+
+
+def test_schedule_date_line_not_clause_heading(meta):
+    # Date-like lines starting with number+month should not be fabricated as clause headings.
+    # Regression test for lex-au-explorer FASA definitions ("30 June 2000 rate, in relation to...").
+    # Positive control: "30 Standard rate" should still become a clause heading.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Definitions", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="30 Standard rate"),
+        ParsedParagraph(ElementType.BODY, text="30 June 2000 rate, in relation to an individual, means..."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    # "30 Standard rate" should still become a clause heading
+    clause = xml.find(".//akn:hcontainer[@name='clause'][@eId='schedule-1__clause-30']", ns)
+    assert clause is not None, "Positive control: '30 Standard rate' should fabricate clause-30"
+
+    # The clause heading should contain "Standard rate", not "June 2000"
+    heading = clause.find("akn:heading", ns)
+    assert heading is not None
+    assert "Standard rate" in heading.text
+
+    # The date line should appear as plain prose in the schedule content
+    prose_paras = xml.findall(".//akn:hcontainer[@name='schedule']/akn:content/akn:p", ns)
+    date_prose = [p for p in prose_paras if "June 2000" in (p.text or "")]
+    assert len(date_prose) > 0, "Date line should appear as prose in schedule content"
