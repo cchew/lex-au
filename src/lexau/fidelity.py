@@ -20,6 +20,14 @@ _WP_MIN_TOKENS = 4  # \w-token minimum on either side; below -> wp_skipped
 _WP_TOKEN = re.compile(r"\w+|[^\w\s]")
 _WP_WORD = re.compile(r"\w+")
 
+# §7: paragraph count (on either side) above which an unequal-length replace
+# block skips pairwise best-match alignment and falls back to one whole-block
+# classification. Alignment cost is O(min(n, m) * n * m); at the cap that is a
+# few tens of thousands of comparisons per block, trivial, but a pathological
+# block (a whole schedule netted into one replace opcode) must not blow up
+# audit runtime across ~3,076 Acts.
+_WP_ALIGN_MAX_PARAS = 40
+
 
 @dataclass
 class WithinParaResult:
@@ -79,6 +87,99 @@ def within_para_classify(dtext: str, atext: str) -> WithinParaResult:
     if all(cd[t] <= ca[t] for t in cd) and sum(cd.values()) < sum(ca.values()):
         return WithinParaResult("wp_word_insert", n_dw, n_aw, [], inserted)
     return WithinParaResult("wp_garble", n_dw, n_aw, dropped, inserted)
+
+
+def _wp_para_overlap(a: str, b: str) -> float:
+    """Casefolded \\w-token overlap coefficient, for best-match pairing.
+
+    Same tokeniser and casefold convention as ``_wp_diff_words`` /
+    ``within_para_classify`` (``_WP_WORD``, ``.casefold()``), kept separate
+    from ``_overlap`` above (which lowercases via ``_TOKEN``) so the
+    within-paragraph layer's notion of "similar" stays internally consistent.
+    """
+    from collections import Counter
+
+    ta = [t.casefold() for t in _WP_WORD.findall(a)]
+    tb = [t.casefold() for t in _WP_WORD.findall(b)]
+    if not ta and not tb:
+        return 1.0
+    if not ta or not tb:
+        return 0.0
+    ca, cb = Counter(ta), Counter(tb)
+    inter = sum((ca & cb).values())
+    return inter / max(len(ta), len(tb))
+
+
+def _align_replace_block(docx_sub: list[str], akn_sub: list[str]) -> list[WithinParaResult]:
+    """Best-match align an unequal-length ``replace`` block, then classify.
+
+    ``docx_sub``/``akn_sub`` are the paragraphs spanned by one difflib
+    ``replace`` opcode where the two sides have different paragraph counts
+    (``compare()`` already handles the equal-length case positionally). No
+    paragraph in ``docx_sub`` string-equals any paragraph in ``akn_sub`` --
+    if one did, the outer ``SequenceMatcher`` would have carved it out as its
+    own ``equal`` opcode -- so alignment here has to be similarity-based, not
+    exact-match.
+
+    Method: score every (docx paragraph, akn paragraph) pair by casefolded
+    \\w-token overlap (``_wp_para_overlap``), then greedily take the
+    highest-scoring remaining pair, remove both sides, and repeat. This
+    always produces exactly ``min(len(docx_sub), len(akn_sub))`` pairs --
+    each round removes one row and one column, so the loop only stops when
+    one side is exhausted -- leaving the excess paragraphs on the longer side
+    unmatched, even when every score is 0 (a genuine wholesale rewrite: nothing
+    matches well, but the forced pairs still classify, typically ``wp_garble``,
+    rather than being silently dropped). Ties are broken deterministically by
+    the lowest (docx index, akn index) pair, so the result is stable across
+    runs for the same input.
+
+    Unmatched docx paragraphs report ``wp_word_drop``, unmatched akn
+    paragraphs ``wp_word_insert``, in both cases with the *whole* paragraph as
+    the token list (there is no counterpart to diff against).
+
+    Above ``_WP_ALIGN_MAX_PARAS`` paragraphs on either side, pairwise scoring
+    is skipped (cost is quadratic-ish in block size) and the whole block is
+    classified as one joined-string comparison, tagged ``wp_block_skipped`` --
+    a marker distinct from ``wp_skipped`` (too few \\w tokens to compare)
+    so the two "no fine-grained answer" reasons aren't conflated downstream.
+    """
+    n_d, n_a = len(docx_sub), len(akn_sub)
+
+    if n_d > _WP_ALIGN_MAX_PARAS or n_a > _WP_ALIGN_MAX_PARAS:
+        base = within_para_classify(" ".join(docx_sub), " ".join(akn_sub))
+        return [
+            WithinParaResult(
+                "wp_block_skipped",
+                base.docx_word_tokens,
+                base.akn_word_tokens,
+                base.dropped,
+                base.inserted,
+            )
+        ]
+
+    scores = [[_wp_para_overlap(d, a) for a in akn_sub] for d in docx_sub]
+    rd, ra = set(range(n_d)), set(range(n_a))
+    pairs: list[tuple[int, int]] = []
+    while rd and ra:
+        best_score = -1.0
+        best_i = best_j = -1
+        for i in sorted(rd):
+            for j in sorted(ra):
+                if scores[i][j] > best_score:
+                    best_score, best_i, best_j = scores[i][j], i, j
+        pairs.append((best_i, best_j))
+        rd.discard(best_i)
+        ra.discard(best_j)
+    pairs.sort()
+
+    results = [within_para_classify(docx_sub[i], akn_sub[j]) for i, j in pairs]
+    for i in sorted(rd):
+        toks = _WP_WORD.findall(docx_sub[i])
+        results.append(WithinParaResult("wp_word_drop", len(toks), 0, toks, []))
+    for j in sorted(ra):
+        toks = _WP_WORD.findall(akn_sub[j])
+        results.append(WithinParaResult("wp_word_insert", 0, len(toks), [], toks))
+    return results
 
 
 def normalise(s: str) -> str:
@@ -235,5 +336,9 @@ def compare(docx_paras: list[str], akn_paras: list[str]) -> list[Divergence]:
                     within_para_classify(docx_paras[i1 + k], akn_paras[j1 + k])
                     for k in range(i2 - i1)
                 ]
+            else:
+                div.within_para = _align_replace_block(
+                    docx_paras[i1:i2], akn_paras[j1:j2]
+                )
             divs.append(div)
     return divs

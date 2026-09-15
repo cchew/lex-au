@@ -283,9 +283,132 @@ def test_compare_k3_equal_length_replace_block():
     assert len(d.within_para) == 3
 
 
-def test_compare_unequal_replace_block_has_no_within_para():
+# --- Task 9: unequal-length replace blocks now classify within_para ------
+#
+# Phase 1 (test_compare_unequal_replace_block_has_no_within_para) pinned
+# within_para == [] for every unequal-length replace block. That is now
+# intentionally superseded: compare() best-match aligns the two sides within
+# the block and classifies each aligned pair, reporting any paragraph left
+# over on the longer side as wp_word_drop / wp_word_insert.
+
+
+def test_compare_unequal_replace_block_now_classifies_within_para():
+    # Same fixture Phase 1 used to pin the *absence* of within_para; now pins
+    # its presence. Not re-asserting specific per-pair kinds here (see the two
+    # more tightly-controlled scenarios below for that) -- this is the direct
+    # regression update the brief calls for.
     docx = ["keep", "aaa bbb ccc ddd", "eee fff ggg hhh"]
-    akn  = ["keep", "aaa bbb ccc ddd eee", "fff ggg", "hhh iii jjj"]
+    akn = ["keep", "aaa bbb ccc ddd eee", "fff ggg", "hhh iii jjj"]
     divs = compare(docx, akn)
+    replace_divs = [
+        d
+        for d in divs
+        if (d.docx_span[1] - d.docx_span[0]) != (d.akn_span[1] - d.akn_span[0])
+    ]
+    assert replace_divs, "fixture must still produce an unequal-length block"
+    for d in replace_divs:
+        assert d.within_para != []
+
+
+def test_compare_delete_and_insert_opcodes_still_have_no_within_para():
+    # Fresh guard (brief-required): only `replace` opcodes ever populate
+    # within_para. delete/insert opcodes must not regress.
+    docx = ["Para one.", "Para two.", "Para three."]
+    akn = ["Para one.", "Para three.", "Completely new paragraph appended."]
+    divs = compare(docx, akn)
+    kinds = {d.kind for d in divs}
+    assert "drop_para" in kinds
+    assert "spurious_para" in kinds
     for d in divs:
-        assert d.within_para == []
+        if d.kind in ("drop_para", "spurious_para"):
+            assert d.within_para == []
+
+
+def test_compare_unequal_block_classifies_matched_pairs_and_flags_insertion():
+    # 3 DOCX paragraphs vs 4 AKN paragraphs: the real edit is one wholly new
+    # inserted AKN paragraph. The other three differ from their DOCX
+    # counterpart only by punctuation, so they must classify wp_punct (their
+    # \w-token sequences are identical once punctuation is stripped, but the
+    # raw token streams differ -- see within_para_classify), never wp_clean.
+    docx = [
+        "alpha bravo charlie delta first paragraph text",
+        "echo foxtrot golf hotel second paragraph text",
+        "india juliet kilo lima third paragraph text",
+    ]
+    akn = [
+        "alpha, bravo, charlie, delta, first paragraph text.",
+        "echo, foxtrot, golf, hotel, second paragraph text.",
+        "india, juliet, kilo, lima, third paragraph text.",
+        "mike november oscar papa completely new inserted sentence",
+    ]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    d = divs[0]
+    assert d.docx_span == (0, 3)
+    assert d.akn_span == (0, 4)
+    assert d.within_para != []
+    assert len(d.within_para) == 4
+
+    inserted = [w for w in d.within_para if w.kind == "wp_word_insert"]
+    assert len(inserted) == 1
+    assert inserted[0].dropped == []
+    assert inserted[0].inserted == [
+        "mike",
+        "november",
+        "oscar",
+        "papa",
+        "completely",
+        "new",
+        "inserted",
+        "sentence",
+    ]
+
+    matched = [w for w in d.within_para if w.kind != "wp_word_insert"]
+    assert len(matched) == 3
+    assert all(w.kind in ("wp_clean", "wp_punct") for w in matched)
+
+
+def test_compare_unequal_block_wholesale_rewrite_forces_garble_pairs():
+    # Genuine wholesale rewrite: 2 DOCX paragraphs vs 3 AKN paragraphs, no
+    # shared vocabulary anywhere. Best-match alignment still forces
+    # min(2, 3) = 2 pairs (there is no "good" match, but the pairing is not
+    # abandoned) -- read within_para_classify: two same-length-ish paragraphs
+    # sharing zero \w tokens fail both the drop-subset and insert-subset
+    # checks, so they land in its terminal case, wp_garble. The one paragraph
+    # left over on the longer (AKN) side reports wp_word_insert.
+    docx = [
+        "quantum flux reactor stabilizes rapidly today",
+        "silent violin echoes through empty concert hall",
+    ]
+    akn = [
+        "purple elephant dances gracefully near river",
+        "wooden chair creaks under heavy morning frost",
+        "golden sunrise paints the distant mountain peaks",
+    ]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    d = divs[0]
+    assert d.within_para != []
+    assert len(d.within_para) == 3
+    garbled = [w for w in d.within_para if w.kind == "wp_garble"]
+    assert len(garbled) == 2
+    inserted = [w for w in d.within_para if w.kind == "wp_word_insert"]
+    assert len(inserted) == 1
+
+
+def test_compare_unequal_block_above_cap_falls_back_to_wp_block_skipped():
+    # A block above _WP_ALIGN_MAX_PARAS (40) on either side must skip
+    # pairwise best-match alignment (O(min(n,m)*n*m) is fine at the cap but
+    # not unbounded) and fall back to one whole-block classification, tagged
+    # wp_block_skipped so it reads distinctly from wp_skipped (too-few-tokens)
+    # in aggregation. Real (not mocked) run through compare() at 41 vs 42
+    # paragraphs, none of which string-match across sides.
+    docx = [f"docx paragraph number {i} has some unique filler words" for i in range(41)]
+    akn = [f"akn paragraph number {i} has some unique filler words!" for i in range(42)]
+    divs = compare(docx, akn)
+    assert len(divs) == 1
+    d = divs[0]
+    assert d.docx_span == (0, 41)
+    assert d.akn_span == (0, 42)
+    assert len(d.within_para) == 1
+    assert d.within_para[0].kind == "wp_block_skipped"

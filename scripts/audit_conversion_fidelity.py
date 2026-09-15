@@ -51,6 +51,7 @@ WP_KINDS = (
     "wp_word_reorder",
     "wp_garble",
     "wp_skipped",
+    "wp_block_skipped",
 )
 
 _AKN_META = f"{{{AKN_NS}}}meta"
@@ -391,23 +392,32 @@ def _render_md(s: dict) -> str:
     if "within_para" in s:
         wp = s["within_para"]
         cov = wp["coverage"]
-        total_mass = cov["equal_len_para_mass"] + cov["unequal_len_para_mass"]
-        pct = (100.0 * cov["equal_len_para_mass"] / total_mass) if total_mass else 0.0
+        classified_pct = 100.0 * cov.get("classified_fraction", 0.0)
         minor_row = wp["by_outer_kind"].get("minor", {})
         lines += [
             "## Within-paragraph classification (§7)",
             "",
-            "Only `replace` opcodes whose two sides span an equal number of "
-            "paragraphs are classified per positional pair; unequal-length blocks "
-            "are still netted into one string by `compare()` and are out of scope "
-            "here.",
+            "`replace` opcodes are classified per aligned paragraph pair. "
+            "Equal-length blocks pair positionally (Phase 1). Unequal-length "
+            "blocks are best-match aligned within the block by casefolded "
+            "\\w-token overlap; any paragraph left unmatched on the longer side "
+            "reports `wp_word_drop` (DOCX) or `wp_word_insert` (AKN) with the "
+            "whole paragraph as the token list. A block whose paragraph count "
+            "exceeds the pairwise-alignment cap on either side skips per-pair "
+            "alignment and reports one whole-block `wp_block_skipped` "
+            "classification instead, so a pathological block cannot blow up "
+            "audit runtime.",
             "",
             f"- replace opcodes: {cov['replace_opcodes']}",
-            f"- equal-length (classified): {cov['equal_len']} "
+            f"- equal-length (positional pairs): {cov['equal_len']} "
             f"({cov['equal_len_para_mass']} paragraph-pairs)",
-            f"- unequal-length (not classified): {cov['unequal_len']} "
-            f"({cov['unequal_len_para_mass']} paragraph-pairs)",
-            f"- coverage: {pct:.1f}% of replace paragraph mass",
+            f"- unequal-length (best-match aligned): {cov['unequal_len']} "
+            f"({cov['unequal_len_para_mass']} paragraph-pairs), of which "
+            f"{cov.get('unequal_len_capped', 0)} "
+            f"({cov.get('unequal_len_capped_para_mass', 0)} paragraph-pairs) "
+            "exceeded the alignment cap and fell back to `wp_block_skipped`",
+            f"- coverage: {classified_pct:.1f}% of replace paragraph mass "
+            "classified pair-by-pair (excludes capped-fallback mass)",
             "",
             "### Paragraph-pair counts by within-paragraph kind",
             "",
@@ -477,7 +487,9 @@ def main() -> int:
     acts_with_nonminor = 0
     start = time.time()
 
-    # --- §7 within-paragraph aggregation (equal-length replace blocks only) ---
+    # --- §7 within-paragraph aggregation (equal- and unequal-length replace
+    # blocks; unequal-length blocks above the alignment cap fall back to one
+    # wp_block_skipped classification per block, see fidelity._align_replace_block) ---
     wp_totals: Counter = Counter()               # per within_para.kind, 1 per pair
     wp_by_outer: dict[str, Counter] = {}         # outer Divergence.kind -> Counter
     wp_worst: list[dict] = []                    # per-Act, for the worst-20 table
@@ -486,6 +498,8 @@ def main() -> int:
     replace_unequal_len = 0
     replace_equal_len_para_mass = 0
     replace_unequal_len_para_mass = 0
+    replace_unequal_len_capped = 0          # unequal blocks over the alignment cap
+    replace_unequal_len_capped_para_mass = 0
     _REPLACE_KINDS = ("minor", "reorder", "drop_text")
 
     for n, (slug, entry) in enumerate(items, 1):
@@ -542,13 +556,26 @@ def main() -> int:
                 if equal_len:
                     replace_equal_len += 1
                     replace_equal_len_para_mass += span_mass
-                    for w in d.within_para:
-                        wp_totals[w.kind] += 1
-                        wp_by_outer.setdefault(d.kind, Counter())[w.kind] += 1
-                        act_wp[w.kind] += 1
                 else:
                     replace_unequal_len += 1
                     replace_unequal_len_para_mass += span_mass
+                    # §7 (this task): unequal-length blocks over
+                    # _WP_ALIGN_MAX_PARAS fall back to one whole-block
+                    # wp_block_skipped classification rather than per-pair
+                    # alignment. Tracked separately so `classified_fraction`
+                    # can exclude that fallback mass from "classified".
+                    if len(d.within_para) == 1 and d.within_para[0].kind == "wp_block_skipped":
+                        replace_unequal_len_capped += 1
+                        replace_unequal_len_capped_para_mass += span_mass
+                # Equal-length blocks always classified positionally (Phase 1);
+                # unequal-length blocks now also classify (this task, best-match
+                # aligned) -- both feed the same totals/by-outer-kind/worst-20
+                # aggregation. Additive: this loop body used to be nested only
+                # under `if equal_len:`, so equal-length figures are unchanged.
+                for w in d.within_para:
+                    wp_totals[w.kind] += 1
+                    wp_by_outer.setdefault(d.kind, Counter())[w.kind] += 1
+                    act_wp[w.kind] += 1
             wp_score = act_wp["wp_garble"] + act_wp["wp_word_drop"]
             if wp_score:
                 wp_worst.append(
@@ -616,6 +643,12 @@ def main() -> int:
     }
     if args.within_para:
         wp_worst.sort(key=lambda w: (-w["score"], w["slug"]))
+        _total_replace_mass = replace_equal_len_para_mass + replace_unequal_len_para_mass
+        _classified_fraction = (
+            (_total_replace_mass - replace_unequal_len_capped_para_mass) / _total_replace_mass
+            if _total_replace_mass
+            else 0.0
+        )
         summary["within_para"] = {
             "totals": {k: wp_totals.get(k, 0) for k in WP_KINDS},
             "by_outer_kind": {
@@ -627,6 +660,9 @@ def main() -> int:
                 "unequal_len": replace_unequal_len,
                 "equal_len_para_mass": replace_equal_len_para_mass,
                 "unequal_len_para_mass": replace_unequal_len_para_mass,
+                "unequal_len_capped": replace_unequal_len_capped,
+                "unequal_len_capped_para_mass": replace_unequal_len_capped_para_mass,
+                "classified_fraction": _classified_fraction,
             },
             "worst_20": wp_worst[:20],
         }

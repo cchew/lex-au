@@ -246,3 +246,52 @@ def test_main_writes_valid_json_with_within_para(tmp_path, monkeypatch):
     summary = json.loads((corpus / "reports" / "fidelity" / "SUMMARY.json").read_text())
     assert "within_para" in summary
     assert summary["within_para"]["by_outer_kind"].get("minor", {}).get("wp_garble") == 1
+
+
+def test_main_summary_classifies_unequal_replace_block_and_reports_coverage(
+    tmp_path, monkeypatch
+):
+    # Task 9: an unequal-length replace block (2 DOCX paragraphs vs 3 AKN
+    # paragraphs, wholesale rewrite -- no shared vocabulary) must now
+    # contribute to within_para totals/worst-20, not sit out as within_para
+    # == []. Also pins the new coverage.classified_fraction field.
+    corpus = tmp_path / "corpus"
+    (corpus / "xml").mkdir(parents=True)
+    (corpus / "docx").mkdir()
+
+    slug = "rewrite-act-2000"
+    akn = (
+        '<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">'
+        "<act><body>"
+        "<p>purple elephant dances gracefully near the winding river today</p>"
+        "<p>wooden chair creaks loudly under heavy morning frost outside</p>"
+        "<p>golden sunrise paints the distant mountain peaks slowly</p>"
+        "</body></act></akomaNtoso>"
+    )
+    (corpus / "xml" / f"{slug}.xml").write_text(akn, encoding="utf-8")
+    doc = Document()
+    doc.add_paragraph("quantum flux reactor stabilizes rapidly today across the lab")
+    doc.add_paragraph("silent violin echoes through the empty concert hall tonight")
+    doc.save(str(corpus / "docx" / f"{slug}-vol0.docx"))
+
+    index = {"acts": {slug: {"xml_path": f"xml/{slug}.xml", "comp_num": None}}}
+    (corpus / "index.json").write_text(json.dumps(index), encoding="utf-8")
+
+    monkeypatch.setattr(sys, "argv", ["audit", "--corpus-dir", str(corpus)])
+    assert audit.main() == 0
+
+    summary = json.loads((corpus / "reports" / "fidelity" / "SUMMARY.json").read_text())
+    wp = summary["within_para"]
+    cov = wp["coverage"]
+
+    assert cov["unequal_len"] >= 1
+    assert cov["unequal_len_capped"] == 0  # well under the alignment cap
+    assert "classified_fraction" in cov
+    assert cov["classified_fraction"] > 0.0
+
+    assert wp["totals"].get("wp_garble", 0) >= 1
+    assert any(w.get("wp_garble") for w in wp["worst_20"])
+
+    md = (corpus / "reports" / "fidelity" / "SUMMARY.md").read_text()
+    assert "best-match aligned" in md
+    assert "wp_block_skipped" in md
