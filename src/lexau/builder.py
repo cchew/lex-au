@@ -1360,7 +1360,8 @@ def inject_passive_mods(
 
     if mod_idx > 0:
         td_el = meta_el.find(f"{{{AKN_NS}}}temporalData")
-        insert_idx = list(meta_el).index(td_el) + 1 if td_el is not None else len(list(meta_el))
+        # Insert <analysis> before <temporalData> per AKN 3.0 XSD
+        insert_idx = list(meta_el).index(td_el) if td_el is not None else len(list(meta_el))
         meta_el.insert(insert_idx, analysis_el)
 
 

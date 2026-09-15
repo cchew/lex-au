@@ -1496,6 +1496,42 @@ def test_passive_mod_empty_omitted(meta):
     assert analysis is None
 
 
+# --- Task 11: <meta> element order per AKN 3.0 ---
+
+def test_meta_element_order_analysis_before_temporal_data(meta):
+    """<analysis> must precede <temporalData> in <meta> per AKN 3.0 XSD."""
+    from lexau.builder import inject_passive_mods, inject_lifecycle, inject_temporal_data
+
+    events = [AmendmentEvent(provision="s 6", effect="am", act_number=99, act_year=2010)]
+    xml = _build_tree_with_section(meta, "6")
+    inject_lifecycle(xml, meta, events)
+    inject_temporal_data(xml, events)
+    inject_passive_mods(xml, events)
+
+    ns = {"akn": AKN_NS}
+    meta_el = xml.find(".//akn:meta", ns)
+    children = list(meta_el)
+
+    # Find indices of analysis and temporalData
+    analysis_idx = None
+    temporal_idx = None
+    for i, child in enumerate(children):
+        if child.tag == f"{{{AKN_NS}}}analysis":
+            analysis_idx = i
+        elif child.tag == f"{{{AKN_NS}}}temporalData":
+            temporal_idx = i
+
+    # Both must exist
+    assert analysis_idx is not None, "<analysis> not found in <meta>"
+    assert temporal_idx is not None, "<temporalData> not found in <meta>"
+
+    # <analysis> must come before <temporalData> (per AKN 3.0 XSD)
+    assert analysis_idx < temporal_idx, (
+        f"<analysis> (index {analysis_idx}) must precede <temporalData> "
+        f"(index {temporal_idx}) per AKN 3.0 XSD"
+    )
+
+
 # ---------------------------------------------------------------------------
 # Task 8: <quotedStructure> detection
 # ---------------------------------------------------------------------------
