@@ -63,51 +63,69 @@ _CREST_POS_LIMIT = 8
 
 _VML_DIM_RE = re.compile(r"\b(width|height)\s*:\s*(-?[0-9.]+)\s*pt", re.IGNORECASE)
 
-# --- Smart Tags (legacy Word auto-detection markup) -------------------------
+# --- Smart Tags / hyperlinks (transparent run wrappers) ---------------------
 #
 # Word's legacy "Smart Tags" feature wraps auto-detected place/person/date
 # spans -- <w:element="place">, "PlaceName", "PlaceType", "country-region",
 # "PersonName" all confirmed present in the corpus -- in a <w:smartTag>
 # element sitting BETWEEN <w:p> and the <w:r> run(s) it contains (and smart
 # tags can nest, e.g. <w:smartTag place><w:smartTag PlaceName><w:r>...).
-# Both python-docx's `Paragraph.runs` (CT_P.r_lst, generated from a
-# `ZeroOrMore("w:r")` grammar entry) and `Paragraph.text`/`_Cell.text`
-# (CT_P.text, `"".join(e.text for e in self.xpath("w:r | w:hyperlink"))`) walk
-# only DIRECT children of <w:p> -- any run nested inside a <w:smartTag> is
-# therefore invisible to both, and its text is silently dropped. Confirmed
-# real losses (Task 1 triage, 2026-09-08): "National Land" and "Australia"
-# (x5 distinct Acts) vanish entirely from operative text; when the smart-tag
-# boundary falls mid-token the drop instead garbles the surviving fragments
-# ("is 1/11" -> "i/11").
+# python-docx's own `Paragraph.runs` (CT_P.r_lst, generated from a
+# `ZeroOrMore("w:r")` grammar entry, direct-children-only) walks only DIRECT
+# children of <w:p> -- any run nested inside a <w:smartTag> is invisible to
+# it, and its text is silently dropped. Confirmed real losses (Task 1 triage,
+# 2026-09-08): "National Land" and "Australia" (x5 distinct Acts) vanish
+# entirely from operative text; when the smart-tag boundary falls mid-token
+# the drop instead garbles the surviving fragments ("is 1/11" -> "i/11").
 #
-# _iter_run_elements recurses into <w:smartTag> (arbitrarily deep, to handle
-# nesting) so those runs are found in document order. It deliberately does
-# NOT recurse into any other wrapper element (<w:hyperlink>, <w:ins>/<w:del>,
-# <w:sdt>) -- those are unconfirmed by Task 1's triage and out of scope for
-# this fix; existing behaviour for them (whatever it is) is unchanged.
+# `Paragraph.text`/`_Cell.text` (CT_P.text: `"".join(e.text for e in
+# self.xpath("w:r | w:hyperlink"))`) is ALSO direct-children-only, so it
+# drops smart-tag-wrapped runs the same way -- but unlike `.runs`, it does
+# already see runs wrapped in <w:hyperlink> (an earlier version of
+# `_cell_text` below did not, which regressed hyperlink text in table cells
+# that `_Cell.text` used to preserve -- caught in code review, 2026-09-16;
+# zero corpus impact at the time, since no <w:hyperlink> in this corpus sits
+# inside a <w:tc>, but the invariant was false and would have bitten the
+# first cell that did).
+#
+# _iter_run_elements recurses into both <w:smartTag> and <w:hyperlink>
+# (arbitrarily deep / in combination, to handle nesting) so runs wrapped in
+# either are found in document order, for BOTH callers below -- paragraph
+# spans now see hyperlink-wrapped text for the first time too (previously
+# invisible to `.runs`, same silent-drop shape as the smart-tag bug this task
+# exists to fix, just not corpus-confirmed by Task 1). It deliberately does
+# NOT recurse into <w:ins>/<w:del> or <w:sdt> -- those are unconfirmed by
+# Task 1's triage and structurally different (revision-tracking and content
+# controls, not simple transparent wrappers); existing behaviour for them
+# (whatever it is) is unchanged.
 _W_R = qn("w:r")
 _W_SMARTTAG = qn("w:smartTag")
+_W_HYPERLINK = qn("w:hyperlink")
+_TRANSPARENT_WRAPPERS = (_W_SMARTTAG, _W_HYPERLINK)
 
 
 def _iter_run_elements(parent_el: etree._Element) -> Iterator[etree._Element]:
     """Yield <w:r> descendants of ``parent_el`` in document order, recursing
-    into (possibly nested) <w:smartTag> wrappers. See module comment above.
+    into (possibly nested/combined) <w:smartTag> and <w:hyperlink> wrappers.
+    See module comment above.
     """
     for child in parent_el:
         if child.tag == _W_R:
             yield child
-        elif child.tag == _W_SMARTTAG:
+        elif child.tag in _TRANSPARENT_WRAPPERS:
             yield from _iter_run_elements(child)
 
 
 def _cell_text(cell) -> str:
-    """Table cell text, including text nested inside <w:smartTag> wrappers.
+    """Table cell text, including text nested inside <w:smartTag> and
+    <w:hyperlink> wrappers.
 
     Mirrors python-docx's own `_Cell.text` (`"\\n".join(p.text for p in
     self.paragraphs)`) but sources each paragraph's text from
     `_iter_run_elements` instead of `Paragraph.text`, so smart-tag-wrapped
-    runs (see module comment above) are not dropped. `Run(r, p).text` still
-    handles the same `<w:tab/>`/`<w:cr/>`/`<w:br>` translation
+    runs (see module comment above) are not dropped -- while still matching
+    `_Cell.text`'s original hyperlink-inclusive behaviour. `Run(r, p).text`
+    still handles the same `<w:tab/>`/`<w:cr/>`/`<w:br>` translation
     `CT_P.text` did for each individual run.
     """
     return "\n".join(
@@ -315,9 +333,12 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
 
     Uses doc.iter_inner_content() (python-docx 1.2.0) to preserve document order.
     Tables are yielded as ParsedParagraph(TABLE, table_rows=[[cell, ...], ...]).
-    cell.text concatenates all paragraph text in the cell; nested tables are flattened.
+    _cell_text() concatenates all paragraph text in the cell (including text
+    nested inside <w:smartTag>/<w:hyperlink> wrappers); nested tables are
+    flattened.
     FIGURE paragraphs (inline image) yield with empty spans.
-    All other paragraphs populate spans from paragraph.runs.
+    All other paragraphs populate spans from _iter_run_elements(), which walks
+    the same smartTag/hyperlink-transparent run set as _cell_text().
 
     A `<w:p>` that carries BOTH its own text and an inline image is SPLIT: it
     is classified normally (so a numbered provision keeps its element type and,

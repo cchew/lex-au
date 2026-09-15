@@ -300,6 +300,75 @@ def test_smart_tag_wrapped_run_preserved_in_table_cell():
     ]
 
 
+def test_hyperlink_wrapped_run_preserved_in_table_cell():
+    """Regression guard for a bug introduced (then caught in code review,
+    2026-09-16) by the smart-tag fix above: python-docx's own `_Cell.text`
+    (what the original `cell.text.strip()` used) sources from `CT_P.text`,
+    whose `xpath("w:r | w:hyperlink")` already saw runs wrapped in
+    <w:hyperlink> -- unlike `Paragraph.runs`, which never did. Swapping in an
+    `_iter_run_elements` that only recursed into <w:smartTag> silently
+    regressed that: any table cell containing a hyperlink would lose its
+    text. Corpus impact was 0 (no <w:hyperlink> sits inside a <w:tc> in this
+    corpus, verified in review), but the invariant was false. Confirmed
+    the fix by scanning: `_iter_run_elements` now recurses into <w:hyperlink>
+    too, matching `_Cell.text`'s original behaviour exactly.
+    """
+    doc = Document()
+    table = doc.add_table(rows=1, cols=1)
+    cell = table.cell(0, 0)
+    cell_p = cell.paragraphs[0]._p
+    cell_p.append(parse_xml(
+        '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:t xml:space="preserve">See </w:t>'
+        '</w:r>'
+    ))
+    cell_p.append(parse_xml(
+        '<w:hyperlink xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+        'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" '
+        'r:id="rId1">'
+        '<w:r><w:t>the Federal Register of Legislation</w:t></w:r>'
+        '</w:hyperlink>'
+    ))
+    cell_p.append(parse_xml(
+        '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:t xml:space="preserve"> for the current version.</w:t>'
+        '</w:r>'
+    ))
+
+    results = list(iter_paragraphs(doc))
+    table_blocks = [r for r in results if r.element_type == ElementType.TABLE]
+    assert len(table_blocks) == 1
+    assert table_blocks[0].table_rows == [
+        ["See the Federal Register of Legislation for the current version."]
+    ]
+
+
+def test_hyperlink_wrapped_run_populates_spans():
+    """Same hyperlink fix, paragraph-span path -- extends `_iter_run_elements`
+    hyperlink recursion to `iter_paragraphs`'s span-building loop too, so a
+    hyperlinked cross-reference in ordinary body text is no longer silently
+    dropped from operative text either (previously invisible to
+    `Paragraph.runs`, same shape as the smart-tag bug, just not
+    corpus-confirmed by Task 1).
+    """
+    doc = Document()
+    p = doc.add_paragraph()
+    p.add_run("See ")
+    p._element.append(parse_xml(
+        '<w:hyperlink xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+        'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" '
+        'r:id="rId1">'
+        '<w:r><w:t>the Register</w:t></w:r>'
+        '</w:hyperlink>'
+    ))
+    p.add_run(" for details.")
+
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if "the Register" in r.text]
+    assert len(body) == 1
+    assert body[0].text == "See the Register for details."
+
+
 def test_loan_act_1976_shape1_fixture():
     # Shape 1: separate bold heading + single-tab numbered body.
     # Expect 5 sections (Short title, Commencement, Authority to borrow,

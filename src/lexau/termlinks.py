@@ -140,14 +140,20 @@ _DEF_PATTERNS = [
     # "X" has the meaning given by / has the same meaning as
     re.compile(r'^"(?P<term>[^"]+)"\s+(?P<connector>has the (?:same )?meaning (?:given by|as))\s+(?P<definiens>.*)', re.DOTALL | re.IGNORECASE),
     # X, in relation to Y, means/includes Z — relational definition (DD 1.5 form).
-    # `qualifier` captures Y (the "in relation to" target) so the caller can
-    # thread the full ", in relation to Y," clause back into the rebuilt
-    # <term>/<def> as plain text -- previously unnamed/uncaptured, so the
-    # clause vanished entirely on injection (wp_word_drop Bug 2, Task 1
-    # triage 2026-09-08: confirmed real content-meaning change in 4
-    # independent Acts, turning a context-qualified definition unconditional).
+    # `qualifier` captures the WHOLE ", in relation to Y," clause verbatim
+    # (comma-to-comma, original casing/spacing intact) so the caller can
+    # splice it back into the rebuilt <term>/<def> as plain text unchanged --
+    # previously unnamed/uncaptured entirely, so the clause vanished on
+    # injection (wp_word_drop Bug 2, Task 1 triage 2026-09-08: confirmed real
+    # content-meaning change in 4 independent Acts, turning a
+    # context-qualified definition unconditional). Capturing the full clause,
+    # rather than just Y and reconstructing the wrapper text around it in
+    # _inject, avoids hardcoding "in relation to"'s casing/spacing and
+    # matching the source exactly regardless (caught in code review,
+    # 2026-09-16 — near-nil real-world impact given OPC drafting
+    # conventions, but free to get right).
     re.compile(
-        rf'^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?),\s+in relation to\s+(?P<qualifier>[^,]{{1,60}}),\s+(?P<connector>means|includes?)\s+(?P<definiens>.*)',
+        rf'^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)(?P<qualifier>,\s+in relation to\s+[^,]{{1,60}},)\s+(?P<connector>means|includes?)\s+(?P<definiens>.*)',
         re.DOTALL | re.IGNORECASE
     ),
     # X means/includes Y — unquoted definiendum (italicised in DOCX -> plain text)
@@ -253,12 +259,14 @@ def _inject(
     term_el.text = f'"{show_as}"' if quoted else show_as
     if qualifier:
         # Relational definition ("X, in relation to Y, means Z") -- carry the
-        # qualifying clause forward as plain text so the rebuilt <term>/<def>
-        # still reads the way the source DOCX did (see _DEF_PATTERNS' Group 3
-        # comment). Kept out of <term> itself: Y qualifies the definiens, not
-        # the definiendum, and folding it in would also change term_eid/the
+        # verbatim ", in relation to Y," clause forward as plain text so the
+        # rebuilt <term>/<def> reads exactly the way the source DOCX did
+        # (see _DEF_PATTERNS' Group 3 comment -- `qualifier` is the whole
+        # clause, comma-to-comma, not reconstructed from a fixed template).
+        # Kept out of <term> itself: Y qualifies the definiens, not the
+        # definiendum, and folding it in would also change term_eid/the
         # registry key for what is otherwise the same defined term.
-        term_el.tail = f", in relation to {qualifier}, {connector} "
+        term_el.tail = f"{qualifier} {connector} "
     else:
         term_el.tail = f" {connector} "
     def_el = etree.SubElement(p_el, f"{AKN_TAG}def")
@@ -308,8 +316,7 @@ def _process_p(
             show_as = m.group('term').strip()
             if _is_narrative_false_positive(show_as):
                 continue  # narrative prose, not a real definiendum
-            qualifier_raw = m.groupdict().get('qualifier')
-            qualifier = qualifier_raw.strip() if qualifier_raw else None
+            qualifier = m.groupdict().get('qualifier') or None
             connector = m.group('connector').strip()
             definiens = m.group('definiens').strip()
             original = m.group(0)

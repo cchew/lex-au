@@ -589,6 +589,28 @@ def test_relational_definition_qualifying_clause_preserved():
     assert def_el.text == "the form approved by the Registrar."
 
 
+def test_relational_definition_qualifying_clause_preserved_verbatim():
+    """Code review, 2026-09-16: the qualifying clause is captured and spliced
+    back as ONE verbatim group (comma-to-comma), not reconstructed from a
+    fixed f-string template -- so irregular internal whitespace in the
+    source DOCX (a real OOXML artefact: multiple <w:t>/<w:tab> runs
+    collapsing into extra spaces) survives exactly, instead of being
+    silently normalised to a single space the way a hardcoded
+    ", in relation to {qualifier}, " template would.
+    """
+    root = _make_section(
+        "Dictionary",
+        "approved form, in relation to  a  messy   application, means the form approved by the Registrar.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+
+    p = root.find(f".//{AKN_TAG}p")
+    term_el = p.find(f"{AKN_TAG}term")
+    assert term_el is not None
+    assert term_el.tail == ", in relation to  a  messy   application, means "
+
+
 def test_relational_definition_with_parenthetical_qualifier():
     root = _make_section(
         "Dictionary",
