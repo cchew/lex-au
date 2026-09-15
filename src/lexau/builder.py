@@ -565,6 +565,23 @@ def _emit_p_inline(p_el: etree._Element, p: "ParsedParagraph") -> None:
     If p.spans is empty or all spans are unformatted, falls back to p_el.text = p.text
     (same behaviour as before v0.6.0). Otherwise emits <b>, <i>, <sup>, <sub> children.
     Bold+italic is rendered as <b><i>text</i></b>.
+
+    Every newly created child is given tail = "" (not left at lxml's default
+    None), even when the immediately following span is itself formatted and
+    so has no plain-text separator to write there. Two consecutive DOCX runs
+    with identical formatting (e.g. split only by an intervening
+    <w:bookmarkStart>/<w:bookmarkEnd>, or an rsid boundary from an old
+    revision -- no real whitespace in the source) otherwise produce two
+    sibling elements with tail=None; lxml's pretty-print serializer (used for
+    the persisted corpus/xml/*.xml output, see corpus.py) then fills that
+    None tail with newline+indent whitespace, which downstream
+    whitespace-normalisation collapses into a spurious literal space --
+    corrupting a contiguous word into two tokens (confirmed real cases, Task
+    1 triage 2026-09-08, wp_garble Group C, 819 records / 62% of all
+    wp_garble: "Excise" -> "E xcise", "sunsetting" -> "sunset ting"). An
+    explicit "" tail is inert either way (a following plain span still
+    overwrites it via `(prev.tail or "") + span.text`) but blocks
+    pretty-print from treating it as unset.
     """
     if not p.spans or not any(
         s.bold or s.italic or s.superscript or s.subscript for s in p.spans
@@ -579,24 +596,29 @@ def _emit_p_inline(p_el: etree._Element, p: "ParsedParagraph") -> None:
         if span.bold or span.italic or span.superscript or span.subscript:
             if span.bold and span.italic:
                 outer = etree.SubElement(p_el, f"{{{AKN_NS}}}b")
+                outer.tail = ""
                 child = etree.SubElement(outer, f"{{{AKN_NS}}}i")
                 child.text = span.text
                 prev = outer
             elif span.bold:
                 child = etree.SubElement(p_el, f"{{{AKN_NS}}}b")
                 child.text = span.text
+                child.tail = ""
                 prev = child
             elif span.italic:
                 child = etree.SubElement(p_el, f"{{{AKN_NS}}}i")
                 child.text = span.text
+                child.tail = ""
                 prev = child
             elif span.superscript:
                 child = etree.SubElement(p_el, f"{{{AKN_NS}}}sup")
                 child.text = span.text
+                child.tail = ""
                 prev = child
             else:  # subscript
                 child = etree.SubElement(p_el, f"{{{AKN_NS}}}sub")
                 child.text = span.text
+                child.tail = ""
                 prev = child
         else:
             # Plain span — append as tail of last element, or text of p_el

@@ -217,6 +217,89 @@ def test_image_paragraph_spans_empty():
     assert figures[0].spans == []
 
 
+def test_smart_tag_wrapped_run_populates_spans():
+    """A <w:r> nested inside <w:smartTag> must not be silently dropped.
+
+    Real corpus bug (Task 1 triage, 2026-09-08, wp_garble Group A /
+    wp_word_drop Bug 1): Word's legacy Smart Tags feature wraps
+    auto-detected place/person names in <w:smartTag>, and python-docx's own
+    Paragraph.runs only finds direct-child <w:r> elements
+    (docx.oxml.text.paragraph.CT_P.r_lst is `ZeroOrMore("w:r")`, a
+    direct-child XPath) -- any run nested inside a smartTag wrapper is
+    invisible to it, so its text is dropped entirely. Confirmed real case:
+    australian-capital-territory-(planning-and-land-management)-act-1988's
+    "National Land" definiendum (nested
+    <w:smartTag element="place"><w:smartTag element="PlaceName">National
+    </w:smartTag> <w:smartTag element="PlaceType">Land</w:smartTag>
+    </w:smartTag>) vanished entirely, leaving only "has the meaning given by
+    section 27." with no defined term at all.
+    """
+    doc = Document()
+    p = doc.add_paragraph()
+    p.add_run("The land is ")
+    smart_tag_xml = (
+        '<w:smartTag xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+        'w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="place">'
+        '<w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="PlaceName">'
+        '<w:r><w:t>National</w:t></w:r>'
+        '</w:smartTag>'
+        '<w:r><w:t xml:space="preserve"> </w:t></w:r>'
+        '<w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="PlaceType">'
+        '<w:r><w:t>Land</w:t></w:r>'
+        '</w:smartTag>'
+        '</w:smartTag>'
+    )
+    p._element.append(parse_xml(smart_tag_xml))
+    p.add_run(" for the purposes of this Act.")
+
+    results = list(iter_paragraphs(doc))
+    body = [r for r in results if "National Land" in r.text]
+    assert len(body) == 1
+    assert body[0].text == "The land is National Land for the purposes of this Act."
+    # The smart-tag runs must show up as their own spans too, not just be
+    # folded into full_text -- downstream builder consumes p.spans, not
+    # p.text, whenever any formatting is present.
+    span_text = "".join(s.text for s in body[0].spans)
+    assert span_text == body[0].text
+
+
+def test_smart_tag_wrapped_run_preserved_in_table_cell():
+    """Same smartTag bug, table-cell path.
+
+    Real case: comprehensive-nuclear-test-ban-treaty-act-1998's schedule
+    table cell "The day on which the Treaty enters into force for Australia"
+    -- "Australia" wrapped in
+    <w:smartTag element="country-region"><w:smartTag element="place"> --
+    dropped entirely by `cell.text` (docx.oxml.text.paragraph.CT_P.text uses
+    the same direct-child-only "w:r | w:hyperlink" XPath as r_lst), leaving
+    "The day on which the Treaty enters into force for ." in the AKN output.
+    """
+    doc = Document()
+    table = doc.add_table(rows=1, cols=1)
+    cell = table.cell(0, 0)
+    cell_p = cell.paragraphs[0]._p
+    cell_p.append(parse_xml(
+        '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:t xml:space="preserve">The day on which the Treaty enters into force for </w:t>'
+        '</w:r>'
+    ))
+    cell_p.append(parse_xml(
+        '<w:smartTag xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+        'w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="country-region">'
+        '<w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="place">'
+        '<w:r><w:t>Australia</w:t></w:r>'
+        '</w:smartTag>'
+        '</w:smartTag>'
+    ))
+
+    results = list(iter_paragraphs(doc))
+    table_blocks = [r for r in results if r.element_type == ElementType.TABLE]
+    assert len(table_blocks) == 1
+    assert table_blocks[0].table_rows == [
+        ["The day on which the Treaty enters into force for Australia"]
+    ]
+
+
 def test_loan_act_1976_shape1_fixture():
     # Shape 1: separate bold heading + single-tab numbered body.
     # Expect 5 sections (Short title, Commencement, Authority to borrow,

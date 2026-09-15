@@ -1722,6 +1722,48 @@ def test_bold_italic_span_emits_nested_b_i(meta):
     assert i_el.text == "critical term"
 
 
+def test_adjacent_same_formatting_spans_no_spurious_space_on_pretty_print(meta):
+    """Real case (Task 1 triage 2026-09-08, wp_garble Group C, 819 records,
+    62% of all wp_garble -- the highest-volume converter defect this task
+    fixes): excise-tariff-amendment-act-1990's long title has "Excise Tariff
+    Amendment Act 1990" split across two adjacent DOCX <w:r> runs with
+    IDENTICAL formatting (both bold), separated only by an intervening
+    <w:bookmarkStart>/<w:bookmarkEnd> pair (Word's auto-inserted "_GoBack"
+    cursor-position bookmark -- no actual whitespace between the runs).
+    _emit_p_inline previously created two SIBLING <b> elements with no tail
+    text between them; lxml's pretty_print serializer (used for the
+    persisted corpus/xml/*.xml output, src/lexau/corpus.py:77) then inserts
+    newline+indent whitespace as that missing tail, corrupting "Excise" into
+    "E xcise" once whitespace-normalised. Also confirmed in
+    acts-and-instruments-(framework-reform)-act-2015's long title
+    ("sunsetting" -> "sunset" + "ting" split across two bold runs).
+    """
+    from lexau.parser import InlineSpan
+    p = ParsedParagraph(
+        ElementType.BODY,
+        text="Excise Tariff Amendment Act 1990",
+        spans=[
+            InlineSpan(text="E", bold=True),
+            InlineSpan(text="xcise Tariff Amendment Act 1990", bold=True),
+        ],
+    )
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        p,
+    ])
+    ns = {"akn": AKN_NS}
+    p_el = xml.find(".//akn:section/akn:content/akn:p", ns)
+    b_els = p_el.findall(f"{{{AKN_NS}}}b")
+    assert [b.text for b in b_els] == ["E", "xcise Tariff Amendment Act 1990"]
+    # The load-bearing assertion: no element between two same-formatting
+    # runs may be left with tail=None, since lxml's pretty-print serializer
+    # (the one actually used for persisted output) fills a None tail with
+    # indentation whitespace, corrupting contiguous source text.
+    pretty = etree.tostring(p_el, pretty_print=True)
+    reparsed = etree.fromstring(pretty)
+    assert "".join(reparsed.itertext()) == "Excise Tariff Amendment Act 1990"
+
+
 def test_build_with_report_list_defs_found(meta):
     """build_with_report counts list-form definitions in list_defs_found."""
     from unittest.mock import patch, MagicMock

@@ -10,6 +10,7 @@ from docx import Document
 from docx.oxml.ns import qn
 from docx.table import Table
 from docx.text.paragraph import Paragraph
+from docx.text.run import Run
 from lxml import etree
 
 from lexau.parser import (
@@ -61,6 +62,58 @@ _MIN_FIGURE_PT = 8.0
 _CREST_POS_LIMIT = 8
 
 _VML_DIM_RE = re.compile(r"\b(width|height)\s*:\s*(-?[0-9.]+)\s*pt", re.IGNORECASE)
+
+# --- Smart Tags (legacy Word auto-detection markup) -------------------------
+#
+# Word's legacy "Smart Tags" feature wraps auto-detected place/person/date
+# spans -- <w:element="place">, "PlaceName", "PlaceType", "country-region",
+# "PersonName" all confirmed present in the corpus -- in a <w:smartTag>
+# element sitting BETWEEN <w:p> and the <w:r> run(s) it contains (and smart
+# tags can nest, e.g. <w:smartTag place><w:smartTag PlaceName><w:r>...).
+# Both python-docx's `Paragraph.runs` (CT_P.r_lst, generated from a
+# `ZeroOrMore("w:r")` grammar entry) and `Paragraph.text`/`_Cell.text`
+# (CT_P.text, `"".join(e.text for e in self.xpath("w:r | w:hyperlink"))`) walk
+# only DIRECT children of <w:p> -- any run nested inside a <w:smartTag> is
+# therefore invisible to both, and its text is silently dropped. Confirmed
+# real losses (Task 1 triage, 2026-09-08): "National Land" and "Australia"
+# (x5 distinct Acts) vanish entirely from operative text; when the smart-tag
+# boundary falls mid-token the drop instead garbles the surviving fragments
+# ("is 1/11" -> "i/11").
+#
+# _iter_run_elements recurses into <w:smartTag> (arbitrarily deep, to handle
+# nesting) so those runs are found in document order. It deliberately does
+# NOT recurse into any other wrapper element (<w:hyperlink>, <w:ins>/<w:del>,
+# <w:sdt>) -- those are unconfirmed by Task 1's triage and out of scope for
+# this fix; existing behaviour for them (whatever it is) is unchanged.
+_W_R = qn("w:r")
+_W_SMARTTAG = qn("w:smartTag")
+
+
+def _iter_run_elements(parent_el: etree._Element) -> Iterator[etree._Element]:
+    """Yield <w:r> descendants of ``parent_el`` in document order, recursing
+    into (possibly nested) <w:smartTag> wrappers. See module comment above.
+    """
+    for child in parent_el:
+        if child.tag == _W_R:
+            yield child
+        elif child.tag == _W_SMARTTAG:
+            yield from _iter_run_elements(child)
+
+
+def _cell_text(cell) -> str:
+    """Table cell text, including text nested inside <w:smartTag> wrappers.
+
+    Mirrors python-docx's own `_Cell.text` (`"\\n".join(p.text for p in
+    self.paragraphs)`) but sources each paragraph's text from
+    `_iter_run_elements` instead of `Paragraph.text`, so smart-tag-wrapped
+    runs (see module comment above) are not dropped. `Run(r, p).text` still
+    handles the same `<w:tab/>`/`<w:cr/>`/`<w:br>` translation
+    `CT_P.text` did for each individual run.
+    """
+    return "\n".join(
+        "".join(Run(r, p).text for r in _iter_run_elements(p._element))
+        for p in cell.paragraphs
+    )
 
 
 def _iter_ancestors(el: etree._Element) -> Iterator[etree._Element]:
@@ -326,7 +379,9 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
                 superscript=bool(run.font.superscript),
                 subscript=bool(run.font.subscript),
             )
-            for run in block.runs
+            for run in (
+                Run(r_el, block) for r_el in _iter_run_elements(block._element)
+            )
             if run.text
         ]
         para_spans.append(spans)
@@ -385,7 +440,7 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
             para_pos += 1
         elif isinstance(block, Table):
             rows = [
-                [cell.text.strip() for cell in row.cells]
+                [_cell_text(cell).strip() for cell in row.cells]
                 for row in block.rows
             ]
             yield ParsedParagraph(element_type=ElementType.TABLE, table_rows=rows)

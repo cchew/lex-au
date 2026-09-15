@@ -557,6 +557,38 @@ def test_relational_definition_in_relation_to():
     assert registry["term-court"] == "Court"
 
 
+def test_relational_definition_qualifying_clause_preserved():
+    """Real case (Task 1 triage 2026-09-08, wp_word_drop Bug 2,
+    corporations-regulations-2001): "approved form, in relation to a
+    provision of the Act or of these Regulations, means the form..."
+    converted to "<term>approved form</term> means the form..." -- the ", in
+    relation to X," qualifying clause vanished entirely, silently turning a
+    context-qualified definition into an unconditional one (a substantive
+    legal-meaning change, not cosmetic). Also confirmed in
+    royal-australian-air-force-veterans'-residences-act-1953,
+    primary-industries-research-and-development-act-1989 and
+    bankruptcy-act-1966 (4 independent Acts, same shape). The clause must
+    survive as plain text between </term> and the connector, exactly as it
+    reads in the source DOCX.
+    """
+    root = _make_section(
+        "Dictionary",
+        "approved form, in relation to an application, means the form approved by the Registrar.",
+    )
+    registry, count = inject_terms(root)
+    assert count == 1
+    assert registry["term-approved-form"] == "approved form"
+
+    p = root.find(f".//{AKN_TAG}p")
+    term_el = p.find(f"{AKN_TAG}term")
+    assert term_el is not None
+    assert term_el.text == "approved form"
+    assert term_el.tail == ", in relation to an application, means "
+    def_el = p.find(f"{AKN_TAG}def")
+    assert def_el is not None
+    assert def_el.text == "the form approved by the Registrar."
+
+
 def test_relational_definition_with_parenthetical_qualifier():
     root = _make_section(
         "Dictionary",

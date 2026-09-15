@@ -136,18 +136,24 @@ _DEF_TAG       = f"{AKN_TAG}def"
 
 _DEF_PATTERNS = [
     # "X" means/includes Y  — quoted definiendum
-    re.compile(r'^"([^"]+)"\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
+    re.compile(r'^"(?P<term>[^"]+)"\s+(?P<connector>means|includes?)\s+(?P<definiens>.*)', re.DOTALL | re.IGNORECASE),
     # "X" has the meaning given by / has the same meaning as
-    re.compile(r'^"([^"]+)"\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
-    # X, in relation to Y, means/includes Z — relational definition (DD 1.5 form)
+    re.compile(r'^"(?P<term>[^"]+)"\s+(?P<connector>has the (?:same )?meaning (?:given by|as))\s+(?P<definiens>.*)', re.DOTALL | re.IGNORECASE),
+    # X, in relation to Y, means/includes Z — relational definition (DD 1.5 form).
+    # `qualifier` captures Y (the "in relation to" target) so the caller can
+    # thread the full ", in relation to Y," clause back into the rebuilt
+    # <term>/<def> as plain text -- previously unnamed/uncaptured, so the
+    # clause vanished entirely on injection (wp_word_drop Bug 2, Task 1
+    # triage 2026-09-08: confirmed real content-meaning change in 4
+    # independent Acts, turning a context-qualified definition unconditional).
     re.compile(
-        rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?),\s+in relation to\s+[^,]{{1,60}},\s+(means|includes?)\s+(.*)',
+        rf'^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?),\s+in relation to\s+(?P<qualifier>[^,]{{1,60}}),\s+(?P<connector>means|includes?)\s+(?P<definiens>.*)',
         re.DOTALL | re.IGNORECASE
     ),
     # X means/includes Y — unquoted definiendum (italicised in DOCX -> plain text)
-    re.compile(rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(means|includes?)\s+(.*)', re.DOTALL | re.IGNORECASE),
+    re.compile(rf'^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(?P<connector>means|includes?)\s+(?P<definiens>.*)', re.DOTALL | re.IGNORECASE),
     # X has the meaning given by / has the same meaning as — unquoted form
-    re.compile(rf'^([A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(has the (?:same )?meaning (?:given by|as))\s+(.*)', re.DOTALL | re.IGNORECASE),
+    re.compile(rf'^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,60}}?)\s+(?P<connector>has the (?:same )?meaning (?:given by|as))\s+(?P<definiens>.*)', re.DOTALL | re.IGNORECASE),
 ]
 
 
@@ -233,6 +239,7 @@ def _inject(
     definiens: str,
     quoted: bool,
     registry: dict[str, str],
+    qualifier: str | None = None,
 ) -> None:
     eid = _term_eid(show_as)
     registry[eid] = show_as
@@ -244,7 +251,16 @@ def _inject(
     term_el = etree.SubElement(p_el, f"{AKN_TAG}term")
     term_el.set("refersTo", f"#{eid}")
     term_el.text = f'"{show_as}"' if quoted else show_as
-    term_el.tail = f" {connector} "
+    if qualifier:
+        # Relational definition ("X, in relation to Y, means Z") -- carry the
+        # qualifying clause forward as plain text so the rebuilt <term>/<def>
+        # still reads the way the source DOCX did (see _DEF_PATTERNS' Group 3
+        # comment). Kept out of <term> itself: Y qualifies the definiens, not
+        # the definiendum, and folding it in would also change term_eid/the
+        # registry key for what is otherwise the same defined term.
+        term_el.tail = f", in relation to {qualifier}, {connector} "
+    else:
+        term_el.tail = f" {connector} "
     def_el = etree.SubElement(p_el, f"{AKN_TAG}def")
     def_el.text = definiens
 
@@ -286,17 +302,19 @@ def _process_p(
     for pattern in _DEF_PATTERNS:
         m = pattern.match(stripped)
         if m:
-            prefix_before_connector = stripped[:m.start(2)]
+            prefix_before_connector = stripped[:m.start('connector')]
             if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
                 continue  # "does not include/mean" -- not a real definition
-            show_as = m.group(1).strip()
+            show_as = m.group('term').strip()
             if _is_narrative_false_positive(show_as):
                 continue  # narrative prose, not a real definiendum
-            connector = m.group(2).strip()
-            definiens = m.group(3).strip()
+            qualifier_raw = m.groupdict().get('qualifier')
+            qualifier = qualifier_raw.strip() if qualifier_raw else None
+            connector = m.group('connector').strip()
+            definiens = m.group('definiens').strip()
             original = m.group(0)
             quoted = original.startswith('"')
-            _inject(p_el, show_as, connector, definiens, quoted, registry)
+            _inject(p_el, show_as, connector, definiens, quoted, registry, qualifier)
             return 1
 
     return 0
@@ -478,10 +496,10 @@ def _looks_like_new_definition(item_p: etree._Element) -> bool:
         m = pattern.match(text)
         if not m:
             continue
-        prefix_before_connector = text[:m.start(2)]
+        prefix_before_connector = text[:m.start('connector')]
         if _FALSE_CONNECTOR_TAIL_RE.search(prefix_before_connector):
             continue
-        if _is_narrative_false_positive(m.group(1).strip()):
+        if _is_narrative_false_positive(m.group('term').strip()):
             continue
         return True
 
