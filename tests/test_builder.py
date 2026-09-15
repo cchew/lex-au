@@ -2508,3 +2508,104 @@ def test_nested_amendment_item_keeps_its_own_instructions_quoted(meta):
         "Omit “Director”, substitute “authority”.",
     ):
         assert fragment in quoted, f"{fragment!r} fell out of the nested quoted item"
+
+
+# --- v0.3.1 §2: FIGURE paragraphs keep their own provision text ---------------
+
+
+def _mixed_vml_docx(tmp_path, text, name="mixed_vml.docx"):
+    """A one-paragraph DOCX whose single <w:p> carries BOTH ``text`` and a VML
+    (<w:pict>/<v:imagedata>) image — the pre-2010 drafting shape behind the 7
+    structural-loss Acts in the P3 note."""
+    from docx import Document as _Document
+    from docx.oxml import parse_xml as _parse_xml
+    from docx.oxml.ns import qn as _qn
+
+    from docx.enum.style import WD_STYLE_TYPE
+
+    doc = _Document(str(_FIG_FIXTURES / "one_wmf.docx"))
+    # An ActHead-styled section heading ahead of the figure paragraph: it makes
+    # the document non-legacy (so parse_paragraph classifies, as in all 7 of
+    # the real structural-loss Acts) and opens a section for the eId prefix.
+    doc.styles.add_style("ActHead 5", WD_STYLE_TYPE.PARAGRAPH)
+    para = doc.paragraphs[0]
+    heading = doc.add_paragraph("4A  Rate of pension")
+    heading.style = doc.styles["ActHead 5"]
+    para._element.addprevious(heading._element)
+    for run in list(para._element.findall(_qn("w:r"))):
+        para._element.remove(run)
+    para.add_run(text)
+    para._element.append(
+        _parse_xml(
+            '<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"'
+            ' xmlns:v="urn:schemas-microsoft-com:vml"'
+            ' xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">'
+            '<w:pict><v:shape style="width:120pt;height:24.75pt">'
+            '<v:imagedata r:id="rId21"/></v:shape></w:pict></w:r>'
+        )
+    )
+    out = tmp_path / name
+    doc.save(str(out))
+    return out
+
+
+def test_mixed_text_figure_keeps_paragraph_eid_and_text(tmp_path):
+    """The whole point of the pair: a numbered provision that shares its <w:p>
+    with an inline formula image keeps its <paragraph> eId and operative text,
+    and gains a <figure> — instead of the text vanishing."""
+    text = (
+        "(a) if the annual pay of the member is less than the prescribed "
+        "amount—the number ascertained in accordance with the formula"
+    )
+    path = _mixed_vml_docx(tmp_path, text)
+    meta = _figure_meta("dfrb_act")
+    report, xml = _convert_figure_volumes([str(path)], meta, tmp_path)
+
+    root = etree.fromstring(xml.encode())
+    ns = {"akn": AKN_NS}
+    para_el = root.find(".//akn:paragraph", ns)
+    assert para_el is not None, "numbered <paragraph> lost"
+    assert para_el.get("eId") == "sec-4A__para-a"
+    assert "the number ascertained in accordance with the formula" in "".join(
+        para_el.itertext()
+    )
+    fig = root.find(".//akn:figure", ns)
+    assert fig is not None
+    assert fig.find("akn:img", ns) is not None
+    assert report.figures_found == 1
+    # The <figure> nests inside the paragraph it came from, not its predecessor.
+    assert para_el.find("akn:figure", ns) is not None
+
+
+def test_figure_paragraph_text_is_not_dropped_by_builder(meta):
+    """Builder-boundary guard: a FIGURE ParsedParagraph that still carries
+    non-whitespace text emits that text alongside the <figure>. The reader's
+    split normally clears it, so this is the safety net for any other producer."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Rate of pension"),
+        ParsedParagraph(
+            ElementType.FIGURE,
+            text="if the annual pay of the member is less than the prescribed amount",
+        ),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    assert xml.find(".//akn:figure", ns) is not None
+    assert "if the annual pay of the member" in "".join(xml.itertext())
+
+
+def test_empty_figure_paragraph_emits_figure_only(meta):
+    """Regression: a text-free FIGURE still emits exactly <figure><img/></figure>
+    with no stray <p>."""
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Diagrams"),
+        ParsedParagraph(ElementType.FIGURE, text="   "),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    fig = xml.find(".//akn:figure", ns)
+    assert fig is not None
+    assert len(list(fig)) == 1
+    assert fig[0].tag == f"{{{AKN_NS}}}img"
+    section = xml.find(".//akn:section", ns)
+    assert section.findall(".//akn:p", ns) == []

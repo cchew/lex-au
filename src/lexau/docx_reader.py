@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import re
 from collections.abc import Iterator
 from dataclasses import replace
 from pathlib import Path
@@ -8,6 +10,7 @@ from docx import Document
 from docx.oxml.ns import qn
 from docx.table import Table
 from docx.text.paragraph import Paragraph
+from lxml import etree
 
 from lexau.parser import (
     ElementType,
@@ -18,13 +21,188 @@ from lexau.parser import (
     parse_paragraph,
 )
 
+# --- VML (legacy) inline images ---------------------------------------------
+#
+# Pre-2010 compilations embed an image as VML (<w:pict> wrapping
+# <v:shape><v:imagedata r:id>) with no DrawingML <a:blip>. 142 live Acts carry
+# 621 such figure paragraphs -- almost all rendered mathematical formulae in
+# 1970s-1980s superannuation Acts (investigation note
+# docs/superpowers/notes/2026-09-07-p3-vml.md).
+#
+# A bare `.//v:imagedata` match is NOT safe: corpus-wide it returns ~5,000
+# DOCX, dominated by 6,988 OLE-object equation previews, 1,794 cover-page
+# Coat-of-Arms crest paragraphs and 246 horizontal-rule PNG dividers. Every
+# guard below is load-bearing -- without the crest guard alone, the cover
+# Coat-of-Arms WMF reclassifies as a figure and injects an empty <p> into
+# <preface> for ~63 Acts.
+_VML_IMAGEDATA = "{urn:schemas-microsoft-com:vml}imagedata"
+_MC_FALLBACK = "{http://schemas.openxmlformats.org/markup-compatibility/2006}Fallback"
+_REL_ID = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
 
-def _has_inline_image(para: Paragraph) -> bool:
-    """Return True if the paragraph contains at least one DrawingML inline image."""
-    return bool(para._element.findall(f".//{qn('a:blip')}"))
+# Observed byte lengths of the Commonwealth Coat of Arms cover WMF/PNG.
+_CREST_BYTES = frozenset({36736, 36536, 32784, 36436, 36336})
+
+# Crest shapes are not one fixed blob: a second, much smaller Coat-of-Arms WMF
+# (7,036 bytes, one hash recurring across 17 live Acts) and several one-off
+# re-renders sit outside _CREST_BYTES entirely. What they share is geometry --
+# every cover crest measured in the live corpus lands in 106-191 pt wide by
+# 79-112 pt tall. A text-free image paragraph in the cover region whose shape
+# falls in this (deliberately wider) box is boilerplate, not a figure. Without
+# this gate the byte-length list alone lets 29 extra Acts through with a crest
+# masquerading as their only figure.
+_CREST_BOX_PT = (55.0, 200.0, 55.0, 140.0)  # w_min, w_max, h_min, h_max
+
+# A VML shape whose smaller dimension is under this is a rule/divider, not a
+# figure (the corpus' 246 horizontal-rule PNGs all sit well under 6 pt).
+_MIN_FIGURE_PT = 8.0
+
+# Paragraph index (0-based) up to which a text-free image paragraph counts as
+# cover-page boilerplate for the whole-document crest-hash pass.
+_CREST_POS_LIMIT = 8
+
+_VML_DIM_RE = re.compile(r"\b(width|height)\s*:\s*(-?[0-9.]+)\s*pt", re.IGNORECASE)
 
 
-def _figure_blobs(para: Paragraph) -> list[tuple[str, bytes]]:
+def _iter_ancestors(el: etree._Element) -> Iterator[etree._Element]:
+    """Yield ``el``'s ancestors, nearest first, up to the document root."""
+    node = el.getparent()
+    while node is not None:
+        yield node
+        node = node.getparent()
+
+
+def _vml_shape_pt(shape_el: etree._Element | None) -> tuple[float | None, float | None]:
+    """Parse ``style="width:..pt;height:..pt"`` into ``(width, height)`` points.
+
+    Returns ``(None, None)`` when the host shape carries no style, or sizes it
+    in a unit other than points (VML also allows px/in/cm) -- an unparsed
+    dimension must never gate a figure out.
+    """
+    if shape_el is None:
+        return (None, None)
+    dims = {
+        key.lower(): float(value)
+        for key, value in _VML_DIM_RE.findall(shape_el.get("style") or "")
+    }
+    return (dims.get("width"), dims.get("height"))
+
+
+def _is_crest_shape(width: float | None, height: float | None) -> bool:
+    """True if a VML shape's declared size is cover-crest geometry."""
+    if width is None or height is None:
+        return False
+    w_min, w_max, h_min, h_max = _CREST_BOX_PT
+    return w_min <= width <= w_max and h_min <= height <= h_max
+
+
+def _vml_figure_parts(
+    para: Paragraph,
+    crest_hashes: frozenset[bytes] = frozenset(),
+    *,
+    cover_region: bool = False,
+) -> list:
+    """Return the resolvable ``<v:imagedata>`` image parts that are real figures.
+
+    A candidate survives only if:
+
+    - its ``r:id`` resolves to an embedded image part;
+    - it has no ``<mc:Fallback>`` ancestor -- in an ``<mc:AlternateContent>``
+      pair the ``<mc:Choice>`` ``<a:blip>`` sibling is the source of truth and
+      the VML twin is inert (all 4 corpus coexistences are this shape);
+    - it has no ``<w:object>`` ancestor -- that is an OLE equation or
+      embedded-document preview, not a document figure;
+    - its host ``<v:shape>``, where it declares one in points, is at least
+      ``_MIN_FIGURE_PT`` on its smaller side -- smaller is a rule/divider;
+    - it is not cover-page Coat-of-Arms boilerplate. Three separate tests,
+      all restricted to text-free paragraphs: a known crest byte length; crest
+      geometry inside the cover region (``cover_region``); or a blob
+      byte-identical to one the cover region already registered
+      (``crest_hashes``), which kills the page-2 and part-divider repeats.
+    """
+    out: list = []
+    w_object = qn("w:object")
+    para_text = "".join(para._element.itertext()).strip()
+    for idt in para._element.findall(f".//{_VML_IMAGEDATA}"):
+        rid = idt.get(_REL_ID)
+        if not rid:
+            continue
+        if any(anc.tag in (_MC_FALLBACK, w_object) for anc in _iter_ancestors(idt)):
+            continue
+        width, height = _vml_shape_pt(idt.getparent())
+        if width is not None and height is not None and min(width, height) < _MIN_FIGURE_PT:
+            continue
+        try:
+            part = para.part.related_parts[rid]
+        except KeyError:
+            continue
+        if not para_text and cover_region and _is_crest_shape(width, height):
+            continue
+        blob = part.blob
+        if not para_text and len(blob) in _CREST_BYTES:
+            continue
+        if crest_hashes and hashlib.sha1(blob).digest() in crest_hashes:
+            continue
+        out.append(part)
+    return out
+
+
+def _crest_blob_hashes(blocks: list) -> frozenset[bytes]:
+    """SHA-1 digests of the cover-region crest blobs in one document.
+
+    A text-free, crest-shaped image paragraph within the first
+    ``_CREST_POS_LIMIT`` + 1 paragraphs is cover boilerplate; any byte-identical
+    repeat later in the document is the same crest recurring (page 2, part
+    dividers) and must not be extracted as a figure. Registration is restricted
+    to crest geometry so that a genuine figure appearing early in a volume can
+    never poison its own later repeats.
+    """
+    seen: set[bytes] = set()
+    pos = 0
+    for block in blocks:
+        if not isinstance(block, Paragraph):
+            continue
+        if pos > _CREST_POS_LIMIT:
+            break
+        pos += 1
+        if "".join(block._element.itertext()).strip():
+            continue
+        for idt in block._element.findall(f".//{_VML_IMAGEDATA}"):
+            rid = idt.get(_REL_ID)
+            if not rid:
+                continue
+            try:
+                part = block.part.related_parts[rid]
+            except KeyError:
+                continue
+            width, height = _vml_shape_pt(idt.getparent())
+            if not (_is_crest_shape(width, height) or len(part.blob) in _CREST_BYTES):
+                continue
+            seen.add(hashlib.sha1(part.blob).digest())
+    return frozenset(seen)
+
+
+def _has_inline_image(
+    para: Paragraph,
+    crest_hashes: frozenset[bytes] = frozenset(),
+    *,
+    cover_region: bool = False,
+) -> bool:
+    """Return True if the paragraph contains at least one inline figure image.
+
+    DrawingML (``<a:blip>``) wins outright; VML is only consulted when there is
+    no blip at all, so an ``<mc:AlternateContent>`` pair is never double-counted.
+    """
+    if para._element.findall(f".//{qn('a:blip')}"):
+        return True
+    return bool(_vml_figure_parts(para, crest_hashes, cover_region=cover_region))
+
+
+def _figure_blobs(
+    para: Paragraph,
+    crest_hashes: frozenset[bytes] = frozenset(),
+    *,
+    cover_region: bool = False,
+) -> list[tuple[str, bytes]]:
     """Return the first embedded image of a FIGURE paragraph as ``[(ext, bytes)]``.
 
     At most one entry: the first ``a:blip`` with a resolvable ``r:embed``
@@ -50,6 +228,12 @@ def _figure_blobs(para: Paragraph) -> list[tuple[str, bytes]]:
             part = para.part.related_parts[rid]
         except KeyError:
             continue
+        ext = Path(str(part.partname)).suffix.lower()
+        return [(ext, part.blob)]
+    # VML fallback: only reached when the paragraph has no usable <a:blip>, so
+    # the VML blob is an *alternative* first blob, never an additional one.
+    # ".wmf" routes through figures.VECTOR_EXTS -> soffice with no extra wiring.
+    for part in _vml_figure_parts(para, crest_hashes, cover_region=cover_region):
         ext = Path(str(part.partname)).suffix.lower()
         return [(ext, part.blob)]
     return []
@@ -82,6 +266,21 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     FIGURE paragraphs (inline image) yield with empty spans.
     All other paragraphs populate spans from paragraph.runs.
 
+    A `<w:p>` that carries BOTH its own text and an inline image is SPLIT: it
+    is classified normally (so a numbered provision keeps its element type and,
+    downstream, its eId) and additionally yields a text-free FIGURE immediately
+    AFTER that provision. Pre-2010 drafting inlines a formula image mid-sentence
+    -- "…ascertained in accordance with the formula [WMF], where A is…" -- so
+    without the split the builder's FIGURE branch, which reads only
+    `image_blobs`, would discard the provision's operative text and eId
+    outright (7 Acts measured; see the Legacy-reclassification finding in
+    docs/superpowers/notes/2026-09-07-p3-vml.md). Emitting the provision first
+    matters: the builder appends `<figure>` to the open stack top, so a
+    figure-first order would nest each figure inside its *predecessor*
+    paragraph. This also fixes the same latent loss on the `a:blip` path, where
+    it fires rarely only because modern Word templates give a figure its own
+    dedicated `<w:p>`.
+
     Acts whose DOCX has no ActHead*-styled paragraph anywhere ("legacy"
     documents, ~550 of 2,944 in the corpus) route through
     classify_legacy_stream instead of parse_paragraph, since legacy Acts
@@ -89,9 +288,29 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     text and bold-run shape instead.
     """
     blocks = list(doc.iter_inner_content())
+    # Cover-page boilerplate is gated two ways: geometry inside the cover
+    # region, and byte-identity with a cover blob anywhere after it.
+    crest_hashes = _crest_blob_hashes(blocks)
+    _cover_ids = {
+        id(b)
+        for b in [b for b in blocks if isinstance(b, Paragraph)][: _CREST_POS_LIMIT + 1]
+    }
 
+    def _in_cover(block: Paragraph) -> bool:
+        return id(block) in _cover_ids
+
+    def _figure_only(block: Paragraph) -> bool:
+        """True for a dedicated image-only paragraph (no text of its own)."""
+        return _has_inline_image(
+            block, crest_hashes, cover_region=_in_cover(block)
+        ) and not block.text.strip()
+
+    # Only text-free image paragraphs are held out of the classification
+    # stream. A mixed text+image paragraph stays in it, exactly as it was
+    # before VML extraction existed, so its style/legacy classification is
+    # unchanged by the matcher.
     para_blocks: list[Paragraph] = [
-        b for b in blocks if isinstance(b, Paragraph) and not _has_inline_image(b)
+        b for b in blocks if isinstance(b, Paragraph) and not _figure_only(b)
     ]
     styles = [b.style.name if b.style else "Default" for b in para_blocks]
     legacy = is_legacy_document(styles)
@@ -125,11 +344,13 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
     para_pos = 0
     for block in blocks:
         if isinstance(block, Paragraph):
-            if _has_inline_image(block):
+            if _figure_only(block):
                 yield ParsedParagraph(
                     ElementType.FIGURE,
                     text=block.text,
-                    image_blobs=_figure_blobs(block),
+                    image_blobs=_figure_blobs(
+                        block, crest_hashes, cover_region=_in_cover(block)
+                    ),
                 )
                 continue
             style = styles[para_pos]
@@ -148,6 +369,18 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
                 else:
                     parsed = replace(parsed, spans=spans)
                 yield parsed
+
+            if _has_inline_image(block, crest_hashes, cover_region=_in_cover(block)):
+                # Mixed text+image <w:p>: the text has just been emitted as its
+                # own provision, so the FIGURE carries no text of its own and
+                # the builder's text-retention guard stays inert (no duplicate).
+                yield ParsedParagraph(
+                    ElementType.FIGURE,
+                    text="",
+                    image_blobs=_figure_blobs(
+                        block, crest_hashes, cover_region=_in_cover(block)
+                    ),
+                )
 
             para_pos += 1
         elif isinstance(block, Table):

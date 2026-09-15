@@ -1581,6 +1581,17 @@ class AknBuilder:
                 img_el = etree.SubElement(fig_el, f"{{{AKN_NS}}}img", src=img_src, alt="")
                 fig_img_els.append(img_el)
                 current_content = None
+                # A FIGURE must never swallow its own paragraph's text. The
+                # reader splits a mixed text+image <w:p> and clears this field,
+                # so in the corpus path p.text is empty here and nothing extra
+                # is emitted. This is the boundary guard for any other producer
+                # of a FIGURE (a hand-built stream, a future reader): emit the
+                # text as a sibling <p> rather than drop an operative provision.
+                # It loses the eId the split would have preserved -- that is the
+                # point of preferring the split.
+                if p.text and p.text.strip():
+                    text_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}p")
+                    _emit_p_inline(text_el, p)
 
         # Materialise figure image blobs once per Act (over every volume's
         # FIGURE paragraphs concatenated in document order) and write the real
