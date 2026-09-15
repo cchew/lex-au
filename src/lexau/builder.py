@@ -181,6 +181,18 @@ _AMENDED_ACT_STYLE = "ActHead 9"
 # Editorial marginal note about an amendment item ("Note: This item fixes a
 # misdescribed amendment."). Never part of the quoted replacement text.
 _MARGIN_NOTE_STYLE = "note(margin)"
+# Item-head styles used INSIDE quoted replacement law (a whole amendment item
+# being re-enacted). Once one appears, `Item`-styled instructions in that run
+# belong to the quoted item, not to the outer schedule item.
+_NESTED_ITEM_HEAD_STYLES = frozenset({"Special ih", "SubitemHead"})
+# Amendment verbs that open a quoted replacement provision. Built from a
+# corpus-wide scan of every `Item`/`Subitem`-styled, colon-terminated paragraph
+# in schedule content -- see `_is_quote_opening_instruction` for why style plus
+# a trailing colon is not a sufficient test on its own.
+_INSTRUCTION_VERB_RE = re.compile(
+    r'^(?:insert|omit|repeal|add|substitute|after|before)\b',
+    re.IGNORECASE,
+)
 # Rendered table-of-contents lines inside schedule content. The schedule's own
 # sections already carry these headings, so the TOC line is pure duplication
 # (P1 note mechanism M3bt).
@@ -250,6 +262,30 @@ def _is_schedule_structural_break(p: ParsedParagraph) -> bool:
     )
 
 
+def _is_quote_opening_instruction(p: ParsedParagraph) -> bool:
+    """True if `p` is an amendment instruction that introduces quoted text.
+
+    Style + trailing colon alone is NOT enough, in either direction, and both
+    failure modes are real (measured over every `Item`/`Subitem`-styled,
+    colon-terminated schedule paragraph in the corpus):
+
+    - *False positive* — `Item`-styled prose inside a transitional or
+      application provision routinely ends in a colon without being an
+      instruction: "In this Part:", "If:", "The repeal of section 5 does not
+      affect:", "eligible financial year means:". Treating those as openers
+      wraps ordinary prose in a spurious `<quotedStructure>`.
+    - *False negative* — a second instruction inside one item ("... substitute:"
+      after an earlier "Omit:") must CLOSE the open quoted run and open its own.
+
+    The leading amendment verb is what separates the two, so it gates both the
+    opening decision and the mid-run termination in `_preprocess_schedule_group`.
+    """
+    if not _is_instruction_paragraph(p):
+        return False
+    text = p.text.rstrip()
+    return text.endswith(":") and bool(_INSTRUCTION_VERB_RE.match(text))
+
+
 def _ends_quoted_run(p: ParsedParagraph) -> bool:
     return _is_schedule_structural_break(p) or p.raw_style == _MARGIN_NOTE_STYLE
 
@@ -304,10 +340,27 @@ def _preprocess_schedule_group(
             if _is_toc_paragraph(q):
                 continue
             item.body.append(q)
-            if not (_is_instruction_paragraph(q) and q.text.rstrip().endswith(":")):
+            if not _is_quote_opening_instruction(q):
                 continue
+            # Scan to the end of the quoted replacement provision. As well as a
+            # structural break, a FRESH amendment instruction closes the run --
+            # one item can carry several ("Omit: <old>" then "substitute: <new>"),
+            # and without this the second instruction and everything after it is
+            # swallowed into the first <quotedStructure> and rendered as quoted
+            # law. Suppressed once the run has opened its own nested
+            # amendment-item context (`Special ih` / `SubitemHead`): from there
+            # on an "Insert:" belongs to the replacement item being quoted, not
+            # to the outer schedule item.
             j = i
-            while j < n and not _ends_quoted_run(paragraphs[j]):
+            nested = False
+            while j < n:
+                q2 = paragraphs[j]
+                if _ends_quoted_run(q2):
+                    break
+                if not nested and _is_quote_opening_instruction(q2):
+                    break
+                if q2.raw_style in _NESTED_ITEM_HEAD_STYLES:
+                    nested = True
                 j += 1
             inner = [x for x in paragraphs[i:j] if not _is_toc_paragraph(x)]
             if inner:
@@ -1460,6 +1513,16 @@ class AknBuilder:
                 p_el = etree.SubElement(current_content, f"{{{AKN_NS}}}p")
                 _emit_p_inline(p_el, p)
 
+            # NOTE / EXAMPLE / PENALTY / LIST_ITEM below are duplicated, on
+            # purpose, by `_build_quoted_content` — the schedule path needs the
+            # same shapes but every eId it mints must stay `schedule-*`-rooted,
+            # so it cannot share this loop without reaching the body eId
+            # generator. The copy has ALREADY DIVERGED: it resets
+            # `current_content` at the end of these three branches, which these
+            # do not (the P1 note's §6 `current_content` non-reset finding, whose
+            # body-path half is still open). Keep the two in sync for any fix of
+            # that class — a change here almost always needs the mirror change in
+            # `_build_quoted_content`, and vice versa.
             elif p.element_type == ElementType.NOTE:
                 _flush_blocklist()
                 parent_elem = stack[-1][2] if stack else body

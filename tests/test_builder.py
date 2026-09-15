@@ -2338,3 +2338,173 @@ def test_b4_leaves_plain_non_amending_schedule_byte_identical(meta):
     xml, _ = build_xml(meta, paragraphs)
     att = xml.find(f".//{{{AKN_NS}}}attachments")
     assert etree.tostring(att, pretty_print=True).decode() == _PLAIN_SCHEDULE_BASELINE
+
+
+# ---------------------------------------------------------------------------
+# Task 6 fix round — quoted-run termination (reviewer Finding 1)
+#
+# `_ends_quoted_run` closed a quoted run on a structural break or a margin note
+# but not on a FRESH amendment instruction, so a second instruction inside one
+# item was swallowed into the first <quotedStructure> and rendered as quoted
+# law. The inverse also held: any `Item`-styled colon-terminated line could open
+# a <quotedStructure> around ordinary transitional prose.
+#
+# Shapes below come from the real DOCX paragraph streams of the Acts named in
+# the review, read via docx_reader against corpus/docx.
+# ---------------------------------------------------------------------------
+
+
+def test_two_instructions_in_one_item_open_separate_quoted_structures(meta):
+    # parliamentary-business-resources-(consequential-and-transitional-provisions)-act-2017
+    # schedule 1 item 1, and the same shape in NDIS (worker-screening-database)
+    # 2019 schedule 1 item 1: one ItemHead, an "Omit:" block of old text, then a
+    # bare "substitute:" introducing the replacement block.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Parliamentary Business Resources Act 2017", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  Section\xa03", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Omit:", raw_style="Item"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="audits relating to work expenses.", raw_style="SO Para"),
+        ParsedParagraph(ElementType.BODY, text="substitute:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="•\tThe Authority has functions relating to:", raw_style="SO Bullet"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="the work resources and travel resources.", raw_style="SO Para"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    items = xml.findall(".//akn:hcontainer[@name='item']", ns)
+    assert len(items) == 1, f"expected 1 item, got {len(items)}"
+    item = items[0]
+
+    qs = item.findall("akn:quotedStructure", ns)
+    assert len(qs) == 2, f"expected 2 <quotedStructure> in the item, got {len(qs)}"
+    assert qs[0].get("eId").endswith("__qstr-1")
+    assert qs[1].get("eId").endswith("__qstr-2")
+
+    # The instruction lines are the item's own prose, never quoted law.
+    for q in qs:
+        quoted_text = " ".join(" ".join(q.itertext()).split())
+        assert "substitute:" not in quoted_text, f"instruction swallowed into quoted law: {quoted_text!r}"
+        assert "Omit:" not in quoted_text
+    item_prose = [
+        " ".join((p.text or "").split())
+        for p in item.findall("akn:content/akn:p", ns)
+    ]
+    assert "Omit:" in item_prose
+    assert "substitute:" in item_prose
+
+    # Old text in the first quoted structure, replacement in the second.
+    assert "audits relating to work expenses." in "".join(qs[0].itertext())
+    assert "The Authority has functions relating to:" in "".join(qs[1].itertext())
+    assert "the work resources and travel resources." in "".join(qs[1].itertext())
+
+    # Word-for-word: nothing lost.
+    text = " ".join(" ".join(xml.itertext()).split())
+    for fragment in (
+        "Omit:", "substitute:",
+        "audits relating to work expenses.",
+        "The Authority has functions relating to:",
+        "the work resources and travel resources.",
+    ):
+        assert fragment in text
+
+
+def test_colon_prose_inside_quoted_law_does_not_truncate_the_run(meta):
+    # broadcasting-legislation-amendment-(broadcasting-reform)-act-2017: an
+    # inserted transitional provision whose own definition intros are Item-styled
+    # and end in a colon ("eligible financial year means:", "where:"). These are
+    # quoted law, NOT fresh instructions -- the run must run past them.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1  In the appropriate position", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.SECTION, number="14", heading="Rebate", raw_style="ActHead 5"),
+        ParsedParagraph(ElementType.BODY, text="eligible financial year means:", raw_style="Item"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="the 2013-2014 financial year; or", raw_style="paragraph"),
+        ParsedParagraph(ElementType.BODY, text="where:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="days in non-licence period means the number of days in the period:", raw_style="Item"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="beginning on the designated day.", raw_style="paragraph"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    qs = xml.findall(".//akn:quotedStructure", ns)
+    assert len(qs) == 1, f"genuine quoted span was split into {len(qs)} -- expected 1"
+
+    quoted = " ".join(" ".join(qs[0].itertext()).split())
+    for fragment in (
+        "Rebate",
+        "eligible financial year means:",
+        "the 2013-2014 financial year; or",
+        "where:",
+        "days in non-licence period means the number of days in the period:",
+        "beginning on the designated day.",
+    ):
+        assert fragment in quoted, f"{fragment!r} fell out of the quoted structure"
+
+
+def test_item_styled_transitional_prose_does_not_open_a_quoted_structure(meta):
+    # The inverse false positive: `Item`-styled application/transitional prose
+    # that ends in a colon ("The repeal of ... does not affect:", "In this Part:")
+    # is not an amendment instruction and must not wrap the following prose in a
+    # <quotedStructure>.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Transitional", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="5  Saving provision", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="The repeal of section\xa010 by this Schedule does not affect:", raw_style="Item"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="a determination in force immediately before the repeal; or", raw_style="paragraph"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="anything done under such a determination.", raw_style="paragraph"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    assert xml.findall(".//akn:quotedStructure", ns) == [], (
+        "transitional prose ending in a colon must not open a <quotedStructure>"
+    )
+    item = xml.find(".//akn:hcontainer[@name='item']", ns)
+    assert item is not None
+    text = " ".join(" ".join(item.itertext()).split())
+    for fragment in (
+        "The repeal of section\xa010 by this Schedule does not affect:".replace("\xa0", " "),
+        "a determination in force immediately before the repeal; or",
+        "anything done under such a determination.",
+    ):
+        assert fragment in text
+
+
+def test_nested_amendment_item_keeps_its_own_instructions_quoted(meta):
+    # statute-law-revision genre: an item repeals an amending Act's item and
+    # substitutes a replacement, whose own `Special ih` sub-items carry their own
+    # `Item` instructions. Those are quoted law -- an "Insert:" after a
+    # `Special ih` must NOT close the outer quoted run.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Amendment of amending Acts", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="4  Item\xa0213 of Schedule\xa02", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Repeal the item, substitute:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="213  Subsection\xa045(1A)", raw_style="Special ih"),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="authorised officer means an officer of Customs.", raw_style="Definition"),
+        ParsedParagraph(ElementType.BODY, text="213A  Paragraph\xa045(1A)(a)", raw_style="Special ih"),
+        ParsedParagraph(ElementType.BODY, text="Omit “Director”, substitute “authority”.", raw_style="Item"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    qs = xml.findall(".//akn:quotedStructure", ns)
+    assert len(qs) == 1, f"nested replacement item was split into {len(qs)} quoted structures"
+    quoted = " ".join(" ".join(qs[0].itertext()).split())
+    for fragment in (
+        "213 Subsection 45(1A)",
+        "Insert:",
+        "authorised officer means an officer of Customs.",
+        "213A Paragraph 45(1A)(a)",
+        "Omit “Director”, substitute “authority”.",
+    ):
+        assert fragment in quoted, f"{fragment!r} fell out of the nested quoted item"
