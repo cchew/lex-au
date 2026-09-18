@@ -214,7 +214,7 @@ _LEGACY_NUMBERED_RE = re.compile(r'^(\d+[A-Z]*)\.[ \t]+(.+)$', re.DOTALL)
 # boldness, which this class of Act does not consistently carry. Heading
 # text must start uppercase to avoid matching an arbitrary sentence that
 # happens to open with a digit.
-_LEGACY_BOLD_HEADING_RE = re.compile(r'^(\d+[A-Z]*)[ \t]+([A-Z].*)$', re.DOTALL)
+_LEGACY_SHAPE4_HEADING_RE = re.compile(r'^(\d+[A-Z]*)[ \t]+([A-Z].*)$', re.DOTALL)
 
 # Leading integer of a legacy section number ("26WA" -> 26), used only for
 # the sequential-continuity check below — never for eId/heading generation.
@@ -272,15 +272,18 @@ _LEGACY_SCHEDULE_HEADING_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGN
 # assistance's ItemHead-styled "4  Paragraph 1185B(2)(b)") then coincide
 # with this Act's own next-expected number and get misclassified as
 # top-level sections, the exact same failure shape as "4D" above. This
-# Act's own SECTION heading reading "Schedule(s)" (there is no ambiguity
-# here about *whose* heading it is -- it was itself only just accepted as
-# a genuine section by one of the two candidacy paths below) is a reliable,
-# earlier trigger: in every Act this task and its regression scan touched,
-# "<n> Schedule(s)" is the Act's own final top-level section before its
-# Schedules begin, so nothing of this Act's own is lost by stopping there,
-# regardless of whether the literal "Schedule N—Heading" line downstream
-# happens to be bold.
-_LEGACY_SCHEDULES_SECTION_RE = re.compile(r'^Schedule\(s?\)?$', re.IGNORECASE)
+# Act's own SECTION heading reading "Schedule(s)"/"Schedules"/"Schedule"
+# (there is no ambiguity here about *whose* heading it is -- it was itself
+# only just accepted as a genuine section by one of the two candidacy
+# paths below) is a reliable, earlier trigger: in every Act this task and
+# its regression scan touched, this heading announces the Act's own final
+# top-level section before its Schedules begin, so nothing of this Act's
+# own is lost by stopping there, regardless of whether the literal
+# "Schedule N—Heading" line downstream happens to be bold. Matches the
+# bare plural "Schedules" too (national-food-authority-amendment-
+# act-1995's own section 3 heading; the original "Schedule\(s?\)\?"
+# pattern required a literal "(" and missed it).
+_LEGACY_SCHEDULES_SECTION_RE = re.compile(r'^Schedules?(\(s\))?$', re.IGNORECASE)
 
 # Third, independent trigger for the same schedule gate, and the most
 # reliable of the three: the STANDARD BOILERPLATE sentence this Act's own
@@ -310,15 +313,14 @@ _LEGACY_SCHEDULE_BOILERPLATE_RE = re.compile(
 # item is an imperative editing instruction ("Omit \"the\", substitute
 # \"a\".", "Add at the end \"...\"."). Corpus evidence: this is what every
 # remaining false positive the three schedule triggers above miss (Acts
-# whose own Schedule-announcing section is titled "Amendments"/"Schedules"
-# rather than "Schedule(s)", e.g. national-food-authority-amendment-
-# act-1995, commonwealth-electoral-amendment-act-1995,
-# life-insurance-(consequential-amendments-and-repeals)-act-1995) actually
-# looks like, independent of which Act or which schedule-heading phrasing
-# produced it -- so this is a second, independent line of defence, not a
-# duplicate of the three triggers above.
+# whose own Schedule-announcing section is titled something none of them
+# recognise at all, e.g. "Amendments" -- commonwealth-electoral-amendment-
+# act-1995, life-insurance-(consequential-amendments-and-repeals)-
+# act-1995) actually looks like, independent of which Act or which
+# schedule-heading phrasing produced it -- so this is a second, independent
+# line of defence, not a duplicate of the three triggers above.
 _LEGACY_AMENDMENT_INSTRUCTION_RE = re.compile(
-    r'^(Omit|Insert|Repeal|Substitute|Add|Renumber)\b', re.IGNORECASE
+    r'^(Omit|Insert|Repeal|Substitute|Add|Renumber|Before|After)\b', re.IGNORECASE
 )
 
 # Hard backstop, independent of all three schedule triggers above: none of
@@ -327,13 +329,13 @@ _LEGACY_AMENDMENT_INSTRUCTION_RE = re.compile(
 # Act sampled by the regression scan with a genuine, cleanly-detected
 # Schedule boundary: well under 10). A corpus-wide regression scan of this
 # fix surfaced several much older (pre-1990s) or differently-drafted Acts
-# (e.g. quarantine-amendment-act-1985, national-food-authority-amendment-
-# act-1995, commonwealth-electoral-amendment-act-1995) whose Schedule
-# section is phrased in ways none of the three triggers above recognise
-# (heading text "Schedules"/"Amendments"/no announcing section at all) --
-# for those, the sequential-number fallback can run on into genuine
-# Schedule-item content and misclassify it, exactly the family of bug the
-# three triggers above exist to prevent. This cap bounds the worst case:
+# (e.g. quarantine-amendment-act-1985, commonwealth-electoral-amendment-
+# act-1995) whose Schedule section is phrased in ways none of the three
+# triggers above recognise (heading text "Amendments"/"Scope of
+# quarantine"/no announcing section at all) -- for those, the
+# sequential-number fallback can run on into genuine Schedule-item content
+# and misclassify it, exactly the family of bug the three triggers above
+# exist to prevent. This cap bounds the worst case:
 # once the running count would exceed it, both new candidacy paths stop
 # firing outright, for the rest of the stream, regardless of the schedule
 # gate's state. It costs nothing for this task's 8 target files (all well
@@ -411,9 +413,34 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
     formula" as a precondition, so `test_classify_legacy_stream_shape1_
     heading_plus_numbered_body` and the other existing shape-1 fixtures
     (whose streams start right after their own formula, with no TOC) are
-    unaffected. The ORIGINAL bold-donor shape-1 path is intentionally left
-    ungated — it is unchanged, already-proven-safe behaviour and gating it
-    retroactively is not this fix's job.
+    unaffected. The bold-donor path's OWN firing condition
+    (`if all_bold or sequential:`) is intentionally left ungated by
+    `candidacy_open` — gating it retroactively (formula/schedule/cap) is
+    not this fix's job, and every existing bold-donor fixture still passes
+    unchanged.
+
+    `donor_is_operative` itself, however, is NOT bold-donor-unchanged: it
+    now also excludes `_LEGACY_NUMBERED_RE` / `_SUBSEC_RE` /
+    `_LEGACY_SHAPE4_HEADING_RE` matches on the donor — checks that previously
+    ran for non-bold donors only are now also applied when `all_bold` is
+    True (the exclusion list is shared code, not duplicated per branch).
+    This is a real, deliberate behaviour change on the bold-donor path,
+    not a side effect: pre-fix, a fully-bold "1. This Act may be
+    cited..." donor immediately followed by another numbered paragraph
+    ("2.\ttext") would have been swallowed as THAT paragraph's heading
+    donor — discarding section 1's own text into a nonsensical heading for
+    section 2 (see `test_classify_legacy_stream_bold_donor_matching_
+    numbered_shape_not_swallowed`). The change can only ever REMOVE a
+    donor candidacy, never grant one it didn't already have, so it cannot
+    be the source of the corpus-wide fabricated-section false positives
+    documented in this task's report — those are all produced by the two
+    NEW paths (shape 4, non-bold shape-1) reaching Schedule-item content,
+    not by this exclusion widening. A dedicated, full-corpus scan (per-item
+    diff of the exact `(number, heading)` set produced by each Act's
+    legacy paragraph stream, base commit vs this fix — not just a net
+    count) confirmed no previously-classified section is lost anywhere in
+    the corpus as a result of this widening; see this task's report for
+    the scan command and result.
 
     Schedule gate on the same two new paths (three independent triggers --
     see _LEGACY_SCHEDULE_HEADING_RE, _LEGACY_SCHEDULES_SECTION_RE and
@@ -439,10 +466,23 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
             i += 1
             continue
 
-        # Snapshot BEFORE updating: the formula/schedule paragraph itself
-        # must never be usable as a shape-4 candidate or shape-1 donor in
-        # this same iteration (it is front matter / a schedule marker, not
-        # a heading donor for this Act's own top-level sections).
+        # Snapshot BEFORE updating. For the formula: the enacting-formula
+        # paragraph itself must never be usable as a shape-1 donor in this
+        # same iteration -- without the snapshot, a "the very next paragraph
+        # is 1.\ttext" Act would have the formula's own text (which passes
+        # every donor exclusion check; it is not a marginal note) wrongly
+        # consumed as section 1's heading.
+        #
+        # For the schedule triggers the snapshot has the OPPOSITE effect:
+        # it leaves candidacy OPEN on the very paragraph that flips
+        # `past_schedule_heading` to True, not closed. This is deliberately
+        # left as-is rather than "fixed" to close-on-the-same-paragraph: no
+        # Schedule-heading-matching text ever also matches a candidate
+        # shape in this corpus (a "Schedule N—Heading" line does not start
+        # with a digit; the boilerplate sentence is ordinary prose), so the
+        # exploitable window is empty in practice, and it is covered
+        # regardless by the sequential-number and amendment-instruction
+        # guards below if it were ever reached.
         formula_seen_before_this_para = past_enacting_formula
         schedule_seen_before_this_para = past_schedule_heading
         if _LEGACY_ENACTED_RE.search(stripped):
@@ -459,12 +499,14 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
         )
 
         if candidacy_open:
-            m4 = _LEGACY_BOLD_HEADING_RE.match(stripped)
-            if (
-                m4
-                and not _LEGACY_HEADING_RE.match(stripped)
-                and not _LEGACY_FUSED_RE.match(stripped)
-            ):
+            # No _LEGACY_HEADING_RE / _LEGACY_FUSED_RE exclusion needed here
+            # (unlike the shape-1 donor check below): _LEGACY_SHAPE4_HEADING_RE
+            # requires a digit-leading string, HEADING_RE requires one of
+            # Chapter/Part/Division/Subdivision, and FUSED_RE requires a
+            # period immediately after the number -- none of the three can
+            # match the same string m4 just matched.
+            m4 = _LEGACY_SHAPE4_HEADING_RE.match(stripped)
+            if m4:
                 candidate_num = _leading_int(m4.group(1))
                 heading = m4.group(2).strip()
                 if (
@@ -489,7 +531,7 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                 or _LEGACY_FUSED_RE.match(stripped)
                 or _LEGACY_NUMBERED_RE.match(stripped)
                 or _SUBSEC_RE.match(stripped)
-                or _LEGACY_BOLD_HEADING_RE.match(stripped)
+                or _LEGACY_SHAPE4_HEADING_RE.match(stripped)
             )
             if m and not donor_is_operative and not _LEGACY_FUSED_RE.match(next_stripped):
                 candidate_num = _leading_int(m.group(1))

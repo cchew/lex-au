@@ -495,7 +495,11 @@ def test_constitution_alteration_state_debts_1909_family_f_fixture():
     preface = root.find(".//akn:preface", ns)
     assert body is not None
     structural_children = body.findall("akn:hcontainer", ns) + body.findall("akn:section", ns)
-    assert len(structural_children) >= 1
+    # Exactly 2 (Short title, Alteration of s. 105) -- an exact count also
+    # catches over-classification (e.g. Schedule/TOC content spuriously
+    # promoted to SECTION), not just the empty-body regression this fixture
+    # was written for.
+    assert len(structural_children) == 2
 
     preface_text = " ".join(preface.itertext()) if preface is not None else ""
     assert "This Act may be cited as Constitution Alteration" not in preface_text

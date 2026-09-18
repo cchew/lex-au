@@ -382,6 +382,148 @@ def test_classify_legacy_stream_uppercase_part_heading_not_consumed_as_shape1():
     assert results[0][0].number == "1"
 
 
+def test_classify_legacy_stream_shape4_fused_heading_non_bold():
+    # Shape 4 (fused "<n> Heading", no period): matches regardless of
+    # boldness, gated on the enacting-formula + sequential-number check
+    # instead -- mirrors education-and-training-legislation-amendment-
+    # act-1996's own "1 Short title", which is plain unbolded text (unlike
+    # its bold siblings "2 Commencement" / "3 Schedule(s)").
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", False, ""),
+        ("This Act may be cited as the Test Act 1996.", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[1][0].element_type == ElementType.SECTION
+    assert results[1][0].number == "1"
+    assert results[1][0].heading == "Short title"
+    assert results[3][0].element_type == ElementType.SECTION
+    assert results[3][0].number == "2"
+
+
+def test_classify_legacy_stream_rejects_toc_preview_before_enacting_formula():
+    # Reproduces australian-trade-commission-(transitional-provisions-and-
+    # consequential-amendments)-act-1985's Table of Provisions: a TOC entry
+    # can look exactly like a genuine shape-1 donor+candidate pair -- a
+    # short, non-operative-looking donor immediately followed by a
+    # "1.\ttext"-shaped candidate -- and, being the TOC's first listed
+    # section, trivially satisfies the sequential check too. It appears
+    # BEFORE the Act's enacting formula, where nothing is ever real
+    # operative text; the REAL "Short title." / "1.\ttext" pair appears
+    # again, correctly, after the formula.
+    stream = [
+        ("Section", False, ""),
+        ("1.\tShort title", False, ""),
+        ("The Parliament of Australia enacts:", False, ""),
+        ("Short title", False, ""),
+        ("1. This Act may be cited as the Test Act 1985.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY  # TOC "Section" not consumed
+    assert results[1][0].element_type == ElementType.BODY  # TOC entry not promoted to SECTION
+    assert results[3] == []  # real donor consumed
+    assert results[4][0].element_type == ElementType.SECTION
+    assert results[4][0].number == "1"
+    assert results[4][0].heading == "Short title"
+
+
+def test_classify_legacy_stream_rejects_quoted_section_from_target_act():
+    # Reproduces veterans'-affairs-legislation-amendment-act-(no.-1)-1996:
+    # a Schedule item can itself be a bold "<n> Heading"-shaped line
+    # QUOTING a section being inserted into the *target* Act being amended
+    # ("3 After section 4C" / "Insert:" / "4D Exclusion..." -- "4D" belongs
+    # to the target Act, not this one). Once this Act's own Schedule
+    # boundary is detected ("3 Schedule(s)" plus its boilerplate body
+    # text), neither new candidacy path may fire again, so the
+    # coincidentally-sequential "4D" (continuing from this Act's own last
+    # real section, "3") is correctly rejected.
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Amendment Act 1996.", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+        ("3 Schedule(s)", True, ""),
+        (
+            "Each Act that is specified in a Schedule to this Act is amended "
+            "or repealed as set out in the applicable items in the Schedule "
+            "concerned.",
+            False,
+            "",
+        ),
+        ("Schedule 1—Amendment of the Test Principal Act 1990", True, ""),
+        ("3 After section 4C", True, ""),
+        ("Insert:", False, ""),
+        ("4D Exclusion of test provisions", True, ""),
+        ("(1) This is the inserted section's own text.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    numbers = [r.number for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers == ["1", "2", "3"]
+    assert "4D" not in numbers
+
+
+def test_classify_legacy_stream_rejects_amendment_instruction_heading():
+    # A "<n> Heading"-shaped line whose heading text is itself an
+    # amendment instruction (Omit/Insert/Repeal/Substitute/Add/Renumber)
+    # is never a genuine section heading, even when sequential and past
+    # the enacting formula -- catches Schedule items in Acts whose own
+    # Schedule-announcing section is titled something none of the other
+    # Schedule-boundary triggers recognise (e.g. "Amendments").
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1995.", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+        ('3 Omit "the", substitute "a".', True, ""),
+        ("Some schedule item body text.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    numbers = [r.number for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers == ["1", "2"]
+
+
+def test_classify_legacy_stream_fallback_capped_at_max_section():
+    # Hard numeric backstop: a pathological stream with no recognisable
+    # Schedule boundary but a sequential-looking "<n> Heading" run well
+    # beyond anything a real Act in this corpus needs before its Schedules
+    # begin must still stop -- both new candidacy paths shut off once
+    # last_section_num reaches the cap, regardless of the schedule gate's
+    # state.
+    stream = [("The Parliament of Australia enacts:", False, "")]
+    for n in range(1, 20):
+        stream.append((f"{n} Heading {n}", True, ""))
+        stream.append((f"Body text for section {n}.", False, ""))
+    results = classify_legacy_stream(stream)
+    numbers = [int(r.number) for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers  # the cap doesn't suppress everything
+    assert max(numbers) <= 12  # _LEGACY_FALLBACK_MAX_SECTION
+    assert len(numbers) <= 12
+
+
+def test_classify_legacy_stream_bold_donor_matching_numbered_shape_not_swallowed():
+    # A bold "N.\ttext" line -- itself a genuine numbered candidate, not a
+    # marginal-note donor -- must not be silently consumed as ANOTHER
+    # section's heading merely because the whole line happens to be bold.
+    # Pre-Task-12, the bold-donor path only excluded _LEGACY_HEADING_RE /
+    # _LEGACY_FUSED_RE matches on the donor; a fully-bold "1. This Act may
+    # be cited..." line would have been wrongly swallowed as the heading
+    # donor for section 2's "2.\ttext" candidate, discarding section 1's
+    # own text into a nonsensical heading for section 2. donor_is_operative
+    # now also excludes _LEGACY_NUMBERED_RE matches on the donor,
+    # regardless of boldness, so this text is correctly left alone instead
+    # of vanishing into section 2's heading.
+    stream = [
+        ("1. This Act may be cited as the Test Act 1999.", True, ""),
+        ("2.\tCommencement provisions apply.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[1][0].heading != "1. This Act may be cited as the Test Act 1999."
+
+
 def test_legacy_style_heading5_short_title():
     # Shape 3: style-driven section heading. Confirmed against
     # agricultural-and-veterinary-chemical-products-levy-imposition-
