@@ -458,6 +458,54 @@ def test_loan_war_service_land_settlement_1970_shape3_fixture():
     assert sections[3].heading == "Application of moneys"
 
 
+def test_constitution_alteration_state_debts_1909_family_f_fixture():
+    # Family F (XSD baseline, docs/superpowers/2026-09-07-xsd-baseline.md):
+    # 8 corpus files -- this is the smallest -- whose marginal-note headings
+    # are NOT bolded, unlike loan-act-(no.-2)-1976's identically-shaped
+    # ("Short title." / "1.\ttext") but *bolded* donor. Before the fix,
+    # neither of this Act's two sections was ever classified as SECTION, so
+    # _split_stream's preface_end search found no structural element and the
+    # entire Act -- including both operative sections -- fell into
+    # <preface>, leaving <body/> completely empty (SCHEMAV_ELEMENT_CONTENT
+    # body | missing-child:hcontainer).
+    from datetime import date
+
+    from lxml import etree
+
+    from lexau.builder import AknBuilder
+    from lexau.models import ActMetadata
+
+    doc = Document(str(CORPUS_DOCX / "constitution-alteration-(state-debts)-1909-vol0.docx"))
+    meta = ActMetadata(
+        name="Constitution Alteration (State Debts) 1909",
+        title_id="C1909A00003",
+        comp_id="C1909Q00001",
+        comp_num="1",
+        year=1909,
+        number=3,
+        effective_date=date(1910, 8, 6),
+    )
+    b = AknBuilder(meta)
+    for p in iter_paragraphs(doc):
+        b.add(p)
+    root, _report = b.build()
+
+    ns = {"akn": "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"}
+    body = root.find(".//akn:body", ns)
+    preface = root.find(".//akn:preface", ns)
+    assert body is not None
+    structural_children = body.findall("akn:hcontainer", ns) + body.findall("akn:section", ns)
+    assert len(structural_children) >= 1
+
+    preface_text = " ".join(preface.itertext()) if preface is not None else ""
+    assert "This Act may be cited as Constitution Alteration" not in preface_text
+    assert "Section one hundred and five of the Constitution is altered" not in preface_text
+
+    body_text = " ".join(body.itertext())
+    assert "This Act may be cited as Constitution Alteration" in body_text
+    assert "Section one hundred and five of the Constitution is altered" in body_text
+
+
 FIGURES_DOCX = Path(__file__).parent / "fixtures" / "figures"
 
 

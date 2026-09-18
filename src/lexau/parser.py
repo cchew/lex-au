@@ -194,14 +194,164 @@ def parse_paragraph_legacy(text: str, style: str = "") -> list[ParsedParagraph]:
 # extra SECTION before this fix — confirmed against the Task 5 fixture).
 _LEGACY_NUMBERED_RE = re.compile(r'^(\d+[A-Z]*)\.[ \t]+(.+)$', re.DOTALL)
 
+# Legacy shape 4: number + heading FUSED on one line, e.g. "1 Short title"
+# (single space, no period — unlike shape 1's "1.\tThis Act...", and unlike
+# _SECTION_RE's 2+-whitespace "4  Short title" which only fires behind an
+# ActHead style gate that legacy documents never carry). Confirmed against
+# five 1996 omnibus amendment Acts (Task 12, family-F XSD triage) whose
+# section headings are typeset as one "<n> Heading" paragraph followed by a
+# separate body-text paragraph with no number of its own — e.g. vocational-
+# education-and-training-funding-laws-amendment-act-1996's "1 Short title"
+# / "2 Commencement" / "3 Schedule(s)" (fully bold in that Act). The NAME
+# is legacy: despite the original design assuming this shape is always
+# bold, education-and-training-legislation-amendment-act-1996's OWN "1
+# Short title" is plain, unbolded text (only its sibling "2 Commencement"
+# and "3 Schedule(s)" are bold) — confirmed by re-inspecting all 8 target
+# DOCX files directly rather than extrapolating from a few. Matching in
+# classify_legacy_stream is therefore gated on `candidacy_open` (past the
+# enacting formula, not past a Schedule heading) plus the sequential-number
+# check, exactly like shape 1's non-bold donor fallback below — NOT on
+# boldness, which this class of Act does not consistently carry. Heading
+# text must start uppercase to avoid matching an arbitrary sentence that
+# happens to open with a digit.
+_LEGACY_BOLD_HEADING_RE = re.compile(r'^(\d+[A-Z]*)[ \t]+([A-Z].*)$', re.DOTALL)
+
+# Leading integer of a legacy section number ("26WA" -> 26), used only for
+# the sequential-continuity check below — never for eId/heading generation.
+_LEGACY_NUMBER_INT_RE = re.compile(r'^(\d+)')
+
+# Enacting-formula detector for the sequential-number gate below. Broader
+# than builder.py's own _ENACTING_RE/_WHEREAS_RE (which are scoped to that
+# module's <formula>/<preamble> tagging and only match the exact modern
+# "...enacts:" phrasing) -- this one also has to catch the old-style "BE it
+# enacted by the King's/Queen's Most Excellent Majesty ... as follows :—"
+# formula used by the pre-1960s Acts this task fixes, which _ENACTING_RE
+# does not match (no bare "enacts:"). `search`, not `match`: the formula
+# text is never the start of the paragraph in either shape.
+_LEGACY_ENACTED_RE = re.compile(r'\benact\w*\b.*:', re.IGNORECASE | re.DOTALL)
+
+# Schedule-heading detector for the sequential-number gate below -- a local
+# copy of builder.py's own _SCHEDULE_RE (not imported, to avoid a
+# parser<->builder circular dependency; builder.py already imports FROM
+# parser.py). Real corpus finding (veterans'-affairs-legislation-amendment-
+# act-(no.-1)-1996, surfaced by a corpus-wide regression scan of this fix):
+# a Schedule item can itself be a fully-bold "<n> Heading"-shaped line
+# QUOTING a section being inserted into the *target* Act being amended --
+# e.g. Schedule item "3 After section 4C" / "Insert:" / "4D Exclusion of
+# Consumer Credit Codes..." -- where "4D" is the *target* Act's new section
+# number, not a section of *this* amending Act at all. Schedule item
+# numbering restarts at 1 within each Schedule (confirmed elsewhere in this
+# corpus, e.g. customs-and-excise-legislation-amendment-act-(no.-1)-1996's
+# own "2 Subsection 2(3)" schedule item, which the sequential check already
+# rejects because it doesn't continue the Act's own count) -- but nothing
+# stops an inserted-section number from coincidentally continuing where
+# this Act's own last real section left off, exactly as "4D" did here.
+# Legacy documents never carry an ActHead style, so builder.py's own
+# _is_schedule_heading() (style-gated) never fires for them and schedule
+# content is never split out of the body stream at all -- closing that gap
+# is a separate, larger task (flagged in this task's report). The narrower,
+# safe fix here: once a genuine (fully-bold, to exclude a stray body-prose
+# cross-reference like "Schedule 1 to this Act specifies...") Schedule
+# heading is seen, BOTH new candidacy paths below stop firing for the rest
+# of the stream -- past that point, every "<n> Heading"-shaped line belongs
+# to Schedule-item numbering, not this Act's own top-level sections, and
+# the sequential check has no reliable way to tell the two apart.
+_LEGACY_SCHEDULE_HEADING_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGNORECASE)
+
+# Second, independent trigger for the same schedule gate: this Act's own
+# "<n> Schedule(s)" section (the standard modern-template section 3 that
+# announces "each Act specified in a Schedule to this Act is amended...").
+# Corpus evidence (2 more real false positives caught by the corpus-wide
+# regression scan after the bold-gated _LEGACY_SCHEDULE_HEADING_RE fix
+# above): parliamentary-contributory-superannuation-amendment-act-1996's
+# real "Schedule 1—..." heading and retirement-assistance-for-farmers-
+# scheme-extension-act-2000's "Schedule\xa01—Social Security Act 1991" are
+# BOTH plain, unbolded text (unlike veterans'-affairs-1996's bolded one),
+# so _LEGACY_SCHEDULE_HEADING_RE's bold gate misses them -- their Schedule
+# item numbers (parliamentary's "4 Subsection 18(10B)", retirement-
+# assistance's ItemHead-styled "4  Paragraph 1185B(2)(b)") then coincide
+# with this Act's own next-expected number and get misclassified as
+# top-level sections, the exact same failure shape as "4D" above. This
+# Act's own SECTION heading reading "Schedule(s)" (there is no ambiguity
+# here about *whose* heading it is -- it was itself only just accepted as
+# a genuine section by one of the two candidacy paths below) is a reliable,
+# earlier trigger: in every Act this task and its regression scan touched,
+# "<n> Schedule(s)" is the Act's own final top-level section before its
+# Schedules begin, so nothing of this Act's own is lost by stopping there,
+# regardless of whether the literal "Schedule N—Heading" line downstream
+# happens to be bold.
+_LEGACY_SCHEDULES_SECTION_RE = re.compile(r'^Schedule\(s?\)?$', re.IGNORECASE)
+
+# Third, independent trigger for the same schedule gate, and the most
+# reliable of the three: the STANDARD BOILERPLATE sentence this Act's own
+# "<n> Schedule(s)" section body carries ("each Act that is specified in a
+# Schedule to this Act is amended or repealed as set out in the applicable
+# items..."), confirmed byte-for-byte or near-identical across every 1990s+
+# omnibus amendment Act this task's corpus-wide regression scan touched
+# (customs-and-excise-1996, vocational-education-1996, retirement-
+# assistance-2000, parliamentary-contributory-superannuation-1996, ...).
+# Unlike the heading-text trigger above, this does not depend on the
+# section's own heading wording at all ("Schedule(s)" vs "Schedules" vs
+# something else entirely) -- it is drafting boilerplate, present verbatim
+# regardless of formatting quirks in any one Act, which is why it is
+# searched for on EVERY paragraph (not just section headings) below.
+_LEGACY_SCHEDULE_BOILERPLATE_RE = re.compile(
+    r'specified in a Schedule to this Act is amended or repealed', re.IGNORECASE
+)
+
+# Fourth guard, orthogonal to the three schedule triggers above (it applies
+# regardless of whether a schedule boundary was ever detected): reject a
+# shape-4 candidate whose heading text is itself an amendment INSTRUCTION,
+# using the small, closed vocabulary of drafting verbs Australian Schedule
+# items are built from (OPC drafting convention: Omit/Insert/Repeal/
+# Substitute/Add/Before/After, each followed by a quoted or referenced
+# fragment). A genuine section heading is a noun phrase describing what the
+# section does ("Short title", "Closure of accounts and fund"); a Schedule
+# item is an imperative editing instruction ("Omit \"the\", substitute
+# \"a\".", "Add at the end \"...\"."). Corpus evidence: this is what every
+# remaining false positive the three schedule triggers above miss (Acts
+# whose own Schedule-announcing section is titled "Amendments"/"Schedules"
+# rather than "Schedule(s)", e.g. national-food-authority-amendment-
+# act-1995, commonwealth-electoral-amendment-act-1995,
+# life-insurance-(consequential-amendments-and-repeals)-act-1995) actually
+# looks like, independent of which Act or which schedule-heading phrasing
+# produced it -- so this is a second, independent line of defence, not a
+# duplicate of the three triggers above.
+_LEGACY_AMENDMENT_INSTRUCTION_RE = re.compile(
+    r'^(Omit|Insert|Repeal|Substitute|Add|Renumber)\b', re.IGNORECASE
+)
+
+# Hard backstop, independent of all three schedule triggers above: none of
+# this corpus's Acts have more than a handful of real top-level sections
+# before their Schedules begin (this task's 8 target files: 2-4; every
+# Act sampled by the regression scan with a genuine, cleanly-detected
+# Schedule boundary: well under 10). A corpus-wide regression scan of this
+# fix surfaced several much older (pre-1990s) or differently-drafted Acts
+# (e.g. quarantine-amendment-act-1985, national-food-authority-amendment-
+# act-1995, commonwealth-electoral-amendment-act-1995) whose Schedule
+# section is phrased in ways none of the three triggers above recognise
+# (heading text "Schedules"/"Amendments"/no announcing section at all) --
+# for those, the sequential-number fallback can run on into genuine
+# Schedule-item content and misclassify it, exactly the family of bug the
+# three triggers above exist to prevent. This cap bounds the worst case:
+# once the running count would exceed it, both new candidacy paths stop
+# firing outright, for the rest of the stream, regardless of the schedule
+# gate's state. It costs nothing for this task's 8 target files (all well
+# under the cap) and turns an unbounded run of tens of fabricated sections
+# into, at worst, a handful -- the same order of magnitude this corpus's
+# genuinely narrow legacy-shape gaps (e.g. the 1955 Act's unhandled
+# em-dash-fused subsection shape, noted in this task's report) already
+# leave on the table.
+_LEGACY_FALLBACK_MAX_SECTION = 12
+
 
 def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list[ParsedParagraph]]:
-    """Classify a full legacy-Act paragraph stream, applying shape-1 lookback.
+    """Classify a full legacy-Act paragraph stream, applying shape-1/4 lookback.
 
     `paragraphs` is (text, all_bold, style) per DOCX paragraph, in document
     order, where all_bold is True iff every non-whitespace run in that
     paragraph is bold, and style is the paragraph's DOCX style name (used
-    for shape 3's Heading-5 detection; irrelevant to shapes 1/2 lookback).
+    for shape 3's Heading-5 detection; irrelevant to shapes 1/2/4).
 
     Returns one list of ParsedParagraph per input paragraph, aligned by
     index, so callers can still attach that paragraph's InlineSpans. A
@@ -213,9 +363,72 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
     "1. (1) text") — that paragraph defers to parse_paragraph_legacy's
     fused handling instead, preserving the SUBSECTION structure that a
     shape-1 collapse would otherwise discard.
+
+    Non-bold shape-1 donor + sequential-number gate (Task 12, family-F XSD
+    fix): the donor's boldness was, until now, the SOLE signal distinguishing
+    a genuine marginal-note heading from an ordinary body sentence that
+    happens to precede a numbered paragraph (see the original 2026-07-18
+    design note — a pure text heuristic risked swallowing the last sentence
+    of a multi-paragraph section as a false heading). That signal is absent
+    for three pre-1960s Acts (e.g. constitution-alteration-(state-debts)-
+    1909) whose marginal notes were never bolded at all -- confirmed against
+    the SAME "Short title." / "1.\ttext" template a *bolded*-donor Act
+    (loan-act-(no.-2)-1976) already handles correctly, i.e. this is a
+    formatting-inconsistency in the source documents, not a different
+    template. Dropping the bold requirement outright would reopen exactly
+    the risk the 2026-07-18 note flagged. Instead, a non-bold donor is only
+    consumed when the candidate section number is EXACTLY one more than the
+    last SECTION number classified so far in this stream (starting at 0, so
+    the very first section must be "1"). Legislative section numbers are
+    strictly sequential in original enactment text, and old-style Acts of
+    this shape number every subsection with parenthesised markers ("(2.)"),
+    never a bare digit — so an un-numbered body sentence can never precede a
+    bare "<next-expected-N>.\ttext" paragraph by coincidence. This is why
+    `test_classify_legacy_stream_ignores_non_bold_candidate`'s adversarial
+    "This concludes..." donor (immediately followed by "3.\ttext", with no
+    section 1 or 2 having been seen) is correctly rejected: 3 != 0 + 1.
+
+    Enacting-formula gate on BOTH new paths (shape 4 and the non-bold
+    shape-1 fallback): a corpus-wide regression scan surfaced a real false
+    positive the sequential check alone does not catch — a Table of
+    Provisions. australian-trade-commission-(transitional-provisions-and-
+    consequential-amendments)-act-1985's front matter lists its real
+    section 1 as a TOC entry ("Section" / "1.\tShort title", both plain,
+    unstyled "Normal" paragraphs, not this Act's "TOC Heading"/"TOC N"
+    styles the builder's own TOC detection expects) *before* its enacting
+    formula and *before* the real, later "Short title." / "1.\ttext" pair.
+    "Section" satisfies every donor-exclusion check above (it doesn't look
+    like any operative element) and the TOC's "1.\tShort title" is,
+    trivially, the first candidate the sequential check ever sees — so it
+    passed. A Table of Provisions previews the Act's real numbering and can
+    restart from 1 anywhere in the front matter; sequential continuity
+    alone cannot tell a preview from the real thing. The Act's enacting
+    formula ("BE it enacted by..."/"...Parliament of Australia enacts:")
+    can: every Act in this corpus has exactly one, and everything before it
+    is definitionally front matter (title, TOC, long title, assent date),
+    never real operative text. `last_section_num` alone still governs which
+    candidate number is expected; this only adds "and we're past the
+    formula" as a precondition, so `test_classify_legacy_stream_shape1_
+    heading_plus_numbered_body` and the other existing shape-1 fixtures
+    (whose streams start right after their own formula, with no TOC) are
+    unaffected. The ORIGINAL bold-donor shape-1 path is intentionally left
+    ungated — it is unchanged, already-proven-safe behaviour and gating it
+    retroactively is not this fix's job.
+
+    Schedule gate on the same two new paths (three independent triggers --
+    see _LEGACY_SCHEDULE_HEADING_RE, _LEGACY_SCHEDULES_SECTION_RE and
+    _LEGACY_SCHEDULE_BOILERPLATE_RE above for the full corpus findings --
+    plus a hard numeric backstop, _LEGACY_FALLBACK_MAX_SECTION, for Acts
+    none of the three text triggers recognise): once any trigger fires,
+    `candidacy_open` goes False for the rest of the stream, so neither new
+    path fires on Schedule-item numbering or on quoted section numbers
+    describing the *target* Act being amended.
     """
     n = len(paragraphs)
     results: list[list[ParsedParagraph]] = [[] for _ in range(n)]
+    last_section_num: int = 0
+    past_enacting_formula = False
+    past_schedule_heading = False
     i = 0
     while i < n:
         text, all_bold, style = paragraphs[i]
@@ -226,27 +439,95 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
             i += 1
             continue
 
-        if all_bold and i + 1 < n:
-            next_stripped = paragraphs[i + 1][0].strip()
-            m = _LEGACY_NUMBERED_RE.match(next_stripped)
+        # Snapshot BEFORE updating: the formula/schedule paragraph itself
+        # must never be usable as a shape-4 candidate or shape-1 donor in
+        # this same iteration (it is front matter / a schedule marker, not
+        # a heading donor for this Act's own top-level sections).
+        formula_seen_before_this_para = past_enacting_formula
+        schedule_seen_before_this_para = past_schedule_heading
+        if _LEGACY_ENACTED_RE.search(stripped):
+            past_enacting_formula = True
+        if all_bold and _LEGACY_SCHEDULE_HEADING_RE.match(stripped):
+            past_schedule_heading = True
+        if _LEGACY_SCHEDULE_BOILERPLATE_RE.search(stripped):
+            past_schedule_heading = True
+
+        candidacy_open = (
+            formula_seen_before_this_para
+            and not schedule_seen_before_this_para
+            and last_section_num < _LEGACY_FALLBACK_MAX_SECTION
+        )
+
+        if candidacy_open:
+            m4 = _LEGACY_BOLD_HEADING_RE.match(stripped)
             if (
-                m
+                m4
                 and not _LEGACY_HEADING_RE.match(stripped)
                 and not _LEGACY_FUSED_RE.match(stripped)
-                and not _LEGACY_FUSED_RE.match(next_stripped)
             ):
-                results[i] = []  # consumed into next section's heading
-                results[i + 1] = [
-                    ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=stripped),
-                    ParsedParagraph(ElementType.BODY, text=m.group(2).strip()),
-                ]
-                i += 2
-                continue
+                candidate_num = _leading_int(m4.group(1))
+                heading = m4.group(2).strip()
+                if (
+                    candidate_num is not None
+                    and candidate_num == last_section_num + 1
+                    and not _LEGACY_AMENDMENT_INSTRUCTION_RE.match(heading)
+                ):
+                    results[i] = [
+                        ParsedParagraph(ElementType.SECTION, number=m4.group(1), heading=heading)
+                    ]
+                    last_section_num = candidate_num
+                    if _LEGACY_SCHEDULES_SECTION_RE.match(heading):
+                        past_schedule_heading = True
+                    i += 1
+                    continue
+
+        if i + 1 < n:
+            next_stripped = paragraphs[i + 1][0].strip()
+            m = _LEGACY_NUMBERED_RE.match(next_stripped)
+            donor_is_operative = (
+                _LEGACY_HEADING_RE.match(stripped)
+                or _LEGACY_FUSED_RE.match(stripped)
+                or _LEGACY_NUMBERED_RE.match(stripped)
+                or _SUBSEC_RE.match(stripped)
+                or _LEGACY_BOLD_HEADING_RE.match(stripped)
+            )
+            if m and not donor_is_operative and not _LEGACY_FUSED_RE.match(next_stripped):
+                candidate_num = _leading_int(m.group(1))
+                sequential = (
+                    candidacy_open
+                    and candidate_num is not None
+                    and candidate_num == last_section_num + 1
+                )
+                if all_bold or sequential:
+                    results[i] = []  # consumed into next section's heading
+                    results[i + 1] = [
+                        ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=stripped),
+                        ParsedParagraph(ElementType.BODY, text=m.group(2).strip()),
+                    ]
+                    if candidate_num is not None:
+                        last_section_num = candidate_num
+                    if _LEGACY_SCHEDULES_SECTION_RE.match(stripped):
+                        past_schedule_heading = True
+                    i += 2
+                    continue
 
         results[i] = parse_paragraph_legacy(text, style)
+        for r in results[i]:
+            if r.element_type == ElementType.SECTION:
+                num = _leading_int(r.number)
+                if num is not None:
+                    last_section_num = num
+                if _LEGACY_SCHEDULES_SECTION_RE.match(r.heading or ""):
+                    past_schedule_heading = True
         i += 1
 
     return results
+
+
+def _leading_int(number: str) -> int | None:
+    """Leading integer of a legacy section number string, or None."""
+    m = _LEGACY_NUMBER_INT_RE.match(number)
+    return int(m.group(1)) if m else None
 
 
 @dataclass
