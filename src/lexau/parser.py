@@ -202,12 +202,12 @@ _LEGACY_NUMBERED_RE = re.compile(r'^(\d+[A-Z]*)\.[ \t]+(.+)$', re.DOTALL)
 # section headings are typeset as one "<n> Heading" paragraph followed by a
 # separate body-text paragraph with no number of its own — e.g. vocational-
 # education-and-training-funding-laws-amendment-act-1996's "1 Short title"
-# / "2 Commencement" / "3 Schedule(s)" (fully bold in that Act). The NAME
-# is legacy: despite the original design assuming this shape is always
-# bold, education-and-training-legislation-amendment-act-1996's OWN "1
-# Short title" is plain, unbolded text (only its sibling "2 Commencement"
-# and "3 Schedule(s)" are bold) — confirmed by re-inspecting all 8 target
-# DOCX files directly rather than extrapolating from a few. Matching in
+# / "2 Commencement" / "3 Schedule(s)" (fully bold in that Act). Despite
+# the original design assuming shape 4 would always be bold, education-
+# and-training-legislation-amendment-act-1996's OWN "1 Short title" is
+# plain, unbolded text (only its sibling "2 Commencement" and "3
+# Schedule(s)" are bold) — confirmed by re-inspecting all 8 target DOCX
+# files directly rather than extrapolating from a few. Matching in
 # classify_legacy_stream is therefore gated on `candidacy_open` (past the
 # enacting formula, not past a Schedule heading) plus the sequential-number
 # check, exactly like shape 1's non-bold donor fallback below — NOT on
@@ -435,12 +435,15 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
     be the source of the corpus-wide fabricated-section false positives
     documented in this task's report — those are all produced by the two
     NEW paths (shape 4, non-bold shape-1) reaching Schedule-item content,
-    not by this exclusion widening. A dedicated, full-corpus scan (per-item
-    diff of the exact `(number, heading)` set produced by each Act's
-    legacy paragraph stream, base commit vs this fix — not just a net
-    count) confirmed no previously-classified section is lost anywhere in
-    the corpus as a result of this widening; see this task's report for
-    the scan command and result.
+    not by this exclusion widening. A per-item diff scan (the exact
+    `(number, heading)` set produced by each Act's legacy paragraph
+    stream, base commit vs this fix — not just a net count), stitched
+    together from several overlapping runs after background-task
+    instability prevented one continuous full-corpus pass, covered
+    roughly 75-95% of the corpus's ~550 legacy documents and found zero
+    decrease-direction hits in any Act scanned — no previously-classified
+    section observed lost as a result of this widening; see this task's
+    report for the scan command, result, and coverage caveat.
 
     Schedule gate on the same two new paths (three independent triggers --
     see _LEGACY_SCHEDULE_HEADING_RE, _LEGACY_SCHEDULES_SECTION_RE and
