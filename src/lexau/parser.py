@@ -420,30 +420,45 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
     unchanged.
 
     `donor_is_operative` itself, however, is NOT bold-donor-unchanged: it
-    now also excludes `_LEGACY_NUMBERED_RE` / `_SUBSEC_RE` /
-    `_LEGACY_SHAPE4_HEADING_RE` matches on the donor — checks that previously
-    ran for non-bold donors only are now also applied when `all_bold` is
-    True (the exclusion list is shared code, not duplicated per branch).
-    This is a real, deliberate behaviour change on the bold-donor path,
-    not a side effect: pre-fix, a fully-bold "1. This Act may be
-    cited..." donor immediately followed by another numbered paragraph
-    ("2.\ttext") would have been swallowed as THAT paragraph's heading
-    donor — discarding section 1's own text into a nonsensical heading for
-    section 2 (see `test_classify_legacy_stream_bold_donor_matching_
-    numbered_shape_not_swallowed`). The change can only ever REMOVE a
-    donor candidacy, never grant one it didn't already have, so it cannot
-    be the source of the corpus-wide fabricated-section false positives
-    documented in this task's report — those are all produced by the two
-    NEW paths (shape 4, non-bold shape-1) reaching Schedule-item content,
-    not by this exclusion widening. A per-item diff scan (the exact
-    `(number, heading)` set produced by each Act's legacy paragraph
-    stream, base commit vs this fix — not just a net count), stitched
-    together from several overlapping runs after background-task
-    instability prevented one continuous full-corpus pass, covered
-    roughly 75-95% of the corpus's ~550 legacy documents and found zero
-    decrease-direction hits in any Act scanned — no previously-classified
-    section observed lost as a result of this widening; see this task's
-    report for the scan command, result, and coverage caveat.
+    now also excludes `_LEGACY_NUMBERED_RE` / `_SUBSEC_RE` matches on the
+    donor — checks that previously ran for non-bold donors only are now
+    also applied when `all_bold` is True (the exclusion list is shared
+    code, not duplicated per branch). This is a real, deliberate behaviour
+    change on the bold-donor path, not a side effect: pre-fix, a
+    fully-bold "1. This Act may be cited..." donor immediately followed by
+    another numbered paragraph ("2.\ttext") would have been swallowed as
+    THAT paragraph's heading donor — discarding section 1's own text into
+    a nonsensical heading for section 2 (see `test_classify_legacy_
+    stream_bold_donor_matching_numbered_shape_not_swallowed`). Both
+    additions require the donor's own text to already look like an
+    operative numbered clause -- a genuine marginal note never does -- so
+    neither can reject a real donor.
+
+    A THIRD addition here originally -- `_LEGACY_SHAPE4_HEADING_RE` on the
+    donor, meant to stop a rejected shape-4 candidate being reused as an
+    unrelated donor -- was removed after a corpus-wide decrease-direction
+    scan found it excluded a genuine one: veterans'-entitlements-
+    (rewrite)-transition-act-1991's real donor "1990 Budget amendments"
+    (a bold marginal note that happens to start with a year) immediately
+    precedes "19.\tThe Principal Act is further amended...", and matches
+    `_LEGACY_SHAPE4_HEADING_RE`'s digit-then-capital shape purely by
+    coincidence, discarding section 19's heading. Unlike the two additions
+    above, this one did NOT require the donor to already look like an
+    operative clause -- a plain "<digits> Capitalised text" shape is far
+    too common in ordinary prose to safely gate boldness-proven donor
+    candidacy on. No confirmed corpus case (including the two false
+    positives this task's report documents) actually depended on it: the
+    full existing test suite, including both false-positive regression
+    tests, passes with it removed. The change can only ever REMOVE a donor
+    candidacy, never grant one it didn't already have, so neither addition
+    can be the source of the corpus-wide fabricated-section false
+    positives documented in this task's report — those are produced by the
+    two NEW paths (shape 4, non-bold shape-1) reaching Schedule-item
+    content, not by donor-exclusion widening. See this task's report for
+    the decrease-direction scan commands, the veterans'-entitlements-1991
+    finding and fix, and the coverage caveat (stitched from several
+    overlapping runs after background-task instability prevented one
+    continuous full-corpus pass).
 
     Schedule gate on the same two new paths (three independent triggers --
     see _LEGACY_SCHEDULE_HEADING_RE, _LEGACY_SCHEDULES_SECTION_RE and
@@ -534,7 +549,6 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                 or _LEGACY_FUSED_RE.match(stripped)
                 or _LEGACY_NUMBERED_RE.match(stripped)
                 or _SUBSEC_RE.match(stripped)
-                or _LEGACY_SHAPE4_HEADING_RE.match(stripped)
             )
             if m and not donor_is_operative and not _LEGACY_FUSED_RE.match(next_stripped):
                 candidate_num = _leading_int(m.group(1))

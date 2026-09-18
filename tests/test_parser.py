@@ -524,6 +524,41 @@ def test_classify_legacy_stream_bold_donor_matching_numbered_shape_not_swallowed
     assert results[1][0].heading != "1. This Act may be cited as the Test Act 1999."
 
 
+def test_classify_legacy_stream_bold_marginal_note_starting_with_digits_not_excluded():
+    # Regression: reproduces veterans'-entitlements-(rewrite)-transition-
+    # act-1991's real "1990 Budget amendments" donor -- a genuine bold
+    # marginal note that happens to start with a 4-digit year followed by
+    # capitalised text, immediately preceding "19.\tThe Principal Act is
+    # further amended...". An earlier version of this fix's donor_is_
+    # operative also excluded any donor matching the shape-4 "<digits>
+    # Capitalised text" shape (to stop a REJECTED shape-4 candidate being
+    # reused as an unrelated donor) -- too broad: a plain-prose marginal
+    # note that happens to open with digits satisfies that shape purely by
+    # coincidence, and got wrongly excluded, discarding section 19's real
+    # heading. donor_is_operative must not reject a donor merely for
+    # matching shape-4's text pattern; only for looking like an already-
+    # operative numbered clause (_LEGACY_NUMBERED_RE / _SUBSEC_RE).
+    stream = [
+        ("18.\tThe Principal Act is amended as set out in Schedule 1.", False, "Normal"),
+        (
+            "PART 4—1990 BUDGET AMENDMENTS OF THE VETERANS’ ENTITLEMENTS ACT 1986",
+            True,
+            "Normal",
+        ),
+        ("1990 Budget amendments", True, "Normal"),
+        (
+            "19.\tThe Principal Act is further amended as set out in Schedule 2.",
+            False,
+            "Normal",
+        ),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[2] == []  # donor consumed
+    assert results[3][0].element_type == ElementType.SECTION
+    assert results[3][0].number == "19"
+    assert results[3][0].heading == "1990 Budget amendments"
+
+
 def test_legacy_style_heading5_short_title():
     # Shape 3: style-driven section heading. Confirmed against
     # agricultural-and-veterinary-chemical-products-levy-imposition-
