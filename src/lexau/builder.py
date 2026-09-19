@@ -370,10 +370,36 @@ def _preprocess_schedule_group(
     return out
 
 
+def _unique_quoted_eid(eid: str, seen: set[str]) -> str:
+    """Disambiguate `eid` against `seen` with a numeric occurrence suffix,
+    leaving the first occurrence unchanged (same shape as `_build_schedule_
+    content`'s local `_unique`, extracted so `_build_quoted_content` can share
+    one collision-tracking set across every call for one schedule (Task 13).
+
+    `_build_quoted_content` had no uniquification at all before Task 13: two
+    structural siblings at the same stack depth -- e.g. two independent
+    nested-item quotes each restarting at "Part 1" (`_NESTED_ITEM_HEAD_STYLES`),
+    or two un-spanned instruction-prose chunks in one item that both carry a
+    bare paragraph letter -- minted the identical `@eId` twice. Schedule-only:
+    called from `_build_quoted_content`, which is only ever reached via
+    `_build_item_body` / `_build_schedule_content`, never from `AknBuilder.
+    build()`'s body loop.
+    """
+    if eid not in seen:
+        seen.add(eid)
+        return eid
+    n = 2
+    while f"{eid}-{n}" in seen:
+        n += 1
+    seen.add(f"{eid}-{n}")
+    return f"{eid}-{n}"
+
+
 def _build_quoted_content(
     container: etree._Element,
     eid_prefix: str,
     paragraphs: list[ParsedParagraph],
+    seen_eids: set[str],
 ) -> None:
     """Build a body-shaped hierarchy under `container`, with every eId rooted at
     `eid_prefix`.
@@ -383,6 +409,11 @@ def _build_quoted_content(
     but is a separate function on purpose: `eid_prefix` is always a
     `schedule-*` string, so nothing here can shift a body-level `@eId`.
     `make_eid` is only *read* — the body eId generator is untouched.
+
+    `seen_eids` (Task 13) is the same set across every call belonging to one
+    schedule -- shared with `_build_item_body`'s sibling calls for the same
+    item and across items -- so a residual same-scope collision gets an
+    occurrence suffix instead of a silent duplicate `@eId`.
     """
     stack: list[tuple[ElementType, str, etree._Element]] = []
     current_content: etree._Element | None = None
@@ -405,8 +436,15 @@ def _build_quoted_content(
             while stack and _DEPTH.get(stack[-1][0], -1) >= target_depth:
                 stack.pop()
             parent = stack[-1][2] if stack else container
-            prefix = _join(eid_prefix, *(make_eid(et.value, num) for et, num, _ in stack))
-            full_eid = _join(prefix, make_eid(p.element_type.value, p.number))
+            # Read the immediate ancestor's *actual* (already-disambiguated)
+            # eId rather than re-deriving it from (type, num) pairs on the
+            # stack -- necessary since Task 13, where a sibling collision
+            # further up can give an ancestor an occurrence-suffixed eId that
+            # `make_eid(et.value, num)` would not reproduce.
+            prefix = parent.get("eId", eid_prefix)
+            full_eid = _unique_quoted_eid(
+                _join(prefix, make_eid(p.element_type.value, p.number)), seen_eids
+            )
             if p.element_type == ElementType.LEVEL4:
                 elem = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="level4", eId=full_eid
@@ -429,14 +467,26 @@ def _build_quoted_content(
         elif p.element_type == ElementType.LIST_ITEM:
             level = int(p.number) if p.number.isdigit() else 0
             parent = stack[-1][2] if stack else container
-            section_prefix = _join(
-                eid_prefix, *(make_eid(et.value, num) for et, num, _ in stack)
-            )
+            # Same ancestor-eId read as the structural branch above, for the
+            # same reason: a disambiguated ancestor's ".value, num)" pair no
+            # longer matches its actual eId.
+            section_prefix = parent.get("eId", eid_prefix)
             if blocklist_el is None or level != blocklist_level:
+                # `blocklist_count` resets to 0 at the top of every
+                # `_build_quoted_content` call (like `_build_item_body`'s
+                # other per-call state), so two prose chunks in one item that
+                # each open a list both mint "list-1" under the same
+                # `item_eid` prefix. Same collision class this task exists to
+                # close -- run through the shared `seen_eids` too.
                 blocklist_count += 1
                 blocklist_level = level
                 blocklist_el = etree.SubElement(parent, f"{{{AKN_NS}}}blockList")
-                blocklist_el.set("eId", _join(section_prefix, f"list-{blocklist_count}"))
+                blocklist_el.set(
+                    "eId",
+                    _unique_quoted_eid(
+                        _join(section_prefix, f"list-{blocklist_count}"), seen_eids
+                    ),
+                )
             item_el = etree.SubElement(blocklist_el, f"{{{AKN_NS}}}item")
             item_el.set(
                 "eId", f"{blocklist_el.get('eId')}__item-{len(list(blocklist_el))}"
@@ -499,14 +549,23 @@ def _build_item_body(
     item_el: etree._Element,
     item_eid: str,
     body: list[ParsedParagraph | _QuotedSpan],
+    seen_eids: set[str],
 ) -> None:
-    """Emit an amendment item's instruction prose and its quoted provisions."""
+    """Emit an amendment item's instruction prose and its quoted provisions.
+
+    `seen_eids` (Task 13) is threaded into every `_build_quoted_content` call
+    below -- one item can make several such calls (a chunk before a span, the
+    span's own inner content, a chunk after it, ...), and without a set shared
+    across all of them two calls sharing the same `item_eid` prefix (or two
+    quoted spans that each restart a nested item's own numbering) can mint the
+    identical structural `@eId` twice.
+    """
     qs_idx = 0
     chunk: list[ParsedParagraph] = []
     for entry in body:
         if isinstance(entry, _QuotedSpan):
             if chunk:
-                _build_quoted_content(item_el, item_eid, chunk)
+                _build_quoted_content(item_el, item_eid, chunk, seen_eids)
                 chunk = []
             qs_idx += 1
             qs_eid = f"{item_eid}__qstr-{qs_idx}"
@@ -517,11 +576,11 @@ def _build_item_body(
             qs_el.set("endQuote", "”")
             qs_el.set("from", "#")
             qs_el.set("to", "#")
-            _build_quoted_content(qs_el, qs_eid, entry.inner_paras)
+            _build_quoted_content(qs_el, qs_eid, entry.inner_paras, seen_eids)
         else:
             chunk.append(entry)
     if chunk:
-        _build_quoted_content(item_el, item_eid, chunk)
+        _build_quoted_content(item_el, item_eid, chunk, seen_eids)
 
 
 def inject_note_refs(root: etree._Element) -> int:
@@ -862,6 +921,11 @@ def _build_schedule_content(
     amdact_idx = 0
     item_idx = 0
     seen_eids: set[str] = set()
+    # Task 13: separate from `seen_eids` above (which only tracks this
+    # schedule's own grouping/item/amdact wrapper eIds) -- shared across every
+    # `_build_item_body` / `_build_quoted_content` call for this schedule, so
+    # a structural collision inside quoted content gets an occurrence suffix.
+    quoted_seen_eids: set[str] = set()
 
     def _unique(eid: str) -> str:
         if eid not in seen_eids:
@@ -907,7 +971,7 @@ def _build_schedule_content(
                 etree.SubElement(item_el, f"{{{AKN_NS}}}num").text = entry.num
             if entry.heading:
                 etree.SubElement(item_el, f"{{{AKN_NS}}}heading").text = entry.heading
-            _build_item_body(item_el, item_eid, entry.body)
+            _build_item_body(item_el, item_eid, entry.body, quoted_seen_eids)
             current_clause = None
             current_subclause = None
             current_para = None

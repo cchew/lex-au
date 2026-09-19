@@ -2687,3 +2687,137 @@ def test_empty_figure_paragraph_emits_figure_only(meta):
     assert fig[0].tag == f"{{{AKN_NS}}}img"
     section = xml.find(".//akn:section", ns)
     assert section.findall(".//akn:p", ns) == []
+
+
+# ---------------------------------------------------------------------------
+# Task 13 — XSD family C residue: structural eIds inside quoted content
+#
+# Re-baselined after Task 6 (`dup-key:eId-act` on part/subsection/section/
+# division/chapter/paragraph, filtered from `validate_corpus` against a fresh
+# reconvert of the 267 Acts flagged at the 2026-09-07 baseline): Task 6's
+# schedule-scoped grouping wrapper and item/quotedStructure nesting resolved
+# every cross-item and cross-schedule case, but `_build_quoted_content` itself
+# had no collision tracking at all. Two shapes reproduce the residue directly:
+#
+#   - two structural siblings at the same stack depth inside ONE quoted span
+#     (e.g. a duplicated paragraph letter in an inserted list); and
+#   - a nested-item quote (`Special ih`/`SubitemHead`) that restarts a whole
+#     new numbering sequence more than once inside one span, each restart
+#     independently landing on "Part 1" / "Division 1" / etc.
+#
+# Both mint the identical `@eId` twice today because `_build_quoted_content`
+# recomputes each element's eId from (type, num) with no memory of what it
+# already emitted.
+# ---------------------------------------------------------------------------
+
+
+def test_quoted_paragraphs_at_same_depth_get_distinct_eids(meta):
+    # Two inserted list paragraphs both labelled "(a)" -- a duplicated letter
+    # inside one quoted replacement (not two separate items, not two separate
+    # quoted spans -- the collision Task 6's item/qstr nesting cannot reach).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Some Act 2000", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  Section\xa05", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="first thing."),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="second thing."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    paras = xml.findall(".//akn:quotedStructure/akn:paragraph", ns)
+    assert len(paras) == 2
+    assert paras[0].get("eId") != paras[1].get("eId")
+    assert [p.find("akn:num", ns).text for p in paras] == ["a", "a"], (
+        "the literal letter must still read 'a' in <num> even though the eId is disambiguated"
+    )
+    # Word-for-word: both paragraphs kept, nothing merged or dropped.
+    text = " ".join(" ".join(xml.itertext()).split())
+    assert "first thing." in text
+    assert "second thing." in text
+
+
+def test_nested_item_quote_restarting_part_numbering_gets_distinct_eids(meta):
+    # One "Insert:" span quotes two whole new nested items (Special ih), each
+    # introducing its own "Part 1" -- numbering legitimately restarts per
+    # nested item, but nothing inside a quotedStructure tracks that the way
+    # the schedule's own grouping wrapper does.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Some Act 2000", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  After Part\xa05", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="5A  Section\xa010", raw_style="Special ih"),
+        ParsedParagraph(ElementType.PART, number="1", heading="First new part", raw_style="ActHead 2"),
+        ParsedParagraph(ElementType.BODY, text="5B  Section\xa011", raw_style="Special ih"),
+        ParsedParagraph(ElementType.PART, number="1", heading="Second new part", raw_style="ActHead 2"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    parts = xml.findall(".//akn:quotedStructure/akn:part", ns)
+    assert len(parts) == 2
+    assert parts[0].get("eId") != parts[1].get("eId")
+    assert [p.find("akn:num", ns).text for p in parts] == ["1", "1"]
+    assert [p.find("akn:heading", ns).text for p in parts] == [
+        "First new part", "Second new part",
+    ]
+
+
+def test_two_blocklists_in_one_item_across_a_span_get_distinct_eids(meta):
+    # Fix-round finding (reviewer): `blocklist_count` resets to 0 at the top
+    # of every `_build_quoted_content` call, same as the structural stack
+    # does -- two prose chunks in one item that each open a list (split by a
+    # quoted span that a margin note then closes) both minted "list-1" under
+    # the same `item_eid` prefix. Same collision class as the other two
+    # Task 13 tests, in the LIST_ITEM branch instead of the structural one.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Amendments", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Some Act 2000", raw_style="ActHead 9"),
+        ParsedParagraph(ElementType.BODY, text="1  Section\xa05", raw_style="ItemHead"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="1", text="(a) first list item, chunk one."),
+        ParsedParagraph(ElementType.BODY, text="Insert:", raw_style="Item"),
+        ParsedParagraph(ElementType.BODY, text="something quoted."),
+        ParsedParagraph(ElementType.BODY, text="Note: this ends the quoted run", raw_style="note(margin)"),
+        ParsedParagraph(ElementType.LIST_ITEM, number="1", text="(a) first list item, chunk two."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = _all_eids(xml)
+    assert len(eids) == len(set(eids)), f"eId collision: {sorted(e for e in eids if eids.count(e) > 1)}"
+
+    block_lists = xml.findall(".//akn:hcontainer[@name='item']/akn:blockList", ns)
+    assert len(block_lists) == 2
+    assert block_lists[0].get("eId") != block_lists[1].get("eId")
+    # Word-for-word: both list items kept.
+    text = " ".join(" ".join(xml.itertext()).split())
+    assert "first list item, chunk one." in text
+    assert "first list item, chunk two." in text
+
+
+def test_quoted_content_disambiguation_does_not_shift_body_eids(meta):
+    # Regression gate for the hard constraint: the Task 13 fix lives entirely
+    # inside `_build_quoted_content`/`_build_item_body` (schedule-only call
+    # graph). A body section elsewhere in the same Act, with no schedule at
+    # all, must keep its plain `sec-*`/`subsec-*` eIds -- occurrence-suffixing
+    # must never reach a body element.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.SECTION, number="5", heading="Interpretation"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="In this Act:"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    assert xml.find(".//akn:section[@eId='sec-5']", ns) is not None
+    assert xml.find(".//akn:subsection[@eId='sec-5__subsec-1']", ns) is not None
