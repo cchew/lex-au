@@ -20,12 +20,6 @@ _DMY = re.compile(
 # "01/07/1995" — AU convention DD/MM/YYYY
 _SLASH = re.compile(r'\b(\d{1,2})/(\d{1,2})/(\d{4})\b')
 
-# Dateless commencement references
-_COMMENCEMENT = re.compile(
-    r'\b(the day this Act commences|the commencement day|the day of commencement)\b',
-    re.IGNORECASE,
-)
-
 
 def inject_dates(root: etree._Element) -> int:
     """Inject <date> elements into all <p> elements. Returns count injected."""
@@ -41,9 +35,20 @@ def inject_dates(root: etree._Element) -> int:
 
 
 def _inject_into_p(p_el: etree._Element, text: str) -> int:
-    """Replace date strings in p_el.text with <date> elements. Returns injected count."""
-    # Collect all matches (DMY, slash, commencement) in position order
-    matches: list[tuple[int, int, str, str | None]] = []  # (start, end, display, iso_date|None)
+    """Replace date strings in p_el.text with <date> elements. Returns injected count.
+
+    Only literal calendar dates (DMY / slash-form) are wrapped. Dateless
+    commencement phrases ("the commencement day" etc.) used to be wrapped too,
+    with no @date attribute -- but the AKN 3.0 XSD's own doc comment says
+    <date> is for "a date expressed in the text", which these phrases are not,
+    and @date is XSD-required. There is no lifecycle/version date reliably
+    "in hand" at this point that a bare phrase can be resolved to without
+    guessing which commencement it refers to (whole-Act? a specific Schedule
+    item? a different, cross-referenced Act's commencement?), so rather than
+    fabricate one, these phrases are simply left as plain, unwrapped text.
+    """
+    # Collect all matches (DMY, slash) in position order
+    matches: list[tuple[int, int, str, str]] = []  # (start, end, display, iso_date)
 
     for m in _DMY.finditer(text):
         day = m.group(1).zfill(2)
@@ -59,15 +64,12 @@ def _inject_into_p(p_el: etree._Element, text: str) -> int:
         iso = f"{year}-{month}-{day}"
         matches.append((m.start(), m.end(), m.group(0), iso))
 
-    for m in _COMMENCEMENT.finditer(text):
-        matches.append((m.start(), m.end(), m.group(0), None))
-
     if not matches:
         return 0
 
     # Sort by position; resolve overlaps by keeping leftmost
     matches.sort(key=lambda x: x[0])
-    filtered: list[tuple[int, int, str, str | None]] = []
+    filtered: list[tuple[int, int, str, str]] = []
     last_end = 0
     for start, end, display, iso in matches:
         if start >= last_end:
@@ -85,8 +87,7 @@ def _inject_into_p(p_el: etree._Element, text: str) -> int:
         pre = text[cursor:start]
         date_el = etree.SubElement(p_el, f"{{{AKN_NS}}}date")
         date_el.text = display
-        if iso:
-            date_el.set("date", iso)
+        date_el.set("date", iso)
         if prev_el is None:
             p_el.text = pre or None
         else:

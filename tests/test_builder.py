@@ -7,7 +7,7 @@ from unittest.mock import patch, MagicMock
 from lexau.models import ActMetadata
 from lexau.parser import ParsedParagraph, ElementType
 from lexau.builder import AknBuilder, inject_lifecycle
-from lexau.endnote_parser import AmendmentEvent, EndnoteResult
+from lexau.endnote_parser import AmendmentEvent, EndnoteResult, LegislationHistoryEntry
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 
@@ -1325,6 +1325,89 @@ def test_lifecycle_dedup(meta):
     assert amd_events[0].get("source") == "/akn/au/act/2009/70"
 
 
+def test_amendment_event_date_from_assent(meta):
+    """<eventRef type='amendment'@date> populated from the amending Act's assent
+    date in Endnote 3 (legislation_history) when it's a clean single date --
+    the register/registered date the brief refers to as the source, already
+    parsed by parse_endnotes but not previously wired into <lifecycle>."""
+    events = _make_events(("s 6", "am", 70, 2009))
+    history = [
+        LegislationHistoryEntry(
+            act_name="Some Amending Act 2009",
+            act_number=70,
+            act_year=2009,
+            assent_raw="24\xa0November 2009",
+            commencement_raw="Sch\xa01 (items\xa01-3): 1\xa0July 2010 (s 2(1))",
+        )
+    ]
+    fake_result = EndnoteResult(amendment_events=events, legislation_history=history)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    evt = xml.find(".//akn:lifecycle/akn:eventRef[@type='amendment']", ns)
+    assert evt is not None
+    assert evt.get("date") == "2009-11-24"
+
+
+def test_amendment_event_date_from_clean_commencement(meta):
+    """A clean, single-date commencement_raw (no Schedule/item breakdown) is
+    also an acceptable, unambiguous source when assent_raw is blank."""
+    events = _make_events(("s 6", "am", 91, 2000))
+    history = [
+        LegislationHistoryEntry(
+            act_name="Some Other Amending Act 2000",
+            act_number=91,
+            act_year=2000,
+            assent_raw="",
+            commencement_raw="1\xa0July 2000 (s 2)",
+        )
+    ]
+    fake_result = EndnoteResult(amendment_events=events, legislation_history=history)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    evt = xml.find(".//akn:lifecycle/akn:eventRef[@type='amendment']", ns)
+    assert evt is not None
+    assert evt.get("date") == "2000-07-01"
+
+
+def test_amendment_event_date_absent_when_not_derivable(meta):
+    """No register date is fabricated: when the only data in hand is a
+    Schedule-item-qualified, multi-part commencement string and a blank
+    assent (a real, common corpus pattern -- staged commencement across
+    several Schedules with no single whole-Act date), @date stays absent
+    rather than guessing one of the several real dates in the raw text."""
+    events = _make_events(("s 6", "am", 146, 1999))
+    history = [
+        LegislationHistoryEntry(
+            act_name="Some Consequential Amendment Act 1999",
+            act_number=146,
+            act_year=1999,
+            assent_raw="",
+            commencement_raw="Sch\xa01 (items\xa092-94): 5\xa0Dec 1999 (s 2(1), (2))",
+        )
+    ]
+    fake_result = EndnoteResult(amendment_events=events, legislation_history=history)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    evt = xml.find(".//akn:lifecycle/akn:eventRef[@type='amendment']", ns)
+    assert evt is not None
+    assert evt.get("date") is None
+
+
 def test_lifecycle_skipped_no_path(meta):
     """last_volume_path=None → no <lifecycle> emitted."""
     b = AknBuilder(meta)
@@ -1366,6 +1449,28 @@ def test_temporal_group_exists(meta):
     ns = {"akn": AKN_NS}
     tg = xml.find(".//akn:temporalData/akn:temporalGroup[@eId='tg-1']", ns)
     assert tg is not None
+
+
+def test_time_interval_refers_to(meta):
+    """<timeInterval@refersTo> is XSD-required. Must be a '#'-prefixed idref
+    pointing at a real TLCConcept eId registered in <references>."""
+    events = _make_events(("s 6", "am", 99, 2010))
+    fake_result = EndnoteResult(amendment_events=events)
+
+    b = AknBuilder(meta)
+    with patch("lexau.builder.parse_endnotes", return_value=fake_result), \
+         patch("lexau.builder.DocxDocument", MagicMock()):
+        xml, _ = b.build_with_report({}, last_volume_path=Path("fake.docx"))
+
+    ns = {"akn": AKN_NS}
+    ti = xml.find(".//akn:temporalData/akn:temporalGroup/akn:timeInterval", ns)
+    assert ti is not None
+    refers_to = ti.get("refersTo")
+    assert refers_to is not None
+    assert refers_to.startswith("#")
+    concept_eid = refers_to.lstrip("#")
+    concept = xml.find(f".//akn:references/akn:TLCConcept[@eId='{concept_eid}']", ns)
+    assert concept is not None, f"refersTo idref {refers_to!r} must resolve to a real TLCConcept"
 
 
 def test_time_interval_open(meta):

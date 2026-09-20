@@ -66,13 +66,16 @@ def test_cross_act_ref():
     assert resolved == 1
 
 
-def test_unresolved_ref_has_no_href():
+def test_unresolved_ref_has_derived_href():
+    """XSD requires ref@href always -- an unresolved cross-Act ref must still carry
+    a well-formed, deterministically-derived href (a local citation stub, not a
+    verified corpus lookup), alongside the existing class='unresolved' marker."""
     root = _make_p("as defined in the Nonexistent Act 1999")
     resolved, unresolved, *_ = inject_refs(root, CORPUS_INDEX)
     ns = {"akn": AKN_NS}
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
-    assert ref.get("href") is None
+    assert ref.get("href") == "/akn/au/act/nonexistent-act-1999"
     assert ref.get("class") == "unresolved"
     assert unresolved == 1
 
@@ -130,6 +133,7 @@ def test_subsidiary_legislation_unresolved():
     ref = root.find(".//akn:ref", ns)
     assert ref is not None
     assert ref.get("class") == "unresolved"
+    assert ref.get("href") == "/akn/au/regulation/privacy-regulation-2013"
     assert unresolved == 1
 
 

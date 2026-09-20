@@ -56,16 +56,36 @@ def test_slash_date():
     assert date_el.text == "01/07/1995"
 
 
-def test_commencement_day():
-    """'the commencement day' → <date> with no date attribute"""
+def test_commencement_day_not_wrapped():
+    """'the commencement day' has no resolvable calendar date in hand (it's a
+    prose reference to an event, not "a date expressed in the text" -- see the
+    AKN 3.0 XSD's own doc comment on <date>, which requires @date). Wrapping it
+    in <date> with no @date is an XSD violation (family B); the fix is to leave
+    the phrase as plain, unwrapped text rather than fabricate a value."""
     root = _make_root_with_p("On the commencement day, the officer must notify.")
     count = inject_dates(root)
-    assert count == 1
+    assert count == 0
     p = _get_p(root)
-    date_el = p.find(f"{AKN_TAG}date")
-    assert date_el is not None
-    assert date_el.get("date") is None
-    assert date_el.text == "the commencement day"
+    assert p.find(f"{AKN_TAG}date") is None
+    assert p.text == "On the commencement day, the officer must notify."
+
+
+def test_day_of_commencement_not_wrapped():
+    """'the day of commencement' -- same non-derivable-phrase rule as above."""
+    root = _make_root_with_p("From the day of commencement, this section applies.")
+    count = inject_dates(root)
+    assert count == 0
+    p = _get_p(root)
+    assert p.find(f"{AKN_TAG}date") is None
+
+
+def test_day_this_act_commences_not_wrapped():
+    """'the day this Act commences' -- same non-derivable-phrase rule as above."""
+    root = _make_root_with_p("This section commences on the day this Act commences.")
+    count = inject_dates(root)
+    assert count == 0
+    p = _get_p(root)
+    assert p.find(f"{AKN_TAG}date") is None
 
 
 def test_no_relative():

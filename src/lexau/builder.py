@@ -18,7 +18,7 @@ from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_re
 from lexau.datelinks import inject_dates
 from lexau.figures import materialise_figures
 from docx import Document as DocxDocument
-from lexau.endnote_parser import parse_endnotes, AmendmentEvent, EndnoteResult
+from lexau.endnote_parser import parse_endnotes, AmendmentEvent, EndnoteResult, LegislationHistoryEntry
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 AKN = ElementMaker(namespace=AKN_NS, nsmap={None: AKN_NS})
@@ -1269,12 +1269,95 @@ def _build_attachments(
     return attachments_el, total_clauses
 
 
-def inject_lifecycle(root: etree._Element, meta: ActMetadata, events: list[AmendmentEvent]) -> None:
+_MONTH_MAP = {
+    "jan": "01", "january": "01",
+    "feb": "02", "february": "02",
+    "mar": "03", "march": "03",
+    "apr": "04", "april": "04",
+    "may": "05",
+    "jun": "06", "june": "06",
+    "jul": "07", "july": "07",
+    "aug": "08", "august": "08",
+    "sep": "09", "sept": "09", "september": "09",
+    "oct": "10", "october": "10",
+    "nov": "11", "november": "11",
+    "dec": "12", "december": "12",
+}
+
+# A raw endnote date cell that is JUST a single calendar date, optionally
+# followed by a trailing statutory-provision citation like "(s 2)" or
+# "(s 2(1), (2))". Anchored start-to-end deliberately: a raw string with a
+# Schedule/item breakdown prefix ("Sch 1 (items 92-94): 5 Dec 1999 (s 2(1))")
+# or more than one date is NOT a single unambiguous whole-Act date and must
+# NOT match -- see _resolve_amendment_date's docstring.
+_SINGLE_DATE_RE = re.compile(
+    r'^(\d{1,2})\s+([A-Za-z]+)\.?\s+(\d{4})'
+    r'(?:\s*\(s\.?\s*[\d,\s()A-Za-z.]*\))?$'
+)
+
+
+def _parse_single_date(raw: str) -> str | None:
+    """ISO date if `raw` (after normalising non-breaking spaces) is exactly one
+    unambiguous calendar date; None otherwise (blank, missing, or a compound/
+    multi-part string that doesn't reduce to a single date)."""
+    if not raw:
+        return None
+    text = raw.replace("\xa0", " ").strip()
+    if not text:
+        return None
+    m = _SINGLE_DATE_RE.match(text)
+    if not m:
+        return None
+    day, month_name, year = m.groups()
+    month = _MONTH_MAP.get(month_name.lower())
+    if month is None:
+        return None
+    return f"{year}-{month}-{int(day):02d}"
+
+
+def _resolve_amendment_date(
+    act_number: int,
+    act_year: int,
+    history: list[LegislationHistoryEntry],
+) -> str | None:
+    """Best available register date for an amending Act's <eventRef@date>,
+    from Endnote 3 (legislation_history) -- already parsed by parse_endnotes,
+    just not previously wired into <lifecycle>.
+
+    Prefers a clean single-date commencement (the date the amendment actually
+    took effect) over assent (Royal Assent is Act-level, always applies, but
+    is one step removed from "when the amendment happened"). Falls back to
+    assent only when no row's commencement reduces to one unambiguous date --
+    common when a Schedule/item-qualified commencement breakdown is the only
+    text available. Returns None (do not fabricate) when neither source
+    yields a single clean date for any matching row -- e.g. blank assent AND
+    a multi-part commencement string; this is the documented, expected
+    residual for family B's eventRef@date (see task-14-report.md).
+    """
+    matches = [h for h in history if h.act_number == act_number and h.act_year == act_year]
+    for h in matches:
+        iso = _parse_single_date(h.commencement_raw)
+        if iso:
+            return iso
+    for h in matches:
+        iso = _parse_single_date(h.assent_raw)
+        if iso:
+            return iso
+    return None
+
+
+def inject_lifecycle(
+    root: etree._Element,
+    meta: ActMetadata,
+    events: list[AmendmentEvent],
+    legislation_history: list[LegislationHistoryEntry] | None = None,
+) -> None:
     """Insert <lifecycle> into <meta> after <identification>."""
     ns = {"akn": AKN_NS}
     meta_el = root.find(".//akn:meta", ns)
     identification_el = meta_el.find(f"{{{AKN_NS}}}identification")
     insert_idx = list(meta_el).index(identification_el) + 1
+    history = legislation_history or []
 
     lifecycle_el = etree.Element(f"{{{AKN_NS}}}lifecycle")
     lifecycle_el.set("source", "#parliament")
@@ -1300,8 +1383,20 @@ def inject_lifecycle(root: etree._Element, meta: ActMetadata, events: list[Amend
         evt.set("type", "amendment")
         evt.set("eId", f"evt-amd-{amd_idx}")
         evt.set("source", amd_uri)
+        amd_date = _resolve_amendment_date(event.act_number, event.act_year, history)
+        if amd_date:
+            evt.set("date", amd_date)
 
     meta_el.insert(insert_idx, lifecycle_el)
+
+
+# TLCConcept describing what a <timeInterval> represents, for its
+# XSD-required refersTo idref. Every timeInterval this builder emits is the
+# same "open-ended, from creation to present" kind, so one shared concept
+# (registered once per document) covers all of them.
+_PERIOD_CURRENT_EID = "periodCurrent"
+_PERIOD_CURRENT_HREF = "/ontology/concept/au/periodCurrent"
+_PERIOD_CURRENT_SHOW_AS = "Period during which this expression is current"
 
 
 def inject_temporal_data(root: etree._Element, events: list[AmendmentEvent]) -> None:
@@ -1323,8 +1418,18 @@ def inject_temporal_data(root: etree._Element, events: list[AmendmentEvent]) -> 
     ti_el = etree.SubElement(tg_el, f"{{{AKN_NS}}}timeInterval")
     ti_el.set("start", "#evt-creation")
     # No end attribute = open-ended (current version)
+    ti_el.set("refersTo", f"#{_PERIOD_CURRENT_EID}")
 
     meta_el.insert(insert_idx, td_el)
+
+    refs_el = meta_el.find(f"{{{AKN_NS}}}references")
+    if refs_el is not None:
+        existing_eids = {el.get("eId") for el in refs_el}
+        if _PERIOD_CURRENT_EID not in existing_eids:
+            tlc = etree.SubElement(refs_el, f"{{{AKN_NS}}}TLCConcept")
+            tlc.set("eId", _PERIOD_CURRENT_EID)
+            tlc.set("href", _PERIOD_CURRENT_HREF)
+            tlc.set("showAs", _PERIOD_CURRENT_SHOW_AS)
 
 
 def _collect_eids(root: etree._Element) -> set[str]:
@@ -1879,7 +1984,10 @@ class AknBuilder:
             endnote_result = parse_endnotes(DocxDocument(str(last_volume_path)))
             report.amendment_events_parsed = len(endnote_result.amendment_events)
             if endnote_result.amendment_events:
-                inject_lifecycle(root, self._meta, endnote_result.amendment_events)
+                inject_lifecycle(
+                    root, self._meta, endnote_result.amendment_events,
+                    endnote_result.legislation_history,
+                )
                 inject_temporal_data(root, endnote_result.amendment_events)
                 inject_passive_mods(root, endnote_result.amendment_events, report=report)
 

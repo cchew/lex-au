@@ -110,6 +110,43 @@ def _collect_matches(
     return result
 
 
+_SUBSIDIARY_DOC_TYPE = (
+    ("regulation", "regulation"),
+    ("instrument", "instrument"),
+    ("order", "order"),
+    ("rule", "rules"),
+)
+
+
+def _slugify(name: str) -> str:
+    """Same slug convention as ActMetadata.safe_name -- lowercase, spaces/slashes
+    to hyphens. Deterministic from the matched citation text alone."""
+    return name.strip().lower().replace(" ", "-").replace("/", "-")
+
+
+def _doc_type_for(name: str, kind: str) -> str:
+    """Best-effort AKN doc-type path segment for an unresolved citation, inferred
+    from the keyword in the matched text (Regulation/Instrument/Order/Rules)."""
+    if kind == "act":
+        return "act"
+    lname = name.lower()
+    for needle, doc_type in _SUBSIDIARY_DOC_TYPE:
+        if needle in lname:
+            return doc_type
+    return "act"
+
+
+def _unresolved_href(name: str, kind: str) -> str:
+    """Deterministic local citation stub for a cross-Act/subsidiary-legislation
+    name that isn't in corpus_index. Not a verified corpus lookup (that's what
+    class='unresolved' signals) -- just a well-formed, reproducible href built
+    from data already in hand (the matched citation text), so the required
+    XSD href attribute is never left empty. If this exact name is later added
+    to the corpus under lex-au's own safe_name slug convention, this href
+    already matches it."""
+    return f"/akn/au/{_doc_type_for(name, kind)}/{_slugify(name)}"
+
+
 def _make_ref(
     match: re.Match,
     kind: str,
@@ -148,6 +185,7 @@ def _make_ref(
             ref_el.set("href", corpus_index[leg_name]["frbr_uri"])
             resolved[0] += 1
         else:
+            ref_el.set("href", _unresolved_href(leg_name, kind))
             ref_el.set("class", "unresolved")
             unresolved[0] += 1
     elif kind == "act":
@@ -156,6 +194,7 @@ def _make_ref(
             ref_el.set("href", corpus_index[act_name]["frbr_uri"])
             resolved[0] += 1
         else:
+            ref_el.set("href", _unresolved_href(act_name, kind))
             ref_el.set("class", "unresolved")
             unresolved[0] += 1
 
