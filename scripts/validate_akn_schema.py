@@ -91,6 +91,42 @@ def validate_corpus(corpus_xml_dir: Path, xsd_path: Path) -> dict:
     return {"total": total, "valid": valid, "invalid": total - valid,
             "by_signature": dict(sorted(by_sig.items(), key=lambda kv: -kv[1]["count"]))}
 
+def load_whitelist(whitelist_path: Path) -> dict:
+    """Load the manifest and return its {signature: entry} mapping.
+
+    Tolerates either a bare {signature: entry, ...} mapping or the documented
+    {"entries": {...}, ...metadata} shape (docs/xsd-whitelist.json uses the
+    latter so it can carry a top-level _comment/generated/etc.).
+    """
+    data = json.loads(Path(whitelist_path).read_text())
+    return data.get("entries", data) if isinstance(data, dict) else {}
+
+
+def gate(corpus_xml_dir: Path, xsd_path: Path, whitelist_path: Path) -> tuple[bool, list[str]]:
+    """Strict-with-whitelist gate.
+
+    Passes iff every violation signature found by validate_corpus() is a key
+    in the whitelist manifest AND its observed count does not exceed that
+    entry's ``max_entries`` ceiling. Returns (passed, failing_signatures) --
+    failing_signatures lists, in validate_corpus's by-count-descending order,
+    every signature that is either absent from the manifest (a regression or
+    a new defect class) or present but over its ceiling (a regression within
+    a known-partial signature).
+    """
+    whitelist = load_whitelist(whitelist_path)
+    result = validate_corpus(Path(corpus_xml_dir), Path(xsd_path))
+    failing: list[str] = []
+    for sig, info in result["by_signature"].items():
+        entry = whitelist.get(sig)
+        if entry is None:
+            failing.append(sig)
+            continue
+        ceiling = entry.get("max_entries")
+        if ceiling is not None and info["count"] > ceiling:
+            failing.append(sig)
+    return (len(failing) == 0, failing)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--corpus-dir", type=Path, default=Path("corpus"))

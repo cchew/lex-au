@@ -1,0 +1,114 @@
+{
+  "_comment": "Strict-with-whitelist XSD gate manifest (Task 15, SDD plan 2026-09-08-wfw-v0.3.1-phase2-4). Keys are the exact _signature() bucket strings from scripts/validate_akn_schema.py. gate() passes iff every violation signature present in a validate_corpus() run is a key here AND its observed count is <= max_entries. Any signature absent from this file fails the gate (a regression or a genuinely new defect class). Source census: docs/superpowers/2026-09-07-xsd-baseline.md (38-bucket strict census, 3076 files, dated 2026-09-07). Families D, E, F and 5 of Family C's 6 signatures are fully cleared by Tasks 10-14 (source-code fixes in src/lexau/*.py) and are therefore REMOVED from this manifest so the ratchet tightens -- but the on-disk corpus/xml has NOT been re-converted with those fixes as of this task (that is Task 17, a later human-gated step), so a validate_corpus run against the current corpus/xml will still show the old pre-fix counts for those removed signatures until Task 17 runs. This manifest describes the EXPECTED post-Task-17 state, not the current on-disk state. Family A is entirely out of scope for this 24-task plan (flagged in the census as a large multi-site builder.py refactor, tracked separately) and is copied through unchanged. Non-fatal wiring: scripts/spot_check.py calls gate() in warning mode only (Task 15); Task 20 flips it to fatal once the Task-17 re-converted corpus is confirmed clean against this manifest.",
+  "generated": "2026-09-21",
+  "entries": {
+    "SCHEMAV_ELEMENT_CONTENT | paragraph | not-expected:intro": {
+      "family": "A",
+      "max_entries": 64048,
+      "census_files": 947,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | content | not-expected:intro": {
+      "family": "A",
+      "max_entries": 8504,
+      "census_files": 950,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | authorialNote | not-expected:intro": {
+      "family": "A",
+      "max_entries": 8457,
+      "census_files": 789,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | subsection | not-expected:intro": {
+      "family": "A",
+      "max_entries": 6031,
+      "census_files": 596,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | hcontainer | not-expected:amendmentList": {
+      "family": "A",
+      "max_entries": 4541,
+      "census_files": 1706,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | table | not-expected:intro": {
+      "family": "A",
+      "max_entries": 2536,
+      "census_files": 2083,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | hcontainer | not-expected:intro": {
+      "family": "A",
+      "max_entries": 2391,
+      "census_files": 332,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | section | not-expected:intro": {
+      "family": "A",
+      "max_entries": 1368,
+      "census_files": 290,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | blockList | not-expected:intro": {
+      "family": "A",
+      "max_entries": 499,
+      "census_files": 60,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | figure | not-expected:intro": {
+      "family": "A",
+      "max_entries": 465,
+      "census_files": 215,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | subDivision | not-expected:intro": {
+      "family": "A",
+      "max_entries": 315,
+      "census_files": 56,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | intro | not-expected:intro": {
+      "family": "A",
+      "max_entries": 79,
+      "census_files": 61,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | division | not-expected:intro": {
+      "family": "A",
+      "max_entries": 41,
+      "census_files": 35,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | part | not-expected:intro": {
+      "family": "A",
+      "max_entries": 4,
+      "census_files": 3,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | subDivision | not-expected": {
+      "family": "A",
+      "max_entries": 2,
+      "census_files": 2,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | content | not-expected:hcontainer": {
+      "family": "A",
+      "max_entries": 1,
+      "census_files": 1,
+      "reason": "family A -- out of scope for this plan, large multi-site builder.py refactor, tracked separately."
+    },
+    "SCHEMAV_CVC_COMPLEX_TYPE_4 | eventRef | required-attr:date": {
+      "family": "B",
+      "max_entries": 4498,
+      "census_files": 357,
+      "reason": "family B, documented partial. Original census ceiling was 17751/875 (no eventRef@date populated at all). Task 14 populates eventRef@date from Endnote 3 legislation_history where a single unambiguous date is derivable; it is left absent (never fabricated) where not derivable. This 4498/357 ceiling is Task 14's own full-corpus verification scan of the fixed source code -- a real, brief-mandated residual, not a defect. Per Task 14's own task review, roughly 63% of this residual is potentially recoverable in a future task via SR/SLI-style history-row keying plus a split-endnote-volume fix, so this ceiling is not necessarily an irreducible floor -- it is the current verified state after Task 14, pending Task 17's full corpus re-convert."
+    },
+    "SCHEMAV_CVC_IDC | paragraph | dup-key:eId-act": {
+      "family": "C",
+      "max_entries": 2,
+      "census_files": 1,
+      "reason": "family C, residual. Count unchanged from the original census (2/1) but this number is NOT a reliable measure of the true corpus-wide state. libxml2 stops evaluating identity constraints in a content model once an EARLIER sibling in that same model fails an unrelated content-model rule -- and Family A (out of scope, trips in nearly every amending Act) does exactly that -- so validate_corpus currently reports near-zero dup-key:eId-act violations inside <attachments> regardless of the true count. A raw eId-scan that bypasses the XSD validator entirely found the true residual is much larger: ~1,471 raw duplicate paragraph-eId groups across 7 real Acts (a separate, pre-existing 'para-*' class), even though only 2 entries / 1 file show up in validate_corpus's own count. Do not treat a future validate_corpus run showing more than 2/1 here as necessarily a new regression without also running a raw eId-duplication scan to confirm -- and do not treat 2/1 as proof the defect is small."
+    }
+  }
+}

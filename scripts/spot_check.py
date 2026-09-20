@@ -16,6 +16,12 @@ from pathlib import Path
 
 from lxml import etree
 
+# Allow running as a standalone script (`python scripts/spot_check.py`), where
+# sys.path[0] is scripts/ itself rather than the repo root, as well as being
+# imported as scripts.spot_check by the test suite.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from scripts.validate_akn_schema import _COBALT_XSD, gate
+
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 NS = {"akn": AKN_NS}
 
@@ -139,6 +145,15 @@ def main() -> int:
              "Limitations -- excluded from the section-presence check so "
              "the gate only fails on new regressions, not this known set",
     )
+    parser.add_argument(
+        "--xsd-whitelist", type=Path,
+        default=Path("docs/xsd-whitelist.json"),
+        help="Strict-with-whitelist XSD gate manifest (see "
+             "scripts/validate_akn_schema.py:gate()). Reported as a "
+             "non-fatal warning only -- does not affect this script's exit "
+             "code until Task 20 flips it to fatal once the re-converted "
+             "corpus is confirmed clean against the manifest.",
+    )
     args = parser.parse_args()
 
     corpus_dir: Path = args.corpus_dir
@@ -216,6 +231,23 @@ def main() -> int:
 
     print(f"\n{'='*60}")
     print(f"Acts with zero <section> elements: {empty_body_count} / {len(xml_files)}")
+
+    if args.xsd_whitelist.exists():
+        xsd_path = _COBALT_XSD / "akomantoso30.xsd"
+        gate_passed, gate_failing = gate(xml_dir, xsd_path, args.xsd_whitelist)
+        if gate_passed:
+            print("XSD strict-with-whitelist gate: PASS (warning-only, non-fatal)")
+        else:
+            print(
+                f"XSD strict-with-whitelist gate: WARN (non-fatal) -- "
+                f"{len(gate_failing)} signature(s) not covered by "
+                f"{args.xsd_whitelist}:"
+            )
+            for sig in gate_failing:
+                print(f"        {sig}")
+    else:
+        print(f"XSD strict-with-whitelist gate: SKIPPED -- {args.xsd_whitelist} not found")
+
     if total_failures == 0:
         print(f"All checks passed ({len(xml_files)} Acts)")
         return 0

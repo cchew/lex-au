@@ -1,7 +1,8 @@
+import json
 from pathlib import Path
 import sys
 import textwrap
-from scripts.validate_akn_schema import validate_one, _signature
+from scripts.validate_akn_schema import validate_one, _signature, gate
 
 # Derive the XSD path from sys.prefix (same as the script's _COBALT_XSD) rather
 # than a CWD-relative literal, so the test passes regardless of pytest's cwd.
@@ -70,3 +71,55 @@ def test_signature_distinguishes_structurally_different_errors():
     assert any("body" in s for s in sigs)
     # Minor #1: duplicate-eId and "no precomputed value" must not share a bucket.
     assert _signature(dup_eid) != _signature(no_precomp)
+
+
+# gate() -- strict-with-whitelist. _INVALID (above) reliably produces exactly
+# two violation signatures against the real strict XSD:
+#   "SCHEMAV_CVC_COMPLEX_TYPE_4 | act | required-attr:name"   (count 1)
+#   "SCHEMAV_ELEMENT_CONTENT | bogus | not-expected"            (count 1)
+# Tests build a small whitelist fixture (not the real docs/xsd-whitelist.json)
+# so ceilings are controlled and the test doesn't depend on corpus content.
+
+_SIG_ACT_NAME = "SCHEMAV_CVC_COMPLEX_TYPE_4 | act | required-attr:name"
+_SIG_BOGUS = "SCHEMAV_ELEMENT_CONTENT | bogus | not-expected"
+
+
+def _write_whitelist(path: Path, entries: dict) -> Path:
+    path.write_text(json.dumps({"entries": entries}))
+    return path
+
+
+def test_gate_passes_when_all_signatures_whitelisted(tmp_path):
+    xml_dir = tmp_path / "xml"; xml_dir.mkdir()
+    (xml_dir / "bad.xml").write_text(_INVALID)
+    whitelist = _write_whitelist(tmp_path / "whitelist.json", {
+        _SIG_ACT_NAME: {"family": "X", "max_entries": 1, "reason": "test"},
+        _SIG_BOGUS: {"family": "X", "max_entries": 1, "reason": "test"},
+    })
+    ok, failing = gate(xml_dir, _XSD, whitelist)
+    assert ok is True
+    assert failing == []
+
+
+def test_gate_fails_on_non_whitelisted_signature(tmp_path):
+    xml_dir = tmp_path / "xml"; xml_dir.mkdir()
+    (xml_dir / "bad.xml").write_text(_INVALID)
+    whitelist = _write_whitelist(tmp_path / "whitelist.json", {
+        _SIG_ACT_NAME: {"family": "X", "max_entries": 1, "reason": "test"},
+        # _SIG_BOGUS deliberately omitted.
+    })
+    ok, failing = gate(xml_dir, _XSD, whitelist)
+    assert ok is False
+    assert failing == [_SIG_BOGUS]
+
+
+def test_gate_fails_when_whitelisted_signature_exceeds_ceiling(tmp_path):
+    xml_dir = tmp_path / "xml"; xml_dir.mkdir()
+    (xml_dir / "bad.xml").write_text(_INVALID)
+    whitelist = _write_whitelist(tmp_path / "whitelist.json", {
+        _SIG_ACT_NAME: {"family": "X", "max_entries": 0, "reason": "test"},  # ceiling below actual count of 1
+        _SIG_BOGUS: {"family": "X", "max_entries": 1, "reason": "test"},
+    })
+    ok, failing = gate(xml_dir, _XSD, whitelist)
+    assert ok is False
+    assert failing == [_SIG_ACT_NAME]
