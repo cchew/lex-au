@@ -1030,9 +1030,11 @@ def _build_schedule_content(
                 clause_count += 1
                 num_str = m.group(1)
                 heading_str = (m.group(2) or "").strip()
-                # Clause eIds are deliberately NOT run through `_unique`: B4 is a
-                # structural fix, not B2's identifier-uniquifier, so any residual
-                # clause collision must stay visible in the eId diff.
+                # This branch keys the eId on the monotonic `clause_idx` counter,
+                # not the scraped `num_str` (APP clause numbers can repeat across
+                # unrelated APP groups), so it never needs `_unique` to stay
+                # collision-free -- unlike the two `num_str`-keyed clause branches
+                # below (Task 16A), which do.
                 eid = f"{_container_eid()}__clause-{clause_idx}"
                 current_clause = etree.SubElement(
                     _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
@@ -1080,7 +1082,7 @@ def _build_schedule_content(
                 else:
                     clause_idx += 1
                     clause_count += 1
-                    eid = f"{_container_eid()}__clause-{num_str}"
+                    eid = _unique(f"{_container_eid()}__clause-{num_str}")
                     current_clause = etree.SubElement(
                         _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                     )
@@ -1129,7 +1131,7 @@ def _build_schedule_content(
             else:
                 clause_idx += 1
                 clause_count += 1
-                eid = f"{_container_eid()}__clause-{num_str}"
+                eid = _unique(f"{_container_eid()}__clause-{num_str}")
                 current_clause = etree.SubElement(
                     _container(), f"{{{AKN_NS}}}hcontainer", name="clause", eId=eid
                 )

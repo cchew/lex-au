@@ -458,6 +458,45 @@ def test_schedule_alphanumeric_clause(meta):
     assert clause.get("eId") == "schedule-1__clause-1A"
 
 
+def test_schedule_clause_eid_collision_across_articles(meta):
+    # Task 16A: a treaty/convention schedule's "ARTICLE N" headings carry a style
+    # (e.g. "subsection") that no existing grouping-wrapper style recognizes, so
+    # `_container_eid()` stays pinned at the schedule root for the whole schedule.
+    # Each Article's own numbering restarts at 1, so the bare-BODY _CLAUSE_RE
+    # branch (~line 1083) must route the mint through `_unique` or every
+    # Article's first clause collides on `schedule-1__clause-1`.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Convention", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="ARTICLE 1"),
+        ParsedParagraph(ElementType.BODY, text="1  This Convention does not apply to adoptions."),
+        ParsedParagraph(ElementType.BODY, text="ARTICLE 2"),
+        ParsedParagraph(ElementType.BODY, text="1  Each Contracting State shall designate a Central Authority."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clauses = xml.findall(".//akn:hcontainer[@name='clause']", ns)
+    assert len(clauses) == 2
+    eids = [c.get("eId") for c in clauses]
+    assert eids == ["schedule-1__clause-1", "schedule-1__clause-1-2"]
+
+
+def test_schedule_clause_no_collision_no_suffix(meta):
+    # Task 16A regression: when clause numbers never repeat, `_unique` must
+    # leave every eId exactly as before the fix (no spurious "-2" suffix).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1  First clause"),
+        ParsedParagraph(ElementType.BODY, text="2  Second clause"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    clauses = xml.findall(".//akn:hcontainer[@name='clause']", ns)
+    eids = [c.get("eId") for c in clauses]
+    assert eids == ["schedule-1__clause-1", "schedule-1__clause-2"]
+
+
 def test_schedule_section_typed_clause(meta):
     # TG Regs: clause headings parsed as SECTION elements (not BODY text) with num+heading fields
     paragraphs = [
