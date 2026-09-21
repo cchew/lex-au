@@ -497,6 +497,104 @@ def test_schedule_clause_no_collision_no_suffix(meta):
     assert eids == ["schedule-1__clause-1", "schedule-1__clause-2"]
 
 
+# ---------------------------------------------------------------------------
+# Task 16B — schedule para-*/subclause-*/subpara-* eId de-duplication
+#
+# Task 16A fixed the two clause-eId collision sites in this function (bare-
+# BODY _CLAUSE_RE and the SECTION-typed non-dotted branch). Five sibling
+# sites were left unfixed: the dotted-subclause branch (_SUBCLAUSE_RE and its
+# SECTION-typed twin), PARAGRAPH, SUBSECTION-typed subclause, and
+# SUBPARAGRAPH. All five keyed the eId only on (parent eId, scraped
+# number/letter) with no cross-sibling occurrence tracking, so multiple
+# lettered sub-lists restarting under the same parent (e.g. several
+# Definition-styled paragraphs, each opening its own (a)/(b) list) minted
+# identical eIds. Fixed by threading the same shared `quoted_seen_eids` set
+# (Task 13) through `_unique_quoted_eid` at all five sites.
+# ---------------------------------------------------------------------------
+
+
+def test_schedule_paragraph_letter_collision_gets_distinct_eids(meta):
+    # Two PARAGRAPH-typed schedule entries restarting at the same letter "a"
+    # under one clause (e.g. two Definition-styled sub-lists) minted identical
+    # eIds before this fix.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1  First clause"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha one"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha two"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    paras = xml.findall(".//akn:hcontainer[@name='clause']/akn:paragraph", ns)
+    assert len(paras) == 2
+    eids = [p.get("eId") for p in paras]
+    assert eids == ["schedule-1__clause-1__para-a", "schedule-1__clause-1__para-a-2"]
+    # The literal letter must still read "a" in <num> even though the eId is
+    # disambiguated (same convention as the Task 13 quoted-content fix).
+    nums = [p.find("akn:num", ns).text for p in paras]
+    assert nums == ["a", "a"]
+    # Word-for-word: both paragraphs kept, nothing merged or dropped.
+    text = " ".join(" ".join(xml.itertext()).split())
+    assert "alpha one" in text
+    assert "alpha two" in text
+
+
+def test_schedule_paragraph_no_collision_no_suffix(meta):
+    # Regression: distinct letters under one clause must be byte-identical to
+    # before this fix -- no spurious "-2" suffix when nothing actually
+    # collides.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1  First clause"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="beta"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="c", text="gamma"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    paras = xml.findall(".//akn:hcontainer[@name='clause']/akn:paragraph", ns)
+    eids = [p.get("eId") for p in paras]
+    assert eids == [
+        "schedule-1__clause-1__para-a",
+        "schedule-1__clause-1__para-b",
+        "schedule-1__clause-1__para-c",
+    ]
+
+
+# ---------------------------------------------------------------------------
+# Task 16B — hard non-goal verification: body-path duplicate eIds untouched
+#
+# builder.py:1652-1653 (AknBuilder.build()'s main body loop) is a separate,
+# explicitly out-of-scope duplicate-eId class (26,878 groups across 695 Acts
+# at the pre-16B baseline) -- fixing it would rename body eIds that
+# lex-au-graph keys ~111,000 nodes off. No test in this suite previously
+# asserted body-path duplicates survive un-deduplicated; this one closes that
+# gap directly. The corpus-scale before/after count+set check lives in the
+# Task 16B report, not here.
+# ---------------------------------------------------------------------------
+
+
+def test_body_path_paragraph_letter_collision_stays_undeduped(meta):
+    xml, _ = build_xml(meta, [
+        ParsedParagraph(ElementType.SECTION, number="5", heading="Obligations"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text=""),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="the first condition:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="the second condition:"),
+    ])
+    ns = {"akn": AKN_NS}
+    paras = xml.findall(".//akn:paragraph", ns)
+    assert len(paras) == 2
+    eids = [p.get("eId") for p in paras]
+    # Body path has no collision tracking (out of scope for Task 16B) -- both
+    # paragraphs mint the IDENTICAL eId, unlike the schedule-path fix above.
+    assert eids == ["sec-5__subsec-1__para-a", "sec-5__subsec-1__para-a"]
+    text = " ".join(" ".join(xml.itertext()).split())
+    assert "the first condition:" in text
+    assert "the second condition:" in text
+
+
 def test_schedule_section_typed_clause(meta):
     # TG Regs: clause headings parsed as SECTION elements (not BODY text) with num+heading fields
     paragraphs = [

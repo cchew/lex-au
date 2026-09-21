@@ -1053,7 +1053,7 @@ def _build_schedule_content(
                 content_text = m.group(2).strip()
                 parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
-                eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
+                eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str.replace('.', '-')}", quoted_seen_eids)
                 current_subclause = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
                 )
@@ -1102,7 +1102,7 @@ def _build_schedule_content(
         elif p.element_type == ElementType.PARAGRAPH:
             parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else _container())
             parent_eid = parent.get("eId", schedule_eid)
-            eid = f"{parent_eid}__para-{p.number}"
+            eid = _unique_quoted_eid(f"{parent_eid}__para-{p.number}", quoted_seen_eids)
             current_para = etree.SubElement(parent, f"{{{AKN_NS}}}paragraph", eId=eid)
             etree.SubElement(current_para, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
@@ -1119,7 +1119,7 @@ def _build_schedule_content(
             if "." in num_str:
                 parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
-                eid = f"{parent_eid}__subclause-{num_str.replace('.', '-')}"
+                eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str.replace('.', '-')}", quoted_seen_eids)
                 current_subclause = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
                 )
@@ -1151,7 +1151,7 @@ def _build_schedule_content(
                 current_clause if current_clause is not None else _container()
             )
             parent_eid = parent.get("eId", schedule_eid)
-            eid = f"{parent_eid}__subclause-{num_str}"
+            eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str}", quoted_seen_eids)
             sub_el = etree.SubElement(
                 parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
             )
@@ -1174,7 +1174,7 @@ def _build_schedule_content(
             else:
                 parent = _container()
             parent_eid = parent.get("eId", schedule_eid)
-            eid = f"{parent_eid}__subpara-{p.number}"
+            eid = _unique_quoted_eid(f"{parent_eid}__subpara-{p.number}", quoted_seen_eids)
             subpara_el = etree.SubElement(parent, f"{{{AKN_NS}}}subparagraph", eId=eid)
             etree.SubElement(subpara_el, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
