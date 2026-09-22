@@ -347,6 +347,69 @@ _LEGACY_AMENDMENT_INSTRUCTION_RE = re.compile(
 _LEGACY_FALLBACK_MAX_SECTION = 12
 
 
+# Bare-imperative form of _LEGACY_AMENDMENT_INSTRUCTION_RE (line ~322). The
+# "<Verb> of …" heading shape is a noun phrase, not an instruction — real
+# corpus headings "Repeal of Acts" (australian-trade-commission-
+# (transitional-provisions…)-act-1985) and "Repeal of section 17a"
+# (social-security-and-repatriation-legislation-amendment-act-1986) are
+# genuine and must not be rejected.
+_LEGACY_BARE_INSTRUCTION_RE = re.compile(
+    r'^(Omit|Insert|Repeal|Substitute|Add|Renumber|Before|After)\b(?!\s+of\b)',
+    re.IGNORECASE,
+)
+
+# 4th schedule trigger: an unbolded Schedule BANNER. _LEGACY_SCHEDULE_
+# HEADING_RE requires all_bold AND a number; real banners are "SCHEDULE\t
+# Section 3" (commonwealth-electoral-1995 p34), "SCHEDULE—continued", "The
+# Schedule", "FIRST SCHEDULE". Anchored with $ so a prose cross-reference
+# ("Schedule 1 to this Act specifies…") cannot match — that is what the bold
+# gate on the existing trigger was protecting against.
+_LEGACY_SCHEDULE_ORDINAL = (
+    r'FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|TENTH'
+    r'|ELEVENTH|TWELFTH'
+)
+_LEGACY_SCHEDULE_BANNER_RE = re.compile(
+    r'^(?:THE[\xa0 ]+)?'
+    r'(?:(?:' + _LEGACY_SCHEDULE_ORDINAL + r')[\xa0 ]+)?'
+    r'SCHEDULES?'
+    r'(?:[\xa0 ]+(?:\d+[A-Z]*|[IVXLC]+))?'
+    r'(?:[\xa0 ]*[-—–][^\n]*|\t[^\n]*)?$',
+    re.IGNORECASE,
+)
+
+# 5th trigger: OPC Schedule-item micro-structure (see design note above).
+_LEGACY_SCHEDULE_ITEM_RE = re.compile(
+    r'^\d+[A-Z]*\.?[\xa0 \t]+'
+    r'(?:Section|Sections|Subsection|Subsections|Paragraph|Paragraphs|'
+    r'Subparagraph|Subparagraphs|Part|Parts|Division|Divisions|Subdivision|'
+    r'Schedule|Schedules|Chapter|Clause|Clauses|Item|Items|Heading|Headings|'
+    r'Note|Notes|Title|Preamble|Definition|Index|Table|After|Before)\b'
+    r'[^.\n]{0,150}:$',
+    re.IGNORECASE,
+)
+
+
+def _is_legacy_schedule_item(paragraphs: list[tuple[str, bool, str]], j: int) -> bool:
+    if j < 0 or j >= len(paragraphs):
+        return False
+    if not _LEGACY_SCHEDULE_ITEM_RE.match(paragraphs[j][0].strip()):
+        return False
+    k = j + 1
+    while k < len(paragraphs) and not paragraphs[k][0].strip():
+        k += 1
+    if k >= len(paragraphs):
+        return False
+    return bool(_LEGACY_BARE_INSTRUCTION_RE.match(paragraphs[k][0].strip()))
+
+
+def _legacy_bad_donor(stripped: str) -> bool:
+    return bool(
+        _LEGACY_BARE_INSTRUCTION_RE.match(stripped)
+        or stripped[:1] in '"“”\'‘’('
+        or re.match(r'^\([a-z0-9ivx]+\)', stripped)
+    )
+
+
 def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list[ParsedParagraph]]:
     """Classify a full legacy-Act paragraph stream, applying shape-1/4 lookback.
 
@@ -509,6 +572,8 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
             past_schedule_heading = True
         if _LEGACY_SCHEDULE_BOILERPLATE_RE.search(stripped):
             past_schedule_heading = True
+        if formula_seen_before_this_para and _LEGACY_SCHEDULE_BANNER_RE.match(stripped):
+            past_schedule_heading = True
 
         candidacy_open = (
             formula_seen_before_this_para
@@ -523,6 +588,8 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
             # Chapter/Part/Division/Subdivision, and FUSED_RE requires a
             # period immediately after the number -- none of the three can
             # match the same string m4 just matched.
+            if _is_legacy_schedule_item(paragraphs, i):
+                past_schedule_heading = True
             m4 = _LEGACY_SHAPE4_HEADING_RE.match(stripped)
             if m4:
                 candidate_num = _leading_int(m4.group(1))
@@ -541,6 +608,13 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                     i += 1
                     continue
 
+        if (formula_seen_before_this_para
+                and _is_legacy_schedule_item(paragraphs, i + 1)):
+            past_schedule_heading = True
+            results[i] = parse_paragraph_legacy(text, style)
+            i += 1
+            continue
+
         if i + 1 < n:
             next_stripped = paragraphs[i + 1][0].strip()
             m = _LEGACY_NUMBERED_RE.match(next_stripped)
@@ -557,7 +631,8 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                     and candidate_num is not None
                     and candidate_num == last_section_num + 1
                 )
-                if all_bold or sequential:
+                bad_donor = _legacy_bad_donor(stripped)
+                if all_bold or (sequential and not bad_donor):
                     results[i] = []  # consumed into next section's heading
                     results[i + 1] = [
                         ParsedParagraph(ElementType.SECTION, number=m.group(1), heading=stripped),
@@ -567,6 +642,26 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                         last_section_num = candidate_num
                     if _LEGACY_SCHEDULES_SECTION_RE.match(stripped):
                         past_schedule_heading = True
+                    i += 2
+                    continue
+                if sequential and bad_donor:
+                    # Donor text is garbage, but the candidate IS a genuine
+                    # section (we've already vetoed the Schedule-item shape
+                    # above) — promote it headingless instead of falling
+                    # through to plain BODY, so last_section_num keeps
+                    # advancing for every later genuine section in this Act.
+                    # This is exactly the fallback path parse_paragraph_legacy
+                    # already emits for headingless sections elsewhere in
+                    # this corpus (e.g. quarantine-amendment-act-1985's own
+                    # pre-existing sec-1/5/25/26) — builder.py:1664's `if
+                    # p.heading:` guard already handles an empty heading
+                    # correctly, no downstream change needed.
+                    results[i] = parse_paragraph_legacy(text, style)
+                    results[i + 1] = [
+                        ParsedParagraph(ElementType.SECTION, number=m.group(1)),
+                        ParsedParagraph(ElementType.BODY, text=m.group(2).strip()),
+                    ]
+                    last_section_num = candidate_num
                     i += 2
                     continue
 

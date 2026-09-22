@@ -559,6 +559,134 @@ def test_classify_legacy_stream_bold_marginal_note_starting_with_digits_not_excl
     assert results[3][0].heading == "1990 Budget amendments"
 
 
+def test_classify_legacy_stream_vetoes_donor_before_schedule_item():
+    # Task 16C-v2: reproduces the shape underlying commonwealth-electoral-
+    # amendment-act-1995's "7. Section 298:" / "Repeal the section." pair --
+    # an OPC-drafted Schedule item's unmistakable two-paragraph
+    # micro-structure (short legislative-citation reference ending in a
+    # colon, immediately followed by a bare drafting imperative). Without
+    # the donor-path veto, the preceding bold "Amendments" paragraph would
+    # be swallowed as a fabricated heading donor for a SECTION numbered "7"
+    # whose body is really just "Section 298:" -- the exact failure shape
+    # Task 16C-v2's donor-path veto (applied regardless of all_bold) exists
+    # to stop, since the majority of true fabrications arrive via this
+    # ungated bold-donor branch.
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1995.", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+        ("Amendments", True, ""),
+        ("7. Section 298:", True, ""),
+        ("Repeal the section.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    numbers = [r.number for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers == ["1", "2"]  # no fabricated "7"
+    # "Amendments" is not consumed as a heading donor -- it survives as its
+    # own (non-SECTION) paragraph instead of vanishing into section 7's body.
+    assert results[5] != []
+    assert results[5][0].element_type != ElementType.SECTION
+
+
+def test_classify_legacy_stream_schedule_banner_closes_candidacy():
+    # Task 16C-v2 banner trigger: an unbolded Schedule BANNER
+    # ("SCHEDULE\tSection 3", the real commonwealth-electoral-1995 shape)
+    # must close candidacy for the rest of the stream, exactly like the
+    # three pre-existing (bold-gated or boilerplate) schedule triggers do --
+    # a sequential "2 Commencement"-shaped candidate immediately after must
+    # NOT be promoted to a SECTION.
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1995.", False, ""),
+        ("SCHEDULE\tSection 3", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    numbers = [r.number for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers == ["1"]  # "2" rejected: candidacy closed by the banner
+
+
+def test_classify_legacy_stream_schedule_banner_ignores_prose_cross_reference():
+    # Companion to the banner test above: a plain prose cross-reference
+    # ("Schedule 1 to this Act specifies the amendments.") must NOT match
+    # the banner trigger -- the $-anchor exists precisely so trailing prose
+    # after "Schedule 1" disqualifies the match. A sequential candidate
+    # after this line must still be accepted (candidacy stays open).
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1995.", False, ""),
+        ("Schedule 1 to this Act specifies the amendments.", False, ""),
+        ("2 Commencement", True, ""),
+        ("This Act commences on Royal Assent.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    numbers = [r.number for rl in results for r in rl if r.element_type == ElementType.SECTION]
+    assert numbers == ["1", "2"]  # candidacy still open, "2" correctly accepted
+
+
+def test_classify_legacy_stream_bad_donor_promotes_headingless_section():
+    # Task 16C-v2 headingless-promotion path: reproduces quarantine-
+    # amendment-act-1985's section 6, whose heading donor is garbage
+    # ("(c) if the person was appointed to a di...", a stray lettered
+    # sub-paragraph fragment, not a marginal note). The candidate itself
+    # IS a genuine, sequential section -- rejecting the bad donor must not
+    # collapse it to plain BODY (the first attempt's regression) or stall
+    # last_section_num; it must be promoted headingless instead.
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1985.", False, ""),
+        ("(c) if the person was appointed to a division", False, ""),
+        ("2.\tThe person ceases to hold office.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    sec2 = next(
+        r for rl in results for r in rl
+        if r.element_type == ElementType.SECTION and r.number == "2"
+    )
+    assert not sec2.heading  # headingless, not garbage heading text
+    # the bad donor's own text is preserved as its own paragraph, not
+    # discarded or turned into anything but its ordinary classification.
+    assert results[3][0].element_type == ElementType.BODY
+    assert results[3][0].text == "(c) if the person was appointed to a division"
+
+
+def test_classify_legacy_stream_bare_instruction_lookahead_rescues_repeal_of():
+    # Task 16C-v2's (?!\s+of\b) negative lookahead: a genuine section
+    # heading of the shape "<Verb> of ..." (a noun phrase, not a drafting
+    # imperative) must NOT be treated as a bad donor and rejected --
+    # confirmed real corpus headings "Repeal of Acts" (australian-trade-
+    # commission-(transitional-provisions...)-act-1985) and "Repeal of
+    # section 17a" (social-security-and-repatriation-legislation-amendment-
+    # act-1986). Both must still be consumed as genuine heading donors.
+    stream = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("Repeal of Acts", False, ""),
+        ("1.\tThis Act repeals redundant Acts.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[1] == []  # donor consumed, not rejected
+    assert results[2][0].element_type == ElementType.SECTION
+    assert results[2][0].heading == "Repeal of Acts"
+
+    stream2 = [
+        ("The Parliament of Australia enacts:", False, ""),
+        ("1 Short title", True, ""),
+        ("This Act may be cited as the Test Act 1986.", False, ""),
+        ("Repeal of section 17a", False, ""),
+        ("2.\tSection 17a of the Principal Act is repealed.", False, ""),
+    ]
+    results2 = classify_legacy_stream(stream2)
+    assert results2[3] == []  # donor consumed, not rejected
+    assert results2[4][0].element_type == ElementType.SECTION
+    assert results2[4][0].heading == "Repeal of section 17a"
+
+
 def test_legacy_style_heading5_short_title():
     # Shape 3: style-driven section heading. Confirmed against
     # agricultural-and-veterinary-chemical-products-levy-imposition-
