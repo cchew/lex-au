@@ -1,0 +1,3544 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2017/90/!main"/>
+          <FRBRuri value="/akn/au/act/2017/90"/>
+          <FRBRdate date="2017-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="90"/>
+          <FRBRname value="petroleum-and-other-fuels-reporting-act-2017"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2017/90/eng@2026-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/2017/90/eng@2026-07-01"/>
+          <FRBRdate date="2026-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2017/90/eng@2026-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2017/90/eng@2026-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2017-01-01" type="generation" eId="evt-creation" source="#petroleum-and-other-fuels-reporting-act-2017"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2017/115" date="2017-10-30"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2019/57" date="2019-08-07"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2021/13" date="2021-03-01"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2021/66" date="2021-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2023/71" date="2023-09-19"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2025/73" date="2025-12-04"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="commissioner-of-taxation" href="/ontology/roles/au/commissioner-of-taxation" showAs="the Commissioner of Taxation"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCRole eId="trustee" href="/ontology/roles/au/trustee" showAs="the trustee"/>
+        <TLCTerm eId="term-agreement" href="/ontology/term/au/term-agreement" showAs="Agreement"/>
+        <TLCTerm eId="term-and" href="/ontology/term/au/term-and" showAs="and"/>
+        <TLCTerm eId="term-civil-penalty-provision" href="/ontology/term/au/term-civil-penalty-provision" showAs="civil penalty provision"/>
+        <TLCTerm eId="term-commercial-in-confidence" href="/ontology/term/au/term-commercial-in-confidence" showAs="commercial-in-confidence"/>
+        <TLCTerm eId="term-constitutional-corporation" href="/ontology/term/au/term-constitutional-corporation" showAs="constitutional corporation"/>
+        <TLCTerm eId="term-constitutional-trade-and-commerce" href="/ontology/term/au/term-constitutional-trade-and-commerce" showAs="constitutional trade and commerce"/>
+        <TLCTerm eId="term-fuel" href="/ontology/term/au/term-fuel" showAs="fuel"/>
+        <TLCTerm eId="term-fuel-related-product" href="/ontology/term/au/term-fuel-related-product" showAs="fuel-related product"/>
+        <TLCTerm eId="term-international-energy-security-body" href="/ontology/term/au/term-international-energy-security-body" showAs="international energy security body"/>
+        <TLCTerm eId="term-offence-against-this-act" href="/ontology/term/au/term-offence-against-this-act" showAs="offence against this Act"/>
+        <TLCTerm eId="term-personal-information" href="/ontology/term/au/term-personal-information" showAs="personal information"/>
+        <TLCTerm eId="term-producing-a-covered-product" href="/ontology/term/au/term-producing-a-covered-product" showAs="producing a covered product"/>
+        <TLCTerm eId="term-protected-information" href="/ontology/term/au/term-protected-information" showAs="protected information"/>
+        <TLCTerm eId="term-refining-a-covered-product" href="/ontology/term/au/term-refining-a-covered-product" showAs="refining a covered product"/>
+        <TLCTerm eId="term-regulatory-powers-act" href="/ontology/term/au/term-regulatory-powers-act" showAs="Regulatory Powers Act"/>
+        <TLCTerm eId="term-rules" href="/ontology/term/au/term-rules" showAs="rules"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-statistical-fuel-information" href="/ontology/term/au/term-statistical-fuel-information" showAs="statistical fuel information"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Petroleum and Other Fuels Reporting Act 2017</p>
+      <p>No. 90, 2017</p>
+      <p><b>Compilation No. </b><b>7</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 July 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 73, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Petroleum and Other Fuels Reporting Act 2017</i> that shows the text of the law as amended and in force on 1 July 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Objects of this Act	1</p>
+      <p>4	Simplified outline of this Act	2</p>
+      <p>5	Definitions	2</p>
+      <p>6	Meaning of commercial-in-confidence	8</p>
+      <p>7	Act binds the Crown	8</p>
+      <p>8	Offshore areas	8</p>
+      <p>9	Concurrent operation of State and Territory laws	9</p>
+      <p><ref href="#part-2">Part 2</ref>—Reports of fuel information and information-gathering powers	10</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Introduction	10</p>
+      <p>10	Simplified outline of this <ref href="#part-10">Part	10</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Reports of fuel information	11</p>
+      <p>11	Reports of fuel information to be given to <role refersTo="#secretary">the Secretary</role>	11</p>
+      <p>12	Extended application of <ref href="#sec-11">section 11</ref>	13</p>
+      <p>13	Exceptions to duty to report	14</p>
+      <p>13A	Civil penalty for false or misleading information relating to <i>Fuel Security Act 2021</i>	15</p>
+      <p>13B	Compliance audits relating to the <i>Fuel Security Act 2021</i>	15</p>
+      <p>13C	Duty to provide reasonable facilities and assistance for audit	16</p>
+      <p>13D	Duty to comply with requirements in relation to report of audit	17</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Information-gathering powers	18</p>
+      <p>13E	Secretary may require information or documents	18</p>
+      <p>13F	Additional operation of <ref href="#sec-13E">section 13E</ref>	19</p>
+      <p>13G	Civil penalty for failing to comply with notice	20</p>
+      <p>13H	Civil penalty for false or misleading information or documents	21</p>
+      <p><ref href="#part-3">Part 3</ref>—Collection and publication of fuel information	22</p>
+      <p>14	Simplified outline of this <ref href="#part-22">Part	22</ref></p>
+      <p>15	Collection of fuel information	22</p>
+      <p>16	Publication of fuel information	22</p>
+      <p>17	Severability—publication of fuel information	23</p>
+      <p>18	Other powers or functions not affected	24</p>
+      <p><ref href="#part-4">Part 4</ref>—Secrecy and disclosure	25</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Introduction	25</p>
+      <p>19	Simplified outline of this <ref href="#part-25">Part	25</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Secrecy	26</p>
+      <p>20	Secrecy	26</p>
+      <p>21	Exercising powers, or performing functions or duties, as an entrusted person	27</p>
+      <p>22	Recording and use of protected information in relation to the publication of fuel information	27</p>
+      <p>23	Disclosure to <role refersTo="#minister">the Minister</role>	27</p>
+      <p>24	Disclosure to certain agencies, bodies or persons	28</p>
+      <p>25	Disclosure with consent	29</p>
+      <p>26	Disclosure of publicly available information	30</p>
+      <p>27	Disclosure to the person to whom the protected information relates	30</p>
+      <p>28	Disclosure to the person from whom the protected information was obtained	30</p>
+      <p>29	Disclosure to a court, tribunal etc.	30</p>
+      <p>30	Disclosure for purposes of law enforcement	31</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Disclosure	33</p>
+      <p>31	Disclosure of information to <role refersTo="#secretary">the Secretary</role>	33</p>
+      <p><ref href="#part-5">Part 5</ref>—Compliance and enforcement	34</p>
+      <p>32	Simplified outline of this <ref href="#part-34">Part	34</ref></p>
+      <p>33	Monitoring powers	34</p>
+      <p>34	Appointment of authorised persons	36</p>
+      <p>35	Civil penalty provisions	36</p>
+      <p>36	Infringement notices	37</p>
+      <p><ref href="#part-6">Part 6</ref>—Miscellaneous	38</p>
+      <p>37	Simplified outline of this <ref href="#part-38">Part	38</ref></p>
+      <p>38	Treatment of trusts	38</p>
+      <p>39	Delegations	39</p>
+      <p>40	Review of operation of this Act	40</p>
+      <p>41	Rules	40</p>
+      <p>Endnotes	42</p>
+      <p>Endnote 1—About the endnotes	42</p>
+      <p>Endnote 2—Abbreviation key	44</p>
+      <p>Endnote 3—Legislation history	45</p>
+      <p>Endnote 4—Amendment history	47</p>
+      <p>An Act to provide for the reporting and dissemination of information relating to petroleum, other fuels and fuel-related products, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act is the <i>Petroleum and Other Fuels Reporting </i><i>Act 201</i><i>7</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provisions</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  The whole of this Act</td>
+                <td>The day after this Act receives the Royal Assent.</td>
+                <td>24 August 2017</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Objects of this Act</heading>
+          <content>
+            <p>The objects of this Act are the following:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>to assist the Commonwealth to monitor fuel security to aid the Commonwealth to develop policy relating to the prevention of, preparation for, or management of, fuel supply disruptions or potential disruptions;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>to assist the Commonwealth to give effect to Australia’s obligations under the Agreement, or under any other international agreement to which Australia is a party relating to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-i">
+            <num>i</num>
+            <content>
+              <p>international energy security; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the reporting of data relating to petroleum, other fuels or fuel-related products;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>to facilitate the publication of information relating to Australia’s petroleum and other fuel markets;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-d">
+            <num>d</num>
+            <content>
+              <p>	(d)	to support the implementation of the <i>Fuel Security Act 2021</i>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>This Act requires the reporting of certain information relating to fuels and fuel-related products.</p>
+            <p><role refersTo="#secretary">The Secretary</role> may collect information relating to fuels and fuel-related products. <role refersTo="#secretary">The Secretary</role> may publish such information, unless the information is likely to enable the identification of a person or is commercial-in-confidence.</p>
+            <p>There are protections for sensitive information.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Definitions</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <content>
+              <p><b><i>affected</i></b>: see subsection 13C(2).</p>
+              <p><term refersTo="#term-agreement">Agreement</term> means <def>the Agreement on an International Energy Program, done at Paris on 18 November 1974.</def></p>
+              <p><term refersTo="#term-civil-penalty-provision">civil penalty provision</term> has the same meaning as <def>in the Regulatory Powers Act.</def></p>
+              <p><term refersTo="#term-commercial-in-confidence">commercial-in-confidence</term> has the meaning given by <def><ref href="#sec-6">section 6</ref>.</def></p>
+              <p><term refersTo="#term-constitutional-corporation">constitutional corporation</term> means <def>a corporation to which paragraph 51(xx) of the Constitution applies.</def></p>
+              <p><term refersTo="#term-constitutional-trade-and-commerce">constitutional trade and commerce</term> means <def>the following:</def></p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The Agreement is in Australian Treaty Series 1979 No. 7 ([1979] ATS 7) and could in 2017 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+              </content>
+            </authorialNote>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>trade or commerce between Australia and places outside Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>trade or commerce among the States;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>trade or commerce within a Territory, between a State and a Territory or between 2 Territories.</p>
+              </content>
+              <content>
+                <p><b><i>covered activity</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>producing a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>refining a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>wholesaling a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>holding stock of a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>importing a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>exporting a covered product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>any other activity, in relation to a covered product, prescribed by the rules for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p><b><i>covered product</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>crude oil; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>condensate; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>liquefied petroleum gas; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>natural gas liquid; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>gasoline; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>diesel; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>kerosene; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>fuel oil; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>heating oil; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>naphtha; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-k">
+              <num>k</num>
+              <content>
+                <p>compressed natural gas; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-l">
+              <num>l</num>
+              <content>
+                <p>liquefied natural gas; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-m">
+              <num>m</num>
+              <content>
+                <p>an oil, lubricant or grease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-n">
+              <num>n</num>
+              <content>
+                <p>paraffin wax; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-o">
+              <num>o</num>
+              <content>
+                <p>a petroleum-based solvent; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-p">
+              <num>p</num>
+              <content>
+                <p>petroleum coke; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-q">
+              <num>q</num>
+              <content>
+                <p>bitumen; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-r">
+              <num>r</num>
+              <content>
+                <p>biofuel; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-s">
+              <num>s</num>
+              <content>
+                <p>hydrogen; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-sa">
+              <num>sa</num>
+              <content>
+                <p>diesel exhaust fluid; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-sb">
+              <num>sb</num>
+              <content>
+                <p>technical grade urea; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-t">
+              <num>t</num>
+              <content>
+                <p>any other fuel prescribed by the rules for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-u">
+              <num>u</num>
+              <content>
+                <p>any other fuel-related product prescribed by the rules for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p><b><i>entrusted person</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an APS employee in the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>any other person employed or engaged by the Department.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-fuel">fuel</term> means <def>any product that produces energy through a chemical reaction.</def></p>
+                <p><b><i>fuel information</i></b> means:</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	Examples of a fuel include petroleum, hydrogen and biofuel.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any raw data, or any value added information product, that relates to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>covered activities; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the quantity, quality or characteristics of covered products; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>	(iii)	the holding (<ref href="#sec-19">within the meaning of section 19</ref> of the <i>Fuel Security Act 2021</i>) of stocks of covered products that are MSO products (within the meaning of that Act); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any metadata that describes data of a kind referred to in paragraph (a);</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-and">and</term> includes <def>contextual information relating to covered products (such as the location, control and ownership of covered products).</def></p>
+                <p><term refersTo="#term-fuel-related-product">fuel-related product</term> means <def>a product that is not a fuel, but: is derived from a fuel; or is an input into or an output from the production or refining of a fuel.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is derived from a fuel; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is an input into or an output from the production or refining of a fuel.</p>
+              </content>
+              <content>
+                <p><b><i>holding stock</i></b> of a covered product means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>keeping a covered product in storage (whether on land or at sea), but does not include:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>storing a covered product in a service station, retail store, personal vehicle, road tanker, rail tank car or pipeline; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>keeping a covered product wholly or principally for private or domestic use; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>holding, in circumstances prescribed by the rules for the purposes of this paragraph, a contractual right to take possession of a covered product.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	See also subsection (4).</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p><term refersTo="#term-international-energy-security-body">international energy security body</term> means <def>a body established under: the Agreement; or any other agreement with one or more countries, to which Australia is a party, relating to: international energy security; or the reporting of data relating to petroleum, other fuels or fuel-related products.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Agreement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any other agreement with one or more countries, to which Australia is a party, relating to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>international energy security; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the reporting of data relating to petroleum, other fuels or fuel-related products.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-offence-against-this-act">offence against this Act</term> includes <def>an offence against Chapter 7 of the Criminal Code that relates to this Act.</def></p>
+                <p><b><i>offshore area</i></b>, in relation to a State or Territory, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>person</i></b> has a meaning affected by <ref href="#sec-38">section 38</ref>.</p>
+                <p><term refersTo="#term-personal-information">personal information</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+                <p><term refersTo="#term-producing-a-covered-product">producing a covered product</term> means <def>recovering a covered product through a process of extraction or otherwise creating a covered product, but does not include refining a covered product.</def></p>
+                <p><term refersTo="#term-protected-information">protected information</term> means <def>fuel information that is personal information, or fuel information that is commercial-in-confidence, that: 	(a)	is obtained under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i>, <ref href="#sec-95Z">section 95Z</ref>PA of the <i>Competition and Consumer Act 2010</i> or subsection 355-65(8) in Schedule 1 to the <i>Taxation Administration Act 1953</i>; or 	(b)	is derived from a record of personal information, or information that is commercial-in-confidence, that was made under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i> or a provision referred to in paragraph (a); or 	(c)	is derived from a disclosure or use of personal information, or information that is commercial-in-confidence, that was made under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i> or a provision referred to in paragraph (a).</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	is obtained under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i>, <ref href="#sec-95Z">section 95Z</ref>PA of the <i>Competition and Consumer Act 2010</i> or subsection 355-65(8) in Schedule 1 to the <i>Taxation Administration Act 1953</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	is derived from a record of personal information, or information that is commercial-in-confidence, that was made under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i> or a provision referred to in paragraph (a); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	is derived from a disclosure or use of personal information, or information that is commercial-in-confidence, that was made under, or in accordance with, this Act, the <i>Fuel Security Act 2021</i> or a provision referred to in paragraph (a).</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	For the meaning of <b><i>commercial</i></b><b><i>-</i></b><b><i>in</i></b><b><i>-</i></b><b><i>confidence</i></b>, see <ref href="#sec-6">section 6</ref>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p><term refersTo="#term-refining-a-covered-product">refining a covered product</term> means <def>transforming a covered product into another covered product, or recycling or re-refining a covered product.</def></p>
+                <p><b><i>regulated entity</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a constitutional corporation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a trust, all of the trustees of which are constitutional corporations; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a body corporate that is incorporated in a Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	a body corporate that is taken to be registered in a Territory under <ref href="#sec-119A">section 119A</ref> of the <i>Corporations Act 2001</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a trust, if the proper law of the trust and the law of the trust’s administration are the law of a Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>an entity, the core or routine activities of which are carried out in or in connection with a Territory.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-regulatory-powers-act">Regulatory Powers Act</term> means <def>the Regulatory Powers (Standard Provisions) Act 2014.</def></p>
+                <p><term refersTo="#term-rules">rules</term> means <def>rules made under <ref href="#sec-41">section 41</ref>.</def></p>
+                <p><term refersTo="#term-secretary">Secretary</term> means <def>the Secretary of the Department.</def></p>
+                <p><term refersTo="#term-statistical-fuel-information">statistical fuel information</term> means <def>fuel information that is statistical information.</def></p>
+                <p><b><i>wholesaling</i></b> a covered product means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	entering a covered product for home consumption (within the meaning of the <i>Customs Act 1901</i> or the <i>Excise Act 1901</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if a covered product is not subject to duty of excise or duty of customs—removing the covered product from an import terminal or domestic production facilities (such as a refinery); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if another activity is prescribed by the rules for the purposes of this paragraph for a kind of covered product—undertaking that activity in relation to the kind of product.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The rules must not prescribe a fuel for the purposes of paragraph (t) of the definition of <b><i>covered product</i></b> in subsection (1) unless the Minister is satisfied that prescribing the fuel will promote the objects of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The rules must not prescribe a fuel-related product for the purposes of paragraph (u) of the definition of <b><i>covered product</i></b> in subsection (1) unless the Minister is satisfied that prescribing the product will assist the Commonwealth to give effect to Australia’s obligations, relating to the reporting of data relating to petroleum, other fuels or fuel-related products, under:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Agreement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>any other agreement with one or more countries.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	A person is taken to be <b><i>holding stock</i></b> of a covered product that is an MSO product within the meaning of the <i>Fuel Security Act 2021</i> if the person holds stocks of that product <ref href="#sec-19">within the meaning of section 19</ref> of that Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Meaning of commercial-in-confidence</heading>
+          <content>
+            <p>		Information is <b><i>commercial</i></b><b><i>-</i></b><b><i>in</i></b><b><i>-</i></b><b><i>confidence</i></b> if the Secretary is satisfied that:</p>
+          </content>
+          <paragraph eId="part-1__sec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>release of the information would cause competitive detriment to a person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is not in the public domain; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-c">
+            <num>c</num>
+            <content>
+              <p>the information is not required to be disclosed under another law of the Commonwealth, a State or a Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-d">
+            <num>d</num>
+            <content>
+              <p>the information is not readily discoverable.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Act binds the Crown</heading>
+          <subsection eId="part-1__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in each of its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not make the Crown liable to be:</p>
+            </content>
+            <paragraph eId="part-1__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>prosecuted for an offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>subject to civil proceedings for a civil penalty order under Part 4 of the Regulatory Powers Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>given an infringement notice under Part 5 of the Regulatory Powers Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-8">
+          <num>8</num>
+          <heading>Offshore areas</heading>
+          <subsection eId="part-1__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies in relation to the offshore areas in respect of the States and Territories as if references in this Act to Australia, when used in a geographical sense, included references to the offshore areas in respect of the States and Territories.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The extended application given to this Act by subsection (1) extends only in relation to:</p>
+            </content>
+            <paragraph eId="part-1__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>acts, matters and things directly or indirectly connected with exploration of, or exploitation of the natural resources of, the continental shelf of Australia; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>acts done by or in relation to, and matters, circumstances and things affecting, a person who is in an offshore area for a reason directly or indirectly connected with such exploration or exploitation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-9">
+          <num>9</num>
+          <heading>Concurrent operation of State and Territory laws</heading>
+          <content>
+            <p>This Act does not exclude or limit the operation of a law of a State or Territory that is capable of operating concurrently with this Act.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Reports of fuel information and information-gathering powers</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Introduction</heading>
+          <section eId="part-2__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>Reports must be given to <role refersTo="#secretary">the Secretary</role> if certain activities (called covered activities) are undertaken in relation to certain fuels and fuel-related products (called covered products).</p>
+              <p>The rules may set out exceptions to the duty to report. <role refersTo="#secretary">The Secretary</role> may determine that a particular person is not required to give a report in particular circumstances.</p>
+              <p><role refersTo="#secretary">The Secretary</role> may request information or documents relating to Australia’s market for covered products if <role refersTo="#secretary">the Secretary</role> reasonably believes there is a disruption to Australia’s fuel supply which significantly impacts Australia’s fuel market.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Reports of fuel information</heading>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Reports of fuel information to be given to the Secretary</heading>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a covered activity of a kind prescribed by the rules for the purposes of this subsection is undertaken in relation to a covered product of a kind prescribed by the rules in relation to the covered activity for the purposes of this subsection; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the covered activity is undertaken by a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the covered activity is undertaken in whichever of the following circumstances is prescribed by the rules in relation to the covered activity:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>in Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>outside Australia, in connection with business carried on in Australia by the regulated entity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>	(iii)	in the Greater Sunrise special regime area (within the meaning of the <i>Seas and Submerged Lands Act 1973</i>), in connection with business carried on in that area by the regulated entity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The person prescribed by the rules must give <role refersTo="#secretary">the Secretary</role> a report in accordance with this section.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>To avoid doubt, rules made for the purposes of subsection (2) may prescribe more than one person who must give a report in relation to the same kind of covered activity and the same kind of covered product.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A report under subsection (2) must:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>include the fuel information, in relation to the covered activity or the covered product, that is prescribed by the rules; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>be given in the manner and form approved in writing by <role refersTo="#secretary">the Secretary</role>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>be given to <role refersTo="#secretary">the Secretary</role> within the period prescribed by the rules.</p>
+                </content>
+                <authorialNote placement="end" eId="note-6" marker="6">
+                  <content>
+                    <p>Note 1:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note 2:	A person may commit an offence if the person provides false or misleading information or documents (see sections 137.1 and 137.2 of the <i>Criminal Code</i>). There is also a civil penalty for persons providing false or misleading information in relation to the <i>Fuel Security Act 2021</i> (see <ref href="#sec-13A">section 13A</ref> of this Act).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Rules made for the purposes of paragraph (4)(a) may prescribe different requirements for:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>different covered activities; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>different covered products; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-5__para-c">
+                <num>c</num>
+                <content>
+                  <p>reports by different persons.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Without limiting paragraph (4)(b), <role refersTo="#secretary">the Secretary</role> may approve:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>electronic communication as a manner in which a report must be given; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>more than one manner for giving a report; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-6__para-c">
+                <num>c</num>
+                <content>
+                  <p>different forms for different covered activities, different covered products or reports by different persons; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-6__para-d">
+                <num>d</num>
+                <content>
+                  <p>a single form for more than one report.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-7">
+              <num>7</num>
+              <content>
+                <p>Rules made for the purposes of paragraph (4)(c) may prescribe different periods for:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>different covered activities; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>different covered products; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-7__para-c">
+                <num>c</num>
+                <content>
+                  <p>reports by different persons.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-8">
+              <num>8</num>
+              <content>
+                <p>	(8)	Subsections (5), (6) and (7) do not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-9">
+              <num>9</num>
+              <content>
+                <p>A covered activity that is importing or exporting a covered product is taken to be undertaken in Australia for the purposes of subparagraph (1)(c)(i) if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-9__para-a">
+                <num>a</num>
+                <content>
+                  <p>for importing—the product is imported to Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-9__para-b">
+                <num>b</num>
+                <content>
+                  <p>for exporting—the product is exported from Australia.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Extended application of section 11</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Without limiting the effect of <ref href="#sec-11">section 11</ref> apart from this section, <ref href="#sec-11">section 11</ref> also has effect as provided by this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, no subsection of this section limits the operation of any other subsection of this section.</p>
+              </content>
+              <content>
+                <p>Census and statistics power</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Section 11 also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>each reference in subsection 11(1) to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the reference in paragraph 11(4)(a) to fuel information were expressly confined to a reference to statistical fuel information.</p>
+                </content>
+                <content>
+                  <p>External affairs power</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Section 11 also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>each reference in subsection 11(1) to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>the reference in paragraph 11(4)(a) to fuel information were expressly confined to fuel information that is necessary to give effect to Australia’s rights or obligations under:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-i">
+                <num>i</num>
+                <content>
+                  <p>the Agreement; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>any other agreement with one or more countries.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Section 11 also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>each reference in subsection 11(1) to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>subparagraph 11(1)(c)(i) were omitted.</p>
+                </content>
+                <content>
+                  <p>Trade and commerce power</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Section 11 also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>each reference in subsection 11(1) to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>the following paragraph were added at the end of that subsection:</p>
+                </content>
+                <content>
+                  <p>“; and (d)	the covered activity is undertaken in the course of or in relation to constitutional trade and commerce.”.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Exceptions to duty to report</heading>
+            <content>
+              <p>Exceptions prescribed by the rules</p>
+            </content>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subsection 11(2) does not apply in the circumstances prescribed by the rules.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	A person bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), the rules must prescribe that subsection 11(2) does not apply in circumstances relating to a threshold or thresholds prescribed by, or worked out in accordance with, the rules.</p>
+              </content>
+              <content>
+                <p>Exemptions by <role refersTo="#secretary">the Secretary</role></p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection 11(2) does not apply to a particular person, in relation to a particular kind of covered activity and a particular kind of covered product, if <role refersTo="#secretary">the Secretary</role>:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>is satisfied that, in all the circumstances, it is not appropriate for that subsection to apply to the person in relation to the covered activity and the covered product; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>makes a written determination to that effect.</p>
+                </content>
+                <authorialNote placement="end" eId="note-9" marker="9">
+                  <content>
+                    <p>Note:	A person bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A determination under paragraph (3)(b) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13A">
+            <num>13A</num>
+            <heading>Civil penalty for false or misleading information relating to Fuel Security Act 2021</heading>
+            <content>
+              <p>A person must not, in a report under <ref href="#sec-11">section 11</ref>, provide information that:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-a">
+              <num>a</num>
+              <content>
+                <p>relates to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	whether a regulated entity that is subject to the minimum stockholding obligation under the <i>Fuel Security Act 2021 </i>is complying with <ref href="#sec-7">section 7</ref> of that Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	whether fuel security services payment is payable to a constitutional corporation under the <i>Fuel Security Act 2021</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-b">
+              <num>b</num>
+              <content>
+                <p>is false or misleading in a material particular, or omits a matter or thing without which the information is misleading in a material particular.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">300 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-13B">
+            <num>13B</num>
+            <heading>Compliance audits relating to the Fuel Security Act 2021</heading>
+            <subsection eId="part-2__dvs-2__sec-13B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The rules may make provision in relation to the auditing of compliance with <ref href="#sec-11">section 11</ref>, so far as that section relates to the giving of reports that relate to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>MSO activities undertaken in relation to MSO products by regulated entities; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the refining of FSSP fuels.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), rules made for the purposes of that subsection may do any of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>empower <role refersTo="#secretary">the Secretary</role> to require an audit to be conducted;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>prescribe matters to which an audit may relate or be required by <role refersTo="#secretary">the Secretary</role> to relate;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>prescribe persons who are authorised to conduct audits;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>require reports of audits to accompany reports given under <ref href="#sec-11">section 11</ref> or otherwise be given to <role refersTo="#secretary">the Secretary</role>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	The following expressions used in subsection (1)<i> </i>have the same meaning as in the <i>Fuel Security Act 2021</i>:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>FSSP fuels;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>MSO activity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>MSO product;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13B__subsec-3__para-d">
+                <num>d</num>
+                <content>
+                  <p>regulated entity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13C">
+            <num>13C</num>
+            <heading>Duty to provide reasonable facilities and assistance for audit</heading>
+            <subsection eId="part-2__dvs-2__sec-13C__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	A person affected by an audit required to be conducted under rules made for the purposes of subsection 13B(1) must provide the person conducting the audit (the <b><i>audit team leader</i></b>), and any person assisting the audit team leader in the conduct of the audit, with all reasonable facilities and assistance necessary for the effective exercise of the audit team leader’s duties in relation to the audit.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13C__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	A person is <b><i>affected</i></b> by an audit if the person is any of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person being audited;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the audit relates to compliance with <ref href="#sec-11">section 11</ref> so far as that section relates to the giving of reports that relate to MSO activities undertaken in relation to MSO products by a regulated entity:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the regulated entity; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>if the regulated entity has an Australian controlling corporation—the Australian controlling corporation; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>	(iii)	any entity in possession of stocks of an MSO product that are held (<ref href="#sec-19">within the meaning of section 19</ref> of the <i>Fuel Security Act 2021</i>) by the regulated entity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>if the audit relates to compliance with <ref href="#sec-11">section 11</ref> so far as that section relates to the giving of reports that relate to the refining of FSSP fuels by a constitutional corporation—the constitutional corporation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13C__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	The following expressions used in subsection (2)<i> </i>have the same meaning as in the <i>Fuel Security Act 2021</i>:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>FSSP fuels;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>MSO activity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>MSO product;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13C__subsec-3__para-d">
+                <num>d</num>
+                <content>
+                  <p>regulated entity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13D">
+            <num>13D</num>
+            <heading>Duty to comply with requirements in relation to report of audit</heading>
+            <subsection eId="part-2__dvs-2__sec-13D__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person who is required to give <role refersTo="#secretary">the Secretary</role> a report under <ref href="#sec-11">section 11</ref> must comply with any rules prescribed for the purposes of subsection 13B(1) requiring a report of an audit to accompany the report under <ref href="#sec-11">section 11</ref>.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13D__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person who is required by any rules prescribed for the purposes of subsection 13B(1) to give a report of an audit to <role refersTo="#secretary">the Secretary</role> must give the report of the audit to <role refersTo="#secretary">the Secretary</role> in accordance with the rules.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Information-gathering powers</heading>
+          <section eId="part-2__dvs-3__sec-13E">
+            <num>13E</num>
+            <heading>Secretary may require information or documents</heading>
+            <content>
+              <p>Scope</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if <role refersTo="#secretary">the Secretary</role> reasonably believes that:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>there is a disruption to Australia’s fuel supply; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the disruption has had, is having, or is likely to have, a significant impact on Australia’s fuel market.</p>
+                </content>
+                <content>
+                  <p>Notice</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may give a regulated entity a written notice if <role refersTo="#secretary">the Secretary</role> reasonably believes that the entity has information or documents relevant to the Australian market for a covered product.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Without limiting subsection (2), information or documents relevant to the Australian market for a covered product include information or documents relating to the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the entity’s orders for any upcoming supply of the product to the market, and the scheduled timeframes for that supply;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the entity’s orders for any upcoming demand for the product by customers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>stock levels of the product held by the entity.</p>
+                </content>
+                <content>
+                  <p>Contents of notice</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The notice may require the entity to do either or both of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>to give information specified in the notice to <role refersTo="#secretary">the Secretary</role> within the period and in the manner specified in the notice;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>to produce documents specified in the notice to <role refersTo="#secretary">the Secretary</role> within the period and in the manner specified in the notice.</p>
+                </content>
+                <authorialNote placement="end" eId="note-10" marker="10">
+                  <content>
+                    <p>Note 1:	For civil penalties for failing to comply with a requirement of a notice or for providing false or misleading information or documents, see sections 13G and 13H.</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-11" marker="11">
+                  <content>
+                    <p>Note 2:	A person may commit an offence if the person provides false or misleading information or documents (see sections 137.1 and 137.2 of the <i>Criminal Code</i>).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The notice must set out the effect of the following provisions:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p><ref href="#sec-13G">section 13G</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p><ref href="#sec-13H">section 13H</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-5__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	<ref href="#sec-137">section 137</ref>.1 of the<i> Criminal Code</i> (about an offence for giving false or misleading information);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-5__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	<ref href="#sec-137">section 137</ref>.2 of the <i>Criminal Code </i>(about an offence for producing false or misleading documents).</p>
+                </content>
+                <content>
+                  <p>Minimum period for complying with notice</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13E__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A period specified under paragraph (4)(a) or (b):</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>must be at least 5 business days after the day the notice is given; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>may be:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-6__para-i">
+                <num>i</num>
+                <content>
+                  <p>a single period; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13E__subsec-6__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a recurring period.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-13F">
+            <num>13F</num>
+            <heading>Additional operation of section 13E</heading>
+            <subsection eId="part-2__dvs-3__sec-13F__subsec-1">
+              <num>1</num>
+              <content>
+                <p>In addition to the effect of <ref href="#sec-13E">section 13E</ref>, that section also has effect as provided by this section.</p>
+              </content>
+              <content>
+                <p>Census and statistics power</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13F__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Section 13E also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a reference to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>a reference to information or documents were expressly confined to statistical information or statistical documents.</p>
+                </content>
+                <content>
+                  <p>External affairs power</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13F__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Section 13E also has the effect it would have if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>a reference to a regulated entity included a reference to a person who is not a regulated entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>a reference to information or documents were expressly confined to information or documents necessary to give effect to Australia’s rights or obligations under:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the Agreement; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13F__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>any other agreement with one or more countries.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-13G">
+            <num>13G</num>
+            <heading>Civil penalty for failing to comply with notice</heading>
+            <content>
+              <p>Civil penalty</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-13G__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person contravenes this subsection if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13G__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is given a notice under <ref href="#sec-13E">section 13E</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13G__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person fails to comply with a requirement of the notice.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Civil penalty:	<quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13G__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply if the person has a reasonable excuse.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	A person bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Continuing contravention</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13G__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If a person contravenes subsection (1) by contravening a requirement mentioned in paragraph 13E(4)(a) or (b), the maximum civil penalty for each day that the contravention continues is 10% of the maximum civil penalty that can be imposed in respect of that contravention.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	Subsection (1), as it relates to a contravention of a requirement mentioned in paragraph 13E(4)(a) or (b), is a continuing civil penalty provision under <ref href="#sec-93">section 93</ref> of the Regulatory Powers Act.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-13H">
+            <num>13H</num>
+            <heading>Civil penalty for false or misleading information or documents</heading>
+            <content>
+              <p>Civil penalty</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-13H__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person contravenes this subsection if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13H__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is given a notice under <ref href="#sec-13E">section 13E</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13H__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person gives information or produces a document that is false or misleading in a material particular, or omits a matter or thing without which the information or the document is misleading in a material particular.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Civil penalty:	<quantity refersTo="#penaltyUnit">300 penalty units</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13H__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply if the person has a reasonable excuse.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	A person bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Collection and publication of fuel information</heading>
+        <section eId="part-3__sec-14">
+          <num>14</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part permits <role refersTo="#secretary">the Secretary</role> to collect fuel information.</p>
+            <p>Fuel information is raw data or value added information product that relates to covered activities, or to the quantity, quality or characteristics of covered products, or to the holding (within the meaning of the <i>Fuel Security Act 2021</i>) of certain covered products. Fuel information includes metadata describing such data, and contextual information.</p>
+            <p><role refersTo="#secretary">The Secretary</role> may publish or make available fuel information. The information must not be likely to enable the identification of a person or be commercial-in-confidence.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-15">
+          <num>15</num>
+          <heading>Collection of fuel information</heading>
+          <content>
+            <p><role refersTo="#secretary">The Secretary</role> may collect fuel information.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-16">
+          <num>16</num>
+          <heading>Publication of fuel information</heading>
+          <subsection eId="part-3__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in such manner as <role refersTo="#secretary">the Secretary</role> thinks appropriate, cause to be published or made available statistical fuel information.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in such manner as <role refersTo="#secretary">the Secretary</role> thinks appropriate, cause to be published or made available fuel information that is not statistical fuel information.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must not cause to be published or made available information under this section if the information is:</p>
+            </content>
+            <paragraph eId="part-3__sec-16__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>likely to enable the identification of a person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>commercial-in-confidence.</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	An entrusted person may make a record of or use protected information for the purpose of the publication or making available of information under this section: see <ref href="#sec-22">section 22</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-17">
+          <num>17</num>
+          <heading>Severability—publication of fuel information</heading>
+          <subsection eId="part-3__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Without limiting the effect of subsection 16(2) apart from this section, subsection 16(2) also has effect as provided by this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, no subsection of this section limits the operation of any other subsection of this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection 16(2) also has the effect it would have if that subsection were, by express provision, confined to the communication of information by electronic means.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection 16(2) also has the effect it would have if the reference in that subsection to fuel information that is not statistical fuel information were, by express provision, confined to information that relates to the affairs of a regulated entity or was obtained from a regulated entity.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection 16(2) also has the effect it would have if the reference in that subsection to fuel information that is not statistical fuel information were, by express provision, confined to information the publication or making available of which is necessary to give effect to Australia’s rights or obligations under:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the Agreement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>any other agreement with one or more countries.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsection 16(2) also has the effect it would have if the reference in that subsection to fuel information that is not statistical fuel information were, by express provision, confined to information relating to acts or omissions that occur outside Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subsection 16(2) also has the effect it would have if the reference in that subsection to fuel information that is not statistical fuel information were, by express provision, confined to information relating to acts or omissions in the course of or in relation to constitutional trade and commerce.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18">
+          <num>18</num>
+          <heading>Other powers or functions not affected</heading>
+          <content>
+            <p>This Part does not, by implication, limit any other power or function of <role refersTo="#secretary">the Secretary</role> to collect, publish, or otherwise deal with information.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Secrecy and disclosure</heading>
+        <division eId="part-4__dvs-1">
+          <num>1</num>
+          <heading>Introduction</heading>
+          <section eId="part-4__dvs-1__sec-19">
+            <num>19</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>This Part makes it an offence for an entrusted person to record, use or disclose protected information, except in circumstances set out in this Part.</p>
+              <p>This Part also authorises certain fuel information to be disclosed to <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-4__dvs-2">
+          <num>2</num>
+          <heading>Secrecy</heading>
+          <section eId="part-4__dvs-2__sec-20">
+            <num>20</num>
+            <heading>Secrecy</heading>
+            <content>
+              <p>Offence</p>
+            </content>
+            <subsection eId="part-4__dvs-2__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is, or has been, an entrusted person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person has obtained information in his or her capacity as an entrusted person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the information is protected information; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the person:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>makes a record of the information; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>uses the information; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>discloses the information to another person.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+                <content>
+                  <p>Exceptions</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the conduct is authorised by:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>this Act or another law of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a law of a State or Territory prescribed by the rules; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the conduct is in compliance with a requirement under:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>this Act or another law of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a law of a State or a Territory prescribed by the rules.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-20__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (1) does not apply if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person makes a record of, discloses or otherwise uses information; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the information is commercial-in-confidence; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-20__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person does not know that the information is commercial-in-confidence.</p>
+                </content>
+                <authorialNote placement="end" eId="note-16" marker="16">
+                  <content>
+                    <p>Note:	A defendant bears an evidential burden in relation to the matters in subsections (2) and (3) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                  </content>
+                </authorialNote>
+                <content>
+                  <p>Implied freedom of political communication</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-20__subsec-4">
+              <num>4</num>
+              <content>
+                <p>This section does not apply to the extent (if any) that it would infringe any constitutional doctrine of implied freedom of political communication.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-21">
+            <num>21</num>
+            <heading>Exercising powers, or performing functions or duties, as an entrusted person</heading>
+            <content>
+              <p>An entrusted person may make a record of, use or disclose protected information if the record is made, or the information is used or disclosed, in the course of exercising powers, or performing functions or duties, as an entrusted person.</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	The powers, functions and duties of entrusted persons are not limited to those conferred or imposed by this Act.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-4__dvs-2__sec-22">
+            <num>22</num>
+            <heading>Recording and use of protected information in relation to the publication of fuel information</heading>
+            <content>
+              <p>An entrusted person may:</p>
+            </content>
+            <paragraph eId="part-4__dvs-2__sec-22__para-a">
+              <num>a</num>
+              <content>
+                <p>make a record of protected information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-22__para-b">
+              <num>b</num>
+              <content>
+                <p>use protected information;</p>
+              </content>
+              <content>
+                <p>for the purpose of the publication or making available of fuel information under <ref href="#sec-16">section 16</ref>.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-2__sec-23">
+            <num>23</num>
+            <heading>Disclosure to the Minister</heading>
+            <subsection eId="part-4__dvs-2__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An entrusted person may:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-23__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>disclose protected information to <role refersTo="#minister">the Minister</role>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-23__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>make a record of or use protected information for the purpose of disclosing protected information to <role refersTo="#minister">the Minister</role>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An entrusted person may:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-23__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	disclose protected information to a person employed by the Minister under the <i>Members of Parliament (Staff) Act 1984</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-23__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>make a record of or use protected information for the purposes of disclosing the information under paragraph (a).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-24">
+            <num>24</num>
+            <heading>Disclosure to certain agencies, bodies or persons</heading>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may disclose:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>protected information to an agency, body or person referred to in paragraph (2)(a), (b), (c) or (d); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>protected information that is statistical information to a body referred to in paragraph (2)(e);</p>
+                </content>
+                <content>
+                  <p>if <role refersTo="#secretary">the Secretary</role> reasonably believes that the information will enable or assist the agency, body or person to exercise its powers, or perform its functions or duties.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The agencies, bodies and persons to which protected information may be disclosed under this section are the following:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Australian Competition and Consumer Commission;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#commissioner-of-taxation">the Commissioner of Taxation</role>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>an agency or authority of the Commonwealth prescribed by the rules;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>a State or Territory government, agency or authority prescribed by the rules;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>the International Energy Agency or any other international energy security body prescribed by the rules.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, authorise an entrusted person to disclose:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>protected information to an agency, body or person referred to in paragraph (2)(a), (b), (c) or (d); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>protected information that is statistical information to a body referred to in paragraph (2)(e);</p>
+                </content>
+                <content>
+                  <p>if <role refersTo="#secretary">the Secretary</role> reasonably believes that the information will enable or assist the agency, body or person to exercise its powers, or perform its functions or duties.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If an entrusted person is authorised to disclose information under subsection (3), that person may disclose the information.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-5">
+              <num>5</num>
+              <content>
+                <p>An entrusted person may:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>make a record of protected information; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>use protected information;</p>
+                </content>
+                <content>
+                  <p>for the purpose of disclosing protected information under subsection (1) or (4).</p>
+                  <p>Conditions</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, by writing, impose conditions to be complied with in relation to protected information disclosed under subsection (1) or (4), other than information disclosed to the Australian Competition and Consumer Commission.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is subject to a condition under subsection (6); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person engages in conduct; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-24__subsec-7__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person’s conduct breaches the condition.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-8">
+              <num>8</num>
+              <content>
+                <p>An instrument under subsection (6) is not a legislative instrument.</p>
+              </content>
+              <content>
+                <p>Protected information disclosed to the Australian Competition and Consumer Commission</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-24__subsec-9">
+              <num>9</num>
+              <content>
+                <p>	(9)	Protected information disclosed under subsection (1) or (4) to the Australian Competition and Consumer Commission is taken, for the purposes of <ref href="#part-VII">Part VII</ref>A of the <i>Competition and Consumer Act 2010</i>, to be protected information <ref href="#sec-95Z">within the meaning of section 95Z</ref>P of that Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-25">
+            <num>25</num>
+            <heading>Disclosure with consent</heading>
+            <content>
+              <p>An entrusted person may make a record of, use or disclose protected information that relates to the affairs of a person if:</p>
+            </content>
+            <paragraph eId="part-4__dvs-2__sec-25__para-a">
+              <num>a</num>
+              <content>
+                <p>the person has consented to the recording, use or disclosure; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-25__para-b">
+              <num>b</num>
+              <content>
+                <p>the recording, use or disclosure is in accordance with that consent.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-2__sec-26">
+            <num>26</num>
+            <heading>Disclosure of publicly available information</heading>
+            <content>
+              <p>An entrusted person may:</p>
+            </content>
+            <paragraph eId="part-4__dvs-2__sec-26__para-a">
+              <num>a</num>
+              <content>
+                <p>make a record of protected information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-26__para-b">
+              <num>b</num>
+              <content>
+                <p>use protected information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-26__para-c">
+              <num>c</num>
+              <content>
+                <p>disclose protected information to another person;</p>
+              </content>
+              <content>
+                <p>if the protected information has already been lawfully made available to the public.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-2__sec-27">
+            <num>27</num>
+            <heading>Disclosure to the person to whom the protected information relates</heading>
+            <content>
+              <p>An entrusted person may disclose protected information to the person to whom the protected information relates.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-2__sec-28">
+            <num>28</num>
+            <heading>Disclosure to the person from whom the protected information was obtained</heading>
+            <content>
+              <p>An entrusted person may disclose protected information to the person from whom the information was obtained.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-2__sec-29">
+            <num>29</num>
+            <heading>Disclosure to a court, tribunal etc.</heading>
+            <content>
+              <p>An entrusted person may make a record of, use or disclose protected information, or a document containing protected information:</p>
+            </content>
+            <paragraph eId="part-4__dvs-2__sec-29__para-a">
+              <num>a</num>
+              <content>
+                <p>for the purposes of proceedings before:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-29__para-i">
+              <num>i</num>
+              <content>
+                <p>a court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-29__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a tribunal, authority or person that has the power to require the answering of questions or the production of documents; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-29__para-b">
+              <num>b</num>
+              <content>
+                <p>in accordance with an order of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-29__para-i">
+              <num>i</num>
+              <content>
+                <p>a court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-29__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a tribunal, authority or person that has the power to require the answering of questions or the production of documents.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-2__sec-30">
+            <num>30</num>
+            <heading>Disclosure for purposes of law enforcement</heading>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may disclose protected information to an agency referred to in subsection (2), if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> reasonably believes that the disclosure of the information is necessary for:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the enforcement of the criminal law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the enforcement of a law imposing a pecuniary penalty; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the protection of the public revenue; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the protected information is disclosed for the purposes of that enforcement or protection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The agencies to which <role refersTo="#secretary">the Secretary</role> may disclose protected information under this section are:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a Department, agency or authority of the Commonwealth, a State or a Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Australian Federal Police; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the police force or police service of a State or Territory;</p>
+                </content>
+                <content>
+                  <p>whose functions include that enforcement or protection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, authorise an entrusted person to disclose protected information to an agency referred to in subsection (2), if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> reasonably believes that the disclosure of the information is necessary for:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the enforcement of the criminal law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the enforcement of a law imposing a pecuniary penalty; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-3__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the protection of the public revenue; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the protected information is disclosed for the purposes of that enforcement or protection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If a person is authorised to disclose information under subsection (3), that person may disclose the information.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-5">
+              <num>5</num>
+              <content>
+                <p>An entrusted person may:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>make a record of protected information; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>use protected information;</p>
+                </content>
+                <content>
+                  <p>for the purpose of disclosing protected information under subsection (1) or (4).</p>
+                  <p>Conditions</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, by writing, impose conditions to be complied with in relation to protected information disclosed under subsection (1) or (4).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is subject to a condition under subsection (6); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person engages in conduct; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-7__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person’s conduct breaches the condition.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-8">
+              <num>8</num>
+              <content>
+                <p>An instrument under subsection (6) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-3">
+          <num>3</num>
+          <heading>Disclosure</heading>
+          <section eId="part-4__dvs-3__sec-31">
+            <num>31</num>
+            <heading>Disclosure of information to the Secretary</heading>
+            <subsection eId="part-4__dvs-3__sec-31__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	An entrusted person (within the meaning of the <i>Australian Border Force Act 2015</i>) may give:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-31__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-31__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an entrusted person (within the meaning of this Act) authorised under subsection (3);</p>
+                </content>
+                <content>
+                  <p>such Immigration and Border Protection information (within the meaning of the <i>Australian Border Force Act 2015</i>) that is fuel information as the Secretary reasonably believes will enable or assist him or her to perform or exercise any of his or her functions or powers under this Act or the <i>Fuel Security Act 2021</i>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-31__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The information mentioned in subsection (1) may include personal information.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-31__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, authorise an entrusted person for the purposes of paragraph (1)(b).</p>
+              </content>
+              <authorialNote placement="end" eId="note-18" marker="18">
+                <content>
+                  <p>Note:	This section constitutes an authorisation for the purposes of the <i>Privacy Act 1988</i>, paragraph 42(2)(c) of the <i>Australian Border Force Act 2015</i> and other laws.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Compliance and enforcement</heading>
+        <section eId="part-5__sec-32">
+          <num>32</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>Civil penalty orders may be sought under Part 4 of the Regulatory Powers Act from a relevant court in relation to contraventions of the requirement in <ref href="#sec-11">section 11</ref> to give reports to <role refersTo="#secretary">the Secretary</role> and the requirement in <ref href="#sec-13E">section 13E</ref> to give information or produce documents.</p>
+            <p>An authorised person may enter premises under a warrant or with consent of the occupier and exercise monitoring powers there under Part 2 of the Regulatory Powers Act, for the purposes of determining whether information given in compliance or purported compliance with <ref href="#sec-11">section 11</ref> is correct.</p>
+            <p>A person can be given an infringement notice under Part 5 of the Regulatory Powers Act for contravening <ref href="#sec-11">section 11</ref> or <ref href="#sec-13E">section 13E</ref>.</p>
+            <p>A person who is given an infringement notice can choose to pay an amount as an alternative to having court proceedings brought against the person for the contravention. If the person does not choose to pay the amount, proceedings can be brought against the person for the contravention.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-33">
+          <num>33</num>
+          <heading>Monitoring powers</heading>
+          <content>
+            <p>Information subject to monitoring</p>
+          </content>
+          <subsection eId="part-5__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Information given in compliance or purported compliance with <ref href="#sec-11">section 11</ref> is subject to monitoring under Part 2 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-19" marker="19">
+              <content>
+                <p>Note:	Part 2 of the Regulatory Powers Act creates a framework for monitoring whether the information is correct. It includes powers of entry and inspection.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Related provisions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>For the purposes of Part 2 of the Regulatory Powers Act, as that Act applies in relation to the information mentioned in subsection (1), each of the following provisions is related to the provision mentioned in subsection (1):</p>
+            </content>
+            <paragraph eId="part-5__sec-33__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a civil penalty provision of the <i>Fuel Security Act 2021</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a civil penalty provision of the <i>Fuel Quality Standards Act 2000</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-1A__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	an offence provision of the <i>Fuel Quality Standards Act 2000</i>.</p>
+              </content>
+              <content>
+                <p>Authorised applicant, authorised person, issuing officer, relevant chief executive and relevant court</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 2 of the Regulatory Powers Act, as that Part applies in relation to the information mentioned in subsection (1):</p>
+            </content>
+            <paragraph eId="part-5__sec-33__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is an authorised applicant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>a person appointed under <ref href="#sec-34">section 34</ref> is an authorised person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a magistrate is an issuing officer; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is the relevant chief executive; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>each of the following is a relevant court:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the Federal Court of Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-33__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+              <content>
+                <p>Extension to offshore areas</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Part 2 of the Regulatory Powers Act, as that Part applies in relation to information mentioned in subsection (1), extends to each offshore area.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-34">
+          <num>34</num>
+          <heading>Appointment of authorised persons</heading>
+          <subsection eId="part-5__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in writing, appoint a person who is one of the following as an authorised person for the purposes of this Act:</p>
+            </content>
+            <paragraph eId="part-5__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an APS employee in the Department;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a person who is engaged as a consultant or contractor to perform services in relation to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must not appoint a person as an authorised person unless <role refersTo="#secretary">the Secretary</role> is satisfied that the person has the knowledge or experience necessary to properly exercise the powers of an authorised person.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An authorised person must, in exercising powers as such, comply with any directions of <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If a direction is given under subsection (3) in writing, the direction is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-35">
+          <num>35</num>
+          <heading>Civil penalty provisions</heading>
+          <content>
+            <p>Enforceable civil penalty provisions</p>
+          </content>
+          <subsection eId="part-5__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each civil penalty provision of this Act is enforceable under Part 4 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-20" marker="20">
+              <content>
+                <p>Note:	Part 4 of the Regulatory Powers Act allows a civil penalty provision to be enforced by obtaining an order for a person to pay a pecuniary penalty for the contravention of the provision.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Authorised applicant and relevant court</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act:</p>
+            </content>
+            <paragraph eId="part-5__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is an authorised applicant in relation to the civil penalty provisions of this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>each of the following is a relevant court in relation to the civil penalty provisions of this Act:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the Federal Court of Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+              <content>
+                <p>Extension to offshore areas</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Part 4 of the Regulatory Powers Act, as it applies in relation to the civil penalty provisions mentioned in subsection (1), extends to each offshore area.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-36">
+          <num>36</num>
+          <heading>Infringement notices</heading>
+          <content>
+            <p>Provisions subject to an infringement notice</p>
+          </content>
+          <subsection eId="part-5__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A civil penalty provision of this Act is subject to an infringement notice under Part 5 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-21" marker="21">
+              <content>
+                <p>Note:	Part 5 of the Regulatory Powers Act creates a framework for using infringement notices in relation to provisions.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Infringement officer and relevant chief executive</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 5 of the Regulatory Powers Act:</p>
+            </content>
+            <paragraph eId="part-5__sec-36__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is an infringement officer in relation to the provisions mentioned in subsection (1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is the relevant chief executive in relation to the provisions mentioned in subsection (1).</p>
+              </content>
+              <content>
+                <p>Extension to offshore areas</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Part 5 of the Regulatory Powers Act, as that Part applies in relation to the provisions mentioned in subsection (1), extends to each offshore area.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-6__sec-37">
+          <num>37</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part deals with other matters, such as delegations, reviews of this Act and rules.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-38">
+          <num>38</num>
+          <heading>Treatment of trusts</heading>
+          <subsection eId="part-6__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to a trust as if it were a person, but with the changes set out in this section.</p>
+            </content>
+            <content>
+              <p>Trusts with a single trustee</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the trust has a single trustee:</p>
+            </content>
+            <paragraph eId="part-6__sec-38__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>an obligation that would otherwise be imposed on the trust by this Act is imposed on <role refersTo="#trustee">the trustee</role> instead; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-38__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an offence against this Act that would otherwise have been committed by the trust is taken to have been committed by <role refersTo="#trustee">the trustee</role>.</p>
+              </content>
+              <content>
+                <p>Trusts with multiple trustees</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the trust has 2 or more trustees:</p>
+            </content>
+            <paragraph eId="part-6__sec-38__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>an obligation that would otherwise be imposed on the trust by this Act is imposed on each trustee instead, but may be discharged by any of the trustees; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-38__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>an offence against this Act that would otherwise have been committed by the trust is taken to have been committed by each trustee of the trust, at the time the offence was committed, who:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-38__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>did the relevant act or made the relevant omission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-38__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>aided, abetted, counselled or procured the relevant act or omission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-38__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>was in any way knowingly concerned in, or party to, the relevant act or omission (whether directly or indirectly and whether by any act or omission of <role refersTo="#trustee">the trustee</role>).</p>
+              </content>
+              <content>
+                <p>Contraventions of civil penalty provisions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-38__subsec-4">
+            <num>4</num>
+            <content>
+              <p>This section applies to a contravention of a civil penalty provision in a corresponding way to the way in which it applies to an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-39">
+          <num>39</num>
+          <heading>Delegations</heading>
+          <subsection eId="part-6__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in writing, delegate any or all of his or her functions or powers under:</p>
+            </content>
+            <paragraph eId="part-6__sec-39__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-6">section 6</ref> (about commercial-in-confidence information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>paragraph 11(4)(b) (about approving manners and forms); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>subsection 13(3) (about exemptions from the duty to report); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-ca">
+              <num>ca</num>
+              <content>
+                <p>	(ca)	rules made for the purposes of subsection 13B(1) (about compliance audits relating to the <i>Fuel Security Act 2021</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-cb">
+              <num>cb</num>
+              <content>
+                <p><ref href="#sec-13E">section 13E</ref> (about requiring information or documents); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p><ref href="#sec-15">section 15</ref> (about collection of fuel information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p><ref href="#sec-16">section 16</ref> (about publication of fuel information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p><ref href="#sec-34">section 34</ref> (about appointment of authorised persons); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-39__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p><ref href="#sec-35">section 35</ref> of the Regulatory Powers Act as the relevant chief executive to issue identity cards to authorised persons;</p>
+              </content>
+              <content>
+                <p>to an SES employee, or an acting SES employee, in the Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-22" marker="22">
+                <content>
+                  <p>Note:	<b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In performing a function, or exercising a power, under a delegation, the delegate must comply with any directions of <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-40">
+          <num>40</num>
+          <heading>Review of operation of this Act</heading>
+          <subsection eId="part-6__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> must cause an independent review to be conducted of the operation of this Act and the rules.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the matters to be covered by the review, the review must consider the following:</p>
+            </content>
+            <paragraph eId="part-6__sec-40__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the definition of <b><i>fuel information</i></b> in <ref href="#sec-5">section 5</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-40__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the definition of <b><i>covered product</i></b> in <ref href="#sec-5">section 5</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-40__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	the definition of <b><i>covered activity</i></b> in <ref href="#sec-5">section 5</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The review must be conducted as soon as practicable after the end of 3 years after this section commences.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The persons who conduct the review must give <role refersTo="#minister">the Minister</role> a written report of the review.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> must cause copies of the report to be tabled in each House of the Parliament within 15 sitting days of that House after the report is given to <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-41">
+          <num>41</num>
+          <heading>Rules</heading>
+          <subsection eId="part-6__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters:</p>
+            </content>
+            <paragraph eId="part-6__sec-41__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-6__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-41__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>orig = original</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>p = page(s)</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>para = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>cl = clause(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>cont. = continued</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>r = regulation(s)/Court rule(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>sub ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>sub div = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>sub pt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act
+(Register ID)</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Petroleum and Other Fuels Reporting Act 2017 (C2017A00090)</td>
+                  <td>90, 2017</td>
+                  <td>23 Aug 2017</td>
+                  <td>24 Aug 2017 (s 2(1) item 1)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Australian Border Force Amendment (Protected Information) Act 2017 (C2017A00115)</td>
+                  <td>115, 2017</td>
+                  <td>30 Oct 2017</td>
+                  <td>sch 1 (item 32): 31 Oct 2017 (s 2(1) item 4)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Timor Sea Maritime Boundaries Treaty Consequential Amendments Act 2019 (C2019A00057)</td>
+                  <td>57, 2019</td>
+                  <td>7 Aug 2019</td>
+                  <td>sch 1 (item 138): 30 Aug 2019 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021 (C2021A00013)</td>
+                  <td>13, 2021</td>
+                  <td>1 Mar 2021</td>
+                  <td>sch 2 (item 685): 1 Sept 2021 (s 2(1) item 5)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Fuel Security (Consequential and Transitional Provisions) Act 2021 (C2021A00066)</td>
+                  <td>66, 2021</td>
+                  <td>29 June 2021</td>
+                  <td>sch 1 (items 3-17, 19), sch 2 (items 1, 2): 30 June 2021 (s 2(1) items 2, 4)</td>
+                  <td>sch 1 (item 19), sch 2 (items 1, 2)</td>
+                </tr>
+                <tr>
+                  <td>Members of Parliament (Staff) Amendment Act 2023 (C2023A00071)</td>
+                  <td>71, 2023</td>
+                  <td>19 Sept 2023</td>
+                  <td>sch 4 (item 19): 17 Oct 2023 (s 2(1) item 5)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Regulatory Reform Omnibus Act 2025 (C2025A00073)</td>
+                  <td>73, 2025</td>
+                  <td>4 Dec 2025</td>
+                  <td>sch 4 (items 22, 23): 1 July 2026 (s 2(1) item 13)
+sch 4 (items 24-32): 5 Dec 2025 (s 2(1) item 14)</td>
+                  <td>sch 4 (item 23)</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 3</td>
+                  <td>am No 66, 2021; No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 5</td>
+                  <td>am No 66, 2021; No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 2 heading</td>
+                  <td>am No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1 heading</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2 heading</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 11</td>
+                  <td>am No 57, 2019; No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 13A</td>
+                  <td>ad No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 13B</td>
+                  <td>ad No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 13C</td>
+                  <td>ad No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 13D</td>
+                  <td>ad No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 13E</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 13F</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 13G</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 13H</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 14</td>
+                  <td>am No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 21</td>
+                  <td>am No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 23</td>
+                  <td>am No 71, 2023</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 31</td>
+                  <td>am No 115, 2017; No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 32</td>
+                  <td>am No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 33</td>
+                  <td>am No 13, 2021; No 66, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 35</td>
+                  <td>am No 13, 2021</td>
+                </tr>
+                <tr>
+                  <td>Part 6</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 39</td>
+                  <td>am No 66, 2021; No 73, 2025</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

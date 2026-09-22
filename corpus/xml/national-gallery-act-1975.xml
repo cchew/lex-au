@@ -1,0 +1,2416 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1975/61/!main"/>
+          <FRBRuri value="/akn/au/act/1975/61"/>
+          <FRBRdate date="1975-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="61"/>
+          <FRBRname value="national-gallery-act-1975"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1975/61/eng@2021-05-01/!main"/>
+          <FRBRuri value="/akn/au/act/1975/61/eng@2021-05-01"/>
+          <FRBRdate date="2021-05-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1975/61/eng@2021-05-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1975/61/eng@2021-05-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1975-01-01" type="generation" eId="evt-creation" source="#national-gallery-act-1975"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1978/34"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1978/36" date="1978-06-12"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1989/21" date="1989-06-09"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1989/60" date="1989-06-19"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1990/88"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1991/179"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1991/199"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1992/130"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1996/43"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/1999/156"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2001/159"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2003/27" date="2003-04-12"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-19" source="/akn/au/act/2021/20" date="2021-03-02"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-deputy-chair" href="/ontology/term/au/term-deputy-chair" showAs="Deputy Chair"/>
+        <TLCTerm eId="term-director" href="/ontology/term/au/term-director" showAs="Director"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-fund" href="/ontology/term/au/term-fund" showAs="Fund"/>
+        <TLCTerm eId="term-gallery" href="/ontology/term/au/term-gallery" showAs="Gallery"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-national-collection" href="/ontology/term/au/term-national-collection" showAs="national collection"/>
+        <TLCTerm eId="term-part-time-member" href="/ontology/term/au/term-part-time-member" showAs="part-time member"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>National Gallery Act 1975</p>
+      <p>No. 61, 1975</p>
+      <p><b>Compilation No. </b><b>1</b><b>6</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 May 2021</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 20, 2021</p>
+      <p><b>Registered:</b><b>	</b>14 May 2021</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>National Gallery Act 1975</i> that shows the text of the law as amended and in force on 1 May 2021 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p><ref href="#part-II">Part II</ref>—The National Gallery of Australia	3</p>
+      <p>4	Establishment of National Gallery of Australia	3</p>
+      <p>6	Functions of Gallery	3</p>
+      <p>7	Powers of Gallery	4</p>
+      <p>8	Land and works of art for Gallery	5</p>
+      <p>9	Disposal of works of art from national collection	6</p>
+      <p>10	Exchange of works of art	6</p>
+      <p>11	Disposal of property left with Gallery	6</p>
+      <p><ref href="#part-III">Part III</ref>—The Council	11</p>
+      <p>12	Council	11</p>
+      <p>13	Membership of Council	11</p>
+      <p>14	Deputy Chair	12</p>
+      <p>15	Acting members	12</p>
+      <p>16	Remuneration and allowances of members etc.	13</p>
+      <p>17	Termination of appointment	13</p>
+      <p>18	Resignation	14</p>
+      <p>20	Meetings of Council	14</p>
+      <p>21	Committees of Council	15</p>
+      <p>22	Delegation	15</p>
+      <p><ref href="#part-IV">Part IV</ref>—The Director	17</p>
+      <p>24	Director	17</p>
+      <p>26	Terms and conditions of appointment etc.	17</p>
+      <p>27	Remuneration and allowances	17</p>
+      <p>28	Leave of absence	17</p>
+      <p>29	Termination of appointment	18</p>
+      <p>30	Resignation	19</p>
+      <p>31	Acting Director	19</p>
+      <p><ref href="#part-V">Part V</ref>—Staff	20</p>
+      <p>33	Staff	20</p>
+      <p><ref href="#part-VI">Part VI</ref>—Finance	21</p>
+      <p>34	Moneys payable to Gallery	21</p>
+      <p>36	National Gallery of Australia Fund	21</p>
+      <p>37	Application of moneys	21</p>
+      <p>37A	Investment policy	22</p>
+      <p>38	Restrictions on financial transactions	23</p>
+      <p>40	Annual report	24</p>
+      <p>41	Exemption from taxation	24</p>
+      <p><ref href="#part-VII">Part VII</ref>—Miscellaneous	25</p>
+      <p>45	Supply of liquor on premises of Gallery	25</p>
+      <p>45A	Minister may give directions to the Council	25</p>
+      <p>45B	Delegation by <role refersTo="#minister">the Minister</role>	25</p>
+      <p>46	Regulations	26</p>
+      <p>Endnotes	27</p>
+      <p>Endnote 1—About the endnotes	27</p>
+      <p>Endnote 2—Abbreviation key	29</p>
+      <p>Endnote 3—Legislation history	30</p>
+      <p>Endnote 4—Amendment history	35</p>
+      <p>An Act relating to the National Gallery of Australia</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>National Gallery Act 1975</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on a date to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Council.</def></p>
+              <p><term refersTo="#term-council">Council</term> means <def>the Council of the National Gallery of Australia.</def></p>
+              <p><term refersTo="#term-deputy-chair">Deputy Chair</term> means <def>the Deputy Chair of the Council.</def></p>
+              <p><term refersTo="#term-director">Director</term> means <def>the Director of the National Gallery of Australia.</def></p>
+              <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-fund">Fund</term> means <def>the National Gallery of Australia Fund established by subsection 36(1).</def></p>
+              <p><term refersTo="#term-gallery">Gallery</term> means <def>the National Gallery of Australia established by this Act.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of the Council.</def></p>
+              <p><term refersTo="#term-national-collection">national collection</term> means <def>all works of art that are owned by the Gallery from time to time other than a work of art that is acquired, commissioned or produced by the Gallery for the purposes of sale.</def></p>
+              <p><term refersTo="#term-part-time-member">part-time member</term> means <def>a member of the Council appointed to be a part-time member.</def></p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A reference in this Act to any land or building owned by, or under the control of, the Gallery includes a reference to a part of any such land or a part of any such building, as the case may be.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>The National Gallery of Australia</heading>
+        <section eId="part-II__sec-4">
+          <num>4</num>
+          <heading>Establishment of National Gallery of Australia</heading>
+          <subsection eId="part-II__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The National Gallery of Australia is established.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Gallery:</p>
+            </content>
+            <paragraph eId="part-II__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is a body corporate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall have a seal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>may acquire, hold and dispose of real and personal property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>may sue or be sued in its corporate name.</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Gallery. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The seal of the Gallery shall be kept in such custody as the Council directs and shall not be used except as authorized by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-4">
+            <num>4</num>
+            <content>
+              <p>All courts, judges and persons acting judicially shall take judicial notice of the imprint of the seal of the Gallery affixed to a document and shall presume that it was duly affixed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Functions of Gallery</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The functions of the Gallery are:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to develop and maintain a national collection of works of art; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to exhibit, or to make available for exhibition by others, in Australia or elsewhere, works of art from the national collection or works of art that are otherwise in the possession of the Gallery.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Gallery shall use every endeavour to make the most advantageous use of the national collection in the national interest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Powers of Gallery</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Act, the Gallery has power to do all things necessary or convenient to be done for or in connexion with the performance of its functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), the powers of the Gallery referred to in that subsection include power:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to purchase or take on hire, to commission or produce, or to accept as a gift or on deposit or loan, works of art;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to make available (whether by hire, loan, sale or otherwise) works of art;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>to accept gifts, devises, bequests or assignments made to the Gallery, whether on trust or otherwise, and whether unconditionally or subject to a condition and, if a gift, devise, bequest or assignment is accepted by the Gallery on trust or subject to a condition, to act as trustee or to comply with the condition, as the case may be;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>to collect, and make available (whether by hire, loan, sale or otherwise), information on the visual arts;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-da">
+              <num>da</num>
+              <content>
+                <p>to make available (whether for reward or otherwise) services in relation to the visual arts (whether with or without the supply of goods), including the carrying out of investigations and the giving of advice;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>to make available (whether by hire, loan, sale or otherwise) reproductions of works of art;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>to arrange for, or to assist in, research into matters pertaining to the visual arts;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>to erect buildings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-ga">
+              <num>ga</num>
+              <content>
+                <p>to grant (whether for reward or otherwise) rights to use any land or building owned by, or under the control of, the Gallery;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-gb">
+              <num>gb</num>
+              <content>
+                <p>to fix charges for entry onto any land, or into any building, owned by, or under the control of the Gallery, being charges that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>are in addition to the charges fixed by the regulations; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>relate to special exhibitions or other special events;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>to purchase or take on hire, or to accept as a gift or on deposit or loan, and to dispose of or otherwise deal with, furnishings, equipment and other goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>to act on behalf of the Commonwealth or of an authority of the Commonwealth in the administration of a trust relating to works of art or related matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Gallery shall not dispose of a work of art in the national collection except in accordance with sections 9, 10 or 11.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Notwithstanding anything contained in this Act, but subject to <ref href="#sec-36">section 36</ref> of this Act and subsection 59(1) of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with investment by corporate Commonwealth entities), any money or other property held by the Gallery upon trust or accepted by the Gallery subject to a condition shall not be dealt with except in accordance with the obligations of the Gallery as trustee of the trust or as the person who has accepted the money or other property subject to the condition, as the case may be.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Land and works of art for Gallery</heading>
+          <subsection eId="part-II__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may make available to the Gallery for the purposes of the Gallery such land owned by the Commonwealth as is specified by the Minister by notice in the <i>Gazette </i>and any building, structure or other improvements on that land.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Council so requests, <role refersTo="#minister">the Minister</role> may:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>transfer or cause to be transferred to the Gallery, for inclusion in the national collection, works of art owned by the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>transfer or cause to be transferred to the Gallery such other goods or equipment owned by the Commonwealth as he or she considers would be of use to the Gallery.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-9">
+          <num>9</num>
+          <heading>Disposal of works of art from national collection</heading>
+          <subsection eId="part-II__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (4), where the Council is satisfied that a work of art in the national collection:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is unfit for the national collection; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is not required as part of the national collection;</p>
+              </content>
+              <content>
+                <p>the Council may resolve that the work of art be disposed of by sale, gift or destruction.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Council shall not resolve that a work of art be disposed of by way of destruction unless the Council is satisfied that the work has no saleable value.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the Council has resolved, in accordance with this section, that a work of art be disposed of, the Gallery may dispose of that work of art accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsection (5) is subject to <ref href="#sec-38">section 38</ref> (about restrictions on financial transactions).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-10">
+          <num>10</num>
+          <heading>Exchange of works of art</heading>
+          <subsection eId="part-II__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where the Council is satisfied that the exchange of a work of art in the national collection for another work of art would be advantageous to the collection, the Gallery may make that exchange.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An agreement for an exchange under subsection (1) may include an undertaking by one party to pay an amount to the other party in recognition of the difference in value between the works of art to be exchanged.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-11">
+          <num>11</num>
+          <heading>Disposal of property left with Gallery</heading>
+          <subsection eId="part-II__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-II__sec-11__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Council wishes to apply this section to any property (including a work of art) that is not the property of the Gallery but has been submitted to the Gallery with a view to its acceptance by the Gallery or for any other purpose;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the property has remained in the possession or custody of the Gallery for a period of not less than 1 year after its submission to the Gallery;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>in a case to which subsection (2) applies:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the Council has complied with the requirements of that subsection; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the period specified in the notice under that subsection or, if such notices were sent to more than 1 person, the period specified in the notice last sent, has expired; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the property is not the subject of a claim lodged with the Gallery by the person who submitted the property to the Gallery or by any other person who has an interest in the property;</p>
+              </content>
+              <content>
+                <p>this section applies in relation to that property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Gallery has a record of the name and address of a person who has an interest in property referred to in paragraph (1)(a) or of the person who submitted that property to the Gallery, the Council shall send by pre-paid registered post to that person or to each of those persons, addressed to him or her at the relevant address, a notice informing him or her that, after the expiration of 3 months from the date of the notice, the Council intends, unless the person who submitted the property to the Gallery or any other person who has an interest in the property lodges with the Gallery a claim with respect to the property, to deal with the property under this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council may, in respect of property in relation to which this section applies, cause a notice, in accordance with subsection (4), relating to the property to be published twice, with an interval of at least 7 days between the dates of the publications, in such daily newspapers as will ensure its publication in every State and internal Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A notice under subsection (3) shall sufficiently identify the property to which it relates and shall state that, at the expiration of 3 months from the date of publication of the notice, the Council intends to deal with the property under this section unless, before that time, the person who submitted the property to the Gallery or any other person who has an interest in the property has lodged with the Gallery a claim with respect to the property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-II__sec-11__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the period of 3 months specified in a notice under subsection (3) that has been published for the second time has expired; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the property to which the notice relates has not ceased to be property in relation to which this section applies;</p>
+              </content>
+              <content>
+                <p>the Council may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>if the property is a work of art and the Council wishes to acquire it for the national collection—request <role refersTo="#minister">the Minister</role> to approve its acquisition for the national collection; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>in any other case—request <role refersTo="#minister">the Minister</role> to approve its disposal in accordance with this section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Before approving of the acquisition of a work of art in accordance with a request under paragraph (5)(c), <role refersTo="#minister">the Minister</role> shall obtain a valuation of the work of art from an independent expert.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	Where a work of art the subject of a request under paragraph (5)(c) has not ceased to be property in relation to which this section applies, the Minister may, by notice published in the <i>Gazette</i>, approve the acquisition of the work of art for the national collection.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-8">
+            <num>8</num>
+            <content>
+              <p>	(8)	Upon the publication in the <i>Gazette </i>of a notice under subsection (7), the work of art to which the notice applies is, by force of this subsection:</p>
+            </content>
+            <paragraph eId="part-II__sec-11__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>vested in the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>freed and discharged from all interests, trusts, restrictions, obligations, contracts, licences and charges;</p>
+              </content>
+              <content>
+                <p>to the intent that the legal estate in the work of art and all rights and powers incident to that legal estate are vested in the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-9">
+            <num>9</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall, on behalf of the Commonwealth, transfer to the Gallery for inclusion in the national collection a work of art referred to in subsection (8).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-10">
+            <num>10</num>
+            <content>
+              <p>Where property the subject of a request under paragraph (5)(d) has not ceased to be property in relation to which this section applies, <role refersTo="#minister">the Minister</role> may approve the disposal of the property and advise the Council accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-11">
+            <num>11</num>
+            <content>
+              <p>Where <role refersTo="#minister">the Minister</role> has advised the Council of his or her approval of the disposal of property and the property has not ceased to be property in relation to which this section applies, the Gallery may:</p>
+            </content>
+            <paragraph eId="part-II__sec-11__subsec-11__para-a">
+              <num>a</num>
+              <content>
+                <p>cause the property to be sold by public auction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-11__para-b">
+              <num>b</num>
+              <content>
+                <p>if the Council determines that the property is valueless or that for some other reason it is not practicable to sell the property by public auction—cause the property to be disposed of otherwise than by sale or to be destroyed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-12">
+            <num>12</num>
+            <content>
+              <p>For the purposes of a sale or other disposal of goods under subsection (11), the Gallery shall be deemed to be the absolute owner of the property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-13">
+            <num>13</num>
+            <content>
+              <p>The interest of every person in a work of art to which a notice published under subsection (7) relates is, on the date of acquisition of that work of art, converted into a right to compensation against the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-14">
+            <num>14</num>
+            <content>
+              <p>	(14)	Parts VII and IX of the <i>Lands Acquisition Act 1989 </i>apply in relation to a right to compensation referred to in subsection (13) as if:</p>
+            </content>
+            <paragraph eId="part-II__sec-11__subsec-14__para-a">
+              <num>a</num>
+              <content>
+                <p>that right were an entitlement to compensation under <ref href="#sec-52">section 52</ref> of that Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-14__para-b">
+              <num>b</num>
+              <content>
+                <p>a reference in those Parts to an interest in land were a reference to the legal estate in the work of art to which that right relates; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-11__subsec-14__para-c">
+              <num>c</num>
+              <content>
+                <p>a reference in those Parts to <role refersTo="#minister">the Minister</role> were a reference to <role refersTo="#minister">the Minister</role> administering this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-15">
+            <num>15</num>
+            <content>
+              <p>Where a person satisfies the Council that he or she had an interest in property immediately before the property was sold by virtue of subsection (11), the Gallery shall pay to the person such amount as it considers appropriate having regard to the interest that person had in the property but not exceeding the amount by which the amount of the proceeds of the sale exceeded the amount of any expenses incurred by the Gallery in connexion with the storage and sale of the property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-16">
+            <num>16</num>
+            <content>
+              <p>	(16)	No action, other than an action under the <i>Lands Acquisition Act 1989 </i>as applied by subsection (14), lies against any person by reason of any act or thing done in accordance with this section.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>The Council</heading>
+        <section eId="part-III__sec-12">
+          <num>12</num>
+          <heading>Council</heading>
+          <subsection eId="part-III__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The affairs of the Gallery shall be conducted by a Council to be known as the Council of the National Gallery of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>All acts and things done in the name of, or on behalf of, the Gallery by the Council or with <role refersTo="#authority">the authority</role> of the Council shall be deemed to have been done by the Gallery.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-13">
+          <num>13</num>
+          <heading>Membership of Council</heading>
+          <subsection eId="part-III__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council shall consist of not more than 11 members, namely:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chair;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Director; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>not more than 9 other members.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The members, other than the Director, shall be appointed by the Governor-General having regard to their knowledge and experience with respect to the visual arts or any other area of knowledge relevant to the affairs of the Gallery.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A member, other than the Director, shall be appointed to be a part-time member and holds office for such term, not exceeding 3 years, as is fixed by the Governor-General in the instrument of his or her appointment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>A person must not be appointed as a member referred to in paragraph (1)(a) or (c) for a term if the sum of the following exceeds 9 years:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-3A__para-a">
+              <num>a</num>
+              <content>
+                <p>that term;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-3A__para-b">
+              <num>b</num>
+              <content>
+                <p>any terms of previous appointment of the person as a member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A part-time member is eligible for re-appointment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The exercise or performance of the powers or functions of the Council is not affected by reason only of there being a vacancy in the office of a member.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Deputy Chair</heading>
+          <subsection eId="part-III__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Deputy Chair of the Council who shall be elected by the members from among the part-time members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member elected as Deputy Chair holds office as Deputy Chair for the period fixed by the Council at the time of his or her election but that period shall not extend beyond the expiration of the term for which he or she is holding office as a member at that time.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Deputy Chair may resign his or her office by writing under his or her hand delivered to the Chair.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Deputy Chair is eligible for re-election.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-15">
+          <num>15</num>
+          <heading>Acting members</heading>
+          <content>
+            <p>Acting by operation of law</p>
+          </content>
+          <subsection eId="part-III__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Deputy Chair is to act as the Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of Chair (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when the Chair:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	For rules that apply to persons acting as the Chair, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Acting appointments</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council may, by written instrument, appoint a member to act as the Deputy Chair during any period, or during all periods, when the Deputy Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is acting as the Chair; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by written instrument, appoint a person to act as a member (other than as the Director, Chair or Deputy Chair):</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of a member (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when a member:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>is acting as the Deputy Chair; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-16">
+          <num>16</num>
+          <heading>Remuneration and allowances of members etc.</heading>
+          <subsection eId="part-III__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A part-time member or a member of a committee constituted under <ref href="#sec-21">section 21</ref> who is not a member of the Council shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person referred to in subsection (1) shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-III__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of a part-time member by reason of misbehaviour or physical or mental incapacity.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a part-time member:</p>
+            </content>
+            <paragraph eId="part-III__sec-17__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent, except on leave granted by the Council, from 3 consecutive meetings of the Council;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate his or her appointment.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	The appointment of a part-time member may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013 </i>(which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>A part-time member may resign his or her office by writing under his or her hand delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Meetings of Council</heading>
+          <subsection eId="part-III__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chair or, if for any reason the Chair is unable to act, the Deputy Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>shall convene such meetings of the Council as he or she considers necessary for the efficient conduct of its business; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>shall, on receipt of a written request signed by not less than 4 members, convene a meeting of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may at any time convene a meeting of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chair shall preside at all meetings of the Council at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In the event of the absence of the Chair from a meeting of the Council, the Deputy Chair shall preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In the event of the absence of both the Chair and the Deputy Chair from a meeting of the Council, the members present shall elect one of their number to preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-6">
+            <num>6</num>
+            <content>
+              <p>At a meeting of the Council, a quorum is constituted by a majority of members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subject to subsection (8), all questions arising at a meeting of the Council shall be decided by a majority of the votes of the members present and voting, including the member presiding.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In the event of an equality of votes on a resolution proposed at a meeting of the Council, the resolution shall be taken not to be passed but, if the same resolution is proposed at the first meeting of the Council held after the date of that first-mentioned meeting and there is again an equality of votes, the member presiding has a casting vote on the resolution.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-21">
+          <num>21</num>
+          <heading>Committees of Council</heading>
+          <subsection eId="part-III__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Council may constitute such committees as it thinks necessary for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A committee may be constituted wholly by members of the Council or partly by members of the Council and partly by other persons.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council may, by resolution, either generally or as otherwise provided by the resolution, delegate to the Chair, the Director or any other member of the Council or to a member of the staff of the Gallery, all or any of its powers under this Act or the regulations, other than this power of delegation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power so delegated, when exercised by the delegate, shall, for the purposes of this Act and the regulations, be deemed to have been exercised by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegation of a power under this section:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>may be revoked by resolution of the Council (whether or not constituted by the persons constituting the Council at the time the power was delegated);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>does not prevent the exercise of the power by the Council; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>continues in force notwithstanding a change in the membership of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Section 34A of the <i>Acts Interpretation Act 1901 </i>applies in relation to a delegation under this section as if the Council were a person.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	A certificate signed by the Chair stating any matter with respect to a delegation of a power under this section is <i>prima facie </i>evidence of that matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A document purporting to be a certificate mentioned in subsection (5) shall, unless the contrary is established, be deemed to be such a certificate and to have been duly given.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>The Director</heading>
+        <section eId="part-IV__sec-24">
+          <num>24</num>
+          <heading>Director</heading>
+          <subsection eId="part-IV__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Director of the National Gallery of Australia, who shall be appointed by the Governor-General.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director is the executive officer of the Council.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Terms and conditions of appointment etc.</heading>
+          <subsection eId="part-IV__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director holds office on such terms and conditions (if any) in respect of matters not provided for by this Act as are determined by the Governor-General.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director holds office for such period, not exceeding 7 years, as is specified in the instrument of his or her appointment, but is eligible for re-appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Remuneration and allowances</heading>
+          <subsection eId="part-IV__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Leave of absence</heading>
+          <subsection eId="part-IV__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director has such recreation leave entitlements as are determined by the Remuneration Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may grant the Director leave of absence, other than recreation leave, on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-IV__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of the Director by reason of misbehaviour or physical or mental incapacity.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Director:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-aa">
+              <num>aa</num>
+              <content>
+                <p>fails, without reasonable excuse, to comply with subsection (3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-ab">
+              <num>ab</num>
+              <content>
+                <p>is absent, except on leave granted by the Council, from 3 consecutive meetings of the Council; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent from duty, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>engages in paid employment outside the duties of his or her office without the approval of <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate his or her appointment.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	The appointment of the Director may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director shall give written notice to <role refersTo="#minister">the Minister</role> of all direct or indirect pecuniary interests that the Director has or acquires in any business or in any body corporate carrying on any business.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Subsection (3) applies in addition to <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-30">
+          <num>30</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>The Director may resign his or her office by writing under his or her hand delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-31">
+          <num>31</num>
+          <heading>Acting Director</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may appoint a person to act in the office of Director:</p>
+          </content>
+          <paragraph eId="part-IV__sec-31__para-a">
+            <num>a</num>
+            <content>
+              <p>during a vacancy in the office; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-31__para-b">
+            <num>b</num>
+            <content>
+              <p>during any period, or during all periods, when the person holding the office is absent from duty or from Australia or is, for any other reason, unable to perform the functions of the office.</p>
+            </content>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Staff</heading>
+        <section eId="part-V__sec-33">
+          <num>33</num>
+          <heading>Staff</heading>
+          <content>
+            <p>Subject to any direction of <role refersTo="#minister">the Minister</role>:</p>
+          </content>
+          <paragraph eId="part-V__sec-33__para-a">
+            <num>a</num>
+            <content>
+              <p>the Gallery may employ such persons as are necessary for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-33__para-b">
+            <num>b</num>
+            <content>
+              <p>the terms and conditions of employment (other than in respect of matters provided for by this Act) of persons so employed shall be as determined by the Council.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Finance</heading>
+        <section eId="part-VI__sec-34">
+          <num>34</num>
+          <heading>Moneys payable to Gallery</heading>
+          <subsection eId="part-VI__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There are payable to the Gallery such moneys as are appropriated, from time to time, by the Parliament for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may give directions as to the amounts in which, and the times at which, moneys referred to in subsection (1) are to be paid to the Gallery.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-36">
+          <num>36</num>
+          <heading>National Gallery of Australia Fund</heading>
+          <subsection eId="part-VI__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this subsection a fund, to be known as the National Gallery of Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Income received from the investment of money standing to the credit of the Fund forms part of the Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>There shall be paid into the Fund:</p>
+            </content>
+            <paragraph eId="part-VI__sec-36__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>gifts and bequests of money accepted by the Gallery after the commencement of this section otherwise than on trust;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-36__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>money received by the Gallery after that commencement from the disposal of gifts, devises, bequests and assignments of property accepted by the Gallery, whether before or after that commencement, otherwise than on trust; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-36__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>so much of the money held by the Gallery in bank accounts otherwise than on trust immediately before that commencement as the Minister, by notice in writing given to the Gallery <quantity refersTo="#deadline">within 21 days</quantity> after that commencement, determines.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-37">
+          <num>37</num>
+          <heading>Application of moneys</heading>
+          <subsection eId="part-VI__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The moneys of the Gallery (including money standing to the credit of the Fund) shall be applied only:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the costs or expenses of the Gallery under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of any remuneration and allowances payable under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not prevent investment, under subsection (3) of this section or <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, of money that is not immediately required for the purposes of the Gallery.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In addition to investments authorised by <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, the Gallery may invest the following in any other form of investment:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>money accepted as a gift or bequest to the Gallery;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>money that the Gallery receives from the disposal of property given, devised, bequeathed or assigned to the Gallery by a person other than the Commonwealth;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>income received from an investment made under this subsection or from the disposal of such an investment.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	See subsection 7(4) for obligations of the Gallery as trustee of a trust.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An investment under subsection (3), or the disposal of such an investment, must be in accordance with a policy in force under <ref href="#sec-37A">section 37A</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-37A">
+          <num>37A</num>
+          <heading>Investment policy</heading>
+          <subsection eId="part-VI__sec-37A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council may formulate a written policy in relation to the following matters:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the investment strategy of the Gallery;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>benchmarks and standards for assessing the performance of the Gallery’s investments;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37A__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>risk management for the Gallery’s investments.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Publication of policy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Council must cause a copy of the policy to be published on the Gallery’s website.</p>
+            </content>
+            <content>
+              <p>Review of policy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Council must conduct periodic reviews of the policy.</p>
+            </content>
+            <content>
+              <p>Compliance with policy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Gallery must comply with the policy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37A__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A failure to comply with the policy does not affect the validity of any transaction.</p>
+            </content>
+            <content>
+              <p>Policy not a legislative instrument</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37A__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A policy formulated under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-38">
+          <num>38</num>
+          <heading>Restrictions on financial transactions</heading>
+          <subsection eId="part-VI__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Gallery must not, without the written approval of <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>acquire any work of art for a consideration exceeding in amount or value the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>dispose of any work of art if the amount or value of the consideration for the disposal, or the value of the work of art, exceeds the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>acquire any property, right or privilege, other than a work of art, for a consideration exceeding in amount or value the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>dispose of any property, right or privilege, other than a work of art, if the amount or value of the consideration for the disposal, or the value of the property, right or privilege, exceeds the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>enter into a contract for the construction of a building for the Gallery, being a contract under which the Gallery is to pay an amount exceeding the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>enter into a lease of land for a period exceeding 10 years.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An approval under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (1) does not apply to a contract if the contract provides for the supply of a service to the Gallery for the day-to-day operations of the Gallery.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (1) does not apply to the following:</p>
+            </content>
+            <paragraph eId="part-VI__sec-38__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>an investment acquired under subsection 37(3);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the disposal of such an investment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-40">
+          <num>40</num>
+          <heading>Annual report</heading>
+          <content>
+            <p>		The annual report prepared by the Council and given to the Minister under <ref href="#sec-46">section 46</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> for a period must include particulars of any disposals of works of art under <ref href="#sec-9">section 9</ref> of this Act during the period.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-41">
+          <num>41</num>
+          <heading>Exemption from taxation</heading>
+          <content>
+            <p>The Gallery is not subject to taxation under a law of the Commonwealth or of a State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VII__sec-45">
+          <num>45</num>
+          <heading>Supply of liquor on premises of Gallery</heading>
+          <subsection eId="part-VII__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The regulations may make provision for and in relation to the sale, supply, disposal, possession or control of liquor on premises in the Australian Capital Territory owned by or under the control of the Gallery.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The law of the Australian Capital Territory relating to the sale, supply and disposal of liquor does not apply with respect to premises in respect of which regulations are in force under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In this section, <b><i>liquor</i></b> means wine, spirits, ale, beer, porter, cider, perry or any liquid containing alcohol ordinarily used or fit for use as a beverage.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-45A">
+          <num>45A</num>
+          <heading>Minister may give directions to the Council</heading>
+          <subsection eId="part-VII__sec-45A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, give written directions to the Council about the performance of its functions or the exercise of its powers.</p>
+            </content>
+            <authorialNote placement="end" eId="note-10" marker="10">
+              <content>
+                <p>Note:	Section 42 (disallowance) and <ref href="#part-4">Part 4</ref> of Chapter 3 (sunsetting) of the <i>Legislation Act 2003</i> do not apply to the directions (see regulations made for the purposes of paragraphs 44(2)(b) and 54(2)(b) of that Act).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-VII__sec-45A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A direction under subsection (1) must be of a general nature only.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-45A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council must comply with a direction under subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-45B">
+          <num>45B</num>
+          <heading>Delegation by the Minister</heading>
+          <subsection eId="part-VII__sec-45B__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate all or any of <role refersTo="#minister">the Minister</role>’s functions or powers under this Act to:</p>
+            </content>
+            <paragraph eId="part-VII__sec-45B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> of the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-45B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-11" marker="11">
+                <content>
+                  <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901</i> contain provisions relating to delegations.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-45B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>However, subsection (1) does not apply to <role refersTo="#minister">the Minister</role>’s powers under <ref href="#sec-8">section 8</ref>, 15, 33 or 45A.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-45B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In performing a delegated function or exercising a delegated power, the delegate must comply with any written directions of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-46">
+          <num>46</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that by this Act are required or permitted to be prescribed, or are necessary or convenient to be prescribed for carrying out or giving effect to this Act, and in particular:</p>
+          </content>
+          <paragraph eId="part-VII__sec-46__para-a">
+            <num>a</num>
+            <content>
+              <p>for regulating the conduct of persons on any land or building owned by, or under the control of, the Gallery;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-46__para-b">
+            <num>b</num>
+            <content>
+              <p>for fixing charges for entry onto any land, or into any building, owned by, or under the control of, the Gallery; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-46__para-c">
+            <num>c</num>
+            <content>
+              <p>for prescribing penalties not exceeding a fine of <quantity refersTo="#penaltyUnit">5 penalty units</quantity> for offences against the regulations.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>National Gallery Act 1975</td>
+                <td>61, 1975</td>
+                <td>19 June 1975</td>
+                <td>3 June 1976 (Gazette 1976, No. S93)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Administrative Changes (Consequential Provisions) Act 1978</td>
+                <td>36, 1978</td>
+                <td>12 June 1978</td>
+                <td>12 June 1978</td>
+                <td>s. 8</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1985</td>
+                <td>65, 1985</td>
+                <td>5 June 1985</td>
+                <td>s. 3: Royal Assent (a)</td>
+                <td>s. 13</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 2) 1985</td>
+                <td>193, 1985</td>
+                <td>16 Dec 1985</td>
+                <td>s. 3: Royal Assent (b)</td>
+                <td>s. 16</td>
+              </tr>
+              <tr>
+                <td>Lands Acquisition (Repeal and Consequential Provisions) Act 1989</td>
+                <td>21, 1989</td>
+                <td>20 Apr 1989</td>
+                <td>9 June 1989 (s. 2 and Gazette 1989, No. S185)</td>
+                <td>ss. 5, 6, 8, 9(5), 10 and 13</td>
+              </tr>
+              <tr>
+                <td>Arts, Territories and Environment Legislation Amendment Act 1989</td>
+                <td>60, 1989</td>
+                <td>19 June 1989</td>
+                <td>ss. 11 and 13: 7 Dec 1988
+Part 5 (ss. 14, 15): 11 May 1989 (s. 2(3) and Gazette 1989, No. S164)
+Remainder: Royal Assent</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Environment, Tourism and Territories Legislation Amendment Act 1990</td>
+                <td>88, 1990</td>
+                <td>20 Nov 1990</td>
+                <td>Part 5 (ss. 9–11): Royal Assent (c)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Sport, Environment, Tourism and Territories Legislation Amendment Act (No. 2) 1991</td>
+                <td>179, 1991</td>
+                <td>25 Nov 1991</td>
+                <td>25 Nov 1991</td>
+                <td>s. 3(2)</td>
+              </tr>
+              <tr>
+                <td>Prime Minister and Cabinet Legislation Amendment Act 1991</td>
+                <td>199, 1991</td>
+                <td>18 Dec 1991</td>
+                <td>18 Dec 1991</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Environment and Territories Legislation Amendment Act 1992</td>
+                <td>130, 1992</td>
+                <td>24 Oct 1992</td>
+                <td>24 Oct 1992</td>
+                <td>s. 7</td>
+              </tr>
+              <tr>
+                <td>Arts, Environment and Territories Legislation Amendment Act 1993</td>
+                <td>6, 1994</td>
+                <td>18 Jan 1994</td>
+                <td>s. 5: Royal Assent (d)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1996</td>
+                <td>43, 1996</td>
+                <td>25 Oct 1996</td>
+                <td>Schedule 2 (item 75): (e) Schedule 4 (items 100, 101) and Schedule 5 (items 90–92): Royal Assent (e)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+                <td>152, 1997</td>
+                <td>24 Oct 1997</td>
+                <td>Sch 2 (items 951–962): 1 Jan 1998 (s 2(2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (item 627): 5 Dec 1999 (s 2(1), (2) and gaz 1999, No S584)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Corporate Law Economic Reform Program Act 1999</td>
+                <td>156, 1999</td>
+                <td>24 Nov 1999</td>
+                <td>Sch 10 (items 94, 95): 13 Mar 2000 (s 2(2)(c) and gaz 2000, No S114)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+                <td>159, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>Sch 1 (item 68): 29 Oct 2001 (s 2(1))</td>
+                <td>Sch 1 (item 97)</td>
+              </tr>
+              <tr>
+                <td>National Gallery Amendment Act 2003</td>
+                <td>27, 2003</td>
+                <td>11 Apr 2003</td>
+                <td>12 Apr 2003 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2011</td>
+                <td>5, 2011</td>
+                <td>22 Mar 2011</td>
+                <td>Sch 5 (items 143, 144): 19 Apr 2011 (s 2(1) item 13)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Sch 2 (items 792–796) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 5, 12)</td>
+                <td>Sch 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 10 (items 69–84) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (item 334): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>National Collecting Institutions Legislation Amendment Act 2021</td>
+                <td>20, 2021</td>
+                <td>2 Mar 2021</td>
+                <td>Sch 1 (items 7–9, 19) and Sch 2 (items 17–26): 1 May 2021 (s 2(1) item 1)</td>
+                <td>Sch 1 (item 19) and Sch 2 (item 26)</td>
+              </tr>
+            </table>
+          </paragraph>
+          <paragraph eId="part-VII__sec-46__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>National Gallery Act 1975 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1985</i>, subsection 2(29) of which provides as follows:</p>
+            </content>
+          </paragraph>
+          <subsection eId="part-VII__sec-46__subsec-29">
+            <num>29</num>
+            <content>
+              <p>	(29)	The amendments of the <i>National Gallery Act 1975 </i>made by this Act shall come into operation on the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-46__subsec-29__para-b">
+              <num>b</num>
+              <content>
+                <p><i>(b)</i>	The <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1985 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>2) 1985</i>, paragraph 2(15)(a) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-15">
+            <num>15</num>
+            <content>
+              <p>	(15)	The amendments of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1985 </i>made by this Act shall be deemed to have come into operation:</p>
+            </content>
+            <paragraph eId="part-VII__sec-46__subsec-15__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of the amendment made to subsection 2(29)—on the day on which that Act received the Royal Assent; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-46__subsec-15__para-c">
+              <num>c</num>
+              <content>
+                <p><i>(c)</i>	The <i>National Gallery Act 1975 </i>was amended by <ref href="#part-5">Part 5</ref> (sections 9–11) only of the <i>Arts, Environment, Tourism and Territories Legislation Amendment Act 1990</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Parts 1, 4, 5, 6, 7 and 8 commence on the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-46__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p><i>(d)</i>	The <i>National Gallery Act 1975 </i>was amended by <ref href="#sec-5">section 5</ref> only of the <i>Arts, Environment and Territories Legislation Amendment Act 1993</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsections (2) and (3), this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-46__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p><i>(e)</i>	The <i>National Gallery Act 1975 </i>was amended by Schedule 2 (item 75), Schedule 4 (items 100 and 101) and Schedule 5 (items 90–92) only of the <i>Statute Law Revision Act 1996</i>, subsections 2(1) and (2) of which provide as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsections (2) and (3), this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Each item in Schedule 2 commences or is taken to have commenced (as the case requires) at the time specified in the note at the end of the item.</p>
+            </content>
+            <content>
+              <p>	Item 75 is taken to have commenced immediately after the commencement of the <i>Arts, Environment and Territories Legislation Amendment Act 1992</i>.</p>
+              <p>	The <i>Arts, Environment and Territories Legislation Amendment Act 1992</i> came into operation on 24 October 1992.</p>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td>rs. No. 130, 1992</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am. No. 65, 1985; No. 130, 1992; No. 152, 1997; No. 5, 2011; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Part II</td>
+                <td>rs. No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am. No. 65, 1985; No. 130, 1992; No. 6, 1994; No. 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>rep No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am. No. 65, 1985; No. 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am. No. 65, 1985; No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No. 65, 1985; No 88, 1990; No 27, 2003; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>rs. No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am. No. 65, 1985; No. 21, 1989; No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am. No. 130, 1992</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 65, 1985; No 43, 1996; No 152, 1997; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am. No. 43, 1996; No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 65, 1985; No 43, 1996; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am. No. 65, 1985; No. 43, 1996; No. 152, 1997; No. 156, 1999; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am. No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>rs. No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 43, 1996; No 152, 1997; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>rs. No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am.  No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Part IV</td>
+                <td>rs No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>am No. 130, 1992</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>am No. 65, 1985; No. 43, 1996; No. 159, 2001</td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>am No. 65, 1985; No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 179, 1991</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No. 65, 1985; No. 179, 1991; No. 43, 1996; No. 152, 1997; No. 156, 1999; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No. 65, 1985; No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>rs No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 46, 2011</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 33</td>
+                <td>am No. 199, 1991</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 34</td>
+                <td>am No. 34, 1978; No. 5, 2011</td>
+              </tr>
+              <tr>
+                <td>s 35</td>
+                <td>rep No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 36</td>
+                <td>rs No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 130, 1992</td>
+              </tr>
+              <tr>
+                <td>s 37</td>
+                <td>am No 65, 1985; No 152, 1997; No 62, 2014; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 37A</td>
+                <td>ad No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 38</td>
+                <td>am No 65, 1985; No 60, 1989; No 179, 1991; No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 39</td>
+                <td>rs No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 40</td>
+                <td>rs No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 88, 1990</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 41</td>
+                <td>am No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 42</td>
+                <td>am No. 36, 1978</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 43</td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 44</td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 45A</td>
+                <td>ad No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 45B</td>
+                <td>ad No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 46</td>
+                <td>am No. 65, 1985; No 61, 2016</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

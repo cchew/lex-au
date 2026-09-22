@@ -1,0 +1,3740 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1955/34/!main"/>
+          <FRBRuri value="/akn/au/act/1955/34"/>
+          <FRBRdate date="1955-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="34"/>
+          <FRBRname value="cocos-(keeling)-islands-act-1955"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1955/34/eng@2020-12-18/!main"/>
+          <FRBRuri value="/akn/au/act/1955/34/eng@2020-12-18"/>
+          <FRBRdate date="2020-12-18" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1955/34/eng@2020-12-18/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1955/34/eng@2020-12-18/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1955-01-01" type="generation" eId="evt-creation" source="#cocos-(keeling)-islands-act-1955"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1956/89"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1958/67"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1963/22" date="1963-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1966/93"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1973/216"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1975/56" date="1975-06-12"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1982/26" date="1982-05-07"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1983/39" date="1983-06-20"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1986/168"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1988/99"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/1989/60" date="1989-06-19"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/1992/104" date="1992-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/1992/211"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/1994/113" date="1994-09-16"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/1996/60"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/1997/118" date="1997-07-07"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-19" source="/akn/au/act/2001/143" date="2001-10-02"/>
+        <eventRef type="amendment" eId="evt-amd-20" source="/akn/au/act/2008/73" date="2008-07-03"/>
+        <eventRef type="amendment" eId="evt-amd-21" source="/akn/au/act/2010/139" date="2010-12-10"/>
+        <eventRef type="amendment" eId="evt-amd-22" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-23" source="/akn/au/act/2020/154" date="2020-12-17"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="registrar" href="/ontology/roles/au/registrar" showAs="the Registrar"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-applied-western-australian-law" href="/ontology/term/au/term-applied-western-australian-law" showAs="applied Western Australian law"/>
+        <TLCTerm eId="term-authority" href="/ontology/term/au/term-authority" showAs="authority"/>
+        <TLCTerm eId="term-court-of-western-australia" href="/ontology/term/au/term-court-of-western-australia" showAs="court of Western Australia"/>
+        <TLCTerm eId="term-court-officer-of-western-australia" href="/ontology/term/au/term-court-officer-of-western-australia" showAs="court officer of Western Australia"/>
+        <TLCTerm eId="term-family-court-of-western-australia" href="/ontology/term/au/term-family-court-of-western-australia" showAs="Family Court of Western Australia"/>
+        <TLCTerm eId="term-indictment-court" href="/ontology/term/au/term-indictment-court" showAs="indictment court"/>
+        <TLCTerm eId="term-jurisdiction" href="/ontology/term/au/term-jurisdiction" showAs="jurisdiction"/>
+        <TLCTerm eId="term-laws-of-the-territory-or-laws-in-force-in-the-territory" href="/ontology/term/au/term-laws-of-the-territory-or-laws-in-force-in-the-territory" showAs="laws of the Territory or laws in force in the Territory"/>
+        <TLCTerm eId="term-ordinance" href="/ontology/term/au/term-ordinance" showAs="Ordinance"/>
+        <TLCTerm eId="term-power" href="/ontology/term/au/term-power" showAs="power"/>
+        <TLCTerm eId="term-prison" href="/ontology/term/au/term-prison" showAs="prison"/>
+        <TLCTerm eId="term-registrar" href="/ontology/term/au/term-registrar" showAs="Registrar"/>
+        <TLCTerm eId="term-sheriff" href="/ontology/term/au/term-sheriff" showAs="Sheriff"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-supreme-court-of-the-territory" href="/ontology/term/au/term-supreme-court-of-the-territory" showAs="Supreme Court of the Territory"/>
+        <TLCTerm eId="term-the-islands" href="/ontology/term/au/term-the-islands" showAs="the Islands"/>
+        <TLCTerm eId="term-the-police-force-of-the-territory" href="/ontology/term/au/term-the-police-force-of-the-territory" showAs="the police force of the Territory"/>
+        <TLCTerm eId="term-the-proclaimed-date" href="/ontology/term/au/term-the-proclaimed-date" showAs="the proclaimed date"/>
+        <TLCTerm eId="term-the-territory" href="/ontology/term/au/term-the-territory" showAs="the Territory"/>
+        <TLCTerm eId="term-transfer-day" href="/ontology/term/au/term-transfer-day" showAs="transfer day"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Cocos (Keeling) Islands Act 1955</p>
+      <p>No. 34, 1955</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compila</b><b>tion date:</b><b>	</b>18 December 2020</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 154, 2020</p>
+      <p><b>Registered:</b><b>	</b>9 February 2021</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Cocos (Keeling) Islands Act 1955</i> that shows the text of the law as amended and in force on 18 December 2020 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>4	Interpretation	1</p>
+      <p>4A	Application of the <i>Criminal Code</i>	4</p>
+      <p><ref href="#part-II">Part II</ref>—Acceptance of the Islands	5</p>
+      <p>5	Acceptance of Cocos or Keeling Islands	5</p>
+      <p>6	Transfer of rights, liabilities etc. to Commonwealth	5</p>
+      <p>7	Extinguishment of certain rights and restrictions under the 1886 Indenture	6</p>
+      <p><ref href="#part-III">Part III</ref>—Laws and legislative powers	7</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Laws of the Territory	7</p>
+      <p>7A	The laws of the Territory	7</p>
+      <p>8	Operation of existing laws etc.	7</p>
+      <p>8A	Application of Western Australian laws	8</p>
+      <p>8B	Minister must table lists of applied Western Australian Acts	9</p>
+      <p>8C	House may terminate application of Western Australian Acts in the Territory	9</p>
+      <p>8D	Extension of period for giving notice of motion to terminate WA Act	11</p>
+      <p>8E	Application of Commonwealth Acts	13</p>
+      <p>8G	Powers under the applied Western Australian laws	13</p>
+      <p>8GA	Applied Western Australian laws—effect of directions or delegations	17</p>
+      <p>8H	Arrangements with the Government of Western Australia	18</p>
+      <p>8I	Savings	18</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Legislative powers of the Governor-General	20</p>
+      <p>12	Legislative powers of Governor-General	20</p>
+      <p>13	Laying of Ordinances before the Parliament	20</p>
+      <p>13A	Ordinance not to be re-made while required to be tabled	22</p>
+      <p>13B	Ordinance not to be re-made while subject to disallowance	22</p>
+      <p>13C	Disallowed Ordinance not to be re-made unless resolution rescinded or House approves	24</p>
+      <p>13D	Regulations, rules and by-laws	24</p>
+      <p><ref href="#part-IVA">Part IVA</ref>—Trials on indictment	26</p>
+      <p>15AA	Trials on indictment to be by judge and jury	26</p>
+      <p>15AB	Minister may make arrangements with States	26</p>
+      <p>15AC	Indictment court may sit in a State	26</p>
+      <p>15AD	Juries outside the Territory	28</p>
+      <p>15AE	Offences in relation to jurors	30</p>
+      <p>15AF	Removal of accused to State to stand trial	31</p>
+      <p>15AG	Accused to be conveyed to court	32</p>
+      <p>15AH	Return of accused to Territory	32</p>
+      <p>15AI	Person deemed to be prisoner under <i>Removal of Prisoners (Territories) Act 1923</i>	33</p>
+      <p>15AJ	Person deemed to be criminal lunatic under <i>Removal of Prisoners (Territories) Act 1923</i>	33</p>
+      <p>15AK	Repatriation of person tried in a State	33</p>
+      <p><ref href="#part-IVAA">Part IVAA</ref>—Conferral of Territory jurisdiction on Western Australian courts etc.	35</p>
+      <p>15AAA	Definitions	35</p>
+      <p>15AAB	Conferral of jurisdiction on Western Australian courts and court officers	35</p>
+      <p>15AAC	Transfer of Supreme Court jurisdiction	35</p>
+      <p>15AAD	Transfer of pending proceedings	36</p>
+      <p>15AAE	Application of provisions of this Act to courts of Western Australia	37</p>
+      <p>15AAF	Savings—jurisdiction of Supreme Court of the Territory on and after transfer day	38</p>
+      <p>15AAG	Abolition of Supreme Court of the Territory	39</p>
+      <p>15AAH	Transitional provisions after abolition of Supreme Court	39</p>
+      <p>15AAI	References to courts of Territory—transitional	40</p>
+      <p><ref href="#part-V">Part V</ref>—Miscellaneous	41</p>
+      <p>15A	Appointment of officers	41</p>
+      <p>16	Sittings of courts etc.	41</p>
+      <p>17	Grant of pardon, remission etc.	41</p>
+      <p>18	Continuation of Malay customs	42</p>
+      <p>18A	Exemption from customs duty of goods produced in the Territory	42</p>
+      <p>18B	Disposal of land	42</p>
+      <p>19	Audit	43</p>
+      <p>19A	Ordinances—incorporation of matters by reference	43</p>
+      <p>20	Regulations	43</p>
+      <p>Schedule—Laws continuing in force in the Territory on and after <date date="1992-07-01">1 July 1992</date>	45</p>
+      <p>Endnotes	46</p>
+      <p>Endnote 1—About the endnotes	46</p>
+      <p>Endnote 2—Abbreviation key	48</p>
+      <p>Endnote 3—Legislation history	49</p>
+      <p>Endnote 4—Amendment history	54</p>
+      <p>Endnote 5—Editorial changes	57</p>
+      <p>An Act to provide for the acceptance of the Cocos or Keeling Islands as a Territory under <role refersTo="#authority">the Authority</role> of the Commonwealth and to provide for the Government of that Territory</p>
+      <p>Preamble</p>
+      <p>	AND WHEREAS by the <i>Cocos (Keeling) Islands (Request and Consent) Act 1954</i> the Parliament of the Commonwealth requested, and consented to, the enactment by the Parliament of the United Kingdom of an Act enabling the Queen to place the Cocos or Keeling Islands under the authority of the Commonwealth and making provision for matters incidental to the placing of those Islands under that authority:</p>
+      <p>AND WHEREAS the Government of the Commonwealth has also requested, and consented to, the enactment by the Parliament of the United Kingdom of such an Act:</p>
+      <p>AND WHEREAS by the Imperial Act entitled the Cocos Islands Act, 1955, it is provided that Her Majesty may, by Order in Council, direct that the Cocos or Keeling Islands shall, on such date as may be specified in the Order, cease to form part of the Colony of Singapore and be placed under <role refersTo="#authority">the authority</role> of the Commonwealth:</p>
+      <p>AND WHEREAS by the Constitution it is provided that the Parliament may make laws for the government of any territory placed by the Queen under <role refersTo="#authority">the authority</role> of and accepted by the Commonwealth:</p>
+      <p>BE it therefore enacted by the Queen’s Most Excellent Majesty, the Senate, and the House of Representatives of the Commonwealth of Australia, as follows:</p>
+    </preface>
+    <preamble>
+      <recitals>
+        <recital>
+          <p>WHEREAS the islands named the Cocos or Keeling Islands (being the islands referred to in <ref href="#sec-4">section 4</ref>) are governed and administered as part of the Colony of Singapore, in pursuance of the Singapore Colony Order in Council, 1955, being an Order in Council dated <date date="1955-02-01">1 February 1955</date>, made by Her Majesty by virtue and in exercise of the powers vested in Her Majesty by the Imperial Acts entitled the British Settlements Acts, 1887 and 1945, and the Straits Settlements (Repeal) Act, 1946:</p>
+        </recital>
+      </recitals>
+    </preamble>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>This Act may be cited as the Cocos (Keeling) Islands Act 1955.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-I__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act shall come into operation on a date to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The date so fixed shall be the date on which the Cocos or Keeling Islands cease to form part of the Colony of Singapore and are placed under <role refersTo="#authority">the authority</role> of the Commonwealth.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><b><i>amended</i></b>: for when an applied Western Australian law is <b><i>amended</i></b>, see subsection 8GA(4).</p>
+              <p><term refersTo="#term-applied-western-australian-law">applied Western Australian law</term> means <def>a Western Australian law as in force in the Territory under <ref href="#sec-8A">section 8A</ref>.</def></p>
+              <p><term refersTo="#term-authority">authority</term> includes <def>a body corporate, or an unincorporated body, established for a public purpose.</def></p>
+              <p><b><i>constable</i></b> means:</p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a member or special member of the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an officer or special officer of the police force of the Territory.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-court-officer-of-western-australia">court officer of Western Australia</term> means <def>a person holding, or performing the functions or duties of, any of the following offices: any of the following offices in a court of Western Australia: Judge; Magistrate (however described); Master; Registrar (however described); Clerk (however described); Sheriff (however described); Bailiff (however described); or any of the following offices in the Family Court of Western Australia: Marshal; Director of Court Counselling; Collector of Maintenance; or the office of Chairman, Deputy Chairman or nominee member of the Workers’ Compensation Board of Western Australia; or any other office in respect of a court of Western Australia, being an office specified in the regulations.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any of the following offices in a court of Western Australia:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>Judge;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>Magistrate (however described);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>Master;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>Registrar (however described);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-v">
+              <num>v</num>
+              <content>
+                <p>Clerk (however described);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-vi">
+              <num>vi</num>
+              <content>
+                <p>Sheriff (however described);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-vii">
+              <num>vii</num>
+              <content>
+                <p>Bailiff (however described); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any of the following offices in the Family Court of Western Australia:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>Marshal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>Director of Court Counselling;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>Collector of Maintenance; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the office of Chairman, Deputy Chairman or nominee member of the Workers’ Compensation Board of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>any other office in respect of a court of Western Australia, being an office specified in the regulations.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-court-of-western-australia">court of Western Australia</term> means <def>any of the following courts or tribunals: the Supreme Court of Western Australia; the District Court of Western Australia; the Family Court of Western Australia; a Court of Petty Sessions of Western Australia; a Local Court of Western Australia; a coroners’ court of Western Australia; the Children’s Court of Western Australia; the Workers’ Compensation Board of Western Australia; any other court or tribunal specified in the regulations.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Supreme Court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the District Court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Family Court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a Court of Petty Sessions of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a Local Court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>a coroners’ court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>the Children’s Court of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>the Workers’ Compensation Board of Western Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>any other court or tribunal specified in the regulations.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-indictment-court">indictment court</term> means <def>a court established by a law of the Territory (whether before or after the commencement of this definition) in which trials on indictment of offences against laws in force in the Territory may be conducted.</def></p>
+                <p><term refersTo="#term-jurisdiction">jurisdiction</term> includes <def>powers.</def></p>
+                <p><term refersTo="#term-laws-of-the-territory-or-laws-in-force-in-the-territory">laws of the Territory or laws in force in the Territory</term> means <def>the laws in force in the Territory as mentioned in <ref href="#sec-7A">section 7A</ref>.</def></p>
+                <p><term refersTo="#term-ordinance">Ordinance</term> means <def>an Ordinance made under this Act.</def></p>
+                <p><term refersTo="#term-power">power</term> includes <def>a function or duty, and, in that context, exercise means perform.</def></p>
+                <p><term refersTo="#term-prison">prison</term> includes <def>a lock-up or other place of lawful detention.</def></p>
+                <p><term refersTo="#term-registrar">Registrar</term>, in relation to an indictment court, means <def>the registrar, or a deputy registrar, of that court.</def></p>
+                <p><term refersTo="#term-sheriff">Sheriff</term> means <def>the Sheriff, or a Deputy Sheriff, of the Territory.</def></p>
+                <p><term refersTo="#term-state">State</term> includes <def>a Territory other than the Territory.</def></p>
+                <p><term refersTo="#term-supreme-court-of-the-territory">Supreme Court of the Territory</term> means <def>the Supreme Court established by the Supreme Court Ordinance 1955 of the Territory.</def></p>
+                <p><term refersTo="#term-the-islands">the Islands</term> means <def>the Cocos or Keeling Islands situated in the Indian Ocean in or about latitude 12°5´ south and longitude 96°53´ east, including the Northern Island otherwise called North Keeling Island.</def></p>
+                <p><term refersTo="#term-the-police-force-of-the-territory">the police force of the Territory</term> includes <def>any police force empowered to provide police services under a law in force in the Territory.</def></p>
+                <p><term refersTo="#term-the-proclaimed-date">the proclaimed date</term> means <def>the date fixed by Proclamation under <ref href="#sec-2">section 2</ref>.</def></p>
+                <p><term refersTo="#term-the-territory">the Territory</term> means <def>the Territory of Cocos (Keeling) Islands.</def></p>
+                <p><b><i>Western Australian law</i></b>: see subsection 8A(6).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In this Act, a reference to an Act is a reference to the whole or a part of that Act, or to the whole or a part of a law made under that Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4A">
+          <num>4A</num>
+          <heading>Application of the Criminal Code</heading>
+          <subsection eId="part-I__sec-4A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Chapter 2 of the <i>Criminal Code</i> applies to all offences created by this Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-I__sec-4A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Chapter 2 of the <i>Criminal Code</i> does not apply in relation to, or in relation to matters arising under, a law in force in the Territory because of <ref href="#sec-8A">section 8A</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Acceptance of the Islands</heading>
+        <section eId="part-II__sec-5">
+          <num>5</num>
+          <heading>Acceptance of Cocos or Keeling Islands</heading>
+          <content>
+            <p>The Islands are declared to be accepted by the Commonwealth as a Territory under <role refersTo="#authority">the authority</role> of the Commonwealth and shall be known as the Territory of Cocos (Keeling) Islands.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Transfer of rights, liabilities etc. to Commonwealth</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (3), all property, rights and powers in or in connexion with the Islands, being property, rights and powers which, immediately before the proclaimed date, were held or enjoyed by or on behalf of the Queen in right of the United Kingdom or of the Colony of Singapore, or by or on behalf of the Government of the United Kingdom or of the Colony of Singapore, shall, from and including that date, be deemed to be held or enjoyed by or on behalf of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), all liabilities and obligations incurred before the proclaimed date by or on behalf of the Government of the United Kingdom or the Government of the Colony of Singapore, in or in connexion with the Islands and subsisting immediately before that date shall, from and including that date, be deemed to have been incurred by or on behalf of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsections (1) and (2) do not apply to or in relation to:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>property, rights or powers in, or in connexion with, that part of the Islands known as Direction Island, or liabilities or obligations in respect of property in that part of the Islands;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>liabilities of the Colony of Singapore in respect of the payment of pensions or retiring allowances; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>liabilities relating to public loans.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	In this section, <b><i>property</i></b> includes immovable property.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Extinguishment of certain rights and restrictions under the 1886 Indenture</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The restrictions under the 1886 Indenture relating to dealings in land in the Islands are extinguished.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>All rights and powers reserved to and exercisable by or on behalf of the Queen under the 1886 Indenture are extinguished.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>the 1886 Indenture</i></b> means the Indenture dated 7 July 1886 that was made between Her late Majesty Queen Victoria, the Governor of the Straits Settlements and George Clunies Ross in relation to the Islands.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Laws and legislative powers</heading>
+        <division eId="part-III__dvs-1">
+          <num>1</num>
+          <heading>Laws of the Territory</heading>
+          <section eId="part-III__dvs-1__sec-7A">
+            <num>7A</num>
+            <heading>The laws of the Territory</heading>
+            <subsection eId="part-III__dvs-1__sec-7A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>On and after <date date="1992-07-01">1 July 1992</date>, the laws in force in the Territory from time to time are:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-7A__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>Acts as in force from time to time in or in relation to the Territory on and after that day; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-7A__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>Ordinances made on or after that day as in force from time to time; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-7A__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>laws as in force in the Territory in accordance with <ref href="#sec-8">section 8</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-7A__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>applied Western Australian laws.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-7A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, subsection (1) does not prevent any other law, including a law of a State, from applying in the Territory of its own force.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Operation of existing laws etc.</heading>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A law in force in the Territory immediately before <date date="1992-07-01">1 July 1992</date> is repealed unless it is specified in the Schedule.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection (3), a law that is specified in the Schedule (including any instruments made under that law) as in force in the Territory immediately before <date date="1992-07-01">1 July 1992</date> continues to be in force in the Territory on and after that day.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A law specified in the Schedule may be amended or repealed by an Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-4">
+              <num>4</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>instruments</i></b> includes regulations, rules and by-laws.</p>
+                <p><b><i>law</i></b>:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>includes a principle or rule of common law or equity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>does not include an Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8A">
+            <num>8A</num>
+            <heading>Application of Western Australian laws</heading>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, <ref href="#sec-8G">section 8G</ref> and <ref href="#part-IVAA">Part IVAA</ref>, Western Australian laws are in force in the Territory.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	A Western Australian law as in force in the Territory under this section is an <b><i>applied Western Australian law </i></b>(see the definition in subsection 4(1)).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To the extent that a law is in force in the Territory under subsection (1), it may be incorporated, amended or repealed by an Ordinance or a law made under an Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An Ordinance may suspend the operation in the Territory of a law in force in the Territory under subsection (1) for such period as is specified in the Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-4">
+              <num>4</num>
+              <content>
+                <p>To the extent that a law is in force in the Territory under subsection (1), it has no effect so far as it is inconsistent with the Constitution or an Act or Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-5">
+              <num>5</num>
+              <content>
+                <p>For the purpose of subsection (4), a law is consistent with the Constitution or an Act or Ordinance if the law is capable of operating concurrently with it.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8A__subsec-6">
+              <num>6</num>
+              <content>
+                <p>	(6)	A <b><i>Western Australian law</i></b>:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8A__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>is a law in force in Western Australia from time to time; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8A__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>includes a principle or rule of common law or equity that is part of the law of Western Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8A__subsec-6__para-c">
+                <num>c</num>
+                <content>
+                  <p>does not include:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8A__subsec-6__para-i">
+                <num>i</num>
+                <content>
+                  <p>a Commonwealth Act or a provision of a Commonwealth Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8A__subsec-6__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an instrument (however described) made under a Commonwealth Act, or a provision of such an instrument.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8B">
+            <num>8B</num>
+            <heading>Minister must table lists of applied Western Australian Acts</heading>
+            <subsection eId="part-III__dvs-1__sec-8B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Minister must cause a list of Acts of the Western Australian Parliament (<b><i>WA Acts</i></b>) to be prepared and tabled in each House of the Parliament for the following periods:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8B__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the period of 3 months beginning on <date date="1992-07-01">1 July 1992</date>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8B__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>each subsequent period of 6 months.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The list must specify the names of all WA Acts that are wholly or partly in force in the Territory under <ref href="#sec-8A">section 8A</ref> on the day specified in the list, and have not been specified in a previous list under this section. The specified day must be not more than 14 days before the day on which the list is to be tabled.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The list must include WA Acts whose operation has been suspended in accordance with subsection 8A(3).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8B__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The list must be tabled in each House of the Parliament before the end of the period to which the list relates. However, if the House concerned does not sit during any day in the last month of the period, the list may be tabled in that House within the next 15 sitting days of that House.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8C">
+            <num>8C</num>
+            <heading>House may terminate application of Western Australian Acts in the Territory</heading>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-1">
+              <num>1</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>terminate</i></b> means terminate the operation of a WA Act in the Territory.</p>
+                <p><b><i>WA Act</i></b> means an Act of the Western Australian Parliament that is specified in a list tabled under <ref href="#sec-8B">section 8B</ref>, or part of such an Act.</p>
+                <p><b><i>WA Acts list</i></b> means a list prepared and tabled in a House of the Parliament under <ref href="#sec-8B">section 8B</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a notice of a motion to terminate a WA Act has been given in a House of the Parliament:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>within 15 sitting days after the tabling in that House of the WA Acts list specifying that WA Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>if <ref href="#sec-8D">section 8D</ref> applies to that WA Act—<quantity refersTo="#deadline">within 3 months</quantity> after that list was tabled; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>that House passes a resolution to terminate the WA Act;</p>
+                </content>
+                <content>
+                  <p>then the WA Act is terminated from the time when the resolution was passed.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>a notice of a motion to terminate a WA Act has been given in a House of the Parliament:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>within 15 sitting days after the tabling in that House of the WA Acts list specifying that WA Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>if <ref href="#sec-8D">section 8D</ref> applies to that WA Act—<quantity refersTo="#deadline">within 3 months</quantity> after that list was tabled; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the expiration of 15 sitting days after the notice was given:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>then the WA Act is terminated from the expiration of that period of 15 sitting days.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	If, before the expiration of 15 sitting days after notice of a motion to terminate a WA Act specified in a WA Acts list has been given in a House of the Parliament (<b><i>the notice House</i></b>):</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the House of Representatives is dissolved or expires, or the Parliament is prorogued; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time of the dissolution, expiry or prorogation:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-4__para-i">
+                <num>i</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-4__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>subsections (2) and (3) apply as if the WA Acts list had been tabled in the notice House on the first sitting day of that House after the dissolution, expiry or prorogation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The termination of a WA Act under subsection (2) or (3) has the same effect as the repeal of that WA Act, as a law of the Territory, by an Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-6">
+              <num>6</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a WA Act (<b><i>the terminated Act</i></b>) is terminated under subsection (2) or (3); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8C__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>the terminated Act repealed, in whole or in part, another WA Act or any other law that was in force in the Territory immediately before the terminated Act came into force in the Territory under <ref href="#sec-8A">section 8A</ref>;</p>
+                </content>
+                <content>
+                  <p>the termination of the terminated Act has the effect of reviving that other WA Act or law from and including the date of the termination, as if the terminated Act had not come into force in the Territory.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8C__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A notice of a motion, or a resolution, for the purposes of this section may relate to the termination of more than one WA Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8D">
+            <num>8D</num>
+            <heading>Extension of period for giving notice of motion to terminate WA Act</heading>
+            <subsection eId="part-III__dvs-1__sec-8D__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	This section provides for an extension of time for giving a notice of a motion (<b><i>the termination notice</i></b>) in a House of the Parliament to terminate one or more WA Acts that are specified in the first WA Acts list that is required by <ref href="#sec-8A">section 8A</ref> to be tabled in that House.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8D__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>within 15 sitting days after tabling of the WA Acts list in a House of the Parliament, a notice of a motion is given in that House to extend the period for giving the termination notice in relation to one or more WA Acts specified in the extension notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>that House passes a resolution to extend the period;</p>
+                </content>
+                <content>
+                  <p>the termination notice may be given in that House <quantity refersTo="#deadline">within 3 months</quantity> after the tabling of the WA Acts list in that House.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8D__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	within 15 sitting days after tabling of the WA Acts list in a House of the Parliament, a notice of a motion (<b><i>the extension notice</i></b>) is given in that House to extend the period for giving the termination notice in relation to one or more WA Acts specified in the extension notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the expiration of 15 sitting days after the extension notice has been given in that House:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>the termination notice may be given in that House <quantity refersTo="#deadline">within 3 months</quantity> after the tabling of the WA Acts list in that House.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8D__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	If a notice of a motion (<b><i>the extension notice</i></b>) is given in a House of the Parliament (<b><i>the notice House</i></b>) for the purpose of obtaining an extension under subsection (2) or (3) but, before the expiration of 15 sitting days after the extension notice is given:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the House of Representatives is dissolved or expires, or the Parliament is prorogued; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time of the dissolution, expiry or prorogation:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-i">
+                <num>i</num>
+                <content>
+                  <p>the extension notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>the following provisions apply:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>the extension notice is taken to have been given in the notice House on the first sitting day of that House after the dissolution, expiry or prorogation;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8D__subsec-4__para-d">
+                <num>d</num>
+                <content>
+                  <p>the termination notice may be given in that House within the first 15 sitting days of that House after the dissolution, expiry or prorogation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8D__subsec-5">
+              <num>5</num>
+              <content>
+                <p>	(5)	In this section, <b><i>terminate</i></b>, <b><i>WA Act</i></b> and <b><i>WA Acts list</i></b> have the same meanings as in <ref href="#sec-8C">section 8C</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8E">
+            <num>8E</num>
+            <heading>Application of Commonwealth Acts</heading>
+            <subsection eId="part-III__dvs-1__sec-8E__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An Act (whether passed before or after this section’s commencement) extends to the Territory of its own force except so far as the Act or another Act expressly provides otherwise.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8E__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Except as provided by this Act, an Ordinance has no effect so far as it purports to affect the application of an Act in or in relation to the Territory.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8G">
+            <num>8G</num>
+            <heading>Powers under the applied Western Australian laws</heading>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If, by an applied Western Australian law, a power is vested in:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a Minister of Western Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Governor of Western Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Governor-in-Council of Western Australia;</p>
+                </content>
+                <content>
+                  <p>that power is, in relation to the Territory, vested in <role refersTo="#minister">the Minister</role> instead of the person or authority mentioned in paragraph (a), (b) or (c) of this subsection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>by an applied Western Australian law, a power is vested in a person (other than a court officer of Western Australia) or an authority (other than a court of Western Australia); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>subsection (1) does not apply to that power;</p>
+                </content>
+                <content>
+                  <p>the power is, in relation to the Territory, vested in <role refersTo="#minister">the Minister</role> instead of the person or authority mentioned in paragraph (a) of this subsection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-2A">
+              <num>2A</num>
+              <content>
+                <p>To avoid doubt, a reference in subsection (1) or (2) to a power vested in a person or authority by an applied Western Australian law does not include a reference to a power so vested, whether directly or indirectly, because of an Ordinance made for the purposes of subsection 8A(2).</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	Under subsection 8A(2), an Ordinance may provide for the incorporation, amendment or repeal of a law in force in the Territory under <ref href="#sec-8A">section 8A</ref>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Delegation etc.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If a power is vested in <role refersTo="#minister">the Minister</role> under subsection (1) or (2), <role refersTo="#minister">the Minister</role> may, in writing:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>direct that the power is also vested in a person or authority; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>delegate the power to a person or authority.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A direction or delegation under subsection (3) is subject to such conditions as may be specified:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>in the direction or delegation; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>in the case of a deemed direction under subsection (5A) or (5B)—in writing, by <role refersTo="#minister">the Minister</role>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A person or authority in whom a power is vested by a direction under paragraph (3)(a) may delegate the power, in writing, to another person or authority:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>if authorised to do so by the direction; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>in the case of a deemed direction under subsection (5A) or (5B)—if authorised to do so, in writing, by <role refersTo="#minister">the Minister</role>.</p>
+                </content>
+                <content>
+                  <p>Deemed vesting of powers—Western Australian persons and authorities exercising powers in Cocos (Keeling) Islands</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-5A">
+              <num>5A</num>
+              <content>
+                <p>If a power is vested in <role refersTo="#minister">the Minister</role> under paragraph (1)(a) or subsection (2), <role refersTo="#minister">the Minister</role> is taken to have directed under paragraph (3)(a) that the power is also vested in another person or authority in the circumstances that:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person or authority is subject to an arrangement under <ref href="#sec-8H">section 8H</ref> and is:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-i">
+                <num>i</num>
+                <content>
+                  <p>an officer or employee of Western Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an authority established by or under a Western Australian law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>an officer or employee of such an authority; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-b">
+                <num>b</num>
+                <content>
+                  <p>the power corresponds to a power that the person or authority is authorised, under a Western Australian law, to exercise in, or in a part of, Western Australia:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-i">
+                <num>i</num>
+                <content>
+                  <p>whether in the person’s or authority’s own right; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>whether in the capacity of a delegate; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8G__subsec-5A__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>whether in any other way.</p>
+                </content>
+                <content>
+                  <p>Deemed vesting of powers—other persons and authorities exercising powers in Cocos (Keeling) Islands</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-5B">
+              <num>5B</num>
+              <content>
+                <p>If a power mentioned in column 1 of an item of the following table is vested in <role refersTo="#minister">the Minister</role> under paragraph (1)(a) or subsection (2), <role refersTo="#minister">the Minister</role> is taken to have directed under paragraph (3)(a) that the power is also vested in a person or authority mentioned in column 2 of the item.</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Deemed vesting of powers—other persons and authorities exercising powers in Cocos (Keeling) Islands</th>
+                  <th>Deemed vesting of powers—other persons and authorities exercising powers in Cocos (Keeling) Islands</th>
+                  <th>Deemed vesting of powers—other persons and authorities exercising powers in Cocos (Keeling) Islands</th>
+                </tr>
+                <tr>
+                  <td>Item</td>
+                  <td>Column 1</td>
+                  <td>Column 2</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>A power that corresponds to a power vested by a Western Australian law in a police force (however described)</td>
+                  <td>The Australian Federal Police</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>A power that corresponds to a power vested by a Western Australian law in a police officer (however described) holding, occupying or exercising the powers of a particular kind of office or position</td>
+                  <td>A member or special member of the Australian Federal Police holding, occupying or exercising the powers of a corresponding office or position in the Territory</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>A power that corresponds to a power vested by a Western Australian law in a body (a local government body) responsible for local government under such a law</td>
+                  <td>The Cocos (Keeling) Islands Shire</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>A power that corresponds to a power vested by a Western Australian law in a person holding, occupying or exercising the powers of a particular kind of office or position on or with a local government body</td>
+                  <td>A person holding, occupying or exercising the powers of a corresponding office or position on or with the Cocos (Keeling) Islands Shire</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>A power that corresponds to a power, vested by a Western Australian law, that is prescribed by an Ordinance for the purposes of this item</td>
+                  <td>A person or authority prescribed by that Ordinance</td>
+                </tr>
+              </table>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, in writing, direct that subsection (5A) or (5B) does not apply to a specified power.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A direction under subsection (6) may be unconditional or subject to such conditions (if any) as are specified in the direction.</p>
+              </content>
+              <content>
+                <p>Other matters</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-8">
+              <num>8</num>
+              <content>
+                <p>An instrument under this section may identify a power by reference to a class of powers.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-9">
+              <num>9</num>
+              <content>
+                <p>The validity of the exercise of a power under an applied Western Australian law by a person or authority under this section is unaffected by the failure of the person or authority to hold a qualification required of a person or authority exercising that power under a Western Australian law.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-10">
+              <num>10</num>
+              <content>
+                <p>	(10)	This section does not affect the operation of <ref href="#sec-8A">section 8A</ref> in relation to the application in or in relation to the Territory of a law (a <b><i>subordinate law</i></b>) made under a Western Australian law, whether the subordinate law is made after this section’s commencement or not.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-10A">
+              <num>10A</num>
+              <content>
+                <p>	(10A)	Subject to any direction or delegation made under this section, if a power vested by an applied Western Australian law in a person or authority (the <b><i>first mentioned person or authority</i></b>) is vested in another person or authority under this section, each reference in any applied Western Australian law to the first mentioned person or authority is taken to include a reference to the other person or authority.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8G__subsec-11">
+              <num>11</num>
+              <content>
+                <p>An instrument under this section is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8GA">
+            <num>8GA</num>
+            <heading>Applied Western Australian laws—effect of directions or delegations</heading>
+            <content>
+              <p>Scope</p>
+            </content>
+            <subsection eId="part-III__dvs-1__sec-8GA__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the Minister directs, under paragraph 8G(3)(a), that all the powers of a person or authority (the <b><i>first mentioned person or authority</i></b>) under an applied Western Australian law are vested in another person or authority; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the Minister delegates to a person or authority, under paragraph 8G(3)(b), all the powers of a person or authority (also the <b><i>first mentioned person or authority</i></b>) under an applied Western Australian law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	a person or authority delegates to another person or authority, under subsection 8G(5), all of the powers of a person or authority (also the <b><i>first mentioned person or authority</i></b>) under an applied Western Australian law.</p>
+                </content>
+                <content>
+                  <p>Addition of powers</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8GA__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the applied Western Australian law is amended to give the first mentioned person or authority one or more additional powers under the law; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the direction or delegation is in force immediately before the amendment takes effect;</p>
+                </content>
+                <content>
+                  <p>then, on and after the amendment taking effect, the direction or delegation is taken to include the additional powers.</p>
+                  <p>Alteration of powers</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8GA__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the applied Western Australian law is amended to alter the scope of one or more of the powers of the first mentioned person or authority under the law; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the direction or delegation is in force immediately before the amendment takes effect;</p>
+                </content>
+                <content>
+                  <p>then, on and after the amendment taking effect, the direction or delegation is taken to include the powers as altered.</p>
+                  <p>Amendments of applied Western Australian laws</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8GA__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	An applied Western Australian law is <b><i>amended</i></b> if:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the applied Western Australian law is amended by an Ordinance; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8GA__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>the corresponding Western Australian law is amended.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8H">
+            <num>8H</num>
+            <heading>Arrangements with the Government of Western Australia</heading>
+            <subsection eId="part-III__dvs-1__sec-8H__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commonwealth may enter into arrangements with Western Australia for the effective application and administration of the laws in force in the Territory.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8H__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting the generality of subsection (1), such an arrangement may provide for the exercise of powers by:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8H__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>an officer or employee of Western Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8H__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>an authority of Western Australia established under a Western Australian law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8H__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>an officer or employee of an authority of Western Australia established under a Western Australian law;</p>
+                </content>
+                <content>
+                  <p>in or in relation to the Territory.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-8I">
+            <num>8I</num>
+            <heading>Savings</heading>
+            <subsection eId="part-III__dvs-1__sec-8I__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The repeal of a law of the Territory by subsection 8(1) does not:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>revive anything not in force or existing at the time of the repeal; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>affect the previous operation of the law, or anything duly done under or permitted by the law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>affect any right, privilege, obligation or liability acquired, accrued or incurred under the law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>affect any penalty, forfeiture or punishment incurred in respect of any offence committed against the law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>affect any investigation, legal proceeding or remedy in respect of any such right, privilege, obligation, liability, penalty, forfeiture or punishment.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8I__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In spite of the repeal, the law continues in force for the purposes of:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the institution or continuation of any investigation or legal proceeding mentioned in paragraph (1)(e); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the enforcement of any remedy mentioned in paragraph (1)(e); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8I__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the imposition of any penalty, forfeiture or punishment mentioned in paragraph (1)(e).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-III__dvs-2">
+          <num>2</num>
+          <heading>Legislative powers of the Governor-General</heading>
+          <section eId="part-III__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Legislative powers of Governor-General</heading>
+            <subsection eId="part-III__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Governor-General may make Ordinances for the peace, order and good government of the Territory.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	Notice of the making of an Ordinance shall be published in the <i>Gazette</i>, and an Ordinance shall, unless the contrary intention appears in the Ordinance, come into operation on the date of publication of the notice.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Laying of Ordinances before the Parliament</heading>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An Ordinance shall be laid before each House of the Parliament within 15 sitting days of that House after the making of the Ordinance, and, if it is not so laid before each House of the Parliament, ceases to have effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If either House of the Parliament, in pursuance of a motion of which notice has been given within 15 sitting days after an Ordinance has been laid before that House, passes a resolution disallowing the Ordinance or a part of the Ordinance, the Ordinance or part so disallowed thereupon ceases to have effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If, at the expiration of 15 sitting days after notice of a motion to disallow an Ordinance or part of an Ordinance has been given in a House of the Parliament, being notice given within 15 sitting days after the Ordinance has been laid before that House:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>the Ordinance or part, as the case may be, specified in the motion shall thereupon be deemed to have been disallowed.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-3A">
+              <num>3A</num>
+              <content>
+                <p>If, before the expiration of 15 sitting days after notice of a motion to disallow an Ordinance or part of an Ordinance has been given in a House of the Parliament:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3A__para-a">
+                <num>a</num>
+                <content>
+                  <p>the House of Representatives is dissolved or expires, or the Parliament is prorogued; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3A__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time of the dissolution, expiry or prorogation, as the case may be:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3A__para-i">
+                <num>i</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-3A__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>the Ordinance shall, for the purposes of subsections (2) and (3), be deemed to have been laid before that first-mentioned House on the first sitting day of that first-mentioned House after the dissolution, expiry or prorogation, as the case may be.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Where an Ordinance is disallowed, or is deemed to have been disallowed, under this section or ceases to have effect by virtue of the operation of subsection (1), the disallowance of the Ordinance or the operation of subsection (1) in relation to the Ordinance, as the case may be, has the same effect as a repeal of the Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-4A">
+              <num>4A</num>
+              <content>
+                <p>Where:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-4A__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	an Ordinance (in this subsection referred to as the <b><i>relevant Ordinance</i></b>) is disallowed, or is deemed to have been disallowed, under this section or ceases to have effect by virtue of the operation of subsection (1); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13__subsec-4A__para-b">
+                <num>b</num>
+                <content>
+                  <p>the relevant Ordinance repealed, in whole or in part, another Ordinance or any other law that was in force immediately before the relevant Ordinance came into operation;</p>
+                </content>
+                <content>
+                  <p>the disallowance of the relevant Ordinance or the operation of subsection (1) in relation to the relevant Ordinance, as the case may be, has the effect of reviving that other Ordinance or law, as the case may be, from and including the date of the disallowance or the date on which the relevant Ordinance ceased to have effect by virtue of that operation of subsection (1), as the case may be, as if the relevant Ordinance had not been made.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-4B">
+              <num>4B</num>
+              <content>
+                <p>A reference in subsection (4) or (4A) to an Ordinance shall be read as including a reference to a part of an Ordinance, and a reference in subsection (4A) to a law has a corresponding meaning.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-13A">
+            <num>13A</num>
+            <heading>Ordinance not to be re-made while required to be tabled</heading>
+            <subsection eId="part-III__dvs-2__sec-13A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Where an Ordinance (in this section called the <b><i>original Ordinance</i></b>) has been made, no Ordinance containing a provision being the same in substance as a provision of the original Ordinance shall be made during the period defined by subsection (2) unless both Houses of the Parliament by resolution approve the making of an Ordinance containing a provision the same in substance as that provision of the original Ordinance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The period referred to in subsection (1) is the period starting on the day on which the original Ordinance was made and ending at the end of 7 days after:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the original Ordinance has been laid, in accordance with subsection 13(1), before both Houses of the Parliament on the same day—that day;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the original Ordinance has been so laid before both Houses on different days—the later of those days; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13A__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>if the original Ordinance has not been so laid before both Houses—the last day on which subsection 13(1) could have been complied with.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If a provision of an Ordinance is made in contravention of this section, the provision has no effect.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-13B">
+            <num>13B</num>
+            <heading>Ordinance not to be re-made while subject to disallowance</heading>
+            <subsection eId="part-III__dvs-2__sec-13B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Where notice of a motion to disallow an Ordinance has been given in a House of the Parliament within 15 sitting days after the Ordinance has been laid before that House, no Ordinance containing a provision being the same in substance as a provision of the first-mentioned Ordinance shall be made unless:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the notice has been withdrawn;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Ordinance is deemed to have been disallowed under subsection 13(3);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the motion has been withdrawn or otherwise disposed of; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>subsection 13(3A) has applied in relation to the Ordinance.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Where:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>because of subsection 13(3A), an Ordinance is deemed to have been laid before a House of the Parliament on a particular day; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>notice of a motion to disallow the Ordinance has been given in that House within 15 sitting days after that day;</p>
+                </content>
+                <content>
+                  <p>no Ordinance containing a provision being the same in substance as a provision of the first-mentioned Ordinance shall be made unless:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the notice has been withdrawn;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>the Ordinance is deemed to have been disallowed under subsection 13(3);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>the motion has been withdrawn or otherwise disposed of; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13B__subsec-2__para-f">
+                <num>f</num>
+                <content>
+                  <p>subsection 13(3A) has applied again in relation to the Ordinance.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If a provision of an Ordinance is made in contravention of this section, the provision has no effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13B__subsec-4">
+              <num>4</num>
+              <content>
+                <p>This section does not limit the operation of <ref href="#sec-13A">section 13A</ref> or 13C.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13B__subsec-5">
+              <num>5</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>Ordinance</i></b> includes a part of an Ordinance.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-13C">
+            <num>13C</num>
+            <heading>Disallowed Ordinance not to be re-made unless resolution rescinded or House approves</heading>
+            <content>
+              <p>If an Ordinance or a part of an Ordinance is disallowed, or is deemed to have been disallowed, under <ref href="#sec-13">section 13</ref>, and an Ordinance containing a provision being the same in substance as a provision so disallowed, or deemed to have been disallowed, is made <quantity refersTo="#deadline">within 6 months</quantity> after the date of the disallowance, that provision has no effect, unless:</p>
+            </content>
+            <paragraph eId="part-III__dvs-2__sec-13C__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of an Ordinance, or a part of an Ordinance, disallowed by resolution—the resolution has been rescinded by the House of the Parliament by which it was passed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-13C__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of an Ordinance, or a part of an Ordinance, deemed to have been disallowed—the House of the Parliament in which notice of the motion to disallow the Ordinance or part was given has approved, by resolution, the making of a provision the same in substance as the provision deemed to have been disallowed.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-III__dvs-2__sec-13D">
+            <num>13D</num>
+            <heading>Regulations, rules and by-laws</heading>
+            <subsection eId="part-III__dvs-2__sec-13D__subsec-1">
+              <num>1</num>
+              <content>
+                <p>All regulations made under an Ordinance shall be laid before each House of the Parliament within 15 sitting days of that House after the day on which the regulations are made and, if they are not so laid before each House of the Parliament, have no effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13D__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>In subsection (1), a regulation made under a law in force in the Territory:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13D__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>does not include a regulation of Western Australia as in force in the Territory under <ref href="#sec-8A">section 8A</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13D__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>includes a regulation made by a person or an authority empowered, under <ref href="#sec-8G">section 8G</ref>, to make the regulation under an applied Western Australian law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13D__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsections 13(2) to (4B), inclusive, and sections 13A, 13B and 13C apply in relation to regulations laid before a House of the Parliament as if, in those provisions:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-13D__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>references to subsection 13(1) were references to subsection (1) of this section; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13D__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>references to an Ordinance were references to regulations; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-13D__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>references to a provision of an Ordinance were references to a regulation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13D__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	In this section, <b><i>regulations</i></b> includes rules and by-laws.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-IVA">
+        <num>IVA</num>
+        <heading>Trials on indictment</heading>
+        <section eId="part-IVA__sec-15AA">
+          <num>15AA</num>
+          <heading>Trials on indictment to be by judge and jury</heading>
+          <content>
+            <p>The trial on indictment of an offence against a law in force in the Territory shall be by judge and jury.</p>
+          </content>
+        </section>
+        <section eId="part-IVA__sec-15AB">
+          <num>15AB</num>
+          <heading>Minister may make arrangements with States</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may make arrangements with the government or an authority of a State for the purposes of the effective application of the provisions of this Part relating to sittings of an indictment court in that State in the exercise of its criminal jurisdiction.</p>
+          </content>
+        </section>
+        <section eId="part-IVA__sec-15AC">
+          <num>15AC</num>
+          <heading>Indictment court may sit in a State</heading>
+          <subsection eId="part-IVA__sec-15AC__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, an indictment court, in the exercise of its criminal jurisdiction, may sit in a State if to do so would not be contrary to the interests of justice.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An indictment court may, at any time after the presentation of an indictment for an offence against a law in force in the Territory and before the jury has returned its verdict, if it is satisfied that the interests of justice require it, order:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AC__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the trial of the offence has not begun—that the trial be held in a State, and at a time and place, specified in the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the trial of the offence has begun—that the trial be discontinued, the jury be discharged and a new trial be held in a State, and at a time and place, specified in the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An indictment court may make an order under subsection (2) at a sittings of the court in the Territory or in a State.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An indictment court may make an order under subsection (2) at a sittings of the court in a State whether or not the accused is present but, if the accused is not present, the court shall only make the order if:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AC__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the accused is represented; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the court is satisfied that the accused understands the effect of the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where an indictment court makes an order under subsection (2), the court may order that:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AC__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>on the warrant of <role refersTo="#registrar">the Registrar</role>, a magistrate of the Territory or such other person as the court directs (being a person who holds an office in relation to the court), the accused be removed to the place specified in the order, and held there, for the purposes of the trial of that person and for any related proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>on the summons of <role refersTo="#registrar">the Registrar</role>, all persons required to attend to give evidence in the trial or proceedings attend at the place specified in the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-6">
+            <num>6</num>
+            <content>
+              <p>When exercising its criminal jurisdiction in a State, an indictment court has, and may exercise, all the powers that it would have if it were exercising its criminal jurisdiction in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A power exercised by an indictment court under subsection (6) shall be deemed to have been exercised by the court at a sittings of the court in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Where an indictment court is sitting in a State for the purpose of a trial in that State, the court may, if it is satisfied that the interests of justice require it, order that, for the purpose of viewing a place, or taking evidence from a person, in the Territory, or for a prescribed purpose:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AC__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the trial be adjourned for such time as the court considers reasonable and necessary, and be continued in the Territory for so long as is necessary for that purpose;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>on the warrant of <role refersTo="#registrar">the Registrar</role>, a magistrate of the Territory or such other person as the court directs (being a person who holds an office in relation to the court), the accused be returned to the Territory for the purposes of the continuation of the trial and any related proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the jurors empanelled for the trial go to the Territory and remain there for such time as the court directs for the purpose of continuing to attend as jurors in the trial.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A person who appears as a witness in an indictment court in a trial, or in related proceedings, held wholly or partly in a State, shall be paid by the Commonwealth such fees and allowances as would be payable to the person if the person had appeared as a witness in a trial held in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AC__subsec-10">
+            <num>10</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AC__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>an indictment court, when exercising its criminal jurisdiction in a State, makes an order, issues a warrant or summons or gives a judgment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>a person fails to comply with that order, warrant, summons or judgment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AC__subsec-10__para-c">
+              <num>c</num>
+              <content>
+                <p>that failure would have constituted an offence against a law in force in the Territory if it had occurred there;</p>
+              </content>
+              <content>
+                <p>the person commits an offence against this Act punishable by a penalty that is the same as the penalty for the offence referred to in paragraph (c).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AD">
+          <num>15AD</num>
+          <heading>Juries outside the Territory</heading>
+          <subsection eId="part-IVA__sec-15AD__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>jury list</i></b> means the roll, list or book, on or in which the names of persons liable to serve as jurors appear.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to this section and the regulations, the laws in force in a State relating to:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the qualification of jurors;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the preparation of jury lists and jury panels;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the summoning, attendance and empanelling of juries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the number of jurors;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the right of challenge;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>the discharge of juries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>the disagreement of jurors;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>the remuneration of jurors; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>other matters concerning jurors (other than matters dealt with under <ref href="#sec-15A">section 15A</ref>E) after they have been summoned, appointed or sworn;</p>
+              </content>
+              <content>
+                <p>that apply for the purposes of the trial of a criminal matter in the Supreme Court of that State sitting at a place in that State, extend and shall be applied, with such changes as are necessary, for the purposes of the trial of a criminal matter in an indictment court when sitting at that place.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of a trial in an indictment court held wholly or partly at a place in a State, the jury list that would be used for the purposes of a criminal trial in the Supreme Court of that State sitting in the same place shall be used as well for the purposes of the trial in the indictment court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The precept for a jury shall be issued by <role refersTo="#registrar">the Registrar</role>, or such other person holding an office in relation to the indictment court as the court directs, and the Sheriff or such other person as the court directs shall prepare the jury panels and summon jurors.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The person who has custody of the jury list referred to in subsection (3) in the State where the indictment court is holding a trial shall:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AD__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>give a copy of that list to the person directed by the court to prepare a jury panel; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AD__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>indicate on that copy the names of the persons who, to his or her knowledge, would not, if summoned at the time the copy is given, be liable to serve as jurors under the law in force in that State.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The Commonwealth shall pay such reasonable fee as may be demanded for a copy of a list referred to in paragraph (5)(a).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Any remuneration required to be paid to a person who serves, or is summoned to serve, on a jury in a trial in an indictment court held wholly or partly in a State shall be paid by the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Where a law applied by this Act for the purposes of a trial in an indictment court requires an act or thing to be done by a person specified in that law, the court may, if it is necessary to do so for the purpose of the effective application of the law, order that a person who holds a specified office in relation to the court do that act or thing, and the law shall be deemed to apply to that person accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AD__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The regulations may provide that such provisions of a law referred to in subsection (2) as are specified in the regulations do not apply or apply subject to such modifications as are specified in the regulations.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AE">
+          <num>15AE</num>
+          <heading>Offences in relation to jurors</heading>
+          <subsection eId="part-IVA__sec-15AE__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>juror</i></b> includes a person whose name is on a jury panel.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AE__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person who is served with a summons to attend as a juror in a trial in an indictment court held wholly or partly in a State shall not:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AE__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>fail to attend in accordance with the summons; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AE__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>having so attended, withdraw from the presence of the court, without the permission of the Sheriff, before being discharged or excused by a judge of the court or the Sheriff.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 1 month</quantity> or <quantity refersTo="#penaltyUnit">2 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AE__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>Subsection (2) does not apply if the person has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (2A) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AE__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person shall not personate a person who is a juror with the intention of sitting on a jury.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">10 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AE__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A person shall not:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AE__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>engage in conduct that results in the corruption of a juror;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AE__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>make or promise a payment to a juror, or confer or promise to confer any other benefit on a juror in relation to the person’s service as a juror, other than a payment of the ordinary remuneration of the juror’s employment; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AE__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>being a juror, accept such a payment or benefit.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 5 years</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AE__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>engage in conduct</i></b> means:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AE__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>do an act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AE__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>omit to perform an act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AF">
+          <num>15AF</num>
+          <heading>Removal of accused to State to stand trial</heading>
+          <subsection eId="part-IVA__sec-15AF__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an indictment court makes an order under paragraph 15AC(5)(a) in relation to an accused, <role refersTo="#registrar">the Registrar</role>, a magistrate of the Territory or a person directed by the court under that paragraph, may:</p>
+            </content>
+            <paragraph eId="part-IVA__sec-15AF__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>by warrant directed to all constables, require them to convey the accused in custody from the Territory to the prison specified in the warrant and to deliver the accused into the custody of the officer for the time being in charge of that prison; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVA__sec-15AF__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>by warrant directed to that officer, require that officer to detain the accused in that prison pursuant to this section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AF__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A warrant referred to in subsection (1) may be executed by any constable.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AF__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An accused delivered into custody at a prison in a State under a warrant under subsection (1) may, subject to any order of the indictment court, be detained in that prison or any other prison in that State for so long as the accused’s detention is necessary for the execution of the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AF__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An accused may, while so in custody, be dealt with in the same manner, and is subject to the same laws, as if the warrant issued under subsection (1) had been issued under a law in force in the relevant State relating to holding persons in custody pending the trial of those persons.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AF__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Commonwealth shall pay to the relevant State the reasonable expenses of maintaining an accused detained in a prison under a warrant under subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AG">
+          <num>15AG</num>
+          <heading>Accused to be conveyed to court</heading>
+          <subsection eId="part-IVA__sec-15AG__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an accused has been removed to a State under this Act, a judge of an indictment court may order that the accused be conveyed to the court for the purposes of trial in that State, and any related proceedings.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AG__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a judge of an indictment court makes an order under subsection (1), the person who has the custody of the accused shall release the accused to a constable to enable the accused to be conveyed to the court in accordance with that order.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AH">
+          <num>15AH</num>
+          <heading>Return of accused to Territory</heading>
+          <subsection eId="part-IVA__sec-15AH__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an indictment court makes an order under paragraph 15AC(8)(b), <role refersTo="#registrar">the Registrar</role>, a magistrate of the Territory or a person directed by the Court under that paragraph may, by warrant directed to all constables, require them to convey the accused in custody from the State in which the court made the order to the prison in the Territory specified in the warrant and to deliver the accused into the custody of the officer for the time being in charge of that prison.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVA__sec-15AH__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A warrant referred to in subsection (1) may be executed by any constable.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IVA__sec-15AI">
+          <num>15AI</num>
+          <heading>Person deemed to be prisoner under Removal of Prisoners (Territories) Act 1923</heading>
+          <content>
+            <p>Where:</p>
+          </content>
+          <paragraph eId="part-IVA__sec-15AI__para-a">
+            <num>a</num>
+            <content>
+              <p>a person has been tried in relation to an indictable offence against a law in force in the Territory by an indictment court sitting in a State; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AI__para-b">
+            <num>b</num>
+            <content>
+              <p>the person is convicted of that offence and sentenced to imprisonment;</p>
+            </content>
+            <content>
+              <p>the person shall be deemed:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AI__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	to be a prisoner within the meaning of the<i> Removal of Prisoners (Territories) Act 1923</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AI__para-d">
+            <num>d</num>
+            <content>
+              <p>to have been removed to that State under that Act;</p>
+            </content>
+            <content>
+              <p>and the provisions of that Act apply (so far as they are capable of applying) in relation to the person accordingly.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IVA__sec-15AJ">
+          <num>15AJ</num>
+          <heading>Person deemed to be criminal lunatic under Removal of Prisoners (Territories) Act 1923</heading>
+          <content>
+            <p>Where a person who has been removed to a State under this Act:</p>
+          </content>
+          <paragraph eId="part-IVA__sec-15AJ__para-a">
+            <num>a</num>
+            <content>
+              <p>is found to have been insane at the time of the commission of the offence;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AJ__para-b">
+            <num>b</num>
+            <content>
+              <p>is found or certified, or otherwise lawfully proved, to be unfit, on the ground of insanity, to be tried for the offence; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AJ__para-c">
+            <num>c</num>
+            <content>
+              <p>is convicted of an offence and afterwards certified, or otherwise lawfully proved, to be insane;</p>
+            </content>
+            <content>
+              <p>the person shall be deemed:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AJ__para-d">
+            <num>d</num>
+            <content>
+              <p>	(d)	to be a criminal lunatic within the meaning of the <i>Removal of Prisoners (Territories) Act 1923</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AJ__para-e">
+            <num>e</num>
+            <content>
+              <p>to have been removed to that State under that Act;</p>
+            </content>
+            <content>
+              <p>and sections 9 and 10A of that Act apply (so far as they are capable of applying) in relation to the person accordingly.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IVA__sec-15AK">
+          <num>15AK</num>
+          <heading>Repatriation of person tried in a State</heading>
+          <content>
+            <p>Where:</p>
+          </content>
+          <paragraph eId="part-IVA__sec-15AK__para-a">
+            <num>a</num>
+            <content>
+              <p>a person has been removed to a State under this Act;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AK__para-b">
+            <num>b</num>
+            <content>
+              <p>the trial of the person in an indictment court sitting in that State has concluded; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVA__sec-15AK__para-c">
+            <num>c</num>
+            <content>
+              <p>the person is acquitted (other than on the ground of insanity) or is not, after the date on which the trial concludes, required to serve a sentence of imprisonment;</p>
+            </content>
+            <content>
+              <p>the Commonwealth shall, on application by the person to <role refersTo="#secretary">the Secretary</role>, provide the person with means to enable the person to return to the Territory.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-IVAA">
+        <num>IVAA</num>
+        <heading>Conferral of Territory jurisdiction on Western Australian courts etc.</heading>
+        <section eId="part-IVAA__sec-15AAA">
+          <num>15AAA</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Part:</p>
+            <p><term refersTo="#term-family-court-of-western-australia">Family Court of Western Australia</term> means <def><ref href="/akn/au/act/court-established-by-the-family-court-act-1975" class="unresolved">the Court established by the Family Court Act 1975</ref> of Western Australia.</def></p>
+            <p><term refersTo="#term-transfer-day">transfer day</term> means <def>the day on which this Part commences.</def></p>
+          </content>
+        </section>
+        <section eId="part-IVAA__sec-15AAB">
+          <num>15AAB</num>
+          <heading>Conferral of jurisdiction on Western Australian courts and court officers</heading>
+          <subsection eId="part-IVAA__sec-15AAB__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Part and any law in force in the Territory, the courts and court officers of Western Australia have jurisdiction (including appellate jurisdiction) in and in relation to the Territory as if the Territory were part of Western Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAB__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to any law in force in the Territory, a court or court officer of Western Australia may, in exercising jurisdiction under this section, sit in the Territory or Western Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAB__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subject to any law in force in the Territory, the practice and procedure applicable to a court or court officer exercising jurisdiction under this section are to be the practice and procedure as in force from time to time in relation to that court or court officer in Western Australia.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IVAA__sec-15AAC">
+          <num>15AAC</num>
+          <heading>Transfer of Supreme Court jurisdiction</heading>
+          <subsection eId="part-IVAA__sec-15AAC__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to the jurisdiction vested in or exercisable by the Supreme Court of the Territory or a judge of that Court immediately before the transfer day, except in relation to matters for which:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>proceedings were pending in that Court immediately before that day; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>proceedings had been completed in that Court before that day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAC__subsec-2">
+            <num>2</num>
+            <content>
+              <p>On and after the transfer day, the jurisdiction:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>ceases to be vested in the Supreme Court of the Territory or a Judge of that Court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is vested in:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>if the Family Court of Western Australia or a Judge of that Court would, apart from this section, have the jurisdiction under subsection 15AAB(1)—the Family Court of Western Australia or a Judge of that Court (as the case requires); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the District Court of Western Australia or a Judge of that Court would, apart from this section, have the jurisdiction under subsection 15AAB(1)—the District Court of Western Australia or a Judge of that Court (as the case requires); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>if the Children’s Court of Western Australia or a Judge of that Court would, apart from this section, have the jurisdiction under subsection 15AAB(1)—the Children’s Court of Western Australia or a Judge of that Court (as the case requires); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAC__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>in any other case—the Supreme Court of Western Australia or a Judge of that Court (as the case requires).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IVAA__sec-15AAD">
+          <num>15AAD</num>
+          <heading>Transfer of pending proceedings</heading>
+          <subsection eId="part-IVAA__sec-15AAD__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	On and after the transfer day, the parties to proceedings in a matter pending in the Supreme Court of the Territory (<b><i>Territory Court</i></b>) may apply to that Court to transfer the proceedings to:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the Family Court of Western Australia—the Family Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the District Court of Western Australia—the District Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the Children’s Court of Western Australia—the Children’s Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>in any other case—the Supreme Court of Western Australia.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAD__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	If the Territory Court decides that it is not contrary to the interests of justice to grant the application, the Court is to transfer the proceedings to the relevant Court (<b><i>State Court</i></b>) and:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the State Court may hear and determine the proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>all documents filed of record in the Territory Court in the proceedings are to be transmitted to the State Court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>any money lodged with the Territory Court in relation to the proceedings is to be transferred to the State Court and is taken to be money lodged with the State Court in relation to the proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAD__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>everything done in or in relation to the proceedings in the Territory Court is taken to have been done in the State Court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IVAA__sec-15AAE">
+          <num>15AAE</num>
+          <heading>Application of provisions of this Act to courts of Western Australia</heading>
+          <content>
+            <p>In relation to the exercise of jurisdiction by a court of Western Australia or a Judge or an officer mentioned in this Part, this Act has effect as if:</p>
+          </content>
+          <paragraph eId="part-IVAA__sec-15AAE__para-a">
+            <num>a</num>
+            <content>
+              <p>a reference in this Act to an indictment court included a reference to the Supreme Court of Western Australia or the District Court of Western Australia; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-b">
+            <num>b</num>
+            <content>
+              <p>a reference in this Act to a Judge of an indictment court included a reference to a Judge of the Supreme Court of Western Australia or of the District Court of Western Australia; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-c">
+            <num>c</num>
+            <content>
+              <p>a reference in this Act to <role refersTo="#registrar">the Registrar</role> of an indictment court included a reference to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	a person who has the powers of the Registrar of the Supreme Court of Western Australia in the application of the <i>Supreme Court Act 1935 </i>of Western Australia in the Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	a person who has the powers of a judge of the District Court of Western Australia in the application of the <i>District Court of Western Australia Act 1969 </i>of Western Australia in the Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-d">
+            <num>d</num>
+            <content>
+              <p>a reference in this Act to the Sheriff of an indictment court included a reference to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	a person who has the powers of the sheriff of the Supreme Court of Western Australia in the application of the <i>Supreme Court Act 1935</i> of Western Australia in the Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	a person who has the powers of the sheriff of the District Court of Western Australia in the application of the <i>District Court of Western Australia Act 1969 </i>of Western Australia in the Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-e">
+            <num>e</num>
+            <content>
+              <p>a reference in <ref href="#sec-16">section 16</ref> to a Territory court included a reference to a Western Australian court exercising jurisdiction in or in relation to the Territory under a law of the Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IVAA__sec-15AAE__para-f">
+            <num>f</num>
+            <content>
+              <p>a reference in paragraph 16(c) to a person who holds an office in relation to a Territory court included a reference to a person who has the powers mentioned in that paragraph in relation to the Territory under a law of the Territory.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IVAA__sec-15AAF">
+          <num>15AAF</num>
+          <heading>Savings—jurisdiction of Supreme Court of the Territory on and after transfer day</heading>
+          <content>
+            <p><ref href="#part-IVAA">Part IVAA</ref> of this Act as in force immediately before the transfer day continues in force in relation to any matter in respect of which the Supreme Court of the Territory or a Judge of that Court continues to have jurisdiction on or after that day.</p>
+          </content>
+        </section>
+        <section eId="part-IVAA__sec-15AAG">
+          <num>15AAG</num>
+          <heading>Abolition of Supreme Court of the Territory</heading>
+          <content>
+            <p>The Supreme Court of the Territory is abolished on a day to be fixed by Proclamation, being a day on which no person holds office as a judge of that Court.</p>
+          </content>
+        </section>
+        <section eId="part-IVAA__sec-15AAH">
+          <num>15AAH</num>
+          <heading>Transitional provisions after abolition of Supreme Court</heading>
+          <subsection eId="part-IVAA__sec-15AAH__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>proclaimed day</i></b> means the day to be fixed by Proclamation under <ref href="#sec-15A">section 15A</ref>AG.</p>
+              <p><b><i>State Court</i></b> means the Court to which proceedings are transferred under subsection (2).</p>
+              <p><b><i>Territory Court</i></b> means the Supreme Court of the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAH__subsec-2">
+            <num>2</num>
+            <content>
+              <p>As soon as practicable after no person holds office as a Judge of the Territory Court, <role refersTo="#registrar">the Registrar</role> of the Court must transfer all proceedings in the Court (including completed proceedings) to:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the Family Court of Western Australia—the Family Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the District Court of Western Australia—the District Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>if the proceedings relate only to a matter of a kind that is within the jurisdiction of the Children’s Court of Western Australia—the Children’s Court of Western Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>in any other case—the Supreme Court of Western Australia.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAH__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If proceedings are transferred under subsection (2):</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>all documents filed of record in the Territory Court in the proceedings are to be transmitted to the State Court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>any money lodged with the Territory Court in relation to the proceedings is to be transferred to the State Court and is taken to be money lodged with the State Court in relation to the proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>everything done in or in relation to the proceedings in the Territory Court is taken to have been done in the State Court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAH__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If proceedings transferred under subsection (2) were not completed before the proclaimed day, the State Court may:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>hear, or further hear, the proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>determine the proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAH__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>have regard to any evidence or argument in the proceedings in the Territory Court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IVAA__sec-15AAI">
+          <num>15AAI</num>
+          <heading>References to courts of Territory—transitional</heading>
+          <subsection eId="part-IVAA__sec-15AAI__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Unless the contrary intention appears:</p>
+            </content>
+            <paragraph eId="part-IVAA__sec-15AAI__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a reference in any Act to the Supreme Court of the Territory is taken to include a reference to the Supreme Court of Western Australia exercising jurisdiction in or in relation to the Territory under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IVAA__sec-15AAI__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a reference in any Act to courts of the Territory is taken to include a reference to courts of Western Australia exercising jurisdiction in or in relation to the Territory under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IVAA__sec-15AAI__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not apply to a reference in the <i>Federal Court of Australia Act 1976</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-V__sec-15A">
+          <num>15A</num>
+          <heading>Appointment of officers</heading>
+          <subsection eId="part-V__sec-15A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	In spite of the <i>Public Service Act 1999</i>, a law of the Territory may make provision for and in relation to the appointment and employment of persons for the purposes of the government of the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-15A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Nothing in this section shall be deemed to prevent the appointment or employment of persons under the <i>Public Service Act 1999 </i>in its application to the Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-16">
+          <num>16</num>
+          <heading>Sittings of courts etc.</heading>
+          <subsection eId="part-V__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Provision may be made by Ordinance for and in relation to:</p>
+            </content>
+            <paragraph eId="part-V__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>sittings in Australia outside the Territory of a Territory court for the purpose of hearing and determining a matter if the court is satisfied that the hearing of the matter outside the Territory is not contrary to the interests of justice;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the establishment and operation at places in Australia outside the Territory of registries of Territory courts; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-16__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>where a power is conferred or imposed by law on a person who holds an office in relation to a Territory court—the exercise of the power at places in Australia outside the Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A reference in subsection (1) to a Territory court is a reference to a court having jurisdiction in the Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-17">
+          <num>17</num>
+          <heading>Grant of pardon, remission etc.</heading>
+          <subsection eId="part-V__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General, acting with the advice of <role refersTo="#minister">the Minister</role>, may, by warrant under the Governor-General’s hand, grant to a person convicted by a court of the Territory exercising criminal jurisdiction a pardon, either free or conditional, or a remission or commutation of sentence, or a respite, for such period as the Governor-General thinks fit, of the execution of sentence, and may remit any fine, penalty or forfeiture imposed or incurred under a law in force in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where an offence has been committed in the Territory, or where an offence has been committed outside the Territory for which the offender may be tried in the Territory, the Governor-General, acting with the advice of <role refersTo="#minister">the Minister</role>, may, by warrant under the Governor-General’s hand, grant a pardon to an accomplice who gives evidence that leads to the conviction of the principal offender, or of any of the principal offenders.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-18">
+          <num>18</num>
+          <heading>Continuation of Malay customs</heading>
+          <content>
+            <p>The institutions, customs and usages of the Malay residents of the Territory shall, subject to any law in force in the Territory from time to time, be permitted to continue in existence.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-18A">
+          <num>18A</num>
+          <heading>Exemption from customs duty of goods produced in the Territory</heading>
+          <content>
+            <p>Duties of Customs are not chargeable on goods imported into Australia from the Territory if the goods:</p>
+          </content>
+          <paragraph eId="part-V__sec-18A__para-a">
+            <num>a</num>
+            <content>
+              <p>are the produce or manufacture of the Territory;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-18A__para-b">
+            <num>b</num>
+            <content>
+              <p>have been shipped in the Territory for export to Australia; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-18A__para-c">
+            <num>c</num>
+            <content>
+              <p>are not goods which, if manufactured or produced in Australia, would be subject to a Duty of Excise.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-18B">
+          <num>18B</num>
+          <heading>Disposal of land</heading>
+          <subsection eId="part-V__sec-18B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The application of the <i>Lands Acquisition Act 1989 </i>in relation to land in the Territory does not prevent or affect the making or operation of a provision of a law of the Territory (including a law made before this section’s commencement) under which:</p>
+            </content>
+            <paragraph eId="part-V__sec-18B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>lands in the Territory acquired by or vested in the Commonwealth may be disposed of or otherwise dealt with; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-18B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>instruments, receipts and other documents in relation to any such lands may be executed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-18B__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>rights, duties and liabilities in relation to any such lands are or may be acquired, conferred or imposed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-18B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A law of the Territory mentioned in subsection (1) which provides for the acquisition of land must provide that land is not to be acquired otherwise than on just terms.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-19">
+          <num>19</num>
+          <heading>Audit</heading>
+          <content>
+            <p>The accounts of the Territory are subject to inspection and audit by the Auditor-General for the Commonwealth.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-19A">
+          <num>19A</num>
+          <heading>Ordinances—incorporation of matters by reference</heading>
+          <subsection eId="part-V__sec-19A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Despite subsection 14(2) of the <i>Legislation Act 2003</i>, an Ordinance, or a law made under such an Ordinance, may make provision in relation to a matter by applying, adopting or incorporating, with or without modification, a provision of a Western Australian law (whether or not the law is an applied Western Australian law), as in force at a particular time or as in force from time to time.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-19A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies to a provision of a Western Australian law that is not an Act of the Western Australian Parliament only if the provision is subject to disallowance (however described) in Western Australia.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-20">
+          <num>20</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters which by this Act are required or permitted to be prescribed, or which are necessary or convenient to be prescribed for carrying out or giving effect to this Act, and, in particular:</p>
+          </content>
+          <paragraph eId="part-V__sec-20__para-a">
+            <num>a</num>
+            <content>
+              <p>prescribing penalties, of imprisonment for a period not exceeding 3 months or a fine not exceeding <quantity refersTo="#penaltyUnit">15 penalty units</quantity>, for offences against the regulations; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-20__para-b">
+            <num>b</num>
+            <content>
+              <p>making saving or transitional provisions in relation to the abolition of any court established by a law of the Territory.</p>
+            </content>
+            <content>
+              <p>Schedule—Laws continuing in force in the Territory on and after <date date="1992-07-01">1 July 1992</date></p>
+              <p>Section 8</p>
+              <p><i>Administration Ordinance 1975</i></p>
+              <p>Companies Ordinance (of the Colony of Singapore in its application to the Territory)</p>
+              <p>Co-operative Societies Ordinance (of the Colony of Singapore in its application to the Territory)</p>
+              <p>Courts Ordinance (of the Colony of Singapore in its application to the Territory)</p>
+              <p><i>Interpretation Ordinance 1955</i></p>
+              <p><i>Migratory Birds Ordinance 1980</i></p>
+              <p><i>Postal Services Ordinance 1979</i></p>
+              <p>Quarantine and Prevention of Disease Ordinance (of the Colony of Singapore in its application to the Territory)</p>
+              <p><i>Supreme Court Ordinance 1955</i></p>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Cocos (Keeling) Islands Act 1955</td>
+                <td>34, 1955</td>
+                <td>16 June 1955</td>
+                <td>23 Nov 1955 (s 2 and gaz 1955, p 3665)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Cocos (Keeling) Islands Act 1956</td>
+                <td>89, 1956</td>
+                <td>8 Nov 1956</td>
+                <td>23 Nov 1955 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Cocos (Keeling) Islands Act 1958</td>
+                <td>67, 1958</td>
+                <td>8 Oct 1958</td>
+                <td>8 Oct 1958 (s 2)</td>
+                <td>s 5(2)</td>
+              </tr>
+              <tr>
+                <td>Cocos (Keeling) Islands Act 1963</td>
+                <td>22, 1963</td>
+                <td>28 May 1963</td>
+                <td>25 June 1963</td>
+                <td>s 3</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision (Decimal Currency) Act 1966</td>
+                <td>93, 1966</td>
+                <td>29 Oct 1966</td>
+                <td>Sch 1: 1 Dec 1966 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1973</td>
+                <td>216, 1973</td>
+                <td>19 Dec 1973</td>
+                <td>s 9(1), 10 and Sch 1: 31 Dec 1973 (s 2)</td>
+                <td>s 9(1) and 10</td>
+              </tr>
+              <tr>
+                <td>Postal and Telecommunications Commissions (Transitional Provisions) Act 1975</td>
+                <td>56, 1975</td>
+                <td>12 June 1975</td>
+                <td>Sch 2: 12 June 1975 (s 2(2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Cocos (Keeling) Islands Amendment Act 1979</td>
+                <td>6, 1979</td>
+                <td>5 Mar 1979</td>
+                <td>21 Mar 1979 (s 2 and gaz 1979, No S48)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Amendments) Act 
+(No. 1) 1982</td>
+                <td>26, 1982</td>
+                <td>7 May 1982</td>
+                <td>s 79: 4 June 1982 (s 2(12))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Amendments) Act (No. 2) 1982</td>
+                <td>80, 1982</td>
+                <td>22 Sept 1982</td>
+                <td>s 263: 4 June 1982 (s 2(11))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1983</td>
+                <td>39, 1983</td>
+                <td>20 June 1983</td>
+                <td>s 7(1) and Sch 1: 18 July 1983 (s 2(1))</td>
+                <td>s 7(1)</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1985</td>
+                <td>65, 1985</td>
+                <td>5 June 1985</td>
+                <td>Sch 1: 3 July 1985 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 2) 1986</td>
+                <td>168, 1986</td>
+                <td>18 Dec 1986</td>
+                <td>s 5(3) and Sch 1: 18 Dec 1986 (s 2(1))</td>
+                <td>s 5(3)</td>
+              </tr>
+              <tr>
+                <td>Statutory Instruments (Tabling and Disallowance) Legislation Amendment Act 1988</td>
+                <td>99, 1988</td>
+                <td>2 Dec 1988</td>
+                <td>Sch: 2 Dec 1988 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Territories and Environment Legislation Amendment Act 1989</td>
+                <td>60, 1989</td>
+                <td>19 June 1989</td>
+                <td>s 17–20: 19 June 1989 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Law Reform Act 1992</td>
+                <td>104, 1992</td>
+                <td>30 June 1992</td>
+                <td>s 1, 2, 25 and 26: Royal Assent
+s 9, 10, 19, 21 and 22: 29 June 1993 (gaz 1993, S196)
+Remainder: 1 July 1992</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Legislation Amendment Act 1992</td>
+                <td>211, 1992</td>
+                <td>24 Dec 1992</td>
+                <td>s 4: (f)
+Remainder: Royal Assent</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Environment, Sport and Territories Legislation Amendment Act 1994</td>
+                <td>113, 1994</td>
+                <td>16 Sept 1994</td>
+                <td>16 Sept 1994</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Workplace Relations and Other Legislation Amendment Act 1996</td>
+                <td>60, 1996</td>
+                <td>25 Nov 1996</td>
+                <td>Sch 19 (item 13): Royal Assent (g)</td>
+                <td>s 2(2) and (6) (am. by 77, 1996, Sch 3 [items 1, 2])</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Workplace Relations and Other Legislation Amendment Act (No. 2) 1996</td>
+                <td>77, 1996</td>
+                <td>19 Dec 1996</td>
+                <td>Sch 3 (items 1, 2): (h)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Environment, Sport and Territories Legislation Amendment Act 1997</td>
+                <td>118, 1997</td>
+                <td>7 July 1997</td>
+                <td>Sch 1 (items 14–19): 7 July 1997 (s 2(1))</td>
+                <td>Sch 1 (item 15)</td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (items 297, 298): 5 Dec 1999 (gaz 1999, No. S584 and s 2(1), (2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Transport and Regional Services Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>143, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>2 Oct 2001</td>
+                <td>s. 4</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2008</td>
+                <td>73, 2008</td>
+                <td>3 July 2008</td>
+                <td>Sch 4 (items 157–159): 4 July 2008</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Law Reform Act 2010</td>
+                <td>139, 2010</td>
+                <td>10 Dec 2010</td>
+                <td>Sch 3: 11 Dec 2010</td>
+                <td>Sch 3 (items 
+3–5)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act (No. 1) 2016</td>
+                <td>4, 2016</td>
+                <td>11 Feb 2016</td>
+                <td>Sch 4 (items 1, 57, 58): 10 Mar 2016 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (items 92–94): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Legislation Amendment Act 2020</td>
+                <td>154, 2020</td>
+                <td>17 Dec 2020</td>
+                <td>Sch 1 (items 27–52, 76): 18 Dec 2020 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 76)</td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Registration</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Workplace Relations Amendment (Work Choices) (Consequential Amendments) Regulations 2006 (No. 1) (SLI No. 50, 2006)</td>
+                <td>17 Mar 2006 (F2006L00820)</td>
+                <td>Sch 46: 27 Mar 2006 (r 2(b))</td>
+                <td>—</td>
+              </tr>
+            </table>
+          </paragraph>
+          <paragraph eId="part-V__sec-20__para-f">
+            <num>f</num>
+            <content>
+              <p><i>(f)</i>	Subsection 2(2) of the <i>Territories Legislation Amendment Act 1992 </i>provides as follows:</p>
+            </content>
+          </paragraph>
+          <subsection eId="part-V__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Section 4 and Schedule 2 commence immediately after the commencement of sections 10 and 19 of the <i>Territories Law Reform Act 1992</i>.</p>
+            </content>
+            <content>
+              <p>	Sections 10 and 19 commenced on 29 June 1993 (<i>see Gazette </i>1993, No. S196).</p>
+            </content>
+            <paragraph eId="part-V__sec-20__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p><i>(g)</i>	The <i>Cocos (Keeling) Islands Act 1955 </i>was amended by Schedule 19 (item 13) only of the <i>Workplace Relations and Other Legislation Amendment Act 1996</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-V__sec-20__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p><i>(h)</i>	The <i>Workplace Relations and Other Legislation Amendment Act 1996</i> was amended by Schedule 3 (items 1 and 2) of the <i>Workplace Relations and Other Legislation Amendment Act (No.</i><i> </i><i>2) 1996</i>, subsection 2(4) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	The items of Schedule 3 are taken to have commenced immediately after the <i>Workplace Relations and Other Legislation Amendment Act 1996</i> received the Royal Assent.</p>
+            </content>
+            <content>
+              <p>The <i>Workplace Relations and Other Legislation Amendment Act 1996</i> received the Royal Assent on 25 November 1996.</p>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Preamble</td>
+                <td>am No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No. 67, 1958</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 216, 1973</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 6, 1979; No 60, 1989; No 104, 1992; No 211, 1992; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 4A</td>
+                <td>ad No. 143, 2001</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No. 6, 1979; No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Part III</td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>Div. 1 of Part III</td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 7A</td>
+                <td>ad No 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 8A</td>
+                <td>ad No 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 211, 1992; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>ss 8B–8E</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 8F</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 60, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep SLI 2006 No. 50</td>
+              </tr>
+              <tr>
+                <td>s 8G</td>
+                <td>ad No 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 211, 1992; No 113, 1994; No 146, 1999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 139, 2010</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 8GA</td>
+                <td>ad No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 8H</td>
+                <td>ad No 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 139, 2010; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ed C13</td>
+              </tr>
+              <tr>
+                <td>s 8I</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>ss 9, 10</td>
+                <td>am No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No. 216, 1973</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 56, 1975</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 4, 2016 (md not incorp)</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No. 22, 1963; No. 6, 1979; No. 26, 1982 (as am. by No. 80, 1982); No. 39, 1983; No. 168, 1986; No. 99, 1988</td>
+              </tr>
+              <tr>
+                <td>ss 13A–13C</td>
+                <td>ad No. 99, 1988</td>
+              </tr>
+              <tr>
+                <td>s 13D</td>
+                <td>ad No 99, 1988</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 104, 1992; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td>rep No. 118, 1997</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No. 67, 1958; No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 14A</td>
+                <td>ad No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 118, 1997</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>rs No. 6, 1979</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 65, 1985; No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No. 118, 1997</td>
+              </tr>
+              <tr>
+                <td>Part IVA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part IVA</td>
+                <td>ad No. 60, 1989</td>
+              </tr>
+              <tr>
+                <td>s 15AA</td>
+                <td>ad No 60, 1989</td>
+              </tr>
+              <tr>
+                <td>s 15AB</td>
+                <td>ad No 60, 1989</td>
+              </tr>
+              <tr>
+                <td>s 15AC</td>
+                <td>ad No 60, 1989</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>s 15AD</td>
+                <td>ad No 60, 1989</td>
+              </tr>
+              <tr>
+                <td>s 15AE</td>
+                <td>ad No. 60, 1989</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 143, 2001; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>ss 15AF–15AK</td>
+                <td>ad No. 60, 1989</td>
+              </tr>
+              <tr>
+                <td>Part IVAA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part IVAA</td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>ss 15AAA, 15AAB</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 211, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 211, 1992</td>
+              </tr>
+              <tr>
+                <td>ss 15AAC, 15AAD</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 211, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 15AAE</td>
+                <td>ad No 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 118, 1997; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>ss 15AAF–15AAH</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 15AAI</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 211, 1992</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 15A</td>
+                <td>ad No. 67, 1958</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 216, 1973; No. 65, 1985; No. 104, 1992; No. 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>rs No 65, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 60, 1989; No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No. 67, 1958; No. 60, 1989; No. 73, 2008</td>
+              </tr>
+              <tr>
+                <td>s 18A</td>
+                <td>ad No. 89, 1956</td>
+              </tr>
+              <tr>
+                <td>s 18B</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td>s 19A</td>
+                <td>ad No 154, 2020</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No. 93, 1966; No. 6, 1979; No. 104, 1992; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>Schedule</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Schedule</td>
+                <td>ad No. 104, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No. 118, 1997</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 5—Editorial changes</p>
+              <p>In preparing this compilation for registration, the following kinds of editorial change(s) were made under the <i>Legislation Act 2003</i>.</p>
+              <p><b>Subsection 8</b><b>H(2)</b></p>
+              <p><b>Kind of editorial change</b></p>
+              <p>Give effect to the misdescribed amendment as intended</p>
+              <p><b>Details of editorial change</b></p>
+              <p>Schedule 1 item 45 of the <i>Territories Legislation Amendment Act 2020</i> instructs to omit “or the performance of functions or duties” from subsection 8H(2).</p>
+              <p>The words “or the performance of functions or duties” do not appear in subsection 8H(2). However, the words “or performance of functions or duties” do appear.</p>
+              <p>This compilation was editorially changed to omit the words “or performance of functions or duties” from subsection 8H(2) to give effect to the misdescribed amendment as intended.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

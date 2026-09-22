@@ -1,0 +1,3320 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2003/117/!main"/>
+          <FRBRuri value="/akn/au/act/2003/117"/>
+          <FRBRdate date="2003-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="117"/>
+          <FRBRname value="offshore-petroleum-and-greenhouse-gas-storage-(regulatory-levies)-act-2003"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2003/117/eng@2022-03-02/!main"/>
+          <FRBRuri value="/akn/au/act/2003/117/eng@2022-03-02"/>
+          <FRBRdate date="2022-03-02" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2003/117/eng@2022-03-02/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2003/117/eng@2022-03-02/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2003-01-01" type="generation" eId="evt-creation" source="#offshore-petroleum-and-greenhouse-gas-storage-(regulatory-levies)-act-2003"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2006/19"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2008/120"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2009/103" date="2009-10-08"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2010/119" date="2010-11-16"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2011/27" date="2011-05-25"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2011/114" date="2011-10-14"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2013/142" date="2013-12-13"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2014/79" date="2014-07-17"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2015/16" date="2015-03-20"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2015/34" date="2015-04-02"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2019/93" date="2019-10-28"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2020/42" date="2020-05-15"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2021/97" date="2021-09-03"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCTerm eId="term-annual-titles-administration-levy" href="/ontology/term/au/term-annual-titles-administration-levy" showAs="annual titles administration levy"/>
+        <TLCTerm eId="term-annual-well-levy" href="/ontology/term/au/term-annual-well-levy" showAs="annual well levy"/>
+        <TLCTerm eId="term-commonwealth-waters" href="/ontology/term/au/term-commonwealth-waters" showAs="Commonwealth waters"/>
+        <TLCTerm eId="term-compliance-investigation" href="/ontology/term/au/term-compliance-investigation" showAs="compliance investigation"/>
+        <TLCTerm eId="term-cost" href="/ontology/term/au/term-cost" showAs="cost"/>
+        <TLCTerm eId="term-cross-boundary-greenhouse-gas-assessment-permit" href="/ontology/term/au/term-cross-boundary-greenhouse-gas-assessment-permit" showAs="cross-boundary greenhouse gas assessment permit"/>
+        <TLCTerm eId="term-cross-boundary-greenhouse-gas-holding-lease" href="/ontology/term/au/term-cross-boundary-greenhouse-gas-holding-lease" showAs="cross-boundary greenhouse gas holding lease"/>
+        <TLCTerm eId="term-cross-boundary-greenhouse-gas-injection-licence" href="/ontology/term/au/term-cross-boundary-greenhouse-gas-injection-licence" showAs="cross-boundary greenhouse gas injection licence"/>
+        <TLCTerm eId="term-environment-plan-levy" href="/ontology/term/au/term-environment-plan-levy" showAs="environment plan levy"/>
+        <TLCTerm eId="term-expense" href="/ontology/term/au/term-expense" showAs="expense"/>
+        <TLCTerm eId="term-greenhouse-gas-assessment-permit" href="/ontology/term/au/term-greenhouse-gas-assessment-permit" showAs="greenhouse gas assessment permit"/>
+        <TLCTerm eId="term-greenhouse-gas-holding-lease" href="/ontology/term/au/term-greenhouse-gas-holding-lease" showAs="greenhouse gas holding lease"/>
+        <TLCTerm eId="term-greenhouse-gas-injection-licence" href="/ontology/term/au/term-greenhouse-gas-injection-licence" showAs="greenhouse gas injection licence"/>
+        <TLCTerm eId="term-infrastructure-licence" href="/ontology/term/au/term-infrastructure-licence" showAs="infrastructure licence"/>
+        <TLCTerm eId="term-lease-area" href="/ontology/term/au/term-lease-area" showAs="lease area"/>
+        <TLCTerm eId="term-licence-area" href="/ontology/term/au/term-licence-area" showAs="licence area"/>
+        <TLCTerm eId="term-nopsema" href="/ontology/term/au/term-nopsema" showAs="NOPSEMA"/>
+        <TLCTerm eId="term-nopsema-inspector" href="/ontology/term/au/term-nopsema-inspector" showAs="NOPSEMA inspector"/>
+        <TLCTerm eId="term-permit-area" href="/ontology/term/au/term-permit-area" showAs="permit area"/>
+        <TLCTerm eId="term-petroleum-exploration-permit" href="/ontology/term/au/term-petroleum-exploration-permit" showAs="petroleum exploration permit"/>
+        <TLCTerm eId="term-petroleum-production-licence" href="/ontology/term/au/term-petroleum-production-licence" showAs="petroleum production licence"/>
+        <TLCTerm eId="term-petroleum-retention-lease" href="/ontology/term/au/term-petroleum-retention-lease" showAs="petroleum retention lease"/>
+        <TLCTerm eId="term-pipeline-licence" href="/ontology/term/au/term-pipeline-licence" showAs="pipeline licence"/>
+        <TLCTerm eId="term-prepare" href="/ontology/term/au/term-prepare" showAs="prepare"/>
+        <TLCTerm eId="term-remedial-direction" href="/ontology/term/au/term-remedial-direction" showAs="remedial direction"/>
+        <TLCTerm eId="term-safety-case-levy" href="/ontology/term/au/term-safety-case-levy" showAs="safety case levy"/>
+        <TLCTerm eId="term-safety-investigation-levy" href="/ontology/term/au/term-safety-investigation-levy" showAs="safety investigation levy"/>
+        <TLCTerm eId="term-scheduled-area" href="/ontology/term/au/term-scheduled-area" showAs="scheduled area"/>
+        <TLCTerm eId="term-state-psla" href="/ontology/term/au/term-state-psla" showAs="State PSLA"/>
+        <TLCTerm eId="term-state-safety-law" href="/ontology/term/au/term-state-safety-law" showAs="State safety law"/>
+        <TLCTerm eId="term-state-territory-remedial-direction" href="/ontology/term/au/term-state-territory-remedial-direction" showAs="State/Territory remedial direction"/>
+        <TLCTerm eId="term-territory-psla" href="/ontology/term/au/term-territory-psla" showAs="Territory PSLA"/>
+        <TLCTerm eId="term-territory-safety-law" href="/ontology/term/au/term-territory-safety-law" showAs="Territory safety law"/>
+        <TLCTerm eId="term-well" href="/ontology/term/au/term-well" showAs="well"/>
+        <TLCTerm eId="term-well-activity-levy" href="/ontology/term/au/term-well-activity-levy" showAs="well activity levy"/>
+        <TLCTerm eId="term-well-investigation-levy" href="/ontology/term/au/term-well-investigation-levy" showAs="well investigation levy"/>
+        <TLCTerm eId="term-well-related-equipment" href="/ontology/term/au/term-well-related-equipment" showAs="well-related equipment"/>
+        <TLCTerm eId="term-year" href="/ontology/term/au/term-year" showAs="year"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Act 2003</p>
+      <p>No. 117, 2003</p>
+      <p><b>Compilation No.</b><b> </b><b>20</b></p>
+      <p><b>Compilation date:</b><b>	</b>2 March 2022</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 97, 2021</p>
+      <p><b>Registered:</b><b>	</b>11 March 2022</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Act 2003</i> that shows the text of the law as amended and in force on 2 March 2022 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Introduction	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Definitions	2</p>
+      <p>3A	Designated coastal waters	5</p>
+      <p>3B	Commonwealth waters—cross-boundary greenhouse gas titles	6</p>
+      <p>3C	Crown to be bound	6</p>
+      <p>3D	Act does not impose a tax on property of a State	7</p>
+      <p>4	Extension to external Territories	7</p>
+      <p><ref href="#part-2">Part 2</ref>—Safety investigation levy	8</p>
+      <p>5	Imposition of safety investigation levy—Commonwealth waters	8</p>
+      <p>6	Imposition of safety investigation levy—designated coastal waters	9</p>
+      <p><ref href="#part-3">Part 3</ref>—Safety case levy	12</p>
+      <p>7	Imposition of safety case levy—Commonwealth waters	12</p>
+      <p>8	Imposition of safety case levy—designated coastal waters	14</p>
+      <p><ref href="#part-4">Part 4</ref>—Well investigation levy	17</p>
+      <p>9	Imposition of well investigation levy—Commonwealth titles	17</p>
+      <p>10	Imposition of well investigation levy—State/Territory titles	19</p>
+      <p><ref href="#part-4A">Part 4A</ref>—Annual well levy	23</p>
+      <p>10A	Imposition of annual well levy—Commonwealth titles	23</p>
+      <p>10B	Imposition of annual well levy—State/Territory titles	25</p>
+      <p><ref href="#part-4B">Part 4B</ref>—Well activity levy	29</p>
+      <p>10C	Imposition of well activity levy—Commonwealth titles etc.	29</p>
+      <p>10D	Imposition of well activity levy—State/Territory titles etc.	30</p>
+      <p><ref href="#part-4C">Part 4C</ref>—Annual titles administration levy	34</p>
+      <p>10E	Imposition of annual titles administration levy	34</p>
+      <p><ref href="#part-4D">Part 4D</ref>—Environment plan levy	36</p>
+      <p>10F	Imposition of environment plan levy—activities authorised by Commonwealth titles etc.	36</p>
+      <p>10G	Imposition of environment plan levy—activities authorised by State/Territory titles etc.	39</p>
+      <p><ref href="#part-5">Part 5</ref>—Regulations	43</p>
+      <p>11	Regulations	43</p>
+      <p>Endnotes	44</p>
+      <p>Endnote 1—About the endnotes	44</p>
+      <p>Endnote 2—Abbreviation key	46</p>
+      <p>Endnote 3—Legislation history	47</p>
+      <p>Endnote 4—Amendment history	50</p>
+      <p>An Act to impose levies relating to the regulation of offshore petroleum activities and greenhouse gas storage activities</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Introduction</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>(</i><i>Regulatory</i><i> Levies) Act 2003</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provision(s)</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  Sections 1 and 2 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day on which this Act receives the Royal Assent.</td>
+                <td>4 December 2003</td>
+              </tr>
+              <tr>
+                <td>2.  Sections 3 to 11</td>
+                <td>1 January 2005.</td>
+                <td>1 January 2005</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally passed by the Parliament and assented to. It will not be expanded to deal with provisions inserted in this Act after assent.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Column 3 of the table contains additional information that is not part of this Act. Information in this column may be added to or edited in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-annual-titles-administration-levy">annual titles administration levy</term> means <def>levy imposed by <ref href="#sec-10E">section 10E</ref>.</def></p>
+            <p><term refersTo="#term-annual-well-levy">annual well levy</term> means <def>levy imposed by <ref href="#sec-10A">section 10A</ref> or 10B.</def></p>
+            <p><b><i>applicable State or Territory safety law</i></b> means:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>in relation to the designated coastal waters of a State—the State safety law of that State; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>in relation to the designated coastal waters of the Northern Territory—the Territory safety law.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-commonwealth-waters">Commonwealth waters</term> has the same meaning as <def>in <ref href="#part-6">Part 6</ref>.9 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-compliance-investigation">compliance investigation</term> means <def>an investigation under Part 3 of the Regulatory Powers (Standard Provisions) Act 2014, in its application under <ref href="#dvs-1">Division 1</ref> of <ref href="#part-6">Part 6</ref>.5 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><b><i>construct</i></b>, in relation to a well, includes:</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	See also <ref href="#sec-3B">section 3B</ref>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>drill the well; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>install any well-related equipment associated with the well.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-cost">cost</term> includes <def>part of a cost.</def></p>
+              <p><term refersTo="#term-cross-boundary-greenhouse-gas-assessment-permit">cross-boundary greenhouse gas assessment permit</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-cross-boundary-greenhouse-gas-holding-lease">cross-boundary greenhouse gas holding lease</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-cross-boundary-greenhouse-gas-injection-licence">cross-boundary greenhouse gas injection licence</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><b><i>designated coastal waters</i></b>,<b> </b>in relation to a State or the Northern Territory, has the meaning given by <ref href="#sec-3A">section 3A</ref>.</p>
+              <p><term refersTo="#term-environment-plan-levy">environment plan levy</term> means <def>levy imposed by <ref href="#sec-10F">section 10F</ref> or 10G.</def></p>
+              <p><term refersTo="#term-expense">expense</term> includes <def>part of an expense.</def></p>
+              <p><term refersTo="#term-greenhouse-gas-assessment-permit">greenhouse gas assessment permit</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-greenhouse-gas-holding-lease">greenhouse gas holding lease</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-greenhouse-gas-injection-licence">greenhouse gas injection licence</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-infrastructure-licence">infrastructure licence</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-lease-area">lease area</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-licence-area">licence area</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-nopsema">NOPSEMA</term> means <def>the National Offshore Petroleum Safety and Environmental Management Authority.</def></p>
+              <p><term refersTo="#term-nopsema-inspector">NOPSEMA inspector</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><b><i>offshore area</i></b>, in relation to a State or Territory, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><term refersTo="#term-permit-area">permit area</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-petroleum-exploration-permit">petroleum exploration permit</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-petroleum-production-licence">petroleum production licence</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-petroleum-retention-lease">petroleum retention lease</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-pipeline-licence">pipeline licence</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-prepare">prepare</term>, in relation to a well, includes <def>construct.</def></p>
+              <p><term refersTo="#term-remedial-direction">remedial direction</term> means <def>a direction under <ref href="#sec-586">section 586</ref>, 586A, 587, 587A, 591B, 592, 594A or 595 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-safety-case-levy">safety case levy</term> means <def>levy imposed by <ref href="#sec-7">section 7</ref> or 8.</def></p>
+              <p><term refersTo="#term-safety-investigation-levy">safety investigation levy</term> means <def>levy imposed by <ref href="#sec-5">section 5</ref> or 6.</def></p>
+              <p><term refersTo="#term-scheduled-area">scheduled area</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-state-psla">State PSLA</term> has the same meaning as <def>in <ref href="#part-6">Part 6</ref>.9 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-state-safety-law">State safety law</term> means <def>the provisions of a State PSLA that substantially correspond to Schedule 3 to <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-state-territory-remedial-direction">State/Territory remedial direction</term> means <def>a direction under a provision of a State PSLA or Territory PSLA that substantially corresponds to <ref href="#sec-586">section 586</ref>, 586A, 587, 587A, 591B, 592, 594A or 595 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-territory-psla">Territory PSLA</term> has the same meaning as <def>in <ref href="#part-6">Part 6</ref>.9 of <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-territory-safety-law">Territory safety law</term> means <def>the provisions of the Territory PSLA that substantially correspond to Schedule 3 to <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-well">well</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-well-activity-levy">well activity levy</term> means <def>levy imposed by <ref href="#sec-10C">section 10C</ref> or 10D.</def></p>
+              <p><term refersTo="#term-well-investigation-levy">well investigation levy</term> means <def>levy imposed by <ref href="#sec-9">section 9</ref> or 10.</def></p>
+              <p><term refersTo="#term-well-related-equipment">well-related equipment</term> has the same meaning as <def>in <ref href="">the Offshore Petroleum and Greenhouse Gas Storage Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-year">year</term> means <def>a 12-month period beginning on 1 January.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-3A">
+          <num>3A</num>
+          <heading>Designated coastal waters</heading>
+          <subsection eId="part-1__sec-3A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	For the purposes of this Act, <b><i>designated coastal waters</i></b>, in relation to a State or the Northern Territory, means:</p>
+            </content>
+            <paragraph eId="part-1__sec-3A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>so much of the scheduled area for that State or Territory as consists of the territorial sea; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any area that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>is within the scheduled area for that State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is on the landward side of the territorial sea; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>	(iii)	was, immediately before the commencement of the relevant State PSLA or Territory PSLA, the subject of a petroleum exploration permit under the repealed <i>Petroleum (Submerged Lands) Act 1967</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of subsection (1), assume that the breadth of the territorial sea of Australia had never been determined or declared to be greater than 3 nautical miles, but had continued to be 3 nautical miles.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Paragraph (1)(b) has effect subject to subsection (4).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of this Act, if (whether before or after the commencement of this subsection) an area that is within the designated coastal waters of a State or Territory because it is described in subparagraphs (1)(b)(i), (ii) and (iii) became or becomes an area that is:</p>
+            </content>
+            <paragraph eId="part-1__sec-3A__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>not the subject of a petroleum exploration permit under the relevant State PSLA or Territory PSLA; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>not the subject of a petroleum retention lease under the relevant State PSLA or Territory PSLA; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>not the subject of a petroleum production licence under the relevant State PSLA or Territory PSLA; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3A__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>not the subject of an application for a petroleum retention lease or petroleum production licence under the relevant State PSLA or Territory PSLA;</p>
+              </content>
+              <content>
+                <p>the area is taken to have ceased to be part of the designated coastal waters of that State or Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3B">
+          <num>3B</num>
+          <heading>Commonwealth waters—cross-boundary greenhouse gas titles</heading>
+          <content>
+            <p>For the purposes of this Act, each of the following areas is taken to be in Commonwealth waters:</p>
+          </content>
+          <paragraph eId="part-1__sec-3B__para-a">
+            <num>a</num>
+            <content>
+              <p>the permit area of a cross-boundary greenhouse gas assessment permit;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3B__para-b">
+            <num>b</num>
+            <content>
+              <p>the lease area of a cross-boundary greenhouse gas holding lease;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3B__para-c">
+            <num>c</num>
+            <content>
+              <p>the licence area of a cross-boundary greenhouse gas injection licence.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-3C">
+          <num>3C</num>
+          <heading>Crown to be bound</heading>
+          <content>
+            <p>This Act binds, and is taken always to have bound, the Crown in right of each of the States and of the Northern Territory. However, it does not bind, and is taken never to have bound, the Crown in right of the Commonwealth.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3D">
+          <num>3D</num>
+          <heading>Act does not impose a tax on property of a State</heading>
+          <subsection eId="part-1__sec-3D__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act has no effect, and is taken always to have had no effect, to the extent (if any) to which it imposes a tax on property of any kind belonging to a State.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In this section, <b><i>property of any kind belonging to a State</i></b> has the same meaning as in <ref href="#sec-114">section 114</ref> of the Constitution.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Extension to external Territories</heading>
+          <content>
+            <p>		This Act extends to each external Territory to which the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i> extends.</p>
+          </content>
+          <authorialNote placement="end" eId="note-3" marker="3">
+            <content>
+              <p>Note:	See <ref href="#sec-34">section 34</ref> of the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+            </content>
+          </authorialNote>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Safety investigation levy</heading>
+        <section eId="part-2__sec-5">
+          <num>5</num>
+          <heading>Imposition of safety investigation levy—Commonwealth waters</heading>
+          <subsection eId="part-2__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a notifiable accident or occurrence happens in relation to a facility located in Commonwealth waters; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a NOPSEMA inspector begins to conduct a compliance investigation in relation to the notifiable accident or occurrence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the condition or conditions specified in the regulations are satisfied;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the notifiable accident or occurrence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>safety investigation levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Safety investigation levy imposed by subsection (1) is payable by the operator of the facility.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Safety investigation levy is not payable under subsection (1) unless regulations are in force for the purposes of paragraph (1)(c).</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	For collection of safety investigation levy, see <ref href="#sec-686">section 686</ref> of the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Amount of safety investigation levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The amount of safety investigation levy imposed by subsection (1) in respect of a notifiable accident or occurrence is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The regulations may specify different amounts of safety investigation levy, or different means of working out amounts of safety investigation levy, in relation to different kinds of notifiable accident or occurrence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	Subsection (6) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-5__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>accident</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              <p><b><i>dangerous occurrence</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              <p><b><i>facility</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              <p><b><i>notifiable accident or occurrence</i></b>, in relation to a facility, means an accident or dangerous occurrence:</p>
+            </content>
+            <paragraph eId="part-2__sec-5__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>at or near the facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-5__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	that is required to be notified to NOPSEMA by the operator under clause 82 of Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              </content>
+              <content>
+                <p><b><i>operator</i></b>, in relation to a facility, has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-6">
+          <num>6</num>
+          <heading>Imposition of safety investigation levy—designated coastal waters</heading>
+          <subsection eId="part-2__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a notifiable accident or occurrence happens in relation to a facility located in the designated coastal waters of a State or of the Northern Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a NOPSEMA inspector begins to conduct an inspection in relation to the notifiable accident or occurrence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-6__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the condition or conditions specified in the regulations are satisfied;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the notifiable accident or occurrence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>safety investigation levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Safety investigation levy imposed by subsection (1) is payable by the operator of the facility.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Safety investigation levy is not payable under subsection (1) unless regulations are in force for the purposes of paragraph (1)(c).</p>
+            </content>
+            <authorialNote placement="end" eId="note-5" marker="5">
+              <content>
+                <p>Note:	For collection of safety investigation levy, see <ref href="#sec-686">section 686</ref> of the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Amount of safety investigation levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The amount of safety investigation levy imposed by subsection (1) in respect of a notifiable accident or occurrence is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The regulations may specify different amounts of safety investigation levy, or different means of working out amounts of safety investigation levy, in relation to different kinds of notifiable accident or occurrence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	Subsection (6) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-6__subsec-8">
+            <num>8</num>
+            <content>
+              <p>For the purposes of the application of this section in relation to the designated coastal waters of a State or of the Northern Territory:</p>
+            </content>
+            <content>
+              <p><b><i>accident</i></b> has the same meaning as in the applicable State or Territory safety law.</p>
+              <p><b><i>dangerous occurrence</i></b> has the same meaning as in the applicable State or Territory safety law.</p>
+              <p><b><i>facility</i></b> has the same meaning as in the applicable State or Territory safety law.</p>
+              <p><b><i>inspection </i></b>has the same meaning as in the applicable State or Territory safety law.</p>
+              <p><b><i>notifiable accident or occurrence</i></b>, in relation to a facility, means an accident or dangerous occurrence:</p>
+            </content>
+            <paragraph eId="part-2__sec-6__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>at or near the facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-6__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	that is required to be notified to NOPSEMA by the operator under the provision of the applicable State or Territory safety law that substantially corresponds to clause 82 of Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              </content>
+              <content>
+                <p><b><i>operator</i></b>, in relation to a facility, has the same meaning as in the applicable State or Territory safety law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Safety case levy</heading>
+        <section eId="part-3__sec-7">
+          <num>7</num>
+          <heading>Imposition of safety case levy—Commonwealth waters</heading>
+          <subsection eId="part-3__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-7__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a safety case is in force in relation to a facility at any time during a year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the facility is located, or proposed to be located, in Commonwealth waters;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the safety case in respect of that year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>safety case levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Safety case levy imposed by subsection (1) is payable by:</p>
+            </content>
+            <paragraph eId="part-3__sec-7__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>unless any of the following paragraphs apply—the operator of the facility; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the facility is a pipeline subject to a pipeline licence and a remedial direction does not apply in relation to the pipeline at any time during the year—the licensee of the pipeline licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if the facility is a pipeline subject to a pipeline licence and a remedial direction applies in relation to the pipeline at any time during the year:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the licensee of the pipeline licence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the licensee is not subject to the remedial direction—the person who is subject to the remedial direction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>if the facility is not a pipeline that is subject to a pipeline licence but is a pipeline in relation to which a remedial direction is in force at any time during the year—the person who is subject to the remedial direction.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	For collection of safety case levy, see <ref href="#sec-687">section 687</ref> of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Amount of safety case levy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of safety case levy imposed by subsection (1) in respect of a year is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The regulations may specify different amounts of safety case levy, or different means of working out amounts of safety case levy, in relation to different kinds of facilities, circumstances or any other matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	Subsection (6) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-7__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>facility</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>, and includes a proposed facility.</p>
+              <p><b><i>operator</i></b>, in relation to a facility, has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+              <p><b><i>pipeline </i></b>has the same meaning as in the<i> Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>, and includes a pipeline that is:</p>
+            </content>
+            <paragraph eId="part-3__sec-7__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>proposed to be constructed or operated; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-7__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>being constructed.</p>
+              </content>
+              <content>
+                <p><b><i>pipeline licence</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>proposed facility</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum </i><i>and Greenhouse Gas Storage </i><i>Act 2006</i>.</p>
+                <p><b><i>safety case in force in relation to a facility</i></b> has the meaning given by prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-8">
+          <num>8</num>
+          <heading>Imposition of safety case levy—designated coastal waters</heading>
+          <subsection eId="part-3__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-8__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a safety case is in force in relation to a facility at any time during a year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the facility is located, or proposed to be located, in the designated coastal waters of a State or of the Northern Territory;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the safety case in respect of that year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>safety case levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Safety case levy imposed by subsection (1) is payable by:</p>
+            </content>
+            <paragraph eId="part-3__sec-8__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>unless any of the following paragraphs apply—the operator of the facility; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the facility is a pipeline subject to a pipeline licence and a State/Territory remedial direction does not apply in relation to the pipeline at any time during the year—the licensee of the pipeline licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if the facility is a pipeline subject to a pipeline licence and a State/Territory remedial direction applies in relation to the pipeline at any time during the year:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the licensee of the pipeline licence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the licensee is not subject to the State/Territory remedial direction—the person who is subject to the State or Territory remedial direction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>if the facility is not a pipeline that is subject to a pipeline licence but is a pipeline in relation to which a State/Territory remedial direction is in force at any time during the year—the person who is subject to the remedial direction.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	For collection of safety case levy, see <ref href="#sec-687">section 687</ref> of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Amount of safety case levy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of safety case levy imposed by subsection (1) in respect of a year is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The regulations may specify different amounts of safety case levy, or different means of working out amounts of safety case levy, in relation to different kinds of facilities, circumstances or any other matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	Subsection (6) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Transitional</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-7A">
+            <num>7A</num>
+            <content>
+              <p>If, at a particular time during the period:</p>
+            </content>
+            <paragraph eId="part-3__sec-8__subsec-7A__para-a">
+              <num>a</num>
+              <content>
+                <p>beginning at the start of <date date="2010-01-01">1 January 2010</date>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-7A__para-b">
+              <num>b</num>
+              <content>
+                <p>ending at the end of <date date="2012-12-31">31 December 2012</date>;</p>
+              </content>
+              <content>
+                <p>a pipeline safety management plan is in force in relation to a pipeline that is a facility, this section has effect as if, at that time, a safety case was in force in relation to the facility.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-7B">
+            <num>7B</num>
+            <content>
+              <p>For the purposes of the application of this section in relation to a facility located, or proposed to be located, in the designated coastal waters of a State or the Northern Territory, if, at a particular time during the period:</p>
+            </content>
+            <paragraph eId="part-3__sec-8__subsec-7B__para-a">
+              <num>a</num>
+              <content>
+                <p>beginning at the start of <date date="2010-01-01">1 January 2010</date>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-7B__para-b">
+              <num>b</num>
+              <content>
+                <p>ending at the end of <date date="2012-12-31">31 December 2012</date>;</p>
+              </content>
+              <content>
+                <p>a safety case is in force in relation to the facility (within the meaning of regulations of that State or Territory that substantially correspond to the <i>Petroleum (Submerged Lands) (Management of Safety on Offshore Facilities) Regulations</i><i> </i><i>1996</i>, as those last-mentioned regulations were in force immediately before the end of 31 December 2009), this section has effect as if, at that time, a safety case was in force in relation to the facility.</p>
+                <p>Definitions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-8__subsec-8">
+            <num>8</num>
+            <content>
+              <p>For the purposes of the application of this section in relation to the designated coastal waters of a State or of the Northern Territory:</p>
+            </content>
+            <content>
+              <p><b><i>facility</i></b> has the same meaning as in the applicable State or Territory safety law, and includes a proposed facility.</p>
+              <p><b><i>operator</i></b>, in relation to a facility, has the same meaning as in the applicable State or Territory safety law.</p>
+              <p><b><i>pipeline </i></b>has the same meaning as in the applicable State or Territory safety law, and includes a pipeline that is:</p>
+            </content>
+            <paragraph eId="part-3__sec-8__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>proposed to be constructed or operated; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-8__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>being constructed.</p>
+              </content>
+              <content>
+                <p><b><i>pipeline licence </i></b>has the same meaning as in the applicable State or Territory safety law.</p>
+                <p><b><i>pipeline safety management plan</i></b> <b><i>in force in relation to a pipeline</i></b> has the same meaning as in regulations of that State or Territory that substantially correspond to the <i>Petroleum (Submerged Lands) (Pipelines) Regulations</i><i> </i><i>2001</i>, as those last-mentioned regulations were in force immediately before the end of 31 December 2009.</p>
+                <p><b><i>proposed facility</i></b> has the same meaning as in the applicable State or Territory safety law.</p>
+                <p><b><i>safety case in force in relation to a facility</i></b> has the same meaning as in regulations of that State or Territory that substantially correspond to prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Well investigation levy</heading>
+        <section eId="part-4__sec-9">
+          <num>9</num>
+          <heading>Imposition of well investigation levy—Commonwealth titles</heading>
+          <subsection eId="part-4__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a well has been used, is being used, has been prepared for use, or is being prepared for use, in connection with operations authorised by an eligible title (the <b><i>current title</i></b>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a well has been used in connection with operations authorised by an eligible title from which the current title is derived, and the wellhead is situated in the title area of the current title; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a NOPSEMA inspector has begun to conduct a compliance investigation relating to a contravention or possible contravention of subclause 13A(1) or (2) or 13B(1) or (2) of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the contravention or possible contravention relates to the well; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	a particular time (the <b><i>threshold time</i></b>) is the first time when the amount of the costs and expenses reasonably incurred by NOPSEMA in relation to the conduct of the compliance investigation exceeds $30,000; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>NOPSEMA has given the registered holder of the current title a written notice stating that the amount of the costs and expenses reasonably incurred by NOPSEMA in relation to the conduct of the compliance investigation has exceeded $30,000;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the compliance investigation in respect of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the period of 3 months beginning at the threshold time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>each successive 3-month period at any time during which a NOPSEMA inspector continues to conduct the compliance investigation.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note 1:	Clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> deals with the duties of petroleum titleholders in relation to wells.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note 2:	Clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> deals with the duties of greenhouse gas titleholders in relation to wells.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>well investigation levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Well investigation levy imposed by subsection (1) is payable by the registered holder of the current title.</p>
+            </content>
+            <content>
+              <p>Amount of well investigation levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of well investigation levy imposed by subsection (1) on a compliance investigation is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>conduct</i></b> a compliance investigation includes prepare a written report relating to the compliance investigation.</p>
+              <p><b><i>derived </i></b>has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>eligible title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4__sec-9__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>a greenhouse gas title.</p>
+              </content>
+              <content>
+                <p><b><i>greenhouse gas title</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>petroleum title</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>registered holder</i></b>, in relation to an eligible title, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>title area</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	in relation to a petroleum title—has the same meaning as in clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-9__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	in relation to a greenhouse gas title—has the same meaning as in clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+              <content>
+                <p><b><i>well</i></b> includes well-related equipment associated with a well.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-10">
+          <num>10</num>
+          <heading>Imposition of well investigation levy—State/Territory titles</heading>
+          <subsection eId="part-4__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a well has been used, is being used, has been prepared for use, or is being prepared for use, in connection with operations authorised by a State/Territory title (the <b><i>current title</i></b>) granted under a State PSLA or Territory PSLA; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a well has been used in connection with operations authorised by a State/Territory title from which the current title is derived, and the wellhead is situated in the title area of the current title; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a NOPSEMA inspector has begun to conduct an inspection concerning a contravention or possible contravention of a provision of the State PSLA or Territory PSLA that substantially corresponds to subclause 13A(1) or (2) or 13B(1) or (2) of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the contravention or possible contravention relates to the well; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	a particular time (the <b><i>threshold time</i></b>) is the first time when the amount of the costs and expenses reasonably incurred by NOPSEMA in relation to the conduct of the inspection exceeds $30,000; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>NOPSEMA has given the registered holder of the current title a written notice stating that the amount of the costs and expenses reasonably incurred by NOPSEMA in relation to the conduct of the inspection has exceeded $30,000;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the inspection in respect of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the period of 3 months beginning at the threshold time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>each successive 3-month period at any time during which a NOPSEMA inspector continues to conduct the inspection.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note 1:	Clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> deals with the duties of petroleum titleholders in relation to wells.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-11" marker="11">
+                <content>
+                  <p>Note 2:	Clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> deals with the duties of greenhouse gas titleholders in relation to wells.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>well investigation levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Well investigation levy imposed by subsection (1) is payable by the registered holder of the current title.</p>
+            </content>
+            <content>
+              <p>Amount of well investigation levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of well investigation levy imposed by subsection (1) on an inspection is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-10__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Commonwealth greenhouse gas title</i></b> means a greenhouse gas title within the meaning of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>Commonwealth petroleum title</i></b> means a petroleum title within the meaning of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>conduct</i></b> an inspection includes prepare a written report relating to the inspection.</p>
+              <p><b><i>derived </i></b>has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>inspection </i></b>has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>registered holder</i></b>, in relation to a State/Territory title, means the person whose name is shown in the Register kept under the relevant State PSLA or Territory PSLA as the holder of the title.</p>
+              <p><b><i>State/Territory greenhouse gas title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth greenhouse gas title confers in relation to the offshore area of the State or Territory.</p>
+              <p><b><i>State/Territory petroleum title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth petroleum title confers in relation to the offshore area of the State or Territory.</p>
+              <p><b><i>State/Territory title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4__sec-10__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a State/Territory petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>a State/Territory greenhouse gas title.</p>
+              </content>
+              <content>
+                <p><b><i>title area</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	in relation to a State/Territory petroleum title—has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-10__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	in relation to a State/Territory greenhouse gas title—has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+              <content>
+                <p><b><i>well</i></b> includes well-related equipment associated with a well.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4A">
+        <num>4A</num>
+        <heading>Annual well levy</heading>
+        <section eId="part-4A__sec-10A">
+          <num>10A</num>
+          <heading>Imposition of annual well levy—Commonwealth titles</heading>
+          <subsection eId="part-4A__sec-10A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If there are one or more eligible wells in relation to an eligible title for a year, levy is imposed on those wells.</p>
+            </content>
+            <authorialNote placement="end" eId="note-12" marker="12">
+              <content>
+                <p>Note:	For <b><i>eligible well</i></b>, see subsections (5) and (6).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>annual well levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Annual well levy imposed by subsection (1) is payable by the registered holder of the eligible title.</p>
+            </content>
+            <content>
+              <p>Amount of annual well levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of annual well levy imposed by subsection (1) in respect of one or more wells is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Eligible well</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-5">
+            <num>5</num>
+            <content>
+              <p>For the purposes of this section, if:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10A__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	immediately before the start of a year, a well is wholly or partly situated in the title area of an eligible title (the <b><i>current title</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the well is or was drilled under <role refersTo="#authority">the authority</role> of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>the current title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an eligible title from which the current title is derived; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the well is not abandoned;</p>
+              </content>
+              <content>
+                <p>the well is an <b><i>eligible well</i></b> in relation to the current title for that year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-6">
+            <num>6</num>
+            <content>
+              <p>For the purposes of this section, if:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10A__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	during a year, a well began to be drilled in the title area of an eligible title (the <b><i>current title</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the well was drilled under <role refersTo="#authority">the authority</role> of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>the current title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an eligible title from which the current title is derived; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>the well was abandoned during that year;</p>
+              </content>
+              <content>
+                <p>the well is an <b><i>eligible well</i></b> in relation to the current title for the subsequent year.</p>
+                <p>Abandoned wells</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-6A">
+            <num>6A</num>
+            <content>
+              <p>	(6A)	For the purposes of this section, disregard the abandonment of a well unless the process of abandoning the well was the subject of a notification under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	For the purposes of this section, if a well commences to be abandoned, and prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> (as those prescribed regulations are in force, or as that prescribed provision is in force, at the time when the abandonment commenced) requires the commencement of the abandonment of the well to be approved by NOPSEMA under those regulations, disregard the abandonment unless:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10A__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>the commencement of the abandonment was approved by NOPSEMA under those regulations; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>if the approval was subject to conditions—the abandonment was in accordance with those conditions.</p>
+              </content>
+              <content>
+                <p>Definitions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10A__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>derived</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>eligible title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10A__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>a greenhouse gas title.</p>
+              </content>
+              <content>
+                <p><b><i>greenhouse gas title</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>petroleum title</i></b> has the same meaning as in Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>registered holder</i></b>, in relation to an eligible title, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>title area</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	in relation to a petroleum title—has the same meaning as in clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10A__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	in relation to a greenhouse gas title—has the same meaning as in clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4A__sec-10B">
+          <num>10B</num>
+          <heading>Imposition of annual well levy—State/Territory titles</heading>
+          <subsection eId="part-4A__sec-10B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>there are one or more eligible wells in relation to a State/Territory title for a year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the State/Territory title was granted under a law of a particular State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	at the start of the year, NOPSEMA has functions or powers under regulations of the State or Territory that substantially correspond to prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>;</p>
+              </content>
+              <content>
+                <p>levy is imposed on those wells.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	For <b><i>eligible well</i></b>, see subsections (5) and (6).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>annual well levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Annual well levy imposed by subsection (1) is payable by the registered holder of the State/Territory title.</p>
+            </content>
+            <content>
+              <p>Amount of annual well levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of annual well levy imposed by subsection (1) in respect of one or more wells is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Eligible well</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-5">
+            <num>5</num>
+            <content>
+              <p>For the purposes of this section, if:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10B__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	immediately before the start of a year, the well is wholly or partly situated in the title area of a State/Territory title (the <b><i>current title</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the well is or was drilled under <role refersTo="#authority">the authority</role> of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>the current title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a State/Territory title from which the current title is derived; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the well is not abandoned;</p>
+              </content>
+              <content>
+                <p>the well is an <b><i>eligible well</i></b> in relation to the current title for that year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-6">
+            <num>6</num>
+            <content>
+              <p>For the purposes of this section, if:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10B__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	during a year, a well began to be drilled in the title area of a State/Territory title (the <b><i>current title</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the well was drilled under <role refersTo="#authority">the authority</role> of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>the current title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a State/Territory title from which the current title is derived; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>the well was abandoned during that year;</p>
+              </content>
+              <content>
+                <p>the well is an <b><i>eligible well</i></b> in relation to the current title for the subsequent year.</p>
+                <p>Abandoned wells</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-7">
+            <num>7</num>
+            <content>
+              <p>For the purposes of this section, if regulations of a State or Territory that substantially correspond to Part 5 of the old Resource Management and Administration Regulations require the commencement of the abandonment of a well to be approved by NOPSEMA under those regulations of the State or Territory, disregard the abandonment unless:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10B__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>the commencement of the abandonment was approved by NOPSEMA under those regulations of the State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>if the approval was subject to conditions—the abandonment was in accordance with those conditions.</p>
+              </content>
+              <content>
+                <p>Definitions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4A__sec-10B__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Commonwealth greenhouse gas title</i></b> means a greenhouse gas title within the meaning of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>Commonwealth petroleum title</i></b> means a petroleum title within the meaning of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>derived </i></b>has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>old Resource Management and Administration Regulations</i></b> means the <i>Offshore Petroleum and Greenhouse Gas Storage (Resource Management and Administration) Regulations</i><i> </i><i>2011</i>, as in force before the commencement of the <i>Offshore Petroleum and Greenhouse Gas Storage Legislation Amendment (Well Operations) Regulation</i><i> </i><i>2015</i>.</p>
+              <p><b><i>registered holder</i></b>, in relation to a State/Territory title, means the person whose name is shown in the Register kept under the relevant State PSLA or Territory PSLA as the holder of the title.</p>
+              <p><b><i>State/Territory greenhouse gas title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth greenhouse gas title confers in relation to the offshore area of the State or Territory.</p>
+              <p><b><i>State/Territory petroleum title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth petroleum title confers in relation to the offshore area of the State or Territory.</p>
+              <p><b><i>State/Territory title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4A__sec-10B__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a State/Territory petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>a State/Territory greenhouse gas title.</p>
+              </content>
+              <content>
+                <p><b><i>title area</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	in relation to a State/Territory petroleum title—has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to clause 13A of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4A__sec-10B__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	in relation to a State/Territory greenhouse gas title—has the same meaning as in the provisions of the relevant State PSLA or Territory PSLA that substantially correspond to clause 13B of Schedule 3 to the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4B">
+        <num>4B</num>
+        <heading>Well activity levy</heading>
+        <section eId="part-4B__sec-10C">
+          <num>10C</num>
+          <heading>Imposition of well activity levy—Commonwealth titles etc.</heading>
+          <subsection eId="part-4B__sec-10C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a person makes an application to NOPSEMA, under prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>, for acceptance of a well operations management plan; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	a person submits to NOPSEMA, under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>, a proposed revision of a well operations management plan; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the registered holder of an eligible title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>subject to a remedial direction (other than as the registered holder of an eligible title);</p>
+              </content>
+              <content>
+                <p>levy is imposed on the application or submission.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4B__sec-10C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>well activity levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Well activity levy imposed by subsection (1) is payable by the person.</p>
+            </content>
+            <content>
+              <p>Amount of well activity levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10C__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of well activity levy imposed by subsection (1) on an application or submission is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10C__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>eligible title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a greenhouse gas title.</p>
+              </content>
+              <content>
+                <p><b><i>greenhouse gas title</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a greenhouse gas assessment permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a greenhouse gas holding lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>a greenhouse gas injection licence.</p>
+              </content>
+              <content>
+                <p><b><i>petroleum title</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a petroleum retention lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10C__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>a petroleum production licence.</p>
+              </content>
+              <content>
+                <p><b><i>registered holder</i></b>, in relation to an eligible title, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4B__sec-10D">
+          <num>10D</num>
+          <heading>Imposition of well activity levy—State/Territory titles etc.</heading>
+          <subsection eId="part-4B__sec-10D__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any of the following subparagraphs applies:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a person makes an application to NOPSEMA, under the regulations of a State or Territory that substantially correspond to prescribed regulations, or a prescribed provision of regulations, made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>, for acceptance of a well operations management plan;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a person makes an application to NOPSEMA, under regulations of a State or Territory that substantially correspond to Part 5 of the old Resource Management and Administration Regulations, for approval to commence an activity relating to a well;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a person makes an application to NOPSEMA, under the regulations of a State or Territory that substantially correspond to Part 5 of the old Resource Management and Administration Regulations, for acceptance of a well operations management plan;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>	(iv)	a person submits to NOPSEMA, under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>, a proposed revision of a well operations management plan; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the registered holder of a State/Territory title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>subject to a State/Territory remedial direction (other than as the registered holder of a State/Territory title);</p>
+              </content>
+              <content>
+                <p>levy is imposed on the application or submission.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4B__sec-10D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>well activity levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10D__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Well activity levy imposed by subsection (1) is payable by the person.</p>
+            </content>
+            <content>
+              <p>Amount of well activity levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10D__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of well activity levy imposed by subsection (1) on an application or submission is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+            <content>
+              <p>Exemption</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4B__sec-10D__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4B__sec-10D__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>at a particular time, a person makes an application to NOPSEMA, under the regulations of a State or Territory that substantially correspond to Part 5 of the old Resource Management and Administration Regulations, for approval to commence an activity relating to a well; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>well activity levy is imposed by subsection (1) on the application; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>during the 6-month period beginning at that time:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>the person makes another application under those regulations for approval to commence an activity relating to the well; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>another person who has become the registered holder of a State/Territory title makes an application under those regulations for approval to commence an activity relating to the well;</p>
+              </content>
+              <content>
+                <p>well activity levy is not imposed by subsection (1) on the application referred to in subparagraph (c)(i) or (ii), as the case may be.</p>
+                <p>Definitions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4B__sec-10D__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Commonwealth greenhouse gas title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a greenhouse gas assessment permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a greenhouse gas holding lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>a greenhouse gas injection licence.</p>
+              </content>
+              <content>
+                <p><b><i>Commonwealth petroleum title</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a petroleum retention lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>a petroleum production licence.</p>
+              </content>
+              <content>
+                <p><b><i>old Resource Management and Administration Regulations</i></b> means the <i>Offshore Petroleum and Greenhouse Gas Storage (Resource Management and Administration) Regulations</i><i> </i><i>2011</i>, as in force before the commencement of the <i>Offshore Petroleum and Greenhouse Gas Storage Legislation Amendment (Well Operations) Regulation</i><i> </i><i>2015</i>.</p>
+                <p><b><i>registered holder</i></b>, in relation to a State/Territory title, means the person whose name is shown in the Register kept under the relevant State PSLA or Territory PSLA as the holder of the title.</p>
+                <p><b><i>State/Territory greenhouse gas title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth greenhouse gas title confers in relation to the offshore area of the State or Territory.</p>
+                <p><b><i>State/Territory petroleum title </i></b>means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth petroleum title confers in relation to the offshore area of the State or Territory.</p>
+                <p><b><i>State/Territory title</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a State/Territory petroleum title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4B__sec-10D__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a State/Territory greenhouse gas title.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4C">
+        <num>4C</num>
+        <heading>Annual titles administration levy</heading>
+        <section eId="part-4C__sec-10E">
+          <num>10E</num>
+          <heading>Imposition of annual titles administration levy</heading>
+          <subsection eId="part-4C__sec-10E__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Levy is imposed on an eligible title:</p>
+            </content>
+            <paragraph eId="part-4C__sec-10E__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>for the year beginning on the day the title comes into force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>for each subsequent year beginning on the anniversary of that day, if the title is in force at the start of the anniversary.</p>
+              </content>
+              <content>
+                <p>Levy is imposed whether or not the eligible title is in force for the whole of the year.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	See <ref href="#sec-695M">section 695M</ref> of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i> for the remittal or refund of levy imposed for a year by this subsection if the title ceases to be in force before the end of the year.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>annual titles administration levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Annual titles administration levy imposed by subsection (1) is payable by the registered holder of the title.</p>
+            </content>
+            <content>
+              <p>Amount of annual titles administration levy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of annual titles administration levy imposed by subsection (1) on a title is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The regulations may specify different amounts of annual titles administration levy, or different means of working out amounts of annual titles administration levy, in relation to different eligible titles.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	Subsection (5) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4C__sec-10E__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>boundary</i></b><b><i>-</i></b><b><i>change petroleum exploration permit</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>cash</i></b><b><i>-</i></b><b><i>bid petroleum exploration permit</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              <p><b><i>eligible title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>a work-bid petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-aa">
+              <num>aa</num>
+              <content>
+                <p>a cash-bid petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>a special petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-ba">
+              <num>ba</num>
+              <content>
+                <p>a boundary-change petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>a petroleum retention lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-d">
+              <num>d</num>
+              <content>
+                <p>a petroleum production licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-e">
+              <num>e</num>
+              <content>
+                <p>an infrastructure licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-f">
+              <num>f</num>
+              <content>
+                <p>a pipeline licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-g">
+              <num>g</num>
+              <content>
+                <p>a work-bid greenhouse gas assessment permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-ga">
+              <num>ga</num>
+              <content>
+                <p>a cross-boundary greenhouse gas assessment permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-h">
+              <num>h</num>
+              <content>
+                <p>a greenhouse gas holding lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4C__sec-10E__subsec-7__para-i">
+              <num>i</num>
+              <content>
+                <p>a greenhouse gas injection licence.</p>
+              </content>
+              <content>
+                <p><b><i>registered holder</i></b>, in relation to a title, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>special petroleum exploration permit</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>work</i></b><b><i>-</i></b><b><i>bid greenhouse gas assessment permit</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>work</i></b><b><i>-</i></b><b><i>bid petroleum exploration permit</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4D">
+        <num>4D</num>
+        <heading>Environment plan levy</heading>
+        <section eId="part-4D__sec-10F">
+          <num>10F</num>
+          <heading>Imposition of environment plan levy—activities authorised by Commonwealth titles etc.</heading>
+          <subsection eId="part-4D__sec-10F__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by one or more Commonwealth titles; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a proposed revision of an environment plan is submitted to NOPSEMA under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by one or more Commonwealth titles; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	the plan is submitted by an applicant for a Commonwealth title mentioned in paragraph (e), (f), (g), (k) or (l) of the definition of <b><i>Commonwealth title</i></b> in subsection (7); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are carried out for the purposes of complying with a remedial direction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a proposed revision of an environment plan is submitted to NOPSEMA under a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are carried out for the purposes of complying with a remedial direction;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the submission.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>environment plan</i></b> <b><i>levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Environment plan levy imposed by subsection (1) is payable:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(a) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by a single Commonwealth title;</p>
+              </content>
+              <content>
+                <p>by the titleholder; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(a) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by 2 or more Commonwealth titles;</p>
+              </content>
+              <content>
+                <p>jointly and severally by the titleholders; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(b) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by a single Commonwealth title;</p>
+              </content>
+              <content>
+                <p>by the titleholder; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(b) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by 2 or more Commonwealth titles;</p>
+              </content>
+              <content>
+                <p>jointly and severally by the titleholders; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>if paragraph (1)(c) applies—by the applicant for the Commonwealth title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>if paragraph (1)(d) or (e) applies—by the person who is subject to the remedial direction.</p>
+              </content>
+              <content>
+                <p>Amount of environment plan levy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of environment plan levy imposed by subsection (1) in respect of a submission is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The regulations may specify different amounts of environment plan levy, or different means of working out amounts of environment plan levy, in relation to different circumstances.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	Subsection (5) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10F__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Commonwealth title</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>a petroleum exploration permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>a petroleum retention lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>a petroleum production licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-d">
+              <num>d</num>
+              <content>
+                <p>an infrastructure licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-e">
+              <num>e</num>
+              <content>
+                <p>a pipeline licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-f">
+              <num>f</num>
+              <content>
+                <p>a petroleum special prospecting authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-g">
+              <num>g</num>
+              <content>
+                <p>a petroleum access authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-ga">
+              <num>ga</num>
+              <content>
+                <p>a petroleum scientific investigation consent; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-h">
+              <num>h</num>
+              <content>
+                <p>a greenhouse gas assessment permit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-i">
+              <num>i</num>
+              <content>
+                <p>a greenhouse gas holding lease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-j">
+              <num>j</num>
+              <content>
+                <p>a greenhouse gas injection licence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-k">
+              <num>k</num>
+              <content>
+                <p>a greenhouse gas search authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-l">
+              <num>l</num>
+              <content>
+                <p>a greenhouse gas special authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-m">
+              <num>m</num>
+              <content>
+                <p>a greenhouse gas research consent.</p>
+              </content>
+              <content>
+                <p><b><i>greenhouse gas research consent</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>greenhouse gas search authority</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>greenhouse gas special authority</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>petroleum access authority</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>petroleum scientific investigation consent</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>petroleum special prospecting authority</i></b> has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>registered holder</i></b>, in relation to a title, has the same meaning as in the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+                <p><b><i>titleholder</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	for a title mentioned in any of paragraphs (a) to (g) or (h) to (l) of the definition of <b><i>Commonwealth title</i></b> in this subsection—the registered holder of the title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10F__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	for a consent mentioned in paragraph (ga) or (m) of the definition of <b><i>Commonwealth title</i></b> in this subsection—the holder of the consent (<ref href="#sec-254">within the meaning of section 254</ref> or 425 of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4D__sec-10G">
+          <num>10G</num>
+          <heading>Imposition of environment plan levy—activities authorised by State/Territory titles etc.</heading>
+          <subsection eId="part-4D__sec-10G__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If either:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by one or more State/Territory titles; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a proposed revision of an environment plan is submitted to NOPSEMA under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by one or more State/Territory titles; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	the plan is submitted by an applicant for a State/Territory title that substantially corresponds to a Commonwealth title mentioned in paragraph (e), (f), (g), (k) or (l) of the definition of <b><i>Commonwealth title</i></b> in subsection 10F(7); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an environment plan is submitted to NOPSEMA under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are carried out for the purposes of complying with a State/Territory remedial direction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a proposed revision of an environment plan is submitted to NOPSEMA under a regulation of a State or Territory that substantially corresponds to a prescribed provision of regulations made under the<i> Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are carried out for the purposes of complying with a State/Territory remedial direction;</p>
+              </content>
+              <content>
+                <p>levy is imposed on the submission.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Levy imposed by subsection (1) is to be known as <b><i>environment plan</i></b> <b><i>levy</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Environment plan levy imposed by subsection (1) is payable:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(a) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by a single State/Territory title;</p>
+              </content>
+              <content>
+                <p>by the titleholder; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(a) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the plan relates are authorised by 2 or more State/Territory titles;</p>
+              </content>
+              <content>
+                <p>jointly and severally by the titleholders; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(b) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by a single State/Territory title;</p>
+              </content>
+              <content>
+                <p>by the titleholder; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph (1)(b) applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the activities to which the revised plan relates are authorised by 2 or more State/Territory titles;</p>
+              </content>
+              <content>
+                <p>jointly and severally by the titleholders; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>if paragraph (1)(c) applies—by the applicant for the State/Territory title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>if paragraph (1)(d) or (e) applies—by the person who is subject to the remedial direction.</p>
+              </content>
+              <content>
+                <p>Amount of environment plan levy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The amount of environment plan levy imposed by subsection (1) in respect of a submission is the amount that is specified in, or worked out in accordance with, the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The regulations may specify different amounts of environment plan levy, or different means of working out amounts of environment plan levy, in relation to different circumstances.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	Subsection (5) does not limit subsection 33(3A) of the <i>Acts Interpretation Act 1901</i>.</p>
+            </content>
+            <content>
+              <p>Definitions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4D__sec-10G__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>registered holder</i></b>, in relation to a State/Territory title, means the person whose name is shown in the Register kept under the relevant State PSLA or Territory PSLA as the holder of the title.</p>
+              <p><b><i>State/Territory title</i></b> means an instrument under a State PSLA or Territory PSLA that confers, in relation to the designated coastal waters of a State or Territory, some or all of the rights that a Commonwealth title (<ref href="#sec-10F">within the meaning of section 10F</ref>) confers in relation to the offshore area of the State or Territory.</p>
+              <p><b><i>titleholder</i></b> means:</p>
+            </content>
+            <paragraph eId="part-4D__sec-10G__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	for a State/Territory title that substantially corresponds to a Commonwealth title mentioned in any of paragraphs (a) to (g) or (h) to (l) of the definition of <b><i>Commonwealth title</i></b> in subsection 10F(7)—the registered holder of the title; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4D__sec-10G__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	for a State/Territory title that substantially corresponds to a consent mentioned in paragraph (ga) or (m) of the definition of <b><i>Commonwealth title </i></b>in subsection 10F(7)—the holder of the consent under the relevant State PSLA or Territory PSLA.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Regulations</heading>
+        <section eId="part-5__sec-11">
+          <num>11</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations for the purposes of sections 5, 6, 7, 8, 9, 10, 10A, 10B, 10C, 10D, 10E, 10F and 10G.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum (Safety Levies) Act 2003</td>
+              <td>117, 2003</td>
+              <td>4 Dec 2003</td>
+              <td>s 3–11: 1 Jan 2005 (s 2(1) item 2)
+Remainder: 4 Dec 2003 (s 2(1) item 1)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum (Safety Levies) Amendment Act 2006</td>
+              <td>19, 2006</td>
+              <td>29 Mar 2006</td>
+              <td>Sch 1: 1 July 2008 (s 2(1) item 2 and F2008L02273)
+Remainder: 29 Mar 2006 (s 2(1) item 1)</td>
+              <td>Sch 1 (items 33–36)</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum (Safety Levies) Amendment (Greenhouse Gas Storage) Act 2008</td>
+              <td>120, 2008</td>
+              <td>21 Nov 2008</td>
+              <td>Sch 1: 1 July 2008 (s 2(1) item 2)
+Schedule 2: 22 Nov 2008 (s 2(1) item 3)
+Remainder: 21 Nov 2008 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Safety Levies) Amendment Act 2009</td>
+              <td>103, 2009</td>
+              <td>8 Oct 2009</td>
+              <td>Sch 1 (items 1–12): 1 Jan 2010 (s 2(1) item 2)
+Sch 1 (item 13): 9 Oct 2009 (s 2(1) item 3)
+Remainder: 8 Oct 2009 (s 2(1) item 1)</td>
+              <td>Sch 1 (items 7, 12, 13)</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Safety Levies) Amendment Act 2010</td>
+              <td>119, 2010</td>
+              <td>16 Nov 2010</td>
+              <td>Sch 1: 1 Jan 2010 (s 2(1) item 2)
+Remainder: 16 Nov 2010 (s 2(1) item 1)</td>
+              <td>Sch 1 (items 5, 6)</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage Regulatory Levies Legislation Amendment (2011 Measures No. 1) Act 2011</td>
+              <td>27, 2011</td>
+              <td>25 May 2011</td>
+              <td>Sch 1: 17 June 2011 (s 2(1) item 2 and F2011L01059)
+Remainder: 25 May 2011 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage Regulatory Levies Legislation Amendment (2011 Measures No. 2) Act 2011</td>
+              <td>114, 2011</td>
+              <td>14 Oct 2011</td>
+              <td>Sch 1: 1 Jan 2012 (s 2(1) item 2)
+Remainder:14 Oct 2011 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment Act 2013</td>
+              <td>142, 2013</td>
+              <td>13 Dec 2013</td>
+              <td>Sch 1: 14 Dec 2013 (s 2(1) item 2)
+Remainder: 13 Dec 2013 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment Act 2014</td>
+              <td>79, 2014</td>
+              <td>17 July 2014</td>
+              <td>Sch 1 (items 1, 2): 17 Jan 2015 (s 2(1) item 2)
+Sch 1 (items 3–21): 18 July 2014 (s 2(1) item 3)
+Remainder: 17 July 2014 (s 2(1) item 1)</td>
+              <td>Sch 1 (item 21)</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment (Designated Coastal Waters) Act 2015</td>
+              <td>16, 2015</td>
+              <td>19 Mar 2015</td>
+              <td>20 Mar 2015 (s 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment (Miscellaneous Matters) Act 2015</td>
+              <td>34, 2015</td>
+              <td>2 Apr 2015</td>
+              <td>Sch 1: 3 Apr 2015 (s 2(1) items 2, 3)
+Remainder: 2 Apr 2015 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment Act 2019</td>
+              <td>93, 2019</td>
+              <td>28 Oct 2019</td>
+              <td>Sch 1 (items 1–10), Sch 4 and 5: 29 Oct 2019 (s 2(1) items 2, 6)
+Sch 1 (items 11–18), Sch 2, 3 and 6: 28 Apr 2020 (s 2(1) items 3–5, 7)</td>
+              <td>Sch 1 (item 10, 18), Sch 2 (items 19, 41, 54), Sch 3 (item 12), Sch 4 (item 7), Sch 5 (item 3) and Sch 6 (item 20)</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment (Miscellaneous Measures) Act 2020</td>
+              <td>42, 2020</td>
+              <td>15 May 2020</td>
+              <td>Sch 3 (item 1): 28 Oct 2019 (s 2(1) item 4)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment (Miscellaneous Measures) Act 2020</td>
+              <td>42, 2020</td>
+              <td>15 May 2020</td>
+              <td>Sch 1: 1 Oct 2020 (s 2(1) item 2)
+Sch 2: 16 May 2020 (s 2(1) item 3)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Offshore Petroleum and Greenhouse Gas Storage (Regulatory Levies) Amendment Act 2021</td>
+              <td>97, 2021</td>
+              <td>3 Sept 2021</td>
+              <td>Sch 1: 2 Mar 2022 (s 2(1) item 2)</td>
+              <td>Sch 1 (item 20)</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td>am No 120, 2008; No 103, 2009; No 27, 2011</td>
+              <td>am No 120, 2008; No 103, 2009; No 27, 2011</td>
+            </tr>
+            <tr>
+              <td>Part 1</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 1</td>
+              <td>am No 120, 2008; No 27, 2011</td>
+              <td>am No 120, 2008; No 27, 2011</td>
+            </tr>
+            <tr>
+              <td>s 3</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009; No 27, 2011; No 114, 2011; No 16, 2015; No 34, 2015; No 93, 2019</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009; No 27, 2011; No 114, 2011; No 16, 2015; No 34, 2015; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ed C16</td>
+              <td>ed C16</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 42, 2020; No 97, 2021</td>
+              <td>am No 42, 2020; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>s 3A</td>
+              <td>ad No 16, 2015</td>
+              <td>ad No 16, 2015</td>
+            </tr>
+            <tr>
+              <td>s 3B</td>
+              <td>ad No 42, 2020</td>
+              <td>ad No 42, 2020</td>
+            </tr>
+            <tr>
+              <td>s 3C</td>
+              <td>ad No 42, 2020</td>
+              <td>ad No 42, 2020</td>
+            </tr>
+            <tr>
+              <td>s 3D</td>
+              <td>ad No 42, 2020</td>
+              <td>ad No 42, 2020</td>
+            </tr>
+            <tr>
+              <td>s 4</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+            </tr>
+            <tr>
+              <td>Part 2</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 5</td>
+              <td>am No 19, 2006; No 120, 2008; No 114, 2011; No 34, 2015; No 93, 2019</td>
+              <td>am No 19, 2006; No 120, 2008; No 114, 2011; No 34, 2015; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td>s 6</td>
+              <td>am No 19, 2006; No 120, 2008; No 114, 2011; No 34, 2015</td>
+              <td>am No 19, 2006; No 120, 2008; No 114, 2011; No 34, 2015</td>
+            </tr>
+            <tr>
+              <td>Part 3</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 7</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 103, 2009</td>
+              <td>rs No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 119, 2010; No 93, 2019; No 97, 2021</td>
+              <td>am No 119, 2010; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>s 8</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009</td>
+              <td>am No 19, 2006; No 120, 2008; No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 103, 2009</td>
+              <td>rs No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 119, 2010; No 93, 2019; No 97, 2021</td>
+              <td>am No 119, 2010; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>Part 4</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part 4</td>
+              <td>rep No 103, 2009</td>
+              <td>rep No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td>s 9</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 103, 2009</td>
+              <td>rep No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 34, 2015; No 93, 2019</td>
+              <td>am No 114, 2011; No 34, 2015; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td>s 10</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+              <td>am No 19, 2006; No 120, 2008</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 103, 2009</td>
+              <td>rep No 103, 2009</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 16, 2015; No 34, 2015; No 93, 2019</td>
+              <td>am No 114, 2011; No 16, 2015; No 34, 2015; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td>Part 4A</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part 4A</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td>s 10A</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 93, 2019</td>
+              <td>am No 114, 2011; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td>s 10B</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 16, 2015; No 93, 2019</td>
+              <td>am No 114, 2011; No 16, 2015; No 93, 2019</td>
+            </tr>
+            <tr>
+              <td>Part 4B</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part 4B</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td>s 10C</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 93, 2019; No 97, 2021</td>
+              <td>am No 114, 2011; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>s 10D</td>
+              <td>ad No 27, 2011</td>
+              <td>ad No 27, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 114, 2011; No 16, 2015; No 93, 2019; No 97, 2021</td>
+              <td>am No 114, 2011; No 16, 2015; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>Part 4C</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part 4C</td>
+              <td>ad No 114, 2011</td>
+              <td>ad No 114, 2011</td>
+            </tr>
+            <tr>
+              <td>s 10E</td>
+              <td>ad No 114, 2011</td>
+              <td>ad No 114, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 142, 2013; No 79, 2014; No 34, 2015; No 42, 2020</td>
+              <td>am No 142, 2013; No 79, 2014; No 34, 2015; No 42, 2020</td>
+            </tr>
+            <tr>
+              <td>Part 4D</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part 4D</td>
+              <td>ad No 114, 2011</td>
+              <td>ad No 114, 2011</td>
+            </tr>
+            <tr>
+              <td>s 10F</td>
+              <td>ad No 114, 2011</td>
+              <td>ad No 114, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 79, 2014; No 93, 2019; No 97, 2021</td>
+              <td>am No 79, 2014; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>s 10G</td>
+              <td>ad No 114, 2011</td>
+              <td>ad No 114, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 79, 2014; No 16, 2015; No 93, 2019; No 97, 2021</td>
+              <td>am No 79, 2014; No 16, 2015; No 93, 2019; No 97, 2021</td>
+            </tr>
+            <tr>
+              <td>Part 5</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 11</td>
+              <td>am No 103, 2009; No 27, 2011; No 114, 2011</td>
+              <td>am No 103, 2009; No 27, 2011; No 114, 2011</td>
+            </tr>
+          </table>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

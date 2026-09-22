@@ -1,0 +1,2481 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1987/34/!main"/>
+          <FRBRuri value="/akn/au/act/1987/34"/>
+          <FRBRdate date="1987-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="34"/>
+          <FRBRname value="aboriginal-land-(lake-condah-and-framlingham-forest)-act-1987"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1987/34/eng@2016-10-21/!main"/>
+          <FRBRuri value="/akn/au/act/1987/34/eng@2016-10-21"/>
+          <FRBRdate date="2016-10-21" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1987/34/eng@2016-10-21/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1987/34/eng@2016-10-21/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1987-01-01" type="generation" eId="evt-creation" source="#aboriginal-land-(lake-condah-and-framlingham-forest)-act-1987"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1988/99"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1989/21" date="1989-06-09"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1989/150"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1994/99" date="1994-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2001/112"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2005/32"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2006/30"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2006/125"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2006/152"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2015/10" date="2015-03-05"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2016/61" date="2016-09-23"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-aboriginal" href="/ontology/term/au/term-aboriginal" showAs="Aboriginal"/>
+        <TLCTerm eId="term-aboriginal-and-torres-strait-islander-corporation" href="/ontology/term/au/term-aboriginal-and-torres-strait-islander-corporation" showAs="Aboriginal and Torres Strait Islander corporation"/>
+        <TLCTerm eId="term-community-council" href="/ontology/term/au/term-community-council" showAs="Community Council"/>
+        <TLCTerm eId="term-condah-land" href="/ontology/term/au/term-condah-land" showAs="Condah land"/>
+        <TLCTerm eId="term-corporation" href="/ontology/term/au/term-corporation" showAs="Corporation"/>
+        <TLCTerm eId="term-crown" href="/ontology/term/au/term-crown" showAs="Crown"/>
+        <TLCTerm eId="term-day-of-vesting" href="/ontology/term/au/term-day-of-vesting" showAs="day of vesting"/>
+        <TLCTerm eId="term-framlingham-forest" href="/ontology/term/au/term-framlingham-forest" showAs="Framlingham Forest"/>
+        <TLCTerm eId="term-framlingham-reserve" href="/ontology/term/au/term-framlingham-reserve" showAs="Framlingham Reserve"/>
+        <TLCTerm eId="term-kerrup-jmara-elders-aboriginal-corporation" href="/ontology/term/au/term-kerrup-jmara-elders-aboriginal-corporation" showAs="Kerrup-Jmara Elders Aboriginal Corporation"/>
+        <TLCTerm eId="term-kirrae-whurrong-aboriginal-corporation" href="/ontology/term/au/term-kirrae-whurrong-aboriginal-corporation" showAs="Kirrae Whurrong Aboriginal Corporation"/>
+        <TLCTerm eId="term-mineral" href="/ontology/term/au/term-mineral" showAs="mineral"/>
+        <TLCTerm eId="term-mining-operation" href="/ontology/term/au/term-mining-operation" showAs="mining operation"/>
+        <TLCTerm eId="term-mining-purposes" href="/ontology/term/au/term-mining-purposes" showAs="mining purposes"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Aboriginal Land (Lake Condah and Framlingham Forest) Act 1987</p>
+      <p>No. 34, 1987</p>
+      <p><b>Compilation No.</b><b> </b><b>17</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>21 October 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 61, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>24 October 2016</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Aboriginal Land (Lake Condah and Framlingham Forest) Act 1987</i> that shows the text of the law as amended and in force on 21 October 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	3</p>
+      <p>1	Short title	3</p>
+      <p>2	Commencement	3</p>
+      <p>3	Interpretation	3</p>
+      <p>4	Crown	6</p>
+      <p>4A	Application of the <i>Criminal Code</i>	6</p>
+      <p>5	Delegation	6</p>
+      <p><ref href="#part-II">Part II</ref>—Vesting of Condah land and Framlingham Forest	9</p>
+      <p>6	Vesting of Condah land	9</p>
+      <p>7	Vesting of Framlingham Forest	9</p>
+      <p>8	Conversion of interests into claims for compensation	10</p>
+      <p>9	Notice to owners	10</p>
+      <p>10	Registration of vesting	11</p>
+      <p>11	Compensation	11</p>
+      <p>12	Miscellaneous	11</p>
+      <p><ref href="#part-III">Part III</ref>—Management of Condah land	12</p>
+      <p>13	Management, transfer or lease of land	12</p>
+      <p>14	Rights of access over Condah land	12</p>
+      <p>15	By-laws	13</p>
+      <p>16	Sacred and significant sites	14</p>
+      <p>17	Committee of Elders	15</p>
+      <p>18	Powers of Committee of Elders	15</p>
+      <p>19	Winding up	16</p>
+      <p>20	Change of ownership of land	17</p>
+      <p><ref href="#part-IV">Part IV</ref>—Management of Framlingham Forest	18</p>
+      <p>21	Management, transfer or lease of Framlingham Forest	18</p>
+      <p>22	Rights of access over Framlingham Forest	18</p>
+      <p>23	By-laws	19</p>
+      <p>24	Sacred and significant sites	20</p>
+      <p>25	Membership	21</p>
+      <p>26	Committee of Elders	21</p>
+      <p>27	Power of Committee of Elders	21</p>
+      <p>28	Winding up	23</p>
+      <p>29	Change of ownership of land	23</p>
+      <p><ref href="#part-V">Part V</ref>—Mining	25</p>
+      <p>30	Mining operations	25</p>
+      <p>31	Permission to carry out mining operation	26</p>
+      <p>32	Payments and other consideration	27</p>
+      <p>33	Conciliation and review	28</p>
+      <p>34	Sacred or significant sites	29</p>
+      <p>35	Offences	30</p>
+      <p>36	Entry onto relevant land and mining tenements	30</p>
+      <p>37	Offences by corporations	31</p>
+      <p><ref href="#part-VI">Part VI</ref>—Funding	32</p>
+      <p>38	Aboriginal Advancement Account	32</p>
+      <p>38A	Notional accounts within the Aboriginal Advancement Account	32</p>
+      <p><ref href="#part-VII">Part VII</ref>—Miscellaneous	34</p>
+      <p>39	Exemption from land tax	34</p>
+      <p>40	Compensation for acquisition of property	34</p>
+      <p>41	Regulations	34</p>
+      <p>Schedule 1—Land in the Parish of Condah to be vested in the Kerrup-Jmara Elders Aboriginal Corporation	35</p>
+      <p><ref href="#part-A">Part A</ref>		35</p>
+      <p><ref href="#part-B">Part B</ref>		37</p>
+      <p>Schedule 2—Land in the Parish of Purnim to be vested in the Kirrae Whurrong Aboriginal Corporation	39</p>
+      <p>Endnotes	40</p>
+      <p>Endnote 1—About the endnotes	40</p>
+      <p>Endnote 2—Abbreviation key	42</p>
+      <p>Endnote 3—Legislation history	43</p>
+      <p>Endnote 4—Amendment history	46</p>
+      <p>An Act to provide for the vesting in certain Aboriginal communities of certain land at Lake Condah and Framlingham owned by the State of Victoria, and for related purposes</p>
+      <p>AND WHEREAS the Government of Victoria acknowledges:</p>
+      <p>that:</p>
+      <p>	(i)	that part of Condah land shown shaded and hatched on the plan in <ref href="#part-A">Part A</ref> of Schedule 1 was originally Aboriginal land and was on 22 February 1984 acquired under the <i>Crown Land (Reserves) Act 1978 </i>of Victoria and is deemed to be temporarily reserved under that Act as an area of historic and archaeological interest;</p>
+      <p>that part of Condah land was traditionally owned, occupied, used and enjoyed by Aboriginals in accordance with Aboriginal laws, customs, traditions and practices;</p>
+      <p>the traditional Aboriginal rights of ownership, occupation, use and enjoyment concerning that part of Condah land are deemed never to have been extinguished;</p>
+      <p>that part of Condah land has been taken by force from the Kerrup-Jmara Clan without consideration as to compensation under common law or without regard to Kerrup-Jmara Law;</p>
+      <p>Aboriginals residing on that part of Condah land and other Aboriginals are considered to be the inheritors in title from Aboriginals who owned, occupied, used and enjoyed the land since time immemorial;</p>
+      <p>that part of Condah land is of spiritual, social, historical, cultural and economic importance to the Kerrup-Jmara Community and to local and other Aboriginals;</p>
+      <p>it is expedient to acknowledge, recognise and assert the traditional rights of Aboriginals to that part of Condah land and the continuous association they have with the land; and</p>
+      <p>that:</p>
+      <p>Framlingham Forest was originally Aboriginal land and was later part of lands reserved temporarily from sale and for the use of Aboriginals under the exercise of the power vested in the Government of the State of Victoria with the advice of the Executive Council by Act No. 24 Victoria 117 and pursuant to the order of the Executive Council made on <date date="1861-09-19">19 September 1861</date>;</p>
+      <p>Framlingham Forest was traditionally owned, occupied, used and enjoyed by Aboriginals in accordance with Aboriginal laws, customs, traditions and practices;</p>
+      <p>the traditional Aboriginal rights of ownership, occupation, use and enjoyment concerning Framlingham Forest are deemed never to have been extinguished;</p>
+      <p>Framlingham Forest has been taken by force from the Kirrae Whurrong (Pertobe) Clan without consideration as to compensation under common law or without regard to Kirrae Whurrong Law;</p>
+      <p>Aboriginals residing at Framlingham Forest and other Aboriginals are considered to be the inheritors in title from Aboriginals who owned, occupied, used and enjoyed Framlingham Forest since time immemorial;</p>
+      <p>Framlingham Forest is of spiritual, social, historical, cultural and economic importance to the Kirrae Whurrong community and to local and other Aboriginals;</p>
+      <p>it is expedient to acknowledge, recognise and assert the traditional rights of Aboriginals to Framlingham Forest and the continuous association they have with Framlingham Forest:</p>
+      <p>AND WHEREAS the Government of Victoria has requested the Parliament of the Commonwealth to enact an Act in the terms of this Act:</p>
+      <p>AND WHEREAS the Commonwealth does not acknowledge the matters acknowledged by the Government of Victoria, but has agreed to the enactment of such an Act:</p>
+      <p>BE IT THEREFORE ENACTED by the Queen, and the Senate and the House of Representatives of the Commonwealth of Australia, as follows:</p>
+    </preface>
+    <preamble>
+      <recitals>
+        <recital>
+          <p>WHEREAS Condah land and Framlingham Forest are situated in the State of Victoria:</p>
+        </recital>
+      </recitals>
+    </preamble>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Aboriginal</i><i> </i><i>Land</i><i> (</i><i>Lake</i><i> </i><i>Condah</i><i> and </i><i>Framlingham</i><i> </i><i>Forest</i><i>) Act 1987</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-I__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p><ref href="#part-I">Part I</ref> shall come into operation on the day on which this Act receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on a day or days to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-aboriginal">Aboriginal</term> means <def>a member of the Aboriginal race of Australia.</def></p>
+              <p><term refersTo="#term-aboriginal-and-torres-strait-islander-corporation">Aboriginal and Torres Strait Islander corporation</term> means <def>a corporation registered under the Corporations (Aboriginal and Torres Strait Islander) Act 2006.</def></p>
+              <p><term refersTo="#term-community-council">Community Council</term> means <def>the directors of the Kirrae Whurrong Aboriginal Corporation.</def></p>
+              <p><term refersTo="#term-condah-land">Condah land</term> means <def>the land shown shaded and hatched on the plan in <ref href="#part-A">Part A</ref>, and shown hatched on the plan in <ref href="#part-B">Part B</ref>, of Schedule 1.</def></p>
+              <p><term refersTo="#term-corporation">Corporation</term> means <def>the Kerrup-Jmara Elders Aboriginal Corporation or the Kirrae Whurrong Aboriginal Corporation, as the case requires.</def></p>
+              <p><term refersTo="#term-crown">Crown</term> means <def>the Crown in right of the Commonwealth or of the State of Victoria, or of both, as the case requires.</def></p>
+              <p><term refersTo="#term-day-of-vesting">day of vesting</term>, in relation to a Corporation, means <def>the day on which the relevant land is vested in the Corporation under <ref href="#sec-6">section 6</ref> or 7.</def></p>
+              <p><term refersTo="#term-framlingham-forest">Framlingham Forest</term> means <def>the land shown shaded and hatched on the plan in Schedule 2.</def></p>
+              <p><term refersTo="#term-framlingham-reserve">Framlingham Reserve</term> means <def>the lands shown on the plan in <ref href="/akn/au/act/first-schedule-to-the-aboriginal-lands-act-1970" class="unresolved">the First Schedule to the Aboriginal Lands Act 1970</ref> of Victoria.</def></p>
+              <p><b><i>interest</i></b>, in relation to land, means:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a legal or equitable estate or interest in the land; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a right, power or privilege over, or in connection with, the land.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-kerrup-jmara-elders-aboriginal-corporation">Kerrup-Jmara Elders Aboriginal Corporation</term> means <def>the Aboriginal and Torres Strait Islander corporation of that name.</def></p>
+                <p><term refersTo="#term-kirrae-whurrong-aboriginal-corporation">Kirrae Whurrong Aboriginal Corporation</term> means <def>the Aboriginal and Torres Strait Islander corporation of that name.</def></p>
+                <p><term refersTo="#term-mineral">mineral</term> means <def>any substance (except water) that occurs naturally as part of the earth’s crust, including: oil shale and coal; and hydrocarbons and mineral oils contained in oil shale or coal or extracted from oil shale or coal by chemical or industrial processes; and 	(c)	petroleum within the meaning of the <i>Petroleum Act </i>1958<i> </i>of Victoria; and 	(d)	stone within the meaning of the <i>Extractive Industries Act</i><i> </i>1966<i> </i>of Victoria.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>oil shale and coal; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>hydrocarbons and mineral oils contained in oil shale or coal or extracted from oil shale or coal by chemical or industrial processes; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	petroleum within the meaning of the <i>Petroleum Act </i>1958<i> </i>of Victoria; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	stone within the meaning of the <i>Extractive Industries Act</i><i> </i>1966<i> </i>of Victoria.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-mining-operation">mining operation</term> means <def>any operation carried out from mining purposes.</def></p>
+                <p><term refersTo="#term-mining-purposes">mining purposes</term> means <def>the purposes of: prospecting for a mineral or winning a mineral from a place where it occurs naturally; extracting from its natural state a mineral previously won from a place where it occurred naturally if the extraction occurs at or in the vicinity of the place where the mineral occurs naturally; disposing of a mineral in connection with operations for a purpose mentioned in paragraph (a) or paragraph (b); disposing of waste substances resulting from operations for a purpose mentioned in paragraph (a) or paragraph (b); and treating, storing or stacking earth in connection with operations for a purpose mentioned in paragraph (a) or paragraph (b) if the treating, storing or stacking earth occurs at or in the vicinity of the place where the mineral occurs naturally.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>prospecting for a mineral or winning a mineral from a place where it occurs naturally;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>extracting from its natural state a mineral previously won from a place where it occurred naturally if the extraction occurs at or in the vicinity of the place where the mineral occurs naturally;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>disposing of a mineral in connection with operations for a purpose mentioned in paragraph (a) or paragraph (b);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>disposing of waste substances resulting from operations for a purpose mentioned in paragraph (a) or paragraph (b); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>treating, storing or stacking earth in connection with operations for a purpose mentioned in paragraph (a) or paragraph (b) if the treating, storing or stacking earth occurs at or in the vicinity of the place where the mineral occurs naturally.</p>
+              </content>
+              <content>
+                <p><b><i>mining tenement</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	an exploration licence under Part 2 of the <i>Mineral Resources Development Act </i>1990<i> </i>of Victoria, a permit to search for stone under <ref href="#sec-27">section 27</ref> of the <i>Extractive Industries Act </i>1966<i> </i>of Victoria or a petroleum exploration permit under <ref href="#part-I">Part I</ref>V of the <i>Petroleum Act </i>1958<i> </i>of Victoria; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	any other lease, licence, permit or other authority under the <i>Mineral Resources Development Act </i>1990<i> </i>of Victoria or the <i>Petroleum Act </i>1958<i> </i>of Victoria.</p>
+              </content>
+              <content>
+                <p><b><i>relevant land</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in relation to the Kerrup-Jmara Elders Aboriginal Corporation, the Condah land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to the Kirrae Whurrong Aboriginal Corporation, Framlingham Forest.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In provisions of the <i>Lands Acquisition Act 1955 </i>as applying by virtue of this Act:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	<b><i>Supreme Court</i></b> means the Supreme Court of Victoria;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<b><i>date of acquisition</i></b>, in relation to land, means the date of commencement of <ref href="#sec-6">section 6</ref> or 7, as the case requires;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<b><i>this Act</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	the <i>Lands Acquisition Act 1955 </i>as applying by virtue of this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	<b><i>claiman</i></b><i>t</i>, <b><i>court of summary jurisdiction</i></b>, <b><i>mortgagee</i></b> and <b><i>mortgagor</i></b> have the meanings they have in the <i>Lands Acquisition Act 1955</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Crown</heading>
+          <content>
+            <p>This Act binds the Crown in right of the Commonwealth and in right of the State of Victoria.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-4A">
+          <num>4A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code </i>(except <ref href="#part-2">Part 2</ref>.5) applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code </i>sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-I__sec-5">
+          <num>5</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-I__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, either generally or as otherwise provided by the instrument of delegation, by writing signed by <role refersTo="#minister">the Minister</role>, delegate all or any powers that are conferred on <role refersTo="#minister">the Minister</role> by or under this Act to:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a Minister of the Crown of Victoria; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an officer of the Department.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A Minister of the Crown of the State of Victoria to whom a power has been delegated under subsection (1) may, by writing signed by that Minister, authorise another person to exercise the power so delegated.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An authority under subsection (2) may be given to:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a specified person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the person for the time being occupying or performing the duties of a position in the public service of the State of Victoria, being a position specified in the instrument by which <role refersTo="#authority">the authority</role> is given.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Any act or thing done in the exercise of a power by a person to whom that power has been delegated by <role refersTo="#minister">the Minister</role> under subsection (1) or by a person authorised by a delegate of <role refersTo="#minister">the Minister</role> under subsection (2) to exercise that power has the same force and effect as if it had been done by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where the exercise of a power by <role refersTo="#minister">the Minister</role> is dependent upon the opinion, belief or state of mind of <role refersTo="#minister">the Minister</role> in relation to a matter and that power has been delegated under subsection (1), that power may be exercised by the delegate or by a person authorised by the delegate under subsection (2) upon the opinion, belief or state of mind of the delegate or of the authorised person, as the case may be, in relation to that matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A delegation under subsection (1) does not prevent the exercise of a power by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The giving of an authority under subsection (2) does not prevent the exercise of a power by the person by whom <role refersTo="#authority">the authority</role> was given.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Where a person purports to exercise a power conferred or expressed to be conferred on <role refersTo="#minister">the Minister</role> by this Act, it shall be presumed, unless the contrary is established, that the person is duly authorised by a delegation under subsection (1) or by an authority under subsection (1), given pursuant to such a delegation, to exercise the power.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Vesting of Condah land and Framlingham Forest</heading>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Vesting of Condah land</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>On the commencement of this section, the Condah land, other than minerals in the Condah land is, by force of this Act:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>vested in the Kerrup-Jmara Elders Aboriginal Corporation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>freed and discharged from all interests (other than interests in minerals), trusts, restrictions, dedications, reservations, obligations, contracts, licences, charges and rates;</p>
+              </content>
+              <content>
+                <p>to the intent that the legal estate in the land and all rights and powers incident to that legal estate are vested in the Kerrup-Jmara Elders Aboriginal Corporation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>On the commencement of this section, the lands delineated and shown hatched on the plan in <ref href="#part-A">Part A</ref> of Schedule 1 are closed as roads and all rights, easements and privileges existing or claimed either in the public or by any body or person as incident to any past dedication or supposed dedication of them or by user or by any fiction of law cease to exist.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Vesting of Framlingham Forest</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>On the commencement of this section, Framlingham Forest, other than minerals in Framlingham Forest, is, by force of this Act:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>vested in the Kirrae Whurrong Aboriginal Corporation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>freed and discharged from all interests (other than interests in minerals), trusts, restrictions, dedications, reservations, obligations, contracts, licences, charges and rates;</p>
+              </content>
+              <content>
+                <p>to the intent that the legal estate in the land and all rights and powers incident to that legal estate are vested in the Kirrae Whurrong Aboriginal Corporation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>On the commencement of this section, the lands delineated and shown hatched on the plan in Schedule 2 are closed as roads and all rights, easements and privileges existing or claimed either in the public or by any body or person as incident to any past dedication or supposed dedication of them or by user or by any fiction of law cease to exist.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Conversion of interests into claims for compensation</heading>
+          <content>
+            <p>On the commencement of <ref href="#sec-6">section 6</ref> or 7, as the case requires:</p>
+          </content>
+          <paragraph eId="part-II__sec-8__para-a">
+            <num>a</num>
+            <content>
+              <p>the property of the State of Victoria in the Condah land or in Framlingham Forest (other than property in minerals); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-II__sec-8__para-b">
+            <num>b</num>
+            <content>
+              <p>each interest of a person (other than the Kerrup-Jmara Elders Aboriginal Corporation or the Kirrae Whurrong Aboriginal Corporation) in the Condah land or in Framlingham Forest (other than interests in minerals);</p>
+            </content>
+            <content>
+              <p>is converted into a right to compensation under this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-II__sec-9">
+          <num>9</num>
+          <heading>Notice to owners</heading>
+          <subsection eId="part-II__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister shall, as soon as practicable after the commencement of <ref href="#sec-6">section 6</ref> or 7 cause a copy of a notice of vesting of the land, in accordance with a form approved by the Minister, to be served upon each person who had an interest in the land immediately before the commencement of that section (in this section referred to as an <b><i>owner</i></b>), or such of them as can, after careful inquiry, be ascertained.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is unable, after careful inquiry, to ascertain the identity of an owner; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>service on an owner cannot be effected;</p>
+              </content>
+              <content>
+                <p>service on that owner may be effected by causing a copy of the notice of vesting to be published in a newspaper circulating in the district in which the relevant land is situated.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-10">
+          <num>10</num>
+          <heading>Registration of vesting</heading>
+          <subsection eId="part-II__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	After the commencement of <ref href="#sec-6">section 6</ref> or 7, as the case may require, the Chief Executive Officer of the Aboriginal and Torres Strait Islander Commission<i> </i>shall lodge with the Registrar-General for Victoria or other proper officer of Victoria a copy of the notice of vesting referred to in <ref href="#sec-9">section 9</ref>, certified by writing signed by the Chief Executive Officer of the Aboriginal and Torres Strait Islander Commission.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The officer with whom the copy of a notice of vesting is lodged in pursuance of subsection (1) may register the acquisition in the manner as nearly as may be in which dealings with land are registered, and may deal with and give effect to the copy of the notice of acquisition as if it were a grant, conveyance, memorandum or instrument of transfer of the land to the Corporation duly executed under the laws in force in Victoria.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-11">
+          <num>11</num>
+          <heading>Compensation</heading>
+          <content>
+            <p>		In spite of the repeal of the <i>Lands Acquisition Act 1955</i>, <ref href="#part-IV">Part IV</ref> of that Act applies in relation to interests in the Condah land or Framlingham Forest that have been vested in the Corporation by force of this Act as if the land had been acquired by compulsory process under the <i>Lands Acquisition Act 1955 </i>on the commencement of <ref href="#sec-6">section 6</ref> or 7, as the case may require, and as if the right to compensation under <ref href="#sec-8">section 8</ref> of this Act were a right to compensation under <ref href="#sec-11">section 11</ref> of the <i>Lands Acquisition Act</i><i> </i><i>1955</i>.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-12">
+          <num>12</num>
+          <heading>Miscellaneous</heading>
+          <content>
+            <p>		In spite of the repeal of the <i>Lands Acquisition Act 1955</i>, sections 13, 55, 58, 59 and 62 of that Act apply in relation to interests in the Condah land or Framlingham Forest that have been vested in the Corporation by force of this Act as if the land had been acquired by compulsory process under the <i>Lands Acquisition Act</i><i> </i><i>1955 </i>on the commencement of <ref href="#sec-6">section 6</ref> or 7, as the case requires.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Management of Condah land</heading>
+        <section eId="part-III__sec-13">
+          <num>13</num>
+          <heading>Management, transfer or lease of land</heading>
+          <subsection eId="part-III__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Upon the vesting of the Condah land in the Kerrup-Jmara Elders Aboriginal Corporation, the Corporation has:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the full power of management, control and enjoyment of the Condah land, subject to the law of Victoria and the Commonwealth;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the power to transfer its interest in the Condah land to another Aboriginal and Torres Strait Islander corporation, subject to subsection (2); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the power to give a lease of the Condah land or a licence over the Condah land to the Crown, a public authority of the State of Victoria or of the Commonwealth or any other person, subject to subsection (3).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Kerrup-Jmara Elders Aboriginal Corporation shall not transfer its interest in the Condah land to another Aboriginal and Torres Strait Islander corporation if there is an objection from a member of the Kerrup-Jmara Committee of Elders or any other adult member of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Kerrup-Jmara Elders Aboriginal Corporation shall not give a lease of the Condah land or a licence over the Condah land that is for a period of more than 3 years to a person who is not the Crown or a public authority of the State of Victoria or the Commonwealth unless <role refersTo="#minister">the Minister</role> has approved the giving of that lease or licence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Rights of access over Condah land</heading>
+          <subsection eId="part-III__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Any legal rights of access over the Condah land existing immediately before the day of vesting (other than the right of access provided by the roads shown hatched on the plan in <ref href="#part-A">Part A</ref> of Schedule 1) continue to exist on the same terms and conditions as those on which they existed immediately before the day of vesting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Except as otherwise provided in this Act, a person may, in the performance of functions under this Act or otherwise in accordance with this or any other Act or any law of the State of Victoria, enter and remain on the Condah land.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-15">
+          <num>15</num>
+          <heading>By-laws</heading>
+          <subsection eId="part-III__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Kerrup-Jmara Elders Aboriginal Corporation may make by-laws, not inconsistent with any law of the Commonwealth or the State of Victoria, for or with respect to:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>economic enterprise on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>cultural activities on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the management, access, conservation, fire protection, development and use of the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the declaration of sacred or significant sites or other areas of significance to Aboriginal people on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the activities to be permitted on the Condah land or any part of it;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>protection and conservation of flora or fauna found on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>in relation to the Condah land, the cutting, removal and sale of timber, the granting of revocable licences and the payment of royalties for timber to the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>hunting, shooting and fishing on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>control of visitors in, and charging fees (to be paid to the Corporation) for entrance to, the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-k">
+              <num>k</num>
+              <content>
+                <p>the regulation and control of motor traffic and parking on the Condah land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-m">
+              <num>m</num>
+              <content>
+                <p>the appointment of persons to enforce the by-laws, and the powers and duties of those persons.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The by-laws may provide that a contravention of a by-law is an offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The regulations may provide, in respect of an offence against the by-laws, for the imposition of:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if the offender is a natural person—a fine not exceeding <quantity refersTo="#penaltyUnit">5 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the offender is a corporation—a fine not exceeding <quantity refersTo="#penaltyUnit">25 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The regulations may make provision for and in relation to enabling a person who is alleged to have committed an offence against the by-laws to pay to the Commonwealth, as an alternative to prosecution, a penalty not exceeding:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of a natural person—<quantity refersTo="#penaltyUnit">1 penalty unit</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of a corporation—<quantity refersTo="#penaltyUnit">5 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the Kerrup-Jmara Elders Aboriginal Corporation makes a by-law, the directors of the Corporation must, <quantity refersTo="#deadline">within 7 days</quantity> after making it, give a copy of the by-law to the Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	For the purposes of the <i>Legislation Act 2003</i>, a by-law made by the Kerrup-Jmara Elders Aboriginal Corporation and received by the Minister is a legislative instrument made by the Minister on the day the by-law is received.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	A by-law made by the Corporation and received by the Minister is stated to be a legislative instrument made by the Minister so that the Minister may perform the functions of a rule-maker in relation to the instrument under the <i>Legislation Act 2003</i>. For example, under that Act a rule-maker for a legislative instrument is required to lodge the instrument (and any amendments and compilations of the instrument) for registration under that Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-16">
+          <num>16</num>
+          <heading>Sacred and significant sites</heading>
+          <subsection eId="part-III__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Kerrup-Jmara Elders Aboriginal Corporation shall compile a register of sites on the Condah land that are sacred or significant to Aboriginals or any group of Aboriginals and shall record in the register:</p>
+            </content>
+            <paragraph eId="part-III__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if a site has been specifically identified, the boundaries of the site; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if a site is known to exist but has not been specifically identified, the boundaries of the site as it is known to exist.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Kerrup-Jmara Elders Aboriginal Corporation shall keep the register in a manner that is appropriate to prevent disclosure of its contents without the permission of the directors of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The directors of the Corporation must make the register available to <role refersTo="#minister">the Minister</role>, if he or she so requests, for the purposes of considering the making of a declaration under paragraph 30(2)(c).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Committee of Elders</heading>
+          <content>
+            <p>The Kerrup-Jmara Committee of Elders is that body of persons who are members of the Kerrup-Jmara Elders Aboriginal Corporation and are considered by Aboriginal tradition and practice and by recognition of the Kerrup-Jmara Community to be the Committee of Elders.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Powers of Committee of Elders</heading>
+          <subsection eId="part-III__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The powers of the Kerrup-Jmara Committee of Elders are:</p>
+            </content>
+            <paragraph eId="part-III__sec-18__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	subject to the <i>Corporations (Aboriginal and Torres Strait Islander) Act 2006</i>, to declare a specified person to be eligible to be a member of the Kerrup-Jmara Elders Aboriginal Corporation or any body created by that Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to determine anything with respect to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>matters of spiritual, cultural and religious significance to the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the management or development of any sacred or significant site on the Condah land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the maintenance and application within the Corporation of the traditional lores, customs and practices of the Corporation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the harvesting, taking, use or pursuit of animal and vegetable life (including fish and bird life) found on the Condah land with limitations as to time, volume and circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to hear and determine disputes within the Corporation about breaches of traditional customs, lores and practices.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A decision of the Committee of Elders is final and binding on all members of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Corporation shall act in accordance with the decisions of the Committee of Elders about all matters in respect of which the Committee has power to make decisions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Nothing in this section has effect so as to confer judicial power on the Committee of Elders.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Subject to the <i>Corporations (Aboriginal and Torres Strait Islander) Act 2006</i>, a person is eligible to be a member of the Kerrup-Jmara Elders Aboriginal Corporation or a body created by the Corporation if, and only if, a declaration in force under paragraph (1)(a) so declares.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Where, immediately before the commencement of this section, a person was a member of the Kerrup-Jmara Elders Aboriginal Corporation or a body created by that Corporation, a declaration under paragraph (1)(a) shall be deemed to be in force in relation to that person.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-19">
+          <num>19</num>
+          <heading>Winding up</heading>
+          <content>
+            <p>If the Kerrup-Jmara Elders Aboriginal Corporation is wound up and its interest in the Condah land has not been transferred to another Aboriginal and Torres Strait Islander corporation under this Act:</p>
+          </content>
+          <paragraph eId="part-III__sec-19__para-a">
+            <num>a</num>
+            <content>
+              <p>by force of this Act, that interest in the Condah land is, subject to paragraph (b), vested in the Commonwealth on trust for the benefit of the Aboriginal people of Victoria; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-19__para-b">
+            <num>b</num>
+            <content>
+              <p>the Governor-General shall, to the extent of that interest, execute a deed of grant of an estate in the Condah land:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-19__para-i">
+            <num>i</num>
+            <content>
+              <p>to another Aboriginal and Torres Strait Islander corporation that is approved by <role refersTo="#minister">the Minister</role> and whose members are the descendants of the Kerrup-Jmara Clan; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-19__para-ii">
+            <num>ii</num>
+            <content>
+              <p>if there is no Aboriginal and Torres Strait Islander corporation as described in subparagraph (i)—to any appropriate Aboriginal and Torres Strait Islander corporation.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Change of ownership of land</heading>
+          <content>
+            <p>		If the Condah land is transferred or granted to another Aboriginal and Torres Strait Islander corporation (the <b><i>transferee corporation</i></b>) in accordance with this Act:</p>
+          </content>
+          <paragraph eId="part-III__sec-20__para-a">
+            <num>a</num>
+            <content>
+              <p>this Act has effect in relation to the transferee corporation and to the Condah land as if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-20__para-i">
+            <num>i</num>
+            <content>
+              <p>a reference in this Act to the Kerrup-Jmara Elders Aboriginal Corporation were a reference to the transferee corporation; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-20__para-ii">
+            <num>ii</num>
+            <content>
+              <p>references to the Committee of Elders were references to such Committee of Elders as is declared by the Governor-General by Proclamation for the purposes of this section; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-20__para-iii">
+            <num>iii</num>
+            <content>
+              <p>references to the directors of the Corporation were references to the directors of the transferee corporation; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-20__para-b">
+            <num>b</num>
+            <content>
+              <p>the transferee corporation is deemed to be the successor in law of the Corporation or Aboriginal and Torres Strait Islander corporation in or to which the Condah land was last vested or granted and has all the powers, duties, rights and liabilities of that Corporation or Aboriginal and Torres Strait Islander corporation.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Management of Framlingham Forest</heading>
+        <section eId="part-IV__sec-21">
+          <num>21</num>
+          <heading>Management, transfer or lease of Framlingham Forest</heading>
+          <subsection eId="part-IV__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Upon the vesting of Framlingham Forest in the Kirrae Whurrong Aboriginal Corporation, the Corporation has:</p>
+            </content>
+            <paragraph eId="part-IV__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the full power of management, control and enjoyment of Framlingham Forest, subject to the law of Victoria and the Commonwealth;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the power to transfer its interest in Framlingham Forest to another Aboriginal and Torres Strait Islander corporation, subject to subsection (2); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the power to give a lease of Framlingham Forest or a licence over Framlingham Forest to the Crown, a public authority of the State of Victoria or of the Commonwealth or any other person, subject to subsection (3).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Kirrae Whurrong Aboriginal Corporation shall not transfer its interest in Framlingham Forest to another Aboriginal and Torres Strait Islander corporation if there is an objection from a member of the Kirrae Whurrong Committee of Elders or an adult member of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Kirrae Whurrong Aboriginal Corporation shall not give a lease of Framlingham Forest or a licence over Framlingham Forest that is for a period of more than 3 years to a person who is not the Crown or a public authority of the State of Victoria or the Commonwealth unless <role refersTo="#minister">the Minister</role> has approved the giving of that lease or licence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-22">
+          <num>22</num>
+          <heading>Rights of access over Framlingham Forest</heading>
+          <subsection eId="part-IV__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Any legal rights of access over Framlingham Forest existing immediately before the day of vesting (other than the right of access provided by the roads shown hatched on the plan in Schedule 2) continue to exist on the same terms and conditions as those on which they existed immediately before the day of vesting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Except as otherwise provided in this Act, a person may, in the performance of functions under this Act or otherwise in accordance with this or any other Act or any law of the State of Victoria, enter and remain in Framlingham Forest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-23">
+          <num>23</num>
+          <heading>By-laws</heading>
+          <subsection eId="part-IV__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Kirrae Whurrong Aboriginal Corporation may make by-laws, not inconsistent with any law of the Commonwealth or the State of Victoria, for or with respect to:</p>
+            </content>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>economic enterprise in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>cultural activities in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the management, access, conservation, fire protection, development and use of Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the declaration of sacred or significant sites or other areas of significance to Aboriginal people in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the activities to be permitted in Framlingham Forest or any part of it;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>protection and conservation of flora and fauna found in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>in relation to Framlingham Forest, the cutting, removal and sale of timber, the granting of revocable licences and the payment of royalties for timber to the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>hunting, shooting and fishing in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>control of visitors in, and charging fees (to be paid to the Corporation) for entrance to, Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-k">
+              <num>k</num>
+              <content>
+                <p>the regulation and control of motor traffic and parking in Framlingham Forest; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-m">
+              <num>m</num>
+              <content>
+                <p>the appointment of persons to enforce the by-laws, and the powers and duties of those persons.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The by-laws may provide that a contravention of a by-law is an offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The regulations may provide, in respect of an offence against the by-laws, for the imposition of:</p>
+            </content>
+            <paragraph eId="part-IV__sec-23__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if the offender is a natural person—a fine not exceeding <quantity refersTo="#penaltyUnit">5 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the offender is a corporation—a fine not exceeding <quantity refersTo="#penaltyUnit">25 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The regulations may make provision for and in relation to enabling a person who is alleged to have committed an offence against the by-laws to pay to the Commonwealth, as an alternative to prosecution, a penalty not exceeding:</p>
+            </content>
+            <paragraph eId="part-IV__sec-23__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of a natural person—<quantity refersTo="#penaltyUnit">1 penalty unit</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of a corporation—<quantity refersTo="#penaltyUnit">5 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the Kirrae Whurrong Aboriginal Corporation makes a by-law, the Community Council shall, <quantity refersTo="#deadline">within 7 days</quantity> after making it, give a copy of the by-law to the Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	For the purposes of the <i>Legislation Act 2003</i>, a by-law made by the Kirrae Whurrong Aboriginal Corporation and received by the Minister is a legislative instrument made by the Minister on the day the by-law is received.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	A by-law made by the Corporation and received by the Minister is stated to be a legislative instrument made by the Minister so that the Minister may perform the functions of a rule-maker in relation to the instrument under the <i>Legislation Act 2003</i>. For example, under that Act a rule-maker for a legislative instrument is required to lodge the instrument (and any amendments and compilations of the instrument) for registration under that Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-24">
+          <num>24</num>
+          <heading>Sacred and significant sites</heading>
+          <subsection eId="part-IV__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Kirrae Whurrong Aboriginal Corporation shall compile a register of sites in Framlingham Forest that are sacred or significant to Aboriginals or any group of Aboriginals and shall record in the register:</p>
+            </content>
+            <paragraph eId="part-IV__sec-24__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if a site has been specifically identified, the boundaries of the site; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-24__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if a site is known to exist but has not been specifically identified, the boundaries of the site as it is known to exist.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Kirrae Whurrong Aboriginal Corporation shall keep the register in a manner that is appropriate to prevent disclosure of its contents without the permission of the Community Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Community Council shall make the register available to <role refersTo="#minister">the Minister</role>, if he or she so requests, for the purposes of considering the making of a declaration under paragraph 30(2)(c).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-25">
+          <num>25</num>
+          <heading>Membership</heading>
+          <subsection eId="part-IV__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person is eligible to be a member of the Kirrae Whurrong Aboriginal Corporation if, and only if, the person has resided on Framlingham Reserve for a continuous period of more than 12 months (whether before or after, or before and after, the commencement of this subsection).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>At least one-half of the members of the Community Council shall be persons who are residents of the Framlingham Reserve.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect notwithstanding anything to the contrary in the <i>Corporations (Aboriginal and </i><i>Torres Strait</i><i> Islander) Act 2006</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Committee of Elders</heading>
+          <subsection eId="part-IV__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Kirrae Whurrong Committee of Elders is that body of persons who are members of the Kirrae Whurrong Aboriginal Corporation and are considered by Aboriginal tradition and practice and by recognition of those Aboriginals living in the Framlingham Forest area to be the Committee of Elders.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>At least one-half of the members of the Kirrae Whurrong Committee of Elders shall be persons who are residents of Framlingham Reserve.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Power of Committee of Elders</heading>
+          <subsection eId="part-IV__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The powers of the Kirrae Whurrong Committee of Elders are:</p>
+            </content>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	subject to <ref href="#sec-25">section 25</ref> and to the <i>Corporations (Aboriginal and Torres Strait Islander) Act 2006</i>, to declare a specified person to be eligible to be a member of the Kirrae Whurrong Aboriginal Corporation or any body created by the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to determine anything with respect to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>matters of spiritual, cultural and religious significance to the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the management or development of any sacred or significant site in Framlingham Forest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the maintenance and application within the Corporation of the traditional lores, customs and practices of the Corporation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the harvesting, taking, use or pursuit of animal and vegetable life (including fish and bird life) found in Framlingham Forest with limitations as to time, volume and circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to hear and determine disputes within the Corporation about breaches of traditional customs, lores and practices.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A decision of the Committee of Elders is final and binding on all members of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Corporation shall act in accordance with the decisions of the Committee of Elders about all matters in respect of which the Committee has power to make decisions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Nothing in this section has effect so as to confer judicial power on the Committee of Elders.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Subject to the <i>Corporations (Aboriginal and Torres Strait Islander) Act 2006</i>, a person is eligible to be a member of the Kirrae Whurrong Aboriginal Corporation or a body created by that Corporation if, and only if, a declaration in force under paragraph (1)(a) so declares.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Winding up</heading>
+          <content>
+            <p>If the Kirrae Whurrong Aboriginal Corporation is wound up and its interest in Framlingham Forest has not been transferred to another Aboriginal and Torres Strait Islander corporation under this Act:</p>
+          </content>
+          <paragraph eId="part-IV__sec-28__para-a">
+            <num>a</num>
+            <content>
+              <p>by force of this Act, that interest in Framlingham Forest is, subject to paragraph (b), vested in the Commonwealth on trust for the benefit of the Aboriginal people of Victoria; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-28__para-b">
+            <num>b</num>
+            <content>
+              <p>the Governor-General shall, to the extent of that interest, execute a deed of grant of an estate in Framlingham Forest:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-28__para-i">
+            <num>i</num>
+            <content>
+              <p>to another Aboriginal and Torres Strait Islander corporation that is approved by <role refersTo="#minister">the Minister</role> and whose members are the descendants of the Kirrae Whurrong (Pertobe) Clan; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-28__para-ii">
+            <num>ii</num>
+            <content>
+              <p>if there is no Aboriginal and Torres Strait Islander corporation as described in subparagraph (i)—to any appropriate Aboriginal and Torres Strait Islander corporation.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Change of ownership of land</heading>
+          <content>
+            <p>		If Framlingham Forest is transferred or granted to another Aboriginal and Torres Strait Islander corporation (the <b><i>transferee corporation</i></b>) in accordance with this Act:</p>
+          </content>
+          <paragraph eId="part-IV__sec-29__para-a">
+            <num>a</num>
+            <content>
+              <p>this Act has effect in relation to the transferee corporation and to Framlingham Forest as if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-29__para-i">
+            <num>i</num>
+            <content>
+              <p>a reference in this Act to the Kirrae Whurrong Aboriginal Corporation were a reference to the transferee corporation; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-29__para-ii">
+            <num>ii</num>
+            <content>
+              <p>references to the Committee of Elders were references to such Committee of Elders as is declared by the Governor-General by Proclamation for the purposes of this section; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-29__para-iii">
+            <num>iii</num>
+            <content>
+              <p>references to the directors of the Corporation were references to the directors of the transferee corporation; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-29__para-b">
+            <num>b</num>
+            <content>
+              <p>the transferee corporation is deemed to be the successor in law of the Corporation or Aboriginal and Torres Strait Islander corporation in or to which Framlingham Forest was last vested or granted and has all the powers, duties, rights and liabilities of that Corporation or Aboriginal and Torres Strait Islander corporation.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Mining</heading>
+        <section eId="part-V__sec-30">
+          <num>30</num>
+          <heading>Mining operations</heading>
+          <subsection eId="part-V__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), a person shall not, under <role refersTo="#authority">the authority</role> of a mining tenement that has been granted, renewed or extended on or after the day of vesting:</p>
+            </content>
+            <paragraph eId="part-V__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>carry out any mining operation on the relevant land; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>enter the relevant land with the intention of carrying out any mining operation.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>for an offence against paragraph (1)(a):</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the person is a natural person—<quantity refersTo="#penaltyUnit">50 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the person is a body corporate—<quantity refersTo="#penaltyUnit">250 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>for an offence against paragraph (1)(b):</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the person is a natural person—<quantity refersTo="#penaltyUnit">10 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the person is a body corporate—<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply in relation to anything done with respect to relevant land if:</p>
+            </content>
+            <paragraph eId="part-V__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Corporation has granted the necessary permission under <ref href="#sec-31">section 31</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> has declared in writing that he or she is satisfied that the Corporation was given a reasonable opportunity to make submissions to the relevant Minister of the Crown of the State of Victoria about the conditions on which the grant, renewal or extension of the mining tenement should be made; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>if <ref href="#sec-34">section 34</ref> applies—<role refersTo="#minister">the Minister</role> has declared in writing that he or she is satisfied that any registered sacred or significant site has been appropriately protected.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-30__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Regulations made for the purposes of <ref href="#sec-124">section 124</ref> of the <i>Lands Acquisition Act 1989 </i>do not apply to the relevant land.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-31">
+          <num>31</num>
+          <heading>Permission to carry out mining operation</heading>
+          <subsection eId="part-V__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who has applied for a mining tenement, or for the renewal variation or extension of a mining tenement, in relation to the relevant land may, with the approval of <role refersTo="#minister">the Minister</role>, apply to the Corporation for permission to carry out the operations to which the first-mentioned application relates.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An application:</p>
+            </content>
+            <paragraph eId="part-V__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>shall be in writing;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall be lodged with the Corporation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>shall include or be accompanied by all the information submitted by the applicant in support of the application for or relating to the mining tenement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the Corporation so requests, the applicant shall supply it with any further information in writing that it reasonably requires so that it can decide whether to grant the application.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-4">
+            <num>4</num>
+            <content>
+              <p>As soon as practicable after applying for permission, or after supplying any further information to the Corporation, the applicant shall give <role refersTo="#minister">the Minister</role> a copy of the application, or of the further information.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-5">
+            <num>5</num>
+            <content>
+              <p>After receiving an application for permission, the Corporation may:</p>
+            </content>
+            <paragraph eId="part-V__sec-31__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>refuse permission;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>grant permission without any conditions; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>grant permission on any conditions that it considers appropriate and are not inconsistent with any law of the State or the Commonwealth in force in Victoria.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-6">
+            <num>6</num>
+            <content>
+              <p>As soon as practicable after granting or refusing permission, the Corporation shall give notice in writing to the applicant of that decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The applicant shall, <quantity refersTo="#deadline">within 7 days</quantity> after receiving the notice, give a copy of the notice to the Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-8">
+            <num>8</num>
+            <content>
+              <p>If, at the end of 120 days after applying, an applicant has not received notice from the Corporation of its decision on the application, the Corporation shall be deemed to have made a decision to refuse permission.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The Corporation may require the applicant to pay a reasonable fee for expenses incurred by it in processing the application.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-10">
+            <num>10</num>
+            <content>
+              <p>If the Corporation receives fees from an applicant and later grants permission to the applicant on the condition that the applicant give any payment or other consideration to the Corporation, the Corporation shall treat the amount of the costs and expenses received as payment towards the payment or consideration.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-32">
+          <num>32</num>
+          <heading>Payments and other consideration</heading>
+          <subsection eId="part-V__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-V__sec-32__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Corporation grants permission to a person to carry out mining operations;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-32__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person agrees to the conditions on which the permission is granted; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-32__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the conditions provide that the person gives any payment or other consideration to the Corporation;</p>
+              </content>
+              <content>
+                <p>the person shall, <quantity refersTo="#deadline">within 14 days</quantity> after agreeing to the conditions, notify the Minister of the terms of the agreement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The payment or other consideration:</p>
+            </content>
+            <paragraph eId="part-V__sec-32__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>shall be reasonable for any disturbance to the relevant land and to the traditional owners of the land and their lifestyle that has resulted or is likely to result from the granting of a mining tenement;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-32__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	in the case of an application for a licence or permit referred to in paragraph (a) of the definition of<b><i> mining tenement</i></b> in <ref href="#sec-3">section 3</ref>—shall not exceed any amount that would have become payable as compensation under an Act of Victoria mentioned in that paragraph in respect of any operations carried out under that licence or permit; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-32__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>in the case of an application for a lease, licence, permit or other authority referred to in paragraph (b) of that definition—may exceed any amount that would have become payable as compensation under an Act of Victoria mentioned in that paragraph in respect of any operations carried on under that lease, licence, permit or other authority.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-33">
+          <num>33</num>
+          <heading>Conciliation and review</heading>
+          <subsection eId="part-V__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If an applicant under <ref href="#sec-31">section 31</ref> notifies <role refersTo="#minister">the Minister</role> that the Corporation has granted permission on any conditions to which the applicant objects, or has refused permission, <role refersTo="#minister">the Minister</role> shall arrange to meet with the Corporation and the applicant to attempt to resolve the matter by conciliation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If, at the end of the conciliation proceedings, the conciliation is unsuccessful, the applicant and the Corporation shall, <quantity refersTo="#deadline">within 60 days</quantity> thereafter, appoint an arbitrator to review the decision of the Corporation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-V__sec-33__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the applicant and the Corporation are unable to appoint an arbitrator within that period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the applicant requests <role refersTo="#minister">the Minister</role> to appoint an arbitrator;</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> shall appoint an arbitrator, being a person whom <role refersTo="#minister">the Minister</role> considers to be in a position to deal with the matter impartially.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-33__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In reviewing the decision of the Corporation, the arbitrator shall consider the following factors:</p>
+            </content>
+            <paragraph eId="part-V__sec-33__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the effect that the entry onto the relevant land and the carrying out of mining operations on the land would have on:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>the preservation and protection of the lifestyle, culture and traditions of the traditional owners of the land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the proposals and wishes of the traditional owners of the land about its management, use and control;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the development of the social, cultural and economic structures of the traditional owners; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the freedom of access of the traditional owners of the land and their freedom to carry out, in accordance with tradition, rites, ceremonies and other activities on the land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the suitability of the applicant to carry out the proposed mining operations and the applicant’s capacity, in carrying out those operations, to minimise any disturbance to the traditional owners and the land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the preservation of the natural environment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>the economic and any other significance of the proposed mining operations to the State of Victoria and to the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-33__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The arbitrator shall make a decision:</p>
+            </content>
+            <paragraph eId="part-V__sec-33__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>confirming the decision of the Corporation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>varying the decision of the Corporation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-33__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>setting aside the decision of the Corporation and making a decision (being a decision that the Corporation could have made under this section) in substitution for the decision of the Corporation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-33__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The decision of the Corporation as varied by the arbitrator, or a decision made by the arbitrator in substitution for the decision of the Corporation shall, except for the purposes of subsection (2), be deemed to be a decision of the Corporation and has effect, unless the arbitrator otherwise determines, on and from the day on which the decision of the Corporation had effect.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-34">
+          <num>34</num>
+          <heading>Sacred or significant sites</heading>
+          <subsection eId="part-V__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If a person applies for a mining tenement in relation to relevant land after the day of vesting, <role refersTo="#minister">the Minister</role> shall consult with the Corporation to ascertain whether the land to which the application relates includes the whole or part of any sacred or significant site registered under <ref href="#sec-16">section 16</ref> or 24.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If <role refersTo="#minister">the Minister</role> is satisfied that the land does include the whole or part of a registered sacred or significant site:</p>
+            </content>
+            <paragraph eId="part-V__sec-34__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> shall give the applicant any information about the site and its location that <role refersTo="#minister">the Minister</role> considers appropriate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-34__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the Corporation shall be deemed to have advised the Minister under <ref href="#part-II">Part II</ref>A of the <i>Aboriginal and </i><i>Torres Strait</i><i> Islanders Heritage Protection Act 1984 </i>that it considers that a declaration under <ref href="#sec-21E">section 21E</ref> of that Act should be made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Unless <role refersTo="#minister">the Minister</role> otherwise determines in a particular case, this section does not apply in relation to the renewal or extension of a mining tenement.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-35">
+          <num>35</num>
+          <heading>Offences</heading>
+          <content>
+            <p>A person shall not, without the consent of <role refersTo="#minister">the Minister</role>, give or offer, or agree to give or offer, any payment or other consideration (not being payment or other consideration given as a complete or partial discharge of a liability under this Act or payment of a royalty under this Act for any minerals recovered from the relevant land) with the intention of obtaining the permission of the Corporation to carry out any mining operation on the relevant land.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:</p>
+            </content>
+          </hcontainer>
+          <paragraph eId="part-V__sec-35__para-a">
+            <num>a</num>
+            <content>
+              <p>if the person is a natural person—<quantity refersTo="#penaltyUnit">20 penalty units</quantity>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-35__para-b">
+            <num>b</num>
+            <content>
+              <p>if the person is a body corporate—<quantity refersTo="#penaltyUnit">100 penalty units</quantity>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-36">
+          <num>36</num>
+          <heading>Entry onto relevant land and mining tenements</heading>
+          <content>
+            <p>Subject to <ref href="#sec-30">section 30</ref>, if the Corporation grants permission to a person to carry out any mining operation on the relevant land, the person and the person’s agents, contractors and employees, may enter the relevant land:</p>
+          </content>
+          <paragraph eId="part-V__sec-36__para-a">
+            <num>a</num>
+            <content>
+              <p>for the purpose of carrying out the mining operation; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-36__para-b">
+            <num>b</num>
+            <content>
+              <p>subject to any conditions upon which permission is granted; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-36__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	subject to the <i>Mineral Resources Development Act</i> 1990<i> </i>of Victoria, the <i>Petroleum Act </i>1958<i> </i>of Victoria and the <i>Extractive Industries Act </i>1966<i> </i>of Victoria, but without requiring any further permission to enter the land under any of those Acts.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-37">
+          <num>37</num>
+          <heading>Offences by corporations</heading>
+          <subsection eId="part-V__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, in proceedings for an offence against this Act in respect of any conduct engaged in by a corporation, it is necessary to establish the state of mind of the corporation, it is sufficient to show that a director, employee or agent of the corporation, being a director, employee or agent by whom the conduct was engaged in within the scope of actual or apparent authority, had that state of mind.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any conduct engaged in on behalf of a corporation:</p>
+            </content>
+            <paragraph eId="part-V__sec-37__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>by a director, employee or agent of the corporation within the scope of actual or apparent authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-37__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>by any other person at the direction or with the consent or agreement (whether express or implied) of a director, employee or agent of the corporation, where the giving of such direction, consent or agreement is within the scope of the actual or apparent authority of the director, employee or agent;</p>
+              </content>
+              <content>
+                <p>shall be deemed, for the purposes of any proceedings for an offence against this Act, to have been engaged in by the corporation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A reference in subsection (1) to the state of mind of a person includes a reference to the knowledge, intention, opinion, belief or purpose of the person and the person’s reasons for the intention, opinion, belief or purpose.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Funding</heading>
+        <section eId="part-VI__sec-38">
+          <num>38</num>
+          <heading>Aboriginal Advancement Account</heading>
+          <subsection eId="part-VI__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Aboriginal Advancement Account is established for the purpose of furthering the social and economic advancement of Aboriginal people living in Victoria.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Account is a special account for the purposes of the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>There must be credited to the Account amounts determined by the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Amounts standing to the credit of the Account must be debited from the Account for the purposes of the making by the Commonwealth of payments to further the social and economic advancement of Aboriginal people living in Victoria.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If interest is received by the Commonwealth from the investment of an amount standing to the credit of the Account, an amount equal to the interest must be credited to the Account.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-38A">
+          <num>38A</num>
+          <heading>Notional accounts within the Aboriginal Advancement Account</heading>
+          <subsection eId="part-VI__sec-38A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The regulations may create separate notional accounts within the Aboriginal Advancement Account in the name of particular Aboriginal groups living in Victoria.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Amounts determined in accordance with the regulations must be credited to the notional accounts. To avoid doubt, amounts that may be so determined include amounts required to be credited to the Aboriginal Advancement Account under subsection 38(5).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Amounts standing to the credit of a notional account must be debited from the account for the purposes of the making by the Commonwealth of payments to further the social and economic advancement of the Aboriginal group in whose name the notional account was created.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VII__sec-39">
+          <num>39</num>
+          <heading>Exemption from land tax</heading>
+          <content>
+            <p>		The Condah land and Framlingham Forest are exempt from land tax under the <i>Land Tax Act </i>1958<i> </i>of Victoria.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-40">
+          <num>40</num>
+          <heading>Compensation for acquisition of property</heading>
+          <subsection eId="part-VII__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, but for this section, the operation of this Act would result in the acquisition of property from a person otherwise than on just terms, there is payable to the person by the Commonwealth such reasonable amount of compensation as is agreed upon between the person and the Commonwealth or, failing agreement, as is determined by the Federal Court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In subsection (1), <b><i>acquisition of property</i></b> and <b><i>just terms</i></b> have the same respective meanings as in paragraph 51(xxxi) of the Constitution.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-41">
+          <num>41</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing matters:</p>
+          </content>
+          <paragraph eId="part-VII__sec-41__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-41__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+    <attachments>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-1">
+          <num>1</num>
+          <heading>Land in the Parish of Condah to be vested in the Kerrup-Jmara Elders Aboriginal Corporation</heading>
+          <content>
+            <p>Section 6</p>
+            <p>
+              <ref href="#part-A">Part A</ref>
+            </p>
+            <p>
+              <ref href="#part-B">Part B</ref>
+            </p>
+          </content>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-2">
+          <num>2</num>
+          <heading>Land in the Parish of Purnim to be vested in the Kirrae Whurrong Aboriginal Corporation</heading>
+          <content>
+            <p>Section 7</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <td>ad = added or inserted</td>
+              <td>o = order(s)</td>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <td>Act</td>
+              <td>Number and year</td>
+              <td>Assent</td>
+              <td>Commencement</td>
+              <td>Application, saving and transitional provisions</td>
+            </tr>
+            <tr>
+              <td>Aboriginal Land (Lake Condah and Framlingham Forest) Act 1987</td>
+              <td>34, 1987</td>
+              <td>2 June 1987</td>
+              <td>s 1–5: 2 June 1987 (s 2(1))
+s 6–41, Sch 1, 2: 1 July 1987 (s 2(2) and gaz 1987, No S157)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Statutory Instruments (Tabling and Disallowance) Legislation Amendment Act 1988</td>
+              <td>99, 1988</td>
+              <td>2 Dec 1988</td>
+              <td>2 Dec 1988</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Lands Acquisition (Repeal and Consequential Provisions) Act 1989</td>
+              <td>21, 1989</td>
+              <td>20 Apr 1989</td>
+              <td>9 June 1989 (s 2 and gaz 1989, No S186)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Aboriginal and Torres Strait Islander Commission Act 1989</td>
+              <td>150, 1989</td>
+              <td>27 Nov 1989</td>
+              <td>5 Mar 1990 (gaz 1990, No S48)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Aboriginal Land (Lake Condah and Framlingham Forest) Amendment Act 1994</td>
+              <td>99, 1994</td>
+              <td>30 June 1994</td>
+              <td>30 June 1994</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+              <td>152, 1997</td>
+              <td>24 Oct 1997</td>
+              <td>Sch 2 (items 94–112): 1 Jan 1998 (s 2(2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Judiciary Amendment Act 1999</td>
+              <td>7, 1999</td>
+              <td>31 Mar 1999</td>
+              <td>Sch 1–3: 1 Sept 1999 (gaz 1999, No. S395)
+Remainder: 31 Mar 1999</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Reconciliation and Aboriginal and Torres Strait Islander Affairs Legislation Amendment (Application of Criminal Code) Act 2001</td>
+              <td>112, 2001</td>
+              <td>17 Sept 2001</td>
+              <td>15 Oct 2001</td>
+              <td>s 4</td>
+            </tr>
+            <tr>
+              <td>Financial Framework Legislation Amendment Act 2005</td>
+              <td>8, 2005</td>
+              <td>22 Feb 2005</td>
+              <td>s 4 and Sch 1 (items 58, 496): 22 Feb 2005</td>
+              <td>s 4 and Sch 1 (item 496)</td>
+            </tr>
+            <tr>
+              <td>Aboriginal and Torres Strait Islander Commission Amendment Act 2005</td>
+              <td>32, 2005</td>
+              <td>22 Mar 2005</td>
+              <td>Sch 4 (items 5, 6): 24 Mar 2005</td>
+              <td>Sch 4 (item 6)</td>
+            </tr>
+            <tr>
+              <td>Financial Framework Legislation Amendment Act (No. 1) 2006</td>
+              <td>30, 2006</td>
+              <td>6 Apr 2006</td>
+              <td>Sch 1 (item 20): 7 Apr 2006</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Corporations (Aboriginal and Torres Strait Islander) Consequential, Transitional and Other Measures Act 2006</td>
+              <td>125, 2006</td>
+              <td>4 Nov 2006</td>
+              <td>Sch 1–3: 1 July 2007 (s 2(1)) Remainder: 4 Nov 2006</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Aboriginal and Torres Strait Islander Heritage Protection Amendment Act 2006</td>
+              <td>152, 2006</td>
+              <td>7 Dec 2006</td>
+              <td>Sch 1: 8 Dec 2006
+Sch 2: 28 May 2007 (F2007L01489) Remainder: 7 Dec 2006</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+              <td>62, 2014</td>
+              <td>30 June 2014</td>
+              <td>Sch 7 (item 53) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+              <td>Sch 14</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+              <td>36, 2015</td>
+              <td>13 Apr 2015</td>
+              <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+              <td>Sch 7</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act (No.1) 2015</td>
+              <td>5, 2015</td>
+              <td>25 Mar 2015</td>
+              <td>Sch 3 (item 8): 25 Mar 2015 (s 2(1) item 10)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) Act 2015</td>
+              <td>10, 2015</td>
+              <td>5 Mar 2015</td>
+              <td>Sch 3 (items 4, 5, 348, 349): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>Sch 3 (items 348, 349)</td>
+            </tr>
+            <tr>
+              <td>Statute Update Act 2016</td>
+              <td>61, 2016</td>
+              <td>23 Sept 2016</td>
+              <td>Sch 1 (items 12–24): 21 Oct 2016 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <td>Provision affected</td>
+              <td>How affected</td>
+            </tr>
+            <tr>
+              <td>Part I</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 3</td>
+              <td>am No. 99, 1994; No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 4A</td>
+              <td>ad No. 112, 2001</td>
+            </tr>
+            <tr>
+              <td>s 5</td>
+              <td>am No. 150, 1989; No. 32, 2005</td>
+            </tr>
+            <tr>
+              <td>Part II</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 10</td>
+              <td>am No. 7, 1999</td>
+            </tr>
+            <tr>
+              <td>s 11</td>
+              <td>am No. 21, 1989</td>
+            </tr>
+            <tr>
+              <td>s 12</td>
+              <td>am No. 21, 1989</td>
+            </tr>
+            <tr>
+              <td>Part III</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 13</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 15</td>
+              <td>am No. 99, 1988; No. 125, 2006; No 10, 2015; No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 16</td>
+              <td>am No. 125, 2006; No. 152, 2006</td>
+            </tr>
+            <tr>
+              <td>s 18</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 19</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 20</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>Part IV</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 21</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 23</td>
+              <td>am No. 99, 1988; No 10, 2015; No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 24</td>
+              <td>am No. 152, 2006</td>
+            </tr>
+            <tr>
+              <td>s 25</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 27</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 28</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>s 29</td>
+              <td>am No. 125, 2006</td>
+            </tr>
+            <tr>
+              <td>Part V</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 30</td>
+              <td>am No. 21, 1989; No. 112, 2001; No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 35</td>
+              <td>am No. 112, 2001; No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 36</td>
+              <td>am No. 99, 1994</td>
+            </tr>
+            <tr>
+              <td>s37</td>
+              <td>am No 5, 2015</td>
+            </tr>
+            <tr>
+              <td>Part VI</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Heading to Part VI</td>
+              <td>rs No. 152, 1997</td>
+            </tr>
+            <tr>
+              <td>s 38</td>
+              <td>am No. 152, 1997</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No. 8, 2005; No. 30, 2006</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 38A</td>
+              <td>ad No. 30, 2006</td>
+            </tr>
+          </table>
+        </hcontainer>
+      </attachment>
+    </attachments>
+  </act>
+</akomaNtoso>

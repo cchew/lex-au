@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1988/54/!main"/>
+          <FRBRuri value="/akn/au/act/1988/54"/>
+          <FRBRdate date="1988-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="54"/>
+          <FRBRname value="aviation-fuel-revenues-(special-appropriation)-act-1988"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1988/54/eng@2013-12-01/!main"/>
+          <FRBRuri value="/akn/au/act/1988/54/eng@2013-12-01"/>
+          <FRBRdate date="2013-12-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1988/54/eng@2013-12-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1988/54/eng@2013-12-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1988-01-01" type="generation" eId="evt-creation" source="#aviation-fuel-revenues-(special-appropriation)-act-1988"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1992/73" date="1992-06-26"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1993/87"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1995/82" date="1995-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1999/97" date="1999-07-16"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2000/125"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2006/74" date="2006-06-26"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2014/110" date="2014-10-16"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-3">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-4">
+            <source href="#evt-amd-4"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-5">
+            <source href="#evt-amd-5"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-6">
+            <source href="#evt-amd-6"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-7">
+            <source href="#evt-amd-7"/>
+            <destination href="#sec-3"/>
+          </textualMod>
+          <textualMod type="insertion" eId="mod-8">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-3A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-9">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-3A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-10">
+            <source href="#evt-amd-4"/>
+            <destination href="#sec-3A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-11">
+            <source href="#evt-amd-7"/>
+            <destination href="#sec-3A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-12">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-13">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-14">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-15">
+            <source href="#evt-amd-4"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-aa" href="/ontology/term/au/term-aa" showAs="AA"/>
+        <TLCTerm eId="term-aviation-fuel" href="/ontology/term/au/term-aviation-fuel" showAs="aviation fuel"/>
+        <TLCTerm eId="term-aviation-gasoline" href="/ontology/term/au/term-aviation-gasoline" showAs="aviation gasoline"/>
+        <TLCTerm eId="term-aviation-kerosene" href="/ontology/term/au/term-aviation-kerosene" showAs="aviation kerosene"/>
+        <TLCTerm eId="term-casa" href="/ontology/term/au/term-casa" showAs="CASA"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p></p>
+      <p>Aviation Fuel Revenues (Special Appropriation) Act 1988</p>
+      <p>No. 54, 1988 as amended</p>
+      <p><b>Compilation start date: </b><b>	</b><b>	</b>1 December 2013</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 110, 2014</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Aviation Fuel Revenues (Special Appropriation) Act 1988</i> as in force on 1 December 2013. It includes any commenced amendment affecting the legislation to that date.</p>
+      <p>This compilation was prepared on <date date="2014-10-22">22 October 2014</date>.</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of each amended provision.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in the endnotes.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If a provision of the compiled law is affected by a modification that is in force, details are included in the endnotes.</p>
+      <p><b>Provisions ceasing to have effect</b></p>
+      <p>If a provision of the compiled law has expired or otherwise ceased to have effect in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>3A	Minister may fix special rates	2</p>
+      <p>4	Money to be paid to AA and CASA in relation to eligible aviation fuel	2</p>
+      <p>Endnotes	4</p>
+      <p>Endnote 1—About the endnotes	4</p>
+      <p>Endnote 2—Abbreviation key	6</p>
+      <p>Endnote 3—Legislation history	7</p>
+      <p>Endnote 4—Amendment history	9</p>
+      <p>Endnote 5—Uncommenced amendments [none]	10</p>
+      <p>Endnote 6—Modifications [none]	10</p>
+      <p>Endnote 7—Misdescribed amendments [none]	10</p>
+      <p>Endnote 8—Miscellaneous [none]	10</p>
+      <p>An Act to appropriate certain aviation fuel revenues for Airservices Australia and the Civil Aviation Safety Authority</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Aviation Fuel Revenues (Special Appropriation) Act 1988</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <content>
+          <p>This Act commences on the day on which it receives the Royal Assent.</p>
+        </content>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Interpretation</heading>
+        <content>
+          <p>In this Act:</p>
+          <p><term refersTo="#term-aa">AA</term> means <def>Airservices Australia established by <ref href="">the Air Services Act 1995</ref>.</def></p>
+          <p><term refersTo="#term-aviation-fuel">aviation fuel</term> means <def>aviation gasoline and aviation kerosene.</def></p>
+          <p><term refersTo="#term-aviation-gasoline">aviation gasoline</term> means <def>gasoline classified to subitem 10.6 of <ref href="/akn/au/act/schedule-to-the-excise-tariff-act-1921" class="unresolved">the Schedule to the Excise Tariff Act 1921</ref> (about gasoline for use as fuel in aircraft).</def></p>
+          <p><term refersTo="#term-aviation-kerosene">aviation kerosene</term> means <def>kerosene classified to subitem 10.17 of <ref href="/akn/au/act/schedule-to-the-excise-tariff-act-1921" class="unresolved">the Schedule to the Excise Tariff Act 1921</ref> (about kerosene for use as fuel in aircraft).</def></p>
+          <p><term refersTo="#term-casa">CASA</term> means <def><ref href="/akn/au/act/civil-aviation-safety-authority-established-by-the-civil-aviation-act-1988" class="unresolved">the Civil Aviation Safety Authority established by the Civil Aviation Act 1988</ref>.</def></p>
+          <p><b><i>eligible aviation fuel</i></b> means:</p>
+        </content>
+        <paragraph eId="sec-3__para-a">
+          <num>a</num>
+          <content>
+            <p>aviation gasoline entered for home consumption on or after <date date="1988-07-01">1 July 1988</date>; and</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-b">
+          <num>b</num>
+          <content>
+            <p>aviation kerosene entered for home consumption on or after <date date="1999-05-12">12 May 1999</date>.</p>
+          </content>
+          <content>
+            <p><b><i>statutory rate</i></b>, in relation to an amount paid to the Commonwealth as duty of Excise or duty of Customs in relation to eligible aviation fuel, means the lowest of whichever of the following rates is applicable:</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-a">
+          <num>a</num>
+          <content>
+            <p>if a determination under subsection 3A(1) was in force at the time duty was imposed on the eligible aviation fuel—the rate fixed by that determination;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-b">
+          <num>b</num>
+          <content>
+            <p>	(b)	in the case of duty of Excise—the rate of duty imposed on the eligible aviation fuel under the <i>Excise Tariff Act 1921</i>;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-c">
+          <num>c</num>
+          <content>
+            <p>	(c)	in the case of duty of Customs—the rate that would have been the rate of duty of Excise imposed on the eligible aviation fuel under the <i>Excise Tariff Act 1921 </i>if the eligible aviation fuel had been subject to duty of Excise instead of duty of Customs;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-d">
+          <num>d</num>
+          <content>
+            <p>if a determination under subsection 3A(2) was in force at the time duty was imposed on the eligible aviation fuel—the rate fixed by that determination.</p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-3A">
+        <num>3A</num>
+        <heading>Minister may fix special rates</heading>
+        <subsection eId="sec-3A__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	The Minister may make a written determination fixing a rate for the purposes of paragraph (a) of the definition of <b><i>statutory rate</i></b> in <ref href="#sec-3">section 3</ref>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-3A__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	The Minister may make a written determination fixing a rate for the purposes of paragraph (d) of the definition of <b><i>statutory rate</i></b> in <ref href="#sec-3">section 3</ref>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-3A__subsec-3">
+          <num>3</num>
+          <content>
+            <p>A determination under subsection (1) or (2) may provide that a rate is to be fixed using a method of indexation set out in the determination.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Money to be paid to AA and CASA in relation to eligible aviation fuel</heading>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>For each amount paid to the Commonwealth as a duty of Excise or duty of Customs in relation to eligible aviation fuel, AA and CASA are each entitled to be paid a share of the amount calculated using the formula:</p>
+          </content>
+          <figure>
+            <img src="corpus/images/aviation-fuel-revenues-(special-appropriation)-act-1988-fig-1.png" alt=""/>
+          </figure>
+          <content>
+            <p>where:</p>
+            <p><b><i>Statutory rate</i></b> means the statutory rate in relation to the amount paid to the Commonwealth.</p>
+            <p><b><i>Litres of eligible aviation fuel</i></b> means the number of litres of eligible aviation fuel by reference to which the amount paid to the Commonwealth was calculated.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-1A">
+          <num>1A</num>
+          <content>
+            <p>The respective shares of AA and CASA of a payment under subsection (1) are to be determined by <role refersTo="#minister">the Minister</role>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Where the whole or a part of an amount paid as duty of Excise or duty of Customs in relation to eligible aviation fuel is repaid by the Commonwealth to a person by way of rebate or otherwise, there shall be deducted from the sum of the amounts that would, but for this subsection, be paid under subsection (1) an amount calculated using the formula:</p>
+          </content>
+          <figure>
+            <img src="corpus/images/aviation-fuel-revenues-(special-appropriation)-act-1988-fig-2.png" alt=""/>
+          </figure>
+          <content>
+            <p>where:</p>
+            <p><b><i>Statutory rate</i></b> means the statutory rate in relation to the amount paid to the Commonwealth.</p>
+            <p><b><i>Litres of eligible aviation fuel</i></b> means the number of litres of eligible aviation fuel by reference to which the amount repaid by the Commonwealth was calculated.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-3">
+          <num>3</num>
+          <content>
+            <p>For the purposes of subsections (1) and (2), where 2 or more parts of an amount paid as duty were ascertained by reference to different rates of duty, each of the parts shall be taken to be a separate amount paid as duty.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-4">
+          <num>4</num>
+          <content>
+            <p>Amounts payable under subsection (1) are payable out of the Consolidated Revenue Fund, which is appropriated accordingly.</p>
+          </content>
+          <content>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide details of the history of this legislation and its provisions. The following endnotes are included in each compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p>Endnote 5—Uncommenced amendments</p>
+            <p>Endnote 6—Modifications</p>
+            <p>Endnote 7—Misdescribed amendments</p>
+            <p>Endnote 8—Miscellaneous</p>
+            <p>If there is no information under a particular endnote, the word “none” will appear in square brackets after the endnote heading.</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key in this endnote sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended the compiled law. The information includes commencement information for amending laws and details of application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision level. It also includes information about any provisions that have expired or otherwise ceased to have effect in accordance with a provision of the compiled law.</p>
+            <p><b>Uncommenced amendments—Endnote 5</b></p>
+            <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in endnote 5.</p>
+            <p><b>Modifications—Endnote 6</b></p>
+            <p>If the compiled law is affected by a modification that is in force, details of the modification are included in endnote 6.</p>
+            <p><b>Misdescribed amendments—Endnote 7</b></p>
+            <p>An amendment is a misdescribed amendment if the effect of the amendment cannot be incorporated into the text of the compilation. Any misdescribed amendment is included in endnote 7.</p>
+            <p><b>Miscellaneous—Endnote 8</b></p>
+            <p>Endnote 8 includes any additional information that may be helpful for a reader of the compilation.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>pres = present</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>(prev) = previously</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>Reg = Regulation/Regulations</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>exp = expired or ceased to have effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>hdg = heading(s)</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>LI = Legislative Instrument</td>
+              <td>s = section(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>No = Number(s)</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>o = order(s)</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>Ord = Ordinance</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>orig = original</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>par = paragraph(s)/subparagraph(s)
+/sub-subparagraph(s)</td>
+              <td></td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Aviation Fuel Revenues (Special Appropriation) Act 1988</td>
+              <td>54, 1988</td>
+              <td>15 June 1988</td>
+              <td>15 June 1988</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Aviation Fuel Revenues (Special Appropriation) Amendment Act 1992</td>
+              <td>73, 1992</td>
+              <td>26 June 1992</td>
+              <td>26 June 1992</td>
+              <td>ss. 7 and 8</td>
+            </tr>
+            <tr>
+              <td>Aviation Fuel Revenues (Special Appropriation) Amendment Act 1993</td>
+              <td>87, 1993</td>
+              <td>30 Nov 1993</td>
+              <td>30 Nov 1993</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Civil Aviation Legislation Amendment Act 1995</td>
+              <td>82, 1995</td>
+              <td>30 June 1995</td>
+              <td>s. 5 (items 2–10): 6 July 1995 (see Gazette 1995, No. S270) (a)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Civil Aviation Legislation Amendment Act 1998</td>
+              <td>1, 1998</td>
+              <td>24 Mar 1998</td>
+              <td>Schedule 3 (item 1): 6 July 1995 (b)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Aviation Fuel Revenues (Special Appropriation) Amendment Act 1999</td>
+              <td>97, 1999</td>
+              <td>16 July 1999</td>
+              <td>16 July 1999</td>
+              <td>Sch. 1 (items 5, 6)</td>
+            </tr>
+            <tr>
+              <td>Petroleum Excise Amendment (Measures to Address Evasion) Act 2000</td>
+              <td>125, 2000</td>
+              <td>26 Oct 2000</td>
+              <td>Schedule 1: Royal Assent (c)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Excise Laws Amendment (Fuel Tax Reform and Other Measures) Act 2006</td>
+              <td>74, 2006</td>
+              <td>26 June 2006</td>
+              <td>Schedule 1: (items 2, 3): 1 July 2006</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Tax and Superannuation Laws Amendment (2014 Measures No. 4) Act 2014</td>
+              <td>110, 2014</td>
+              <td>16 Oct 2014</td>
+              <td>Sch 5 (items 77–83): 1 Dec 2013 (s 2(1) item 6)</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <paragraph eId="sec-4__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>Aviation Fuel Revenues (Special Appropriation) Act 1</i>9<i>88</i>  was amended by <ref href="#sec-5">section 5</ref> (items 2–10) of the <i>Civil Aviation Legislation Amendment Act 1995</i>, subsection 2(1) of which provides as follows:</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Subject to this section, this Act commences on:</p>
+          </content>
+          <paragraph eId="sec-4__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>a day to be fixed by Proclamation; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>the first day after the end of the period of 6 months beginning on the day on which this Act receives the Royal Assent;</p>
+            </content>
+            <content>
+              <p>whichever is earlier.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p><i>(b)</i>	The <i>Aviation Fuel Revenues (Special Appropriation) Act 1988 </i>was amended by Schedule 3 (item 1) of the <i>Civil Aviation Legislation Amendment Act 1998</i>, subsection 2(3) of which provides as follows:</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	Schedule 3 is taken to have commenced on 6 July 1995, immediately after the commencement of item 7 of Schedule 3 to the <i>Civil Aviation Legislation Amendment Act 1995</i>.</p>
+          </content>
+          <paragraph eId="sec-4__subsec-3__para-c">
+            <num>c</num>
+            <content>
+              <p><i>(c)</i>	The <i>Aviation Fuel Revenues (Special Appropriation) Act 1988 </i>was amended by Schedule 1 only of the <i>Petroleum Excise Amendment (Measures to Address Evasion) Act 2000</i>, subsection 2(1) of which provides as follows:</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>This Act, other than item 5 of Schedule 2, commences on the day on which it receives the Royal Assent.</p>
+          </content>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td>am. No. 82, 1995</td>
+            </tr>
+            <tr>
+              <td>s. 3</td>
+              <td>am. No. 73, 1992; No. 87, 1993; No. 82, 1995; No. 97, 1999; No. 125, 2000; No. 74, 2006; No 110, 2014</td>
+            </tr>
+            <tr>
+              <td>Heading to s. 3A</td>
+              <td>rs. No. 82, 1995</td>
+            </tr>
+            <tr>
+              <td>s. 3A</td>
+              <td>ad. No. 73, 1992</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am. No. 82, 1995; No. 97, 1999; No 110, 2014</td>
+            </tr>
+            <tr>
+              <td>Heading to s. 4</td>
+              <td>am. No. 82, 1995</td>
+            </tr>
+            <tr>
+              <td>s. 4</td>
+              <td>am. No. 73, 1992; No. 87, 1993; No. 82, 1995 (as am. by No. 1, 1998); No. 97, 1999</td>
+            </tr>
+            <tr>
+              <td>s. 5</td>
+              <td>am. No. 73, 1992</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 110, 2014</td>
+            </tr>
+            <tr>
+              <td>Heading to s. 6</td>
+              <td>am. No. 82, 1995
+rep. No. 97, 1999</td>
+            </tr>
+            <tr>
+              <td>s. 6</td>
+              <td>ad. No. 87, 1993</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am. No. 82, 1995</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep. No. 97, 1999</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 5—Uncommenced amendments [none]</p>
+            <p>Endnote 6—Modifications [none]</p>
+            <p>Endnote 7—Misdescribed amendments [none]</p>
+            <p>Endnote 8—Miscellaneous [none]</p>
+          </content>
+        </subsection>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

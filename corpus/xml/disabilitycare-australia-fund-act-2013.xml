@@ -1,0 +1,2947 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2013/37/!main"/>
+          <FRBRuri value="/akn/au/act/2013/37"/>
+          <FRBRdate date="2013-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="37"/>
+          <FRBRname value="disabilitycare-australia-fund-act-2013"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2013/37/eng@2024-07-06/!main"/>
+          <FRBRuri value="/akn/au/act/2013/37/eng@2024-07-06"/>
+          <FRBRdate date="2024-07-06" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2013/37/eng@2024-07-06/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2013/37/eng@2024-07-06/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2013-01-01" type="generation" eId="evt-creation" source="#disabilitycare-australia-fund-act-2013"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2015/117" date="2015-08-26"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2015/126" date="2015-09-10"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2018/146" date="2018-11-30"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2019/56" date="2019-07-30"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2019/91" date="2019-10-28"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2022/27" date="2022-04-01"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2022/65" date="2022-11-29"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2023/81" date="2023-09-28"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2024/54" date="2024-07-05"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-acquire" href="/ontology/term/au/term-acquire" showAs="acquire"/>
+        <TLCTerm eId="term-agency" href="/ontology/term/au/term-agency" showAs="Agency"/>
+        <TLCTerm eId="term-appropriation-act" href="/ontology/term/au/term-appropriation-act" showAs="Appropriation Act"/>
+        <TLCTerm eId="term-balance-of-the-disabilitycare-australia-fund" href="/ontology/term/au/term-balance-of-the-disabilitycare-australia-fund" showAs="balance of the DisabilityCare Australia Fund"/>
+        <TLCTerm eId="term-bank" href="/ontology/term/au/term-bank" showAs="bank"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-debenture" href="/ontology/term/au/term-debenture" showAs="debenture"/>
+        <TLCTerm eId="term-derivative" href="/ontology/term/au/term-derivative" showAs="derivative"/>
+        <TLCTerm eId="term-disabilitycare-australia-fund" href="/ontology/term/au/term-disabilitycare-australia-fund" showAs="DisabilityCare Australia Fund"/>
+        <TLCTerm eId="term-disabilitycare-australia-fund-investment-mandate" href="/ontology/term/au/term-disabilitycare-australia-fund-investment-mandate" showAs="DisabilityCare Australia Fund Investment Mandate"/>
+        <TLCTerm eId="term-disabilitycare-australia-fund-special-account" href="/ontology/term/au/term-disabilitycare-australia-fund-special-account" showAs="DisabilityCare Australia Fund Special Account"/>
+        <TLCTerm eId="term-federation-reform-fund" href="/ontology/term/au/term-federation-reform-fund" showAs="Federation Reform Fund"/>
+        <TLCTerm eId="term-finance-department" href="/ontology/term/au/term-finance-department" showAs="Finance Department"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-financial-asset" href="/ontology/term/au/term-financial-asset" showAs="financial asset"/>
+        <TLCTerm eId="term-future-fund-board" href="/ontology/term/au/term-future-fund-board" showAs="Future Fund Board"/>
+        <TLCTerm eId="term-future-fund-special-account" href="/ontology/term/au/term-future-fund-special-account" showAs="Future Fund Special Account"/>
+        <TLCTerm eId="term-investment" href="/ontology/term/au/term-investment" showAs="investment"/>
+        <TLCTerm eId="term-investment-manager" href="/ontology/term/au/term-investment-manager" showAs="investment manager"/>
+        <TLCTerm eId="term-investment-of-the-disabilitycare-australia-fund" href="/ontology/term/au/term-investment-of-the-disabilitycare-australia-fund" showAs="investment of the DisabilityCare Australia Fund"/>
+        <TLCTerm eId="term-modifications" href="/ontology/term/au/term-modifications" showAs="modifications"/>
+        <TLCTerm eId="term-national-disability-insurance-department" href="/ontology/term/au/term-national-disability-insurance-department" showAs="National Disability Insurance Department"/>
+        <TLCTerm eId="term-national-disability-insurance-minister" href="/ontology/term/au/term-national-disability-insurance-minister" showAs="National Disability Insurance Minister"/>
+        <TLCTerm eId="term-person" href="/ontology/term/au/term-person" showAs="person"/>
+        <TLCTerm eId="term-realise" href="/ontology/term/au/term-realise" showAs="realise"/>
+        <TLCTerm eId="term-securities-lending-arrangement" href="/ontology/term/au/term-securities-lending-arrangement" showAs="securities lending arrangement"/>
+        <TLCTerm eId="term-treasury-department" href="/ontology/term/au/term-treasury-department" showAs="Treasury Department"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>DisabilityCare Australia Fund Act 2013</p>
+      <p>No. 37, 2013</p>
+      <p><b>Compilation No.</b><b> </b><b>12</b></p>
+      <p><b>Compilation date:</b>	6 July 2024</p>
+      <p><b>Includes amendments:</b>	Act No. 54, 2024</p>
+      <p><b>Registered:</b>	17 July 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>DisabilityCare Australia Fund Act 2013</i> that shows the text of the law as amended and in force on 6 July 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Simplified outline	2</p>
+      <p>4	Definitions	4</p>
+      <p>5	Crown to be bound	7</p>
+      <p>6	Extension to external Territories	7</p>
+      <p>7	Extra-territorial application	7</p>
+      <p>8	Object	7</p>
+      <p><ref href="#part-2">Part 2</ref>—DisabilityCare Australia Fund	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Introduction	8</p>
+      <p>9	Simplified outline	8</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Establishment of the DisabilityCare Australia Fund etc.	10</p>
+      <p>10	Establishment of the DisabilityCare Australia Fund	10</p>
+      <p>11	Establishment of the DisabilityCare Australia Fund Special Account	10</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Credits of amounts to the DisabilityCare Australia Fund	11</p>
+      <p>12	Credits to Special Account—determinations by the Treasurer	11</p>
+      <p>13	Maximum amount of credits for States and Territories for a financial year	11</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Debits of amounts from the DisabilityCare Australia Fund, etc.	13</p>
+      <p>14	Purposes of the DisabilityCare Australia Fund Special Account—main purposes	13</p>
+      <p>15	Purposes of the DisabilityCare Australia Fund Special Account—purposes related exclusively to the investments etc. of the DisabilityCare Australia Fund	13</p>
+      <p>16	Purposes of the DisabilityCare Australia Fund Special Account—purposes not related exclusively to the DisabilityCare Australia Fund	14</p>
+      <p>17	Reimbursing the Commonwealth—transfer to general CRF	16</p>
+      <p>18	Reimbursing the States and Territories—channelling of State/Territory grants payments through the Federation Reform Fund	16</p>
+      <p>19	Reimbursing the States and Territories—limit on annual debits based on maximum amount of credits for States and Territories	17</p>
+      <p>20	Reimbursing the States and Territories—recommendations about grants payments	18</p>
+      <p>21	Reimbursing the States and Territories—debit from the Federation Reform Fund	18</p>
+      <p>22	Reimbursing the States and Territories—grant to a State or Territory	18</p>
+      <p>23	Future Fund Board must ensure that there is sufficient money in the DisabilityCare Australia Fund Special Account to cover authorised debits etc.	19</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Inter-fund transfers	20</p>
+      <p>24	Transfers from the DisabilityCare Australia Fund to the Future Fund	20</p>
+      <p><ref href="#part-3">Part 3</ref>—Investment of the DisabilityCare Australia Fund	21</p>
+      <p>25	Simplified outline	21</p>
+      <p>26	Objects of investment of the DisabilityCare Australia Fund	21</p>
+      <p>27	Investment of the DisabilityCare Australia Fund	22</p>
+      <p>28	Management of investments of the DisabilityCare Australia Fund	22</p>
+      <p>29	DisabilityCare Australia Fund Investment Mandate	23</p>
+      <p>30	Limitation on DisabilityCare Australia Fund Investment Mandate	25</p>
+      <p>31	Future Fund Board to be consulted on DisabilityCare Australia Fund Investment Mandate	25</p>
+      <p>32	Compliance with DisabilityCare Australia Fund Investment Mandate	26</p>
+      <p>33	Future Fund Board must not trigger the takeover provisions of the <i>Corporations Act 2001</i>	27</p>
+      <p>34	Borrowing	28</p>
+      <p>35	DisabilityCare Australia Fund investment policies	28</p>
+      <p>36	Derivatives	30</p>
+      <p>37	Additional financial assets	30</p>
+      <p>38	Securities lending arrangements	31</p>
+      <p>39	Investment managers	31</p>
+      <p>41	Refund of franking credits	32</p>
+      <p>42	Realisation of non-financial assets	32</p>
+      <p>43	Additional function of the Future Fund Board	33</p>
+      <p><ref href="#part-4">Part 4</ref>—Reporting obligations etc.	34</p>
+      <p>44	Finance Minister to prepare report on balance of DisabilityCare Australia Special Account etc.	34</p>
+      <p>45	Finance Minister may require Future Fund Board to prepare reports or give information	34</p>
+      <p>46	Keeping the responsible Ministers informed etc.	35</p>
+      <p>47	Finance Minister may give reports to other Ministers etc.	36</p>
+      <p><ref href="#part-6">Part 6</ref>—Miscellaneous	37</p>
+      <p>52	Delegation by the Finance Minister	37</p>
+      <p>53	Delegation by the National Disability Insurance Minister	37</p>
+      <p>54	Delegation by the Treasurer	38</p>
+      <p>55	Review of operation of Act	38</p>
+      <p>56	Regulations	38</p>
+      <p>Endnotes	39</p>
+      <p>Endnote 1—About the endnotes	39</p>
+      <p>Endnote 2—Abbreviation key	41</p>
+      <p>Endnote 3—Legislation history	42</p>
+      <p>Endnote 4—Amendment history	45</p>
+      <p>An Act to establish the DisabilityCare Australia Fund, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>DisabilityCare Australia Fund Act 2013</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provision(s)</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1. Sections 1 and 2 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day this Act receives the Royal Assent.</td>
+                <td>28 May 2013</td>
+              </tr>
+              <tr>
+                <td>2.  Sections 3 to 8</td>
+                <td>1 July 2013.</td>
+                <td>1 July 2013</td>
+              </tr>
+              <tr>
+                <td>3.  Parts 2, 3 and 4</td>
+                <td>The later of:
+(a) 1 July 2014; and
+(b) the commencement of Schedule 1 to the Medicare Levy Amendment (DisabilityCare Australia) Act 2013.
+However, the provision(s) do not commence at all if the event mentioned in paragraph (b) does not occur.</td>
+                <td>1 July 2014
+(paragraph (a) applies)</td>
+              </tr>
+              <tr>
+                <td>4.  Part 5</td>
+                <td>1 July 2013.</td>
+                <td>1 July 2013</td>
+              </tr>
+              <tr>
+                <td>5.  Section 52</td>
+                <td>The later of:
+(a) 1 July 2014; and
+(b) the commencement of Schedule 1 to the Medicare Levy Amendment (DisabilityCare Australia) Act 2013.
+However, the provision(s) do not commence at all if the event mentioned in paragraph (b) does not occur.</td>
+                <td>1 July 2014
+(paragraph (a) applies)</td>
+              </tr>
+              <tr>
+                <td>6.  Section 53</td>
+                <td>1 July 2013.</td>
+                <td>1 July 2013</td>
+              </tr>
+              <tr>
+                <td>7.  Sections 54 to 56</td>
+                <td>The later of:
+(a) 1 July 2014; and
+(b) the commencement of Schedule 1 to the Medicare Levy Amendment (DisabilityCare Australia) Act 2013.
+However, the provision(s) do not commence at all if the event mentioned in paragraph (b) does not occur.</td>
+                <td>1 July 2014
+(paragraph (a) applies)</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Simplified outline</heading>
+          <content>
+            <p>The following is a simplified outline of this Act:</p>
+            <p>•	This Act sets up the DisabilityCare Australia Fund, which consists of:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the DisabilityCare Australia Fund Special Account; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the investments of the DisabilityCare Australia Fund.</p>
+            </content>
+            <content>
+              <p>•	The main purposes of the DisabilityCare Australia Fund Special Account are:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	to transfer amounts to the Federation Reform Fund in order to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	to debit amounts in order to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+            </content>
+            <content>
+              <p>•	The Future Fund Board is responsible for deciding how to invest the DisabilityCare Australia Fund.</p>
+              <p>•	Investments of the DisabilityCare Australia Fund will consist of financial assets.</p>
+              <p>•	The Future Fund Board is bound by a DisabilityCare Australia Fund Investment Mandate given to it by the responsible Ministers.</p>
+              <p>•	This Act also sets up the DisabilityCare Australia Transitional Special Account, which will fund the implementation of the <i>National Disability Insurance Scheme Act 2013</i> in its initial period of operation.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The <i>Future Fund Act 2006</i> provides that the Future Fund Management Agency is responsible for assisting and advising the Future Fund Board.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-acquire">acquire</term> includes <def>acquire by way of issue.</def></p>
+            <p><term refersTo="#term-agency">Agency</term> means <def>the Future Fund Management Agency.</def></p>
+            <p><term refersTo="#term-appropriation-act">Appropriation Act</term> means <def>an Act appropriating money for expenditure out of the Consolidated Revenue Fund.</def></p>
+            <p><b><i>asset</i></b> means:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>any kind of real or personal property; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>any legal or equitable estate or interest in real or personal property; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>any legal or equitable right.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-balance-of-the-disabilitycare-australia-fund">balance of the DisabilityCare Australia Fund</term> means <def>the sum of: amounts standing to the credit of the DisabilityCare Australia Fund Special Account; and the value of investments of the DisabilityCare Australia Fund.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>amounts standing to the credit of the DisabilityCare Australia Fund Special Account; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>the value of investments of the DisabilityCare Australia Fund.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-bank">bank</term> has the same meaning as <def>in the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><b><i>business entity</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a company; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a partnership; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>a trust; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>a body politic.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Future Fund Board.</def></p>
+              <p><term refersTo="#term-debenture">debenture</term> has the same meaning as <def>in <ref href="">the Corporations Act 2001</ref>.</def></p>
+              <p><term refersTo="#term-derivative">derivative</term> means <def>a derivative (within the meaning of Chapter 7 of <ref href="">the Corporations Act 2001</ref>) that is a financial asset.</def></p>
+              <p><term refersTo="#term-disabilitycare-australia-fund">DisabilityCare Australia Fund</term> means <def>the DisabilityCare Australia Fund established by <ref href="#sec-10">section 10</ref>.</def></p>
+              <p><b><i>DisabilityCare Australia Fund investment function</i></b> of the Future Fund Board means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a function or power conferred on the Future Fund Board by <ref href="#sec-27">section 27</ref>, 28, 34, 36, 38 or 39; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a right or power conferred on the Future Fund Board in its capacity as the holder of an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-disabilitycare-australia-fund-investment-mandate">DisabilityCare Australia Fund Investment Mandate</term> has the meaning given by <def>subsection 29(4).</def></p>
+              <p><term refersTo="#term-disabilitycare-australia-fund-special-account">DisabilityCare Australia Fund Special Account</term> means <def>the DisabilityCare Australia Fund Special Account established by <ref href="#sec-11">section 11</ref>.</def></p>
+              <p><term refersTo="#term-federation-reform-fund">Federation Reform Fund</term> means <def>the Federation Reform Fund established by <ref href="#sec-5">section 5</ref> of <ref href="">the Federation Reform Fund Act 2008</ref>.</def></p>
+              <p><term refersTo="#term-finance-department">Finance Department</term> means <def>the Department administered by the Finance Minister.</def></p>
+              <p><term refersTo="#term-finance-minister">Finance Minister</term> has the same meaning as <def>in the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-financial-asset">financial asset</term> has the same meaning as <def>in <ref href="">the Future Fund Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-future-fund-board">Future Fund Board</term> means <def>the Future Fund Board of Guardians.</def></p>
+              <p><term refersTo="#term-future-fund-special-account">Future Fund Special Account</term> means <def>the Future Fund Special Account established by <ref href="#sec-12">section 12</ref> of <ref href="">the Future Fund Act 2006</ref>.</def></p>
+              <p><term refersTo="#term-investment">investment</term> means <def>any mode of application of money or financial assets for the purpose of gaining a return (whether by way of income, capital gain or any other form of return).</def></p>
+              <p><term refersTo="#term-investment-manager">investment manager</term> means <def>a person or body (other than the Agency) who undertakes to do any or all of the following: invest amounts on behalf of the Future Fund Board; manage the investment of funds on behalf of the Future Fund Board; acquire derivatives on behalf of the Future Fund Board; manage derivatives on behalf of the Future Fund Board; enter into securities lending arrangements on behalf of the Future Fund Board; realise financial assets on behalf of the Future Fund Board; perform custodial functions in relation to the financial assets of the Future Fund Board.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>invest amounts on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>manage the investment of funds on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>acquire derivatives on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>manage derivatives on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>enter into securities lending arrangements on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-f">
+            <num>f</num>
+            <content>
+              <p>realise financial assets on behalf of the Future Fund Board;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-g">
+            <num>g</num>
+            <content>
+              <p>perform custodial functions in relation to the financial assets of the Future Fund Board.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-investment-of-the-disabilitycare-australia-fund">investment of the DisabilityCare Australia Fund</term> means <def>a financial asset that, under a provision of this Act, is taken to be an investment of the DisabilityCare Australia Fund.</def></p>
+              <p><term refersTo="#term-modifications">modifications</term> includes <def>additions, omissions and substitutions.</def></p>
+              <p><term refersTo="#term-national-disability-insurance-department">National Disability Insurance Department</term> means <def>the Department administered by the National Disability Insurance Minister.</def></p>
+              <p><term refersTo="#term-national-disability-insurance-minister">National Disability Insurance Minister</term> means <def><ref href="/akn/au/act/minister-who-administers-the-national-disability-insurance-scheme-act-2013" class="unresolved">the Minister who administers the National Disability Insurance Scheme Act 2013</ref>.</def></p>
+              <p><term refersTo="#term-person">person</term> includes <def>a partnership.</def></p>
+              <p><term refersTo="#term-realise">realise</term> includes <def>redeem or dispose of.</def></p>
+              <p><b><i>responsible Ministers</i></b> means:</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	See also subsection 2C(1) of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the Treasurer; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>the Finance Minister.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-securities-lending-arrangement">securities lending arrangement</term> means <def>an agreement of the kind known as a securities lending arrangement.</def></p>
+              <p><term refersTo="#term-treasury-department">Treasury Department</term> means <def>the Department administered by the Treasurer.</def></p>
+              <p><b><i>value</i></b>, of an investment of the DisabilityCare Australia Fund, means the market value of the investment. For this purpose, disregard anything that would prevent or restrict conversion of a financial asset to money.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Crown to be bound</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in each of its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not make the Crown liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Extension to external Territories</heading>
+          <content>
+            <p>This Act extends to every external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Extra-territorial application</heading>
+          <content>
+            <p>This Act extends to acts, omissions, matters and things outside Australia (unless the contrary intention appears).</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-8">
+          <num>8</num>
+          <heading>Object</heading>
+          <content>
+            <p>The object of this Act is to enhance the Commonwealth’s ability:</p>
+          </content>
+          <paragraph eId="part-1__sec-8__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-8__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-8__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	to fund the implementation of the <i>National Disability Insurance Scheme Act 2013</i> in its initial period of operation.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>DisabilityCare Australia Fund</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Introduction</heading>
+          <section eId="part-2__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Simplified outline</heading>
+            <content>
+              <p>The following is a simplified outline of this Part:</p>
+              <p>•	This Part sets up the DisabilityCare Australia Fund.</p>
+              <p>•	The DisabilityCare Australia Fund consists of:</p>
+            </content>
+            <paragraph eId="part-2__dvs-1__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>the DisabilityCare Australia Fund Special Account; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>the investments of the DisabilityCare Australia Fund.</p>
+              </content>
+              <content>
+                <p>•	The Treasurer may determine that amounts are to be credited to the DisabilityCare Australia Fund Special Account.</p>
+                <p>•	Amounts may be debited from the DisabilityCare Australia Fund Special Account in accordance with the purposes of the DisabilityCare Australia Fund Special Account.</p>
+                <p>•	The main purposes of the DisabilityCare Australia Fund Special Account are:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	to transfer amounts to the Federation Reform Fund in order to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	to debit amounts in order to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+              </content>
+              <content>
+                <p>•	The Finance Minister is responsible for authorising debits (the amounts of which will be credited to the Federation Reform Fund) on the recommendation of the National Disability Insurance Minister.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Establishment of the DisabilityCare Australia Fund etc.</heading>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Establishment of the DisabilityCare Australia Fund</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The DisabilityCare Australia Fund is established by this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Fund consists of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the DisabilityCare Australia Fund Special Account; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the investments of the DisabilityCare Australia Fund.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Establishment of the DisabilityCare Australia Fund Special Account</heading>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The DisabilityCare Australia Fund Special Account is established by this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The DisabilityCare Australia Fund Special Account is a special account for the purposes of the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	An Appropriation Act may contain a provision to the effect that, if any of the purposes of a special account is a purpose that is covered by an item in the Appropriation Act (whether or not the item expressly refers to the special account), then amounts may be debited against the appropriation for that item and credited to that special account.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Credits of amounts to the DisabilityCare Australia Fund</heading>
+          <section eId="part-2__dvs-3__sec-12">
+            <num>12</num>
+            <heading>Credits to Special Account—determinations by the Treasurer</heading>
+            <subsection eId="part-2__dvs-3__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Treasurer may, by writing, determine that:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a specified amount is to be credited to the DisabilityCare Australia Fund Special Account on a specified day; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a specified amount is to be credited to the DisabilityCare Australia Fund Special Account in specified instalments on specified days.</p>
+                </content>
+                <authorialNote placement="end" eId="note-5" marker="5">
+                  <content>
+                    <p>Note:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In making a determination under subsection (1), the Treasurer must have regard to the object of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A determination under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Maximum amount of credits for States and Territories for a financial year</heading>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>For the financial year mentioned in column 1 of an item in the following table, the maximum amount of credits for States and Territories is the amount mentioned in column 2 of that item:</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Maximum amount of credits for States and Territories</th>
+                  <th>Maximum amount of credits for States and Territories</th>
+                  <th>Maximum amount of credits for States and Territories</th>
+                </tr>
+                <tr>
+                  <td>Item</td>
+                  <td>Column 1
+Financial year</td>
+                  <td>Column 2
+Maximum amount of credits for States and Territories</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2014-2015</td>
+                  <td>$825.000 million</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2015-2016</td>
+                  <td>$853.875 million</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>2016-2017</td>
+                  <td>$883.761 million</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>2017-2018</td>
+                  <td>$914.692 million</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>2018-2019</td>
+                  <td>$946.706 million</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>2019-2020</td>
+                  <td>$979.841 million</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>2020-2021</td>
+                  <td>$1014.136 million</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>2021-2022</td>
+                  <td>$1049.630 million</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>2022-2023</td>
+                  <td>$1086.367 million</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>2023-2024</td>
+                  <td>$1124.390 million</td>
+                </tr>
+              </table>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The consequences of the maximum amount of credits for States and Territories for a financial year being a particular amount are set out in <ref href="#sec-19">section 19</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-4">
+          <num>4</num>
+          <heading>Debits of amounts from the DisabilityCare Australia Fund, etc.</heading>
+          <section eId="part-2__dvs-4__sec-14">
+            <num>14</num>
+            <heading>Purposes of the DisabilityCare Australia Fund Special Account—main purposes</heading>
+            <content>
+              <p>Each of the following is a purpose of the DisabilityCare Australia Fund Special Account:</p>
+            </content>
+            <paragraph eId="part-2__dvs-4__sec-14__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	to transfer amounts to the Federation Reform Fund in order to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-14__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	to debit amounts in order to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-4__sec-15">
+            <num>15</num>
+            <heading>Purposes of the DisabilityCare Australia Fund Special Account—purposes related exclusively to the investments etc. of the DisabilityCare Australia Fund</heading>
+            <content>
+              <p>Each of the following is a purpose of the DisabilityCare Australia Fund Special Account:</p>
+            </content>
+            <paragraph eId="part-2__dvs-4__sec-15__para-a">
+              <num>a</num>
+              <content>
+                <p>paying the costs of, or incidental to, the acquisition of financial assets under <ref href="#sec-27">section 27</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-b">
+              <num>b</num>
+              <content>
+                <p>paying expenses of an investment of the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-c">
+              <num>c</num>
+              <content>
+                <p>paying the costs of, or incidental to, the acquisition of derivatives under <ref href="#sec-36">section 36</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-d">
+              <num>d</num>
+              <content>
+                <p>paying or discharging the costs, expenses and other obligations incurred by the Future Fund Board under a contract between the Future Fund Board and an investment manager engaged under subsection 39(1);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-e">
+              <num>e</num>
+              <content>
+                <p>paying or discharging the costs, expenses and other obligations incurred in connection with the establishment, maintenance or operation of a bank account of the Future Fund Board, where the bank account relates exclusively to the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-f">
+              <num>f</num>
+              <content>
+                <p>paying a premium in respect of a contract of insurance entered into by the Future Fund Board exclusively in connection with the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-15__para-g">
+              <num>g</num>
+              <content>
+                <p>paying or discharging any other costs, expenses, obligations or liabilities incurred by the Future Fund Board exclusively in connection with the DisabilityCare Australia Fund.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	See <ref href="#sec-80">section 80</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with special accounts).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-4__sec-16">
+            <num>16</num>
+            <heading>Purposes of the DisabilityCare Australia Fund Special Account—purposes not related exclusively to the DisabilityCare Australia Fund</heading>
+            <content>
+              <p>Each of the following is a purpose of the DisabilityCare Australia Fund Special Account:</p>
+            </content>
+            <paragraph eId="part-2__dvs-4__sec-16__para-a">
+              <num>a</num>
+              <content>
+                <p>paying or discharging the costs, expenses and other obligations incurred in connection with the establishment, maintenance or operation of a bank account of the Future Fund Board, where those costs, expenses or obligations are not covered by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph 15(e); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ia">
+              <num>ia</num>
+              <content>
+                <p>	(ia)	paragraph 15(e) of the <i>Disaster Ready Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ib">
+              <num>ib</num>
+              <content>
+                <p>	(ib)	paragraph 13(e) of the <i>Housing Australia Future Fund Act 2023</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	paragraph 2(1)(g) of Schedule 2 to the <i>Future Fund Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iia">
+              <num>iia</num>
+              <content>
+                <p>	(iia)	paragraph 16(e) of the <i>Future Drought Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iv">
+              <num>iv</num>
+              <content>
+                <p>	(iv)	paragraph 18(e) of the <i>Medical Research Future Fund Act 2015</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-v">
+              <num>v</num>
+              <content>
+                <p>	(v)	paragraph 15(e) of the <i>Aboriginal and Torres Strait Islander Land and Sea Future Fund Act 2018</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-b">
+              <num>b</num>
+              <content>
+                <p>paying a premium in respect of a contract of insurance entered into by the Future Fund Board, where the premium is not covered by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-i">
+              <num>i</num>
+              <content>
+                <p>paragraph 15(f); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ia">
+              <num>ia</num>
+              <content>
+                <p>	(ia)	paragraph 15(f) of the <i>Disaster Ready Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ib">
+              <num>ib</num>
+              <content>
+                <p>	(ib)	paragraph 13(f) of the <i>Housing Australia Future Fund Act 2023</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	paragraph 2(1)(h) of Schedule 2 to the <i>Future Fund Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iia">
+              <num>iia</num>
+              <content>
+                <p>	(iia)	paragraph 16(f) of the <i>Future Drought Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iv">
+              <num>iv</num>
+              <content>
+                <p>	(iv)	paragraph 18(f) of the <i>Medical Research Future Fund Act 2015</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-v">
+              <num>v</num>
+              <content>
+                <p>	(v)	paragraph 15(f) of the <i>Aboriginal and Torres Strait Islander Land and Sea Future Fund Act 2018</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-c">
+              <num>c</num>
+              <content>
+                <p>paying or discharging any other costs, expenses, obligations or liabilities incurred by the Future Fund Board, where the costs, expenses, obligations or liabilities are not covered by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-i">
+              <num>i</num>
+              <content>
+                <p>a paragraph of <ref href="#sec-15">section 15</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ia">
+              <num>ia</num>
+              <content>
+                <p>	(ia)	a paragraph of <ref href="#sec-15">section 15</ref> of the <i>Disaster Ready Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ib">
+              <num>ib</num>
+              <content>
+                <p>	(ib)	a paragraph of <ref href="#sec-13">section 13</ref> of the <i>Housing Australia Future Fund Act 2023</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	a paragraph of subclause 2(1) of Schedule 2 to the <i>Future Fund Act 2006</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iia">
+              <num>iia</num>
+              <content>
+                <p>	(iia)	a paragraph of <ref href="#sec-16">section 16</ref> of the <i>Future Drought Fund Act 2019</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-iv">
+              <num>iv</num>
+              <content>
+                <p>	(iv)	a paragraph of <ref href="#sec-18">section 18</ref> of the <i>Medical Research Future Fund Act 2015</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-v">
+              <num>v</num>
+              <content>
+                <p>	(v)	a paragraph of <ref href="#sec-15">section 15</ref> of the <i>Aboriginal and Torres Strait Islander Land and Sea Future Fund Act 2018</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-d">
+              <num>d</num>
+              <content>
+                <p>paying remuneration, and other employment-related costs and expenses, in respect of members of the staff of the Agency;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	paying or discharging the costs, expenses and other obligations incurred by the Commonwealth under a contract entered into under <ref href="#sec-78">section 78</ref> or 82 of the <i>Future Fund Act 2006</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-4__sec-16__para-f">
+              <num>f</num>
+              <content>
+                <p>paying or discharging the costs, expenses and other obligations incurred by the Commonwealth in connection with the operation of the Agency.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	See <ref href="#sec-80">section 80</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with special accounts).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-4__sec-17">
+            <num>17</num>
+            <heading>Reimbursing the Commonwealth—transfer to general CRF</heading>
+            <subsection eId="part-2__dvs-4__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Finance Minister may, by writing, direct that a specified amount is to be debited from the DisabilityCare Australia Fund Special Account.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A direction under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-17__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Finance Minister must give a copy of a direction under subsection (1) to the Treasurer and the National Disability Insurance Minister.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-18">
+            <num>18</num>
+            <heading>Reimbursing the States and Territories—channelling of State/Territory grants payments through the Federation Reform Fund</heading>
+            <subsection eId="part-2__dvs-4__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Finance Minister may, by writing, direct that a specified amount is to be:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-18__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>debited from the DisabilityCare Australia Fund Special Account; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-18__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>credited to the Federation Reform Fund;</p>
+                </content>
+                <content>
+                  <p>on a specified day.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The direction must be expressed to be given in order to enable the amount to be debited from the Federation Reform Fund for the purpose of making a specified grant of financial assistance in relation to reimbursing the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Two or more directions under subsection (1) may be set out in the same document.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A direction under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-18__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The Finance Minister must give a copy of a direction under subsection (1) to the Treasurer and the National Disability Insurance Minister.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-19">
+            <num>19</num>
+            <heading>Reimbursing the States and Territories—limit on annual debits based on maximum amount of credits for States and Territories</heading>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The total amount of debits from the DisabilityCare Australia Fund Special Account under <ref href="#sec-18">section 18</ref> in a financial year must not exceed the maximum amount of credits for States and Territories for the financial year under <ref href="#sec-13">section 13</ref> (taking into account the increase, if any, under a previous operation of subsection (4)).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If a direction under subsection 18(1) would, apart from this section, result in a contravention of subsection (1), the direction is invalid.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (4) applies if the total amount of debits from the DisabilityCare Australia Fund Special Account under subsection 18(1) in a financial year falls short of the maximum amount of credits for States and Territories for the financial year under <ref href="#sec-13">section 13</ref> (taking into account the increase, if any, under a previous operation of subsection (4)).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Increase the maximum amount of credits for States and Territories for the <i>next</i> financial year by the amount of the shortfall.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-20">
+            <num>20</num>
+            <heading>Reimbursing the States and Territories—recommendations about grants payments</heading>
+            <content>
+              <p>A grant must not be specified under subsection 18(2) unless the National Disability Insurance Minister has recommended the specification of the grant.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-4__sec-21">
+            <num>21</num>
+            <heading>Reimbursing the States and Territories—debit from the Federation Reform Fund</heading>
+            <content>
+              <p>Scope</p>
+            </content>
+            <subsection eId="part-2__dvs-4__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-21__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Finance Minister gives a direction under subsection 18(1) for a purpose in relation to a grant of financial assistance to a State or Territory; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-21__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the amount specified in the direction is credited to the Federation Reform Fund.</p>
+                </content>
+                <content>
+                  <p>Debit from the Federation Reform Fund</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Treasurer must ensure that, as soon as practicable after the amount is credited, the Federation Reform Fund is debited for the purposes of making the grant.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-22">
+            <num>22</num>
+            <heading>Reimbursing the States and Territories—grant to a State or Territory</heading>
+            <content>
+              <p>Scope</p>
+            </content>
+            <subsection eId="part-2__dvs-4__sec-22__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-22__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an amount is to be debited from the Federation Reform Fund for the purpose of making a grant of financial assistance to a State or Territory; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-22__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the grant is a grant of financial assistance in relation to reimbursing the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-22__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the grant is covered by subsection 21(2).</p>
+                </content>
+                <authorialNote placement="end" eId="note-8" marker="8">
+                  <content>
+                    <p>Note:	Subsection 21(2) deals with grants channelled through the Federation Reform Fund.</p>
+                  </content>
+                </authorialNote>
+                <content>
+                  <p>Terms and conditions</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-22__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The terms and conditions on which that financial assistance is granted are to be set out in a written agreement between the Commonwealth and the State or Territory.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-22__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An agreement under subsection (2) may be entered into by a Minister on behalf of the Commonwealth.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-23">
+            <num>23</num>
+            <heading>Future Fund Board must ensure that there is sufficient money in the DisabilityCare Australia Fund Special Account to cover authorised debits etc.</heading>
+            <content>
+              <p>The Future Fund Board must take all reasonable steps to ensure that the amount of money standing to the credit of the DisabilityCare Australia Fund Special Account is sufficient to cover the debit of amounts authorised, or proposed to be authorised, under <ref href="#sec-17">section 17</ref> or 18.</p>
+            </content>
+            <authorialNote placement="end" eId="note-9" marker="9">
+              <content>
+                <p>Note:	This may require the Future Fund Board to realise an investment of the DisabilityCare Australia Fund in accordance with <ref href="#sec-28">section 28</ref>.</p>
+              </content>
+            </authorialNote>
+          </section>
+        </division>
+        <division eId="part-2__dvs-5">
+          <num>5</num>
+          <heading>Inter-fund transfers</heading>
+          <section eId="part-2__dvs-5__sec-24">
+            <num>24</num>
+            <heading>Transfers from the DisabilityCare Australia Fund to the Future Fund</heading>
+            <subsection eId="part-2__dvs-5__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	If an amount is debited from the Future Fund Special Account for a purpose mentioned in subclause 2(2) of Schedule 2 to the <i>Future Fund Act 2006</i>, the Finance Minister may, by writing, direct that a specified amount is to be:</p>
+              </content>
+              <paragraph eId="part-2__dvs-5__sec-24__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>debited from the DisabilityCare Australia Fund Special Account; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-24__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>credited to the Future Fund Special Account;</p>
+                </content>
+                <content>
+                  <p>on a specified day.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The specified amount must not exceed the amount debited from the Future Fund Special Account as mentioned in subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-24__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A direction under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Investment of the DisabilityCare Australia Fund</heading>
+        <section eId="part-3__sec-25">
+          <num>25</num>
+          <heading>Simplified outline</heading>
+          <content>
+            <p>The following is a simplified outline of this Part:</p>
+            <p>•	The Future Fund Board is responsible for deciding how to invest the DisabilityCare Australia Fund.</p>
+            <p>•	Investments of the DisabilityCare Australia Fund will consist of financial assets.</p>
+            <p>•	Investments of the DisabilityCare Australia Fund will be held in the name of the Future Fund Board.</p>
+            <p>•	The Future Fund Board is bound by a DisabilityCare Australia Fund Investment Mandate given to it by the responsible Ministers.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-26">
+          <num>26</num>
+          <heading>Objects of investment of the DisabilityCare Australia Fund</heading>
+          <subsection eId="part-3__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The main object of the acquisition by the Future Fund Board of a financial asset as an investment of the DisabilityCare Australia Fund is to enhance the Commonwealth’s ability:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The ancillary objects of the acquisition by the Future Fund Board of a financial asset as an investment of the DisabilityCare Australia Fund are to enhance the ability of the Commonwealth and the Future Fund Board to:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>discharge costs, expenses, obligations and liabilities; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>make payments;</p>
+              </content>
+              <content>
+                <p>as mentioned in paragraphs 15(a) to (g) and 16(a) to (f).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-27">
+          <num>27</num>
+          <heading>Investment of the DisabilityCare Australia Fund</heading>
+          <subsection eId="part-3__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board may invest amounts standing to the credit of the DisabilityCare Australia Fund Special Account in any financial assets.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Investments under subsection (1) are to be made in the name of the Future Fund Board.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Investments under subsection (1) are taken to be investments of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-4">
+            <num>4</num>
+            <content>
+              <p>This section does not authorise the acquisition of a derivative.</p>
+            </content>
+            <authorialNote placement="end" eId="note-10" marker="10">
+              <content>
+                <p>Note:	For acquisition of derivatives, see <ref href="#sec-36">section 36</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-28">
+          <num>28</num>
+          <heading>Management of investments of the DisabilityCare Australia Fund</heading>
+          <subsection eId="part-3__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Income derived from an investment of the DisabilityCare Australia Fund is to be credited to the DisabilityCare Australia Fund Special Account.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A return of capital, or any other financial distribution, relating to an investment of the DisabilityCare Australia Fund is to be credited to the DisabilityCare Australia Fund Special Account.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Future Fund Board may realise an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Upon realisation of an investment of the DisabilityCare Australia Fund, the proceeds of the investment are to be credited to the DisabilityCare Australia Fund Special Account.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-5">
+            <num>5</num>
+            <content>
+              <p>At any time before an investment of the DisabilityCare Australia Fund matures, the Future Fund Board may authorise the re-investment of the proceeds upon maturity in a financial asset investment with the same entity. The new investment is taken to be an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	Section 58 of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with investment by the Commonwealth) does not apply to an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-29">
+          <num>29</num>
+          <heading>DisabilityCare Australia Fund Investment Mandate</heading>
+          <subsection eId="part-3__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The responsible Ministers may give the Future Fund Board written directions about the performance of its DisabilityCare Australia Fund investment functions, and must give at least one such direction.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note 1:	<b><i>DisabilityCare Australia Fund investment function</i></b> is defined in <ref href="#sec-4">section 4</ref>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-12" marker="12">
+              <content>
+                <p>Note 2:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) has effect subject to <ref href="#sec-30">section 30</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In giving a direction under subsection (1), the responsible Ministers must have regard to:</p>
+            </content>
+            <paragraph eId="part-3__sec-29__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>maximising the return earned on the DisabilityCare Australia Fund, consistent with international best practice for institutional investment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>enhancing the Commonwealth’s ability:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>such other matters as the responsible Ministers consider relevant.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Directions under subsection (1) are to be known collectively as the <b><i>DisabilityCare Australia Fund Investment Mandate</i></b>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A direction under subsection (1) may set out the policies to be pursued by the Future Fund Board in relation to:</p>
+            </content>
+            <paragraph eId="part-3__sec-29__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>matters of risk and return; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the allocation of financial assets.</p>
+              </content>
+              <content>
+                <p>A policy relating to the allocation of financial assets must not be inconsistent with a policy relating to matters of risk and return.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsection (5) does not limit subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subsection (5) has effect subject to <ref href="#sec-30">section 30</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The DisabilityCare Australia Fund Investment Mandate prevails over subsection (12) to the extent of any inconsistency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The responsible Ministers must not give a direction under subsection (1) that is inconsistent with this Act (other than subsection (12)).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-10">
+            <num>10</num>
+            <content>
+              <p>A direction under subsection (1) must not take effect before the 15th day after the day on which it is given.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-11">
+            <num>11</num>
+            <content>
+              <p>A direction under subsection (1) is a legislative instrument.</p>
+            </content>
+            <authorialNote placement="end" eId="note-13" marker="13">
+              <content>
+                <p>Note 1:	Section 42 (disallowance) of the <i>Legislation Act 2003</i> does not apply to the direction—see regulations made for the purposes of paragraph 44(2)(b) of that Act.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-14" marker="14">
+              <content>
+                <p>Note 2:	<ref href="#part-4">Part 4</ref> of Chapter 3 (sunsetting) of the <i>Legislation Act 2003</i> does not apply to the direction—see regulations made for the purposes of paragraph 54(2)(b) of that Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-12">
+            <num>12</num>
+            <content>
+              <p>In the performance of its DisabilityCare Australia Fund investment functions, the Future Fund Board must seek to:</p>
+            </content>
+            <paragraph eId="part-3__sec-29__subsec-12__para-a">
+              <num>a</num>
+              <content>
+                <p>maximise the return earned on the DisabilityCare Australia Fund, consistent with international best practice for institutional investment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-12__para-b">
+              <num>b</num>
+              <content>
+                <p>enhance the Commonwealth’s ability:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-12__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	to reimburse the States and Territories for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-12__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	to reimburse the Commonwealth for expenditure incurred in relation to the <i>National Disability Insurance Scheme Act 2013</i>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	<b><i>DisabilityCare Australia Fund investment function</i></b> is defined in <ref href="#sec-4">section 4</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-13">
+            <num>13</num>
+            <content>
+              <p>Subsection (12) has effect subject to:</p>
+            </content>
+            <paragraph eId="part-3__sec-29__subsec-13__para-a">
+              <num>a</num>
+              <content>
+                <p>this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-13__para-b">
+              <num>b</num>
+              <content>
+                <p>a direction under subsection (1).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-30">
+          <num>30</num>
+          <heading>Limitation on DisabilityCare Australia Fund Investment Mandate</heading>
+          <subsection eId="part-3__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The responsible Ministers must not give a direction under subsection 29(1) that has the purpose, or has or is likely to have the effect, of directly or indirectly requiring the Future Fund Board to:</p>
+            </content>
+            <paragraph eId="part-3__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>invest an amount standing to the credit of the DisabilityCare Australia Fund Special Account in a particular financial asset; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>acquire a particular derivative; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-30__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>allocate financial assets to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-30__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>a particular business entity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-30__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a particular activity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-30__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a particular business.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Paragraphs (1)(a) and (b) do not limit paragraph (1)(c).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-31">
+          <num>31</num>
+          <heading>Future Fund Board to be consulted on DisabilityCare Australia Fund Investment Mandate</heading>
+          <subsection eId="part-3__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Before giving the Future Fund Board a direction under subsection 29(1), the responsible Ministers must:</p>
+            </content>
+            <paragraph eId="part-3__sec-31__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>send a draft of the direction to the Future Fund Board; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-31__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>invite the Future Fund Board to make a submission to the responsible Ministers on the draft direction within a time limit specified by the responsible Ministers; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-31__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>consider any submission that is received from the Future Fund Board within that time limit.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the responsible Ministers give the Future Fund Board a direction under subsection 29(1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Future Fund Board made a submission to the responsible Ministers on a draft of the direction within the time limit specified by the responsible Ministers;</p>
+              </content>
+              <content>
+                <p>the submission is to be tabled in each House of the Parliament with the direction.</p>
+              </content>
+              <authorialNote placement="end" eId="note-16" marker="16">
+                <content>
+                  <p>Note:	For tabling of the direction, see <ref href="#sec-38">section 38</ref> of the <i>Legislation Act 2003</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A time limit specified under this section must be reasonable.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-32">
+          <num>32</num>
+          <heading>Compliance with DisabilityCare Australia Fund Investment Mandate</heading>
+          <subsection eId="part-3__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board must take all reasonable steps to comply with the DisabilityCare Australia Fund Investment Mandate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>As soon as practicable after the Future Fund Board becomes aware that it has failed to comply with the DisabilityCare Australia Fund Investment Mandate, the Future Fund Board must give the responsible Ministers a written statement:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>informing the responsible Ministers of the failure to comply with the DisabilityCare Australia Fund Investment Mandate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>setting out the action that the Future Fund Board proposes to take in order to comply with the DisabilityCare Australia Fund Investment Mandate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the responsible Ministers are satisfied that the Future Fund Board has failed to comply with the DisabilityCare Australia Fund Investment Mandate, the responsible Ministers may, by written notice given to the Future Fund Board, direct the Future Fund Board:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>to give the responsible Ministers, within a period specified in the notice, a written explanation for the failure to comply with the DisabilityCare Australia Fund Investment Mandate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>to take action specified in the notice, within a period specified in the notice, in order to comply with the DisabilityCare Australia Fund Investment Mandate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Future Fund Board must comply with a direction under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A failure to comply with:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the DisabilityCare Australia Fund Investment Mandate; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>a direction under subsection (3);</p>
+              </content>
+              <content>
+                <p>does not affect the validity of any transaction.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A direction under subsection (3) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-33">
+          <num>33</num>
+          <heading>Future Fund Board must not trigger the takeover provisions of the Corporations Act 2001</heading>
+          <subsection eId="part-3__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subsections 606(1A) and (2A) and <ref href="#sec-611">section 611</ref> of the <i>Corporations Act 2001</i> do not apply to an acquisition by the Future Fund Board if the acquisition is the result of the performance by the Future Fund Board of its DisabilityCare Australia Fund investment functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A failure by the Future Fund Board to comply with <ref href="#sec-606">section 606</ref> of the <i>Corporations Act 2001</i> (as modified by this section) does not affect the validity of any transaction.</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	See also <ref href="#sec-39">section 39</ref> of the <i>Future Fund Act 2006</i> (application of the <i>Corporations Act 2001</i>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-34">
+          <num>34</num>
+          <heading>Borrowing</heading>
+          <subsection eId="part-3__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board must not borrow money for a purpose in connection with the DisabilityCare Australia Fund unless the borrowing is authorised by subsection (2) or (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Future Fund Board is authorised to borrow money for a purpose in connection with the DisabilityCare Australia Fund if:</p>
+            </content>
+            <paragraph eId="part-3__sec-34__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the purpose of the borrowing is to enable the Future Fund Board to cover settlement of a transaction for the acquisition of one or more financial assets; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-34__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>at the time the relevant acquisition decision was made, it was likely that the borrowing would not be needed; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-34__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the period of the borrowing does not exceed 7 days; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-34__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>if the borrowing were to take place, the total amount borrowed by the Future Fund Board would not exceed 10% of the balance of the DisabilityCare Australia Fund.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Future Fund Board is authorised to borrow money for a purpose in connection with the DisabilityCare Australia Fund if the borrowing takes place in such circumstances (if any) as are specified in the regulations.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-35">
+          <num>35</num>
+          <heading>DisabilityCare Australia Fund investment policies</heading>
+          <subsection eId="part-3__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board must formulate written policies to be complied with by it in relation to the following matters in connection with the DisabilityCare Australia Fund:</p>
+            </content>
+            <paragraph eId="part-3__sec-35__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the investment strategy for the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>benchmarks and standards for assessing the performance of the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>risk management for the DisabilityCare Australia Fund;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a matter relating to international best practice for institutional investment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a matter specified in the regulations.</p>
+              </content>
+              <authorialNote placement="end" eId="note-18" marker="18">
+                <content>
+                  <p>Note:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Future Fund Board must ensure that policies formulated under subsection (1) are consistent with the DisabilityCare Australia Fund Investment Mandate.</p>
+            </content>
+            <content>
+              <p>Publication of policies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Future Fund Board must cause copies of policies formulated under subsection (1) to be published on the internet.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Future Fund Board must ensure that the first set of policies formulated under subsection (1) is published on the internet as soon as practicable after the commencement of this section.</p>
+            </content>
+            <content>
+              <p>Review of policies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Future Fund Board must conduct periodic reviews of policies formulated under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If there is a change in the DisabilityCare Australia Fund Investment Mandate, the Future Fund Board must review any relevant policies formulated under subsection (1).</p>
+            </content>
+            <content>
+              <p>Compliance with policies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The Future Fund Board must take all reasonable steps to comply with policies formulated under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A failure to comply with a policy formulated under subsection (1) does not affect the validity of any transaction.</p>
+            </content>
+            <content>
+              <p>Policies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A policy formulated under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-36">
+          <num>36</num>
+          <heading>Derivatives</heading>
+          <subsection eId="part-3__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board may acquire a derivative for the purpose of:</p>
+            </content>
+            <paragraph eId="part-3__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>protecting the value of an investment of the DisabilityCare Australia Fund (other than a derivative); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>protecting the return on an investment of the DisabilityCare Australia Fund (other than a derivative); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-36__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>achieving indirect exposure to financial assets (other than derivatives) for a purpose in connection with the DisabilityCare Australia Fund; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-36__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>achieving transactional efficiency for a purpose in connection with the DisabilityCare Australia Fund;</p>
+              </content>
+              <content>
+                <p>but must not acquire a derivative for the purpose of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-36__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>speculation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-36__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>leverage.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The acquisition of a derivative under subsection (1) must be consistent with the investment strategy embodied in a policy formulated by the Future Fund Board under subsection 35(1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A derivative acquired under subsection (1) is to be held in the name of the Future Fund Board.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-36__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A derivative acquired under subsection (1) is taken to be an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-37">
+          <num>37</num>
+          <heading>Additional financial assets</heading>
+          <content>
+            <p>If, as a result of:</p>
+          </content>
+          <paragraph eId="part-3__sec-37__para-a">
+            <num>a</num>
+            <content>
+              <p>the Future Fund Board’s holding of an investment of the DisabilityCare Australia Fund; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-37__para-b">
+            <num>b</num>
+            <content>
+              <p>the exercise of any rights or powers conferred on the Future Fund Board in its capacity as the holder of an investment of the DisabilityCare Australia Fund;</p>
+            </content>
+            <content>
+              <p>the Future Fund Board becomes the holder of a financial asset, that financial asset is taken to be an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-38">
+          <num>38</num>
+          <heading>Securities lending arrangements</heading>
+          <subsection eId="part-3__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board may enter into securities lending arrangements for a purpose in connection with the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any money received by the Future Fund Board under a securities lending arrangement entered into under subsection (1) is to be credited to the DisabilityCare Australia Fund Special Account.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>To avoid doubt, a securities lending arrangement entered into under subsection (1) may provide for the Future Fund Board to realise an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-38__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If, as the result of the operation of a securities lending arrangement entered into under subsection (1), the Future Fund Board becomes the holder of a financial asset, that financial asset is taken to be an investment of the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-39">
+          <num>39</num>
+          <heading>Investment managers</heading>
+          <subsection eId="part-3__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board may engage one or more investment managers for purposes in connection with the DisabilityCare Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Future Fund Board must not:</p>
+            </content>
+            <paragraph eId="part-3__sec-39__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>invest amounts under subsection 27(1); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>acquire derivatives under subsection 36(1); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>enter into a securities lending arrangement under subsection 38(1); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>realise financial assets that are investments of the DisabilityCare Australia Fund;</p>
+              </content>
+              <content>
+                <p>unless the Future Fund Board does so:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>through an investment manager engaged by the Future Fund Board under subsection (1) of this section; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>in a manner approved, in writing, by the responsible Ministers.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Future Fund Board must ensure that any investment manager engaged by the Future Fund Board under subsection (1) operates within this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-39__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Future Fund Board must ensure that any investment manager engaged by the Future Fund Board under subsection (1) reports to:</p>
+            </content>
+            <paragraph eId="part-3__sec-39__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the Future Fund Board; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-39__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the Agency;</p>
+              </content>
+              <content>
+                <p>on the state of the investments of the DisabilityCare Australia Fund at such times and in such manner as the Future Fund Board determines.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-41">
+          <num>41</num>
+          <heading>Refund of franking credits</heading>
+          <content>
+            <p>If:</p>
+          </content>
+          <paragraph eId="part-3__sec-41__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	the Future Fund Board receives a refund of a tax offset under the <i>Income Tax Assessment Act 1997</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-41__para-b">
+            <num>b</num>
+            <content>
+              <p>the tax offset is attributable to an investment of the DisabilityCare Australia Fund;</p>
+            </content>
+            <content>
+              <p>the refund is to be credited to the DisabilityCare Australia Fund Special Account.</p>
+            </content>
+            <authorialNote placement="end" eId="note-19" marker="19">
+              <content>
+                <p>Note 1:	See also <ref href="#sec-84B">section 84B</ref> of the <i>Future Fund Act 2006</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-20" marker="20">
+              <content>
+                <p>Note 2:	For refunds of tax offsets, see <ref href="#dvs-6">Division 6</ref>3 of the <i>Income Tax Assessment Act 1997</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-42">
+          <num>42</num>
+          <heading>Realisation of non-financial assets</heading>
+          <subsection eId="part-3__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If an asset held by the Future Fund Board as an investment of the DisabilityCare Australia Fund ceases to be a financial asset:</p>
+            </content>
+            <paragraph eId="part-3__sec-42__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Future Fund Board must realise the asset as soon as practicable after the Future Fund Board becomes aware of the cessation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-42__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>this Act (other than this section) applies in relation to the asset (including in relation to the realisation of the asset) as if the asset had remained a financial asset, and an investment of the DisabilityCare Australia Fund, until the realisation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If an asset acquired by the Future Fund Board, purportedly as an investment of the DisabilityCare Australia Fund, is not a financial asset:</p>
+            </content>
+            <paragraph eId="part-3__sec-42__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Future Fund Board must realise the asset as soon as practicable after the Future Fund Board becomes aware that the asset is not a financial asset; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-42__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>this Act (other than this section) applies in relation to the asset (including in relation to the realisation of the asset) as if the asset had been a financial asset, and an investment of the DisabilityCare Australia Fund, from the time of its acquisition by the Future Fund Board until the realisation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-43">
+          <num>43</num>
+          <heading>Additional function of the Future Fund Board</heading>
+          <content>
+            <p>The functions of the Future Fund Board include the function of investing amounts in accordance with this Act.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Reporting obligations etc.</heading>
+        <section eId="part-4__sec-44">
+          <num>44</num>
+          <heading>Finance Minister to prepare report on balance of DisabilityCare Australia Special Account etc.</heading>
+          <subsection eId="part-4__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>At the end of each quarter starting on or after <date date="2014-07-01">1 July 2014</date>, the Finance Minister must cause a report to be prepared setting out:</p>
+            </content>
+            <paragraph eId="part-4__sec-44__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the balance of the DisabilityCare Australia Fund at the end of the quarter; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-44__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the total States’ and Territories’ share of the DisabilityCare Australia Fund.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-44__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister must cause the report to be published on the internet as soon as practicable after the end of the quarter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-44__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>quarter</i></b> means a period of 3 months commencing on 1 January, 1 April, 1 July or 1 October of a year.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-45">
+          <num>45</num>
+          <heading>Finance Minister may require Future Fund Board to prepare reports or give information</heading>
+          <content>
+            <p>Reports</p>
+          </content>
+          <subsection eId="part-4__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Finance Minister may, by written notice given to the Future Fund Board, require the Future Fund Board to:</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>prepare a report about one or more specified matters relating to the performance of the Future Fund Board’s functions under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-45__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>give copies of the report to the Finance Minister within the period specified in the notice.</p>
+              </content>
+              <content>
+                <p>Information</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may, by written notice given to the Future Fund Board, require the Future Fund Board to:</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>prepare a document setting out specified information relating to the performance of the Future Fund Board’s functions under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-45__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>give copies of the document to the Finance Minister within the period specified in the notice.</p>
+              </content>
+              <content>
+                <p>Compliance</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Future Fund Board must comply with a requirement under subsection (1) or (2).</p>
+            </content>
+            <content>
+              <p>Publication of reports and documents</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Finance Minister may cause to be published (whether on the internet or otherwise):</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a report under subsection (1); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-45__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>a document under subsection (2).</p>
+              </content>
+              <content>
+                <p>Reports and documents</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A report under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A document under subsection (2) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-46">
+          <num>46</num>
+          <heading>Keeping the responsible Ministers informed etc.</heading>
+          <subsection eId="part-4__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Future Fund Board must keep the responsible Ministers informed of the operations of the Future Fund Board under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-46__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Future Fund Board must give the Finance Minister such reports, documents and information in relation to those operations as are appropriate.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-47">
+          <num>47</num>
+          <heading>Finance Minister may give reports to other Ministers etc.</heading>
+          <content>
+            <p>The Finance Minister may give:</p>
+          </content>
+          <paragraph eId="part-4__sec-47__para-a">
+            <num>a</num>
+            <content>
+              <p>the Treasurer; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-47__para-b">
+            <num>b</num>
+            <content>
+              <p>the National Disability Insurance Minister;</p>
+            </content>
+            <content>
+              <p>any of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-47__para-c">
+            <num>c</num>
+            <content>
+              <p>a report under subsection 45(1) or 46(2);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-47__para-d">
+            <num>d</num>
+            <content>
+              <p>a document under subsection 45(2) or 46(2);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-47__para-e">
+            <num>e</num>
+            <content>
+              <p>any other information or document obtained by the Finance Minister under this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-6__sec-52">
+          <num>52</num>
+          <heading>Delegation by the Finance Minister</heading>
+          <content>
+            <p>Department</p>
+          </content>
+          <subsection eId="part-6__sec-52__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Finance Minister may, by writing, delegate any or all of his or her powers under <ref href="#sec-17">section 17</ref>, 18 or 24 to:</p>
+            </content>
+            <paragraph eId="part-6__sec-52__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> of the Finance Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-52__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the Finance Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-21" marker="21">
+                <content>
+                  <p>Note:	The expressions <b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-52__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In exercising powers under a delegation, the delegate must comply with any directions of the Finance Minister.</p>
+            </content>
+            <content>
+              <p>Agency</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-52__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Finance Minister may, by writing, delegate any or all of his or her powers under <ref href="#sec-24">section 24</ref> to:</p>
+            </content>
+            <paragraph eId="part-6__sec-52__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chair; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-52__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the Agency.</p>
+              </content>
+              <authorialNote placement="end" eId="note-22" marker="22">
+                <content>
+                  <p>Note:	The expressions <b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-52__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In exercising powers under a delegation, the delegate must comply with any directions of the Finance Minister.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-53">
+          <num>53</num>
+          <heading>Delegation by the National Disability Insurance Minister</heading>
+          <subsection eId="part-6__sec-53__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The National Disability Insurance Minister may, by writing, delegate his or her power under <ref href="#sec-20">section 20</ref> to:</p>
+            </content>
+            <paragraph eId="part-6__sec-53__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> of the National Disability Insurance Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-53__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the National Disability Insurance Minister Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-23" marker="23">
+                <content>
+                  <p>Note:	The expressions <b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-53__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In exercising powers under a delegation, the delegate must comply with any directions of the National Disability Insurance Minister.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-54">
+          <num>54</num>
+          <heading>Delegation by the Treasurer</heading>
+          <content>
+            <p>The Treasurer may, by writing, delegate any or all of his or her functions under <ref href="#sec-12">section 12</ref> or subsection 21(2) to:</p>
+          </content>
+          <paragraph eId="part-6__sec-54__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#secretary">the Secretary</role> of the Treasury Department; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-54__para-b">
+            <num>b</num>
+            <content>
+              <p>an SES employee, or acting SES employee, in the Treasury Department.</p>
+            </content>
+            <authorialNote placement="end" eId="note-24" marker="24">
+              <content>
+                <p>Note:	The expressions <b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-6__sec-55">
+          <num>55</num>
+          <heading>Review of operation of Act</heading>
+          <content>
+            <p>The responsible Ministers must cause a review of the operation of this Act to be undertaken before:</p>
+          </content>
+          <paragraph eId="part-6__sec-55__para-a">
+            <num>a</num>
+            <content>
+              <p>unless paragraph (b) applies—<date date="2024-06-30">30 June 2024</date>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-55__para-b">
+            <num>b</num>
+            <content>
+              <p>if the responsible Ministers consider that another date is appropriate—that date.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-6__sec-56">
+          <num>56</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-6__sec-56__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-56__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>DisabilityCare Australia Fund Act 2013</td>
+                <td>37, 2013</td>
+                <td>28 May 2013</td>
+                <td>s 3–8, 48–51 and 53: 1 July 2013 (s 2(1) items 2, 4, 6)
+s 9–47, 52 and 54–56: 1 July 2014 (s 2(1) items 3, 5, 7)
+Remainder: 28 May 2013 (s 2(1) item 1)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 8 (items 127–137) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Medical Research Future Fund (Consequential Amendments) Act 2015</td>
+                <td>117, 2015</td>
+                <td>26 Aug 2015</td>
+                <td>Sch 1 (items 4–6): 27 Aug 2015 (s 2(1) item 2)
+Sch 2 (items 5–7): 29 Oct 2015 (s 2(1) item 3)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (items 173, 174): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Aboriginal and Torres Strait Islander Land and Sea Future Fund (Consequential Amendments) Act 2018</td>
+                <td>146, 2018</td>
+                <td>30 Nov 2018</td>
+                <td>Sch 1 (items 4–6): 1 Feb 2019 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Future Drought Fund (Consequential Amendments) Act 2019</td>
+                <td>56, 2019</td>
+                <td>30 July 2019</td>
+                <td>Sch 1 (items 7–9) and Sch 2 (items 8–10, 41–43): 1 Sept 2019 (s 2(1) item 2)
+Sch 3: 31 July 2019 (s 2(1) item 3)</td>
+                <td>Sch 2 (items 41–43)</td>
+              </tr>
+              <tr>
+                <td>Emergency Response Fund (Consequential Amendments) Act 2019</td>
+                <td>91, 2019</td>
+                <td>28 Oct 2019</td>
+                <td>Sch 1 (items 7–9) and Sch 2 (items 7–10, 43–45): 12 Dec 2019 (s 2(1) item 1)</td>
+                <td>Sch 2 (items 43–45)</td>
+              </tr>
+              <tr>
+                <td>National Disability Insurance Scheme Amendment (Participant Service Guarantee and Other Measures) Act 2022</td>
+                <td>27, 2022</td>
+                <td>1 Apr 2022</td>
+                <td>Sch 3 (item 62): 8 Apr 2022 (s 2(1) item 30)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Emergency Response Fund Amendment (Disaster Ready Fund) Act 2022</td>
+                <td>65, 2022</td>
+                <td>29 Nov 2022</td>
+                <td>Sch 1 (items 164–166): 1 Mar 2023 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (Housing Measures No. 1) Act 2023</td>
+                <td>81, 2023</td>
+                <td>28 Sept 2023</td>
+                <td>Sch 4 (items 7–9): 1 Nov 2023 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>COAG Legislation Amendment Act 2024</td>
+                <td>54, 2024</td>
+                <td>5 July 2024</td>
+                <td>Sch 1 (items 10, 11, 29–40): 6 July 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 62, 2014; No 91, 2019; No 27, 2022; No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Division 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 62, 2014; No 117, 2015; No 146, 2018; No 56, 2019; No 91, 2019; No 65, 2022; No 81, 2023</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>am No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>s 40</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 48</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 49</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 50</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 51</td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part 6</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 53</td>
+                <td>am No 62, 2014</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

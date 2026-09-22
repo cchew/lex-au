@@ -1,0 +1,2377 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2009/11/!main"/>
+          <FRBRuri value="/akn/au/act/2009/11"/>
+          <FRBRdate date="2009-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="11"/>
+          <FRBRname value="federal-financial-relations-act-2009"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2009/11/eng@2024-12-11/!main"/>
+          <FRBRuri value="/akn/au/act/2009/11/eng@2024-12-11"/>
+          <FRBRdate date="2024-12-11" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2009/11/eng@2024-12-11/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2009/11/eng@2024-12-11/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2009-01-01" type="generation" eId="evt-creation" source="#federal-financial-relations-act-2009"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2009/36" date="2009-05-27"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2012/61" date="2012-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2013/68" date="2013-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2015/126" date="2015-09-10"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2018/16" date="2018-07-01"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2018/143" date="2018-11-29"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2020/64" date="2020-06-22"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2022/96" date="2022-12-16"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2024/54" date="2024-07-05"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2024/138" date="2024-12-10"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="commissioner-of-taxation" href="/ontology/roles/au/commissioner-of-taxation" showAs="the Commissioner of Taxation"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-appropriation-act" href="/ontology/term/au/term-appropriation-act" showAs="Appropriation Act"/>
+        <TLCTerm eId="term-designated-housing-agreement" href="/ontology/term/au/term-designated-housing-agreement" showAs="designated housing agreement"/>
+        <TLCTerm eId="term-estimated-population-of-a-state" href="/ontology/term/au/term-estimated-population-of-a-state" showAs="estimated population of a State"/>
+        <TLCTerm eId="term-federation-reform-fund" href="/ontology/term/au/term-federation-reform-fund" showAs="Federation Reform Fund"/>
+        <TLCTerm eId="term-first-indexation-amount" href="/ontology/term/au/term-first-indexation-amount" showAs="first indexation amount"/>
+        <TLCTerm eId="term-general-interest-charge" href="/ontology/term/au/term-general-interest-charge" showAs="general interest charge"/>
+        <TLCTerm eId="term-gst" href="/ontology/term/au/term-gst" showAs="GST"/>
+        <TLCTerm eId="term-gst-act" href="/ontology/term/au/term-gst-act" showAs="GST Act"/>
+        <TLCTerm eId="term-gst-imposition-acts" href="/ontology/term/au/term-gst-imposition-acts" showAs="GST Imposition Acts"/>
+        <TLCTerm eId="term-gst-law" href="/ontology/term/au/term-gst-law" showAs="GST law"/>
+        <TLCTerm eId="term-gst-refund-provision" href="/ontology/term/au/term-gst-refund-provision" showAs="GST refund provision"/>
+        <TLCTerm eId="term-gst-revenue" href="/ontology/term/au/term-gst-revenue" showAs="GST revenue"/>
+        <TLCTerm eId="term-gst-revenue-sharing-relativity-for-a-state-for-a-payment-year" href="/ontology/term/au/term-gst-revenue-sharing-relativity-for-a-state-for-a-payment-year" showAs="GST revenue sharing relativity for a State for a payment year"/>
+        <TLCTerm eId="term-housing-affordability-matter" href="/ontology/term/au/term-housing-affordability-matter" showAs="housing affordability matter"/>
+        <TLCTerm eId="term-intergovernmental-agreement" href="/ontology/term/au/term-intergovernmental-agreement" showAs="Intergovernmental Agreement"/>
+        <TLCTerm eId="term-luxury-car-tax-law" href="/ontology/term/au/term-luxury-car-tax-law" showAs="luxury car tax law"/>
+        <TLCTerm eId="term-national-health-reform-agreement" href="/ontology/term/au/term-national-health-reform-agreement" showAs="National Health Reform Agreement"/>
+        <TLCTerm eId="term-pool-top-up" href="/ontology/term/au/term-pool-top-up" showAs="pool top-up"/>
+        <TLCTerm eId="term-primary-housing-agreement" href="/ontology/term/au/term-primary-housing-agreement" showAs="primary housing agreement"/>
+        <TLCTerm eId="term-second-indexation-amount" href="/ontology/term/au/term-second-indexation-amount" showAs="second indexation amount"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-supplementary-housing-agreement" href="/ontology/term/au/term-supplementary-housing-agreement" showAs="supplementary housing agreement"/>
+        <TLCTerm eId="term-temporary-energy-bill-relief-agreement" href="/ontology/term/au/term-temporary-energy-bill-relief-agreement" showAs="temporary energy bill relief agreement"/>
+        <TLCTerm eId="term-wine-equalisation-tax-law" href="/ontology/term/au/term-wine-equalisation-tax-law" showAs="wine equalisation tax law"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Federal Financial Relations Act 2009</p>
+      <p>No. 11, 2009</p>
+      <p><b>Compilation No.</b><b> </b><b>14</b></p>
+      <p><b>Compilation date:</b><b>	</b>11 December 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 138, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Federal Financial Relations Act 2009</i> that shows the text of the law as amended and in force on 11 December 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Object	1</p>
+      <p>4	Definitions	2</p>
+      <p><ref href="#part-2">Part 2</ref>—General revenue assistance	7</p>
+      <p><ref href="#dvs-1">Division 1</ref>—GST revenue grants	7</p>
+      <p>5	GST revenue grants	7</p>
+      <p>6	GST revenue	8</p>
+      <p>7	Determination of population of a State	10</p>
+      <p>8	GST revenue sharing relativity	10</p>
+      <p>8A	Pool top-up for a payment year	10</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Other general revenue assistance	13</p>
+      <p>9	General purpose financial assistance	13</p>
+      <p><ref href="#part-2A">Part 2A</ref>—National skills and workforce development payments	15</p>
+      <p>12A	National skills and workforce development payments	15</p>
+      <p><ref href="#part-3">Part 3</ref>—National specific purpose payments	16</p>
+      <p>13	National specific purpose payments for disability services	16</p>
+      <p><ref href="#part-3A">Part 3A</ref>—National health reform payments	17</p>
+      <p>15A	National health reform payments	17</p>
+      <p><ref href="#part-3B">Part 3B</ref>—Payments relating to housing, homelessness and housing affordability matters	18</p>
+      <p>15B	Simplified outline of this <ref href="#part-18">Part	18</ref></p>
+      <p>15C	Payments relating to housing, homelessness and housing affordability matters—primary housing agreement and supplementary housing agreement	18</p>
+      <p>15D	Payments relating to housing, homelessness and housing affordability matters—designated housing agreement	21</p>
+      <p><ref href="#part-3C">Part 3C</ref>—Temporary energy bill relief	22</p>
+      <p>15E	Payments relating to temporary energy bill relief	22</p>
+      <p>15F	Amount of financial assistance	23</p>
+      <p><ref href="#part-4">Part 4</ref>—National partnership payments	24</p>
+      <p>16	National partnership payments	24</p>
+      <p><ref href="#part-5">Part 5</ref>—Payment of grants	26</p>
+      <p>17	Advance payments for financial year	26</p>
+      <p>18	Overpayment or underpayment of grant	26</p>
+      <p>19	Minister may fix amounts, and times of payments, of financial assistance	27</p>
+      <p>20	Repayment if condition not fulfilled	27</p>
+      <p><ref href="#part-6">Part 6</ref>—Miscellaneous	28</p>
+      <p>21	Minister to have regard to Intergovernmental Agreement and other agreements	28</p>
+      <p>22	Appropriation	29</p>
+      <p>23	Delegation	29</p>
+      <p>24	Regulations	29</p>
+      <p>Endnotes	30</p>
+      <p>Endnote 1—About the endnotes	30</p>
+      <p>Endnote 2—Abbreviation key	32</p>
+      <p>Endnote 3—Legislation history	33</p>
+      <p>Endnote 4—Amendment history	36</p>
+      <p>An Act to provide financial assistance to the States, the Australian Capital Territory and the Northern Territory, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Federal Financial Relations Act 2009</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act commences on <date date="2009-04-01">1 April 2009</date>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Object</heading>
+          <subsection eId="part-1__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The main object of this Act is to provide ongoing financial support for the delivery of services by the States, through:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>general revenue assistance, including the provision of GST revenue grants, to be used by the States for any purpose; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-aa">
+              <num>aa</num>
+              <content>
+                <p>payments to be spent by the States in accordance with a skills and workforce development agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>national specific purpose payments, to be spent by the States on certain service delivery sectors; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ba">
+              <num>ba</num>
+              <content>
+                <p>national health reform payments, to be spent by the States in accordance with the National Health Reform Agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-bb">
+              <num>bb</num>
+              <content>
+                <p>payments relating to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>housing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>homelessness; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>housing affordability matters;</p>
+              </content>
+              <content>
+                <p>to be spent by the States in accordance with:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>a primary housing agreement and a supplementary housing agreement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-v">
+              <num>v</num>
+              <content>
+                <p>a designated housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>national partnership payments, to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>support the delivery by the States of specified outputs or projects; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>facilitate reforms by the States; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>reward the States for nationally significant reforms.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Another object of this Act is to provide financial support for the delivery by the States of temporary and targeted relief from high energy bills for households and small businesses.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-appropriation-act">Appropriation Act</term> means <def>an Act appropriating money for expenditure out of the Consolidated Revenue Fund.</def></p>
+            <p><term refersTo="#term-designated-housing-agreement">designated housing agreement</term> means <def>an agreement that: is entered into between the Commonwealth and one or more States; and relates to any or all of the following: housing; homelessness; housing affordability matters; and is expressed to be a designated housing agreement for the purposes of this Act; and is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</def></p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>is entered into between the Commonwealth and one or more States; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>relates to any or all of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>housing;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>homelessness;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>housing affordability matters; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>is expressed to be a designated housing agreement for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-estimated-population-of-a-state">estimated population of a State</term> has the meaning given by <def><ref href="#sec-7">section 7</ref>.</def></p>
+              <p><term refersTo="#term-federation-reform-fund">Federation Reform Fund</term> means <def>the Federation Reform Fund established by <ref href="#sec-5">section 5</ref> of <ref href="">the Federation Reform Fund Act 2008</ref>.</def></p>
+              <p><term refersTo="#term-first-indexation-amount">first indexation amount</term> has the meaning given by <def>subsections 8A(2) and (3).</def></p>
+              <p><term refersTo="#term-general-interest-charge">general interest charge</term> means <def>the charge worked out under <ref href="#part-II">Part II</ref>A of <ref href="">the Taxation Administration Act 1953</ref>.</def></p>
+              <p><term refersTo="#term-gst">GST</term> has the same meaning as <def>in the GST Act.</def></p>
+              <p><term refersTo="#term-gst-act">GST Act</term> means <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+              <p><term refersTo="#term-gst-imposition-acts">GST Imposition Acts</term> means <def>the following Acts: 	(a)	the <i>A New Tax System (Goods and Services Tax Imposition—Customs) Act 1999</i>; 	(b)	the <i>A New Tax System (Goods and Services Tax Imposition—Excise) Act 1999</i>; 	(c)	the <i>A New Tax System (Goods and Services Tax Imposition—General) Act 1999</i>; 	(d)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—Customs) Act 2005</i>; 	(e)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—Excise) Act 2005</i>; 	(f)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—General) Act 2005</i>.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	the <i>A New Tax System (Goods and Services Tax Imposition—Customs) Act 1999</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the <i>A New Tax System (Goods and Services Tax Imposition—Excise) Act 1999</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	the <i>A New Tax System (Goods and Services Tax Imposition—General) Act 1999</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>	(d)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—Customs) Act 2005</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>	(e)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—Excise) Act 2005</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-f">
+            <num>f</num>
+            <content>
+              <p>	(f)	the <i>A New Tax System (Goods and Services Tax Imposition (Recipients)—General) Act 2005</i>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-gst-law">GST law</term> has the same meaning as <def>in the GST Act.</def></p>
+              <p><term refersTo="#term-gst-refund-provision">GST refund provision</term> means <def>a provision of a Commonwealth law the effect of which is to require the Commonwealth to refund some or all of an amount of GST that has been paid, whether or not the provision also applies in relation to other kinds of tax.</def></p>
+              <p><term refersTo="#term-gst-revenue">GST revenue</term> has the meaning given by <def><ref href="#sec-6">section 6</ref>.</def></p>
+              <p><term refersTo="#term-gst-revenue-sharing-relativity-for-a-state-for-a-payment-year">GST revenue sharing relativity for a State for a payment year</term> has the meaning given by <def><ref href="#sec-8">section 8</ref>.</def></p>
+              <p><term refersTo="#term-housing-affordability-matter">housing affordability matter</term> means <def>a matter that is likely to affect the affordability of housing.</def></p>
+              <p><term refersTo="#term-intergovernmental-agreement">Intergovernmental Agreement</term> means <def>the Intergovernmental Agreement on Federal Financial Relations that took effect on 1 January 2009, as amended from time to time.</def></p>
+              <p><term refersTo="#term-luxury-car-tax-law">luxury car tax law</term> has the meaning given by <def><ref href="#sec-27">section 27</ref>-1 of the A New Tax System (Luxury Car Tax) Act 1999.</def></p>
+              <p><term refersTo="#term-national-health-reform-agreement">National Health Reform Agreement</term> means <def>the National Health Reform Agreement agreed to by the Council of Australian Governments on 2 August 2011, as amended from time to time.</def></p>
+              <p><b><i>payment year</i></b> means:</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	The <i>Intergovernmental Agreement on Federal Financial Relations</i> provides an overarching framework for financial transfers between the Commonwealth and the States and related collaboration on policy development and service delivery.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the financial year starting on <date date="2009-07-01">1 July 2009</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>each succeeding financial year.</p>
+            </content>
+            <content>
+              <p>These are described by a figure referring to 2 years (for example, the 2009-10 payment year is the payment year starting on <date date="2009-07-01">1 July 2009</date>).</p>
+              <p><term refersTo="#term-pool-top-up">pool top-up</term> has the meaning given by <def><ref href="#sec-8A">section 8A</ref>.</def></p>
+              <p><term refersTo="#term-primary-housing-agreement">primary housing agreement</term> means <def>an agreement that: is entered into between the Commonwealth and one or more States; and relates to any or all of the following: housing; homelessness; housing affordability matters; and is expressed to be a primary housing agreement for the purposes of this Act; and is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>is entered into between the Commonwealth and one or more States; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>relates to any or all of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>housing;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>homelessness;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>housing affordability matters; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>is expressed to be a primary housing agreement for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-second-indexation-amount">second indexation amount</term> has the meaning given by <def>subsections 8A(4) and (5).</def></p>
+              <p><b><i>skills and workforce development agreement</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the National Skills Agreement that was entered into between the Commonwealth and the States and that took effect on <date date="2024-01-01">1 January 2024</date>, as amended from time to time; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>if the agreement referred to in paragraph (a) ceases to have effect—an agreement, as amended from time to time, that:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>is entered into between the Commonwealth and one or more States; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>relates to skills or workforce development, or both; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>is expressed to be a skills and workforce development agreement for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iv">
+            <num>iv</num>
+            <content>
+              <p>is entered into before or after the commencement of this paragraph.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-state">State</term> includes <def>the Australian Capital Territory and the Northern Territory.</def></p>
+              <p><term refersTo="#term-supplementary-housing-agreement">supplementary housing agreement</term> means <def>an agreement that: is entered into between the Commonwealth and a single State; and relates to any or all of the following: housing; homelessness; housing affordability matters; and relates to: a single financial year; or each of 2 consecutive financial years; or each of 3 consecutive financial years; or each of 4 consecutive financial years; or each of 5 consecutive financial years; and is expressed to be a supplementary housing agreement for the purposes of this Act; and is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>is entered into between the Commonwealth and a single State; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>relates to any or all of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>housing;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>homelessness;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>housing affordability matters; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>relates to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>a single financial year; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>each of 2 consecutive financial years; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>each of 3 consecutive financial years; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iv">
+            <num>iv</num>
+            <content>
+              <p>each of 4 consecutive financial years; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-v">
+            <num>v</num>
+            <content>
+              <p>each of 5 consecutive financial years; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>is expressed to be a supplementary housing agreement for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>is entered into before or after the commencement of <ref href="#part-3B">Part 3B</ref>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-temporary-energy-bill-relief-agreement">temporary energy bill relief agreement</term> means <def>an agreement that: is entered into between the Commonwealth and one or more States; and relates to the delivery by the State or States of temporary relief from high energy bills for households and small businesses; and provides that the State or States must not deliver that relief to a household or small business unless criteria specified in the agreement in relation to the household or small business are met; and is expressed to be a temporary energy bill relief agreement for the purposes of this Act; and is entered into on or after <date date="2022-12-09">9 December 2022</date>.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>is entered into between the Commonwealth and one or more States; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>relates to the delivery by the State or States of temporary relief from high energy bills for households and small businesses; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>provides that the State or States must not deliver that relief to a household or small business unless criteria specified in the agreement in relation to the household or small business are met; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>is expressed to be a temporary energy bill relief agreement for the purposes of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>is entered into on or after <date date="2022-12-09">9 December 2022</date>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-wine-equalisation-tax-law">wine equalisation tax law</term> has the meaning given by <def><ref href="#sec-33">section 33</ref>-1 of the A New Tax System (Wine Equalisation Tax) Act 1999.</def></p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>General revenue assistance</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>GST revenue grants</heading>
+          <section eId="part-2__dvs-1__sec-5">
+            <num>5</num>
+            <heading>GST revenue grants</heading>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this Act, each State is entitled to the payment, by way of financial assistance, for a payment year, of a grant worked out using the formula:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/federal-financial-relations-act-2009-fig-1.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>adjusted State population</i></b> means the estimated population of the State on 31 December in the payment year (see <ref href="#sec-7">section 7</ref>) multiplied by the GST revenue sharing relativity (see <ref href="#sec-8">section 8</ref>) for the State for that year.</p>
+                <p><b><i>adjusted total population</i></b> means the sum of the adjusted State populations of all of the States for the payment year.</p>
+                <p><b><i>GST revenue</i></b> means the GST revenue for the payment year (see <ref href="#sec-6">section 6</ref>).</p>
+                <p><b><i>pool top</i></b><b><i>-</i></b><b><i>up</i></b> means the pool top-up for the payment year (see <ref href="#sec-8A">section 8A</ref>).</p>
+                <p>Additional financial assistance for transitional payment years</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>transitional year</i></b><b> </b>means the 2021-22 payment year, the 2022-23 payment year, the 2023-24 payment year, the 2024-25 payment year, the 2025-26 payment year or the 2026-27 payment year.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If the sum of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the amount of the grant to which a State is entitled under subsection (1) for a transitional year (the <b><i>base year</i></b>); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the amount of the grant to which the State is entitled under subsection (1) for each transitional year (if any) before the base year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the amount of the grant (if any) to which the State is entitled under this subsection for each transitional year (if any) before the base year;</p>
+                </content>
+                <content>
+                  <p>is less than the sum of the amounts of the grants to which the State would, in the Minister’s opinion, have been entitled for the base year, and each transitional year (if any) before the base year, under this section if the <i>Treasury Laws Amendment (Making Sure Every State and Territory Gets Their Fair Share of GST) Act 2018</i> had not been enacted, the State is entitled, subject to this Act, to the payment, by way of additional financial assistance for the base year, of a grant equal to the difference.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must, in forming an opinion under subsection (3):</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>consult with each of the States; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>have regard to any report of the Commonwealth Grants Commission that <role refersTo="#minister">the Minister</role> considers relevant.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-6">
+            <num>6</num>
+            <heading>GST revenue</heading>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must, by notifiable instrument, determine the amounts described in subsections (3) and (4) for a payment year.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The <b><i>GST revenue</i></b> for a payment year is the difference between:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the sum of all the amounts described in subsection (3) and determined for the payment year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the amount described in subsection (4) and determined for the payment year.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-3">
+              <num>3</num>
+              <content>
+                <p>For the purposes of paragraph (2)(a) the amounts are:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the amount that is the total of the following:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the GST that was collected;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the payments made to <role refersTo="#commissioner-of-taxation">the Commissioner of Taxation</role> representing amounts of GST that would have been payable if the Constitution did not prevent tax from being imposed on property of any kind belonging to a State and <ref href="#sec-5">section 5</ref> of the GST Imposition Acts had not been enacted;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the additional GST that would have been collected if the Commonwealth and Commonwealth entities could be made subject to taxation by a Commonwealth law and <ref href="#sec-177">section 177</ref>-1 of the GST Act made those entities actually liable rather than notionally liable; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the amount of general interest charge that was collected to the extent that it is attributable to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>unpaid GST; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>unpaid general interest charge payable in respect of unpaid GST; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the amount, determined in a manner agreed by the Commonwealth and all of the States, that represents amounts of voluntary GST payments that should have, but have not, been paid by local government bodies.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-4">
+              <num>4</num>
+              <content>
+                <p>For the purposes of paragraph (2)(b) the amount is the total of the following, so far as each of them is attributable to GST:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>payments under the GST refund provisions;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	what was payable under the GST refund provisions and was (rather than being paid directly under those provisions) allocated, applied or refunded in accordance with <ref href="#part-II">Part II</ref>B of the <i>Taxation Administration Act 1953</i>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-5">
+              <num>5</num>
+              <content>
+                <p>In making determinations for the purposes of this section, <role refersTo="#minister">the Minister</role> must make such adjustments as are necessary to ensure that any effect that the luxury car tax law or wine equalisation tax law would otherwise have on the amounts of GST, and the amounts attributable to GST, is removed.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Determination of population of a State</heading>
+            <content>
+              <p>		The <b><i>estimated population</i></b> of a State on 31 December in a payment year is the population of the State on that date as determined by the Australian Statistician after that date and before 31 August in the following payment year.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-1__sec-8">
+            <num>8</num>
+            <heading>GST revenue sharing relativity</heading>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Minister may determine that a factor specified in the determination is the <b><i>GST revenue sharing relativity</i></b> for a State for a payment year.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before making a determination under subsection (1), <role refersTo="#minister">the Minister</role> must consult each of the States.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-2A">
+              <num>2A</num>
+              <content>
+                <p>A factor determined under subsection (1) for a State for the 2022-23 payment year or the 2023-24 payment year must be greater than or equal to 0.7.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-2B">
+              <num>2B</num>
+              <content>
+                <p>A factor determined under subsection (1) for a State for the 2024-25 payment year or a later payment year must be greater than or equal to 0.75.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	A determination under subsection (1) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-8A">
+            <num>8A</num>
+            <heading>Pool top-up for a payment year</heading>
+            <subsection eId="part-2__dvs-1__sec-8A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The <b><i>pool top</i></b><b><i>-</i></b><b><i>up</i></b> for a payment year is worked out using this table:</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Pool top-up for a payment year</th>
+                  <th>Pool top-up for a payment year</th>
+                  <th>Pool top-up for a payment year</th>
+                </tr>
+                <tr>
+                  <td>Item</td>
+                  <td>For this payment year:</td>
+                  <td>The pool top-up is:</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>the 2020-21 payment year or an earlier payment year</td>
+                  <td>$0</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>the 2021-22 payment year</td>
+                  <td>$600 million</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>the 2022-23 payment year</td>
+                  <td>the sum of:
+(a) $600 million; and
+(b) the first indexation amount for that payment year</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>the 2023-24 payment year</td>
+                  <td>the sum of:
+(a) $600 million; and
+(b) the first indexation amount for that payment year</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>the 2024-25 payment year</td>
+                  <td>the sum of:
+(a) $850 million; and
+(b) the first indexation amount for that payment year</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>the 2025-26 payment year or a later payment year</td>
+                  <td>the sum of:
+(a) $850 million; and
+(b) the first indexation amount for that payment year; and
+(c) the second indexation amount for that payment year</td>
+                </tr>
+              </table>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The <b><i>first indexation amount</i></b> for a payment year (the <b><i>current year</i></b>) is the greater of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the amount worked out using the formula in subsection (3); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the current year is the 2023-24 payment year or a later payment year—the first indexation amount for the last payment year before the current year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>otherwise—$0.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The formula for paragraph (2)(a) is:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/federal-financial-relations-act-2009-fig-2.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>GST revenue for current year</i></b> is the GST revenue for the current year.</p>
+                <p><b><i>GST revenue for 2021</i></b><b><i>-</i></b><b><i>22</i></b> is the GST revenue for the 2021-22 payment year.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8A__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	The <b><i>second indexation amount</i></b> for a payment year (the <b><i>current year</i></b>) is the greater of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the amount worked out using the formula in subsection (5); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the current year is the 2026-27 payment year or a later payment year—the second indexation amount for the last payment year before the current year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8A__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>otherwise—$0.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8A__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The formula for paragraph (4)(a) is:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/federal-financial-relations-act-2009-fig-3.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>GST revenue for current year</i></b> is the GST revenue for the current year.</p>
+                <p><b><i>GST revenue for 2024</i></b><b><i>-</i></b><b><i>25</i></b> is the GST revenue for the 2024-25 payment year.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Other general revenue assistance</heading>
+          <section eId="part-2__dvs-2__sec-9">
+            <num>9</num>
+            <heading>General purpose financial assistance</heading>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to a State specified in the determination for the purpose of making a grant of general purpose financial assistance to the State.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If <role refersTo="#minister">the Minister</role> determines an amount under subsection (1):</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>that amount must be credited to the Federation Reform Fund; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#minister">the Minister</role> must ensure that, as soon as practicable after the amount is credited, the Federation Reform Fund is debited for the purposes of making the grant.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	Despite subsection (2), if an Appropriation Act relating to a financial year declares that a specified amount is the <b><i>debit limit</i></b> for the financial year for the purposes of this section:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the total amount credited to the Federation Reform Fund under paragraph (2)(a) during the financial year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the total amount debited from the Federation Reform Fund during the financial year for the purposes of making such grants;</p>
+                </content>
+                <content>
+                  <p>must not exceed that specified amount.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Despite subsection (2), if, for a financial year, no Appropriation Act relating to the financial year declares that a specified amount is the <b><i>debit limit </i></b>for the financial year for the purposes of this section:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>amounts must not be credited to the Federation Reform Fund under paragraph (2)(a) during the financial year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>amounts must not be debited from the Federation Reform Fund during the financial year for the purposes of making such grants.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-5">
+              <num>5</num>
+              <content>
+                <p>	(5)	A determination under subsection (1) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-2A">
+        <num>2A</num>
+        <heading>National skills and workforce development payments</heading>
+        <section eId="part-2A__sec-12A">
+          <num>12A</num>
+          <heading>National skills and workforce development payments</heading>
+          <content>
+            <p>Scope</p>
+          </content>
+          <subsection eId="part-2A__sec-12A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to a State in relation to a financial year if:</p>
+            </content>
+            <paragraph eId="part-2A__sec-12A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the State is a party to a skills and workforce development agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2A__sec-12A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the financial year is the 2024-25 financial year or a later financial year.</p>
+              </content>
+              <content>
+                <p>Determination</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2A__sec-12A__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to the State for the purpose of making a grant of financial assistance for the financial year for the purpose of expenditure in accordance with the skills and workforce development agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2A__sec-12A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A determination under subsection (2) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+            <content>
+              <p>Terms and conditions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2A__sec-12A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that the financial assistance is spent in accordance with the skills and workforce development agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2A__sec-12A__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Financial assistance payable to the State under this section is subject to such additional terms and conditions (if any) as are set out in the skills and workforce development agreement.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>National specific purpose payments</heading>
+        <section eId="part-3__sec-13">
+          <num>13</num>
+          <heading>National specific purpose payments for disability services</heading>
+          <subsection eId="part-3__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Financial assistance is payable in accordance with this section to a State, for the financial year starting on <date date="2008-07-01">1 July 2008</date> and for each later financial year, for the purpose of expenditure on disability services.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The total amount of all financial assistance payable under subsection (1) to the States for a financial year is:</p>
+            </content>
+            <paragraph eId="part-3__sec-13__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>for the financial year starting on <date date="2008-07-01">1 July 2008</date>—the amount determined by the Minister; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>for the financial year starting on <date date="2009-07-01">1 July 2009</date>—$903,686,000; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>for a later financial year—the total amount under this subsection for the preceding financial year, adjusted in accordance with subsection (4).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A determination under paragraph (2)(a) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, determine the manner in which the total amount under paragraph (2)(c) is to be adjusted for a particular financial year. The determination must include a statement of the total amount for that financial year.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, determine, for each financial year, the manner in which the total amount under subsection (2) is to be divided between the States.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Financial assistance is payable to a State under this section on condition that the financial assistance is spent on disability services.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3A">
+        <num>3A</num>
+        <heading>National health reform payments</heading>
+        <section eId="part-3A__sec-15A">
+          <num>15A</num>
+          <heading>National health reform payments</heading>
+          <subsection eId="part-3A__sec-15A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to a State specified in the determination for the purpose of making a grant of financial assistance for the purpose of expenditure in accordance with the National Health Reform Agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-15A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A determination under subsection (1) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-15A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Financial assistance is payable to a State under this section on condition that the financial assistance is spent in accordance with the National Health Reform Agreement.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3B">
+        <num>3B</num>
+        <heading>Payments relating to housing, homelessness and housing affordability matters</heading>
+        <section eId="part-3B__sec-15B">
+          <num>15B</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>•	Payments relating to housing, homelessness and housing affordability matters may be made to a State if the State is a party to:</p>
+          </content>
+          <paragraph eId="part-3B__sec-15B__para-a">
+            <num>a</num>
+            <content>
+              <p>a primary housing agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3B__sec-15B__para-b">
+            <num>b</num>
+            <content>
+              <p>a supplementary housing agreement.</p>
+            </content>
+            <content>
+              <p>•	Payments relating to housing, homelessness and housing affordability matters may be made to a State if the State is a party to a designated housing agreement.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3B__sec-15C">
+          <num>15C</num>
+          <heading>Payments relating to housing, homelessness and housing affordability matters—primary housing agreement and supplementary housing agreement</heading>
+          <content>
+            <p>Scope</p>
+          </content>
+          <subsection eId="part-3B__sec-15C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to a State in relation to a financial year if the State is a party to:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a primary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a supplementary housing agreement that relates to the financial year.</p>
+              </content>
+              <content>
+                <p>Determination</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to the State for the purpose of making a grant of financial assistance for the financial year for the purpose of expenditure in accordance with:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the primary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the supplementary housing agreement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A determination under subsection (2) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+            <content>
+              <p>Terms and conditions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that the financial assistance is spent in accordance with:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the primary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the supplementary housing agreement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that, at all times during the period ascertained in accordance with the primary housing agreement or the supplementary housing agreement, the State will:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>have a housing strategy for the State that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>indicates the level of housing supply needed to respond to projected housing demand, and outlines the reforms and initiatives that contribute to meeting this need; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>includes such other matters (if any) as are specified in the primary housing agreement or the supplementary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>so far as is reasonably practicable to do so—make the housing strategy available on a publicly accessible website.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that, at all times during the period ascertained in accordance with the primary housing agreement or the supplementary housing agreement, the State will:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>have a homelessness strategy for the State that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>addresses the priority homelessness cohorts identified in the primary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>includes reforms or initiatives that contribute to a reduction in the incidence of homelessness; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-6__para-iii">
+              <num>iii</num>
+              <content>
+                <p>includes such other matters (if any) as are specified in the primary housing agreement or the supplementary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>so far as is reasonably practicable to do so—make the homelessness strategy available on a publicly accessible website.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that, for each $1 paid to the State under this section for the financial year in relation to homelessness, the State will spend during the financial year, out of its own resources, $1 in relation to homelessness.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that the State will:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>give <role refersTo="#minister">the Minister</role> such information (if any) relating to any or all of the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-8__para-i">
+              <num>i</num>
+              <content>
+                <p>housing;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-8__para-ii">
+              <num>ii</num>
+              <content>
+                <p>homelessness;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-8__para-iii">
+              <num>iii</num>
+              <content>
+                <p>housing affordability matters;</p>
+              </content>
+              <content>
+                <p>as is specified in the primary housing agreement or the supplementary housing agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>do so in the manner, and within the period, ascertained in accordance with the primary housing agreement or the supplementary housing agreement, as the case requires.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-15C__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The following are matters for the State:</p>
+            </content>
+            <paragraph eId="part-3B__sec-15C__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>the accuracy (or likely accuracy) of the level of housing supply indicated in the housing strategy mentioned in subsection (5);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>the quality or effectiveness (or likely quality or effectiveness) of the reforms and initiatives included in that housing strategy;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-15C__subsec-9__para-c">
+              <num>c</num>
+              <content>
+                <p>the quality or effectiveness (or likely quality or effectiveness) of the reforms or initiatives included in the homelessness strategy mentioned in subsection (6).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3B__sec-15D">
+          <num>15D</num>
+          <heading>Payments relating to housing, homelessness and housing affordability matters—designated housing agreement</heading>
+          <subsection eId="part-3B__sec-15D__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to a State specified in the determination for the purpose of making a grant of financial assistance for the purpose of expenditure in accordance with a designated housing agreement to which the State is a party.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-15D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A determination under subsection (1) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-15D__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Financial assistance is payable to a State under this section on condition that the financial assistance is spent in accordance with the designated housing agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-15D__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Financial assistance payable to a State under this section is subject to such additional terms and conditions (if any) as are set out in the designated housing agreement.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3C">
+        <num>3C</num>
+        <heading>Temporary energy bill relief</heading>
+        <section eId="part-3C__sec-15E">
+          <num>15E</num>
+          <heading>Payments relating to temporary energy bill relief</heading>
+          <content>
+            <p>Scope</p>
+          </content>
+          <subsection eId="part-3C__sec-15E__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to a State in relation to a financial year if:</p>
+            </content>
+            <paragraph eId="part-3C__sec-15E__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the State is a party to a temporary energy bill relief agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3C__sec-15E__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the financial year is the 2022-23 or 2023-24 financial year.</p>
+              </content>
+              <content>
+                <p>Determination</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3C__sec-15E__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> must determine that an amount specified in the determination is to be paid to the State for the purpose of making a grant of financial assistance for the financial year for the purpose of expenditure in accordance with the temporary energy bill relief agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3C__sec-15E__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A determination under subsection (2) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+            <content>
+              <p>Terms and conditions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3C__sec-15E__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Financial assistance is payable to the State under this section for the financial year on condition that the financial assistance is spent in accordance with the temporary energy bill relief agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3C__sec-15E__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Financial assistance payable to the State under this section is subject to such additional terms and conditions (if any) as are set out in the temporary energy bill relief agreement.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3C__sec-15F">
+          <num>15F</num>
+          <heading>Amount of financial assistance</heading>
+          <content>
+            <p>Subject to the temporary energy bill relief agreements, the amount of financial assistance payable under this Part to the States is $1.5 billion.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>National partnership payments</heading>
+        <section eId="part-4__sec-16">
+          <num>16</num>
+          <heading>National partnership payments</heading>
+          <subsection eId="part-4__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may determine that an amount specified in the determination is to be paid to a State specified in the determination for the purpose of making a grant of financial assistance to:</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>support the delivery by the State of specified outputs or projects; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>facilitate reforms by the State; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>reward the State for nationally significant reforms.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If <role refersTo="#minister">the Minister</role> determines an amount under subsection (1):</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that amount must be credited to the Federation Reform Fund; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> must ensure that, as soon as practicable after the amount is credited, the Federation Reform Fund is debited for the purposes of making the grant.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Despite subsection (2), if an Appropriation Act relating to a financial year declares that a specified amount is the <b><i>debit limit</i></b> for the financial year for the purposes of this section:</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the total amount credited to the Federation Reform Fund under paragraph (2)(a) during the financial year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the total amount debited from the Federation Reform Fund during the financial year for the purposes of making such grants;</p>
+              </content>
+              <content>
+                <p>must not exceed that specified amount.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Despite subsection (2), if, for a financial year, no Appropriation Act relating to the financial year declares that a specified amount is the <b><i>debit limit </i></b>for the financial year for the purposes of this section:</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>amounts must not be credited to the Federation Reform Fund under paragraph (2)(a) during the financial year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>amounts must not be debited from the Federation Reform Fund during the financial year for the purposes of making such grants.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	A determination under subsection (1) is a legislative instrument, but <ref href="#sec-42">section 42</ref> (disallowance) of the <i>Legislation Act 2003</i> does not apply to the determination.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Payment of grants</heading>
+        <section eId="part-5__sec-17">
+          <num>17</num>
+          <heading>Advance payments for financial year</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may make advances to a State of portions of the amount or amounts to which, it appears to <role refersTo="#minister">the Minister</role>, the State will be entitled under:</p>
+          </content>
+          <paragraph eId="part-5__sec-17__para-a">
+            <num>a</num>
+            <content>
+              <p><ref href="#sec-5">section 5</ref>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-17__para-b">
+            <num>b</num>
+            <content>
+              <p>a provision of <ref href="#part-2A">Part 2A</ref>, 3, 3A, 3B or 3C;</p>
+            </content>
+            <content>
+              <p>for a financial year.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-18">
+          <num>18</num>
+          <heading>Overpayment or underpayment of grant</heading>
+          <subsection eId="part-5__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If a State has been paid an amount in excess of the amount that, under:</p>
+            </content>
+            <paragraph eId="part-5__sec-18__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-5">section 5</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-18__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a provision of <ref href="#part-2A">Part 2A</ref>, 3, 3A, 3B or 3C;</p>
+              </content>
+              <content>
+                <p>it was entitled to receive by way of financial assistance for a financial year, <role refersTo="#minister">the Minister</role> must deduct an amount equal to the excess from any amount that the State is entitled to receive by way of financial assistance under that provision for the first practicable subsequent financial year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a State has been paid less than the amount that, under:</p>
+            </content>
+            <paragraph eId="part-5__sec-18__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-5">section 5</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-18__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a provision of <ref href="#part-2A">Part 2A</ref>, 3, 3A, 3B or 3C;</p>
+              </content>
+              <content>
+                <p>it was entitled to receive by way of financial assistance for a financial year, <role refersTo="#minister">the Minister</role> must add an amount equal to the shortfall to any amount that the State is entitled to receive by way of financial assistance under that provision for the first practicable subsequent financial year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-19">
+          <num>19</num>
+          <heading>Minister may fix amounts, and times of payments, of financial assistance</heading>
+          <subsection eId="part-5__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Financial assistance payable to a State under this Act is to be paid in such amounts, and at such times, as <role refersTo="#minister">the Minister</role> determines in writing.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A determination made under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-20">
+          <num>20</num>
+          <heading>Repayment if condition not fulfilled</heading>
+          <subsection eId="part-5__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>It is a condition of a payment of financial assistance under this Act to a State that, if the State does not fulfil a condition in respect of the payment, the State will, if <role refersTo="#minister">the Minister</role> so determines, repay to the Commonwealth the amount stated in the determination.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The amount stated in the determination under subsection (1) must not be more than the amount of the payment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A determination made under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-5__sec-20__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a payment of financial assistance has, during a financial year, been made to a State under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-20__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> has determined under subsection (1) that the State must repay an amount in respect of the payment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-20__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the State has not repaid the amount;</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> may deduct an amount equal to the amount unpaid from any amount that the State is entitled to receive by way of financial assistance under this Act for a subsequent financial year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-20__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An amount payable by a State to the Commonwealth under this Act is a debt due by the State to the Commonwealth.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-6__sec-21">
+          <num>21</num>
+          <heading>Minister to have regard to Intergovernmental Agreement and other agreements</heading>
+          <content>
+            <p>In making a determination under this Act, <role refersTo="#minister">the Minister</role> must have regard to:</p>
+          </content>
+          <paragraph eId="part-6__sec-21__para-a">
+            <num>a</num>
+            <content>
+              <p>the Intergovernmental Agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-aaa">
+            <num>aaa</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-i">
+            <num>i</num>
+            <content>
+              <p>the determination relates to financial assistance to a State under <ref href="#sec-12A">section 12A</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the State is a party to a skills and workforce development agreement;</p>
+            </content>
+            <content>
+              <p>the skills and workforce development agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-aa">
+            <num>aa</num>
+            <content>
+              <p>if the determination relates to financial assistance under <ref href="#sec-13">section 13</ref> or 15A—the National Health Reform Agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ab">
+            <num>ab</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-i">
+            <num>i</num>
+            <content>
+              <p>the determination relates to financial assistance to a State under <ref href="#sec-15C">section 15C</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the State is a party to a primary housing agreement or a supplementary housing agreement;</p>
+            </content>
+            <content>
+              <p>the primary housing agreement or the supplementary housing agreement, as the case may be; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ac">
+            <num>ac</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-i">
+            <num>i</num>
+            <content>
+              <p>the determination relates to financial assistance to a State under <ref href="#sec-15D">section 15D</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the State is a party to a designated housing agreement;</p>
+            </content>
+            <content>
+              <p>the designated housing agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ad">
+            <num>ad</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-i">
+            <num>i</num>
+            <content>
+              <p>the determination relates to financial assistance to a State under <ref href="#sec-15E">section 15E</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the State is a party to a temporary energy bill relief agreement;</p>
+            </content>
+            <content>
+              <p>the temporary energy bill relief agreement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-21__para-b">
+            <num>b</num>
+            <content>
+              <p>if the determination relates to financial assistance to one or more States—any other written agreement between the Commonwealth and one or more States that relates to that financial assistance.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-6__sec-22">
+          <num>22</num>
+          <heading>Appropriation</heading>
+          <content>
+            <p>Payments under <ref href="#dvs-1">Division 1</ref> of <ref href="#part-2">Part 2</ref>, <ref href="#part-2A">Part 2A</ref>, <ref href="#part-3">Part 3</ref>, <ref href="#part-3A">Part 3A</ref>, <ref href="#part-3B">Part 3B</ref>, <ref href="#part-3C">Part 3C</ref> or <ref href="#part-5">Part 5</ref> are to be made out of the Consolidated Revenue Fund, which is appropriated accordingly.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-23">
+          <num>23</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-6__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by writing, delegate any or all of his or her powers under <ref href="#sec-17">section 17</ref> or 19 to an SES employee, or acting SES employee, in the Department.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The expressions <b><i>SES employee</i></b> and <b><i>acting SES employee</i></b> are defined in <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-6__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In exercising powers under a delegation, the delegate must comply with any directions of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-24">
+          <num>24</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-6__sec-24__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-24__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Federal Financial Relations Act 2009</td>
+                <td>11, 2009</td>
+                <td>26 Mar 2009</td>
+                <td>1 Apr 2009 (s 2)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Financial Assistance Legislation Amendment Act 2009</td>
+                <td>36, 2009</td>
+                <td>27 May 2009</td>
+                <td>Sch 1 (item 1): 27 May 2009 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Sch 2 (item 597) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 3, 12)</td>
+                <td>Sch 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Federal Financial Relations Amendment (National Health Reform) Act 2012</td>
+                <td>61, 2012</td>
+                <td>25 June 2012</td>
+                <td>Sch 1 (items 1, 3, 4) and Sch 3: 26 June 2012 (s 2(1) items 2, 2B, 4)
+Remainder: 25 June 2012 (s 2(1) items 1, 2A, 2C, 3)</td>
+                <td>Sch 1 (item 6), Sch 2 (item 7) and Sch 3 (item 2)</td>
+              </tr>
+              <tr>
+                <td>Australian Education (Consequential and Transitional Provisions) Act 2013</td>
+                <td>68, 2013</td>
+                <td>27 June 2013</td>
+                <td>Sch 1 (items 1–4) and Sch 2: 1 Jan 2014 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 4) and Sch 2</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Australian Education Amendment Act 2017</td>
+                <td>78, 2017</td>
+                <td>27 June 2017</td>
+                <td>Sch 1 (item 108): 1 Jan 2018 (s 2(1) item 4)
+Sch 1 (item 109): 27 June 2017 (s 2(1) item 5)</td>
+                <td>Sch 1 (item 109)</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 9 (items 29–32) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 9 (item 32) and Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 227): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (National Housing and Homelessness Agreement) Act 2018</td>
+                <td>16, 2018</td>
+                <td>28 Mar 2018</td>
+                <td>1 July 2018 (s 2(1) item 1)</td>
+                <td>Sch 1 (item 10)</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (Making Sure Every State and Territory Gets Their Fair Share of GST) Act 2018</td>
+                <td>143, 2018</td>
+                <td>29 Nov 2018</td>
+                <td>Sch 1 (items 2–7): 30 Nov 2018 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 7)</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (2019 Measures No. 3) Act 2020</td>
+                <td>64, 2020</td>
+                <td>22 June 2020</td>
+                <td>Sch 3 (items 170, 171, 325, 326): 1 Oct 2020 (s 2(1) item 6)</td>
+                <td>Sch 3 (items 325, 326)</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (Energy Price Relief Plan) Act 2022</td>
+                <td>96, 2022</td>
+                <td>16 Dec 2022</td>
+                <td>Sch 2: 17 Dec 2022 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>COAG Legislation Amendment Act 2024</td>
+                <td>54, 2024</td>
+                <td>5 July 2024</td>
+                <td>Sch 1 (items 14, 15, 29, 50, 51): 6 July 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (Responsible Buy Now Pay Later and Other Measures) Act 2024</td>
+                <td>138, 2024</td>
+                <td>10 Dec 2024</td>
+                <td>Sch 6: 11 Dec 2024 (s 2(1) item 9)</td>
+                <td>Sch 6 (items 8–11)</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 61, 2012; No 16, 2018; No 96, 2022; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 61, 2012; No 62, 2014; No 16, 2018; No 143, 2018; No 96, 2022; No 54, 2024; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>rs No 143, 2018</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 61, 2012; No 64, 2020</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am No 126, 2015; No 143, 2018</td>
+              </tr>
+              <tr>
+                <td>s 8A</td>
+                <td>ad No 143, 2018</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 36, 2009; No 62, 2014; No 126, 2015; No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 2A</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 2A</td>
+                <td>ad No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>12A</td>
+                <td>ad No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>rep No 61, 2012</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>rep No 68, 2013</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 68, 2013; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 61, 2012; No 68, 2013; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No 68, 2013; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 16, 2018</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>rep No 68, 2013</td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td>ad No 61, 2012</td>
+              </tr>
+              <tr>
+                <td>s 15A</td>
+                <td>ad No 61, 2012; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>Part 3B</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 3B</td>
+                <td>ad No 16, 2018</td>
+              </tr>
+              <tr>
+                <td>s 15B</td>
+                <td>ad No 16, 2018</td>
+              </tr>
+              <tr>
+                <td>s 15C</td>
+                <td>ad No 16, 2018</td>
+              </tr>
+              <tr>
+                <td>s 15D</td>
+                <td>ad No 16, 2018</td>
+              </tr>
+              <tr>
+                <td>Part 3C</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 3C</td>
+                <td>ad No 96, 2022</td>
+              </tr>
+              <tr>
+                <td>s 15E</td>
+                <td>ad No 96, 2022</td>
+              </tr>
+              <tr>
+                <td>s 15F</td>
+                <td>ad No 96, 2022</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 62, 2014; No 126, 2015; No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 61, 2012; No 16, 2018; No 96, 2022; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am No 61, 2012; No 16, 2018; No 96, 2022; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 6</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 61, 2012; No 16, 2018; No 143, 2018; No 96, 2022; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 61, 2012; No 16, 2018; No 96, 2022; No 138, 2024</td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>am No 46, 2011</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

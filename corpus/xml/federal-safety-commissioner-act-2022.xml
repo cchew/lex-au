@@ -1,0 +1,3504 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2016/87/!main"/>
+          <FRBRuri value="/akn/au/act/2016/87"/>
+          <FRBRdate date="2016-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="87"/>
+          <FRBRname value="federal-safety-commissioner-act-2022"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2016/87/eng@2023-10-18/!main"/>
+          <FRBRuri value="/akn/au/act/2016/87/eng@2023-10-18"/>
+          <FRBRdate date="2023-10-18" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2016/87/eng@2023-10-18/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2016/87/eng@2023-10-18/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2016-01-01" type="generation" eId="evt-creation" source="#federal-safety-commissioner-act-2022"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2016/88" date="2016-12-01"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2017/92" date="2017-08-23"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2019/57" date="2019-08-07"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2021/13" date="2021-03-01"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2022/79" date="2022-12-06"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2023/74" date="2023-09-20"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-accredited-person" href="/ontology/term/au/term-accredited-person" showAs="accredited person"/>
+        <TLCTerm eId="term-builder" href="/ontology/term/au/term-builder" showAs="builder"/>
+        <TLCTerm eId="term-building-contractor" href="/ontology/term/au/term-building-contractor" showAs="building contractor"/>
+        <TLCTerm eId="term-building-employer" href="/ontology/term/au/term-building-employer" showAs="building employer"/>
+        <TLCTerm eId="term-building-work" href="/ontology/term/au/term-building-work" showAs="building work"/>
+        <TLCTerm eId="term-civil-penalty-order" href="/ontology/term/au/term-civil-penalty-order" showAs="civil penalty order"/>
+        <TLCTerm eId="term-commonwealth-place" href="/ontology/term/au/term-commonwealth-place" showAs="Commonwealth place"/>
+        <TLCTerm eId="term-compliance-powers" href="/ontology/term/au/term-compliance-powers" showAs="compliance powers"/>
+        <TLCTerm eId="term-compliance-purposes" href="/ontology/term/au/term-compliance-purposes" showAs="compliance purposes"/>
+        <TLCTerm eId="term-conduct" href="/ontology/term/au/term-conduct" showAs="conduct"/>
+        <TLCTerm eId="term-constitutional-corporation" href="/ontology/term/au/term-constitutional-corporation" showAs="constitutional corporation"/>
+        <TLCTerm eId="term-copy-a-document" href="/ontology/term/au/term-copy-a-document" showAs="copy a document"/>
+        <TLCTerm eId="term-corporate-commonwealth-entity" href="/ontology/term/au/term-corporate-commonwealth-entity" showAs="corporate Commonwealth entity"/>
+        <TLCTerm eId="term-disclose" href="/ontology/term/au/term-disclose" showAs="disclose"/>
+        <TLCTerm eId="term-evidential-burden" href="/ontology/term/au/term-evidential-burden" showAs="evidential burden"/>
+        <TLCTerm eId="term-federal-court" href="/ontology/term/au/term-federal-court" showAs="Federal Court"/>
+        <TLCTerm eId="term-federal-safety-commissioner" href="/ontology/term/au/term-federal-safety-commissioner" showAs="Federal Safety Commissioner"/>
+        <TLCTerm eId="term-fw-act" href="/ontology/term/au/term-fw-act" showAs="FW Act"/>
+        <TLCTerm eId="term-greater-sunrise-special-regime-area" href="/ontology/term/au/term-greater-sunrise-special-regime-area" showAs="Greater Sunrise special regime area"/>
+        <TLCTerm eId="term-land" href="/ontology/term/au/term-land" showAs="land"/>
+        <TLCTerm eId="term-occupier" href="/ontology/term/au/term-occupier" showAs="occupier"/>
+        <TLCTerm eId="term-pre-construction-agreement" href="/ontology/term/au/term-pre-construction-agreement" showAs="pre-construction agreement"/>
+        <TLCTerm eId="term-premises" href="/ontology/term/au/term-premises" showAs="premises"/>
+        <TLCTerm eId="term-relevant-court" href="/ontology/term/au/term-relevant-court" showAs="relevant court"/>
+        <TLCTerm eId="term-relevant-state-or-territory-court" href="/ontology/term/au/term-relevant-state-or-territory-court" showAs="relevant State or Territory court"/>
+        <TLCTerm eId="term-resources-platform" href="/ontology/term/au/term-resources-platform" showAs="resources platform"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-whs-accreditation-scheme" href="/ontology/term/au/term-whs-accreditation-scheme" showAs="WHS Accreditation Scheme"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Federal Safety Commissioner Act 2022</p>
+      <p>No. 87, 2016</p>
+      <p><b>Compilation No. </b><b>8</b></p>
+      <p><b>Compilation date:</b><b>	</b>18 October 2023</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 74, 2023</p>
+      <p><b>Registered:</b><b>	</b>25 October 2023</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Federal Safety Commissioner Act 2022</i> that shows the text of the law as amended and in force on 18 October 2023 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repeal</b><b>ing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>Chapter 1—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Object	2</p>
+      <p>4	Simplified outline of this Act	2</p>
+      <p>5	Definitions	2</p>
+      <p>6	Meaning of <i>building work</i>	6</p>
+      <p>10	Extension of Act to Christmas Island and Cocos (Keeling) Islands	8</p>
+      <p>11	Extension of Act to EEZ and waters above continental shelf	8</p>
+      <p>12	Geographical application of offences	9</p>
+      <p>13	Act to bind Crown	9</p>
+      <p>Chapter 4—The Federal Safety Commissioner	10</p>
+      <p><ref href="#part-1">Part 1</ref>—Simplified outline of this Chapter	10</p>
+      <p>36	Simplified outline of this Chapter	10</p>
+      <p><ref href="#part-2">Part 2</ref>—The Federal Safety Commissioner	11</p>
+      <p>37	Federal Safety Commissioner	11</p>
+      <p>38	Functions of Federal Safety Commissioner	11</p>
+      <p>39	Minister’s directions to Federal Safety Commissioner	12</p>
+      <p>40	Delegation by Federal Safety Commissioner	12</p>
+      <p>41	Acting Federal Safety Commissioner	13</p>
+      <p>42	Consultants	13</p>
+      <p><ref href="#part-3">Part 3</ref>—WHS Accreditation Scheme for Commonwealth building work	14</p>
+      <p>43	WHS Accreditation Scheme for Commonwealth building work	14</p>
+      <p>Chapter 7—Powers to obtain information	16</p>
+      <p><ref href="#part-1">Part 1</ref>—Simplified outline of this Chapter	16</p>
+      <p>60	Simplified outline of this Chapter	16</p>
+      <p><ref href="#part-3">Part 3</ref>—Powers of Federal Safety Officers	17</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Appointment of Federal Safety Officers	17</p>
+      <p>68	Federal Safety Officers	17</p>
+      <p>69	Identity cards for Federal Safety Officers	18</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Powers of Federal Safety Officers	20</p>
+      <p>70	Purposes for which powers of Federal Safety Officers may be exercised	20</p>
+      <p>71	When powers of Federal Safety Officers may be exercised	20</p>
+      <p>72	Power of Federal Safety Officers to enter premises	21</p>
+      <p>73	Showing identity card before entry	21</p>
+      <p>74	Powers of Federal Safety Officers while on premises	22</p>
+      <p>75	Persons assisting Federal Safety Officers	23</p>
+      <p>76	Power to ask for person’s name and address	23</p>
+      <p>77	Power to require persons to produce records or documents	24</p>
+      <p>78	Hindering or obstructing Federal Safety Officers	24</p>
+      <p>79	Power to keep records or documents	24</p>
+      <p>Chapter 8—Enforcement	26</p>
+      <p><ref href="#part-1">Part 1</ref>—Simplified outline of this Chapter	26</p>
+      <p>80	Simplified outline of this Chapter	26</p>
+      <p><ref href="#part-2">Part 2</ref>—Orders for contraventions of civil remedy provisions	27</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Obtaining an order for contravention of civil remedy provision	27</p>
+      <p>81	Penalty etc. for contravention of civil remedy provision	27</p>
+      <p>82	Interest up to judgement	28</p>
+      <p>83	Conduct contravening more than one civil remedy provision	28</p>
+      <p>84	Multiple contraventions	29</p>
+      <p>85	Proceedings may be heard together	29</p>
+      <p>86	Civil evidence and procedure rules for proceedings relating to contraventions of civil remedy provisions	29</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Civil proceedings and criminal proceedings	30</p>
+      <p>87	Civil proceedings after criminal proceedings	30</p>
+      <p>88	Criminal proceedings during civil proceedings	30</p>
+      <p>89	Criminal proceedings after civil proceedings	30</p>
+      <p>90	Evidence given in civil proceedings not admissible in criminal proceedings	30</p>
+      <p>91	Civil double jeopardy	31</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Miscellaneous	32</p>
+      <p>92	Ancillary contravention of civil remedy provisions	32</p>
+      <p>93	Exceptions etc. to civil remedy provisions—burden of proof	32</p>
+      <p>94	Liability of bodies corporate	32</p>
+      <p>Chapter 9—Miscellaneous	34</p>
+      <p><ref href="#part-1">Part 1</ref>—Simplified outline of this Chapter	34</p>
+      <p>101	Simplified outline of this Chapter	34</p>
+      <p><ref href="#part-2">Part 2</ref>—Provisions relating to information	35</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Provisions relating to requirements to provide information	35</p>
+      <p>102	Self-incrimination etc.	35</p>
+      <p>104	Certain records and documents are inadmissible	36</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Protecting information acquired for the purposes of this Act	37</p>
+      <p>105	Disclosure of information by the Federal Safety Commissioner	37</p>
+      <p><ref href="#part-4">Part 4</ref>—Provisions relating to courts	39</p>
+      <p>113	Jurisdiction of the Federal Court	39</p>
+      <p>114	Exercising jurisdiction in the Fair Work Division of the Federal Court	39</p>
+      <p>115	No limitation on Federal Court’s powers	40</p>
+      <p>116	Appeals from relevant State or Territory courts	40</p>
+      <p><ref href="#part-5">Part 5</ref>—Miscellaneous	42</p>
+      <p>118	Federal Safety Commissioner etc. not liable for conduct in good faith	42</p>
+      <p>120	Rules and regulations	42</p>
+      <p>Endnotes	44</p>
+      <p>Endnote 1—About the endnotes	44</p>
+      <p>Endnote 2—Abbreviation key	46</p>
+      <p>Endnote 3—Legislation history	47</p>
+      <p>Endnote 4—Amendment history	49</p>
+      <p>An Act relating to the Federal Safety Commissioner, and for related purposes</p>
+    </preface>
+    <body>
+      <chapter eId="chapter-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="chapter-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Federal Safety Commissioner Act 2022</i>.</p>
+          </content>
+        </section>
+        <section eId="chapter-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="chapter-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provision(s)</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  Sections 1 and 2 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day this Act receives the Royal Assent.</td>
+                <td>1 December 2016</td>
+              </tr>
+              <tr>
+                <td>2.  Sections 3 to 120</td>
+                <td>The later of:
+(a) 1 January 2014; and
+(b) the day after this Act receives the Royal Assent.</td>
+                <td>2 December 2016
+(paragraph (b) applies)</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="chapter-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="chapter-1__sec-3">
+          <num>3</num>
+          <heading>Object</heading>
+          <content>
+            <p>The object of this Act is to promote work health and safety in relation to building work undertaken by a constitutional corporation, the Commonwealth or a corporate Commonwealth entity.</p>
+          </content>
+        </section>
+        <section eId="chapter-1__sec-4">
+          <num>4</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>The Federal Safety Commissioner, and Federal Safety Officers, are responsible for promoting work health and safety in relation to building work. They also have a role in relation to the Work Health and Safety Accreditation Scheme, which is a scheme prescribed by the rules for accrediting persons who carry out building work funded by the Commonwealth or a corporate Commonwealth entity.</p>
+            <p>Federal Safety Officers may obtain information. Federal Safety Officers can also enter premises for certain purposes. There are protections for, and limitations on the use of, information that is provided under this Act.</p>
+          </content>
+        </section>
+        <section eId="chapter-1__sec-5">
+          <num>5</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-accredited-person">accredited person</term> means <def>a person who is accredited under the WHS Accreditation Scheme.</def></p>
+            <p><b><i>authorised applicant</i></b> for an order relating to a contravention of a civil remedy provision means:</p>
+          </content>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a person affected by the contravention; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>a person prescribed by the rules for the purposes of this paragraph.</p>
+            </content>
+            <content>
+              <p>Rules prescribing persons for the purposes of paragraph (c) may provide that a person is prescribed only in relation to circumstances specified in the rules.</p>
+              <p><term refersTo="#term-builder">builder</term> has the meaning given by <def>subsection 43(8).</def></p>
+              <p><term refersTo="#term-building-contractor">building contractor</term> means <def>a person who has entered into, or who has offered to enter into, a contract for services under which the person: carries out building work; or arranges for building work to be carried out.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>carries out building work; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>arranges for building work to be carried out.</p>
+            </content>
+            <content>
+              <p><b><i>building employee</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a person whose employment consists of, or includes, building work; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a person who accepts an offer of engagement as an employee for work that consists of, or includes, building work.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-building-employer">building employer</term> means <def>an employer who employs, or offers to employ, building employees.</def></p>
+              <p><term refersTo="#term-building-work">building work</term> has the meaning given by <def><ref href="#sec-6">section 6</ref>.</def></p>
+              <p><term refersTo="#term-civil-penalty-order">civil penalty order</term> means <def>an order under paragraph 81(1)(a).</def></p>
+              <p><b><i>civil remedy provision</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a Grade A civil remedy provision; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a Grade B civil remedy provision.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-commonwealth-place">Commonwealth place</term> means <def>a place referred to in paragraph 52(i) of the Constitution, other than the seat of government.</def></p>
+              <p><term refersTo="#term-compliance-powers">compliance powers</term> means <def>functions and powers conferred on a Federal Safety Officer.</def></p>
+              <p><term refersTo="#term-compliance-purposes">compliance purposes</term> means <def>the purposes referred to in subsection 70(2).</def></p>
+              <p><term refersTo="#term-conduct">conduct</term> includes <def>an omission.</def></p>
+              <p><term refersTo="#term-constitutional-corporation">constitutional corporation</term> means <def>a corporation to which paragraph 51(xx) of the Constitution applies.</def></p>
+              <p><term refersTo="#term-copy-a-document">copy a document</term> includes <def>take extracts from the document.</def></p>
+              <p><term refersTo="#term-corporate-commonwealth-entity">corporate Commonwealth entity</term> has the same meaning as <def>in the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-disclose">disclose</term> means <def>divulge or communicate.</def></p>
+              <p><b><i>employee</i></b> has its ordinary meaning, and:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>includes an individual who is usually an employee within that meaning; but</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>does not include an individual on a vocational placement.</p>
+            </content>
+            <content>
+              <p><b><i>employer</i></b> has its ordinary meaning, and includes a person that is usually an employer within that meaning.</p>
+              <p><term refersTo="#term-evidential-burden">evidential burden</term>, in relation to a matter, means <def>the burden of adducing or pointing to evidence that suggests a reasonable possibility that the matter exists or does not exist.</def></p>
+              <p><term refersTo="#term-federal-court">Federal Court</term> means <def>the Federal Court of Australia.</def></p>
+              <p><term refersTo="#term-federal-safety-commissioner">Federal Safety Commissioner</term> means <def>the Federal Safety Commissioner referred to in <ref href="#sec-37">section 37</ref>.</def></p>
+              <p><b><i>Federal Safety Officer</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>the Federal Safety Commissioner; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a person appointed as a Federal Safety Officer under subsection 68(1).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-fw-act">FW Act</term> means <def><ref href="">the Fair Work Act 2009</ref>.</def></p>
+              <p><b><i>Grade A civil remedy provision</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a section of this Act (other than a section that is divided into subsections) that has a note at its foot stating “Grade A civil penalty”; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a subsection of this Act that has a note at its foot stating “Grade A civil penalty”.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The maximum penalty for a Grade A civil remedy provision is <quantity refersTo="#penaltyUnit">1,000 penalty units</quantity> for bodies corporate, and otherwise <quantity refersTo="#penaltyUnit">200 penalty units</quantity> (see subsection 81(2)).</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p><b><i>Grade B civil remedy provision</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a section of this Act (other than a section that is divided into subsections) that has a note at its foot stating “Grade B civil penalty”; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a subsection of this Act that has a note at its foot stating “Grade B civil penalty”.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	The maximum penalty for a Grade B civil remedy provision is <quantity refersTo="#penaltyUnit">100 penalty units</quantity> for bodies corporate, and otherwise <quantity refersTo="#penaltyUnit">20 penalty units</quantity> (see subsection 81(2)).</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p><term refersTo="#term-greater-sunrise-special-regime-area">Greater Sunrise special regime area</term> has the same meaning as <def>in <ref href="">the Seas and Submerged Lands Act 1973</ref>.</def></p>
+              <p><b><i>land</i></b> has a meaning affected by subsection 6(6).</p>
+              <p><term refersTo="#term-occupier">occupier</term> has the same meaning as <def>in the FW Act.</def></p>
+              <p><term refersTo="#term-pre-construction-agreement">pre-construction agreement</term> has the meaning given by <def>subsection 43(8).</def></p>
+              <p><term refersTo="#term-premises">premises</term> has the same meaning as <def>in the FW Act.</def></p>
+              <p><term refersTo="#term-relevant-court">relevant court</term> means <def>each of the following courts: the Federal Court; the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>); a Supreme Court of a State or Territory; a District Court, or County Court, of a State.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>the Federal Court;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>a Supreme Court of a State or Territory;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>a District Court, or County Court, of a State.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-relevant-state-or-territory-court">relevant State or Territory court</term> means <def>each of the following courts: a District, County or Local Court of a State; a magistrates court; the Industrial Relations Court of South Australia; the Industrial Court of New South Wales; any other State or Territory court that is prescribed by the rules.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a District, County or Local Court of a State;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a magistrates court;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>the Industrial Relations Court of South Australia;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>the Industrial Court of New South Wales;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="chapter-1__sec-5__para-e">
+            <num>e</num>
+            <content>
+              <p>any other State or Territory court that is prescribed by the rules.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-resources-platform">resources platform</term> means <def>an artificial island, installation or structure attached to the seabed for the purpose of exploration for, or exploitation of, resources or for other economic purposes.</def></p>
+              <p><term refersTo="#term-secretary">Secretary</term> means <def>the Secretary of the Department.</def></p>
+              <p><b><i>this Act</i></b> includes the rules and the regulations.</p>
+              <p><term refersTo="#term-whs-accreditation-scheme">WHS Accreditation Scheme</term> means <def>the Work Health and Safety Accreditation Scheme referred to in <ref href="#sec-43">section 43</ref>.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="chapter-1__sec-6">
+          <num>6</num>
+          <heading>Meaning of building work</heading>
+          <subsection eId="chapter-1__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to subsections (3), (4) and (5), <b><i>building work</i></b> means any of the following activities:</p>
+            </content>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the construction, alteration, extension, restoration, repair, demolition or dismantling of buildings, structures or works that form, or are to form, part of land, whether or not the buildings, structures or works are permanent;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the construction, alteration, extension, restoration, repair, demolition or dismantling of railways (not including rolling stock) or docks;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the installation in any building, structure or works of fittings forming, or to form, part of land, including heating, lighting, air-conditioning, ventilation, power supply, drainage, sanitation, water supply, fire protection, security and communications systems;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>any operation that is part of, or is preparatory to, or is for rendering complete, work covered by paragraph (a), (b) or (c), for example:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>site clearance, earth-moving, excavation, tunnelling and boring; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the laying of foundations; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the erection, maintenance or dismantling of scaffolding; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the prefabrication of made-to-order components to form part of any building, structure or works, whether carried out on-site or off-site; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-v">
+              <num>v</num>
+              <content>
+                <p>site restoration, landscaping and the provision of roadways and other access works;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>transporting or supplying goods, to be used in work covered by paragraph (a), (b), (c) or (d), directly to building sites (including any resources platform) where that work is being or may be performed;</p>
+              </content>
+              <content>
+                <p>but does not include any of the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the drilling for, or extraction of, oil or natural gas;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>the extraction (whether by underground or surface working) of minerals, including tunnelling or boring, or constructing underground works, for that purpose;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>any work that is part of a project for:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the construction, repair or restoration of a single dwelling-house; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the construction, repair or restoration of any building, structure or work associated with a single dwelling-house; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-6__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the alteration or extension of a single dwelling-house, if it remains a single dwelling-house after the alteration or extension.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="chapter-1__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, paragraphs (1)(f) and (g) do not prevent this Act from applying to building work (within the meaning of paragraphs (1)(a) to (e)) that is performed on land in which there is an interest relating to the mining of oil, gas or minerals.</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	This Act extends to any resources platform, and to certain ships, in the exclusive economic zone or in the waters above the continental shelf (see <ref href="#sec-11">section 11</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="chapter-1__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Paragraph (1)(h) does not apply if the project is part of a multi-dwelling development that consists of, or includes, the construction of at least 5 single dwelling-houses.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Subject to subsection (5), <b><i>building work</i></b> includes any activity that is prescribed by the rules for the purposes of this subsection.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-6__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	<b><i>Building work</i></b> does not include any activity that is prescribed by the rules for the purposes of this subsection.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-6__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-land">land</term> includes <def>land beneath water.</def></p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="chapter-1__sec-10">
+          <num>10</num>
+          <heading>Extension of Act to Christmas Island and Cocos (Keeling) Islands</heading>
+          <subsection eId="chapter-1__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act extends to the Territory of Christmas Island and to the Territory of Cocos (Keeling) Islands.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act applies in relation to the Territory of Christmas Island and to the Territory of Cocos (Keeling) Islands with any modifications that are prescribed by the rules.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="chapter-1__sec-11">
+          <num>11</num>
+          <heading>Extension of Act to EEZ and waters above continental shelf</heading>
+          <subsection eId="chapter-1__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act extends to or in relation to:</p>
+            </content>
+            <paragraph eId="chapter-1__sec-11__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any resources platform in the exclusive economic zone or in the waters above the continental shelf; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-11__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any ship, in the exclusive economic zone or in the waters above the continental shelf, that is travelling to or from (or both to and from) an Australian port.</p>
+              </content>
+              <content>
+                <p>Extensions prescribed by rules</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="chapter-1__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting subsection (1), if the rules prescribe further extensions of this Act, or specified provisions of this Act, to or in relation to the exclusive economic zone or to the waters above the continental shelf, then this Act extends accordingly.</p>
+            </content>
+            <content>
+              <p>Modifications relating to Greater Sunrise special regime area</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Despite subsections (1) and (2), if the rules prescribe modifications of this Act, or specified provisions of this Act, for its operation under subsection (1) or (2) in relation to all or part of the Greater Sunrise special regime area then, so far as this Act would, apart from this subsection, extend to the area or part, it has effect as so modified.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-11__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of subsection (3), the rules may prescribe different modifications relating to different parts of the Greater Sunrise special regime area.</p>
+            </content>
+            <content>
+              <p>Extension relating to Greater Sunrise special regime area</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-11__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Despite subsection 13AB(1) of the <i>Seas and Submerged Lands Act 1973</i>:</p>
+            </content>
+            <paragraph eId="chapter-1__sec-11__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>an extension of this Act under subsection (1) of this section has effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-1__sec-11__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>an extension of this Act, or a provision of this Act, because of rules made for the purposes of subsection (2) of this section may (subject to those rules) have effect;</p>
+              </content>
+              <content>
+                <p>in relation to acts, omissions, matters and things directly or indirectly connected with the exploration of, or exploitation of the natural resources of, the continental shelf in the Greater Sunrise special regime area. This subsection has effect whether or not the extension is affected by subsection (3) of this section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="chapter-1__sec-12">
+          <num>12</num>
+          <heading>Geographical application of offences</heading>
+          <content>
+            <p>		<ref href="#dvs-14">Division 14</ref> (standard geographical jurisdiction) of the <i>Criminal Code</i> does not apply in relation to an offence against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-5" marker="5">
+            <content>
+              <p>Note:	The extended geographical application that <ref href="#sec-11">section 11</ref> gives to this Act will apply to the offences in this Act.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="chapter-1__sec-13">
+          <num>13</num>
+          <heading>Act to bind Crown</heading>
+          <subsection eId="chapter-1__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in each of its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="chapter-1__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Nothing in this Act renders the Commonwealth or a State or Territory liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+      </chapter>
+      <chapter eId="chapter-4">
+        <num>4</num>
+        <heading>The Federal Safety Commissioner</heading>
+        <part eId="chapter-4__part-1">
+          <num>1</num>
+          <heading>Simplified outline of this Chapter</heading>
+          <section eId="chapter-4__part-1__sec-36">
+            <num>36</num>
+            <heading>Simplified outline of this Chapter</heading>
+            <content>
+              <p>The Federal Safety Commissioner is an SES position in the Department. <role refersTo="#commissioner">The Commissioner</role> has 2 main functions: in relation to work health and safety in building work and the Work Health and Safety Accreditation Scheme.</p>
+              <p>The Work Health and Safety Accreditation Scheme is a scheme prescribed by the rules. Any person who wishes to carry out building work funded by the Commonwealth or a corporate Commonwealth entity must be accredited by the Federal Safety Commissioner in accordance with the scheme.</p>
+            </content>
+          </section>
+        </part>
+        <part eId="chapter-4__part-2">
+          <num>2</num>
+          <heading>The Federal Safety Commissioner</heading>
+          <section eId="chapter-4__part-2__sec-37">
+            <num>37</num>
+            <heading>Federal Safety Commissioner</heading>
+            <subsection eId="chapter-4__part-2__sec-37__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, by writing, designate a position in the Department as the position of Federal Safety Commissioner.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	For creation of positions, see <ref href="#sec-77">section 77</ref> of the <i>Public Service Act 1999</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-37__subsec-2">
+              <num>2</num>
+              <content>
+                <p>That position can only be occupied by an SES employee.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-37__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Federal Safety Commissioner is the SES employee who occupies, or the acting SES employee who is acting in, that position.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-37__subsec-4">
+              <num>4</num>
+              <content>
+                <p>An instrument under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="chapter-4__part-2__sec-38">
+            <num>38</num>
+            <heading>Functions of Federal Safety Commissioner</heading>
+            <content>
+              <p>The Federal Safety Commissioner has the following functions:</p>
+            </content>
+            <paragraph eId="chapter-4__part-2__sec-38__para-aa">
+              <num>aa</num>
+              <content>
+                <p>promoting the object of this Act (see <ref href="#sec-3">section 3</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-a">
+              <num>a</num>
+              <content>
+                <p>promoting work health and safety in relation to building work undertaken by a constitutional corporation, the Commonwealth or a corporate Commonwealth entity;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-b">
+              <num>b</num>
+              <content>
+                <p>performing functions as the accreditation authority for the purposes of the WHS Accreditation Scheme;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-c">
+              <num>c</num>
+              <content>
+                <p>promoting the benefits of the WHS Accreditation Scheme and disseminating information about the WHS Accreditation Scheme;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-ca">
+              <num>ca</num>
+              <content>
+                <p>auditing compliance with National Construction Code performance requirements in relation to building materials;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-d">
+              <num>d</num>
+              <content>
+                <p>referring matters to other relevant agencies and bodies;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="chapter-4__part-2__sec-38__para-e">
+              <num>e</num>
+              <content>
+                <p>any other functions conferred on the Federal Safety Commissioner by this Act or by another Act.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="chapter-4__part-2__sec-39">
+            <num>39</num>
+            <heading>Minister’s directions to Federal Safety Commissioner</heading>
+            <subsection eId="chapter-4__part-2__sec-39__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, give written directions to the Federal Safety Commissioner specifying the manner in which the Federal Safety Commissioner must exercise the powers or perform the functions of the Federal Safety Commissioner under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-39__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must not give a direction under subsection (1) about a particular case.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-39__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Federal Safety Commissioner must comply with a direction under subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-39__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Despite anything in <ref href="#sec-44">section 44</ref> of the <i>Legislation Act 2003</i>, <ref href="#sec-42">section 42</ref> of that Act (disallowance of legislative instruments) applies to a direction under subsection (1) of this section.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="chapter-4__part-2__sec-40">
+            <num>40</num>
+            <heading>Delegation by Federal Safety Commissioner</heading>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Federal Safety Commissioner may, in writing, delegate all or any of his or her powers and functions under this Act to:</p>
+              </content>
+              <paragraph eId="chapter-4__part-2__sec-40__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a Federal Safety Officer; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-2__sec-40__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an SES employee or acting SES employee; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-2__sec-40__subsec-1__para-ba">
+                <num>ba</num>
+                <content>
+                  <p>an APS employee whose duties relate to the performance of the Federal Safety Commissioner’s functions or the exercise of the Federal Safety Commissioner’s powers; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-2__sec-40__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>a person (whether or not an SES employee) prescribed by the rules for the purposes of this paragraph.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In exercising powers or performing functions under a delegation, the delegate must comply with any directions of the Federal Safety Commissioner.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-3">
+              <num>3</num>
+              <content>
+                <p>As soon as practicable after delegating any power or function under this section, the Federal Safety Commissioner must publish details of the delegation.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Federal Safety Commissioner may give a direction for the purposes of subsection (2).</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A written direction under subsection (4) that is of general application is a legislative instrument.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-40__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A written direction under subsection (4) that relates to a particular case is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="chapter-4__part-2__sec-41">
+            <num>41</num>
+            <heading>Acting Federal Safety Commissioner</heading>
+            <subsection eId="chapter-4__part-2__sec-41__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If an SES employee, or acting SES employee, is acting in the position of Federal Safety Commissioner:</p>
+              </content>
+              <paragraph eId="chapter-4__part-2__sec-41__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the employee has and may exercise all the powers, and is to perform all the functions and duties, of the occupier of the position of Federal Safety Commissioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-2__sec-41__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>this Act, and any other law of the Commonwealth, applies in relation to the employee as if the employee were the occupier of the position of Federal Safety Commissioner.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-41__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Anything done by or in relation to a person purporting to act in the position of Federal Safety Commissioner is not invalid merely because the occasion to act had not arisen or had ceased.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="chapter-4__part-2__sec-42">
+            <num>42</num>
+            <heading>Consultants</heading>
+            <subsection eId="chapter-4__part-2__sec-42__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Federal Safety Commissioner may, on behalf of the Commonwealth, engage persons having suitable qualifications and experience as consultants to the Federal Safety Commissioner.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-2__sec-42__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The terms and conditions of the engagement of a person are those determined by the Federal Safety Commissioner in writing.</p>
+              </content>
+            </subsection>
+          </section>
+        </part>
+        <part eId="chapter-4__part-3">
+          <num>3</num>
+          <heading>WHS Accreditation Scheme for Commonwealth building work</heading>
+          <section eId="chapter-4__part-3__sec-43">
+            <num>43</num>
+            <heading>WHS Accreditation Scheme for Commonwealth building work</heading>
+            <content>
+              <p>Accreditation scheme</p>
+            </content>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The rules may prescribe an accreditation scheme, to be known as the Work Health and Safety Accreditation Scheme, for persons who wish to carry out building work funded by the Commonwealth or a corporate Commonwealth entity.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The rules must provide for the Federal Safety Commissioner to be the accrediting authority under the scheme.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The rules may prescribe fees for applications made under the rules.</p>
+              </content>
+              <content>
+                <p>Commonwealth building work to be carried out by accredited persons</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Commonwealth or a corporate Commonwealth entity must not fund building work unless:</p>
+              </content>
+              <paragraph eId="chapter-4__part-3__sec-43__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>contracts for the building work will be entered into with builders who are accredited persons; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-3__sec-43__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time of the funding, the Commonwealth or corporate Commonwealth entity takes appropriate steps to ensure that builders will be accredited persons when they carry out the building work.</p>
+                </content>
+                <content>
+                  <p>This subsection does not apply to building work prescribed by the rules.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-5">
+              <num>5</num>
+              <content>
+                <p>For the purposes of this section, the Commonwealth or a corporate Commonwealth entity funds building work if it:</p>
+              </content>
+              <paragraph eId="chapter-4__part-3__sec-43__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>pays for, or otherwise funds or finances, the building work (whether directly or indirectly); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-4__part-3__sec-43__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>facilitates the carrying out of the building work by entering into, or otherwise funding or financing (whether directly or indirectly), a pre-construction agreement that relates to the building work.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-6">
+              <num>6</num>
+              <content>
+                <p>If another provision of a law of the Commonwealth is inconsistent with subsection (4), subsection (4) prevails to the extent of the inconsistency unless the other provision expressly refers to this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-7">
+              <num>7</num>
+              <content>
+                <p>Failure to comply with subsection (4) does not affect the validity of anything done by the Commonwealth or a corporate Commonwealth entity in relation to building work.</p>
+              </content>
+              <content>
+                <p>Definitions</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-4__part-3__sec-43__subsec-8">
+              <num>8</num>
+              <content>
+                <p>In this Act:</p>
+              </content>
+              <content>
+                <p><b><i>builder</i></b>, in relation to building work, means a person who carries out any of the building work.</p>
+                <p><b><i>pre</i></b><b><i>-</i></b><b><i>construction agreement</i></b> means an agreement to lease or transfer land, a building or a part of a building on the condition, or on conditions that include the condition, that building work will be carried out on the land, the building or the part of the building.</p>
+              </content>
+            </subsection>
+          </section>
+        </part>
+      </chapter>
+      <chapter eId="chapter-7">
+        <num>7</num>
+        <heading>Powers to obtain information</heading>
+        <part eId="chapter-7__part-1">
+          <num>1</num>
+          <heading>Simplified outline of this Chapter</heading>
+          <section eId="chapter-7__part-1__sec-60">
+            <num>60</num>
+            <heading>Simplified outline of this Chapter</heading>
+            <content>
+              <p>Federal Safety Officers are appointed under this Chapter. Federal Safety Officers have powers, including the power to enter premises, the power to ask a person’s name and address and the power to require persons to produce records or documents.</p>
+              <p>Intentionally hindering or obstructing a Federal Safety Officer who is exercising any of these powers is prohibited.</p>
+            </content>
+          </section>
+        </part>
+        <part eId="chapter-7__part-3">
+          <num>3</num>
+          <heading>Powers of Federal Safety Officers</heading>
+          <division eId="chapter-7__part-3__dvs-2">
+            <num>2</num>
+            <heading>Appointment of Federal Safety Officers</heading>
+            <section eId="chapter-7__part-3__dvs-2__sec-68">
+              <num>68</num>
+              <heading>Federal Safety Officers</heading>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>The Federal Safety Commissioner may, by written instrument, appoint any of the following persons as a Federal Safety Officer:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-68__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>a person who is an employee of the Commonwealth or who holds an office or appointment under a law of the Commonwealth;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-68__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>a person who is an employee of a State or Territory or who holds an office or appointment under a law of a State or Territory;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-68__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>a consultant engaged under <ref href="#sec-42">section 42</ref>.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The Federal Safety Commissioner must not appoint a person referred to in paragraph (1)(c) as a Federal Safety Officer unless the Federal Safety Commissioner is satisfied that the person is an appropriate person to be appointed as a Federal Safety Officer.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The Federal Safety Commissioner is a Federal Safety Officer by force of this subsection.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>In exercising powers or performing functions as a Federal Safety Officer, a Federal Safety Officer appointed under subsection (1) must comply with any directions of the Federal Safety Commissioner.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-5">
+                <num>5</num>
+                <content>
+                  <p>The Federal Safety Commissioner may give directions for the purposes of subsection (4).</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-6">
+                <num>6</num>
+                <content>
+                  <p>A written direction under subsection (5) that is of general application is a legislative instrument.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-68__subsec-7">
+                <num>7</num>
+                <content>
+                  <p>A written direction under subsection (5) that relates to a particular case is not a legislative instrument.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-2__sec-69">
+              <num>69</num>
+              <heading>Identity cards for Federal Safety Officers</heading>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>The Federal Safety Commissioner must issue an identity card to a Federal Safety Officer appointed under subsection 68(1).</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-2">
+                <num>2</num>
+                <content>
+                  <p><role refersTo="#minister">The Minister</role> must issue an identity card to the Federal Safety Commissioner.</p>
+                </content>
+                <content>
+                  <p>Form of identity card</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The identity card must:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-69__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>be in the form approved by the Federal Safety Commissioner; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-69__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>contain a recent photograph of the person to whom it is issued.</p>
+                  </content>
+                  <content>
+                    <p>Federal Safety Officer must carry card</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>A Federal Safety Officer must carry the identity card at all times when performing functions or exercising powers as a Federal Safety Officer.</p>
+                </content>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note:	The Federal Safety Commissioner is a Federal Safety Officer (see the definition of <b><i>Federal Safety Officer</i></b> in <ref href="#sec-5">section 5</ref>).</p>
+                  </content>
+                </authorialNote>
+                <content>
+                  <p>Offence</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-5">
+                <num>5</num>
+                <content>
+                  <p>A person commits an offence of strict liability if:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-69__subsec-5__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the person ceases to be a Federal Safety Officer; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-2__sec-69__subsec-5__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the person does not, <quantity refersTo="#deadline">within 14 days</quantity> of so ceasing, return the person’s identity card to the Federal Safety Commissioner or the Minister (as the case requires).</p>
+                  </content>
+                  <hcontainer name="penalty">
+                    <content>
+                      <p>Penalty:	<quantity refersTo="#penaltyUnit">1 penalty unit</quantity>.</p>
+                    </content>
+                  </hcontainer>
+                  <content>
+                    <p>Exception—card lost or destroyed</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-2__sec-69__subsec-6">
+                <num>6</num>
+                <content>
+                  <p>Subsection (5) does not apply if the identity card was lost or destroyed.</p>
+                </content>
+                <authorialNote placement="end" eId="note-8" marker="8">
+                  <content>
+                    <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (6) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                  </content>
+                </authorialNote>
+              </subsection>
+            </section>
+          </division>
+          <division eId="chapter-7__part-3__dvs-3">
+            <num>3</num>
+            <heading>Powers of Federal Safety Officers</heading>
+            <section eId="chapter-7__part-3__dvs-3__sec-70">
+              <num>70</num>
+              <heading>Purposes for which powers of Federal Safety Officers may be exercised</heading>
+              <content>
+                <p>Compliance purposes for Federal Safety Officers</p>
+              </content>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-70__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>A Federal Safety Officer may exercise compliance powers for one or more of the following purposes:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-70__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>ascertaining whether a constitutional corporation, the Commonwealth or a corporate Commonwealth entity that is an applicant for accreditation meets the accreditation requirements;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-70__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>ascertaining whether a constitutional corporation, the Commonwealth or a corporate Commonwealth entity that is an accredited person has complied, or is complying, with conditions of the accreditation;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-70__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>ascertaining whether an accredited person has complied, or is complying, with conditions of the accreditation in respect of building work in a Territory or Commonwealth place.</p>
+                  </content>
+                  <content>
+                    <p>Functions and powers subject to terms and conditions</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-70__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The functions and powers of a Federal Safety Officer are subject to any conditions and restrictions specified in his or her instrument of appointment.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-71">
+              <num>71</num>
+              <heading>When powers of Federal Safety Officers may be exercised</heading>
+              <content>
+                <p>A Federal Safety Officer may exercise compliance powers:</p>
+              </content>
+              <paragraph eId="chapter-7__part-3__dvs-3__sec-71__para-a">
+                <num>a</num>
+                <content>
+                  <p>at any time during working hours; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-7__part-3__dvs-3__sec-71__para-b">
+                <num>b</num>
+                <content>
+                  <p>at any other time, if the Federal Safety Officer reasonably believes that it is necessary to do so for compliance purposes.</p>
+                </content>
+              </paragraph>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-72">
+              <num>72</num>
+              <heading>Power of Federal Safety Officers to enter premises</heading>
+              <content>
+                <p>Powers of Federal Safety Officers to enter premises</p>
+              </content>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-72__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>A Federal Safety Officer may, without force:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-72__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>enter premises, if the officer reasonably believes that building work is being carried out, or has been carried out by an applicant or accredited person referred to in subsection 70(2); or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-72__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>enter business premises, if the officer reasonably believes that:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-72__subsec-2__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>there are records or documents relevant to compliance purposes on the premises, or accessible from a computer on the premises; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-72__subsec-2__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>a person who ordinarily performs work or conducts business at the premises has information relevant to compliance purposes.</p>
+                  </content>
+                  <authorialNote placement="end" eId="note-9" marker="9">
+                    <content>
+                      <p>Note:	Intentionally hindering or obstructing a Federal Safety Officer is prohibited (see <ref href="#sec-78">section 78</ref>).</p>
+                    </content>
+                  </authorialNote>
+                  <content>
+                    <p>Limitation on Federal Safety Officers entering premises</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-72__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>Despite paragraph (2)(a), a Federal Safety Officer must not enter a part of premises that is used for residential purposes unless the officer reasonably believes that the work referred to in that paragraph is being performed on that part of the premises.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-72__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>Despite subparagraph (2)(b)(ii), a Federal Safety Officer must not enter business premises under that subparagraph if the Federal Safety Officer reasonably believes that the person concerned is not at those premises.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-73">
+              <num>73</num>
+              <heading>Showing identity card before entry</heading>
+              <content>
+                <p>A Federal Safety Officer must, before or as soon as practicable after entering premises, show his or her identity card to the occupier, or another person who apparently represents the occupier, if the occupier or other person is present at the premises.</p>
+              </content>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-74">
+              <num>74</num>
+              <heading>Powers of Federal Safety Officers while on premises</heading>
+              <content>
+                <p>Entry other than under subparagraph 72(2)(b)(ii)</p>
+              </content>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-74__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A Federal Safety Officer who enters premises under paragraph 72(2)(a) or subparagraph 72(2)(b)(i) may exercise one or more of the following powers while on the premises:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>inspect any work, process or object;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>interview any person;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>require a person to tell the Federal Safety Officer who has custody of, or access to, a record or document;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>require a person who has custody of, or access to, a record or document to produce the record or document to the Federal Safety Officer either while the Federal Safety Officer is on the premises, or within a specified period;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-e">
+                  <num>e</num>
+                  <content>
+                    <p>inspect, and make copies of, any record or document that:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>is on the premises; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>is accessible from a computer that is on the premises;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-74__subsec-1__para-f">
+                  <num>f</num>
+                  <content>
+                    <p>take samples of any goods or substances in accordance with any procedures prescribed by the rules.</p>
+                  </content>
+                  <authorialNote placement="end" eId="note-10" marker="10">
+                    <content>
+                      <p>Note:	See also sections 79 (power to keep records or documents), 102 (self-incrimination) and 104 (certain records and documents are inadmissible).</p>
+                    </content>
+                  </authorialNote>
+                  <content>
+                    <p>Entry under subparagraph 72(2)(b)(ii)</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-74__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>A Federal Safety Officer who enters premises under subparagraph 72(2)(b)(ii) may interview the person concerned while on those premises.</p>
+                </content>
+                <content>
+                  <p>Refusing or failing to participate in an interview</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-74__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>	(3)	A refusal or failure by a person to participate in an interview under this section is not to be treated as conduct covered by <ref href="#sec-149">section 149</ref>.1 of the <i>Criminal Code</i>.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-75">
+              <num>75</num>
+              <heading>Persons assisting Federal Safety Officers</heading>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-75__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A person may accompany a Federal Safety Officer onto premises to assist the Federal Safety Officer if the Federal Safety Commissioner is satisfied that:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-75__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the assistance is necessary and reasonable; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-75__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the person assisting has suitable qualifications and experience to properly assist the Federal Safety Officer.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-75__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The person assisting:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-75__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>may do such things on the premises as the Federal Safety Officer requires to assist the Federal Safety Officer to exercise compliance powers; but</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-75__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>must not do anything that the Federal Safety Officer does not have power to do.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-75__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>Anything done by the person assisting is taken for all purposes to have been done by the Federal Safety Officer.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-76">
+              <num>76</num>
+              <heading>Power to ask for person’s name and address</heading>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-76__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A Federal Safety Officer may require a person to tell the Federal Safety Officer the person’s name and address if the Federal Safety Officer reasonably believes that the person has contravened a civil remedy provision.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-76__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>If the Federal Safety Officer reasonably believes that the name or address is false, the Federal Safety Officer may require the person to give evidence of its correctness.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-76__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The person must comply with a requirement under subsection (1) or (2) if:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-76__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the Federal Safety Officer advises the person that he or she may contravene a civil remedy provision if he or she fails to comply with the requirement; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-76__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the Federal Safety Officer shows his or her identity card to the person.</p>
+                  </content>
+                  <authorialNote placement="end" eId="note-11" marker="11">
+                    <content>
+                      <p>Note:	Grade B civil penalty.</p>
+                    </content>
+                  </authorialNote>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-76__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>Subsection (3) does not apply if the person has a reasonable excuse.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-77">
+              <num>77</num>
+              <heading>Power to require persons to produce records or documents</heading>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-77__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A Federal Safety Officer may require a person, by notice, to produce a record or document to the Federal Safety Officer.</p>
+                </content>
+                <authorialNote placement="end" eId="note-12" marker="12">
+                  <content>
+                    <p>Note:	See also sections 79 (power to keep records or documents) and 102 (self-incrimination).</p>
+                  </content>
+                </authorialNote>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-77__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The notice must:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-77__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>be in writing; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-77__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>be served on the person; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-77__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>require the person to produce the record or document at a specified place within a specified period of at least 14 days.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-77__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The person must comply with the notice.</p>
+                </content>
+                <authorialNote placement="end" eId="note-13" marker="13">
+                  <content>
+                    <p>Note:	Grade B civil penalty.</p>
+                  </content>
+                </authorialNote>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-77__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>Subsection (3) does not apply if the person has a reasonable excuse.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-78">
+              <num>78</num>
+              <heading>Hindering or obstructing Federal Safety Officers</heading>
+              <content>
+                <p>A person must not intentionally hinder or obstruct a Federal Safety Officer in exercising his or her compliance powers, or induce or attempt to induce any other person to do so.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	Grade A civil penalty.</p>
+                </content>
+              </authorialNote>
+            </section>
+            <section eId="chapter-7__part-3__dvs-3__sec-79">
+              <num>79</num>
+              <heading>Power to keep records or documents</heading>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-79__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>If a record or document is produced to a Federal Safety Officer in accordance with this Division, the Federal Safety Officer may:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>inspect, and make copies of, the record or document; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>keep the record or document for any period that is necessary.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-79__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>While the Federal Safety Officer keeps a record or document, he or she must allow the following persons to inspect, or make copies of, the record or document at all reasonable times:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the person who produced the record or document;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>any person otherwise entitled to possession of the record or document;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>a person authorised by a person referred to in paragraph (a) or (b).</p>
+                  </content>
+                  <content>
+                    <p>Certified copy to be supplied to person entitled to document</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-79__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>A person otherwise entitled to possession of the document is entitled to be supplied, as soon as practicable, with a copy that is certified, by one of the following persons, to be a true copy:</p>
+                </content>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-3__para-g">
+                  <num>g</num>
+                  <content>
+                    <p>the Federal Safety Commissioner;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-3__para-h">
+                  <num>h</num>
+                  <content>
+                    <p>a Federal Safety Officer;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-3__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>an APS employee assisting the Federal Safety Commissioner;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-7__part-3__dvs-3__sec-79__subsec-3__para-j">
+                  <num>j</num>
+                  <content>
+                    <p>a person engaged as a consultant under <ref href="#sec-42">section 42</ref>.</p>
+                  </content>
+                  <content>
+                    <p>Treatment of certified copy</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-7__part-3__dvs-3__sec-79__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>The certified copy must be received in all courts and tribunals as evidence as if it were the original.</p>
+                </content>
+              </subsection>
+            </section>
+          </division>
+        </part>
+      </chapter>
+      <chapter eId="chapter-8">
+        <num>8</num>
+        <heading>Enforcement</heading>
+        <part eId="chapter-8__part-1">
+          <num>1</num>
+          <heading>Simplified outline of this Chapter</heading>
+          <section eId="chapter-8__part-1__sec-80">
+            <num>80</num>
+            <heading>Simplified outline of this Chapter</heading>
+            <content>
+              <p>An authorised applicant (who may be a person affected by a contravention of a civil remedy provision) may apply to certain courts for an order relating to the contravention. A court may make any order, such as imposing a pecuniary penalty on a person or granting an injunction. This Chapter also includes general rules relating to contraventions of civil remedy provisions (such as who bears burdens of proof, double jeopardy, and the treatment of persons and bodies that are not individuals).</p>
+            </content>
+          </section>
+        </part>
+        <part eId="chapter-8__part-2">
+          <num>2</num>
+          <heading>Orders for contraventions of civil remedy provisions</heading>
+          <division eId="chapter-8__part-2__dvs-1">
+            <num>1</num>
+            <heading>Obtaining an order for contravention of civil remedy provision</heading>
+            <section eId="chapter-8__part-2__dvs-1__sec-81">
+              <num>81</num>
+              <heading>Penalty etc. for contravention of civil remedy provision</heading>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>	(1)	A relevant court, on application by an authorised applicant, may make one or more of the following orders relating to a person (the <b><i>defendant</i></b>) who has contravened a civil remedy provision:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>an order imposing a pecuniary penalty on the defendant;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>an order requiring the defendant to pay a specified amount to another person as compensation for damage suffered by the other person as a result of the contravention;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>any other order that the court considers appropriate.</p>
+                  </content>
+                  <content>
+                    <p>Maximum penalty for civil remedy provisions</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The maximum pecuniary penalty is:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>for a Grade A civil remedy provision—<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity> if the defendant is a body corporate and otherwise <quantity refersTo="#penaltyUnit">200 penalty units</quantity>; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>for a Grade B civil remedy provision—<quantity refersTo="#penaltyUnit">100 penalty units</quantity> if the defendant is a body corporate and otherwise <quantity refersTo="#penaltyUnit">20 penalty units</quantity>.</p>
+                  </content>
+                  <content>
+                    <p>Injunctions</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The orders that may be made under paragraph (1)(c) include:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>injunctions (including interim injunctions); and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>any other orders that the court considers necessary to stop the conduct or remedy its effects, including orders for the sequestration of assets.</p>
+                  </content>
+                  <content>
+                    <p>Pecuniary penalties</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-5">
+                <num>5</num>
+                <content>
+                  <p>A pecuniary penalty under paragraph (1)(a) is payable to the Commonwealth, or to some other person if the court so directs. It may be recovered as a debt.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-6">
+                <num>6</num>
+                <content>
+                  <p>In determining a pecuniary penalty under paragraph (1)(a), the court must take into account all relevant matters, including:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-6__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the nature and extent of the contravention; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-6__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the nature and extent of any loss or damage suffered because of the contravention; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-6__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>the circumstances in which the contravention took place; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-1__sec-81__subsec-6__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>whether the person has previously been found by a court (including a court in a foreign country) to have engaged in any similar conduct.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-81__subsec-7">
+                <num>7</num>
+                <content>
+                  <p>The Consolidated Revenue Fund is appropriated for the purposes of a debt due to a person other than the Commonwealth in relation to a penalty under paragraph (1)(a).</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-1__sec-82">
+              <num>82</num>
+              <heading>Interest up to judgement</heading>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-82__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>This section applies to an order (other than a civil penalty order) under this Division in relation to an amount that a person was required to pay to, or on behalf of, another person under this Act.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-82__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>In making the order the court must, on application, include an amount of interest in the sum ordered, unless good cause is shown to the contrary.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-82__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>Without limiting subsection (2), in determining the amount of interest, the court must take into account the period between the day the relevant cause of action arose and the day the order is made.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-1__sec-83">
+              <num>83</num>
+              <heading>Conduct contravening more than one civil remedy provision</heading>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-83__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>If conduct constitutes a contravention of 2 or more civil remedy provisions, proceedings may be instituted under this Part against a person in relation to the contravention of any one or more of those provisions.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-83__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>However, the person is not liable to more than one pecuniary penalty under this Part in relation to the same conduct.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-1__sec-84">
+              <num>84</num>
+              <heading>Multiple contraventions</heading>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-84__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A relevant court may make a single civil penalty order against a person for multiple contraventions of a civil remedy provision if proceedings for the contraventions are founded on the same facts, or if the contraventions form, or are part of, a series of contraventions of the same or a similar character.</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-1__sec-84__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>However, any pecuniary penalty imposed must not exceed the sum of the maximum penalties that could be ordered if a separate pecuniary penalty were ordered for each of the contraventions.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-1__sec-85">
+              <num>85</num>
+              <heading>Proceedings may be heard together</heading>
+              <content>
+                <p>A relevant court may direct that 2 or more proceedings relating to contraventions of civil remedy provisions are to be heard together.</p>
+              </content>
+            </section>
+            <section eId="chapter-8__part-2__dvs-1__sec-86">
+              <num>86</num>
+              <heading>Civil evidence and procedure rules for proceedings relating to contraventions of civil remedy provisions</heading>
+              <content>
+                <p>A relevant court must apply the rules of evidence and procedure for civil matters when hearing proceedings for a contravention of a civil remedy provision.</p>
+              </content>
+            </section>
+          </division>
+          <division eId="chapter-8__part-2__dvs-2">
+            <num>2</num>
+            <heading>Civil proceedings and criminal proceedings</heading>
+            <section eId="chapter-8__part-2__dvs-2__sec-87">
+              <num>87</num>
+              <heading>Civil proceedings after criminal proceedings</heading>
+              <content>
+                <p>A relevant court may not make a civil penalty order against a person for a contravention of a civil remedy provision if the person has been convicted of an offence constituted by conduct that is the same, or substantially the same, as the conduct constituting the contravention.</p>
+              </content>
+            </section>
+            <section eId="chapter-8__part-2__dvs-2__sec-88">
+              <num>88</num>
+              <heading>Criminal proceedings during civil proceedings</heading>
+              <subsection eId="chapter-8__part-2__dvs-2__sec-88__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>Proceedings for a civil penalty order against a person for a contravention of a civil remedy provision are stayed if:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-2__sec-88__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>criminal proceedings are commenced or have already been commenced against the person for an offence; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-2__sec-88__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the offence is constituted by conduct that is the same, or substantially the same, as the conduct alleged to constitute the contravention.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-2__sec-88__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The proceedings for the order may be resumed if the person is not convicted of the offence. Otherwise, the proceedings are dismissed.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-2__sec-89">
+              <num>89</num>
+              <heading>Criminal proceedings after civil proceedings</heading>
+              <content>
+                <p>Criminal proceedings may be commenced against a person for conduct that is the same, or substantially the same, as conduct that would constitute a contravention of a civil remedy provision regardless of whether an order has been made under this Part against the person in relation to the contravention.</p>
+              </content>
+            </section>
+            <section eId="chapter-8__part-2__dvs-2__sec-90">
+              <num>90</num>
+              <heading>Evidence given in civil proceedings not admissible in criminal proceedings</heading>
+              <subsection eId="chapter-8__part-2__dvs-2__sec-90__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>Evidence of information given, or evidence of production of documents, by an individual is not admissible in criminal proceedings against the individual if:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-2__sec-90__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the individual previously gave the information or produced the documents in proceedings for a civil penalty order against the individual for an alleged contravention of a civil remedy provision (whether or not the order was made); and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-2__sec-90__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the conduct alleged to constitute the offence is the same, or substantially the same, as the conduct alleged to constitute the contravention.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-2__sec-90__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>However, subsection (1) does not apply to criminal proceedings in relation to the falsity of the evidence given by the individual in the proceedings for the civil penalty order.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-2__sec-91">
+              <num>91</num>
+              <heading>Civil double jeopardy</heading>
+              <content>
+                <p>If a person is ordered to pay a pecuniary penalty under a civil remedy provision in relation to particular conduct, the person is not liable to be ordered to pay a pecuniary penalty under some other provision of a law of the Commonwealth in relation to that conduct.</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	A court may make other orders, such as an order for compensation, in relation to particular conduct even if the court has made a civil penalty order in relation to that conduct.</p>
+                </content>
+              </authorialNote>
+            </section>
+          </division>
+          <division eId="chapter-8__part-2__dvs-3">
+            <num>3</num>
+            <heading>Miscellaneous</heading>
+            <section eId="chapter-8__part-2__dvs-3__sec-92">
+              <num>92</num>
+              <heading>Ancillary contravention of civil remedy provisions</heading>
+              <subsection eId="chapter-8__part-2__dvs-3__sec-92__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A person must not:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-92__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>attempt to contravene a civil remedy provision; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-92__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>aid, abet, counsel or procure a contravention of a civil remedy provision; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-92__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>induce (by threats, promises or otherwise) a contravention of a civil remedy provision; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-92__subsec-1__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>be in any way, directly or indirectly, knowingly concerned in, or party to, a contravention of a civil remedy provision; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-92__subsec-1__para-e">
+                  <num>e</num>
+                  <content>
+                    <p>conspire with others to effect a contravention of a civil remedy provision.</p>
+                  </content>
+                  <content>
+                    <p>Civil penalty</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-3__sec-92__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>A person who contravenes subsection (1) in relation to a civil remedy provision is taken to have contravened the provision.</p>
+                </content>
+              </subsection>
+            </section>
+            <section eId="chapter-8__part-2__dvs-3__sec-93">
+              <num>93</num>
+              <heading>Exceptions etc. to civil remedy provisions—burden of proof</heading>
+              <content>
+                <p>If, in proceedings for a civil penalty order against a person for a contravention of a civil remedy provision, the person wishes to rely on any exception, exemption, excuse, qualification or justification provided by the law creating the civil remedy provision, then the person bears an evidential burden in relation to that matter.</p>
+              </content>
+            </section>
+            <section eId="chapter-8__part-2__dvs-3__sec-94">
+              <num>94</num>
+              <heading>Liability of bodies corporate</heading>
+              <content>
+                <p>Conduct of a body corporate</p>
+              </content>
+              <subsection eId="chapter-8__part-2__dvs-3__sec-94__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>Any conduct engaged in on behalf of a body corporate:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	by an officer, employee or agent (an <b><i>official</i></b>) of the body within the scope of his or her actual or apparent authority; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>by any other person at the direction or with the consent or agreement (whether express or implied) of an official of the body, if the giving of the direction, consent or agreement is within the scope of the actual or apparent authority of the official;</p>
+                  </content>
+                  <content>
+                    <p>is taken, for the purposes of this Act, to have been engaged in also by the body.</p>
+                    <p>State of mind of a body corporate</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-3__sec-94__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>If, for the purposes of this Act, it is necessary to establish the state of mind of a body corporate in relation to particular conduct, it is enough to show:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>that the conduct was engaged in by a person referred to in paragraph (1)(a) or (b); and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>that the person had that state of mind.</p>
+                  </content>
+                  <content>
+                    <p>Meaning of state of mind</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-8__part-2__dvs-3__sec-94__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The state of mind of a person includes:</p>
+                </content>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the knowledge, intention, opinion, belief or purpose of the person; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-8__part-2__dvs-3__sec-94__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the person’s reasons for the intention, opinion, belief or purpose.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </section>
+          </division>
+        </part>
+      </chapter>
+      <chapter eId="chapter-9">
+        <num>9</num>
+        <heading>Miscellaneous</heading>
+        <part eId="chapter-9__part-1">
+          <num>1</num>
+          <heading>Simplified outline of this Chapter</heading>
+          <section eId="chapter-9__part-1__sec-101">
+            <num>101</num>
+            <heading>Simplified outline of this Chapter</heading>
+            <content>
+              <p>For persons who are required by this Act to provide information, <ref href="#part-2">Part 2</ref> contains provisions relating to self-incrimination, protection from liability for providing the information and the admissibility of the information provided. The Part also contains rules to protect the privacy of that information, while allowing its disclosure in certain circumstances.</p>
+              <p>Provisions relating to courts, such as the conferral of power on the Federal Court and appeals from certain State or Territory courts, are dealt with by <ref href="#part-4">Part 4</ref>.</p>
+              <p>Certain officials under this Act are protected from civil proceedings under <ref href="#part-5">Part 5</ref>. That Part also allows <role refersTo="#minister">the Minister</role> to delegate certain powers, and contains a rule-making and regulation-making power.</p>
+            </content>
+          </section>
+        </part>
+        <part eId="chapter-9__part-2">
+          <num>2</num>
+          <heading>Provisions relating to information</heading>
+          <division eId="chapter-9__part-2__dvs-1">
+            <num>1</num>
+            <heading>Provisions relating to requirements to provide information</heading>
+            <section eId="chapter-9__part-2__dvs-1__sec-102">
+              <num>102</num>
+              <heading>Self-incrimination etc.</heading>
+              <content>
+                <p>Excuses that are not available</p>
+              </content>
+              <subsection eId="chapter-9__part-2__dvs-1__sec-102__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A person is not excused from producing a record or document under paragraph 74(1)(d) or subsection 77(1), on the ground that to do so:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>would contravene any other law; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>might tend to incriminate the person or otherwise expose the person to a penalty or other liability.</p>
+                  </content>
+                  <content>
+                    <p>Use/derivative use indemnity in relation to other requirements</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-9__part-2__dvs-1__sec-102__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>In the case of an individual who produces a record or document under paragraph 74(1)(d) or subsection 77(1), neither:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the record or document produced; nor</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>any information, document or thing obtained as a direct or indirect consequence of producing the record or document;</p>
+                  </content>
+                  <content>
+                    <p>is admissible in evidence against the individual in criminal proceedings, other than proceedings to which subsection (4) of this section applies.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-9__part-2__dvs-1__sec-102__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>This subsection applies to the following proceedings:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-4__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	proceedings for an offence against <ref href="#sec-137">section 137</ref>.1 or 137.2 of the <i>Criminal Code</i> that relates to this Act (false or misleading information or documents);</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-1__sec-102__subsec-4__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>	(b)	proceedings for an offence against <ref href="#sec-149">section 149</ref>.1 of the <i>Criminal Code</i> that relates to this Act (obstruction of Commonwealth officials).</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </section>
+            <section eId="chapter-9__part-2__dvs-1__sec-104">
+              <num>104</num>
+              <heading>Certain records and documents are inadmissible</heading>
+              <content>
+                <p>The following:</p>
+              </content>
+              <paragraph eId="chapter-9__part-2__dvs-1__sec-104__para-a">
+                <num>a</num>
+                <content>
+                  <p>any record or document inspected or copied under paragraph 74(1)(e) of which an individual had custody, or to which an individual had access, when it was inspected or copied;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-2__dvs-1__sec-104__para-b">
+                <num>b</num>
+                <content>
+                  <p>any information, document or thing obtained as a direct or indirect consequence of inspecting or copying a record or document described in paragraph (a) of this section;</p>
+                </content>
+                <content>
+                  <p>are not admissible in evidence in criminal proceedings against the individual, other than:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-2__dvs-1__sec-104__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	proceedings for an offence against <ref href="#sec-137">section 137</ref>.1 or 137.2 of the <i>Criminal Code</i> that relates to this Act (false or misleading information or documents); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-2__dvs-1__sec-104__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	proceedings for an offence against <ref href="#sec-149">section 149</ref>.1 of the <i>Criminal Code</i> that relates to this Act (obstruction of Commonwealth officials).</p>
+                </content>
+              </paragraph>
+            </section>
+          </division>
+          <division eId="chapter-9__part-2__dvs-2">
+            <num>2</num>
+            <heading>Protecting information acquired for the purposes of this Act</heading>
+            <section eId="chapter-9__part-2__dvs-2__sec-105">
+              <num>105</num>
+              <heading>Disclosure of information by the Federal Safety Commissioner</heading>
+              <content>
+                <p>Information to which this section applies</p>
+              </content>
+              <subsection eId="chapter-9__part-2__dvs-2__sec-105__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>This section applies to information that is acquired by any of the following persons in the course of performing functions, or exercising powers, as such a person:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-1__para-h">
+                  <num>h</num>
+                  <content>
+                    <p>the Federal Safety Commissioner;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-1__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>a Federal Safety Officer;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-1__para-j">
+                  <num>j</num>
+                  <content>
+                    <p>an APS employee assisting the Federal Safety Commissioner;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-1__para-k">
+                  <num>k</num>
+                  <content>
+                    <p>a consultant under <ref href="#sec-42">section 42</ref>.</p>
+                  </content>
+                  <content>
+                    <p>Disclosure that is necessary or appropriate, or likely to assist administration or enforcement</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-9__part-2__dvs-2__sec-105__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>The Federal Safety Commissioner may disclose, or authorise the disclosure of, the information if <role refersTo="#commissioner">the Commissioner</role> reasonably believes:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>that it is necessary or appropriate to do so for the purposes of the performance of <role refersTo="#commissioner">the Commissioner</role>’s functions or the exercise of <role refersTo="#commissioner">the Commissioner</role>’s powers; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>that the disclosure is likely to assist in the administration or enforcement of a law of the Commonwealth, a State or a Territory.</p>
+                  </content>
+                  <content>
+                    <p>Disclosure to <role refersTo="#minister">the Minister</role></p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="chapter-9__part-2__dvs-2__sec-105__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>The Federal Safety Commissioner may disclose, or authorise the disclosure of, the information to <role refersTo="#minister">the Minister</role> if <role refersTo="#commissioner">the Commissioner</role> reasonably believes that the disclosure is likely to assist <role refersTo="#minister">the Minister</role> to consider a complaint or issue in relation to a matter arising under this Act.</p>
+                </content>
+                <content>
+                  <p>Disclosure to the Department</p>
+                </content>
+              </subsection>
+              <subsection eId="chapter-9__part-2__dvs-2__sec-105__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>The Federal Safety Commissioner may disclose, or authorise the disclosure of, the information to:</p>
+                </content>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-4__para-a">
+                  <num>a</num>
+                  <content>
+                    <p><role refersTo="#secretary">the Secretary</role>; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="chapter-9__part-2__dvs-2__sec-105__subsec-4__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>an SES employee, or an APS employee, in the Department;</p>
+                  </content>
+                  <content>
+                    <p>for the purpose of briefing, or considering briefing, <role refersTo="#minister">the Minister</role> if <role refersTo="#commissioner">the Commissioner</role> reasonably believes the disclosure is likely to assist <role refersTo="#minister">the Minister</role> to consider a complaint or issue in relation to a matter arising under this Act.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </section>
+          </division>
+        </part>
+        <part eId="chapter-9__part-4">
+          <num>4</num>
+          <heading>Provisions relating to courts</heading>
+          <section eId="chapter-9__part-4__sec-113">
+            <num>113</num>
+            <heading>Jurisdiction of the Federal Court</heading>
+            <content>
+              <p>Jurisdiction is conferred on the Federal Court in relation to any matter arising under this Act.</p>
+            </content>
+          </section>
+          <section eId="chapter-9__part-4__sec-114">
+            <num>114</num>
+            <heading>Exercising jurisdiction in the Fair Work Division of the Federal Court</heading>
+            <subsection eId="chapter-9__part-4__sec-114__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a writ of mandamus or prohibition or an injunction is sought in the Federal Court against a person holding office under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	a declaration is sought under <ref href="#sec-21">section 21</ref> of the <i>Federal Court of Australia Act 1976</i> in relation to a matter arising under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	an injunction is sought under <ref href="#sec-23">section 23</ref> of the <i>Federal Court of Australia Act 1976</i> in relation to a matter arising under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>a prosecution is instituted in the Federal Court under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>an appeal is instituted in the Federal Court from a judgement of the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or a court of a State or Territory in a matter arising under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>proceedings in relation to a matter arising under this Act are transferred to the Federal Court from the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or a court of a State or Territory states a case or reserves a question for the consideration of the Federal Court in a matter arising under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-114__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>the High Court remits a matter arising under this Act to the Federal Court.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-9__part-4__sec-114__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The jurisdiction of the Federal Court is to be exercised in the Fair Work Division of the Federal Court.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="chapter-9__part-4__sec-115">
+            <num>115</num>
+            <heading>No limitation on Federal Court’s powers</heading>
+            <content>
+              <p>		To avoid doubt, nothing in this Act limits the Federal Court’s powers under <ref href="#sec-21">section 21</ref>, 22 or 23 of the <i>Federal Court of Australia Act 1976</i>.</p>
+            </content>
+          </section>
+          <section eId="chapter-9__part-4__sec-116">
+            <num>116</num>
+            <heading>Appeals from relevant State or Territory courts</heading>
+            <content>
+              <p>Appeals from original decisions of relevant State or Territory courts</p>
+            </content>
+            <subsection eId="chapter-9__part-4__sec-116__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An appeal lies to the Federal Court from a decision of a relevant State or Territory court exercising jurisdiction under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-9__part-4__sec-116__subsec-2">
+              <num>2</num>
+              <content>
+                <p>No appeal lies from a decision of a relevant State or Territory court exercising jurisdiction under this Act, except:</p>
+              </content>
+              <paragraph eId="chapter-9__part-4__sec-116__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the court was exercising summary jurisdiction—an appeal, to that court or another relevant State or Territory court of the same State or Territory, as provided for by a law of that State or Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-116__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>in any case—an appeal as provided for by subsection (1).</p>
+                </content>
+                <content>
+                  <p>Appeals from appellate decisions of relevant State or Territory courts</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-9__part-4__sec-116__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An appeal lies to the Federal Court from a decision of a relevant State or Territory court made on appeal from a decision that:</p>
+              </content>
+              <paragraph eId="chapter-9__part-4__sec-116__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>was a decision of that court or another relevant State or Territory court of the same State or Territory; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-4__sec-116__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>was made in the exercise of jurisdiction under this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-9__part-4__sec-116__subsec-4">
+              <num>4</num>
+              <content>
+                <p>No appeal lies from a decision to which subsection (3) applies, except an appeal as provided for by that subsection.</p>
+              </content>
+              <content>
+                <p>Leave to appeal not required</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-9__part-4__sec-116__subsec-5">
+              <num>5</num>
+              <content>
+                <p>It is not necessary to obtain the leave of the Federal Court, or the court appealed from, in relation to an appeal under subsection (1) or (3).</p>
+              </content>
+            </subsection>
+          </section>
+        </part>
+        <part eId="chapter-9__part-5">
+          <num>5</num>
+          <heading>Miscellaneous</heading>
+          <section eId="chapter-9__part-5__sec-118">
+            <num>118</num>
+            <heading>Federal Safety Commissioner etc. not liable for conduct in good faith</heading>
+            <subsection eId="chapter-9__part-5__sec-118__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Civil proceedings do not lie for loss, damage or injury of any kind suffered by a person as a result of anything done, or omitted to be done, in good faith and without negligence by a person referred to in subsection (2) in the exercise, or purported exercise, of functions, powers or duties under, or in relation to, this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-9__part-5__sec-118__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The persons are:</p>
+              </content>
+              <paragraph eId="chapter-9__part-5__sec-118__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Federal Safety Commissioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-118__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>a Federal Safety Officer; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-118__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>an APS employee assisting the Federal Safety Commissioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-118__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>a person engaged as a consultant under <ref href="#sec-42">section 42</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="chapter-9__part-5__sec-120">
+            <num>120</num>
+            <heading>Rules and regulations</heading>
+            <content>
+              <p>Rules</p>
+            </content>
+            <subsection eId="chapter-9__part-5__sec-120__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters:</p>
+              </content>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>required or permitted by this Act to be prescribed by the rules; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-9__part-5__sec-120__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), the rules may make provision for, and in relation to, the following:</p>
+              </content>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the manner in which, and the time within which, applications under this Act may be made and dealt with;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the form of notices that are required or permitted to be given under this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="chapter-9__part-5__sec-120__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	Despite subsection 12(2) of the <i>Legislation Act 2003</i>, the first rules made for the purposes of subsection 6(4) or (5) (meaning of <b><i>building work</i></b>) or 10(2) (extension of Act to Christmas Island and Cocos (Keeling) Islands) may be expressed to take effect from the commencement of the subsection for which the rules are made, if those rules are made within 120 days after this subsection commences.</p>
+              </content>
+              <content>
+                <p>Regulations</p>
+              </content>
+            </subsection>
+            <subsection eId="chapter-9__part-5__sec-120__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Governor-General may make regulations prescribing:</p>
+              </content>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-aa">
+                <num>aa</num>
+                <content>
+                  <p>matters required or permitted by this Act to be prescribed by the regulations; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-ab">
+                <num>ab</num>
+                <content>
+                  <p>matters necessary or convenient to be prescribed for carrying out or giving effect to this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>penalties for offences against the rules, not exceeding a fine of <quantity refersTo="#penaltyUnit">10 penalty units</quantity>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>civil penalties for contraventions of the rules, not exceeding:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-i">
+                <num>i</num>
+                <content>
+                  <p>for a body corporate—<quantity refersTo="#penaltyUnit">25 penalty units</quantity>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="chapter-9__part-5__sec-120__subsec-4__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>in any other case—<quantity refersTo="#penaltyUnit">5 penalty units</quantity>.</p>
+                </content>
+                <content>
+                  <p>Endnotes</p>
+                  <p>Endnote 1—About the endnotes</p>
+                  <p>The endnotes provide information about this compilation and the compiled law.</p>
+                  <p>The following endnotes are included in every compilation:</p>
+                  <p>Endnote 1—About the endnotes</p>
+                  <p>Endnote 2—Abbreviation key</p>
+                  <p>Endnote 3—Legislation history</p>
+                  <p>Endnote 4—Amendment history</p>
+                  <p><b>Abbreviation key—Endnote 2</b></p>
+                  <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                  <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                  <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                  <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                  <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                  <p><b>Editorial changes</b></p>
+                  <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                  <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                  <p><b>Misdescribed amendments</b></p>
+                  <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                  <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                  <p>Endnote 2—Abbreviation key</p>
+                </content>
+                <table>
+                  <tr>
+                    <th>ad = added or inserted</th>
+                    <th>o = order(s)</th>
+                  </tr>
+                  <tr>
+                    <td>am = amended</td>
+                    <td>Ord = Ordinance</td>
+                  </tr>
+                  <tr>
+                    <td>amdt = amendment</td>
+                    <td>orig = original</td>
+                  </tr>
+                  <tr>
+                    <td>c = clause(s)</td>
+                    <td>par = paragraph(s)/subparagraph(s)</td>
+                  </tr>
+                  <tr>
+                    <td>C[x] = Compilation No. x</td>
+                    <td>/sub-subparagraph(s)</td>
+                  </tr>
+                  <tr>
+                    <td>Ch = Chapter(s)</td>
+                    <td>pres = present</td>
+                  </tr>
+                  <tr>
+                    <td>def = definition(s)</td>
+                    <td>prev = previous</td>
+                  </tr>
+                  <tr>
+                    <td>Dict = Dictionary</td>
+                    <td>(prev…) = previously</td>
+                  </tr>
+                  <tr>
+                    <td>disallowed = disallowed by Parliament</td>
+                    <td>Pt = Part(s)</td>
+                  </tr>
+                  <tr>
+                    <td>Div = Division(s)</td>
+                    <td>r = regulation(s)/rule(s)</td>
+                  </tr>
+                  <tr>
+                    <td>ed = editorial change</td>
+                    <td>reloc = relocated</td>
+                  </tr>
+                  <tr>
+                    <td>exp = expires/expired or ceases/ceased to have</td>
+                    <td>renum = renumbered</td>
+                  </tr>
+                  <tr>
+                    <td>effect</td>
+                    <td>rep = repealed</td>
+                  </tr>
+                  <tr>
+                    <td>F = Federal Register of Legislation</td>
+                    <td>rs = repealed and substituted</td>
+                  </tr>
+                  <tr>
+                    <td>gaz = gazette</td>
+                    <td>s = section(s)/subsection(s)</td>
+                  </tr>
+                  <tr>
+                    <td>LA = Legislation Act 2003</td>
+                    <td>Sch = Schedule(s)</td>
+                  </tr>
+                  <tr>
+                    <td>LIA = Legislative Instruments Act 2003</td>
+                    <td>Sdiv = Subdivision(s)</td>
+                  </tr>
+                  <tr>
+                    <td>(md) = misdescribed amendment can be given</td>
+                    <td>SLI = Select Legislative Instrument</td>
+                  </tr>
+                  <tr>
+                    <td>effect</td>
+                    <td>SR = Statutory Rules</td>
+                  </tr>
+                  <tr>
+                    <td>(md not incorp) = misdescribed amendment</td>
+                    <td>Sub-Ch = Sub-Chapter(s)</td>
+                  </tr>
+                  <tr>
+                    <td>cannot be given effect</td>
+                    <td>SubPt = Subpart(s)</td>
+                  </tr>
+                  <tr>
+                    <td>mod = modified/modification</td>
+                    <td>underlining = whole or part not</td>
+                  </tr>
+                  <tr>
+                    <td>No. = Number(s)</td>
+                    <td>commenced or to be commenced</td>
+                  </tr>
+                </table>
+                <content>
+                  <p>Endnote 3—Legislation history</p>
+                </content>
+                <table>
+                  <tr>
+                    <th>Act</th>
+                    <th>Number and year</th>
+                    <th>Assent</th>
+                    <th>Commencement</th>
+                    <th>Application, saving and transitional provisions</th>
+                  </tr>
+                  <tr>
+                    <td>Building and Construction Industry (Improving Productivity) Act 2016</td>
+                    <td>87, 2016</td>
+                    <td>1 Dec 2016</td>
+                    <td>s 3–120: 2 Dec 2016 (s 2(1) item 2)
+Remainder: 1 Dec 2016 (s 2(1) item 1)</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Building and Construction Industry (Consequential and Transitional Provisions) Act 2016</td>
+                    <td>88, 2016</td>
+                    <td>1 Dec 2016</td>
+                    <td>Sch 1 (item 6) and Sch 2: 2 Dec 2016 (s 2(1) items 3, 4)</td>
+                    <td>Sch 2</td>
+                  </tr>
+                  <tr>
+                    <td>as amended by</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2017</td>
+                    <td>92, 2017</td>
+                    <td>23 Aug 2017</td>
+                    <td>Sch 2 (items 20–23) and Sch 4: 23 Aug 2017 (s 2(1) item 1)</td>
+                    <td>Sch 4</td>
+                  </tr>
+                  <tr>
+                    <td>Building and Construction Industry (Improving Productivity) Amendment Act 2017</td>
+                    <td>1, 2017</td>
+                    <td>16 Feb 2017</td>
+                    <td>17 Feb 2017 (s 2(1) item 1)</td>
+                    <td>Sch 1 (item 3)</td>
+                  </tr>
+                  <tr>
+                    <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2017</td>
+                    <td>92, 2017</td>
+                    <td>23 Aug 2017</td>
+                    <td>Sch 2 (items 24–49) and Sch 4: 23 Aug 2017 (s 2(1) item 1)</td>
+                    <td>Sch 4</td>
+                  </tr>
+                  <tr>
+                    <td>Timor Sea Maritime Boundaries Treaty Consequential Amendments Act 2019</td>
+                    <td>57, 2019</td>
+                    <td>7 Aug 2019</td>
+                    <td>Sch 1 (items 4, 5): 30 Aug 2019 (s 2(1) item 2)</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021</td>
+                    <td>13, 2021</td>
+                    <td>1 Mar 2021</td>
+                    <td>Sch 2 (items 153–155): 1 Sept 2021 (s 2(1) item 5)</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Fair Work Legislation Amendment (Secure Jobs, Better Pay) Act 2022</td>
+                    <td>79, 2022</td>
+                    <td>6 Dec 2022</td>
+                    <td>Sch 1 (items 178–306, 318–344): 7 Dec 2022 (s 2(1) items 6, 8)
+Sch 1 (items 307–312): 6 Feb 2023 (s 2(1) item 7)</td>
+                    <td>Sch 1 (items 318–344)</td>
+                  </tr>
+                  <tr>
+                    <td>Statute Law Amendment (Prescribed Forms and Other Updates) Act 2023</td>
+                    <td>74, 2023</td>
+                    <td>20 Sept 2023</td>
+                    <td>Sch 4 (item 50): 18 Oct 2023 (s 2(1) item 3)</td>
+                    <td>—</td>
+                  </tr>
+                </table>
+                <content>
+                  <p>Endnote 4—Amendment history</p>
+                </content>
+                <table>
+                  <tr>
+                    <th>Provision affected</th>
+                    <th>How affected</th>
+                  </tr>
+                  <tr>
+                    <td>Title</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 1</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 3</td>
+                    <td>rs No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 4</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 5</td>
+                    <td>am No 92, 2017; No 57, 2019; No 13, 2021; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 7</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 8</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 9</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 11</td>
+                    <td>am No 57, 2019</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 2</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 1 heading</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 14</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 14A</td>
+                    <td>ad No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 15</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 16</td>
+                    <td>rs No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 17</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 18</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 19</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 20</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>ed C6</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 21</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 22</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 23</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 24</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 25</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 26</td>
+                    <td>rs No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 27</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 28</td>
+                    <td>am No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 29</td>
+                    <td>am No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 30</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 31</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32A</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32B</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32C</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32D</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32E</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32F</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32G</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32H</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32J</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 32K</td>
+                    <td>rs No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 3</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 33</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 34</td>
+                    <td>am No 1, 2017; No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 35</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 4</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Part 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 36</td>
+                    <td>am No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td>Part 2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 38</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 39</td>
+                    <td>am No 74, 2023</td>
+                  </tr>
+                  <tr>
+                    <td>s 40</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 43</td>
+                    <td>am No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 5</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 44</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 45</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 46</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 47</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 48</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 49</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 6</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 50</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 51</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 52</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 53</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 54</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 55</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 56</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 57</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 58</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 59</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 7</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Part 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 60</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 2</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61A</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61B</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61C</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61D</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61E</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 61F</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 62</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 63</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 64</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 65</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Part 3 heading</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Division 1</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 66</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 67</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Division 3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Division 3 heading</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 70</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 71</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 72</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 73</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 74</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>ed C6</td>
+                  </tr>
+                  <tr>
+                    <td>s 75</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 76</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 77</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 78</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 79</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 8</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Part 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 80</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Division 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 81</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Division 3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 95</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 96</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 97</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 3</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 98</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 99</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 100</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Chapter 9</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Part 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 101</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Division 1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 102</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 103</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Division 2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 105</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 106</td>
+                    <td>am No 88, 2016; No 92, 2017</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 107</td>
+                    <td>am No 92, 2017; No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 3</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 108</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 109</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 110</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 111</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 112</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 4</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 114</td>
+                    <td>am No 13, 2021</td>
+                  </tr>
+                  <tr>
+                    <td>s 117</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>Part 5</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>s 118</td>
+                    <td>am No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 119</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 119A</td>
+                    <td>rep No 79, 2022</td>
+                  </tr>
+                  <tr>
+                    <td>s 120</td>
+                    <td>am No 74, 2023</td>
+                  </tr>
+                </table>
+              </paragraph>
+            </subsection>
+          </section>
+        </part>
+      </chapter>
+    </body>
+  </act>
+</akomaNtoso>

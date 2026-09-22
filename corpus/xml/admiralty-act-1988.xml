@@ -1,0 +1,2533 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1988/34/!main"/>
+          <FRBRuri value="/akn/au/act/1988/34"/>
+          <FRBRdate date="1988-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="34"/>
+          <FRBRname value="admiralty-act-1988"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1988/34/eng@2022-02-18/!main"/>
+          <FRBRuri value="/akn/au/act/1988/34/eng@2022-02-18"/>
+          <FRBRdate date="2022-02-18" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1988/34/eng@2022-02-18/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1988/34/eng@2022-02-18/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1988-01-01" type="generation" eId="evt-creation" source="#admiralty-act-1988"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1989/151"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1992/166"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1994/20"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2001/149"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2004/62" date="2004-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2006/23"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2008/73" date="2008-07-03"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2008/77" date="2008-07-12"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2009/131" date="2009-12-14"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2012/129" date="2012-09-13"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2013/13" date="2013-03-14"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2015/59" date="2015-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2019/57" date="2019-08-07"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2021/13" date="2021-03-01"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCTerm eId="term-civil-liability-convention" href="/ontology/term/au/term-civil-liability-convention" showAs="Civil Liability Convention"/>
+        <TLCTerm eId="term-entering-appearance" href="/ontology/term/au/term-entering-appearance" showAs="entering appearance"/>
+        <TLCTerm eId="term-federal-court" href="/ontology/term/au/term-federal-court" showAs="Federal Court"/>
+        <TLCTerm eId="term-foreign-ship" href="/ontology/term/au/term-foreign-ship" showAs="foreign ship"/>
+        <TLCTerm eId="term-freight" href="/ontology/term/au/term-freight" showAs="freight"/>
+        <TLCTerm eId="term-hovercraft" href="/ontology/term/au/term-hovercraft" showAs="hovercraft"/>
+        <TLCTerm eId="term-initiating-process" href="/ontology/term/au/term-initiating-process" showAs="initiating process"/>
+        <TLCTerm eId="term-inland-waters" href="/ontology/term/au/term-inland-waters" showAs="inland waters"/>
+        <TLCTerm eId="term-inland-waterways-vessel" href="/ontology/term/au/term-inland-waterways-vessel" showAs="inland waterways vessel"/>
+        <TLCTerm eId="term-limitation-proceeding" href="/ontology/term/au/term-limitation-proceeding" showAs="limitation proceeding"/>
+        <TLCTerm eId="term-master" href="/ontology/term/au/term-master" showAs="master"/>
+        <TLCTerm eId="term-member-of-the-crew" href="/ontology/term/au/term-member-of-the-crew" showAs="member of the crew"/>
+        <TLCTerm eId="term-mortgage" href="/ontology/term/au/term-mortgage" showAs="mortgage"/>
+        <TLCTerm eId="term-off-shore-industry-fixed-structure" href="/ontology/term/au/term-off-shore-industry-fixed-structure" showAs="off-shore industry fixed structure"/>
+        <TLCTerm eId="term-relevant-person" href="/ontology/term/au/term-relevant-person" showAs="relevant person"/>
+        <TLCTerm eId="term-sea" href="/ontology/term/au/term-sea" showAs="sea"/>
+        <TLCTerm eId="term-ship" href="/ontology/term/au/term-ship" showAs="ship"/>
+        <TLCTerm eId="term-surrogate-ship" href="/ontology/term/au/term-surrogate-ship" showAs="surrogate ship"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Admiralty Act 1988</p>
+      <p>No. 34, 1988</p>
+      <p><b>Compilation No.</b><b> </b><b>22</b></p>
+      <p><b>Compilation date:</b><b>	</b>18 February 2022</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 3, 2022</p>
+      <p><b>Registered:</b><b>	</b>24 February 2022</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Admiralty Act 1988</i> that shows the text of the law as amended and in force on 18 February 2022 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>4	Maritime claims	5</p>
+      <p>5	Application	8</p>
+      <p>6	Certain rights not created or affected	8</p>
+      <p>7	External Territories	8</p>
+      <p>8	Act to bind Crown	8</p>
+      <p><ref href="#part-II">Part II</ref>—Jurisdiction in Admiralty	10</p>
+      <p>9	Admiralty jurisdiction <i>in personam</i>	10</p>
+      <p>10	Jurisdiction of superior courts in respect of Admiralty actions <i>in rem</i>	10</p>
+      <p>11	Jurisdiction of other courts in respect of Admiralty actions <i>in rem</i>	10</p>
+      <p>12	Jurisdiction in associated matters	11</p>
+      <p>13	Restriction to Admiralty and maritime jurisdiction	11</p>
+      <p><ref href="#part-III">Part III</ref>—Rights to proceed in Admiralty	12</p>
+      <p>14	Admiralty actions <i>in rem </i>to be commenced under this Act	12</p>
+      <p>15	Right to proceed <i>in rem </i>on maritime liens etc.	12</p>
+      <p>16	Right to proceed <i>in rem </i>on proprietary maritime claims	12</p>
+      <p>17	Right to proceed <i>in rem </i>on owner’s liabilities	12</p>
+      <p>18	Right to proceed <i>in rem </i>on demise charterer’s liabilities	13</p>
+      <p>19	Right to proceed <i>in rem </i>against surrogate ship	13</p>
+      <p>20	Service on and arrest of only one ship	13</p>
+      <p>21	Re-arrest	14</p>
+      <p>22	Service and arrest out of jurisdiction	14</p>
+      <p>23	Service and Execution of Process Act not to apply	15</p>
+      <p>24	Proceeds	15</p>
+      <p>25	Limitation of liability under Liability Conventions	16</p>
+      <p>26	Proceedings under Civil Liability Convention	16</p>
+      <p>26A	Proceedings in accordance with the Bunker Oil Convention	17</p>
+      <p><ref href="#part-IV">Part IV</ref>—Transfer and remittal of proceedings	18</p>
+      <p>27	Transfer	18</p>
+      <p>28	Remittal	18</p>
+      <p>29	Security in relation to stayed or dismissed proceedings	20</p>
+      <p>30	Power to deal with ship or other property	21</p>
+      <p><ref href="#part-V">Part V</ref>—Miscellaneous	23</p>
+      <p>31	Effect of judgment	23</p>
+      <p>32	Powers of Federal Court in relation to register	23</p>
+      <p>33	Co-ownership disputes	23</p>
+      <p>34	Damages for unjustified arrest etc.	24</p>
+      <p>35	Priorities: general maritime claims	24</p>
+      <p>36	Statutory powers of detention	25</p>
+      <p>37	Limitation periods	25</p>
+      <p>38	Mode of trial	26</p>
+      <p>39	Jurisdictional limits	26</p>
+      <p>40	Courts to act in aid of each other	27</p>
+      <p>41	Rules	27</p>
+      <p>42	Rules Committee	28</p>
+      <p>43	Regulations	29</p>
+      <p><ref href="#part-VI">Part VI</ref>—Repeals and amendments of Imperial legislation	30</p>
+      <p>44	Colonial Courts of Admiralty Act	30</p>
+      <p>45	Repeal of certain Imperial laws	30</p>
+      <p>46	Merchant Shipping Act	31</p>
+      <p>47	Transitional	31</p>
+      <p>Endnotes	32</p>
+      <p>Endnote 1—About the endnotes	32</p>
+      <p>Endnote 2—Abbreviation key	34</p>
+      <p>Endnote 3—Legislation history	35</p>
+      <p>Endnote 4—Amendment history	38</p>
+      <p>An Act relating to Admiralty and maritime jurisdiction</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Admiralty Act 1988</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act commences on a day to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><b><i>Australia</i></b>, when used in a geographical sense, includes each external Territory.</p>
+              <p><term refersTo="#term-civil-liability-convention">Civil Liability Convention</term> has the same meaning as <def>the Convention has in the Protection of the Sea (Civil Liability) Act 1981.</def></p>
+              <p><b><i>coastal sea of Australia</i></b> means:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the territorial sea of Australia; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the sea on the landward side of the territorial sea of Australia and not within the limits of a State or Territory.</p>
+              </content>
+              <content>
+                <p><b><i>commencement</i></b>, in relation to a proceeding, has the meaning given by subsection (2).</p>
+                <p><b><i>costs and expenses</i></b>, in relation to the Marshal, has the meaning given by subsection (5).</p>
+                <p><term refersTo="#term-entering-appearance">entering appearance</term> has the meaning given by <def>subsection (4).</def></p>
+                <p><term refersTo="#term-federal-court">Federal Court</term> means <def>the Federal Court of Australia.</def></p>
+                <p><term refersTo="#term-foreign-ship">foreign ship</term> means <def>a ship that is not registered, and is not permitted to be registered, under <ref href="">the Shipping Registration Act 1981</ref>.</def></p>
+                <p><term refersTo="#term-freight">freight</term> includes <def>passage money and hire.</def></p>
+                <p><b><i>goods</i></b>, in relation to a ship, has the meaning given by subsection (3).</p>
+                <p><term refersTo="#term-hovercraft">hovercraft</term> means <def>an air-cushion vehicle, or a similar vehicle, used wholly or principally in navigation by water.</def></p>
+                <p><term refersTo="#term-initiating-process">initiating process</term> includes <def>a third party notice.</def></p>
+                <p><term refersTo="#term-inland-waters">inland waters</term> means <def>waters within Australia other than waters of the sea.</def></p>
+                <p><term refersTo="#term-inland-waterways-vessel">inland waterways vessel</term> means <def>a vessel used or intended to be used wholly on inland waters.</def></p>
+                <p><b><i>Liability Convention</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Civil Liability Convention;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Limitation Convention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>any other international convention that is in force in relation to Australia and makes provision with respect to the limitation of liability in relation to maritime claims.</p>
+              </content>
+              <content>
+                <p><b><i>Limitation Convention</i></b> has the meaning given to the expression <b><i>Convention</i></b> by subsection 3(1) of the <i>Limitation of Liability for Maritime Claims Act 1989</i>.</p>
+                <p><term refersTo="#term-limitation-proceeding">limitation proceeding</term> means <def>a proceeding under: <ref href="#sec-25">section 25</ref> of this Act; 	(b)	<ref href="#sec-9">section 9</ref> of the <i>Limitation of Liability for Maritime Claims Act 1989</i>; or 	(c)	<ref href="#sec-10">section 10</ref> of the <i>Protection of the Sea (Civil Liability) Act 1981</i>. <b><i>maritime claim</i></b>, <b><i>general maritime claim</i></b> and <b><i>proprietary maritime claim</i></b> have the meanings given by <ref href="#sec-4">section 4</ref>.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-25">section 25</ref> of this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<ref href="#sec-9">section 9</ref> of the <i>Limitation of Liability for Maritime Claims Act 1989</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<ref href="#sec-10">section 10</ref> of the <i>Protection of the Sea (Civil Liability) Act 1981</i>.</p>
+              </content>
+              <content>
+                <p><b><i>maritime claim</i></b>, <b><i>general maritime claim</i></b> and <b><i>proprietary maritime claim</i></b> have the meanings given by <ref href="#sec-4">section 4</ref>.</p>
+                <p><term refersTo="#term-master">master</term>, in relation to a ship, means <def>a person who has command or charge of the ship.</def></p>
+                <p><term refersTo="#term-member-of-the-crew">member of the crew</term>, in relation to a ship, means <def>a person employed or engaged in any capacity on board the ship on the business of the ship, other than: the master of the ship; a person who has the conduct of the ship as the pilot of the ship; or a person temporarily employed on the ship in port.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the master of the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a person who has the conduct of the ship as the pilot of the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a person temporarily employed on the ship in port.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-mortgage">mortgage</term>, in relation to a ship or a share in a ship, includes <def>a hypothecation or pledge of, and a charge on, the ship or share, whether at law or in equity and whether arising under the law in force in a part of Australia or elsewhere.</def></p>
+                <p><term refersTo="#term-off-shore-industry-fixed-structure">off-shore industry fixed structure</term> means <def>a structure (including a pipeline) that: is fixed to the seabed and is not able to move or be moved as a structure from one place to another; and is used or intended for use wholly or primarily in, or in any operations or activities associated with or incidental to, exploring or exploiting the mineral and other non-living resources of: the continental shelf of Australia; or the seabed of the coastal sea of Australia or the subsoil of that seabed.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is fixed to the seabed and is not able to move or be moved as a structure from one place to another; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is used or intended for use wholly or primarily in, or in any operations or activities associated with or incidental to, exploring or exploiting the mineral and other non-living resources of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the continental shelf of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the seabed of the coastal sea of Australia or the subsoil of that seabed.</p>
+              </content>
+              <content>
+                <p><b><i>off</i></b><b><i>-</i></b><b><i>shore industry mobile unit</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a vessel, or a structure other than a vessel that is able to float or be floated and to move or be moved as a structure from one place to another, that is used or intended for use wholly or primarily in, or in any operations or activities associated with or incidental to, exploring or exploiting the mineral and other non-living resources of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the continental shelf of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the seabed of the coastal sea of Australia or the subsoil of that seabed;</p>
+              </content>
+              <content>
+                <p>by drilling, or by obtaining substantial quantities of material from, the seabed or its subsoil, with equipment that is on or forms part of the vessel or structure; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a barge or similar vessel fitted with living quarters for more than 12 persons and used or intended for use wholly or primarily in connection with the construction, maintenance or repair of off-shore industry fixed structures.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-relevant-person">relevant person</term>, in relation to a maritime claim, means <def>a person who would be liable on the claim in a proceeding commenced as an action in personam.</def></p>
+                <p><term refersTo="#term-sea">sea</term> includes <def>all waters within the ebb and flow of the tide.</def></p>
+                <p><term refersTo="#term-ship">ship</term> means <def>a vessel of any kind used or constructed for use in navigation by water, however it is propelled or moved, and includes: a barge, lighter or other floating vessel; a hovercraft; an off-shore industry mobile unit; and a vessel that has sunk or is stranded and the remains of such a vessel; but does not include: a seaplane; an inland waterways vessel; or a vessel under construction that has not been launched.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a barge, lighter or other floating vessel;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a hovercraft;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an off-shore industry mobile unit; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a vessel that has sunk or is stranded and the remains of such a vessel;</p>
+              </content>
+              <content>
+                <p>but does not include:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a seaplane;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>an inland waterways vessel; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>a vessel under construction that has not been launched.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-surrogate-ship">surrogate ship</term> has the meaning given by <def>subsection (6).</def></p>
+                <p><b><i>this Act</i></b> includes the regulations and the Rules made under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A reference in this Act to the time when a proceeding is commenced is a reference to the time when the initiating process in relation to the proceeding is filed in, or issued by, a court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A reference in this Act to goods, in relation to a ship, includes a reference to the baggage and other possessions of a person who is on the ship, being baggage and possessions that are being carried or are to be carried on the ship.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A reference in this Act to the entering of appearance includes a reference to any similar procedure.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A reference in this Act to the costs and expenses of the Marshal includes a reference to the amounts payable to a person acting in accordance with the Rules as a Marshal of a court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-6">
+            <num>6</num>
+            <content>
+              <p>For the purposes of this Act, where:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a proceeding on a maritime claim may be commenced against a ship under a provision of this Act (other than <ref href="#sec-19">section 19</ref>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>under <ref href="#sec-19">section 19</ref>, a proceeding on the claim may be commenced against some other ship;</p>
+              </content>
+              <content>
+                <p>the other ship is, in relation to the claim, a surrogate ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Maritime claims</heading>
+          <subsection eId="part-I__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A reference in this Act to a maritime claim is a reference to a proprietary maritime claim or a general maritime claim.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A reference in this Act to a proprietary maritime claim is a reference to:</p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a claim relating to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>possession of a ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>title to, or ownership of, a ship or a share in a ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a mortgage of a ship or of a share in a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>a mortgage of a ship’s freight;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a claim between co-owners of a ship relating to the possession, ownership, operation or earnings of the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	a claim for the satisfaction or enforcement of a judgment given by a court (including a court of a foreign country) against a ship or other property in a proceeding <i>in rem </i>in the nature of a proceeding in Admiralty; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a claim for interest in respect of a claim referred to in paragraph (a), (b) or (c).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A reference in this Act to a general maritime claim is a reference to:</p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a claim for damage done by a ship (whether by collision or otherwise); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a claim in respect of the liability of the owner of a ship arising under <ref href="#part-II">Part II</ref> or IV of the <i>Protection of the Sea (Civil Liability) Act 1981 </i>or under a law of a State or Territory that makes provision as mentioned in subsection 7(1) of that Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-ba">
+              <num>ba</num>
+              <content>
+                <p>a claim under:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	the applied provisions (within the meaning of the <i>Protection of the Sea (Civil Liability for Bunker Oil Pollution Damage) Act 2008</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a law of a State or Territory of a kind referred to in subsection 10(1) of that Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>a claim for loss of life, or for personal injury, sustained in consequence of a defect in a ship or in the apparel or equipment of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>a claim (including a claim for loss of life or personal injury) arising out of an act or omission of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the owner or charterer of a ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a person in possession or control of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a person for whose wrongful acts or omissions the owner, charterer or person in possession or control of a ship is liable;</p>
+              </content>
+              <content>
+                <p>being an act or omission in the navigation or management of the ship, including an act or omission in connection with:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the loading of goods on to, or the unloading of goods from, the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-v">
+              <num>v</num>
+              <content>
+                <p>the embarkation of persons on to, or the disembarkation of persons from, the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-vi">
+              <num>vi</num>
+              <content>
+                <p>the carriage of goods or persons on the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>a claim for loss of, or damage to, goods carried by a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>a claim arising out of an agreement that relates to the carriage of goods or persons by a ship or to the use or hire of a ship, whether by charterparty or otherwise; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-g">
+              <num>g</num>
+              <content>
+                <p>a claim relating to salvage (including life salvage and salvage of cargo or wreck found on land); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-h">
+              <num>h</num>
+              <content>
+                <p>a claim in respect of general average; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-j">
+              <num>j</num>
+              <content>
+                <p>a claim in respect of towage of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-k">
+              <num>k</num>
+              <content>
+                <p>a claim in respect of pilotage of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-m">
+              <num>m</num>
+              <content>
+                <p>a claim in respect of goods, materials or services (including stevedoring and lighterage services) supplied or to be supplied to a ship for its operation or maintenance; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-n">
+              <num>n</num>
+              <content>
+                <p>a claim in respect of the construction of a ship (including such a claim relating to a vessel before it was launched); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-o">
+              <num>o</num>
+              <content>
+                <p>a claim in respect of the alteration, repair or equipping of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-p">
+              <num>p</num>
+              <content>
+                <p>a claim in respect of a liability for port, harbour, canal or light tolls, charges or dues, or tolls, charges or dues of a similar kind, in relation to a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-q">
+              <num>q</num>
+              <content>
+                <p>	(q)	a claim in respect of a levy in relation to a ship, including a shipping levy imposed by the <i>Protection of the Sea (Shipping Levy) Act 1981</i>, being a levy in relation to which a power to detain the ship is conferred by a law in force in Australia or in a part of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-r">
+              <num>r</num>
+              <content>
+                <p>a claim by a master, shipper, charterer or agent in respect of disbursements on account of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-s">
+              <num>s</num>
+              <content>
+                <p>a claim for an insurance premium, or for a mutual insurance call, in relation to a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-t">
+              <num>t</num>
+              <content>
+                <p>a claim by a master, or a member of the crew, of a ship for:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>wages; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an amount that a person, as employer, is under an obligation to pay to a person as employee, whether the obligation arose out of the contract of employment or by operation of law, including the operation of the law of a foreign country; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-u">
+              <num>u</num>
+              <content>
+                <p>	(u)	a claim for the enforcement of, or a claim arising out of, an arbitral award (including a foreign award within the meaning of the <i>International Arbitration Act 1974</i>) made in respect of a proprietary maritime claim or a claim referred to in one of the preceding paragraphs; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-3__para-w">
+              <num>w</num>
+              <content>
+                <p>a claim for interest in respect of a claim referred to in one of the preceding paragraphs.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-5">
+          <num>5</num>
+          <heading>Application</heading>
+          <subsection eId="part-I__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to the succeeding provisions of this section, this Act applies in relation to:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>all ships, irrespective of the places of residence or domicile of their owners; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>all maritime claims, wherever arising.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not apply in relation to a proceeding commenced before the commencement of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>This Act does not apply in relation to a cause of action that arose:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>in respect of an inland waterways vessel; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>in respect of the use or intended use of a ship on inland waters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Paragraph (3)(b) does not have effect in relation to a cause of action if, at the time when the cause of action arose, the ship concerned was a foreign ship.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-6">
+          <num>6</num>
+          <heading>Certain rights not created or affected</heading>
+          <content>
+            <p>The provisions of this Act (other than <ref href="#sec-34">section 34</ref>) do not have effect to create:</p>
+          </content>
+          <paragraph eId="part-I__sec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>a new maritime lien or other charge; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>a cause of action that would not have existed if this Act had not been passed.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-I__sec-7">
+          <num>7</num>
+          <heading>External Territories</heading>
+          <content>
+            <p>This Act extends to each external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-8">
+          <num>8</num>
+          <heading>Act to bind Crown</heading>
+          <subsection eId="part-I__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in all its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not authorise:</p>
+            </content>
+            <paragraph eId="part-I__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a proceeding to be commenced as an action <i>in rem </i>against a government ship or government property; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the arrest, detention or sale of a government ship or government property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Where a proceeding has been commenced as an action <i>in rem </i>against a government ship or government property, the court may, if it is satisfied that the proceeding was so commenced in the reasonable belief that the ship was not a government ship, or the property was not government property:</p>
+            </content>
+            <paragraph eId="part-I__sec-8__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	order that the proceeding be treated as though it were a proceeding commenced as an action <i>in personam </i>on the claim against a person specified as defendant in the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-8__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>make such consequential orders as are necessary.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>government</i></b> means the Commonwealth, a State or the Northern Territory.</p>
+              <p><b><i>government property</i></b> means cargo or other property that belongs to a government, but does not include cargo or other property that belongs to a trading corporation that is an agency of a government.</p>
+              <p><b><i>government ship</i></b> means a ship that belongs, or is for the time being demised or sub-demised, to a government (including such a ship used by or in connection with a part of the Defence Force), but does not include a ship that belongs, or is for the time being demised or sub-demised, to a trading corporation that is an agency of a government.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Jurisdiction in Admiralty</heading>
+        <section eId="part-II__sec-9">
+          <num>9</num>
+          <heading>Admiralty jurisdiction in personam</heading>
+          <subsection eId="part-II__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Jurisdiction is conferred on the Federal Court, the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) and on the courts of the Territories, and the courts of the States are invested with federal jurisdiction, in respect of proceedings commenced as actions <i>in personam</i>:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>on a maritime claim; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>on a claim for damage done to a ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not confer on a court other than the Federal Court or a Supreme Court of a Territory, or invest a court of a State other than the Supreme Court of a State with, jurisdiction in respect of limitation proceedings.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-10">
+          <num>10</num>
+          <heading>Jurisdiction of superior courts in respect of Admiralty actions in rem</heading>
+          <content>
+            <p>		Jurisdiction is conferred on the Federal Court and on the Supreme Courts of the Territories, and the Supreme Courts of the States are invested with federal jurisdiction, in respect of proceedings that may, under this Act, be commenced as actions <i>in rem</i>.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-11">
+          <num>11</num>
+          <heading>Jurisdiction of other courts in respect of Admiralty actions in rem</heading>
+          <subsection eId="part-II__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may by Proclamation declare a court of a State or of a Territory to be a court to which this section applies.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subject to any condition or limitation (whether as to locality, subject-matter or otherwise) specified in the Proclamation, a court of a State to which this section applies is invested with federal jurisdiction, and jurisdiction is conferred on a court of a Territory to which this section applies, in respect of proceedings that may, under this Act, be commenced as actions <i>in rem</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a Proclamation has been varied or rescinded, the variation or rescission does not deprive a court of jurisdiction to hear and determine a proceeding that was pending in the court at the time of the variation or rescission.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-12">
+          <num>12</num>
+          <heading>Jurisdiction in associated matters</heading>
+          <content>
+            <p>The jurisdiction that a court has under this Act extends to jurisdiction in respect of a matter of Admiralty and maritime jurisdiction not otherwise within its jurisdiction that is associated with a matter in which the jurisdiction of the court under this Act is invoked.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-13">
+          <num>13</num>
+          <heading>Restriction to Admiralty and maritime jurisdiction</heading>
+          <content>
+            <p>This Act does not confer jurisdiction on a court, or invest a court with jurisdiction, in a matter that is not of a kind mentioned in paragraph 76(ii) or (iii) of the Constitution.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Rights to proceed in Admiralty</heading>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Admiralty actions in rem to be commenced under this Act</heading>
+          <content>
+            <p>		In a matter of Admiralty or maritime jurisdiction, a proceeding shall not be commenced as an action <i>in rem </i>against a ship or other property except as provided by this Act.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-15">
+          <num>15</num>
+          <heading>Right to proceed in rem on maritime liens etc.</heading>
+          <subsection eId="part-III__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	A proceeding on a maritime lien or other charge in respect of a ship or other property subject to the lien or charge may be commenced as an action <i>in rem</i><i> </i>against the ship or property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A reference in subsection (1) to a maritime lien includes a reference to a lien for:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>salvage;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>damage done by a ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>wages of the master, or of a member of the crew, of a ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>master’s disbursements.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-16">
+          <num>16</num>
+          <heading>Right to proceed in rem on proprietary maritime claims</heading>
+          <content>
+            <p>		A proceeding on a proprietary maritime claim concerning a ship or other property may be commenced as an action <i>in rem </i>against the ship or property.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Right to proceed in rem on owner’s liabilities</heading>
+          <content>
+            <p>Where, in relation to a general maritime claim concerning a ship or other property, a relevant person:</p>
+          </content>
+          <paragraph eId="part-III__sec-17__para-a">
+            <num>a</num>
+            <content>
+              <p>was, when the cause of action arose, the owner or charterer of, or in possession or control of, the ship or property; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-17__para-b">
+            <num>b</num>
+            <content>
+              <p>is, when the proceeding is commenced, the owner of the ship or property;</p>
+            </content>
+            <content>
+              <p>a proceeding on the claim may be commenced as an action <i>in rem </i>against the ship or property.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Right to proceed in rem on demise charterer’s liabilities</heading>
+          <content>
+            <p>Where, in relation to a maritime claim concerning a ship, a relevant person:</p>
+          </content>
+          <paragraph eId="part-III__sec-18__para-a">
+            <num>a</num>
+            <content>
+              <p>was, when the cause of action arose, the owner or charterer, or in possession or control, of the ship; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-18__para-b">
+            <num>b</num>
+            <content>
+              <p>is, when the proceeding is commenced, a demise charterer of the ship;</p>
+            </content>
+            <content>
+              <p>a proceeding on the claim may be commenced as an action <i>in rem </i>against the ship.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-19">
+          <num>19</num>
+          <heading>Right to proceed in rem against surrogate ship</heading>
+          <content>
+            <p>		A proceeding on a general maritime claim concerning a ship may be commenced as an action <i>in rem</i> against some other ship if:</p>
+          </content>
+          <paragraph eId="part-III__sec-19__para-a">
+            <num>a</num>
+            <content>
+              <p>a relevant person in relation to the claim was, when the cause of action arose, the owner or charterer of, or in possession or control of, the first-mentioned ship; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-19__para-b">
+            <num>b</num>
+            <content>
+              <p>that person is, when the proceeding is commenced, the owner of the second-mentioned ship.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Service on and arrest of only one ship</heading>
+          <subsection eId="part-III__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where service of initiating process in a proceeding commenced as mentioned in <ref href="#sec-15">section 15</ref>, 17, 18 or 19 has been effected on a ship, service of initiating process in the proceeding shall not be effected on any other ship unless the service on the first-mentioned ship has been set aside or the proceeding, so far as it relates to that ship, has been discontinued, dismissed or struck out.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where service of initiating process in a proceeding commenced as mentioned in <ref href="#sec-15">section 15</ref>, 17, 18 or 19 has been effected on a ship, service of initiating process in some other proceeding on the same claim commenced as mentioned in any of those sections shall not be effected on any other ship unless the first-mentioned proceeding has been discontinued, dismissed or struck out.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a ship has been arrested in a proceeding commenced as mentioned in <ref href="#sec-15">section 15</ref>, 17, 18 or 19, no other ship shall be arrested in the proceeding unless the first-mentioned ship:</p>
+            </content>
+            <paragraph eId="part-III__sec-20__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>was invalidly arrested and has been released from arrest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>was unlawfully removed from the custody of the Marshal and the Marshal has not regained custody of the ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-III__sec-20__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a person has a claim that is both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>a claim on a maritime lien or other charge; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a general maritime claim;</p>
+              </content>
+              <content>
+                <p>in respect of a ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the person has commenced a proceeding under <ref href="#sec-19">section 19</ref> against a surrogate ship;</p>
+              </content>
+              <content>
+                <p>subsection (3) does not prevent the arrest of the first-mentioned ship in a proceeding on the maritime lien or other charge if the amount recovered by the person in the proceeding commenced under <ref href="#sec-19">section 19</ref> is less than the amount of the claim on the maritime lien or other charge.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-21">
+          <num>21</num>
+          <heading>Re-arrest</heading>
+          <subsection eId="part-III__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A ship or other property arrested in a proceeding on a maritime claim may not be re-arrested in the proceeding in relation to the claim unless the court so orders, whether because default has been made in the performance of a guarantee or undertaking given to procure the release of the ship or property from the earlier arrest or for some other sufficient reason.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An order under subsection (1) may be made subject to such conditions as are just.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Service and arrest out of jurisdiction</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (4):</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	initiating process in a proceeding commenced as an action <i>in rem </i>in the Federal Court may be served on a ship or other property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a ship or other property may be arrested in such a proceeding;</p>
+              </content>
+              <content>
+                <p>at any place within Australia, including a place within the limits of the territorial sea of Australia.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subject to subsection (4), initiating process in a proceeding commenced as an action <i>in rem </i>in a court of a State or a Territory may be served on a ship or other property:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if, at a time when the process was effective for service, the ship or property was within the locality within which the court may exercise jurisdiction—at any place within Australia, including a place within the limits of the territorial sea of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any case—at any place within the State or Territory, including a place within the limits of the territorial sea of Australia that is adjacent to the State or Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Subject to subsection (4), in a proceeding commenced as an action <i>in rem </i>in a court of a State or Territory, a ship or other property may be arrested at any place within Australia, including a place within the limits of the territorial sea of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where the arrest of a foreign ship, or of cargo on board a foreign ship, would be inconsistent with a right of innocent passage that is being exercised by the ship, this Act does not authorise the service of process on the ship or the arrest of the ship or cargo.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>innocent passage</i></b> has the meaning it has under the United Nations Convention on the Law of the Sea done at Montego Bay on 10 December 1982.</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note: 	For the Convention on the Law of the Sea see Schedule 1 to the <i>Seas and Submerged Lands Act 1973</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-23">
+          <num>23</num>
+          <heading>Service and Execution of Process Act not to apply</heading>
+          <content>
+            <p>		The <i>Service and Execution of Process Act 1992 </i>does not apply to the service of initiating process on, or the arrest of, a ship or other property under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-24">
+          <num>24</num>
+          <heading>Proceeds</heading>
+          <content>
+            <p>		Where, but for the sale of a ship or other property under this Act, a proceeding could have been commenced as an action <i>in rem </i>against the ship or property, the proceeding may be commenced as an action <i>in rem </i>against the proceeds of the sale that have been paid into a court under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-25">
+          <num>25</num>
+          <heading>Limitation of liability under Liability Conventions</heading>
+          <subsection eId="part-III__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who apprehends that a claim for compensation under a law (including a law of a State or a Territory) that gives effect to provisions of a Liability Convention may be made against the person by some other person may apply to the Federal Court to determine the question whether the liability of the first-mentioned person in respect of the claim may be limited under that law.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not affect the jurisdiction of any other court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>On an application under subsection (1), the Federal Court may, in accordance with the law referred to in that subsection:</p>
+            </content>
+            <paragraph eId="part-III__sec-25__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>determine whether the applicant’s liability may be so limited and, if it may be so limited, determine the limit of that liability;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-25__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>order the constitution of a limitation fund for the payment of claims in respect of which the applicant is entitled to limit his or her liability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-25__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>make such orders as are just with respect to the administration and distribution of that fund.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a court has jurisdiction under this Act in respect of a proceeding, that jurisdiction extends to entertaining a defence in the proceeding by way of limitation of liability under a law that gives effect to provisions of a Liability Convention.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-26">
+          <num>26</num>
+          <heading>Proceedings under Civil Liability Convention</heading>
+          <content>
+            <p>A proceeding under this Act on a maritime claim referred to in paragraph 4(3)(b) shall not be brought otherwise than in accordance with paragraphs 1 and 3 of Article IX of the Civil Liability Convention, whether or not the proceeding also relates to a maritime claim or to a maritime lien or other charge.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-26A">
+          <num>26A</num>
+          <heading>Proceedings in accordance with the Bunker Oil Convention</heading>
+          <subsection eId="part-III__sec-26A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A proceeding under this Act on a maritime claim referred to in paragraph 4(3)(ba) must not be brought otherwise than in accordance with paragraphs 1 and 2 of Article 9 of the Bunker Oil Convention, whether or not the proceeding also relates to another maritime claim or to a maritime lien or other charge.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-26A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Bunker Oil Convention</i></b> has the same meaning as in the <i>Protection of the Sea (Civil Liability for Bunker Oil Pollution Damage) Act 2008</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Transfer and remittal of proceedings</heading>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Transfer</heading>
+          <subsection eId="part-IV__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where a proceeding commenced under this Act is pending in the Federal Court, in the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>), in the Supreme Court of a State or Territory or in a court of a State or Territory exercising jurisdiction under <ref href="#sec-11">section 11</ref>, the court (in this section called the <b><i>first court</i></b>) may, at any stage of the proceeding, upon application or on its own motion, by order, transfer the proceeding to some other court that has jurisdiction under this Act with respect to the subject-matter of the claim (in this section called the <b><i>second court</i></b>).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not authorise the transfer of a proceeding commenced as an action <i>in rem </i>to a court that does not, apart from the operation of subsection 28(7), have jurisdiction in respect of proceedings so commenced.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a proceeding has been so transferred, the second court shall proceed as if:</p>
+            </content>
+            <paragraph eId="part-IV__sec-27__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the proceeding had been commenced in that court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the same or similar steps in the proceeding had been taken in that court as were taken in the first court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the orders and directions made by the first court in the proceeding had been made by the second court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Remittal</heading>
+          <subsection eId="part-IV__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where a proceeding commenced under this Act as an action <i>in rem </i>against a ship or other property is pending in the Federal Court or in the Supreme Court of a State, the court may, at any stage of the proceeding, upon application or on its own motion, remit the proceeding for hearing to:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-aa">
+              <num>aa</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a court of a State; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if service of the initiating process was effected on the ship or property in a Territory—a court of that Territory;</p>
+              </content>
+              <content>
+                <p>being a court that would have had jurisdiction in respect of the proceeding if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	the proceeding had been commenced in that court as an action <i>in personam</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>service of initiating process in that proceeding had been effected within the locality within which that court may exercise jurisdiction.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where a proceeding commenced under this Act as an action <i>in rem </i>is pending in the Supreme Court of a Territory, the court may, at any stage of the proceeding, upon application or on its own motion, remit the proceeding for hearing to some other court of the Territory that would have had jurisdiction in respect of the proceeding if:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the proceeding had been commenced in that court as an action <i>in personam</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>service of initiating process in that proceeding had been effected in that Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The court from which the proceeding is remitted (in this section called the <b><i>first court</i></b>) may give such orders or directions as are appropriate in relation to the further steps to be taken in the proceeding and, subject to any such orders and directions, the court to which the proceeding is remitted (in this section called the <b><i> second court</i></b>) may give orders and directions of a similar kind.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subject to any orders and directions given under subsection (3), the second court shall proceed as if:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the proceeding had been commenced in that court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the same or similar steps in the proceeding had been taken in the second court as were taken in the first court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the orders and directions made by the first court in the proceeding had been made by the second court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The first court shall give effect to a judgment or order given in the proceeding, being a judgment or order that finally disposes of the proceeding, as though that judgment or order were a judgment or order of that court in the proceeding.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsection (5) does not affect:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a right of appeal that a party to the proceeding has; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the power of a court to stay execution pending an appeal.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The second court is invested with federal jurisdiction, or, if that court is the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or a court of a Territory, jurisdiction is conferred on that court, in respect of the proceeding.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Security in relation to stayed or dismissed proceedings</heading>
+          <subsection eId="part-IV__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>it appears to the court in which a proceeding commenced under this Act is pending that the proceeding should be stayed or dismissed on the ground that the claim concerned should be determined by arbitration (whether in Australia or elsewhere) or by a court of a foreign country; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a ship or other property is under arrest in the proceeding;</p>
+              </content>
+              <content>
+                <p>the court may order that the proceeding be stayed on condition that the ship or property be retained by the court as security for the satisfaction of any award or judgment that may be made in the arbitration or in a proceeding in the court of the foreign country.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not limit any other power of the court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The power of the court to stay or dismiss a proceeding includes power to do so on such conditions as are just, including a condition:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>with respect to the institution or prosecution of the arbitration or proceeding in the court of the foreign country; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>that equivalent security be provided for the satisfaction of any award or judgment that may be made in the arbitration or in the proceeding in the court of the foreign country.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a court has made an order under subsection (1) or (3), the court may make such interim or supplementary orders as are appropriate in relation to the ship or property for the purpose of preserving:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the ship or property; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the rights of a party or of a person interested in the ship or property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a ship or other property is under arrest in a proceeding;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>an award or judgment as mentioned in subsection (1) has been made in favour of a party; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>apart from this section, the award or judgment is enforceable in Australia;</p>
+              </content>
+              <content>
+                <p>then, in addition to any other proceeding that may be taken by the party to enforce the award or judgment, the party may apply to the court in the stayed proceeding for an appropriate order in relation to the ship or property to give effect to the award or judgment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-30">
+          <num>30</num>
+          <heading>Power to deal with ship or other property</heading>
+          <subsection eId="part-IV__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies where:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a proceeding has been transferred or remitted under the preceding provisions of this Part; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a ship or other property is under arrest in the proceeding.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The court from which the proceeding was transferred or remitted:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>may deal with the ship or property as though it were under arrest in a proceeding that had not been so transferred or remitted; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>may make such orders as are necessary or convenient for transferring the custody of the ship or property to the court to which the proceeding has been so transferred or remitted.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Notwithstanding any other provision of this Act, an order made under subsection (2) has effect according to its tenor.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a court has made an order under paragraph (2)(b), the court to which the proceeding has been transferred or remitted has the same powers in relation to the ship or property as it has in relation to a ship or other property under arrest in a proceeding commenced in that court.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-V__sec-31">
+          <num>31</num>
+          <heading>Effect of judgment</heading>
+          <subsection eId="part-V__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where judgment is given for the plaintiff in a proceeding on a maritime claim commenced as an action<i> in rem </i>against a ship or other property, the extent to which a defendant in the proceeding who has entered an appearance and is a relevant person in relation to the claim is personally liable on the judgment is not limited by the value of the ship or property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where judgment is given for the plaintiff in a proceeding on a maritime claim commenced as an action <i>in rem </i>against a ship or other property, a defendant in the proceeding who has entered an appearance and is not a relevant person in relation to the claim is not personally liable on the judgment for the payment of money in respect of the claim except so far as the judgment is for costs against that defendant.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (2) does not prevent the sale, under this Act, of a ship or other property that is under arrest in a proceeding.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-32">
+          <num>32</num>
+          <heading>Powers of Federal Court in relation to register</heading>
+          <content>
+            <p>		In a proceeding in the Federal Court on a proprietary maritime claim, the orders that the court may make include orders of the kind that a court may make under <ref href="#sec-59">section 59</ref> or 59A of the <i>Shipping Registration Act 1981</i>.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-33">
+          <num>33</num>
+          <heading>Co-ownership disputes</heading>
+          <content>
+            <p>In a proceeding on a maritime claim between co-owners of a ship relating to the possession, ownership, operation or earnings of the ship, the orders that the court may make include:</p>
+          </content>
+          <paragraph eId="part-V__sec-33__para-a">
+            <num>a</num>
+            <content>
+              <p>orders for the settlement of accounts outstanding and unsettled; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-33__para-b">
+            <num>b</num>
+            <content>
+              <p>an order directing that the ship, or a share in the ship, be sold.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-34">
+          <num>34</num>
+          <heading>Damages for unjustified arrest etc.</heading>
+          <subsection eId="part-V__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, in relation to a proceeding commenced under this Act:</p>
+            </content>
+            <paragraph eId="part-V__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a party unreasonably and without good cause:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-34__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>demands excessive security in relation to the proceeding; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-34__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>obtains the arrest of a ship or other property under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a party or other person unreasonably and without good cause fails to give a consent required under this Act for the release from arrest of a ship or other property;</p>
+              </content>
+              <content>
+                <p>the party or person is liable in damages to a party to the proceeding, or to a person who has an interest in the ship or property, being a party or person who has suffered loss or damage as a direct result.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The jurisdiction of a court in which a proceeding was commenced under this Act extends to determining a claim arising under subsection (1) in relation to the proceeding.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-35">
+          <num>35</num>
+          <heading>Priorities: general maritime claims</heading>
+          <subsection eId="part-V__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-V__sec-35__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a proceeding in respect of a general maritime claim concerning a ship has been commenced under this Act against a surrogate ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-35__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to a proceeding commenced under this Act concerning a ship, a surrogate ship has been arrested;</p>
+              </content>
+              <content>
+                <p>the order in which general maritime claims against both the ships shall be paid out of the proceeds of the sale of the surrogate ship shall be determined as if all the claims were general maritime claims against the surrogate ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies notwithstanding any other law, including a law of a State or Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-36">
+          <num>36</num>
+          <heading>Statutory powers of detention</heading>
+          <subsection eId="part-V__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies where:</p>
+            </content>
+            <paragraph eId="part-V__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a law other than this Act (including a law of a State or Territory) confers on a person a power to detain a ship in relation to a civil claim; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a proceeding on the civil claim may be commenced as an action <i>in rem </i>against the ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the ship is under arrest under this Act, the power to detain the ship shall not be exercised.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The exercise of the power to detain the ship does not prevent the arrest of the ship under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a ship that has been detained under such a power is arrested under this Act, then, by force of this subsection, the detention is suspended for so long as the ship is under arrest.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where a ship that has been detained, or would, but for subsection (2), be liable to be detained, under such a power is arrested and sold under this Act, the civil claim is, unless the court otherwise directs, payable in priority to any claim against the ship other than the claim of a Marshal for expenses.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-37">
+          <num>37</num>
+          <heading>Limitation periods</heading>
+          <subsection eId="part-V__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A proceeding may be brought under this Act on a maritime claim, or on a claim on a maritime lien or other charge, at any time before the end of:</p>
+            </content>
+            <paragraph eId="part-V__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the limitation period that would have been applicable in relation to the claim if a proceeding on the claim had been brought otherwise than under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if no proceeding on the claim could have been so brought—a period of 3 years after the cause of action arose.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply if a limitation period is fixed in relation to the claim by an Act, an Imperial Act, an Act of a State or an Act or Ordinance of a Territory, including such an Act or Ordinance in its application in a part of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-V__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>but for this subsection, a court would not have power to extend a limitation period in respect of a maritime claim or a claim of a particular kind on a maritime lien or other charge; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the court has power to extend a limitation period in respect of a claim of the same kind;</p>
+              </content>
+              <content>
+                <p>then, by force of this subsection, the court has power, exercisable in the same way, and in the same kinds of circumstances, as the power referred to in paragraph (b), to extend the period fixed by subsection (1) in respect of maritime claims, or claims on maritime liens or other charges, of a kind referred to in that subsection.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The absence of the ship or property concerned from the locality in which the court may exercise jurisdiction shall not be taken into account in relation to the exercise of the power conferred by subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-37__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The law relating to laches does not apply in relation to a claim brought within a period fixed by or under this section.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-38">
+          <num>38</num>
+          <heading>Mode of trial</heading>
+          <content>
+            <p>		A proceeding under this Act commenced as an action <i>in rem</i>, a limitation proceeding and a proceeding under this Act that is associated with either shall be tried without a jury.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-39">
+          <num>39</num>
+          <heading>Jurisdictional limits</heading>
+          <subsection eId="part-V__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to any Proclamation made under subsection 11(2), where a court of a State is invested with jurisdiction in relation to a proceeding commenced as an action <i>in rem</i>, or such jurisdiction is conferred on a court of a Territory, by or under this Act, then:</p>
+            </content>
+            <paragraph eId="part-V__sec-39__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of a court of a State—the court is invested with the jurisdiction within the limits of the jurisdiction of that court as to the amount claimed and as to remedies, but not otherwise; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-39__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of a court of a Territory—the jurisdiction is conferred on the court only so far as the Constitution permits and within the limits of the jurisdiction of that court as to the amount claimed, as to locality and as to remedies, but not otherwise.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a court of a State is invested with jurisdiction in relation to a proceeding commenced under <ref href="#sec-9">section 9</ref> or such jurisdiction is conferred on a court of a Territory, the jurisdiction is invested or conferred within the limits of the jurisdiction of the court concerned and, in the case of a court of a Territory, only so far as the Constitution permits.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Section 15C of the <i>Acts Interpretation Act 1901 </i>does not apply in relation to proceedings to which this section applies.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-40">
+          <num>40</num>
+          <heading>Courts to act in aid of each other</heading>
+          <content>
+            <p>All courts having jurisdiction under this Act, the judges of those courts and the officers of or under the control of those courts shall severally act in aid of, and be auxiliary to, each other in all matters arising under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-41">
+          <num>41</num>
+          <heading>Rules</heading>
+          <subsection eId="part-V__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make Rules, not inconsistent with this Act, making provision in relation to the practice and procedure to be followed in courts exercising jurisdiction under this Act and matters incidental to such practice and procedure.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In particular, the Rules may make provision in relation to:</p>
+            </content>
+            <paragraph eId="part-V__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>pleading;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>parties;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>appearance;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the service and execution of process;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>bail;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>caveats against arrest or release of ships and other property;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>the arrest, custody and sale of ships and other property;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>the furnishing of security;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>the forms to be used;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-k">
+              <num>k</num>
+              <content>
+                <p>records and registers and inspections of those records and registers;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-m">
+              <num>m</num>
+              <content>
+                <p>limitation proceedings, including:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the parties to those proceedings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the operation of determinations made in those proceedings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-n">
+              <num>n</num>
+              <content>
+                <p>evidence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-2__para-o">
+              <num>o</num>
+              <content>
+                <p>enforcement and satisfaction of judgments of courts in matters under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Rules may prescribe penalties for offences against the Rules not exceeding:</p>
+            </content>
+            <paragraph eId="part-V__sec-41__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if the defendant is a natural person—a fine of $1,000; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the defendant is a corporation—a fine of $5,000.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Jurisdiction is conferred on the Federal Court, the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) and on the courts of the Territories, and the courts of the States are invested with federal jurisdiction, in respect of matters arising under the Rules.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	The <i>Legislation Act 2003</i> (other than sections 8, 9, 10 and 16 and <ref href="#part-4">Part 4</ref> of Chapter 3 of that Act) applies in relation to the Rules:</p>
+            </content>
+            <paragraph eId="part-V__sec-41__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>as if a reference to a legislative instrument (other than in subparagraph 14(1)(a)(ii) and subsection 14(3) of that Act) were a reference to the Rules; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-41__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>subject to such further modifications or adaptations of that Act (other than the provisions of <ref href="#part-2">Part 2</ref> of Chapter 3 of that Act or any other provisions whose modification or adaptation would affect the operation of that Part) as are prescribed by the regulations for the purposes of this paragraph.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-6">
+            <num>6</num>
+            <content>
+              <p>To avoid doubt, the Rules are rules of court.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-42">
+          <num>42</num>
+          <heading>Rules Committee</heading>
+          <subsection eId="part-V__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Attorney-General shall constitute a committee consisting of not more than 7 persons to advise the Attorney-General with respect to the Rules and shall appoint a member of the committee to preside at meetings of the committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The members of the committee shall include a Judge of the Supreme Court of a State or Territory and a Judge of the Federal Court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-42__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subject to the directions, if any, of the Attorney-General, the procedure of the committee shall be as the committee determines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-43">
+          <num>43</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters:</p>
+          </content>
+          <paragraph eId="part-V__sec-43__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-43__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Repeals and amendments of Imperial legislation</heading>
+        <section eId="part-VI__sec-44">
+          <num>44</num>
+          <heading>Colonial Courts of Admiralty Act</heading>
+          <subsection eId="part-VI__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Imperial Act known as the Colonial Courts of Admiralty Act, 1890, as amended and in force at the date of commencement of this Act, is repealed so far as it is part of the law of the Commonwealth or of an external Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-44__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The repeal effected by subsection (1) does not affect a proceeding under the Colonial Courts of Admiralty Act, 1890 commenced but not finally determined before the commencement of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-45">
+          <num>45</num>
+          <heading>Repeal of certain Imperial laws</heading>
+          <content>
+            <p>The Imperial Acts specified in the following Table are repealed to the extent set out in the Table so far as they are part of the law of the Commonwealth or of an external Territory:</p>
+          </content>
+          <table>
+            <tr>
+              <th>Reign and chapter</th>
+              <th>Citation or description</th>
+              <th>Extent of repeal</th>
+            </tr>
+            <tr>
+              <td>13 Richard II, Statutes I, chapter 5</td>
+              <td>Jurisdiction of the Admiral and his Deputy</td>
+              <td>The whole</td>
+            </tr>
+            <tr>
+              <td>15 Richard II, chapter 3</td>
+              <td>Jurisdiction of the Admiral</td>
+              <td>The whole</td>
+            </tr>
+            <tr>
+              <td>17 Edward II, chapter 13</td>
+              <td>Prerogativa Regis</td>
+              <td>The paragraph commencing “Also the King shall have Wreck”</td>
+            </tr>
+            <tr>
+              <td>2 Henry IV, chapter 11</td>
+              <td>Statute of 13 Richard II, Statutes 1, chapter 5 as to the Admiral’s Jurisdiction confirmed</td>
+              <td>The whole</td>
+            </tr>
+            <tr>
+              <td>2 William and Mary, Session 2, chapter 2</td>
+              <td>Admiralty Act, 1690</td>
+              <td>The whole</td>
+            </tr>
+          </table>
+        </section>
+        <section eId="part-VI__sec-46">
+          <num>46</num>
+          <heading>Merchant Shipping Act</heading>
+          <content>
+            <p>Sections 449 and 472 of the Imperial Act known as the Merchant Shipping Act, 1894, as amended and in force at the date of commencement of this Act, are repealed so far as they are part of the law of the Commonwealth or of an external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-47">
+          <num>47</num>
+          <heading>Transitional</heading>
+          <content>
+            <p>		The application of <ref href="#sec-8">section 8</ref> of the <i>Acts Interpretation Act 1901 </i>extends to an Imperial Act, and a provision of an Imperial Act, repealed by this Part as though it were an Act of the Parliament, or a provision of an Act of the Parliament, repealed by this Part.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Admiralty Act 1988</td>
+              <td>34, 1988</td>
+              <td>22 May 1988</td>
+              <td>1 Jan 1989 (s 2 and gaz 1988, No S359)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Limitation of Liability for Maritime Claims Act 1989</td>
+              <td>151, 1989</td>
+              <td>30 Nov 1989</td>
+              <td>Sch 2: 30 May 1991 (s 2(2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Service and Execution of Process (Transitional Provisions and Consequential Amendments) Act 1992</td>
+              <td>166, 1992</td>
+              <td>11 Dec 1992</td>
+              <td>Sch: 10 Apr 1993 (s 2 and gaz 1993, No GN13)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Maritime Legislation Amendment Act 1994</td>
+              <td>20, 1994</td>
+              <td>15 Feb 1994</td>
+              <td>Sch 1: 1 Aug 1994 (s 2(1) and gaz 1994, No S289)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>International Maritime Conventions Legislation Amendment Act 2001</td>
+              <td>149, 2001</td>
+              <td>1 Oct 2001</td>
+              <td>Sch 1 (item 1): 13 May 2004 (s 2(2) and gaz 2004, No S157)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Law and Justice Legislation Amendment Act 2004</td>
+              <td>62, 2004</td>
+              <td>26 May 2004</td>
+              <td>Sch 1 (item 5): 27 May 2004 (s 2(1) item 4)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Jurisdiction of the Federal Magistrates Court Legislation Amendment Act 2006</td>
+              <td>23, 2006</td>
+              <td>6 Apr 2006</td>
+              <td>Sch 3: 4 May 2006 (s 2(1) item 2)</td>
+              <td>Sch 3 (items 2, 6, 8)</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act 2008</td>
+              <td>73, 2008</td>
+              <td>3 July 2008</td>
+              <td>Sch 1 (item 3): 3 July 2008 (s 2(1) item 4)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Protection of the Sea (Civil Liability for Bunker Oil Pollution Damage) (Consequential Amendments) Act 2008</td>
+              <td>77, 2008</td>
+              <td>12 July 2008</td>
+              <td>Sch 1 (items 1–4): 16 June 2009 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Personal Property Securities (Consequential Amendments) Act 2009</td>
+              <td>131, 2009</td>
+              <td>14 Dec 2009</td>
+              <td>Sch 3 (item 1): 30 Jan 2012 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts Interpretation Amendment Act 2011</td>
+              <td>46, 2011</td>
+              <td>27 June 2011</td>
+              <td>Sch 2 (item 35) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 3, 12)</td>
+              <td>Sch 3 (items 10, 11)</td>
+            </tr>
+            <tr>
+              <td>Navigation (Consequential Amendments) Act 2012</td>
+              <td>129, 2012</td>
+              <td>13 Sept 2012</td>
+              <td>Sch 2 (items 1–5): 1 July 2013 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Federal Circuit Court of Australia (Consequential Amendments) Act 2013</td>
+              <td>13, 2013</td>
+              <td>14 Mar 2013</td>
+              <td>Sch 1 (item 25) and Sch 2 (item 1): 12 Apr 2013 (s 2(1) items 2, 3)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Norfolk Island Legislation Amendment Act 2015</td>
+              <td>59, 2015</td>
+              <td>26 May 2015</td>
+              <td>Sch 2 (item 34): 1 July 2016 (s 2(1) item 5)
+Sch 2 (items 356–396): 18 June 2015 (s 2(1) item 6)</td>
+              <td>Sch 2 (items 356–396)</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Territories Legislation Amendment Act 2016</td>
+              <td>33, 2016</td>
+              <td>23 Mar 2016</td>
+              <td>Sch 2: 24 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Timor Sea Maritime Boundaries Treaty Consequential Amendments Act 2019</td>
+              <td>57, 2019</td>
+              <td>7 Aug 2019</td>
+              <td>Sch 1 (item 1): 30 Aug 2019 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021</td>
+              <td>13, 2021</td>
+              <td>1 Mar 2021</td>
+              <td>Sch 2 (items 57–61): 1 Sept 2021 (s 2(1) item 5)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Courts and Tribunals Legislation Amendment (2021 Measures No. 1) Act 2022</td>
+              <td>3, 2022</td>
+              <td>17 Feb 2022</td>
+              <td>Sch 1 (items 72, 73): 18 Feb 2022 (s 2(1) item 3)</td>
+              <td>Sch 1 (item 73)</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>Part I</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 3</td>
+              <td>am No 151, 1989; No 149, 2001; No 62, 2004; No 129, 2012; No 13, 2013; No 13, 2021</td>
+            </tr>
+            <tr>
+              <td>s 4</td>
+              <td>am Nos. 73 and 77, 2008</td>
+            </tr>
+            <tr>
+              <td>s 8</td>
+              <td>am No 59, 2015</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ed C19</td>
+            </tr>
+            <tr>
+              <td>Part II</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 9</td>
+              <td>am No 23, 2006; No 13, 2013; No 13, 2021</td>
+            </tr>
+            <tr>
+              <td>Part III</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 22</td>
+              <td>am No 20, 1994; No 57, 2019</td>
+            </tr>
+            <tr>
+              <td>s 23</td>
+              <td>am No. 166, 1992</td>
+            </tr>
+            <tr>
+              <td>s 26A</td>
+              <td>ad No. 77, 2008</td>
+            </tr>
+            <tr>
+              <td>Part IV</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 27</td>
+              <td>am No 23, 2006; No 13, 2013; No 13, 2021</td>
+            </tr>
+            <tr>
+              <td>s 28</td>
+              <td>am No 23, 2006; No 13, 2013; No 13, 2021</td>
+            </tr>
+            <tr>
+              <td>Part V</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 32</td>
+              <td>am No. 131, 2009</td>
+            </tr>
+            <tr>
+              <td>s 41</td>
+              <td>am No 23, 2006; No 46, 2011; No 13, 2013; No 13, 2021; No 3, 2022</td>
+            </tr>
+            <tr>
+              <td>Part VII</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 48</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>Part VIII</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 49</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 50</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 51</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 52</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 53</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 54</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 55</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 56</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 57</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>Part IX</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 58</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+            <tr>
+              <td>s 59</td>
+              <td>rep No. 129, 2012</td>
+            </tr>
+          </table>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

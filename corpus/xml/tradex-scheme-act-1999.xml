@@ -1,0 +1,3547 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1999/185/!main"/>
+          <FRBRuri value="/akn/au/act/1999/185"/>
+          <FRBRdate date="1999-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="185"/>
+          <FRBRname value="tradex-scheme-act-1999"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1999/185/eng@2024-10-14/!main"/>
+          <FRBRuri value="/akn/au/act/1999/185/eng@2024-10-14"/>
+          <FRBRdate date="2024-10-14" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1999/185/eng@2024-10-14/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1999/185/eng@2024-10-14/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1999-01-01" type="generation" eId="evt-creation" source="#tradex-scheme-act-1999"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2001/55" date="2001-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2001/140"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2004/80" date="2004-06-23"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2008/18"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2010/124" date="2010-11-18"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2016/11" date="2016-02-29"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2024/38" date="2024-05-31"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-and" href="/ontology/term/au/term-and" showAs="and"/>
+        <TLCTerm eId="term-approved-form" href="/ontology/term/au/term-approved-form" showAs="approved form"/>
+        <TLCTerm eId="term-authorised-officer" href="/ontology/term/au/term-authorised-officer" showAs="authorised officer"/>
+        <TLCTerm eId="term-chapter-5-body-corporate" href="/ontology/term/au/term-chapter-5-body-corporate" showAs="Chapter 5 body corporate"/>
+        <TLCTerm eId="term-container" href="/ontology/term/au/term-container" showAs="container"/>
+        <TLCTerm eId="term-disqualifying-circumstances" href="/ontology/term/au/term-disqualifying-circumstances" showAs="disqualifying circumstances"/>
+        <TLCTerm eId="term-document" href="/ontology/term/au/term-document" showAs="document"/>
+        <TLCTerm eId="term-eligible-goods" href="/ontology/term/au/term-eligible-goods" showAs="eligible goods"/>
+        <TLCTerm eId="term-enter-for-home-consumption" href="/ontology/term/au/term-enter-for-home-consumption" showAs="enter for home consumption"/>
+        <TLCTerm eId="term-exportation" href="/ontology/term/au/term-exportation" showAs="exportation"/>
+        <TLCTerm eId="term-holder-of-a-tradex-order" href="/ontology/term/au/term-holder-of-a-tradex-order" showAs="holder of a tradex order"/>
+        <TLCTerm eId="term-identity-card" href="/ontology/term/au/term-identity-card" showAs="identity card"/>
+        <TLCTerm eId="term-infringement-notice" href="/ontology/term/au/term-infringement-notice" showAs="infringement notice"/>
+        <TLCTerm eId="term-insolvent-under-administration" href="/ontology/term/au/term-insolvent-under-administration" showAs="insolvent under administration"/>
+        <TLCTerm eId="term-kind-or-description-of-goods" href="/ontology/term/au/term-kind-or-description-of-goods" showAs="kind or description of goods"/>
+        <TLCTerm eId="term-magistrate" href="/ontology/term/au/term-magistrate" showAs="magistrate"/>
+        <TLCTerm eId="term-occupier-of-premises" href="/ontology/term/au/term-occupier-of-premises" showAs="occupier of premises"/>
+        <TLCTerm eId="term-offence-against-this-act" href="/ontology/term/au/term-offence-against-this-act" showAs="offence against this Act"/>
+        <TLCTerm eId="term-premises" href="/ontology/term/au/term-premises" showAs="premises"/>
+        <TLCTerm eId="term-register" href="/ontology/term/au/term-register" showAs="Register"/>
+        <TLCTerm eId="term-required-records" href="/ontology/term/au/term-required-records" showAs="required records"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-texco-scheme" href="/ontology/term/au/term-texco-scheme" showAs="Texco Scheme"/>
+        <TLCTerm eId="term-tradex-duty" href="/ontology/term/au/term-tradex-duty" showAs="tradex duty"/>
+        <TLCTerm eId="term-tradex-number" href="/ontology/term/au/term-tradex-number" showAs="tradex number"/>
+        <TLCTerm eId="term-tradex-order" href="/ontology/term/au/term-tradex-order" showAs="tradex order"/>
+        <TLCTerm eId="term-tradex-scheme" href="/ontology/term/au/term-tradex-scheme" showAs="Tradex Scheme"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Tradex Scheme Act 1999</p>
+      <p>No. 185, 1999</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compilation date:</b><b>	</b>14 October 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 38, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Tradex Scheme Act 1999</i> that shows the text of the law as amended and in force on 14 October 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Object of Act	1</p>
+      <p>4	Definitions	1</p>
+      <p>5	Core criteria for applying for or holding a tradex order	5</p>
+      <p>6	Disqualifying circumstances	6</p>
+      <p>6A	Continuity of partnerships	6</p>
+      <p>7	Act not to extend to external Territories	7</p>
+      <p>8	Act not to bind Crown	7</p>
+      <p><ref href="#part-2">Part 2</ref>—Register of Tradex Orders	8</p>
+      <p>9	Secretary to ensure that Register is kept	8</p>
+      <p><ref href="#part-3">Part 3</ref>—Making of tradex orders	9</p>
+      <p>10	Application for tradex order	9</p>
+      <p>11	Making of tradex order	10</p>
+      <p><ref href="#part-4">Part 4</ref>—Variation of tradex orders	12</p>
+      <p>12	Application for variation of tradex order	12</p>
+      <p>13	Grant or refusal of application for variation	13</p>
+      <p><ref href="#part-5">Part 5</ref>—Revocation, suspension and cessation of tradex orders	15</p>
+      <p>14	Request by holder for revocation of tradex order	15</p>
+      <p>15	Holder to notify ineligibility	15</p>
+      <p>16	Notice to show cause why tradex order should not be revoked	16</p>
+      <p>17	Suspension of tradex order	17</p>
+      <p>18	Revocation of tradex order following request under <ref href="#sec-14">section 14</ref>	18</p>
+      <p>19	Revocation of tradex order following notice given to Secretary under <ref href="#sec-15">section 15</ref> or given by Secretary under <ref href="#sec-16">section 16</ref>	18</p>
+      <p>19A	Revocation of tradex order if holder cannot be contacted	20</p>
+      <p>20	Where individual holder dies or non-individual holder ceases to exist	20</p>
+      <p><ref href="#part-6">Part 6</ref>—Liability to pay tradex duty in respect of nominated goods in certain circumstances	21</p>
+      <p>21	Liability of holder to pay tradex duty	21</p>
+      <p><ref href="#part-7">Part 7</ref>—Keeping of records	23</p>
+      <p>22	Holder of tradex order to keep records in relation to nominated goods	23</p>
+      <p>23	Provisions relating to keeping of required records	23</p>
+      <p><ref href="#part-8">Part 8</ref>—Audit	25</p>
+      <p>24	Audit powers	25</p>
+      <p>25	Monitoring warrants	26</p>
+      <p><ref href="#part-9">Part 9</ref>—Offences	28</p>
+      <p>26	Failure to notify details of change in registered particulars	28</p>
+      <p>27	Failure to notify ineligibility	28</p>
+      <p>28	Failure to pay tradex duty	28</p>
+      <p>29	Failure to keep records	29</p>
+      <p>30	Failure to comply with requirement made by authorised officer	29</p>
+      <p>31	Failure by occupier of premises to provide facilities or assistance for authorised officer	30</p>
+      <p>32	False or misleading statements	30</p>
+      <p><ref href="#part-10">Part 10</ref>—Penalty in lieu of prosecution	32</p>
+      <p>33	When an infringement notice can be served	32</p>
+      <p>34	Matters to be included in an infringement notice	32</p>
+      <p>35	Withdrawal of infringement notice	33</p>
+      <p>36	What happens if unpaid tradex duty and penalty are paid	33</p>
+      <p>37	More than one infringement notice may not be served for the same offence	34</p>
+      <p>38	Infringement notice not required to be served etc.	34</p>
+      <p><ref href="#part-11">Part 11</ref>—Miscellaneous	35</p>
+      <p>39	Reconsideration of certain decisions	35</p>
+      <p>40	Review of decisions by Administrative Review Tribunal	36</p>
+      <p>40A	Evidentiary matters in relation to tradex duty liability	37</p>
+      <p>41	Other evidentiary matters	37</p>
+      <p>42	Payment by cheque	39</p>
+      <p>42A	Refund of overpaid tradex duty	39</p>
+      <p>43	Power of Secretary to extend certain periods	39</p>
+      <p>44	Power of Secretary to approve forms	40</p>
+      <p>45	Authorised officers	40</p>
+      <p>46	Tradex order not transmissible	41</p>
+      <p>47	Application of <i>Criminal Code</i>	41</p>
+      <p>48	Delegation	41</p>
+      <p>48A	Treatment of partnerships	41</p>
+      <p>49	Regulations	42</p>
+      <p>Endnotes	43</p>
+      <p>Endnote 1—About the endnotes	43</p>
+      <p>Endnote 2—Abbreviation key	45</p>
+      <p>Endnote 3—Legislation history	46</p>
+      <p>Endnote 4—Amendment history	48</p>
+      <p>An Act to establish a scheme, to be known as the Tradex Scheme, for the importation, without payment of duties of customs or other taxes, of goods that are to be subsequently exported, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Tradex Scheme Act 1999</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), this Act commences on a day to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If this Act does not commence under subsection (1) <quantity refersTo="#deadline">within 6 months</quantity> after the day on which it receives the Royal Assent, it commences on the first day after the end of that period.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Object of Act</heading>
+          <content>
+            <p>The object of this Act is to establish a statutory scheme, to be known as the Tradex Scheme, under which goods may be imported without payment of duties of customs or other taxes provided that the goods are subsequently exported or incorporated in other goods that are exported.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-approved-form">approved form</term> means <def>a form approved under <ref href="#sec-44">section 44</ref>.</def></p>
+            <p><term refersTo="#term-authorised-officer">authorised officer</term> means <def>an individual holding an appointment as an authorised officer under <ref href="#sec-45">section 45</ref>.</def></p>
+            <p><term refersTo="#term-chapter-5-body-corporate">Chapter 5 body corporate</term> has the same meaning as <def>in <ref href="">the Corporations Act 2001</ref>.</def></p>
+            <p><term refersTo="#term-container">container</term> includes <def>every means by which goods may be covered, enclosed, packed or contained.</def></p>
+            <p><b><i>core criteria</i></b>:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>for the making of an application for, or an application for the variation of, a tradex order—has the meaning given by subsection 5(1); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>for the holding of a tradex order—has the meaning given by subsection 5(2).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-disqualifying-circumstances">disqualifying circumstances</term> has the meaning given by <def><ref href="#sec-6">section 6</ref>.</def></p>
+              <p><term refersTo="#term-document">document</term> includes <def>a book and any record.</def></p>
+              <p><term refersTo="#term-eligible-goods">eligible goods</term> means <def>goods other than: goods intended for sale in an establishment that offers goods for sale free of duties of customs and other taxes; and goods which, if they were produced in Australia, would be subject to duties of excise or to another tax that is declared by the regulations to be a tax to which this paragraph applies.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>goods intended for sale in an establishment that offers goods for sale free of duties of customs and other taxes; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>goods which, if they were produced in Australia, would be subject to duties of excise or to another tax that is declared by the regulations to be a tax to which this paragraph applies.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-enter-for-home-consumption">enter for home consumption</term> means <def>enter for home consumption under <ref href="#sec-68">section 68</ref> of <ref href="">the Customs Act 1901</ref>.</def></p>
+              <p><term refersTo="#term-exportation">exportation</term>, in relation to goods, includes <def>the exportation of other goods in which the first-mentioned goods are incorporated.</def></p>
+              <p><term refersTo="#term-holder-of-a-tradex-order">holder of a tradex order</term> means <def>the person on whose application the order was made.</def></p>
+              <p><term refersTo="#term-identity-card">identity card</term> means <def>an identity card issued under subsection 45(2).</def></p>
+              <p><b><i>ineligible</i></b>: a person is ineligible to apply for, or to hold, a tradex order if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>where the person is an individual—the person is an insolvent under administration; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>where the person is a body corporate—the person is a Chapter 5 body corporate; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>where the person is a partnership—any of the partners is an insolvent under administration or a Chapter 5 body corporate.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-infringement-notice">infringement notice</term> means <def>a notice served under <ref href="#sec-33">section 33</ref>.</def></p>
+              <p><term refersTo="#term-insolvent-under-administration">insolvent under administration</term> means <def>a person who: 	(a)	under the <i>Bankruptcy Act 1966</i>, or the law of an external Territory, is a bankrupt in respect of a bankruptcy from which the person has not been discharged; or under the law of a foreign country, or the law of an external Territory, has the status of an undischarged bankrupt;</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	under the <i>Bankruptcy Act 1966</i>, or the law of an external Territory, is a bankrupt in respect of a bankruptcy from which the person has not been discharged; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>under the law of a foreign country, or the law of an external Territory, has the status of an undischarged bankrupt;</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-and">and</term> includes <def>a person who has executed a personal insolvency agreement under: 	(c)	Part X of the <i>Bankruptcy Act 1966</i>; or the corresponding provisions of the law of an external Territory or the law of a foreign country; where the terms of the agreement have not been fully complied with.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	Part X of the <i>Bankruptcy Act 1966</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>the corresponding provisions of the law of an external Territory or the law of a foreign country;</p>
+            </content>
+            <content>
+              <p>where the terms of the agreement have not been fully complied with.</p>
+              <p><term refersTo="#term-kind-or-description-of-goods">kind or description of goods</term> includes <def>a kind or description expressed by reference to the tariff classification in <ref href="">the Customs Tariff Act 1995</ref> by which goods of that kind or description are classified.</def></p>
+              <p><term refersTo="#term-magistrate">magistrate</term> means <def>any magistrate, whether remunerated by salary or not.</def></p>
+              <p><b><i>nominated goods</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>in relation to goods of a kind or description in respect of which an application has been made for a tradex order—eligible goods of the kind or description specified in the application that are intended to be imported by the applicant; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>in relation to goods of a kind or description in respect of which a tradex order is in force—eligible goods of the kind or description specified in the order that are intended to be imported, or are imported, by the holder of the order.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-occupier-of-premises">occupier of premises</term> means <def>the person in charge, or apparently in charge, of the premises.</def></p>
+              <p><term refersTo="#term-offence-against-this-act">offence against this Act</term> includes <def>an offence against <ref href="#sec-6">section 6</ref> of <ref href="">the Crimes Act 1914</ref>, or against <ref href="#sec-11">section 11</ref>.1, 11.4 or 11.5 of the Criminal Code, in relation to an offence against this Act.</def></p>
+              <p><b><i>person</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>an individual; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a body corporate; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>a partnership.</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	See also <ref href="#sec-48A">section 48A</ref> (partnerships).</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p><term refersTo="#term-premises">premises</term> includes <def>any place (whether enclosed or built on, or not) and, in particular, includes: a building, wharf or other structure; and a vessel; and an aircraft; and a vehicle; and a part of premises (including a part of any of the above).</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a building, wharf or other structure; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a vessel; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>an aircraft; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>a vehicle; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>a part of premises (including a part of any of the above).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-register">Register</term> means <def>the Register of Tradex Orders kept under <ref href="#sec-9">section 9</ref>.</def></p>
+              <p><term refersTo="#term-required-records">required records</term> has the meaning given by <def>subsection 22(2).</def></p>
+              <p><term refersTo="#term-secretary">Secretary</term> means <def>Secretary of the Department.</def></p>
+              <p><term refersTo="#term-texco-scheme">Texco Scheme</term> means <def>the administrative scheme of that name that was in force immediately before the commencement of this Act under Customs By-law 9640056 for the purposes of item 21 of Schedule 4 to <ref href="">the Customs Tariff Act 1995</ref>.</def></p>
+              <p><term refersTo="#term-tradex-duty">tradex duty</term> means <def>the tax known as tradex duty that is payable under <ref href="#sec-21">section 21</ref>, as imposed by the Tradex Duty Imposition (Excise) Act 1999, the Tradex Duty Imposition (Customs) Act 1999 or the Tradex Duty Imposition (General) Act 1999.</def></p>
+              <p><term refersTo="#term-tradex-number">tradex number</term> has the meaning given by <def>paragraph 11(7)(a).</def></p>
+              <p><term refersTo="#term-tradex-order">tradex order</term> means <def>an order made under <ref href="#sec-11">section 11</ref> that is in force.</def></p>
+              <p><term refersTo="#term-tradex-scheme">Tradex Scheme</term> means <def>the scheme for the making of tradex orders that is established by this Act.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Core criteria for applying for or holding a tradex order</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The <b><i>core criteria</i></b> for the making by a person of an application for, or an application for a variation of, a tradex order are:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that the person intends to import nominated goods that are to be subsequently exported; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the requirements of regulations made for the purposes of this paragraph are met in relation to the nominated goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>that the nominated goods will be exported within one year after their entry for home consumption; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>that adequate record-keeping and accounting systems are in place in respect of nominated goods until they are exported.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The <b><i>core criteria</i></b> for the holding by a person of a tradex order are:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that the holder:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>intends to import nominated goods that are to be subsequently exported; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>has imported, and intends to continue to import, nominated goods that have been, or are to be, subsequently exported; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>that the requirements of regulations made for the purposes of this paragraph have been met in relation to all of the nominated goods that have been exported; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>that every exportation of nominated goods occurred within one year after their entry for home consumption; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>that adequate record-keeping and accounting systems are in place in respect of nominated goods until they are exported.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend periods referred to in paragraphs (1)(c) and (2)(c) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Disqualifying circumstances</heading>
+          <content>
+            <p>		<b><i>Disqualifying circumstances</i></b> exist in relation to a person who is the holder of a tradex order if:</p>
+          </content>
+          <paragraph eId="part-1__sec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>any of the core criteria for the holding of the order have not been complied with, except where the only effect of the non-compliance was to render the person liable to pay tradex duty and the person has paid the duty in accordance with <ref href="#sec-21">section 21</ref>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>the person gave information, or a document, to <role refersTo="#secretary">the Secretary</role> or to an authorised officer in connection with an application for, or for a variation of, the order or an application for, or for a variation of, another tradex order, being information or a document that:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-i">
+            <num>i</num>
+            <content>
+              <p>if the person is an individual or body corporate—the person knew, or ought to have known, to be false or misleading in a material particular; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-ii">
+            <num>ii</num>
+            <content>
+              <p>if the person is a partnership—any of the partners knew, or ought to have known, to be false or misleading in a material particular; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-c">
+            <num>c</num>
+            <content>
+              <p>the person was ineligible to apply for the order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-d">
+            <num>d</num>
+            <content>
+              <p>the person is ineligible to hold the order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-e">
+            <num>e</num>
+            <content>
+              <p>the person has failed to pay tradex duty in accordance with <ref href="#sec-21">section 21</ref> in respect of:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-i">
+            <num>i</num>
+            <content>
+              <p>nominated goods; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-6__para-ii">
+            <num>ii</num>
+            <content>
+              <p>nominated goods in relation to another tradex order that is or has been held by the person.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-6A">
+          <num>6A</num>
+          <heading>Continuity of partnerships</heading>
+          <content>
+            <p>For the purposes of this Act, a change in the composition of a partnership does not affect the continuity of the partnership.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Act not to extend to external Territories</heading>
+          <content>
+            <p>This Act does not extend to the external Territories.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-8">
+          <num>8</num>
+          <heading>Act not to bind Crown</heading>
+          <content>
+            <p>This Act does not bind the Crown in any of its capacities.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Register of Tradex Orders</heading>
+        <section eId="part-2__sec-9">
+          <num>9</num>
+          <heading>Secretary to ensure that Register is kept</heading>
+          <subsection eId="part-2__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a Register of Tradex Orders to be kept for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Register is to contain such particulars, and to be kept in such form, as <role refersTo="#secretary">the Secretary</role> considers appropriate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Register may be kept in an electronic form.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> finds out that any particulars entered in the Register are incorrect, whether because a change has occurred in the matter to which the particulars relate or for any other reason, <role refersTo="#secretary">the Secretary</role> must, as soon as practicable, cause the correct particulars to be entered in the Register.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause the holder of a tradex order to be notified in writing of the particulars entered in the Register in respect of the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If a change occurs in any of the particulars that:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>are entered in the Register in respect of a tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>have been notified to the holder of the order under subsection (5);</p>
+              </content>
+              <content>
+                <p>the holder must, <quantity refersTo="#deadline">within 14 days</quantity> after the change occurs, notify the Secretary in writing of the details of the change.</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend a period referred to in subsection (6) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Making of tradex orders</heading>
+        <section eId="part-3__sec-10">
+          <num>10</num>
+          <heading>Application for tradex order</heading>
+          <subsection eId="part-3__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who proposes to import eligible goods of a particular kind or description may apply for a tradex order in relation to goods of that kind or description.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The application must:</p>
+            </content>
+            <paragraph eId="part-3__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>be in accordance with the approved form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>specify the kind or description of goods to which the application relates; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>contain such other information as the form requires; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>be signed in the manner indicated in the form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>be lodged with <role refersTo="#secretary">the Secretary</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may at any time, by written notice given to the applicant, require the applicant to give to <role refersTo="#secretary">the Secretary</role> in writing, within a period (being a reasonable period) stated in the notice, any of the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-10__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>particulars of proposed export activities that would, if the order were not made, make the nominated goods eligible for drawback when they are exported;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>particulars of the measures proposed to be taken to ensure that the requirements of the regulations will be met in relation to the nominated goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>particulars of the record-keeping or accounting systems that are in place in respect of the nominated goods until they are exported;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>any other information relevant to <role refersTo="#secretary">the Secretary</role>’s consideration of the application.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend a period referred to in subsection (3) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-11">
+          <num>11</num>
+          <heading>Making of tradex order</heading>
+          <subsection eId="part-3__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), if <role refersTo="#secretary">the Secretary</role> is satisfied that:</p>
+            </content>
+            <paragraph eId="part-3__sec-11__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the core criteria for the making of the application are complied with in respect of some or all of the nominated goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the applicant is not ineligible to apply for the tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the applicant has not given to <role refersTo="#secretary">the Secretary</role> or to an authorised officer for the purposes of this Act any information or document that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the applicant is an individual or body corporate—the applicant knew, or ought to have known, to be false or misleading in a material particular; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the applicant is a partnership—any of the partners knew, or ought to have known, to be false or misleading in a material particular; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the applicant has not failed to pay tradex duty in accordance with <ref href="#sec-21">section 21</ref> in respect of nominated goods in relation to another tradex order that is or has been held by the applicant;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> must make an order specifying the nominated goods in respect of which <role refersTo="#secretary">the Secretary</role> is satisfied as mentioned in paragraph (a).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may refuse the application, wholly or partly, except in so far as he or she is required to make a tradex order in respect of the application under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a written notice of his or her decision on the application to be given to the applicant.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If a notice under subsection (3) has not been received by the applicant <quantity refersTo="#deadline">within 40 days</quantity> after the day on which the application was lodged, the Secretary is taken to have refused the application.</p>
+            </content>
+            <authorialNote placement="end" eId="note-5" marker="5">
+              <content>
+                <p>Note:	For the right to have a decision refusing the application reconsidered, see <ref href="#sec-39">section 39</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the decision is to refuse the application wholly or partly, the notice of the decision given under subsection (3) must:</p>
+            </content>
+            <paragraph eId="part-3__sec-11__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>set out <role refersTo="#secretary">the Secretary</role>’s findings on material questions of fact; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>refer to the evidence or other material on which those findings were based; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>give the reasons for the decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A tradex order must be in writing signed by <role refersTo="#secretary">the Secretary</role> and comes into force on a date stated in the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-7">
+            <num>7</num>
+            <content>
+              <p>When <role refersTo="#secretary">the Secretary</role> makes a tradex order, <role refersTo="#secretary">the Secretary</role> must:</p>
+            </content>
+            <paragraph eId="part-3__sec-11__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	cause a distinguishing number (the <b><i>tradex number</i></b>) to be allocated to the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>cause particulars of the order and the tradex number to be entered in the Register; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>include in the notice of the decision given under subsection (3) (in addition to any other matters that may be required under subsection (5) to be included in the notice) particulars of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-7__para-i">
+              <num>i</num>
+              <content>
+                <p>the tradex number allocated to the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-7__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the date on which the order comes into force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-7__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the nominated goods to which the order applies.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Variation of tradex orders</heading>
+        <section eId="part-4__sec-12">
+          <num>12</num>
+          <heading>Application for variation of tradex order</heading>
+          <subsection eId="part-4__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The holder of a tradex order may apply for a variation of the order in relation to goods of a particular kind or description.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The variation applied for must be a variation by way of either or both of the following:</p>
+            </content>
+            <paragraph eId="part-4__sec-12__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the exclusion from the order of goods of a kind or description specified in the order;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the inclusion in the order of eligible goods of a kind or description not already specified in the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The application must:</p>
+            </content>
+            <paragraph eId="part-4__sec-12__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>be in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>be in accordance with the approved form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>state the tradex number allocated to the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>set out particulars of the kind or description of goods that are to be excluded from, or included in, the order by the proposed variation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>contain such other information as the form requires; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>be signed in the manner indicated in the form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-12__subsec-3__para-g">
+              <num>g</num>
+              <content>
+                <p>be lodged with <role refersTo="#secretary">the Secretary</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may at any time, by written notice given to the applicant, require the applicant to give to <role refersTo="#secretary">the Secretary</role> in writing, within a period (being a reasonable period) stated in the notice, any information relevant to <role refersTo="#secretary">the Secretary</role>’s consideration of the application.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend a period referred to in subsection (4) (see <ref href="#sec-43">section 43</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-13">
+          <num>13</num>
+          <heading>Grant or refusal of application for variation</heading>
+          <subsection eId="part-4__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the application is or includes an application for the exclusion from the tradex order of goods of a particular kind or description; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is satisfied that, if goods of that kind or description are excluded from the order, no disqualifying circumstances will exist in relation to the applicant;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> must grant the application in so far as it is an application for the exclusion of goods of that kind or description.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4__sec-13__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the application is or includes an application for the inclusion in the tradex order of goods of a particular kind or description; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is satisfied that the core criteria for the making of the application are complied with in respect of some or all of those goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> is satisfied that no disqualifying circumstances exist in relation to the applicant;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> must grant the application in so far as it is an application for the inclusion of goods in respect of which <role refersTo="#secretary">the Secretary</role> is satisfied as mentioned in paragraph (b).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may refuse the application wholly or partly, except in so far as he or she is required to grant the application under subsection (1) or (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a written notice of his or her decision on the application to be given to the applicant.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If a notice under subsection (4) has not been received by the applicant <quantity refersTo="#deadline">within 40 days</quantity> after the day on which the application was lodged, the Secretary is taken to have refused the application.</p>
+            </content>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	For the right to have a decision refusing the application reconsidered, see <ref href="#sec-39">section 39</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If the decision is to refuse the application wholly or partly, the notice of the decision given under subsection (4) must:</p>
+            </content>
+            <paragraph eId="part-4__sec-13__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>set out <role refersTo="#secretary">the Secretary</role>’s findings on material questions of fact; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>refer to the evidence or other material on which those findings were based; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>give the reasons for the decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-7">
+            <num>7</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> decides to grant the application wholly or partly, <role refersTo="#secretary">the Secretary</role> must vary the tradex order so as to give effect to the decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A variation of a tradex order must be in writing signed by <role refersTo="#secretary">the Secretary</role> and comes into force on a date stated in the instrument of variation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-13__subsec-9">
+            <num>9</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> varies the tradex order, <role refersTo="#secretary">the Secretary</role>:</p>
+            </content>
+            <paragraph eId="part-4__sec-13__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>must cause particulars of the variation to be entered in the Register; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>include in the notice given under subsection (4) (in addition to any other matters that may be required under subsection (6) to be included in the notice) particulars of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-9__para-i">
+              <num>i</num>
+              <content>
+                <p>the kind or description of goods that have been excluded from, or included in, the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-13__subsec-9__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the date on which the variation comes into force.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Revocation, suspension and cessation of tradex orders</heading>
+        <section eId="part-5__sec-14">
+          <num>14</num>
+          <heading>Request by holder for revocation of tradex order</heading>
+          <subsection eId="part-5__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The holder of a tradex order may request <role refersTo="#secretary">the Secretary</role> to revoke the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The request must:</p>
+            </content>
+            <paragraph eId="part-5__sec-14__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-14__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>be in accordance with the approved form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-14__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>state the tradex number allocated to the tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-14__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>contain such information as the form requires; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-14__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>be signed in the manner indicated in the form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-14__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>be lodged with <role refersTo="#secretary">the Secretary</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-15">
+          <num>15</num>
+          <heading>Holder to notify ineligibility</heading>
+          <subsection eId="part-5__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the holder of a tradex order:</p>
+            </content>
+            <paragraph eId="part-5__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes aware that the holder was ineligible to apply for the order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>becomes ineligible to hold the order;</p>
+              </content>
+              <content>
+                <p>the holder must, <quantity refersTo="#deadline">within 7 days</quantity> after becoming aware as mentioned in paragraph (a) or becoming ineligible as mentioned in paragraph (b), give notice to the Secretary in accordance with subsection (2).</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend the period referred to in subsection (1) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The notice must:</p>
+            </content>
+            <paragraph eId="part-5__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>be in accordance with the approved form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>state the tradex number allocated to the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>state that the holder was ineligible to apply for the order, or has become ineligible to hold the order, as the case may be; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>set out particulars of the circumstances that gave rise to the ineligibility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>contain such other information as the form requires; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>be signed in the manner indicated in the form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-15__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>be lodged with <role refersTo="#secretary">the Secretary</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-16">
+          <num>16</num>
+          <heading>Notice to show cause why tradex order should not be revoked</heading>
+          <subsection eId="part-5__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If it appears to <role refersTo="#secretary">the Secretary</role> that any circumstances (other than circumstances specified in a notice given to <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-15">section 15</ref>) that may be disqualifying circumstances exist in relation to the holder of a tradex order, <role refersTo="#secretary">the Secretary</role> must cause to be given to the holder a written notice:</p>
+            </content>
+            <paragraph eId="part-5__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>setting out particulars of the circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>inviting the holder to give to the Secretary, <quantity refersTo="#deadline">within 28 days</quantity> after the day on which the notice is received by the holder, written evidence:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-16__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>that the circumstances do not exist; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-16__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the circumstances exist—that they are not disqualifying circumstances.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend the period referred to in paragraph 16(1)(b) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> is of the opinion that the holder of a tradex order does not intend to export nominated goods to which the order applies, <role refersTo="#secretary">the Secretary</role> may give the holder a written notice:</p>
+            </content>
+            <paragraph eId="part-5__sec-16__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>setting out <role refersTo="#secretary">the Secretary</role>’s opinion; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-16__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>inviting the holder to give the Secretary, <quantity refersTo="#deadline">within 28 days</quantity> after the day on which the notice is received by the holder, written evidence that the holder intends to export the nominated goods.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend the period referred to in paragraph 16(2)(b) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-17">
+          <num>17</num>
+          <heading>Suspension of tradex order</heading>
+          <subsection eId="part-5__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role>:</p>
+            </content>
+            <paragraph eId="part-5__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>decides to give a notice under <ref href="#sec-16">section 16</ref> to the holder of a tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>believes on reasonable grounds that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>any disqualifying circumstances exist in relation to the holder; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the holder does not intend to export the nominated goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>considers that it is appropriate to take action under this section;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> may suspend the order.</p>
+              </content>
+              <authorialNote placement="end" eId="note-11" marker="11">
+                <content>
+                  <p>Note:	For the right to have a decision suspending a tradex order reconsidered, see <ref href="#sec-39">section 39</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a written notice of:</p>
+            </content>
+            <paragraph eId="part-5__sec-17__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>his or her decision to suspend the tradex order, and the reasons for the decision; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the date on which the suspension comes into force;</p>
+              </content>
+              <content>
+                <p>to be given to the holder of the order. The notice may be included in the notice given under <ref href="#sec-16">section 16</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A tradex order that has been suspended is taken not to be in force during the period of the suspension.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> believes that it is appropriate to do so, <role refersTo="#secretary">the Secretary</role> may remove the suspension of a tradex order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a written notice of:</p>
+            </content>
+            <paragraph eId="part-5__sec-17__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>his or her decision to remove the suspension of a tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-17__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the date on which the removal of the suspension comes into force;</p>
+              </content>
+              <content>
+                <p>to be given to the holder of the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The suspension, or the removal of the suspension, of a tradex order must be in writing signed by <role refersTo="#secretary">the Secretary</role> and comes into force on a date stated in the instrument of suspension or removal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-7">
+            <num>7</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause particulars of the suspension, or of the removal of the suspension, and the date on which the suspension or removal comes into force, to be entered in the Register.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-17__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The suspension of a tradex order, if not sooner removed, ceases to be in force if the order is revoked.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-18">
+          <num>18</num>
+          <heading>Revocation of tradex order following request under section 14</heading>
+          <subsection eId="part-5__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>As soon as practicable after a request for the revocation of a tradex order is lodged by the holder of the order under <ref href="#sec-14">section 14</ref>, <role refersTo="#secretary">the Secretary</role> must:</p>
+            </content>
+            <paragraph eId="part-5__sec-18__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>revoke the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-18__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>cause written notice of the revocation, and the date on which the revocation comes into force, to be given to the person who made the request; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-18__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>cause to be entered in the Register a statement that the order has been revoked and the date on which the revocation comes into force.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The revocation of a tradex order under this section must be in writing signed by <role refersTo="#secretary">the Secretary</role> and comes into force on a date stated in the instrument of revocation.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-19">
+          <num>19</num>
+          <heading>Revocation of tradex order following notice given to Secretary under section 15 or given by Secretary under section 16</heading>
+          <subsection eId="part-5__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-5__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the holder of a tradex order has given a notice to <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-15">section 15</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a notice is given to the holder of a tradex order under subsection 16(1) and the holder does not satisfy <role refersTo="#secretary">the Secretary</role>, within the period stated in the notice, that the circumstances specified in the notice:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>do not exist; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if they exist—are not disqualifying circumstances;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> must revoke the order.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	A decision under subsection (1) to revoke a tradex order is reviewable (see <ref href="#sec-39">section 39</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-5__sec-19__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> has given the holder of a tradex order a notice under subsection 16(2); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>the holder does not satisfy <role refersTo="#secretary">the Secretary</role>, within the period stated in the notice, that the holder intends to export the goods referred to in the notice;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> may revoke the tradex order.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	A decision under subsection (1A) to revoke a tradex order is reviewable (see <ref href="#sec-39">section 39</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The revocation of a tradex order under this section must be in writing signed by <role refersTo="#secretary">the Secretary</role> and comes into force on a date stated in the instrument of revocation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause a written notice of his or her decision to revoke the order to be given to the holder of the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The notice of the decision must:</p>
+            </content>
+            <paragraph eId="part-5__sec-19__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>state the day on which the revocation comes into force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>set out <role refersTo="#secretary">the Secretary</role>’s findings on material questions of fact; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>refer to the evidence or other material on which those findings were based; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>give the reasons for the decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-19__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If a tradex order is revoked under this section, <role refersTo="#secretary">the Secretary</role> must cause to be entered in the Register a statement that the order has been revoked and the date on which the revocation comes into force.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-19A">
+          <num>19A</num>
+          <heading>Revocation of tradex order if holder cannot be contacted</heading>
+          <subsection eId="part-5__sec-19A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If, after reasonable attempts to contact the holder of a tradex order, <role refersTo="#secretary">the Secretary</role> is satisfied that the holder cannot be contacted, <role refersTo="#secretary">the Secretary</role> may revoke the tradex order.</p>
+            </content>
+            <authorialNote placement="end" eId="note-14" marker="14">
+              <content>
+                <p>Note:	A decision under subsection (1) to revoke a tradex order is reviewable (see <ref href="#sec-39">section 39</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-5__sec-19A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The revocation of the tradex order:</p>
+            </content>
+            <paragraph eId="part-5__sec-19A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>must be done by written instrument; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-19A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>comes into force on the date specified in the instrument.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-19A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If a tradex order is revoked under this section, <role refersTo="#secretary">the Secretary</role> must enter in the Register a statement that the order has been revoked and the date on which the revocation comes into force.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-20">
+          <num>20</num>
+          <heading>Where individual holder dies or non-individual holder ceases to exist</heading>
+          <content>
+            <p>If <role refersTo="#secretary">the Secretary</role> becomes aware that the Register contains particulars of a tradex order that was held by an individual who has died or by a body corporate or partnership that has ceased to exist, <role refersTo="#secretary">the Secretary</role> must cause to be entered in the Register a statement that the individual has died or the body corporate or partnership has ceased to exist and the date on which the individual died or the body corporate or partnership ceased to exist.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Liability to pay tradex duty in respect of nominated goods in certain circumstances</heading>
+        <section eId="part-6__sec-21">
+          <num>21</num>
+          <heading>Liability of holder to pay tradex duty</heading>
+          <subsection eId="part-6__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies if, in respect of either of the following:</p>
+            </content>
+            <paragraph eId="part-6__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>goods that are nominated goods in relation to a tradex order;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>goods that are nominated goods in relation to a suspended or revoked tradex order and that were imported before that suspension or revocation;</p>
+              </content>
+              <content>
+                <p>any of the following circumstances occur:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the goods are consumed or used by the holder in Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the goods are disposed of or otherwise dealt with in any way by the holder for the purpose of being consumed or used by another person in Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a requirement of the regulations is not met in relation to the goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the goods are not exported before the end of the period that applies under paragraph 5(2)(c) (otherwise than because the goods were accidentally destroyed or accidentally damaged).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The holder of the order is liable to pay to the Commonwealth, in accordance with the regulations, tradex duty in respect of the goods.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The tradex duty is payable <quantity refersTo="#deadline">within 28 days</quantity> after the earliest of whichever of the following days is applicable:</p>
+            </content>
+            <paragraph eId="part-6__sec-21__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the day on which the goods are consumed or used as mentioned in paragraph (1)(c);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the day on which the goods are disposed of or otherwise dealt with as mentioned in paragraph (1)(d);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the day on which the requirement of the regulations is not met in relation to the goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-21__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>the last day of the period referred to in paragraph (1)(f).</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend the period referred to in subsection (3) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-21__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An amount of tradex duty that is not paid within the period referred to in subsection (3) is a debt due to the Commonwealth and is recoverable by action in any court of competent jurisdiction.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-21__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A person who fails to pay an amount of tradex duty in accordance with subsection (3) continues to be liable to pay the duty even if a person is convicted of an offence, or pays a penalty under <ref href="#part-10">Part 10</ref>, in respect of the failure to pay the amount.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-21__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>consumed or used</i></b> means consumed or used otherwise than as permitted by regulations made for the purposes of this section.</p>
+              <p><b><i>holder</i></b> includes the person who was the holder of a suspended or revoked tradex order.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-7">
+        <num>7</num>
+        <heading>Keeping of records</heading>
+        <section eId="part-7__sec-22">
+          <num>22</num>
+          <heading>Holder of tradex order to keep records in relation to nominated goods</heading>
+          <subsection eId="part-7__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If any nominated goods in relation to a tradex order are entered for home consumption, the holder of the order must keep, or ensure that another person keeps on behalf of the holder, the required records in relation to the goods in accordance with <ref href="#sec-23">section 23</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-7__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The <b><i>required records</i></b> are records containing full particulars of the entry of the goods for home consumption and all subsequent dealings with, and things done in respect of, the goods by the holder, including particulars of:</p>
+            </content>
+            <paragraph eId="part-7__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>any incorporation of the goods in other goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the storage of the goods, or of any goods in which they are incorporated, while they are in the possession, custody or ownership of the holder;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>if the goods, or any goods in which they are incorporated, are consumed or used in Australia by the holder—the consumption or use;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>if the goods, or any goods in which they are incorporated, are disposed of, or otherwise dealt with, by the holder for the purpose of being consumed or used by any other person in Australia—the disposal or other dealing;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the exportation of the goods or of any goods in which they are incorporated;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>any payment of tradex duty in respect of the goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-22__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>any other matters specified in the regulations.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-7__sec-23">
+          <num>23</num>
+          <heading>Provisions relating to keeping of required records</heading>
+          <subsection eId="part-7__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The required records in relation to goods are to be kept at a place in Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-7__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The required records in relation to goods are to be kept:</p>
+            </content>
+            <paragraph eId="part-7__sec-23__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in writing in the English language; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-23__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in another form (including an electronic form) that enables them to be readily converted into writing in the English language.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-7__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The required records in relation to goods are to be kept for 5 years after the last occasion on which any act was done in relation to the goods by, or at the request or direction of, the holder of the order.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-8">
+        <num>8</num>
+        <heading>Audit</heading>
+        <section eId="part-8__sec-24">
+          <num>24</num>
+          <heading>Audit powers</heading>
+          <subsection eId="part-8__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An authorised officer has the powers conferred by this section but may not exercise the power to enter premises:</p>
+            </content>
+            <paragraph eId="part-8__sec-24__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>except with the consent of the occupier of the premises or under <role refersTo="#authority">the authority</role> of a monitoring warrant issued under <ref href="#sec-25">section 25</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the occupier of the premises requires the officer to produce his or her identity card for inspection by the occupier—unless the officer complies with the requirement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An authorised officer has power to do all or any of the following in respect of the holder of a tradex order:</p>
+            </content>
+            <paragraph eId="part-8__sec-24__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to require the holder, within a period specified by the officer, to make available for examination by the officer in accordance with subsection (3) specified documents:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>which are in the holder’s possession, or to which the holder has access; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>which are relevant to whether any disqualifying circumstances exist in relation to the holder;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to require the holder to demonstrate to the officer the operation of any record-keeping or accounting system used in respect of the nominated goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>to conduct testing of any such record-keeping or accounting system in order to determine its accuracy in respect of the nominated goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>if the holder has indicated, or documents made available by the holder indicate, that nominated goods have been, are, or may be, on particular premises—subject to subsection (1), to enter the premises;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>to search, with such assistance as is necessary, for any nominated goods on premises so entered and:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>to examine any such goods that are on the premises and, for that purpose, to open (including to break open) any container in which any such goods are, or may be, stored; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>to take and retain samples of any such goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>to examine, and to make and retain copies of, or take and retain extracts from, any documents made available in accordance with a requirement under paragraph (a) or found on premises entered under paragraph (d);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>to require the holder, an agent of the holder, or an employee of the holder or of such an agent, to answer any questions about:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>any documents referred to in paragraph (f); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>any record-keeping or accounting system referred to in paragraph (b); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the nominated goods.</p>
+              </content>
+              <authorialNote placement="end" eId="note-16" marker="16">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend the period specified in a requirement made under paragraph (2)(a) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A requirement under paragraph (2)(a) to make documents available for examination by an authorised officer must be complied with either:</p>
+            </content>
+            <paragraph eId="part-8__sec-24__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>by sending or giving the documents (or copies of the documents that are certified, in a manner acceptable to the officer, to be true copies) to the officer for examination; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-24__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>by notifying the officer that the documents may be examined, at any reasonable time, by the officer at the premises where they are kept and allowing the officer so to examine them.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-24__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The occupier of premises entered by an authorised officer under paragraph (2)(d) must provide the officer with all reasonable facilities for the effective exercise of the officer’s powers.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-25">
+          <num>25</num>
+          <heading>Monitoring warrants</heading>
+          <subsection eId="part-8__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An authorised officer may apply to a magistrate for a monitoring warrant under this section in relation to particular premises.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), the magistrate is to issue a monitoring warrant if the magistrate is satisfied, by information on oath or affirmation, that:</p>
+            </content>
+            <paragraph eId="part-8__sec-25__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the occupier of the premises has not consented to the officer entering the premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>it is reasonably necessary that the officer should have access to the premises for the purpose of finding out whether any nominated goods, or documents relating to any nominated goods, are on the premises.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The magistrate must not issue a monitoring warrant unless the officer or another person has given the magistrate, either orally (on oath or affirmation) or by affidavit, such further information as the magistrate requires about the grounds on which the issue of the warrant is being sought.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The monitoring warrant must:</p>
+            </content>
+            <paragraph eId="part-8__sec-25__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>authorise an authorised officer named in the warrant, with such assistance and by such force as is necessary and reasonable, from time to time, while the warrant remains in force:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>to enter the premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>to exercise powers of the kind set out in paragraphs 24(2)(b), (c), (e), (f) and (g) in relation to the premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>state whether an entry under the warrant is authorised to be made at any time of the day or night or during specified hours of the day or night; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>specify the day (not more than 7 days after the day on which the warrant is issued) on which the warrant ceases to have effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-25__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>state the purpose for which the warrant is issued.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-9">
+        <num>9</num>
+        <heading>Offences</heading>
+        <section eId="part-9__sec-26">
+          <num>26</num>
+          <heading>Failure to notify details of change in registered particulars</heading>
+          <subsection eId="part-9__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-9__sec-26__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is the holder of a tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-26__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is required by subsection 9(6) to notify <role refersTo="#secretary">the Secretary</role> of the details of a change in any of the particulars entered in the Register in respect of the order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-26__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the person fails to comply with the requirement.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of an offence against subsection (1), strict liability applies to the physical element of the offence, that the requirement is a requirement made by subsection 9(6).</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-27">
+          <num>27</num>
+          <heading>Failure to notify ineligibility</heading>
+          <subsection eId="part-9__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-9__sec-27__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is the holder of a tradex order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-27__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is required by <ref href="#sec-15">section 15</ref> to give a notice to <role refersTo="#secretary">the Secretary</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-27__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the person fails to comply with the requirement.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of an offence against subsection (1), strict liability applies to the physical element of the offence, that the requirement is a requirement made by <ref href="#sec-15">section 15</ref>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-18" marker="18">
+              <content>
+                <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-28">
+          <num>28</num>
+          <heading>Failure to pay tradex duty</heading>
+          <subsection eId="part-9__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-9__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is liable under subsection 21(2) to pay to the Commonwealth tradex duty in respect of goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person fails to pay the duty within the period applicable under subsection 21(3).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	An amount equal to the amount of tradex duty that was not paid by the person within the period applicable under subsection 21(3).</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An offence against subsection (1) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-19" marker="19">
+              <content>
+                <p>Note:	For the meaning of <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-29">
+          <num>29</num>
+          <heading>Failure to keep records</heading>
+          <subsection eId="part-9__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-9__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is required by <ref href="#sec-22">section 22</ref> to keep records in respect of any goods; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person fails to comply with the requirement.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of an offence against subsection (1), strict liability applies to the physical element of the offence, that the requirement is a requirement made by <ref href="#sec-22">section 22</ref>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-20" marker="20">
+              <content>
+                <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-30">
+          <num>30</num>
+          <heading>Failure to comply with requirement made by authorised officer</heading>
+          <subsection eId="part-9__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-9__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a requirement is made of the person by an authorised officer under paragraph 24(2)(a), (b) or (g); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person refuses or fails to comply with the requirement.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">60 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person is not entitled:</p>
+            </content>
+            <paragraph eId="part-9__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to refuse to answer a question that he or she is required by an authorised officer to answer under paragraph 24(2)(g); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to refuse to make available for examination documents that he or she is required to make available by an authorised officer under paragraph 24(2)(a);</p>
+              </content>
+              <content>
+                <p>on the ground that the answer to the question or the making available of the documents, as the case may be, might tend to incriminate him or her.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-30__subsec-3">
+            <num>3</num>
+            <content>
+              <p>However, any answer so given, or the making available of any such documents, and any information or thing (including any document) obtained as a direct or indirect result of the giving of the answer or the making available of the documents, is not admissible in evidence against the person in:</p>
+            </content>
+            <paragraph eId="part-9__sec-30__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>any criminal proceedings other than proceedings for an offence against <ref href="#sec-32">section 32</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-30__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>any civil proceedings.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-31">
+          <num>31</num>
+          <heading>Failure by occupier of premises to provide facilities or assistance for authorised officer</heading>
+          <content>
+            <p>The occupier of premises entered by an authorised officer under paragraph 24(2)(d) commits an offence if the occupier fails to provide the officer with all reasonable facilities and assistance for the effective exercise of the officer’s powers.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:	<quantity refersTo="#penaltyUnit">10 penalty units</quantity>.</p>
+            </content>
+          </hcontainer>
+        </section>
+        <section eId="part-9__sec-32">
+          <num>32</num>
+          <heading>False or misleading statements</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-9__sec-32__para-a">
+            <num>a</num>
+            <content>
+              <p>the person answers a question asked by an authorised officer or gives a document to, or makes a document available for examination by, <role refersTo="#secretary">the Secretary</role> or an authorised officer; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-9__sec-32__para-b">
+            <num>b</num>
+            <content>
+              <p>the answer or the document is false or misleading in a material particular; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-9__sec-32__para-c">
+            <num>c</num>
+            <content>
+              <p>the person knows that the answer or document is false or misleading in that particular.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-21" marker="21">
+              <content>
+                <p>Note:	Subsection 4B(2) of the <i>Crimes Act 1914</i> allows a court that convicts an individual of an offence to impose a fine instead of, or in addition to, a term of imprisonment. The maximum fine that a court can impose on the individual is worked out by multiplying the maximum term of imprisonment (in months) by 5, and then multiplying the amount of a penalty unit by the resulting number. The amount of a penalty unit is stated in <ref href="#sec-4A">section 4A</ref>A of that Act.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-10">
+        <num>10</num>
+        <heading>Penalty in lieu of prosecution</heading>
+        <section eId="part-10__sec-33">
+          <num>33</num>
+          <heading>When an infringement notice can be served</heading>
+          <content>
+            <p>If <role refersTo="#secretary">the Secretary</role> has reason to believe that a person has committed an offence against <ref href="#sec-28">section 28</ref>, <role refersTo="#secretary">the Secretary</role> may cause an infringement notice to be served on the person in accordance with this Part.</p>
+          </content>
+        </section>
+        <section eId="part-10__sec-34">
+          <num>34</num>
+          <heading>Matters to be included in an infringement notice</heading>
+          <subsection eId="part-10__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An infringement notice must:</p>
+            </content>
+            <paragraph eId="part-10__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>state that it is being served on behalf of <role refersTo="#secretary">the Secretary</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>set out particulars of the alleged offence and the maximum penalty that a court could impose for the alleged offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if there is still any unpaid amount of tradex duty—state that the obligation to pay that amount continues despite the service of the infringement notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>specify a penalty that is payable under the notice in respect of the alleged offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>state that, if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the person on whom the notice is served does not wish the matter to be dealt with by a court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the person has paid any unpaid amount of tradex duty or pays any unpaid amount of tradex duty within the period of 28 days after the date of service of the notice;</p>
+              </content>
+              <content>
+                <p>the person may pay to <role refersTo="#secretary">the Secretary</role> within that period the amount of the penalty specified in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-34__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>state where and how the penalty may be paid.</p>
+              </content>
+              <authorialNote placement="end" eId="note-22" marker="22">
+                <content>
+                  <p>Note:	<role refersTo="#secretary">The Secretary</role> has power to extend periods stated in notices given under paragraph (1)(e) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An infringement notice may contain any other matters that <role refersTo="#secretary">the Secretary</role> considers necessary.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The penalty to be specified in an infringement notice under paragraph (1)(d) is an amount equal to one-fifth of the tradex duty that was not paid by the person on whom the notice is served within the period applicable under subsection 21(3).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-35">
+          <num>35</num>
+          <heading>Withdrawal of infringement notice</heading>
+          <subsection eId="part-10__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may withdraw an infringement notice served on a person by causing written notice of the withdrawal to be served on the person within the period within which the penalty specified in the infringement notice is required to be paid.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The matters to which <role refersTo="#secretary">the Secretary</role> may have regard in deciding whether or not to withdraw an infringement notice include, but are not limited to, the following:</p>
+            </content>
+            <paragraph eId="part-10__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>whether the person has previously been convicted of an offence against this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the circumstances in which the offence specified in the notice is alleged to have been committed;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-35__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>whether the person has previously been served with an infringement notice in respect of which the person paid the penalty specified in the notice.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-10__sec-35__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the person pays the penalty specified in the infringement notice within the period within which the penalty is required to be paid; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-35__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the notice is withdrawn after the person pays the penalty;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> must refund to the person, out of money appropriated by the Parliament for the purpose, an amount equal to the amount paid.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-36">
+          <num>36</num>
+          <heading>What happens if unpaid tradex duty and penalty are paid</heading>
+          <subsection eId="part-10__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies if:</p>
+            </content>
+            <paragraph eId="part-10__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an infringement notice is served on a person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person pays any unpaid tradex duty and the penalty specified in the notice before the end of the period referred to in paragraph 34(1)(e); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-36__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the infringement notice is not withdrawn.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any liability of the person for the offence specified in the notice is taken to be discharged.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Further proceedings cannot be taken against the person for the offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-36__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The person is not regarded as having been convicted of the offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-37">
+          <num>37</num>
+          <heading>More than one infringement notice may not be served for the same offence</heading>
+          <content>
+            <p>This Part does not permit the service of more than one infringement notice on a person for the same offence.</p>
+          </content>
+        </section>
+        <section eId="part-10__sec-38">
+          <num>38</num>
+          <heading>Infringement notice not required to be served etc.</heading>
+          <content>
+            <p>This Part does not:</p>
+          </content>
+          <paragraph eId="part-10__sec-38__para-a">
+            <num>a</num>
+            <content>
+              <p>require an infringement notice to be served on a person in relation to an offence against <ref href="#sec-28">section 28</ref>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-10__sec-38__para-b">
+            <num>b</num>
+            <content>
+              <p>affect the liability of a person to be prosecuted for an offence against <ref href="#sec-28">section 28</ref> if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-10__sec-38__para-i">
+            <num>i</num>
+            <content>
+              <p>an infringement notice is not served on the person in relation to the offence; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-10__sec-38__para-ii">
+            <num>ii</num>
+            <content>
+              <p>an infringement notice served on the person in relation to the offence has been withdrawn; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-10__sec-38__para-c">
+            <num>c</num>
+            <content>
+              <p>affect the liability of a person to be prosecuted for an offence against <ref href="#sec-28">section 28</ref> if the person does not comply with an infringement notice served on the person in relation to the offence; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-10__sec-38__para-d">
+            <num>d</num>
+            <content>
+              <p>limit the amount of the penalty that may be imposed by a court on a person convicted of an offence against <ref href="#sec-28">section 28</ref>.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-11">
+        <num>11</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-11__sec-39">
+          <num>39</num>
+          <heading>Reconsideration of certain decisions</heading>
+          <subsection eId="part-11__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If a decision is made by <role refersTo="#secretary">the Secretary</role>:</p>
+            </content>
+            <paragraph eId="part-11__sec-39__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>under <ref href="#sec-11">section 11</ref> refusing wholly or partly an application for a tradex order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>under <ref href="#sec-13">section 13</ref> refusing wholly or partly an application for the variation of a tradex order;</p>
+              </content>
+              <content>
+                <p>the applicant may apply to the Secretary, <quantity refersTo="#deadline">within 28 days</quantity> after the day on which the notice of the decision was given to the applicant, for reconsideration of the decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a decision is made by <role refersTo="#secretary">the Secretary</role>:</p>
+            </content>
+            <paragraph eId="part-11__sec-39__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>under <ref href="#sec-17">section 17</ref> suspending a tradex order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>under <ref href="#sec-19">section 19</ref> or 19A revoking a tradex order;</p>
+              </content>
+              <content>
+                <p>the holder of the order may apply to the Secretary, <quantity refersTo="#deadline">within 28 days</quantity> after the day on which the notice of the decision was given to the holder, for reconsideration of the decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An application for reconsideration must:</p>
+            </content>
+            <paragraph eId="part-11__sec-39__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>be in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>be in accordance with the approved form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>include the grounds on which the person seeks the reconsideration of the decision (whether or not those grounds had previously been considered); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>be signed in the manner indicated in the form; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>be lodged with <role refersTo="#secretary">the Secretary</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause to be recorded the day on which an application for reconsideration of a decision is lodged.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must decide, not later than 28 days after the day on which the application was lodged, whether to affirm the original decision or to substitute any other decision that <role refersTo="#secretary">the Secretary</role> might have made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In reconsidering a decision, <role refersTo="#secretary">the Secretary</role> may have regard to:</p>
+            </content>
+            <paragraph eId="part-11__sec-39__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the application for reconsideration and any submissions, information, documents and materials that <role refersTo="#secretary">the Secretary</role> was entitled to take into account in making the decision; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>any new matter produced to <role refersTo="#secretary">the Secretary</role> by the applicant for reconsideration other than matter that was not produced to <role refersTo="#secretary">the Secretary</role> before the end of the period within which the application for reconsideration was required to be made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-7">
+            <num>7</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> fails to make a decision on the reconsideration within the period referred to in subsection (5), <role refersTo="#secretary">the Secretary</role> is taken, for the purposes of the reconsideration, to have made, at the end of that period, a decision to affirm the original decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-39__subsec-8">
+            <num>8</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must cause to be given to the applicant a written notice:</p>
+            </content>
+            <paragraph eId="part-11__sec-39__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>of his or her decision on the application for reconsideration; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-39__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>if subsection (7) applied—of the decision that is taken by that subsection to have been made.</p>
+              </content>
+              <authorialNote placement="end" eId="note-23" marker="23">
+                <content>
+                  <p>Note 1:	<role refersTo="#secretary">The Secretary</role> has power to extend periods referred to in subsections (1) and (2) (see <ref href="#sec-43">section 43</ref>).</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-24" marker="24">
+                <content>
+                  <p>Note 2:	For the right to have a decision on reconsideration reviewed by the Administrative Review Tribunal, see <ref href="#sec-40">section 40</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-40">
+          <num>40</num>
+          <heading>Review of decisions by Administrative Review Tribunal</heading>
+          <content>
+            <p>Application may be made to the Administrative Review Tribunal for the review of a decision by <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-39">section 39</ref> on a reconsideration of:</p>
+          </content>
+          <paragraph eId="part-11__sec-40__para-a">
+            <num>a</num>
+            <content>
+              <p>a decision of <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-11">section 11</ref> refusing wholly or partly an application for a tradex order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-40__para-b">
+            <num>b</num>
+            <content>
+              <p>a decision of <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-13">section 13</ref> refusing wholly or partly an application for the variation of a tradex order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-40__para-c">
+            <num>c</num>
+            <content>
+              <p>a decision of <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-17">section 17</ref> suspending a tradex order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-40__para-d">
+            <num>d</num>
+            <content>
+              <p>a decision of <role refersTo="#secretary">the Secretary</role> under <ref href="#sec-19">section 19</ref> or 19A revoking a tradex order.</p>
+            </content>
+            <authorialNote placement="end" eId="note-25" marker="25">
+              <content>
+                <p>Note:	Under <ref href="#sec-266">section 266</ref> of the <i>Administrative Review Tribunal Act 2024</i>, the decision-maker must give to persons whose interests are affected by the decision a notification of the making of the decision and of their right to have the decision reviewed. In notifying any such persons, the decision-maker must have regard to the matters (if any) prescribed by the rules made under that Act.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-11__sec-40A">
+          <num>40A</num>
+          <heading>Evidentiary matters in relation to tradex duty liability</heading>
+          <subsection eId="part-11__sec-40A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> believes on reasonable grounds that the circumstance referred to in paragraph 21(1)(f) has occurred in respect of either of the following:</p>
+            </content>
+            <paragraph eId="part-11__sec-40A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>goods that are nominated goods in relation to a tradex order;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-40A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>goods that are nominated goods in relation to a suspended or revoked tradex order and that were imported before that suspension or revocation;</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> may issue an evidentiary certificate stating that the circumstance has occurred in relation to those goods.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-40A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>As soon as practicable after issuing the certificate, <role refersTo="#secretary">the Secretary</role> must give a copy to the person who is or was the holder of the tradex order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-40A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The certificate is, in any proceedings, prima facie evidence of the matters stated in the certificate.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-41">
+          <num>41</num>
+          <heading>Other evidentiary matters</heading>
+          <subsection eId="part-11__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>At the hearing of a prosecution for an offence against <ref href="#sec-28">section 28</ref>, a certificate signed by <role refersTo="#secretary">the Secretary</role> stating:</p>
+            </content>
+            <paragraph eId="part-11__sec-41__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that <role refersTo="#secretary">the Secretary</role> did not allow a further period under <ref href="#sec-43">section 43</ref> for payment under subsection 21(3) of the tradex duty; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-41__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the whole or a part of the tradex duty was not paid within the period applicable under that subsection;</p>
+              </content>
+              <content>
+                <p>is prima facie evidence of those matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>At the hearing of a prosecution for an offence against <ref href="#sec-28">section 28</ref>, a certificate signed by <role refersTo="#secretary">the Secretary</role> stating:</p>
+            </content>
+            <paragraph eId="part-11__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that <role refersTo="#secretary">the Secretary</role> allowed a further period under <ref href="#sec-43">section 43</ref> for payment under subsection 21(3) of the tradex duty; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>that the whole or a part of the tradex duty was not paid before the end of the further period;</p>
+              </content>
+              <content>
+                <p>is prima facie evidence of those matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>At the hearing of a prosecution for an offence against <ref href="#sec-28">section 28</ref> in respect of which an infringement notice was served, a certificate signed by <role refersTo="#secretary">the Secretary</role> stating:</p>
+            </content>
+            <paragraph eId="part-11__sec-41__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>that <role refersTo="#secretary">the Secretary</role> did not allow a further period under <ref href="#sec-43">section 43</ref> for payment under paragraph 34(1)(e) of any unpaid tradex duty and the penalty specified in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-41__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>that the whole or a part of any unpaid tradex duty or of the penalty was not paid in accordance with the notice within the period applicable under that paragraph;</p>
+              </content>
+              <content>
+                <p>is prima facie evidence of those matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-41__subsec-4">
+            <num>4</num>
+            <content>
+              <p>At the hearing of a prosecution for an offence against <ref href="#sec-28">section 28</ref> in respect of which an infringement notice was served, a certificate signed by <role refersTo="#secretary">the Secretary</role> stating:</p>
+            </content>
+            <paragraph eId="part-11__sec-41__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>that <role refersTo="#secretary">the Secretary</role> allowed a further period under <ref href="#sec-43">section 43</ref> for payment under paragraph 34(1)(e) of any unpaid tradex duty and the penalty specified in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-41__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>that the whole or a part of any unpaid tradex duty or of the penalty was not paid in accordance with the notice before the end of the further period;</p>
+              </content>
+              <content>
+                <p>is prima facie evidence of those matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-41__subsec-5">
+            <num>5</num>
+            <content>
+              <p>At the hearing of a prosecution for an offence against <ref href="#sec-28">section 28</ref> in respect of which an infringement notice was served, a certificate signed by <role refersTo="#secretary">the Secretary</role> stating that the notice was withdrawn on a day stated in the certificate is prima facie evidence of that fact.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-41__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A document that purports to be a certificate signed by <role refersTo="#secretary">the Secretary</role> is taken to be such a certificate unless the contrary is proved.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-42">
+          <num>42</num>
+          <heading>Payment by cheque</heading>
+          <content>
+            <p>If a cheque is tendered to <role refersTo="#secretary">the Secretary</role> as payment of all or part of any tradex duty or as payment of all or part of the penalty specified in an infringement notice, payment is taken not to have been made unless the cheque is honoured upon presentation.</p>
+          </content>
+        </section>
+        <section eId="part-11__sec-42A">
+          <num>42A</num>
+          <heading>Refund of overpaid tradex duty</heading>
+          <subsection eId="part-11__sec-42A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If an amount of tradex duty has been overpaid by a person, the Commonwealth must, on request by the person, refund the amount of the overpayment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-42A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A request by a person for the purposes of subsection (1):</p>
+            </content>
+            <paragraph eId="part-11__sec-42A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>must be made in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-42A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>must be made no later than 4 years after the overpayment was made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-43">
+          <num>43</num>
+          <heading>Power of Secretary to extend certain periods</heading>
+          <subsection eId="part-11__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purposes of the application of a provision of this Act referred to in subsection (4) in relation to a person, <role refersTo="#secretary">the Secretary</role> may, by writing, extend the period referred to in the provision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The power of <role refersTo="#secretary">the Secretary</role> under subsection (1) to extend a period may be exercised before or after the end of the period.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> extends a period under subsection (1), a reference in this Act or in a notice or other instrument under this Act to the period is taken, in relation to the person, to be a reference to the period as so extended.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-43__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The periods that may be extended under subsection (1) are the periods referred to in paragraphs 5(1)(c) and (2)(c), subsections 9(6), 10(3), 12(4) and 15(1), paragraphs 16(1)(b) and (2)(b), subsection 21(3), paragraphs 24(2)(a) and 34(1)(e) and subsections 39(1) and (2).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-44">
+          <num>44</num>
+          <heading>Power of Secretary to approve forms</heading>
+          <content>
+            <p><role refersTo="#secretary">The Secretary</role> may, by writing, approve a form for the purposes of a provision of this Act.</p>
+          </content>
+        </section>
+        <section eId="part-11__sec-45">
+          <num>45</num>
+          <heading>Authorised officers</heading>
+          <subsection eId="part-11__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by writing, appoint persons to be authorised officers for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may cause an identity card to be issued to an authorised officer.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An identity card:</p>
+            </content>
+            <paragraph eId="part-11__sec-45__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>is to incorporate a recent photograph of the person to whom it is issued; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>is to contain:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the person’s signature; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a unique number assigned to the person by <role refersTo="#secretary">the Secretary</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>is to state that the person is an authorised officer for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-45__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A person who ceases to be an authorised officer must, as soon as practicable after so ceasing, return his or her identity card to <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-45__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-11__sec-45__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>an identity card was issued to the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the person has ceased to be an authorised officer; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-45__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the person fails to return the identity card as required by subsection (4).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1 penalty unit</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-45__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>person</i></b> means an individual.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-46">
+          <num>46</num>
+          <heading>Tradex order not transmissible</heading>
+          <content>
+            <p>To avoid doubt, a tradex order is not property that is transmissible by assignment, by contract, by will or by operation of law.</p>
+          </content>
+        </section>
+        <section eId="part-11__sec-47">
+          <num>47</num>
+          <heading>Application of Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+        </section>
+        <section eId="part-11__sec-48">
+          <num>48</num>
+          <heading>Delegation</heading>
+          <content>
+            <p><role refersTo="#secretary">The Secretary</role> may, by writing, delegate to an officer of, or a person employed in, the Department all or any of <role refersTo="#secretary">the Secretary</role>’s functions and powers under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-11__sec-48A">
+          <num>48A</num>
+          <heading>Treatment of partnerships</heading>
+          <subsection eId="part-11__sec-48A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to a partnership as if it were a person, but with the changes set out in this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-48A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An obligation that would otherwise be imposed on the partnership by this Act is imposed on each partner instead, but may be discharged by any of the partners.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-48A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If under this Act a notice or other document is given to a partner of the partnership in accordance with whichever of the following is applicable:</p>
+            </content>
+            <paragraph eId="part-11__sec-48A__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	<ref href="#sec-28A">section 28A</ref> of the <i>Acts Interpretation Act 1901</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-48A__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>regulations made for the purposes of paragraph 49(d);</p>
+              </content>
+              <content>
+                <p>the notice or document is taken to have been given to the partnership.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-11__sec-48A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The partners are jointly and severally liable to pay an amount that would otherwise be payable by the partnership under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-48A__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An offence against this Act that would otherwise be committed by the partnership is taken to have been committed by each partner.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-11__sec-48A__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A partner does not commit an offence because of subsection (5) if the partner:</p>
+            </content>
+            <paragraph eId="part-11__sec-48A__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>does not know of the circumstances that constitute the contravention of the provision concerned; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__sec-48A__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>knows of those circumstances but takes all reasonable steps to correct the contravention as soon as possible after the partner becomes aware of those circumstances.</p>
+              </content>
+              <authorialNote placement="end" eId="note-26" marker="26">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matters in subsection (6)—see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-11__sec-49">
+          <num>49</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing all matters:</p>
+          </content>
+          <paragraph eId="part-11__sec-49__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-49__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act;</p>
+            </content>
+            <content>
+              <p>including regulations about:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-49__para-c">
+            <num>c</num>
+            <content>
+              <p>how applications, requests or notices under this Act are to be made or given to or lodged with <role refersTo="#secretary">the Secretary</role> or an authorised officer; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-11__sec-49__para-d">
+            <num>d</num>
+            <content>
+              <p>how notices or other documents under this Act are to be given by <role refersTo="#secretary">the Secretary</role> or an authorised officer.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Tradex Scheme Act 1999</td>
+                <td>185, 1999</td>
+                <td>23 Dec 1999</td>
+                <td>24 June 2000 (s 2(2))</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Corporations (Repeals, Consequentials and Transitionals) Act 2001</td>
+                <td>55, 2001</td>
+                <td>28 June 2001</td>
+                <td>s 4–14 and Sch 3 (item 558): 15 July 2001 (s 2(3))</td>
+                <td>s 4–14</td>
+              </tr>
+              <tr>
+                <td>Industry, Science and Resources Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>140, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>Sch 1 (items 169–171): 2 Oct 2001 (s 2)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Bankruptcy Legislation Amendment Act 2004</td>
+                <td>80, 2004</td>
+                <td>23 June 2004</td>
+                <td>Sch 1 (items 210, 212, 213, 215): 1 Dec 2004 (s 2(1) item 2 and gaz 2004, No GN34)</td>
+                <td>Sch 1 (items 212, 213, 215)</td>
+              </tr>
+              <tr>
+                <td>Tradex Scheme Amendment Act 2008</td>
+                <td>18, 2008</td>
+                <td>8 Apr 2008</td>
+                <td>Sch 1: 8 Oct 2008 (s 2(1) item 2)</td>
+                <td>Sch 1 (items 5, 7)</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment (Serious and Organised Crime) Act (No. 2) 2010</td>
+                <td>4, 2010</td>
+                <td>19 Feb 2010</td>
+                <td>Sch 11 (item 24): 20 Feb 2010 (s 2(1) item 13)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Tradex Scheme Amendment Act 2010</td>
+                <td>124, 2010</td>
+                <td>18 Nov 2010</td>
+                <td>Sch 1: 13 May 2011 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 8)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act (No. 1) 2016</td>
+                <td>4, 2016</td>
+                <td>11 Feb 2016</td>
+                <td>Sch 4 (items 1, 323–325): 10 Mar 2016 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Insolvency Law Reform Act 2016</td>
+                <td>11, 2016</td>
+                <td>29 Feb 2016</td>
+                <td>Sch 2 (items 318–320): 1 Mar 2017 (s 2(1) item 7)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 2 (items 101–103) and Sch 3 (item 41): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024</td>
+                <td>38, 2024</td>
+                <td>31 May 2024</td>
+                <td>Sch 13 (items 3, 6): 14 Oct  2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 55, 2001; No 80, 2004; No 18, 2008; No 4, 2010; No 124, 2010; No 11, 2016</td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>s 6A</td>
+                <td>ad No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No 18, 2008; No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 19A</td>
+                <td>ad No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>Part 6</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>Part 9</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>am No 140, 2001; No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>am No 140, 2001; No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 140, 2001; No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>am No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>am No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>Part 11</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 39</td>
+                <td>am No 18, 2008; No 38, 2024</td>
+              </tr>
+              <tr>
+                <td>s 40</td>
+                <td>am No 18, 2008; No 38, 2024</td>
+              </tr>
+              <tr>
+                <td>s 40A</td>
+                <td>ad No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 41</td>
+                <td>rs No 18, 2008</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 42A</td>
+                <td>ad No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 43</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 44</td>
+                <td>am No 18, 2008</td>
+              </tr>
+              <tr>
+                <td>s 45</td>
+                <td>am No 4, 2016; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 48A</td>
+                <td>ad No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>Part 12</td>
+                <td>rep No 124, 2010</td>
+              </tr>
+              <tr>
+                <td>s 50</td>
+                <td>rep No 124, 2010</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

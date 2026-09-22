@@ -1,0 +1,2339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1969/92/!main"/>
+          <FRBRuri value="/akn/au/act/1969/92"/>
+          <FRBRdate date="1969-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="92"/>
+          <FRBRname value="public-works-committee-act-1969"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1969/92/eng@2017-03-22/!main"/>
+          <FRBRuri value="/akn/au/act/1969/92/eng@2017-03-22"/>
+          <FRBRdate date="2017-03-22" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1969/92/eng@2017-03-22/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1969/92/eng@2017-03-22/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1969-01-01" type="generation" eId="evt-creation" source="#public-works-committee-act-1969"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1972/57" date="1972-06-09"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1973/140"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1973/216"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1974/48"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1981/20"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1982/80"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1983/39" date="1983-06-20"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1988/108"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1992/196"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1997/20"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2001/109"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2006/132"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2007/150"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2012/136" date="2012-09-22"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2015/59" date="2015-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2015/145" date="2015-11-12"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-19" source="/akn/au/act/2017/13" date="2017-02-22"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-assessor" href="/ontology/term/au/term-assessor" showAs="assessor"/>
+        <TLCTerm eId="term-authority-of-the-commonwealth-to-which-this-act-applies" href="/ontology/term/au/term-authority-of-the-commonwealth-to-which-this-act-applies" showAs="authority of the Commonwealth to which this Act applies"/>
+        <TLCTerm eId="term-building" href="/ontology/term/au/term-building" showAs="building"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-commence" href="/ontology/term/au/term-commence" showAs="commence"/>
+        <TLCTerm eId="term-court-of-summary-jurisdiction" href="/ontology/term/au/term-court-of-summary-jurisdiction" showAs="court of summary jurisdiction"/>
+        <TLCTerm eId="term-engineering-work" href="/ontology/term/au/term-engineering-work" showAs="engineering work"/>
+        <TLCTerm eId="term-inter-governmental-body" href="/ontology/term/au/term-inter-governmental-body" showAs="inter-governmental body"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-movable-property" href="/ontology/term/au/term-movable-property" showAs="movable property"/>
+        <TLCTerm eId="term-parliamentary-zone" href="/ontology/term/au/term-parliamentary-zone" showAs="Parliamentary zone"/>
+        <TLCTerm eId="term-public-work" href="/ontology/term/au/term-public-work" showAs="public work"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-structure" href="/ontology/term/au/term-structure" showAs="structure"/>
+        <TLCTerm eId="term-the-committee" href="/ontology/term/au/term-the-committee" showAs="the Committee"/>
+        <TLCTerm eId="term-work" href="/ontology/term/au/term-work" showAs="work"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Public Works Committee Act 1969</p>
+      <p>No. 92, 1969</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>22 March 2017</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 13, 2017</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>22 March 2017</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Public Works Committee Act 1969</i> that shows the text of the law as amended and in force on 22 March 2017 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>5	Interpretation	1</p>
+      <p>5AA	Meaning of <i>public work</i>	4</p>
+      <p>5A	Application of the <i>Criminal Code</i>	5</p>
+      <p>6	Extension to Territories	5</p>
+      <p>6A	Bodies to which Act applies	6</p>
+      <p><ref href="#part-II">Part II</ref>—Parliamentary Standing Committee on Public Works	7</p>
+      <p>7	Parliamentary Standing Committee on Public Works	7</p>
+      <p>8	Declaration to be subscribed by members	8</p>
+      <p>9	Chair and Deputy Chair	9</p>
+      <p>10	Sectional Committees	10</p>
+      <p>11	Reference of matters to Sectional Committees	11</p>
+      <p>12	Meetings of the Committee	12</p>
+      <p>13	Quorum	12</p>
+      <p>14	Voting	13</p>
+      <p>15	Minutes	13</p>
+      <p>16	Annual report	13</p>
+      <p><ref href="#part-III">Part III</ref>—Reports on Public Works	14</p>
+      <p>17	Functions of the Committee	14</p>
+      <p>18	Reference of public works to the Committee	15</p>
+      <p>18A	Inquiries by Committee	17</p>
+      <p>18B	Consideration of overseas public works	17</p>
+      <p>19	Review of reports	18</p>
+      <p>20	Power to take evidence	18</p>
+      <p>21	Power to summon witnesses	18</p>
+      <p>22	Warrant for apprehension of witness	19</p>
+      <p>23	Evidence to be given in public except in certain cases	20</p>
+      <p>24	Continuance of evidence	21</p>
+      <p>25	Privileges of witnesses	21</p>
+      <p>26	Assessors	22</p>
+      <p>27	Power to enter on land etc.	22</p>
+      <p>28	Failure of witness to attend	22</p>
+      <p>29	Preventing witnesses from giving evidence	23</p>
+      <p>30	Refusal to be sworn etc.	23</p>
+      <p>31	False evidence	23</p>
+      <p>32	Protection of witnesses	23</p>
+      <p>33	Prosecution of offences	24</p>
+      <p><ref href="#part-IV">Part IV</ref>—Miscellaneous	25</p>
+      <p>35	Allowances	25</p>
+      <p>36	Limitation of annual expenditure	25</p>
+      <p>37	Application of Parliamentary Papers Act	25</p>
+      <p>38	Evidence given before former Committee	25</p>
+      <p>40	Regulations	26</p>
+      <p>The Schedule—Public Works Committee Act 1969	27</p>
+      <p>Endnotes	28</p>
+      <p>Endnote 1—About the endnotes	28</p>
+      <p>Endnote 2—Abbreviation key	30</p>
+      <p>Endnote 3—Legislation history	31</p>
+      <p>Endnote 4—Amendment history	34</p>
+      <p>An Act relating to the Parliamentary Standing Committee on Public Works</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Public Works Committee Act 1969</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on a date to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-5">
+          <num>5</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-assessor">assessor</term> means <def>a person appointed under <ref href="#sec-26">section 26</ref>.</def></p>
+            <p><b><i>authority of the Commonwealth</i></b> means:</p>
+          </content>
+          <paragraph eId="part-I__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a body corporate, or an unincorporated body, established for a public purpose by, or in accordance with the provisions of, an enactment;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a body established by the Governor-General or a Minister otherwise than in accordance with an enactment; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>an incorporated company over which the Commonwealth is in a position to exercise control;</p>
+            </content>
+            <content>
+              <p>but does not include an inter-governmental body or a body established by or under an enactment <ref href="#sec-3">within the meaning of section 3</ref> of the <i>Australian Capital Territory (Self</i><i>-</i><i>Government) Act 1988</i>.</p>
+              <p><term refersTo="#term-authority-of-the-commonwealth-to-which-this-act-applies">authority of the Commonwealth to which this Act applies</term> means <def>an authority of the Commonwealth that, under <ref href="#sec-6A">section 6A</ref>, is an authority of the Commonwealth to which this Act applies.</def></p>
+              <p><term refersTo="#term-building">building</term> includes <def>part of a building.</def></p>
+              <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Committee.</def></p>
+              <p><term refersTo="#term-commence">commence</term>, in relation to a public work, includes <def>enter into a contract for the carrying out of the whole or a part of the work, and commencement has a corresponding meaning.</def></p>
+              <p><term refersTo="#term-court-of-summary-jurisdiction">court of summary jurisdiction</term> includes <def>a court of a Territory sitting as a court for the making of summary orders or the summary punishment of offences under the law of the Territory.</def></p>
+              <p><b><i>enactment</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>an Act;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>an Ordinance of the Australian Capital Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>an instrument (including rules, regulations or by-laws) made under an Act or under such an Ordinance.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-engineering-work">engineering work</term> includes <def>part of an engineering work.</def></p>
+              <p><term refersTo="#term-inter-governmental-body">inter-governmental body</term> means <def>a body corporate or an unincorporated body established by, or in accordance with the provisions of, an agreement between the Commonwealth and a State or States or between the Commonwealth and the Government of another country or the Governments of other countries.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of the Committee.</def></p>
+              <p><term refersTo="#term-movable-property">movable property</term> includes <def>aircraft, satellites, ships and vehicles.</def></p>
+              <p><term refersTo="#term-parliamentary-zone">Parliamentary zone</term> has the same meaning as <def>in <ref href="">the Parliament Act 1974</ref>.</def></p>
+              <p><term refersTo="#term-public-work">public work</term> has the meaning given by <def><ref href="#sec-5A">section 5A</ref>A.</def></p>
+              <p><term refersTo="#term-state">State</term> includes <def>the Australian Capital Territory and the Northern Territory.</def></p>
+              <p><term refersTo="#term-structure">structure</term> includes <def>part of a structure.</def></p>
+              <p><term refersTo="#term-the-committee">the Committee</term> means <def>the Parliamentary Standing Committee on Public Works for the time being constituted in accordance with this Act.</def></p>
+              <p><term refersTo="#term-work">work</term> means <def>an architectural or engineering work, and includes: the construction, alteration, repair, refurbishment or fitting out of buildings and other structures; the installation, alteration or repair of plant and equipment designed to be used in, or in relation to, the provision of services for buildings and other structures; the undertaking, construction, alteration or repair of landscaping and earthworks (whether or not in relation to buildings and other structures); the demolition, destruction, dismantling or removal of: buildings and other structures; plant and equipment falling within paragraph (b); and earthworks; the clearing of land and the development of land for use as urban land or otherwise; and any other matter declared by the regulations to be a work; but does not include: the production of, or anything done in relation to, intangible things; the production of, or anything done in relation to, movable property unless the work is, under the regulations, a movable work to which this Act applies; the installation, alteration or repair of plant or equipment where the plant or equipment: is not designed to be used in, or in relation to, the provision of services for a building or other structure; and is not necessary or desirable to make a building or structure a complete building or structure; and any other matter declared by the regulations not to be a work.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>the construction, alteration, repair, refurbishment or fitting out of buildings and other structures;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the installation, alteration or repair of plant and equipment designed to be used in, or in relation to, the provision of services for buildings and other structures;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>the undertaking, construction, alteration or repair of landscaping and earthworks (whether or not in relation to buildings and other structures);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>the demolition, destruction, dismantling or removal of:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>buildings and other structures;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>plant and equipment falling within paragraph (b); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-iii">
+            <num>iii</num>
+            <content>
+              <p>earthworks;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-e">
+            <num>e</num>
+            <content>
+              <p>the clearing of land and the development of land for use as urban land or otherwise; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-f">
+            <num>f</num>
+            <content>
+              <p>any other matter declared by the regulations to be a work;</p>
+            </content>
+            <content>
+              <p>but does not include:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-g">
+            <num>g</num>
+            <content>
+              <p>the production of, or anything done in relation to, intangible things;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-h">
+            <num>h</num>
+            <content>
+              <p>the production of, or anything done in relation to, movable property unless the work is, under the regulations, a movable work to which this Act applies;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-j">
+            <num>j</num>
+            <content>
+              <p>the installation, alteration or repair of plant or equipment where the plant or equipment:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>is not designed to be used in, or in relation to, the provision of services for a building or other structure; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>is not necessary or desirable to make a building or structure a complete building or structure; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-5__para-k">
+            <num>k</num>
+            <content>
+              <p>any other matter declared by the regulations not to be a work.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-I__sec-5AA">
+          <num>5AA</num>
+          <heading>Meaning of public work</heading>
+          <subsection eId="part-I__sec-5AA__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	A<b><i> public work</i></b> means:</p>
+            </content>
+            <paragraph eId="part-I__sec-5AA__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a work to which subsection (2), (3) or (5) applies; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a work declared by the regulations to be a public work.</p>
+              </content>
+              <content>
+                <p>However, a <b><i>public work </i></b>does not include:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a work that is proposed to be carried out within the Parliamentary zone; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a work that is proposed to be carried out by or for the Commonwealth by way of assistance to an overseas country; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a work declared by the regulations not to be a public work.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5AA__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This subsection applies to a work:</p>
+            </content>
+            <paragraph eId="part-I__sec-5AA__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that is proposed to be carried out by or for the Commonwealth, either within or outside Australia; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>in respect of the carrying out of which moneys appropriated by the Parliament are proposed to be expended by the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in relation to which moneys appropriated by the Parliament are proposed to be expended by the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5AA__subsec-3">
+            <num>3</num>
+            <content>
+              <p>This subsection applies to a work:</p>
+            </content>
+            <paragraph eId="part-I__sec-5AA__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>that is proposed to be carried out, either within or outside Australia, by or for an authority of the Commonwealth to which this Act applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>in respect of the carrying out of which moneys appropriated by the Parliament, or moneys of <role refersTo="#authority">the authority</role>, are proposed to be expended by <role refersTo="#authority">the authority</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in relation to which moneys appropriated by the Parliament are proposed to be expended by the Commonwealth or <role refersTo="#authority">the authority</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5AA__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of subsections (2) and (3), it does not matter whether or not the work concerned is a work of which the Commonwealth, or an authority of the Commonwealth to which this Act applies, is proposed to become the owner.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-5AA__subsec-5">
+            <num>5</num>
+            <content>
+              <p>This subsection applies to a work:</p>
+            </content>
+            <paragraph eId="part-I__sec-5AA__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>that is proposed to be carried out, either within or outside Australia, otherwise than by or for the Commonwealth or an authority of the Commonwealth to which this Act applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>of which the Commonwealth, or an authority of the Commonwealth to which this Act applies, is proposed to become the owner; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5AA__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>in relation to which moneys appropriated by the Parliament are proposed to be expended by the Commonwealth or an authority of the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-5A">
+          <num>5A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-I__sec-6">
+          <num>6</num>
+          <heading>Extension to Territories</heading>
+          <subsection eId="part-I__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act extends to every Territory not forming part of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not extend to a work if:</p>
+            </content>
+            <paragraph eId="part-I__sec-6__subsec-2__para-aa">
+              <num>aa</num>
+              <content>
+                <p>a work:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>that is proposed to be carried out by or for the Australian Capital Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in respect of the carrying out of which moneys of that Territory are proposed to be expended by that Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the work is proposed to be carried out by or for the Northern Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>money of the Northern Territory is proposed to be expended by that Territory in carrying out the work.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-6A">
+          <num>6A</num>
+          <heading>Bodies to which Act applies</heading>
+          <subsection eId="part-I__sec-6A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), this Act applies to every authority of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-6A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not apply to:</p>
+            </content>
+            <paragraph eId="part-I__sec-6A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>an authority of the Commonwealth in respect of which a declaration referred to in subsection (3) is in force; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Parliament House Construction Authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-6A__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>an authority of the Commonwealth established for the purpose of providing, or for purposes which include the purpose of providing, tertiary education in the Australian Capital Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-6A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where the Governor-General is satisfied that an authority of the Commonwealth is engaging in trading or other activities, or is providing services, in competition with another body or other bodies, or with persons, the Governor-General may make regulations declaring that this Act does not apply to that authority.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Parliamentary Standing Committee on Public Works</heading>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Parliamentary Standing Committee on Public Works</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>As soon as practicable after the commencement of the first session of each Parliament, a joint committee of members of the Parliament, to be known as the Parliamentary Standing Committee on Public Works, shall be appointed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Committee shall consist of nine members, namely:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>three members of the Senate appointed by the Senate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>six members of the House of Representatives appointed by that House.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The appointment of members by a House of the Parliament shall be in accordance with the practice of that House with respect to the appointment of members of that House to serve on joint select committees of both Houses of the Parliament.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A member of the Parliament is not eligible for appointment as a member of the Committee if he or she is:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the President of the Senate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the Speaker of the House of Representatives; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>the Chair of Committees of the Senate or the Deputy Speaker of the House of Representatives.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A member holds office during the pleasure of the House of the Parliament by which he or she was appointed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A member ceases to hold office:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>when the House of Representatives expires by effluxion of time or is dissolved;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>if he or she becomes the holder of an office specified in any of the paragraphs of subsection (5);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>if he or she ceases to be a member of the House of the Parliament by which he or she was appointed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-7__para-d">
+              <num>d</num>
+              <content>
+                <p>if he or she resigns his or her office as provided by either of the next two succeeding subsections.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A member appointed by the Senate may resign his or her office by writing under his or her hand addressed to the President of the Senate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A member appointed by the House of Representatives may resign his or her office by writing under his or her hand addressed to the Speaker of that House.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-10">
+            <num>10</num>
+            <content>
+              <p>Either House of the Parliament may appoint one of its members to fill a vacancy amongst the members of the Committee appointed by that House.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-11">
+            <num>11</num>
+            <content>
+              <p>	(11)	Notice of the appointment of a member, and of a member ceasing to hold office otherwise than upon the expiry or dissolution of the House of Representatives, shall be published in the <i>Gazette</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-12">
+            <num>12</num>
+            <content>
+              <p>The exercise of a power or the performance of a function by the Committee, the Chair or a member is not invalidated by reason only of there being a vacancy or vacancies in the membership of the Committee.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Declaration to be subscribed by members</heading>
+          <content>
+            <p>A member shall, before proceeding to discharge the duties of his or her office, make and subscribe a declaration of office in accordance with the form in the Schedule:</p>
+          </content>
+          <paragraph eId="part-II__sec-8__para-a">
+            <num>a</num>
+            <content>
+              <p>in the case of a member appointed by the Senate—before the President of the Senate or a person appointed by the President of the Senate to be a person before whom such a declaration may be made and subscribed; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-II__sec-8__para-b">
+            <num>b</num>
+            <content>
+              <p>in the case of a member appointed by the House of Representatives—before the Speaker of that House or a person appointed by the Speaker of that House to be a person before whom such a declaration may be made and subscribed.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-II__sec-9">
+          <num>9</num>
+          <heading>Chair and Deputy Chair</heading>
+          <subsection eId="part-II__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Chair and a Deputy Chair of the Committee, who shall be elected by the members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Chair and Deputy Chair hold office during the pleasure of the Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chair or Deputy Chair ceases to hold office if:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>he or she ceases to be a member; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>he or she resigns his or her office as provided by the next succeeding subsection.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Chair or Deputy Chair may resign that office by writing under his or her hand presented to a meeting of the Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subject to this section, the Chair or, in his or her absence, the Deputy Chair shall preside at all meetings of the Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chair is absent from Australia or is, for any reason, unable to exercise his or her powers under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the Deputy Chair is absent from Australia or is, for any reason, unable to exercise the powers of the Chair under this Act;</p>
+              </content>
+              <content>
+                <p>the members present at a meeting of the Committee may appoint one of their number to be temporary chair of the Committee.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-7">
+            <num>7</num>
+            <content>
+              <p>While the appointment of a temporary chair remains in force, he or she shall preside at all meetings of the Committee at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The appointment of a temporary chair remains in force until:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>he or she resigns the appointment by writing under his or her hand presented to a meeting of the Committee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>he or she ceases to be a member;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the absence or inability of the Chair or Deputy Chair ceases; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-8__para-d">
+              <num>d</num>
+              <content>
+                <p>the appointment is revoked by the Committee;</p>
+              </content>
+              <content>
+                <p>whichever first happens.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The Deputy Chair and a temporary chair may each exercise any of the powers of the Chair under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-10">
+            <num>10</num>
+            <content>
+              <p>If the Chair, the Deputy Chair and (if the appointment of a temporary chair is in force), the temporary chair, are absent from a meeting of the Committee, the members present may appoint one of their number to preside at the meeting. The member so appointed may exercise, in relation to that meeting, and in relation to any matter arising out of that meeting, any of the powers of the Chair under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-11">
+            <num>11</num>
+            <content>
+              <p>For the purpose of the exercise of the powers of the Chair under this Act, a reference in this Act to the Chair includes a reference to the Deputy Chair, to a temporary chair and to a member appointed under subsection (10).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-10">
+          <num>10</num>
+          <heading>Sectional Committees</heading>
+          <subsection eId="part-II__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee may appoint three or more members to be a Sectional Committee and may appoint a member to fill a vacancy amongst the members of a Sectional Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member of a Sectional Committee:</p>
+            </content>
+            <paragraph eId="part-II__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>holds office during the pleasure of the Committee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>ceases to hold office if he or she ceases to be a member of the Committee; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>may resign that office by writing under his or her hand addressed to the Chair of the Committee.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>There shall be a Chair and a Deputy Chair of each Sectional Committee, who shall be elected by the members of the Sectional Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Chair or Deputy Chair of a Sectional Committee:</p>
+            </content>
+            <paragraph eId="part-II__sec-10__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>holds office during the pleasure of the Sectional Committee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-10__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>ceases to hold office if he or she ceases to be a member of the Sectional Committee; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-10__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>may resign his or her office by writing under his or her hand presented at a meeting of the Sectional Committee.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Chair or, in his or her absence, the Deputy Chair, of a Sectional Committee shall preside at all meetings of the Sectional Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-6">
+            <num>6</num>
+            <content>
+              <p>There shall not be more than two Sectional Committees at the one time.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A Sectional Committee or Sectional Committees may sit when the Committee is sitting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-8">
+            <num>8</num>
+            <content>
+              <p>At a meeting of a Sectional Committee, a majority of the members of the Sectional Committee form a quorum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-10__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The exercise of a power by a Sectional Committee, the Chair of a Sectional Committee or a member of a Sectional Committee is not invalidated by reason only of there being a vacancy or vacancies in the membership of the Sectional Committee.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-11">
+          <num>11</num>
+          <heading>Reference of matters to Sectional Committees</heading>
+          <subsection eId="part-II__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee may refer to a Sectional Committee appointed under the last preceding section, for inquiry and report to the Committee, a matter connected with a public work that has been referred to the Committee under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of the last preceding subsection, this Act (other than sections 7, 8, 9 and 10, this section, subsections (2) and (3) of the next succeeding section and sections 13, 16, 17, 18, 19, 24, 35, 38 and 39) applies in relation to a Sectional Committee in like manner as it applies in relation to the Committee and, for the purposes of this Act as so applying, a reference to the Chair is to be read as a reference to the Chair, or to the Deputy Chair, of the Sectional Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The report of a Sectional Committee upon a matter referred to it under this section, together with the record of all evidence given before, and all documents and parts of documents produced in evidence to, the Sectional Committee shall be presented to the Committee by the Chair, or by the Deputy Chair, of the Sectional Committee.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-12">
+          <num>12</num>
+          <heading>Meetings of the Committee</heading>
+          <subsection eId="part-II__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee may meet at such times and at such places within Australia or within an external Territory as the Committee, by resolution, determines or, subject to any resolution of the Committee, as the Chair determines, but shall not meet at any place outside Australia and the external Territories.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Five members may make a request in writing signed by them to the Chair to convene a meeting of the Committee for a specified purpose.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Upon receiving a request under the last preceding subsection, the Chair shall:</p>
+            </content>
+            <paragraph eId="part-II__sec-12__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>determine a time and place for the holding of the meeting, being a time on a day not later than fourteen days after the day on which he or she received the request; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-12__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>by such means as he or she thinks fit, inform each member of the time, date and place of the meeting and of the purpose of the meeting.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Committee may meet and transact business notwithstanding any prorogation of the Parliament.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-12__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Committee shall not meet or transact business on a sitting day of either House of the Parliament during the time of the sitting, except by leave of that House.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-13">
+          <num>13</num>
+          <heading>Quorum</heading>
+          <content>
+            <p>At a meeting of the Committee, five members form a quorum.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-14">
+          <num>14</num>
+          <heading>Voting</heading>
+          <subsection eId="part-II__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A question arising at a meeting of the Committee shall be determined by a majority of the votes of the members present and voting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The member presiding at a meeting of the Committee has a deliberative vote and, in the event of an equality of votes, a casting vote.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where the members present at a meeting of the Committee do not vote unanimously on a question, there shall, if a member so requires, be recorded in the minutes and in the Committee’s report:</p>
+            </content>
+            <paragraph eId="part-II__sec-14__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the names of the members who voted and the manner in which each such member voted;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-14__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the names of the members who abstained from voting and the fact that they abstained from voting; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-14__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if the question was determined by the casting vote of the member presiding—the name of the member presiding and the fact that the question was so determined.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-15">
+          <num>15</num>
+          <heading>Minutes</heading>
+          <content>
+            <p>The Committee shall keep full minutes of its proceedings.</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-16">
+          <num>16</num>
+          <heading>Annual report</heading>
+          <content>
+            <p>The Committee shall cause to be laid before each House of the Parliament, within fifteen sitting days of that House after each 31 December, a report of its proceedings, if any, during the year ended on that 31 December.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Reports on Public Works</heading>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Functions of the Committee</heading>
+          <subsection eId="part-III__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee shall, as expeditiously as is practicable:</p>
+            </content>
+            <paragraph eId="part-III__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>consider each public work that is referred to it in accordance with this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>make a report to both Houses of the Parliament concerning the expedience of carrying out the work and concerning any other matters related to the work in respect of which the Committee thinks it desirable that the views of the Committee should be reported to those Houses;</p>
+              </content>
+              <content>
+                <p>and, for those purposes, shall do such things and make such inquiries as it thinks necessary.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Committee may, in its report on a public work, recommend any alterations to the proposals for the work that, in its opinion, are necessary or desirable to ensure that the most effective use is made of the moneys to be expended on the work.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In considering and reporting on a public work, the Committee shall have regard to:</p>
+            </content>
+            <paragraph eId="part-III__sec-17__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the stated purpose of the work and its suitability for that purpose;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the necessity for, or the advisability of, carrying out the work;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the most effective use that can be made, in the carrying out of the work, of the moneys to be expended on the work;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>where the work purports to be of a revenue-producing character, the amount of revenue that it may reasonably be expected to produce; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>the present and prospective public value of the work.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In considering and reporting on a public work proposed to be carried out by an authority of the Commonwealth, the Committee shall have regard to the functions, powers and duties of <role refersTo="#authority">the authority</role> and to the powers conferred on a Minister in relation to the activities of <role refersTo="#authority">the authority</role> concerned.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Reference of public works to the Committee</heading>
+          <subsection eId="part-III__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A motion may be moved in either House of the Parliament that a public work be referred to the Committee for consideration and report.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A motion under the last preceding subsection may relate to a public work that has been referred to the Committee as constituted during a previous Parliament.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Upon the moving of the motion, <role refersTo="#minister">the Minister</role> shall furnish to the House in which the motion is moved:</p>
+            </content>
+            <paragraph eId="part-III__sec-18__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a statement in relation to the public work (including the purpose of the work); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>such plans, specifications and other particulars as <role refersTo="#minister">the Minister</role> thinks necessary.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Governor-General may, at any time when the Parliament is not in session or the House of Representatives is adjourned for a period exceeding one month or for an indefinite period, being a time when the Committee is in existence, refer a public work to the Committee for consideration and report.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A public work that has been referred to the Committee in accordance with this section shall not be commenced before a report of the Committee concerning the work has been presented to both Houses of the Parliament.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If, after a report of the Committee concerning a public work has been presented to both Houses of the Parliament and before the work has been commenced, each House resolves that, for reasons or purposes stated in the resolution, the work be again referred to the Committee for consideration and report, the Committee shall further consider the work and the work shall not be commenced before a further report of the Committee concerning the work has been presented to both Houses.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A public work that has been referred to the Committee shall not be commenced unless, after the report of the Committee (or, if there has been a further reference of the work under the last preceding subsection, the report of the Committee on the further reference) has been presented to both Houses of the Parliament, the House of Representatives has resolved that it is expedient to carry out the work.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A public work the estimated cost of which exceeds the threshold amount shall not be commenced unless:</p>
+            </content>
+            <paragraph eId="part-III__sec-18__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the work has been referred to the Committee in accordance with this section;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>the House of Representatives has resolved that, by reason of the urgent nature of the work, it is expedient that it be carried out without having been referred to the Committee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the Governor-General has, by order, declared that the work is for defence purposes and that the reference of the work to the Committee would be contrary to the public interest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-8__para-d">
+              <num>d</num>
+              <content>
+                <p>the work is a work that has been declared, by a notice under subsection (8A), to be a repetitive work for the purposes of this subsection.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-8A">
+            <num>8A</num>
+            <content>
+              <p>	(8A)	The Minister may, by notice published in the <i>Gazette</i>, declare a work to be a repetitive work for the purposes of subsection (8) if:</p>
+            </content>
+            <paragraph eId="part-III__sec-18__subsec-8A__para-a">
+              <num>a</num>
+              <content>
+                <p>he or she is satisfied that the work is substantially similar to other works that have been carried out, are being carried out or are likely to be carried out from time to time by or for the Commonwealth, or by or for an authority of the Commonwealth to which this Act applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-8A__para-b">
+              <num>b</num>
+              <content>
+                <p>the Committee has agreed to the work being so declared.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-9">
+            <num>9</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>estimated cost</i></b>, in relation to a public work, means an estimate of cost made when all particulars of the work substantially affecting its cost have been determined.</p>
+              <p><b><i>threshold amount</i></b> means:</p>
+            </content>
+            <paragraph eId="part-III__sec-18__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>$15,000,000; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-18__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>if another amount is specified in the regulations for the purposes of this definition—that other amount.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18A">
+          <num>18A</num>
+          <heading>Inquiries by Committee</heading>
+          <subsection eId="part-III__sec-18A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, where a public work is referred to the Committee for consideration and report, the Committee may direct that the inquiry by the Committee into the work shall take place in public or in private.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Committee directs that an inquiry by the Committee into a public work take place in private, the Committee may give directions as to the persons who may be present at the inquiry.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a public work by way of the provision of services on land for the purpose of developing the land for use as urban land is referred to the Committee, the Committee may decide to consider and report on the work without holding any inquiry into the work.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18B">
+          <num>18B</num>
+          <heading>Consideration of overseas public works</heading>
+          <content>
+            <p>Where a public work that is to be carried out outside Australia and the external Territories is referred to the Committee:</p>
+          </content>
+          <paragraph eId="part-III__sec-18B__para-a">
+            <num>a</num>
+            <content>
+              <p>the Committee shall consider the work on the basis of plans, models and statements placed before it and of the evidence (if any) taken by it;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-18B__para-b">
+            <num>b</num>
+            <content>
+              <p>the Committee is not entitled to require or request the attendance before it of any person who is outside Australia; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-18B__para-c">
+            <num>c</num>
+            <content>
+              <p>the Committee may receive statements, in writing, relevant to its consideration of the work, from any person who is in or outside Australia, and may take evidence from any person who is in Australia.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-19">
+          <num>19</num>
+          <heading>Review of reports</heading>
+          <subsection eId="part-III__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where the Committee has made a report concerning a public work, the Committee (including the Committee as constituted at any subsequent time, whether during the same or another Parliament) may, if it resolves, before the work is commenced, that the report be reviewed, review the report and make a further report in accordance with <ref href="#sec-17">section 17</ref> to both Houses of the Parliament concerning the work.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without prejudice to the operation of subsection (7) of <ref href="#sec-18">section 18</ref>, if the Chair notifies <role refersTo="#minister">the Minister</role> in writing that the Committee has resolved, in accordance with this section, that a report concerning a public work be reviewed, the work shall not be commenced unless:</p>
+            </content>
+            <paragraph eId="part-III__sec-19__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Committee has resolved that it does not desire the commencement of the work to be deferred;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-19__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a further report has been made by the Committee concerning the work;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-19__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the House of Representatives has resolved that it is expedient that the work be commenced without awaiting the further report; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-19__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the further report has not been made before the House of Representatives expires by effluxion of time or is dissolved.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Power to take evidence</heading>
+          <subsection eId="part-III__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee may take evidence on oath or affirmation and the Chair may administer an oath or affirmation to a witness appearing before the Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An oath or affirmation administered to a witness may be in accordance with the prescribed form.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-21">
+          <num>21</num>
+          <heading>Power to summon witnesses</heading>
+          <subsection eId="part-III__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chair or a member authorized by the Committee by resolution may summon a person to appear before the Committee to give evidence and to produce such documents (if any) as are referred to in the summons.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The summons may be in accordance with the prescribed form.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The summons may be served upon the person to whom it is addressed either personally or by being left at, or sent by post to, his or her usual place of business or of abode.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Warrant for apprehension of witness</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a summons under the last preceding section has been served upon a person;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a reasonable amount for the costs of his or her conveyance has been tendered to that person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>that person fails to appear or, if he or she has appeared, fails, unless excused or released by a member from continuing in attendance, to continue in attendance as directed by the Committee or the Chair;</p>
+              </content>
+              <content>
+                <p>the Chair or a member authorized by the Committee may issue a warrant for his or her apprehension.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The warrant may be in accordance with the prescribed form.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The person executing the warrant may:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>apprehend the person in respect of whom it is issued;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>bring that person before the Committee; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>detain that person in custody until he or she is released by order of the Chair or a member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The warrant may be executed by the person to whom it is addressed or by a person appointed by him or her to assist in its execution and the person executing the warrant may break and enter a building, place, vehicle or vessel for the purpose of executing the warrant.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-23">
+          <num>23</num>
+          <heading>Evidence to be given in public except in certain cases</heading>
+          <subsection eId="part-III__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, where the Committee directs that the inquiry by the Committee into a public work shall take place in public, any evidence taken by the Committee for the purpose of the inquiry shall be taken in public.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where, in the opinion of the Committee, any evidence proposed to be given before, or the whole or a part of a document produced or proposed to be produced in evidence to, the Committee relates to a secret or confidential matter, the Committee may, and at the request of the witness giving the evidence or producing the document shall:</p>
+            </content>
+            <paragraph eId="part-III__sec-23__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>take the evidence in private; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-23__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>direct that the document, or the part of the document, be treated as confidential.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a direction under the last preceding subsection is applicable in respect of a document, or a part of a document, produced in evidence to the Committee, the contents of that document or part shall, for the purposes of this section and of <ref href="#sec-37">section 37</ref>, be deemed to be evidence given by the person producing the document and taken by the Committee in private.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where, at the request of a witness, evidence is taken by the Committee in private:</p>
+            </content>
+            <paragraph eId="part-III__sec-23__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the Committee shall not, without the consent in writing of the witness; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-23__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>a person (including a member) shall not, without the consent in writing of the witness and <role refersTo="#authority">the authority</role> of the Committee under subsection (6);</p>
+              </content>
+              <content>
+                <p>disclose or publish the whole or a part of that evidence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where evidence is taken by the Committee in private otherwise than at the request of a witness, a person (including a member) shall not, without <role refersTo="#authority">the authority</role> of the Committee under the next succeeding subsection, disclose or publish the whole or a part of that evidence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The Committee may, in its discretion, disclose or publish or, by writing under the hand of the Chair, authorize the disclosure or publication of, evidence taken in private before the Committee, but this subsection does not operate so as to affect the necessity for the consent of a witness under subsection (4).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Nothing in this section prohibits:</p>
+            </content>
+            <paragraph eId="part-III__sec-23__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>the disclosure of evidence by a Sectional Committee to the Committee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-23__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>the disclosure or publication of evidence that has already been lawfully published; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-23__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>the disclosure or publication by a person of a matter of which he or she has become aware otherwise than by reason, directly or indirectly, of the giving of evidence before the Committee.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">4 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-24">
+          <num>24</num>
+          <heading>Continuance of evidence</heading>
+          <content>
+            <p>Where the Committee as constituted at any time, or a Sectional Committee as constituted at any time, has taken evidence in relation to a matter but the Committee as so constituted has ceased to exist before reporting on the matter, the Committee as constituted at any subsequent time, whether during the same or another Parliament, may consider that evidence as if it had taken that evidence.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-25">
+          <num>25</num>
+          <heading>Privileges of witnesses</heading>
+          <content>
+            <p>A person summoned to appear or appearing before the Committee as a witness has the same protection and privileges, and is, in addition to the penalties provided by this Act, subject to the same liabilities in any civil or criminal proceeding, as a witness in proceedings in the High Court.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-26">
+          <num>26</num>
+          <heading>Assessors</heading>
+          <subsection eId="part-III__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Committee may appoint a person to be an assessor to assist it in relation to an inquiry under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person is not qualified for appointment as an assessor unless he or she possesses engineering or other technical knowledge or, in relation to the matter the subject of the inquiry, special local knowledge or experience.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-27">
+          <num>27</num>
+          <heading>Power to enter on land etc.</heading>
+          <content>
+            <p>For the purposes of this Act, a member or other person acting on behalf of the Committee may, with <role refersTo="#authority">the authority</role> of the Committee, upon notice given by him or her or the Committee in accordance with the regulations to the occupier of any land, building or place in Australia or an external Territory:</p>
+          </content>
+          <paragraph eId="part-III__sec-27__para-a">
+            <num>a</num>
+            <content>
+              <p>enter and inspect the land, building or place; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-27__para-b">
+            <num>b</num>
+            <content>
+              <p>inspect any material on the land or on or in the building or place.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-28">
+          <num>28</num>
+          <heading>Failure of witness to attend</heading>
+          <subsection eId="part-III__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person upon whom a summons under <ref href="#sec-21">section 21</ref> has been served shall not:</p>
+            </content>
+            <paragraph eId="part-III__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>fail to appear; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>fail, unless excused or released by a member from continuing in attendance, to continue in attendance;</p>
+              </content>
+              <content>
+                <p>as required by the summons.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">4 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Paragraph (1)(a) or (b) does not apply if the person proves that he or she has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	A defendant bears a legal burden in relation to the matter in subsection (2) (see <ref href="#sec-13">section 13</ref>.4 of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-29">
+          <num>29</num>
+          <heading>Preventing witnesses from giving evidence</heading>
+          <content>
+            <p>A person shall not dissuade or prevent a person from obeying a summons under <ref href="#sec-21">section 21</ref>.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">4 penalty units</quantity>.</p>
+            </content>
+          </hcontainer>
+        </section>
+        <section eId="part-III__sec-30">
+          <num>30</num>
+          <heading>Refusal to be sworn etc.</heading>
+          <subsection eId="part-III__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person upon whom a summons under <ref href="#sec-21">section 21</ref> has been served shall not refuse or fail:</p>
+            </content>
+            <paragraph eId="part-III__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to be sworn or to make an affirmation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to answer a question put to him or her by the Chair or a member; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-30__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to produce a document that he or she was, by the summons, required to produce.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">4 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Paragraph (1)(a), (b) or (c) does not apply if the person proves that he or she has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	A defendant bears a legal burden in relation to the matter in subsection (2) (see <ref href="#sec-13">section 13</ref>.4 of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-31">
+          <num>31</num>
+          <heading>False evidence</heading>
+          <content>
+            <p>A person shall not give false evidence on oath or affirmation before the Committee.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:	Imprisonment for five years.</p>
+            </content>
+          </hcontainer>
+        </section>
+        <section eId="part-III__sec-32">
+          <num>32</num>
+          <heading>Protection of witnesses</heading>
+          <content>
+            <p>A person shall not:</p>
+          </content>
+          <paragraph eId="part-III__sec-32__para-a">
+            <num>a</num>
+            <content>
+              <p>use violence to or inflict injury on;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-32__para-b">
+            <num>b</num>
+            <content>
+              <p>cause violence, damage, loss or disadvantage to; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-32__para-c">
+            <num>c</num>
+            <content>
+              <p>cause the punishment of;</p>
+            </content>
+            <content>
+              <p>a person for or on account of his or her having appeared, or being about to appear, as a witness before the Committee or for or on account of any evidence lawfully given by him or her before the Committee.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">4 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-33">
+          <num>33</num>
+          <heading>Prosecution of offences</heading>
+          <subsection eId="part-III__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An offence against this Act may be prosecuted summarily or upon indictment, but an offender is not liable to be punished more than once in respect of the same offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to the next succeeding subsection, where proceedings in respect of an offence against this Act are brought in a court of summary jurisdiction, the court may commit the defendant for trial or determine the proceedings.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where proceedings in respect of an offence against <ref href="#sec-31">section 31</ref> are brought in a court of summary jurisdiction, the court shall not determine the proceedings except with the consent of the defendant and, where the court determines the proceedings, it shall not impose a penalty exceeding imprisonment for a period of one year.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-IV__sec-35">
+          <num>35</num>
+          <heading>Allowances</heading>
+          <subsection eId="part-IV__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chair and other members shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The allowances are payable, upon the certificate of the Chair, out of the Consolidated Revenue Fund, which is appropriated accordingly.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-36">
+          <num>36</num>
+          <heading>Limitation of annual expenditure</heading>
+          <content>
+            <p>The total amount paid out of the Consolidated Revenue Fund in respect of allowances payable under the last preceding section shall not exceed Thirty thousand dollars in any financial year.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-37">
+          <num>37</num>
+          <heading>Application of Parliamentary Papers Act</heading>
+          <subsection eId="part-IV__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Section 23 has effect notwithstanding <ref href="#sec-2">section 2</ref> of the <i>Parliamentary Papers Act 1908</i><i>-</i><i>1963</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where evidence taken by the Committee in private is disclosed or published in accordance with <ref href="#sec-23">section 23</ref>, <ref href="#sec-4">section 4</ref> of the <i>Parliamentary Papers Act 1908</i><i>-</i><i>1963 </i>applies to and in relation to the disclosure or publication as if it were a publication of that evidence under an authority given in pursuance of <ref href="#sec-2">section 2</ref> of that Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-38">
+          <num>38</num>
+          <heading>Evidence given before former Committee</heading>
+          <content>
+            <p>		For the purposes of this Act and of the <i>Parliamentary Papers Act 1908</i><i>-</i><i>1963</i>, evidence taken by the Parliamentary Standing Committee on Public Works as constituted at any time under the <i>Commonwealth Public Works Committee Act 1913 </i>or under that Act as amended and in force at any time, or by a Sectional Committee of that Committee within the meaning of that Act, shall be deemed to be evidence taken by the Committee under this Act and, if it was taken in private at the request of the witness giving it, to have been taken under this Act in private at the request of that witness.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-40">
+          <num>40</num>
+          <heading>Regulations</heading>
+          <subsection eId="part-IV__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that by this Act are required or permitted to be prescribed or are necessary or convenient to be prescribed for carrying out or giving effect to this Act and in particular providing for the payment of fees and expenses to assessors and to witnesses appearing before the Committee.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Before making regulations for the purposes of:</p>
+            </content>
+            <paragraph eId="part-IV__sec-40__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	paragraph (f) or (k) of the definition of <b><i>work</i></b> in subsection 5(1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-40__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>paragraph 5AA(1)(b) or (e);</p>
+              </content>
+              <content>
+                <p>the Governor-General shall take into consideration any relevant recommendation made to <role refersTo="#minister">the Minister</role> by the Committee.</p>
+                <p>The Schedule—Public Works Committee Act 1969</p>
+                <p>Section 8</p>
+                <p>DECLARATION BY MEMBER</p>
+                <p>I, A.B., do solemnly and sincerely promise and declare that, according to the best of my skill and ability, I will faithfully, impartially and truly execute the office and perform the duties of a member of the Parliamentary Standing Committee on Public Works.</p>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>o = order(s)</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>Ord = Ordinance</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>orig = original</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>par = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>F = Federal Register of Legislation</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Act 1969</td>
+                  <td>92, 1969</td>
+                  <td>27 Sept 1969</td>
+                  <td>24 Nov 1969 (s 2 and gaz 1969, p 7065)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Act 1972</td>
+                  <td>57, 1972</td>
+                  <td>9 June 1972</td>
+                  <td>9 June 1972 (s 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Act 1973</td>
+                  <td>140, 1973</td>
+                  <td>15 Nov 1973</td>
+                  <td>15 Nov 1973 (s 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 1973</td>
+                  <td>216, 1973</td>
+                  <td>19 Dec 1973</td>
+                  <td>s 9(1), 10 and Sch 1: 31 Dec 1973 (s 2)</td>
+                  <td>s 9(1), 10</td>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Act 1974</td>
+                  <td>48, 1974</td>
+                  <td>21 Aug 1974</td>
+                  <td>21 Aug 1974 (s 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Amendment Act 1981</td>
+                  <td>20, 1981</td>
+                  <td>9 Apr 1981</td>
+                  <td>9 Apr 1981 (s 2)</td>
+                  <td>s 13</td>
+                </tr>
+                <tr>
+                  <td>Statute Law (Miscellaneous Amendments) Act (No. 2) 1982</td>
+                  <td>80, 1982</td>
+                  <td>22 Sept 1982</td>
+                  <td>s 233–236: 20 Oct 1982 (s 2(16))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1983</td>
+                  <td>39, 1983</td>
+                  <td>20 June 1983</td>
+                  <td>Sch 1: 18 July 1983 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1985</td>
+                  <td>65, 1985</td>
+                  <td>5 June 1985</td>
+                  <td>Sch 1: 3 July 1985 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory (Planning and Land Management) Act 1988</td>
+                  <td>108, 1988</td>
+                  <td>6 Dec 1988</td>
+                  <td>Sch: 31 Jan 1989 (s 2(3) and gaz 1989, No S39)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Administrative Services Legislation Amendment Act 1989</td>
+                  <td>5, 1989</td>
+                  <td>13 Mar 1989</td>
+                  <td>s 4(d): 31 Jan 1989 (s 2(2))
+s 3, 4(a)-(c), (e)-(g), 5, 6: 13 Mar 1989 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Qantas Sale Act 1992</td>
+                  <td>196, 1992</td>
+                  <td>21 Dec 1992</td>
+                  <td>Sch (Part 1): 10 Mar 1993 (s 2(2), (3)(a) and gaz 1993, No GN17)
+Sch (Part 5): 30 Aug 1995 (s 2(2), (3)(c) and gaz 1995, No S324).</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Qantas Sale Amendment Act 1993</td>
+                  <td>60, 1993</td>
+                  <td>3 Nov 1993</td>
+                  <td>10 Mar 1993 (s 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Qantas Sale Amendment Act 1994</td>
+                  <td>168, 1994</td>
+                  <td>16 Dec 1994</td>
+                  <td>s 3 (item 17): 16 Dec 1994 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Crimes and Other Legislation Amendment Act 1997</td>
+                  <td>20, 1997</td>
+                  <td>7 Apr 1997</td>
+                  <td>Sch 2 (item 9): 7 Apr 1997 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Finance and Administration Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                  <td>109, 2001</td>
+                  <td>17 Sept 2001</td>
+                  <td>s 5 and Sch 2 (items 7-14): 15 Oct 2001 (s 2(a))</td>
+                  <td>s 5</td>
+                </tr>
+                <tr>
+                  <td>Public Works Committee Amendment Act 2006</td>
+                  <td>132, 2006</td>
+                  <td>7 Nov 2006</td>
+                  <td>7 Nov 2006 (s 2)</td>
+                  <td>Sch 1 (item 6)</td>
+                </tr>
+                <tr>
+                  <td>Maritime Legislation Amendment Act 2007</td>
+                  <td>150, 2007</td>
+                  <td>24 Sept 2007</td>
+                  <td>Sch 1 (items 23, 24): 1 Jan 2008 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2012</td>
+                  <td>136, 2012</td>
+                  <td>22 Sept 2012</td>
+                  <td>Sch 1 (item 110): 22 Sept 2012 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Norfolk Island Legislation Amendment Act 2015</td>
+                  <td>59, 2015</td>
+                  <td>26 May 2015</td>
+                  <td>Sch 2 (item 316): 1 July 2016 (s 2(1) item 5)
+Sch 2 (items 356-396): 18 June 2015 (s 2(1) item 6)</td>
+                  <td>Sch 2 (items 356-396)</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Territories Legislation Amendment Act 2016</td>
+                  <td>33, 2016</td>
+                  <td>23 Mar 2016</td>
+                  <td>Sch 2: 24 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act (No. 2) 2015</td>
+                  <td>145, 2015</td>
+                  <td>12 Nov 2015</td>
+                  <td>Sch 4 (item 47): 10 Dec 2015 (s 2(1) item 7)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Update Act 2016</td>
+                  <td>61, 2016</td>
+                  <td>23 Sept 2016</td>
+                  <td>Sch 1 (items 396-400): 21 Oct 2016 (s 2(1) item 1)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Update (A.C.T. Self-Government (Consequential Provisions) Regulations) Act 2017</td>
+                  <td>13, 2017</td>
+                  <td>22 Feb 2017</td>
+                  <td>Sch 1 (items 27–29): 22 Mar 2017 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part I</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>ss. 3, 4</td>
+                  <td>rep. No. 216, 1973</td>
+                </tr>
+                <tr>
+                  <td>s. 5</td>
+                  <td>am. No. 216, 1973; No. 48, 1974; No. 20, 1981; No. 108, 1988; No. 5, 1989; No. 132, 2006; No 13, 2017</td>
+                </tr>
+                <tr>
+                  <td>s. 5AA</td>
+                  <td>ad. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 5A</td>
+                  <td>ad. No. 109, 2001</td>
+                </tr>
+                <tr>
+                  <td>s. 6</td>
+                  <td>am. No. 216, 1973; No. 20, 1981; No 59, 2015; No 13, 2017</td>
+                </tr>
+                <tr>
+                  <td>s. 6A</td>
+                  <td>ad. No. 20, 1981</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am. No. 80, 1982; No. 196, 1992; No. 150, 2007</td>
+                </tr>
+                <tr>
+                  <td>s. 6B</td>
+                  <td>ad. No. 20, 1981</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep. No. 108, 1988</td>
+                </tr>
+                <tr>
+                  <td>Part II</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 7</td>
+                  <td>am. No. 216, 1973; No. 48, 1974; No. 132, 2006; No. 136, 2012; No 145, 2015</td>
+                </tr>
+                <tr>
+                  <td>s. 8</td>
+                  <td>am. No. 48, 1974; No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>Heading to s. 9</td>
+                  <td>rs. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>ss. 9–11</td>
+                  <td>am. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 12</td>
+                  <td>am. No. 48, 1974; No. 20, 1981; No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 16</td>
+                  <td>am. No. 48, 1974</td>
+                </tr>
+                <tr>
+                  <td>Part III</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 17</td>
+                  <td>am. No. 20, 1981</td>
+                </tr>
+                <tr>
+                  <td>s. 18</td>
+                  <td>am. No. 140, 1973; No. 48, 1974; No. 20, 1981; No. 80, 1982; No. 39, 1983; No. 65, 1985; No. 5, 1989; No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>ss. 18A, 18B</td>
+                  <td>ad. No. 20, 1981</td>
+                </tr>
+                <tr>
+                  <td>s. 19</td>
+                  <td>am. No. 48, 1974; No. 20, 1981; No. 80, 1982; No. 39, 1983; No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>ss. 20–22</td>
+                  <td>am. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 23</td>
+                  <td>am. No. 48, 1974; No. 20, 1981; No. 132, 2006; No 61, 2016</td>
+                </tr>
+                <tr>
+                  <td>s. 26</td>
+                  <td>am. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 27</td>
+                  <td>am. No. 20, 1981; No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 48, 1974; No 109, 2001; No 61, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 29</td>
+                  <td>am No 48, 1974; No 109, 2001; No 61, 2016</td>
+                </tr>
+                <tr>
+                  <td>s. 30</td>
+                  <td>am. No. 48, 1974; No. 109, 2001; No. 132, 2006; No 61, 2016</td>
+                </tr>
+                <tr>
+                  <td>s. 31</td>
+                  <td>am. No. 109, 2001</td>
+                </tr>
+                <tr>
+                  <td>s. 32</td>
+                  <td>am. No. 109, 2001; No. 132, 2006; No 61, 2016</td>
+                </tr>
+                <tr>
+                  <td>s. 33</td>
+                  <td>am. No. 48, 1974</td>
+                </tr>
+                <tr>
+                  <td>s. 34</td>
+                  <td>rep. No. 20, 1997</td>
+                </tr>
+                <tr>
+                  <td>Part IV</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 35</td>
+                  <td>am. No. 132, 2006</td>
+                </tr>
+                <tr>
+                  <td>s. 36</td>
+                  <td>am. No. 57, 1972</td>
+                </tr>
+                <tr>
+                  <td>s. 37</td>
+                  <td>am. No. 48, 1974</td>
+                </tr>
+                <tr>
+                  <td>s. 39</td>
+                  <td>rep. No. 216, 1973</td>
+                </tr>
+                <tr>
+                  <td>s. 40</td>
+                  <td>am. No. 5, 1989; No. 132, 2006</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

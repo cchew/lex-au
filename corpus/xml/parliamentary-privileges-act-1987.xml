@@ -1,0 +1,962 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1987/21/!main"/>
+          <FRBRuri value="/akn/au/act/1987/21"/>
+          <FRBRdate date="1987-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="21"/>
+          <FRBRname value="parliamentary-privileges-act-1987"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1987/21/eng@2016-10-21/!main"/>
+          <FRBRuri value="/akn/au/act/1987/21/eng@2016-10-21"/>
+          <FRBRdate date="2016-10-21" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1987/21/eng@2016-10-21/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1987/21/eng@2016-10-21/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1987-01-01" type="generation" eId="evt-creation" source="#parliamentary-privileges-act-1987"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1992/165"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2001/24"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2016/61" date="2016-09-23"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="insertion" eId="mod-1">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-3A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-12"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-3">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-13"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-4">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-14"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCTerm eId="term-committee" href="/ontology/term/au/term-committee" showAs="committee"/>
+        <TLCTerm eId="term-court" href="/ontology/term/au/term-court" showAs="court"/>
+        <TLCTerm eId="term-document" href="/ontology/term/au/term-document" showAs="document"/>
+        <TLCTerm eId="term-house" href="/ontology/term/au/term-house" showAs="House"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-tribunal" href="/ontology/term/au/term-tribunal" showAs="tribunal"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Parliamentary Privileges Act 1987</p>
+      <p>No. 21, 1987</p>
+      <p><b>Compilation No.</b><b> </b><b>4</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>21 October 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 61, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>21 October 2016</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Parliamentary Privileges Act 1987</i> that shows the text of the law as amended and in force on 21 October 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>3A	Application of the <i>Criminal Code</i>	2</p>
+      <p>4	Essential element of offences	2</p>
+      <p>5	Powers, privileges and immunities	2</p>
+      <p>6	Contempts by defamation abolished	3</p>
+      <p>7	Penalties imposed by Houses	3</p>
+      <p>8	Houses not to expel members	4</p>
+      <p>9	Resolutions and warrants for committal	4</p>
+      <p>10	Reports of proceedings	4</p>
+      <p>11	Publication of tabled papers	5</p>
+      <p>12	Protection of witnesses	5</p>
+      <p>13	Unauthorised disclosure of evidence	6</p>
+      <p>14	Immunities from arrest and attendance before courts	6</p>
+      <p>15	Application of laws to Parliament House	7</p>
+      <p>16	Parliamentary privilege in court proceedings	7</p>
+      <p>17	Certificates relating to proceedings	9</p>
+      <p>Endnotes	11</p>
+      <p>Endnote 1—About the endnotes	11</p>
+      <p>Endnote 2—Abbreviation key	13</p>
+      <p>Endnote 3—Legislation history	14</p>
+      <p>Endnote 4—Amendment history	15</p>
+      <p>An Act to declare the powers, privileges and immunities of each House of the Parliament and of the members and committees of each House, and for related purposes</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Parliamentary Privileges Act 1987</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <content>
+          <p>This Act shall come into operation on the day on which it receives the Royal Assent.</p>
+        </content>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Interpretation</heading>
+        <subsection eId="sec-3__subsec-1">
+          <num>1</num>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+          </content>
+          <intro>
+            <p><term refersTo="#term-committee">committee</term> means:</p>
+          </intro>
+          <paragraph eId="sec-3__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>a committee of a House or of both Houses, including a committee of a whole House and a committee established by an Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-3__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>a sub-committee of a committee referred to in paragraph (a).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-court">court</term> means <def>a federal court or a court of a State or Territory.</def></p>
+              <p><term refersTo="#term-document">document</term> includes <def>a part of a document.</def></p>
+              <p><term refersTo="#term-house">House</term> means <def>a House of the Parliament.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of a House.</def></p>
+              <p><term refersTo="#term-tribunal">tribunal</term> means <def>any person or body (other than a House, a committee or a court) having power to examine witnesses on oath, including a Royal Commission or other commission of inquiry of the Commonwealth or of a State or Territory having that power.</def></p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-3__subsec-2">
+          <num>2</num>
+          <content>
+            <p>For the purposes of this Act, the submission of a written statement by a person to a House or a committee shall, if so ordered by the House or the committee, be deemed to be the giving of evidence in accordance with that statement by that person before that House or committee.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-3__subsec-3">
+          <num>3</num>
+          <content>
+            <p>In this Act, a reference to an offence against a House is a reference to a breach of the privileges or immunities, or a contempt, of a House or of the members or committees.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-3A">
+        <num>3A</num>
+        <heading>Application of the Criminal Code</heading>
+        <subsection eId="sec-3A__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-3A__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	To avoid doubt, subsection (1) does not apply the <i>Criminal Code</i> to an offence against a House.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Essential element of offences</heading>
+        <content>
+          <p>Conduct (including the use of words) does not constitute an offence against a House unless it amounts, or is intended or likely to amount, to an improper interference with the free exercise by a House or committee of its authority or functions, or with the free performance by a member of the member’s duties as a member.</p>
+        </content>
+      </section>
+      <section eId="sec-5">
+        <num>5</num>
+        <heading>Powers, privileges and immunities</heading>
+        <content>
+          <p>Except to the extent that this Act expressly provides otherwise, the powers, privileges and immunities of each House, and of the members and the committees of each House, as in force under <ref href="#sec-49">section 49</ref> of the Constitution immediately before the commencement of this Act, continue in force.</p>
+        </content>
+      </section>
+      <section eId="sec-6">
+        <num>6</num>
+        <heading>Contempts by defamation abolished</heading>
+        <subsection eId="sec-6__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Words or acts shall not be taken to be an offence against a House by reason only that those words or acts are defamatory or critical of the Parliament, a House, a committee or a member.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Subsection (1) does not apply to words spoken or acts done in the presence of a House or a committee.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-7">
+        <num>7</num>
+        <heading>Penalties imposed by Houses</heading>
+        <subsection eId="sec-7__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A House may impose on a person a penalty of imprisonment for a period not exceeding 6 months for an offence against that House determined by that House to have been committed by that person.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-2">
+          <num>2</num>
+          <content>
+            <p>A penalty of imprisonment imposed in accordance with this section is not affected by a prorogation of the Parliament or the dissolution or expiration of a House.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-3">
+          <num>3</num>
+          <content>
+            <p>A House does not have power to order the imprisonment of a person for an offence against the House otherwise than in accordance with this section.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-4">
+          <num>4</num>
+          <content>
+            <p>A resolution of a House ordering the imprisonment of a person in accordance with this section may provide that the President of the Senate or the Speaker of the House of Representatives, as the case requires, is to have power, either generally or in specified circumstances, to order the discharge of the person from imprisonment and, where a resolution so provides, the President or the Speaker has, by force of this Act, power to discharge the person accordingly.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-5">
+          <num>5</num>
+          <content>
+            <p>A House may impose on a person a fine:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>not exceeding $5,000, in the case of a natural person; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>not exceeding $25,000, in the case of a corporation;</p>
+            </content>
+            <content>
+              <p>for an offence against that House determined by that House to have been committed by that person.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-6">
+          <num>6</num>
+          <content>
+            <p>A fine imposed under subsection (5) is a debt due to the Commonwealth and may be recovered on behalf of the Commonwealth in a court of competent jurisdiction by any person appointed by a House for that purpose.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-7">
+          <num>7</num>
+          <content>
+            <p>A fine shall not be imposed on a person under subsection (5) for an offence for which a penalty of imprisonment is imposed on that person.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-8">
+          <num>8</num>
+          <content>
+            <p>A House may give such directions and authorise the issue of such warrants as are necessary or convenient for carrying this section into effect.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-8">
+        <num>8</num>
+        <heading>Houses not to expel members</heading>
+        <content>
+          <p>A House does not have power to expel a member from membership of a House.</p>
+        </content>
+      </section>
+      <section eId="sec-9">
+        <num>9</num>
+        <heading>Resolutions and warrants for committal</heading>
+        <content>
+          <p>Where a House imposes on a person a penalty of imprisonment for an offence against that House, the resolution of the House imposing the penalty and the warrant committing the person to custody shall set out particulars of the matters determined by the House to constitute that offence.</p>
+        </content>
+      </section>
+      <section eId="sec-10">
+        <num>10</num>
+        <heading>Reports of proceedings</heading>
+        <subsection eId="sec-10__subsec-1">
+          <num>1</num>
+          <content>
+            <p>It is a defence to an action for defamation that the defamatory matter was published by the defendant without any adoption by the defendant of the substance of the matter, and the defamatory matter was contained in a fair and accurate report of proceedings at a meeting of a House or a committee.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-10__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Subsection (1) does not apply in respect of matter published in contravention of <ref href="#sec-13">section 13</ref>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-10__subsec-3">
+          <num>3</num>
+          <content>
+            <p>This section does not deprive a person of any defence that would have been available to that person if this section had not been enacted.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-11">
+        <num>11</num>
+        <heading>Publication of tabled papers</heading>
+        <subsection eId="sec-11__subsec-1">
+          <num>1</num>
+          <content>
+            <p>No action, civil or criminal, lies against an officer of a House in respect of a publication to a member of a document that has been laid before a House.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-11__subsec-2">
+          <num>2</num>
+          <content>
+            <p>This section does not deprive a person of any defence that would have been available to that person if this section had not been enacted.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-12">
+        <num>12</num>
+        <heading>Protection of witnesses</heading>
+        <subsection eId="sec-12__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A person shall not, by fraud, intimidation, force or threat, by the offer or promise of any inducement or benefit, or by other improper means, influence another person in respect of any evidence given or to be given before a House or a committee, or induce another person to refrain from giving any such evidence.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:</p>
+            </content>
+          </hcontainer>
+          <paragraph eId="sec-12__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>in the case of a natural person, <quantity refersTo="#custodialSentence">imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">50 penalty units</quantity>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-12__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>in the case of a corporation, <quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-12__subsec-2">
+          <num>2</num>
+          <content>
+            <p>A person shall not inflict any penalty or injury upon, or deprive of any benefit, another person on account of:</p>
+          </content>
+          <paragraph eId="sec-12__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the giving or proposed giving of any evidence; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-12__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>any evidence given or to be given;</p>
+            </content>
+            <content>
+              <p>before a House or a committee.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:</p>
+              </content>
+            </hcontainer>
+          </paragraph>
+          <paragraph eId="sec-12__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>in the case of a natural person, <quantity refersTo="#custodialSentence">imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">50 penalty units</quantity>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-12__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>in the case of a corporation, <quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-12__subsec-3">
+          <num>3</num>
+          <content>
+            <p>This section does not prevent the imposition of a penalty by a House in respect of an offence against a House or by a court in respect of an offence against an Act establishing a committee.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-13">
+        <num>13</num>
+        <heading>Unauthorised disclosure of evidence</heading>
+        <content>
+          <p>A person shall not, without <role refersTo="#authority">the authority</role> of a House or a committee, publish or disclose:</p>
+        </content>
+        <paragraph eId="sec-13__para-a">
+          <num>a</num>
+          <content>
+            <p>a document that has been prepared for the purpose of submission, and submitted, to a House or a committee and has been directed by a House or a committee to be treated as evidence taken in camera; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-13__para-b">
+          <num>b</num>
+          <content>
+            <p>any oral evidence taken by a House or a committee in camera, or a report of any such oral evidence;</p>
+          </content>
+          <content>
+            <p>unless a House or a committee has published, or authorised the publication of, that document or that oral evidence.</p>
+          </content>
+          <hcontainer name="penalty">
+            <content>
+              <p>Penalty:</p>
+            </content>
+          </hcontainer>
+        </paragraph>
+        <paragraph eId="sec-13__para-a">
+          <num>a</num>
+          <content>
+            <p>in the case of a natural person, <quantity refersTo="#custodialSentence">imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">50 penalty units</quantity>; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-13__para-b">
+          <num>b</num>
+          <content>
+            <p>in the case of a corporation, <quantity refersTo="#penaltyUnit">250 penalty units</quantity>.</p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-14">
+        <num>14</num>
+        <heading>Immunities from arrest and attendance before courts</heading>
+        <subsection eId="sec-14__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A member:</p>
+          </content>
+          <paragraph eId="sec-14__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>shall not be required to attend before a court or a tribunal; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>shall not be arrested or detained in a civil cause;</p>
+            </content>
+            <content>
+              <p>on any day:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-1__para-c">
+            <num>c</num>
+            <content>
+              <p>on which the House of which that member is a member meets;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-1__para-d">
+            <num>d</num>
+            <content>
+              <p>on which a committee of which that member is a member meets; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-1__para-e">
+            <num>e</num>
+            <content>
+              <p>which is <quantity refersTo="#deadline">within 5 days</quantity> before or 5 days after a day referred to in paragraph (c) or (d).</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-14__subsec-2">
+          <num>2</num>
+          <content>
+            <p>An officer of a House:</p>
+          </content>
+          <paragraph eId="sec-14__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>shall not be required to attend before a court or a tribunal; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>shall not be arrested or detained in a civil cause;</p>
+            </content>
+            <content>
+              <p>on any day:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-2__para-c">
+            <num>c</num>
+            <content>
+              <p>on which a House or a committee upon which that officer is required to attend meets; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-2__para-d">
+            <num>d</num>
+            <content>
+              <p>which is <quantity refersTo="#deadline">within 5 days</quantity> before or 5 days after a day referred to in paragraph (c).</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-14__subsec-3">
+          <num>3</num>
+          <content>
+            <p>A person who is required to attend before a House or a committee on a day:</p>
+          </content>
+          <paragraph eId="sec-14__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>shall not be required to attend before a court or a tribunal; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-14__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>shall not be arrested or detained in a civil cause;</p>
+            </content>
+            <content>
+              <p>on that day.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-14__subsec-4">
+          <num>4</num>
+          <content>
+            <p>Except as provided by this section, a member, an officer of a House and a person required to attend before a House or a committee has no immunity from compulsory attendance before a court or a tribunal or from arrest or detention in a civil cause by reason of being a member or such an officer or person.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-15">
+        <num>15</num>
+        <heading>Application of laws to Parliament House</heading>
+        <content>
+          <p>It is hereby declared, for the avoidance of doubt, that, subject to <ref href="#sec-49">section 49</ref> of the Constitution and this Act, a law in force in the Australian Capital Territory applies according to its tenor (except as otherwise provided by that or any other law) in relation to:</p>
+        </content>
+        <paragraph eId="sec-15__para-a">
+          <num>a</num>
+          <content>
+            <p>any building in the Territory in which a House meets; and</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-15__para-b">
+          <num>b</num>
+          <content>
+            <p>	(b)	any part of the precincts as defined by subsection 3(1) of the <i>Parliamentary Precincts Act 1988</i>.</p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-16">
+        <num>16</num>
+        <heading>Parliamentary privilege in court proceedings</heading>
+        <subsection eId="sec-16__subsec-1">
+          <num>1</num>
+          <content>
+            <p>For the avoidance of doubt, it is hereby declared and enacted that the provisions of article 9 of the Bill of Rights, 1688 apply in relation to the Parliament of the Commonwealth and, as so applying, are to be taken to have, in addition to any other operation, the effect of the subsequent provisions of this section.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-16__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	For the purposes of the provisions of article 9 of the Bill of Rights, 1688 as applying in relation to the Parliament, and for the purposes of this section, <b><i>proceedings in Parliament</i></b> means all words spoken and acts done in the course of, or for purposes of or incidental to, the transacting of the business of a House or of a committee, and, without limiting the generality of the foregoing, includes:</p>
+          </content>
+          <paragraph eId="sec-16__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the giving of evidence before a House or a committee, and evidence so given;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>the presentation or submission of a document to a House or a committee;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-2__para-c">
+            <num>c</num>
+            <content>
+              <p>the preparation of a document for purposes of or incidental to the transacting of any such business; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-2__para-d">
+            <num>d</num>
+            <content>
+              <p>the formulation, making or publication of a document, including a report, by or pursuant to an order of a House or a committee and the document so formulated, made or published.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-16__subsec-3">
+          <num>3</num>
+          <content>
+            <p>In proceedings in any court or tribunal, it is not lawful for evidence to be tendered or received, questions asked or statements, submissions or comments made, concerning proceedings in Parliament, by way of, or for the purpose of:</p>
+          </content>
+          <paragraph eId="sec-16__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>questioning or relying on the truth, motive, intention or good faith of anything forming part of those proceedings in Parliament;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>otherwise questioning or establishing the credibility, motive, intention or good faith of any person; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>drawing, or inviting the drawing of, inferences or conclusions wholly or partly from anything forming part of those proceedings in Parliament.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-16__subsec-4">
+          <num>4</num>
+          <content>
+            <p>A court or tribunal shall not:</p>
+          </content>
+          <paragraph eId="sec-16__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>require to be produced, or admit into evidence, a document that has been prepared for the purpose of submission, and submitted, to a House or a committee and has been directed by a House or a committee to be treated as evidence taken in camera, or admit evidence relating to such a document; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>admit evidence concerning any oral evidence taken by a House or a committee in camera or require to be produced or admit into evidence a document recording or reporting any such oral evidence;</p>
+            </content>
+            <content>
+              <p>unless a House or a committee has published, or authorised the publication of, that document or a report of that oral evidence.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-16__subsec-5">
+          <num>5</num>
+          <content>
+            <p>In relation to proceedings in a court or tribunal so far as they relate to:</p>
+          </content>
+          <paragraph eId="sec-16__subsec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a question arising under <ref href="#sec-57">section 57</ref> of the Constitution; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-16__subsec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the interpretation of an Act;</p>
+            </content>
+            <content>
+              <p>neither this section nor the Bill of Rights, 1688 shall be taken to prevent or restrict the admission in evidence of a record of proceedings in Parliament published by or with <role refersTo="#authority">the authority</role> of a House or a committee or the making of statements, submissions or comments based on that record.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-16__subsec-6">
+          <num>6</num>
+          <content>
+            <p>In relation to a prosecution for an offence against this Act or an Act establishing a committee, neither this section nor the Bill of Rights, 1688 shall be taken to prevent or restrict the admission of evidence, the asking of questions, or the making of statements, submissions or comments, in relation to proceedings in Parliament to which the offence relates.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-16__subsec-7">
+          <num>7</num>
+          <content>
+            <p>Without prejudice to the effect that article 9 of the Bill of Rights, 1688 had, on its true construction, before the commencement of this Act, this section does not affect proceedings in a court or a tribunal that commenced before the commencement of this Act.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-17">
+        <num>17</num>
+        <heading>Certificates relating to proceedings</heading>
+        <content>
+          <p>For the purposes of this Act, a certificate signed by or on behalf of the President of the Senate, the Speaker of the House of Representatives or a chairman of a committee stating that:</p>
+        </content>
+        <paragraph eId="sec-17__para-a">
+          <num>a</num>
+          <content>
+            <p>a particular document was prepared for the purpose of submission, and submitted, to a House or a committee;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-b">
+          <num>b</num>
+          <content>
+            <p>a particular document was directed by a House or a committee to be treated as evidence taken in camera;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-c">
+          <num>c</num>
+          <content>
+            <p>certain oral evidence was taken by a committee in camera;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-d">
+          <num>d</num>
+          <content>
+            <p>a document was not published or authorised to be published by a House or a committee;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-e">
+          <num>e</num>
+          <content>
+            <p>a person is or was an officer of a House;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-f">
+          <num>f</num>
+          <content>
+            <p>an officer is or was required to attend upon a House or a committee;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-g">
+          <num>g</num>
+          <content>
+            <p>a person is or was required to attend before a House or a committee on a day;</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-h">
+          <num>h</num>
+          <content>
+            <p>a day is a day on which a House or a committee met or will meet; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-17__para-i">
+          <num>i</num>
+          <content>
+            <p>a specified fine was imposed on a specified person by a House;</p>
+          </content>
+          <content>
+            <p>is evidence of the matters contained in the certificate.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Parliamentary Privileges Act 1987</td>
+              <td>21, 1987</td>
+              <td>20 May 1987</td>
+              <td>20 May 1987 (s 2)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Parliamentary Precincts Act 1988</td>
+              <td>9, 1988</td>
+              <td>5 Apr 1988</td>
+              <td>s 12 and Sch 2: 1 Aug 1988 (s 2(2) and gaz 1988, No S229)</td>
+              <td>s 12</td>
+            </tr>
+            <tr>
+              <td>Law and Justice Legislation Amendment Act (No. 3) 1992</td>
+              <td>165, 1992</td>
+              <td>11 Dec 1992</td>
+              <td>Note about section heading: 11 Dec 1992 (s 2(1))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Law and Justice Legislation Amendment (Application of Criminal Code) Act 2001</td>
+              <td>24, 2001</td>
+              <td>6 Apr 2001</td>
+              <td>s 4(1), (2) and Sch 38: 24 May 2001 (s 2(1)(a))</td>
+              <td>s 4(1) and (2)</td>
+            </tr>
+            <tr>
+              <td>Statute Update Act 2016</td>
+              <td>61, 2016</td>
+              <td>23 Sept 2016</td>
+              <td>Sch 1 (items 355–360): 21 Oct 2016 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>s 3A</td>
+              <td>ad No 24, 2001</td>
+            </tr>
+            <tr>
+              <td>s 12</td>
+              <td>am No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 13</td>
+              <td>am No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 14</td>
+              <td>am No 165, 1992</td>
+            </tr>
+            <tr>
+              <td>s 15</td>
+              <td>am No 9, 1988</td>
+            </tr>
+          </table>
+        </paragraph>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

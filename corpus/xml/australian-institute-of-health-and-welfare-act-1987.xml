@@ -1,0 +1,3054 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1987/41/!main"/>
+          <FRBRuri value="/akn/au/act/1987/41"/>
+          <FRBRdate date="1987-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="41"/>
+          <FRBRname value="australian-institute-of-health-and-welfare-act-1987"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1987/41/eng@2018-11-27/!main"/>
+          <FRBRuri value="/akn/au/act/1987/41/eng@2018-11-27"/>
+          <FRBRdate date="2018-11-27" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1987/41/eng@2018-11-27/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1987/41/eng@2018-11-27/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1987-01-01" type="generation" eId="evt-creation" source="#australian-institute-of-health-and-welfare-act-1987"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1988/79" date="1988-06-24"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1989/95" date="1989-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1991/122" date="1991-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1991/199"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1992/16" date="1992-05-04"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1999/156"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2001/59" date="2001-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2001/159"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2006/50" date="2006-06-09"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2006/101"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2018/105" date="2018-11-27"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="ceo" href="/ontology/roles/au/ceo" showAs="the CEO"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-board" href="/ontology/term/au/term-board" showAs="Board"/>
+        <TLCTerm eId="term-ceo" href="/ontology/term/au/term-ceo" showAs="CEO"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-deputy-chair" href="/ontology/term/au/term-deputy-chair" showAs="Deputy Chair"/>
+        <TLCTerm eId="term-ethics-committee" href="/ontology/term/au/term-ethics-committee" showAs="Ethics Committee"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-health-related-information-and-statistics" href="/ontology/term/au/term-health-related-information-and-statistics" showAs="health-related information and statistics"/>
+        <TLCTerm eId="term-institute" href="/ontology/term/au/term-institute" showAs="Institute"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-paid-work" href="/ontology/term/au/term-paid-work" showAs="paid work"/>
+        <TLCTerm eId="term-production" href="/ontology/term/au/term-production" showAs="production"/>
+        <TLCTerm eId="term-trust-money" href="/ontology/term/au/term-trust-money" showAs="trust money"/>
+        <TLCTerm eId="term-trust-property" href="/ontology/term/au/term-trust-property" showAs="trust property"/>
+        <TLCTerm eId="term-welfare-related-information-and-statistics" href="/ontology/term/au/term-welfare-related-information-and-statistics" showAs="welfare-related information and statistics"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Institute of Health and Welfare Act 1987</p>
+      <p>No. 41, 1987</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compilation date:</b>			27 November 2018</p>
+      <p><b>Includes amendments up to:</b>	Act No. 105, 2018</p>
+      <p><b>Registered:</b>				4 December 2018</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Institute of Health and Welfare Act 1987</i> that shows the text of the law as amended and in force on 27 November 2018 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>2A	Simplified outline of this Act	1</p>
+      <p>3	Interpretation	2</p>
+      <p><ref href="#part-II">Part II</ref>—Australian Institute of Health and Welfare	5</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Establishment, functions and powers of Institute	5</p>
+      <p>4	Establishment of Institute	5</p>
+      <p>5	Functions of the Institute	5</p>
+      <p>6	Powers of Institute	7</p>
+      <p>7	Directions by Minister	8</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Board of the Institute	10</p>
+      <p>Subdivision A—Establishment and functions of the Board	10</p>
+      <p>8	Establishment of the Board	10</p>
+      <p>8A	Functions of the Board	10</p>
+      <p>Subdivision B—Membership of the Board	10</p>
+      <p>9	Membership	10</p>
+      <p>Subdivision C—Members of the Board	11</p>
+      <p>10	Application of this Subdivision	11</p>
+      <p>11	Appointment of members	11</p>
+      <p>11A	Term of appointment	12</p>
+      <p>11B	Acting appointments	12</p>
+      <p>12	Remuneration	13</p>
+      <p>12A	Leave of absence	13</p>
+      <p>12B	Outside employment	13</p>
+      <p>12C	Other terms and conditions	13</p>
+      <p>13	Resignation	13</p>
+      <p>13A	Termination of appointment	14</p>
+      <p>13B	Disclosure of interests	14</p>
+      <p>Subdivision D—Meetings of the Board	15</p>
+      <p>14	Convening of meetings	15</p>
+      <p>14A	Presiding at meetings	15</p>
+      <p>14B	Quorum	15</p>
+      <p>15	Voting at meetings	16</p>
+      <p>15A	Conduct of meetings	16</p>
+      <p>15B	Minutes	16</p>
+      <p>15C	Decisions without meetings	16</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Committees of Institute	18</p>
+      <p>16	Committees	18</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Chief Executive Officer of Institute	20</p>
+      <p>17	Chief Executive Officer	20</p>
+      <p>17A	Functions of <role refersTo="#ceo">the CEO</role>	20</p>
+      <p>17B	Appointment	20</p>
+      <p>17C	Term of appointment	21</p>
+      <p>17D	Acting appointments	21</p>
+      <p>18	Remuneration	21</p>
+      <p>18A	Leave of absence	21</p>
+      <p>18B	Outside employment	22</p>
+      <p>18C	Other terms and conditions	22</p>
+      <p>18D	Resignation	22</p>
+      <p>18E	Termination of appointment	22</p>
+      <p>18F	Certain decisions of the Board	23</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Staff	24</p>
+      <p>19	Staff	24</p>
+      <p><ref href="#part-III">Part III</ref>—Finance	25</p>
+      <p>20	Money to be appropriated by Parliament	25</p>
+      <p>22	Money of Institute	25</p>
+      <p>23	Contracts	25</p>
+      <p>24	Annual report	26</p>
+      <p>25	Trust money and trust property	26</p>
+      <p>26	Exemption from taxation	26</p>
+      <p><ref href="#part-IV">Part IV</ref>—Miscellaneous	27</p>
+      <p>27	Delegation by Institute	27</p>
+      <p>28	Delegation by <role refersTo="#ceo">the CEO</role>	27</p>
+      <p>29	Confidentiality	27</p>
+      <p>30	Restricted application of the <i>Epidemiological Studies (Confidentiality) Act 1981</i>	30</p>
+      <p>31	Periodical reports	31</p>
+      <p>32	Regulations	32</p>
+      <p>Endnotes	33</p>
+      <p>Endnote 1—About the endnotes	33</p>
+      <p>Endnote 2—Abbreviation key	35</p>
+      <p>Endnote 3—Legislation history	36</p>
+      <p>Endnote 4—Amendment history	39</p>
+      <p>Endnote 5—Editorial changes	42</p>
+      <p>An Act to establish an Australian Institute of Health and Welfare, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Institute of Health and Welfare Act 1987</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on a day to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2A">
+          <num>2A</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>This Act establishes the Australian Institute of Health and Welfare.</p>
+            <p>The main functions of the Institute are the following:</p>
+          </content>
+          <paragraph eId="part-I__sec-2A__para-a">
+            <num>a</num>
+            <content>
+              <p>to collect and produce information and statistics relating to health and welfare;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-2A__para-b">
+            <num>b</num>
+            <content>
+              <p>to coordinate and provide assistance for the collection and production of information and statistics relating to health and welfare by other bodies or persons;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-2A__para-c">
+            <num>c</num>
+            <content>
+              <p>to conduct and promote research into the health of the people of Australia and their health services;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-2A__para-d">
+            <num>d</num>
+            <content>
+              <p>to publish reports on work carried out by or in association with the Institute;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-2A__para-e">
+            <num>e</num>
+            <content>
+              <p>to make recommendations to <role refersTo="#minister">the Minister</role> on the prevention and treatment of diseases and the improvement and promotion of the health and health awareness of the people of Australia.</p>
+            </content>
+            <content>
+              <p>The Institute must perform its functions and exercise its powers in accordance with directions given by <role refersTo="#minister">the Minister</role>.</p>
+              <p>This Act also establishes the Board of the Institute. The Board’s main functions are to ensure the proper, efficient and effective performance of the Institute’s functions.</p>
+              <p>There is to be a Chief Executive Officer of the Institute. <role refersTo="#ceo">The CEO</role> is responsible for the day-to-day administration of the Institute.</p>
+              <p>There is to be an Australian Institute of Health and Welfare Ethics Committee. The Institute may appoint other committees to assist the Institute in performing its functions.</p>
+              <p>This Act also deals with miscellaneous matters, including delegations, confidentiality and the power to make regulations.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-board">Board</term> means <def>the Board of the Institute.</def></p>
+            <p><term refersTo="#term-ceo">CEO</term> means <def>the Chief Executive Officer of the Institute.</def></p>
+            <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Board.</def></p>
+            <p><term refersTo="#term-deputy-chair">Deputy Chair</term> means <def>the Deputy Chair of the Board.</def></p>
+            <p><term refersTo="#term-ethics-committee">Ethics Committee</term> means <def>the Australian Institute of Health and Welfare Ethics Committee.</def></p>
+            <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+            <p><term refersTo="#term-health-related-information-and-statistics">health-related information and statistics</term> means <def>information and statistics collected and produced from data relevant to health or health services.</def></p>
+            <p><term refersTo="#term-institute">Institute</term> means <def>the Australian Institute of Health and Welfare.</def></p>
+            <p><term refersTo="#term-member">member</term> means <def>a member of the Board, and includes the Chair and the Deputy Chair.</def></p>
+            <p><term refersTo="#term-paid-work">paid work</term> means <def>work for financial gain or reward (whether as an employee, a self-employed person or otherwise).</def></p>
+            <p><term refersTo="#term-production">production</term> means <def>compilation, analysis and dissemination.</def></p>
+            <p><b><i>State Health Minister</i></b> means:</p>
+          </content>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Crown for a State;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Australian Capital Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Northern Territory;</p>
+            </content>
+            <content>
+              <p>who is responsible, or principally responsible, for the administration of matters relating to health in the State, the Australian Capital Territory or the Northern Territory, as the case may be.</p>
+              <p><b><i>State Housing Minister</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Crown for a State; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Australian Capital Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Northern Territory;</p>
+            </content>
+            <content>
+              <p>who is responsible, or principally responsible, for the administration of matters relating to housing in the State or Territory, as the case may be.</p>
+              <p><b><i>State or Territory agency</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>a Department of a State or Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a body (whether incorporated or not) established for a public purpose by or under a law of a State or Territory.</p>
+            </content>
+            <content>
+              <p><b><i>State Welfare Minister</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Crown for a State; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Australian Capital Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> of the Northern Territory;</p>
+            </content>
+            <content>
+              <p>who is responsible, or principally responsible, for the administration of matters relating to welfare in the State or Territory, as the case may be.</p>
+              <p><term refersTo="#term-trust-money">trust money</term> means <def>money received or held by the Institute on trust.</def></p>
+              <p><term refersTo="#term-trust-property">trust property</term> means <def>property received or held by the Institute on trust.</def></p>
+              <p><term refersTo="#term-welfare-related-information-and-statistics">welfare-related information and statistics</term> means <def>information and statistics collected and produced from data relevant to the provision of welfare services.</def></p>
+              <p><b><i>welfare services</i></b> includes:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>aged care services; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>child care services (including services designed to encourage or support participation by parents in educational courses, training and the labour force); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>services for people with disabilities; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-d">
+            <num>d</num>
+            <content>
+              <p>housing assistance (including programs designed to provide access to secure housing in the long term and programs to provide access to crisis accommodation in the short term); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-e">
+            <num>e</num>
+            <content>
+              <p>child welfare services (including, in particular, child protection and substitute care services); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-f">
+            <num>f</num>
+            <content>
+              <p>other community services.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Australian Institute of Health and Welfare</heading>
+        <division eId="part-II__dvs-1">
+          <num>1</num>
+          <heading>Establishment, functions and powers of Institute</heading>
+          <section eId="part-II__dvs-1__sec-4">
+            <num>4</num>
+            <heading>Establishment of Institute</heading>
+            <subsection eId="part-II__dvs-1__sec-4__subsec-1">
+              <num>1</num>
+              <content>
+                <p>There is hereby established a body to be known as the Australian Institute of Health and Welfare.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-4__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Institute:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-4__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>is a body corporate with perpetual succession;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-4__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>shall have a common seal; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-4__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>may sue and be sued in its corporate name.</p>
+                </content>
+                <authorialNote placement="end" eId="note-1" marker="1">
+                  <content>
+                    <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Institute. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-4__subsec-3">
+              <num>3</num>
+              <content>
+                <p>All courts, judges and persons acting judicially shall take judicial notice of the imprint of the common seal of the Institute affixed to a document and shall presume that it was duly affixed.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-1__sec-5">
+            <num>5</num>
+            <heading>Functions of the Institute</heading>
+            <content>
+              <p>Institute to have health-related and welfare-related functions</p>
+              <p>(1AA)	The functions of the Institute are:</p>
+            </content>
+            <paragraph eId="part-II__dvs-1__sec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the health-related functions conferred by subsection (1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the welfare-related functions conferred by subsection (1A).</p>
+              </content>
+              <content>
+                <p>Health-related functions</p>
+              </content>
+            </paragraph>
+            <subsection eId="part-II__dvs-1__sec-5__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Institute’s health-related functions are:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to collect health-related information and statistics, in consultation with the Australian Bureau of Statistics if necessary, whether by the Institute itself or in association with other bodies or persons;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to produce health-related information and statistics, whether by itself or in association with other bodies or persons;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to co-ordinate the collection and production of health-related information and statistics by other bodies or persons;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>to provide assistance, including financial assistance, for the collection and production of health-related information and statistics by other bodies or persons;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>to develop methods and undertake studies designed to assess the provision, use, cost and effectiveness of health services and health technologies;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>to conduct and promote research into the health of the people of Australia and their health services;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>to develop, in consultation with the Australian Bureau of Statistics, specialised statistical standards and classifications relevant to health and health services, and advise the Bureau on the data to be used by it for the purposes of health-related statistics;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>subject to <ref href="#sec-29">section 29</ref>, to enable researchers to have access to health-related information and statistics held by the Institute or by bodies or persons with whom contracts or arrangements have been entered into by the Institute;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-j">
+                <num>j</num>
+                <content>
+                  <p>to publish methodological and substantive reports on work carried out by or in association with the Institute under this subsection;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>to make recommendations to <role refersTo="#minister">the Minister</role> on the prevention and treatment of diseases and the improvement and promotion of the health and health awareness of the people of Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-m">
+                <num>m</num>
+                <content>
+                  <p>to do anything incidental to any of the foregoing.</p>
+                </content>
+                <content>
+                  <p>Welfare-related functions</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-5__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>The Institute’s welfare-related functions are:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>to collect welfare-related information and statistics, in consultation with the Australian Bureau of Statistics if necessary, whether by the Institute itself or in association with other bodies or persons; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>to produce welfare-related information and statistics (whether by itself or in association with other bodies or persons); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-c">
+                <num>c</num>
+                <content>
+                  <p>to co-ordinate the collection and production of welfare-related information and statistics by other bodies or persons; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-d">
+                <num>d</num>
+                <content>
+                  <p>to provide assistance (including financial assistance) for the collection and production of welfare-related information and statistics by other bodies or persons; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-e">
+                <num>e</num>
+                <content>
+                  <p>to develop, in consultation with the Australian Bureau of Statistics, specialised statistical standards and classifications relevant to welfare services; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-f">
+                <num>f</num>
+                <content>
+                  <p>subject to <ref href="#sec-29">section 29</ref>, to enable researchers to have access to welfare-related information and statistics held by the Institute or by bodies or persons with whom contracts or arrangements have been entered into by the Institute; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-g">
+                <num>g</num>
+                <content>
+                  <p>to publish methodological and substantive reports on work carried out by or in association with the Institute under this subsection; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1A__para-h">
+                <num>h</num>
+                <content>
+                  <p>to do anything incidental to the functions conferred by paragraphs (a) to (g).</p>
+                </content>
+                <content>
+                  <p>Functions of Australian Bureau of Statistics not limited by this section</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-5__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section is not intended to limit the functions of the Australian Bureau of Statistics.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Powers of Institute</heading>
+            <content>
+              <p>The Institute has power to do all things necessary or convenient to be done for or in connection with the performance of its functions and, in particular, has power:</p>
+            </content>
+            <paragraph eId="part-II__dvs-1__sec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>to enter into contracts or arrangements, including contracts or arrangements with bodies or persons to perform functions on behalf of the Institute;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>to acquire, hold and dispose of real or personal property;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>to occupy, use and control any land or building owned or held under lease by the Commonwealth and made available for the purposes of the Institute;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-d">
+              <num>d</num>
+              <content>
+                <p>to appoint agents and attorneys and act as an agent for other persons;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-e">
+              <num>e</num>
+              <content>
+                <p>to accept gifts, grants, devises and bequests made to the Institute, whether on trust or otherwise, and to act as trustee of money or other property vested in the Institute on trust;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-f">
+              <num>f</num>
+              <content>
+                <p>subject to <ref href="#sec-29">section 29</ref>, to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>release data to other bodies or persons; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>publish the results of any of its work; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-1__sec-6__para-g">
+              <num>g</num>
+              <content>
+                <p>to do anything incidental to any of its powers.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-II__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Directions by Minister</heading>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by notifiable instrument, give a direction to the Institute with respect to the performance of its functions or the exercise of its powers.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must consult the Chair before giving any direction to the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1B">
+              <num>1B</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must consult each State Health Minister before giving the direction if the direction relates to the Institute’s health-related functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1C">
+              <num>1C</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must consult each State Welfare Minister before giving the direction if the direction:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-7__subsec-1C__para-a">
+                <num>a</num>
+                <content>
+                  <p>relates to the Institute’s welfare-related functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-7__subsec-1C__para-b">
+                <num>b</num>
+                <content>
+                  <p>does not concern housing matters.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1D">
+              <num>1D</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must consult each State Housing Minister before giving the direction if the direction:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-7__subsec-1D__para-a">
+                <num>a</num>
+                <content>
+                  <p>relates to the Institute’s welfare-related functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-7__subsec-1D__para-b">
+                <num>b</num>
+                <content>
+                  <p>concerns housing matters.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1E">
+              <num>1E</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must cause a copy of any direction given under subsection (1) to be delivered, in writing, to the Chair as soon as practicable.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1F">
+              <num>1F</num>
+              <content>
+                <p>A failure to comply with subsection (1E) does not affect the validity of the direction.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Institute shall comply with any direction given under subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section does not affect the application, in relation to the Institute, of <ref href="#sec-22">section 22</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the application of government policy to corporate Commonwealth entities).</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-II__dvs-2">
+          <num>2</num>
+          <heading>Board of the Institute</heading>
+          <content>
+            <p>Subdivision A—Establishment and functions of the Board</p>
+          </content>
+          <section eId="part-II__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Establishment of the Board</heading>
+            <content>
+              <p>The Board of the Institute is established by this section.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-8A">
+            <num>8A</num>
+            <heading>Functions of the Board</heading>
+            <subsection eId="part-II__dvs-2__sec-8A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The functions of the Board are:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-8A__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to ensure the proper, efficient and effective performance of the Institute’s functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-8A__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other functions conferred on the Board by this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-8A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Board has the power to do all things necessary or convenient to be done for or in connection with the performance of its functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-8A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Anything done in the name of, or on behalf of, the Institute by the Board, or with <role refersTo="#authority">the authority</role> of the Board, is taken to have been done by the Institute.</p>
+              </content>
+              <content>
+                <p>Subdivision B—Membership of the Board</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Membership</heading>
+            <content>
+              <p>The Board consists of the following members:</p>
+            </content>
+            <paragraph eId="part-II__dvs-2__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chair;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-2__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>the Deputy Chair;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-2__sec-9__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-2__sec-9__para-d">
+              <num>d</num>
+              <content>
+                <p>not more than 3 members nominated by State Health Ministers;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-2__sec-9__para-e">
+              <num>e</num>
+              <content>
+                <p>not more than 6 other members.</p>
+              </content>
+              <content>
+                <p>Subdivision C—Members of the Board</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-II__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Application of this Subdivision</heading>
+            <content>
+              <p>This Subdivision applies to members other than <role refersTo="#ceo">the CEO</role>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	<ref href="#dvs-4">Division 4</ref> deals with the office of <role refersTo="#ceo">the CEO</role>.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-II__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Appointment of members</heading>
+            <content>
+              <p>Members</p>
+            </content>
+            <subsection eId="part-II__dvs-2__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member is to be appointed by <role refersTo="#minister">the Minister</role> by written instrument, on a part-time basis.</p>
+              </content>
+              <content>
+                <p>Chair and Deputy Chair</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must appoint one member to be the Chair and another member to be the Deputy Chair.</p>
+              </content>
+              <content>
+                <p>Eligibility for appointment</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person is not eligible for appointment as a member unless <role refersTo="#minister">the Minister</role> is satisfied that the person has appropriate skills or experience, or significant standing, in one or more of the following fields:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>public administration in relation to health, welfare or housing;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>education;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>Aboriginal and Torres Strait Islander health and welfare;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-d">
+                <num>d</num>
+                <content>
+                  <p>data and data standards;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-e">
+                <num>e</num>
+                <content>
+                  <p>statistics and statistical methods;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-f">
+                <num>f</num>
+                <content>
+                  <p>performance measurement and reporting;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-g">
+                <num>g</num>
+                <content>
+                  <p>financial management;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-h">
+                <num>h</num>
+                <content>
+                  <p>corporate management;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>consumer interests;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11__subsec-3__para-j">
+                <num>j</num>
+                <content>
+                  <p>law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-11A">
+            <num>11A</num>
+            <heading>Term of appointment</heading>
+            <content>
+              <p>A member holds office for the period specified in the instrument of appointment. The period must not exceed 5 years.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	A member may be reappointed: see <ref href="#sec-33A">section 33A</ref>A of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-II__dvs-2__sec-11B">
+            <num>11B</num>
+            <heading>Acting appointments</heading>
+            <subsection eId="part-II__dvs-2__sec-11B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Deputy Chair is to act as the Chair:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in the office of Chair (whether or not an appointment has previously been made to the office); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when the Chair:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>is absent from duty or from Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-11B__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by written instrument, appoint a member to act as the Deputy Chair:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in the office of Deputy Chair (whether or not an appointment has previously been made to the office); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when the Deputy Chair:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>is absent from duty or from Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-11B__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by written instrument, appoint a person to act as a member (other than the Chair or the Deputy Chair):</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in the office of a member (whether or not an appointment has previously been made to the office); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when a member:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>is absent from duty or from Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-11B__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+                <authorialNote placement="end" eId="note-4" marker="4">
+                  <content>
+                    <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Remuneration</heading>
+            <subsection eId="part-II__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, the member is to be paid the remuneration that is prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A member is to be paid the allowances that are prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-12A">
+            <num>12A</num>
+            <heading>Leave of absence</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may grant a member leave of absence on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-12B">
+            <num>12B</num>
+            <heading>Outside employment</heading>
+            <subsection eId="part-II__dvs-2__sec-12B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member must not engage in any paid work that conflicts or could conflict with the proper performance of the member’s duties.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-12B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply to a member who is an official of a State or Territory agency.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-12C">
+            <num>12C</num>
+            <heading>Other terms and conditions</heading>
+            <content>
+              <p>A member holds office on the terms and conditions (if any) in relation to matters not covered by this Act that are determined by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Resignation</heading>
+            <subsection eId="part-II__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member may resign the member’s appointment by giving <role refersTo="#minister">the Minister</role> a written resignation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The resignation takes effect on the day it is received by <role refersTo="#minister">the Minister</role> or, if a later day is specified in the resignation, on that later day.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-13A">
+            <num>13A</num>
+            <heading>Termination of appointment</heading>
+            <subsection eId="part-II__dvs-2__sec-13A__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may terminate the appointment of a member:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>for misbehaviour; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the member is unable to perform the duties of the member’s office because of physical or mental incapacity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-13A__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may terminate the appointment of the member if:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the member:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>becomes bankrupt; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>applies to take the benefit of any law for the relief of bankrupt or insolvent debtors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>compounds with the member’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>makes an assignment of the member’s remuneration for the benefit of the member’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the member is absent, except on leave of absence, from 3 consecutive meetings of the Board; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-13A__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the member engages in paid work that conflicts or could conflict with the proper performance of the member’s duties (see <ref href="#sec-12B">section 12B</ref>).</p>
+                </content>
+                <authorialNote placement="end" eId="note-5" marker="5">
+                  <content>
+                    <p>Note:	The appointment of a member may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-13B">
+            <num>13B</num>
+            <heading>Disclosure of interests</heading>
+            <content>
+              <p>		Neither <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests), nor any rules made for the purposes of that section, apply to a member’s interest if:</p>
+            </content>
+            <paragraph eId="part-II__dvs-2__sec-13B__para-a">
+              <num>a</num>
+              <content>
+                <p>the member is an official of a State or Territory agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-2__sec-13B__para-b">
+              <num>b</num>
+              <content>
+                <p>the member only has the interest by reason of being an official of the State or Territory agency.</p>
+              </content>
+              <content>
+                <p>Subdivision D—Meetings of the Board</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-II__dvs-2__sec-14">
+            <num>14</num>
+            <heading>Convening of meetings</heading>
+            <subsection eId="part-II__dvs-2__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Board must meet at least once every 4 months.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Chair:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-14__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>may convene a meeting at any time; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-14__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>must convene a meeting on receipt of a written request signed by at least 3 members.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may convene such meetings of the Board as <role refersTo="#minister">the Minister</role> considers necessary.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-14A">
+            <num>14A</num>
+            <heading>Presiding at meetings</heading>
+            <subsection eId="part-II__dvs-2__sec-14A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chair must preside at all meetings of the Board at which the Chair is present.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-14A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If the Chair is not present at a meeting of the Board, the Deputy Chair must preside.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-14B">
+            <num>14B</num>
+            <heading>Quorum</heading>
+            <subsection eId="part-II__dvs-2__sec-14B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At a meeting of the Board, a quorum is constituted by a majority of members, which must include the Chair or the Deputy Chair.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-14B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, if:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-14B__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a member is required by rules made for the purposes of <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> not to be present during deliberations, or to take part in any decision, of the Board with respect to a particular matter; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-14B__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>when the member leaves the meeting concerned there is no longer a quorum present;</p>
+                </content>
+                <content>
+                  <p>the remaining members at the meeting constitute a quorum for the purpose of any deliberation or decision at that meeting with respect to that matter.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Voting at meetings</heading>
+            <subsection eId="part-II__dvs-2__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A question arising at a meeting of the Board is to be determined by a majority of the votes of the members present and voting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The person presiding at a meeting of the Board has a deliberative vote and, if the votes are equal, a casting vote.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-2__sec-15A">
+            <num>15A</num>
+            <heading>Conduct of meetings</heading>
+            <content>
+              <p>		Subject to this Act and the <i>Public Governance, Performance and Accountability Act 2013</i>, the Board may regulate the procedure of its meetings as it considers appropriate.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	Section 33B of the <i>Acts Interpretation Act 1901</i> contains further information about the ways in which members may participate in meetings.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-II__dvs-2__sec-15B">
+            <num>15B</num>
+            <heading>Minutes</heading>
+            <content>
+              <p>The Board must keep minutes of its meetings.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-15C">
+            <num>15C</num>
+            <heading>Decisions without meetings</heading>
+            <subsection eId="part-II__dvs-2__sec-15C__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Board is taken to have made a decision at a meeting if:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-15C__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>without meeting, a majority of the members entitled to vote on the proposed decision indicate agreement with the decision; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-15C__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>that agreement is indicated in accordance with the method determined by the Board under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-15C__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>all the members were informed of the proposed decision, or reasonable efforts were made to inform all the members of the proposed decision.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-15C__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) applies only if the Board:</p>
+              </content>
+              <paragraph eId="part-II__dvs-2__sec-15C__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>has determined that it may make decisions of that kind without meeting; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-2__sec-15C__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>has determined the method by which members are to indicate agreement with proposed decisions.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-15C__subsec-3">
+              <num>3</num>
+              <content>
+                <p>For the purposes of paragraph (1)(a), a member is not entitled to vote on a proposed decision if the member would not have been entitled to vote on that proposal if the matter had been considered at a meeting of the Board.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-2__sec-15C__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Board must keep a record of decisions made in accordance with this section.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-II__dvs-3">
+          <num>3</num>
+          <heading>Committees of Institute</heading>
+          <section eId="part-II__dvs-3__sec-16">
+            <num>16</num>
+            <heading>Committees</heading>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Institute shall appoint a committee to be known as the Australian Institute of Health and Welfare Ethics Committee.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The functions and composition of the Ethics Committee shall be as prescribed.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Regulations for the purpose of subsection (2) must not be inconsistent with recommendations of <role refersTo="#ceo">the CEO</role> of the National Health and Medical Research Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Institute may appoint such other committees as it thinks fit to assist it in performing its functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The functions and composition of a committee appointed under subsection (4) shall be as determined from time to time in writing by the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The succeeding subsections of this section apply in relation to a committee appointed under subsection (1) or (4).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The members of a committee may include members of the Board.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-8">
+              <num>8</num>
+              <content>
+                <p>A member of a committee holds office for such period as is specified in the instrument of appointment.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-9">
+              <num>9</num>
+              <content>
+                <p>A member of a committee may resign by instrument in writing delivered to the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-10">
+              <num>10</num>
+              <content>
+                <p>Except where <role refersTo="#minister">the Minister</role> otherwise directs in writing, a member of a committee shall be paid such remuneration as is determined by the Remuneration Tribunal.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-11">
+              <num>11</num>
+              <content>
+                <p>A member of a committee (other than a member of the Board) shall be paid such allowances as are prescribed.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-12">
+              <num>12</num>
+              <content>
+                <p>	(12)	Subsections (9) and (10) have effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-13">
+              <num>13</num>
+              <content>
+                <p>A member of a committee must disclose at a meeting of the committee any pecuniary or other interest:</p>
+              </content>
+              <paragraph eId="part-II__dvs-3__sec-16__subsec-13__para-a">
+                <num>a</num>
+                <content>
+                  <p>that the member has directly or indirectly in a matter being considered, or about to be considered by the committee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-3__sec-16__subsec-13__para-b">
+                <num>b</num>
+                <content>
+                  <p>that would conflict with the proper performance of the member’s functions in relation to the consideration of the matter.</p>
+                </content>
+                <content>
+                  <p>The member must make the disclosure as soon as practicable after he or she knows of the relevant facts.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-14">
+              <num>14</num>
+              <content>
+                <p>The disclosure must be recorded in the minutes of the meeting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-3__sec-16__subsec-15">
+              <num>15</num>
+              <content>
+                <p>Subsection (13) does not apply to an interest held by a member of the Board who is an official of a State or Territory agency, merely because the member is an official of the State or Territory agency.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-II__dvs-4">
+          <num>4</num>
+          <heading>Chief Executive Officer of Institute</heading>
+          <section eId="part-II__dvs-4__sec-17">
+            <num>17</num>
+            <heading>Chief Executive Officer</heading>
+            <content>
+              <p>There is to be a Chief Executive Officer of the Institute.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-4__sec-17A">
+            <num>17A</num>
+            <heading>Functions of the CEO</heading>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> is responsible for the day-to-day administration of the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> has power to do all things necessary or convenient to be done for or in connection with the performance of <role refersTo="#ceo">the CEO</role>’s duties.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>All acts and things done in the name of, or on behalf of, the Institute by <role refersTo="#ceo">the CEO</role> shall be deemed to have been done by the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> is to act in accordance with policies and strategies determined by the Board.</p>
+              </content>
+              <content>
+                <p>Board directions</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The Board may give written directions to <role refersTo="#ceo">the CEO</role> about the performance of <role refersTo="#ceo">the CEO</role>’s functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> must comply with a direction under subsection (5).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-17A__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A direction under subsection (5) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-4__sec-17B">
+            <num>17B</num>
+            <heading>Appointment</heading>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> is to be appointed by the Board by written instrument.</p>
+            </content>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	The CEO may be reappointed: see <ref href="#sec-33A">section 33A</ref>A of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-II__dvs-4__sec-17C">
+            <num>17C</num>
+            <heading>Term of appointment</heading>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> holds office on a full-time basis for the period specified in the instrument of appointment. The period must not exceed 5 years.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-4__sec-17D">
+            <num>17D</num>
+            <heading>Acting appointments</heading>
+            <content>
+              <p>The Board may, by written instrument, appoint a person to act as <role refersTo="#ceo">the CEO</role>:</p>
+            </content>
+            <paragraph eId="part-II__dvs-4__sec-17D__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of CEO (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-4__sec-17D__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when <role refersTo="#ceo">the CEO</role>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-4__sec-17D__para-i">
+              <num>i</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__dvs-4__sec-17D__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-II__dvs-4__sec-18">
+            <num>18</num>
+            <heading>Remuneration</heading>
+            <subsection eId="part-II__dvs-4__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, <role refersTo="#ceo">the CEO</role> is to be paid the remuneration that is prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> is to be paid the allowances that are prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-4__sec-18A">
+            <num>18A</num>
+            <heading>Leave of absence</heading>
+            <subsection eId="part-II__dvs-4__sec-18A__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> has the recreation leave entitlements that are determined by the Remuneration Tribunal.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-18A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Board may grant <role refersTo="#ceo">the CEO</role> leave of absence, other than recreation leave, on the terms and conditions as to remuneration or otherwise that the Board determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-4__sec-18B">
+            <num>18B</num>
+            <heading>Outside employment</heading>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> must not engage in paid work outside the duties of <role refersTo="#ceo">the CEO</role>’s office without the Board’s approval.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-4__sec-18C">
+            <num>18C</num>
+            <heading>Other terms and conditions</heading>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> holds office on the terms and conditions (if any) in relation to matters not covered by this Act that are determined by the Board.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-4__sec-18D">
+            <num>18D</num>
+            <heading>Resignation</heading>
+            <subsection eId="part-II__dvs-4__sec-18D__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#ceo">The CEO</role> may resign <role refersTo="#ceo">the CEO</role>’s appointment by giving the Board a written resignation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-18D__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The resignation takes effect on the day it is received by the Board or, if a later day is specified in the resignation, on that later day.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-4__sec-18E">
+            <num>18E</num>
+            <heading>Termination of appointment</heading>
+            <subsection eId="part-II__dvs-4__sec-18E__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Board may terminate the appointment of <role refersTo="#ceo">the CEO</role>:</p>
+              </content>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>for misbehaviour; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>if <role refersTo="#ceo">the CEO</role> is unable to perform the duties of <role refersTo="#ceo">the CEO</role>’s office because of physical or mental incapacity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-4__sec-18E__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Board may terminate the appointment of <role refersTo="#ceo">the CEO</role> if:</p>
+              </content>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#ceo">the CEO</role>:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>becomes bankrupt; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>applies to take the benefit of any law for the relief of bankrupt or insolvent debtors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>compounds with <role refersTo="#ceo">the CEO</role>’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>makes an assignment of <role refersTo="#ceo">the CEO</role>’s remuneration for the benefit of <role refersTo="#ceo">the CEO</role>’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#ceo">the CEO</role> is absent, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-4__sec-18E__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p><role refersTo="#ceo">the CEO</role> engages, except with the Board’s approval, in paid work outside the duties of <role refersTo="#ceo">the CEO</role>’s office (see <ref href="#sec-18B">section 18B</ref>).</p>
+                </content>
+                <authorialNote placement="end" eId="note-9" marker="9">
+                  <content>
+                    <p>Note:	The appointment of the CEO may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-4__sec-18F">
+            <num>18F</num>
+            <heading>Certain decisions of the Board</heading>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> must not be present during any deliberation, or take part in any decision, of the Board under this Division.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-II__dvs-5">
+          <num>5</num>
+          <heading>Staff</heading>
+          <section eId="part-II__dvs-5__sec-19">
+            <num>19</num>
+            <heading>Staff</heading>
+            <subsection eId="part-II__dvs-5__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The staff required for the purposes of this Act shall be:</p>
+              </content>
+              <paragraph eId="part-II__dvs-5__sec-19__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	persons engaged under the <i>Public Service Act 1999</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-5__sec-19__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>persons appointed or employed by the Institute.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-5__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+              </content>
+              <paragraph eId="part-II__dvs-5__sec-19__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#ceo">the CEO</role> and the APS employees assisting <role refersTo="#ceo">the CEO</role> together constitute a Statutory Agency; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-5__sec-19__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#ceo">the CEO</role> is the Head of that Statutory Agency.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-5__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Institute may engage as advisers or consultants persons having suitable qualifications and experience.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-5__sec-19__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The terms and conditions of appointment or employment of members of the staff referred to in paragraph (1)(b) are such as are determined by the Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-II__dvs-5__sec-19__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The terms and conditions of engagement of advisers or consultants are such as are determined by the Institute.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Finance</heading>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Money to be appropriated by Parliament</heading>
+          <subsection eId="part-III__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is payable to the Institute such money as is appropriated by the Parliament for the purposes of the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may give directions as to the means in which, and the times at which, money referred to in subsection (1) is to be paid to the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Money of Institute</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The money of the Institute consists of:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>money paid to the Institute under an appropriation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any other money, other than trust money, paid to the Institute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The money of the Institute shall be applied only:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the expenses, charges, obligations and liabilities incurred or undertaken by the Institute in the performance of its functions and the exercise of its powers;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of remuneration and allowances payable under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>in making any other payments required or permitted to be made by the Institute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Subsection (2) does not prevent investment, under <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, of money that is not immediately required for the purposes of the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-23">
+          <num>23</num>
+          <heading>Contracts</heading>
+          <content>
+            <p>The Institute must not enter into a lease of land for a period of 10 years or more without the written approval of <role refersTo="#minister">the Minister</role>.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-24">
+          <num>24</num>
+          <heading>Annual report</heading>
+          <content>
+            <p>		The annual report prepared by the members and given to the Minister under <ref href="#sec-46">section 46</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> for a period must include:</p>
+          </content>
+          <paragraph eId="part-III__sec-24__para-a">
+            <num>a</num>
+            <content>
+              <p>particulars of each direction given under subsection 7(1) that is applicable to the period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-24__para-b">
+            <num>b</num>
+            <content>
+              <p>if the Board considers those particulars contain information concerning a person or are of a confidential nature—a statement that a direction under that subsection was given.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-25">
+          <num>25</num>
+          <heading>Trust money and trust property</heading>
+          <content>
+            <p>The Institute:</p>
+          </content>
+          <paragraph eId="part-III__sec-25__para-a">
+            <num>a</num>
+            <content>
+              <p>shall pay trust money into an account or accounts containing no money other than trust money;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-25__para-b">
+            <num>b</num>
+            <content>
+              <p>shall apply or deal with trust money and trust property only in accordance with the powers and duties of the Institute as trustee; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-25__para-c">
+            <num>c</num>
+            <content>
+              <p>may only invest trust money:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-25__para-i">
+            <num>i</num>
+            <content>
+              <p>in any manner in which the Institute is authorised to invest the money by the terms of the trust; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-25__para-ii">
+            <num>ii</num>
+            <content>
+              <p>in any manner in which trust money may be lawfully invested.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-III__sec-26">
+          <num>26</num>
+          <heading>Exemption from taxation</heading>
+          <content>
+            <p>The income, property and transactions of the Institute are not subject to taxation under any law of the Commonwealth or of a State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Delegation by Institute</heading>
+          <subsection eId="part-IV__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Institute may, either generally or as otherwise provided by the instrument of delegation, by writing under its common seal:</p>
+            </content>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>delegate to a member;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>delegate to a member of the staff of the Institute; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>with the approval of <role refersTo="#minister">the Minister</role>—delegate to any other person or body;</p>
+              </content>
+              <content>
+                <p>all or any of the Institute’s powers or functions under this Act, other than this power of delegation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power or function so delegated, when exercised or performed by the delegate, shall, for the purposes of this Act, be deemed to have been exercised or performed by the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegation does not prevent the exercise of a power or performance of a function by the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Delegation by the CEO</heading>
+          <subsection eId="part-IV__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> may, in writing, delegate all or any of <role refersTo="#ceo">the CEO</role>’s functions or powers under this Act to:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a member of the staff of the Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>with the written approval of the Board—any other person or body.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In performing a delegated function or exercising a delegated power, the delegate must comply with any written directions of <role refersTo="#ceo">the CEO</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Confidentiality</heading>
+          <subsection eId="part-IV__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to this section, a person (in this subsection called the <b><i>informed person</i></b>) who has:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	any information concerning another person (which person is in this section called an <b><i>information subject</i></b>), being information acquired by the informed person because of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>holding an office, engagement or appointment, or being employed, under this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>performing a duty or function, or exercising a power, under or in connection with this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>doing any act or thing under an agreement or arrangement entered into by the Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	any document relating to another person (which person is in this section also called an <b><i>information subject</i></b>), being a document furnished for the purposes of this Act;</p>
+              </content>
+              <content>
+                <p>shall not, except for the purposes of this Act, either directly or indirectly:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>make a record of any of that information or divulge or communicate any of that information to any person (including an information subject);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>produce that document to any person (including an information subject); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>be required to divulge or communicate any of that information to a court or to produce that document in a court.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsections (2A) and (2B), nothing in this section prohibits:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a person from divulging or communicating information, or producing a document, to <role refersTo="#minister">the Minister</role> if it does not identify an information subject;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a person from divulging or communicating information, or producing a document, to a person specified in writing by the person (in this subsection called the <b><i>information provider</i></b>) who divulged or communicated the information, or produced the document, directly to the Institute;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>a person from divulging or communicating information, or producing a document, to a person specified in writing by the Ethics Committee if to do so is not contrary to the written terms and conditions (if any) upon which the information provider divulged or communicated the information, or produced the document, directly to the Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the publication of conclusions based on statistics derived from, or of particulars of procedures used in, the work of the Institute, if:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>to do so is not contrary to the written terms and conditions (if any) upon which an information provider divulged or communicated information relevant to the publication, or produced a document relevant to the publication, directly to the Institute; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the publication does not identify the information subject.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>Paragraph (2)(c) applies only to information that is health-related or welfare-related information and statistics.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2B">
+            <num>2B</num>
+            <content>
+              <p>Paragraph (2)(c) applies to a document only to the extent to which the document contains health-related or welfare-related information and statistics.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person to whom information is divulged or communicated, or a document is produced, under paragraph (2)(a), (b) or (c), and any person under the control of that person is, in respect of that information or document, subject to subsection (1) as if the person were a person exercising powers, or performing duties or functions, under this Act and had acquired the information or document in the exercise of those powers or the performance of those duties or functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	<b><i>court</i></b> includes any tribunal, authority or person having power to require the production of documents or the answering of questions;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<b><i>person</i></b> includes a body or association of persons, whether incorporated or not, and also includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>in the case of an information provider—a body politic; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in the case of an information subject—a deceased person;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<b><i>produce</i></b> includes permit access to;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	<b><i>publication</i></b>, in relation to conclusions, statistics or particulars, includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>the divulging or communication to a court of the conclusions, statistics or particulars; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the production to a court of a document containing the conclusions, statistics or particulars; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p>a reference to information concerning a person includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>a reference to information as to the whereabouts, existence or non-existence of a document concerning a person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a reference to information identifying a person or body providing information concerning a person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-30">
+          <num>30</num>
+          <heading>Restricted application of the Epidemiological Studies (Confidentiality) Act 1981</heading>
+          <subsection eId="part-IV__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The <i>Epidemiological Studies (Confidentiality) Act 1981</i> (in this section called the <b><i>Confidentiality Act</i></b>) does not apply to anything done in the exercise of a power or performance of a function under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Notwithstanding the Confidentiality Act, a person who has assisted, or is assisting in, the conduct of a prescribed study or an epidemiological study may, at the written request of the Institute:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>communicate to the Institute any information acquired by the person because of having assisted, or assisting, in the conduct of that study; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>give the Institute access to documents prepared or obtained in the conduct of that study.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-3">
+            <num>3</num>
+            <content>
+              <p>It is a defence to a prosecution under the Confidentiality Act if it is established that the information was communicated or access to a document was given, as the case may be, in accordance with a written request by the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	<b><i>epidemiological study</i></b> has the same meaning as in the Confidentiality Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<b><i>prescribed study</i></b> has the same meaning as in the Confidentiality Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-31">
+          <num>31</num>
+          <heading>Periodical reports</heading>
+          <subsection eId="part-IV__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Institute shall prepare and, as soon as practicable, and in any event <quantity refersTo="#deadline">within 6 months</quantity>:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>after <date date="1987-12-31">31 December 1987</date>—shall submit to the Minister a health report for the period commencing on the commencement of this Act and ending on that date; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>after <date date="1989-12-31">31 December 1989</date> and every second 31 December thereafter—shall submit to the Minister a health report for the 2 year period ending on that 31 December.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>The Institute must submit to <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>as soon as practicable after (and in any event <quantity refersTo="#deadline">within 6 months</quantity> of) 30 June 1993, a welfare report prepared by the Institute for the period:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	beginning on the day on which the <i>Australian </i><i>Institute</i><i> of </i><i>Health Amendment Act</i><i> 1992</i> commences; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>ending on <date date="1993-06-30">30 June 1993</date>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>as soon as practicable after (and in any event <quantity refersTo="#deadline">within 6 months</quantity> of) 30 June 1995 and every second 30 June thereafter, a welfare report for the 2 year period ending on that 30 June.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Institute may at any time submit to <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a health or welfare report for any period; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a report in respect of any matter relating to the exercise of the powers, or the performance of the functions, of the Institute or its committees under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A health report shall provide:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>statistics and related information concerning the health of the people of Australia; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>an outline of the development of health-related information and statistics by the Institute, whether by itself or in association with other persons or bodies;</p>
+              </content>
+              <content>
+                <p>during the period to which the report relates.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>A welfare report must provide:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-3A__para-a">
+              <num>a</num>
+              <content>
+                <p>statistics and related information concerning the provision of welfare services to the Australian people; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-3A__para-b">
+              <num>b</num>
+              <content>
+                <p>an outline of the development of welfare-related information and statistics by the Institute, whether by itself or in association with other persons or bodies;</p>
+              </content>
+              <content>
+                <p>during the period to which the report relates.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall cause a copy of a report submitted under subsection (1) or (1A) to be laid before each House of the Parliament within 15 sitting days of that House after the day on which <role refersTo="#minister">the Minister</role> receives the report.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-5">
+            <num>5</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may cause a copy of a report submitted under subsection (2) to be laid before each House of the Parliament.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-32">
+          <num>32</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing matters required or permitted by this Act to be prescribed.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Australian Institute of Health Act 1987</td>
+              <td>41, 1987</td>
+              <td>5 June 1987</td>
+              <td>1 July 1987 (s 2 and gaz 1987, No S144)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Community Services and Health Legislation Amendment Act 1988</td>
+              <td>79, 1988</td>
+              <td>24 June 1988</td>
+              <td>s 8 and 9: 24 June 1988 (s 2(1))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Community Services and Health Legislation Amendment Act 1989</td>
+              <td>95, 1989</td>
+              <td>28 June 1989</td>
+              <td>s 4–6: 28 June 1989 (s 2(1))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Industrial Relations Legislation Amendment Act 1991</td>
+              <td>122, 1991</td>
+              <td>27 June 1991</td>
+              <td>s 31(2) and Sch: 10 Dec 1991 (s 2(3) and gaz 1991, No S332)</td>
+              <td>s 31(2)</td>
+            </tr>
+            <tr>
+              <td>Prime Minister and Cabinet Legislation Amendment Act 1991</td>
+              <td>199, 1991</td>
+              <td>18 Dec 1991</td>
+              <td>Sch 2: 18 Dec 1991 (s 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Australian Institute of Health Amendment Act 1992</td>
+              <td>16, 1992</td>
+              <td>6 Apr 1992</td>
+              <td>4 May 1992</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+              <td>152, 1997</td>
+              <td>24 Oct 1997</td>
+              <td>Sch 2 (items 324–337): 1 Jan 1998 (s 2(2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+              <td>146, 1999</td>
+              <td>11 Nov 1999</td>
+              <td>Sch 1 (items 195–197): 5 Dec 1999 (s 2(1), (2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Corporate Law Economic Reform Program Act 1999</td>
+              <td>156, 1999</td>
+              <td>24 Nov 1999</td>
+              <td>Sch 10 (items 35–37): 13 Mar 2000 (s 2(2)(c) and gaz 2000, No S114)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Health Legislation Amendment Act (No. 2) 2001</td>
+              <td>59, 2001</td>
+              <td>28 June 2001</td>
+              <td>Sch 1: 28 June 2001 (s 2(1))</td>
+              <td>Sch 1 (items 4, 9)</td>
+            </tr>
+            <tr>
+              <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+              <td>159, 2001</td>
+              <td>1 Oct 2001</td>
+              <td>Sch 1 (items 16, 97): 29 Oct 2001 (s 2(1))</td>
+              <td>Sch 1 (item 97)</td>
+            </tr>
+            <tr>
+              <td>National Health and Medical Research Council Amendment Act 2006</td>
+              <td>50, 2006</td>
+              <td>9 June 2006</td>
+              <td>Sch 1 (items 110, 124–143): 1 July 2006 (s 2(1) items 2, 4)</td>
+              <td>Sch 1 (items 124–143)</td>
+            </tr>
+            <tr>
+              <td>Tax Laws Amendment (Repeal of Inoperative Provisions) Act 2006</td>
+              <td>101, 2006</td>
+              <td>14 Sept 2006</td>
+              <td>Sch 5 (item 22) and Sch 6 (items 5–11): 14 Sept 2006 (s 2(1) item 4)</td>
+              <td>Sch 6 (items 5–11)</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act 2011</td>
+              <td>5, 2011</td>
+              <td>22 Mar 2011</td>
+              <td>Sch 5 (items 28, 29) and Sch 7 (item 21): 19 Apr 2011 (s 2(1) items 13, 18)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts Interpretation Amendment Act 2011</td>
+              <td>46, 2011</td>
+              <td>27 June 2011</td>
+              <td>Sch 2 (items 174–178) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 3, 12)</td>
+              <td>Sch 3 (items 10, 11)</td>
+            </tr>
+            <tr>
+              <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+              <td>62, 2014</td>
+              <td>30 June 2014</td>
+              <td>Sch 7 (items 273–283) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+              <td>Sch 14</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+              <td>36, 2015</td>
+              <td>13 Apr 2015</td>
+              <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+              <td>Sch 7</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Statute Update Act 2016</td>
+              <td>61, 2016</td>
+              <td>23 Sept 2016</td>
+              <td>Sch 1 (item 50): 21 Oct 2016 (s 2(1) item 1)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Australian Institute of Health and Welfare Amendment Act 2018</td>
+              <td>105, 2018</td>
+              <td>21 Sept 2018</td>
+              <td>27 Nov 2018 (s 2(1) item 1)</td>
+              <td>Sch 1 (items 26–31)</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td>Part I</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 1</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td>s 2A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 3</td>
+              <td>am No 95, 1989; No 16, 1992; No 152, 1997; No 59, 2001; No 5, 2011; No 62, 2014; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Part II</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Part II heading</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td>Division 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 4</td>
+              <td>am No 16, 1992; No 152, 1997; No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 5</td>
+              <td>am No 16, 1992; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ed C13</td>
+            </tr>
+            <tr>
+              <td>s 7</td>
+              <td>am No 95, 1989; No 16, 1992; No 152, 1997; No 62, 2014; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Division 2</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Division 2</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Subdivision A</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 8</td>
+              <td>am No 16, 1992; No 59, 2001; No 159, 2001; No 5, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 8A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Subdivision B</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 9</td>
+              <td>am No 46, 2011</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Subdivision C</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 10</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 11</td>
+              <td>rs No 122, 1991</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 146, 1999</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 11A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 11B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 12</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 12A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 12B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 12C</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 13</td>
+              <td>am No 122, 1991; No 16, 1992; No 152, 1997; No 156, 1999; No 62, 2014</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 13A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 13B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Subdivision D</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 14</td>
+              <td>am No 79, 1988; No 16, 1992; No 152, 1997; No 156, 1999</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 62, 2014; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 14A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 14B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 15</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 15A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 15B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 15C</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Division 3</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 16</td>
+              <td>am No 16, 1992; No 152, 1997; No 59, 2001; No 50, 2006; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Division 4</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Division 4</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 17</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 17A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 17B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 17C</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 17D</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18A</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18B</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18C</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18D</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18E</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 18F</td>
+              <td>ad No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Division 5</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 19</td>
+              <td>am No 199, 1991; No 146, 1999; No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>Part III</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 20</td>
+              <td>am No 5, 2011</td>
+            </tr>
+            <tr>
+              <td>s 21</td>
+              <td>rep No 152, 1997</td>
+            </tr>
+            <tr>
+              <td>s 22</td>
+              <td>am No 152, 1997; No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 23</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 24</td>
+              <td>am No 79, 1988; No 152, 1997</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 62, 2014</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>am No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 25</td>
+              <td>am No 152, 1997; No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 26</td>
+              <td>am No 101, 2006</td>
+            </tr>
+            <tr>
+              <td>Part IV</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>s 28</td>
+              <td>rs No 105, 2018</td>
+            </tr>
+            <tr>
+              <td>s 29</td>
+              <td>am No 95, 1989; No 16, 1992; No 59, 2001; No 61, 2016</td>
+            </tr>
+            <tr>
+              <td>s 31</td>
+              <td>am No 16, 1992</td>
+            </tr>
+            <tr>
+              <td>Schedule</td>
+              <td>ad No 16, 1992</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 59, 2001</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 5—Editorial changes</p>
+            <p>In preparing this compilation for registration, the following kinds of editorial change(s) were made under the <i>Legislation Act 2003</i>.</p>
+            <p><b>Subsections</b><b> </b><b>5(1AA), (1), (1A) and (3) (headings)</b></p>
+            <p><b>Kind of editorial change</b></p>
+            <p>Changes to punctuation</p>
+            <p><b>Details of editorial change</b></p>
+            <p>This compilation was editorially changed to omit the square brackets around the subsection headings in subsections 5(1AA), (1), (1A) and (3) to bring it into line with legislative drafting practice.</p>
+          </content>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

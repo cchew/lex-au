@@ -1,0 +1,2229 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2016/65/!main"/>
+          <FRBRuri value="/akn/au/act/2016/65"/>
+          <FRBRdate date="2016-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="65"/>
+          <FRBRname value="national-cancer-screening-register-act-2016"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2016/65/eng@2026-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/2016/65/eng@2026-07-01"/>
+          <FRBRdate date="2026-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2016/65/eng@2026-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2016/65/eng@2026-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2016-01-01" type="generation" eId="evt-creation" source="#national-cancer-screening-register-act-2016"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2017/59" date="2017-06-22"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2019/42" date="2019-04-05"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2021/13" date="2021-03-01"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2024/29" date="2024-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2025/17" date="2026-02-20"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="information-commissioner" href="/ontology/roles/au/information-commissioner" showAs="Information Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-approved-form" href="/ontology/term/au/term-approved-form" showAs="approved form"/>
+        <TLCTerm eId="term-child-protection-officer" href="/ontology/term/au/term-child-protection-officer" showAs="child protection officer"/>
+        <TLCTerm eId="term-civil-penalty-provision" href="/ontology/term/au/term-civil-penalty-provision" showAs="civil penalty provision"/>
+        <TLCTerm eId="term-claims-information" href="/ontology/term/au/term-claims-information" showAs="claims information"/>
+        <TLCTerm eId="term-commercial-in-confidence" href="/ontology/term/au/term-commercial-in-confidence" showAs="commercial-in-confidence"/>
+        <TLCTerm eId="term-contracted-service-provider" href="/ontology/term/au/term-contracted-service-provider" showAs="contracted service provider"/>
+        <TLCTerm eId="term-designated-cancer" href="/ontology/term/au/term-designated-cancer" showAs="designated cancer"/>
+        <TLCTerm eId="term-enforcement-body" href="/ontology/term/au/term-enforcement-body" showAs="enforcement body"/>
+        <TLCTerm eId="term-healthcare" href="/ontology/term/au/term-healthcare" showAs="healthcare"/>
+        <TLCTerm eId="term-healthcare-provider-organisation" href="/ontology/term/au/term-healthcare-provider-organisation" showAs="healthcare provider organisation"/>
+        <TLCTerm eId="term-if-the-register" href="/ontology/term/au/term-if-the-register" showAs="if the register"/>
+        <TLCTerm eId="term-individual-healthcare-provider" href="/ontology/term/au/term-individual-healthcare-provider" showAs="individual healthcare provider"/>
+        <TLCTerm eId="term-key-information-for-an-individual" href="/ontology/term/au/term-key-information-for-an-individual" showAs="key information for an individual"/>
+        <TLCTerm eId="term-participating-state-or-territory" href="/ontology/term/au/term-participating-state-or-territory" showAs="participating State or Territory"/>
+        <TLCTerm eId="term-personal-information" href="/ontology/term/au/term-personal-information" showAs="personal information"/>
+        <TLCTerm eId="term-protected-information" href="/ontology/term/au/term-protected-information" showAs="protected information"/>
+        <TLCTerm eId="term-purposes-of-the-register" href="/ontology/term/au/term-purposes-of-the-register" showAs="purposes of the register"/>
+        <TLCTerm eId="term-register" href="/ontology/term/au/term-register" showAs="register"/>
+        <TLCTerm eId="term-registration-authority" href="/ontology/term/au/term-registration-authority" showAs="registration authority"/>
+        <TLCTerm eId="term-regulatory-powers-act" href="/ontology/term/au/term-regulatory-powers-act" showAs="Regulatory Powers Act"/>
+        <TLCTerm eId="term-rules" href="/ontology/term/au/term-rules" showAs="rules"/>
+        <TLCTerm eId="term-screening" href="/ontology/term/au/term-screening" showAs="screening"/>
+        <TLCTerm eId="term-screening-test" href="/ontology/term/au/term-screening-test" showAs="screening test"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-state-or-territory-authority" href="/ontology/term/au/term-state-or-territory-authority" showAs="State or Territory authority"/>
+        <TLCTerm eId="term-veterans-affairs-department" href="/ontology/term/au/term-veterans-affairs-department" showAs="Veterans’ Affairs Department"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>National Cancer Screening Register Act 2016</p>
+      <p>No. 65, 2016</p>
+      <p><b>Compilation No.</b><b> </b><b>5</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 July 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 17, 2026</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>National Cancer Screening Register Act 2016</i> that shows the text of the law as amended and in force on 1 July 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1  Short title	1</p>
+      <p>2  Commencement	1</p>
+      <p>3  Simplified outline of this Act	2</p>
+      <p>4  Definitions	2</p>
+      <p>5  Meaning of commercial-in-confidence	7</p>
+      <p>6  Act binds the Crown	7</p>
+      <p>7  Act extends to external Territories	7</p>
+      <p><ref href="#part-2">Part 2</ref>—Register	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Simplified outline of this <ref href="#part-8">Part	8</ref></p>
+      <p>8  Simplified outline of this <ref href="#part-8">Part	8</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Establishment, contents and purposes	9</p>
+      <p>9  Establishment of the register	9</p>
+      <p>10  Coverage of the register	9</p>
+      <p>11  Contents of the register	9</p>
+      <p>12  Purposes of the register	10</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Notification to the register	12</p>
+      <p>13  Requirement to notify	12</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Requests about the register	13</p>
+      <p>14  Requests about participation in the register	13</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Alternative constitutional bases	14</p>
+      <p>15  Alternative constitutional bases	14</p>
+      <p><ref href="#part-3">Part 3</ref>—Dealing with information in the register	16</p>
+      <p>16  Simplified outline of this <ref href="#part-16">Part	16</ref></p>
+      <p>17  Authorised dealings with information	16</p>
+      <p>18  Offence relating to protected information	19</p>
+      <p>19  Exception for use in good faith	19</p>
+      <p>20  Exception if unaware information is commercial-in-confidence	19</p>
+      <p>21  Exceptions relating to the person to whom the protected information relates	20</p>
+      <p>22  Exception for disclosure to person who provided the information	20</p>
+      <p>22A  Data breaches	20</p>
+      <p>22B  Contravention is an interference with privacy	24</p>
+      <p>22C  Information Commissioner may disclose details of investigations to <role refersTo="#secretary">the Secretary</role>	25</p>
+      <p><ref href="#part-4">Part 4</ref>—Other matters	26</p>
+      <p>23  Simplified outline of this <ref href="#part-26">Part	26</ref></p>
+      <p>24  Civil penalty provisions	26</p>
+      <p>25  Approved forms	27</p>
+      <p>26  Agreements	27</p>
+      <p>27  Delegation	27</p>
+      <p>28  Rules	28</p>
+      <p>Endnotes		30</p>
+      <p>Endnote 1—About the endnotes	30</p>
+      <p>Endnote 2—Abbreviation key	32</p>
+      <p>Endnote 3—Legislation history	34</p>
+      <p>Endnote 4—Amendment history	35</p>
+      <p>An Act to establish and provide for a cancer screening register, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act is the <i>National Cancer Screening Register Act 2016</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provisions</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  Sections 1 to 12 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day after this Act receives the Royal Assent.</td>
+                <td>21 October 2016</td>
+              </tr>
+              <tr>
+                <td>2.  Section 13</td>
+                <td>1 May 2017.</td>
+                <td>1 May 2017</td>
+              </tr>
+              <tr>
+                <td>3.  Sections 14 to 28</td>
+                <td>At the same time as the provisions covered by table item 1.</td>
+                <td>21 October 2016</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>This Act establishes a register of information about screening associated with certain types of cancer.</p>
+            <p>The purposes of the register relate to:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>supporting cancer screening programs; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>providing access to information about cancer screening and diagnoses; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>cancer screening matters more broadly.</p>
+            </content>
+            <content>
+              <p>There are protections for sensitive information.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-approved-form">approved form</term> means <def>a form approved under subsection 25(1).</def></p>
+            <p><term refersTo="#term-child-protection-officer">child protection officer</term> means <def>an officer or employee of a State or Territory, or of a State or Territory authority, who has functions, powers or duties in relation to the care, protection or welfare of children.</def></p>
+            <p><term refersTo="#term-civil-penalty-provision">civil penalty provision</term> has the same meaning as <def>in the Regulatory Powers Act.</def></p>
+            <p><term refersTo="#term-claims-information">claims information</term> means <def>information about: 	(a)	claims for medicare benefit under <ref href="#part-I">Part I</ref>I of the <i>Health Insurance Act 1973</i>; or treatment, other than information that relates to compensation or benefits, provided under any of the following Acts: 	(i)	the <i>Australian Participants in British Nuclear Tests </i><i>and British Commonwealth Occupation Force </i><i>(Treatment) Act 2006</i>; 	(ii)	the <i>Military Rehabilitation and Compensation Act 2004</i>; 	(iii)	the <i>Safety, Rehabilitation and Compensation Act 1988</i>; 	(iiia)	the <i>Treatment Benefits (Special Access) Act 2019</i>; 	(iv)	<ref href="#sec-1">section 1</ref> of the <i>Military Rehabilitation and Compensation Act 2004</i>.</def></p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	claims for medicare benefit under <ref href="#part-I">Part I</ref>I of the <i>Health Insurance Act 1973</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>treatment, other than information that relates to compensation or benefits, provided under any of the following Acts:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	the <i>Australian Participants in British Nuclear Tests </i><i>and British Commonwealth Occupation Force </i><i>(Treatment) Act 2006</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	the <i>Military Rehabilitation and Compensation Act 2004</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iii">
+            <num>iii</num>
+            <content>
+              <p>	(iii)	the <i>Safety, Rehabilitation and Compensation Act 1988</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iiia">
+            <num>iiia</num>
+            <content>
+              <p>	(iiia)	the <i>Treatment Benefits (Special Access) Act 2019</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-iv">
+            <num>iv</num>
+            <content>
+              <p>	(iv)	<ref href="#sec-1">section 1</ref> of the <i>Military Rehabilitation and Compensation Act 2004</i>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-commercial-in-confidence">commercial-in-confidence</term> has the meaning given by <def><ref href="#sec-5">section 5</ref>.</def></p>
+              <p><term refersTo="#term-contracted-service-provider">contracted service provider</term> has the meaning given by <def>subsection 22A(10).</def></p>
+              <p><term refersTo="#term-designated-cancer">designated cancer</term> means <def>one of the following types of cancer: bowel cancer; cervical cancer; lung cancer.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>bowel cancer;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>cervical cancer;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>lung cancer.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-enforcement-body">enforcement body</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+              <p><b><i>entity</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a person; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a partnership; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>any other unincorporated association or body; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>a trust; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>a part of another entity (under a previous application of this definition).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-healthcare">healthcare</term> means <def>health service <ref href="#sec-6__subsec-1">within the meaning of subsection 6(1)</ref> of <ref href="">the Privacy Act 1988</ref>.</def></p>
+              <p><b><i>healthcare provider</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>an individual healthcare provider; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a healthcare provider organisation.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-healthcare-provider-organisation">healthcare provider organisation</term> means <def>an entity that has conducted, conducts, or will conduct, an enterprise that provides healthcare (including healthcare provided free of charge).</def></p>
+              <p><term refersTo="#term-individual-healthcare-provider">individual healthcare provider</term> means <def>an individual who: has provided, provides, or is to provide, healthcare; or is registered by a registration authority as a member of a particular health profession.</def></p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	Because of paragraph (e) of the definition of <b><i>entity</i></b>, a healthcare provider organisation could be part of an entity.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>has provided, provides, or is to provide, healthcare; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>is registered by a registration authority as a member of a particular health profession.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-key-information-for-an-individual">key information for an individual</term> means <def>the following: the individual’s name, address, contact details, date of birth and gender; 	(b)	the individual’s healthcare identifier (within the meaning of the <i>Healthcare Identifiers Act 2010</i>) if any; 	(c)	the individual’s medicare number (within the meaning of <ref href="#part-VI">Part VI</ref>I of the <i>National Health Act 1953</i>) if any; the number allocated to the individual by the Veterans’ Affairs Department if any; if applicable, the individual’s date of death;</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the individual’s name, address, contact details, date of birth and gender;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the individual’s healthcare identifier (within the meaning of the <i>Healthcare Identifiers Act 2010</i>) if any;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	the individual’s medicare number (within the meaning of <ref href="#part-VI">Part VI</ref>I of the <i>National Health Act 1953</i>) if any;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>the number allocated to the individual by the Veterans’ Affairs Department if any;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>if applicable, the individual’s date of death;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-f">
+            <num>f</num>
+            <content>
+              <p><term refersTo="#term-if-the-register">if the register</term> includes <def>information relating to the individual in connection with screening associated with cervical cancer: the individual’s sex; and the individual’s Human Papillomavirus vaccination status and number of doses of the vaccine administered to the individual; the individual’s Indigenous status; the individual’s country of origin or cultural identity; the individual’s preferred language and whether an interpreter is required to facilitate communication with the individual; the name and contact details of a personal representative of the individual if any; if applicable, information on assistance required by the individual for the purposes of this Act because of a medical condition or disability; any other information of a kind relevant to the purposes of the register and prescribed by the rules for the purposes of this definition. <b><i>nominated healthcare provider</i></b> of an individual, for screening associated with a designated cancer, means the healthcare provider the individual requested be recorded for screening associated with the designated cancer in a request in effect under <ref href="#sec-14">section 14</ref>. <b><i>parent</i></b>: without limiting who is a parent of anyone for the purposes of this Act, a person is the <b><i>parent</i></b> of another person if the other person is a child of the person within the meaning of the <i>Family Law Act 1975</i>.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>the individual’s sex; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the individual’s Human Papillomavirus vaccination status and number of doses of the vaccine administered to the individual;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-g">
+            <num>g</num>
+            <content>
+              <p>the individual’s Indigenous status;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-h">
+            <num>h</num>
+            <content>
+              <p>the individual’s country of origin or cultural identity;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>the individual’s preferred language and whether an interpreter is required to facilitate communication with the individual;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-j">
+            <num>j</num>
+            <content>
+              <p>the name and contact details of a personal representative of the individual if any;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-k">
+            <num>k</num>
+            <content>
+              <p>if applicable, information on assistance required by the individual for the purposes of this Act because of a medical condition or disability;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-l">
+            <num>l</num>
+            <content>
+              <p>any other information of a kind relevant to the purposes of the register and prescribed by the rules for the purposes of this definition.</p>
+            </content>
+            <content>
+              <p><b><i>nominated healthcare provider</i></b> of an individual, for screening associated with a designated cancer, means the healthcare provider the individual requested be recorded for screening associated with the designated cancer in a request in effect under <ref href="#sec-14">section 14</ref>.</p>
+              <p><b><i>parent</i></b>: without limiting who is a parent of anyone for the purposes of this Act, a person is the <b><i>parent</i></b> of another person if the other person is a child of the person within the meaning of the <i>Family Law Act 1975</i>.</p>
+              <p><term refersTo="#term-participating-state-or-territory">participating State or Territory</term> means <def>a State or Territory that has agreed with the Commonwealth to participate in the register.</def></p>
+              <p><term refersTo="#term-personal-information">personal information</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+              <p><b><i>personal representative</i></b>, of an individual, means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a parent or guardian of the individual, if the individual is incapable of managing his or her health affairs; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a trustee of an estate of the individual, if the individual is under a legal disability; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>a person who holds an enduring power of attorney granted by the individual; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>a person nominated by the individual for the purpose of managing the individual’s affairs in relation to screening associated with a designated cancer.</p>
+            </content>
+            <content>
+              <p><b><i>professional disciplinary authority</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a registration authority; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the Health Care Complaints Commission established by the <i>Health Care Complaints Act 1993</i> (NSW); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	the Health Ombudsman appointed under the <i>Health Ombudsman Act 2013</i> (Qld); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>any other authority that is responsible for investigating complaints about the professional conduct of individual healthcare providers.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-protected-information">protected information</term> means <def>personal information or information that is commercial-in-confidence, to the extent that the information is: included in the register or otherwise obtained under, or in accordance with, this Act; or derived from a record of information that was included in the register or was otherwise obtained under, or in accordance with, this Act; or derived from a disclosure or use of information that was included in the register or was otherwise obtained under, or in accordance with, this Act.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>included in the register or otherwise obtained under, or in accordance with, this Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>derived from a record of information that was included in the register or was otherwise obtained under, or in accordance with, this Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>derived from a disclosure or use of information that was included in the register or was otherwise obtained under, or in accordance with, this Act.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-purposes-of-the-register">purposes of the register</term> means <def>the purposes set out in <ref href="#sec-12">section 12</ref>.</def></p>
+              <p><term refersTo="#term-register">register</term> means <def>the National Cancer Screening Register established under <ref href="#sec-9">section 9</ref>.</def></p>
+              <p><term refersTo="#term-registration-authority">registration authority</term> means <def>an entity that is responsible under a law for registering members of a particular health profession.</def></p>
+              <p><term refersTo="#term-regulatory-powers-act">Regulatory Powers Act</term> means <def>the Regulatory Powers (Standard Provisions) Act 2014.</def></p>
+              <p><term refersTo="#term-rules">rules</term> means <def>the rules made under <ref href="#sec-28">section 28</ref>.</def></p>
+              <p><term refersTo="#term-screening">screening</term> means <def>a process in which an individual undergoes testing or procedures in order to determine whether the individual has: a designated cancer or a precursor to a designated cancer; or any indicator, including genetic markers or cell abnormalities, that may lead to a designated cancer.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a designated cancer or a precursor to a designated cancer; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>any indicator, including genetic markers or cell abnormalities, that may lead to a designated cancer.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-screening-test">screening test</term> means <def>a test or procedure as part of screening.</def></p>
+              <p><term refersTo="#term-secretary">Secretary</term> means <def>the Secretary of the Department.</def></p>
+              <p><term refersTo="#term-state-or-territory-authority">State or Territory authority</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+              <p><term refersTo="#term-veterans-affairs-department">Veterans’ Affairs Department</term> means <def>the Department administered by the Minister administering the Veterans’ Entitlements Act 1986.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Meaning of commercial-in-confidence</heading>
+          <content>
+            <p>		Information is <b><i>commercial</i></b><b><i>-</i></b><b><i>in</i></b><b><i>-</i></b><b><i>confidence</i></b> if a person demonstrates to the Minister that:</p>
+          </content>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>release of the information would cause competitive detriment to the person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is not in the public domain; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>the information is not required to be disclosed under a law of the Commonwealth, or of a State or Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>the information is not readily discoverable.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Act binds the Crown</heading>
+          <content>
+            <p>This Act binds the Crown in each of its capacities. However, it does not make the Crown liable to be prosecuted for an offence.</p>
+          </content>
+          <authorialNote placement="end" eId="note-3" marker="3">
+            <content>
+              <p>Note:	See subsection 24(5) in relation to civil penalties.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Act extends to external Territories</heading>
+          <content>
+            <p>This Act extends to every external Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Register</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Simplified outline of this Part</heading>
+          <section eId="part-2__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>The National Cancer Screening Register is established to keep information about cancer screening and diagnoses associated with particular types of cancer.</p>
+              <p>The purposes of the register relate to:</p>
+            </content>
+            <paragraph eId="part-2__dvs-1__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>supporting cancer screening programs; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>providing access to information about cancer screening and diagnoses; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>cancer screening matters more broadly.</p>
+              </content>
+              <content>
+                <p>Certain healthcare providers are required to notify the Commonwealth Chief Medical Officer about certain types of screening test or diagnosis. In most circumstances, this information will be included on the register.</p>
+                <p>Individuals can make a number of requests in relation to the register. For example, an individual can opt out of receiving information from the register. An individual can also request that information notified by healthcare providers relating to the individual not be included in the register.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Establishment, contents and purposes</heading>
+          <section eId="part-2__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Establishment of the register</heading>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commonwealth must establish and keep a register to be called the National Cancer Screening Register.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Parts of the register may be kept separate from each other, and be called different names.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The register is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Coverage of the register</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The register may include information relating to individuals in connection with screening associated with bowel cancer.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The register may include information relating to individuals in connection with screening associated with cervical cancer.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The register may include information relating to individuals in connection with screening associated with lung cancer.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Contents of the register</heading>
+            <content>
+              <p>The register may include the following for each individual:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-11__para-a">
+              <num>a</num>
+              <content>
+                <p>the individual’s key information;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	details of the individual’s nominated healthcare provider for screening associated with a designated cancer, if any, including the healthcare provider’s healthcare identifier (within the meaning of the <i>Healthcare Identifiers Act 2010</i>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-c">
+              <num>c</num>
+              <content>
+                <p>information about screening tests undergone or to be undergone by the individual;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-d">
+              <num>d</num>
+              <content>
+                <p>if the individual is diagnosed with a designated cancer or a precursor to a designated cancer, that diagnosis;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-e">
+              <num>e</num>
+              <content>
+                <p>claims information which may indicate whether or not the individual has undergone or should undergo screening associated with a designated cancer;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-f">
+              <num>f</num>
+              <content>
+                <p>details of any request or withdrawal made by the individual under <ref href="#sec-14">section 14</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-g">
+              <num>g</num>
+              <content>
+                <p>any other information relevant to the purposes of the register and prescribed by the rules.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Purposes of the register</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The purposes of the register are to facilitate the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>establishing and keeping an electronic database of records relating to screening and diagnoses associated with the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>collecting, analysing and publishing statistics and other information relating to screening and diagnoses associated with the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>monitoring the effectiveness, quality and safety of screening and diagnoses associated with the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>providing an individual with an invitation to undergo screening;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>providing an individual with a test kit for screening;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>advising an individual when the individual is due to undergo a screening test or when action may need to be taken after a screening test;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>advising an individual’s nominated healthcare provider for screening associated with a designated cancer (if any) when the individual is due to undergo, or when action may need to be taken after, a screening test associated with the designated cancer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>advising a participating State or Territory when action may need to be taken after a screening test for an individual residing in the State or Territory;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>providing an individual access to information relating to the individual about screening and diagnoses associated with a designated cancer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-j">
+                <num>j</num>
+                <content>
+                  <p>providing healthcare providers access to information about screening and diagnoses associated with a designated cancer in relation to an individual, for the purposes of providing healthcare to the individual in relation to the designated cancer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>providing a participating State or Territory with access to information relating to individuals residing in the State or Territory in connection with screening and diagnoses associated with the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-l">
+                <num>l</num>
+                <content>
+                  <p>planning, delivering and promoting healthcare and services in relation to the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-m">
+                <num>m</num>
+                <content>
+                  <p>reporting to international organisations in relation to the designated cancers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-n">
+                <num>n</num>
+                <content>
+                  <p>research relating to healthcare, screening or a designated cancer.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For an individual who has a personal representative:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>paragraphs (1)(d) and (e) also apply to providing the representative with an invitation or test kit for the individual; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>paragraph (1)(f) also applies to advising the representative; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>paragraph (1)(i) also applies to providing the representative access to information relating to the individual.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Notification to the register</heading>
+          <section eId="part-2__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Requirement to notify</heading>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The individual healthcare provider prescribed by the rules for a type of screening test or diagnosis prescribed by the rules must notify the Commonwealth Chief Medical Officer in the approved form, by the time prescribed by the rules, of the information prescribed by the rules for the type of screening test or diagnosis.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person is liable to a civil penalty if the person contravenes subsection (1).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-4">
+          <num>4</num>
+          <heading>Requests about the register</heading>
+          <section eId="part-2__dvs-4__sec-14">
+            <num>14</num>
+            <heading>Requests about participation in the register</heading>
+            <subsection eId="part-2__dvs-4__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An individual may, in the approved form, make any of the following requests:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>that a particular healthcare provider be recorded as the individual’s nominated healthcare provider for screening associated with a designated cancer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>that the individual not be given, at all or for a period of time, by (or on behalf of) the Commonwealth:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>any invitation of a kind referred to in paragraph 12(1)(d) or test kit referred to in paragraph 12(1)(e) in relation to screening associated with a designated cancer; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>any advice of a kind referred to in paragraph 12(1)(f) in relation to screening associated with a designated cancer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>that information relating to the individual that is:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>about a designated cancer; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>notified under <ref href="#sec-13">section 13</ref> after the date of the request;</p>
+                </content>
+                <content>
+                  <p>not be included in the register;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>that a date by which the register indicates the individual is due to undergo a screening test associated with cervical cancer be changed;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-14__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>that the register use a pseudonym for the individual.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An individual may, in the approved form, withdraw any request made under subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Commonwealth must give effect to a request or withdrawal under this section as soon as practicable.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-14__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A personal representative of the individual may make or withdraw a request under this section on behalf of the individual.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-5">
+          <num>5</num>
+          <heading>Alternative constitutional bases</heading>
+          <section eId="part-2__dvs-5__sec-15">
+            <num>15</num>
+            <heading>Alternative constitutional bases</heading>
+            <subsection eId="part-2__dvs-5__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Without limiting its effect apart from this subsection, this Act also has the effect it would have if its operation were expressly confined to matters relating to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the provision of pharmaceutical and sickness benefits; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the provision of medical services (without any form of civil conscription); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>census and statistics; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>postal, telegraphic, telephonic and other like services; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>external affairs, including:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>giving effect to the International Covenant on Economic, Social and Cultural Rights done at New York on <date date="1966-12-16">16 December 1966</date>, in particular Article 12, or to another international agreement to which Australia is a party; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>addressing matters of international concern; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>	(f)	a Territory or a Commonwealth place (within the meaning of the <i>Commonwealth Places (Application of Laws) Act 1970</i>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>the implied power of the Parliament to make laws with respect to nationhood; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>the executive power of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-15__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>matters incidental to the execution of any of the legislative powers of the Parliament or the executive power of the Commonwealth.</p>
+                </content>
+                <authorialNote placement="end" eId="note-4" marker="4">
+                  <content>
+                    <p>Note:	The International Covenant on Economic, Social and Cultural Rights is in Australian Treaty Series 1976 No. 5 ([1976] ATS 5) and could in 2016 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting its effect apart from this subsection, this Act also has the effect it would have if its operation were expressly confined to acts or omissions of corporations to which paragraph 51(xx) of the Constitution applies.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-15__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A term used in this section and the Constitution has the same meaning in this section as it has in the Constitution.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Dealing with information in the register</heading>
+        <section eId="part-3__sec-16">
+          <num>16</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>Information can be collected for inclusion in the register.</p>
+            <p>Personal information included in the register, or derived from information included in the register, is “protected information”.</p>
+            <p>Section 18 makes it an offence for a person to record, disclose or use protected information without authorisation.</p>
+            <p>Recording, disclosure and use of protected information is authorised in specific circumstances, including for the purposes of the register and by healthcare providers and States and Territories.</p>
+            <p>There are also a number of exceptions to the offence.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-17">
+          <num>17</num>
+          <heading>Authorised dealings with information</heading>
+          <content>
+            <p>Uploading personal information etc. to the register</p>
+          </content>
+          <subsection eId="part-3__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person may collect, make a record of, disclose or otherwise use:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>personal information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>key information for an individual; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>information that is commercial-in-confidence;</p>
+              </content>
+              <content>
+                <p>if the person does so for the purposes of including information in the register.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply to information notified under <ref href="#sec-13">section 13</ref> to the extent that collection, recording, disclosure or use under the subsection would be contrary to a request in effect under <ref href="#sec-14">section 14</ref>.</p>
+            </content>
+            <content>
+              <p>Using or disclosing information in the register</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person may collect, make a record of, disclose or otherwise use protected information, or key information included in the register, if:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the person does so for the purposes of the register and is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>an officer or employee of the Commonwealth or of an authority of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>engaged by the Commonwealth, or by an authority of the Commonwealth, to perform work relating to the purposes of the register; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>an officer or employee of a person referred to in subparagraph (ii), or engaged by a person referred to in subparagraph (ii) to perform work relating to the purposes of the register; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>all of the following apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the person is a healthcare provider;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the information is about screening or diagnosis associated with a designated cancer in relation to an individual;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the collection, recording, disclosure or use is for the purposes of providing healthcare to the individual in relation to the designated cancer; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the collection, recording, disclosure or use is required or permitted by the law of a participating State or Territory, and the person is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>a State or Territory authority of the participating State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an officer or employee of the participating State or Territory, or of a State or Territory authority of the participating State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>engaged by the participating State or Territory, or by a State or Territory authority of the participating State or Territory, to perform work relating to the information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-iv">
+              <num>iv</num>
+              <content>
+                <p>an officer or employee of a person referred to in subparagraph (iii), or engaged by a person referred to in subparagraph (iii) to perform work relating to the information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>the person does so for the purposes of performing the person’s functions, or exercising the person’s powers, under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>the person is required or authorised to do so by or under a law of the Commonwealth or of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>the information is disclosed to the person under this section and the collection, recording, disclosure or use is for the purposes for which the information was disclosed to the person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-g">
+              <num>g</num>
+              <content>
+                <p>all of the following apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the person is <role refersTo="#secretary">the Secretary</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the collection, recording, disclosure or use is for the purposes of disclosing information to a professional disciplinary authority, a child protection officer or an enforcement body;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the person reasonably believes that the information will enable or assist <role refersTo="#authority">the authority</role>, officer or body to perform or exercise any of <role refersTo="#authority">the authority</role>’s, officer’s or body’s functions or powers; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-h">
+              <num>h</num>
+              <content>
+                <p>the person does so for the purposes of court or tribunal proceedings, or in accordance with an order of a court or tribunal; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the person does so for the purposes of a coronial inquiry, or in accordance with an order of a coroner.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note 1:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note 2:	For paragraph (c), collection, recording, disclosure or use by a listed representative of a participating State or Territory is authorised under this subsection if the law of the State or Territory does not prevent the collection, recording, disclosure or use.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (3) does not apply to protected information or key information to the extent that collection, recording, disclosure or use under the subsection would be contrary to a request in effect under <ref href="#sec-14">section 14</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Collection, recording, disclosure or use of personal information for the purposes of research of a kind to which guidelines approved under <ref href="#sec-95">section 95</ref> or 95A of the <i>Privacy Act 1988</i> relate is authorised under paragraph (3)(a) or (f) only if the collection, recording, use or disclosure is in accordance with the guidelines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18">
+          <num>18</num>
+          <heading>Offence relating to protected information</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-3__sec-18__para-a">
+            <num>a</num>
+            <content>
+              <p>the person makes a record of, discloses or otherwise uses information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-18__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-18__para-c">
+            <num>c</num>
+            <content>
+              <p>the making of the record, or the disclosure or use, is not authorised by <ref href="#sec-17">section 17</ref>.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity> or <quantity refersTo="#penaltyUnit">120 penalty units</quantity>, or both.</p>
+              </content>
+            </hcontainer>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-19">
+          <num>19</num>
+          <heading>Exception for use in good faith</heading>
+          <content>
+            <p>Section 18 does not apply to a person to the extent that the person makes a record of, discloses or otherwise uses protected information in good faith and in purported compliance with <ref href="#sec-17">section 17</ref>.</p>
+          </content>
+          <authorialNote placement="end" eId="note-8" marker="8">
+            <content>
+              <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-3__sec-20">
+          <num>20</num>
+          <heading>Exception if unaware information is commercial-in-confidence</heading>
+          <content>
+            <p>Section 18 does not apply to a person if:</p>
+          </content>
+          <paragraph eId="part-3__sec-20__para-a">
+            <num>a</num>
+            <content>
+              <p>the person makes a record of, discloses or otherwise uses information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-20__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is commercial-in-confidence; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-20__para-c">
+            <num>c</num>
+            <content>
+              <p>the person does not know that the information is commercial-in-confidence.</p>
+            </content>
+            <authorialNote placement="end" eId="note-9" marker="9">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-21">
+          <num>21</num>
+          <heading>Exceptions relating to the person to whom the protected information relates</heading>
+          <subsection eId="part-3__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Section 18 does not apply to a person if:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person discloses protected information to the person to whom the information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the person to whom the protected information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the making of the record, or the disclosure or use, of the protected information is in accordance with the express or implied consent of the person to whom the information relates.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matters in this subsection (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies as if a reference in that subsection to the person to whom the protected information relates includes a reference to the person’s personal representative.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-22">
+          <num>22</num>
+          <heading>Exception for disclosure to person who provided the information</heading>
+          <content>
+            <p>Section 18 does not apply to a person if:</p>
+          </content>
+          <paragraph eId="part-3__sec-22__para-a">
+            <num>a</num>
+            <content>
+              <p>the person obtains protected information from another person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-22__para-b">
+            <num>b</num>
+            <content>
+              <p>the person discloses that information to the other person.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-22A">
+          <num>22A</num>
+          <heading>Data breaches</heading>
+          <content>
+            <p>Notification of contraventions and possible contraventions</p>
+          </content>
+          <subsection eId="part-3__sec-22A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> becomes aware (otherwise than because of a notice under subsection (2)) that a person has, or may have, contravened <ref href="#sec-18">section 18</ref> in a manner involving an unauthorised recording, use or disclosure of personal information included in the register, <role refersTo="#secretary">the Secretary</role> must, as soon as practicable, notify <role refersTo="#information-commissioner">the Information Commissioner</role>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-12" marker="12">
+              <content>
+                <p>Note:	This subsection applies when <role refersTo="#secretary">the Secretary</role> becomes aware of the contravention or possible contravention, regardless of when it occurred or whether it is ongoing.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a contracted service provider or a former contracted service provider becomes aware that a person has, or may have, contravened <ref href="#sec-18">section 18</ref> in a manner involving an unauthorised recording, use or disclosure of personal information included in the register, the contracted service provider or former contracted service provider must, as soon as practicable, notify:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#information-commissioner">the Information Commissioner</role>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	This subsection applies when the contracted service provider or former contracted service provider becomes aware of the contravention or possible contravention, regardless of when it occurred or whether it is ongoing.</p>
+                </content>
+              </authorialNote>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">100 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A notice given under subsection (1) or (2) must set out the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a description of the contravention that has occurred or may have occurred;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the kind or kinds of information concerned;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>if the notice is given under subsection (2)—the identity and contact details of the contracted service provider or former contracted service provider.</p>
+              </content>
+              <content>
+                <p>Handling possible contraventions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role>, or a contracted service provider or former contracted service provider, becomes aware that a person may have contravened <ref href="#sec-18">section 18</ref> in a manner involving an unauthorised recording, use or disclosure of personal information included in the register, <role refersTo="#secretary">the Secretary</role>, or the contracted service provider or former contracted service provider, must do the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>so far as is reasonably practicable, contain the possible contravention;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>evaluate any risks that, if the contravention has occurred, may be related to or arise out of the contravention;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>if there is a reasonable likelihood that the contravention has occurred and the effects of the contravention might be serious for at least one individual whose details are included in the register:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>in the case of <role refersTo="#secretary">the Secretary</role>—consult <role refersTo="#information-commissioner">the Information Commissioner</role> about notifying individuals who may be affected; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in the case of a contracted service provider or former contracted service provider—ask <role refersTo="#secretary">the Secretary</role> to consult <role refersTo="#information-commissioner">the Information Commissioner</role> about notifying individuals who may be affected.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	This subsection applies when <role refersTo="#secretary">the Secretary</role>, contracted service provider or former contracted service provider becomes aware of the possible contravention, regardless of when it occurred or whether it is ongoing.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Handling contraventions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role>, or a contracted service provider or former contracted service provider, becomes aware that a person has contravened <ref href="#sec-18">section 18</ref> in a manner involving an unauthorised recording, use or disclosure of personal information included in the register, <role refersTo="#secretary">the Secretary</role>, or the contracted service provider or former contracted service provider, must do the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>so far as is reasonably practicable, contain the contravention and undertake a preliminary assessment of the causes;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>evaluate any risks that may be related to or arise out of the contravention;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>in the case of <role refersTo="#secretary">the Secretary</role>—consult <role refersTo="#information-commissioner">the Information Commissioner</role> about notifying individuals who may be affected;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>in the case of a contracted service provider or former contracted service provider—ask <role refersTo="#secretary">the Secretary</role> to consult <role refersTo="#information-commissioner">the Information Commissioner</role> about notifying individuals who may be affected;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-5__para-e">
+              <num>e</num>
+              <content>
+                <p>take steps to prevent or mitigate the effects of further contraventions.</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	This subsection applies when <role refersTo="#secretary">the Secretary</role>, contracted service provider or former contracted service provider becomes aware of the contravention, regardless of when it occurred or whether it is ongoing.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Secretary’s duty</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-6">
+            <num>6</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> must comply with a request under subparagraph (4)(c)(ii) or paragraph (5)(d).</p>
+            </content>
+            <content>
+              <p>No need to report or consult if already done</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A person is not required to comply with subsection (1) or (2) in relation to a contravention that has occurred if the person has already given notice under that subsection that the contravention may have occurred.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A person is not required to comply with paragraph (5)(c) or (d) in relation to a contravention if the person has already consulted, or asked <role refersTo="#secretary">the Secretary</role> to consult, <role refersTo="#information-commissioner">the Information Commissioner</role> under paragraph (4)(c) in relation to the contravention.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A contracted service provider or former contracted service provider is not required to comply with subsection (2), subparagraph (4)(c)(ii) or paragraph (5)(d) in relation to a contravention that has, or may have, occurred if another person has already:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>given notice in relation to the contravention under subsection (1) or (2); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>consulted, or asked <role refersTo="#secretary">the Secretary</role> to consult, <role refersTo="#information-commissioner">the Information Commissioner</role> in relation to the contravention under paragraph (4)(c) or (5)(c) or (d).</p>
+              </content>
+              <content>
+                <p>Contracted service providers</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22A__subsec-10">
+            <num>10</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <content>
+              <p><b>contracted service provider</b> means a person who:</p>
+            </content>
+            <paragraph eId="part-3__sec-22A__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>is engaged under an agreement referred to in <ref href="#sec-26">section 26</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22A__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>obtains protected information in the course of performing services under the agreement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-22B">
+          <num>22B</num>
+          <heading>Contravention is an interference with privacy</heading>
+          <subsection eId="part-3__sec-22B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An act or practice that contravenes <ref href="#sec-18">section 18</ref> or subsection 22A(1), (2), (4), (5) or (6) is taken to be:</p>
+            </content>
+            <paragraph eId="part-3__sec-22B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	for the purposes of the <i>Privacy Act 1988</i>, an interference with the privacy of an individual; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>covered by <ref href="#sec-13">section 13</ref> of that Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The respondent to a complaint under the <i>Privacy Act 1988</i> about an act or practice, other than an act or practice of an agency or organisation, is the person who engaged in the act or practice.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In addition to the Information Commissioner’s functions under the <i>Privacy Act 1988</i>, the Information Commissioner has the following functions in relation to the register:</p>
+            </content>
+            <paragraph eId="part-3__sec-22B__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>to investigate an act or practice that may be an interference with the privacy of an individual under subsection (1) and, if <role refersTo="#information-commissioner">the Information Commissioner</role> considers it appropriate to do so, to attempt by conciliation to effect a settlement of the matters that gave rise to the investigation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22B__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>to do anything incidental or conducive to the performance of those functions.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22B__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#information-commissioner">The Information Commissioner</role> has power to do all things that are necessary or convenient to be done for or in connection with the performance of his or her functions under subsection (3).</p>
+            </content>
+            <authorialNote placement="end" eId="note-16" marker="16">
+              <content>
+                <p>Note:	An act or practice that is an interference with privacy may be the subject of a complaint under <ref href="#sec-36">section 36</ref> of the <i>Privacy Act 1988</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-22C">
+          <num>22C</num>
+          <heading>Information Commissioner may disclose details of investigations to the Secretary</heading>
+          <content>
+            <p><role refersTo="#information-commissioner">The Information Commissioner</role> is authorised to disclose to <role refersTo="#secretary">the Secretary</role> any information or documents that relate to an investigation <role refersTo="#information-commissioner">the Information Commissioner</role> conducts because of the operation of <ref href="#sec-22B">section 22B</ref>, if <role refersTo="#information-commissioner">the Information Commissioner</role> is satisfied that to do so will enable the Commonwealth to monitor or improve the operation or security of the register.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Other matters</heading>
+        <section eId="part-4__sec-23">
+          <num>23</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part deals with other matters, such as civil penalties, approved forms, agreements, delegations and rules.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-24">
+          <num>24</num>
+          <heading>Civil penalty provisions</heading>
+          <content>
+            <p>Enforceable civil penalty provisions</p>
+          </content>
+          <subsection eId="part-4__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each civil penalty provision of this Act is enforceable under Part 4 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	Part 4 of the Regulatory Powers Act allows a civil penalty provision to be enforced by obtaining an order for a person to pay a pecuniary penalty for the contravention of the provision.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Authorised applicant</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following persons is an authorised applicant in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-4__sec-24__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-24__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or an acting SES employee, in the Department.</p>
+              </content>
+              <content>
+                <p>Relevant court</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following courts is a relevant court in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-4__sec-24__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Federal Court of Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-24__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-24__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+              <content>
+                <p>Extension to external Territories</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-24__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Part 4 of the Regulatory Powers Act, as that Part applies in relation to the civil penalty provisions of this Act, extends to every external Territory.</p>
+            </content>
+            <content>
+              <p>Liability of Crown</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-24__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Part 4 of the Regulatory Powers Act, as that Part applies in relation to the civil penalty provisions of this Act, does not make the Crown liable to a pecuniary penalty.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-25">
+          <num>25</num>
+          <heading>Approved forms</heading>
+          <subsection eId="part-4__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, approve a form for the purposes of a provision of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A request or withdrawal of a request required by a provision of this Act to be in the approved form must be given to the person specified in the form for that purpose.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-26">
+          <num>26</num>
+          <heading>Agreements</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, engage a person under a written agreement to perform services for or on behalf of the Commonwealth in connection with functions of the Commonwealth, <role refersTo="#minister">the Minister</role> or the Commonwealth Chief Medical Officer under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-27">
+          <num>27</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-4__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate his or her functions or powers under:</p>
+            </content>
+            <paragraph eId="part-4__sec-27__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-5">section 5</ref> (about commercial-in-confidence information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p><ref href="#sec-25">section 25</ref> (about approving forms); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><ref href="#sec-26">section 26</ref> (about engaging persons under agreements);</p>
+              </content>
+              <content>
+                <p>to an SES employee, or an acting SES employee, in the Department.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in writing, delegate his or her functions or powers under:</p>
+            </content>
+            <paragraph eId="part-4__sec-27__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>paragraph 17(3)(g) (about disclosing information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><ref href="#sec-22A">section 22A</ref> (about data breaches);</p>
+              </content>
+              <content>
+                <p>to an SES employee, or an acting SES employee, in the Department.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In performing a function, or exercising a power, under a delegation, the delegate must comply with any directions of <role refersTo="#minister">the Minister</role> or <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-28">
+          <num>28</num>
+          <heading>Rules</heading>
+          <subsection eId="part-4__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>Before making rules for the purposes of:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	paragraph (l) of the definition of <b><i>key information</i></b> in <ref href="#sec-4">section 4</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>paragraph 11(g);</p>
+              </content>
+              <content>
+                <p>the Minister must consult the Information Commissioner in relation to matters that relate to the privacy functions (within the meaning of the <i>Australian Information Commissioner Act 2010</i>) and have regard to any submissions made by the Information Commissioner because of that consultation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>orig = original</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>p = page(s)</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>para = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>cl = clause(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>cont. = continued</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>r = regulation(s)/Court rule(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>sub ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>sub div = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>sub pt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act
+(Register ID)</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>National Cancer Screening Register Act 2016 (C2016A00065)</td>
+                  <td>65, 2016</td>
+                  <td>20 Oct 2016</td>
+                  <td>s 13: 1 May 2017 (s 2(1) item 2)
+remainder: 21 Oct 2016 (s 2(1) items 1, 3)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Veterans’ Affairs Legislation Amendment (Budget Measures) Act 2017 (C2017A00059)</td>
+                  <td>59, 2017</td>
+                  <td>22 June 2017</td>
+                  <td>sch 1 (item 35): 1 July 2017 (s 2(1) item 4)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Treatment Benefits (Special Access) (Consequential Amendments and Transitional Provisions) Act 2019 (C2019A00042)</td>
+                  <td>42, 2019</td>
+                  <td>5 Apr 2019</td>
+                  <td>sch 1 (item 1), sch 2 (item 13): 6 Apr 2019 (s 2(1) item 2)</td>
+                  <td>sch 1 (item 1)</td>
+                </tr>
+                <tr>
+                  <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021 (C2021A00013)</td>
+                  <td>13, 2021</td>
+                  <td>1 Mar 2021</td>
+                  <td>sch 2 (item 601): 1 Sept 2021 (s 2(1) item 5)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>National Cancer Screening Register Amendment Act 2024 (C2024A00029)</td>
+                  <td>29, 2024</td>
+                  <td>30 May 2024</td>
+                  <td>31 May 2024 (s 2(1) item 1)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Veterans’ Entitlements, Treatment and Support (Simplification and Harmonisation) Act 2025 (C2025A00017)</td>
+                  <td>17, 2025</td>
+                  <td>20 Feb 2026</td>
+                  <td>sch 8 (item 54): 1 July 2026 (s 2(1) item 6)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 59, 2017; No 42, 2019; No 29, 2024; No 17, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 29, 2024</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 24</td>
+                  <td>am No 13, 2021</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

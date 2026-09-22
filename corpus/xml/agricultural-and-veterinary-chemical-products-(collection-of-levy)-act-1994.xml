@@ -1,0 +1,2587 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1994/41/!main"/>
+          <FRBRuri value="/akn/au/act/1994/41"/>
+          <FRBRdate date="1994-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="41"/>
+          <FRBRname value="agricultural-and-veterinary-chemical-products-(collection-of-levy)-act-1994"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1994/41/eng@2024-10-14/!main"/>
+          <FRBRuri value="/akn/au/act/1994/41/eng@2024-10-14"/>
+          <FRBRdate date="2024-10-14" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1994/41/eng@2024-10-14/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1994/41/eng@2024-10-14/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1994-01-01" type="generation" eId="evt-creation" source="#agricultural-and-veterinary-chemical-products-(collection-of-levy)-act-1994"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1994/72" date="1995-03-15"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1994/94" date="1994-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1995/36"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2000/137"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2001/115"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2003/13"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2004/79" date="2004-06-23"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2005/42"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2013/125" date="2013-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2014/91" date="2014-07-21"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2021/125" date="2021-12-07"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2024/39" date="2024-05-31"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-active-constituent" href="/ontology/term/au/term-active-constituent" showAs="active constituent"/>
+        <TLCTerm eId="term-agency" href="/ontology/term/au/term-agency" showAs="Agency"/>
+        <TLCTerm eId="term-agricultural-chemical-product" href="/ontology/term/au/term-agricultural-chemical-product" showAs="agricultural chemical product"/>
+        <TLCTerm eId="term-apvma" href="/ontology/term/au/term-apvma" showAs="APVMA"/>
+        <TLCTerm eId="term-assessment" href="/ontology/term/au/term-assessment" showAs="assessment"/>
+        <TLCTerm eId="term-australia" href="/ontology/term/au/term-australia" showAs="Australia"/>
+        <TLCTerm eId="term-australian-product" href="/ontology/term/au/term-australian-product" showAs="Australian product"/>
+        <TLCTerm eId="term-chemical-product" href="/ontology/term/au/term-chemical-product" showAs="chemical product"/>
+        <TLCTerm eId="term-civil-penalty-order" href="/ontology/term/au/term-civil-penalty-order" showAs="civil penalty order"/>
+        <TLCTerm eId="term-civil-penalty-provision" href="/ontology/term/au/term-civil-penalty-provision" showAs="civil penalty provision"/>
+        <TLCTerm eId="term-give-information" href="/ontology/term/au/term-give-information" showAs="give information"/>
+        <TLCTerm eId="term-imported-product" href="/ontology/term/au/term-imported-product" showAs="imported product"/>
+        <TLCTerm eId="term-late-payment-penalty" href="/ontology/term/au/term-late-payment-penalty" showAs="late payment penalty"/>
+        <TLCTerm eId="term-levy" href="/ontology/term/au/term-levy" showAs="levy"/>
+        <TLCTerm eId="term-manufacture" href="/ontology/term/au/term-manufacture" showAs="manufacture"/>
+        <TLCTerm eId="term-notional-wholesale-value" href="/ontology/term/au/term-notional-wholesale-value" showAs="notional wholesale value"/>
+        <TLCTerm eId="term-participating-territory" href="/ontology/term/au/term-participating-territory" showAs="participating Territory"/>
+        <TLCTerm eId="term-rate-of-levy" href="/ontology/term/au/term-rate-of-levy" showAs="rate of levy"/>
+        <TLCTerm eId="term-registered" href="/ontology/term/au/term-registered" showAs="registered"/>
+        <TLCTerm eId="term-relevant-financial-year" href="/ontology/term/au/term-relevant-financial-year" showAs="relevant financial year"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-thing" href="/ontology/term/au/term-thing" showAs="thing"/>
+        <TLCTerm eId="term-total-leviable-value" href="/ontology/term/au/term-total-leviable-value" showAs="total leviable value"/>
+        <TLCTerm eId="term-understatement-penalty" href="/ontology/term/au/term-understatement-penalty" showAs="understatement penalty"/>
+        <TLCTerm eId="term-veterinary-chemical-product" href="/ontology/term/au/term-veterinary-chemical-product" showAs="veterinary chemical product"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Agricultural and Veterinary Chemical Products (Collection of Levy) Act 1994</p>
+      <p>No. 41, 1994</p>
+      <p><b>Compilation No. </b><b>11</b></p>
+      <p><b>Compilation date:</b><b>	</b>14 October 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 39, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Agricultural and Veterinary Chemical Products (Collection of Levy) Act 1994</i> that shows the text of the law as amended and in force on 14 October 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced</b><b> amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>3A	Minister may specify collecting agency	7</p>
+      <p>4	Extension to certain external Territories	7</p>
+      <p>5	Act to bind Crown	7</p>
+      <p>5A	Application of the <i>Criminal Code</i>	8</p>
+      <p>6	Power of collecting agency to make certain determinations	8</p>
+      <p><ref href="#part-2">Part 2</ref>—Liability for levy and penalties	10</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Liability for levy for financial years from <date date="2005-07-01">1 July 2005</date>	10</p>
+      <p>12B	Liability for levy in respect of disposals during the 2005-2006 and later financial years	10</p>
+      <p>12C	Amount of levy imposed in respect of disposals during the 2005-2006 and later financial years	10</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Other rules relating to the levy	11</p>
+      <p>13	Payment of levy	11</p>
+      <p>14	Late payment penalty	11</p>
+      <p>14A	Understatement penalty	12</p>
+      <p><ref href="#part-3">Part 3</ref>—Calculation or assessment of levy	13</p>
+      <p>15	Calculation of levy by person liable	13</p>
+      <p>16	Assessment of levy by collecting agency	15</p>
+      <p>17	Fresh assessments	16</p>
+      <p>18	Reconsideration and review of assessments	17</p>
+      <p>18A	Reporting obligations of collecting agency	18</p>
+      <p>18B	APVMA may request information from collecting agency	19</p>
+      <p><ref href="#part-4">Part 4</ref>—Enforcement	21</p>
+      <p>19	Levy, late payment penalty and understatement penalty recovered as debts	21</p>
+      <p>20	APVMA or collecting agency may require information about disposals of chemical products	21</p>
+      <p><ref href="#part-5">Part 5</ref>—Miscellaneous	23</p>
+      <p>33	Administrative Review Tribunal may review certain decisions by collecting agency	23</p>
+      <p>34	Self-incrimination etc.	23</p>
+      <p>35	Annual returns by interested persons	24</p>
+      <p>36	Records to be kept by applicants for registration of, and persons who import or manufacture, chemical products	25</p>
+      <p>37	Records to be kept by interested persons	26</p>
+      <p>37A	Main constitutional basis of sections 35 and 37	27</p>
+      <p>37B	Other constitutional bases of sections 35 and 37	27</p>
+      <p>38	Exemptions from liability for damages	28</p>
+      <p>38A	Refund of overpayments	28</p>
+      <p>38B	Waiver of amounts	28</p>
+      <p>38C	Rounding of amounts	29</p>
+      <p>38D	Costs and expenses of collecting agency	29</p>
+      <p>38E	Delegation	29</p>
+      <p>39	Regulations	29</p>
+      <p>Endnotes	30</p>
+      <p>Endnote 1—About the endnotes	30</p>
+      <p>Endnote 2—Abbreviation key	32</p>
+      <p>Endnote 3—Legislation history	33</p>
+      <p>Endnote 4—Amendment history	37</p>
+      <p>An Act to provide for the collection of a levy on agricultural and veterinary chemical products, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Agricultural and Veterinary Chemical Products (Collection of Levy) Act 1994</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>		This Act commences on the same day as the <i>Agricultural and Veterinary Chemicals Act 1994</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-1__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-active-constituent">active constituent</term> has the same meaning as <def>in <ref href="/akn/au/act/agricultural-and-veterinary-chemicals-code-set-out-in-the-schedule-to-the-agricultural-and-veterinary-chemicals-code-act-1994" class="unresolved">the Agricultural and Veterinary Chemicals Code set out in the Schedule to the Agricultural and Veterinary Chemicals Code Act 1994</ref>.</def></p>
+              <p><term refersTo="#term-agency">Agency</term> has the same meaning as <def>Commonwealth entity in the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-agricultural-chemical-product">agricultural chemical product</term> has the same meaning as <def>in <ref href="/akn/au/act/agricultural-and-veterinary-chemicals-code-set-out-in-the-schedule-to-the-agricultural-and-veterinary-chemicals-code-act-1994" class="unresolved">the Agricultural and Veterinary Chemicals Code set out in the Schedule to the Agricultural and Veterinary Chemicals Code Act 1994</ref>.</def></p>
+              <p><term refersTo="#term-apvma">APVMA</term> means <def>the Australian Pesticides and Veterinary Medicines Authority continued in existence by <ref href="#sec-6">section 6</ref> of the Agricultural and Veterinary Chemicals (Administration) Act 1992.</def></p>
+              <p><term refersTo="#term-assessment">assessment</term> means <def>an assessment under <ref href="#sec-16">section 16</ref>.</def></p>
+              <p><term refersTo="#term-australia">Australia</term> includes <def>any external Territories that are participating Territories.</def></p>
+              <p><term refersTo="#term-australian-product">Australian product</term> means <def>a chemical product that has been manufactured in Australia, but does not include an imported product.</def></p>
+              <p><term refersTo="#term-chemical-product">chemical product</term> means <def>an agricultural chemical product or a veterinary chemical product but does not include such a product that, under the regulations, is exempt from levy.</def></p>
+              <p><term refersTo="#term-civil-penalty-order">civil penalty order</term> has the same meaning as <def>in the Agricultural and Veterinary Chemicals (Administration) Act 1992.</def></p>
+              <p><term refersTo="#term-civil-penalty-provision">civil penalty provision</term> means <def>a provision declared by this Act to be a civil penalty provision.</def></p>
+              <p><b><i>collecting agency</i></b> means:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency—the Agency; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if paragraph (a) does not apply—the APVMA.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-give-information">give information</term> includes <def>make a statement.</def></p>
+                <p><term refersTo="#term-imported-product">imported product</term> means <def>a chemical product that has been imported into Australia (whether or not the product was manufactured in Australia).</def></p>
+                <p><b><i>inspector</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a person appointed as an inspector for the purposes of this Act under subsection 69F(1) of the<i> Agricultural and Veterinary Chemicals (Administration) Act 1992</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an officer of the Public Service of a State or Territory to whom an arrangement referred to in subsection 69F(2) of that Act applies for the purposes of this Act.</p>
+              </content>
+              <content>
+                <p><b><i>interested person</i></b>, in relation to a registered chemical product, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	subject to paragraphs (b), (c) and (d), the person (the <b><i>original applicant</i></b>) who applied for the registration or, in the case of a chemical product whose registration has been renewed, applied for the renewal, or the last renewal, as the case may be, of the registration; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>subject to paragraphs (c) and (d), if the original applicant has entered into a contract with another person in relation to the product under which, or as a result of which, the other person will or may apply to the APVMA to have the other person’s name entered in the relevant particulars in relation to the product, or to have a label approved in relation to containers for the product, and the other person’s name is entered in those relevant particulars, or such a label is approved, on the application of the other person—the other person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if the person who, apart from this paragraph, would be the interested person because of paragraph (a) or (b), was an individual who has died or is an individual whose affairs are being lawfully administered by another person—the legal personal representative of the individual or the person administering his or her affairs, as the case may be; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>if the person who, apart from this paragraph, would be the interested person because of paragraph (a) or (b), was a body corporate—a successor in law of that body corporate.</p>
+              </content>
+              <content>
+                <p><b><i>jurisdiction</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a State; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the participating Territories.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-late-payment-penalty">late payment penalty</term> means <def>late payment penalty payable under <ref href="#sec-14">section 14</ref>.</def></p>
+                <p><b><i>leviable disposal</i></b>, in relation to a chemical product, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the product is an Australian product:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the product is disposed of in Australia by the manufacturer—that disposal of the product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the product is applied by the manufacturer to the manufacturer’s own use—that application of the product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the product is an imported product:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the product is disposed of in Australia by the importer—that disposal of the product; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the product is applied by the importer to the importer’s own use—that application of the product.</p>
+              </content>
+              <content>
+                <p><b><i>leviable value</i></b>, in relation to a leviable disposal of a chemical product, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the leviable disposal was a sale by wholesale of the product by the manufacturer or importer and the parties to the sale were dealing at arm’s length—the amount received by the manufacturer or importer in respect of the sale; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—the notional wholesale value of the product at the time of the disposal.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-levy">levy</term> means <def>levy, imposed by any Act, that is payable under this Act.</def></p>
+                <p><term refersTo="#term-manufacture">manufacture</term> includes <def>formulate.</def></p>
+                <p><term refersTo="#term-notional-wholesale-value">notional wholesale value</term>, in relation to a chemical product at a particular time, means <def>the amount that the collecting agency determines would have been received: if the product is an Australian product—by the manufacturer; or if the product is an imported product—by the importer; in respect of the product if, at that time, the product had been sold by the manufacturer or importer, as the case may be, by wholesale to a person with whom the manufacturer or importer was dealing at arm’s length.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the product is an Australian product—by the manufacturer; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the product is an imported product—by the importer;</p>
+              </content>
+              <content>
+                <p>in respect of the product if, at that time, the product had been sold by the manufacturer or importer, as the case may be, by wholesale to a person with whom the manufacturer or importer was dealing at arm’s length.</p>
+                <p><term refersTo="#term-participating-territory">participating Territory</term> has the same meaning as <def>in <ref href="">the Agricultural and Veterinary Chemicals Act 1994</ref>.</def></p>
+                <p><b><i>prescribed date for payment</i></b>, in relation to any levy that is payable, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if levy is payable because of an assessment that has been made—the date stated in the notice of assessment to be the date by which the levy is to be paid; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—the next 31 December following the end of the relevant financial year.</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	As the levy is paid in arrears, levy might be payable in respect of a chemical product whose registration has ceased.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p><term refersTo="#term-rate-of-levy">rate of levy</term> has the meaning given by <def><ref href="#sec-12C">section 12C</ref>.</def></p>
+                <p><term refersTo="#term-registered">registered</term>, in relation to a jurisdiction, means <def>registered under a registration law of the jurisdiction.</def></p>
+                <p><b><i>registration law</i></b>, in relation to a jurisdiction, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if there is an Agvet Code of the jurisdiction that is in force—<ref href="#part-2">Part 2</ref> of that Code, including (to avoid doubt) <ref href="#part-2">Part 2</ref> of that Code as it has effect because of the operation of <ref href="#part-11">Part 11</ref> of that Code; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—a prescribed law of the jurisdiction;</p>
+              </content>
+              <content>
+                <p>and also has an extended meaning as mentioned in subsections (2) and (2A).</p>
+                <p><term refersTo="#term-relevant-financial-year">relevant financial year</term> means <def>the financial year in which the leviable disposals in respect of which the levy is payable took place.</def></p>
+                <p><b><i>relevant particulars</i></b>, in relation to a registered chemical product, has the same meaning as in the Agricultural and Veterinary Chemicals Code set out in the Schedule to the <i>Agricultural and Veterinary Chemicals Code Act 1994</i>.</p>
+                <p><term refersTo="#term-state">State</term> includes <def>the Northern Territory.</def></p>
+                <p><term refersTo="#term-thing">thing</term> includes <def>a document.</def></p>
+                <p><term refersTo="#term-total-leviable-value">total leviable value</term>, in relation to a chemical product for a particular period, means <def>the sum of the leviable values in respect of the leviable disposals of the product that took place anywhere in Australia during that period.</def></p>
+                <p><term refersTo="#term-understatement-penalty">understatement penalty</term> means <def>understatement penalty payable under <ref href="#sec-14A">section 14A</ref>.</def></p>
+                <p><term refersTo="#term-veterinary-chemical-product">veterinary chemical product</term> has the same meaning as <def>in <ref href="/akn/au/act/agricultural-and-veterinary-chemicals-code-set-out-in-the-schedule-to-the-agricultural-and-veterinary-chemicals-code-act-1994" class="unresolved">the Agricultural and Veterinary Chemicals Code set out in the Schedule to the Agricultural and Veterinary Chemicals Code Act 1994</ref>.</def></p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If, at any time or during any period, a permit is in force in respect of a chemical product under Part 7 of the Agvet Code of a State or of the participating Territories (including, to avoid doubt, a permit that is taken to be in force under <ref href="#part-7">Part 7</ref> of such a Code because of the operation of <ref href="#part-1">Part 1</ref>1 of the Code), this Act has effect as if:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the product were registered under Part 2 of the Code at that time or during that period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a reference to the person who applied for the registration of the product were a reference to the person who applied for the permit.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>	(2A)	If, at any time or during any period, a permit is in force in respect of a chemical product under a prescribed law referred to in paragraph (b) of the definition of<b><i> registration law</i></b> in subsection (1), this Act has effect as if:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-2A__para-a">
+              <num>a</num>
+              <content>
+                <p>the product were registered under that law at that time or during that period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-2A__para-b">
+              <num>b</num>
+              <content>
+                <p>a reference to the person who applied for the registration of the product were a reference to the person who applied for the permit.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2B">
+            <num>2B</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-2B__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a chemical product was registered at a particular time or during a particular period under a law that is prescribed for the purposes of paragraph (b) of the definition of <b><i>registration law</i></b> in subsection (1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-2B__para-b">
+              <num>b</num>
+              <content>
+                <p>the product is declared by the regulations to have been, or to be, an excluded chemical product for the purposes of this Act from a time referred to in the regulations that is earlier than that particular time or earlier than the commencement of that particular period;</p>
+              </content>
+              <content>
+                <p>the product is taken, for the purposes of this Act, not to have been registered under that law at that time or during that period, as the case may be.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If a change occurs in the legal or equitable ownership of a chemical product, the product is taken to be disposed of at the time of the change by the person who was the legal owner of the product immediately before the change.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If a chemical product is applied by a person to the person’s own use, the product is taken to be disposed of by the person when it is so applied.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3A">
+          <num>3A</num>
+          <heading>Minister may specify collecting agency</heading>
+          <subsection eId="part-1__sec-3A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by written instrument, specify an Agency to be the collecting agency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Before making an instrument specifying an Agency, <role refersTo="#minister">the Minister</role> must get the written agreement of <role refersTo="#minister">the Minister</role> responsible for the Agency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An instrument under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Extension to certain external Territories</heading>
+          <content>
+            <p>This Act extends to the external Territories that are participating Territories.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Act to bind Crown</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in all its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Nothing in this Act renders the Crown in any capacity liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-5A">
+          <num>5A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-2" marker="2">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Power of collecting agency to make certain determinations</heading>
+          <subsection eId="part-1__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The collecting agency may do any one or more of the following:</p>
+            </content>
+            <paragraph eId="part-1__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	by notice in writing to the manufacturer or importer of a chemical product, determine the amount that would have been received by the manufacturer or importer in respect of the product at a particular time as mentioned in the definition of <b><i>notional wholesale value</i></b> in subsection 3(1);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	for the purpose of paragraph (a) of the definition of <b><i>prescribed date for payment</i></b>,<b><i> </i></b>by notice published in the <i>Gazette</i>, direct that, in relation to levy payable in a particular calendar year or financial year stated in the <i>Gazette </i>notice, a reference in a notice of assessment to a date that is specified in the <i>Gazette </i>notice is taken instead to be a reference to another date (whether earlier or later) that is specified in the <i>Gazette </i>notice;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	for the purpose of paragraph (b) of the definition of <b><i>prescribed date for payment</i></b>, by notice published in the <i>Gazette</i>, direct that, in relation to levy payable in a particular calendar year or financial year stated in the <i>Gazette </i>notice, a reference in that paragraph to a date that is specified in the <i>Gazette </i>notice is taken instead to be a reference to another date (whether earlier or later) that is specified in the <i>Gazette </i>notice;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	by notice published in the <i>Gazette</i>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	specify amounts of levy to which the <i>Gazette </i>notice applies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	direct that, for the purposes of this Act, an amount of such a levy that, apart from the direction, would be required to be paid by a particular date is taken to have been paid by that date if the levy is paid by instalments worked out in accordance with the <i>Gazette </i>notice on such dates as are stated in the <i>Gazette </i>notice.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A determination or direction made or given under subsection (1) has effect according to its terms.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A notice made under paragraph (1)(a) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A notice made under paragraph (1)(b), (c) or (d) is a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Liability for levy and penalties</heading>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Liability for levy for financial years from 1 July 2005</heading>
+          <section eId="part-2__dvs-2__sec-12B">
+            <num>12B</num>
+            <heading>Liability for levy in respect of disposals during the 2005-2006 and later financial years</heading>
+            <subsection eId="part-2__dvs-2__sec-12B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a chemical product was registered in any jurisdiction during the whole or any part of the financial year beginning on <date date="2005-07-01">1 July 2005</date> or a later financial year, then levy is payable in respect of leviable disposals of the product that took place anywhere in Australia at any time during that year.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection (3), the interested person in relation to the chemical product is liable to pay the levy.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If the chemical product was registered as mentioned in subsection (1) in more than one jurisdiction and different persons are the interested persons in relation to the product in different jurisdictions, those persons are jointly and severally liable to pay the levy.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-12C">
+            <num>12C</num>
+            <heading>Amount of levy imposed in respect of disposals during the 2005-2006 and later financial years</heading>
+            <content>
+              <p>The amount of the levy that is payable under <ref href="#sec-12B">section 12B</ref> in respect of leviable disposals of a particular chemical product during a financial year is the amount worked out using the formula:</p>
+            </content>
+            <figure>
+              <img src="corpus/images/agricultural-and-veterinary-chemical-products-(collection-of-levy)-act-1994-fig-1.png" alt=""/>
+            </figure>
+            <content>
+              <p>where:</p>
+              <p><b><i>rate of levy </i></b>means the percentage prescribed by the regulations for the purposes of this section in respect of the financial year.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Other rules relating to the levy</heading>
+          <section eId="part-2__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Payment of levy</heading>
+            <content>
+              <p>A person who is liable to pay levy in respect of a chemical product must pay the levy on or before the prescribed date for payment of that levy.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	If any levy payable in respect of a chemical product is not paid, the Agvet Codes provide that the APVMA may refuse to renew the registration of the product.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-2__dvs-3__sec-14">
+            <num>14</num>
+            <heading>Late payment penalty</heading>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if either or both of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>any levy payable by a person under this Part in respect of leviable disposals of a particular chemical product during a period;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any understatement penalty payable in respect of the product for the period;</p>
+                </content>
+                <content>
+                  <p>is not wholly paid on or before the prescribed date for payment of the levy, or the date stated under subsection 16(8A), as the case requires.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>The person immediately becomes liable to pay a late payment penalty of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the total amount of levy and understatement penalty that is unpaid is not more than $10,000—$200; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the total amount of levy and understatement penalty that is unpaid is more than $10,000—$400.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The collecting agency may remit the whole or a part of an amount of late payment penalty.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	If any late payment penalty payable in respect of a chemical product is not paid, the Agvet Codes provide that the APVMA may refuse to renew the registration of the product.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-14A">
+            <num>14A</num>
+            <heading>Understatement penalty</heading>
+            <subsection eId="part-2__dvs-3__sec-14A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14A__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a person mentioned in paragraph 20(1)(a) or (2)(a)<i> </i>(about notices requiring information) gives to the collecting agency under that section information relating to the importation, manufacture or disposal of a chemical product during a period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14A__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the total leviable value (the <b><i>understated value</i></b>) in respect of the product for the period worked out on the basis of that information is less than the actual total leviable value in respect of the product for the period.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The person is liable to pay an understatement penalty in respect of the product for the period of the higher of the following amounts:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>$100;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>25% of the difference between the actual total leviable value and the understated value.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The collecting agency may remit the whole or a part of an amount of understatement penalty.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	If any understatement penalty payable in respect of a chemical product is not paid, the Agvet Codes provide that the APVMA may refuse to renew the registration of the product.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Calculation or assessment of levy</heading>
+        <section eId="part-3__sec-15">
+          <num>15</num>
+          <heading>Calculation of levy by person liable</heading>
+          <subsection eId="part-3__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If it appears to the collecting agency that a person may be liable to pay levy in respect of leviable disposals of a chemical product that took place during a particular period, the collecting agency may, not earlier than the end of that period, by written notice given to the person:</p>
+            </content>
+            <paragraph eId="part-3__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>tell the person the rate of levy payable in respect of chemical products for that period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>require the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>to calculate the total leviable value (if any) in respect of the product for that period and the amount of the levy (if any) that is payable; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>within a period of not less than one month that is stated in the notice, to notify the collecting agency in writing of the results of the calculations and the basis on which the calculations were made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person must not refuse or fail to comply with a requirement made under subsection (1).</p>
+            </content>
+            <content>
+              <p>(2AA)	A person commits an offence of strict liability if the person contravenes subsection (2).</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>Subsection (2AA) does not apply if the person has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (2A). See subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-2B">
+            <num>2B</num>
+            <content>
+              <p>Subsection (2) is a civil penalty provision.</p>
+            </content>
+            <authorialNote placement="end" eId="note-8" marker="8">
+              <content>
+                <p>Note 1:	For monitoring and investigation powers of inspectors in relation to this Act, see <ref href="#part-7A">Part 7A</ref>A of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-9" marker="9">
+              <content>
+                <p>Note 2:	<ref href="#dvs-1">Division 1</ref> of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992 </i>provides for pecuniary penalties for contraventions of civil penalty provisions.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-10" marker="10">
+              <content>
+                <p>Note 3:	For infringement notices, enforceable undertakings and formal warnings in relation to contraventions of this provision, see Divisions 2, 3 and 6 of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subject to subsection (6), a person who has given to the collecting agency , under subparagraph (1)(b)(ii) or this subsection, a notification in writing in respect of the total leviable value (if any) in respect of a chemical product for a period and the amount of the levy (if any) that is payable may make a further calculation of that value and amount in substitution for the value and amount last so calculated and notify the collecting agency of the results of the further calculations and the basis on which the further calculations were made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subject to subsection (6), an amount notified by a person to the collecting agency in accordance with this section as being the amount calculated by the person to be the levy payable in respect of a chemical product for a period or, if more than one amount has been so notified for that period, the amount last notified, is taken to be the amount of levy so payable.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subject to subsection (6), if a notification by a person to the collecting agency in accordance with this section or, if more than one notification has been made, the last such notification, states that the calculations made by the person show that no levy is payable in respect of a particular chemical product for a period, no levy is payable by the person in respect of that product for that period.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsections (3), (4) and (5) do not apply in relation to a chemical product in respect of a period if the collecting agency has made or makes an assessment as to whether any levy is payable in respect of that product for that period.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-16">
+          <num>16</num>
+          <heading>Assessment of levy by collecting agency</heading>
+          <content>
+            <p>Assessment of levy</p>
+          </content>
+          <subsection eId="part-3__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The collecting agency may make an assessment as to whether any levy is payable in respect of leviable disposals of a particular chemical product during a particular period.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An assessment may be made before, on or after the date that, apart from the assessment, would be the prescribed date for payment of the levy and whether or not any payment has been made on account of the levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An assessment is to state the total leviable value (if any) in respect of the product for the period concerned and the amount of the levy (if any) payable.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An assessment may be based on any information in the possession of the APVMA or, if an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref>, the Agency, whether obtained as a result of the making of a requirement under this Act or otherwise.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The collecting agency must give written notice of an assessment:</p>
+            </content>
+            <paragraph eId="part-3__sec-16__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>if any levy is assessed to be payable—to the person who it considers is liable to pay the levy; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>if no levy is assessed to be payable—to the person who, if levy had been payable, it considers would have been liable to pay the levy.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A notice of assessment must contain particulars of any determination made by the collecting agency under paragraph 6(1)(a).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-7">
+            <num>7</num>
+            <content>
+              <p>If any levy is payable, the notice must state the date by which the levy is to be paid.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The date to be so stated must not be earlier than whichever is the later of the following dates:</p>
+            </content>
+            <paragraph eId="part-3__sec-16__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the date that, apart from the assessment, would be the prescribed date for payment of the levy;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>the 21st day after the day on which the notice is given.</p>
+              </content>
+              <content>
+                <p>Assessment to include details of understatement penalty</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-8A">
+            <num>8A</num>
+            <content>
+              <p>If any understatement penalty is also payable in respect of the product for the period concerned, the notice must state:</p>
+            </content>
+            <paragraph eId="part-3__sec-16__subsec-8A__para-a">
+              <num>a</num>
+              <content>
+                <p>the amount of understatement penalty payable; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-8A__para-b">
+              <num>b</num>
+              <content>
+                <p>the date by which the penalty is to be paid (which is to be the same as the date stated under subsection (7)).</p>
+              </content>
+              <content>
+                <p>Reconsideration and review of assessments</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A notice of an assessment must include a statement to the effect of <ref href="#sec-18">section 18</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-10">
+            <num>10</num>
+            <content>
+              <p>A failure to comply with subsection (9) does not affect the validity of the assessment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-11">
+            <num>11</num>
+            <content>
+              <p>	(11)	An assessment is taken to be a decision for the purposes of the <i>Administrative Review Tribunal Act 2024</i>.</p>
+            </content>
+            <content>
+              <p>Notice of assessment is conclusive evidence of the due making of the assessment</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-12">
+            <num>12</num>
+            <content>
+              <p>The production of a notice of assessment, or of a document purporting to be a copy of a notice of assessment, signed on behalf of the collecting agency by the Chief Executive Officer of the Agency or a delegate of the Chief Executive Officer is conclusive evidence of the due making of the assessment and, except in proceedings under <ref href="#sec-18">section 18</ref> on a review or appeal relating to the assessment, that the amount and all the particulars of the assessment are correct.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-17">
+          <num>17</num>
+          <heading>Fresh assessments</heading>
+          <subsection eId="part-3__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), if the collecting agency is satisfied that an assessment was incorrect, the collecting agency may make a fresh assessment under <ref href="#sec-16">section 16</ref> in substitution for the incorrect assessment, even though levy or understatement penalty may have been paid in respect of the incorrect assessment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A fresh assessment may:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the incorrect assessment was based on false or misleading information given to the APVMA, an Agency specified by instrument under <ref href="#sec-3A">section 3A</ref> or an inspector—be made at any time; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—be made only within 4 years from the date on which levy became payable under the incorrect assessment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18">
+          <num>18</num>
+          <heading>Reconsideration and review of assessments</heading>
+          <subsection eId="part-3__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who is affected by an assessment made by the collecting agency may, if dissatisfied with the assessment, by written notice given to the collecting agency <quantity refersTo="#deadline">within 21 days</quantity> after the day on which the person first received notice of the assessment, or within any further period that the collecting agency allows, request the collecting agency to reconsider the assessment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The person must set out in the request reasons for making the request.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Upon receipt of the request, the collecting agency must reconsider the assessment and, subject to subsection (4), may confirm or revoke the assessment or vary the assessment in any manner that it thinks fit.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the collecting agency does not confirm, revoke or vary an assessment before the end of 21 days after the day on which it received the request under subsection (1) to reconsider the assessment, it is taken, at the end of that period, to have confirmed the assessment under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the collecting agency confirms, revokes or varies an assessment before the end of the period referred to in subsection (4), it must, by written notice given to the person making the request, tell the person the result of the reconsideration of the assessment and the reasons for confirming, varying or revoking the assessment, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A failure to comply with subsection (5) does not affect the validity of the confirmation, revocation or variation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Applications may be made to the Administrative Review Tribunal for review of assessments of the collecting agency that have been confirmed or varied under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-8">
+            <num>8</num>
+            <content>
+              <p>If, as a result of an application made under paragraph 33(b), the Administrative Review Tribunal has reviewed a determination made by the collecting agency under paragraph 6(1)(a) in relation to a chemical product as at a particular time, the Tribunal is not entitled to alter the determination as so reviewed by it when it is reviewing an assessment to which the determination is relevant.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-9">
+            <num>9</num>
+            <content>
+              <p>	(9)	If an assessment is taken, because of subsection (4), to be confirmed, <ref href="#sec-18">section 18</ref> of the <i>Administrative Review Tribunal Act 2024</i> applies as if the prescribed period for making application for review of the assessment were the period beginning on the day on which the assessment is taken to be confirmed and ending on the 28th day after that day.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-10">
+            <num>10</num>
+            <content>
+              <p>	(10)	If a request is made under subsection (1) in respect of an assessment, <ref href="#sec-32">section 32</ref> of the <i>Administrative Review Tribunal Act 2024</i> (reviewable decision continues to operate unless Tribunal orders otherwise) applies as if the making of the request were the making of an application to the Administrative Review Tribunal for a review of the assessment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18A">
+          <num>18A</num>
+          <heading>Reporting obligations of collecting agency</heading>
+          <subsection eId="part-3__sec-18A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies if an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In relation to a particular period, the Agency must notify the APVMA, in writing, of the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the leviable disposals of a chemical product that took place during the period;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the total leviable value (if any) in respect of the product for that period and the amount of the levy (if any) that was payable;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>any assessment made by the Agency as to whether any levy was payable in respect of leviable disposals of the chemical product during the period;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the amounts of levy, late payment penalty or understatement penalty collected by the Agency during the period;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>if the prescribed date for payment of levy falls within the period—the amounts of levy that have not been paid on or before the prescribed date;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>if late payment penalty or understatement penalty is payable during the period—any amounts of late payment penalty or understatement penalty that have not been paid;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>if the amounts of any levy, late payment penalty or understatement penalty overpaid by a person have been credited during the period against a liability of the person to pay another such amount under the Act—the amount credited and the person in relation to whom the amount was credited;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>if the whole or part of the liability to pay an amount of levy, late payment penalty or understatement penalty has been waived during the period—the amount that has been waived and the person in relation to whom the amount was waived;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18A__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>if the total amount of levy, late payment penalty or understatement penalty was rounded during the period—the amount of levy, late payment penalty or understatement penalty payable, the amount as rounded and the person in relation to whom the amount was rounded.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-18A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Agency must notify the APVMA in such form, and by such time after the end of the period, as the APVMA requires.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18B">
+          <num>18B</num>
+          <heading>APVMA may request information from collecting agency</heading>
+          <subsection eId="part-3__sec-18B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies if an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The APVMA may request the collecting agency to provide any information it has acquired under this Act if the APVMA considers that the information is or may be required to enable:</p>
+            </content>
+            <paragraph eId="part-3__sec-18B__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the APVMA to perform functions, or exercise powers, under the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i> or the Agvet Code of a State or of the participating Territories; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18B__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the Chief Executive Officer of the APVMA to perform his or her functions, or exercise his or her powers, under the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i> or the Agvet Code of a State or of the participating Territories<i>.</i></p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-18B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Agency must respond to the APVMA in such form, and by such time, as the APVMA requires.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Enforcement</heading>
+        <section eId="part-4__sec-19">
+          <num>19</num>
+          <heading>Levy, late payment penalty and understatement penalty recovered as debts</heading>
+          <subsection eId="part-4__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Any levy that has not been paid on or before the prescribed date for payment of the levy, or any late payment penalty or understatement penalty that is payable, is:</p>
+            </content>
+            <paragraph eId="part-4__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a debt due to the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>payable to the APVMA on behalf of the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-19__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>may be sued for and recovered by the APVMA.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The APVMA must pay to the Commonwealth any amounts of levy, late payment penalty or understatement penalty received by it.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-20">
+          <num>20</num>
+          <heading>APVMA or collecting agency may require information about disposals of chemical products</heading>
+          <subsection eId="part-4__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purpose of determining whether levy under <ref href="#part-2">Part 2</ref> is payable in respect of a chemical product for a calendar year or a financial year, the APVMA may or, if a collecting agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency, the collecting agency may, not earlier than the end of the year, give written notice to any one or more of the following:</p>
+            </content>
+            <paragraph eId="part-4__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person, or any of the persons, by whom any such levy would be payable;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the product is an imported product and the person referred to in paragraph (a) is not, or none of the persons referred to in that paragraph is, the importer—the importer;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-20__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if the product is an Australian product and the person referred to in paragraph (a) is not, or none of the persons referred to in that paragraph is, the manufacturer—the manufacturer;</p>
+              </content>
+              <content>
+                <p>requiring the person to whom the notice is given to give to the APVMA or the collecting agency, as the case may be, within a period stated in the notice that is not less than one month after the notice is given, any information relating to the importation, manufacture or disposal of the product during the year that is necessary to work out the total leviable value in respect of the product for the year.</p>
+              </content>
+              <authorialNote placement="end" eId="note-11" marker="11">
+                <content>
+                  <p>Note:	A person might be liable for an understatement penalty if the total leviable value worked out on the basis of information given under this subsection is less than the actual total leviable value: see <ref href="#sec-14A">section 14A</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the APVMA may give a written notice under subsection (1) even if an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person must not refuse or fail to comply with a requirement made under subsection (1) or (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-20__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>A person commits an offence of strict liability if the person contravenes subsection (3).</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-12" marker="12">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (3A) does not apply if the person has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-13" marker="13">
+              <content>
+                <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (4). See subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4__sec-20__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection (3) is a civil penalty provision.</p>
+            </content>
+            <authorialNote placement="end" eId="note-14" marker="14">
+              <content>
+                <p>Note 1:	For monitoring and investigation powers of inspectors in relation to this Act, see <ref href="#part-7A">Part 7A</ref>A of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-15" marker="15">
+              <content>
+                <p>Note 2:	<ref href="#dvs-1">Division 1</ref> of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992 </i>provides for pecuniary penalties for contraventions of civil penalty provisions.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-16" marker="16">
+              <content>
+                <p>Note 3:	For infringement notices, enforceable undertakings and formal warnings in relation to contraventions of this provision, see Divisions 2, 3 and 6 of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-5__sec-33">
+          <num>33</num>
+          <heading>Administrative Review Tribunal may review certain decisions by collecting agency</heading>
+          <content>
+            <p>An application may be made to the Administrative Review Tribunal for review of:</p>
+          </content>
+          <paragraph eId="part-5__sec-33__para-b">
+            <num>b</num>
+            <content>
+              <p>a decision of the collecting agency determining an amount under paragraph 6(1)(a); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-33__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	a decision of the collecting agency under subsection 14(2) or 14A(3)<i> </i>remitting, or refusing to remit, the whole or part of an amount of late payment penalty or understatement penalty; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-33__para-d">
+            <num>d</num>
+            <content>
+              <p>a decision of the collecting agency allowing, or refusing to allow, a further period for the making of a request under subsection 18(1).</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-34">
+          <num>34</num>
+          <heading>Self-incrimination etc.</heading>
+          <subsection eId="part-5__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person is not excused from:</p>
+            </content>
+            <paragraph eId="part-5__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>giving information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>producing a document or thing; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>answering a question asked by an inspector;</p>
+              </content>
+              <content>
+                <p>under this Act on the ground that doing so might tend to incriminate the person or expose the person to a penalty.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>However, in the case of an individual, none of the following:</p>
+            </content>
+            <paragraph eId="part-5__sec-34__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the information or answer given;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the document or thing produced;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the giving of the information or the answer, or the producing of the document or thing;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>any information, document or thing obtained as a direct or indirect consequence of giving the information or answer, or producing the document or thing;</p>
+              </content>
+              <content>
+                <p>is admissible in evidence against the individual in:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>criminal proceedings, other than:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	proceedings for an offence against <ref href="#sec-137">section 137</ref>.1 or 137.2 of the <i>Criminal Code</i> (which deal with false or misleading information or documents) that relates to this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	proceedings for an offence against <ref href="#sec-149">section 149</ref>.1 of the <i>Criminal Code</i> (which deals with obstruction of Commonwealth public officials) that relates to this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-34__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>civil proceedings for a contravention of a civil penalty provision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-35">
+          <num>35</num>
+          <heading>Annual returns by interested persons</heading>
+          <subsection eId="part-5__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The interested person in relation to a chemical product who is liable to pay levy in respect of leviable disposals of the product that took place anywhere in Australia at any time during a financial year must give the APVMA, before 30 November in the next financial year, a return setting out the total quantity of the chemical product covered by those leviable disposals.</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	See also sections 37A and 37B.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply:</p>
+            </content>
+            <paragraph eId="part-5__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to that interested person in relation to that chemical product and to a financial year if the total quantity of that product covered by those leviable disposals in that year is not more than the quantity prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to a chemical product prescribed by the regulations for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p>Strict liability offence</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person commits an offence of strict liability if the person contravenes subsection (1).</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+            <content>
+              <p>Civil penalty</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (1) is a civil penalty provision.</p>
+            </content>
+            <authorialNote placement="end" eId="note-18" marker="18">
+              <content>
+                <p>Note 1:	For monitoring and investigation powers of inspectors in relation to this Act, see <ref href="#part-7A">Part 7A</ref>A of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-19" marker="19">
+              <content>
+                <p>Note 2:	<ref href="#dvs-1">Division 1</ref> of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992 </i>provides for pecuniary penalties for contraventions of civil penalty provisions.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-20" marker="20">
+              <content>
+                <p>Note 3:	For infringement notices, enforceable undertakings and formal warnings in relation to contraventions of subsection (1), see Divisions 2, 3 and 6 of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Statement to Department</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-5">
+            <num>5</num>
+            <content>
+              <p>From the returns given to the APVMA in relation to a financial year, the APVMA must give <role refersTo="#secretary">the Secretary</role> of the Department, before the end of the next financial year, a statement setting out the total quantities of each active constituent for each chemical product covered by those returns.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-36">
+          <num>36</num>
+          <heading>Records to be kept by applicants for registration of, and persons who import or manufacture, chemical products</heading>
+          <subsection eId="part-5__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who applies for registration, or the renewal of registration, of a chemical product, or imports a chemical product into, or manufactures a chemical product in, Australia must:</p>
+            </content>
+            <paragraph eId="part-5__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>keep any records relating to the importation, manufacture or disposal of the product that may be necessary to work out the total leviable value in respect of the product for any period in respect of which levy may be payable in respect of leviable disposals of the product; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>retain those records for 6 years.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence of strict liability if the person contravenes subsection (1).</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-21" marker="21">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (1) is a civil penalty provision.</p>
+            </content>
+            <authorialNote placement="end" eId="note-22" marker="22">
+              <content>
+                <p>Note 1:	For monitoring and investigation powers of inspectors in relation to this Act, see <ref href="#part-7A">Part 7A</ref>A of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-23" marker="23">
+              <content>
+                <p>Note 2:	<ref href="#dvs-1">Division 1</ref> of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992 </i>provides for pecuniary penalties for contraventions of civil penalty provisions.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-24" marker="24">
+              <content>
+                <p>Note 3:	For infringement notices, enforceable undertakings and formal warnings in relation to contraventions of this provision, see Divisions 2, 3 and 6 of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-37">
+          <num>37</num>
+          <heading>Records to be kept by interested persons</heading>
+          <subsection eId="part-5__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The interested person in relation to a chemical product who is liable to pay levy in respect of leviable disposals of the product that took place anywhere in Australia at any time during a financial year must:</p>
+            </content>
+            <paragraph eId="part-5__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>keep any records relating to those disposals that are reasonably necessary to enable the APVMA to find out whether <ref href="#sec-35">section 35</ref> has been complied with; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>retain those records for 6 years.</p>
+              </content>
+              <authorialNote placement="end" eId="note-25" marker="25">
+                <content>
+                  <p>Note:	See also sections 37A and 37B.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Strict liability offence</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence of strict liability if the person contravenes subsection (1).</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+            <content>
+              <p>Civil penalty</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (1) is a civil penalty provision.</p>
+            </content>
+            <authorialNote placement="end" eId="note-26" marker="26">
+              <content>
+                <p>Note 1:	For monitoring and investigation powers of inspectors in relation to this Act, see <ref href="#part-7A">Part 7A</ref>A of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-27" marker="27">
+              <content>
+                <p>Note 2:	<ref href="#dvs-1">Division 1</ref> of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992 </i>provides for pecuniary penalties for contraventions of civil penalty provisions.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-28" marker="28">
+              <content>
+                <p>Note 3:	For infringement notices, enforceable undertakings and formal warnings in relation to contraventions of subsection (1), see Divisions 2, 3 and 6 of <ref href="#part-7A">Part 7A</ref>B of the <i>Agricultural and Veterinary Chemicals (Administration) Act 1992</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-37A">
+          <num>37A</num>
+          <heading>Main constitutional basis of sections 35 and 37</heading>
+          <content>
+            <p>Sections 35 and 37 rely on the Commonwealth’s legislative powers under paragraphs 51(xi) (census and statistics) and (xxxix) (incidental matters) of the Constitution.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-37B">
+          <num>37B</num>
+          <heading>Other constitutional bases of sections 35 and 37</heading>
+          <subsection eId="part-5__sec-37B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Independently of <ref href="#sec-37A">section 37A</ref>, sections 35 and 37 also have effect as provided by this section.</p>
+            </content>
+            <content>
+              <p>Trade and commerce</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-37B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Sections 35 and 37 also have the effect they would have if a reference to a leviable disposal were expressly confined to a leviable disposal that occurs in the course of:</p>
+            </content>
+            <paragraph eId="part-5__sec-37B__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>trade or commerce between Australia and places outside Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37B__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>trade or commerce among the States; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37B__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>trade or commerce within a Territory, between a State and a Territory or between 2 Territories.</p>
+              </content>
+              <content>
+                <p>Corporations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-37B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Sections 35 and 37 also have the effect they would have if a reference to a leviable disposal were expressly confined to a leviable disposal by a corporation to which paragraph 51(xx) of the Constitution applies.</p>
+            </content>
+            <content>
+              <p>Territories</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-37B__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Sections 35 and 37 also have the effect they would have if a reference to a leviable disposal were expressly confined to a leviable disposal that occurs in a Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-38">
+          <num>38</num>
+          <heading>Exemptions from liability for damages</heading>
+          <content>
+            <p>No action, suit or other proceeding for damages lies against the Commonwealth, the APVMA, or any other Commonwealth authority, or a person who is or has been an officer or employee of the Commonwealth, of the APVMA or of any other Commonwealth authority, or is or has been a delegate of the APVMA or of any other Agency, a director of the APVMA, a consultant to the APVMA or an inspector, for or in relation to anything done or omitted to be done in good faith in the performance or purported performance of any function, or the exercise or purported exercise of any power, conferred by this Act.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-38A">
+          <num>38A</num>
+          <heading>Refund of overpayments</heading>
+          <subsection eId="part-5__sec-38A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The collecting agency may credit an amount of levy, late payment penalty or understatement penalty that has been overpaid by a person against a liability of the person to pay another such amount under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-38A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The collecting agency must refund the amount to the person to the extent that it is not credited.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-38B">
+          <num>38B</num>
+          <heading>Waiver of amounts</heading>
+          <content>
+            <p>The collecting agency may waive, up to a maximum of $100, the whole or a part of the liability to pay an amount of levy, late payment penalty or understatement penalty.</p>
+          </content>
+          <authorialNote placement="end" eId="note-29" marker="29">
+            <content>
+              <p>Note:	If the collecting agency waives the whole or a part of the liability to pay an amount, this is a permanent bar to recovering that amount.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-5__sec-38C">
+          <num>38C</num>
+          <heading>Rounding of amounts</heading>
+          <content>
+            <p>If the total amount of levy, late payment penalty and understatement penalty payable by a person in respect of a chemical product for a period is not exactly divisible by $2, the collecting agency may round the amount down to the nearest amount that is exactly divisible by $2.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-38D">
+          <num>38D</num>
+          <heading>Costs and expenses of collecting agency</heading>
+          <content>
+            <p>If an Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency, the APVMA must pay the Agency for the costs and expenses incurred by the Agency in relation to collecting levy, late payment penalty or understatement penalty under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-38E">
+          <num>38E</num>
+          <heading>Delegation</heading>
+          <content>
+            <p>The Chief Executive Officer of an Agency may, by writing, delegate his or her power under subsection 16(12) to:</p>
+          </content>
+          <paragraph eId="part-5__sec-38E__para-a">
+            <num>a</num>
+            <content>
+              <p>if the Agency is the APVMA—an SES employee or acting SES employee in the APVMA; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-38E__para-b">
+            <num>b</num>
+            <content>
+              <p>if the Agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency—an SES employee or acting SES employee in the Agency.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-39">
+          <num>39</num>
+          <heading>Regulations</heading>
+          <subsection eId="part-5__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make regulations prescribing matters:</p>
+            </content>
+            <paragraph eId="part-5__sec-39__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-39__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act;</p>
+              </content>
+              <content>
+                <p>and, in particular, prescribing the way in which notices may be given by or to the APVMA or, if a collecting agency is specified by instrument under <ref href="#sec-3A">section 3A</ref> to be the collecting agency, the collecting agency, or both, under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The percentage that may be prescribed by the regulations for the purposes of <ref href="#sec-12C">section 12C</ref> must not exceed 2%.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemical Products (Collection of Levy) Act 1994</td>
+                <td>41, 1994</td>
+                <td>15 Mar 1994</td>
+                <td>15 Mar 1995 (s 2)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemical Products (Collection of Levy) Amendment Act 1994</td>
+                <td>72, 1994</td>
+                <td>21 June 1994</td>
+                <td>15 Mar 1995 (s 2 (1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Primary Industries and Energy Legislation Amendment Act 1994</td>
+                <td>94, 1994</td>
+                <td>29 June 1994</td>
+                <td>s 11: 15 Mar 1995 (s 2(4))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Primary Industries and Energy Legislation Amendment Act (No.1) 1995</td>
+                <td>36, 1995</td>
+                <td>12 Apr 1995</td>
+                <td>s 3: 12 Apr 1995 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Criminal Code Amendment (Theft, Fraud, Bribery and Related Offences) Act 2000</td>
+                <td>137, 2000</td>
+                <td>24 Nov 2000</td>
+                <td>Sch 2 (items 21, 418, 419): 24 May 2001 (s 2(3))</td>
+                <td>Sch 2 (items 418, 419)</td>
+              </tr>
+              <tr>
+                <td>Agriculture, Fisheries and Forestry Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>115, 2001</td>
+                <td>18 Sept 2001</td>
+                <td>16 Oct 2001 (s 2)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment Act 2003</td>
+                <td>13, 2003</td>
+                <td>8 Apr 2003</td>
+                <td>s 4 and Sch 1–3: 8  Oct 2003 (s 2(1) items 1, 2)
+Remainder: 8 Apr 2003 (s 2(1) item 3)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Name Change) Act 2004</td>
+                <td>79, 2004</td>
+                <td>23 June 2004</td>
+                <td>Sch 1 (items 470–483, 485, 487–491): 30 July 2004 (s 2(1) items 7, 8, 10, 12)
+Sch 1 (items 484, 486): 22 Feb 2005 (s 2(1) items 9, 11)</td>
+                <td>s 2(1) (am. by 42, 2005, Sch 1 [item 49])</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Levy and Fees) Act 2005</td>
+                <td>42, 2005</td>
+                <td>1 Apr 2005</td>
+                <td>Schedule 1 (item 49): 23 June 2004 (s 2(1) item 7)
+Schedule 1 (items 51, 53): 22 Feb 2005 (s 2(1) items 9, 11)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Financial Framework Legislation Amendment Act 2005</td>
+                <td>8, 2005</td>
+                <td>22 Feb 2005</td>
+                <td>s 4 and Sch 1 (items 75, 496): 22 Feb 2005 (s 2(1) items 1, 2, 10)</td>
+                <td>s 4 and Sch 1 (item 496)</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Levy and Fees) Act 2005</td>
+                <td>42, 2005</td>
+                <td>1 Apr 2005</td>
+                <td>Sch 1 (items 1–27, 29, 31–40): 1 Apr 2005 (s 2(1) items 2, 4, 6)
+Sch 1 (items 28, 30): Does not commence (s 2(1) items 3, 5)</td>
+                <td>Sch 1 (item 22)</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Sch 2 (item 44) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 3, 12)</td>
+                <td>Sch 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment Act 2013</td>
+                <td>125, 2013</td>
+                <td>29 June 2013</td>
+                <td>Sch 3 (items 1–17), 
+Sch 5 and Sch 6 (items 1–12, 46–59): 1 July 2014 (s 2(1) item 2)</td>
+                <td>Sch 5 (item 36) and Sch 6 (items 46–59)</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Removing Re‑approval and Re‑registration) Act 2014</td>
+                <td>91, 2014</td>
+                <td>21 July 2014</td>
+                <td>Sch 1 (item 71): 21 July 2014 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 13 (items 1, 2): 1 July 2014 (s 2(1) item 7)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2: 14 Apr 2015 (s 2)</td>
+                <td>Sch 2 (item 3)</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Removing Re-approval and Re-registration) Act 2014</td>
+                <td>91, 2014</td>
+                <td>21 July 2014</td>
+                <td>Sch 1 (item 1): 21 July 2014 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Agricultural and Veterinary Chemicals Legislation Amendment (Australian Pesticides and Veterinary Medicines Authority Board and Other Improvements) Act 2021</td>
+                <td>125, 2021</td>
+                <td>7 Dec 2021</td>
+                <td>Sch 1 (items 28–31): 8 Dec 2021 (s 2(1) item 4)</td>
+                <td>Sch 1 (item 31)</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 2) Act 2024</td>
+                <td>39, 2024</td>
+                <td>31 May 2024</td>
+                <td>Sch 15 (items 1, 2, 24): 14 Oct 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 72, 1994; No 94, 1994; No 36, 1995; No 115, 2001; No 13, 2003; No 79, 2004; No 42, 2005; No 46, 2011; No 125, 2013; No 62, 2014; No 125, 2021</td>
+              </tr>
+              <tr>
+                <td>s 3A</td>
+                <td>ad No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 5A</td>
+                <td>ad. No. 115, 2001</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 6</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 6</td>
+                <td>am. No. 36, 1995; No. 79, 2004; No. 42, 2005; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 7</td>
+                <td>rep. No. 72, 1994</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Part 2</td>
+                <td>rs. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Div 1 of Pt 2</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to Div. 1 of Part 2</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 8</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 8</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 9</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 9(1)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 9(2)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 9(3)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 9</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 10</td>
+                <td>rep. No. 72, 1994</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 11</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 11</td>
+                <td>am. No. 13, 2003</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 12</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 12(1)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 12</td>
+                <td>am. No. 13, 2003; No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 12A</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Div. 2 of Part 2</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s 12B</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s 12C</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Division 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Div. 3 of Part 2</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Note to s. 13</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td>s. 14</td>
+                <td>am. No. 72, 1994; No. 36, 1995; No. 79, 2004; No. 42, 2005; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Note to s. 14(2)</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s. 14A</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 15</td>
+                <td>am. No. 115, 2001; No. 79, 2004; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 16</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 16(1)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 16(9)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Subhead. to s. 16(12)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s. 16</td>
+                <td>am. No. 79, 2004; No. 42, 2005; No 125, 2013; No 39, 2024</td>
+              </tr>
+              <tr>
+                <td>s. 17</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 18</td>
+                <td>am. No. 79, 2004; No. 42, 2005; No 125, 2013; No 39, 2024</td>
+              </tr>
+              <tr>
+                <td>s 18A</td>
+                <td>ad No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 18B</td>
+                <td>ad No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to s. 19</td>
+                <td>am. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s. 19</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 8, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 79, 2004; No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 20</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 20</td>
+                <td>am. No. 72, 1994; No. 36, 1995; No. 115, 2001; No. 79, 2004; No. 42, 2005; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Note to s. 20(1)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>Note to s. 20(2)</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 23</td>
+                <td>am. No. 115, 2001</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 29</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to s. 33</td>
+                <td>am. No. 79, 2004</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 33</td>
+                <td>am. No. 79, 2004; No. 42, 2005; No 125, 2013; No 39, 2024</td>
+              </tr>
+              <tr>
+                <td>s. 34</td>
+                <td>rs. No. 42, 2005; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 35</td>
+                <td>rep No 125, 2013</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad No 125, 2021</td>
+              </tr>
+              <tr>
+                <td>hdg to s 36</td>
+                <td>rs No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 36</td>
+                <td>am. No. 115, 2001; No 125, 2013; No 91, 2014</td>
+              </tr>
+              <tr>
+                <td>s. 37</td>
+                <td>rep. No. 137, 2000</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad No 125, 2021</td>
+              </tr>
+              <tr>
+                <td>s 37A</td>
+                <td>ad No 125, 2021</td>
+              </tr>
+              <tr>
+                <td>s 37B</td>
+                <td>ad No 125, 2021</td>
+              </tr>
+              <tr>
+                <td>s. 38</td>
+                <td>am. No. 79, 2004; No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 38A</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 38B</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>Note to s 38B</td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 38C</td>
+                <td>ad. No. 42, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s 38D</td>
+                <td>ad No 125, 2013</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 38E</td>
+                <td>ad No 125, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 39</td>
+                <td>am. No. 72, 1994; No. 79, 2004; No. 42, 2005; No 125, 2013</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

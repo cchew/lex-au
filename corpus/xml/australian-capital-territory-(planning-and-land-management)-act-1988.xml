@@ -1,0 +1,3567 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1988/108/!main"/>
+          <FRBRuri value="/akn/au/act/1988/108"/>
+          <FRBRdate date="1988-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="108"/>
+          <FRBRname value="australian-capital-territory-(planning-and-land-management)-act-1988"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1988/108/eng@2018-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/1988/108/eng@2018-07-01"/>
+          <FRBRdate date="2018-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1988/108/eng@2018-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1988/108/eng@2018-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1988-01-01" type="generation" eId="evt-creation" source="#australian-capital-territory-(planning-and-land-management)-act-1988"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1990/88"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1990/104" date="1989-01-31"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1991/179"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1992/21" date="1992-05-08"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1992/130"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1997/118" date="1997-07-07"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2001/159"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2003/140"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2007/59"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2012/136" date="2012-09-22"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2013/147" date="2013-12-17"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2015/126" date="2015-09-10"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2018/32" date="2018-07-01"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-and" href="/ontology/term/au/term-and" showAs="and"/>
+        <TLCTerm eId="term-assembly" href="/ontology/term/au/term-assembly" showAs="Assembly"/>
+        <TLCTerm eId="term-authority" href="/ontology/term/au/term-authority" showAs="Authority"/>
+        <TLCTerm eId="term-chief-executive" href="/ontology/term/au/term-chief-executive" showAs="Chief Executive"/>
+        <TLCTerm eId="term-commencing-day" href="/ontology/term/au/term-commencing-day" showAs="commencing day"/>
+        <TLCTerm eId="term-commonwealth-gazette" href="/ontology/term/au/term-commonwealth-gazette" showAs="Commonwealth Gazette"/>
+        <TLCTerm eId="term-designated-area" href="/ontology/term/au/term-designated-area" showAs="Designated Area"/>
+        <TLCTerm eId="term-enactment" href="/ontology/term/au/term-enactment" showAs="enactment"/>
+        <TLCTerm eId="term-executive" href="/ontology/term/au/term-executive" showAs="Executive"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-interim-authority" href="/ontology/term/au/term-interim-authority" showAs="interim authority"/>
+        <TLCTerm eId="term-land" href="/ontology/term/au/term-land" showAs="land"/>
+        <TLCTerm eId="term-lands-acquisition-act" href="/ontology/term/au/term-lands-acquisition-act" showAs="Lands Acquisition Act"/>
+        <TLCTerm eId="term-liability" href="/ontology/term/au/term-liability" showAs="liability"/>
+        <TLCTerm eId="term-management" href="/ontology/term/au/term-management" showAs="management"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-national-capital-plan" href="/ontology/term/au/term-national-capital-plan" showAs="National Capital Plan"/>
+        <TLCTerm eId="term-national-land" href="/ontology/term/au/term-national-land" showAs="National Land"/>
+        <TLCTerm eId="term-ncdc" href="/ontology/term/au/term-ncdc" showAs="NCDC"/>
+        <TLCTerm eId="term-ncdc-act" href="/ontology/term/au/term-ncdc-act" showAs="NCDC Act"/>
+        <TLCTerm eId="term-ncdc-policy" href="/ontology/term/au/term-ncdc-policy" showAs="NCDC policy"/>
+        <TLCTerm eId="term-plan" href="/ontology/term/au/term-plan" showAs="Plan"/>
+        <TLCTerm eId="term-self-government-act" href="/ontology/term/au/term-self-government-act" showAs="Self-Government Act"/>
+        <TLCTerm eId="term-self-government-day" href="/ontology/term/au/term-self-government-day" showAs="Self-Government Day"/>
+        <TLCTerm eId="term-territory" href="/ontology/term/au/term-territory" showAs="Territory"/>
+        <TLCTerm eId="term-territory-gazette" href="/ontology/term/au/term-territory-gazette" showAs="Territory Gazette"/>
+        <TLCTerm eId="term-territory-land" href="/ontology/term/au/term-territory-land" showAs="Territory Land"/>
+        <TLCTerm eId="term-territory-plan" href="/ontology/term/au/term-territory-plan" showAs="Territory Plan"/>
+        <TLCTerm eId="term-territory-planning-authority" href="/ontology/term/au/term-territory-planning-authority" showAs="Territory planning authority"/>
+        <TLCTerm eId="term-transition-period" href="/ontology/term/au/term-transition-period" showAs="transition period"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Capital Territory (Planning and Land Management) Act 1988</p>
+      <p>No. 108, 1988</p>
+      <p><b>Compilation No.</b><b> </b><b>19</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>1 July 2018</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 32, 2018</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>6 August 2018</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Capital Territory (Planning and Land Management) Act 1988</i> that shows the text of the law as amended and in force on 1 July 2018 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Location of definitions	1</p>
+      <p>4	Definitions for whole Act	2</p>
+      <p><ref href="#part-II">Part II</ref>—Establishment, functions and powers of authority	5</p>
+      <p>5	Establishment and name of Authority	5</p>
+      <p>6	Functions of <role refersTo="#authority">the Authority</role>	5</p>
+      <p>7	Ministerial directions	6</p>
+      <p>8	Powers of Authority	7</p>
+      <p><ref href="#part-III">Part III</ref>—The National Capital Plan	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Object and effect of National Capital Plan	8</p>
+      <p>9	Object of Plan	8</p>
+      <p>10	Matters to be covered in Plan	8</p>
+      <p>11	Effect of Plan	9</p>
+      <p>12	Works in Designated Areas to be subject to Plan and approval by <role refersTo="#authority">the Authority</role>	9</p>
+      <p>13	Plan not to have retrospective effect	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Preparation of National Capital Plan	10</p>
+      <p>14	Draft Plan to be prepared	10</p>
+      <p>15	Public consultation	10</p>
+      <p>16	Certification of draft Plan	10</p>
+      <p>17	Effect of certification of draft Plan	11</p>
+      <p>18	Submission to Minister for approval	11</p>
+      <p>19	Minister’s powers	11</p>
+      <p>20	Action on referral by Minister	12</p>
+      <p>20A	Objections to re-submitted draft Plan	12</p>
+      <p>21	Publication and commencement of approved Plan	13</p>
+      <p>22	Parliamentary scrutiny of Plan	13</p>
+      <p>23	Amendments of Plan	14</p>
+      <p>24	Plan may be prepared in stages or parts	14</p>
+      <p><ref href="#part-IV">Part IV</ref>—The Territory Plan	15</p>
+      <p>25	Territory Plan	15</p>
+      <p>26	Territory Plan not to be inconsistent with National Capital Plan	16</p>
+      <p><ref href="#part-V">Part V</ref>—Land management	17</p>
+      <p>27	National Land	17</p>
+      <p>28	Territory Land	17</p>
+      <p>29	Administration of Territory Land and the taking of water on National Land	17</p>
+      <p>30	Territory liable as manager	18</p>
+      <p>31	Money in respect of land	19</p>
+      <p>31A	Minerals in Territory Land	19</p>
+      <p>32	Application of Lands Acquisition Act to Territory Land	20</p>
+      <p><ref href="#part-VI">Part VI</ref>—Constitution and meetings of authority	21</p>
+      <p>33	Constitution of Authority	21</p>
+      <p>34	Vacancies not to invalidate actions of Authority	21</p>
+      <p>35	Remuneration	21</p>
+      <p>36	Period of appointment of members	22</p>
+      <p>37	Acting appointments	22</p>
+      <p>38	Leave of absence	23</p>
+      <p>39	Outside employment	23</p>
+      <p>40	Resignation of members	24</p>
+      <p>41	Termination of appointments	24</p>
+      <p>42	Disclosure of interests	24</p>
+      <p>43	Meetings	25</p>
+      <p>44	Advisory committees	26</p>
+      <p><ref href="#part-VII">Part VII</ref>—Administration of authority	27</p>
+      <p>45	Chief Executive	27</p>
+      <p>46	Functions of Chief Executive	27</p>
+      <p>47	Staff of Authority	27</p>
+      <p>48	Consultants	28</p>
+      <p>49	Delegations	28</p>
+      <p><ref href="#part-VIII">Part VIII</ref>—Miscellaneous	29</p>
+      <p>51	Commonwealth to indemnify Territory	29</p>
+      <p>52	Application of Acts Interpretation Act	29</p>
+      <p>53	Regulations	29</p>
+      <p><ref href="#part-X">Part X</ref>—Transitional provisions	31</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	31</p>
+      <p>56	Definitions for this <ref href="#part-31">Part	31</ref></p>
+      <p>57	Declaration of end of transition period	31</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Before establishment of Executive and Territory planning authority	33</p>
+      <p>58	Interim authority may take preliminary steps to prepare Territory plan	33</p>
+      <p>59	Procedures before establishment of Executive	33</p>
+      <p>60	Procedures before establishment of Territory planning authority	33</p>
+      <p>61	Application of Canberra Water Supply (Googong Dam) Act before establishment of Executive	34</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Continuation of NCDC policies	35</p>
+      <p>62	NCDC policies to continue in effect	35</p>
+      <p>63	Administration of NCDC policies	35</p>
+      <p>64	Effect of NCDC policies during transition period	35</p>
+      <p>65	Variation or revocation of NCDC policies during transition period	35</p>
+      <p>66	NCDC policies after transition period	36</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Variation of NCDC policies by Authority	37</p>
+      <p>67	Variation of NCDC policies by Authority during transition period	37</p>
+      <p>68	Public consultation	37</p>
+      <p>69	Submission to Minister for approval	38</p>
+      <p>70	Minister’s powers	38</p>
+      <p>71	Action on referral by Minister	38</p>
+      <p>72	Publication and commencement of approved variation	39</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Variation of NCDC policies by Territory planning authority	40</p>
+      <p>73	NCDC policies may be varied by Territory planning authority	40</p>
+      <p>74	Public consultation	40</p>
+      <p>75	Submission to Executive for approval	41</p>
+      <p>76	Executive’s powers	41</p>
+      <p>77	Action on referral by Executive	41</p>
+      <p>78	Submission to Minister	42</p>
+      <p>79	Publication and commencement of approved variation	42</p>
+      <p><ref href="#dvs-6">Division 6</ref>—Plan of lay-out of the City of Canberra	43</p>
+      <p>80	Modification of <ref href="#sec-12A">section 12A</ref> of <i>Seat of Government (Administration) Act 1910</i>	43</p>
+      <p><ref href="#dvs-7">Division 7</ref>—Transfers following repeal of NCDC Act	44</p>
+      <p>81	Transfer of persons employed by NCDC	44</p>
+      <p>82	Contracts	44</p>
+      <p>83	Assets, rights and liabilities	44</p>
+      <p>84	Court proceedings	45</p>
+      <p>85	Transfer of appropriated money	45</p>
+      <p>Endnotes	46</p>
+      <p>Endnote 1—About the endnotes	46</p>
+      <p>Endnote 2—Abbreviation key	48</p>
+      <p>Endnote 3—Legislation history	49</p>
+      <p>Endnote 4—Amendment history	53</p>
+      <p>An Act to provide for the planning of the Australian Capital Territory and the management of land in that Territory, to repeal the <i>National Capital Development Commission Act 1957</i>, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Capital Territory</i><i> (Planning and Land Management) Act 1988</i>. </p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-I__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Sections 1, 2 and 55 commence on the day on which this Act receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The amendment of the <i>Seat of Government (Administration) Act 1910 </i>contained in the Schedule commences on the day declared under <ref href="#sec-57">section 57</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The remaining provisions of this Act (including the other amendments in the Schedule) commence on a day or days to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Location of definitions</heading>
+          <subsection eId="part-I__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Section 4 contains definitions of expressions used throughout this Act (including <ref href="#part-X">Part X</ref>).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Section 56 contains definitions of expressions used only in <ref href="#part-X">Part X</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Some sections also contain, at the end, special definitions for the purposes of those sections.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Definitions for whole Act</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-assembly">Assembly</term> means <def>the Legislative Assembly for the Australian Capital Territory established by the Self-Government Act.</def></p>
+            <p><term refersTo="#term-authority">Authority</term> means <def>the National Capital Authority established by this Act.</def></p>
+            <p><term refersTo="#term-chief-executive">Chief Executive</term> means <def>the Chief Executive of the Authority referred to in <ref href="#sec-45">section 45</ref>.</def></p>
+            <p><b><i>Commonwealth authority</i></b> means:</p>
+          </content>
+          <paragraph eId="part-I__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a body, whether corporate or not, established by or under a law of the Commonwealth other than the Self-Government Act;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>any other body, whether corporate or not, established by the Commonwealth;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>an office established by, or appointment made under, a law of the Commonwealth other than the Self-Government Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>an appointment made by the Commonwealth.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-commonwealth-gazette">Commonwealth Gazette</term> means <def>the Commonwealth of Australia Gazette.</def></p>
+              <p><term refersTo="#term-designated-area">Designated Area</term> means <def>an area of land specified in the Plan under <ref href="#sec-10">section 10</ref>.</def></p>
+              <p><term refersTo="#term-enactment">enactment</term> has the same meaning as <def>in the Self-Government Act.</def></p>
+              <p><term refersTo="#term-executive">Executive</term> has the same meaning as <def>in the Self-Government Act.</def></p>
+              <p><b><i>full</i></b><b><i>-</i></b><b><i>time member</i></b> means:</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	Canberra Airport is not a Designated Area: see <ref href="#sec-112A">section 112A</ref> of the <i>Airports Act 1996</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>if there is a full-time Chairperson—the Chairperson; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>if there is a part-time Chairperson—the Chief Executive.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-lands-acquisition-act">Lands Acquisition Act</term> means <def>the Act for the time being in force relating to the acquisition of land by the Commonwealth and associated matters.</def></p>
+              <p><term refersTo="#term-land">land</term> includes <def>water.</def></p>
+              <p><term refersTo="#term-liability">liability</term> includes <def>obligation.</def></p>
+              <p><term refersTo="#term-management">management</term>, in relation to land, includes <def>care, control and maintenance.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of the Authority.</def></p>
+              <p><term refersTo="#term-national-land">National Land</term> has the meaning given by <def><ref href="#sec-27">section 27</ref>.</def></p>
+              <p><term refersTo="#term-plan">Plan</term> means <def>the National Capital Plan prepared by the Authority under <ref href="#part-III">Part III</ref>.</def></p>
+              <p><term refersTo="#term-self-government-act">Self-Government Act</term> means <def>the Australian Capital Territory (Self-Government) Act 1988.</def></p>
+              <p><term refersTo="#term-self-government-day">Self-Government Day</term> means <def>the day on which the Assembly becomes empowered to make laws.</def></p>
+              <p><b><i>take</i></b>, in relation to water, has the same meaning as in the <i>Water Resources Act 2007</i> (ACT), as in force at the time this definition commences.</p>
+              <p><term refersTo="#term-territory">Territory</term> has the same meaning as <def>in the Self-Government Act.</def></p>
+              <p><b><i>Territory authority</i></b> means:</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	This definition was inserted by the <i>Australian Capital Territory Water Management Legislation Amendment Act 2013</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a body, whether corporate or not, established by or under an enactment;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>any other body, whether corporate or not, established by the Executive;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>an office established by, or appointment made under, an enactment; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>an appointment made by the Executive or by a Minister as defined by the Self-Government Act.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-territory-gazette">Territory Gazette</term> means <def>the Australian Capital Territory Gazette.</def></p>
+              <p><term refersTo="#term-territory-plan">Territory Plan</term> means <def>the plan referred to in <ref href="#sec-25">section 25</ref>, and includes a stage or part of that plan.</def></p>
+              <p><term refersTo="#term-territory-planning-authority">Territory planning authority</term> means <def>the authority referred to in <ref href="#sec-25">section 25</ref>.</def></p>
+              <p><term refersTo="#term-territory-land">Territory Land</term> has the meaning given by <def><ref href="#sec-28">section 28</ref>.</def></p>
+              <p><b><i>works</i></b> includes:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the construction, alteration, extension or demolition of buildings or structures;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>landscaping;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>tree-felling; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>excavations;</p>
+            </content>
+            <content>
+              <p>but excludes anything done inside buildings or structures.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Establishment, functions and powers of authority</heading>
+        <section eId="part-II__sec-5">
+          <num>5</num>
+          <heading>Establishment and name of Authority</heading>
+          <subsection eId="part-II__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The body known immediately before the commencement of this section as the National Capital Planning Authority is continued in existence with the new name, National Capital Authority.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	Section 25B of the <i>Acts Interpretation Act 1901</i> deals with the situation where a body changes its name.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the finance law (within the meaning of the <i>Public Governance, Performance and Accountability Act 2013</i>):</p>
+            </content>
+            <paragraph eId="part-II__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> is a listed entity; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> is the accountable authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the following persons are officials of <role refersTo="#authority">the Authority</role>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the members of <role refersTo="#authority">the Authority</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the staff of <role refersTo="#authority">the Authority</role> referred to in subsection 47(1);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>persons whose services are made available to <role refersTo="#authority">the Authority</role> under subsection 47(3);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-v">
+              <num>v</num>
+              <content>
+                <p>consultants engaged under <ref href="#sec-48">section 48</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the purposes of <role refersTo="#authority">the Authority</role> include:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the functions of <role refersTo="#authority">the Authority</role> referred to in <ref href="#sec-6">section 6</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the functions of the Chief Executive referred to in <ref href="#sec-46">section 46</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Functions of the Authority</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The functions of <role refersTo="#authority">the Authority</role> are:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to prepare and administer a National Capital Plan;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to keep the Plan under constant review and to propose amendments to it when necessary;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>on behalf of the Commonwealth, to commission works to be carried out in Designated Areas in accordance with the Plan where neither a Department of State of the Commonwealth nor any Commonwealth authority has the responsibility to commission those works;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>to recommend to <role refersTo="#minister">the Minister</role> the carrying out of works that it considers desirable to maintain or enhance the character of the National Capital;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>to foster an awareness of Canberra as the National Capital;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>with the approval of <role refersTo="#minister">the Minister</role>, to perform planning services for any person or body, whether within Australia or overseas; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>subject to subsection (2) and with <role refersTo="#minister">the Minister</role>’s approval, on behalf of the Commonwealth, to manage National Land designated in writing by <role refersTo="#minister">the Minister</role> as land required for the special purposes of Canberra as the National Capital.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The functions of <role refersTo="#authority">the Authority</role> under paragraph (1)(g) do not include:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the management of the taking of water on National Land; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the regulation of the taking of water on National Land.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note 1:	Regulations may be made for the purposes of <ref href="#sec-27">section 27</ref> of the <i>Australian Capital Territory (Self</i><i>-</i><i>Government) Act 1988</i> with the effect that the <i>Water Resources Act 2007</i> (ACT) binds the Crown in right of the Commonwealth in respect of National Land.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note 2:	<role refersTo="#authority">The Authority</role> retains the function of approving works in Designated Areas under <ref href="#sec-12">section 12</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Ministerial directions</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, give general directions in writing to <role refersTo="#authority">the Authority</role> about the performance of <role refersTo="#authority">the Authority</role>’s functions.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	Section 42 (disallowance) and <ref href="#part-4">Part 4</ref> of Chapter 3 (sunsetting) of the <i>Legislation Act 2003</i> do not apply to the directions (see regulations made for the purposes of paragraphs 44(2)(b) and 54(2)(b) of that Act).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> must comply with a direction under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Subsection (2) does not apply to the extent that the direction relates to the Authority’s performance of functions or exercise of powers under the <i>Public Governance, Performance and Accountability Act 2013.</i></p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Particulars of any directions given in a financial year must be included in the annual report of <role refersTo="#authority">the Authority</role> for that year.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Powers of Authority</heading>
+          <content>
+            <p>Subject to this Act, <role refersTo="#authority">the Authority</role> has power to do all things necessary or convenient to be done for or in connection with the performance of its functions.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>The National Capital Plan</heading>
+        <division eId="part-III__dvs-1">
+          <num>1</num>
+          <heading>Object and effect of National Capital Plan</heading>
+          <section eId="part-III__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Object of Plan</heading>
+            <content>
+              <p>The object of the Plan is to ensure that Canberra and the Territory are planned and developed in accordance with their national significance.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Matters to be covered in Plan</heading>
+            <subsection eId="part-III__dvs-1__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Plan may specify areas of land that have the special characteristics of the National Capital to be Designated Areas.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Plan:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>shall define the planning principles and policies for giving effect to the object of the Plan and, in particular, shall set standards for the maintenance and enhancement of the character of the National Capital and set general standards and aesthetic principles to be adhered to in the development of the National Capital;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>shall set out the general policies to be implemented throughout the Territory, being policies of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>land use (including the range and nature of permitted land use); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the planning of national and arterial road systems;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>may set out the detailed conditions of planning, design and development in Designated Areas and the priorities in carrying out such planning, design and development; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-10__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>may set out special requirements for the development of any area (not being a Designated Area), being requirements that are desirable in the interests of the National Capital.</p>
+                </content>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note:	This Part does not apply in relation to Canberra Airport: see <ref href="#sec-112A">section 112A</ref> of the <i>Airports Act 1996</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-11">
+            <num>11</num>
+            <heading>Effect of Plan</heading>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An enactment that is inconsistent with the Plan has no effect to the extent of the inconsistency, but an enactment shall be taken to be consistent with the Plan to the extent that it is capable of operating concurrently with the Plan.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commonwealth, a Commonwealth authority, the Territory or a Territory authority shall not do any act that is inconsistent with the Plan.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-12">
+            <num>12</num>
+            <heading>Works in Designated Areas to be subject to Plan and approval by the Authority</heading>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>No works shall be performed in a Designated Area unless:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the proposal to perform the works has been submitted to <role refersTo="#authority">the Authority</role> together with such plans and specifications as are required by <role refersTo="#authority">the Authority</role>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#authority">the Authority</role> has approved the works in writing; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the works are in accordance with the Plan.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	Subsection (1) does not affect <ref href="#sec-5">section 5</ref> of the <i>Parliament Act 1974.</i></p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-13">
+            <num>13</num>
+            <heading>Plan not to have retrospective effect</heading>
+            <content>
+              <p>Where, immediately before the Plan comes into effect, it would be lawful to use any land in a particular way in the exercise of a right derived from an estate in that land, the Plan does not prevent the use of that land in that way during the term of that estate.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-III__dvs-2">
+          <num>2</num>
+          <heading>Preparation of National Capital Plan</heading>
+          <section eId="part-III__dvs-2__sec-14">
+            <num>14</num>
+            <heading>Draft Plan to be prepared</heading>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall prepare a draft Plan in accordance with this Division.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Public consultation</heading>
+            <subsection eId="part-III__dvs-2__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>After preparing the draft Plan, <role refersTo="#authority">the Authority</role> shall:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>submit a copy to the Territory planning authority;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	by notice published in the <i>Commonwealth Gazette </i>and in the principal daily newspaper published and circulated in the Territory:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>state that the draft Plan has been prepared, and that copies will be available for public inspection at the places and times, and during the period, specified in the notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>invite interested persons to make written representations about the draft Plan within a reasonable period specified in the notice and specify the address to which the representations may be forwarded; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>make the draft Plan available for inspection accordingly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#authority">The Authority</role> shall:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>consult with the Territory planning authority about the draft Plan and have regard to any views expressed by it; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-15__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>have regard to any representations made by the public;</p>
+                </content>
+                <content>
+                  <p>and, if it thinks fit, may alter the draft Plan.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-16">
+            <num>16</num>
+            <heading>Certification of draft Plan</heading>
+            <subsection eId="part-III__dvs-2__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>After <role refersTo="#authority">the Authority</role> has:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-16__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>made the draft Plan available for public inspection;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>consulted with the Territory planning authority; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>reported in writing to <role refersTo="#minister">the Minister</role> on the consultation and the views expressed by that authority;</p>
+                </content>
+                <content>
+                  <p><role refersTo="#authority">the Authority</role> may apply to <role refersTo="#minister">the Minister</role> to certify the draft Plan under this section while it is being further considered.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>After considering the report by <role refersTo="#authority">the Authority</role>, <role refersTo="#minister">the Minister</role> may, subject to subsection (3), declare, by written instrument, that the draft Plan is certified.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If <role refersTo="#authority">the Authority</role> reports under subsection (1) that the Territory planning authority objects to the certification of the draft Plan, <role refersTo="#minister">the Minister</role> shall not act under subsection (2) except after consultation with the Executive.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The certification remains in force for 6 months unless sooner revoked, but <role refersTo="#minister">the Minister</role> may, by written instrument, extend that period for one or more further periods of 6 months.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16__subsec-5">
+              <num>5</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> shall cause a copy of each instrument to be laid before each House of the Parliament within 15 sitting days of that House after the instrument is made.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Effect of certification of draft Plan</heading>
+            <content>
+              <p>So long as the draft Plan is certified, <ref href="#sec-11">section 11</ref> applies as if the Plan were in effect.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Submission to Minister for approval</heading>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall submit the draft Plan to <role refersTo="#minister">the Minister</role> for approval, together with a written report on its consultations under <ref href="#sec-15">section 15</ref>.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-19">
+            <num>19</num>
+            <heading>Minister’s powers</heading>
+            <subsection eId="part-III__dvs-2__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), on receipt of the draft Plan submitted for approval, <role refersTo="#minister">the Minister</role> shall, after such consultation, if any, as <role refersTo="#minister">the Minister</role> thinks necessary:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-19__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>approve the draft Plan without alteration; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-19__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>refer the draft Plan to <role refersTo="#authority">the Authority</role> with either or both of the following:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-19__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>directions to conduct further consultations;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-19__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>suggested alterations.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If <role refersTo="#authority">the Authority</role> reports under <ref href="#sec-18">section 18</ref> that the Territory planning authority objects to any aspect of the draft Plan, <role refersTo="#minister">the Minister</role> shall not act under subsection (1) except after consultation with the Executive.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-20">
+            <num>20</num>
+            <heading>Action on referral by Minister</heading>
+            <content>
+              <p>If <role refersTo="#minister">the Minister</role> refers the draft Plan to <role refersTo="#authority">the Authority</role>, <role refersTo="#authority">the Authority</role> shall:</p>
+            </content>
+            <paragraph eId="part-III__dvs-2__sec-20__para-a">
+              <num>a</num>
+              <content>
+                <p>reconsider the draft Plan;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-20__para-b">
+              <num>b</num>
+              <content>
+                <p>have any further consultations directed by <role refersTo="#minister">the Minister</role> and such other consultations as <role refersTo="#authority">the Authority</role> thinks necessary;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-20__para-c">
+              <num>c</num>
+              <content>
+                <p>consider any suggestions made by <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-20__para-d">
+              <num>d</num>
+              <content>
+                <p>if it thinks fit, alter the draft Plan; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-20__para-e">
+              <num>e</num>
+              <content>
+                <p>re-submit the draft Plan to <role refersTo="#minister">the Minister</role> for approval;</p>
+              </content>
+              <content>
+                <p>and subsection 19(1) and, if necessary, this section, apply again.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-III__dvs-2__sec-20A">
+            <num>20A</num>
+            <heading>Objections to re-submitted draft Plan</heading>
+            <subsection eId="part-III__dvs-2__sec-20A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If the Territory planning authority continues to object to any aspect of the draft Plan re-submitted to <role refersTo="#minister">the Minister</role>, <role refersTo="#authority">the Authority</role> must attach to the draft Plan a statement of its reasons for not accommodating the objection.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-20A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If <role refersTo="#minister">the Minister</role> receives a statement from <role refersTo="#authority">the Authority</role> under subsection (1), <role refersTo="#minister">the Minister</role>, after consultation with the Executive, must give a written direction to <role refersTo="#authority">the Authority</role>:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-20A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>to disregard the objection; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-20A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>to alter the draft Plan to accommodate the objection wholly or partly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-20A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	A direction given by the Minister under subsection (2) must be published in the <i>Gazette </i>within 7 days after the Minister gives the direction.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-20A__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must cause a copy of each direction given under subsection (2) to be laid before each House of the Parliament within 6 sitting days of that House after <role refersTo="#minister">the Minister</role> gives the direction.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-21">
+            <num>21</num>
+            <heading>Publication and commencement of approved Plan</heading>
+            <subsection eId="part-III__dvs-2__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Where the Minister approves the draft Plan, the Minister shall publish notice of the approval in the <i>Commonwealth Gazette </i>and specify the address where copies of the Plan may be inspected and bought.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Plan takes effect on publication of the notice of approval.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-22">
+            <num>22</num>
+            <heading>Parliamentary scrutiny of Plan</heading>
+            <subsection eId="part-III__dvs-2__sec-22__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Plan shall be laid before each House of the Parliament within 6 sitting days of that House after the Plan has taken effect, and, if it is not so laid before each House of the Parliament, ceases to have effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-22__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If either House of the Parliament, in pursuance of a motion of which notice has been given within 6 sitting days after the Plan has been laid before that House, passes a resolution disallowing the Plan or a part of the Plan, the Plan or part so disallowed thereupon ceases to have effect.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-22__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If, before the end of 6 sitting days after notice of a motion to disallow the Plan or part of the Plan has been given in a House of the Parliament:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the House of Representatives is dissolved or expires, or the Parliament is prorogued; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time of the dissolution, expiry or prorogation, as the case may be:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the notice has not been withdrawn and the motion has not been called on; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the motion has been called on, moved and seconded and has not been withdrawn or otherwise disposed of;</p>
+                </content>
+                <content>
+                  <p>the Plan shall, for the purposes of subsection (2), be taken to have been laid before the first-mentioned House on the first sitting day of that House after the dissolution, expiry or prorogation, as the case may be.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-22__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a part of the Plan (in this subsection called the <b><i>later part</i></b>) is disallowed; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-22__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the later part amended or revoked another part of the Plan (in this subsection called the <b><i>earlier part</i></b>) that was in effect immediately before the later part took effect;</p>
+                </content>
+                <content>
+                  <p>the disallowance revives the earlier part from the date of the disallowance as if the later part had not taken effect.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-23">
+            <num>23</num>
+            <heading>Amendments of Plan</heading>
+            <content>
+              <p>Amendments of the Plan shall be prepared in the same way as the Plan, and sections 14 to 22 (both inclusive) apply to amendments as if references in those sections to the Plan were references to amendments.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-24">
+            <num>24</num>
+            <heading>Plan may be prepared in stages or parts</heading>
+            <content>
+              <p>The Plan may be prepared in separate stages or parts and, in such a case, sections 14 to 23 (both inclusive) apply as if references in those sections to the Plan were references to such a stage or part of the Plan.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>The Territory Plan</heading>
+        <section eId="part-IV__sec-25">
+          <num>25</num>
+          <heading>Territory Plan</heading>
+          <subsection eId="part-IV__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Assembly shall, as soon as practicable, make laws providing for:</p>
+            </content>
+            <paragraph eId="part-IV__sec-25__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>establishing a Territory planning authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>conferring functions on <role refersTo="#authority">the authority</role>, including the functions of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>preparing and administering a plan in respect of land, not inconsistent with the National Capital Plan; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>keeping the plan under constant review and proposing amendments to it when necessary.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The object of the plan is to ensure, in a manner not inconsistent with the National Capital Plan, the planning and development of the Territory to provide the people of the Territory with an attractive, safe and efficient environment in which to live and work and have their recreation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The plan:</p>
+            </content>
+            <paragraph eId="part-IV__sec-25__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>shall define the planning principles and policies for giving effect to the object of the plan; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>may include the detailed conditions of planning, design and development of land and the priorities in carrying out such planning, design and development.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The laws shall include provision for:</p>
+            </content>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the procedure for making the plan and amendments of the plan, including a procedure for ascertaining and considering the views of the public;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>public notification of any directions given to the Territory planning authority by the Executive;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the procedures for just and timely review, without unnecessary formality, of appropriate classes of decisions on planning, design and development of land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>requiring <role refersTo="#authority">the authority</role> to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>consult with <role refersTo="#authority">the Authority</role> about making the plan and any amendments; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>report in writing to the Executive on such consultations and the views expressed by <role refersTo="#authority">the Authority</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-5">
+            <num>5</num>
+            <content>
+              <p>This section does not limit the power of the Assembly to make laws otherwise than under this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>land</i></b> does not include Designated Areas.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Territory Plan not to be inconsistent with National Capital Plan</heading>
+          <content>
+            <p>The Territory Plan has no effect to the extent that it is inconsistent with the National Capital Plan, but the Territory Plan shall be taken to be consistent with the National Capital Plan to the extent that it is capable of operating concurrently with the National Capital Plan.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Land management</heading>
+        <section eId="part-V__sec-27">
+          <num>27</num>
+          <heading>National Land</heading>
+          <subsection eId="part-V__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may, by notice published in the <i>Commonwealth Gazette </i>declare specified areas of land in the Territory to be National Land.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall not declare an area to be National Land unless the land is, or is intended to be, used by or on behalf of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If an Act vests the management (however described) of specified land in the Territory in a person or body, the land is National Land for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (3) does not apply to the vesting of an estate in land.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-28">
+          <num>28</num>
+          <heading>Territory Land</heading>
+          <content>
+            <p>At any time when any land in the Territory is not National Land, that land is Territory Land for the purposes of this Act.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-29">
+          <num>29</num>
+          <heading>Administration of Territory Land and the taking of water on National Land</heading>
+          <subsection eId="part-V__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Executive, on behalf of the Commonwealth:</p>
+            </content>
+            <paragraph eId="part-V__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>has responsibility for the management of Territory Land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	subject to <ref href="#sec-9">section 9</ref> of the <i>Seat of Government (Administration) Act 1910</i>, may grant, dispose of, acquire, hold and administer estates in Territory Land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>has responsibility for:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the management of the taking of water on National Land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the regulation of the taking of water on National Land.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Executive shall perform its functions under subsection (1) subject to enactment and in accordance with the principles:</p>
+            </content>
+            <paragraph eId="part-V__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that new estates in Territory Land shall be granted only in accordance with procedures that are notified to the public; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>that appropriate classes of decisions relating to the administration of estates in Territory Land shall be subject to just and timely review without unnecessary formality.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The term of an estate in Territory Land granted on or after Self-Government Day shall not exceed 99 years or such longer period as is prescribed, but the estate may be renewed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may intervene in any proceedings for review of a decision relating to the administration of an estate in Territory Land.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-30">
+          <num>30</num>
+          <heading>Territory liable as manager</heading>
+          <subsection eId="part-V__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, apart from this section, the Commonwealth would be liable in respect of an act done or omitted to be done by the Territory in the performance of its functions under <ref href="#sec-29">section 29</ref>, the liability is vested in the Territory and ceases to be a liability of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-V__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a liability arises in respect of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>land at a time when it is Territory Land; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the management of the taking of water on National Land; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the regulation of the taking of water on National Land; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the liability arises from a covenant given by the Commonwealth at any time in its capacity as owner of the land;</p>
+              </content>
+              <content>
+                <p>the liability is vested in the Territory and ceases to be a liability of the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-31">
+          <num>31</num>
+          <heading>Money in respect of land</heading>
+          <subsection eId="part-V__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where any money would, apart from this section, be payable to the Commonwealth in respect of any land in discharge of a liability existing at a time when the land is Territory Land, the money is payable to the Territory instead of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where any Territory Land that is not subject to a leasehold interest becomes National Land, the Commonwealth shall pay to the Territory an amount equal to the reasonable compensation that would be payable to the Territory under the Lands Acquisition Act if:</p>
+            </content>
+            <paragraph eId="part-V__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>immediately before the land became National Land, the Territory had been granted a leasehold interest in the land by the Commonwealth for the maximum term allowable under subsection 29(3);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>that interest was granted for any purpose for which a leasehold interest in that land could be granted;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>that interest was subject to any estate in the land existing immediately before it became National Land;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>subject to paragraph (c), the Territory was not bound by any express or implied covenants (including covenants to pay rent or rates) in relation to that interest; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-31__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>when the land became National Land, that interest was acquired by the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (2) applies only to Territory Land that becomes National Land at any time after the first declaration of National Land.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-31A">
+          <num>31A</num>
+          <heading>Minerals in Territory Land</heading>
+          <subsection eId="part-V__sec-31A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>mineral</i></b> means a naturally occurring substance or mixture of substances, whether in a solid, liquid or gaseous state.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>So long as any land in the Territory is Territory Land, all rights of the Commonwealth in relation to minerals in that land are vested in the Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-32">
+          <num>32</num>
+          <heading>Application of Lands Acquisition Act to Territory Land</heading>
+          <subsection eId="part-V__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Lands Acquisition Act does not apply in relation to:</p>
+            </content>
+            <paragraph eId="part-V__sec-32__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>anything done by or on behalf of the Commonwealth or a Commonwealth authority in respect of an interest in Territory Land while the interest is vested in the Commonwealth or a Commonwealth authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-32__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the acquisition (compulsory or not) of an estate in Territory Land by the Territory, whether acting on behalf of the Commonwealth or not.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In subsection (1):</p>
+            </content>
+            <content>
+              <p><b><i>estate</i></b> includes the interest of the Commonwealth in land in which no person other than the Commonwealth holds an estate.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Constitution and meetings of authority</heading>
+        <section eId="part-VI__sec-33">
+          <num>33</num>
+          <heading>Constitution of Authority</heading>
+          <subsection eId="part-VI__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall consist of a Chairperson and 4 other members, as provided by this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Chairperson may be appointed on a full-time or part-time basis.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the Chairperson is appointed on a full-time basis, the Chairperson shall also be the Chief Executive and there shall be 4 non-executive members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the Chairperson is appointed on a part-time basis, there shall be a separate Chief Executive and 3 other non-executive members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Chief Executive (if any) appointed under subsection (4) shall be appointed on a full-time basis.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The non-executive members shall be appointed on a part-time basis.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The members shall be appointed by the Governor-General, and hold office on such terms and conditions (in respect of matters not provided for by this Act) as are determined by the Governor-General.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-34">
+          <num>34</num>
+          <heading>Vacancies not to invalidate actions of Authority</heading>
+          <content>
+            <p>An act done by <role refersTo="#authority">the Authority</role> is not invalid merely because of a vacancy or vacancies in the membership of <role refersTo="#authority">the Authority</role>.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-35">
+          <num>35</num>
+          <heading>Remuneration</heading>
+          <subsection eId="part-VI__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A member shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-36">
+          <num>36</num>
+          <heading>Period of appointment of members</heading>
+          <subsection eId="part-VI__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Part, a member holds office for the period, not exceeding 5 years, specified in the instrument of appointment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person appointed as a member is eligible for re-appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-37">
+          <num>37</num>
+          <heading>Acting appointments</heading>
+          <subsection eId="part-VI__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may appoint a person to act as the full-time member during any period, or during all periods:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>when there is a vacancy in the office of that member, whether or not an appointment has previously been made to the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>when that member is absent from duty or from Australia or is, for any other reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where there is, or is to be, a part-time Chairperson, <role refersTo="#minister">the Minister</role> may appoint a member to act as the Chairperson during any period, or during all periods:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>when there is a vacancy in the office of Chairperson, whether or not an appointment has previously been made to the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>when the Chairperson is absent from Australia or is, for any other reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may appoint a person to act as a non-executive member referred to in subsection 33(3) or (4) during any period, or during all periods:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>when there is a vacancy in the office of a non-executive member, whether or not an appointment has previously been made to the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>when a non-executive member is acting as Chairperson, is absent from Australia or is, for any other reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-38">
+          <num>38</num>
+          <heading>Leave of absence</heading>
+          <subsection eId="part-VI__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A full-time member has such recreation leave entitlements as are determined by the Remuneration Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may:</p>
+            </content>
+            <paragraph eId="part-VI__sec-38__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>grant a full-time member leave of absence, other than recreation leave, on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-38__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>grant a part-time member leave to be absent from a meeting or meetings of <role refersTo="#authority">the Authority</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-39">
+          <num>39</num>
+          <heading>Outside employment</heading>
+          <subsection eId="part-VI__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A full-time member shall not engage in paid employment outside his or her duties except with the approval of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a part-time member engages in paid employment that, in the opinion of <role refersTo="#minister">the Minister</role>, conflicts with the proper performance of his or her duties, <role refersTo="#minister">the Minister</role> may, in writing, direct the member to cease that employment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-40">
+          <num>40</num>
+          <heading>Resignation of members</heading>
+          <content>
+            <p>A member may resign by written instrument delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-41">
+          <num>41</num>
+          <heading>Termination of appointments</heading>
+          <subsection eId="part-VI__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of a member for misbehaviour or physical or mental incapacity.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-VI__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a member becomes bankrupt, applies to take the benefit of any law for relief of bankrupt or insolvent debtors, compounds with creditors or makes an assignment of remuneration for their benefit;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a full-time member is absent from duty, except on leave of absence, for 14 consecutive days or 28 days in any 12 months;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-41__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>a part-time member is absent, except on leave of absence granted under <ref href="#sec-38">section 38</ref>, from 3 consecutive meetings of <role refersTo="#authority">the Authority</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-41__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a member fails, without reasonable excuse, to comply with subsection 42(1), (2) or (3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-41__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	in the case of the Chairperson—the Chairperson fails, without reasonable excuse, to comply with <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests) or rules made for the purposes of that section;</p>
+              </content>
+              <content>
+                <p>the Governor-General may terminate the appointment of the member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-42">
+          <num>42</num>
+          <heading>Disclosure of interests</heading>
+          <subsection eId="part-VI__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A member who has a direct or indirect pecuniary interest in a matter being considered or about to be considered by <role refersTo="#authority">the Authority</role> shall, as soon as possible after the relevant facts have come to the member’s knowledge, disclose the nature of the interest at a meeting of <role refersTo="#authority">the Authority</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A disclosure shall be recorded in the minutes of the meeting and the member shall not, unless <role refersTo="#minister">the Minister</role> or <role refersTo="#authority">the Authority</role> otherwise determines:</p>
+            </content>
+            <paragraph eId="part-VI__sec-42__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be present during any deliberation of <role refersTo="#authority">the Authority</role> with respect to that matter; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-42__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>take part in any decision of <role refersTo="#authority">the Authority</role> with respect to that matter.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-42__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purpose of making such a determination by <role refersTo="#authority">the Authority</role> in relation to a member who has made a disclosure, a member who has a direct or indirect pecuniary interest in the matter to which the disclosure relates shall not:</p>
+            </content>
+            <paragraph eId="part-VI__sec-42__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>be present during any deliberation of <role refersTo="#authority">the Authority</role> for the purpose of making the determination; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-42__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>take part in making the determination.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-42__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Subsections (1) to (3) apply to the Chairperson in addition to <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-43">
+          <num>43</num>
+          <heading>Meetings</heading>
+          <subsection eId="part-VI__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall hold such meetings as are necessary for the efficient performance of its functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Chairperson:</p>
+            </content>
+            <paragraph eId="part-VI__sec-43__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>may convene a meeting at any time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-43__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall convene a meeting on receipt of a written request signed by not less than 2 other members.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may convene a meeting at any time.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Chairperson shall preside at all meetings at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where the Chairperson is not present at a meeting, the members present shall appoint one of their number to preside.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-6">
+            <num>6</num>
+            <content>
+              <p>At a meeting, 3 members constitute a quorum, but, subject to subsection (6A), one of them must be the full-time member.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-6A">
+            <num>6A</num>
+            <content>
+              <p>If the full-time member is precluded from being present by <ref href="#sec-42">section 42</ref>, then:</p>
+            </content>
+            <paragraph eId="part-VI__sec-43__subsec-6A__para-a">
+              <num>a</num>
+              <content>
+                <p>if the full-time member is the Chairperson—any 3 members constitute a quorum; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-43__subsec-6A__para-b">
+              <num>b</num>
+              <content>
+                <p>if the full-time member is not the Chairperson—the Chairperson and any other 2 members constitute a quorum.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Questions arising at a meeting shall be decided by a majority of the votes of the members present and voting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The person presiding at a meeting has a deliberative vote and, if necessary, also has a casting vote.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-43__subsec-9">
+            <num>9</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall keep minutes of its meetings.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-44">
+          <num>44</num>
+          <heading>Advisory committees</heading>
+          <content>
+            <p>On the recommendation of <role refersTo="#authority">the Authority</role>, <role refersTo="#minister">the Minister</role> may appoint committees to give advice to <role refersTo="#authority">the Authority</role> or to assist it in the performance of its functions.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Administration of authority</heading>
+        <section eId="part-VII__sec-45">
+          <num>45</num>
+          <heading>Chief Executive</heading>
+          <content>
+            <p>There shall be a Chief Executive of <role refersTo="#authority">the Authority</role>, who shall be appointed as provided by <ref href="#sec-33">section 33</ref>.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-46">
+          <num>46</num>
+          <heading>Functions of Chief Executive</heading>
+          <subsection eId="part-VII__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chief Executive has the responsibility of managing the affairs of <role refersTo="#authority">the Authority</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may give written directions to the Chief Executive about the management of <role refersTo="#authority">the Authority</role>’s affairs.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chief Executive must comply with a direction under subsection (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Subsection (3) does not apply to the extent that the direction relates to the Chief Executive’s performance of functions or exercise of powers under the <i>Public Service Act 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A direction under subsection (2) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-47">
+          <num>47</num>
+          <heading>Staff of Authority</heading>
+          <subsection eId="part-VII__sec-47__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The staff of the Authority shall be persons engaged under the <i>Public Service Act 1999.</i></p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-47__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+            </content>
+            <paragraph eId="part-VII__sec-47__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chief Executive and the APS employees assisting the Chief Executive together constitute a Statutory Agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-47__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Chief Executive is the Head of that Statutory Agency.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-47__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chief Executive may, on behalf of <role refersTo="#authority">the Authority</role>, arrange with a person:</p>
+            </content>
+            <paragraph eId="part-VII__sec-47__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>for the services of officers or employees of the person to be made available for the purposes of <role refersTo="#authority">the Authority</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-47__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>for the services of a member of the staff of <role refersTo="#authority">the Authority</role> to be made available for the purposes of the person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-48">
+          <num>48</num>
+          <heading>Consultants</heading>
+          <content>
+            <p><role refersTo="#authority">The Authority</role> may engage such consultants as it thinks necessary.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-49">
+          <num>49</num>
+          <heading>Delegations</heading>
+          <content>
+            <p><role refersTo="#authority">The Authority</role> may delegate all or any of its powers under this Act to:</p>
+          </content>
+          <paragraph eId="part-VII__sec-49__para-a">
+            <num>a</num>
+            <content>
+              <p>the Chief Executive;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-49__para-b">
+            <num>b</num>
+            <content>
+              <p>a member of the staff of <role refersTo="#authority">the Authority</role>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-49__para-c">
+            <num>c</num>
+            <content>
+              <p>a person whose services have been made available under <ref href="#sec-47">section 47</ref>.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VIII">
+        <num>VIII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VIII__sec-51">
+          <num>51</num>
+          <heading>Commonwealth to indemnify Territory</heading>
+          <subsection eId="part-VIII__sec-51__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Commonwealth shall indemnify the Territory, and keep the Territory indemnified, against any action, claim or demand brought or made against the Territory in respect of any act done or omitted to be done by or on behalf of the Commonwealth, being an action, claim or demand that, apart from this Act, could be brought or made against the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-51__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The indemnity extends to damages, expenses and costs arising from, connected with or consequential upon such an action, claim or demand.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-51__subsec-3">
+            <num>3</num>
+            <content>
+              <p>This section does not apply to an action, claim or demand in respect of a liability referred to in <ref href="#sec-30">section 30</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-52">
+          <num>52</num>
+          <heading>Application of Acts Interpretation Act</heading>
+          <content>
+            <p>		Neither paragraph 46(1)(a) of the <i>Acts Interpretation Act 1901 </i>nor paragraph 13(1)(a) or (b) of the<i> </i><i>Legislation Act 2003</i><i> </i>applies to:</p>
+          </content>
+          <paragraph eId="part-VIII__sec-52__para-a">
+            <num>a</num>
+            <content>
+              <p>the Territory Plan; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-52__para-b">
+            <num>b</num>
+            <content>
+              <p>an instrument made, granted or issued under paragraph 29(1)(b).</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-VIII__sec-53">
+          <num>53</num>
+          <heading>Regulations</heading>
+          <subsection eId="part-VIII__sec-53__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing matters:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-53__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-53__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-53__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In particular, the regulations may provide for:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-53__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the charging and recovery of fees in relation to proposals submitted to <role refersTo="#authority">the Authority</role> for approval under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-53__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the remission, refund or waiver of those fees, or the exemption of persons from payment of those fees.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-53__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The amount of a fee:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-53__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>must be reasonably related to the expenses incurred or to be incurred by <role refersTo="#authority">the Authority</role> in connection with the proposal in question; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-53__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>must not be such as to amount to taxation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-X">
+        <num>X</num>
+        <heading>Transitional provisions</heading>
+        <division eId="part-X__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-X__dvs-1__sec-56">
+            <num>56</num>
+            <heading>Definitions for this Part</heading>
+            <content>
+              <p>In this Part:</p>
+              <p><term refersTo="#term-commencing-day">commencing day</term> means <def>the day on which this Part commences.</def></p>
+              <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-interim-authority">interim authority</term> means <def>the authority established by the Interim Territory Planning Ordinance 1988 of the Territory.</def></p>
+              <p><term refersTo="#term-national-capital-plan">National Capital Plan</term> means <def>the Plan prepared under <ref href="#part-III">Part III</ref>, and includes a stage or part of that Plan.</def></p>
+              <p><term refersTo="#term-ncdc">NCDC</term> means <def>the National Capital Development Commission established under the NCDC Act.</def></p>
+              <p><term refersTo="#term-ncdc-act">NCDC Act</term> means <def><ref href="/akn/au/act/national-capital-development-commission-act-1957" class="unresolved">the National Capital Development Commission Act 1957</ref>.</def></p>
+              <p><term refersTo="#term-ncdc-policy">NCDC policy</term> means <def>a policy that: relates to the planning and development of the Territory; and has been established by the NCDC under the NCDC Act;</def></p>
+            </content>
+            <paragraph eId="part-X__dvs-1__sec-56__para-a">
+              <num>a</num>
+              <content>
+                <p>relates to the planning and development of the Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-1__sec-56__para-b">
+              <num>b</num>
+              <content>
+                <p>has been established by the NCDC under the NCDC Act;</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-and">and</term> includes <def>a part of such a policy.</def></p>
+                <p><term refersTo="#term-transition-period">transition period</term> means <def>the period starting on the commencing day and ending on the day declared under <ref href="#sec-57">section 57</ref>.</def></p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-1__sec-57">
+            <num>57</num>
+            <heading>Declaration of end of transition period</heading>
+            <subsection eId="part-X__dvs-1__sec-57__subsec-1">
+              <num>1</num>
+              <content>
+                <p>When the Governor-General is satisfied that the National Capital Plan sufficiently covers the Territory, the Governor-General shall, by Proclamation, declare that the transition period ends on a day specified in the Proclamation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-1__sec-57__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The day specified shall not be later than 2 years after Self-Government Day.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-1__sec-57__subsec-3">
+              <num>3</num>
+              <content>
+                <p>On the first sitting day of a House of the Parliament after the end of the transition period, <role refersTo="#minister">the Minister</role> shall cause to be laid before that House:</p>
+              </content>
+              <paragraph eId="part-X__dvs-1__sec-57__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>a copy of the Proclamation; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-1__sec-57__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>a statement identifying the NCDC policies still in effect at the end of that period.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-X__dvs-2">
+          <num>2</num>
+          <heading>Before establishment of Executive and Territory planning authority</heading>
+          <section eId="part-X__dvs-2__sec-58">
+            <num>58</num>
+            <heading>Interim authority may take preliminary steps to prepare Territory plan</heading>
+            <content>
+              <p>Until the Territory planning authority is established, the interim authority may take preliminary steps to prepare the Territory plan in accordance with <ref href="#sec-25">section 25</ref>.</p>
+            </content>
+          </section>
+          <section eId="part-X__dvs-2__sec-59">
+            <num>59</num>
+            <heading>Procedures before establishment of Executive</heading>
+            <subsection eId="part-X__dvs-2__sec-59__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Until the establishment of the Executive on Self-Government Day:</p>
+              </content>
+              <paragraph eId="part-X__dvs-2__sec-59__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>references in this Part to the Executive shall be read as references to <role refersTo="#minister">the Minister</role>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-2__sec-59__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>subsection 70(2) has no effect; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-2__sec-59__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	references in subsections 74(1) and 79(1) to the <i>Territory Gazette </i>shall be read as references to the <i>Commonwealth Gazette.</i></p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-2__sec-59__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Section 78 does not apply to a draft variation submitted or re-submitted to <role refersTo="#minister">the Minister</role> under <ref href="#sec-75">section 75</ref> or 77 as affected by this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-2__sec-59__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Any steps taken under this Part by <role refersTo="#minister">the Minister</role> before Self-Government Day have effect on and after that Day as if they had been taken by the Executive.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-2__sec-60">
+            <num>60</num>
+            <heading>Procedures before establishment of Territory planning authority</heading>
+            <subsection eId="part-X__dvs-2__sec-60__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Until the establishment of the Territory planning authority under <ref href="#sec-25">section 25</ref>, references in this Part to the Territory planning authority shall be read as references to the interim authority.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-2__sec-60__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Any steps taken under this Part by the interim authority before the establishment of the Territory planning authority have effect after that establishment as if they had been taken by the Territory planning authority.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-2__sec-61">
+            <num>61</num>
+            <heading>Application of Canberra Water Supply (Googong Dam) Act before establishment of Executive</heading>
+            <subsection eId="part-X__dvs-2__sec-61__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Until the establishment of the Executive on Self-Government Day:</p>
+              </content>
+              <paragraph eId="part-X__dvs-2__sec-61__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	references in the <i>Canberra</i><i> Water Supply (Googong Dam) Act 1974 </i>to the Executive shall be read as references to the Minister;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-2__sec-61__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>references in that Act to the Territory shall be read as references to the Commonwealth or a Commonwealth authority; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-2__sec-61__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p><ref href="#sec-6A">section 6A</ref> of that Act has no effect.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-2__sec-61__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Any steps taken under that Act by <role refersTo="#minister">the Minister</role> before Self-Government Day have effect on and after that Day as if they had been taken by the Executive.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-X__dvs-3">
+          <num>3</num>
+          <heading>Continuation of NCDC policies</heading>
+          <section eId="part-X__dvs-3__sec-62">
+            <num>62</num>
+            <heading>NCDC policies to continue in effect</heading>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-X__dvs-3__sec-62__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	before the commencing day, an NCDC policy was in published form and had been notified in the <i>Commonwealth Gazette</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-3__sec-62__para-b">
+              <num>b</num>
+              <content>
+                <p>the policy was in operation immediately before that day;</p>
+              </content>
+              <content>
+                <p>the policy continues in effect, subject to sections 65 and 66.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-3__sec-63">
+            <num>63</num>
+            <heading>Administration of NCDC policies</heading>
+            <subsection eId="part-X__dvs-3__sec-63__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#authority">The Authority</role> shall administer each NCDC policy to the extent that it relates to:</p>
+              </content>
+              <paragraph eId="part-X__dvs-3__sec-63__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>Designated Areas; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-3__sec-63__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other functions of <role refersTo="#authority">the Authority</role>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-3__sec-63__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Territory planning authority shall administer each NCDC policy to the extent that it does not relate to the matters referred to in subsection (1).</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-3__sec-64">
+            <num>64</num>
+            <heading>Effect of NCDC policies during transition period</heading>
+            <content>
+              <p>During the transition period, <role refersTo="#authority">the Authority</role>, the Territory or a Territory authority shall not do any act that is inconsistent with an NCDC policy while it is in effect under this Part.</p>
+            </content>
+          </section>
+          <section eId="part-X__dvs-3__sec-65">
+            <num>65</num>
+            <heading>Variation or revocation of NCDC policies during transition period</heading>
+            <subsection eId="part-X__dvs-3__sec-65__subsec-1">
+              <num>1</num>
+              <content>
+                <p>During the transition period, an NCDC policy still in effect may be:</p>
+              </content>
+              <paragraph eId="part-X__dvs-3__sec-65__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>revoked wholly or partly by the National Capital Plan; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-3__sec-65__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>varied under <ref href="#dvs-4">Division 4</ref> or 5.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-3__sec-65__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-X__dvs-3__sec-65__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a provision of the National Capital Plan (in this subsection called the <b><i>revoking provision</i></b>) has revoked an NCDC policy or part of such a policy; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-3__sec-65__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the revoking provision is disallowed under <ref href="#sec-22">section 22</ref>;</p>
+                </content>
+                <content>
+                  <p>the disallowance revives the policy, or the part of the policy, as the case may be, from the date of the disallowance as if the revoking provision had not taken effect.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-3__sec-66">
+            <num>66</num>
+            <heading>NCDC policies after transition period</heading>
+            <subsection eId="part-X__dvs-3__sec-66__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-X__dvs-3__sec-66__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>at the end of the transition period, an NCDC policy, or part of such a policy, is still in effect;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-3__sec-66__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the policy, or that part of the policy, is such that it could be part of the National Capital Plan; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-3__sec-66__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>either House of the Parliament, within 6 sitting days of that House after the end of the transition period, passes a resolution that the policy, or that part of the policy, is to become part of the National Capital Plan;</p>
+                </content>
+                <content>
+                  <p>the policy, or that part of the policy, becomes part of the National Capital Plan, and may be varied or revoked accordingly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-3__sec-66__subsec-2">
+              <num>2</num>
+              <content>
+                <p>On the day after the last day on which a resolution could be passed as described in paragraph (1)(c), an NCDC policy, or part of such a policy, that is still in effect and has not become part of the National Capital Plan under subsection (1) shall be taken to be part of the Territory Plan, and may be varied or revoked accordingly.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-X__dvs-4">
+          <num>4</num>
+          <heading>Variation of NCDC policies by Authority</heading>
+          <section eId="part-X__dvs-4__sec-67">
+            <num>67</num>
+            <heading>Variation of NCDC policies by Authority during transition period</heading>
+            <subsection eId="part-X__dvs-4__sec-67__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At any time during the transition period, <role refersTo="#authority">the Authority</role> may vary an NCDC policy if it considers that it is in the interests of the National Capital to do so.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-4__sec-67__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A variation by <role refersTo="#authority">the Authority</role>:</p>
+              </content>
+              <paragraph eId="part-X__dvs-4__sec-67__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>shall relate to one or more particular blocks or sections of land in the Territory; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-67__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>shall be made in accordance with this Division.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-4__sec-68">
+            <num>68</num>
+            <heading>Public consultation</heading>
+            <subsection eId="part-X__dvs-4__sec-68__subsec-1">
+              <num>1</num>
+              <content>
+                <p>After preparing a draft variation, <role refersTo="#authority">the Authority</role> shall:</p>
+              </content>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>submit a copy to the Territory planning authority;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	by notice published in the <i>Commonwealth Gazette</i> and in the principal daily newspaper published and circulated in the Territory:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>state that the draft variation has been prepared, and that copies will be available for public inspection at the places and times, and during the period, specified in the notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>invite interested persons to make written representations about the draft variation within a reasonable period specified in the notice and specify the address to which the representations may be forwarded; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>make the draft variation available for inspection accordingly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-4__sec-68__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#authority">The Authority</role> shall:</p>
+              </content>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>consult with the Territory planning authority about the draft variation and have regard to any views expressed by it; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-68__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>have regard to any representations made by the public;</p>
+                </content>
+                <content>
+                  <p>and, if it thinks fit, may alter the draft variation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-4__sec-69">
+            <num>69</num>
+            <heading>Submission to Minister for approval</heading>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall submit the draft variation to <role refersTo="#minister">the Minister</role> for approval, together with a written report on its consultations under <ref href="#sec-68">section 68</ref>.</p>
+            </content>
+          </section>
+          <section eId="part-X__dvs-4__sec-70">
+            <num>70</num>
+            <heading>Minister’s powers</heading>
+            <subsection eId="part-X__dvs-4__sec-70__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), on receipt of the draft variation submitted for approval, <role refersTo="#minister">the Minister</role> shall, after such consultation, if any, as <role refersTo="#minister">the Minister</role> thinks necessary:</p>
+              </content>
+              <paragraph eId="part-X__dvs-4__sec-70__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>approve the draft variation without alteration; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-70__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>refer the draft variation to <role refersTo="#authority">the Authority</role> with either or both of the following:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-70__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>directions to conduct further consultations;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-4__sec-70__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>suggested alterations.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-4__sec-70__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If <role refersTo="#authority">the Authority</role> reports under <ref href="#sec-69">section 69</ref> that the Territory planning authority objects to any aspect of the draft variation, <role refersTo="#minister">the Minister</role> shall not act under subsection (1) except after consultation with the Executive.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-4__sec-71">
+            <num>71</num>
+            <heading>Action on referral by Minister</heading>
+            <content>
+              <p>If <role refersTo="#minister">the Minister</role> refers the draft variation to <role refersTo="#authority">the Authority</role>, <role refersTo="#authority">the Authority</role> shall:</p>
+            </content>
+            <paragraph eId="part-X__dvs-4__sec-71__para-a">
+              <num>a</num>
+              <content>
+                <p>reconsider the draft variation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-4__sec-71__para-b">
+              <num>b</num>
+              <content>
+                <p>have any further consultations directed by <role refersTo="#minister">the Minister</role> and such other consultations as <role refersTo="#authority">the Authority</role> thinks necessary;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-4__sec-71__para-c">
+              <num>c</num>
+              <content>
+                <p>consider any suggestions made by <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-4__sec-71__para-d">
+              <num>d</num>
+              <content>
+                <p>if it thinks fit, alter the draft variation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-4__sec-71__para-e">
+              <num>e</num>
+              <content>
+                <p>re-submit the draft variation to <role refersTo="#minister">the Minister</role> for approval;</p>
+              </content>
+              <content>
+                <p>and subsection 70(1) and, if necessary, this section, apply again.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-4__sec-72">
+            <num>72</num>
+            <heading>Publication and commencement of approved variation</heading>
+            <subsection eId="part-X__dvs-4__sec-72__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Where the Minister approves the draft variation, the Minister shall publish notice of the approval in the <i>Commonwealth Gazette </i>and specify the address where copies of the variation may be inspected and bought.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-4__sec-72__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The variation takes effect on publication of the notice of approval.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-X__dvs-5">
+          <num>5</num>
+          <heading>Variation of NCDC policies by Territory planning authority</heading>
+          <section eId="part-X__dvs-5__sec-73">
+            <num>73</num>
+            <heading>NCDC policies may be varied by Territory planning authority</heading>
+            <subsection eId="part-X__dvs-5__sec-73__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At any time during the transition period, the Territory planning authority may vary an NCDC policy.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-73__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A variation by the Territory planning authority:</p>
+              </content>
+              <paragraph eId="part-X__dvs-5__sec-73__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>shall relate to one or more particular blocks or sections of land in the Territory; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-73__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>shall be made in accordance with this Division.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-73__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A variation has no effect to the extent that it is inconsistent with a variation made by <role refersTo="#authority">the Authority</role> under <ref href="#dvs-4">Division 4</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-5__sec-74">
+            <num>74</num>
+            <heading>Public consultation</heading>
+            <subsection eId="part-X__dvs-5__sec-74__subsec-1">
+              <num>1</num>
+              <content>
+                <p>After preparing a draft variation, the Territory planning authority shall:</p>
+              </content>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>submit a copy to the National Capital Authority;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	by notice published in the <i>Territory Gazette</i> and in the principal daily newspaper published and circulated in the Territory:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>state that the draft variation has been prepared, and that copies will be available for public inspection at the places and times, and during the period, specified in the notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>invite interested persons to make written representations about the draft variation within a reasonable period specified in the notice and specify the address to which the representations may be forwarded; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>make the draft variation available for inspection accordingly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-74__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Territory planning authority shall:</p>
+              </content>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>consult with the National Capital Authority about the draft variation and have regard to any views expressed by the last-mentioned Authority; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-5__sec-74__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>have regard to any representations made by the public;</p>
+                </content>
+                <content>
+                  <p>and, if it thinks fit, may alter the draft variation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-5__sec-75">
+            <num>75</num>
+            <heading>Submission to Executive for approval</heading>
+            <content>
+              <p>The Territory planning authority shall submit the draft variation to the Executive for approval, together with a written report on its consultations under <ref href="#sec-74">section 74</ref>.</p>
+            </content>
+          </section>
+          <section eId="part-X__dvs-5__sec-76">
+            <num>76</num>
+            <heading>Executive’s powers</heading>
+            <content>
+              <p>After receipt of the draft variation submitted for approval, the Executive shall, after such consultation, if any, as the Executive thinks necessary:</p>
+            </content>
+            <paragraph eId="part-X__dvs-5__sec-76__para-a">
+              <num>a</num>
+              <content>
+                <p>approve the draft variation without alteration; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-76__para-b">
+              <num>b</num>
+              <content>
+                <p>refer the draft variation to the Territory planning authority with either or both of the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-76__para-i">
+              <num>i</num>
+              <content>
+                <p>directions to conduct further consultations;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-76__para-ii">
+              <num>ii</num>
+              <content>
+                <p>suggested alterations.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-5__sec-77">
+            <num>77</num>
+            <heading>Action on referral by Executive</heading>
+            <content>
+              <p>If the Executive refers the draft variation to the Territory planning authority, <role refersTo="#authority">the authority</role> shall:</p>
+            </content>
+            <paragraph eId="part-X__dvs-5__sec-77__para-a">
+              <num>a</num>
+              <content>
+                <p>reconsider the draft variation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-77__para-b">
+              <num>b</num>
+              <content>
+                <p>have any further consultations directed by the Executive and such other consultations as <role refersTo="#authority">the authority</role> thinks necessary;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-77__para-c">
+              <num>c</num>
+              <content>
+                <p>consider any suggestions made by the Executive;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-77__para-d">
+              <num>d</num>
+              <content>
+                <p>if it thinks fit, alter the draft variation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-5__sec-77__para-e">
+              <num>e</num>
+              <content>
+                <p>re-submit the draft variation to the Executive for approval;</p>
+              </content>
+              <content>
+                <p>and <ref href="#sec-76">section 76</ref> and, if necessary, this section, apply again.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-5__sec-78">
+            <num>78</num>
+            <heading>Submission to Minister</heading>
+            <subsection eId="part-X__dvs-5__sec-78__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If the Executive approves the draft variation, the Executive shall submit it to <role refersTo="#minister">the Minister</role>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-78__subsec-2">
+              <num>2</num>
+              <content>
+                <p><quantity refersTo="#deadline">Within 14 days</quantity> after receipt of the draft variation, the Minister may give a certificate in writing that, in the interests of the National Capital, it would be undesirable to approve the variation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-78__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If <role refersTo="#minister">the Minister</role> gives such a certificate within those 14 days, the Executive shall not proceed under <ref href="#sec-79">section 79</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-78__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If, at the end of those 14 days, <role refersTo="#minister">the Minister</role> has not given such a certificate, the Executive may proceed under <ref href="#sec-79">section 79</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-5__sec-79">
+            <num>79</num>
+            <heading>Publication and commencement of approved variation</heading>
+            <subsection eId="part-X__dvs-5__sec-79__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Executive shall publish notice of the approval of the draft variation in the <i>Territory Gazette </i>and specify the address where copies of the variation may be inspected and bought.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-5__sec-79__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The variation takes effect on publication of the notice of approval.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-X__dvs-6">
+          <num>6</num>
+          <heading>Plan of lay-out of the City of Canberra</heading>
+          <section eId="part-X__dvs-6__sec-80">
+            <num>80</num>
+            <heading>Modification of section 12A of Seat of Government (Administration) Act 1910</heading>
+            <content>
+              <p>		Until the repeal of <ref href="#sec-12A">section 12A</ref> of the<i> Seat of Government (Administration) Act 1910</i>, that section has effect as if:</p>
+            </content>
+            <paragraph eId="part-X__dvs-6__sec-80__para-a">
+              <num>a</num>
+              <content>
+                <p>after subsection (1) the following subsection were inserted:</p>
+              </content>
+              <content>
+                <p>“(1A)	<role refersTo="#minister">The Minister</role> shall not act under subsection (1) except after consultation with the Australian Capital Territory Executive.”;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-b">
+              <num>b</num>
+              <content>
+                <p>after subsection (2) the following subsection were inserted:</p>
+              </content>
+              <content>
+                <p>“(2A)	The statement laid before each House of the Parliament under subsection (2) shall include any views expressed by the Australian Capital Territory Executive in consultations held under subsection (1A).”;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-c">
+              <num>c</num>
+              <content>
+                <p>subsection (4) were amended by omitting “<role refersTo="#minister">The Minister</role>” and substituting “A prescribed body”;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-d">
+              <num>d</num>
+              <content>
+                <p>the following subsection were added at the end:</p>
+              </content>
+              <content>
+                <p>“(5)	In subsection (4):</p>
+                <p>			<b><i>prescribed body</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-a">
+              <num>a</num>
+              <content>
+                <p>the Commonwealth;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a Commonwealth authority as defined by the <i>Australian Capital Territory</i><i> Planning and Land Management Act 1988</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-c">
+              <num>c</num>
+              <content>
+                <p>a Territory authority as defined by that Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-6__sec-80__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	the body politic established by <ref href="#sec-7">section 7</ref> of the <i>Australian Capital Territory</i><i> (Self</i><i>-</i><i>Government) Act 1988</i>.”.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-X__dvs-7">
+          <num>7</num>
+          <heading>Transfers following repeal of NCDC Act</heading>
+          <section eId="part-X__dvs-7__sec-81">
+            <num>81</num>
+            <heading>Transfer of persons employed by NCDC</heading>
+            <content>
+              <p>		For the purposes of the application of subsection 81B(3) of the <i>Public Service Act 1922 </i>a person who, immediately before the repeal of the NCDC Act by this Act:</p>
+            </content>
+            <paragraph eId="part-X__dvs-7__sec-81__para-a">
+              <num>a</num>
+              <content>
+                <p>was employed by the NCDC; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-7__sec-81__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	was an unattached officer for the purposes of the <i>Public Service Act 1922</i>;</p>
+              </content>
+              <content>
+                <p>shall be taken to have ceased, immediately before that repeal, to be a person appointed or employed under the <i>Public Service Act 1922.</i></p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-7__sec-82">
+            <num>82</num>
+            <heading>Contracts</heading>
+            <content>
+              <p>Where, immediately before the repeal of the NCDC Act, a contract was subsisting and the NCDC was a party to the contract, the Commonwealth is substituted for the NCDC as a party to the contract.</p>
+            </content>
+          </section>
+          <section eId="part-X__dvs-7__sec-83">
+            <num>83</num>
+            <heading>Assets, rights and liabilities</heading>
+            <subsection eId="part-X__dvs-7__sec-83__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to <ref href="#sec-82">section 82</ref>, assets, rights and liabilities of the NCDC existing immediately before the repeal of the NCDC Act vest in a body or bodies specified in writing by <role refersTo="#minister">the Minister</role>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-7__sec-83__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In specifying a body for the purposes of subsection (1), <role refersTo="#minister">the Minister</role> shall have regard to which body or bodies will perform the relevant functions of the NCDC after the repeal of the NCDC Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-7__sec-83__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>body</i></b> includes the Commonwealth.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-X__dvs-7__sec-84">
+            <num>84</num>
+            <heading>Court proceedings</heading>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-X__dvs-7__sec-84__para-a">
+              <num>a</num>
+              <content>
+                <p>proceedings in a court by or against the NCDC were pending immediately before the repeal of the NCDC Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-X__dvs-7__sec-84__para-b">
+              <num>b</num>
+              <content>
+                <p>the proceedings concern a right or liability vested in the Commonwealth or another body, or both, under <ref href="#sec-82">section 82</ref> or 83;</p>
+              </content>
+              <content>
+                <p>the proceedings may be continued, subject to the direction of the court, by or against the Commonwealth, that other body, or both, as the case requires.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-X__dvs-7__sec-85">
+            <num>85</num>
+            <heading>Transfer of appropriated money</heading>
+            <subsection eId="part-X__dvs-7__sec-85__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Where any money has been, or is, appropriated by an Appropriation Act for the purposes of the NCDC, the Act shall be taken to have appropriated, or to appropriate, the money for the purposes of the Department of Administrative Services as set out in Subdivision 6 of <ref href="#dvs-805">Division 805</ref> in the relevant Schedule to that Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-7__sec-85__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The money shall be apportioned between any or all of the items of that Subdivision as the Finance Minister determines in writing.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-X__dvs-7__sec-85__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section does not apply to:</p>
+              </content>
+              <paragraph eId="part-X__dvs-7__sec-85__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>money drawn by the NCDC before the repeal of the NCDC Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-X__dvs-7__sec-85__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>money paid or payable at any time in discharge of expenditure incurred by the NCDC before the repeal of the NCDC Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-X__dvs-7__sec-85__subsec-4">
+              <num>4</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>Appropriation Act</i></b> means an Act appropriating money for expenditure in respect of the financial year ending on 30 June 1989, and includes an Act appropriating money, by way of interim provision, for such expenditure.</p>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>o = order(s)</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>Ord = Ordinance</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>orig = original</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>par = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>F = Federal Register of Legislation</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory (Planning and Land Management) Act 1988</td>
+                  <td>108, 1988</td>
+                  <td>6 Dec 1988</td>
+                  <td>s 1, 2 and 55: 6 Dec 1988 (s 2(1))
+s 25, 26, 28-32, 51 and 52: 11 May 1989 (s 2(3) and Gazette 1989, No. S164)
+Sch (in part): 12 Mar 1991 (s 2(2) and Gazette 1991, No. S62)
+Remainder: 31 Jan 1989 (s 2(3) and Gazette 1989, No. S39)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Arts, Environment, Tourism and Territories Legislation Amendment Act 1990</td>
+                  <td>88, 1990</td>
+                  <td>20 Nov 1990</td>
+                  <td>Part 3 (ss. 5, 6): 31 Jan 1989 (s 2(3))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory (Planning and Land Management) Amendment Act 1990</td>
+                  <td>104, 1990</td>
+                  <td>18 Dec 1990</td>
+                  <td>31 Jan 1989 (s 2 and Gazette,1989, No. S39)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Arts, Sport, Environment, Tourism and Territories Legislation Amendment Act (No. 2) 1991</td>
+                  <td>179, 1991</td>
+                  <td>25 Nov 1991</td>
+                  <td>25 Nov 1991</td>
+                  <td>s. 3(2)</td>
+                </tr>
+                <tr>
+                  <td>Arts, Sport, Environment and Territories Legislation Amendment Act 1992</td>
+                  <td>21, 1992</td>
+                  <td>10 Apr 1992</td>
+                  <td>8 May 1992</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Arts, Environment and Territories Legislation Amendment Act 1992</td>
+                  <td>130, 1992</td>
+                  <td>24 Oct 1992</td>
+                  <td>24 Oct 1992</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Arts, Environment and Territories Legislation Amendment Act 1993</td>
+                  <td>6, 1994</td>
+                  <td>18 Jan 1994</td>
+                  <td>s. 5: 18 Jan 1994 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Environment, Sport and Territories Legislation Amendment Act 1997</td>
+                  <td>118, 1997</td>
+                  <td>7 July 1997</td>
+                  <td>Schedule 1 (items 1–4): 7 July 1997 (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                  <td>146, 1999</td>
+                  <td>11 Nov 1999</td>
+                  <td>Schedule 1 (items 141–143): 5 Dec 1999 (s 2(2) and  Gazette 1999, No. S584)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+                  <td>159, 2001</td>
+                  <td>1 Oct 2001</td>
+                  <td>29 Oct 2001</td>
+                  <td>Sch. 1 (item 97)</td>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory Legislation Amendment Act 2003</td>
+                  <td>1, 2003</td>
+                  <td>24 Feb 2003</td>
+                  <td>25 Feb 2003</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Legislative Instruments (Transitional Provisions and Consequential Amendments) Act 2003</td>
+                  <td>140, 2003</td>
+                  <td>17 Dec 2003</td>
+                  <td>s. 4 and Schedule 1 (item 10): 1 Jan 2005 (s 2(1) items 2, 3)</td>
+                  <td>s. 4</td>
+                </tr>
+                <tr>
+                  <td>Airports Amendment Act 2007</td>
+                  <td>59, 2007</td>
+                  <td>15 Apr 2007</td>
+                  <td>Schedule 1: 13 May 2007
+Remainder: Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2011</td>
+                  <td>5, 2011</td>
+                  <td>22 Mar 2011</td>
+                  <td>Schedule 5 (items 18, 19): 19 Apr 2011</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts Interpretation Amendment Act 2011</td>
+                  <td>46, 2011</td>
+                  <td>27 June 2011</td>
+                  <td>Schedule 2 (items 120, 121) and Schedule 3 (items 10, 11): 27 Dec 2011</td>
+                  <td>Sch. 3 (items 10, 11)</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2012</td>
+                  <td>136, 2012</td>
+                  <td>22 Sept 2012</td>
+                  <td>Schedule 6 (items 9, 10): Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory Water Management Legislation Amendment Act 2013</td>
+                  <td>147, 2013</td>
+                  <td>17 Dec 2013</td>
+                  <td>Sch 1: 17 Dec 2014 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                  <td>62, 2014</td>
+                  <td>30 June 2014</td>
+                  <td>Sch 6 (items 9, 10), Sch 7 (items 188–192) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                  <td>Sch 14</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                  <td>36, 2015</td>
+                  <td>13 Apr 2015</td>
+                  <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                  <td>Sch 7</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                  <td>126, 2015</td>
+                  <td>10 Sept 2015</td>
+                  <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                  <td>126, 2015</td>
+                  <td>10 Sept 2015</td>
+                  <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                  <td>126, 2015</td>
+                  <td>10 Sept 2015</td>
+                  <td>Sch 1 (item 36): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act (No. 1) 2016</td>
+                  <td>4, 2016</td>
+                  <td>11 Feb 2016</td>
+                  <td>Sch 1 (item 10): 10 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Australian Capital Territory (Planning and Land Management) Amendment Act 2018</td>
+                  <td>32, 2018</td>
+                  <td>22 May 2018</td>
+                  <td>1 July 2018 (s 2(1) item 1)</td>
+                  <td>Sch 1 (items 5–7)</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part I</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 118, 1997; No 59, 2007; No 147, 2013</td>
+                </tr>
+                <tr>
+                  <td>Part II</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 5</td>
+                  <td>rs No 118, 1997</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 62, 2014; No 32, 2018</td>
+                </tr>
+                <tr>
+                  <td>s 6</td>
+                  <td>am No 130, 1992; No 147, 2013</td>
+                </tr>
+                <tr>
+                  <td>s 7</td>
+                  <td>rs No 32, 2018</td>
+                </tr>
+                <tr>
+                  <td>Part III</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 59, 2007</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 20A</td>
+                  <td>ad No 21, 1992</td>
+                </tr>
+                <tr>
+                  <td>Part V</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 29</td>
+                  <td>am No 147, 2013</td>
+                </tr>
+                <tr>
+                  <td>s 30</td>
+                  <td>am No 147, 2013</td>
+                </tr>
+                <tr>
+                  <td>s 31A</td>
+                  <td>ad No 6, 1994</td>
+                </tr>
+                <tr>
+                  <td>Part VI</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 35</td>
+                  <td>am No 4, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 36</td>
+                  <td>am No 159, 2001</td>
+                </tr>
+                <tr>
+                  <td>s 37</td>
+                  <td>am No 46, 2011</td>
+                </tr>
+                <tr>
+                  <td>s 38</td>
+                  <td>rs No 179, 1991</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 146, 1999</td>
+                </tr>
+                <tr>
+                  <td>s 41</td>
+                  <td>am No 179, 1991; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s 42</td>
+                  <td>am No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s 43</td>
+                  <td>am No 1, 2003</td>
+                </tr>
+                <tr>
+                  <td>Part VII</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 46</td>
+                  <td>rs No 32, 2018</td>
+                </tr>
+                <tr>
+                  <td>s 47</td>
+                  <td>am No 146, 1999</td>
+                </tr>
+                <tr>
+                  <td>s 50</td>
+                  <td>rep No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>Part VIII</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 52</td>
+                  <td>am No 140, 2003; No 126, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 53</td>
+                  <td>am No 21, 1992</td>
+                </tr>
+                <tr>
+                  <td>Part IX</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>s 54</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>s 55</td>
+                  <td>am No 88, 1990</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>Part X</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 56</td>
+                  <td>am No 5, 2011; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s 57</td>
+                  <td>am No 104, 1990</td>
+                </tr>
+                <tr>
+                  <td>Division 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 74</td>
+                  <td>am No 118, 1997</td>
+                </tr>
+                <tr>
+                  <td>Division 7</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 85</td>
+                  <td>am No 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>Schedule</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+              </table>
+            </subsection>
+          </section>
+        </division>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

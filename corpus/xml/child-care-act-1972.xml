@@ -1,0 +1,2390 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1972/121/!main"/>
+          <FRBRuri value="/akn/au/act/1972/121"/>
+          <FRBRdate date="1972-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="121"/>
+          <FRBRname value="child-care-act-1972"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1972/121/eng@2016-03-10/!main"/>
+          <FRBRuri value="/akn/au/act/1972/121/eng@2016-03-10"/>
+          <FRBRdate date="2016-03-10" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1972/121/eng@2016-03-10/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1972/121/eng@2016-03-10/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1972-01-01" type="generation" eId="evt-creation" source="#child-care-act-1972"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1973/216"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1976/91"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1984/63" date="1984-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1985/95"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1985/158"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1988/155"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1990/106"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1995/143"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1996/80"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1998/13"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1999/82" date="1999-07-08"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/1999/83" date="1999-07-08"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2006/108"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2010/51" date="2010-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2011/79" date="2011-07-25"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2012/169" date="2012-12-03"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-acnc-type-of-entity" href="/ontology/term/au/term-acnc-type-of-entity" showAs="ACNC type of entity"/>
+        <TLCTerm eId="term-acquisition" href="/ontology/term/au/term-acquisition" showAs="acquisition"/>
+        <TLCTerm eId="term-alteration" href="/ontology/term/au/term-alteration" showAs="alteration"/>
+        <TLCTerm eId="term-approved-equipment" href="/ontology/term/au/term-approved-equipment" showAs="approved equipment"/>
+        <TLCTerm eId="term-approved-project" href="/ontology/term/au/term-approved-project" showAs="approved project"/>
+        <TLCTerm eId="term-body" href="/ontology/term/au/term-body" showAs="body"/>
+        <TLCTerm eId="term-building" href="/ontology/term/au/term-building" showAs="building"/>
+        <TLCTerm eId="term-child-care" href="/ontology/term/au/term-child-care" showAs="child care"/>
+        <TLCTerm eId="term-child-care-centre" href="/ontology/term/au/term-child-care-centre" showAs="child care centre"/>
+        <TLCTerm eId="term-child-care-standards-committee" href="/ontology/term/au/term-child-care-standards-committee" showAs="Child Care Standards Committee"/>
+        <TLCTerm eId="term-eligible-child-care-centre" href="/ontology/term/au/term-eligible-child-care-centre" showAs="eligible child care centre"/>
+        <TLCTerm eId="term-family-assistance-law" href="/ontology/term/au/term-family-assistance-law" showAs="family assistance law"/>
+        <TLCTerm eId="term-information" href="/ontology/term/au/term-information" showAs="information"/>
+        <TLCTerm eId="term-officer" href="/ontology/term/au/term-officer" showAs="officer"/>
+        <TLCTerm eId="term-operator" href="/ontology/term/au/term-operator" showAs="operator"/>
+        <TLCTerm eId="term-place" href="/ontology/term/au/term-place" showAs="place"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Child Care Act 1972</p>
+      <p>No. 121, 1972</p>
+      <p><b>Compilation No.</b><b> </b><b>15</b></p>
+      <p><b>Compilation date: </b><b>	</b><b>	</b><b>	</b>10 March 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 4, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>24 May 2016</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Child Care Act 1972</i> that shows the text of the law as amended and in force on 10 March 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>4	Interpretation	1</p>
+      <p>4A	Child care centres	3</p>
+      <p>4B	Eligible child care centres	4</p>
+      <p>4C	Guidelines for eligible child care centres	5</p>
+      <p><ref href="#part-II">Part II</ref>—Capital grants	6</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Approved projects	6</p>
+      <p>5	Interpretation of <ref href="#dvs-1">Division 1</ref>	6</p>
+      <p>6	Approval of projects	7</p>
+      <p>7	Grants for approved projects	7</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Approved equipment	8</p>
+      <p>8	Interpretation of <ref href="#dvs-2">Division 2</ref>	8</p>
+      <p>9	Approval of equipment	8</p>
+      <p>10	Grants for approved equipment	8</p>
+      <p><ref href="#part-III">Part III</ref>—Recurrent grants	9</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Grants for new eligible child care centres	9</p>
+      <p>12	Grants in relation to establishment of new eligible child care centres	9</p>
+      <p><ref href="#part-IIIA">Part IIIA</ref>—Confidentiality	10</p>
+      <p>12J	Authorised access to and use of protected information	10</p>
+      <p>12K	Offence—unauthorised access to protected information	10</p>
+      <p>12L	Offence—unauthorised use of protected information	11</p>
+      <p>12M	Protection extends to court, tribunal etc. proceedings	11</p>
+      <p>12N	Secretary’s certificate	12</p>
+      <p>12P	Guidelines for exercise of Secretary’s disclosure power	12</p>
+      <p>12Q	Offence—soliciting disclosure of protected information	13</p>
+      <p>12R	Offence—untrue representations	13</p>
+      <p>12S	Offences—offering to supply protected information	14</p>
+      <p>12T	Freedom of Information Act not affected	15</p>
+      <p>12U	Application of the <i>Criminal Code</i>	15</p>
+      <p>12V	Crown not liable to be prosecuted for offences	15</p>
+      <p><ref href="#part-IV">Part IV</ref>—Research grants	16</p>
+      <p>13	Grants for research etc.	16</p>
+      <p><ref href="#part-IVA">Part IVA</ref>—Grants in respect of the development of child care centres	17</p>
+      <p>13A	Interpretation	17</p>
+      <p>13B	Approval of projects related to the development of child care centres	17</p>
+      <p>13C	Grants for projects related to the development of child care centres	17</p>
+      <p><ref href="#part-V">Part V</ref>—Advisory committees	18</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Establishment of committees	18</p>
+      <p>14	Child Care Standards Committee	18</p>
+      <p>15	Convenor of Child Care Standards Committee	18</p>
+      <p>16	Other committees	18</p>
+      <p><ref href="#dvs-2">Division 2</ref>—General	19</p>
+      <p>17	Definition of <i>committee</i>	19</p>
+      <p>18	Appointment of members of committees	19</p>
+      <p>19	Remuneration and allowances of members of committees	19</p>
+      <p><ref href="#part-VI">Part VI</ref>—Miscellaneous	20</p>
+      <p>20	Conditions relating to grants	20</p>
+      <p>20A	Agreements may be entered into with transferees of land etc.	21</p>
+      <p>20B	Overpayments	22</p>
+      <p>21	Delegations by <role refersTo="#minister">the Minister</role>	22</p>
+      <p>22	Approvals and determinations to be in writing	22</p>
+      <p>22A	Exercise of powers in Minister’s discretion	22</p>
+      <p>23	Manner of payment of grants	23</p>
+      <p>24	Money to be appropriated	23</p>
+      <p>25	Regulations	23</p>
+      <p>Endnotes	24</p>
+      <p>Endnote 1—About the endnotes	24</p>
+      <p>Endnote 2—Abbreviation key	26</p>
+      <p>Endnote 3—Legislation history	27</p>
+      <p>Endnote 4—Amendment history	35</p>
+      <p>An Act to provide for assistance by the Commonwealth in respect of places where children all or the majority of whom are under school age may be cared for, in respect of the development of such places and in respect of research in connection with the care of children, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Child Care Act 1972</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on the day on which it receives the Royal Assent.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-acnc-type-of-entity">ACNC type of entity</term> means <def>an entity that meets the description of a type of entity in column 1 of the table in subsection 25-5(5) of the Australian Charities and Not-for-profits Commission Act 2012.</def></p>
+              <p><term refersTo="#term-body">body</term> includes <def>an association and society.</def></p>
+              <p><term refersTo="#term-building">building</term> includes <def>a part of a building and an addition to a building and, in <ref href="#part-VI">Part VI</ref>, includes any other improvement on land.</def></p>
+              <p><term refersTo="#term-child-care">child care</term> means <def>the care of children at a time or times when they are not being cared for in their own homes or in the homes of other persons.</def></p>
+              <p><term refersTo="#term-child-care-centre">child care centre</term> has the meaning given by <def><ref href="#sec-4A">section 4A</ref>.</def></p>
+              <p><term refersTo="#term-child-care-standards-committee">Child Care Standards Committee</term> means <def>the committee established under <ref href="#sec-14">section 14</ref>.</def></p>
+              <p><term refersTo="#term-eligible-child-care-centre">eligible child care centre</term> has the meaning given by <def><ref href="#sec-4B">section 4B</ref>.</def></p>
+              <p><term refersTo="#term-family-assistance-law">family assistance law</term> means <def>any one or more of the following: 	(a)	the <i>A New Tax System (Family Assistance) Act 1999</i>; 	(b)	the <i>A New Tax System (Family Assistance) (Administration) Act 1999</i>; 	(c)	any instrument (including regulations) made under the <i>A New Tax System (Family Assistance) Act 1999</i> or the <i>A New Tax System (Family Assistance) (Administration) Act 1999</i>. <b><i>home</i></b> does not include an orphanage or like institution.</def></p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>A New Tax System (Family Assistance) Act 1999</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the <i>A New Tax System (Family Assistance) (Administration) Act 1999</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	any instrument (including regulations) made under the <i>A New Tax System (Family Assistance) Act 1999</i> or the <i>A New Tax System (Family Assistance) (Administration) Act 1999</i>.</p>
+              </content>
+              <content>
+                <p><b><i>home</i></b> does not include an orphanage or like institution.</p>
+                <p><term refersTo="#term-information">information</term> includes <def>estimates.</def></p>
+                <p><term refersTo="#term-officer">officer</term> means <def>a person performing duties, or exercising powers or functions, under or in relation to this Act and, in relation to a provision of <ref href="#part-IIIA">Part IIIA</ref>, includes: a person who has been such a person; and a person who is or has been appointed or employed by the Commonwealth and who, as a result of that appointment or employment, may acquire or has acquired information about a person under this Act; and a person who, although not appointed or employed by the Commonwealth, performs or performed services for the Commonwealth and who, as a result of performing those services, may acquire or has acquired information about a person under this Act.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a person who has been such a person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a person who is or has been appointed or employed by the Commonwealth and who, as a result of that appointment or employment, may acquire or has acquired information about a person under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a person who, although not appointed or employed by the Commonwealth, performs or performed services for the Commonwealth and who, as a result of performing those services, may acquire or has acquired information about a person under this Act.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-operator">operator</term>, in relation to an eligible child care centre, means <def>the person or body operating, or proposing to operate, the centre.</def></p>
+                <p><term refersTo="#term-place">place</term> includes <def>a proposed place.</def></p>
+                <p><b><i>protected information</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>information about a person or a child care service that is or was held in the records of the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>information that there is no information about a person or a child care service held in such records.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of this Act, a thing is taken to be done or required for a permitted purpose if it is done or required:</p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>for the purposes of this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>for the purposes of a family assistance law;</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4A">
+          <num>4A</num>
+          <heading>Child care centres</heading>
+          <subsection eId="part-I__sec-4A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), a child care centre is a place:</p>
+            </content>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that provides, or proposes to provide, child care for children:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>all of whom are residing in their own homes; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>all or the majority of whom are of pre-school age; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>all or the majority of whom attend the place on a regular basis; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to which either of the following subparagraphs applies:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the place provides, or proposes to provide, that child care:</p>
+              </content>
+              <content>
+                <p>(A)	for not less than 8 hours on each normal working day; and</p>
+                <p>(B) 	on all normal working days in not less than 48 weeks in the year;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4A__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the place is a place that <role refersTo="#minister">the Minister</role> determines should be treated as a child care centre for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of <ref href="#part-IVA">Part IVA</ref>, a place is a child care centre whether or not all or the majority of the children for whom child care is provided at the place attend the place on a regular basis.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4B">
+          <num>4B</num>
+          <heading>Eligible child care centres</heading>
+          <content>
+            <p>		For the purposes of this Act, a child care centre is an <b><i>eligible child care centre</i></b> if:</p>
+          </content>
+          <paragraph eId="part-I__sec-4B__para-a">
+            <num>a</num>
+            <content>
+              <p>the centre is operated, or proposed to be operated, by an entity that meets the requirements of columns 1 and (if applicable) 2 of an item of the following table; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-4B__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> determines that the centre is an eligible child care centre for the purposes of this Act:</p>
+            </content>
+            <table>
+              <tr>
+                <th>Entities that operate eligible child care centres</th>
+                <th>Entities that operate eligible child care centres</th>
+                <th>Entities that operate eligible child care centres</th>
+              </tr>
+              <tr>
+                <td>Item</td>
+                <td>Column 1
+The entity is …</td>
+                <td>Column 2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>a body corporate that is registered under the Australian Charities and Not-for-profits Commission Act 2012</td>
+                <td>not applicable</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>a body corporate that is not an ACNC type of entity</td>
+                <td>the body corporate is:
+(a) not carried on for the purpose of profit or gain; and
+(b) not a Commonwealth, State or Territory authority</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>the trustee of a trust that is registered under the Australian Charities and Not-for-profits Commission Act 2012</td>
+                <td>not applicable</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>the trustee of a trust that is not an ACNC type of entity</td>
+                <td>the trust is established by an entity that meets the requirements of item 1, 2, 3, 7 or 8</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>an unincorporated body that is registered under the Australian Charities and Not-for-profits Commission Act 2012</td>
+                <td>the unincorporated body is approved by the Minister for the purposes of this item</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>an unincorporated body that is not an ACNC type of entity</td>
+                <td>the unincorporated body is:
+(a) not carried on for the purpose of profit or gain; and
+(b) approved by the Minister for the purposes of this item</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>the Australian Capital Territory</td>
+                <td>not applicable</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>a local governing body established by or under State or Territory law</td>
+                <td>not applicable</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+        <section eId="part-I__sec-4C">
+          <num>4C</num>
+          <heading>Guidelines for eligible child care centres</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make guidelines with respect to the exercise of <role refersTo="#minister">the Minister</role>’s powers under <ref href="#sec-4B">section 4B</ref>.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Capital grants</heading>
+        <division eId="part-II__dvs-1">
+          <num>1</num>
+          <heading>Approved projects</heading>
+          <section eId="part-II__dvs-1__sec-5">
+            <num>5</num>
+            <heading>Interpretation of Division 1</heading>
+            <subsection eId="part-II__dvs-1__sec-5__subsec-1">
+              <num>1</num>
+              <content>
+                <p>In this Division, unless the contrary intention appears:</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-alteration">alteration</term>, in relation to a building or other improvement on land, includes <def>an addition to the building or improvement.</def></p>
+                <p><term refersTo="#term-approved-project">approved project</term> means <def>the purchase or proposed purchase of land, or the construction or alteration or proposed construction or alteration of a building or other improvement on land, approved under <ref href="#sec-6">section 6</ref>.</def></p>
+                <p><b><i>capital cost</i></b>, in relation to an approved project, means:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>where the approved project is the purchase or proposed purchase of land, the sum of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>such amount in respect of the land, not including any buildings or other improvements on the land, as <role refersTo="#minister">the Minister</role> determines;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>such amount in respect of any buildings or other improvements on the land (being buildings or improvements that <role refersTo="#minister">the Minister</role> is satisfied are used, or are to be used, for or in connexion with an eligible child care centre) as <role refersTo="#minister">the Minister</role> considers represents that part of the cost of purchasing the land that is attributable to those buildings or improvements; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>such amount as <role refersTo="#minister">the Minister</role> is satisfied is the cost of making any alterations to any building or other improvements on the land that <role refersTo="#minister">the Minister</role> is satisfied are necessary for or in connexion with the provision of an eligible child care centre; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-5__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>where the approved project is the construction or alteration of a building or other improvement on land, such amount as <role refersTo="#minister">the Minister</role> is satisfied is the cost of constructing or altering the building or other improvement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-II__dvs-1__sec-5__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of this Division, the cost of constructing, altering or adding to a building includes the cost of installing such fixtures (including the cost of the fixtures) as <role refersTo="#minister">the Minister</role> approves.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Approval of projects</heading>
+            <subsection eId="part-II__dvs-1__sec-6__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, where <role refersTo="#minister">the Minister</role> is satisfied that:</p>
+              </content>
+              <paragraph eId="part-II__dvs-1__sec-6__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the operator of an eligible child care centre:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-6__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>has purchased, or proposes to purchase, any land, including land on which buildings or other improvements are constructed; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-6__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>has constructed or altered, or proposes to construct or alter, a building or any other improvement on any land; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-II__dvs-1__sec-6__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the land purchased or proposed to be purchased, or the building or improvement constructed or altered or proposed to be constructed or altered, is used, or is to be used, permanently by the operator in relation to the centre;</p>
+                </content>
+                <content>
+                  <p><role refersTo="#minister">the Minister</role> may approve, for the purposes of this Division, the purchase or proposed purchase or the construction or alteration or the proposed construction or alteration, as the case may be.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-II__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Grants for approved projects</heading>
+            <subsection eId="part-II__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, approve the making of a grant to the operator of an eligible child care centre of an amount not exceeding the capital cost of an approved project.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-II__dvs-2">
+          <num>2</num>
+          <heading>Approved equipment</heading>
+          <section eId="part-II__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Interpretation of Division 2</heading>
+            <content>
+              <p>In this Division, unless the contrary intention appears:</p>
+              <p><term refersTo="#term-acquisition">acquisition</term> includes <def>acquisition by way of exchange or purchase or by way of taking on lease, on hire, on hire-purchase or on lease and purchase.</def></p>
+              <p><term refersTo="#term-approved-equipment">approved equipment</term> means <def>equipment approved under <ref href="#sec-9">section 9</ref> or equipment included in a class of equipment approved under that section.</def></p>
+              <p><b><i>cost</i></b>, in relation to the acquisition by the operator of an eligible child care centre of approved equipment, means the sum of the amounts that the Minister is satisfied is the cost of acquiring the equipment and such amount (if any) in respect of altering, adding to or installing the equipment as the Minister determines.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Approval of equipment</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may approve equipment or classes of equipment for the purposes of this Division.</p>
+            </content>
+          </section>
+          <section eId="part-II__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Grants for approved equipment</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, approve the making of a grant to the operator of an eligible child care centre of an amount not exceeding the cost of the acquisition by the operator of approved equipment.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Recurrent grants</heading>
+        <division eId="part-III__dvs-1">
+          <num>1</num>
+          <heading>Grants for new eligible child care centres</heading>
+          <section eId="part-III__dvs-1__sec-12">
+            <num>12</num>
+            <heading>Grants in relation to establishment of new eligible child care centres</heading>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Where, at any time during the 6 weeks immediately before an eligible child care centre first begins to provide child care, a person is employed by the operator of the centre to establish it, <role refersTo="#minister">the Minister</role> may, on behalf of the Commonwealth, approve the making of a grant to the operator of an amount not exceeding the amount of the salary or wages paid to the person in respect of that period by the operator.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may authorize the payment to the operator of an eligible child care centre of an advance or advances in respect of a grant that may become payable to the operator under subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	In this section <b><i>salary or wages</i></b> in relation to a person referred to in subsection (1), means salary or wages at the rate fixed by an award, order, determination or agreement made, or having effect under, a law of the Commonwealth, of a State or of a Territory, or if no such rate is applicable, the rate of salary or wages determined by the Minister. </p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-IIIA">
+        <num>IIIA</num>
+        <heading>Confidentiality</heading>
+        <section eId="part-IIIA__sec-12J">
+          <num>12J</num>
+          <heading>Authorised access to and use of protected information</heading>
+          <subsection eId="part-IIIA__sec-12J__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person may obtain protected information if the information is obtained for a permitted purpose.</p>
+            </content>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	In certain circumstances it is an offence for a person to obtain protected information without authority (see <ref href="#sec-12K">section 12K</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12J__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person may:</p>
+            </content>
+            <paragraph eId="part-IIIA__sec-12J__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>make a record of protected information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12J__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>disclose protected information to any person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12J__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>otherwise use protected information;</p>
+              </content>
+              <content>
+                <p>if the record, disclosure or use made of the information by the person is made:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12J__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>for a permitted purpose; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12J__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>for the purpose for which the information was disclosed to the person under <ref href="#sec-12M">section 12M</ref> or 12N.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	In certain circumstances it is an offence for a person to use protected information without authority (see <ref href="#sec-12L">section 12L</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IIIA__sec-12K">
+          <num>12K</num>
+          <heading>Offence—unauthorised access to protected information</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-IIIA__sec-12K__para-a">
+            <num>a</num>
+            <content>
+              <p>the person obtains information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12K__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12K__para-c">
+            <num>c</num>
+            <content>
+              <p>the person:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12K__para-i">
+            <num>i</num>
+            <content>
+              <p>is not authorised or required by or under this Act or a family assistance law; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12K__para-ii">
+            <num>ii</num>
+            <content>
+              <p>has no other lawful authority;</p>
+            </content>
+            <content>
+              <p>to obtain the information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12K__para-d">
+            <num>d</num>
+            <content>
+              <p>the person knows, or is reckless as to whether, the information is protected information.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-IIIA__sec-12L">
+          <num>12L</num>
+          <heading>Offence—unauthorised use of protected information</heading>
+          <content>
+            <p>A person commits of an offence if:</p>
+          </content>
+          <paragraph eId="part-IIIA__sec-12L__para-a">
+            <num>a</num>
+            <content>
+              <p>the person:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-i">
+            <num>i</num>
+            <content>
+              <p>makes a record of; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-ii">
+            <num>ii</num>
+            <content>
+              <p>discloses to any other person; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-iii">
+            <num>iii</num>
+            <content>
+              <p>otherwise makes use of;</p>
+            </content>
+            <content>
+              <p>information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-c">
+            <num>c</num>
+            <content>
+              <p>the person:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-i">
+            <num>i</num>
+            <content>
+              <p>is not authorised or required by or under this Act or a family assistance law; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-ii">
+            <num>ii</num>
+            <content>
+              <p>has no other lawful authority;</p>
+            </content>
+            <content>
+              <p>to make the record, disclosure or use of the information that is made by the person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12L__para-d">
+            <num>d</num>
+            <content>
+              <p>the person knows, or is reckless as to whether, the information is protected information.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-IIIA__sec-12M">
+          <num>12M</num>
+          <heading>Protection extends to court, tribunal etc. proceedings</heading>
+          <content>
+            <p>An officer must not, except for a permitted purpose, be required:</p>
+          </content>
+          <paragraph eId="part-IIIA__sec-12M__para-a">
+            <num>a</num>
+            <content>
+              <p>to produce any document in his or her possession; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12M__para-b">
+            <num>b</num>
+            <content>
+              <p>to disclose any matter or thing of which he or she had notice;</p>
+            </content>
+            <content>
+              <p>by reason of the performance or exercise of his or her duties, functions or powers under this Act or a family assistance law to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12M__para-c">
+            <num>c</num>
+            <content>
+              <p>a court; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12M__para-d">
+            <num>d</num>
+            <content>
+              <p>a tribunal; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12M__para-e">
+            <num>e</num>
+            <content>
+              <p>an authority; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12M__para-f">
+            <num>f</num>
+            <content>
+              <p>a person;</p>
+            </content>
+            <content>
+              <p>having power to require the production of documents or the answering of questions.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IIIA__sec-12N">
+          <num>12N</num>
+          <heading>Secretary’s certificate</heading>
+          <subsection eId="part-IIIA__sec-12N__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Despite sections 12L and 12M, <role refersTo="#secretary">the Secretary</role> may:</p>
+            </content>
+            <paragraph eId="part-IIIA__sec-12N__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if <role refersTo="#secretary">the Secretary</role> certifies that it is necessary in the public interest to do so in a particular case or class of cases—disclose information acquired by an officer in the performance of his or her functions or duties or in the exercise of his or her powers under this Act or a family assistance law to such persons and for such purposes as <role refersTo="#secretary">the Secretary</role> determines; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12N__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>disclose any such information to <role refersTo="#secretary">the Secretary</role> of a Department of State of the Commonwealth or to the head of an authority of the Commonwealth for the purposes of that Department or authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12N__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>disclose any such information to a person who is expressly or impliedly authorised by the person to whom the information relates to obtain it.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	A person to whom information is disclosed may commit an offence if the person uses the information without authority (see <ref href="#sec-12L">section 12L</ref>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12N__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In giving certificates for the purposes of paragraph (1)(a), <role refersTo="#secretary">the Secretary</role> must act in accordance with guidelines in force under subsection 12P(1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12N__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In disclosing information under paragraph (1)(b), <role refersTo="#secretary">the Secretary</role> must act in accordance with guidelines in force under subsection 12P(1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IIIA__sec-12P">
+          <num>12P</num>
+          <heading>Guidelines for exercise of Secretary’s disclosure power</heading>
+          <subsection eId="part-IIIA__sec-12P__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role>, by legislative instrument:</p>
+            </content>
+            <paragraph eId="part-IIIA__sec-12P__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>may make guidelines for the exercise of <role refersTo="#secretary">the Secretary</role>’s power to give certificates for the purposes of paragraph 12N(1)(a); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12P__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>may make guidelines for the exercise of <role refersTo="#secretary">the Secretary</role>’s power under paragraph 12N(1)(b).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12P__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The guidelines must not be inconsistent with the provisions of the <i>Privacy Act 1988</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12P__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Before making an instrument under subsection (1), the Minister must consult the Information Commissioner in relation to matters that relate to the privacy functions (within the meaning of the <i>Australian Information Commissioner Act 2010</i>).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IIIA__sec-12Q">
+          <num>12Q</num>
+          <heading>Offence—soliciting disclosure of protected information</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-IIIA__sec-12Q__para-a">
+            <num>a</num>
+            <content>
+              <p>the person solicits the disclosure of information from an officer or another person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12Q__para-b">
+            <num>b</num>
+            <content>
+              <p>the disclosure would be in contravention of this Part; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12Q__para-c">
+            <num>c</num>
+            <content>
+              <p>the first-mentioned person knows, or is reckless as to whether, the information is protected information.</p>
+            </content>
+            <content>
+              <p>The offence is committed whether or not any protected information is actually disclosed.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-IIIA__sec-12R">
+          <num>12R</num>
+          <heading>Offence—untrue representations</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-IIIA__sec-12R__para-a">
+            <num>a</num>
+            <content>
+              <p>the person solicits the disclosure of protected information from an officer; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IIIA__sec-12R__para-b">
+            <num>b</num>
+            <content>
+              <p>for that purpose makes representations which the person knows are untrue.</p>
+            </content>
+            <content>
+              <p>The offence is committed whether or not any protected information is actually disclosed.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+              </content>
+            </hcontainer>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-IIIA__sec-12S">
+          <num>12S</num>
+          <heading>Offences—offering to supply protected information</heading>
+          <subsection eId="part-IIIA__sec-12S__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if the person:</p>
+            </content>
+            <paragraph eId="part-IIIA__sec-12S__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>offers to supply (whether to a particular person or otherwise) information about another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12S__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>knows that the information is protected information.</p>
+              </content>
+              <content>
+                <p>The offence is committed whether or not any protected information is actually supplied.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12S__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence if the person:</p>
+            </content>
+            <paragraph eId="part-IIIA__sec-12S__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>holds himself or herself out as being able to supply (whether to a particular person or otherwise) information about another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IIIA__sec-12S__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>knows that the information is protected information.</p>
+              </content>
+              <content>
+                <p>The offence is committed whether or not any protected information is actually supplied.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IIIA__sec-12S__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Nothing in subsection (1) or (2) has the effect that an officer acting in the exercise or performance of his or her duties, functions or powers under this Act or a family assistance law commits an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IIIA__sec-12T">
+          <num>12T</num>
+          <heading>Freedom of Information Act not affected</heading>
+          <content>
+            <p>		The provisions of this Part that relate to the disclosure of information do not affect the operation of the <i>Freedom of Information Act 1982</i>.</p>
+          </content>
+        </section>
+        <section eId="part-IIIA__sec-12U">
+          <num>12U</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Part.</p>
+          </content>
+        </section>
+        <section eId="part-IIIA__sec-12V">
+          <num>12V</num>
+          <heading>Crown not liable to be prosecuted for offences</heading>
+          <content>
+            <p>The Crown is not liable to be prosecuted for an offence against, or arising out of, this Part.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Research grants</heading>
+        <section eId="part-IV__sec-13">
+          <num>13</num>
+          <heading>Grants for research etc.</heading>
+          <subsection eId="part-IV__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, approve the making of a grant to any person for purposes of or relating to:</p>
+            </content>
+            <paragraph eId="part-IV__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>research in child care and related matters; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the initiation and development of methods of child care.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In subsection (1), <b><i>child care</i></b> includes the care in any circumstances of children.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IVA">
+        <num>IVA</num>
+        <heading>Grants in respect of the development of child care centres</heading>
+        <section eId="part-IVA__sec-13A">
+          <num>13A</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Part, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-approved-project">approved project</term> means <def>a project approved by the Minister under <ref href="#sec-13B">section 13B</ref>.</def></p>
+          </content>
+        </section>
+        <section eId="part-IVA__sec-13B">
+          <num>13B</num>
+          <heading>Approval of projects related to the development of child care centres</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may approve, for the purposes of this Part, projects for the development of child care centres that are being carried out, or are proposed to be carried out, in a State or Territory.</p>
+          </content>
+        </section>
+        <section eId="part-IVA__sec-13C">
+          <num>13C</num>
+          <heading>Grants for projects related to the development of child care centres</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, approve the making of a grant to a State or Territory, by way of financial assistance to the State or Territory, in respect of approved projects that are, or are proposed to be, carried out in the State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Advisory committees</heading>
+        <division eId="part-V__dvs-1">
+          <num>1</num>
+          <heading>Establishment of committees</heading>
+          <section eId="part-V__dvs-1__sec-14">
+            <num>14</num>
+            <heading>Child Care Standards Committee</heading>
+            <subsection eId="part-V__dvs-1__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may establish a committee, to be known as the Child Care Standards Committee, which shall consist of such number of members as <role refersTo="#minister">the Minister</role> thinks fit.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-V__dvs-1__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The functions of the Committee are:</p>
+              </content>
+              <paragraph eId="part-V__dvs-1__sec-14__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>to give advice to <role refersTo="#minister">the Minister</role> and to the operators of eligible child care centres in relation to standards to be maintained in the construction and equipment of those centres and in the service provided in them; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-V__dvs-1__sec-14__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>to give advice to <role refersTo="#minister">the Minister</role> on any other matter referred to the Committee by <role refersTo="#minister">the Minister</role> in connexion with the administration of this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-V__dvs-1__sec-15">
+            <num>15</num>
+            <heading>Convenor of Child Care Standards Committee</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall appoint one of the members of the Child Care Standards Committee to be Convenor of the Committee.</p>
+            </content>
+          </section>
+          <section eId="part-V__dvs-1__sec-16">
+            <num>16</num>
+            <heading>Other committees</heading>
+            <content>
+              <p>In addition to the Child Care Standards Committee, <role refersTo="#minister">the Minister</role> may establish such other committees as <role refersTo="#minister">the Minister</role> thinks fit for the purposes of this Act.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-V__dvs-2">
+          <num>2</num>
+          <heading>General</heading>
+          <section eId="part-V__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Definition of committee</heading>
+            <content>
+              <p>		In this Division, <b><i>committee</i></b> means a committee established under this Part.</p>
+            </content>
+          </section>
+          <section eId="part-V__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Appointment of members of committees</heading>
+            <content>
+              <p>A member of a committee shall be appointed by <role refersTo="#minister">the Minister</role> as a part-time member and holds office during <role refersTo="#minister">the Minister</role>’s pleasure.</p>
+            </content>
+          </section>
+          <section eId="part-V__dvs-2__sec-19">
+            <num>19</num>
+            <heading>Remuneration and allowances of members of committees</heading>
+            <subsection eId="part-V__dvs-2__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member of a committee shall be paid such remuneration as is determined by the Remuneration Tribunal.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-V__dvs-2__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A member of a committee shall be paid such allowances as are prescribed.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-V__dvs-2__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section has effect subject to the<i> Remuneration Tribunal Act</i><i> </i><i>1973</i>. </p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VI__sec-20">
+          <num>20</num>
+          <heading>Conditions relating to grants</heading>
+          <subsection eId="part-VI__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A grant under this Act may be made upon such terms and conditions, not inconsistent with this Act, as <role refersTo="#minister">the Minister</role> thinks fit.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Before a grant is made under this Act, <role refersTo="#minister">the Minister</role> may require the grantee to enter into an agreement with respect to the terms and conditions upon which the grant is to be made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An agreement may include provision for:</p>
+            </content>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the repayment of the whole or a part of a grant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the giving of security for:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the repayment of the whole or a part of a grant; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the payment to the Commonwealth of the amount that under the terms and conditions is taken to represent the Commonwealth’s interest in:</p>
+              </content>
+              <content>
+                <p>(A)	land purchased (with or without buildings); and</p>
+                <p>(B)	buildings constructed or altered; and</p>
+                <p>(C)	equipment acquired, altered, added to or installed;</p>
+                <p>as a result of the application of a grant or a grant and other money (whether or not that amount is more than the amount of the grant); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the use and disposal of, and the recovery of, the amount that under the terms and conditions is taken to represent the Commonwealth’s interest in:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>land purchased (with or without buildings); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>buildings constructed or altered; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>equipment acquired, altered, added to or installed;</p>
+              </content>
+              <content>
+                <p>as a result of the application of a grant or a grant and other money (whether or not that amount is more than the amount of the grant).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-20__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where a grant under this Act has, in accordance with this section, been made on terms and conditions, <role refersTo="#minister">the Minister</role>, with the agreement of the grantee, may, by writing, vary those terms and conditions and, where there is an agreement under subsection (2) with respect to the terms and conditions so varied, that agreement shall be taken to be varied accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-20__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	In this section, <b><i>grant</i></b> includes an advance on account of grant under subsection 12(2). </p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-20A">
+          <num>20A</num>
+          <heading>Agreements may be entered into with transferees of land etc.</heading>
+          <subsection eId="part-VI__sec-20A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-VI__sec-20A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>either of the following subparagraphs applies:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20A__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>a grant under <ref href="#part-II">Part II</ref> has been made to the operator of an eligible child care centre on terms and conditions with respect to any land, building or equipment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20A__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the operator of an eligible child care centre has entered into an agreement under this section under which it is required to comply with terms and conditions with respect to any land, building or equipment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-20A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the operator has transferred, or proposes to transfer, the whole or a part of its interest in the land, building or equipment to another person or body;</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> may enter into an agreement with the other person or body under which the other person or body is required to comply, or will, on the transfer being effected, be required to comply, with terms and conditions (whether with respect to the land, building, equipment or otherwise).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-20A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where an agreement under subsection (1) between <role refersTo="#minister">the Minister</role> and a person or body is in force, <role refersTo="#minister">the Minister</role> may vary the agreement with the consent of the person or body.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-20B">
+          <num>20B</num>
+          <heading>Overpayments</heading>
+          <subsection eId="part-VI__sec-20B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The payment of an amount to the operator of an eligible child care centre under this Act is, in addition to any conditions imposed under <ref href="#sec-20">section 20</ref>, subject to the condition that if, for any reason, an amount (in this subsection referred to as the <b><i>recoverable amount</i></b>) has been paid to the operator by way of grant or advance on account of grant under this Act that should not have been paid, the operator will, on demand by the Minister by written notice given to the operator, repay to the Commonwealth the recoverable amount or that part of the recoverable amount specified in the notice. </p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-20B__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may deduct an amount repayable by the operator of an eligible child care centre under subsection (1) or part of such an amount from an amount (including an advance) payable to the operator under this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-21">
+          <num>21</num>
+          <heading>Delegations by the Minister</heading>
+          <subsection eId="part-VI__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by signed instrument, delegate any or all of <role refersTo="#minister">the Minister</role>’s powers under this Act to a person holding or performing the duties of an office in the Department.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-21__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In subsection (1), a reference to this Act includes a reference to an agreement entered into under this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-22">
+          <num>22</num>
+          <heading>Approvals and determinations to be in writing</heading>
+          <content>
+            <p>An approval or determination under this Act must be made in writing.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-22A">
+          <num>22A</num>
+          <heading>Exercise of powers in Minister’s discretion</heading>
+          <content>
+            <p>		Where a provision of this Act provides that the Minister may do a particular act or thing, and the word <b><i>may</i></b> is used, the act or thing may be done at the Minister’s discretion.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-23">
+          <num>23</num>
+          <heading>Manner of payment of grants</heading>
+          <content>
+            <p>A grant under this Act shall be made at such time as is, or by such instalments and at such times as are, determined by agreement between <role refersTo="#minister">the Minister</role> and the operator of the eligible child care centre concerned or, in the absence of such an agreement, by <role refersTo="#minister">the Minister</role>.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-24">
+          <num>24</num>
+          <heading>Money to be appropriated</heading>
+          <content>
+            <p>Grants under this Act and advances on account of grants under subsection 12(2) are payable out of money appropriated by the Parliament for the purposes of this Act.</p>
+          </content>
+        </section>
+        <section eId="part-VI__sec-25">
+          <num>25</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that are required or permitted by this Act to be prescribed or are necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Child Care Act 1972</td>
+              <td>121, 1972</td>
+              <td>2 Nov 1972</td>
+              <td>2 Nov 1972</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act 1973</td>
+              <td>216, 1973</td>
+              <td>19 Dec 1973</td>
+              <td>31 Dec 1973</td>
+              <td>ss. 9(1) and 10</td>
+            </tr>
+            <tr>
+              <td>Administrative Changes (Consequential Provisions) Act 1976</td>
+              <td>91, 1976</td>
+              <td>20 Sept 1976</td>
+              <td>s. 3: (a)</td>
+              <td>s. 4</td>
+            </tr>
+            <tr>
+              <td>Public Service Reform Act 1984</td>
+              <td>63, 1984</td>
+              <td>25 June 1984</td>
+              <td>s. 151(1): 1 July 1984 (see Gazette 1984, No. S245) (b)</td>
+              <td>s.151(9)</td>
+            </tr>
+            <tr>
+              <td>Social Security and Repatriation Legislation Amendment Act 1985</td>
+              <td>95, 1985</td>
+              <td>5 Sept 1985</td>
+              <td>ss. 13–26 and 
+28–30: Royal Assent (c) 
+s. 27: 3 Oct 1985 (c)</td>
+              <td>s. 30</td>
+            </tr>
+            <tr>
+              <td>Child Care Amendment Act 1985</td>
+              <td>158, 1985</td>
+              <td>11 Dec 1985</td>
+              <td>1 Apr 1986</td>
+              <td>s. 7</td>
+            </tr>
+            <tr>
+              <td>Community Services and Health Legislation Amendment Act (No. 2) 1988</td>
+              <td>155, 1988</td>
+              <td>26 Dec 1988</td>
+              <td>s. 10: 1 Jan 1989 
+ss. 12 and 13: 1 July 1989 
+(see Gazette 1989, No. S228) 
+ss. 14 and 17: 1 July 1988 
+ss. 19–26 and 
+28–34: 24 Jan 1990 
+(see Gazette 1990, No. S13) 
+ss. 27 and 36: 15 Mar 1989 
+(see Gazette 1989, No. S91) 
+Part V (ss. 38–40): 24 June 1988 
+s. 41(2): 16 Dec 1987 
+s. 41(3): 6 Nov 1987 
+s. 41(4): 1 Mar 1989 (see s. 2(8) 
+and Gazette 1989, No. S54) 
+Remainder: Royal Assent</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Community Services and Health Legislation Amendment Act 1990</td>
+              <td>106, 1990</td>
+              <td>18 Dec 1990</td>
+              <td>s. 3: Royal Assent (d) 
+ss. 4–11: 1 Jan 1991 (d)</td>
+              <td>s. 8(2)</td>
+            </tr>
+            <tr>
+              <td>Social Security Legislation Amendment (Carer Pension and Other Measures) Act 1995</td>
+              <td>143, 1995</td>
+              <td>12 Dec 1995</td>
+              <td>Schedule 2 (Part 1): 1 Jan 1996 (e)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Child Care Legislation Amendment Act 1996</td>
+              <td>80, 1996</td>
+              <td>19 Dec 1996</td>
+              <td>Schedule 1: 1 July 1997
+Remainder: Royal Assent</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Child Care Payments (Consequential Amendments and Transitional Provisions) Act 1997</td>
+              <td>196, 1997</td>
+              <td>8 Dec 1997</td>
+              <td>Schedule 1 (items 1–7): (f)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Child Care Legislation Amendment Act 1998</td>
+              <td>13, 1998</td>
+              <td>16 Apr 1998</td>
+              <td>Schedule 1 (items 19–24): 27 Apr 1998 (see Gazette 1998, No. S167) (fa)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No. 1) 1999</td>
+              <td>82, 1999</td>
+              <td>8 July 1999</td>
+              <td>Schedule 2 (item 2): (fb)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Child Care Legislation Amendment Act 1998</td>
+              <td>13, 1998</td>
+              <td>16 Apr 1998</td>
+              <td>Schedule 1 (items 1–15): 27 Apr 1998 (see Gazette 1998, No. S167) (g)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No. 1) 1999</td>
+              <td>82, 1999</td>
+              <td>8 July 1999</td>
+              <td>s. 4: Royal Assent (h)
+Schedule 2 (items 4, 5): (h)
+Schedule 3: (h)</td>
+              <td>s. 4 (am. by 83, 1999, Sch. 11 [item 1])
+s. 5 (ad. by 83, 1999, Sch. 11 [item 2]) ???[see Table A]</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No. 2) 1999</td>
+              <td>83, 1999</td>
+              <td>8 July 1999</td>
+              <td>Schedule 11 (item 1): (i)
+Schedule 11 (item 2): (i)</td>
+              <td>s. 2(9) (rs. by 172, 1999, Sch. 2 [item 3])</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Family and Community Services Legislation Amendment (1999 Budget and Other Measures) Act 1999</td>
+              <td>172, 1999</td>
+              <td>10 Dec 1999</td>
+              <td>Schedule 2 (item 3): (j)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No. 2) 1999</td>
+              <td>83, 1999</td>
+              <td>8 July 1999</td>
+              <td>Schedule 3 (k)</td>
+              <td>s. 2(2) (am. by 172, 1999, Sch. 2 [item 1])</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Family and Community Services Legislation Amendment (1999 Budget and Other Measures) Act 1999</td>
+              <td>172, 1999</td>
+              <td>10 Dec 1999</td>
+              <td>Schedule 2 (item 1): (j)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Social Security and Family Assistance Legislation Amendment (Miscellaneous Measures) Act 2006</td>
+              <td>108, 2006</td>
+              <td>27 Sept 2006</td>
+              <td>Schedule 8 (items 76–81): Royal Assent</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Freedom of Information Amendment (Reform) Act 2010</td>
+              <td>51, 2010</td>
+              <td>31 May 2010</td>
+              <td>Sch 5 (item 11) and Sch 7: 1 Nov 2010 (s 2(1) item 7)</td>
+              <td>Sch. 7</td>
+            </tr>
+            <tr>
+              <td>Family Assistance and Other Legislation Amendment (Child Care and Other Measures) Act 2011</td>
+              <td>79, 2011</td>
+              <td>25 July 2011</td>
+              <td>Sch 3 (item 7): 22 Aug 2011 (s 2(1) item 4)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Australian Charities and Not-for-profits Commission (Consequential and Transitional) Act 2012</td>
+              <td>169, 2012</td>
+              <td>3 Dec 2012</td>
+              <td>Sch 2 (items 155–157): 3 Dec 2012 (s 2(1) item 7)</td>
+              <td>Sch 2 (item 157)</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act (No. 1) 2016</td>
+              <td>4, 2016</td>
+              <td>11 Feb 2016</td>
+              <td>Sch 4 (items 1, 48, 49, 338): 10 Mar 2016 (s 2(1) item 6)</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <paragraph eId="part-VI__sec-25__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>Child Care Act 1972 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Administrative Changes (Consequential Provisions) Act 1976</i>, subsection 2(3) of which provides as follows: </p>
+            </content>
+          </paragraph>
+          <subsection eId="part-VI__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The amendments of the <i>Child Care Act 1972 </i>made by this Act shall be deemed to have come into operation on 23 June 1976.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p><i>(b)</i>	The <i>Child Care Act 1972 </i>was amended by subsection 151(1) only of the <i>Public Service Reform Act 1984</i>, subsection 2(4) of which provides as follows: </p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on such day as is, or on such respective days as are, fixed by Proclamation.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p><i>(c)</i>	The <i>Child Care Act 1972 </i>was amended by sections 13–30 only of the <i>Social Security and Repatriation Legislation Amendment Act 1985</i>, subsections 2(1) and (2) of which provide as follows: </p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the day on which it receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Section 27 shall come into operation on the twenty-eighth day after the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p><i>(d)</i>	The <i>Child Care Act 1972 </i>was amended by sections 3–11 only of the <i>Community Services and Health Legislation Amendment Act 1990</i>, <ref href="#sec-2">section 2</ref> of which provides as follows: </p>
+              </content>
+              <content>
+                <p>2.	Each provision of this Act commences, or is taken to have commenced, on the day, or at the time, shown by the note in italics at the foot of that provision.</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p><i>(e)</i>	The <i>Child Care Act 1972 </i>was amended by Schedule 2 (<ref href="#part-1">Part 1</ref>) only of the <i>Social Security Legislation Amendment (Carer Pension and Other Measures) Act 1995</i>, subsection 2(3)(a) of which provides as follows: </p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The following provisions commence on <date date="1996-01-01">1 January 1996</date>:</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>Parts 1 and 3 of Schedule 2;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p><i>(f)</i><i>	</i>The <i>Child Care Payments (Consequential Amendments and Transitional Provisions) Act 1997</i> (as amended by the <i>Child Care Legislation Amendment Act 1998</i>) was repealed by Schedule 2 (item 2) of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i> before the amendments commenced.</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-fa">
+              <num>fa</num>
+              <content>
+                <p><i>(fa)</i>	The <i>Child Care Payments (Consequential Amendments and Transitional Provisions) Act 1997</i> was amended by Schedule 1 (items 19–24) only of the <i>Child Care Legislation Amendment Act 1998</i>, subsection 2(2) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), the remaining provisions of this Act commence on a day to be fixed by Proclamation.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-fb">
+              <num>fb</num>
+              <content>
+                <p><i>(fb)</i><i>	</i>The <i>Child Care Payments (Consequential Amendments and Transitional Provisions) Act 1997</i> was repealed by Schedule 2 (item 2) only of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i>, subsection 2(3) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Items 1, 2, 4 and 5 of Schedule 2 commence immediately before the day that is the payment commencement day for the purposes of the <i>Child Care Payments Act 1997</i>.</p>
+            </content>
+            <content>
+              <p>The payment commencement day was <date date="2000-06-19">19 June 2000</date>.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-g">
+              <num>g</num>
+              <content>
+                <p><i>(g)</i>	The <i>Child Care Act 1972</i> was amended by Schedule 2 (items 1–15) only of the <i>Child Care Legislation Amendment Act 1998</i>, subsection 2(2) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), the remaining provisions of this Act commence on a day to be fixed by Proclamation.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p><i>(h)</i>	The <i>Child Care Act 1972</i> was amended by Schedule 2 (items 4, 5) and Schedule 3 only of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i>, subsections 2(1)–(3) of which provide as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Schedule 1, item 3 of Schedule 2 and Schedules 3 to 8 commence, or are taken to have commenced, immediately after the commencement of:</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>A New Tax System (Family Assistance) Act 1999</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	Schedules 1, 2 and 3 of the <i>A New Tax System (Compensation Measures Legislation Amendment) Act 1999</i>. </p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Items 1, 2, 4 and 5 of Schedule 2 commence immediately before the day that is the payment commencement day for the purposes of the <i>Child Care Payments Act 1997</i>. </p>
+            </content>
+            <content>
+              <p>The payment commencement day was <date date="2000-06-19">19 June 2000</date>.</p>
+            </content>
+            <blockList eId="part-VI__sec-25__subsec-3__list-1">
+              <item eId="part-VI__sec-25__subsec-3__list-1__item-1">
+                <p>The A New Tax System (Family Assistance) Act 1999 and the A New Tax System (Compensation Measures Legislation Amendment) Act 1999 commenced on <date date="2000-07-01">1 July 2000</date>.</p>
+              </item>
+            </blockList>
+            <paragraph eId="part-VI__sec-25__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p><i>(i)</i><i>	</i>The <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No</i><i>.</i><i> </i><i>1) 1999 </i>was amended by Schedule 11 (items 1 and 2) only of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>2) 1999</i>, subsections 2(8) and (9) of which provide as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-8">
+            <num>8</num>
+            <content>
+              <p>	(8)	Item 1 of Schedule 11 commences, or is taken to have commenced, immediately after the commencement of <ref href="#sec-4">section 4</ref> of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-9">
+            <num>9</num>
+            <content>
+              <p>Item 2 of Schedule 11 commences on the earlier of:</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	immediately after the commencement of <ref href="#sec-2">section 2</ref> of the <i>Family and Community Services Legislation Amendment (1999 Budget and Other Measures) Act 1999</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p><date date="2000-01-01">1 January 2000</date>.</p>
+              </content>
+              <content>
+                <p>	Section 4 of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i> commenced on 8 July 1999.</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-25__subsec-9__para-j">
+              <num>j</num>
+              <content>
+                <p><i>(j)</i>	The <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>2) 1999</i> was amended by Schedule 2 (items 1 and 3) only of the <i>Family and Community Services Legislation Amendment (1999 Budget and Other Measures) Act 1999</i>, subsection 2(4) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Schedule 2 commences, or is taken to have commenced, immediately after the commencement of <ref href="#sec-2">section 2</ref> of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>2) 1999</i>.</p>
+            </content>
+            <content>
+              <p><i>	</i>Section 2 commenced on 8 July 1999.</p>
+            </content>
+            <paragraph eId="part-VI__sec-25__subsec-4__para-k">
+              <num>k</num>
+              <content>
+                <p><i>(k)</i>	The <i>Child Care Act 1972</i> was amended by Schedule 3 only of the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>2) 1999</i>, subsection 2(2) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Schedule 1 (Parts 1 to 5), Schedules 3 to 6, Schedule 7 (other than item 14), Schedules 8 and 9, Schedule 10 (other than items 22, 63, 66 and 67) and Schedule 11 (items 3 and 4 only) commence, or are taken to have commenced, on the commencement of Schedule 1 to the <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i>. </p>
+            </content>
+            <content>
+              <p>	The <i>A New Tax System (Family Assistance) (Consequential and Related Measures) Act (No.</i><i> </i><i>1) 1999</i> commenced on 1 July 2000.</p>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 3</td>
+                <td>rep. No. 216, 1973</td>
+              </tr>
+              <tr>
+                <td>s. 4</td>
+                <td>am. No. 216, 1973; No. 95, 1985; No. 106, 1990; No. 143, 1995; No. 13, 1998; Nos. 82 and 83, 1999; No. 79, 2011; No. 169, 2012</td>
+              </tr>
+              <tr>
+                <td>s. 4A</td>
+                <td>ad. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 4B</td>
+                <td>ad. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 13, 1998; No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 169, 2012</td>
+              </tr>
+              <tr>
+                <td>s. 4C</td>
+                <td>ad. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 13, 1998; No. 82, 1999; No. 108, 2006</td>
+              </tr>
+              <tr>
+                <td>ss. 4D–4G</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 4H</td>
+                <td>ad. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ss. 5–7</td>
+                <td>am. No. 95, 1985; No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ss. 8, 9</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 10</td>
+                <td>am. No. 95, 1985; No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 11</td>
+                <td>am. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 158, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 80, 1996</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Heading to Div. 1 of Part III</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 12</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 12A</td>
+                <td>ad. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990; No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Heading to Div. 2 of Part III</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Div. 2 of Part III</td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>ss. 12B–12E</td>
+                <td>ad. No. 143, 1995</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Div. 3 of Part III</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 12F</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Div. 4 of Part III</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>ss. 12G, 12H</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>Part IIIA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part IIIA</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td>s. 12J</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td>s 12K</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 83, 1999; No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>s 12L</td>
+                <td>ad No 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 83, 1999; No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>s 12M</td>
+                <td>ad No 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 83, 1999</td>
+              </tr>
+              <tr>
+                <td>s 12N</td>
+                <td>ad No 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 83, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 12P</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 108, 2006; No. 51, 2010</td>
+              </tr>
+              <tr>
+                <td>s 12Q</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>s 12R</td>
+                <td>ad No 13, 1998</td>
+              </tr>
+              <tr>
+                <td>s. 12S</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 83, 1999; No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>ss. 12T–12V</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td>s. 13</td>
+                <td>am. No. 95, 1985; No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Part IVA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part IVA</td>
+                <td>ad. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td>ss. 13A–13C</td>
+                <td>ad. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 14</td>
+                <td>am. No. 95, 1985; No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 15</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td>s. 16</td>
+                <td>am. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 18</td>
+                <td>am. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td>s. 19</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 20</td>
+                <td>am. Nos. 95 and 158, 1985; No. 106, 1990; No. 80, 1996</td>
+              </tr>
+              <tr>
+                <td>s. 20A</td>
+                <td>ad. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 20B</td>
+                <td>ad. No. 158, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 21</td>
+                <td>rs. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td>s. 21</td>
+                <td>am. No. 216, 1973; No. 91, 1976; No. 63, 1984; No. 95, 1985; No. 155, 1988; No. 106, 1990; No. 13, 1998; No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 21A</td>
+                <td>ad. No. 13, 1998</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 82, 1999</td>
+              </tr>
+              <tr>
+                <td>s. 22</td>
+                <td>rs. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 22A</td>
+                <td>ad. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 23</td>
+                <td>am. No. 106, 1990</td>
+              </tr>
+              <tr>
+                <td>s. 24</td>
+                <td>rs. No. 95, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 158, 1985; No. 80, 1996</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

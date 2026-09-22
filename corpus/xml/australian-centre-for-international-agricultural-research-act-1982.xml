@@ -1,0 +1,2708 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1982/9/!main"/>
+          <FRBRuri value="/akn/au/act/1982/9"/>
+          <FRBRdate date="1982-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="9"/>
+          <FRBRname value="australian-centre-for-international-agricultural-research-act-1982"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1982/9/eng@2026-03-27/!main"/>
+          <FRBRuri value="/akn/au/act/1982/9/eng@2026-03-27"/>
+          <FRBRdate date="2026-03-27" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1982/9/eng@2026-03-27/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1982/9/eng@2026-03-27/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1982-01-01" type="generation" eId="evt-creation" source="#australian-centre-for-international-agricultural-research-act-1982"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1983/39" date="1983-06-20"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1983/91"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1984/63" date="1984-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1985/166"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1987/141"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1991/122" date="1991-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1992/170"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1996/43"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2001/159"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2007/115" date="2007-07-01"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2008/73" date="2008-07-03"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2026/13" date="2026-03-26"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="ceo" href="/ontology/roles/au/ceo" showAs="the CEO"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-account" href="/ontology/term/au/term-account" showAs="Account"/>
+        <TLCTerm eId="term-agricultural-research" href="/ontology/term/au/term-agricultural-research" showAs="agricultural research"/>
+        <TLCTerm eId="term-agriculture" href="/ontology/term/au/term-agriculture" showAs="agriculture"/>
+        <TLCTerm eId="term-annual-report" href="/ontology/term/au/term-annual-report" showAs="annual report"/>
+        <TLCTerm eId="term-appointed-member-of-the-council" href="/ontology/term/au/term-appointed-member-of-the-council" showAs="appointed member of the Council"/>
+        <TLCTerm eId="term-aps-code-of-conduct" href="/ontology/term/au/term-aps-code-of-conduct" showAs="APS Code of Conduct"/>
+        <TLCTerm eId="term-centre" href="/ontology/term/au/term-centre" showAs="Centre"/>
+        <TLCTerm eId="term-ceo" href="/ontology/term/au/term-ceo" showAs="CEO"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-commission" href="/ontology/term/au/term-commission" showAs="Commission"/>
+        <TLCTerm eId="term-commissioner" href="/ontology/term/au/term-commissioner" showAs="Commissioner"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-international-agricultural-research-centre" href="/ontology/term/au/term-international-agricultural-research-centre" showAs="international agricultural research centre"/>
+        <TLCTerm eId="term-paid-work" href="/ontology/term/au/term-paid-work" showAs="paid work"/>
+        <TLCTerm eId="term-performance-standard" href="/ontology/term/au/term-performance-standard" showAs="performance standard"/>
+        <TLCTerm eId="term-president" href="/ontology/term/au/term-president" showAs="President"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Centre for International Agricultural Research Act 1982</p>
+      <p>No. 9, 1982</p>
+      <p><b>Compilation No. </b><b>17</b></p>
+      <p><b>Compilation date:</b><b>	</b>27 March 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 13, 2026</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Centre for International Agricultural Research Act 1982</i> that shows the text of the law as amended and in force on 27 March 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p><ref href="#part-II">Part II</ref>—The Australian Centre for International Agricultural Research	3</p>
+      <p>4	Establishment of Centre	3</p>
+      <p>4A	The Chief Executive Officer	3</p>
+      <p>5	Functions of <role refersTo="#ceo">the CEO</role>	3</p>
+      <p>5A	Power of Minister to give directions	4</p>
+      <p>6	Functions of the staff of the Centre	4</p>
+      <p><ref href="#part-III">Part III</ref>—Commission for International Agricultural Research	5</p>
+      <p><ref href="#dvs-1">Division 1</ref>—The Commission	5</p>
+      <p>7	Establishment of Commission	5</p>
+      <p>8	Constitution of the Commission	5</p>
+      <p>9	Functions of the Commission	5</p>
+      <p><ref href="#dvs-2">Division 2</ref>—The Commissioners	6</p>
+      <p>10	Appointment of Commissioners	6</p>
+      <p>11	Appointments to be part-time	6</p>
+      <p>12	Terms and conditions—general	6</p>
+      <p>13	Remuneration and allowances	6</p>
+      <p>14	Acting Commissioner	7</p>
+      <p>15	Leave of absence	7</p>
+      <p>16	Resignation	7</p>
+      <p>16A	Termination of appointment	7</p>
+      <p>16B	Disclosure of interests	8</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Meetings of the Commission	9</p>
+      <p>16C	Times and places of meetings	9</p>
+      <p>16D	Notice of meetings	9</p>
+      <p>16E	Who presides at meetings	9</p>
+      <p>16F	Quorum	9</p>
+      <p>16G	Voting at meetings	10</p>
+      <p>16H	Conduct of meetings	10</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Delegation by Commission	11</p>
+      <p>16J	Delegation by Commission	11</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Directions by <role refersTo="#minister">the Minister</role>	12</p>
+      <p>16K	Directions by <role refersTo="#minister">the Minister</role>	12</p>
+      <p><ref href="#part-IV">Part IV</ref>—The Policy Advisory Council	13</p>
+      <p>17	Establishment of Council	13</p>
+      <p>18	Function of Council	13</p>
+      <p>19	Constitution of Council	13</p>
+      <p>19A	Remuneration and allowances	14</p>
+      <p>20	President to keep Council informed	15</p>
+      <p>21	Termination of appointment	15</p>
+      <p>22	Resignation	15</p>
+      <p>23	Meetings of Council	16</p>
+      <p><ref href="#part-V">Part V</ref>—<role refersTo="#ceo">The CEO</role>	17</p>
+      <p>24	Appointment of CEO	17</p>
+      <p>25	Appointment to be full-time	17</p>
+      <p>26	Terms and conditions—general	17</p>
+      <p>27	Remuneration and allowances	17</p>
+      <p>28	Other paid work	18</p>
+      <p>29	Acting CEO	18</p>
+      <p>29A	Leave of absence	18</p>
+      <p>29B	Resignation	19</p>
+      <p>29BA	Suspension of appointment	19</p>
+      <p>29C	Termination of appointment	21</p>
+      <p>29E	CEO not subject to direction by the Commission on certain matters	22</p>
+      <p><ref href="#part-VI">Part VI</ref>—Staff and consultants	23</p>
+      <p>30	Staff	23</p>
+      <p>31	Arrangements relating to staff	23</p>
+      <p>32	Consultants	23</p>
+      <p><ref href="#part-VIA">Part VIA</ref>—Application of the finance law	24</p>
+      <p>32A	Application of the finance law	24</p>
+      <p><ref href="#part-VII">Part VII</ref>—The Australian Centre for International Agricultural Research Account	25</p>
+      <p>33	Australian Centre for International Agricultural Research Account	25</p>
+      <p>34	Credits to the Account	25</p>
+      <p>35	Purposes of the Account	25</p>
+      <p><ref href="#part-VIII">Part VIII</ref>—Miscellaneous	27</p>
+      <p>39	Annual report	27</p>
+      <p>41	Delegation by Minister	27</p>
+      <p>42	Regulations	27</p>
+      <p>Endnotes	28</p>
+      <p>Endnote 1—About the endnotes	28</p>
+      <p>Endnote 2—Abbreviation key	30</p>
+      <p>Endnote 3—Legislation history	31</p>
+      <p>Endnote 4—Amendment history	35</p>
+      <p>An Act to encourage research for the purpose of identifying, or finding solutions to, agricultural problems of developing countries</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Centre for International Agricultural Research Act 1982</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on a date to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-account">Account</term> means <def>the account continued in existence by <ref href="#sec-33">section 33</ref>.</def></p>
+            <p><term refersTo="#term-agricultural-research">agricultural research</term> means <def>scientific, technical, economic or socio-economic research in connection with agriculture, and includes the publication of reports, periodicals, books and papers in connection with any such research.</def></p>
+            <p><term refersTo="#term-agriculture">agriculture</term> includes <def>such uses of land as are prescribed for the purposes of this definition.</def></p>
+            <p><term refersTo="#term-annual-report">annual report</term> means <def>the report referred to in <ref href="#sec-39">section 39</ref>.</def></p>
+            <p><term refersTo="#term-appointed-member-of-the-council">appointed member of the Council</term> means <def>a member of the Council appointed under subsection 19(2).</def></p>
+            <p><term refersTo="#term-aps-code-of-conduct">APS Code of Conduct</term> means <def>the Code of Conduct (within the meaning of <ref href="">the Public Service Act 1999</ref>).</def></p>
+            <p><term refersTo="#term-centre">Centre</term> means <def>the Australian Centre for International Agricultural Research.</def></p>
+            <p><term refersTo="#term-ceo">CEO</term> means <def>the Chief Executive Officer of the Centre.</def></p>
+            <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Commission.</def></p>
+            <p><term refersTo="#term-commission">Commission</term> means <def>the Commission for International Agricultural Research established by <ref href="#sec-7">section 7</ref>.</def></p>
+            <p><term refersTo="#term-commissioner">Commissioner</term> means <def>a Commissioner of the Commission appointed in accordance with <ref href="#sec-10">section 10</ref> and includes the Chair.</def></p>
+            <p><term refersTo="#term-council">Council</term> means <def>the Policy Advisory Council.</def></p>
+            <p><b><i>institution</i></b> includes:</p>
+          </content>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>an organization, group or body, whether incorporated or unincorporated; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a Department of State, or an authority, of the Commonwealth or of a State or Territory.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-international-agricultural-research-centre">international agricultural research centre</term> means <def>an independent, non-profit organisation that: is internationally funded; and carries out: research into sustainable improvements in the productivity of agriculture, forestry and fisheries in developing countries; and activities related to such research.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>is internationally funded; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>carries out:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-i">
+            <num>i</num>
+            <content>
+              <p>research into sustainable improvements in the productivity of agriculture, forestry and fisheries in developing countries; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-ii">
+            <num>ii</num>
+            <content>
+              <p>activities related to such research.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-paid-work">paid work</term> means <def>work for financial gain or reward (whether as an employee, a self-employed person or otherwise).</def></p>
+              <p><term refersTo="#term-performance-standard">performance standard</term> means <def>the performance standard determined under subsection 24(4).</def></p>
+              <p><term refersTo="#term-president">President</term> means <def>the President of the Council.</def></p>
+              <p><b><i>serious misconduct</i></b> has a meaning affected by subsection 29C(1A).</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>The Australian Centre for International Agricultural Research</heading>
+        <section eId="part-II__sec-4">
+          <num>4</num>
+          <heading>Establishment of Centre</heading>
+          <subsection eId="part-II__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is hereby established a Centre by the name of the Australian Centre for International Agricultural Research.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Centre consists of:</p>
+            </content>
+            <paragraph eId="part-II__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the staff of the Centre referred to in <ref href="#sec-30">section 30</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-4A">
+          <num>4A</num>
+          <heading>The Chief Executive Officer</heading>
+          <content>
+            <p>There is to be a Chief Executive Officer of the Centre.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	<ref href="#part-V">Part V</ref> deals with the appointment and terms and conditions of <role refersTo="#ceo">the CEO</role>.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-II__sec-5">
+          <num>5</num>
+          <heading>Functions of the CEO</heading>
+          <subsection eId="part-II__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The functions of <role refersTo="#ceo">the CEO</role> are:</p>
+            </content>
+            <paragraph eId="part-II__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to formulate programs and policies with respect to agricultural research for either or both of the following purposes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>identifying agricultural problems of developing countries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>finding solutions to agricultural problems of developing countries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to commission agricultural research by persons or institutions (whether the research is to be conducted in Australia or overseas) in accordance with such programs and policies; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to communicate to persons and institutions the results of such agricultural research; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>to establish and fund training schemes related to the research programs referred to in paragraph (a); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>to conduct and fund development activities related to those research programs; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>to fund international agricultural research centres.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> must, in performing his or her functions with respect to agricultural research, have regard to the need for persons or institutions in developing countries to share in that research.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Nothing in this section authorises, or permits, <role refersTo="#ceo">the CEO</role> to carry out research on behalf of the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> must, in performing his or her functions, comply with any directions given to <role refersTo="#ceo">the CEO</role> under <ref href="#sec-5A">section 5A</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-5A">
+          <num>5A</num>
+          <heading>Power of Minister to give directions</heading>
+          <subsection eId="part-II__sec-5A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by writing, give directions to <role refersTo="#ceo">the CEO</role> with respect to the performance of <role refersTo="#ceo">the CEO</role>’s functions under this Act (including in relation to the appropriate strategic direction <role refersTo="#ceo">the CEO</role> should take in performing his or her functions).</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	A direction under this section is included in the annual report: see <ref href="#sec-39">section 39</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-5A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A direction given under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Functions of the staff of the Centre</heading>
+          <content>
+            <p>The functions of the staff of the Centre referred to in <ref href="#sec-30">section 30</ref> are to assist <role refersTo="#ceo">the CEO</role> perform his or her functions.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Commission for International Agricultural Research</heading>
+        <division eId="part-III__dvs-1">
+          <num>1</num>
+          <heading>The Commission</heading>
+          <section eId="part-III__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Establishment of Commission</heading>
+            <content>
+              <p>The Commission for International Agricultural Research is established by this section.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Constitution of the Commission</heading>
+            <content>
+              <p>The Commission consists of:</p>
+            </content>
+            <paragraph eId="part-III__dvs-1__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a Chair; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-1__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>6 other Commissioners.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-III__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Functions of the Commission</heading>
+            <content>
+              <p>The functions of the Commission are:</p>
+            </content>
+            <paragraph eId="part-III__dvs-1__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>to provide advice to <role refersTo="#minister">the Minister</role> in relation to the formulation of programs of the kind referred to in paragraph 5(1)(a); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-1__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>to provide advice to <role refersTo="#minister">the Minister</role> in relation to the funding of things referred to in paragraphs 5(1)(d), (e) and (f); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-1__sec-9__para-c">
+              <num>c</num>
+              <content>
+                <p>to provide advice to <role refersTo="#minister">the Minister</role> on program and funding priorities; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-1__sec-9__para-d">
+              <num>d</num>
+              <content>
+                <p>to provide advice to <role refersTo="#minister">the Minister</role>, on <role refersTo="#minister">the Minister</role>’s request, on any other matter relating to this Act.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-III__dvs-2">
+          <num>2</num>
+          <heading>The Commissioners</heading>
+          <section eId="part-III__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Appointment of Commissioners</heading>
+            <subsection eId="part-III__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A Commissioner is to be appointed by the Governor-General by written instrument.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A Commissioner holds office for the period specified in the instrument of appointment. The period must not exceed 3 years.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-10__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person cannot be appointed as a Commissioner if the person is a member of the Council.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Appointments to be part-time</heading>
+            <content>
+              <p>A Commissioner holds office on a part-time basis.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Terms and conditions—general</heading>
+            <content>
+              <p>A Commissioner holds office on the terms and conditions (if any) in relation to matters not covered by this Act that are determined by the Governor-General.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Remuneration and allowances</heading>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A Commissioner is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, <role refersTo="#commissioner">the Commissioner</role> is to be paid the remuneration that is prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A Commissioner is to be paid the allowances that are prescribed by the regulations.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-14">
+            <num>14</num>
+            <heading>Acting Commissioner</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may appoint a person to act as a Commissioner:</p>
+            </content>
+            <paragraph eId="part-III__dvs-2__sec-14__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of <role refersTo="#commissioner">the Commissioner</role> (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-14__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when <role refersTo="#commissioner">the Commissioner</role> is absent from duty or from Australia, or is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-III__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Leave of absence</heading>
+            <subsection eId="part-III__dvs-2__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chair may grant leave of absence to any other Commissioner on the terms and conditions that the Chair determines.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may grant leave of absence to the Chair on the terms and conditions that <role refersTo="#minister">the Minister</role> determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-16">
+            <num>16</num>
+            <heading>Resignation</heading>
+            <content>
+              <p>A Commissioner may resign his or her appointment by giving the Governor-General a written resignation.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-2__sec-16A">
+            <num>16A</num>
+            <heading>Termination of appointment</heading>
+            <subsection eId="part-III__dvs-2__sec-16A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Governor-General may terminate the appointment of a Commissioner for misbehaviour or physical or mental incapacity.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Governor-General must terminate the appointment of a Commissioner if:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#commissioner">the Commissioner</role>:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>becomes bankrupt; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>applies to take the benefit of any law for the relief of bankrupt or insolvent debtors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>compounds with his or her creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>makes an assignment of his or her remuneration for the benefit of his or her creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#commissioner">the Commissioner</role> is absent, except on leave of absence, from 3 consecutive meetings of the Commission; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-16A__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	the Commissioner fails, without reasonable excuse, to comply with <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests) or rules made for the purposes of that section.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-16B">
+            <num>16B</num>
+            <heading>Disclosure of interests</heading>
+            <subsection eId="part-III__dvs-2__sec-16B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	A disclosure by a Commissioner under <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act </i><i>2013</i> (which deals with the duty to disclose interests) must be made to the Minister.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) applies in addition to any rules made for the purposes of that section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-16B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	For the purposes of this Act and the <i>Public Governance, Performance and Accountability Act 2013</i>, the Commissioner is taken not to have complied with <ref href="#sec-29">section 29</ref> of that Act if the Commissioner does not comply with this section.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-III__dvs-3">
+          <num>3</num>
+          <heading>Meetings of the Commission</heading>
+          <section eId="part-III__dvs-3__sec-16C">
+            <num>16C</num>
+            <heading>Times and places of meetings</heading>
+            <subsection eId="part-III__dvs-3__sec-16C__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission must hold such meetings as are necessary for the efficient performance of its functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16C__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Meetings are to be held at the times and places determined by the Commission.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16C__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Chair may call a meeting at any time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16C__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Chair must ensure that at least 4 meetings are held each financial year.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-3__sec-16D">
+            <num>16D</num>
+            <heading>Notice of meetings</heading>
+            <content>
+              <p>Each Commissioner is entitled to receive reasonable notice of the Commission’s meetings.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-3__sec-16E">
+            <num>16E</num>
+            <heading>Who presides at meetings</heading>
+            <subsection eId="part-III__dvs-3__sec-16E__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chair presides at all meetings of the Commission at which he or she is present.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16E__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If the Chair is not present at a meeting of the Commission, the Commissioners present must elect a Commissioner to preside at the meeting.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-3__sec-16F">
+            <num>16F</num>
+            <heading>Quorum</heading>
+            <content>
+              <p>At a meeting of the Commission, 4 Commissioners constitute a quorum.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-3__sec-16G">
+            <num>16G</num>
+            <heading>Voting at meetings</heading>
+            <subsection eId="part-III__dvs-3__sec-16G__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A question arising at a meeting of the Commission is to be decided by a majority of the votes of the Commissioners present and voting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16G__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#commissioner">The Commissioner</role> presiding at a meeting of the Commission has a deliberative vote and, if necessary, also a casting vote.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-3__sec-16H">
+            <num>16H</num>
+            <heading>Conduct of meetings</heading>
+            <subsection eId="part-III__dvs-3__sec-16H__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may, subject to this Division, regulate proceedings at its meetings as it considers appropriate.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-3__sec-16H__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission must ensure that minutes of its meetings are kept.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-III__dvs-4">
+          <num>4</num>
+          <heading>Delegation by Commission</heading>
+          <section eId="part-III__dvs-4__sec-16J">
+            <num>16J</num>
+            <heading>Delegation by Commission</heading>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may, by resolution, delegate all or any of its functions or powers under this Act to a Commissioner.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901 </i>contain provisions relating to delegations.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In exercising a delegated function or power, the delegate must comply with any written directions of the Commission.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The delegation continues in force despite a change in the constitution of the Commission.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The delegation may be varied or revoked by resolution of the Commission (whether or not there has been a change in the constitution of the Commission).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A certificate signed by the Chair stating any matter with respect to the delegation is prima facie evidence of the matter.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-4__sec-16J__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A document purporting to be a certificate mentioned in subsection (5) is taken to be such a certificate and to have been duly given unless the contrary is established.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-III__dvs-5">
+          <num>5</num>
+          <heading>Directions by the Minister</heading>
+          <section eId="part-III__dvs-5__sec-16K">
+            <num>16K</num>
+            <heading>Directions by the Minister</heading>
+            <subsection eId="part-III__dvs-5__sec-16K__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by writing, give directions to the Commission with respect to the performance of the Commission’s functions under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-5__sec-16K__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In giving a direction, <role refersTo="#minister">the Minister</role> must have regard to any relevant advice that he or she may have received from the Council under <ref href="#sec-18">section 18</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-5__sec-16K__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must give a copy of a direction to <role refersTo="#ceo">the CEO</role>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	A direction under this section is included in the annual report: see <ref href="#sec-39">section 39</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>The Policy Advisory Council</heading>
+        <section eId="part-IV__sec-17">
+          <num>17</num>
+          <heading>Establishment of Council</heading>
+          <content>
+            <p>There is hereby established a Council by the name of the Policy Advisory Council.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-18">
+          <num>18</num>
+          <heading>Function of Council</heading>
+          <subsection eId="part-IV__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The function of the Council is to provide advice to <role refersTo="#minister">the Minister</role> regarding:</p>
+            </content>
+            <paragraph eId="part-IV__sec-18__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>agricultural problems of developing countries; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-18__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>programs and policies with respect to agricultural research for either or both of the following purposes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-18__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>identifying agricultural problems of developing countries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-18__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>finding solutions to agricultural problems of developing countries.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council shall provide advice under subsection (1) on such occasions as it thinks fit and on request by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall arrange for a copy of any advice provided by the Council to be furnished to the Commission.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-19">
+          <num>19</num>
+          <heading>Constitution of Council</heading>
+          <subsection eId="part-IV__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council shall consist of:</p>
+            </content>
+            <paragraph eId="part-IV__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a President;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the person for the time being occupying, or performing the duties of, the position in the Australian Public Service known as Director-General, Australian International Development Assistance Bureau, or a person nominated by the Director-General; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>not fewer than 9 nor more than 11 other members.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The members referred to in paragraphs (1)(a) and (d) shall be appointed by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>A person cannot be appointed as a member of the Council if the person is a Commissioner.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In appointing persons under subsection (2):</p>
+            </content>
+            <paragraph eId="part-IV__sec-19__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> shall have regard to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the knowledge of the persons concerning agricultural problems of developing countries; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the experience of the persons in organizing or conducting agricultural research; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> shall ensure that a substantial number of the members of the Council are residents of countries other than Australia.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An appointed member of the Council:</p>
+            </content>
+            <paragraph eId="part-IV__sec-19__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>shall be appointed to be a part-time member; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>holds office for such term, not exceeding 3 years, as is specified in the instrument of his or her appointment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The performance of the functions of the Council is not affected by reason only of the existence of either or both of the following circumstances:</p>
+            </content>
+            <paragraph eId="part-IV__sec-19__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a vacancy in the office of President;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-19__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the number of members referred to in paragraph (1)(d) having fallen below 9 for a period of not more than 3 months.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-19__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The appointment of a person under subsection (2) is not invalidated, and shall not be called in question, by reason of a defect or irregularity in, or in connection with, his or her appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-19A">
+          <num>19A</num>
+          <heading>Remuneration and allowances</heading>
+          <subsection eId="part-IV__sec-19A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An appointed member of the Council is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, the appointed member of the Council is to be paid the remuneration that is prescribed by the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-19A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An appointed member of the Council is to be paid the allowances that are prescribed by the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-19A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-20">
+          <num>20</num>
+          <heading>President to keep Council informed</heading>
+          <content>
+            <p>The President shall ensure that the Council is kept adequately informed with respect to the affairs of the Centre.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-21">
+          <num>21</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-IV__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may terminate the appointment of an appointed member of the Council by reason of misbehaviour or physical or mental incapacity.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If an appointed member of the Council:</p>
+            </content>
+            <paragraph eId="part-IV__sec-21__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-21__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent, except on leave granted by the Council, from 3 consecutive meetings of the Council otherwise than on business of the Council undertaken with the approval of the Council;</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> shall terminate the appointment of that member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-22">
+          <num>22</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>An appointed member of the Council may resign his or her office by writing signed by him or her and delivered to <role refersTo="#minister">the Minister</role>.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-23">
+          <num>23</num>
+          <heading>Meetings of Council</heading>
+          <subsection eId="part-IV__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The President:</p>
+            </content>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>shall convene such meetings of the Council as he or she considers necessary for the conduct of its business; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>shall, on receipt of a written request signed by no fewer than 6 members of the Council, convene a meeting of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may at any time convene a meeting of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The President shall preside at all meetings of the Council at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the President is not present at a meeting of the Council, the members present shall elect one of their number to preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-5">
+            <num>5</num>
+            <content>
+              <p>At a meeting of the Council, 7 members constitute a quorum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subject to subsection (7), all questions arising at a meeting of the Council shall be decided by a majority of the votes of the members present and voting, including the member presiding.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In the event of an equality of votes on a motion proposed at a meeting of the Council, the motion shall be taken not to be passed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Subject to this section, the Council may regulate the conduct of proceedings at its meetings as it thinks fit and shall keep minutes of those proceedings.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>The CEO</heading>
+        <section eId="part-V__sec-24">
+          <num>24</num>
+          <heading>Appointment of CEO</heading>
+          <subsection eId="part-V__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> is to be appointed by the Governor-General by written instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> holds office for the period specified in the instrument of appointment. The period must not exceed 5 years.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person may be appointed as both <role refersTo="#ceo">the CEO</role> and a Commissioner (including the Chair).</p>
+            </content>
+            <content>
+              <p>Performance standard</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-24__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, determine a performance standard for <role refersTo="#ceo">the CEO</role>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	Unsatisfactory performance may lead to termination of <role refersTo="#ceo">the CEO</role>’s appointment: see subsection 29C(3).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-V__sec-24__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The performance standard is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-25">
+          <num>25</num>
+          <heading>Appointment to be full-time</heading>
+          <content>
+            <p><role refersTo="#ceo">The CEO</role> holds office on a full-time basis.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-26">
+          <num>26</num>
+          <heading>Terms and conditions—general</heading>
+          <content>
+            <p><role refersTo="#ceo">The CEO</role> holds office on the terms and conditions (if any) in relation to matters not covered by this Act that are determined by the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-27">
+          <num>27</num>
+          <heading>Remuneration and allowances</heading>
+          <subsection eId="part-V__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, <role refersTo="#ceo">the CEO</role> is to be paid the remuneration that is prescribed by the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> is to be paid the allowances that are prescribed by the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-28">
+          <num>28</num>
+          <heading>Other paid work</heading>
+          <content>
+            <p><role refersTo="#ceo">The CEO</role> must not engage in paid work outside the duties of <role refersTo="#ceo">the CEO</role> without <role refersTo="#minister">the Minister</role>’s approval.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-29">
+          <num>29</num>
+          <heading>Acting CEO</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may appoint a person to act as <role refersTo="#ceo">the CEO</role>:</p>
+          </content>
+          <paragraph eId="part-V__sec-29__para-a">
+            <num>a</num>
+            <content>
+              <p>during a vacancy in the office of <role refersTo="#ceo">the CEO</role> (whether or not an appointment has previously been made to the office); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-29__para-b">
+            <num>b</num>
+            <content>
+              <p>during any period, or during all periods, when <role refersTo="#ceo">the CEO</role> is suspended from office, is absent from duty or from Australia, or is, for any reason, unable to perform the duties of the office.</p>
+            </content>
+            <authorialNote placement="end" eId="note-7" marker="7">
+              <content>
+                <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-29A">
+          <num>29A</num>
+          <heading>Leave of absence</heading>
+          <subsection eId="part-V__sec-29A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> has the recreation leave entitlements that are determined by the Remuneration Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29A__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may grant <role refersTo="#ceo">the CEO</role> leave of absence, other than recreation leave, on the terms and conditions as to remuneration or otherwise that <role refersTo="#minister">the Minister</role> determines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-29B">
+          <num>29B</num>
+          <heading>Resignation</heading>
+          <content>
+            <p><role refersTo="#ceo">The CEO</role> may resign his or her appointment by giving the Governor-General a written resignation.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-29BA">
+          <num>29BA</num>
+          <heading>Suspension of appointment</heading>
+          <subsection eId="part-V__sec-29BA__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by notice in writing, suspend the appointment of <role refersTo="#ceo">the CEO</role> if <role refersTo="#minister">the Minister</role> believes that the suspension would be in the interests of the Centre.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The appointment is suspended for such period (not exceeding 3 months) as <role refersTo="#minister">the Minister</role> considers appropriate in all of the circumstances. That period must be specified in the notice.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The suspension of the appointment of <role refersTo="#ceo">the CEO</role> does not affect any entitlement of <role refersTo="#ceo">the CEO</role> to be paid remuneration and allowances.</p>
+            </content>
+            <content>
+              <p>Extension of suspension</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Before the end of the period of suspension (including that period as previously extended under this subsection), <role refersTo="#minister">the Minister</role> may, by notice in writing, extend the period of suspension if:</p>
+            </content>
+            <paragraph eId="part-V__sec-29BA__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> believes that the extension would be in the interests of the Centre; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>subsection (7) applies.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The suspension is extended for such period as <role refersTo="#minister">the Minister</role> considers appropriate in all of the circumstances. The period of suspension, as extended, must be specified in the notice.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The period of suspension, as extended, must not exceed:</p>
+            </content>
+            <paragraph eId="part-V__sec-29BA__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>if subsection (7) applies—12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—3 months.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-7">
+            <num>7</num>
+            <content>
+              <p>For the purposes of paragraphs (4)(b) and (6)(a), this subsection applies if:</p>
+            </content>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>when <role refersTo="#minister">the Minister</role> extends the period of suspension:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-i">
+              <num>i</num>
+              <content>
+                <p>an inquiry to which subsection (8) applies is being conducted; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-ii">
+              <num>ii</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is satisfied that extending the period of suspension is necessary for the purposes of the conduct of the inquiry, <role refersTo="#minister">the Minister</role> considering the findings or report of the inquiry or action being taken in response to the findings or report; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-i">
+              <num>i</num>
+              <content>
+                <p>an inquiry to which subsection (8) applies was being conducted at any time in the 4 weeks before <role refersTo="#minister">the Minister</role> extends the period of suspension; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-7__para-ii">
+              <num>ii</num>
+              <content>
+                <p>when <role refersTo="#minister">the Minister</role> extends the period of suspension, <role refersTo="#minister">the Minister</role> is satisfied that extending the period of suspension is necessary for the purposes of <role refersTo="#minister">the Minister</role> considering the findings or report of the inquiry or action being taken in response to the findings or report.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-8">
+            <num>8</num>
+            <content>
+              <p>This subsection applies to an inquiry if:</p>
+            </content>
+            <paragraph eId="part-V__sec-29BA__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the inquiry commences before the end of 3 months starting at the start of the period of suspension; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>the inquiry is any of the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-8__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an inquiry by the Australian Public Service Commissioner under <ref href="#sec-41A">section 41A</ref> of the <i>Public Service Act 1999</i> into whether the CEO has breached the APS Code of Conduct;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-8__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	a corruption investigation (within the meaning of the <i>National Anti</i><i>-</i><i>Corruption Commission Act 2022</i>) into a corruption issue involving conduct of the CEO;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29BA__subsec-8__para-iii">
+              <num>iii</num>
+              <content>
+                <p>an inquiry, conducted at the request or direction of <role refersTo="#minister">the Minister</role>, into whether <role refersTo="#ceo">the CEO</role>’s conduct or behaviour amounts to serious misconduct by <role refersTo="#ceo">the CEO</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29BA__subsec-9">
+            <num>9</num>
+            <content>
+              <p>	(9)	Subsections (4) to (8) do not limit the application of subsection 33(3) of the <i>Acts Interpretation Act 1901</i> in relation to a notice under subsection (1) of this section.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-29C">
+          <num>29C</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-V__sec-29C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of <role refersTo="#ceo">the CEO</role>:</p>
+            </content>
+            <paragraph eId="part-V__sec-29C__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>for misbehaviour; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if <role refersTo="#ceo">the CEO</role> is unable to perform the duties of <role refersTo="#ceo">the CEO</role>’s office because of physical or mental incapacity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>if <role refersTo="#ceo">the CEO</role>’s conduct or behaviour amounts to serious misconduct by <role refersTo="#ceo">the CEO</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29C__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>	(1A)	Without limiting the circumstances in which the CEO’s conduct or behaviour amounts to serious misconduct by the CEO, the CEO’s conduct or behaviour amounts to <b><i>serious misconduct</i></b> by the CEO in the following circumstances:</p>
+            </content>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>both:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-i">
+              <num>i</num>
+              <content>
+                <p>the conduct or behaviour constitutes a breach of the APS Code of Conduct; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-ii">
+              <num>ii</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is satisfied that the breach is serious enough to justify termination of <role refersTo="#ceo">the CEO</role>’s appointment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the conduct or behaviour constitutes unlawful discrimination (within the meaning of the <i>Australian Human Rights Commission Act 1986</i>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	an investigation report (within the meaning of the <i>National Anti</i><i>-</i><i>Corruption Commission Act 2022</i>) includes a finding or opinion that the CEO has engaged, is engaging or will engage in:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-i">
+              <num>i</num>
+              <content>
+                <p>corrupt conduct (within the meaning of that Act); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-1A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>conduct that could constitute or involve corrupt conduct.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Governor-General must terminate the appointment of <role refersTo="#ceo">the CEO</role> if:</p>
+            </content>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>becomes bankrupt; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>applies to take the benefit of any law for the relief of bankrupt or insolvent debtors; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>compounds with his or her creditors; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>makes an assignment of his or her remuneration for the benefit of his or her creditors; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role> is absent, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role> engages, except with <role refersTo="#minister">the Minister</role>’s approval, in paid work outside the duties of his or her office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-29C__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	the CEO fails, without reasonable excuse, to comply with <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests) or rules made for the purposes of that section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-29C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of <role refersTo="#ceo">the CEO</role> if, in <role refersTo="#minister">the Minister</role>’s opinion, having regard to the performance standard (if any), the performance of <role refersTo="#ceo">the CEO</role> has been unsatisfactory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-29E">
+          <num>29E</num>
+          <heading>CEO not subject to direction by the Commission on certain matters</heading>
+          <content>
+            <p>To avoid doubt, <role refersTo="#ceo">the CEO</role> is not subject to direction by the Commission in relation to <role refersTo="#ceo">the CEO</role>’s performance of functions, or exercise of powers, under:</p>
+          </content>
+          <paragraph eId="part-V__sec-29E__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	the <i>Public Governance, Performance and Accountability Act 2013</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-29E__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the <i>Public Service Act 1999</i>;</p>
+            </content>
+            <content>
+              <p>in relation to the Centre.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Staff and consultants</heading>
+        <section eId="part-VI__sec-30">
+          <num>30</num>
+          <heading>Staff</heading>
+          <subsection eId="part-VI__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The staff of the Centre shall be persons engaged under the <i>Public Service Act 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+            </content>
+            <paragraph eId="part-VI__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role> and the APS employees assisting <role refersTo="#ceo">the CEO</role> together constitute a Statutory Agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role> is the Head of that Statutory Agency.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-31">
+          <num>31</num>
+          <heading>Arrangements relating to staff</heading>
+          <subsection eId="part-VI__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The CEO may arrange with an Agency Head (within the meaning of the <i>Public Service Act 1999</i>) or with a body (other than a company or an association) established for a public purpose by or under a law of the Commonwealth for the services of officers or employees of the Agency or body to be made available to the CEO in relation to the CEO’s functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#ceo">The CEO</role> may enter into an arrangement with the appropriate authority of a State or Territory for the services of officers or employees of the Public Service of the State or Territory, or of a body established for a public purpose by or under a law of the State or Territory, to be made available to <role refersTo="#ceo">the CEO</role> in relation to <role refersTo="#ceo">the CEO</role>’s functions.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-32">
+          <num>32</num>
+          <heading>Consultants</heading>
+          <content>
+            <p><role refersTo="#ceo">The CEO</role> may, on behalf of the Commonwealth, engage consultants to perform services for <role refersTo="#ceo">the CEO</role> related to <role refersTo="#ceo">the CEO</role>’s functions.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-VIA">
+        <num>VIA</num>
+        <heading>Application of the finance law</heading>
+        <section eId="part-VIA__sec-32A">
+          <num>32A</num>
+          <heading>Application of the finance law</heading>
+          <content>
+            <p>		For the purposes of the finance law (within the meaning of the <i>Public Governance, Performance and Accountability Act 2013</i>):</p>
+          </content>
+          <paragraph eId="part-VIA__sec-32A__para-a">
+            <num>a</num>
+            <content>
+              <p>the following combination of bodies is a listed entity:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-i">
+            <num>i</num>
+            <content>
+              <p>the Centre;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the Commission;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-iii">
+            <num>iii</num>
+            <content>
+              <p>the Council; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-b">
+            <num>b</num>
+            <content>
+              <p>the listed entity is to be known as the Australian Centre for International Agricultural Research; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-c">
+            <num>c</num>
+            <content>
+              <p><role refersTo="#ceo">the CEO</role> is the accountable authority of the listed entity; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-d">
+            <num>d</num>
+            <content>
+              <p>the following persons are officials of the listed entity:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-i">
+            <num>i</num>
+            <content>
+              <p><role refersTo="#ceo">the CEO</role>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the Commissioners;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-iii">
+            <num>iii</num>
+            <content>
+              <p>the members of the Council referred to in subsection 19(1);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-iv">
+            <num>iv</num>
+            <content>
+              <p>the staff of the Centre referred to in <ref href="#sec-30">section 30</ref>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-v">
+            <num>v</num>
+            <content>
+              <p>persons whose services are made available to <role refersTo="#ceo">the CEO</role> under <ref href="#sec-31">section 31</ref>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-vi">
+            <num>vi</num>
+            <content>
+              <p>consultants engaged under <ref href="#sec-32">section 32</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-e">
+            <num>e</num>
+            <content>
+              <p>the purposes of the listed entity include:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-i">
+            <num>i</num>
+            <content>
+              <p>the functions of <role refersTo="#ceo">the CEO</role> referred to in <ref href="#sec-5">section 5</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the functions of the staff of the Centre referred to in <ref href="#sec-6">section 6</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-iii">
+            <num>iii</num>
+            <content>
+              <p>the functions of the Commission referred to in <ref href="#sec-9">section 9</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIA__sec-32A__para-iv">
+            <num>iv</num>
+            <content>
+              <p>the function of the Council referred to in <ref href="#sec-18">section 18</ref>.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>The Australian Centre for International Agricultural Research Account</heading>
+        <section eId="part-VII__sec-33">
+          <num>33</num>
+          <heading>Australian Centre for International Agricultural Research Account</heading>
+          <subsection eId="part-VII__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is continued in existence the Australian Centre for International Agricultural Research Account.</p>
+            </content>
+            <authorialNote placement="end" eId="note-8" marker="8">
+              <content>
+                <p>Note:	The Account was established by subsection 5(3) of the <i>Financial Management Legislation Amendment Act 1999</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-VII__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Account is a special account for the purposes of the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-34">
+          <num>34</num>
+          <heading>Credits to the Account</heading>
+          <content>
+            <p>There must be credited to the Account amounts equal to the following:</p>
+          </content>
+          <paragraph eId="part-VII__sec-34__para-a">
+            <num>a</num>
+            <content>
+              <p>all money appropriated by the Parliament for the purposes of the Account;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-34__para-b">
+            <num>b</num>
+            <content>
+              <p>other money received by the Commonwealth in relation to the performance of the functions of <role refersTo="#ceo">the CEO</role>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-34__para-c">
+            <num>c</num>
+            <content>
+              <p>amounts of any gifts given or bequests made for the purposes of the Account.</p>
+            </content>
+            <authorialNote placement="end" eId="note-9" marker="9">
+              <content>
+                <p>Note:	An Appropriation Act provides for amounts to be credited to a special account if any of the purposes of the special account is a purpose that is covered by an item in the Appropriation Act.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-VII__sec-35">
+          <num>35</num>
+          <heading>Purposes of the Account</heading>
+          <subsection eId="part-VII__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section sets out the purposes of the Account.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Amounts standing to the credit of the Account may be debited for the following purposes:</p>
+            </content>
+            <paragraph eId="part-VII__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the costs, expenses and other obligations incurred by the Commonwealth in the performance of the functions of <role refersTo="#ceo">the CEO</role> or of the staff of the Centre referred to in <ref href="#sec-30">section 30</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of any remuneration and allowances payable to any person under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VIII">
+        <num>VIII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VIII__sec-39">
+          <num>39</num>
+          <heading>Annual report</heading>
+          <content>
+            <p>		The annual report prepared by the CEO and given to the Minister under <ref href="#sec-46">section 46</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> for a period must include:</p>
+          </content>
+          <paragraph eId="part-VIII__sec-39__para-a">
+            <num>a</num>
+            <content>
+              <p>particulars of all directions given during the period by <role refersTo="#minister">the Minister</role> to <role refersTo="#ceo">the CEO</role> under <ref href="#sec-5A">section 5A</ref> of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-39__para-b">
+            <num>b</num>
+            <content>
+              <p>particulars of all directions given during the period by <role refersTo="#minister">the Minister</role> to the Commission under <ref href="#sec-16K">section 16K</ref> of this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-VIII__sec-41">
+          <num>41</num>
+          <heading>Delegation by Minister</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, by writing, delegate to any person all or any of <role refersTo="#minister">the Minister</role>’s functions or powers under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-42">
+          <num>42</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that are required or permitted by this Act to be prescribed, or are necessary or convenient to be prescribed, for carrying out or giving effect to this Act.</p>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>orig = original</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>p = page(s)</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>para = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>cl = clause(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>cont. = continued</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>r = regulation(s)/Court rule(s)</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>div = Division(s)</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>sub ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>sub div = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>sub pt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+            <tr>
+              <td>Ord = Ordinance</td>
+              <td></td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Australian Centre for International Agricultural Research Act 1982</td>
+              <td>9, 1982</td>
+              <td>30 Mar 1982</td>
+              <td>3 June 1982 (see Gazette 1982, No. G22)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1983</td>
+              <td>39, 1983</td>
+              <td>20 June 1983</td>
+              <td>s. 3: 18 July 1983 (a)</td>
+              <td>s. 7(1)</td>
+            </tr>
+            <tr>
+              <td>Statute Law (Miscellaneous Provisions) Act (No. 2) 1983</td>
+              <td>91, 1983</td>
+              <td>22 Nov 1983</td>
+              <td>s. 3: 20 Dec 1983 (b)</td>
+              <td>s. 6(1)</td>
+            </tr>
+            <tr>
+              <td>Public Service Reform Act 1984</td>
+              <td>63, 1984</td>
+              <td>25 June 1984</td>
+              <td>s. 151(1): 1 July 1984 (see Gazette 1984, No. S245) (c)</td>
+              <td>s. 151(9)</td>
+            </tr>
+            <tr>
+              <td>Public Service and Statutory Authorities Amendment Act 1985</td>
+              <td>166, 1985</td>
+              <td>11 Dec 1985</td>
+              <td>s. 45: 8 Jan 1986 (d)</td>
+              <td>s. 45(2)</td>
+            </tr>
+            <tr>
+              <td>Statute Law (Miscellaneous Provisions) Act 1987</td>
+              <td>141, 1987</td>
+              <td>18 Dec 1987</td>
+              <td>s. 3: Royal Assent (e)</td>
+              <td>s. 5(1)</td>
+            </tr>
+            <tr>
+              <td>Industrial Relations Legislation Amendment Act 1991</td>
+              <td>122, 1991</td>
+              <td>27 June 1991</td>
+              <td>ss. 4(1), 10(b) and 15–20: 1 Dec 1988
+ss. 28(b)–(e), 30 and 31: 10 Dec 1991 (see Gazette 1991, No. S332)
+Remainder: Royal Assent</td>
+              <td>s. 31(2)</td>
+            </tr>
+            <tr>
+              <td>Australian Centre for International Agricultural Research Amendment Act 1992</td>
+              <td>170, 1992</td>
+              <td>11 Dec 1992</td>
+              <td>11 Dec 1992</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act 1996</td>
+              <td>43, 1996</td>
+              <td>25 Oct 1996</td>
+              <td>Schedule 4 (item 20): 25 Oct 1996 (s 2(1))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+              <td>152, 1997</td>
+              <td>24 Oct 1997</td>
+              <td>Schedule 2 (items 216–225): 1 Jan 1998 (s 2(2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+              <td>146, 1999</td>
+              <td>11 Nov 1999</td>
+              <td>Schedule 1 (items 144–149): 5 Dec 1999 (s 2(1), (2))</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+              <td>159, 2001</td>
+              <td>1 Oct 2001</td>
+              <td>29 Oct 2001</td>
+              <td>Sch. 1 (item 97)</td>
+            </tr>
+            <tr>
+              <td>Financial Framework Legislation Amendment Act 2005</td>
+              <td>8, 2005</td>
+              <td>22 Feb 2005</td>
+              <td>s. 4 and Schedule 1 (items 84–88, 496): Royal Assent</td>
+              <td>s. 4 and Sch. 1 (item 496)</td>
+            </tr>
+            <tr>
+              <td>Australian Centre for International Agricultural Research Amendment Act 2007</td>
+              <td>115, 2007</td>
+              <td>28 June 2007</td>
+              <td>1 July 2007</td>
+              <td>Sch. 2</td>
+            </tr>
+            <tr>
+              <td>Statute Law Revision Act 2008</td>
+              <td>73, 2008</td>
+              <td>3 July 2008</td>
+              <td>Schedule 4 (items 80–86): 4 July 2008</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts Interpretation Amendment Act 2011</td>
+              <td>46, 2011</td>
+              <td>27 June 2011</td>
+              <td>Schedule 2 (items 122–127) and Schedule 3 (items 10, 11): 27 Dec 2011</td>
+              <td>Sch. 3 (items 10, 11)</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Act
+(Register ID)</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014 (C2014A00062)</td>
+              <td>62, 2014</td>
+              <td>30 June 2014</td>
+              <td>sch 6 (items 11, 12), sch 7 (items 194-201), sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+              <td>sch 14</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015 (C2015A00036)</td>
+              <td>36, 2015</td>
+              <td>13 Apr 2015</td>
+              <td>sch 2 (items 7-9), sch 7: 14 Apr 2015 (s 2)</td>
+              <td>sch 7</td>
+            </tr>
+            <tr>
+              <td>as amended by</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015 (C2015A00126)</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015 (C2015A00126)</td>
+              <td>126, 2015</td>
+              <td>10 Sept 2015</td>
+              <td>sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Commonwealth Entities Legislation Amendment Act 2026 (C2026A00013)</td>
+              <td>13, 2026</td>
+              <td>26 Mar 2026</td>
+              <td>sch 1 (items 17-32): 27 Mar 2026 (s 2(1) item 2)</td>
+              <td>sch 1 (items 18, 23, 26, 32)</td>
+            </tr>
+          </table>
+          <paragraph eId="part-VIII__sec-42__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>Australian Centre for International Agricultural Research Act 1982 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1983</i>, subsection 2(1) of which provides as follows:</p>
+            </content>
+          </paragraph>
+          <subsection eId="part-VIII__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the twenty-eighth day after the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VIII__sec-42__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p><i>(b)</i>	The <i>Australian Centre for International Agricultural Research Act 1982 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>2) 1983</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the twenty-eighth day after the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VIII__sec-42__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><i>(c)</i>	The <i>Australian Centre for International Agricultural Research Act 1982 </i>was amended by subsection 151(1) only of the <i>Public Service Reform Act 1984</i>, subsection 2(4) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-42__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on such day as is, or on such respective days as are, fixed by Proclamation.</p>
+            </content>
+            <paragraph eId="part-VIII__sec-42__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p><i>(d)</i>	The <i>Australian Centre for International Agricultural Research Act 1982 </i>was amended by <ref href="#sec-45">section 45</ref> only of the <i>Public Service and Statutory Authorities Amendment Act 1985</i>, subsection 2(7) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-42__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on the twenty-eighth day after the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VIII__sec-42__subsec-7__para-e">
+              <num>e</num>
+              <content>
+                <p><i>(e)</i>	The <i>Australian Centre for International Agricultural Research Act 1982 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act 1987</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the day on which it receives the Royal Assent.</p>
+            </content>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 170, 1992; No 152, 1997; No 8, 2005; No 115, 2007; No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 4</td>
+                <td>am. No. 39, 1983; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 4A</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 5</td>
+                <td>am. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 5</td>
+                <td>am. No. 170, 1992; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 5A</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 6</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 7</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 8</td>
+                <td>am. No. 170, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 9</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 9</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 10</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 11</td>
+                <td>am. No. 91, 1983</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>ss. 12, 13</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 14</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 46, 2011</td>
+              </tr>
+              <tr>
+                <td>Note to s. 14</td>
+                <td>rs. No. 46, 2011</td>
+              </tr>
+              <tr>
+                <td>s. 15</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 16</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 16A</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s. 16B</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Division 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ss. 16C–16H</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Division 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 16J</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Division 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 16K</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 18</td>
+                <td>am. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 19</td>
+                <td>am. No. 170, 1992; No. 146, 1999; No. 115, 2007; No. 73, 2008</td>
+              </tr>
+              <tr>
+                <td>s. 19A</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>ss. 21, 22</td>
+                <td>am. No. 73, 2008</td>
+              </tr>
+              <tr>
+                <td>s. 23</td>
+                <td>am. No. 170, 1992; No. 115, 2007; No. 73, 2008</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>rs No 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>s. 25</td>
+                <td>am. No. 159, 2001</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 26</td>
+                <td>rs. No. 122, 1991</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 146, 1999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 27</td>
+                <td>am. No. 122, 1991</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>rs No 115, 2007; No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>rs No 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 46, 2011; No 62, 2014; No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>s. 29A</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 29B</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s 29BA</td>
+                <td>ad No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>s 29C</td>
+                <td>ad No 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 13, 2026</td>
+              </tr>
+              <tr>
+                <td>s. 29D</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s, 29E</td>
+                <td>ad. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ss. 30, 31</td>
+                <td>am. No. 63, 1984; No. 146, 1999; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 32</td>
+                <td>am. No. 166, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Pt VIA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Pt VIA</td>
+                <td>ad No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 32A</td>
+                <td>ad No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>hdg to Pt VII</td>
+                <td>rs No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 33</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 8, 2005</td>
+              </tr>
+              <tr>
+                <td>s. 33</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 8, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s. 34</td>
+                <td>am. No. 170, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 152, 1997; No. 8, 2005; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>Note to s 34</td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Heading to s. 35</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 8, 2005; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 35</td>
+                <td>am. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 8, 2005; No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 36</td>
+                <td>am. No. 152, 1997; No. 8, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 37</td>
+                <td>rs. No. 170, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 38</td>
+                <td>rep. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 38A</td>
+                <td>ad. No. 141, 1987</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s. 38AA</td>
+                <td>ad. No. 170, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s. 38B</td>
+                <td>ad. No. 141, 1987</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td>Part VIII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 39</td>
+                <td>am. No. 91, 1983</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s. 40</td>
+                <td>am. No. 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>s. 41</td>
+                <td>am. No. 170, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 115, 2007</td>
+              </tr>
+              <tr>
+                <td>ss. 43, 44</td>
+                <td>rep. No. 170, 1992</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

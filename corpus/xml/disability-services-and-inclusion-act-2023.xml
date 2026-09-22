@@ -1,0 +1,2981 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2023/107/!main"/>
+          <FRBRuri value="/akn/au/act/2023/107"/>
+          <FRBRdate date="2023-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="107"/>
+          <FRBRname value="disability-services-and-inclusion-act-2023"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2023/107/eng@2024-05-31/!main"/>
+          <FRBRuri value="/akn/au/act/2023/107/eng@2024-05-31"/>
+          <FRBRdate date="2024-05-31" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2023/107/eng@2024-05-31/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2023/107/eng@2024-05-31/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2023-01-01" type="generation" eId="evt-creation" source="#disability-services-and-inclusion-act-2023"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2024/27" date="2024-05-30"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCRole eId="trustee" href="/ontology/roles/au/trustee" showAs="the trustee"/>
+        <TLCTerm eId="term-accessibility-supports-or-services" href="/ontology/term/au/term-accessibility-supports-or-services" showAs="accessibility supports or services"/>
+        <TLCTerm eId="term-accommodation-supports-or-services" href="/ontology/term/au/term-accommodation-supports-or-services" showAs="accommodation supports or services"/>
+        <TLCTerm eId="term-accredited-certification-body" href="/ontology/term/au/term-accredited-certification-body" showAs="accredited certification body"/>
+        <TLCTerm eId="term-accrediting-authority" href="/ontology/term/au/term-accrediting-authority" showAs="accrediting authority"/>
+        <TLCTerm eId="term-advocacy-supports-or-services" href="/ontology/term/au/term-advocacy-supports-or-services" showAs="advocacy supports or services"/>
+        <TLCTerm eId="term-alternative-compliance-requirements" href="/ontology/term/au/term-alternative-compliance-requirements" showAs="alternative compliance requirements"/>
+        <TLCTerm eId="term-arrangement" href="/ontology/term/au/term-arrangement" showAs="arrangement"/>
+        <TLCTerm eId="term-capacity-building-supports-or-services" href="/ontology/term/au/term-capacity-building-supports-or-services" showAs="capacity building supports or services"/>
+        <TLCTerm eId="term-carer-supports-or-services" href="/ontology/term/au/term-carer-supports-or-services" showAs="carer supports or services"/>
+        <TLCTerm eId="term-centrelink-program" href="/ontology/term/au/term-centrelink-program" showAs="centrelink program"/>
+        <TLCTerm eId="term-certificate-of-compliance" href="/ontology/term/au/term-certificate-of-compliance" showAs="certificate of compliance"/>
+        <TLCTerm eId="term-code-of-conduct" href="/ontology/term/au/term-code-of-conduct" showAs="code of conduct"/>
+        <TLCTerm eId="term-community-inclusion-supports-or-services" href="/ontology/term/au/term-community-inclusion-supports-or-services" showAs="community inclusion supports or services"/>
+        <TLCTerm eId="term-compliance-standards" href="/ontology/term/au/term-compliance-standards" showAs="compliance standards"/>
+        <TLCTerm eId="term-constitutional-corporation" href="/ontology/term/au/term-constitutional-corporation" showAs="constitutional corporation"/>
+        <TLCTerm eId="term-convention-on-the-rights-of-persons-with-disabilities" href="/ontology/term/au/term-convention-on-the-rights-of-persons-with-disabilities" showAs="Convention on the Rights of Persons with Disabilities"/>
+        <TLCTerm eId="term-counselling-supports-or-services" href="/ontology/term/au/term-counselling-supports-or-services" showAs="counselling supports or services"/>
+        <TLCTerm eId="term-education-supports-or-services" href="/ontology/term/au/term-education-supports-or-services" showAs="education supports or services"/>
+        <TLCTerm eId="term-eligible-activity" href="/ontology/term/au/term-eligible-activity" showAs="eligible activity"/>
+        <TLCTerm eId="term-eligible-person" href="/ontology/term/au/term-eligible-person" showAs="eligible person"/>
+        <TLCTerm eId="term-employment-supports-or-services" href="/ontology/term/au/term-employment-supports-or-services" showAs="employment supports or services"/>
+        <TLCTerm eId="term-entrusted-person" href="/ontology/term/au/term-entrusted-person" showAs="entrusted person"/>
+        <TLCTerm eId="term-funding-agreement" href="/ontology/term/au/term-funding-agreement" showAs="funding agreement"/>
+        <TLCTerm eId="term-independent-living-supports-or-services" href="/ontology/term/au/term-independent-living-supports-or-services" showAs="independent living supports or services"/>
+        <TLCTerm eId="term-indigenous-person" href="/ontology/term/au/term-indigenous-person" showAs="Indigenous person"/>
+        <TLCTerm eId="term-information-supports-or-services" href="/ontology/term/au/term-information-supports-or-services" showAs="information supports or services"/>
+        <TLCTerm eId="term-key-personnel" href="/ontology/term/au/term-key-personnel" showAs="key personnel"/>
+        <TLCTerm eId="term-make" href="/ontology/term/au/term-make" showAs="make"/>
+        <TLCTerm eId="term-medicare-program" href="/ontology/term/au/term-medicare-program" showAs="medicare program"/>
+        <TLCTerm eId="term-national-disability-insurance-scheme" href="/ontology/term/au/term-national-disability-insurance-scheme" showAs="National Disability Insurance Scheme"/>
+        <TLCTerm eId="term-ndis-act" href="/ontology/term/au/term-ndis-act" showAs="NDIS Act"/>
+        <TLCTerm eId="term-protected-information" href="/ontology/term/au/term-protected-information" showAs="protected information"/>
+        <TLCTerm eId="term-recreation-supports-or-services" href="/ontology/term/au/term-recreation-supports-or-services" showAs="recreation supports or services"/>
+        <TLCTerm eId="term-regulated-activity" href="/ontology/term/au/term-regulated-activity" showAs="regulated activity"/>
+        <TLCTerm eId="term-relevant-information" href="/ontology/term/au/term-relevant-information" showAs="relevant information"/>
+        <TLCTerm eId="term-research-and-evaluation-program" href="/ontology/term/au/term-research-and-evaluation-program" showAs="research and evaluation program"/>
+        <TLCTerm eId="term-respite-care-supports-or-services" href="/ontology/term/au/term-respite-care-supports-or-services" showAs="respite care supports or services"/>
+        <TLCTerm eId="term-rules" href="/ontology/term/au/term-rules" showAs="rules"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-statutory-funding-condition" href="/ontology/term/au/term-statutory-funding-condition" showAs="statutory funding condition"/>
+        <TLCTerm eId="term-supports-or-services" href="/ontology/term/au/term-supports-or-services" showAs="supports or services"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Disability Services and Inclusion Act 2023</p>
+      <p>No. 107, 2023</p>
+      <p><b>Compilation No. </b><b>1</b></p>
+      <p><b>Compilation date:</b><b>	</b>31 May 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 27, 2024</p>
+      <p><b>Registered:</b><b>	</b>13 June 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Disability Services and Inclusion Act 2023</i> that shows the text of the law as amended and in force on 31 May 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Introduction	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Objects of this Act	1</p>
+      <p>4	General principles guiding actions under this Act	4</p>
+      <p>5	Simplified outline of this Act	5</p>
+      <p>6	Act binds the Crown	7</p>
+      <p>7	Extension to external Territories	7</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Definitions	8</p>
+      <p>8	Definitions	8</p>
+      <p>9	Meaning of <i>eligible person</i>	12</p>
+      <p>10	Meaning of <i>key personnel</i>	13</p>
+      <p>11	Meaning of <i>regulated activity</i>	14</p>
+      <p><ref href="#part-2">Part 2</ref>—Funding arrangements and grants	15</p>
+      <p>12	Simplified outline of this <ref href="#part-15">Part	15</ref></p>
+      <p>13	Arrangements and grants	15</p>
+      <p>14	Terms and conditions	17</p>
+      <p>15	Statutory funding conditions	19</p>
+      <p>16	Constitutional limits	22</p>
+      <p>17	Relationship with other laws	22</p>
+      <p>18	Executive power of the Commonwealth	23</p>
+      <p><ref href="#part-3">Part 3</ref>—Code of conduct, certificates of compliance and accreditations	24</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Introduction	24</p>
+      <p>19	Simplified outline of this <ref href="#part-24">Part	24</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Code of conduct	25</p>
+      <p>20	Code of conduct	25</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Certificates of compliance	26</p>
+      <p>21	Accredited certification body may grant certificate of compliance for meeting compliance standards	26</p>
+      <p>22	Secretary may grant certificate of compliance for meeting alternative compliance requirements	28</p>
+      <p>23	Compliance standards	30</p>
+      <p>24	Alternative compliance requirements	31</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Accrediting authorities	32</p>
+      <p>25	Secretary may approve persons to be accrediting authorities	32</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Accredited certification bodies	34</p>
+      <p>26	Accrediting authorities may accredit persons to be accredited certification bodies	34</p>
+      <p><ref href="#part-4">Part 4</ref>—Information management	36</p>
+      <p>27	Simplified outline of this <ref href="#part-36">Part	36</ref></p>
+      <p>28	Unauthorised use or disclosure of protected information	36</p>
+      <p>29	Authorised uses and disclosures of relevant information	37</p>
+      <p><ref href="#part-5">Part 5</ref>—Miscellaneous	40</p>
+      <p>30	Simplified outline of this <ref href="#part-40">Part	40</ref></p>
+      <p>31	Delegation by <role refersTo="#minister">the Minister</role>	40</p>
+      <p>32	Delegation by <role refersTo="#secretary">the Secretary</role>	41</p>
+      <p>33	Treatment of partnerships	41</p>
+      <p>34	Treatment of unincorporated associations	41</p>
+      <p>35	Treatment of trusts	42</p>
+      <p>36	Rules	42</p>
+      <p>Endnotes	44</p>
+      <p>Endnote 1—About the endnotes	44</p>
+      <p>Endnote 2—Abbreviation key	46</p>
+      <p>Endnote 3—Legislation history	47</p>
+      <p>Endnote 4—Amendment history	48</p>
+      <p>An Act relating to supports and services for people with disability, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <division eId="part-1__dvs-1">
+          <num>1</num>
+          <heading>Introduction</heading>
+          <section eId="part-1__dvs-1__sec-1">
+            <num>1</num>
+            <heading>Short title</heading>
+            <content>
+              <p>		This Act is the <i>Disability Services and Inclusion Act 2023</i>.</p>
+            </content>
+          </section>
+          <section eId="part-1__dvs-1__sec-2">
+            <num>2</num>
+            <heading>Commencement</heading>
+            <subsection eId="part-1__dvs-1__sec-2__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                </tr>
+                <tr>
+                  <td>Column 1</td>
+                  <td>Column 2</td>
+                  <td>Column 3</td>
+                </tr>
+                <tr>
+                  <td>Provisions</td>
+                  <td>Commencement</td>
+                  <td>Date/Details</td>
+                </tr>
+                <tr>
+                  <td>1.  The whole of this Act</td>
+                  <td>The 28th day after this Act receives the Royal Assent.</td>
+                  <td>1 January 2024</td>
+                </tr>
+              </table>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-2__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-1__sec-3">
+            <num>3</num>
+            <heading>Objects of this Act</heading>
+            <content>
+              <p>The objects of this Act are to:</p>
+            </content>
+            <paragraph eId="part-1__dvs-1__sec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>in conjunction with other laws, give effect to the Convention on the Rights of Persons with Disabilities; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>provide funding, outside of the National Disability Insurance Scheme, to persons that provide supports and services for the benefit of people with disability, their families and carers; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>advance the inclusion and social and economic participation of people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>support people with disability to exercise choice and control in matters that affect their lives, including by participating in the development and review of policy and programs; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>promote respect for the inherent dignity, difference and individual autonomy of people with disability and raise community understanding of barriers to the inclusion and participation of people with disability on an equal basis; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>protect the rights of people with disability who receive supports or services from persons funded under this Act, including by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>setting compliance standards that align with contemporary practice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>requiring persons providing such supports or services to implement and maintain appropriate complaints management and resolution systems and incident management systems; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-g">
+              <num>g</num>
+              <content>
+                <p>promote national consistency, coordination and accessibility of supports and services for people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-h">
+              <num>h</num>
+              <content>
+                <p>support people with disability to access supports or services that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>are safe and provided in a way that does not expose people with disability to violence, abuse, neglect or exploitation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>are locally available (including in rural and remote communities) and provided in a manner that is timely, effective and innovative; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>to the extent possible, are integrated with services generally available to other members of Australian society; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-iv">
+              <num>iv</num>
+              <content>
+                <p>to the extent possible, provide continuity of support and services for people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-v">
+              <num>v</num>
+              <content>
+                <p>assist people with disability to meet the daily and lifetime norms of other members of Australian society; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-vi">
+              <num>vi</num>
+              <content>
+                <p>meet the needs of people with disability who experience compound disadvantage, including as a result of being an Indigenous person or as a result of a person’s age, sex, gender identity, sexual orientation, intersex status, ethnicity, religious belief or cultural or linguistic background, socioeconomic status or experience of past trauma; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-vii">
+              <num>vii</num>
+              <content>
+                <p>respect the privacy of people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-viii">
+              <num>viii</num>
+              <content>
+                <p>provide accurate and sufficient information about the supports and services available and the quality of those supports and services; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-ix">
+              <num>ix</num>
+              <content>
+                <p>increase the independence and wellbeing of people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-x">
+              <num>x</num>
+              <content>
+                <p>provide meaningful opportunities for employment, education and development for people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-xi">
+              <num>xi</num>
+              <content>
+                <p>support people with disability to participate in Australian society on an equal basis to other members of Australian society; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>in conjunction with other laws, give effect to certain obligations that Australia has as a party to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>the International Covenant on Civil and Political Rights done at New York on <date date="1966-12-16">16 December 1966</date> ([1980] ATS 23), as amended and in force for Australia from time to time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the International Covenant on Economic, Social and Cultural Rights done at New York on <date date="1966-12-16">16 December 1966</date> ([1976] ATS 5), as amended and in force for Australia from time to time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the Convention on the Rights of the Child done at New York on <date date="1989-11-20">20 November 1989</date> ([1991] ATS 4), as amended and in force for Australia from time to time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the Convention on the Elimination of All Forms of Discrimination Against Women done at New York on <date date="1979-12-18">18 December 1979</date> ([1983] ATS 9), as amended and in force for Australia from time to time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-3__para-v">
+              <num>v</num>
+              <content>
+                <p>the International Convention on the Elimination of All Forms of Racial Discrimination done at New York on <date date="1965-12-21">21 December 1965</date> ([1975] ATS 40), as amended and in force for Australia from time to time.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	The text of a Convention or Covenant could in 2023 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-1__dvs-1__sec-4">
+            <num>4</num>
+            <heading>General principles guiding actions under this Act</heading>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If this Act requires or permits an act or thing to be done, the act or thing is to be done, so far as practicable, in accordance with the general principles in this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-2">
+              <num>2</num>
+              <content>
+                <p>People with disability are individuals who have the inherent right to respect for their human worth and dignity, and live a life free from violence, neglect, abuse and exploitation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-3">
+              <num>3</num>
+              <content>
+                <p>People with disability, whatever the origin, nature, type and degree of disability, have the same basic human rights as other members of Australian society.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-4">
+              <num>4</num>
+              <content>
+                <p>People with disability have the same right as other members of Australian society to realise their individual capacities for physical, social, emotional and intellectual development.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-5">
+              <num>5</num>
+              <content>
+                <p>People with disability have the same right as other members of Australian society to supports and services which will support their attaining a reasonable quality of life.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-6">
+              <num>6</num>
+              <content>
+                <p>People with disability have the same right as other members of Australian society to exercise choice and control in relation to the decisions that affect their lives.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-7">
+              <num>7</num>
+              <content>
+                <p>	(7)	People with disability receiving supports or services have the same right as other members of Australian society to receive those supports or<i> </i>services in a manner which results in the least restriction of their rights and opportunities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-4__subsec-8">
+              <num>8</num>
+              <content>
+                <p>People with disability have the same right as other members of Australian society to pursue any grievance in relation to supports or services.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-1__sec-5">
+            <num>5</num>
+            <heading>Simplified outline of this Act</heading>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, make, vary or administer an arrangement for the making of payments to a person, or make, vary or administer a grant of financial assistance to a person, in relation to various activities for the benefit of people with disability. Those activities are called eligible activities.</p>
+              <p>However, <role refersTo="#minister">the Minister</role> must not make an arrangement for the making of payments, or make a grant of financial assistance, to a person unless the person is an eligible person.</p>
+              <p>Generally, a person is an eligible person for an arrangement or grant if the person, and the person’s key personnel, are not subject to a banning order under the NDIS Act and, in the case where the arrangement or grant is in relation to a regulated activity, the person either:</p>
+            </content>
+            <paragraph eId="part-1__dvs-1__sec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>holds a certificate of compliance for the regulated activity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>is covered by a determination made by <role refersTo="#secretary">the Secretary</role> specifying a day by which the person must obtain a certificate of compliance for the regulated activity.</p>
+              </content>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> can make a legislative instrument to prescribe kinds of eligible activities to be regulated activities.</p>
+                <p>Accredited certification bodies, and <role refersTo="#secretary">the Secretary</role>, can grant a person a certificate of compliance for a regulated activity. Certificates can be granted if the person complies with the compliance standards or alternative compliance requirements for regulated activities.</p>
+                <p>A person to whom money may be payable under an arrangement, or who receives a grant of financial assistance, must comply with the statutory funding conditions under this Act and any other terms and conditions set out in a funding agreement with the Commonwealth.</p>
+                <p>A breach of the statutory funding conditions can result in termination or variation of the funding agreement, termination or variation of the arrangement or grant and publication of information about the breach.</p>
+                <p>The statutory funding conditions for a person who is a party to a funding agreement are the conditions that the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>comply with the code of conduct; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>hold a certificate of compliance for regulated activities (or be covered by a determination made by <role refersTo="#secretary">the Secretary</role>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>implement and maintain an appropriate complaints management and resolution system; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>implement and maintain an appropriate incident management system; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-5__para-e">
+              <num>e</num>
+              <content>
+                <p>comply with other requirements in relation to banning orders under the NDIS Act.</p>
+              </content>
+              <content>
+                <p>Rules made for the purposes of this Act can make provision for a code of conduct, compliance standards and alternative compliance requirements.</p>
+                <p>Information obtained or generated by entrusted persons in administering this Act cannot be used or disclosed unless required or authorised by this Act.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-1__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Act binds the Crown</heading>
+            <subsection eId="part-1__dvs-1__sec-6__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This Act binds the Crown in each of its capacities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-6__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, this Act does not make the Crown liable to be prosecuted for an offence.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Extension to external Territories</heading>
+            <content>
+              <p>This Act extends to the external Territories.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-1__dvs-2">
+          <num>2</num>
+          <heading>Definitions</heading>
+          <section eId="part-1__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Definitions</heading>
+            <content>
+              <p>In this Act:</p>
+              <p><term refersTo="#term-accessibility-supports-or-services">accessibility supports or services</term> means <def>supports or services to assist a person with disability to access the physical environment or to participate in the social environment.</def></p>
+              <p><term refersTo="#term-accommodation-supports-or-services">accommodation supports or services</term> means <def>supports or services to assist a person with disability to obtain or maintain suitable residential arrangements.</def></p>
+              <p><term refersTo="#term-accredited-certification-body">accredited certification body</term> means <def>a person granted an accreditation that is in force under <ref href="#sec-26">section 26</ref>.</def></p>
+              <p><term refersTo="#term-accrediting-authority">accrediting authority</term> means <def>a person granted an approval that is in force under <ref href="#sec-25">section 25</ref>.</def></p>
+              <p><term refersTo="#term-advocacy-supports-or-services">advocacy supports or services</term> means <def>supports or services: to assist a person with disability to exercise choice or control in matters that affect the person, including the provision of legal services; or to assist a person with disability to understand and advocate for their rights and to uphold and enforce their rights, including the provision of legal services; or to influence community attitudes, government policy or laws in relation to the rights and freedoms of people with disability.</def></p>
+            </content>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>to assist a person with disability to exercise choice or control in matters that affect the person, including the provision of legal services; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>to assist a person with disability to understand and advocate for their rights and to uphold and enforce their rights, including the provision of legal services; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>to influence community attitudes, government policy or laws in relation to the rights and freedoms of people with disability.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-alternative-compliance-requirements">alternative compliance requirements</term> has the meaning given by <def>subsection 24(3).</def></p>
+                <p><term refersTo="#term-arrangement">arrangement</term> includes <def>a contract, agreement, deed or understanding.</def></p>
+                <p><term refersTo="#term-capacity-building-supports-or-services">capacity building supports or services</term> means <def>the following: <b><i>	</i></b>(a)<b><i>	</i></b>supports or services to improve the capability of a person with disability to participate in Australian society, including through peer support, mentoring and skills development; supports or services to improve the capability of persons to deliver inclusive and accessible infrastructure, supports or services to people with disability.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p><b><i>	</i></b>(a)<b><i>	</i></b>supports or services to improve the capability of a person with disability to participate in Australian society, including through peer support, mentoring and skills development;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>supports or services to improve the capability of persons to deliver inclusive and accessible infrastructure, supports or services to people with disability.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-carer-supports-or-services">carer supports or services</term> means <def>supports or services that assist carers of people with disability in their caring role.</def></p>
+                <p><term refersTo="#term-centrelink-program">centrelink program</term> has the same meaning as <def>in the Human Services (Centrelink) Act 1997.</def></p>
+                <p><term refersTo="#term-certificate-of-compliance">certificate of compliance</term> means <def>a certificate of compliance that: is granted under <ref href="#sec-21">section 21</ref> or 22 to a person; and is in force.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>is granted under <ref href="#sec-21">section 21</ref> or 22 to a person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>is in force.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-code-of-conduct">code of conduct</term> has the meaning given by <def>subsection 20(3).</def></p>
+                <p><term refersTo="#term-community-inclusion-supports-or-services">community inclusion supports or services</term> means <def>supports or services to assist a person with disability to engage with their chosen community and culture, including by removing barriers to their inclusion in community and cultural activities.</def></p>
+                <p><term refersTo="#term-compliance-standards">compliance standards</term> has the meaning given by <def>subsection 23(3).</def></p>
+                <p><term refersTo="#term-constitutional-corporation">constitutional corporation</term> means <def>a corporation to which paragraph 51(xx) of the Constitution applies.</def></p>
+                <p><term refersTo="#term-convention-on-the-rights-of-persons-with-disabilities">Convention on the Rights of Persons with Disabilities</term> means <def>the Convention on the Rights of Persons with Disabilities done at New York on 13 December 2006, as amended and in force for Australia from time to time.</def></p>
+                <p><term refersTo="#term-counselling-supports-or-services">counselling supports or services</term> means <def>supports or services based on discussing, describing and addressing issues that a person with disability experiences in their life or relationships with the purpose of assisting that person to resolve or manage those issues.</def></p>
+                <p><term refersTo="#term-education-supports-or-services">education supports or services</term> means <def>supports or services to assist a person with disability to prepare for, or participate in, education at any level.</def></p>
+                <p><term refersTo="#term-eligible-activity">eligible activity</term> has the meaning given by <def>subsection 13(1).</def></p>
+                <p><term refersTo="#term-eligible-person">eligible person</term> has the meaning given by <def>subsection 9(1).</def></p>
+                <p><term refersTo="#term-employment-supports-or-services">employment supports or services</term> means <def>the following: supports or services to assist a person with disability to prepare for, obtain or maintain paid work, including training; supports or services to assist a person with disability to gain and maintain self-employment; the provision of incentives or supports to employers to employ people with disability.</def></p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	The Convention on the Rights of Persons with Disabilities is in Australian Treaty Series 2008 No. 12 ([2008] ATS 12) and could in 2023 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>supports or services to assist a person with disability to prepare for, obtain or maintain paid work, including training;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>supports or services to assist a person with disability to gain and maintain self-employment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the provision of incentives or supports to employers to employ people with disability.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-entrusted-person">entrusted person</term> means <def>any of the following: <role refersTo="#secretary">the Secretary</role>; an APS employee; any other person employed or engaged by the Commonwealth to provide services to the Commonwealth.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>an APS employee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>any other person employed or engaged by the Commonwealth to provide services to the Commonwealth.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-funding-agreement">funding agreement</term> has the meaning given by <def>paragraph 14(1)(d).</def></p>
+                <p><term refersTo="#term-independent-living-supports-or-services">independent living supports or services</term> means <def>supports or services to assist a person with disability to develop or maintain the personal skills and self-confidence necessary to enhance the person’s independence, and self-reliance, in the community and in the person’s home.</def></p>
+                <p><term refersTo="#term-indigenous-person">Indigenous person</term> means <def>a person who is: a member of the Aboriginal race of Australia; or a descendant of an Indigenous inhabitant of the Torres Strait Islands.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a member of the Aboriginal race of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>a descendant of an Indigenous inhabitant of the Torres Strait Islands.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-information-supports-or-services">information supports or services</term> means <def>supports or services (including translation and interpretation services) to assist a person with disability to access and understand information available generally to members of Australian society.</def></p>
+                <p><term refersTo="#term-key-personnel">key personnel</term> has the meaning given by <def><ref href="#sec-10">section 10</ref>.</def></p>
+                <p><term refersTo="#term-make">make</term>, in relation to an arrangement, includes <def>enter into.</def></p>
+                <p><term refersTo="#term-medicare-program">medicare program</term> has the same meaning as <def>in the Human Services (Medicare) Act 1973.</def></p>
+                <p><term refersTo="#term-national-disability-insurance-scheme">National Disability Insurance Scheme</term> has the meaning given by <def>the NDIS Act.</def></p>
+                <p><term refersTo="#term-ndis-act">NDIS Act</term> means <def><ref href="">the National Disability Insurance Scheme Act 2013</ref>.</def></p>
+                <p><term refersTo="#term-protected-information">protected information</term> means <def>either of the following kinds of information: 	(a)	personal information within the meaning of the<i> Privacy Act 1988</i>; information about the affairs of a person the disclosure of which could reasonably be expected to found an action by a person (other than the Commonwealth) for breach of a duty of confidence.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	personal information within the meaning of the<i> Privacy Act 1988</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>information about the affairs of a person the disclosure of which could reasonably be expected to found an action by a person (other than the Commonwealth) for breach of a duty of confidence.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-recreation-supports-or-services">recreation supports or services</term> means <def>supports or services to assist a person with disability to participate in recreation and leisure activities.</def></p>
+                <p><term refersTo="#term-regulated-activity">regulated activity</term> means <def>an activity specified in an instrument in force under <ref href="#sec-11">section 11</ref>.</def></p>
+                <p><term refersTo="#term-relevant-information">relevant information</term> means <def>information obtained or generated by an entrusted person in: performing functions or duties, or exercising powers, under this Act; or assisting another person to perform functions or duties, or exercise powers, under this Act.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>performing functions or duties, or exercising powers, under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>assisting another person to perform functions or duties, or exercise powers, under this Act.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-research-and-evaluation-program">research and evaluation program</term> means <def>a program to: undertake research or data analysis in relation to people with disability, including in relation to the provision of supports and services for people with disability; or evaluate programs or policies that are directed towards people with disability, including activities funded under arrangements, or grants of financial assistance, made under this Act.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>undertake research or data analysis in relation to people with disability, including in relation to the provision of supports and services for people with disability; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>evaluate programs or policies that are directed towards people with disability, including activities funded under arrangements, or grants of financial assistance, made under this Act.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-respite-care-supports-or-services">respite care supports or services</term> means <def>supports or services to provide short term care for a person with disability, as an alternative care arrangement, for the purpose of giving relief or assistance to: the person with disability; or the family members or carers of the person with disability.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the person with disability; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>the family members or carers of the person with disability.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-rules">rules</term> means <def>the rules made under <ref href="#sec-36">section 36</ref>.</def></p>
+                <p><term refersTo="#term-secretary">Secretary</term> means <def>the Secretary of the Department.</def></p>
+                <p><term refersTo="#term-statutory-funding-condition">statutory funding condition</term> has the meaning given by <def><ref href="#sec-15">section 15</ref>.</def></p>
+                <p><term refersTo="#term-supports-or-services">supports or services</term> includes <def>the supply of goods or facilities.</def></p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-1__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Meaning of eligible person</heading>
+            <content>
+              <p>Eligible person</p>
+            </content>
+            <subsection eId="part-1__dvs-2__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	A person is an <b><i>eligible person</i></b>, for an arrangement or grant to be made under <ref href="#sec-13">section 13</ref>, if:</p>
+              </content>
+              <paragraph eId="part-1__dvs-2__sec-9__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>in the case where the arrangement or grant is to be in relation to an eligible activity that is a regulated activity—the person:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-9__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>holds a certificate of compliance for the regulated activity; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-9__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is covered by a determination, in force under subsection (2) of this section, for the regulated activity and the day specified in the determination has not occurred; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-9__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person is not subject to a banning order that is in force under <ref href="#sec-73Z">section 73Z</ref>N of the NDIS Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-9__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>none of the members of the key personnel of the person is subject to a banning order that is in force under <ref href="#sec-73Z">section 73Z</ref>N of the NDIS Act.</p>
+                </content>
+                <content>
+                  <p>Determination</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-1__dvs-2__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, make a determination specifying a day by which a person must obtain a certificate of compliance for a regulated activity if the person has given written notice to <role refersTo="#secretary">the Secretary</role> stating the person’s intention to seek and obtain such a certificate on or before that day.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-2__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The specified day must be no later than 15 months after the day on which the determination is made.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-2__sec-9__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, vary the determination to specify a later day if <role refersTo="#minister">the Minister</role> has made an arrangement for the making of payments, or made a grant of financial assistance, to the person under <ref href="#sec-13">section 13</ref>. The later day must be no later than 15 months after the day on which the arrangement or grant was made.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-2__sec-9__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A determination under subsection (2) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Meaning of key personnel</heading>
+            <subsection eId="part-1__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Each of the following is one of the <b><i>key personnel</i></b> of a person:</p>
+              </content>
+              <paragraph eId="part-1__dvs-2__sec-10__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a member of the group of persons who is responsible for the executive decisions of the person;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-10__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other person who has authority or responsibility for (or significant influence over) planning, directing or controlling the activities of the person.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-1__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting paragraph (1)(a), a reference in that paragraph to a person who is responsible for the executive decisions of a person includes:</p>
+              </content>
+              <paragraph eId="part-1__dvs-2__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	if the person is a body corporate that is incorporated, or taken to be incorporated, under the <i>Corporations Act 2001</i>—a director of the body corporate for the purposes of that Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-2__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>in any other case—a member of the person’s governing body.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Meaning of regulated activity</heading>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by legislative instrument, determine that a specified kind of eligible activity is a regulated activity.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Funding arrangements and grants</heading>
+        <section eId="part-2__sec-12">
+          <num>12</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, make, vary or administer an arrangement for the making of payments by the Commonwealth to a person, or make, vary or administer a grant of financial assistance to a person, in relation to various activities for the benefit of people with disability.</p>
+            <p>However, <role refersTo="#minister">the Minister</role> must not make an arrangement for the making of payments, or make a grant of financial assistance, to a person who is not an eligible person for the arrangement or grant.</p>
+            <p>The person must comply with the statutory funding conditions set out in this Part and any other terms and conditions set out in a funding agreement between the person and the Commonwealth.</p>
+            <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, take particular action if the person breaches the statutory funding conditions, including by terminating or varying the funding agreement or publishing information about the breach.</p>
+            <p>This Part operates concurrently with the power to make arrangements and grants of financial assistance under other laws of the Commonwealth including <ref href="#sec-32B">section 32B</ref> of the <i>Financial Framework (Supplementary Powers) Act 1997</i> and Chapter 2D of the <i>Social Security Act 1991</i>.</p>
+          </content>
+        </section>
+        <section eId="part-2__sec-13">
+          <num>13</num>
+          <heading>Arrangements and grants</heading>
+          <content>
+            <p>Arrangements and grants</p>
+          </content>
+          <subsection eId="part-2__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may, on behalf of the Commonwealth, make, vary or administer an arrangement for the making of payments by the Commonwealth to a person, or make, vary or administer a grant of financial assistance to a person, in relation to one or more of the following activities (the <b><i>eligible activities</i></b>):</p>
+            </content>
+            <paragraph eId="part-2__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the provision of accessibility supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the provision of accommodation supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the provision of advocacy supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the provision of capacity building supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the provision of carer supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the provision of community inclusion supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>the provision of counselling supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>the provision of education supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the provision of employment supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>the provision of independent living supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-k">
+              <num>k</num>
+              <content>
+                <p>the provision of information supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-l">
+              <num>l</num>
+              <content>
+                <p>the provision of recreation supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-m">
+              <num>m</num>
+              <content>
+                <p>the provision of respite care supports or services;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-n">
+              <num>n</num>
+              <content>
+                <p>the provision of a research and evaluation program;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-o">
+              <num>o</num>
+              <content>
+                <p>an activity relating to furthering the objects of this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-p">
+              <num>p</num>
+              <content>
+                <p>an activity determined by <role refersTo="#minister">the Minister</role> under subsection (2);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-q">
+              <num>q</num>
+              <content>
+                <p>an activity that is incidental or ancillary to any of the above.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	Section 16 sets out the constitutional limits on arrangements and grants.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, determine an activity for the purposes of paragraph (1)(p).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (1) does not limit the kinds of activities <role refersTo="#minister">the Minister</role> may determine under subsection (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The rules may set out matters to which <role refersTo="#minister">the Minister</role> must or may have regard in deciding whether to make or vary an arrangement or grant under subsection (1).</p>
+            </content>
+            <content>
+              <p>Exception</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Despite subsection (1), <role refersTo="#minister">the Minister</role> must not make an arrangement for the making of payments, or make a grant of financial assistance, to a person unless the person is an eligible person for the arrangement or grant.</p>
+            </content>
+            <content>
+              <p>Other matters</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-6">
+            <num>6</num>
+            <content>
+              <p>An arrangement under subsection (1) may provide for the Commonwealth to reimburse, or partly reimburse, costs or expenses (including costs or expenses incurred in obtaining a certificate of compliance for activities in relation to the arrangement).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A grant under subsection (1) may be made by way of the reimbursement, or partial reimbursement, of costs or expenses (including costs or expenses incurred in obtaining a certificate of compliance for activities in relation to the grant).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Subsections (6) and (7) do not limit subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-9">
+            <num>9</num>
+            <content>
+              <p>Subsection (1) does not authorise the making of a loan.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-14">
+          <num>14</num>
+          <heading>Terms and conditions</heading>
+          <subsection eId="part-2__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The terms and conditions:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>on which money may be payable by the Commonwealth to a person under an arrangement made under <ref href="#sec-13">section 13</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>on which a grant of financial assistance is made to a person under <ref href="#sec-13">section 13</ref>;</p>
+              </content>
+              <content>
+                <p>are the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the statutory funding conditions;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	any other terms and conditions set out in a written agreement (the <b><i>funding agreement</i></b>) between the Commonwealth and the person.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	For the statutory funding conditions, see <ref href="#sec-15">section 15</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The person must comply with the statutory funding conditions and the terms and conditions set out in the funding agreement.</p>
+            </content>
+            <content>
+              <p>Terms and conditions in funding agreement</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The terms and conditions set out in the funding agreement:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>must provide for the circumstances in which the person must repay amounts to the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>may deal with matters covered by the statutory funding conditions; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>may deal with the consequences for a breach of a term or condition of the funding agreement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	may contain obligations to provide information or reports to the Secretary<i> </i>in relation to the following:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>alleged breaches, or actual breaches, of the code of conduct by the person;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>action taken in response to those alleged or actual breaches.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note 1:	An amount repayable to the Commonwealth would be a debt due to the Commonwealth.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note 2:	The code of conduct under <ref href="#sec-20">section 20</ref> may deal with when a person breaches the code of conduct because of an act, or an omission to perform an act, by a member of the key personnel of the person or by another person who is employed, or otherwise engaged, by the person.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsections (3) and (6) do not limit the terms and conditions that may be set out in a funding agreement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-5">
+            <num>5</num>
+            <content>
+              <p>However, a term or condition of a kind mentioned in paragraph (3)(b) set out in a funding agreement is of no effect to the extent of any inconsistency with the statutory funding conditions.</p>
+            </content>
+            <content>
+              <p>Breach of statutory funding conditions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If <role refersTo="#minister">the Minister</role> is satisfied that a person:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>to whom money may be payable under an arrangement made under <ref href="#sec-13">section 13</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>who receives a grant of financial assistance made under <ref href="#sec-13">section 13</ref>;</p>
+              </content>
+              <content>
+                <p>has breached a statutory funding condition, <role refersTo="#minister">the Minister</role> may, on behalf of the Commonwealth, take one or more of the following actions:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>terminate the funding agreement made under this Act with the person in relation to the arrangement or grant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-d">
+              <num>d</num>
+              <content>
+                <p>vary the funding agreement made under this Act with the person in relation to the arrangement or grant, including by imposing terms and conditions and by reducing the amount of money to be paid;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-e">
+              <num>e</num>
+              <content>
+                <p>terminate the arrangement or grant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-f">
+              <num>f</num>
+              <content>
+                <p>vary the arrangement or grant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-6__para-g">
+              <num>g</num>
+              <content>
+                <p>publish information about the breach on a website maintained by the Department.</p>
+              </content>
+              <content>
+                <p>Minister may enter into funding agreement</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-7">
+            <num>7</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, enter into a funding agreement.</p>
+            </content>
+            <content>
+              <p>Protection from civil proceedings</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-8">
+            <num>8</num>
+            <content>
+              <p>	(8)	The Commonwealth, the Minister or a delegate of the Minister is not liable to any action, suit or other civil proceeding<i> </i>for or in relation to the publication, in good faith, of information under paragraph (6)(g).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-15">
+          <num>15</num>
+          <heading>Statutory funding conditions</heading>
+          <content>
+            <p>Statutory funding conditions</p>
+          </content>
+          <subsection eId="part-2__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section sets out the statutory funding conditions that apply to a person:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to whom money may be payable under an arrangement made under <ref href="#sec-13">section 13</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>who receives a grant of financial assistance made under <ref href="#sec-13">section 13</ref>.</p>
+              </content>
+              <content>
+                <p>First condition—code of conduct</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The first <b><i>statutory funding condition</i></b> is the condition that the person complies with the code of conduct.</p>
+            </content>
+            <authorialNote placement="end" eId="note-8" marker="8">
+              <content>
+                <p>Note:	For the code of conduct, see <ref href="#sec-20">section 20</ref>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Second condition—certificate of compliance</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The second <b><i>statutory funding condition</i></b> is the condition that, if the arrangement or grant is in relation to an eligible activity that is a regulated activity, the person:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>holds a certificate of compliance for the regulated activity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>is covered by a determination, in force under subsection 9(2), for the regulated activity and the day specified in the determination has not occurred.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	For certificates of compliance, see sections 21 and 22.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Third condition—complaints management and resolution system</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	The third <b><i>statutory funding condition</i></b> is the condition that the person implements and maintains a complaints management and resolution system that:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>is appropriate for the size of the person and for the kinds of eligible activities to which the arrangement or grant relates; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>acknowledges the role of advocates (including independent advocates), and other representatives, of people with disability; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>provides for cooperation with, and facilitates arrangements for, those advocates, and other representatives, to support people with disability who:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>are affected by the complaints process; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>wish to be independently supported in that process by an advocate or other representative; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>complies with the requirements (if any) prescribed by the rules for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p>Fourth condition—incident management system</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	The fourth <b><i>statutory funding condition</i></b> is the condition that the person implements and maintains an incident management system that:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>is appropriate for the size of the person and for the kinds of eligible activities to which the arrangement or grant relates; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>complies with the requirements (if any) prescribed by the rules for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p>Fifth condition—banning orders</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	The fifth <b><i>statutory funding condition</i></b><b> </b>is the condition that:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is not subject to a banning order that is in force under <ref href="#sec-73Z">section 73Z</ref>N of the NDIS Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>none of the members of the key personnel of the person is subject to a banning order that is in force under <ref href="#sec-73Z">section 73Z</ref>N of the NDIS Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	if another person (the <b><i>employee</i></b>), who is employed or otherwise engaged by the person, is subject to a banning order that is in force under <ref href="#sec-73Z">section 73Z</ref>N of the NDIS Act in relation to activities, supports or services:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>the employee does not breach the banning order in engaging in those activities or providing those supports or services for, or on behalf of, the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the employee became subject to the banning order on or after the day the arrangement or grant is made—the person notifies <role refersTo="#secretary">the Secretary</role>, in writing, of the banning order as soon as practicable after the banning order is made; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-6__para-iii">
+              <num>iii</num>
+              <content>
+                <p>if the employee became subject to the banning order before the day the arrangement or grant is made—the person notifies <role refersTo="#secretary">the Secretary</role>, in writing, of the banning order as soon as practicable after the day the arrangement or grant is made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-16">
+          <num>16</num>
+          <heading>Constitutional limits</heading>
+          <content>
+            <p>An arrangement or grant referred to in <ref href="#sec-13">section 13</ref> must be with respect to one or more of the following:</p>
+          </content>
+          <paragraph eId="part-2__sec-16__para-a">
+            <num>a</num>
+            <content>
+              <p>implementing any of Australia’s international obligations under the Convention on the Rights of Persons with Disabilities;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-b">
+            <num>b</num>
+            <content>
+              <p>the granting of financial assistance to a State or Territory;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-c">
+            <num>c</num>
+            <content>
+              <p>a Territory;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-d">
+            <num>d</num>
+            <content>
+              <p>activities, supports or services for Indigenous persons;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-e">
+            <num>e</num>
+            <content>
+              <p>activities, supports or services that involve the use of a postal, telegraphic, telephonic or other like service within the meaning of paragraph 51(v) of the Constitution;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-f">
+            <num>f</num>
+            <content>
+              <p>activities, supports or services provided by way of sickness benefits or medical services;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-g">
+            <num>g</num>
+            <content>
+              <p>the granting of financial assistance to a constitutional corporation for the purposes of carrying out the corporation’s activities;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-h">
+            <num>h</num>
+            <content>
+              <p>implementing any of Australia’s international obligations under a Convention or Covenant mentioned in paragraph 3(i);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-i">
+            <num>i</num>
+            <content>
+              <p>the exercise of the executive power of the Commonwealth;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-j">
+            <num>j</num>
+            <content>
+              <p>matters incidental to the execution of any of the legislative powers of the Parliament or the executive power of the Commonwealth.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-2__sec-17">
+          <num>17</num>
+          <heading>Relationship with other laws</heading>
+          <content>
+            <p>This Part does not, by implication, limit the Commonwealth’s power to make, vary or administer an arrangement or grant under another law of the Commonwealth including:</p>
+          </content>
+          <paragraph eId="part-2__sec-17__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	subsection 32B(1) of the <i>Financial Framework (Supplementary Powers) Act 1997</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-17__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	Chapter 2D of the <i>Social Security Act 1991</i> (about arrangements and grants relating to assisting persons to obtain and maintain paid work).</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-2__sec-18">
+          <num>18</num>
+          <heading>Executive power of the Commonwealth</heading>
+          <content>
+            <p>This Part does not, by implication, limit the executive power of the Commonwealth.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Code of conduct, certificates of compliance and accreditations</heading>
+        <division eId="part-3__dvs-1">
+          <num>1</num>
+          <heading>Introduction</heading>
+          <section eId="part-3__dvs-1__sec-19">
+            <num>19</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>The rules can make provision for a code of conduct that applies to persons to whom money may be payable under an arrangement or who receive a grant of financial assistance. A breach of the code of conduct is a breach of a statutory funding condition.</p>
+              <p>An accredited certification body can grant a certificate of compliance to a person for a regulated activity if the person complies with the compliance standards for the activity. The rules can make provision for compliance standards.</p>
+              <p><role refersTo="#secretary">The Secretary</role> can grant a certificate of compliance to a person for a regulated activity if the person complies with the alternative compliance requirements for the activity. The rules can make provision for alternative compliance requirements.</p>
+              <p>Accredited certification bodies and <role refersTo="#secretary">the Secretary</role> can also revoke or vary a certificate of compliance granted to a person.</p>
+              <p><role refersTo="#secretary">The Secretary</role> has the power to approve a person to be an accrediting authority. An accrediting authority has the function of accrediting persons to be accredited certification bodies.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-3__dvs-2">
+          <num>2</num>
+          <heading>Code of conduct</heading>
+          <section eId="part-3__dvs-2__sec-20">
+            <num>20</num>
+            <heading>Code of conduct</heading>
+            <subsection eId="part-3__dvs-2__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The rules may make provision for or in relation to a code of conduct that applies to persons:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-20__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to whom money may be payable under an arrangement made under <ref href="#sec-13">section 13</ref>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-20__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>who receive a grant of financial assistance made under <ref href="#sec-13">section 13</ref>.</p>
+                </content>
+                <authorialNote placement="end" eId="note-10" marker="10">
+                  <content>
+                    <p>Note:	Subsection 14(3) provides that the terms and conditions set out in a funding agreement with a person may contain obligations to provide information or reports to the Secretary<i> </i>in relation to alleged breaches, or actual breaches, of the code of conduct and to action taken in response to those alleged or actual breaches.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), rules made for the purposes of that subsection may make provision for circumstances in which a person breaches the code of conduct because of an act, or an omission to perform an act, by:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-20__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a member of the key personnel of the person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-20__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>another person who is employed, or otherwise engaged, by the person.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-20__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	Rules made for the purposes of subsection (1) and in force are the <b><i>code of conduct</i></b>.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-3">
+          <num>3</num>
+          <heading>Certificates of compliance</heading>
+          <section eId="part-3__dvs-3__sec-21">
+            <num>21</num>
+            <heading>Accredited certification body may grant certificate of compliance for meeting compliance standards</heading>
+            <content>
+              <p>Certificate of compliance</p>
+            </content>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An accredited certification body must, in writing, grant a person a certificate of compliance for one or more regulated activities if:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person has made a request, in writing, to the body for a certificate of compliance for those activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the body is satisfied the person complies with the compliance standards for those activities.</p>
+                </content>
+                <authorialNote placement="end" eId="note-11" marker="11">
+                  <content>
+                    <p>Note:	For compliance standards, see <ref href="#sec-23">section 23</ref>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The body must, as soon as practicable after granting the certificate to the person, give a copy of the certificate to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The certificate must:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>state that the person complies with the compliance standards for the regulated activities covered by the certificate; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>specify the day on which the certificate ceases to be in force.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If the accredited certification body refuses to grant a certificate of compliance for a regulated activity, as requested by a person under this section, the body must, as soon as practicable after refusing the request, give written notice of the refusal to the person.</p>
+              </content>
+              <content>
+                <p>Revocation of certificate</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-5">
+              <num>5</num>
+              <content>
+                <p>An accredited certification body must, in writing, revoke a certificate of compliance granted to a person under this section if the body is satisfied the person ceases to comply with the compliance standards for the regulated activities covered by the certificate.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The body must, as soon as practicable after revoking the certificate, give written notice of the revocation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The notice must specify the day the revocation takes effect, which must be no earlier than the day after the notice is given to the person.</p>
+              </content>
+              <content>
+                <p>Variation of certificate</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-8">
+              <num>8</num>
+              <content>
+                <p>An accredited certification body must, in writing, vary a certificate of compliance granted to a person under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>to exclude a regulated activity, if the body is satisfied the person ceases to comply with the compliance standards for that activity; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>to include one or more additional regulated activities, if:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-8__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person has made a request, in writing, to the body to vary the certificate to include those activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-8__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the body is satisfied the person complies with the compliance standards for those activities.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-9">
+              <num>9</num>
+              <content>
+                <p>The body must, as soon as practicable after varying the certificate granted to the person, give written notice of the variation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-10">
+              <num>10</num>
+              <content>
+                <p>The notice must specify the day the variation takes effect, which must be no earlier than the day after the notice is given to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-11">
+              <num>11</num>
+              <content>
+                <p>If the body refuses to vary a certificate of compliance, as requested by a person, the body must, as soon as practicable after refusing the variation, give written notice of the refusal to the person.</p>
+              </content>
+              <content>
+                <p>Period certificate is in force</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-12">
+              <num>12</num>
+              <content>
+                <p>A certificate of compliance granted under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-12__para-a">
+                <num>a</num>
+                <content>
+                  <p>comes into force on the day the copy of the certificate is given under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-12__para-b">
+                <num>b</num>
+                <content>
+                  <p>remains in force until the earliest of the following occurs:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-12__para-i">
+                <num>i</num>
+                <content>
+                  <p>the day specified under paragraph (3)(b);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-12__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the day a revocation of the certificate takes effect;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-12__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>if the accredited certification body that granted the certificate ceases to be accredited—the end of the period of 3 months after the cessation.</p>
+                </content>
+                <content>
+                  <p>Notification to Secretary</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-13">
+              <num>13</num>
+              <content>
+                <p>If an accredited certification body grants, refuses to grant, revokes, varies or refuses to vary a certificate of compliance under this section, the body must notify <role refersTo="#secretary">the Secretary</role>, in writing, as soon as practicable of:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-13__para-a">
+                <num>a</num>
+                <content>
+                  <p>that fact; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-21__subsec-13__para-b">
+                <num>b</num>
+                <content>
+                  <p>for a decision to refuse to grant or vary, or to revoke or vary, a certificate—the reasons for the decision.</p>
+                </content>
+                <content>
+                  <p>Certificate not a legislative instrument</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-14">
+              <num>14</num>
+              <content>
+                <p>A certificate of compliance under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-22">
+            <num>22</num>
+            <heading>Secretary may grant certificate of compliance for meeting alternative compliance requirements</heading>
+            <content>
+              <p>Certificate of compliance</p>
+            </content>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, grant a person a certificate of compliance for one or more regulated activities if:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person has made a request, in writing, to <role refersTo="#secretary">the Secretary</role> for a certificate of compliance for those activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> is satisfied the person complies with the alternative compliance requirements for those activities.</p>
+                </content>
+                <authorialNote placement="end" eId="note-12" marker="12">
+                  <content>
+                    <p>Note:	For alternative compliance requirements, see <ref href="#sec-24">section 24</ref>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, as soon as practicable after granting a certificate to the person, give a copy of the certificate to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The certificate must:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>state that the person complies with the alternative compliance requirements for the regulated activities covered by the certificate; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>specify the day on which the certificate ceases to be in force.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If <role refersTo="#secretary">the Secretary</role> refuses to grant a certificate of compliance for a regulated activity, as requested by a person under this section, <role refersTo="#secretary">the Secretary</role> must, as soon as practicable after refusing the request, give written notice of the refusal to the person.</p>
+              </content>
+              <content>
+                <p>Revocation of certificate</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-5">
+              <num>5</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, in writing, revoke a certificate of compliance granted to a person under this section if <role refersTo="#secretary">the Secretary</role> is satisfied the person ceases to comply with the alternative compliance requirements for the regulated activities covered by the certificate.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, as soon as practicable after revoking the certificate, give written notice of the revocation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The notice must specify the day the revocation takes effect, which must be no earlier than the day after the notice is given to the person.</p>
+              </content>
+              <content>
+                <p>Variation of certificate</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-8">
+              <num>8</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, in writing, vary a certificate of compliance granted to a person under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>to exclude a regulated activity, if <role refersTo="#secretary">the Secretary</role> is satisfied the person ceases to comply with the alternative compliance requirements for that activity; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>to include one or more additional regulated activities, if:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-8__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person has made a request, in writing, to <role refersTo="#secretary">the Secretary</role> to vary the certificate to include those activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-8__para-ii">
+                <num>ii</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> is satisfied the person complies with the alternative compliance requirements for those activities.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-9">
+              <num>9</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, as soon as practicable after varying the certificate granted to the person, give written notice of the variation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-10">
+              <num>10</num>
+              <content>
+                <p>The notice must specify the day the variation takes effect, which must be no earlier than the day after the notice is given to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-11">
+              <num>11</num>
+              <content>
+                <p>If <role refersTo="#secretary">the Secretary</role> refuses to vary a certificate of compliance, as requested by a person, <role refersTo="#secretary">the Secretary</role> must, as soon as practicable after refusing the variation, give written notice of the refusal to the person.</p>
+              </content>
+              <content>
+                <p>Period certificate is in force</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-12">
+              <num>12</num>
+              <content>
+                <p>A certificate of compliance granted under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-12__para-a">
+                <num>a</num>
+                <content>
+                  <p>comes into force on the day the copy of the certificate is given under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-12__para-b">
+                <num>b</num>
+                <content>
+                  <p>remains in force until the earliest of the following occurs:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-12__para-i">
+                <num>i</num>
+                <content>
+                  <p>the day specified under paragraph (3)(b);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-22__subsec-12__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the day a revocation of the certificate takes effect.</p>
+                </content>
+                <content>
+                  <p>Certificate not a legislative instrument</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-22__subsec-13">
+              <num>13</num>
+              <content>
+                <p>A certificate of compliance under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-23">
+            <num>23</num>
+            <heading>Compliance standards</heading>
+            <subsection eId="part-3__dvs-3__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The rules may make provision for or in relation to standards for persons undertaking regulated activities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), the rules may make provision for or in relation to different standards for different kinds of persons or regulated activities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-23__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	Rules made for the purposes of subsection (1) and in force are the <b><i>compliance standards</i></b>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-24">
+            <num>24</num>
+            <heading>Alternative compliance requirements</heading>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The rules may make provision for or in relation to requirements for persons undertaking regulated activities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), the rules may make provision for or in relation to:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>different requirements for different kinds of persons or regulated activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>giving notice to <role refersTo="#secretary">the Secretary</role> of any non-compliance with the requirements for undertaking regulated activities.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	Rules made for the purposes of subsection (1) and in force are the <b><i>alternative compliance requirements</i></b>.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-4">
+          <num>4</num>
+          <heading>Accrediting authorities</heading>
+          <section eId="part-3__dvs-4__sec-25">
+            <num>25</num>
+            <heading>Secretary may approve persons to be accrediting authorities</heading>
+            <content>
+              <p>Approval</p>
+            </content>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, grant an approval to a person to perform the functions of granting and withdrawing accreditation under <ref href="#sec-26">section 26</ref> if <role refersTo="#secretary">the Secretary</role> is satisfied that:</p>
+              </content>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is internationally recognised as a suitable person to perform those functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person will perform those functions in an independent and impartial way; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person will perform those functions effectively; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the person has appropriate internal controls and complaints processes.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The Secretary must<i>,</i> as soon as practicable after granting the approval to the person, give written notice of the approval to the person.</p>
+              </content>
+              <content>
+                <p>Revocation of approval</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-3">
+              <num>3</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, in writing, revoke an approval granted to a person under this section if <role refersTo="#secretary">the Secretary</role> ceases to be satisfied of the matter mentioned in paragraph (1)(a), (b), (c) or (d) in relation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> must, as soon as practicable after revoking an approval granted to a person under this section, give written notice of the revocation to:</p>
+              </content>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>each accredited certification body granted an accreditation by the person under <ref href="#sec-26">section 26</ref> that is in force; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>each person granted a certificate of compliance by the body.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The notice must specify the day the revocation takes effect, which must not be earlier than the day after the notice is given to the person.</p>
+              </content>
+              <content>
+                <p>Period approval is in force</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-6">
+              <num>6</num>
+              <content>
+                <p>An approval granted under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>comes into force on the day the notice is given under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-25__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>unless revoked earlier, remains in force indefinitely.</p>
+                </content>
+                <content>
+                  <p>Approval not a legislative instrument</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-25__subsec-7">
+              <num>7</num>
+              <content>
+                <p>An approval under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-5">
+          <num>5</num>
+          <heading>Accredited certification bodies</heading>
+          <section eId="part-3__dvs-5__sec-26">
+            <num>26</num>
+            <heading>Accrediting authorities may accredit persons to be accredited certification bodies</heading>
+            <content>
+              <p>Accreditation</p>
+            </content>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An accrediting authority must, in writing, grant an accreditation to a person to perform the functions of granting, revoking and varying certificates of compliance under <ref href="#sec-21">section 21</ref> if <role refersTo="#authority">the authority</role> is satisfied:</p>
+              </content>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person will perform those functions competently and impartially; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person has made a request to <role refersTo="#authority">the authority</role> for accreditation under this section.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#authority">The authority</role> must, as soon as practicable after granting the accreditation to the person, give written notice of the accreditation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If <role refersTo="#authority">the authority</role> refuses to grant an accreditation, as requested by a person under this section, <role refersTo="#authority">the authority</role> must, as soon as practicable after refusing the request, give written notice of the refusal to the person.</p>
+              </content>
+              <content>
+                <p>Withdrawal of accreditation</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-4">
+              <num>4</num>
+              <content>
+                <p>An accrediting authority must, in writing, withdraw an accreditation granted to a person under this section if <role refersTo="#authority">the authority</role> ceases to be satisfied of the matter mentioned in paragraph (1)(a) in relation to the person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The accrediting authority must, as soon as practicable after withdrawing the accreditation, give written notice to the person of the withdrawal.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The notice must specify the day the withdrawal takes effect, which must not be earlier than the day after the notice is given.</p>
+              </content>
+              <content>
+                <p>Notification</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-7">
+              <num>7</num>
+              <content>
+                <p>If an accrediting authority grants, refuses to grant or withdraws an accreditation under this section, <role refersTo="#authority">the authority</role> must notify <role refersTo="#secretary">the Secretary</role>, in writing, as soon as practicable of:</p>
+              </content>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>that fact; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>for a decision to refuse to grant, or to withdraw, an accreditation—the reasons for the decision.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-8">
+              <num>8</num>
+              <content>
+                <p>As soon as practicable after <role refersTo="#secretary">the Secretary</role> is notified under subsection (7) of the withdrawal of the accreditation of an accredited certification body, <role refersTo="#secretary">the Secretary</role> must give written notice of the withdrawal to each person granted a certificate of compliance by the body.</p>
+              </content>
+              <content>
+                <p>Period accreditation is in force</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-9">
+              <num>9</num>
+              <content>
+                <p>An accreditation granted under this section:</p>
+              </content>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-9__para-a">
+                <num>a</num>
+                <content>
+                  <p>comes into force on the day the notice is given under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-9__para-b">
+                <num>b</num>
+                <content>
+                  <p>remains in force until the earlier of the following occurs:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-9__para-i">
+                <num>i</num>
+                <content>
+                  <p>the day the withdrawal of the accreditation takes effect;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-5__sec-26__subsec-9__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>if <role refersTo="#authority">the authority</role> that granted the accreditation ceases to be an accrediting authority—the end of the period of 3 months after the cessation.</p>
+                </content>
+                <content>
+                  <p>Accreditation not a legislative instrument</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-5__sec-26__subsec-10">
+              <num>10</num>
+              <content>
+                <p>An accreditation under subsection (1) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Information management</heading>
+        <section eId="part-4__sec-27">
+          <num>27</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>Entrusted persons may commit an offence if they use or disclose protected information other than in accordance with this Part.</p>
+            <p>Entrusted persons can use or disclose information (referred to as relevant information) obtained or generated in the administration of this Act in accordance with this Part.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-28">
+          <num>28</num>
+          <heading>Unauthorised use or disclosure of protected information</heading>
+          <subsection eId="part-4__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is, or has been, an entrusted person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person has obtained or generated relevant information in the person’s capacity as an entrusted person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the information is protected information; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the person uses or discloses the information.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity> or <quantity refersTo="#penaltyUnit">120 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply if the use or disclosure is required or authorised by:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>this Act or another law of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a law of a State or Territory prescribed by the rules for the purposes of this paragraph.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to a matter in this subsection (see subsection 13.3(3) of the<i> Criminal Code</i>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-29">
+          <num>29</num>
+          <heading>Authorised uses and disclosures of relevant information</heading>
+          <content>
+            <p>Use or disclosure in the administration of this Act</p>
+          </content>
+          <subsection eId="part-4__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information for the purposes of:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>performing functions or duties, or exercising powers, under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>assisting another person to perform functions or duties, or exercise powers, under this Act.</p>
+              </content>
+              <content>
+                <p>Use or disclosure for purpose determined by Secretary</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information if the use or disclosure is for a purpose specified in a determination made under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by legislative instrument, make a determination for the purposes of subsection (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An instrument made under subsection (3) must specify the legislative power or powers of the Parliament in respect of which the instrument is made.</p>
+            </content>
+            <content>
+              <p>Commonwealth purposes</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An entrusted person may disclose relevant information:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>to <role refersTo="#secretary">the Secretary</role> of a Department of State of the Commonwealth, or to the head of an authority of the Commonwealth, for the purposes of that Department or authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>to the Chief Executive Centrelink for the purposes of a centrelink program; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>to the Chief Executive Medicare for the purposes of a medicare program.</p>
+              </content>
+              <content>
+                <p>State or Territory purposes</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-6">
+            <num>6</num>
+            <content>
+              <p>An entrusted person may disclose relevant information to the head (however described) of a Department of State of a State or Territory, or of an authority of a State or Territory, if the disclosure is for a purpose specified in a determination made under subsection (7).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-7">
+            <num>7</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by legislative instrument, make a determination for the purposes of subsection (6).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-8">
+            <num>8</num>
+            <content>
+              <p>An instrument made under subsection (7) must specify the legislative power or powers of the Parliament in respect of which the instrument is made.</p>
+            </content>
+            <content>
+              <p>Disclosure to a court, tribunal etc.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-9">
+            <num>9</num>
+            <content>
+              <p>An entrusted person may disclose relevant information to a court exercising federal jurisdiction.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-10">
+            <num>10</num>
+            <content>
+              <p>An entrusted person may disclose relevant information to:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>a court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>a tribunal, authority or person that has the power to require the answering of questions or the production of documents;</p>
+              </content>
+              <content>
+                <p>for the purposes of the enforcement of a law of the Commonwealth or to assist the court, tribunal, authority or person to make or review an administrative decision that is required or authorised to be made or reviewed under a law of the Commonwealth.</p>
+                <p>Use or disclosure for purposes of preventing threat to life, health or safety of a person with disability</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-11">
+            <num>11</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information if the entrusted person reasonably believes that doing so is necessary to lessen or prevent a threat to the life, health or safety of a person with disability.</p>
+            </content>
+            <content>
+              <p>Use or disclosure of statistics</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-12">
+            <num>12</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information if the information is statistics (within the meaning of paragraph 51(xi) of the Constitution) that are not likely to enable the identification of a person.</p>
+            </content>
+            <content>
+              <p>Use or disclosure with consent</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-13">
+            <num>13</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information that relates to a person if:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-13__para-a">
+              <num>a</num>
+              <content>
+                <p>the person, or an agent of the person, has consented to the use or disclosure; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-13__para-b">
+              <num>b</num>
+              <content>
+                <p>the use or disclosure is in accordance with that consent.</p>
+              </content>
+              <content>
+                <p>Disclosure to person to whom information relates</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-14">
+            <num>14</num>
+            <content>
+              <p>An entrusted person may disclose relevant information to the person to whom the information relates.</p>
+            </content>
+            <content>
+              <p>Use or disclosure of information that is already public</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-15">
+            <num>15</num>
+            <content>
+              <p>An entrusted person may use or disclose relevant information if the information has already been lawfully made available to the public.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-5__sec-30">
+          <num>30</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part deals with the delegation of functions or powers by <role refersTo="#minister">the Minister</role> and <role refersTo="#secretary">the Secretary</role>, the application of this Act to partnerships, unincorporated associations and trusts and the power to make rules.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-31">
+          <num>31</num>
+          <heading>Delegation by the Minister</heading>
+          <subsection eId="part-5__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by writing, delegate any or all of <role refersTo="#minister">the Minister</role>’s powers under subsection 13(1) and <ref href="#sec-14">section 14</ref> to:</p>
+            </content>
+            <paragraph eId="part-5__sec-31__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in a Department of State of the Commonwealth other than the Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901</i> contain provisions relating to delegations.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>However, <role refersTo="#minister">the Minister</role> must not delegate to a person mentioned in paragraph (1)(c) the following:</p>
+            </content>
+            <paragraph eId="part-5__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role>’s power under subsection 13(1) to make an arrangement or grant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role>’s power under subsection 14(7) to enter into a funding agreement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In exercising any powers under a delegation under this section, the delegate must comply with any directions of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-32">
+          <num>32</num>
+          <heading>Delegation by the Secretary</heading>
+          <subsection eId="part-5__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by writing, delegate to an SES employee, or acting SES employee, in the Department any or all of <role refersTo="#secretary">the Secretary</role>’s functions or powers under the following provisions:</p>
+            </content>
+            <paragraph eId="part-5__sec-32__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>subsections 9(2) and (4) (specifying a day to obtain a certificate of compliance);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-32__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p><ref href="#sec-22">section 22</ref> (certificates of compliance);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-32__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><ref href="#sec-25">section 25</ref> (approval of accrediting authority).</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901</i> contain provisions relating to delegations.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In performing any functions, or exercising any powers, under a delegation under this section, the delegate must comply with any directions of <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-33">
+          <num>33</num>
+          <heading>Treatment of partnerships</heading>
+          <subsection eId="part-5__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to a partnership as if it were a person, but with the changes set out in this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An obligation that would otherwise be imposed on the partnership by this Act is imposed on each partner instead, but may be discharged by any of the partners.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If this Act would otherwise permit something to be done by the partnership, the thing may be done by one or more of the partners on behalf of the partnership.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-33__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of this Act, a change in the composition of a partnership does not affect the continuity of the partnership.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-34">
+          <num>34</num>
+          <heading>Treatment of unincorporated associations</heading>
+          <subsection eId="part-5__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to an unincorporated association as if it were a person, but with the changes set out in this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An obligation that would otherwise be imposed on the association by this Act is imposed on each member of the association’s committee of management instead, but may be discharged by any of the members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If this Act would otherwise permit something to be done by the unincorporated association, the thing may be done by one or more of the members of the association’s committee of management on behalf of the association.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-35">
+          <num>35</num>
+          <heading>Treatment of trusts</heading>
+          <subsection eId="part-5__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to a trust as if it were a person, but with the changes set out in this section.</p>
+            </content>
+            <content>
+              <p>Trusts with a single trustee</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the trust has a single trustee:</p>
+            </content>
+            <paragraph eId="part-5__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>an obligation that would otherwise be imposed on the trust by this Act is imposed on <role refersTo="#trustee">the trustee</role> instead; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if this Act would otherwise permit something to be done by the trust, the thing may be done by <role refersTo="#trustee">the trustee</role>.</p>
+              </content>
+              <content>
+                <p>Trusts with multiple trustees</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the trust has 2 or more trustees:</p>
+            </content>
+            <paragraph eId="part-5__sec-35__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>an obligation that would otherwise be imposed on the trust by this Act is imposed on each trustee instead, but may be discharged by any of the trustees; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-35__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if this Act would otherwise permit something to be done by the trust, the thing may be done by any of the trustees.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-36">
+          <num>36</num>
+          <heading>Rules</heading>
+          <subsection eId="part-5__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister<i> </i>may, by legislative instrument, make rules prescribing matters:</p>
+            </content>
+            <paragraph eId="part-5__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-5__sec-36__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-36__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Incorporation by reference</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	Despite subsection 14(2) of the <i>Legislation Act 2003</i>, the rules may make provision in relation to a matter by applying, adopting or incorporating, with or without modification, any matter contained in an instrument or other writing as in force or existing from time to time.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Disability Services and Inclusion Act 2023</td>
+                <td>107, 2023</td>
+                <td>4 Dec, 2023</td>
+                <td>1 Jan 2024 (s 2(1) item 1)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Financial Framework (Supplementary Powers) Amendment Act 2024</td>
+                <td>27, 2024</td>
+                <td>30 May 2024</td>
+                <td>Sch 1 (items 7, 8): 31 May 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 27, 2024</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>rs No 27, 2024</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

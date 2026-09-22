@@ -1,0 +1,1465 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1987/149/!main"/>
+          <FRBRuri value="/akn/au/act/1987/149"/>
+          <FRBRdate date="1987-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="149"/>
+          <FRBRname value="petroleum-excise-(prices)-act-1987"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1987/149/eng@2025-02-21/!main"/>
+          <FRBRuri value="/akn/au/act/1987/149/eng@2025-02-21"/>
+          <FRBRdate date="2025-02-21" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1987/149/eng@2025-02-21/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1987/149/eng@2025-02-21/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1987-01-01" type="generation" eId="evt-creation" source="#petroleum-excise-(prices)-act-1987"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1988/115" date="1988-12-12"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1990/114" date="1987-12-26"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1997/79" date="1997-07-01"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2000/137"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2001/140"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2006/17"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2006/74" date="2006-06-26"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2008/108"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2008/117"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2011/140" date="2011-11-29"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2015/126" date="2015-09-10"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2020/64" date="2020-06-22"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2024/38" date="2024-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2025/14" date="2025-02-20"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="ceo" href="/ontology/roles/au/ceo" showAs="the CEO"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-excisable-condensate" href="/ontology/term/au/term-excisable-condensate" showAs="excisable condensate"/>
+        <TLCTerm eId="term-excisable-crude-petroleum-oil" href="/ontology/term/au/term-excisable-crude-petroleum-oil" showAs="excisable crude petroleum oil"/>
+        <TLCTerm eId="term-final-volware-price" href="/ontology/term/au/term-final-volware-price" showAs="final VOLWARE price"/>
+        <TLCTerm eId="term-interim-volware-price" href="/ontology/term/au/term-interim-volware-price" showAs="interim VOLWARE price"/>
+        <TLCTerm eId="term-limited-production-area" href="/ontology/term/au/term-limited-production-area" showAs="limited production area"/>
+        <TLCTerm eId="term-month" href="/ontology/term/au/term-month" showAs="month"/>
+        <TLCTerm eId="term-oil-producer" href="/ontology/term/au/term-oil-producer" showAs="oil producer"/>
+        <TLCTerm eId="term-production-area" href="/ontology/term/au/term-production-area" showAs="production area"/>
+        <TLCTerm eId="term-volware-price" href="/ontology/term/au/term-volware-price" showAs="VOLWARE price"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Petroleum Excise (Prices) Act 1987</p>
+      <p>No. 149, 1987</p>
+      <p><b>Compilation No. </b><b>16</b></p>
+      <p><b>Compilation date:</b><b>	</b>21 February 2025</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 14, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Petroleum Excise (Prices) Act 1987</i> that shows the text of the law as amended and in force on 21 February 2025 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Incorporation	1</p>
+      <p>4	Interpretation	1</p>
+      <p>4A	Application of the <i>Criminal Code</i>	5</p>
+      <p><ref href="#part-IA">Part IA</ref>—Determination of prices for condensate	6</p>
+      <p>5	Purpose of <ref href="#part-6">Part	6</ref></p>
+      <p>5A	Additional operation of Act	6</p>
+      <p><ref href="#part-II">Part II</ref>—Determination of prices	8</p>
+      <p>6	Oil producers to give certain information	8</p>
+      <p>7	Minister etc. to determine VOLWARE prices	11</p>
+      <p>8	Notification of prices	14</p>
+      <p><ref href="#part-III">Part III</ref>—Miscellaneous	15</p>
+      <p>9	Inspection of documents	15</p>
+      <p>10	Obtaining of information and evidence	15</p>
+      <p>11	Conduct by directors, employees or agents	17</p>
+      <p>12	Review of certain decisions	18</p>
+      <p>13	Statements to accompany notification of reviewable decisions	19</p>
+      <p>14	Regulations	20</p>
+      <p>Endnotes	21</p>
+      <p>Endnote 1—About the endnotes	21</p>
+      <p>Endnote 2—Abbreviation key	23</p>
+      <p>Endnote 3—Legislation history	24</p>
+      <p>Endnote 4—Amendment history	27</p>
+      <p>An Act to establish prices in relation to which Duties of Excise are to be imposed on certain crude petroleum oil and condensate, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Petroleum Excise (Prices) Act 1987</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on the day on which it receives the Royal Assent.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Incorporation</heading>
+          <content>
+            <p>		The <i>Excise Act 1901 </i>and the <i>Excise Tariff Act 1921 </i>are incorporated and shall be read as one with this Act.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-excisable-condensate">excisable condensate</term> means <def>condensate in respect of which subitem 21.3 of <ref href="/akn/au/act/schedule-to-the-excise-tariff-act-1921" class="unresolved">the Schedule to the Excise Tariff Act 1921</ref> applies, or will, upon the entry of the condensate for home consumption, apply.</def></p>
+              <p><term refersTo="#term-excisable-crude-petroleum-oil">excisable crude petroleum oil</term> means <def>stabilised crude petroleum oil in respect of which subitem 20.5, 20.6 or 20.7 of <ref href="/akn/au/act/schedule-to-the-excise-tariff-act-1921" class="unresolved">the Schedule to the Excise Tariff Act 1921</ref> applies, or will, upon the entry of the oil for home consumption, apply.</def></p>
+              <p><term refersTo="#term-final-volware-price">final VOLWARE price</term>, in relation to a month and an oil producing region, means <def>the price determined under subsection 7(3) for that month and that region.</def></p>
+              <p><term refersTo="#term-interim-volware-price">interim VOLWARE price</term>, in relation to a month and an oil producing region, means <def>the price determined under subsection 7(2) for that month and that region.</def></p>
+              <p><term refersTo="#term-limited-production-area">limited production area</term> means <def>a production area that is declared to be a limited production area under subsection 6(1B).</def></p>
+              <p><term refersTo="#term-month">month</term> means <def>one of the 12 months of a calendar year.</def></p>
+              <p><term refersTo="#term-oil-producer">oil producer</term> means <def>a person who carries on operations for the recovery of stabilised crude petroleum oil and: if that oil is obtained from an oil producing region that is located, in whole or in part, on the landward side of the outer limits of the territorial sea of Australia—is the holder of a lease or licence (however described) authorising the obtaining of that oil or a part of that oil, being a lease or licence that is issued under the appropriate law of a State or Territory in which, or in the territorial sea adjacent to which, that region, or a part of that region, is located; or 	(b)	if that oil is obtained from an oil producing region that is located, in whole or in part, beyond the outer limits of the territorial sea of Australia—is a petroleum production licensee within the meaning of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</def></p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if that oil is obtained from an oil producing region that is located, in whole or in part, on the landward side of the outer limits of the territorial sea of Australia—is the holder of a lease or licence (however described) authorising the obtaining of that oil or a part of that oil, being a lease or licence that is issued under the appropriate law of a State or Territory in which, or in the territorial sea adjacent to which, that region, or a part of that region, is located; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	if that oil is obtained from an oil producing region that is located, in whole or in part, beyond the outer limits of the territorial sea of Australia—is a petroleum production licensee within the meaning of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+              </content>
+              <content>
+                <p><b><i>oil producing region</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a production area <ref href="#sec-5B">within the meaning of section 5B</ref> of the <i>Excise Tariff Act 1921</i>, being an area from which stabilised crude petroleum oil is obtained and that is prescribed by the regulations as an oil producing region; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>2 or more production areas within the meaning of that section from which stabilised crude petroleum oil is obtained, being areas that are together so prescribed.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-production-area">production area</term> means <def>a production area <ref href="#sec-5B">within the meaning of section 5B</ref> of <ref href="">the Excise Tariff Act 1921</ref>: from which stabilised crude petroleum oil is obtained; and which is prescribed to be the whole or part of an oil producing region.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>from which stabilised crude petroleum oil is obtained; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>which is prescribed to be the whole or part of an oil producing region.</p>
+              </content>
+              <content>
+                <p><b><i>reviewable decision</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-aa">
+              <num>aa</num>
+              <content>
+                <p>a decision to fix a transaction price under subsection (2); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-ab">
+              <num>ab</num>
+              <content>
+                <p>a decision under subsection 6(1B) refusing to declare a production area to be a limited production area; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-ac">
+              <num>ac</num>
+              <content>
+                <p>a decision under subsection 6(1E) to revoke a declaration that a production area is a limited production area; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a determination of the final VOLWARE price for a month and an oil producing region under subsection 7(3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a decision to fix a price for a transaction under subsection 7(6); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a decision under subsection 7(9) to amend a determination of the final VOLWARE price for a month and an oil producing region under subsection 7(3).</p>
+              </content>
+              <content>
+                <p><b><i>transaction price</i></b>, in relation to a quantity of excisable crude petroleum oil, means, subject to subsection 7(6):</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>where the oil producer of the oil has sold the quantity of oil—the price for which it was sold; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—the price fixed under subsection (2).</p>
+              </content>
+              <content>
+                <p><b><i>VOLWARE commencement date</i></b> in relation to excisable crude petroleum oil obtained from an oil producing region means the date prescribed by the regulations as the date after which final VOLWARE prices and interim VOLWARE prices for each month are calculated in relation to that oil, not being a date earlier than 31 December 1987.</p>
+                <p><term refersTo="#term-volware-price">VOLWARE price</term> means <def>an interim VOLWARE price or a final VOLWARE price.</def></p>
+                <p>Effect of regulations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>Regulations prescribing a production area or production areas as an oil producing region may be expressed to have had effect from <date date="1988-01-01">1 January 1988</date> or from any later day, including a day occurring before the making of the regulations, that is specified in the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-1B">
+            <num>1B</num>
+            <content>
+              <p>Where a production area or production areas are prescribed as an oil producing region with effect from <date date="1988-01-01">1 January 1988</date> or any later day and, after that day, another production area is discovered, the regulations may provide that, with effect from the date of that discovery, the oil producing region is taken to include the production area so discovered.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-1C">
+            <num>1C</num>
+            <content>
+              <p>	(1C)	Subsection 12(2) (retrospective application of legislative instruments) of the <i>Legislation Act 2003</i> does not apply to regulations made for the purposes of this Act in relation to condensate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-1D">
+            <num>1D</num>
+            <content>
+              <p>Subsection (1C) does not apply to regulations that create, modify or otherwise affect a provision that makes a person liable to an offence or civil penalty.</p>
+            </content>
+            <content>
+              <p>Transaction price where no sale</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where an oil producer of a quantity of excisable crude petroleum oil does not sell the oil but enters into a transaction under which another person takes, or is intended to take, possession of the oil (whether or not ownership in the oil passes, or is intended to pass, to another person) the Minister, or a person appointed or engaged under the <i>Public Service Act 1999 </i>authorised by the Minister to exercise the Minister’s powers under this subsection, may, by instrument in writing, fix a transaction price in respect of that oil (being a transaction price that he or she considers to be fair and reasonable having regard to the terms of the transaction).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where <role refersTo="#minister">the Minister</role> or authorised person fixes a price for a transaction under subsection (2), he or she shall notify the oil producer in writing of the fixing of the price, giving reasons for it.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-4A">
+          <num>4A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 (except <ref href="#part-2">Part 2</ref>.5) of the <i>Criminal Code</i> applies to all offences created by this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+      </part>
+      <part eId="part-IA">
+        <num>IA</num>
+        <heading>Determination of prices for condensate</heading>
+        <section eId="part-IA__sec-5">
+          <num>5</num>
+          <heading>Purpose of Part</heading>
+          <subsection eId="part-IA__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The purpose of this Part is to allow <role refersTo="#minister">the Minister</role> to establish prices of condensate which are used in imposing duties of excise on condensate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IA__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>It does so by providing that the Act, in addition to its general operation, operates as if:</p>
+            </content>
+            <paragraph eId="part-IA__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>references to excisable crude petroleum oil were references to excisable condensate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>references to stabilised crude petroleum oil, crude petroleum oil and oil were references to condensate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IA__sec-5A">
+          <num>5A</num>
+          <heading>Additional operation of Act</heading>
+          <subsection eId="part-IA__sec-5A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In addition to the operation of this Act apart from this Part, this Act applies as if the modifications set out in subsections (2) and (3) were made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IA__sec-5A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The first modification is that each reference in this Act (other than the definition of <b><i>excisable crude petroleum oil</i></b> in subsection 4(1)) to excisable crude petroleum oil is taken to be a reference to excisable condensate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IA__sec-5A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The second modification is that each reference to:</p>
+            </content>
+            <paragraph eId="part-IA__sec-5A__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>stabilised crude petroleum oil; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5A__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>crude petroleum oil; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5A__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>oil;</p>
+              </content>
+              <content>
+                <p>in this Act (other than the title of this Act) is taken to be a reference to condensate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IA__sec-5A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Nothing in this section affects the operation of references to the following in the regulations, or in the <i>Excise Act 1901</i> or the <i>Excise Tariff Act 1921</i>:</p>
+            </content>
+            <paragraph eId="part-IA__sec-5A__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>excisable crude petroleum oil;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5A__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>stabilised crude petroleum oil;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5A__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>crude petroleum oil;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IA__sec-5A__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>oil.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Determination of prices</heading>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Oil producers to give certain information</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An oil producer of excisable crude petroleum oil entered for home consumption during a particular month shall, in respect of each transaction entered into by the producer concerning that oil, give to <role refersTo="#minister">the Minister</role> such information as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>The information prescribed for the purposes of subsection (1) may differ according to whether or not the transaction entered into by the oil producer relates to excisable crude petroleum oil produced from a production area while that area is declared to be a limited production area.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1B">
+            <num>1B</num>
+            <content>
+              <p>If, in respect of excisable crude petroleum oil produced by an oil producer from a particular production area:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1B__para-a">
+              <num>a</num>
+              <content>
+                <p>the volume of that oil entered for home consumption before the end of each of 3 consecutive months (whether in the same financial year or not) is less than 80% of the free volume of excisable crude petroleum oil in respect of that month, worked out in accordance with subsection (1G); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1B__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is satisfied that the volume of that oil likely to be entered for home consumption before the end of any future month is unlikely, having regard to production statistics and any other relevant factor known to <role refersTo="#minister">the Minister</role>, to exceed 80% of the free volume of that oil in respect of that future month, worked out in accordance with subsection (1G);</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> may declare in writing that production area to be a limited production area and, if <role refersTo="#minister">the Minister</role> does so, he or she must notify the oil producer concerned of that declaration.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1C">
+            <num>1C</num>
+            <content>
+              <p>If, in respect of excisable crude petroleum oil produced by an oil producer from a particular production area:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1C__para-a">
+              <num>a</num>
+              <content>
+                <p>paragraph (1B)(a) applies in respect of any period of 3 consecutive months; but</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1C__para-b">
+              <num>b</num>
+              <content>
+                <p>the Minister does not declare that production area to be a limited production area <quantity refersTo="#deadline">within 15 days</quantity> after the end of that period;</p>
+              </content>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is taken to have refused, under subsection (1B), to make that declaration.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1D">
+            <num>1D</num>
+            <content>
+              <p>If, because the Minister does not declare a production area to be a limited production area <quantity refersTo="#deadline">within 15 days</quantity> after the end of a period of 3 consecutive months, the Minister is taken, under subsection (1C), to have refused to make that declaration:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1D__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	that subsection does not prevent the Minister making such a declaration, in accordance with subsection (1B), at the end of any period of 3 consecutive months to which paragraph (1B)(a) applies (a <b><i>subsequent period</i></b>) that ends after that first-mentioned period; but</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1D__para-b">
+              <num>b</num>
+              <content>
+                <p>if the Minister does not, <quantity refersTo="#deadline">within 15 days</quantity> after the end of a subsequent period, make such a declaration, the Minister is again taken to have refused, under subsection (1B), to make such a declaration.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1E">
+            <num>1E</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1E__para-a">
+              <num>a</num>
+              <content>
+                <p>a particular production area has been declared to be a limited production area; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1E__para-b">
+              <num>b</num>
+              <content>
+                <p>at any time after the declaration, the volume of excisable crude petroleum oil produced in that area and entered for home consumption exceeds the free volume of that oil in respect of that month, worked out in accordance with subsection (1G);</p>
+              </content>
+              <content>
+                <p>then:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1E__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> must, by written notice given to the oil producer concerned, revoke the declaration; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1E__para-d">
+              <num>d</num>
+              <content>
+                <p>the producer must give to <role refersTo="#minister">the Minister</role>, in respect of all excisable crude petroleum oil produced in that area and entered for home consumption after the making of the declaration, the information that, but for the making of the declaration, would have been required in respect of each transaction concerning that oil.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1F">
+            <num>1F</num>
+            <content>
+              <p>The information required to be given to <role refersTo="#minister">the Minister</role> under subsection (1E), or particular parts of that information, must be given to <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1F__para-a">
+              <num>a</num>
+              <content>
+                <p>unless <role refersTo="#minister">the Minister</role> otherwise indicates in the notice revoking the declaration—in the form specified for the purpose of subsection (2); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1F__para-b">
+              <num>b</num>
+              <content>
+                <p>within a time or times specified by <role refersTo="#minister">the Minister</role> in that notice.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-1G">
+            <num>1G</num>
+            <content>
+              <p>	(1G)	For the purposes of this section, the free volume of excisable crude petroleum oil that is entered for home consumption before the end of a month is the maximum volume of such oil that, if entered for home consumption before the end of that month would, under <ref href="#sec-6B">section 6B</ref>, 6C, 6CA or 6D of the <i>Excise Tariff Act 1921</i>, be a volume of oil to which no notional duty was applicable.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note 1:	Subsection (4) of <ref href="#sec-6B">section 6B</ref>, 6C or 6D of the <i>Excise Tariff Act 1921</i> specifies, among other things, the minimum volume of oil to which notional duty becomes applicable. The effect of that subsection is modified by subsection (9) of each of those sections.</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note 2:	Subsection 6CA(5) of the <i>Excise Tariff Act 1921</i> specifies, among other things, the minimum volume of condensate to which notional duty becomes applicable. The effect of that subsection is modified by subsection 6CA(12) of that Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall, by legislative instrument, specify:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the form in which the information is to be given; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the times within which the information is, or parts of the information are, to be given;</p>
+              </content>
+              <content>
+                <p>and the oil producer shall give the information accordingly.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of a natural person—<quantity refersTo="#custodialSentence">imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of a body corporate—<quantity refersTo="#penaltyUnit">100 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Minister etc. to determine VOLWARE prices</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A reference in this section to the volume weighted average of realised prices for a month and an oil producing region is a reference to the amount (expressed as an amount of Australian dollars, calculated to the nearest cent, per kilolitre) obtained by dividing the sum of the transaction prices in respect of quantities of excisable crude petroleum oil obtained from that region that are entered for home consumption during the month by the total volume of that oil.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role>, or a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section, shall, not later than one month after the end of each month occurring after the VOLWARE commencement date in relation to an oil producing region, determine a price in relation to that month and that region, to be known as the interim VOLWARE price for that month and that region, being an estimate by <role refersTo="#minister">the Minister</role> or authorised person, on the basis of the information available to him or her at the time (being information obtained pursuant to <ref href="#sec-6">section 6</ref> or otherwise), of the amount that will finally be determined to be the volume weighted average of realised prices for that month and that region.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>Nothing in this section implies that <role refersTo="#minister">the Minister</role>, or a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section, cannot determine an interim VOLWARE price for a month and an oil producing region at any time during the month concerned, whether or not there is available at that time any information concerning the prices for which excisable crude petroleum oil obtained from that region and entered for home consumption during that month has been sold, or is likely to be sold.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role>, or a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section, shall, not later than 6 months after the end of each month occurring after the VOLWARE commencement date in relation to an oil producing region, determine a price in relation to that month and that region, to be known as the final VOLWARE price for that month and that region, being the final determination by <role refersTo="#minister">the Minister</role> or authorised person of the volume weighted average of realised prices for that month and that region.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>In spite of subsections (2) and (3), neither <role refersTo="#minister">the Minister</role> nor a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section is required to determine an interim VOLWARE price, or a final VOLWARE price, in respect of an oil producing region and a month if, at all times during that month:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-3A__para-a">
+              <num>a</num>
+              <content>
+                <p>if the region consists of a single production area—there is in force a declaration under subsection 6(1B) that that area is a limited production area; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-3A__para-b">
+              <num>b</num>
+              <content>
+                <p>if the region consists of 2 or more production areas—there are in force declarations under subsection 6(1B) that each of those areas is a limited production area.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3B">
+            <num>3B</num>
+            <content>
+              <p>Nothing in subsection (3A) affects the obligation of <role refersTo="#minister">the Minister</role> or of a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section to determine an interim VOLWARE price, or a final VOLWARE price, in respect of an oil producing region and a month if a declaration under subsection 6(1B) relating to a production area in that region that was in force during that month is subsequently revoked.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A determination of the final VOLWARE price for a month and an oil producing region shall not be made unless:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> or authorised person is satisfied that accurate and complete information concerning all of the transactions relevant to determining the price has become available to <role refersTo="#minister">the Minister</role> or authorised person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>5 months and 20 days have passed since the end of that month and information that <role refersTo="#minister">the Minister</role> or authorised person is satisfied is accurate and complete concerning all of those transactions has not yet become available to <role refersTo="#minister">the Minister</role> or authorised person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subject to subsection (6), the regulations may provide for:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the manner in which transaction prices for quantities of excisable crude petroleum oil are to be calculated for the purposes of determining the volume weighted average of realised prices for a month and an oil producing region; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the manner in which the total volume of excisable crude petroleum oil is to be calculated for the purposes of such a determination.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In determining the volume weighted average of realised prices for a month and an oil producing region, <role refersTo="#minister">the Minister</role> or authorised person may fix, for the purposes of the determination, the transaction price in respect of a quantity of excisable crude petroleum oil obtained from that region, being a price that he or she considers to be fair and reasonable, in substitution for a price set out in information given under <ref href="#sec-6">section 6</ref> if he or she considers that:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the parties to any transaction concerning the oil were not dealing at arm’s length in relation to that transaction; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the price set out is less than the amount that could reasonably be expected to be the price if the parties had been dealing at arm’s length.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Where <role refersTo="#minister">the Minister</role> or authorised person fixes a price for a transaction under subsection (6), he or she shall notify the oil producer in writing of the fixing of the price, giving the reasons for it.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The fact that a transaction price for a particular transaction has not been fixed, under subsection (6), for the purpose of determining the interim VOLWARE price for a month and an oil producing region does not preclude the fixing of a transaction price for that transaction, under subsection (6), for the purposes of determining the final VOLWARE price for that month and that region.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-9">
+            <num>9</num>
+            <content>
+              <p>Subject to subsection (10), <role refersTo="#minister">the Minister</role>, or a person authorised by <role refersTo="#minister">the Minister</role> to exercise <role refersTo="#minister">the Minister</role>’s powers under this section, may, at any time after a final VOLWARE price is determined under subsection (3), amend the determination if he or she is satisfied that the determination is incorrect because of:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>the making of an error in calculation or a mistake of fact; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>the giving of information that was inaccurate or incomplete to <role refersTo="#minister">the Minister</role> or authorised person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-10">
+            <num>10</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> or authorised person shall not, under subsection (9), amend a determination after the expiration of 3 years from the day on which the determination was made unless he or she is satisfied that the determination is incorrect because information given to <role refersTo="#minister">the Minister</role> or authorised person is inaccurate or incomplete due to the fraud or evasion of an oil producer.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-11">
+            <num>11</num>
+            <content>
+              <p>For the purposes of this Act (other than subsection (9) of this section) and the Acts referred to in <ref href="#sec-3">section 3</ref>, where a determination has been amended under subsection (9), it has effect, as so amended, as a determination under subsection (3).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Notification of prices</heading>
+          <subsection eId="part-II__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The person making a determination under subsection 5(1) or 7(2), (3) or (9) shall cause written notices setting out the terms of the determination to be given to:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#ceo">the CEO</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>each oil producer.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A failure to comply with subsection (1) does not affect the validity of the determination.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-III__sec-9">
+          <num>9</num>
+          <heading>Inspection of documents</heading>
+          <subsection eId="part-III__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purpose of verifying information given to <role refersTo="#minister">the Minister</role> by an oil producer under <ref href="#sec-6">section 6</ref>, a person authorised in writing by <role refersTo="#minister">the Minister</role> to exercise powers under this section:</p>
+            </content>
+            <paragraph eId="part-III__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>may, at all reasonable times, enter and remain on any land or premises on which documents that may be relevant to that information are situated;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is entitled to full and free access at all reasonable times to all such documents; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-9__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>may inspect, examine, make copies of, or take extracts from, any such documents.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person is not entitled to enter or remain on any land or premises under this section if, on being requested by the occupier of the land or premises for proof of authority, the person does not produce an authority in writing signed by <role refersTo="#minister">the Minister</role> stating that the person is authorised to exercise powers under this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The occupier of land or premises entered or proposed to be entered by a person under subsection (1) shall provide the person with all reasonable facilities and assistance for the effective exercise of powers under this section.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty for a contravention of this subsection:	<quantity refersTo="#penaltyUnit">10 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-10">
+          <num>10</num>
+          <heading>Obtaining of information and evidence</heading>
+          <subsection eId="part-III__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role>, or a person authorised in writing by <role refersTo="#minister">the Minister</role> to exercise powers under this section, may, for the purposes of this Act, by notice in writing, require any person:</p>
+            </content>
+            <paragraph eId="part-III__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to furnish <role refersTo="#minister">the Minister</role> or authorised person with such information as <role refersTo="#minister">the Minister</role> or authorised person requires;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to attend before <role refersTo="#minister">the Minister</role> or authorised person, or before a person authorised by <role refersTo="#minister">the Minister</role> or authorised person for the purpose, at a time and place specified in the notice, and then and there answer questions; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to produce to <role refersTo="#minister">the Minister</role> or authorised person any documents in the custody or under the control of the person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> or authorised person may require the information or answers to questions to be verified or given, as the case may be, on oath or affirmation, and either orally or in writing, and for that purpose <role refersTo="#minister">the Minister</role> or authorised person, or a person authorised by <role refersTo="#minister">the Minister</role> or authorised person for the purpose, may administer an oath or affirmation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The oath to be taken or affirmation to be made by a person for the purposes of this section is an oath or affirmation that the information or answers that the person will give will be true.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A person is not excused from furnishing information or producing a document, when required to do so under this section, on the grounds that furnishing the information or producing the document might tend to incriminate the person or make the person liable to a penalty.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A person is not excused from answering a question, when required to do so under this section, on the grounds that the answer to the question might tend to incriminate the person or make the person liable to a penalty.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	A statement or disclosure made in information furnished, an answer given, or a document produced by a person, in accordance with a requirement made of the person under this section, and any information, document or thing obtained as a direct or indirect consequence of that statement or disclosure, is not admissible against a person in any criminal proceedings except a proceeding for an offence against <ref href="#sec-137">section 137</ref>.1 of the <i>Criminal Code</i> that relates to this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A person shall not fail to comply with a requirement made of the person under this section.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:</p>
+              </content>
+            </hcontainer>
+            <paragraph eId="part-III__sec-10__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of a natural person—<quantity refersTo="#custodialSentence">imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">10 penalty units</quantity>, or both; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of a body corporate—<quantity refersTo="#penaltyUnit">50 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-8">
+            <num>8</num>
+            <content>
+              <p>An offence against subsection (7) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-11">
+          <num>11</num>
+          <heading>Conduct by directors, employees or agents</heading>
+          <subsection eId="part-III__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where it is necessary, for the purposes of this Act, to establish the state of mind of a body corporate in respect of conduct engaged in, or deemed by subsection (2) to have been engaged in, by the body corporate, it is sufficient to show that a director, employee or agent of the body corporate, being a director, employee or agent by whom the conduct was engaged in within the scope of his or her actual or apparent authority, had that state of mind.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any conduct engaged in on behalf of a body corporate:</p>
+            </content>
+            <paragraph eId="part-III__sec-11__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>by a director, employee or agent of the body corporate within the scope of his or her actual or apparent authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-11__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>by any other person at the direction or with the consent or agreement (whether express or implied) of a director, employee or agent of the body corporate, where the giving of the direction, consent or agreement is within the scope of the actual or apparent authority of the director, employee or agent;</p>
+              </content>
+              <content>
+                <p>shall be deemed, for the purposes of this Act, to have been engaged in also by the body corporate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where it is necessary, for the purposes of this Act, to establish the state of mind of a person in relation to conduct deemed by subsection (4) to have been engaged in by the person, it is sufficient to show that an employee or agent of the person, being an employee or agent by whom the conduct was engaged in within the scope of his or her actual or apparent authority, had that state of mind.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Conduct engaged in on behalf of a person other than a body corporate:</p>
+            </content>
+            <paragraph eId="part-III__sec-11__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>by an employee or agent of the person within the scope of his or her actual or apparent authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-11__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>by any other person at the direction or with the consent or agreement (whether express or implied) of an employee or agent of the first-mentioned person, where the giving of the direction, consent or agreement is within the scope of the actual or apparent authority of the employee or agent;</p>
+              </content>
+              <content>
+                <p>shall be deemed, for the purposes of this Act, to have been engaged in also by the first-mentioned person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A reference in this section to the state of mind of a person includes a reference to the knowledge, intention, opinion, belief or purpose of the person and the person’s reasons for the person’s intention, opinion, belief or purpose.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A reference in this section to a director of a body corporate includes a reference to a constituent member of a body corporate incorporated for a public purpose by a law of the Commonwealth, of a State or of a Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-12">
+          <num>12</num>
+          <heading>Review of certain decisions</heading>
+          <subsection eId="part-III__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An oil producer who is dissatisfied with a reviewable decision may request the decision maker to reconsider the decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>The request can only be made by notice given within:</p>
+            </content>
+            <paragraph eId="part-III__sec-12__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>unless paragraph (b) applies—the period of 28 days after the day on which the decision first comes to the notice of the person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-12__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>if the reviewable decision is a determination under subsection 7(3) or a decision under subsection 7(9), and the person who made the decision gave notices of the determination in accordance with subsection 8(1)—the period of 28 days after the day on which the last of those notices was given; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-12__subsec-1A__para-c">
+              <num>c</num>
+              <content>
+                <p>such further period as the person who made the decision allows.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>There shall be set out in the request reasons for making the request.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Upon receipt of the request, the decision maker shall reconsider the decision and may, subject to subsections (5) and (6), confirm or revoke the decision or vary the decision in such manner as he or she thinks fit.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where the decision maker does not confirm, revoke or vary a decision before the expiration of the period of 28 days after the day on which he or she received the request, the decision shall, upon the expiration of that period, be deemed to have been confirmed under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where the decision maker confirms, revokes or varies a decision before the expiration of the period referred to in subsection (4), he or she shall, by notice served on the person who made the request, inform the person of the result of the reconsideration of the decision and the reasons for confirming, varying or revoking the decision, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	Subject to the <i>Administrative Review Tribunal Act 2024</i>, applications may be made to the Administrative Review Tribunal for review of decisions of the decision maker that have been confirmed or varied under subsection (3).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-13">
+          <num>13</num>
+          <heading>Statements to accompany notification of reviewable decisions</heading>
+          <subsection eId="part-III__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where written notice of a reviewable decision is given to an oil producer, that notice shall include a statement to the effect that:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the oil producer may, if dissatisfied with the decision, seek a reconsideration of the decision under subsection 12(1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a person whose interests are affected by the decision may, subject to the <i>Administrative Review Tribunal Act 2024</i>, if dissatisfied with a decision made upon that reconsideration confirming or varying the first-mentioned decision, make application to the Administrative Review Tribunal for review of the decision so confirmed or varied.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where written notice of the confirmation or variation of a reviewable decision under subsection 12(3) is given to an oil producer, that notice shall include a statement to the effect that a person whose interests are affected by the decision may, subject to the <i>Administrative Review Tribunal Act 2024</i>, if dissatisfied with the decision so confirmed or varied, make application to the Administrative Review Tribunal for review of the decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Any failure to comply with the requirements of subsection (1) or (2) in relation to a reviewable decision or a decision under subsection 12(3) does not affect the validity of that decision.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters:</p>
+          </content>
+          <paragraph eId="part-III__sec-14__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-III__sec-14__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Petroleum Excise (Prices) Act 1987</td>
+                <td>149, 1987</td>
+                <td>26 Dec 1987</td>
+                <td>26 Dec 1987 (s 2)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Petroleum Excise (Prices) Amendment Act 1988</td>
+                <td>115, 1988</td>
+                <td>12 Dec 1988</td>
+                <td>12 Dec 1988 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Petroleum Excise (Prices) Amendment Act 1990</td>
+                <td>114, 1990</td>
+                <td>21 Dec 1990</td>
+                <td>26 Dec 1987 (s 2)</td>
+                <td>s 3(2)–(4)</td>
+              </tr>
+              <tr>
+                <td>Petroleum Excise (Prices) Amendment Act 1997</td>
+                <td>79, 1997</td>
+                <td>18 June 1997</td>
+                <td>1 July 1997 (s 2)</td>
+                <td>Sch 1 (item 11)</td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (item 731): 5 Dec 1999 (s 2(1), (2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Criminal Code Amendment (Theft, Fraud, Bribery and Related Offences) Act 2000</td>
+                <td>137, 2000</td>
+                <td>24 Nov 2000</td>
+                <td>Sch 2 (items 314–316, 418, 419): 24 May 2001 (s 2(3))</td>
+                <td>Sch 2 (items 418, 419)</td>
+              </tr>
+              <tr>
+                <td>Industry, Science and Resources Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>140, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>s 4 and Sch 1 (items 99, 100): 2 Oct 2001 (s 2)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Offshore Petroleum (Repeals and Consequential Amendments) Act 2006</td>
+                <td>17, 2006</td>
+                <td>29 Mar 2006</td>
+                <td>Sch 2 (item 72): 1 July 2008 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Excise Laws Amendment (Fuel Tax Reform and Other Measures) Act 2006</td>
+                <td>74, 2006</td>
+                <td>26 June 2006</td>
+                <td>Sch 1 (item 95): 1 July 2006 (s 2(1) item 4)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Excise Legislation Amendment (Condensate) Act 2008</td>
+                <td>108, 2008</td>
+                <td>18 Oct 2008</td>
+                <td>Sch 1 (items 4–10, 13, 14): 18 Oct 2008 (s 2(1) item 2)</td>
+                <td>Sch 1 (items 13, 14)</td>
+              </tr>
+              <tr>
+                <td>Offshore Petroleum Amendment (Greenhouse Gas Storage) Act 2008</td>
+                <td>117, 2008</td>
+                <td>21 Nov 2008</td>
+                <td>Sch 2 (item 58) and Sch 3 (item 32): 22 Nov 2008 (s 2(1) items 3, 4)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Excise Legislation Amendment (Condensate) Act 2011</td>
+                <td>140, 2011</td>
+                <td>29 Nov 2011</td>
+                <td>29 Nov 2011 (s 2)</td>
+                <td>Sch 1 (item 4)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act (No. 1) 2015</td>
+                <td>5, 2015</td>
+                <td>25 Feb 2015</td>
+                <td>Sch 3 (items 142–146): 25 Mar 2015 (s 2(1) item 10)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 477): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (items 362–366): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (2019 Measures No. 3) Act 2020</td>
+                <td>64, 2020</td>
+                <td>22 June 2020</td>
+                <td>Sch 3 (item 292, 325, 326): 1 Oct 2020 (s 2(1) item 6)</td>
+                <td>Sch 3 (items 325, 326)</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024</td>
+                <td>38, 2024</td>
+                <td>31 May 2024</td>
+                <td>Sch 1 (items 42, 67): 14 Oct 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Miscellaneous Measures) Act 2025</td>
+                <td>14, 2025</td>
+                <td>20 Feb 2025</td>
+                <td>Sch 2 (item 31): 21 Feb 2025 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td>am No 108, 2008</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 115, 1988; No 114, 1990; No 79, 1997; No 146, 1999; No 17, 2006; No 74, 2006; No 108, 2008; No 117, 2008; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ed C14</td>
+              </tr>
+              <tr>
+                <td>s 4A</td>
+                <td>ad No 140, 2001</td>
+              </tr>
+              <tr>
+                <td>Part IA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part IA</td>
+                <td>ad No 108, 2008</td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>am No 114, 1990</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 79, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad No 108, 2008</td>
+              </tr>
+              <tr>
+                <td>s 5A</td>
+                <td>ad No 108, 2008</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 79, 1997; No 137, 2000; No 108, 2008; No 61, 2016; No 64, 2020</td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am No 114, 1990; No 79, 1997</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am No 79, 1997; No 140, 2011</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>am No 115, 1988; No 137, 2000; No 140, 2001; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No 5, 2015</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 140, 2011; No 38, 2024; No 14, 2025</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 38, 2024</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

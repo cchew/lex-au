@@ -1,0 +1,3107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1994/59/!main"/>
+          <FRBRuri value="/akn/au/act/1994/59"/>
+          <FRBRdate date="1994-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="59"/>
+          <FRBRname value="foreign-evidence-act-1994"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1994/59/eng@2025-11-08/!main"/>
+          <FRBRuri value="/akn/au/act/1994/59/eng@2025-11-08"/>
+          <FRBRdate date="2025-11-08" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1994/59/eng@2025-11-08/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1994/59/eng@2025-11-08/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1994-01-01" type="generation" eId="evt-creation" source="#foreign-evidence-act-1994"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1999/194"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2001/55" date="2001-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2002/86"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2003/41" date="2003-06-03"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2005/136"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2006/54" date="2006-06-19"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2010/55" date="2010-06-04"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2011/174" date="2011-12-05"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2013/13" date="2013-03-14"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2014/116" date="2014-11-03"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2018/34" date="2018-05-22"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2018/42" date="2018-05-22"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2018/67" date="2018-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2020/134" date="2020-12-17"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2021/13" date="2021-03-01"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2023/63" date="2023-09-13"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2025/60" date="2025-11-06"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCTerm eId="term-asic" href="/ontology/term/au/term-asic" showAs="ASIC"/>
+        <TLCTerm eId="term-australian-law" href="/ontology/term/au/term-australian-law" showAs="Australian law"/>
+        <TLCTerm eId="term-business-record" href="/ontology/term/au/term-business-record" showAs="business record"/>
+        <TLCTerm eId="term-civil-proceeding" href="/ontology/term/au/term-civil-proceeding" showAs="civil proceeding"/>
+        <TLCTerm eId="term-convention" href="/ontology/term/au/term-convention" showAs="Convention"/>
+        <TLCTerm eId="term-criminal-proceeding" href="/ontology/term/au/term-criminal-proceeding" showAs="criminal proceeding"/>
+        <TLCTerm eId="term-document" href="/ontology/term/au/term-document" showAs="document"/>
+        <TLCTerm eId="term-duress" href="/ontology/term/au/term-duress" showAs="duress"/>
+        <TLCTerm eId="term-examination" href="/ontology/term/au/term-examination" showAs="examination"/>
+        <TLCTerm eId="term-foreign-authority" href="/ontology/term/au/term-foreign-authority" showAs="foreign authority"/>
+        <TLCTerm eId="term-foreign-business-authority" href="/ontology/term/au/term-foreign-business-authority" showAs="foreign business authority"/>
+        <TLCTerm eId="term-foreign-government-material" href="/ontology/term/au/term-foreign-government-material" showAs="foreign government material"/>
+        <TLCTerm eId="term-foreign-law" href="/ontology/term/au/term-foreign-law" showAs="foreign law"/>
+        <TLCTerm eId="term-foreign-public-document" href="/ontology/term/au/term-foreign-public-document" showAs="foreign public document"/>
+        <TLCTerm eId="term-inferior-court" href="/ontology/term/au/term-inferior-court" showAs="inferior court"/>
+        <TLCTerm eId="term-member-of-the-australian-federal-police" href="/ontology/term/au/term-member-of-the-australian-federal-police" showAs="member of the Australian Federal Police"/>
+        <TLCTerm eId="term-pmv-related-questioning-warrant" href="/ontology/term/au/term-pmv-related-questioning-warrant" showAs="PMV-related questioning warrant"/>
+        <TLCTerm eId="term-proceeds-of-crime-law" href="/ontology/term/au/term-proceeds-of-crime-law" showAs="proceeds of crime law"/>
+        <TLCTerm eId="term-questioning-warrant" href="/ontology/term/au/term-questioning-warrant" showAs="questioning warrant"/>
+        <TLCTerm eId="term-related-civil-proceeding" href="/ontology/term/au/term-related-civil-proceeding" showAs="related civil proceeding"/>
+        <TLCTerm eId="term-substantial-adverse-effect" href="/ontology/term/au/term-substantial-adverse-effect" showAs="substantial adverse effect"/>
+        <TLCTerm eId="term-torture" href="/ontology/term/au/term-torture" showAs="torture"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Foreign Evidence Act 1994</p>
+      <p>No. 59, 1994</p>
+      <p><b>Compilation No.</b><b> </b><b>22</b></p>
+      <p><b>Compilation date:</b>	8 November 2025</p>
+      <p><b>Includes amendments:</b>	Act No. 60, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Foreign Evidence Act 1994</i> that shows the text of the law as amended and in force on 8 November 2025 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced</b><b> amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Definitions	1</p>
+      <p>4	References to evidence taken in an examination	7</p>
+      <p>5	External Territories	7</p>
+      <p>6	Act to bind Crown	7</p>
+      <p><ref href="#part-2">Part 2</ref>—Examination of witnesses abroad	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Proceedings in superior courts	8</p>
+      <p>7	Orders for taking evidence abroad	8</p>
+      <p>8	Directions and requests relating to orders	8</p>
+      <p>9	Use of evidence taken in an examination	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Proceedings in the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) and inferior courts	10</p>
+      <p>9A	Orders for taking evidence abroad—Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>)	10</p>
+      <p>10	Orders for taking evidence abroad—inferior courts	11</p>
+      <p>11	Orders for taking evidence abroad—family law matters	11</p>
+      <p>12	Use of evidence taken in an examination	12</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Subsequent proceedings	13</p>
+      <p>13	Directions for use in subsequent proceedings of evidence taken abroad	13</p>
+      <p>14	Use of that evidence in subsequent proceedings	13</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Miscellaneous	15</p>
+      <p>15	Discretion to exclude evidence	15</p>
+      <p>16	Variation or revocation of orders	15</p>
+      <p>17	Courts may exercise certain powers in chambers	15</p>
+      <p>18	Operation of other laws	16</p>
+      <p>19	Rules of court	16</p>
+      <p><ref href="#part-3">Part 3</ref>—Use of foreign material in criminal and related civil proceedings	17</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	17</p>
+      <p>20	Proceedings to which this Part applies	17</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Obtaining foreign material	18</p>
+      <p>21	Requests for foreign material	18</p>
+      <p>22	Requirements for testimony	18</p>
+      <p>23	Form of testimony	18</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Using foreign material	20</p>
+      <p>24	Foreign material may be adduced as evidence	20</p>
+      <p>25	Discretion to prevent foreign material being adduced—general	20</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Miscellaneous	22</p>
+      <p>26	Evidentiary certificates relating to requests made to foreign countries	22</p>
+      <p>27	Operation of other laws	22</p>
+      <p><ref href="#part-3A">Part 3A</ref>—Use of foreign material and foreign government material in terrorism-related proceedings	23</p>
+      <p>27A	Foreign material may be adduced as evidence	23</p>
+      <p>27AA	Evidentiary certificates relating to requests made to foreign countries	23</p>
+      <p>27B	Foreign government material may be adduced as evidence	23</p>
+      <p>27C	Discretion to prevent material being adduced	25</p>
+      <p>27D	Admissibility of material adduced	25</p>
+      <p>27DA	Warning and informing jury	27</p>
+      <p>27E	Operation of other laws	28</p>
+      <p><ref href="#part-4">Part 4</ref>—Use of foreign material and records of foreign business authorities in certain civil proceedings	29</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	29</p>
+      <p>28	Proceedings to which this Part applies	29</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Obtaining foreign material	30</p>
+      <p>29	Requests for foreign material	30</p>
+      <p>30	Requirements for testimony	30</p>
+      <p>31	Form of testimony	30</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Using foreign material	31</p>
+      <p>32	Foreign material may be adduced as evidence	31</p>
+      <p>33	Discretion to prevent foreign material being adduced	31</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Records of foreign business authorities	32</p>
+      <p>34	Evidence of records of foreign business authorities	32</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Miscellaneous	33</p>
+      <p>35	Evidentiary certificates relating to requests made to foreign business authorities	33</p>
+      <p>36	Operation of other laws	33</p>
+      <p><ref href="#part-5">Part 5</ref>—Authenticating foreign public documents	34</p>
+      <p>37	Certificates attached to foreign public documents	34</p>
+      <p>38	Foreign public documents not requiring legalisation	34</p>
+      <p>39	Lesser formalities for authentication etc.	35</p>
+      <p><ref href="#part-6">Part 6</ref>—Taking evidence for proceedings in foreign courts	36</p>
+      <p>40	Application of this <ref href="#part-36">Part	36</ref></p>
+      <p>41	Exercise of powers under this <ref href="#part-36">Part	36</ref></p>
+      <p>42	Orders	36</p>
+      <p>43	Copies etc. of documents	37</p>
+      <p>44	Intervention	37</p>
+      <p>45	Injunctions	38</p>
+      <p><ref href="#part-7">Part 7</ref>—Miscellaneous	39</p>
+      <p>46	Regulations	39</p>
+      <p>Schedule—Hague Convention abolishing the requirement of legalisation for foreign public documents	40</p>
+      <p>Endnotes	46</p>
+      <p>Endnote 1—About the endnotes	46</p>
+      <p>Endnote 2—Abbreviation key	48</p>
+      <p>Endnote 3—Legislation history	49</p>
+      <p>Endnote 4—Amendment history	52</p>
+      <p>Endnote 5—Editorial changes	54</p>
+      <p>An Act about certain evidentiary matters involving overseas jurisdictions</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Foreign Evidence Act 1994</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsections (2) and (4), this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), <ref href="#part-3">Part 3</ref> commences on a day to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If <ref href="#part-3">Part 3</ref> does not commence under subsection (2) within the period of 6 months beginning on the day on which this Act receives the Royal Assent, it commences on the first day after the end of that period.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subject to subsection (5), <ref href="#part-5">Part 5</ref> commences on a day to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The day fixed under subsection (4) must not be a day occurring before the Convention enters into force for Australia.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Definitions</heading>
+          <subsection eId="part-1__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-asic">ASIC</term> means <def>the Australian Securities and Investments Commission.</def></p>
+              <p><b><i>Australian court</i></b> means:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the High Court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a court exercising federal jurisdiction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a judge, justice or arbitrator under an Australian law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a person or body authorised by an Australian law, or by consent of parties, to hear, receive and examine evidence;</p>
+              </content>
+              <content>
+                <p>and, for the purposes of <ref href="#part-6">Part 6</ref>, includes a person or body authorised to take or receive evidence, whether on behalf of a court or otherwise and whether or not the person or body is empowered to require the answering of questions or the production of documents.</p>
+                <p><term refersTo="#term-australian-law">Australian law</term> means <def>a law (whether written or unwritten) of or in force in the Commonwealth, a State or a Territory.</def></p>
+                <p><b><i>business</i></b> has a meaning affected by clause 1 of Part 2 of the Dictionary in the <i>Evidence Act 1995</i>.</p>
+                <p><term refersTo="#term-business-record">business record</term> means <def>a document that: is or forms part of the records belonging to or kept by a person, body or organisation in the course of, or for the purposes of, a business; or at any time was or formed part of such a record.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is or forms part of the records belonging to or kept by a person, body or organisation in the course of, or for the purposes of, a business; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>at any time was or formed part of such a record.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-civil-proceeding">civil proceeding</term> means <def>a proceeding other than a criminal proceeding.</def></p>
+                <p><term refersTo="#term-convention">Convention</term> means <def>the Hague Convention Abolishing the Requirement of Legalisation for Foreign Public Documents, a copy of the English text of which is set out in the Schedule.</def></p>
+                <p><term refersTo="#term-criminal-proceeding">criminal proceeding</term> means <def>a prosecution for an offence and includes a proceeding for the committal of a person for trial or sentence for an offence, but does not include a prosecution for an offence that is a prescribed taxation offence within the meaning of <ref href="#part-II">Part II</ref>I of <ref href="">the Taxation Administration Act 1953</ref>.</def></p>
+                <p><b><i>designated offence</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	an offence against subsection 34GD(8) of the <i>Australian Security Intelligence Organisation Act 1979</i>, if the questioning warrant to which the offence relates is a PMV-related questioning warrant; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	an offence against <ref href="#sec-49">section 49</ref> of the <i>Aviation Transport Security Act 2004</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	an offence against either of the following provisions of the <i>Charter of the United Nations Act 1945</i>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p><ref href="#part-4">Part 4</ref> of that Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	<ref href="#part-5">Part 5</ref> of that Act, to the extent that it relates to the <i>Charter of the United Nations (Sanctions—Al</i><i>-</i><i>Qaida) Regulations</i><i> </i><i>2008</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	an offence against Subdivision A of <ref href="#dvs-7">Division 7</ref>2 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-da">
+              <num>da</num>
+              <content>
+                <p>	(da)	an offence against Subdivision B of <ref href="#dvs-8">Division 8</ref>0 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-db">
+              <num>db</num>
+              <content>
+                <p>	(db)	an offence against <ref href="#dvs-8">Division 8</ref>2 of the <i>Criminal Code</i> (sabotage); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	an offence against <ref href="#part-5">Part 5</ref>.3 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ea">
+              <num>ea</num>
+              <content>
+                <p>	(ea)	an offence against <ref href="#part-5">Part 5</ref>.3A of the <i>Criminal Code</i> (state sponsors of terrorism); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	an offence against <ref href="#part-5">Part 5</ref>.4 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-fa">
+              <num>fa</num>
+              <content>
+                <p>	(fa)	an offence against <ref href="#part-5">Part 5</ref>.5 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>	(h)	an offence against <ref href="#dvs-1">Division 1</ref> of Part 2 of the <i>Crimes (Aviation) Act 1991</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	an offence against <ref href="#sec-8">section 8</ref> of the <i>Crimes (Biological Weapons) Act 1976</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-k">
+              <num>k</num>
+              <content>
+                <p>	(k)	an offence against <ref href="#sec-8">section 8</ref> of the <i>Crimes (Hostages) Act 1989</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-l">
+              <num>l</num>
+              <content>
+                <p>	(l)	an offence against the <i>Crimes (Internationally Protected Persons) Act 1976</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-m">
+              <num>m</num>
+              <content>
+                <p>	(m)	an offence against <ref href="#sec-6">section 6</ref> of the <i>Crimes Act 1914</i> that relates to an offence mentioned in any of the above paragraphs.</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	For other ancillary offences, see <ref href="#sec-11">section 11</ref>.6 of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p><term refersTo="#term-document">document</term> means <def>any record of information, and includes: anything on which there is writing; and anything on which there are marks, figures, symbols or perforations having a meaning for persons qualified to interpret them; and anything from which sounds, images or writings can be reproduced with or without the aid of anything else; and a map, plan, drawing or photograph.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>anything on which there is writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>anything on which there are marks, figures, symbols or perforations having a meaning for persons qualified to interpret them; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>anything from which sounds, images or writings can be reproduced with or without the aid of anything else; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a map, plan, drawing or photograph.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-duress">duress</term> has the meaning given by <def>subsection 27D(3).</def></p>
+                <p><term refersTo="#term-examination">examination</term> includes <def>any proceeding that is for the taking of evidence of a person conducted by the judicial authorities of a foreign country in relation to a letter of request issued as a result of an order made by a superior court under <ref href="#part-2">Part 2</ref>.</def></p>
+                <p><term refersTo="#term-foreign-authority">foreign authority</term> means <def>an authority of a foreign country or of part of a foreign country.</def></p>
+                <p><term refersTo="#term-foreign-business-authority">foreign business authority</term> means <def>a person or body that has, under a law of a foreign country, functions relating to the administration or enforcement of a law of that country that regulates, or relates to the regulation of, business or persons engaged in business.</def></p>
+                <p><term refersTo="#term-foreign-government-material">foreign government material</term> means <def>material provided by a foreign authority to an authority of the Commonwealth.</def></p>
+                <p><term refersTo="#term-foreign-law">foreign law</term> means <def>a law (whether written or unwritten) of or in force in a foreign country.</def></p>
+                <p><b><i>foreign material</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>for the purposes of Parts 3 and 3A—the testimony of a person that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>was obtained as a result of a request of a kind referred to in <ref href="#sec-21">section 21</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>complies with the requirements of <ref href="#sec-22">section 22</ref>;</p>
+              </content>
+              <content>
+                <p>including any documents or things produced by or with such testimony; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>for the purposes of <ref href="#part-4">Part 4</ref>—the testimony of a person that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>was obtained as a result of a request of a kind referred to in <ref href="#sec-29">section 29</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>complies with the requirements of <ref href="#sec-30">section 30</ref>;</p>
+              </content>
+              <content>
+                <p>including any documents or things produced by or with such testimony.</p>
+                <p><term refersTo="#term-foreign-public-document">foreign public document</term> means <def>a document to which Article 1 of the Convention applies, other than a document executed in a foreign country (if any) that has objected to Australia’s accession to the Convention.</def></p>
+                <p><term refersTo="#term-inferior-court">inferior court</term> means <def>any of the following courts (other than a superior court): a court of a State when exercising federal jurisdiction; subject to subsection (2), a court of a Territory (other than the Northern Territory); a court of the Northern Territory when exercising jurisdiction conferred or vested by an Act of the Parliament.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a court of a State when exercising federal jurisdiction;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>subject to subsection (2), a court of a Territory (other than the Northern Territory);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of the Northern Territory when exercising jurisdiction conferred or vested by an Act of the Parliament.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-member-of-the-australian-federal-police">member of the Australian Federal Police</term> has the same meaning as <def>in <ref href="">the Australian Federal Police Act 1979</ref>.</def></p>
+                <p><term refersTo="#term-pmv-related-questioning-warrant">PMV-related questioning warrant</term> means <def>a questioning warrant that is issued in relation to politically motivated violence (within the meaning of <ref href="">the Australian Security Intelligence Organisation Act 1979</ref>).</def></p>
+                <p><term refersTo="#term-proceeds-of-crime-law">proceeds of crime law</term> means <def><ref href="">the Proceeds of Crime Act 2002</ref> or <ref href="">the Proceeds of Crime Act 1987</ref>.</def></p>
+                <p><term refersTo="#term-questioning-warrant">questioning warrant</term> has the same meaning as <def>in <ref href="#dvs-3">Division 3</ref> of <ref href="#part-II">Part II</ref>I of <ref href="">the Australian Security Intelligence Organisation Act 1979</ref>.</def></p>
+                <p><term refersTo="#term-related-civil-proceeding">related civil proceeding</term>, in relation to a criminal proceeding, means <def>any civil proceeding arising from the same subject matter from which the criminal proceeding arose, and, in particular, includes: a proceeding under a proceeds of crime law; or 	(b)	a proceeding under the <i>Customs Act 1901</i>; or a proceeding for the recovery of tax, or of any duty, levy or charge, payable to the Commonwealth.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a proceeding under a proceeds of crime law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a proceeding under the <i>Customs Act 1901</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a proceeding for the recovery of tax, or of any duty, levy or charge, payable to the Commonwealth.</p>
+              </content>
+              <content>
+                <p><b><i>senior AFP member</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#commissioner">the Commissioner</role> of the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a Deputy Commissioner of the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	a senior executive AFP employee (within the meaning of the <i>Australian Federal Police Act 1979</i>) who is a member of the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a member of the Australian Federal Police occupying a position in the Australian Federal Police that is equivalent to or higher than one of the positions mentioned in paragraphs (a), (b) and (c), whether or not a declaration under <ref href="#sec-25">section 25</ref> of that Act is in force in respect of the person.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-substantial-adverse-effect">substantial adverse effect</term> means <def>an effect that is adverse and not insubstantial, insignificant or trivial.</def></p>
+                <p><b><i>superior court</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the High Court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Federal Court of Australia or the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Supreme Court of a State, or the Family Court of Western Australia, when exercising federal jurisdiction; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>subject to subsection (2), the Supreme Court of a Territory (other than the Northern Territory); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the Supreme Court of the Northern Territory when exercising jurisdiction conferred or vested by an Act of the Parliament.</p>
+              </content>
+              <content>
+                <p><b><i>terrorism</i></b><b><i>-</i></b><b><i>related proceeding</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a criminal proceeding for a designated offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a proceeding under the <i>Proceeds of Crime Act 2002</i> relating to a designated offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	a proceeding under <ref href="#dvs-10">Division 10</ref>4 of the <i>Criminal Code</i>.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-torture">torture</term> has the meaning given by <def>subsection 27D(3).</def></p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>On and after a day fixed by Proclamation:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Supreme Court of the Australian Capital Territory ceases to be a superior court for the purposes of this Act except so far as it exercises jurisdiction conferred or vested by an Act of the Parliament; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>any other court of the Australian Capital Territory ceases to be an inferior court for the purposes of this Act except so far as it exercises jurisdiction conferred or vested by an Act of the Parliament.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>References to evidence taken in an examination</heading>
+          <content>
+            <p>A reference in this Act to evidence taken in an examination includes a reference to:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a document produced at the examination; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>answers made to any written interrogatories presented at the examination, whether the answers are made in writing or are made orally and put in writing.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>External Territories</heading>
+          <content>
+            <p>This Act extends to each external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Act to bind Crown</heading>
+          <content>
+            <p>This Act binds the Crown in all its capacities.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Examination of witnesses abroad</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Proceedings in superior courts</heading>
+          <section eId="part-2__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Orders for taking evidence abroad</heading>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p>In any proceeding before a superior court, the court may, if it appears in the interests of justice to do so, on the application of a party to the proceeding, make an order, relating to a person outside Australia:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>for examination of the person on oath or affirmation at any place outside Australia before a judge of the court, an officer of the court or such other person as the court may appoint; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>for issue of a commission for examination of the person on oath or affirmation at any place outside Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>for issue of a letter of request to the judicial authorities of a foreign country to take the evidence of the person or cause it to be taken.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In deciding whether it is in the interests of justice to make such an order, the matters to which the court is to have regard include the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>whether the person is willing or able to come to Australia to give evidence in the proceeding;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>whether the person will be able to give evidence material to any issue to be tried in the proceeding;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>whether, having regard to the interests of the parties to the proceeding, justice will be better served by granting or refusing the order.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Directions and requests relating to orders</heading>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a court makes an order of the kind referred to in paragraph 7(1)(a) or (b), the court may, at the time of making the order or at a later time, give such directions as it thinks just relating to the procedure to be followed in relation to the examination, including directions about:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-8__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the time, place and manner of the examination; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other matter that the court thinks relevant.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If a court makes an order of the kind referred to in paragraph 7(1)(c), the court may include in the order a request about any matter relating to taking that evidence, including any of the following matters:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-8__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>examination, cross-examination or re-examination of the person, whether the person’s evidence is given orally, on affidavit or otherwise;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>attendance of the legal representative of each party to the proceeding in question and participation of those persons in the examination in appropriate circumstances;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-8__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>any matter prescribed by the regulations.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Use of evidence taken in an examination</heading>
+            <subsection eId="part-2__dvs-1__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), the court may, on such terms (if any) as it thinks fit, permit a party to the proceeding to tender as evidence in the proceeding:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-9__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person’s evidence taken in an examination held as a result of an order under subsection 7(1); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-9__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a record of that evidence.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Evidence of a person so tendered is not admissible if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-9__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>it appears to the court’s satisfaction at the hearing of the proceeding that the person is in Australia and is able to attend the hearing; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-9__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the evidence would not have been admissible had it been adduced at the hearing.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Proceedings in the Federal Circuit and Family Court of Australia (Division 2) and inferior courts</heading>
+          <section eId="part-2__dvs-2__sec-9A">
+            <num>9A</num>
+            <heading>Orders for taking evidence abroad—Federal Circuit and Family Court of Australia (Division 2)</heading>
+            <content>
+              <p>Child support or family law matters</p>
+            </content>
+            <subsection eId="part-2__dvs-2__sec-9A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>) may, on the application of a party to a proceeding before the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) in a child support or family law matter, exercise the same power to make an order of the kind referred to in <ref href="#dvs-1">Division 1</ref> as the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>) has under that Division for the purpose of a proceeding in the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>).</p>
+              </content>
+              <content>
+                <p>Matters other than child support or family law matters</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Federal Court of Australia may, on the application of a party to a proceeding before the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) in a matter other than a child support or family law matter, exercise the same power to make an order of the kind referred to in <ref href="#dvs-1">Division 1</ref> as the Federal Court of Australia has under that Division for the purpose of a proceeding in the Federal Court of Australia.</p>
+              </content>
+              <content>
+                <p>Definition</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>child support or family law matter</i></b> means:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9A__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a matter arising under the <i>Family Law Act 1975</i> or regulations under that Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9A__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	a matter arising under the <i>Child Support (Assessment) Act 1989</i> or regulations under that Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9A__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	a matter arising under the <i>Child Support (Registration and Collection) Act 1988</i> or regulations under that Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Orders for taking evidence abroad—inferior courts</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Supreme Court of a State or Territory may, on the application of a party to a proceeding before an inferior court in that State or Territory, exercise the same power to make an order of the kind referred to in <ref href="#dvs-1">Division 1</ref> for the purpose of that proceeding as the Supreme Court has under that Division for the purpose of a proceeding in the Supreme Court.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	This section does not apply to a proceeding before a court of summary jurisdiction exercising jurisdiction under the <i>Family Law Act 1975</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Orders for taking evidence abroad—family law matters</heading>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The appropriate court may, on the application of a party to a proceeding before a court of summary jurisdiction exercising jurisdiction under the <i>Family Law Act 1975</i>, exercise the same power to make an order of the kind referred to in <ref href="#dvs-1">Division 1</ref> for the purpose of that proceeding as the appropriate court has under that Division:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>if it is the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>)—for the purpose of any proceeding before it; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	otherwise—for the purpose of a proceeding before it when it is exercising jurisdiction under the <i>Family Law Act 1975</i>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>appropriate court</i></b> means:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the proceeding takes place in a State other than Western Australia, or in a Territory other than the Northern Territory, the Territory of Christmas Island or the Territory of Cocos (Keeling) Islands—the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the proceeding takes place in Western Australia, the Territory of Christmas Island or the Territory of Cocos (Keeling) Islands—the Family Court of Western Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-11__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>if the proceeding takes place in the Northern Territory—the Supreme Court of the Northern Territory.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Use of evidence taken in an examination</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), if an order has been made under <ref href="#sec-9A">section 9A</ref>, 10 or 11 for the purposes of a proceeding before the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or an inferior court, the court may, on such terms (if any) as it thinks fit, permit a party to the proceeding to tender as evidence in the proceeding:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person’s evidence taken in an examination held as a result of the order; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a record of that evidence.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Evidence of a person so tendered is not admissible if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>it appears to the satisfaction of the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or the inferior court, as the case may be, at the hearing of the proceeding that the person is in Australia and is able to attend the hearing; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the evidence would not have been admissible had it been adduced at the hearing.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Subsequent proceedings</heading>
+          <section eId="part-2__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Directions for use in subsequent proceedings of evidence taken abroad</heading>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If, under subsection 10(1), a superior court makes an order in relation to a committal proceeding, it may include in the order a direction that evidence taken outside Australia under the order may, subject to this Division, be tendered in a proceeding that is:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a criminal proceeding that results from the committal proceeding; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a related civil proceeding.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If, under subsection 7(1) or 10(1), a superior court makes an order in relation to a criminal proceeding (other than a committal proceeding), it may include in the order a direction that evidence taken outside Australia under the order may, subject to this Division, be tendered in a proceeding that is a related civil proceeding.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-14">
+            <num>14</num>
+            <heading>Use of that evidence in subsequent proceedings</heading>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies to a proceeding to which a direction, included in an order under subsection 7(1) or 10(1), relates.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection (3), the court before which the proceeding takes place may, on such terms (if any) as it thinks fit, permit a party to the proceeding to tender as evidence in the proceeding:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person’s evidence taken in an examination held as a result of the order under subsection 7(1) or 10(1); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>a record of that evidence.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person’s evidence so tendered is not admissible if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>it appears to the court’s satisfaction at the hearing of the subsequent proceeding that the person is in Australia and is able to attend the hearing; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the evidence would not have been admissible had it been adduced at the hearing of the subsequent proceeding.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-4">
+          <num>4</num>
+          <heading>Miscellaneous</heading>
+          <section eId="part-2__dvs-4__sec-15">
+            <num>15</num>
+            <heading>Discretion to exclude evidence</heading>
+            <subsection eId="part-2__dvs-4__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies to any civil proceeding or criminal proceeding in a superior court, the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>) or an inferior court.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If it is in the interests of justice to do so, a court may exclude from the proceeding evidence obtained under this Part, even if it is otherwise admissible.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-15__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This Part does not affect a court’s power under any other law to exclude, or limit the use of, evidence:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-15__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>because it has been obtained unlawfully or improperly; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-15__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>because it would, if admitted, operate unfairly or be unfairly prejudicial to a party; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-15__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>for any other reason.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-16">
+            <num>16</num>
+            <heading>Variation or revocation of orders</heading>
+            <subsection eId="part-2__dvs-4__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A superior court may vary or revoke an order made by the court under <ref href="#sec-7">section 7</ref>, 9A, 10 or 11.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The power to vary an order includes the power to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-16__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>include in the order a direction under <ref href="#sec-13">section 13</ref>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-16__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>vary or revoke a direction under <ref href="#sec-13">section 13</ref> that is included in the order.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If an order under <ref href="#sec-7">section 7</ref> or 10 that includes a direction under <ref href="#sec-13">section 13</ref> is revoked, the direction under <ref href="#sec-13">section 13</ref> is taken to have been revoked at the same time.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-4__sec-17">
+            <num>17</num>
+            <heading>Courts may exercise certain powers in chambers</heading>
+            <content>
+              <p>A court may exercise its power under <ref href="#sec-7">section 7</ref>, 9A, 10, 11, 13 or 16 in chambers.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-4__sec-18">
+            <num>18</num>
+            <heading>Operation of other laws</heading>
+            <content>
+              <p>This Part is not intended to exclude or limit the operation of any Australian law, or of any rule or regulation made under such a law, that provides for the examination of witnesses outside Australia for the purpose of a proceeding in Australia.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-4__sec-19">
+            <num>19</num>
+            <heading>Rules of court</heading>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The power to make rules regulating the practice and procedure of a superior court extends, for the purpose of regulating proceedings brought under this Part in or before that court, to making any rules:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-19__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>prescribing all matters necessary or convenient to be prescribed for carrying out or giving effect to this Part; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-19__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>in particular, prescribing matters relating to the practice and procedure of that superior court in proceedings for making an order under <ref href="#dvs-1">Division 1</ref> or 2.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Rules so made must not be inconsistent with this Act or with regulations made under <ref href="#sec-46">section 46</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section does not affect any power to make rules under any other law.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Use of foreign material in criminal and related civil proceedings</heading>
+        <division eId="part-3__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-3__dvs-1__sec-20">
+            <num>20</num>
+            <heading>Proceedings to which this Part applies</heading>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This Part applies to a proceeding, in any Australian court, that is:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a criminal proceeding for an offence against the law of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a related civil proceeding; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>a proceeding under a proceeds of crime law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>However, this Part does not apply to a terrorism-related proceeding. This does not prevent testimony or any documents or things from being foreign material for the purposes of <ref href="#part-3A">Part 3A</ref>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	<ref href="#part-3A">Part 3A</ref> deals with use of foreign material in terrorism-related proceedings.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>This Part also applies to a proceeding, in any court of a State or Territory specified in the regulations, that is:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a criminal proceeding for an offence against the law of a State or Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>a related civil proceeding of a kind specified in the regulations in respect of a State or Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>a proceeding under a law that is a corresponding law within the meaning of a proceeds of crime law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>a proceeding under a law of a Territory (other than the Australian Capital Territory or the Northern Territory) that is prescribed by the regulations as a law that corresponds to a proceeds of crime law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-2">
+          <num>2</num>
+          <heading>Obtaining foreign material</heading>
+          <section eId="part-3__dvs-2__sec-21">
+            <num>21</num>
+            <heading>Requests for foreign material</heading>
+            <content>
+              <p>This Part applies to testimony, and any documents or things produced by or with such testimony, obtained as a result of a request made by or on behalf of the Attorney-General to a foreign country for the testimony of a person, and any documents or things produced by or with such testimony, to be made available.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-2__sec-22">
+            <num>22</num>
+            <heading>Requirements for testimony</heading>
+            <subsection eId="part-3__dvs-2__sec-22__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The testimony must have been taken:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>on oath or affirmation; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-1__para-aa">
+                <num>aa</num>
+                <content>
+                  <p>under an obligation to tell the truth imposed, whether expressly or by implication, by or under a law of the foreign country concerned; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>under such caution or admonition as would be accepted, by courts in the foreign country concerned, for the purposes of giving testimony in proceedings before those courts.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-22__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The testimony must purport to be signed or certified by:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a judge, magistrate or officer in or of the foreign country concerned; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>a person who is authorised, by or under a law of the foreign country concerned, to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>administer an oath or affirmation; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-22__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>impose an obligation on the person giving the testimony to tell the truth.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-2__sec-23">
+            <num>23</num>
+            <heading>Form of testimony</heading>
+            <subsection eId="part-3__dvs-2__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The testimony may be reduced to writing or be recorded on a tape, disk or other device from which sounds or images are capable of being reproduced.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The testimony need not:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-23__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>be in the form of an affidavit; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-23__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>constitute a transcript of a proceeding in a foreign court.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-3">
+          <num>3</num>
+          <heading>Using foreign material</heading>
+          <section eId="part-3__dvs-3__sec-24">
+            <num>24</num>
+            <heading>Foreign material may be adduced as evidence</heading>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, foreign material may be adduced in a proceeding to which this Part applies.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The foreign material is not to be adduced as evidence if:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>it appears to the court’s satisfaction at the hearing of the proceeding that the person who gave the testimony concerned is in Australia and is able to attend the hearing; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the evidence would not have been admissible had it been adduced from the person at the hearing.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Paragraph (2)(b) does not apply if:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the foreign material is a business record; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the only reason why the evidence would not have been admissible had it been adduced from the person at the hearing is that an Australian law relating to hearsay evidence (however described) would have applied to the evidence.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-24__subsec-4">
+              <num>4</num>
+              <content>
+                <p>For the purpose of determining whether foreign material is a business record, and may be adduced as evidence, the court may:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>examine the foreign material; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-24__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>draw any reasonable inference from the form and contents of the foreign material as well as from any other matters from which inferences may properly be drawn.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-25">
+            <num>25</num>
+            <heading>Discretion to prevent foreign material being adduced—general</heading>
+            <subsection eId="part-3__dvs-3__sec-25__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The court may direct that foreign material not be adduced as evidence if it appears to the court’s satisfaction that, having regard to the interests of the parties to the proceeding, justice would be better served if the foreign material were not adduced as evidence.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-25__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting the matters that the court may take into account in deciding whether to give such a direction, it must take into account:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-25__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the extent to which the foreign material provides evidence that would not otherwise be available; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-25__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the probative value of the foreign material with respect to any issue that is likely to be determined in the proceeding; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-25__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the extent to which statements contained in the foreign material could, at the time they were made, be challenged by questioning the persons who made them; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-25__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>whether exclusion of the foreign material would cause undue expense or delay; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-25__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>whether exclusion of the foreign material would unfairly prejudice any party to the proceeding.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-4">
+          <num>4</num>
+          <heading>Miscellaneous</heading>
+          <section eId="part-3__dvs-4__sec-26">
+            <num>26</num>
+            <heading>Evidentiary certificates relating to requests made to foreign countries</heading>
+            <subsection eId="part-3__dvs-4__sec-26__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Attorney-General may issue a written certificate signed by the Attorney-General certifying that specified documents or things were obtained as a result of a request made to a foreign country by or on behalf of the Attorney-General.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-26__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In any proceeding to which this Part applies, a certificate under subsection (1) is prima facie evidence of the matters stated in the certificate.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-4__sec-27">
+            <num>27</num>
+            <heading>Operation of other laws</heading>
+            <content>
+              <p>This Part does not limit the ways in which a matter may be proved, or evidence may be adduced, under this Act (other than this Part) or any other Australian law.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3A">
+        <num>3A</num>
+        <heading>Use of foreign material and foreign government material in terrorism-related proceedings</heading>
+        <section eId="part-3A__sec-27A">
+          <num>27A</num>
+          <heading>Foreign material may be adduced as evidence</heading>
+          <subsection eId="part-3A__sec-27A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Foreign material may be adduced in a terrorism-related proceeding.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note 1:	The court has a discretion to direct that foreign material not be adduced if it would have a substantial adverse effect on the right of a party to the proceeding to receive a fair hearing (see <ref href="#sec-27C">section 27C</ref>).</p>
+              </content>
+            </authorialNote>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note 2:	Section 27D deals with admissibility of foreign material adduced.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3A__sec-27A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>However, foreign material is not to be adduced as evidence if it appears to the court’s satisfaction at the hearing of the proceeding that the person who gave the testimony concerned is in Australia and is able to attend the hearing.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27AA">
+          <num>27AA</num>
+          <heading>Evidentiary certificates relating to requests made to foreign countries</heading>
+          <subsection eId="part-3A__sec-27AA__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Attorney-General may issue a written certificate signed by the Attorney-General certifying that specified documents or things were obtained as a result of a request made to a foreign country by or on behalf of the Attorney-General.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27AA__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In any terrorism-related proceeding, a certificate under subsection (1) is prima facie evidence of the matters stated in the certificate.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27B">
+          <num>27B</num>
+          <heading>Foreign government material may be adduced as evidence</heading>
+          <content>
+            <p>Adducing foreign government material</p>
+          </content>
+          <subsection eId="part-3A__sec-27B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Foreign government material may be adduced in a terrorism-related proceeding if the material is:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>annexed to a written statement by a senior AFP member that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>is verified on oath or affirmation by the member; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>meets the requirements in subsection (2); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>accompanied by a certificate of the Attorney-General given under subsection (3).</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note 1:	The court has a discretion to direct that foreign government material not be adduced if it would have a substantial adverse effect on the right of a party to the proceeding to receive a fair hearing (see <ref href="#sec-27C">section 27C</ref>).</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note 2:	Section 27D deals with admissibility of foreign government material adduced.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Content of statement by senior AFP member</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-27B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A statement by a senior AFP member for the purposes of paragraph (1)(a) must:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27B__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>relate only to foreign government material annexed to the statement; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>state what the material is; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>state, to the best of the senior AFP member’s knowledge:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>how the material, and any information contained in the material, was obtained by the first foreign authority to obtain or produce the material or information; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27B__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>each step in the process by which the material or information came from that foreign authority into the possession of the Australian Federal Police.</p>
+              </content>
+              <content>
+                <p>Attorney-General’s certificate</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-27B__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Attorney-General may certify, in a form prescribed under subsection (4), that he or she is satisfied that it was not practicable to obtain the foreign government material or the information in the foreign government material as foreign material.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27B__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Attorney-General may by legislative instrument prescribe a form for a certificate to be given under subsection (3).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27B__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A certificate given under subsection (3) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27C">
+          <num>27C</num>
+          <heading>Discretion to prevent material being adduced</heading>
+          <subsection eId="part-3A__sec-27C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies in relation to a terrorism-related proceeding described in an item of the following table if a person described in that item seeks to adduce foreign material or foreign government material in the proceeding.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Persons seeking to adduce material in proceedings</th>
+                <th>Persons seeking to adduce material in proceedings</th>
+                <th>Persons seeking to adduce material in proceedings</th>
+              </tr>
+              <tr>
+                <td>Item</td>
+                <td>Proceeding</td>
+                <td>Person seeking to adduce material</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Criminal proceeding for a designated offence</td>
+                <td>Prosecutor</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Proceeding under the Proceeds of Crime Act 2002 relating to a designated offence</td>
+                <td>The responsible authority under that Act in relation to the proceeding</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Proceeding under Division 104 of the Criminal Code</td>
+                <td>A member of the Australian Federal Police or a special member (within the meaning of the Australian Federal Police Act 1979)</td>
+              </tr>
+            </table>
+          </subsection>
+          <subsection eId="part-3A__sec-27C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The court may direct that the material not be adduced as evidence in the proceeding if the court is satisfied that adducing the material would have a substantial adverse effect on the right of another party to the proceeding to receive a fair hearing.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27D">
+          <num>27D</num>
+          <heading>Admissibility of material adduced</heading>
+          <subsection eId="part-3A__sec-27D__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following are admissible in a terrorism-related proceeding, subject to subsection (2) but despite any other Australian law about evidence:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27D__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>foreign material adduced under subsection 27A(1) in the proceeding;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>foreign government material adduced under subsection 27B(1) in the proceeding;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the statement to which the foreign government material was annexed as described in paragraph 27B(1)(a);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the certificate that accompanied the foreign government material as described in paragraph 27B(1)(b).</p>
+              </content>
+              <content>
+                <p>Exception to admissibility</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-27D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Foreign material or foreign government material is not admissible if the court is satisfied that the material, or information contained in the material, was obtained directly as a result of torture or duress.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27D__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In subsection (2):</p>
+            </content>
+            <content>
+              <p><b><i>duress</i></b> means a threat that:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>is made explicitly or implicitly to a person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>is a threat to imminently cause one or both of the following unless material or information is provided:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>death or serious injury of the person, a member of the person’s family or a third party;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>damage to, or loss by the person of, the person’s significant assets; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>is a threat to which a reasonable person would respond by providing the material or information.</p>
+              </content>
+              <content>
+                <p><b><i>torture</i></b> means an act or omission by which severe pain or suffering, whether physical or mental, is intentionally inflicted on a person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>for the purpose of obtaining from the person or from a third person information or a confession; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>for the purpose of punishing the person for an act that the person or a third person has committed or is suspected of having committed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>for the purpose of intimidating or coercing the person or a third person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>for a purpose related to a purpose mentioned in paragraph (a), (b) or (c); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>for any reason based on discrimination that is inconsistent with the Articles of the International Covenant on Civil and Political Rights done at New York on <date date="1966-12-16">16 December 1966</date>;</p>
+              </content>
+              <content>
+                <p>but does not include an act or omission arising only from, inherent in or incidental to lawful sanctions that are not inconsistent with the Articles of the Covenant.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	The International Covenant on Civil and Political Rights is in Australian Treaty Series 1980 No. 23 ([1980] ATS 23) and could in 2014 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-27D__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If foreign government material is not admissible, neither of the following is admissible, so far as it relates to the inadmissible foreign government material:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27D__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the statement described in paragraph (1)(c);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27D__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the certificate described in paragraph (1)(d).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27DA">
+          <num>27DA</num>
+          <heading>Warning and informing jury</heading>
+          <subsection eId="part-3A__sec-27DA__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If foreign material or foreign government material is admitted in a terrorism-related proceeding conducted before a jury, and a party to the proceeding so requests, the judge is to:</p>
+            </content>
+            <paragraph eId="part-3A__sec-27DA__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>warn the jury that the material may be unreliable; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27DA__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>inform the jury of matters that may cause it to be unreliable; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-27DA__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>warn the jury of the need for caution in determining whether to accept the material and the weight to be given to it.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-27DA__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The judge need not comply with subsection (1) if there are good reasons for not doing so.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27DA__subsec-3">
+            <num>3</num>
+            <content>
+              <p>It is not necessary that a particular form of words be used in giving the warning or information.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-27DA__subsec-4">
+            <num>4</num>
+            <content>
+              <p>This section does not affect any other power of the judge to give a warning to, or to inform, the jury.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-27E">
+          <num>27E</num>
+          <heading>Operation of other laws</heading>
+          <content>
+            <p>This Part does not limit the ways in which a matter may be proved, or evidence may be adduced, under this Act (other than this Part) or any other Australian law.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Use of foreign material and records of foreign business authorities in certain civil proceedings</heading>
+        <division eId="part-4__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-4__dvs-1__sec-28">
+            <num>28</num>
+            <heading>Proceedings to which this Part applies</heading>
+            <content>
+              <p>This Part applies to a proceeding, in an Australian court, that:</p>
+            </content>
+            <paragraph eId="part-4__dvs-1__sec-28__para-a">
+              <num>a</num>
+              <content>
+                <p>is a civil proceeding other than a related civil proceeding; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-1__sec-28__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	is a proceeding under the <i>Corporations Act 2001</i> or the <i>Australian Securities and Investments Commission Act 2001</i> in which ASIC is a party.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-4__dvs-2">
+          <num>2</num>
+          <heading>Obtaining foreign material</heading>
+          <section eId="part-4__dvs-2__sec-29">
+            <num>29</num>
+            <heading>Requests for foreign material</heading>
+            <content>
+              <p>This Part applies to testimony, and any documents or things produced by or with such testimony, obtained as the result of a request by ASIC to a foreign business authority for the testimony of a person, and any documents or things produced by or with such testimony, to be made available.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-2__sec-30">
+            <num>30</num>
+            <heading>Requirements for testimony</heading>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The testimony must have been taken:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>on oath or affirmation; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>under such caution or admonition as would be accepted, by courts in the foreign country concerned, for the purposes of giving testimony in proceedings before those courts.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The testimony must:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the foreign business authority is an individual—purport to be signed or certified by that individual; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>otherwise—purport to be signed by an office holder of the foreign business authority, and purport to bear an official or public seal of the foreign business authority or an office holder of the foreign business authority.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-31">
+            <num>31</num>
+            <heading>Form of testimony</heading>
+            <subsection eId="part-4__dvs-2__sec-31__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The testimony may be reduced to writing or be recorded on an audio or video tape.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-31__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The testimony need not:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-31__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>be in the form of an affidavit; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-31__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>constitute a transcript of a proceeding in a foreign court.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-3">
+          <num>3</num>
+          <heading>Using foreign material</heading>
+          <section eId="part-4__dvs-3__sec-32">
+            <num>32</num>
+            <heading>Foreign material may be adduced as evidence</heading>
+            <subsection eId="part-4__dvs-3__sec-32__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), foreign material may be adduced in a proceeding to which this Part applies.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-32__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The foreign material is not to be adduced as evidence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-32__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>it appears to the court’s satisfaction at the hearing of the proceeding that the person who gave the testimony concerned is in Australia and is able to attend the hearing; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-32__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the evidence would not have been admissible had it been adduced from the person at the hearing.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-3__sec-33">
+            <num>33</num>
+            <heading>Discretion to prevent foreign material being adduced</heading>
+            <subsection eId="part-4__dvs-3__sec-33__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The court may direct that foreign material not be adduced as evidence if it appears to the court’s satisfaction that, having regard to the interests of the parties to the proceeding, justice would be better served if the foreign material were not adduced as evidence.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-33__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting the matters that the court may take into account in deciding whether to give such a direction, it must take into account:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-33__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the extent to which the foreign material provides evidence that would not otherwise be available; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-33__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the probative value of the foreign material with respect to any issue that is likely to be determined in the proceeding; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-33__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the extent to which statements contained in the foreign material could, at the time they were made, be challenged by questioning the persons who made them; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-33__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>whether exclusion of the foreign material would cause undue expense or delay; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-33__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>whether exclusion of the foreign material would unfairly prejudice any party to the proceeding.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-4">
+          <num>4</num>
+          <heading>Records of foreign business authorities</heading>
+          <section eId="part-4__dvs-4__sec-34">
+            <num>34</num>
+            <heading>Evidence of records of foreign business authorities</heading>
+            <content>
+              <p>Evidence of a record of a foreign business authority may be adduced in a proceeding to which this Part applies by producing a document that:</p>
+            </content>
+            <paragraph eId="part-4__dvs-4__sec-34__para-a">
+              <num>a</num>
+              <content>
+                <p>purports to be a copy of, or an extract from or summary of, the record; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-4__sec-34__para-b">
+              <num>b</num>
+              <content>
+                <p>purports to have been certified by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-4__sec-34__para-i">
+              <num>i</num>
+              <content>
+                <p>if the foreign business authority is an individual—that individual; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-4__sec-34__para-ii">
+              <num>ii</num>
+              <content>
+                <p>otherwise—an office holder of the foreign business authority;</p>
+              </content>
+              <content>
+                <p>to be a true copy, extract or summary, as the case may be.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-4__dvs-5">
+          <num>5</num>
+          <heading>Miscellaneous</heading>
+          <section eId="part-4__dvs-5__sec-35">
+            <num>35</num>
+            <heading>Evidentiary certificates relating to requests made to foreign business authorities</heading>
+            <subsection eId="part-4__dvs-5__sec-35__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chairperson of ASIC may issue a written certificate signed by the Chairperson of ASIC certifying that specified documents or things were obtained as a result of a request made to a foreign business authority by ASIC.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-35__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Deputy Chairperson of ASIC may issue a written certificate signed by the Deputy Chairperson of ASIC certifying that specified documents or things were obtained as a result of a request made to a foreign business authority by ASIC.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-35__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In any proceeding to which this Part applies, a certificate under subsection (1) or (2) is prima facie evidence of the matters stated in the certificate.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-5__sec-36">
+            <num>36</num>
+            <heading>Operation of other laws</heading>
+            <content>
+              <p>This Part does not limit the ways in which a matter may be proved, or evidence may be adduced, under this Act (other than this Part) or any other Australian law.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Authenticating foreign public documents</heading>
+        <section eId="part-5__sec-37">
+          <num>37</num>
+          <heading>Certificates attached to foreign public documents</heading>
+          <subsection eId="part-5__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies in relation to a foreign public document that has placed on it or annexed to it a certificate issued under the Convention.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In a proceeding in any Australian court, and for the purposes of any person performing a function or exercising a power under an Australian law, the certificate is evidence of:</p>
+            </content>
+            <paragraph eId="part-5__sec-37__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the authenticity of the signature on the foreign public document; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the capacity in which the person signing the foreign public document has acted; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>where appropriate, the identity of the seal or stamp that the foreign public document bears.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subject to <ref href="#sec-39">section 39</ref>, an Australian court, or a person performing a function or exercising a power under an Australian law, must not require any formality other than the certificate in order to certify:</p>
+            </content>
+            <paragraph eId="part-5__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the authenticity of the signature on the foreign public document; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the capacity in which the person signing the foreign public document has acted; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-37__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>where appropriate, the identity of the seal or stamp that the foreign public document bears.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-38">
+          <num>38</num>
+          <heading>Foreign public documents not requiring legalisation</heading>
+          <content>
+            <p>If a foreign public document is not subject to a requirement of legalisation, an Australian court, or a person performing a function or exercising a power under an Australian law, must not require a certificate issued under the Convention to be placed on or annexed to the foreign public document in order to certify:</p>
+          </content>
+          <paragraph eId="part-5__sec-38__para-a">
+            <num>a</num>
+            <content>
+              <p>the authenticity of the signature on the foreign public document; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-38__para-b">
+            <num>b</num>
+            <content>
+              <p>the capacity in which the person signing the foreign public document has acted; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-38__para-c">
+            <num>c</num>
+            <content>
+              <p>where appropriate, the identity of the seal or stamp that the foreign public document bears.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-39">
+          <num>39</num>
+          <heading>Lesser formalities for authentication etc.</heading>
+          <content>
+            <p>This Part does not prevent an Australian court, or a person exercising a function or power under an Australian law, requiring or accepting as evidence of:</p>
+          </content>
+          <paragraph eId="part-5__sec-39__para-a">
+            <num>a</num>
+            <content>
+              <p>the authenticity of the signature on a foreign public document; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-39__para-b">
+            <num>b</num>
+            <content>
+              <p>the capacity in which the person signing a foreign public document has acted; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-39__para-c">
+            <num>c</num>
+            <content>
+              <p>where appropriate, the identity of the seal or stamp that a foreign public document bears;</p>
+            </content>
+            <content>
+              <p>a lesser formality than a certificate, issued under the Convention, placed on or annexed to the foreign public document.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Taking evidence for proceedings in foreign courts</heading>
+        <section eId="part-6__sec-40">
+          <num>40</num>
+          <heading>Application of this Part</heading>
+          <subsection eId="part-6__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Part applies in relation to any proceedings before an Australian court that are proceedings for the taking of evidence for use in proceedings instituted in or before a foreign court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Attorney-General’s power to make an order under <ref href="#sec-42">section 42</ref> may only be exercised in relation to proceedings mentioned in subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-40__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>authority</i></b> means any person or body authorised to take or receive evidence:</p>
+            </content>
+            <paragraph eId="part-6__sec-40__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>whether on behalf of a court or otherwise; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-40__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>whether or not the person or body is empowered to require the answering of questions or the production of documents.</p>
+              </content>
+              <content>
+                <p><b><i>foreign court</i></b> means any court, or authority, of a foreign country or a part of such a country.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-41">
+          <num>41</num>
+          <heading>Exercise of powers under this Part</heading>
+          <content>
+            <p>The Attorney-General must not exercise a power under this Part unless he or she is satisfied that it is desirable to do so for the purpose of preventing prejudice to Australia’s security.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-42">
+          <num>42</num>
+          <heading>Orders</heading>
+          <subsection eId="part-6__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Attorney-General may make a written order prohibiting one or more of the following acts:</p>
+            </content>
+            <paragraph eId="part-6__sec-42__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the production of a document;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-42__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the production of a thing;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-42__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the giving of evidence or information, whether in relation to the contents of a document or otherwise.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An order under this section may:</p>
+            </content>
+            <paragraph eId="part-6__sec-42__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be directed to a particular person, to a class of persons or to persons generally; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-42__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>relate to a particular proceeding, to a class of proceedings or to proceedings generally; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-42__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>relate to a particular document, thing, evidence or information or to a class of documents, things, evidence or information.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-43">
+          <num>43</num>
+          <heading>Copies etc. of documents</heading>
+          <subsection eId="part-6__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the Attorney-General makes an order under <ref href="#sec-42">section 42</ref> that has effect in relation to a document, the order also has effect in relation to any copy, extract or summary of that document that is in Australia as if the copy, extract or summary were the document.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies to a copy, extract or summary that is in existence at any time while the order concerned remains in force.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-44">
+          <num>44</num>
+          <heading>Intervention</heading>
+          <subsection eId="part-6__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Attorney-General may, on behalf of the Commonwealth, intervene in proceedings to which this Part applies for the purpose of preventing a contravention of an order made under <ref href="#sec-42">section 42</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-44__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Attorney-General intervenes in proceedings before a court under this section:</p>
+            </content>
+            <paragraph eId="part-6__sec-44__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a certificate by the Attorney-General stating that the doing of an act prohibited by an order made under <ref href="#sec-42">section 42</ref> would be prejudicial to Australia’s security is conclusive evidence of that fact; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-44__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the court may, in the proceedings, make such order as to costs against the Commonwealth as the court thinks fit.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-45">
+          <num>45</num>
+          <heading>Injunctions</heading>
+          <content>
+            <p>If:</p>
+          </content>
+          <paragraph eId="part-6__sec-45__para-a">
+            <num>a</num>
+            <content>
+              <p>an order made under <ref href="#sec-42">section 42</ref> prohibits the production of a document or thing or the giving of evidence or information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-45__para-b">
+            <num>b</num>
+            <content>
+              <p>the Federal Court is satisfied, on application by the Attorney-General, that there are reasonable grounds for believing that the person having possession or control of the document, thing, evidence or information might contravene the order;</p>
+            </content>
+            <content>
+              <p>the Federal Court may grant an injunction restraining that person from dealing with the document, thing, evidence or information in a manner specified in the injunction or restraining that person from dealing with the document, thing, evidence or information except in a manner specified in the injunction.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-7">
+        <num>7</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-7__sec-46">
+          <num>46</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-7__sec-46__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-7__sec-46__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed by carrying out or giving effect to this Act;</p>
+            </content>
+            <content>
+              <p>and, in particular, may make regulations relating to the practice and procedure of a superior court in proceedings for making an order under <ref href="#sec-7">section 7</ref>, 9A, 10 or 11.</p>
+              <p>Schedule—Hague Convention abolishing the requirement of legalisation for foreign public documents</p>
+              <p>Section 3</p>
+              <p>The States signatory to the present Convention,</p>
+              <p>Desiring to abolish the requirement of diplomatic or consular legalisation for foreign public documents,</p>
+              <p>Have resolved to conclude a Convention to this effect and have agreed upon the following provisions:</p>
+              <p>Article 1</p>
+              <p>The present Convention shall apply to public documents which have been executed in the territory of one contracting State and which have to be produced in the territory of another contracting State.</p>
+              <p>For the purposes of the present Convention, the following are deemed to be public documents:</p>
+              <p><i>a</i>)	documents emanating from an authority or an official connected with the courts or tribunals of the State, including those emanating from a public prosecutor, a clerk of a court or a process server (‘huissier de justice’);</p>
+              <p><i>b</i>)	administrative documents;</p>
+              <p><i>c</i>)	notarial acts;</p>
+              <p><i>d</i>)	official certificates which are placed on documents signed by persons in their private capacity, such as official certificates recording the registration of a document or the fact that it was in existence on a certain date and official and notarial authentications of signatures.</p>
+              <p>However, the present Convention shall not apply:</p>
+              <p><i>a</i>)	to documents executed by diplomatic or consular agents;</p>
+              <p><i>b</i>)	to administrative documents dealing directly with commercial or customs operations.</p>
+              <p>Article 2</p>
+              <p>Each contracting State shall exempt from legalisation documents to which the present Convention applies and which have to be produced in its territory. For the purposes of the present Convention, legalisation means only the formality by which the diplomatic or consular agents of the country in which the document has to be produced certify the authenticity of the signature, the capacity in which the person signing the document has acted and, where appropriate, the identity of the seal or stamp which it bears.</p>
+              <p>Article 3</p>
+              <p>The only formality that may be required in order to certify the authenticity of the signature, the capacity in which the person signing the document has acted and, where appropriate, the identity of the seal or stamp which it bears, is the addition of the certificate described in Article 4, issued by the competent authority of the State from which the document emanates.</p>
+              <p>However, the formality mentioned in the preceding paragraph cannot be required when either the laws, regulations, or practice in force in the State where the document is produced or an agreement between two or more contracting States have abolished or simplified it, or exempt the document itself from legalisation.</p>
+              <p>Article 4</p>
+              <p>The certificate referred to in the first paragraph of Article 3 shall be placed on the document itself or on an “allonge”, it shall be in the form of the model annexed to the present Convention.</p>
+              <p>It may, however, be drawn up in the official language of <role refersTo="#authority">the authority</role> which issues it. The standard terms appearing therein may be in a second language also. The title “Apostille (Convention de La Haye du 5 octobre 1961)” shall be in the French language.</p>
+              <p>Article 5</p>
+              <p>The certificate shall be issued at the request of the person who has signed the document or of any bearer.</p>
+              <p>When properly filled in, it will certify the authenticity of the signature, the capacity in which the person signing the document has acted and, where appropriate, the identity of the seal or stamp which the document bears.</p>
+              <p>The signature, seal and stamp on the certificate are exempt from all certification.</p>
+              <p>Article 6</p>
+              <p>Each contracting State shall designate by reference to their official function, the authorities who are competent to issue the certificate referred to in the first paragraph of Article 3.</p>
+              <p>It shall give notice of such designation to the Ministry of Foreign Affairs of the Netherlands at the time it deposits its instrument of ratification or of accession or its declaration of extension. It shall also give notice of any change in the designated authorities.</p>
+              <p>Article 7</p>
+              <p>Each of the authorities designated in accordance with Article 6 shall keep a register or card index in which it shall record the certificates issued, specifying:</p>
+              <p><i>a</i>)	the number and date of the certificate,</p>
+              <p><i>b</i>)	the name of the person signing the public document and the capacity in which he has acted, or in the case of unsigned documents, the name of the authority which has affixed the seal or stamp.</p>
+              <p>At the request of any interested person, <role refersTo="#authority">the authority</role> which has issued the certificate shall verify whether the particulars in the certificate correspond with those in the register or card index.</p>
+              <p>Article 8</p>
+              <p>When a treaty, convention or agreement between two or more contracting States contains provisions which subject the certification of a signature, seal or stamp to certain formalities, the present Convention will only override such provisions if those formalities are more rigorous than the formality referred to in Articles 3 and 4.</p>
+              <p>Article 9</p>
+              <p>Each contracting State shall take the necessary steps to prevent the performance of legalisations by its diplomatic or consular agents in cases where the present Convention provides for exemption.</p>
+              <p>Article 10</p>
+              <p>The present Convention shall be open for signature by the States represented at the Ninth session of the Hague Conference on Private International Law and Iceland, Ireland, Liechtenstein and Turkey.</p>
+              <p>It shall be ratified, and the instruments of ratification shall be deposited with the Ministry of Foreign Affairs of the Netherlands.</p>
+              <p>Article 11</p>
+              <p>The present Convention shall enter into force on the sixtieth day after the deposit of the third instrument of ratification referred to in the second paragraph of Article 10.</p>
+              <p>The Convention shall enter into force for each signatory State which ratifies subsequently on the sixtieth day after the deposit of its instrument of ratification.</p>
+              <p>Article 12</p>
+              <p>Any State not referred to in Article 10 may accede to the present Convention after it has entered into force in accordance with the first paragraph of Article 11. The instrument of accession shall be deposited with the Ministry of Foreign Affairs of the Netherlands.</p>
+              <p>Such accession shall have effect only as regards the relations between the acceding State and those contracting States which have not raised an objection to its accession in the six months after the receipt of the notification referred to in sub-paragraph d) of Article 15. Any such objection shall be notified to the Ministry of Foreign Affairs of the Netherlands.</p>
+              <p>The Convention shall enter into force as between the acceding State and the States which have raised no objection to its accession on the sixtieth day after the expiry of the period of six months mentioned in the preceding paragraph.</p>
+              <p>Article 13</p>
+              <p>Any State may, at the time of signature, ratification or accession, declare that the present Convention shall extend to all the territories for the international relations of which it is responsible, or to one or more of them. Such a declaration shall take effect on the date of entry into force of the Convention for the State concerned.</p>
+              <p>At any time thereafter, such extensions shall be notified to the Ministry of Foreign Affairs of the Netherlands.</p>
+              <p>When the declaration of extension is made by a State which has signed and ratified, the Convention shall enter into force for the territories concerned in accordance with Article 11. When the declaration of extension is made by a State which has acceded, the Convention shall enter into force for the territories concerned in accordance with Article 12.</p>
+              <p>Article 14</p>
+              <p>The present Convention shall remain in force for five years from the date of its entry into force in accordance with the first paragraph of Article 11, even for States which have ratified it or acceded to it subsequently.</p>
+              <p>If there has been no denunciation, the Convention shall be renewed tacitly every five years.</p>
+              <p>Any denunciation shall be notified to the Ministry of Foreign Affairs of the Netherlands at least six months before the end of the five year period.</p>
+              <p>It may be limited to certain of the territories to which the Convention applies.</p>
+              <p>The denunciation will only have effect as regards the State which has notified it. The Convention shall remain in force for the other contracting States.</p>
+              <p>Article 15</p>
+              <p>The Ministry of Foreign Affairs of the Netherlands shall give notice to the States referred to in Article 10, and to the States which have acceded in accordance with Article 12, of the following:</p>
+              <p><i>a</i>)	the notifications referred to in the second paragraph of Article 6;</p>
+              <p><i>b</i>)	the signatures and ratifications referred to in Article 10;</p>
+              <p><i>c</i>)	the date on which the present Convention enters into force in accordance with the first paragraph of Article 11;</p>
+              <p><i>d</i>)	the accessions and objections referred to in Article 12 and the date on which such accessions take effect;</p>
+              <p><i>e</i>)	the extensions referred to in Article 13 and the date on which they take effect;</p>
+              <p><i>f</i>)	the denunciations referred to in the third paragraph of Article 14.</p>
+              <p>In witness whereof the undersigned, being duly authorised thereto, have signed the present Convention.</p>
+              <p>Done at The Hague the 5th October 1961, in French and in English, the French text prevailing in case of divergence between the two texts, in a single copy which shall be deposited in the archives of the Government of the Netherlands, and of which a certified copy shall be sent, through the diplomatic channel, to each of the States represented at the Ninth session of the Hague Conference on Private International Law and also to Iceland, Ireland, Liechtenstein and Turkey.</p>
+              <p>Signatures omitted</p>
+              <p>ANNEX TO THE CONVENTION</p>
+              <p><i>Model of certificate</i></p>
+              <p>The certificate will be in the form of a square with sides at least 9 centimetres long</p>
+            </content>
+            <table>
+              <tr>
+                <th>APOSTILLE</th>
+                <th>APOSTILLE</th>
+              </tr>
+              <tr>
+                <td>(Convention de La Haye du 5 octobre 1961)</td>
+                <td>(Convention de La Haye du 5 octobre 1961)</td>
+              </tr>
+              <tr>
+                <td>1.	Country</td>
+                <td>1.	Country</td>
+              </tr>
+              <tr>
+                <td>This public document</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2.	has been signed by</td>
+                <td>2.	has been signed by</td>
+              </tr>
+              <tr>
+                <td>3.	acting in the capacity of</td>
+                <td>3.	acting in the capacity of</td>
+              </tr>
+              <tr>
+                <td>4.	bears the seal/stamp of</td>
+                <td>4.	bears the seal/stamp of</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Certified</td>
+                <td>Certified</td>
+              </tr>
+              <tr>
+                <td>5.	at</td>
+                <td>6.	the</td>
+              </tr>
+              <tr>
+                <td>7.	by</td>
+                <td>7.	by</td>
+              </tr>
+              <tr>
+                <td>8.	No</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>9.	Seal/Stamp:</td>
+                <td>10.	Signature:</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>orig = original</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>p = page(s)</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>para = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>cl = clause(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>cont. = continued</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>r = regulation(s)/Court rule(s)</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>div = Division(s)</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>sub ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>sub div = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>sub pt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+              <tr>
+                <td>Ord = Ordinance</td>
+                <td></td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Foreign Evidence Act 1994</td>
+                <td>59, 1994</td>
+                <td>9 Apr 1994</td>
+                <td>Pt 3 (s 20–27): 9 Oct 1994 (s 2(2), (3))
+Pt 5 (s 37–39): 16 Mar 1995 (s 2(4), (5) and gaz 1995, No GN8)
+Remainder: 9 Apr 1994 (s 2(1))</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (item 491): 5 Dec 1999 (s 2(1), (2) and gaz 1999, No S584)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Federal Magistrates (Consequential Amendments) Act 1999</td>
+                <td>194, 1999</td>
+                <td>23 Dec 1999</td>
+                <td>Sch 14: 23 Dec 1999 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Corporations (Repeals, Consequentials and Transitionals) Act 2001</td>
+                <td>55, 2001</td>
+                <td>28 June 2001</td>
+                <td>s 4–14 and Sch 3 (items 201–205): 15 July 2001 (s 2(1), (3) and gaz 2001, No S285)</td>
+                <td>s 4–14</td>
+              </tr>
+              <tr>
+                <td>Proceeds of Crime (Consequential Amendments and Transitional Provisions) Act 2002</td>
+                <td>86, 2002</td>
+                <td>11 Oct 2002</td>
+                <td>Sch 6 (item 32): 1 Jan 2003 (s 2(1) item 5 and gaz 2002, No GN44)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Enhancement Act 2003</td>
+                <td>41, 2003</td>
+                <td>3 June 2003</td>
+                <td>Sch 2 (item 7): 3 June 2003 (s 2(1) item 8)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Law and Justice Legislation Amendment (Video Link Evidence and Other Measures) Act 2005</td>
+                <td>136, 2005</td>
+                <td>15 Nov 2005</td>
+                <td>Sch 1 (items 22–25): 16 Nov 2005 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>ASIO Legislation Amendment Act 2006</td>
+                <td>54, 2006</td>
+                <td>19 June 2006</td>
+                <td>Sch 1 (item 15): 20 June 2006 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Law and Justice Legislation Amendment (Marking of Plastic Explosives) Act 2007</td>
+                <td>3, 2007</td>
+                <td>19 Feb 2007</td>
+                <td>Sch 3 (item 5): 25 Aug 2007 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Foreign Evidence Amendment Act 2010</td>
+                <td>55, 2010</td>
+                <td>3 June 2010</td>
+                <td>4 June 2010 (s 2)</td>
+                <td>Sch 1 (items 15, 16, 18, 19)</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment Act (No. 2) 2011</td>
+                <td>174, 2011</td>
+                <td>5 Dec 2011</td>
+                <td>Sch 2 (items 195–197): 1 Jan 2012 (s 2(1) item 5)</td>
+                <td>Sch 2 (item 197)</td>
+              </tr>
+              <tr>
+                <td>Federal Circuit Court of Australia (Consequential Amendments) Act 2013</td>
+                <td>13, 2013</td>
+                <td>14 Mar 2013</td>
+                <td>Sch 1 (items 315–317) and Sch 2 (item 2): 12 Apr 2013 (s 2(1) items 2, 3)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Counter-Terrorism Legislation Amendment (Foreign Fighters) Act 2014</td>
+                <td>116, 2014</td>
+                <td>3 Nov 2014</td>
+                <td>Sch 1 (items 115–126): 1 Dec 2014 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 126)</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment (International Crime Cooperation and Other Measures) Act 2018</td>
+                <td>34, 2018</td>
+                <td>22 May 2018</td>
+                <td>Sch 4: 22 Nov 2018 (s 2(1) item 7)</td>
+                <td>Sch 4 (item 6)</td>
+              </tr>
+              <tr>
+                <td>Treasury Laws Amendment (ASIC Governance) Act 2018</td>
+                <td>42, 2018</td>
+                <td>22 May 2018</td>
+                <td>Sch 1 (item 10): 5 June 2018 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>National Security Legislation Amendment (Espionage and Foreign Interference) Act 2018</td>
+                <td>67, 2018</td>
+                <td>29 June 2018</td>
+                <td>Sch 1 (items 44, 45): 30 June 2018 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <th>Act
+(Register ID)</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Australian Security Intelligence Organisation Amendment Act 2020 (C2020A00134)</td>
+                <td>134, 2020</td>
+                <td>17 Dec 2020</td>
+                <td>sch 1 (items 23, 24): 7 Sept 2020 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021 (C2021A00013)</td>
+                <td>13, 2021</td>
+                <td>1 Mar 2021</td>
+                <td>sch 2 (items 430-439): 1 Sept 2021 (s 2(1) item 5)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes and Other Legislation Amendment (Omnibus) Act 2023 (C2023A00063)</td>
+                <td>63, 2023</td>
+                <td>13 Sept 2023</td>
+                <td>sch 5: 14 Sept 2023 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Criminal Code Amendment (State Sponsors of Terrorism) Act 2025 (C2025A00060)</td>
+                <td>60, 2025</td>
+                <td>6 Nov 2025</td>
+                <td>sch 3 (item 47): 8 Nov 2025 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 55, 2001; No 86, 2002; No 136, 2005; No 54, 2006; No 3, 2007; No 55, 2010; No 116, 2014; No 67, 2018; No 134, 2020; No 13, 2021; No 63, 2023; No 60, 2025</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ed C22</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 2 heading</td>
+                <td>rs No 194, 1999; No 13, 2013</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 13, 2021</td>
+              </tr>
+              <tr>
+                <td>s 9A</td>
+                <td>ad No 194, 1999</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 13, 2013; No 13, 2021</td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>am No 194, 1999</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No 13, 2021</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 194, 1999; No 13, 2013; No 13, 2021</td>
+              </tr>
+              <tr>
+                <td>Division 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>am No 194, 1999; No 13, 2013; No 13, 2021</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 194, 1999</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 194, 1999</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 136, 2005; No 55, 2010; No 116, 2014; No 34, 2018; No 63, 2023</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 63, 2023</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 41, 2003; No 55, 2010; No 63, 2023</td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>am No 55, 2010</td>
+              </tr>
+              <tr>
+                <td>Division 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>am No 55, 2010</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>am No 136, 2005; No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 25A</td>
+                <td>ad No 136, 2005</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 174, 2011</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>Division 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>am No 146, 1999; No 55, 2010</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 34, 2018</td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27A</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27AA</td>
+                <td>ad No 34, 2018</td>
+              </tr>
+              <tr>
+                <td>s 27B</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27C</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27D</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27DA</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>s 27E</td>
+                <td>ad No 116, 2014</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 55, 2001</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 55, 2001; No 63, 2023</td>
+              </tr>
+              <tr>
+                <td>Division 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 35</td>
+                <td>am No 55, 2001; No 42, 2018</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 34, 2018</td>
+              </tr>
+              <tr>
+                <td>Part 7</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 46</td>
+                <td>am No 194, 1999</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 5—Editorial changes</p>
+              <p>In preparing this compilation for registration, the following kinds of editorial change(s) were made under the <i>Legislation Act 2003</i>.</p>
+              <p><b>Subsection</b><b> </b><b>3(1) (paragraph</b><b> </b><b>(</b><b>e</b><b>a</b><b>) of the definition of</b><b> </b><b><i>designated offence</i></b><b>)</b></p>
+              <p><b>Kind of editorial change</b></p>
+              <p>Give effect to the misdescribed amendment as intended</p>
+              <p><b>Details of editorial change</b></p>
+              <p>Schedule 3 item 47 of the <i>Criminal Code Amendment (State Sponsors of Terrorism) Act 2025</i> provides as follows:</p>
+              <p>47  Subsection 3(1) (after paragraph (e) of the definition of <i>designated offence</i>)</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-7__sec-46__para-ea">
+            <num>ea</num>
+            <content>
+              <p>	(ea)	an offence against <ref href="#part-5">Part 5</ref>.3A of the <i>Criminal Code</i> (state sponsors of terrorism); or</p>
+            </content>
+            <content>
+              <p>The instruction to insert the paragraph is missing.</p>
+              <p>This compilation was editorially changed to insert paragraph (ea) after paragraph (e) of the definition of <b><i>designated offence</i></b> in subsection 3(1) to give effect to the misdescribed amendment as intended.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

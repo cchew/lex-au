@@ -1,0 +1,3092 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1997/176/!main"/>
+          <FRBRuri value="/akn/au/act/1997/176"/>
+          <FRBRdate date="1997-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="176"/>
+          <FRBRname value="snowy-hydro-corporatisation-act-1997"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1997/176/eng@2014-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/1997/176/eng@2014-07-01"/>
+          <FRBRdate date="2014-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1997/176/eng@2014-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1997/176/eng@2014-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1997-01-01" type="generation" eId="evt-creation" source="#snowy-hydro-corporatisation-act-1997"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2001/55" date="2001-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2011/100" date="2011-09-15"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2014/62" date="2014-06-30"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="registrar" href="/ontology/roles/au/registrar" showAs="the Registrar"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-assets" href="/ontology/term/au/term-assets" showAs="assets"/>
+        <TLCTerm eId="term-combined-service-period" href="/ontology/term/au/term-combined-service-period" showAs="combined service period"/>
+        <TLCTerm eId="term-commonwealth-record" href="/ontology/term/au/term-commonwealth-record" showAs="Commonwealth record"/>
+        <TLCTerm eId="term-corporatisation-date" href="/ontology/term/au/term-corporatisation-date" showAs="corporatisation date"/>
+        <TLCTerm eId="term-dfrdb-act" href="/ontology/term/au/term-dfrdb-act" showAs="DFRDB Act"/>
+        <TLCTerm eId="term-employee" href="/ontology/term/au/term-employee" showAs="employee"/>
+        <TLCTerm eId="term-existing-snowy-electricity-transmission-undertaking" href="/ontology/term/au/term-existing-snowy-electricity-transmission-undertaking" showAs="existing Snowy electricity transmission undertaking"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-future-long-service-leave-rights" href="/ontology/term/au/term-future-long-service-leave-rights" showAs="future long service leave rights"/>
+        <TLCTerm eId="term-liabilities" href="/ontology/term/au/term-liabilities" showAs="liabilities"/>
+        <TLCTerm eId="term-long-service-leave-act" href="/ontology/term/au/term-long-service-leave-act" showAs="Long Service Leave Act"/>
+        <TLCTerm eId="term-maternity-leave-act" href="/ontology/term/au/term-maternity-leave-act" showAs="Maternity Leave Act"/>
+        <TLCTerm eId="term-new-south-wales-corporatisation-act" href="/ontology/term/au/term-new-south-wales-corporatisation-act" showAs="New South Wales Corporatisation Act"/>
+        <TLCTerm eId="term-share" href="/ontology/term/au/term-share" showAs="share"/>
+        <TLCTerm eId="term-snowy-hydro-company-or-company" href="/ontology/term/au/term-snowy-hydro-company-or-company" showAs="Snowy Hydro Company or Company"/>
+        <TLCTerm eId="term-snowy-hydro-group-company-or-hydro-group-company" href="/ontology/term/au/term-snowy-hydro-group-company-or-hydro-group-company" showAs="Snowy hydro-group company or hydro-group company"/>
+        <TLCTerm eId="term-snowy-mountains-council" href="/ontology/term/au/term-snowy-mountains-council" showAs="Snowy Mountains Council"/>
+        <TLCTerm eId="term-snowy-mountains-hydro-electric-authority-or-authority" href="/ontology/term/au/term-snowy-mountains-hydro-electric-authority-or-authority" showAs="Snowy Mountains Hydro-electric Authority or Authority"/>
+        <TLCTerm eId="term-transferred-employee" href="/ontology/term/au/term-transferred-employee" showAs="transferred employee"/>
+        <TLCTerm eId="term-transgrid" href="/ontology/term/au/term-transgrid" showAs="TransGrid"/>
+        <TLCTerm eId="term-victorian-corporatisation-act" href="/ontology/term/au/term-victorian-corporatisation-act" showAs="Victorian Corporatisation Act"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p></p>
+      <p>Snowy Hydro Corporatisation Act 1997</p>
+      <p>No. 176, 1997 as amended</p>
+      <p><b>Compilation start date: </b><b>	</b><b>	</b>1 July 2014</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 62, 2014</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Snowy Hydro Corporatisation Act 1997</i> as in force on 1 July 2014. It includes any commenced amendment affecting the legislation to that date.</p>
+      <p>This compilation was prepared on <date date="2014-07-16">16 July 2014</date>.</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of each amended provision.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in the endnotes.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If a provision of the compiled law is affected by a modification that is in force, details are included in the endnotes.</p>
+      <p><b>Provisions ceasing to have effect</b></p>
+      <p>If a provision of the compiled law has expired or otherwise ceased to have effect in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Object of Act	2</p>
+      <p>4	Simplified outline	2</p>
+      <p>5	Interpretation	3</p>
+      <p>6	Act binds the Crown	6</p>
+      <p><ref href="#part-2">Part 2</ref>—Snowy Hydro Company	7</p>
+      <p>7	Holding of shares in Snowy Hydro Company	7</p>
+      <p>8	Snowy Hydro-group company is not the Crown	7</p>
+      <p>9	Liabilities of Snowy hydro-group companies not guaranteed by Commonwealth	8</p>
+      <p><ref href="#part-3">Part 3</ref>—Transfers of assets and liabilities	9</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Transfer of existing Snowy hydro undertaking to Company	9</p>
+      <p>10	Transfer to Company of assets and liabilities of Snowy Mountains Hydro-electric Authority	9</p>
+      <p>11	Transfer to Company of assets and liabilities of the Commonwealth	10</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Transfer of electricity transmission undertaking to TransGrid	11</p>
+      <p>12	Transfer to TransGrid of existing Snowy electricity transmission undertaking	11</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Snowy Mountains Hydro-electric Authority’s debts	12</p>
+      <p>Subdivision A—Loans by the Commonwealth	12</p>
+      <p>13	Scope of Subdivision	12</p>
+      <p>14	Finance Minister may declare that all loans are due and payable	12</p>
+      <p>15	Commonwealth must lend to <role refersTo="#authority">the Authority</role> an amount equal to the amount owing	12</p>
+      <p>Subdivision B—Other borrowing transactions	13</p>
+      <p>16	Scope of Subdivision	13</p>
+      <p>17	Borrowing transactions	13</p>
+      <p>18	Authority’s borrowing transactions may become the Commonwealth’s borrowing transactions	13</p>
+      <p>19	Application of the <i>Loans Securities Act 1919</i>	14</p>
+      <p>20	Commonwealth takeover of obligations—payments by <role refersTo="#authority">the Authority</role> to the Commonwealth	15</p>
+      <p>Subdivision C—Miscellaneous	15</p>
+      <p>21	Agreement relating to Commonwealth debt	15</p>
+      <p>22	Appropriation of Consolidated Revenue Fund	16</p>
+      <p><ref href="#part-4">Part 4</ref>—Transfer and rights of employees	17</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Transfer of employees from Snowy Mountains Hydro-electric Authority to Snowy Hydro Company	17</p>
+      <p>23	Transfer to Snowy Hydro Company of employees of Snowy Mountains Hydro-electric Authority	17</p>
+      <p>24	Variations of terms and conditions of employment	18</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Transitional and saving provisions in relation to long service leave	20</p>
+      <p>25	General interpretation	20</p>
+      <p>26	Specific definitions	20</p>
+      <p>27	Long service leave for employees with less than 10 years service	21</p>
+      <p>28	Payments in lieu of long service leave for employees with less than 10 years service	22</p>
+      <p>29	Payments on the death of an employee	23</p>
+      <p>30	Employee’s long service leave credit for the purposes of sections 27 and 28	25</p>
+      <p>31	Division not to affect an employee’s future long service leave rights	25</p>
+      <p>32	Saving—Long Service Leave Act	25</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Transitional and saving provisions relating to the Safety, Rehabilitation and Compensation Act 1988	27</p>
+      <p>33	Interpretation	27</p>
+      <p>34	Transitional provisions relating to the <i>Safety, Rehabilitation and Compensation Act 1988</i> in respect of certain employees of a Snowy hydro-group company	27</p>
+      <p>35	Snowy Hydro Company liable to meet certain <i>Safety, Rehabilitation and Compensation Act 1988</i> liabilities and to be taken to be the employer in certain circumstances under the <i>Safety, Rehabilitation and Compensation Act 1988</i>	27</p>
+      <p>36	Sections 40 and 71 of the <i>Safety, Rehabilitation and Compensation Act 1988</i>	28</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Transitional and saving provisions in relation to maternity leave	29</p>
+      <p>37	Interpretation	29</p>
+      <p>38	Transitional maternity leave provisions for maternity leave beginning on or after corporatisation date	29</p>
+      <p>39	Transitional maternity leave provisions relating to employees of the Snowy Mountains Hydro-electric Authority who were on maternity leave immediately before corporatisation date	29</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Other transitional and saving provisions	31</p>
+      <p>40	Saving—deferred benefits under the DFRDB Act	31</p>
+      <p>41	Saving—period of eligible employment for the purposes of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-I">Part I</ref>X of the DFRDB Act	31</p>
+      <p>42	Transitional provision relating to the <i>Crimes (Superannuation Benefits) Act 1989</i>	32</p>
+      <p>43	Saving—<i>Director of Public Prosecutions Act 1993</i>	33</p>
+      <p>44	Saving—<i>Judiciary Act 1903</i>	34</p>
+      <p>46	Cessation of mobility rights	34</p>
+      <p><ref href="#part-5">Part 5</ref>—Miscellaneous	36</p>
+      <p>47	Sharing of land tax with New South Wales	36</p>
+      <p>48	Minister may execute agreements on behalf of Commonwealth	36</p>
+      <p>49	Exemption from taxes (other than GST)	36</p>
+      <p>49A	GST-free supplies	37</p>
+      <p>50	Exemption from Corporations Act	38</p>
+      <p>51	Ministerial determinations for purposes of application of Income Tax Assessment Acts in respect of assets transferred to Snowy Hydro Company	38</p>
+      <p>52	Modification by regulations of Income Tax Assessment Acts as applying to Snowy Hydro Company	39</p>
+      <p>53	Registration etc. of changing title to assets	39</p>
+      <p>54	Compensation—constitutional safety-net	40</p>
+      <p>55	Snowy Hydro Company’s financial statements and reports to be laid before Parliament	41</p>
+      <p>56	Commonwealth records, etc.	41</p>
+      <p>57	Authorised persons	42</p>
+      <p>58	Regulations	42</p>
+      <p>59	Repeal	42</p>
+      <p>60	Termination and amendment of certain existing agreements relating to Snowy Mountains Scheme	43</p>
+      <p>61	Authority and Council abolished	44</p>
+      <p>62	Validation of treatment of certain expenditure by <role refersTo="#authority">the Authority</role>	44</p>
+      <p>63	Savings, transitional and other provisions	44</p>
+      <p>Schedule 1—Provisions relating to transfer of undertakings	45</p>
+      <p>1	Definitions	45</p>
+      <p>2	Application	45</p>
+      <p>3	Vesting of undertaking in transferee	46</p>
+      <p>4	Operation of Schedule	47</p>
+      <p>5	Date of vesting	47</p>
+      <p>6	Value of particular assets transferred	48</p>
+      <p>7	Transfer of interests in land	48</p>
+      <p>8	Confirmation of vesting in Snowy Hydro Company	48</p>
+      <p>9	Successor of Authority	48</p>
+      <p>Schedule 2—Savings, transitional and other provisions	49</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	49</p>
+      <p>1	Regulations	49</p>
+      <p><ref href="#part-2">Part 2</ref>—Provisions consequent on enactment of this Act	50</p>
+      <p>2	Judicial notice	50</p>
+      <p>3	Final report by Authority	50</p>
+      <p>4	Final report by Council	50</p>
+      <p>Endnotes	52</p>
+      <p>Endnote 1—About the endnotes	52</p>
+      <p>Endnote 2—Abbreviation key	54</p>
+      <p>Endnote 3—Legislation history	55</p>
+      <p>Endnote 4—Amendment history	58</p>
+      <p>Endnote 5—Uncommenced amendments [none]	59</p>
+      <p>Endnote 6—Modifications [none]	59</p>
+      <p>Endnote 7—Misdescribed amendments [none]	59</p>
+      <p>Endnote 8—Miscellaneous [none]	59</p>
+      <p>An Act to reform the Snowy Mountains Hydro-electric Scheme by corporatising the Snowy Mountains Hydro-electric Authority and making related changes to the Scheme, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Snowy Hydro Corporatisation Act 1997</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Parts 1 and 2, <ref href="#sec-11">section 11</ref>, Divisions 2 and 3 of <ref href="#part-3">Part 3</ref>, sections 25, 47, 48, 49, 50, 56, 57 and 58, subsection 63(1) and <ref href="#part-1">Part 1</ref> of Schedule 2 commence on the day on which this Act receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The remaining provisions commence on a day or days to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A proclamation fixing a day for the commencement of <ref href="#sec-59">section 59</ref> is not to be made unless:</p>
+            </content>
+            <paragraph eId="part-1__sec-2__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a public inquiry, sponsored by the Governments of New South Wales and Victoria, has been held with respect to environmental issues arising out of the current pattern of water flows in rivers and streams, caused by the operation of the Snowy Mountains Scheme, and <role refersTo="#minister">the Minister</role> is satisfied with the adequacy of the conduct, outcome and planned implementation of the inquiry, having regard to the continuing viability of the Scheme; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> is satisfied that the Governments of New South Wales and Victoria have agreed to that section commencing on that day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Object of Act</heading>
+          <subsection eId="part-1__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The object of this Act is to reform the Snowy Mountains Hydro-electric Scheme by corporatising the Snowy Mountains Hydro-electric Authority and making related changes to the Scheme.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>It is the intention of the Parliament that this Act:</p>
+            </content>
+            <paragraph eId="part-1__sec-3__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is to operate concurrently with the New South Wales Corporatisation Act and the Victorian Corporatisation Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-3__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is to have effect only to the extent to which it is within the legislative power of the Parliament.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Simplified outline</heading>
+          <content>
+            <p>The following is a simplified outline of this Act:</p>
+            <p>•	This Act provides for the abolition of the Snowy Mountains Hydro-electric Authority and makes provision for the Commonwealth, New South Wales and Victoria to agree as to the identification of <role refersTo="#authority">the Authority</role>’s debts.</p>
+            <p>•	<role refersTo="#authority">The Authority</role>’s assets and liabilities in relation to its Snowy hydro undertaking (other than its electricity transmission undertaking) are to be transferred to Snowy Hydro Company (Snowy Hydro Limited).</p>
+            <p>•	<role refersTo="#authority">The Authority</role>’s assets and liabilities in relation to its electricity transmission undertaking are to be transferred to TransGrid (New South Wales Electricity Transmission Authority).</p>
+            <p>•	<role refersTo="#authority">The Authority</role>’s borrowings (other than any borrowings from the Commonwealth) may be taken over by the Commonwealth before the abolition of <role refersTo="#authority">the Authority</role> and replaced by a debt owed to the Commonwealth.</p>
+            <p>•	<role refersTo="#authority">The Authority</role>’s employees are to be transferred to Snowy Hydro Limited.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)<b>	</b>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-assets">assets</term> means <def>any legal or equitable estate or interest (whether present or future and whether vested or contingent) in real or personal property of any description, and includes: money, securities, choses in action and documents; and rights, powers, privileges and immunities (whether present or future and whether vested or contingent), except any immunity or privilege of the Crown in any capacity. <b><i>authorised person</i></b>, in a provision of <ref href="#part-5">Part 5</ref>, means a person appointed under <ref href="#sec-57">section 57</ref> for the purposes of that provision.</def></p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>money, securities, choses in action and documents; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>rights, powers, privileges and immunities (whether present or future and whether vested or contingent), except any immunity or privilege of the Crown in any capacity.</p>
+              </content>
+              <content>
+                <p><b><i>authorised person</i></b>, in a provision of <ref href="#part-5">Part 5</ref>, means a person appointed under <ref href="#sec-57">section 57</ref> for the purposes of that provision.</p>
+                <p><term refersTo="#term-commonwealth-record">Commonwealth record</term> has the same meaning as <def>in <ref href="">the Archives Act 1983</ref>.</def></p>
+                <p><term refersTo="#term-corporatisation-date">corporatisation date</term> means <def>the date on which the Snowy Mountains Hydro-electric Power Act 1949 is repealed by this Act.</def></p>
+                <p><term refersTo="#term-dfrdb-act">DFRDB Act</term> means <def><ref href="">the Defence Force Retirement and Death Benefits Act 1973</ref>.</def></p>
+                <p><b><i>exempt matter</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the issue or transfer of shares in the Snowy Hydro Company to the Commonwealth, New South Wales or Victoria or a person acting on behalf of the Commonwealth, New South Wales or Victoria; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the operation of the provisions of this Act, the New South Wales Corporatisation Act and the Victorian Corporatisation Act relating to the transfer of assets and liabilities to the Snowy Hydro Company or TransGrid; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an agreement referred to in <ref href="#sec-48">section 48</ref> or any agreement under the New South Wales Corporatisation Act or the Victorian Corporatisation Act to which New South Wales or Victoria is a party; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a debt of the Snowy Hydro Company to the Commonwealth at the corporatisation date (including the refinancing of such a debt); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>giving effect to any of the above.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-existing-snowy-electricity-transmission-undertaking">existing Snowy electricity transmission undertaking</term> means <def>the assets and liabilities of the Snowy Mountains Hydro-electric Authority, the Snowy Mountains Council, the Commonwealth, New South Wales, Victoria, or authorities of the Commonwealth, New South Wales or Victoria, that are transferred to TransGrid by orders under this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act.</def></p>
+                <p><b><i>existing Snowy hydro undertaking</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the assets and liabilities of the Snowy Mountains Hydro-electric Authority and the Snowy Mountains Council that are transferred to the Snowy Hydro Company by this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the assets and liabilities of the Commonwealth, New South Wales, Victoria, or authorities of the Commonwealth, New South Wales or Victoria, that are transferred to the Snowy Hydro Company by orders under this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+                <p><term refersTo="#term-liabilities">liabilities</term> means <def>all liabilities, debts and obligations (whether present or future and whether vested or contingent).</def></p>
+                <p><term refersTo="#term-long-service-leave-act">Long Service Leave Act</term> means <def>the Long Service Leave (Commonwealth Employees) Act 1976 as in force immediately before the corporatisation date.</def></p>
+                <p><term refersTo="#term-maternity-leave-act">Maternity Leave Act</term> means <def>the Maternity Leave (Commonwealth Employees) Act 1973 as in force immediately before the corporatisation date.</def></p>
+                <p><term refersTo="#term-new-south-wales-corporatisation-act">New South Wales Corporatisation Act</term> means <def><ref href="">the Snowy Hydro Corporatisation Act 1997</ref> of New South Wales.</def></p>
+                <p><term refersTo="#term-share">share</term>, in relation to a company, means <def>a share in the capital of the company.</def></p>
+                <p><term refersTo="#term-snowy-hydro-company-or-company">Snowy Hydro Company or Company</term> means <def>the company incorporated, or to be incorporated, by the name Snowy Hydro Limited.</def></p>
+                <p><term refersTo="#term-snowy-hydro-group-company-or-hydro-group-company">Snowy hydro-group company or hydro-group company</term> means <def>the Snowy Hydro Company or a subsidiary of that Company.</def></p>
+                <p><term refersTo="#term-snowy-mountains-council">Snowy Mountains Council</term> means <def>the Snowy Mountains Council referred to in <ref href="#part-V">Part V</ref>I of the agreement set out in Schedule 1 to the Snowy Mountains Hydro-electric Power Act 1949.</def></p>
+                <p><term refersTo="#term-snowy-mountains-hydro-electric-authority-or-authority">Snowy Mountains Hydro-electric Authority or Authority</term> means <def>the Snowy Mountains Hydro-electric Authority referred to in the Snowy Mountains Hydro-electric Power Act 1949.</def></p>
+                <p><term refersTo="#term-transferred-employee">transferred employee</term> means <def>a person who, under <ref href="#sec-23">section 23</ref>, is taken to have been engaged as an employee of the Company.</def></p>
+                <p><term refersTo="#term-transgrid">TransGrid</term> means <def><ref href="/akn/au/act/new-south-wales-electricity-transmission-authority-constituted-under-the-electricity-transmission-authority-act-1994" class="unresolved">the New South Wales Electricity Transmission Authority constituted under the Electricity Transmission Authority Act 1994</ref> of New South Wales.</def></p>
+                <p><term refersTo="#term-victorian-corporatisation-act">Victorian Corporatisation Act</term> means <def><ref href="">the Snowy Hydro Corporatisation Act 1997</ref> of Victoria.</def></p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)<b>	</b>For the purposes of this Act, the question whether a body corporate is a subsidiary of another body corporate is to be determined in the same way as that question is determined under the <i>Corporations Act 2001</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Act binds the Crown</heading>
+          <content>
+            <p><b>	</b><b>	</b>This Act binds the Crown in right of the Commonwealth, of each of the States, of the Australian Capital Territory and of the Northern Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Snowy Hydro Company</heading>
+        <section eId="part-2__sec-7">
+          <num>7</num>
+          <heading>Holding of shares in Snowy Hydro Company</heading>
+          <subsection eId="part-2__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Subject to subsection (3), the Commonwealth may acquire, hold, dispose of or deal with shares in the Snowy Hydro Company.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p><b>	</b>(2)	Shares in the Snowy Hydro Company held by the Commonwealth, being the initial issue to the Commonwealth of shares in the Company:</p>
+            </content>
+            <paragraph eId="part-2__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>are taken to have been fully paid up; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>are taken to have been issued for valuable consideration, being the relevant percentage of the value of the existing Snowy hydro undertaking.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Commonwealth must not dispose of or transfer shares in the Snowy Hydro Company without the approval of the Parliament if the disposal or transfer of shares would result in the Commonwealth holding less than the relevant percentage of all issued shares.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of this section:</p>
+            </content>
+            <paragraph eId="part-2__sec-7__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the value of the existing Snowy hydro undertaking is the value determined by agreement between the Commonwealth, New South Wales and Victoria; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-7__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the relevant percentage of that value is the percentage of all issued shares in the Snowy Hydro Company that are shares initially issued to the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-8">
+          <num>8</num>
+          <heading>Snowy Hydro-group company is not the Crown</heading>
+          <subsection eId="part-2__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A Snowy hydro-group company:</p>
+            </content>
+            <paragraph eId="part-2__sec-8__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is not, and does not represent, the Crown; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is not an instrumentality or agency of the Crown; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>is not entitled to any immunity or privilege of the Crown; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>is not a public authority for any purpose and is taken not to have been constituted or established for a public purpose or for a purpose of the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This section has effect subject to any express provision to the contrary made by any law of the Commonwealth.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-9">
+          <num>9</num>
+          <heading>Liabilities of Snowy hydro-group companies not guaranteed by Commonwealth</heading>
+          <content>
+            <p>The liabilities of a Snowy hydro-group company are not guaranteed by the Commonwealth.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Transfers of assets and liabilities</heading>
+        <division eId="part-3__dvs-1">
+          <num>1</num>
+          <heading>Transfer of existing Snowy hydro undertaking to Company</heading>
+          <section eId="part-3__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Transfer to Company of assets and liabilities of Snowy Mountains Hydro-electric Authority</heading>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, the assets and liabilities of the Snowy Mountains Hydro-electric Authority, immediately before the corporatisation date, are transferred to the Snowy Hydro Company.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The assets and liabilities transferred by this section include the assets and liabilities (if any) of the Snowy Mountains Council. For the purposes of this Act, any such assets and liabilities are taken to be the assets and liabilities of the Snowy Mountains Hydro-electric Authority.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The liabilities transferred by this section include any liability, immediately before the corporatisation date, arising from the works constructed or purporting to be constructed, or the activities carried out or purporting to be carried out, under the agreements terminated by paragraph 60(1)(a) (being a liability of <role refersTo="#authority">the Authority</role>, the Commonwealth, New South Wales, Victoria or any authority of the Commonwealth, New South Wales or Victoria). For the purposes of this Act any such liability is taken to be a liability of <role refersTo="#authority">the Authority</role>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The assets and liabilities transferred by this section do not include the assets and liabilities that are transferred to TransGrid by an order under <ref href="#sec-12">section 12</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The assets transferred by this section do not include stored water.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-10__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Schedule 1 applies to the transfer of assets and liabilities under this section.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-1__sec-11">
+            <num>11</num>
+            <heading>Transfer to Company of assets and liabilities of the Commonwealth</heading>
+            <subsection eId="part-3__dvs-1__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by order in writing and in accordance with an agreement between the Commonwealth, New South Wales and Victoria, direct that such assets or liabilities of the Commonwealth or of an authority of the Commonwealth relating to the Snowy Mountains Hydro-electric Scheme as are specified or referred to in the order be transferred to the Snowy Hydro Company.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An order under this section may be combined with an order under the New South Wales Corporatisation Act or the Victorian Corporatisation Act that transfers assets or liabilities to the Snowy Hydro Company.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Schedule 1 applies to an order under this section.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-2">
+          <num>2</num>
+          <heading>Transfer of electricity transmission undertaking to TransGrid</heading>
+          <section eId="part-3__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Transfer to TransGrid of existing Snowy electricity transmission undertaking</heading>
+            <subsection eId="part-3__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by order in writing and in accordance with an agreement between the Commonwealth, New South Wales and Victoria, direct that such assets or liabilities of the Snowy Mountains Hydro-electric Authority, of the Commonwealth or of an authority of the Commonwealth relating to the transmission of electricity generated by the Snowy Mountains Hydro-electric Scheme as are specified or referred to in the order be transferred to TransGrid.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The consideration for the transfer, and the value, of the existing Snowy electricity transmission undertaking (and any other matter concerning the transfer) may be determined by agreement between the Commonwealth, New South Wales and Victoria.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An order under this section may be combined with an order under the New South Wales Corporatisation Act or the Victorian Corporatisation Act that transfers assets or liabilities to TransGrid.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-12__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Schedule 1 applies to an order under this section.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-3">
+          <num>3</num>
+          <heading>Snowy Mountains Hydro-electric Authority’s debts</heading>
+          <content>
+            <p>Subdivision A—Loans by the Commonwealth</p>
+          </content>
+          <section eId="part-3__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Scope of Subdivision</heading>
+            <subsection eId="part-3__dvs-3__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This Subdivision applies to loans to the Snowy Mountains Hydro-electric Authority that were made by the Commonwealth.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In this Subdivision:</p>
+              </content>
+              <content>
+                <p><b><i>loan</i></b> includes any amount owing by the Authority to the Commonwealth.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-14">
+            <num>14</num>
+            <heading>Finance Minister may declare that all loans are due and payable</heading>
+            <subsection eId="part-3__dvs-3__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Finance Minister may, before the corporatisation date, by writing, declare that the principal amounts of all loans, together with any accrued interest, become due and payable at a time (the <b><i>repayment time</i></b>) before the corporatisation date that is stated in the declaration.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The total of the principal amounts and accrued interest is to be set out in the declaration and is to be the amount agreed between the Commonwealth, New South Wales and Victoria.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The declaration has effect accordingly.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-14__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Commonwealth must not lend any money to <role refersTo="#authority">the Authority</role> after the repayment time except in accordance with this Division.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-15">
+            <num>15</num>
+            <heading>Commonwealth must lend to the Authority an amount equal to the amount owing</heading>
+            <subsection eId="part-3__dvs-3__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a declaration is made under <ref href="#sec-14">section 14</ref>, the Finance Minister must, at or before the repayment time, lend to <role refersTo="#authority">the Authority</role>, on behalf of the Commonwealth, an amount equal to the total amount set out in the declaration.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The loan is to be subject to such terms and conditions as to payment of interest and repayment of principal as are notified in writing by the Finance Minister to <role refersTo="#authority">the Authority</role> at or before the repayment time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-15__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The terms and conditions to be notified are to be those agreed between the Commonwealth, New South Wales and Victoria.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-15__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The amount to be lent under subsection (2) is to be used to pay the amount that became due and payable under <ref href="#sec-14">section 14</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-15__subsec-5">
+              <num>5</num>
+              <content>
+                <p>To avoid doubt, the payment referred to in subsection (4) operates to extinguish the loans referred to in subsection 14(1).</p>
+              </content>
+              <content>
+                <p>Subdivision B—Other borrowing transactions</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-16">
+            <num>16</num>
+            <heading>Scope of Subdivision</heading>
+            <content>
+              <p>This Subdivision applies to borrowing transactions of the Snowy Mountains Hydro-electric Authority (other than loans referred to in sections 14 and 15).</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-3__sec-17">
+            <num>17</num>
+            <heading>Borrowing transactions</heading>
+            <subsection eId="part-3__dvs-3__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	For the purposes of this Subdivision, a <b><i>borrowing transaction</i></b> of the Authority is:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-17__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a loan; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-17__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other transaction that gives rise to a borrowing.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	For the purposes of this section, <b><i>borrowing</i></b> includes borrowing by the issue of stock under regulations made under the <i>Snowy</i><i> </i><i>Mountains</i><i> Hydro</i><i>-</i><i>electric Power Act 1949</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-18">
+            <num>18</num>
+            <heading>Authority’s borrowing transactions may become the Commonwealth’s borrowing transactions</heading>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Treasurer may, before the corporatisation date, by notice in the <i>Gazette</i>, declare that, at a stated time (the <b><i>transfer time</i></b>) before the corporatisation date, the Authority’s rights and obligations under specified borrowing transactions:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-18__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>cease to be rights and obligations of <role refersTo="#authority">the Authority</role>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-18__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>become rights and obligations of the Commonwealth.</p>
+                </content>
+                <authorialNote placement="end" eId="note-1" marker="1">
+                  <content>
+                    <p>Note:	A borrowing transaction may be specified by name, by inclusion in a named class of borrowing transactions or in any other way.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The declaration has effect accordingly.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Treasurer may authorise the payment of money by the Commonwealth to discharge obligations to which the declaration applies, whether by terminating those obligations or otherwise.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Clause 3 of Schedule 1 applies to rights and obligations to which subsection (1) of this section applies as if they were assets and liabilities transferred from <role refersTo="#authority">the Authority</role> to the Commonwealth under a transfer instrument to which that Schedule applies.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Clause 4 of Schedule 1 has effect as if references in that clause to the operation of that Schedule included the making of a declaration under subsection (1) of this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-18__subsec-6">
+              <num>6</num>
+              <content>
+                <p><role refersTo="#authority">The Authority</role> must not enter into any borrowing transactions after the transfer time.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-19">
+            <num>19</num>
+            <heading>Application of the Loans Securities Act 1919</heading>
+            <content>
+              <p>		Sections 5A, 5B, 5C and 5D (other than paragraphs (1)(c) and (2)(c)) of the <i>Loans Securities Act 1919</i> apply in relation to a borrowing that becomes a borrowing of the Commonwealth under <ref href="#sec-18">section 18</ref> as if that borrowing were a borrowing of money outside Australia:</p>
+            </content>
+            <paragraph eId="part-3__dvs-3__sec-19__para-a">
+              <num>a</num>
+              <content>
+                <p>that the Treasurer was authorised to make on behalf of the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__dvs-3__sec-19__para-b">
+              <num>b</num>
+              <content>
+                <p>that the Treasurer made accordingly.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-3__dvs-3__sec-20">
+            <num>20</num>
+            <heading>Commonwealth takeover of obligations—payments by the Authority to the Commonwealth</heading>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a declaration is made under subsection 18(1) in respect of rights and obligations under borrowing transactions, <role refersTo="#authority">the Authority</role> must, in consideration of the transfer of those rights and obligations to the Commonwealth, pay to the Commonwealth an amount determined by the Finance Minister.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The determination is to be in writing and expressed to take effect immediately after the transfer time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The amount to be determined is to be the amount agreed between the Commonwealth, New South Wales and Victoria.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-4">
+              <num>4</num>
+              <content>
+                <p>When an amount is determined under subsection (1), the Finance Minister must, before the corporatisation date, lend to <role refersTo="#authority">the Authority</role>, on behalf of the Commonwealth, an amount equal to the amount determined.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The loan is to be subject to such terms and conditions as to payment of interest and repayment of principal as are notified in writing by the Finance Minister to <role refersTo="#authority">the Authority</role> when the loan is made.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The terms and conditions to be notified are those agreed between the Commonwealth, New South Wales and Victoria.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The amount to be lent under subsection (4) is to be used to pay the amount required to be paid under subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-20__subsec-8">
+              <num>8</num>
+              <content>
+                <p>To avoid doubt, the payment referred to in subsection (7) operates to extinguish the liability to pay the amount referred to in subsection (1).</p>
+              </content>
+              <content>
+                <p>Subdivision C—Miscellaneous</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-21">
+            <num>21</num>
+            <heading>Agreement relating to Commonwealth debt</heading>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commonwealth may enter into an agreement with New South Wales and Victoria with respect to liabilities of <role refersTo="#authority">the Authority</role> to the Commonwealth that are to be transferred to the Snowy Hydro Company on the corporatisation date and with respect to the discharge of those liabilities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The agreement may contain any related provisions (including guarantees) that are considered appropriate.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-22">
+            <num>22</num>
+            <heading>Appropriation of Consolidated Revenue Fund</heading>
+            <content>
+              <p>The Consolidated Revenue Fund is appropriated for the purposes of this Division.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Transfer and rights of employees</heading>
+        <division eId="part-4__dvs-1">
+          <num>1</num>
+          <heading>Transfer of employees from Snowy Mountains Hydro-electric Authority to Snowy Hydro Company</heading>
+          <section eId="part-4__dvs-1__sec-23">
+            <num>23</num>
+            <heading>Transfer to Snowy Hydro Company of employees of Snowy Mountains Hydro-electric Authority</heading>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	A person who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date is taken:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to have ceased to be employed by <role refersTo="#authority">the Authority</role> immediately before that date; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to have been engaged by the Snowy Hydro Company as an employee of the Company with effect on and from that date; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to have been so engaged on terms and conditions that, with such exceptions (if any) as are provided by the regulations, are the same as those that applied to the person, immediately before that date, as an employee of <role refersTo="#authority">the Authority</role>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>to have accrued an entitlement to benefits, in connection with that engagement by the Company, that is equivalent to the entitlement that the person had accrued, as an employee of <role refersTo="#authority">the Authority</role>, immediately before that date.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p><b>	</b>(2)	The service of a transferred employee as an employee of the Company is taken for all purposes to have been continuous with the service of the employee, immediately before the corporatisation date, as an employee of the Authority.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A transferred employee is not entitled to receive any payment or other benefit merely because he or she stopped being an employee of <role refersTo="#authority">the Authority</role> as a result of this section or of any other provision of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-4">
+              <num>4</num>
+              <content>
+                <p>An auditor of the Snowy Mountains Hydro-electric Authority does not, because of the operation of this Act, become an auditor of the Snowy Hydro Company.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A reference in paragraph (1)(c) to terms and conditions is a reference to terms and conditions that are set out in:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>a written contract of employment; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	an award (within the meaning of the <i>Fair Work (Transitional Provisions and Consequential Amendments) Act 2009</i>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-5__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	a certified agreement (as defined by <ref href="#sec-4">section 4</ref> of the <i>Workplace Relations Act 1996</i>, as in force immediately before the reform commencement within the meaning given by that Act); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-5__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	an Australian workplace agreement (as defined by <ref href="#sec-4">section 4</ref> of the <i>Workplace Relations Act 1996</i>, as in force immediately before the reform commencement within the meaning given by that Act); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-23__subsec-5__para-e">
+                <num>e</num>
+                <content>
+                  <p>	(e)	an enterprise flexibility agreement (as defined by <ref href="#sec-4">section 4</ref> of the <i>Workplace Relations Act 1996 </i>as in force immediately before the commencement of Schedule 9 to the <i>Workplace Relations and Other Legislation Amendment Act 1996)</i> that continues to have effect because of <ref href="#part-2">Part 2</ref> of that Schedule.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-23__subsec-6">
+              <num>6</num>
+              <content>
+                <p>This section has effect subject to this Part.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-24">
+            <num>24</num>
+            <heading>Variations of terms and conditions of employment</heading>
+            <subsection eId="part-4__dvs-1__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	Section 23 does not prevent the terms and conditions of a transferred employee’s employment on or after the corporatisation date from being varied:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>in accordance with those terms and conditions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>by or under a law, award, determination or agreement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p><b>	</b>(2)	In this section:</p>
+              </content>
+              <content>
+                <p><b><i>vary</i></b>, in relation to terms and conditions, includes:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>omitting any of those terms and conditions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>adding to those terms and conditions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>substituting new terms and conditions for any of those terms and conditions.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-2">
+          <num>2</num>
+          <heading>Transitional and saving provisions in relation to long service leave</heading>
+          <section eId="part-4__dvs-2__sec-25">
+            <num>25</num>
+            <heading>General interpretation</heading>
+            <content>
+              <p><b>	</b>	Unless the contrary intention appears, expressions used in this Division that are also used in the Long Service Leave Act have the same meanings as in that Act.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-2__sec-26">
+            <num>26</num>
+            <heading>Specific definitions</heading>
+            <content>
+              <p>In this Division:</p>
+              <p><term refersTo="#term-combined-service-period">combined service period</term>, in relation to an employee, means <def>the total of: the period that was, immediately before the corporatisation date, the employee’s period of service for the purposes of the Long Service Leave Act; and the period starting on the corporatisation date during which the employee continues to be an employee of the Snowy Hydro Company.</def></p>
+            </content>
+            <paragraph eId="part-4__dvs-2__sec-26__para-a">
+              <num>a</num>
+              <content>
+                <p>the period that was, immediately before the corporatisation date, the employee’s period of service for the purposes of the Long Service Leave Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-26__para-b">
+              <num>b</num>
+              <content>
+                <p>the period starting on the corporatisation date during which the employee continues to be an employee of the Snowy Hydro Company.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-employee">employee</term> includes <def>a person employed in a full-time or a part-time capacity.</def></p>
+                <p><term refersTo="#term-future-long-service-leave-rights">future long service leave rights</term>, in relation to an employee, means <def>any long service leave rights an employee acquires under an award, determination, industrial agreement or law (other than this Act) on or after the corporatisation date in relation to service after that date.</def></p>
+                <p><b><i>law</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-26__para-a">
+              <num>a</num>
+              <content>
+                <p>a law of the Commonwealth, of a State or of a Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-2__sec-26__para-b">
+              <num>b</num>
+              <content>
+                <p>regulations or any other instrument (other than an award, determination or industrial agreement) made under such a law.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-2__sec-27">
+            <num>27</num>
+            <heading>Long service leave for employees with less than 10 years service</heading>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies in relation to a person who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date if, at that time, the employee’s period of service for the purposes of the Long Service Leave Act was less than 10 years.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-2">
+              <num>2</num>
+              <content>
+                <p>This section does not apply in relation to an employee who dies while in the employment of a Snowy hydro-group company. Section 29 covers such employees.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-3">
+              <num>3</num>
+              <content>
+                <p><b>	</b>(3)	If the employee continues to be employed by a Snowy hydro-group company on or after the corporatisation date until his or her combined service period is at least 10 years, the hydro-group company may grant the employee long service leave on full salary for a period up to the employee’s long service leave credit under subsection 30(1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-27__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the employee stops being an employee of a Snowy hydro-group company, on or after reaching the minimum retirement age, or because of retrenchment; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-27__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>the employee’s combined service period at the time when he or she stops being an employee of a hydro-group company is at least one year;</p>
+                </content>
+                <content>
+                  <p>the hydro-group company may grant the employee long service leave on full salary for a period of up to the employee’s long service leave credit under subsection 30(1).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-5">
+              <num>5</num>
+              <content>
+                <p>If a period of long service leave may be granted to an employee under subsection (3) or (4), the hydro-group company may, if the employee asks in writing, grant the employee long service leave on half salary for a period that is not more than twice the first-mentioned period.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Long service leave granted in the circumstances set out in subsection (4) is to be taken so as to end immediately before the employee stops being an employee.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-27__subsec-7">
+              <num>7</num>
+              <content>
+                <p>For the purposes of this section, the rate of salary to be used in working out the full salary of an employee is the rate that would be applicable to the employee under <ref href="#sec-20">section 20</ref> of the Long Service Leave Act if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-27__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>that section applied to the employee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-27__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	for the expression “<ref href="#sec-16">section 16</ref> or 17” in that section there were substituted the expression “<ref href="#sec-27">section 27</ref> of the <i>Snowy Hydro Corporatisation Act 1997</i>”.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-28">
+            <num>28</num>
+            <heading>Payments in lieu of long service leave for employees with less than 10 years service</heading>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies in relation to a person who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date if, at that time, the employee’s period of service for the purposes of the Long Service Leave Act was less than 10 years.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-2">
+              <num>2</num>
+              <content>
+                <p>This section does not apply in relation to an employee who dies while in the employment of a Snowy hydro-group company. Section 29 covers such employees.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subject to subsection (6), if the employee stops being an employee of a Snowy hydro-group company on or after the day on which his or her combined service period reaches 10 years, the hydro-group company must pay him or her an amount equal to full salary in respect of his or her long service leave credit under subsection 30(2).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subject to subsection (6), if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the employee stops being an employee of a Snowy hydro-group company, on or after reaching the minimum retiring age, or because of retrenchment; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>at that time the employee’s combined service period is at least one year;</p>
+                </content>
+                <content>
+                  <p>the hydro-group company must pay him or her an amount equal to full salary in respect of his or her long service leave credit under subsection 30(2).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Subject to subsection (6), if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>the employee stops being an employee of a Snowy hydro-group company; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>the hydro-group company is satisfied that the employee left the hydro-group company because of ill-health that justified his or her so leaving; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-5__para-c">
+                <num>c</num>
+                <content>
+                  <p>when the employee left, his or her combined service period was at least one year;</p>
+                </content>
+                <content>
+                  <p>the hydro-group company must pay him or her an amount equal to full salary in respect of his or her long service leave credit under subsection 30(2).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-6">
+              <num>6</num>
+              <content>
+                <p>An employee may, by written notice given to a Snowy hydro-group company before the employee stops being an employee of the hydro-group company:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>request the hydro-group company not to make a payment to the employee under this section; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>request the hydro-group company to make a payment under subsection (3), (4) or (5) of a stated amount that is less than the amount that would otherwise be payable under that subsection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The hydro-group company must comply with a request made under subsection (6).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-28__subsec-8">
+              <num>8</num>
+              <content>
+                <p>For the purposes of this section, the rate of salary to be used in working out the full salary of an employee is the rate that would be applicable to the employee under <ref href="#sec-21">section 21</ref> of the Long Service Leave Act if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>that section applied to the employee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-28__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	for the expression “sections 16 and 17” in that section there were substituted the expression “<ref href="#sec-28">section 28</ref> of the <i>Snowy Hydro Corporatisation Act 1997</i>”.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-29">
+            <num>29</num>
+            <heading>Payments on the death of an employee</heading>
+            <subsection eId="part-4__dvs-2__sec-29__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies in relation to a person who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date if, at that time, the employee’s period of service for the purposes of the Long Service Leave Act was less than 10 years.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-29__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)<b>	</b>If the employee dies on or after the corporatisation date and, immediately before his or her death:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the employee was an employee of a Snowy hydro-group company; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the employee’s combined service period was at least one year; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the employee had one or more dependants;</p>
+                </content>
+                <content>
+                  <p>the hydro-group company must make a payment to a dependant or to 2 or more dependants of the employee.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-29__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The total amount of the payment or payments is the amount that would have been payable to the employee under <ref href="#sec-28">section 28</ref> if, on the day of his or her death, the employee had stopped being an employee of the hydro-group company on or after reaching the minimum retiring age.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-29__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If subsection (2) applies, <ref href="#sec-23">section 23</ref> of the Long Service Leave Act has effect as if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>that section applied to an employee of a Snowy hydro-group company; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>a reference in that section to the approving authority were a reference to the hydro-group company; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	for the expression “this Act” in that section there were substituted the expression “<ref href="#sec-29">section 29</ref> of the <i>Snowy Hydro Corporatisation Act 1997</i>”; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-29__subsec-4__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	for the expression “subsection 16(7) or 17(5)” in that section there were substituted the expression “<ref href="#sec-29">section 29</ref> of the <i>Snowy Hydro Corporatisation Act 1997</i>”.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-30">
+            <num>30</num>
+            <heading>Employee’s long service leave credit for the purposes of sections 27 and 28</heading>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	For the purposes of <ref href="#sec-27">section 27</ref>, an employee’s long service leave credit is equal to the long service leave credit that the employee would have under the Long Service Leave Act for the period:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>starting when the employee started his or her period of service; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-30__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>ending immediately before the corporatisation date;</p>
+                </content>
+                <content>
+                  <p>if the employee had been retrenched on the corporatisation date.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of <ref href="#sec-28">section 28</ref>, an employee’s long service leave credit is the employee’s long service leave credit worked out under subsection (1) of this section reduced by any long service leave credit used under <ref href="#sec-27">section 27</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-31">
+            <num>31</num>
+            <heading>Division not to affect an employee’s future long service leave rights</heading>
+            <content>
+              <p><b>	</b><b>	</b>To avoid doubt, this Division does not affect an employee’s future long service leave rights.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-2__sec-32">
+            <num>32</num>
+            <heading>Saving—Long Service Leave Act</heading>
+            <subsection eId="part-4__dvs-2__sec-32__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies to a person who, immediately before the corporatisation date, was an employee of the Snowy Mountains Hydro-electric Authority whose period of service under the Long Service Leave Act was at least 10 years.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-32__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Even though the employee ceases to be employed in Government Service for the purposes of the Long Service Leave Act, the employee’s accrued rights under that Act continue if the employee becomes an employee of the Snowy Hydro Company on the corporatisation date. However, the employee is not entitled to receive any payment because he or she ceases to be in Government Service.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-32__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Long Service Leave Act has effect on and after the corporatisation date in relation to the employee as if the Snowy Hydro Company were an approving authority for the purposes of that Act.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-3">
+          <num>3</num>
+          <heading>Transitional and saving provisions relating to the Safety, Rehabilitation and Compensation Act 1988</heading>
+          <section eId="part-4__dvs-3__sec-33">
+            <num>33</num>
+            <heading>Interpretation</heading>
+            <content>
+              <p><b>	</b><b>	</b>Unless the contrary intention appears, expressions used in this Division that are also used in the <i>Safety, Rehabilitation and Compensation Act 1988</i> have the same meanings as in that Act.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-3__sec-34">
+            <num>34</num>
+            <heading>Transitional provisions relating to the Safety, Rehabilitation and Compensation Act 1988 in respect of certain employees of a Snowy hydro-group company</heading>
+            <subsection eId="part-4__dvs-3__sec-34__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies to an employee of a Snowy hydro-group company who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-34__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The <i>Safety, Rehabilitation and Compensation Act 1988</i> continues to apply, on and after the corporatisation date, in relation to:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-34__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>injuries suffered by the employee before the corporatisation date; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-34__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>loss of, or damage to, property incurred by the employee before the corporatisation date.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-3__sec-35">
+            <num>35</num>
+            <heading>Snowy Hydro Company liable to meet certain Safety, Rehabilitation and Compensation Act 1988 liabilities and to be taken to be the employer in certain circumstances under the Safety, Rehabilitation and Compensation Act 1988</heading>
+            <subsection eId="part-4__dvs-3__sec-35__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)<b>	</b>On and after the corporatisation date, the Snowy Hydro Company:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-35__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	is liable to pay the liabilities of the Snowy Mountains Hydro-electric Authority that existed immediately before that date under <ref href="#sec-128A">section 128A</ref> of the <i>Safety, Rehabilitation and </i><i>Compensation Act 1988</i> as if it were a prescribed Commonwealth authority for the purposes of that section; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-35__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	is taken to have been the employer of the employees of the Authority before the corporatisation date for the purposes of the <i>Safety, Rehabilitation and Compensation Act 1988</i>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-35__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Paragraph 1(b) has effect subject to <ref href="#sec-36">section 36</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-3__sec-36">
+            <num>36</num>
+            <heading>Sections 40 and 71 of the Safety, Rehabilitation and Compensation Act 1988</heading>
+            <subsection eId="part-4__dvs-3__sec-36__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies to an employee of a Snowy hydro-group company who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-3__sec-36__subsec-2">
+              <num>2</num>
+              <content>
+                <p>On and after the corporatisation date:</p>
+              </content>
+              <paragraph eId="part-4__dvs-3__sec-36__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the Snowy hydro-group company is taken to be the relevant employer of the employee for the purposes of <ref href="#sec-40">section 40</ref> of the <i>Safety, Rehabilitation and Compensation Act 1988</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-3__sec-36__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the Snowy hydro-group company is taken to be a Commonwealth authority for the purposes of <ref href="#sec-71">section 71</ref> of the <i>Safety, Rehabilitation and Compensation Act 1988</i>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-4">
+          <num>4</num>
+          <heading>Transitional and saving provisions in relation to maternity leave</heading>
+          <section eId="part-4__dvs-4__sec-37">
+            <num>37</num>
+            <heading>Interpretation</heading>
+            <content>
+              <p>Unless the contrary intention appears, expressions used in this Division that are also used in the Maternity Leave Act have the same meanings as in that Act.</p>
+            </content>
+          </section>
+          <section eId="part-4__dvs-4__sec-38">
+            <num>38</num>
+            <heading>Transitional maternity leave provisions for maternity leave beginning on or after corporatisation date</heading>
+            <subsection eId="part-4__dvs-4__sec-38__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-4__sec-38__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a woman who was an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date becomes an employee of the Snowy Hydro Company under <ref href="#sec-23">section 23</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-4__sec-38__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p><quantity refersTo="#deadline">within 12 months</quantity> after the corporatisation date, the woman would have been entitled to begin leave granted under the Maternity Leave Act if the Authority had continued to exist and the woman had continued to be an employee of the Authority.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-4__sec-38__subsec-2">
+              <num>2</num>
+              <content>
+                <p>On and after the corporatisation date, the Maternity Leave Act continues to apply to the woman in relation to the confinement in respect of which she would have been entitled to leave as if each Snowy hydro-group company were a prescribed Authority for the purposes of that Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-4__sec-39">
+            <num>39</num>
+            <heading>Transitional maternity leave provisions relating to employees of the Snowy Mountains Hydro-electric Authority who were on maternity leave immediately before corporatisation date</heading>
+            <subsection eId="part-4__dvs-4__sec-39__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-4__sec-39__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>immediately before the corporatisation date, a woman was an employee of the Snowy Mountains Hydro-electric Authority and was on leave granted under the Maternity Leave Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-4__sec-39__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the woman becomes an employee of the Snowy Hydro Company under <ref href="#sec-23">section 23</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-4__sec-39__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the woman would have been entitled to remain on that leave, after the corporatisation date, if <role refersTo="#authority">the Authority</role> had continued to exist and the woman had continued to be employed by <role refersTo="#authority">the Authority</role>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-4__sec-39__subsec-2">
+              <num>2</num>
+              <content>
+                <p>On and after the corporatisation date, the Maternity Leave Act continues to apply to the woman in relation to the confinement in respect of which the leave was granted as if each Snowy hydro-group company were a prescribed Authority for the purposes of that Act.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-5">
+          <num>5</num>
+          <heading>Other transitional and saving provisions</heading>
+          <section eId="part-4__dvs-5__sec-40">
+            <num>40</num>
+            <heading>Saving—deferred benefits under the DFRDB Act</heading>
+            <subsection eId="part-4__dvs-5__sec-40__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	This section applies to an employee of a Snowy hydro-group company if, immediately before the corporatisation date, the employee was an employee of the Snowy Mountains Hydro-electric Authority in respect of whom deferred benefits were applicable under <ref href="#sec-78">section 78</ref> of the DFRDB Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-40__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-I">Part I</ref>X of the DFRDB Act, the employee is taken to continue in public employment on and after the corporatisation date while the employee continues to be employed by a hydro-group company.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-40__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section is subject to <ref href="#dvs-3">Division 3</ref> of <ref href="#part-I">Part I</ref>X of the DFRDB Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-40__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Unless the contrary intention appears, expressions used in this section that are also used in the DFRDB Act have the same meanings as in that Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-5__sec-41">
+            <num>41</num>
+            <heading>Saving—period of eligible employment for the purposes of Division 3 of Part IX of the DFRDB Act</heading>
+            <content>
+              <p><b>	</b><b>	</b>If:</p>
+            </content>
+            <paragraph eId="part-4__dvs-5__sec-41__para-a">
+              <num>a</num>
+              <content>
+                <p>a person who is an employee of a Snowy hydro-group company was, immediately before the corporatisation date, an employee of the Snowy Mountains Hydro-electric Authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-5__sec-41__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a period of employment of the person by the Authority was a period of eligible employment for the purposes of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-I">Part I</ref>X of the DFRDB<i> </i>Act;</p>
+              </content>
+              <content>
+                <p>the period of employment continues to be a period of eligible employment for the purposes of that Division.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-5__sec-42">
+            <num>42</num>
+            <heading>Transitional provision relating to the Crimes (Superannuation Benefits) Act 1989</heading>
+            <content>
+              <p>Continuing application of Crimes (Superannuation Benefits) Act 1989</p>
+            </content>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	Subject to this section, if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-5__sec-42__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person who was an employee of the Snowy Mountains Hydro-electric Authority before the corporatisation date committed a corruption offence while such an employee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-42__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person becomes an employee of the Snowy Hydro Company on that date under <ref href="#sec-23">section 23</ref>;</p>
+                </content>
+                <content>
+                  <p>then, on and after that date, the <i>Crimes (Superannuation Benefits) Act 1989 </i>continues to apply in relation to the person in respect of the offence as if a Snowy hydro-group company were an authority of the Commonwealth.</p>
+                  <p>Limitation on superannuation orders</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	A superannuation order may not be made under the <i>Crimes (Superannuation Benefits) Act 1989 </i>in relation to employer contributions or benefits paid or payable to a superannuation scheme by a Snowy hydro-group company on or after the corporatisation date.</p>
+              </content>
+              <content>
+                <p>Superannuation schemes</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	A superannuation scheme in relation to which employer contributions or benefits are paid or payable by a Snowy hydro-group company is not a superannuation scheme for the purposes of the <i>Crimes (Superannuation Benefits) Act 1989</i> in respect of a corruption offence committed by a person after the corporatisation date.</p>
+              </content>
+              <content>
+                <p>Paragraph 19(3)(d) orders</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Despite paragraph 19(3)(d) of the <i>Crimes (Superannuation Benefits) Act 1989</i>, for the purposes of the application of that Act to the Snowy Mountains Hydro-electric Authority, an order made under that paragraph on or after the corporatisation date may only specify that an amount paid to the Commonwealth before that date by or on behalf of the Authority belongs to the Commonwealth.</p>
+              </content>
+              <content>
+                <p>Paragraph 19(4)(b) orders</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-5">
+              <num>5</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-4__dvs-5__sec-42__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person who was an employee of the Snowy Mountains Hydro-electric Authority before the corporatisation date committed a corruption offence while such an employee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-42__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person was or is paid benefits before, on or after that date out of the Consolidated Revenue Fund;</p>
+                </content>
+                <content>
+                  <p>then, despite paragraph 19(4)(b) of the <i>Crimes (Superannuation Benefits) Act 1989</i>, for the purposes of the application of that Act to the corruption offence, an order made under that paragraph on or after that date may only specify that an amount equal to the total benefits paid out of the Consolidated Revenue Fund be paid to the Commonwealth.</p>
+                  <p>Interpretation</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-42__subsec-6">
+              <num>6</num>
+              <content>
+                <p>	(6)	Unless the contrary intention appears, expressions used in this section that are also used in the <i>Crimes (Superannuation Benefits) Act 1989</i> have the same meanings as in that Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-5__sec-43">
+            <num>43</num>
+            <heading>Saving—Director of Public Prosecutions Act 1993</heading>
+            <content>
+              <p><b>	</b><b>	</b>Even though the <i>Director of Public Prosecutions Act 1993</i> ceases to apply to acts, omissions or proceedings in connection with the Snowy Mountains Hydro-electric Authority because the Authority has ceased to exist, that Act continues on and after the corporatisation date to apply to:</p>
+            </content>
+            <paragraph eId="part-4__dvs-5__sec-43__para-a">
+              <num>a</num>
+              <content>
+                <p>acts or omissions that occurred before that date; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-5__sec-43__para-b">
+              <num>b</num>
+              <content>
+                <p>the taking of civil remedies connected with or arising out of a prosecution that relates to such acts or omissions.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-5__sec-44">
+            <num>44</num>
+            <heading>Saving—Judiciary Act 1903</heading>
+            <subsection eId="part-4__dvs-5__sec-44__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Section 55E of the <i>Judiciary Act 1903</i> continues to apply in relation to:</p>
+              </content>
+              <paragraph eId="part-4__dvs-5__sec-44__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>any proceedings to which the Snowy Hydro Company is a party that were started before the corporatisation date; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-44__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any matter that an authorised person, by writing, certifies to be a matter in relation to which the Snowy Mountains Hydro-electric Authority gave written instructions before the corporatisation date to the Australian Government Solicitor; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-44__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>any matter that an authorised person, by writing, certifies to be a matter involving a claim against the Company in respect of which the Commonwealth agreed to indemnify <role refersTo="#authority">the Authority</role> or has agreed to indemnify the Company;</p>
+                </content>
+                <content>
+                  <p>as if the Company were a body established by an Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-44__subsec-2">
+              <num>2</num>
+              <content>
+                <p><b>	</b>(2)	A document purporting to be a certificate under subsection (1) is, unless the contrary is established, taken to be such a certificate.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-44__subsec-3">
+              <num>3</num>
+              <content>
+                <p><b>	</b>(3)	In this section:</p>
+              </content>
+              <content>
+                <p><b><i>authorised person</i></b> means:</p>
+              </content>
+              <paragraph eId="part-4__dvs-5__sec-44__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> of the Attorney-General’s Department; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-44__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	a person holding or performing the duties of a Senior Executive Service office, within the meaning of the <i>Public Service Act 1922</i>, in that Department.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-5__sec-46">
+            <num>46</num>
+            <heading>Cessation of mobility rights</heading>
+            <subsection eId="part-4__dvs-5__sec-46__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	If <ref href="#dvs-2">Division 2</ref> or 3 of <ref href="#part-I">Part I</ref>V of the <i>Public Service Act 1922</i> applied to an employee of the Snowy Mountains Hydro-electric Authority immediately before the corporatisation date, that Division ceases to apply to the employee on that date.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-5__sec-46__subsec-2">
+              <num>2</num>
+              <content>
+                <p><b>	</b>(2)	If <ref href="#dvs-4">Division 4</ref> of <ref href="#part-I">Part I</ref>V of the <i>Public Service Act 1922</i> applied to an employee of the Authority immediately before the corporatisation date:</p>
+              </content>
+              <paragraph eId="part-4__dvs-5__sec-46__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the <i>Officers’ Rights Declaration Act 1928</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-5__sec-46__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	<ref href="#dvs-4">Division 4</ref> of <ref href="#part-I">Part I</ref>V of the <i>Public Service Act 1922</i>; </p>
+                </content>
+                <content>
+                  <p>cease to apply to the employee on that date.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-5__sec-47">
+          <num>47</num>
+          <heading>Sharing of land tax with New South Wales</heading>
+          <subsection eId="part-5__sec-47__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Commonwealth may enter into an agreement with New South Wales with respect to the payment to the Commonwealth of a requisite proportion of land tax paid to New South Wales by the Snowy Hydro Company.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-47__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The requisite proportion is the proportion of shares in the Company held by the Commonwealth during the relevant period for which the land tax was paid.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-48">
+          <num>48</num>
+          <heading>Minister may execute agreements on behalf of Commonwealth</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may execute, on behalf of the Commonwealth, any agreement that the Commonwealth is authorised to enter into by this Act or any other agreement that is necessary or convenient to give effect to the object of this Act.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-49">
+          <num>49</num>
+          <heading>Exemption from taxes (other than GST)</heading>
+          <subsection eId="part-5__sec-49__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	No tax is payable under a law of the Commonwealth, New South Wales or Victoria in respect of:</p>
+            </content>
+            <paragraph eId="part-5__sec-49__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an exempt matter; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>anything done (including, for example, a transaction entered into or an instrument or oral agreement made, executed, lodged or given) because of, or for a purpose connected with or arising out of, an exempt matter.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	Section 177-5 of the <i>A New Tax System (Goods and Services Tax) Act 1999</i> cancels the effect of this section in respect of the GST. Section 49A of this Act deals with supplies that are GST-free.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-49__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister or an authorised person may, in writing, certify whether:</p>
+            </content>
+            <paragraph eId="part-5__sec-49__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a particular matter or thing is an exempt matter; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a particular thing was done (including, for example, a transaction entered into or an instrument or oral agreement made, executed, lodged or given) because of, or for a purpose connected with or arising out of, a particular exempt matter.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-49__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For all purposes and in all proceedings, a certificate under subsection (2) is conclusive evidence of the matter certified, except to the extent (if any) to which the contrary is proved.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-49__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Unless the contrary is proved, a document purporting to be a certificate under subsection (2) is to be taken to be such a certificate and to have been duly signed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-49A">
+          <num>49A</num>
+          <heading>GST-free supplies</heading>
+          <subsection eId="part-5__sec-49A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	To the extent that any of the following constitutes a taxable supply, or a supply that would be input taxed, under the <i>A New Tax System (Goods and Services Tax) Act 1999</i>, it is instead GST-free:</p>
+            </content>
+            <paragraph eId="part-5__sec-49A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the initial issue of shares in the Snowy Hydro Company to the Commonwealth, New South Wales and Victoria;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>supplies made on or before the corporatisation date as a result of, or as a result of action taken under, any of the following provisions:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49A__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p><ref href="#dvs-1">Division 1</ref> or <ref href="#dvs-3">Division 3</ref> of <ref href="#part-3">Part 3</ref>, <ref href="#part-4">Part 4</ref>, <ref href="#sec-56">section 56</ref> or <ref href="#sec-60">section 60</ref> of this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49A__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p><ref href="#sec-11">section 11</ref>, 12, 13, 15, 16 or 53 of the New South Wales Corporatisation Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-49A__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p><ref href="#sec-11">section 11</ref>, 12, 13, 15, 16 or 28 of the Victorian Corporatisation Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-49A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Nothing in subsection (1) results in a progressive or periodic component of a supply being GST-free.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	Progressive or periodic components of supplies will continue to be dealt with under the relevant provisions (including <ref href="#sec-156">section 156</ref>-5) of the <i>A New Tax System (Goods and Services Tax) Act 1999</i> as if subsection (1) did not apply.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-50">
+          <num>50</num>
+          <heading>Exemption from Corporations Act</heading>
+          <content>
+            <p>		Section 205 and <ref href="#part-3">Part 3</ref>.2A of the <i>Corporations Act 2001</i> do not apply in relation to:</p>
+          </content>
+          <paragraph eId="part-5__sec-50__para-a">
+            <num>a</num>
+            <content>
+              <p>any debt to the Commonwealth, or other liability, acquired by the Snowy Hydro Company (or the giving of any related security) in accordance with this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act or any agreement under any such Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-50__para-b">
+            <num>b</num>
+            <content>
+              <p>the acquisition of initial shares in the Company by the Commonwealth, New South Wales or Victoria.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-51">
+          <num>51</num>
+          <heading>Ministerial determinations for purposes of application of Income Tax Assessment Acts in respect of assets transferred to Snowy Hydro Company</heading>
+          <subsection eId="part-5__sec-51__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to an asset that is transferred to the Snowy Hydro Company by:</p>
+            </content>
+            <paragraph eId="part-5__sec-51__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a transfer instrument or transfer instruments referred to in paragraph 2(a) of Schedule 1; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-51__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an order or orders referred to in paragraph 2(b), (c) or (d) of that Schedule.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-51__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Finance Minister may make a written determination that the <i>Income Tax Assessment Act 1936</i> and the <i>Income Tax Assessment Act 1997</i> have effect, in relation to the Company, as if:</p>
+            </content>
+            <paragraph eId="part-5__sec-51__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Company acquired, and became the owner of, a specified asset on a date stated in the determination; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-51__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Company had given consideration in respect of the acquisition of the asset by it; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-51__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the consideration so given:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-51__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>was the amount stated in the determination; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-51__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>represented the cost to the Company of the asset.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-51__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The amount to be stated in a determination under subparagraph (2)(c)(i) in respect of a particular asset is the amount determined in relation to that asset in a relevant agreement entered into as mentioned in clause 6 of Schedule 1.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-51__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A determination under subsection (2) has effect accordingly.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-52">
+          <num>52</num>
+          <heading>Modification by regulations of Income Tax Assessment Acts as applying to Snowy Hydro Company</heading>
+          <subsection eId="part-5__sec-52__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The regulations may provide that the application of the <i>Income Tax Assessment Act 1936</i> and the <i>Income Tax Assessment Act 1997</i> to the Snowy Hydro Company is subject to such modifications as are set out in the regulations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-52__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This section has effect subject to any determinations in force under <ref href="#sec-51">section 51</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-53">
+          <num>53</num>
+          <heading>Registration etc. of changing title to assets</heading>
+          <subsection eId="part-5__sec-53__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	If:</p>
+            </content>
+            <paragraph eId="part-5__sec-53__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an asset vests in the Snowy Hydro Company because of <ref href="#sec-10">section 10</ref> or an order under <ref href="#sec-11">section 11</ref> or vests in TransGrid because of an order under <ref href="#sec-12">section 12</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a person or authority has power, under a law of the Commonwealth, of a State or of a Territory, to register, record or otherwise give effect to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>transactions affecting that kind of asset; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>instruments relating to such transactions;</p>
+              </content>
+              <content>
+                <p>the person or authority may do whatever is necessary or desirable to give effect to, or reflect, the vesting (for example, making entries in a register).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-53__subsec-2">
+            <num>2</num>
+            <content>
+              <p><b>	</b>(2)	Without limiting the generality of subsection (1), if:</p>
+            </content>
+            <paragraph eId="part-5__sec-53__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>land that is situated in a State or Territory, or an interest in such land, vests in the Snowy Hydro Company under <ref href="#sec-10">section 10</ref> or an order under <ref href="#sec-11">section 11</ref> or vests in TransGrid under an order under <ref href="#sec-12">section 12</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>there is lodged with <role refersTo="#registrar">the Registrar</role> of Titles or other proper officer of the State or Territory in which the land is situated a certificate that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>is signed by <role refersTo="#minister">the Minister</role> or an authorised person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>identifies the land or interest, whether by reference to a map or otherwise; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>states that the land or interest is vested in the Company under <ref href="#sec-10">section 10</ref> or 11 or is vested in TransGrid under <ref href="#sec-12">section 12</ref>, as the case may be;</p>
+              </content>
+              <content>
+                <p>the officer with whom the certificate is lodged may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>register the matter in the same way as dealings in land or interests in land of that kind are registered; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-53__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>deal with, and give effect to, the certificate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-54">
+          <num>54</num>
+          <heading>Compensation—constitutional safety-net</heading>
+          <subsection eId="part-5__sec-54__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	If:</p>
+            </content>
+            <paragraph eId="part-5__sec-54__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this section, the operation of this Act would result in the acquisition of property from a person otherwise than on just terms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-54__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the acquisition would be invalid because of paragraph 51(xxxi) of the Constitution;</p>
+              </content>
+              <content>
+                <p>the Commonwealth is liable to pay compensation of a reasonable amount to the person in respect of the acquisition.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-54__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Commonwealth and the person do not agree on the amount of the compensation, the person may institute proceedings in the Federal Court of Australia for the recovery from the Commonwealth of such reasonable amount of compensation as the Court determines.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-54__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>acquisition of property</i></b> has the same meaning as in paragraph 51(xxxi) of the Constitution.</p>
+              <p><b><i>just terms</i></b> has the same meaning as in paragraph 51(xxxi) of the Constitution.</p>
+              <p><b><i>person</i></b> does not include the Snowy Mountains Hydro-electric Authority or the Snowy Mountains Council.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-55">
+          <num>55</num>
+          <heading>Snowy Hydro Company’s financial statements and reports to be laid before Parliament</heading>
+          <subsection eId="part-5__sec-55__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	This section applies when, under the <i>Corporations Act 2001</i>, the Snowy Hydro Company sends to:</p>
+            </content>
+            <paragraph eId="part-5__sec-55__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Commonwealth as the holder of shares in the Company; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-55__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a person who holds shares in the Company as nominee for the Commonwealth;</p>
+              </content>
+              <content>
+                <p>copies of the documents required by that Act to be laid before a particular annual general meeting of the Company.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-55__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> must, as soon as practicable, cause to be laid before each House of the Parliament copies of the documents referred to in subsection (1) (whether made from the copies first referred to in that subsection or otherwise).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-56">
+          <num>56</num>
+          <heading>Commonwealth records, etc.</heading>
+          <subsection eId="part-5__sec-56__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>personal information</i></b><b> </b>has the same meaning as in the <i>Privacy Act 1988</i>.</p>
+              <p><b><i>pre</i></b><b><i>-</i></b><b><i>corporatisation day</i></b> means the day immediately before the corporatisation date.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-56__subsec-2">
+            <num>2</num>
+            <content>
+              <p><b>	</b>(2)	Any asset of the Snowy Mountains Hydro-electric Authority, in existence at the beginning of the pre-corporatisation day, or coming into existence during that day, being an asset that is a Commonwealth record, becomes the property of the Commonwealth at the beginning of that day or immediately after coming into existence, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-56__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Any asset of the Snowy Mountains Hydro-electric Authority, being a copyright in a literary, dramatic, musical or artistic work or other subject-matter, that was owned by <role refersTo="#authority">the Authority</role> at the beginning of the pre-corporatisation day, or comes to be owned by <role refersTo="#authority">the Authority</role> during that day, becomes the property of the Commonwealth at the beginning of that day or immediately after coming to be owned by <role refersTo="#authority">the Authority</role>, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-56__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Clause 3 of Schedule 1 applies to an asset to which subsection (2) or (3) applies as if it were transferred from <role refersTo="#authority">the Authority</role> to the Commonwealth under a transfer instrument to which that Schedule applies.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-56__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The disclosure to the Snowy Hydro Company of personal information about transferred employees contained in Commonwealth records referred to in subsection (2) is authorised.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-56__subsec-6">
+            <num>6</num>
+            <content>
+              <p><b>	</b>(6)	To avoid doubt, but without limiting by implication the operation of <ref href="#sec-8">section 8</ref>, a Snowy hydro-group company is taken, for the purposes of the <i>Archives Act 1983</i>, never to have been established for a public purpose.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-57">
+          <num>57</num>
+          <heading>Authorised persons</heading>
+          <subsection eId="part-5__sec-57__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Finance Minister may, by writing, appoint a person to be an authorised person for the purposes of subsection 49(2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-57__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by writing, appoint a person to be an authorised person for the purposes of subsection 53(2).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-58">
+          <num>58</num>
+          <heading>Regulations</heading>
+          <content>
+            <p><b>	</b><b>	</b>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-5__sec-58__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-58__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act;</p>
+            </content>
+            <content>
+              <p>and, in particular, prescribing penalties, not exceeding a fine of <quantity refersTo="#penaltyUnit">10 penalty units</quantity>, for offences against the regulations.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-59">
+          <num>59</num>
+          <heading>Repeal</heading>
+          <content>
+            <p>		The <i>Snowy</i><i> </i><i>Mountains</i><i> Hydro</i><i>-</i><i>electric Power Act 1949</i> is repealed.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-60">
+          <num>60</num>
+          <heading>Termination and amendment of certain existing agreements relating to Snowy Mountains Scheme</heading>
+          <subsection eId="part-5__sec-60__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following agreements are terminated on the corporatisation date:</p>
+            </content>
+            <paragraph eId="part-5__sec-60__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the agreements copies of which are set out in Schedules 1 and 2 to the <i>Snowy Mountains Hydro</i><i>-</i><i>electric Power Act 1949</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-60__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the agreement a copy of which is set out in the Schedule to the <i>Blowering Water Storage Works Agreements Act 1963</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The agreement a copy of which is set out in the First Schedule to the <i>Seat of Government Acceptance Act 1909</i> is amended on the corporatisation date by omitting clause 10.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The termination of the agreements referred to in subsection (1) extinguishes the rights and obligations of the parties under the agreements.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The omission of clause 10 of the agreement referred to in subsection (2) extinguishes the rights and obligations of the parties under the clause.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An exemption (if any) arising under the agreements referred to in subsection (1) from any written or unwritten laws of the Commonwealth, New South Wales or Victoria is terminated on the corporatisation date and is not transferred by or under this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A right (if any) arising under an agreement referred to in subsection (1) to collect, divert, store or use water or to generate or supply electricity, or right arising under clause 10 of the agreement referred to in subsection (2), is terminated on the corporatisation date and is not transferred by or under this Act, the New South Wales Corporatisation Act or the Victorian Corporatisation Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-60__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subsections (5) and (6) are enacted to avoid doubt.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-61">
+          <num>61</num>
+          <heading>Authority and Council abolished</heading>
+          <content>
+            <p>On the corporatisation date:</p>
+          </content>
+          <paragraph eId="part-5__sec-61__para-a">
+            <num>a</num>
+            <content>
+              <p>the Snowy Mountains Hydro-electric Authority is abolished; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-61__para-b">
+            <num>b</num>
+            <content>
+              <p>the Snowy Mountains Council is abolished;</p>
+            </content>
+            <content>
+              <p>to the extent that they were, immediately before that date, constituted or recognised as legal entities by any Act.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-5__sec-62">
+          <num>62</num>
+          <heading>Validation of treatment of certain expenditure by the Authority</heading>
+          <content>
+            <p>		If the Authority has at any time treated expenditure incurred by it under the agreement a copy of which is set out in Schedule 2 to the <i>Snowy Mountains Hydro</i><i>-</i><i>electric Power Act 1949</i> as being expenditure of a capital nature, or as not being expenditure of a capital nature, the action of the Authority in so treating the expenditure is taken, for all purposes, to have been correct.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-63">
+          <num>63</num>
+          <heading>Savings, transitional and other provisions</heading>
+          <subsection eId="part-5__sec-63__subsec-1">
+            <num>1</num>
+            <content>
+              <p><ref href="#part-1">Part 1</ref> of Schedule 2 has effect.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-63__subsec-2">
+            <num>2</num>
+            <content>
+              <p><ref href="#part-2">Part 2</ref> of Schedule 2 has effect.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+    </body>
+    <attachments>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-1">
+          <num>1</num>
+          <heading>Provisions relating to transfer of undertakings</heading>
+          <hcontainer name="clause" eId="schedule-1__clause-1">
+            <num>1</num>
+            <heading>Definitions</heading>
+            <content>
+              <p>In this Schedule:</p>
+              <p><b><i>corresponding law</i></b> means the New South Wales Corporatisation Act or the Victorian Corporatisation Act.</p>
+              <p><b><i>transfer instrument</i></b>: see clause 2.</p>
+              <p><b><i>transferee</i></b> means the person or body to whom any assets or liabilities are transferred by a transfer instrument to which this Schedule applies.</p>
+              <p><b><i>transferor</i></b> means the person or body from whom any assets or liabilities are transferred by a transfer instrument to which this Schedule applies.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-2">
+            <num>2</num>
+            <heading>Application</heading>
+            <content>
+              <p>		This Schedule applies to the following <b><i>transfer instruments</i></b>:</p>
+            </content>
+            <paragraph eId="schedule-1__clause-2__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-10">section 10</ref> of this Act and a provision of the New South Wales Corporatisation Act or the Victorian Corporatisation Act transferring assets and liabilities of <role refersTo="#authority">the Authority</role> to the Snowy Hydro Company;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an order under <ref href="#sec-11">section 11</ref> of this Act transferring assets or liabilities of the Commonwealth to the Snowy Hydro Company;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-c">
+              <num>c</num>
+              <content>
+                <p>an order under a provision of the New South Wales Corporatisation Act transferring assets or liabilities of New South Wales to the Snowy Hydro Company;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-d">
+              <num>d</num>
+              <content>
+                <p>an order under a provision of the Victorian Corporatisation Act transferring assets or liabilities of Victoria to the Snowy Hydro Company;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-e">
+              <num>e</num>
+              <content>
+                <p>an order under <ref href="#sec-12">section 12</ref> of this Act transferring assets or liabilities of <role refersTo="#authority">the Authority</role>, the Commonwealth or an authority of the Commonwealth to TransGrid;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-f">
+              <num>f</num>
+              <content>
+                <p>an order under a provision of the New South Wales Corporatisation Act transferring assets or liabilities of <role refersTo="#authority">the Authority</role>, New South Wales or an authority of New South Wales to TransGrid;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-2__para-g">
+              <num>g</num>
+              <content>
+                <p>an order under a provision of the Victorian Corporatisation Act transferring assets or liabilities of <role refersTo="#authority">the Authority</role>, Victoria or an authority of Victoria to TransGrid.</p>
+              </content>
+            </paragraph>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-3">
+            <num>3</num>
+            <heading>Vesting of undertaking in transferee</heading>
+            <content>
+              <p>When any assets or liabilities are transferred by a transfer instrument to which this Schedule applies, the following provisions have effect (subject to the transfer instrument):</p>
+            </content>
+            <paragraph eId="schedule-1__clause-3__para-a">
+              <num>a</num>
+              <content>
+                <p>those assets of the transferor vest in the transferee by this Schedule and without the need for any conveyance, transfer, assignment or assurance;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-3__para-b">
+              <num>b</num>
+              <content>
+                <p>those liabilities of the transferor become by this Schedule the liabilities of the transferee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-3__para-c">
+              <num>c</num>
+              <content>
+                <p>all proceedings relating to those assets or liabilities begun before the transfer by or against the transferor or a predecessor of the transferor and pending immediately before the transfer are taken to be proceedings pending by or against the transferee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-3__para-d">
+              <num>d</num>
+              <content>
+                <p>any act, matter or thing done or omitted to be done in relation to those assets or liabilities before the transfer by, to or in respect of the transferor is (to the extent that that act, matter or thing has any effect) taken to have been done or omitted by, to or in respect of the transferee;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-3__para-e">
+              <num>e</num>
+              <content>
+                <p>a reference in any Act, in any instrument made under any Act or in any document of any kind to the transferor or a predecessor of the transferor is (to the extent that it relates to those assets or liabilities but subject to the regulations or other provisions under Schedule 2) to be read as, or as including, a reference to the transferee.</p>
+              </content>
+            </paragraph>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-4">
+            <num>4</num>
+            <heading>Operation of Schedule</heading>
+            <hcontainer name="subclause" eId="schedule-1__clause-4__subclause-1">
+              <num>1</num>
+              <content>
+                <p>The operation of this Schedule is not to be regarded:</p>
+              </content>
+            </hcontainer>
+            <paragraph eId="schedule-1__clause-4__para-a">
+              <num>a</num>
+              <content>
+                <p>as a breach of contract or confidence or otherwise as a civil wrong; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-4__para-b">
+              <num>b</num>
+              <content>
+                <p>as a breach of any contractual provision prohibiting, restricting or regulating the assignment or transfer of assets or liabilities; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-4__para-c">
+              <num>c</num>
+              <content>
+                <p>as giving rise to any remedy by a party to a legal instrument, or as causing or permitting the termination of any legal instrument, because of a change in the beneficial or legal ownership of any asset or liability.</p>
+              </content>
+            </paragraph>
+            <hcontainer name="subclause" eId="schedule-1__clause-4__subclause-2">
+              <num>2</num>
+              <content>
+                <p>The operation of this Schedule is not to be regarded as an event of default under any contract or other legal instrument.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-4__subclause-3">
+              <num>3</num>
+              <content>
+                <p>No attornment to the transferee by a lessee from the transferor is required.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-4__subclause-4">
+              <num>4</num>
+              <content>
+                <p>The operation of this Schedule includes the enactment or making of a transfer instrument to which this Schedule applies.</p>
+              </content>
+            </hcontainer>
+            <content>
+              <p>Note:	The operation of this Schedule also includes the making of a declaration under subsection 18(1) (see subsection 18(5)).</p>
+            </content>
+            <hcontainer name="subclause" eId="schedule-1__clause-4__subclause-5">
+              <num>5</num>
+              <content>
+                <p>In this clause:</p>
+              </content>
+            </hcontainer>
+            <content>
+              <p><b><i>legal instrument</i></b> means an instrument (other than this Act or a corresponding law) that creates, modifies or extinguishes rights or liabilities (or would do so if lodged, filed or registered in accordance with any law), and includes any judgment, order or process of a court.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-5">
+            <num>5</num>
+            <heading>Date of vesting</heading>
+            <content>
+              <p>A transfer instrument to which this Schedule applies takes effect on the date it is enacted or made, or such other date as is specified in the instrument.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-6">
+            <num>6</num>
+            <heading>Value of particular assets transferred</heading>
+            <content>
+              <p>The respective values of particular assets transferred by a transfer instrument to which this Schedule applies may be determined by agreement between the Commonwealth, New South Wales and Victoria.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-7">
+            <num>7</num>
+            <heading>Transfer of interests in land</heading>
+            <hcontainer name="subclause" eId="schedule-1__clause-7__subclause-1">
+              <num>1</num>
+              <content>
+                <p>A transfer instrument to which this Schedule applies may transfer an interest in respect of land vested in the transferor without transferring the whole of the interests of the transferor in that land.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-7__subclause-2">
+              <num>2</num>
+              <content>
+                <p>If the interest transferred is not a separate interest, the transfer instrument operates to create the interest transferred in such terms as are specified in the instrument.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-7__subclause-3">
+              <num>3</num>
+              <content>
+                <p>This clause does not limit any other provision of this Schedule.</p>
+              </content>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-8">
+            <num>8</num>
+            <heading>Confirmation of vesting in Snowy Hydro Company</heading>
+            <hcontainer name="subclause" eId="schedule-1__clause-8__subclause-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, by order in writing, confirm the transfer to the Snowy Hydro Company of particular assets or liabilities by the operation of <ref href="#sec-10">section 10</ref>.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-8__subclause-2">
+              <num>2</num>
+              <content>
+                <p>Such an order is evidence of that transfer.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="subclause" eId="schedule-1__clause-8__subclause-3">
+              <num>3</num>
+              <content>
+                <p>An order under this clause may be combined with an order under the New South Wales Corporatisation Act or the Victorian Corporatisation Act that confirms the transfer of assets or liabilities to the Snowy Hydro Company by that Act.</p>
+              </content>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="clause" eId="schedule-1__clause-9">
+            <num>9</num>
+            <heading>Successor of Authority</heading>
+            <content>
+              <p>The Snowy Hydro Company is taken for all purposes, including the rules of private international law, to be the successor of <role refersTo="#authority">the Authority</role> (except in respect of assets and liabilities transferred under this Act or a corresponding law to any other body or person).</p>
+            </content>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-2">
+          <num>2</num>
+          <heading>Savings, transitional and other provisions</heading>
+          <hcontainer name="part" eId="schedule-2__part-1">
+            <num>1</num>
+            <heading>Preliminary</heading>
+            <hcontainer name="clause" eId="schedule-2__part-1__clause-1">
+              <num>1</num>
+              <heading>Regulations</heading>
+              <hcontainer name="subclause" eId="schedule-2__part-1__clause-1__subclause-1">
+                <num>1</num>
+                <content>
+                  <p>The regulations may contain provisions of a savings or transitional nature consequent on the enactment of this Act.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="subclause" eId="schedule-2__part-1__clause-1__subclause-2">
+                <num>2</num>
+                <content>
+                  <p>Any such provision may, if the regulations so provide, take effect from the day on which this Act receives the Royal Assent or a later day.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="subclause" eId="schedule-2__part-1__clause-1__subclause-3">
+                <num>3</num>
+                <content>
+                  <p>	(3)	To the extent to which any such provision takes effect from a date that is earlier than the date of its notification in the <i>Gazette</i>, the provision does not operate so as:</p>
+                </content>
+              </hcontainer>
+              <paragraph eId="schedule-2__part-1__clause-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to affect, in a manner prejudicial to any person (other than the Commonwealth or an authority of the Commonwealth), the rights of that person existing before the date of notification; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-2__part-1__clause-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to impose liabilities on any person (other than the Commonwealth or an authority of the Commonwealth) in respect of anything done or omitted to be done before the date of notification.</p>
+                </content>
+              </paragraph>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-2__part-2">
+            <num>2</num>
+            <heading>Provisions consequent on enactment of this Act</heading>
+            <hcontainer name="clause" eId="schedule-2__part-2__clause-2">
+              <num>2</num>
+              <heading>Judicial notice</heading>
+              <content>
+                <p>		Despite the repeal of the <i>Snowy</i><i> </i><i>Mountains</i><i> Hydro</i><i>-</i><i>electric Power Act 1949</i>, all courts, judges and people acting judicially must take judicial notice of the imprint of the official seal of the Snowy Mountains Hydro-electric Authority appearing on a document and must presume that the seal was duly affixed.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="clause" eId="schedule-2__part-2__clause-3">
+              <num>3</num>
+              <heading>Final report by Authority</heading>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-3__subclause-1">
+                <num>1</num>
+                <content>
+                  <p>	(1)	Despite sections 59 and 61, the <i>Snowy Mountains Hydro</i><i>-</i><i>electric Power Act 1949</i> continues in force, and the Authority continues in existence, solely for the purpose of enabling the Authority to comply with any of its outstanding obligations under subsection 63H(1) of the <i>Audit Act 1901</i> in respect of any period before the corporatisation date.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-3__subclause-2">
+                <num>2</num>
+                <content>
+                  <p>	(2)	The Auditor-General has such powers as are necessary for the purpose of performing his or her duties under subsection 63H(2) of the <i>Audit Act 1901</i> in relation to financial statements prepared in compliance with the Authority’s obligations referred to in subclause (1) of this clause.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-3__subclause-3">
+                <num>3</num>
+                <content>
+                  <p>The Snowy Hydro Company must provide <role refersTo="#authority">the Authority</role> with any assistance that <role refersTo="#authority">the Authority</role> reasonably requires for the performance of its duties under subclause (1).</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="clause" eId="schedule-2__part-2__clause-4">
+              <num>4</num>
+              <heading>Final report by Council</heading>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-4__subclause-1">
+                <num>1</num>
+                <content>
+                  <p>	(1)	Despite sections 60 and 61, the Snowy Mountains Council continues in existence solely for the purpose of performing any necessary duties under clause 21 of the Agreement set out in Schedule 1 to the <i>Snowy</i><i> </i><i>Mountains</i><i> Hydro</i><i>-</i><i>electric Power Act 1949</i>.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-4__subclause-2">
+                <num>2</num>
+                <content>
+                  <p>The Snowy Hydro Company is to provide any assistance that the Council reasonably requires for the performance of those duties.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide details of the history of this legislation and its provisions. The following endnotes are included in each compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p>Endnote 5—Uncommenced amendments</p>
+                <p>Endnote 6—Modifications</p>
+                <p>Endnote 7—Misdescribed amendments</p>
+                <p>Endnote 8—Miscellaneous</p>
+                <p>If there is no information under a particular endnote, the word “none” will appear in square brackets after the endnote heading.</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key in this endnote sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended the compiled law. The information includes commencement information for amending laws and details of application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision level. It also includes information about any provisions that have expired or otherwise ceased to have effect in accordance with a provision of the compiled law.</p>
+                <p><b>Uncommenced amendments—Endnote 5</b></p>
+                <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in endnote 5.</p>
+                <p><b>Modifications—Endnote 6</b></p>
+                <p>If the compiled law is affected by a modification that is in force, details of the modification are included in endnote 6.</p>
+                <p><b>Misdescribed amendments—Endnote 7</b></p>
+                <p>An amendment is a misdescribed amendment if the effect of the amendment cannot be incorporated into the text of the compilation. Any misdescribed amendment is included in endnote 7.</p>
+                <p><b>Miscellaneous—Endnote 8</b></p>
+                <p>Endnote 8 includes any additional information that may be helpful for a reader of the compilation.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <td>ad = added or inserted</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>(prev) = previously</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>Reg = Regulation/Regulations</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>exp = expired or ceased to have effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>hdg = heading(s)</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>LI = Legislative Instrument</td>
+                  <td>s = section(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>No = Number(s)</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>o = order(s)</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>orig = original</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>par = paragraph(s)/subparagraph(s)
+/sub-subparagraph(s)</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <td>Act</td>
+                  <td>Number and year</td>
+                  <td>Assent</td>
+                  <td>Commencement</td>
+                  <td>Application, saving and transitional provisions</td>
+                </tr>
+                <tr>
+                  <td>Snowy Hydro Corporatisation Act 1997</td>
+                  <td>176, 1997</td>
+                  <td>21 Nov 1997</td>
+                  <td>ss. 1–9, 11–22, 25, 47–50, 56–58, 63(1) and Schedule 2 (Part 1): Royal Assent
+ss. 53–55 and Schedule 1: 3 Apr 2001 (see Gazette 2001, No. GN16)
+Remainder: 28 June 2002 (see Gazette 2002, No. S216)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Corporations (Repeals, Consequentials and Transitionals) Act 2001</td>
+                  <td>55, 2001</td>
+                  <td>28 June 2001</td>
+                  <td>ss. 4–14 and Schedule 3 (items 474–478): 15 July 2001 (see Gazette 2001, No. S285) (a)</td>
+                  <td>ss. 4–14</td>
+                </tr>
+                <tr>
+                  <td>Snowy Hydro Corporatisation Amendment Act 2003</td>
+                  <td>8, 2003</td>
+                  <td>19 Mar 2003</td>
+                  <td>26 July 2001</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Framework Legislation Amendment Act 2005</td>
+                  <td>8, 2005</td>
+                  <td>22 Feb 2005</td>
+                  <td>s. 4 and Schedule 1 (items 364, 496): Royal Assent</td>
+                  <td>s. 4 and Sch. 1 (item 496)</td>
+                </tr>
+                <tr>
+                  <td>Fair Work (State Referral and Consequential and Other Amendments) Act 2009</td>
+                  <td>54, 2009</td>
+                  <td>25 June 2009</td>
+                  <td>Schedule 17 (item 7): (b)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2011</td>
+                  <td>5, 2011</td>
+                  <td>22 Mar 2011</td>
+                  <td>Schedule 5 (items 195–197) and Schedule 7 (item 121): 19 Apr 2011</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts Interpretation Amendment Act 2011</td>
+                  <td>46, 2011</td>
+                  <td>27 June 2011</td>
+                  <td>Schedule 2 (item 1050) and Schedule 3 (items 10, 11): 27 Dec 2011</td>
+                  <td>Sch. 3 (items 10, 11)</td>
+                </tr>
+                <tr>
+                  <td>Statute Stocktake Act (No. 1) 2011</td>
+                  <td>100, 2011</td>
+                  <td>15 Sept 2011</td>
+                  <td>Schedule 1 (item 8): 16 Sept 2011</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                  <td>62, 2014</td>
+                  <td>30 June 2014</td>
+                  <td>Sch 12 (item 131): 1 July 2014 (see 2(1) item 6)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td>Number and year</td>
+                  <td>FRLI registration or gazettal</td>
+                  <td>Commencement</td>
+                  <td>Application, saving and transitional provisions</td>
+                </tr>
+                <tr>
+                  <td>2006 No. 50</td>
+                  <td>17 Mar 2006 (see F2006L00820)</td>
+                  <td>Schedule 23: 27 Mar 2006 (see r. 2(b))</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <paragraph eId="schedule-2__part-2__clause-4__para-a">
+                <num>a</num>
+                <content>
+                  <p><i>(a)</i><i>	</i>The <i>Snowy Hydro Corporatisation Act 1997</i> was amended by Schedule 3 (items 474–478) only of the <i>Corporations (Repeals, Consequentials and Transitionals) Act 2001</i>, subsection 2(3) of which provides as follows:</p>
+                </content>
+              </paragraph>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-4__subclause-3">
+                <num>3</num>
+                <content>
+                  <p>	(3)	Subject to subsections (4) to (10), Schedule 3 commences, or is taken to have commenced, at the same time as the <i>Corporations Act 2001</i>.</p>
+                </content>
+              </hcontainer>
+              <paragraph eId="schedule-2__part-2__clause-4__para-b">
+                <num>b</num>
+                <content>
+                  <p><i>(b)</i>	Subsection 2(1) (item 40) of the <i>Fair Work (State Referral and Consequential and Other Amendments) Act 2009</i> provides as follows:</p>
+                </content>
+              </paragraph>
+              <hcontainer name="subclause" eId="schedule-2__part-2__clause-4__subclause-1-2">
+                <num>1</num>
+                <content>
+                  <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+                </content>
+              </hcontainer>
+              <table>
+                <tr>
+                  <td>Commencement information</td>
+                  <td>Commencement information</td>
+                  <td>Commencement information</td>
+                </tr>
+                <tr>
+                  <td>Column 1</td>
+                  <td>Column 2</td>
+                  <td>Column 3</td>
+                </tr>
+                <tr>
+                  <td>Provision(s)</td>
+                  <td>Commencement</td>
+                  <td>Date/Details</td>
+                </tr>
+                <tr>
+                  <td>40.  Schedule 17</td>
+                  <td>Immediately after the commencement of Part 2-4 of the Fair Work Act 2009.</td>
+                  <td>1 July 2009</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <td>Provision affected</td>
+                  <td>How affected</td>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 5</td>
+                  <td>am. No. 55, 2001; No. 5, 2011; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Subdivision A</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Heading to s. 14</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>ss. 14, 15</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>Subdivision B</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 20</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 23</td>
+                  <td>am. SLI 2006 No. 50; No. 54, 2009</td>
+                </tr>
+                <tr>
+                  <td>Division 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 42</td>
+                  <td>am. No. 8, 2005</td>
+                </tr>
+                <tr>
+                  <td>s. 44</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>s. 45</td>
+                  <td>rep. No. 100, 2011</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Heading to s. 49</td>
+                  <td>am. No. 8, 2003</td>
+                </tr>
+                <tr>
+                  <td>s. 49</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>Note to s. 49(1)</td>
+                  <td>ad. No. 8, 2003</td>
+                </tr>
+                <tr>
+                  <td>s. 49A</td>
+                  <td>ad. No. 8, 2003</td>
+                </tr>
+                <tr>
+                  <td>Heading to s. 50</td>
+                  <td>am. No. 55, 2001</td>
+                </tr>
+                <tr>
+                  <td>s. 50</td>
+                  <td>am. No. 55, 2001</td>
+                </tr>
+                <tr>
+                  <td>s. 51</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>s. 52</td>
+                  <td>am. No. 46, 2011</td>
+                </tr>
+                <tr>
+                  <td>s. 55</td>
+                  <td>am. No. 55, 2001</td>
+                </tr>
+                <tr>
+                  <td>s. 57</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 5—Uncommenced amendments [none]</p>
+                <p>Endnote 6—Modifications [none]</p>
+                <p>Endnote 7—Misdescribed amendments [none]</p>
+                <p>Endnote 8—Miscellaneous [none]</p>
+              </content>
+            </hcontainer>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+    </attachments>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,2836 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2018/164/!main"/>
+          <FRBRuri value="/akn/au/act/2018/164"/>
+          <FRBRdate date="2018-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="164"/>
+          <FRBRname value="road-vehicle-standards-(consequential-and-transitional-provisions)-act-2018"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2018/164/eng@2022-04-01/!main"/>
+          <FRBRuri value="/akn/au/act/2018/164/eng@2022-04-01"/>
+          <FRBRdate date="2022-04-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2018/164/eng@2022-04-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2018/164/eng@2022-04-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2018-01-01" type="generation" eId="evt-creation" source="#road-vehicle-standards-(consequential-and-transitional-provisions)-act-2018"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2019/66" date="2019-09-13"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2022/17" date="2022-04-01"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-2"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Road Vehicle Standards (Consequential and Transitional Provisions) Act 2018</p>
+      <p>No. 164, 2018</p>
+      <p><b>Compilation No. </b><b>2</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 April 2022</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 17, 2022</p>
+      <p><b>Registered:</b><b>	</b>14 April 2022</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Road Vehicle Standards (Consequential and Transitional Provisions) Act 2018</i> that shows the text of the law as amended and in force on 1 April 2022 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Schedules	2</p>
+      <p>Schedule 1—Transitional national road vehicle standards	3</p>
+      <p>Schedule 2—Repeal of <ref href="/akn/au/act/motor-vehicle-standards-act-1989" class="unresolved">the Motor Vehicle Standards Act 1989</ref>	4</p>
+      <p>Motor Vehicle Standards Act 1989	4</p>
+      <p>Schedule 3—Transitional provisions commencing on repeal of <ref href="/akn/au/act/motor-vehicle-standards-act-1989" class="unresolved">the Motor Vehicle Standards Act 1989</ref>	5</p>
+      <p><ref href="#part-1">Part 1</ref>—Introduction	5</p>
+      <p><ref href="#part-2">Part 2</ref>—National standards	7</p>
+      <p><ref href="#part-3">Part 3</ref>—Certification and approval	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Identification plates	8</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Used import plates	12</p>
+      <p><ref href="#part-4">Part 4</ref>—Supply and importation of vehicles	15</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Supply of new vehicles etc.	15</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Supply of used imported vehicles	18</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Import of new and used vehicles	19</p>
+      <p><ref href="#part-5">Part 5</ref>—Registered automotive workshops	25</p>
+      <p><ref href="#part-6">Part 6</ref>—Continuation of certain conditions	27</p>
+      <p><ref href="#part-7">Part 7</ref>—Administration	29</p>
+      <p><ref href="#part-8">Part 8</ref>—Court proceedings	31</p>
+      <p><ref href="#part-9">Part 9</ref>—Miscellaneous	32</p>
+      <p>Schedule 4—Consequential amendments	33</p>
+      <p><ref href="#part-1">Part 1</ref>—Amendments commencing day after Royal Assent	33</p>
+      <p>Age Discrimination Act 2004	33</p>
+      <p><ref href="#part-2">Part 2</ref>—Amendments commencing at beginning of transitional period	34</p>
+      <p>A New Tax System (Luxury Car Tax) Act 1999	34</p>
+      <p>Customs Act 1901	34</p>
+      <p>Fuel Tax Act 2006	34</p>
+      <p>Interstate Road Transport Act 1985	34</p>
+      <p>Interstate Road Transport Charge Act 1985	35</p>
+      <p>National Environment Protection Council Act 1994	36</p>
+      <p>Trans-Tasman Mutual Recognition Act 1997	36</p>
+      <p><ref href="#part-3">Part 3</ref>—Amendments commencing at end of transitional period	37</p>
+      <p>Age Discrimination Act 2004	37</p>
+      <p>Customs Act 1901	37</p>
+      <p>Trans-Tasman Mutual Recognition Act 1997	37</p>
+      <p>Endnotes	38</p>
+      <p>Endnote 1—About the endnotes	38</p>
+      <p>Endnote 2—Abbreviation key	40</p>
+      <p>Endnote 3—Legislation history	41</p>
+      <p>Endnote 4—Amendment history	42</p>
+      <p>An Act to deal with consequential and transitional matters in connection with the <i>Road Vehicle Standards Act 2018</i>, and for related purposes</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act is the <i>Road</i><i> Vehicle Standards (Consequential and Transitional Provisions)</i><i> Act 201</i><i>8</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <subsection eId="sec-2__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+          </content>
+          <table>
+            <tr>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+            </tr>
+            <tr>
+              <td>Column 1</td>
+              <td>Column 2</td>
+              <td>Column 3</td>
+            </tr>
+            <tr>
+              <td>Provisions</td>
+              <td>Commencement</td>
+              <td>Date/Details</td>
+            </tr>
+            <tr>
+              <td>1.  Sections 1 to 3 and anything in this Act not elsewhere covered by this table</td>
+              <td>The day after this Act receives the Royal Assent.</td>
+              <td>11 December 2018</td>
+            </tr>
+            <tr>
+              <td>2.  Schedule 1</td>
+              <td>Immediately after the commencement of section 12 of the Road Vehicle Standards Act 2018.</td>
+              <td>11 December 2018</td>
+            </tr>
+            <tr>
+              <td>3.  Schedules 2 and 3</td>
+              <td>At the same time as section 15 of the Road Vehicle Standards Act 2018 commences.</td>
+              <td>1 July 2021</td>
+            </tr>
+            <tr>
+              <td>4.  Schedule 4, Part 1</td>
+              <td>At the same time as section 3 of the Road Vehicle Standards Act 2018 commences.</td>
+              <td>11 December 2018</td>
+            </tr>
+            <tr>
+              <td>5.  Schedule 4, Part 2</td>
+              <td>At the same time as section 15 of the Road Vehicle Standards Act 2018 commences.</td>
+              <td>1 July 2021</td>
+            </tr>
+            <tr>
+              <td>6.  Schedule 4, Part 3</td>
+              <td>The day after the end of the period of 24 months beginning on the day section 15 of the Road Vehicle Standards Act 2018 commences.</td>
+              <td>1 July 2023</td>
+            </tr>
+          </table>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-2__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Schedules</heading>
+        <content>
+          <p>Legislation that is specified in a Schedule to this Act is amended or repealed as set out in the applicable items in the Schedule concerned, and any other item in a Schedule to this Act has effect according to its terms.</p>
+        </content>
+      </section>
+    </body>
+    <attachments>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-1">
+          <num>1</num>
+          <heading>Transitional national road vehicle standards</heading>
+          <hcontainer name="clause" eId="schedule-1__clause-1">
+            <num>1</num>
+            <heading>Transitional national road vehicle standards</heading>
+            <hcontainer name="subclause" eId="schedule-1__clause-1__subclause-1">
+              <num>1</num>
+              <content>
+                <p>(1)	This item applies for the purposes of the operation of the following during the period beginning on 10 December 2018 and ending on the day before <ref href="#sec-15">section 15</ref> of the <i>Road Vehicle Standards Act 2018 </i>commences:</p>
+              </content>
+            </hcontainer>
+            <paragraph eId="schedule-1__clause-1__para-a">
+              <num>a</num>
+              <content>
+                <p>provisions of that Act that commence on the day after that Act receives the Royal Assent;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__clause-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any instruments made under those provisions.</p>
+              </content>
+            </paragraph>
+            <hcontainer name="subclause" eId="schedule-1__clause-1__subclause-2">
+              <num>2</num>
+              <content>
+                <p>(2)	A vehicle standard as in force from time to time under <ref href="#sec-7">section 7</ref> of the <i>Motor Vehicle Standards Act 1989</i> is taken also to be a national road vehicle standard determined under <ref href="#sec-12">section 12</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>.</p>
+              </content>
+            </hcontainer>
+            <content>
+              <p>Note:	See also item 2 of Schedule 3 in relation to the national road vehicle standards after the repeal of the <i>Motor Vehicle Standards Act 1989</i>.</p>
+            </content>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-2">
+          <num>2</num>
+          <heading>Repeal of the Motor Vehicle Standards Act 1989</heading>
+          <hcontainer name="amendedAct" eId="schedule-2__amdact-1">
+            <heading>Motor Vehicle Standards Act 1989</heading>
+            <hcontainer name="item" eId="schedule-2__amdact-1__item-1">
+              <num>1</num>
+              <heading>The whole of the Act</heading>
+              <content>
+                <p>Repeal the Act.</p>
+              </content>
+            </hcontainer>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-3">
+          <num>3</num>
+          <heading>Transitional provisions commencing on repeal of the Motor Vehicle Standards Act 1989</heading>
+          <hcontainer name="part" eId="schedule-3__part-1">
+            <num>1</num>
+            <heading>Introduction</heading>
+            <hcontainer name="item" eId="schedule-3__part-1__item-1">
+              <num>1</num>
+              <heading>Definitions</heading>
+              <subsection eId="schedule-3__part-1__item-1__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>In this Schedule:</p>
+                </content>
+                <content>
+                  <p><b><i>approved form</i></b> means a form approved under item 28.</p>
+                  <p><b><i>commencement</i></b><b><i> </i></b>means the day that this Schedule commences.</p>
+                  <p><b><i>new law</i></b> means the following laws:</p>
+                </content>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	the <i>Road Vehicle Standards Act 201</i><i>8</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the rules made under that Act;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>the national road vehicle standards determined under that Act;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>any other instruments made under that Act or those rules;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-e">
+                  <num>e</num>
+                  <content>
+                    <p>	(e)	the <i>Road Vehicle Standards Charges (Imposition—Customs) </i><i>Act</i><i> 201</i><i>8</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-f">
+                  <num>f</num>
+                  <content>
+                    <p>	(f)	the <i>Road Vehicle Standards Charges (Imposition—Excise) </i><i>Act </i><i>201</i><i>8</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-g">
+                  <num>g</num>
+                  <content>
+                    <p>	(g)	the <i>Road Vehicle Standards Charges (Imposition—General) </i><i>Act </i><i>201</i><i>8</i>.</p>
+                  </content>
+                  <authorialNote placement="end" eId="note-2" marker="2">
+                    <content>
+                      <p>Note:	The national standards made under the <i>Motor Vehicle Standards Act 1989</i> (also known as the Australian Design Rules) are taken to be national road vehicle standards determined under the <i>Road Vehicle Standards Act 201</i><i>8</i>: see item 2 of this Schedule.</p>
+                    </content>
+                  </authorialNote>
+                  <content>
+                    <p><b><i>old law</i></b> means the following laws, as in force immediately before commencement:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-a-2">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	the <i>Motor Vehicle Standards Act 1989</i> (other than sections 25 to 32);</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-b-2">
+                  <num>b</num>
+                  <content>
+                    <p>	(b)	the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-c-2">
+                  <num>c</num>
+                  <content>
+                    <p>	(c)	the national standards determined under the <i>Motor Vehicle Standards Act 1989</i> (also known as the Australian Design Rules);</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-d-2">
+                  <num>d</num>
+                  <content>
+                    <p>	(d)	the <i>Motor Vehicle Standards (Approval to Place Used Import Plates) Guidelines</i><i> </i><i>2006 (No.</i><i> </i><i>1)</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-e-2">
+                  <num>e</num>
+                  <content>
+                    <p>	(e)	the <i>Motor Vehicle Standards (Placement of Used Import Plates) Determination</i><i> </i><i>2004 (No.1)</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-f-2">
+                  <num>f</num>
+                  <content>
+                    <p>	(f)	the <i>Motor Vehicle Standards (Procedures for Inspecting and Testing Used Imported Vehicles) Determination</i><i> </i><i>2002</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-g-2">
+                  <num>g</num>
+                  <content>
+                    <p>	(g)	the <i>Motor Vehicle Standards (Re</i><i>gistered Automotive Workshops—</i><i>Fit and Proper Persons) Determination</i><i> </i><i>2002</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-h">
+                  <num>h</num>
+                  <content>
+                    <p>	(h)	the <i>Motor Vehicle Standards (Road Vehicles) Determination</i><i> </i><i>2017</i>;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-1__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>	(i)	the <i>Motor Vehicle Standards (Used Imported Vehicle Report) Determination</i><i> </i><i>2006 (No.</i><i> </i><i>1)</i>.</p>
+                  </content>
+                  <content>
+                    <p><b><i>transitional period</i></b> means the 24 month period that begins on commencement.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-1__item-1__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>(2)	The following expressions used in this Schedule, that are also used in the <i>Road Vehicle Standards Act 201</i><i>8</i>, have the same meaning in this Schedule as they have in that Act:</p>
+                </content>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>import;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>provide;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>road vehicle type approval;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>rules;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-e">
+                  <num>e</num>
+                  <content>
+                    <p>Secretary;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-1__item-1__subsec-2__para-f">
+                  <num>f</num>
+                  <content>
+                    <p>SEVs Register.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-1__item-1__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>To avoid doubt, if a provision of this Schedule provides that the new law does not apply in relation to a matter, the provision has effect subject to items 25 and 27.</p>
+                </content>
+                <authorialNote placement="end" eId="note-3" marker="3">
+                  <content>
+                    <p>Note:	Those items provide for certain provisions of the new law to apply in relation to this Schedule and the old law (to the extent that the old law applies because of this Schedule).</p>
+                  </content>
+                </authorialNote>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-2">
+            <num>2</num>
+            <heading>National standards</heading>
+            <hcontainer name="item" eId="schedule-3__part-2__item-1">
+              <num>2</num>
+              <heading>Vehicle standards</heading>
+              <content>
+                <p>A vehicle standard in force under <ref href="#sec-7">section 7</ref> of the <i>Motor Vehicle Standards Act 1989</i> immediately before commencement continues in force as if it were a national road vehicle standard determined under <ref href="#sec-12">section 12</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-2__item-2">
+              <num>3</num>
+              <heading>Procedures for testing vehicles</heading>
+              <content>
+                <p>Procedures relating to retaining records to continue in force</p>
+              </content>
+              <subsection eId="schedule-3__part-2__item-2__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>(1)	The <i>Motor Vehicle Standards (Procedures for Inspecting and Testing Used Imported Vehicles) Determination</i><i> </i><i>2002</i> in force under <ref href="#sec-9">section 9</ref> of the <i>Motor Vehicle Standards Act 1989</i> immediately before commencement continues in force for the period of 7 years beginning on commencement (the <b><i>retention period</i></b>) for the purposes of retaining the records required by <ref href="#sec-8">section 8</ref> of the Determination.</p>
+                </content>
+              </subsection>
+              <subsection eId="schedule-3__part-2__item-2__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>To avoid doubt, a person to whom subitem (1) applies must retain the records required by the Determination:</p>
+                </content>
+                <paragraph eId="schedule-3__part-2__item-2__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>even though the retention period ends after the end of the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-2__item-2__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>even though the person ceases to be a registered automotive workshop (within the meaning of the old law), whether because the transitional period ends or otherwise.</p>
+                  </content>
+                  <content>
+                    <p>Offence—failure to retain records for retention period</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-2__item-2__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>A person commits an offence if:</p>
+                </content>
+                <paragraph eId="schedule-3__part-2__item-2__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the person is required to retain a record because of subitem (1); and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-2__item-2__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the person does not retain the record for the period of 7 years beginning on commencement.</p>
+                  </content>
+                  <hcontainer name="penalty">
+                    <content>
+                      <p>Penalty:	<quantity refersTo="#penaltyUnit">60 penalty units</quantity>.</p>
+                    </content>
+                  </hcontainer>
+                </paragraph>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-3">
+            <num>3</num>
+            <heading>Certification and approval</heading>
+            <hcontainer name="division" eId="schedule-3__part-3__dvs-1">
+              <num>1</num>
+              <heading>Identification plates</heading>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-1__item-1">
+                <num>4</num>
+                <heading>Approval for the placement of identification plates—subsections 10A(1) and (2)</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-3__dvs-1__item-1__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if an approval:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>was given under subsection 10A(1) or (2) of that Act in relation to vehicles of a particular type; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>is in force immediately before commencement;</p>
+                    </content>
+                    <content>
+                      <p>the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                      <p>Pending applications</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-1__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a person applied to the Minister for an approval under subsection 10A(1) or (2) of the <i>Motor Vehicle Standards Act 1989</i> in relation to vehicles of a particular type; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> decides to give written approval—the approval:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-1__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If an approval continues, or is taken to continue, in force during the transitional period subject to the provisions of the old law by force of this item, then the new law does not apply, during the transitional period, to:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>the importation of vehicles to which the approval applies; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-1__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>the provision of vehicles that have had identification plates placed on them in accordance with the approval.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-1__item-2">
+                <num>5</num>
+                <heading>Transition of approval for the placement of identification plates to a road vehicle type approval</heading>
+                <subsection eId="schedule-3__part-3__dvs-1__item-2__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>If:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a person is the holder of:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>	(i)	an approval under subsection 10A(1) or (2) of the <i>Motor Vehicle Standards Act 1989</i> that is in force immediately before commencement, as mentioned in subitem 4(1); or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>	(ii)	an approval under subsection 10A(1) or (2) of the <i>Motor Vehicle Standards Act 1989</i> because of a decision by the Minister allowed by subitem 4(2); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>during the 6 month period beginning immediately after commencement, the person:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-i-2">
+                    <num>i</num>
+                    <content>
+                      <p>provides to <role refersTo="#minister">the Minister</role>, in the approved form, written acknowledgement of the conditions applying to road vehicle type approvals, as set out in the rules, and that breach of any of those conditions is an offence under the new law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-ii-2">
+                    <num>ii</num>
+                    <content>
+                      <p>	(ii)	provides to the Minister, in the approved form, a signed declaration that the person satisfies the conditions applying to road vehicle type approvals, as set out in the rules, in respect of the type of vehicle covered by an approval mentioned in paragraph (a) (an <b><i>old approval</i></b>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-iii">
+                    <num>iii</num>
+                    <content>
+                      <p>pays the charges payable for the purposes of this paragraph;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>	(c)	the person is taken to have been granted a road vehicle type approval under the rules in respect of the type of vehicle covered by the old approval for the 5 year period beginning on the day that paragraph (b) is satisfied (the <b><i>new approval</i></b>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-1__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>on that day, the old approval ceases to be in force.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-2__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>The following provisions have effect in relation to paragraph (1)(b):</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	the written acknowledgement mentioned in subparagraph (1)(b)(i) is, for the purposes of <ref href="#sec-32">section 32</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>, information given, or purportedly given, under or for the purpose of the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>	(b)	the declaration mentioned in subparagraph (1)(b)(ii) is, for the purposes of <ref href="#sec-31">section 31</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>, taken to be made in an application for an approval under the rules.</p>
+                    </content>
+                    <authorialNote placement="end" eId="note-4" marker="4">
+                      <content>
+                        <p>Note:	This means that offences and civil penalty provisions for giving false or misleading information or making a false or misleading declaration apply to the making of an acknowledgement and a declaration under paragraph (1)(b).</p>
+                      </content>
+                    </authorialNote>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-2__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>The following provisions have effect in relation to the new approval:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>evidence that enabled <role refersTo="#minister">the Minister</role> to grant the old approval is taken to be sufficient to satisfy continued compliance with the relevant criteria for granting the new approval under the rules:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>unless the evidence is found to be false or misleading, or is found to omit any matter or thing without which the evidence is misleading; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>unless, and to the extent that, the person seeks a variation of the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>if a person seeks a variation of the new approval under the rules, to the extent of the variation, evidence of a kind mentioned in paragraph (a) will not be sufficient to meet the evidential requirements of the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>any written conditions to which the old approval was subject are taken to be conditions that are specified in the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>evidence that demonstrated that conditions of the old approval were satisfied is taken to be sufficient to satisfy the relevant conditions of the new approval under the rules:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-i-2">
+                    <num>i</num>
+                    <content>
+                      <p>unless the evidence is found to be false or misleading, or is found to omit any matter or thing without which the evidence is misleading; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-ii-2">
+                    <num>ii</num>
+                    <content>
+                      <p>unless, and to the extent that, the person seeks a variation of the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-e">
+                    <num>e</num>
+                    <content>
+                      <p>to the extent that a written condition to which the old approval was subject is inconsistent with:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-i-3">
+                    <num>i</num>
+                    <content>
+                      <p>a condition to which a road vehicle type approval is subject under the rules; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-3__para-ii-3">
+                    <num>ii</num>
+                    <content>
+                      <p>a requirement of the rules;</p>
+                    </content>
+                    <content>
+                      <p>then, to the extent of the inconsistency, the rules prevail.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-2__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>To avoid doubt, if a person is taken to have been granted a road vehicle type approval under the rules because of subitem (1), then the approval is subject to the new law.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-2__subsec-5">
+                  <num>5</num>
+                  <content>
+                    <p>To avoid doubt, if:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-5__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a person is the holder of an old approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-2__subsec-5__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>during the 6 month period beginning immediately after commencement, the person does not take all of the actions required by paragraph (1)(b);</p>
+                    </content>
+                    <content>
+                      <p>then, the person’s approval ceases to be in force at the end of the transitional period (unless earlier cancelled or suspended under the old law).</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-1__item-3">
+                <num>6</num>
+                <heading>Approval for the placement of identification plates—subsection 10A(3)</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-3__dvs-1__item-3__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if an approval was given under subsection 10A(3) of that Act and in force immediately before commencement, the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                  <content>
+                    <p>Pending applications</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-3__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a person applied to the Minister for an approval under subsection 10A(3) of the <i>Motor Vehicle Standards Act 1989</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> decides to give written approval—the approval:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-1__item-3__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-1__item-3__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If an approval continues, or is taken to continue, in force during the transitional period subject to the provisions of the old law by force of this item, then the new law does not apply, during the transitional period, to the provision of vehicles that have had identification plates placed on them in accordance with the approval.</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-1__item-4">
+                <num>7</num>
+                <heading>Offences in relation to identification plates</heading>
+                <content>
+                  <p>Despite the repeal of <ref href="#sec-12">section 12</ref> of the <i>Motor Vehicle Standards Act 1989</i>, that section, and any other provision of the old law (to the extent to which it relates to that section), continue in force during the transitional period.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="division" eId="schedule-3__part-3__dvs-2">
+              <num>2</num>
+              <heading>Used import plates</heading>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-2__item-1">
+                <num>8</num>
+                <heading>Application for approval to place a used import plate</heading>
+                <content>
+                  <p>Applications allowed during transitional period</p>
+                </content>
+                <subsection eId="schedule-3__part-3__dvs-2__item-1__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-1__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>an application may be made under <ref href="#sec-13C">section 13C</ref> of that Act during the transitional period for an approval to place a plate on a used imported vehicle; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-1__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>the provisions of the old law continue to apply in relation to the application and the granting of an approval under <ref href="#sec-13D">section 13D</ref> of that Act.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-2__item-1__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If an approval is granted because of an application allowed by this item:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-1__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>the approval remains in force during the transitional period subject to the provisions of the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-1__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>the new law does not apply, during the transitional period, to the provision of used imported vehicles that have had used import plates placed on them in accordance with the approval.</p>
+                    </content>
+                    <content>
+                      <p>Number limits on placement of used import plates to apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-2__item-1__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>(3)	To avoid doubt, the limits on the number of used import plates set out in regulation 6 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> apply in relation to an approval granted because of an application allowed by this item.</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-2__item-2">
+                <num>9</num>
+                <heading>Grant of approval</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-3__dvs-2__item-2__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if an approval was granted under <ref href="#sec-13D">section 13D</ref> of that Act and in force immediately before commencement, the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                  <content>
+                    <p>Pending applications</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-2__item-2__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a registered automotive workshop applied to the Minister for an approval under <ref href="#sec-13C">section 13C</ref> of the <i>Motor Vehicle Standards Act 1989</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> decides to grant the approval—the approval:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-3__dvs-2__item-2__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-2__item-2__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If an approval continues, or is taken to continue, in force during the transitional period subject to the provisions of the old law by force of this item, then the new law does not apply, during the transitional period, to the provision of used imported vehicles that have had used import plates placed on them in accordance with the approval.</p>
+                  </content>
+                  <content>
+                    <p>Number limits on placement of used import plates to apply</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-3__dvs-2__item-2__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>(4)	To avoid doubt, the limits on the number of used import plates set out in regulation 6 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> apply in relation to an approval continued, or taken to continue, in force during the transitional period by force of this item.</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-3__dvs-2__item-3">
+                <num>10</num>
+                <heading>Offence in relation to the placement of used import plates</heading>
+                <content>
+                  <p>Despite the repeal of <ref href="#sec-13G">section 13G</ref> of the <i>Motor Vehicle Standards Act 1989</i>, that section, and any other provision of the old law (to the extent to which it relates to that section), continue in force during the transitional period.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-4">
+            <num>4</num>
+            <heading>Supply and importation of vehicles</heading>
+            <hcontainer name="division" eId="schedule-3__part-4__dvs-1">
+              <num>1</num>
+              <heading>Supply of new vehicles etc.</heading>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-1__item-1">
+                <num>11</num>
+                <heading>Supply of nonstandard vehicles</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-4__dvs-1__item-1__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>an approval was given under <ref href="#sec-14A">section 14A</ref> of that Act and in force immediately before commencement; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>	(b)	an approval was given under regulation 20 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> for a vehicle to be supplied to the market and the approval was in force immediately before commencement;</p>
+                    </content>
+                    <content>
+                      <p>the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                      <p>Pending applications</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-1__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a person applied to <role refersTo="#minister">the Minister</role> for:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>	(i)	an approval under <ref href="#sec-14A">section 14A</ref> of the <i>Motor Vehicle Standards Act 1989</i>; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>	(ii)	an approval under regulation 20 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> for a vehicle to be supplied to the market; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> decides to give written approval—the approval:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-i-2">
+                    <num>i</num>
+                    <content>
+                      <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-1__subsec-2__para-ii-2">
+                    <num>ii</num>
+                    <content>
+                      <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-1__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If an approval continues, or is taken to continue, in force during the transitional period subject to the provisions of the old law by force of this item, then the new law does not apply, during the transitional period, to the provision of a vehicle in accordance with the approval.</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-1__item-2">
+                <num>12</num>
+                <heading>Transition of approval to supply nonstandard vehicles to a road vehicle type approval</heading>
+                <subsection eId="schedule-3__part-4__dvs-1__item-2__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>If:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a person is the holder of:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>	(i)	an approval under <ref href="#sec-14A">section 14A</ref> of the <i>Motor Vehicle Standards Act 1989</i> or regulation 20 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> that is in force immediately before commencement, as mentioned in subitem 11(1); or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>	(ii)	an approval under <ref href="#sec-14A">section 14A</ref> of the <i>Motor Vehicle Standards Act 1989</i> or regulation 20 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> because of a decision by the Minister allowed by subitem 11(2); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>during the 6 month period beginning immediately after commencement, the person:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-i-2">
+                    <num>i</num>
+                    <content>
+                      <p>provides to <role refersTo="#minister">the Minister</role>, in the approved form, written acknowledgement of the conditions applying to road vehicle type approvals, as set out in the rules, and that breach of any of those conditions is an offence under the new law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-ii-2">
+                    <num>ii</num>
+                    <content>
+                      <p>	(ii)	provides to the Minister, in the approved form, a signed declaration that the person satisfies the conditions applying to road vehicle type approvals, as set out in the rules, in respect of the type of vehicle covered by an approval mentioned in paragraph (a) (the <b><i>old approval</i></b>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-iii">
+                    <num>iii</num>
+                    <content>
+                      <p>pays the charges payable for the purposes of this paragraph;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>	(c)	the person is taken to have been granted a road vehicle type approval under the rules in respect of the type of vehicle covered by the old approval for the 5 year period beginning on the day that paragraph (b) is satisfied (the <b><i>new approval</i></b>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-1__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>on that day, the old approval ceases to be in force.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-2__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>The following provisions have effect in relation to paragraph (1)(b):</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	the written acknowledgement mentioned in subparagraph (1)(b)(i) is, for the purposes of <ref href="#sec-32">section 32</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>, information given, or purportedly given, under or for the purpose of the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>	(b)	the declaration mentioned in subparagraph (1)(b)(ii) is, for the purposes of <ref href="#sec-31">section 31</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>, taken to be made in an application for an approval under the rules.</p>
+                    </content>
+                    <authorialNote placement="end" eId="note-5" marker="5">
+                      <content>
+                        <p>Note:	This means that offences and civil penalty provisions for giving false or misleading information or making a false or misleading declaration apply to the making of an acknowledgement and a declaration under paragraph (1)(b).</p>
+                      </content>
+                    </authorialNote>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-2__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>The following provisions have effect in relation to the new approval:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>evidence that enabled <role refersTo="#minister">the Minister</role> to grant the old approval is taken to be sufficient to satisfy continued compliance with the relevant criteria for granting the new approval under the rules:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>unless the evidence is found to be false or misleading, or is found to omit any matter or thing without which the evidence is misleading; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>unless, and to the extent that, the person seeks a variation of the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>if a person seeks a variation of the new approval under the rules, to the extent of the variation, evidence of a kind mentioned in paragraph (a) will not be sufficient to meet the evidential requirements of the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>any written conditions to which the old approval was subject are taken to be conditions that are specified in the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>evidence that demonstrated that conditions of the old approval were satisfied is taken to be sufficient to satisfy the relevant conditions of the new approval under the rules:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-i-2">
+                    <num>i</num>
+                    <content>
+                      <p>unless the evidence is found to be false or misleading, or is found to omit any matter or thing without which the evidence is misleading; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-ii-2">
+                    <num>ii</num>
+                    <content>
+                      <p>unless, and to the extent that, the person seeks a variation of the new approval under the rules;</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-e">
+                    <num>e</num>
+                    <content>
+                      <p>to the extent that a written condition to which the old approval was subject is inconsistent with:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-i-3">
+                    <num>i</num>
+                    <content>
+                      <p>a condition to which a road vehicle type approval is subject under the rules; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-3__para-ii-3">
+                    <num>ii</num>
+                    <content>
+                      <p>a requirement of the rules;</p>
+                    </content>
+                    <content>
+                      <p>then, to the extent of the inconsistency, the rules prevail.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-2__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>To avoid doubt, if a person is taken to have been granted a road vehicle type approval under the rules because of subitem (1), then the approval is subject to the new law.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-1__item-2__subsec-5">
+                  <num>5</num>
+                  <content>
+                    <p>To avoid doubt, if:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-5__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a person is the holder of an old approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-1__item-2__subsec-5__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>during the 6 month period beginning immediately after commencement, the person does not take all of the actions required by paragraph (1)(b);</p>
+                    </content>
+                    <content>
+                      <p>then the person’s approval ceases to be in force at the end of the transitional period (unless earlier cancelled or suspended under the old law).</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="division" eId="schedule-3__part-4__dvs-2">
+              <num>2</num>
+              <heading>Supply of used imported vehicles</heading>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-2__item-1">
+                <num>13</num>
+                <heading>Supply of used imported vehicles</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-4__dvs-2__item-1__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if an approval was given under regulation 11, 12, 13 or 17 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> and in force immediately before commencement, the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                  <authorialNote placement="end" eId="note-6" marker="6">
+                    <content>
+                      <p>Note:	See also paragraph 16(1)(d) of the <i>Motor Vehicle Standards Act 1989</i> and regulation 7 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>.</p>
+                    </content>
+                  </authorialNote>
+                  <content>
+                    <p>Pending applications</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-2__item-1__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a person applied to the Minister for an approval under regulation 11, 12, 13 or 17 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> decides to give written approval—the approval:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-2__item-1__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If an approval continues in force during the transitional period subject to the provisions of the old law by force of this item, then the new law does not apply, during the transitional period, to:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>the importation of a vehicle in accordance with the approval; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-2__item-1__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>the provision of a vehicle imported in accordance with the approval.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="division" eId="schedule-3__part-4__dvs-3">
+              <num>3</num>
+              <heading>Import of new and used vehicles</heading>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-3__item-1">
+                <num>14</num>
+                <heading>Importation of road vehicles subject to conditions</heading>
+                <content>
+                  <p>Despite the repeal of <ref href="#sec-17">section 17</ref> of the <i>Motor Vehicle Standards Act 1989</i>, that section, and any other provision of the old law (to the extent to which it relates to that section), continue in force during the transitional period.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-3__item-2">
+                <num>15</num>
+                <heading>Authority to take delivery of imported vehicles</heading>
+                <content>
+                  <p>Despite the repeal of <ref href="#sec-17A">section 17A</ref> of the <i>Motor Vehicle Standards Act 1989</i>:</p>
+                </content>
+                <paragraph eId="schedule-3__part-4__dvs-3__item-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>that section continues in force during the transitional period in relation to a vehicle that may be imported during the transitional period in accordance with that Act, as provided for by this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-4__dvs-3__item-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>an approval may be granted under that section during the transitional period for the delivery of a vehicle imported before or during the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-4__dvs-3__item-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>if an approval was granted under that section before the transitional period for the delivery of a vehicle—the approval continues to allow delivery of the vehicle to be taken during the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-4__dvs-3__item-2__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>the authorisation of an officer of the Department by <role refersTo="#minister">the Minister</role> under that section and in force immediately before commencement continues in force during the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-4__dvs-3__item-2__para-e">
+                  <num>e</num>
+                  <content>
+                    <p><role refersTo="#minister">the Minister</role> may authorise an officer of the Department to give approvals under that section during the transitional period.</p>
+                  </content>
+                </paragraph>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-3__item-3">
+                <num>16</num>
+                <heading>Importation of vehicles requiring modification</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-4__dvs-3__item-3__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>If:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	before commencement, the Minister gave written approval to a person under subsection 19(1) of the <i>Motor Vehicle Standards Act 1989</i> in relation to a vehicle; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>at commencement, the person had not imported the vehicle to which the approval relates;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-1__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>the approval is taken to continue in force during the transitional period; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-1__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>before the end of the transitional period, the person may import the vehicle in accordance with the approval given under the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-1__para-e">
+                    <num>e</num>
+                    <content>
+                      <p>the old law applies to the imported vehicle during the transitional period.</p>
+                    </content>
+                    <content>
+                      <p>Pending applications</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-3__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a person applied to the Minister for an approval under <ref href="#sec-19">section 19</ref> of the <i>Motor Vehicle Standards Act 1989</i> in relation to a vehicle; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> grants the approval—both:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>the person may, before the end of the transitional period, import the vehicle in accordance with the approval given under the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>the old law applies to the imported vehicle during the transitional period.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-3__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>(3)	If an approval given under subsection 19(1) of the <i>Motor Vehicle Standards Act 1989</i>:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>is taken to continue in force under this item during the transitional period subject to the provisions of the old law; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-3__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>is granted during the transitional period subject to the provisions of the old law;</p>
+                    </content>
+                    <content>
+                      <p>then the new law does not apply, during the transitional period, to actions taken in accordance with the approval.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-3__item-4">
+                <num>17</num>
+                <heading>Approval to import certain nonstandard vehicles</heading>
+                <content>
+                  <p>Existing approvals to continue in force</p>
+                </content>
+                <subsection eId="schedule-3__part-4__dvs-3__item-4__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>If:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	before commencement, the Minister gave written approval to a person under a regulation made for the purposes of paragraph 20(1)(b) of the <i>Motor Vehicle Standards Act 1989</i> (other than regulation 11, 12, 13 or 17 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>) in relation to a vehicle; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>at commencement, the person had not imported the vehicle to which the approval relates;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-1__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>the approval is taken to continue in force during the transitional period; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-1__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>before the end of the transitional period, the person may import the vehicle in accordance with the approval given under the old law (including any written conditions determined by <role refersTo="#minister">the Minister</role>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-1__para-e">
+                    <num>e</num>
+                    <content>
+                      <p>the old law applies to the imported vehicle during the transitional period.</p>
+                    </content>
+                    <content>
+                      <p>Pending applications</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-4__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	a person applied to the Minister for an approval under a regulation made for the purposes of paragraph 20(1)(b) of the <i>Motor Vehicle Standards Act 1989</i> (other than regulation 11, 12, 13 or 17 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>) in relation to a vehicle; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> grants written approval—both:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>the person may, before the end of the transitional period, import the vehicle in accordance with the approval given under the old law (including any written conditions determined by <role refersTo="#minister">the Minister</role>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-2__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>the old law applies to the imported vehicle during the transitional period.</p>
+                    </content>
+                    <content>
+                      <p>New applications</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-4__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If a person holds an approval:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	under subsection 10A(3) of the <i>Motor Vehicle Standards Act 1989</i> that continues, or is taken to continue, in force during the transitional period by force of item 6 of this Schedule; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>	(b)	under <ref href="#sec-14A">section 14A</ref> of that Act or regulation 20 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> that continues, or is taken to continue, in force during the transitional period by force of item 11 of this Schedule;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>	(c)	the person may apply, during the transitional period, for an approval in accordance with regulation 14 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>, as in force immediately before commencement, to the extent that the application relates to the approval the person holds, as mentioned in paragraph (a) or (b); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-d">
+                    <num>d</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-e">
+                    <num>e</num>
+                    <content>
+                      <p>if <role refersTo="#minister">the Minister</role> gives written approval—both:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-i">
+                    <num>i</num>
+                    <content>
+                      <p>the person may, before the end of the transitional period, import a vehicle in accordance with the approval given under the old law (including any written conditions determined by <role refersTo="#minister">the Minister</role>); and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-3__para-ii">
+                    <num>ii</num>
+                    <content>
+                      <p>the old law applies to the imported vehicle during the transitional period.</p>
+                    </content>
+                    <content>
+                      <p>New law does not apply</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-4__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>(4)	If an approval given under a regulation made for the purposes of paragraph 20(1)(b) of the <i>Motor Vehicle Standards Act 1989</i> (other than regulation 11, 12, 13 or 17 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>):</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-4__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>is taken to continue in force under this item during the transitional period subject to the provisions of the old law; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-4__subsec-4__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>is granted during the transitional period subject to the provisions of the old law;</p>
+                    </content>
+                    <content>
+                      <p>then the new law does not apply, during the transitional period, to actions taken in accordance with the approval.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-3__part-4__dvs-3__item-5">
+                <num>18</num>
+                <heading>Register of Specialist and Enthusiast Vehicles</heading>
+                <subsection eId="schedule-3__part-4__dvs-3__item-5__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of <ref href="#sec-21">section 21</ref> of the <i>Motor Vehicle Standards Act 1989</i>, the Register of Specialist and Enthusiast Vehicles established under that section:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-1__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>is to continue in existence during the transitional period; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-1__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>must be maintained by <role refersTo="#minister">the Minister</role> during the transitional period in accordance with the old law.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-3__part-4__dvs-3__item-5__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If:</p>
+                  </content>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-2__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>	(a)	immediately before commencement, a road vehicle was entered on the Register of Specialist and Enthusiast Vehicles established under <ref href="#sec-21">section 21</ref> of the <i>Motor Vehicle Standards Act 1989</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-2__para-b">
+                    <num>b</num>
+                    <content>
+                      <p><role refersTo="#minister">the Minister</role> considers that it is for the benefit of the Australian community to include a vehicle of that kind on the SEVs Register;</p>
+                    </content>
+                    <content>
+                      <p>then:</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-2__para-c">
+                    <num>c</num>
+                    <content>
+                      <p>even if the vehicle does not meet the criteria set out in the rules, <role refersTo="#minister">the Minister</role> may, during the transitional period and despite the new law, enter the vehicle on the SEVs Register; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-3__part-4__dvs-3__item-5__subsec-2__para-d">
+                    <num>d</num>
+                    <content>
+                      <p>if the vehicle is so entered, the entry of the vehicle on the SEVs Register is subject to the new law.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-5">
+            <num>5</num>
+            <heading>Registered automotive workshops</heading>
+            <hcontainer name="item" eId="schedule-3__part-5__item-1">
+              <num>19</num>
+              <heading>Approval as a registered automotive workshop</heading>
+              <content>
+                <p>Existing approvals to continue in force</p>
+              </content>
+              <subsection eId="schedule-3__part-5__item-1__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>(1)	Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>, if:</p>
+                </content>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>an approval was granted under <ref href="#sec-21B">section 21B</ref> of that Act and in force immediately before commencement; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>an approval granted under <ref href="#sec-21B">section 21B</ref> of that Act had been renewed under <ref href="#sec-21C">section 21C</ref> of that Act and was in force immediately before commencement;</p>
+                  </content>
+                  <content>
+                    <p>the approval is taken to continue in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-5__item-1__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>(2)	However, if an approval mentioned in subitem (1) was in force immediately before commencement because subsection 21C(6) of the <i>Motor Vehicle Standards Act 1989</i> applied, then the approval is taken to continue in force during the transitional period (subject to the provisions of the old law) until a decision is made about whether to renew the approval, as mentioned in subitem (4).</p>
+                </content>
+                <content>
+                  <p>Pending applications</p>
+                </content>
+              </subsection>
+              <subsection eId="schedule-3__part-5__item-1__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>If, before commencement:</p>
+                </content>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	a corporation applied to the Minister for an approval under <ref href="#sec-21A">section 21A</ref> of the <i>Motor Vehicle Standards Act 1989</i>; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-b">
+                  <num>b</num>
+                  <content>
+                    <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                  </content>
+                  <content>
+                    <p>then:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-c">
+                  <num>c</num>
+                  <content>
+                    <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>if <role refersTo="#minister">the Minister</role> decides to grant the approval—the approval:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>comes into force on the day specified by <role refersTo="#minister">the Minister</role> in the approval; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-3__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-5__item-1__subsec-4">
+                <num>4</num>
+                <content>
+                  <p>If, before commencement:</p>
+                </content>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>	(a)	a corporation applied to the Minister for the renewal of an approval under <ref href="#sec-21C">section 21C</ref> of the <i>Motor Vehicle Standards Act 1989</i>; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-b">
+                  <num>b</num>
+                  <content>
+                    <p><role refersTo="#minister">the Minister</role> had not decided the application;</p>
+                  </content>
+                  <content>
+                    <p>then:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-c">
+                  <num>c</num>
+                  <content>
+                    <p><role refersTo="#minister">the Minister</role> must decide the application in accordance with the old law; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>if <role refersTo="#minister">the Minister</role> decides to renew the approval—the approval:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>comes into force on the day the approval is renewed; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-5__item-1__subsec-4__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>continues in force during the transitional period subject to the provisions of the old law.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-6">
+            <num>6</num>
+            <heading>Continuation of certain conditions</heading>
+            <hcontainer name="item" eId="schedule-3__part-6__item-1">
+              <num>20</num>
+              <heading>Obligation to comply with certain conditions after the end of the transitional period</heading>
+              <subsection eId="schedule-3__part-6__item-1__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>If:</p>
+                </content>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>an approval:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>is continued, or is taken to continue, in force during the transitional period because of this Schedule; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>is granted because of this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>	(b)	a condition specified in the approval is that the holder of the approval retain a record for a period (the <b><i>retention period</i></b>);</p>
+                  </content>
+                  <content>
+                    <p>the holder must retain the record for the retention period:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>even if the retention period ends after the end of the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-1__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>even though the approval ceases to be in force, whether because the transitional period ends or otherwise.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-6__item-1__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>If:</p>
+                </content>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>an approval:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>is continued, or is taken to continue, in force during the transitional period because of this Schedule; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>is granted because of this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>	(b)	a condition specified in the approval is that the holder of the approval export or destroy a vehicle to which the approval applies within a period (the <b><i>disposal period</i></b>);</p>
+                  </content>
+                  <content>
+                    <p>the holder must export or destroy the vehicle during the disposal period:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>even if the disposal period ends after the end of the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-1__subsec-2__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>even though the approval ceases to be in force, whether because the transitional period ends or otherwise.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-6__item-2">
+              <num>21</num>
+              <heading>Offences—breach of continued conditions</heading>
+              <subsection eId="schedule-3__part-6__item-2__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>A person commits an offence if:</p>
+                </content>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the person was the holder of an approval that:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>was continued, or was taken to continue, in force during the transitional period because of this Schedule; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>was granted because of this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>a condition specified in the approval was that the holder of the approval retain a record; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>	(c)	the condition requires the record to be retained for a period (the <b><i>retention period</i></b>) that ends after the end of the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-1__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>the person does not retain the record for the retention period.</p>
+                  </content>
+                  <hcontainer name="penalty">
+                    <content>
+                      <p>Penalty:	<quantity refersTo="#penaltyUnit">60 penalty units</quantity>.</p>
+                    </content>
+                  </hcontainer>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-6__item-2__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>A person commits an offence if:</p>
+                </content>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the person was the holder of an approval that:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>was continued, or was taken to continue, in force during the transitional period; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>was granted because of this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>a condition of the approval was that the holder of the approval export or destroy a vehicle to which the approval applies; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>	(c)	the condition requires the vehicle to be exported or destroyed within a period specified in the approval (the <b><i>disposal period</i></b>) that ends after the end of the transitional period; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-6__item-2__subsec-2__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>the vehicle is not exported or destroyed within the disposal period.</p>
+                  </content>
+                  <hcontainer name="penalty">
+                    <content>
+                      <p>Penalty:	<quantity refersTo="#penaltyUnit">60 penalty units</quantity>.</p>
+                    </content>
+                  </hcontainer>
+                </paragraph>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-7">
+            <num>7</num>
+            <heading>Administration</heading>
+            <hcontainer name="item" eId="schedule-3__part-7__item-1">
+              <num>22</num>
+              <heading>Appointment of Administrator and Associate Administrator</heading>
+              <content>
+                <p>Despite the repeal of <ref href="#sec-22">section 22</ref> of the <i>Motor Vehicle Standards Act 1989</i>, for the purposes of the old law as continued in force by this Schedule:</p>
+              </content>
+              <paragraph eId="schedule-3__part-7__item-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person holding office as the Administrator under that section immediately before commencement continues to hold that office during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a person holding office as an Associate Administrator under that section immediately before commencement continues to hold that office during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Administrator and each Associate Administrator continue to have the same functions and powers under the old law during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-1__para-d">
+                <num>d</num>
+                <content>
+                  <p><role refersTo="#secretary">the Secretary</role> may appoint a person to be an Administrator or Associate Administrator under that section during the transitional period.</p>
+                </content>
+              </paragraph>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-7__item-2">
+              <num>23</num>
+              <heading>Delegation by Minister</heading>
+              <content>
+                <p>Despite the repeal of the <i>Motor Vehicle Standards Act 1989</i>:</p>
+              </content>
+              <paragraph eId="schedule-3__part-7__item-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>any instrument of delegation in force under <ref href="#sec-23">section 23</ref> of that Act immediately before commencement continues in force during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	any instrument of delegation in force under regulation 62 of the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i> immediately before commencement continues in force during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-2__para-c">
+                <num>c</num>
+                <content>
+                  <p><role refersTo="#minister">the Minister</role> may, by signed instrument, delegate to the Administrator or an Associate Administrator during the transitional period:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the functions or powers allowed by <ref href="#sec-23">section 23</ref> of that Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>all or any of <role refersTo="#minister">the Minister</role>’s functions or powers under those Regulations; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>all or any of <role refersTo="#minister">the Minister</role>’s functions or powers under this Schedule, other than item 29.</p>
+                </content>
+              </paragraph>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-7__item-3">
+              <num>24</num>
+              <heading>Fees</heading>
+              <content>
+                <p>Despite the repeal of <ref href="#sec-24">section 24</ref> of the <i>Motor Vehicle Standards Act 1989</i>, the following provisions continue in force during the transitional period:</p>
+              </content>
+              <paragraph eId="schedule-3__part-7__item-3__para-a">
+                <num>a</num>
+                <content>
+                  <p><ref href="#sec-24">section 24</ref> of that Act, and any other provision of the old law (to the extent to which it relates to that section);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	<ref href="#part-6">Part 6</ref> of, and Schedule 2 to, the <i>Motor Vehicle Standards Regulations</i><i> </i><i>1989</i>.</p>
+                </content>
+              </paragraph>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-7__item-4">
+              <num>25</num>
+              <heading>Compliance and enforcement</heading>
+              <content>
+                <p>The following provisions have effect:</p>
+              </content>
+              <paragraph eId="schedule-3__part-7__item-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	Divisions 2 to 4 of Part 4 of the <i>Road Vehicle Standards Act 201</i><i>8</i> apply for the purposes of ensuring compliance with:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-4__para-i">
+                <num>i</num>
+                <content>
+                  <p>the old law during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-4__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>this Schedule;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>for the purposes of ensuring that compliance, those Divisions apply as if references to “this Act” in those Divisions were references to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-4__para-i-2">
+                <num>i</num>
+                <content>
+                  <p>this Schedule and any rules made under item 29 of this Schedule; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-7__item-4__para-ii-2">
+                <num>ii</num>
+                <content>
+                  <p>the old law, to the extent that it applies because of this Schedule.</p>
+                </content>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note:	Those Divisions allow inspectors to be appointed and trigger monitoring and investigation powers under the <i>Regulatory Powers (Standard Provisions) Act 2014</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-8">
+            <num>8</num>
+            <heading>Court proceedings</heading>
+            <hcontainer name="item" eId="schedule-3__part-8__item-1">
+              <num>26</num>
+              <heading>Evidentiary certificates</heading>
+              <content>
+                <p>Despite the repeal of <ref href="#sec-34">section 34</ref> of the <i>Motor Vehicle Standards Act 1989</i>:</p>
+              </content>
+              <paragraph eId="schedule-3__part-8__item-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>that section is taken to apply, on and after commencement, in relation to conduct:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-8__item-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>constituting an offence against <ref href="#sec-14">section 14</ref>, 15, 16 or 19 of that Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-8__item-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>engaged in before or during the transitional period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-3__part-8__item-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the authorisation of a person by <role refersTo="#minister">the Minister</role> under that section and in force immediately before commencement continues in force during the transitional period.</p>
+                </content>
+              </paragraph>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-8__item-2">
+              <num>27</num>
+              <heading>Legal proceedings not to lie</heading>
+              <subsection eId="schedule-3__part-8__item-2__subsec-1">
+                <num>1</num>
+                <content>
+                  <p>(1)	Despite the repeal of <ref href="#sec-37">section 37</ref> of the <i>Motor Vehicle Standards Act 1989</i>, that section, and any other provision of the old law (to the extent to which it relates to that section), continue in force during the transitional period.</p>
+                </content>
+              </subsection>
+              <subsection eId="schedule-3__part-8__item-2__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>(2)	Section 81 of the <i>Road Vehicle Standards Act 201</i><i>8</i> applies in relation to this Schedule as if references to “this Act” in that section were references to:</p>
+                </content>
+                <paragraph eId="schedule-3__part-8__item-2__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>this Schedule and any rules made under item 29 of this Schedule; and</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-8__item-2__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>the old law, to the extent that it applies because of this Schedule.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-3__part-9">
+            <num>9</num>
+            <heading>Miscellaneous</heading>
+            <hcontainer name="item" eId="schedule-3__part-9__item-1">
+              <num>28</num>
+              <heading>Approved forms</heading>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> may, in writing, approve a form for the purposes of an item of this Schedule.</p>
+              </content>
+            </hcontainer>
+            <hcontainer name="item" eId="schedule-3__part-9__item-2">
+              <num>29</num>
+              <heading>Transitional rules</heading>
+              <subsection eId="schedule-3__part-9__item-2__subsec-1">
+                <num>1</num>
+                <content>
+                  <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters of a transitional nature (including prescribing any saving or application provisions) relating to:</p>
+                </content>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-1__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>the amendments or repeals made by this Act; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-1__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>	(b)	the enactment of this Act or the <i>Road Vehicle Standards Act 201</i><i>8</i>.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-9__item-2__subsec-2">
+                <num>2</num>
+                <content>
+                  <p>To avoid doubt, the rules may not do the following:</p>
+                </content>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p>create an offence or civil penalty;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-b">
+                  <num>b</num>
+                  <content>
+                    <p>provide powers of:</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-i">
+                  <num>i</num>
+                  <content>
+                    <p>arrest or detention; or</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-ii">
+                  <num>ii</num>
+                  <content>
+                    <p>entry, search or seizure;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-c">
+                  <num>c</num>
+                  <content>
+                    <p>impose a tax;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-d">
+                  <num>d</num>
+                  <content>
+                    <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+                  </content>
+                </paragraph>
+                <paragraph eId="schedule-3__part-9__item-2__subsec-2__para-e">
+                  <num>e</num>
+                  <content>
+                    <p>directly amend the text of this Act.</p>
+                  </content>
+                </paragraph>
+              </subsection>
+              <subsection eId="schedule-3__part-9__item-2__subsec-3">
+                <num>3</num>
+                <content>
+                  <p>This Act (other than subitem (2)) does not limit the rules that may be made for the purposes of subitem (1).</p>
+                </content>
+              </subsection>
+            </hcontainer>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-4">
+          <num>4</num>
+          <heading>Consequential amendments</heading>
+          <hcontainer name="part" eId="schedule-4__part-1">
+            <num>1</num>
+            <heading>Amendments commencing day after Royal Assent</heading>
+            <hcontainer name="amendedAct" eId="schedule-4__part-1__amdact-1">
+              <heading>Age Discrimination Act 2004</heading>
+              <hcontainer name="item" eId="schedule-4__part-1__amdact-1__item-1">
+                <num>1</num>
+                <heading>Schedule 1 (after table item 41)</heading>
+                <content>
+                  <p>Insert:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-1__amdact-1__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <table>
+                    <tr>
+                      <td>42</td>
+                      <td>Rules made under the Road Vehicle Standards Act 2018</td>
+                    </tr>
+                  </table>
+                </quotedStructure>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-4__part-2">
+            <num>2</num>
+            <heading>Amendments commencing at beginning of transitional period</heading>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-2">
+              <heading>A New Tax System (Luxury Car Tax) Act 1999</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-2__item-1">
+                <num>2</num>
+                <heading>Subsection 25-1(4)</heading>
+                <content>
+                  <p>Omit “vehicle standards in force under <ref href="#sec-7">section 7</ref> of the <i>Motor Vehicle Standards Act 1989</i>”, substitute “national road vehicle standards in force under <ref href="#sec-12">section 12</ref> of the <i>Road Vehicle Standards Act 201</i><i>8</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-3">
+              <heading>Customs Act 1901</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-3__item-1">
+                <num>3</num>
+                <heading>At the end of subsection 229(1A)</heading>
+                <content>
+                  <p>Add “or the <i>Road Vehicle Standards Act 201</i><i>8</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-4">
+              <heading>Fuel Tax Act 2006</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-4__item-1">
+                <num>4</num>
+                <heading>Section 110-5 (definition of Transport Minister)</heading>
+                <content>
+                  <p>Omit “<i>Motor Vehicle Standards Act 1989</i>”, substitute “<i>Road Vehicle Standards Act 201</i><i>8</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-5">
+              <heading>Interstate Road Transport Act 1985</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-5__item-1">
+                <num>5</num>
+                <heading>Subsection 3(1) (at the end of the definition of compliance plate)</heading>
+                <content>
+                  <p>Add “(as in force before its repeal or as continued in force by the <i>Road Vehicle Standards (Consequential and Transitional Provisions) Act 201</i><i>8</i>)”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-5__item-2">
+                <num>6</num>
+                <heading>Subsection 3(1) (paragraph (a) of the definition of MRC)</heading>
+                <content>
+                  <p>Before “the maximum mass”, insert “if the vehicle has a compliance plate—”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-5__item-3">
+                <num>7</num>
+                <heading>Subsection 3(1) (after paragraph (a) of the definition of MRC)</heading>
+                <content>
+                  <p>Insert:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-2__amdact-5__item-3__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <paragraph eId="schedule-4__part-2__amdact-5__item-3__qstr-1__para-ab">
+                    <num>ab</num>
+                    <content>
+                      <p>if the vehicle is entered on the RAV—the maximum mass of the vehicle, including any load, as recorded on the RAV; or</p>
+                    </content>
+                  </paragraph>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-5__item-4">
+                <num>8</num>
+                <heading>Subsection 3(1) (paragraph (b) of the definition of MRC)</heading>
+                <content>
+                  <p>Omit “in relation to a vehicle for which there is no compliance plate”, substitute “if the vehicle has no compliance plate and is not entered on the RAV”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-5__item-5">
+                <num>9</num>
+                <heading>Subsection 3(1)</heading>
+                <content>
+                  <p>Insert:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-2__amdact-5__item-5__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <content>
+                    <p><b><i>RAV</i></b> (short for Register of Approved Vehicles) has the same meaning as in the <i>Road Vehicle Standards Act 201</i><i>8</i>.</p>
+                  </content>
+                </quotedStructure>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-6">
+              <heading>Interstate Road Transport Charge Act 1985</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-6__item-1">
+                <num>10</num>
+                <heading>Section 3A (at the end of the definition of compliance plate)</heading>
+                <content>
+                  <p>Add “(as in force before its repeal or as continued in force by the <i>Road Vehicle Standards (Consequential and Transitional Provisions) Act 201</i><i>8</i>)”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-6__item-2">
+                <num>11</num>
+                <heading>Section 3A (paragraph (a) of the definition of MRC)</heading>
+                <content>
+                  <p>Before “the maximum mass”, insert “if the vehicle has a compliance plate—”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-6__item-3">
+                <num>12</num>
+                <heading>Section 3A (after paragraph (a) of the definition of MRC)</heading>
+                <content>
+                  <p>Insert:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-2__amdact-6__item-3__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <paragraph eId="schedule-4__part-2__amdact-6__item-3__qstr-1__para-ab">
+                    <num>ab</num>
+                    <content>
+                      <p>if the vehicle is entered on the RAV—the maximum mass of the vehicle, including any load, as recorded on the RAV; or</p>
+                    </content>
+                  </paragraph>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-6__item-4">
+                <num>13</num>
+                <heading>Subsection 3A (paragraph (b) of the definition of MRC)</heading>
+                <content>
+                  <p>Omit “in relation to a vehicle for which there is no compliance plate”, substitute “if the vehicle has no compliance plate and is not entered on the RAV”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-7">
+              <heading>National Environment Protection Council Act 1994</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-7__item-1">
+                <num>14</num>
+                <heading>Paragraph 14(2)(b)</heading>
+                <content>
+                  <p>Omit “<i>Motor Vehicle Standards Act 1989</i>”, substitute “<i>Road Vehicle Standards Act 201</i><i>8</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-2__amdact-8">
+              <heading>Trans-Tasman Mutual Recognition Act 1997</heading>
+              <hcontainer name="item" eId="schedule-4__part-2__amdact-8__item-1">
+                <num>15</num>
+                <heading>Clause 3 of Part 2 of Schedule 2 (at the end of the table item headed “Road vehicles”)</heading>
+                <content>
+                  <p>Add:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-2__amdact-8__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <table>
+                    <tr>
+                      <td>Road Vehicle Standards Act 2018</td>
+                    </tr>
+                  </table>
+                </quotedStructure>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-4__part-3">
+            <num>3</num>
+            <heading>Amendments commencing at end of transitional period</heading>
+            <hcontainer name="amendedAct" eId="schedule-4__part-3__amdact-9">
+              <heading>Age Discrimination Act 2004</heading>
+              <hcontainer name="item" eId="schedule-4__part-3__amdact-9__item-1">
+                <num>16</num>
+                <heading>Schedule 1 (table item 31)</heading>
+                <content>
+                  <p>Repeal the item.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-3__amdact-10">
+              <heading>Customs Act 1901</heading>
+              <hcontainer name="item" eId="schedule-4__part-3__amdact-10__item-1">
+                <num>17</num>
+                <heading>Subsection 229(1A)</heading>
+                <content>
+                  <p>Omit “<i>Motor Vehicle Standards Act 1989</i> or the”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-4__part-3__amdact-11">
+              <heading>Trans-Tasman Mutual Recognition Act 1997</heading>
+              <hcontainer name="item" eId="schedule-4__part-3__amdact-11__item-1">
+                <num>18</num>
+                <heading>Clause 3 of Part 2 of Schedule 2 (table item headed “Road vehicles”)</heading>
+                <content>
+                  <p>Omit:</p>
+                </content>
+                <quotedStructure eId="schedule-4__part-3__amdact-11__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <table>
+                    <tr>
+                      <td>Motor Vehicle Standards Act 1989</td>
+                    </tr>
+                  </table>
+                  <content>
+                    <p>Endnotes</p>
+                    <p>Endnote 1—About the endnotes</p>
+                    <p>The endnotes provide information about this compilation and the compiled law.</p>
+                    <p>The following endnotes are included in every compilation:</p>
+                    <p>Endnote 1—About the endnotes</p>
+                    <p>Endnote 2—Abbreviation key</p>
+                    <p>Endnote 3—Legislation history</p>
+                    <p>Endnote 4—Amendment history</p>
+                    <p><b>Abbreviation key—Endnote 2</b></p>
+                    <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                    <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                    <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                    <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                    <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                    <p><b>Editorial changes</b></p>
+                    <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                    <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                    <p><b>Misdescribed amendments</b></p>
+                    <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+                    <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+                    <p>Endnote 2—Abbreviation key</p>
+                  </content>
+                  <table>
+                    <tr>
+                      <td>ad = added or inserted</td>
+                      <td>o = order(s)</td>
+                    </tr>
+                    <tr>
+                      <td>am = amended</td>
+                      <td>Ord = Ordinance</td>
+                    </tr>
+                    <tr>
+                      <td>amdt = amendment</td>
+                      <td>orig = original</td>
+                    </tr>
+                    <tr>
+                      <td>c = clause(s)</td>
+                      <td>par = paragraph(s)/subparagraph(s)</td>
+                    </tr>
+                    <tr>
+                      <td>C[x] = Compilation No. x</td>
+                      <td>/sub-subparagraph(s)</td>
+                    </tr>
+                    <tr>
+                      <td>Ch = Chapter(s)</td>
+                      <td>pres = present</td>
+                    </tr>
+                    <tr>
+                      <td>def = definition(s)</td>
+                      <td>prev = previous</td>
+                    </tr>
+                    <tr>
+                      <td>Dict = Dictionary</td>
+                      <td>(prev…) = previously</td>
+                    </tr>
+                    <tr>
+                      <td>disallowed = disallowed by Parliament</td>
+                      <td>Pt = Part(s)</td>
+                    </tr>
+                    <tr>
+                      <td>Div = Division(s)</td>
+                      <td>r = regulation(s)/rule(s)</td>
+                    </tr>
+                    <tr>
+                      <td>ed = editorial change</td>
+                      <td>reloc = relocated</td>
+                    </tr>
+                    <tr>
+                      <td>exp = expires/expired or ceases/ceased to have</td>
+                      <td>renum = renumbered</td>
+                    </tr>
+                    <tr>
+                      <td>effect</td>
+                      <td>rep = repealed</td>
+                    </tr>
+                    <tr>
+                      <td>F = Federal Register of Legislation</td>
+                      <td>rs = repealed and substituted</td>
+                    </tr>
+                    <tr>
+                      <td>gaz = gazette</td>
+                      <td>s = section(s)/subsection(s)</td>
+                    </tr>
+                    <tr>
+                      <td>LA = Legislation Act 2003</td>
+                      <td>Sch = Schedule(s)</td>
+                    </tr>
+                    <tr>
+                      <td>LIA = Legislative Instruments Act 2003</td>
+                      <td>Sdiv = Subdivision(s)</td>
+                    </tr>
+                    <tr>
+                      <td>(md) = misdescribed amendment can be given</td>
+                      <td>SLI = Select Legislative Instrument</td>
+                    </tr>
+                    <tr>
+                      <td>effect</td>
+                      <td>SR = Statutory Rules</td>
+                    </tr>
+                    <tr>
+                      <td>(md not incorp) = misdescribed amendment</td>
+                      <td>Sub-Ch = Sub-Chapter(s)</td>
+                    </tr>
+                    <tr>
+                      <td>cannot be given effect</td>
+                      <td>SubPt = Subpart(s)</td>
+                    </tr>
+                    <tr>
+                      <td>mod = modified/modification</td>
+                      <td>underlining = whole or part not</td>
+                    </tr>
+                    <tr>
+                      <td>No. = Number(s)</td>
+                      <td>commenced or to be commenced</td>
+                    </tr>
+                  </table>
+                  <content>
+                    <p>Endnote 3—Legislation history</p>
+                  </content>
+                  <table>
+                    <tr>
+                      <td>Act</td>
+                      <td>Number and year</td>
+                      <td>Assent</td>
+                      <td>Commencement</td>
+                      <td>Application, saving and transitional provisions</td>
+                    </tr>
+                    <tr>
+                      <td>Road Vehicle Standards (Consequential and Transitional Provisions) Act 2018</td>
+                      <td>164, 2018</td>
+                      <td>10 Dec 2018</td>
+                      <td>Sch 2, 3 and Sch 4 (items 2–15): 1 July 2021 (s 2(1) items 3, 5)
+Sch 4 (items 16–18): 1 July 2023 (s 2(1) item 6)
+Remainder: 11 Dec 2018 (s 2(1) items 1, 2, 4)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Road Vehicle Standards Legislation Amendment Act 2019</td>
+                      <td>66, 2019</td>
+                      <td>13 Sept 2019</td>
+                      <td>Sch 1 (items 8, 9): 14 Sept 2019 (s 2(1) item 1)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Road Vehicle Standards (Consequential and Transitional Provisions) Amendment Act 2022</td>
+                      <td>17, 2022</td>
+                      <td>1 Apr 2022</td>
+                      <td>1 Apr 2022 (s 2(1) item 1)</td>
+                      <td>—</td>
+                    </tr>
+                  </table>
+                  <content>
+                    <p>Endnote 4—Amendment history</p>
+                  </content>
+                  <table>
+                    <tr>
+                      <td>Provision affected</td>
+                      <td>How affected</td>
+                    </tr>
+                    <tr>
+                      <td>s 2</td>
+                      <td>am No 17, 2022</td>
+                    </tr>
+                    <tr>
+                      <td>Schedule 1</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Schedule 1</td>
+                      <td>am No 66, 2019</td>
+                    </tr>
+                    <tr>
+                      <td>Schedule 3</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Schedule 3</td>
+                      <td>am No 17, 2022</td>
+                    </tr>
+                  </table>
+                </quotedStructure>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+    </attachments>
+  </act>
+</akomaNtoso>

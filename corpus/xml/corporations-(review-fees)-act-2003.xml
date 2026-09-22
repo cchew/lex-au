@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2003/23/!main"/>
+          <FRBRuri value="/akn/au/act/2003/23"/>
+          <FRBRdate date="2003-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="23"/>
+          <FRBRname value="corporations-(review-fees)-act-2003"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2003/23/eng@2026-03-14/!main"/>
+          <FRBRuri value="/akn/au/act/2003/23/eng@2026-03-14"/>
+          <FRBRdate date="2026-03-14" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2003/23/eng@2026-03-14/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2003/23/eng@2026-03-14/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2003-01-01" type="generation" eId="evt-creation" source="#corporations-(review-fees)-act-2003"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2007/103" date="2007-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2016/11" date="2016-02-29"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2018/72" date="2018-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2023/76" date="2023-09-20"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-4"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-3">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-4">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-5">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-6">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-7"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-7">
+            <source href="#evt-amd-3"/>
+            <destination href="#sec-7"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-8">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-8"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCTerm eId="term-review-fee" href="/ontology/term/au/term-review-fee" showAs="review fee"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Corporations (Review Fees) Act 2003</p>
+      <p>No. 23, 2003</p>
+      <p><b>Compilation No.</b><b> </b><b>6</b></p>
+      <p><b>Compilation date:</b><b>	</b>14 March 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 6, 2026</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Corporations (Review Fees) Act 2003</i> that shows the text of the law as amended and in force on 14 March 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Application to the Crown	1</p>
+      <p>4	Definitions	1</p>
+      <p>5	Imposition of review fees	2</p>
+      <p>6	Matters relating to amount of fees	2</p>
+      <p>7	Who is liable to pay a review fee, and time that liability is incurred	2</p>
+      <p>7A	Validation of certain review fees	3</p>
+      <p>8	Regulations	4</p>
+      <p>Endnotes	5</p>
+      <p>Endnote 1—About the endnotes	5</p>
+      <p>Endnote 2—Abbreviation key	7</p>
+      <p>Endnote 3—Legislation history	8</p>
+      <p>Endnote 4—Amendment history	9</p>
+      <p>An Act to impose, as taxes, review fees in relation to the <i>Corporations Act 2001</i>, and for related purposes</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Corporations (Review Fees) Act 2003</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <content>
+          <p>This Act commences on <date date="2003-07-01">1 July 2003</date>.</p>
+        </content>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Application to the Crown</heading>
+        <content>
+          <p>		If the Crown, in a capacity, is bound by the provision or provisions of the <i>Corporations Act 2001</i> to which a review fee relates, then the Crown, in that capacity, is bound by this Act in respect of that review fee.</p>
+        </content>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Definitions</heading>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>In this Act:</p>
+          </content>
+          <content>
+            <p><b><i>review date</i></b><b>:</b></p>
+          </content>
+          <paragraph eId="sec-4__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	for a company, registered scheme or notified foreign passport fund—has the meaning given by <ref href="#sec-345A">section 345A</ref> of the <i>Corporations Act 2001</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>for a person mentioned in subsection 5(1) other than a company, registered scheme or notified foreign passport fund—has the meaning prescribed by the regulations in relation to that person.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-review-fee">review fee</term> means <def>a fee imposed by <ref href="#sec-5">section 5</ref>.</def></p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	Subject to this Act, <ref href="#part-1">Part 1</ref>.2 (Interpretation) of the <i>Corporations Act 2001</i> applies for the purposes of this Act as if the provisions of this Act were provisions of that Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	<ref href="#part-1">Part 1</ref>.2 of the <i>Corporations Act 2001</i> includes the Dictionary in <ref href="#sec-9">section 9</ref> of that Act, so the definitions in that section apply for the purposes of this Act unless this Act otherwise provides.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+      </section>
+      <section eId="sec-5">
+        <num>5</num>
+        <heading>Imposition of review fees</heading>
+        <subsection eId="sec-5__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Subject to <ref href="#sec-6">section 6</ref>, the regulations may prescribe fees in relation to the review dates of the following:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>companies;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>registered schemes;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-ba">
+            <num>ba</num>
+            <content>
+              <p>notified foreign passport funds;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-c">
+            <num>c</num>
+            <content>
+              <p>registered Australian bodies;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-d">
+            <num>d</num>
+            <content>
+              <p>	(d)	natural persons registered as auditors under <ref href="#part-9">Part 9</ref>.2 of the <i>Corporations Act 2001</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-f">
+            <num>f</num>
+            <content>
+              <p>	(f)	persons holding an Australian financial services licence under <ref href="#part-7">Part 7</ref>.6 of the <i>Corporations Act 2001</i>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The regulations may prescribe a fee to be paid in one year in relation to the review date of a later year (see paragraph 1351(4)(b) of the <i>Corporations Act 2001</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The fees prescribed by the regulations are imposed, and are so imposed as taxes.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-6">
+        <num>6</num>
+        <heading>Matters relating to amount of fees</heading>
+        <subsection eId="sec-6__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The regulations may prescribe a review fee by specifying an amount (not exceeding $10,000) as the fee.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-2">
+          <num>2</num>
+          <content>
+            <p>A review fee need not bear any relationship to the cost of providing any service.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-7">
+        <num>7</num>
+        <heading>Who is liable to pay a review fee, and time that liability is incurred</heading>
+        <subsection eId="sec-7__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The person who is liable to pay a review fee is worked out under this table.</p>
+          </content>
+          <table>
+            <tr>
+              <th>Liability for review fees</th>
+              <th>Liability for review fees</th>
+              <th>Liability for review fees</th>
+              <th>Liability for review fees</th>
+            </tr>
+            <tr>
+              <td>Item</td>
+              <td>For a review fee imposed on...</td>
+              <td>The person liable is...</td>
+              <td>The person liable is...</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>a company</td>
+              <td>the company</td>
+              <td>the company</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>a registered scheme</td>
+              <td>the responsible entity of the scheme</td>
+              <td>the responsible entity of the scheme</td>
+            </tr>
+            <tr>
+              <td>2A</td>
+              <td>a notified foreign passport fund</td>
+              <td>the operator of the fund</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>a registered Australian body</td>
+              <td>the body</td>
+              <td>the body</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>a natural person registered as an auditor under Part 9.2 of the Corporations Act 2001</td>
+              <td>the natural person</td>
+              <td>the natural person</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>a person holding an Australian financial services licence under Part 7.6 of the Corporations Act 2001</td>
+              <td>the person</td>
+              <td>the person</td>
+            </tr>
+          </table>
+        </subsection>
+        <subsection eId="sec-7__subsec-2">
+          <num>2</num>
+          <content>
+            <p>A person who is liable to pay a review fee incurs that liability on each review date for the person.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-7A">
+        <num>7A</num>
+        <heading>Validation of certain review fees</heading>
+        <subsection eId="sec-7A__subsec-1">
+          <num>1</num>
+          <content>
+            <p>This section applies in relation to the amount of a review fee in the financial year starting on <date date="2011-07-01">1 July 2011</date>, or a later financial year starting on or before <date date="2024-07-01">1 July 2024</date>, if:</p>
+          </content>
+          <paragraph eId="sec-7A__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>the review fee was prescribed because of item 103 of <ref href="#part-1">Part 1</ref>, item 101, 102, 103 or 104 of <ref href="#part-1A">Part 1A</ref>, or any item of <ref href="#part-2">Part 2</ref>, of Schedule 1 to the Review Fees Regulations, as in force at any time during the period:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7A__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>starting at the commencement of the 2011 amending regulations; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7A__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>ending immediately before the commencement of the 2025 amending regulations; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7A__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>in relation to the financial year starting on <date date="2024-07-01">1 July 2024</date>—the review fee is for a review date that occurred before the commencement of the 2025 amending regulations.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	The 2011 amending regulations commenced on <date date="2011-07-01">1 July 2011</date>. The 2025 amending regulations commenced on <date date="2025-03-12">12 March 2025</date>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7A__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The amount of the review fee is taken to be, and always to have been, the amount it would have been if subregulation 4(6) (rather than subregulation 4(5)) of the Review Fees Regulations, as amended by the 2011 amending regulations, had applied to review fees in the financial year starting on <date date="2011-07-01">1 July 2011</date>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7A__subsec-3">
+          <num>3</num>
+          <content>
+            <p>In this section:</p>
+          </content>
+          <content>
+            <p><b><i>2011 amending regulations</i></b> means the <i>Corporations (Review Fees) Amendment Regulations 2011 (No. 1)</i>.</p>
+            <p><b><i>2025 amending regulations</i></b> means the <i>Corporations (Review Fees) Amendment (2025 Measures No. 1) Regulations 2025</i>.</p>
+            <p><b><i>financial year</i></b> means a period of 12 months starting on 1 July.</p>
+            <p><b><i>Review Fees Regulations</i></b> means the <i>Corporations (Review Fees) Regulations 2003</i>.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-8">
+        <num>8</num>
+        <heading>Regulations</heading>
+        <content>
+          <p>		The Governor-General may make regulations for the purposes of this Act and <ref href="#sec-1351">section 1351</ref> of the <i>Corporations Act 2001</i>.</p>
+          <p>Endnotes</p>
+          <p>Endnote 1—About the endnotes</p>
+          <p>The endnotes provide information about this compilation and the compiled law.</p>
+          <p>The following endnotes are included in every compilation:</p>
+          <p>Endnote 1—About the endnotes</p>
+          <p>Endnote 2—Abbreviation key</p>
+          <p>Endnote 3—Legislation history</p>
+          <p>Endnote 4—Amendment history</p>
+          <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+          <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+          <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+          <p>Amending laws are annotated in the legislation history and amendment history.</p>
+          <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+          <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+          <p><b>Editorial changes</b></p>
+          <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+          <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+          <p><b>Misdescribed amendments</b></p>
+          <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+          <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+          <p>Endnote 2—Abbreviation key</p>
+        </content>
+        <table>
+          <tr>
+            <th>ad = added or inserted</th>
+            <th>orig = original</th>
+          </tr>
+          <tr>
+            <td>am = amended</td>
+            <td>p = page(s)</td>
+          </tr>
+          <tr>
+            <td>amdt = amendment</td>
+            <td>para = paragraph(s)/subparagraph(s)</td>
+          </tr>
+          <tr>
+            <td>C[x] = Compilation No. x</td>
+            <td>/sub-subparagraph(s)</td>
+          </tr>
+          <tr>
+            <td>ch = Chapter(s)</td>
+            <td>pres = present</td>
+          </tr>
+          <tr>
+            <td>cl = clause(s)</td>
+            <td>prev = previous</td>
+          </tr>
+          <tr>
+            <td>cont. = continued</td>
+            <td>(prev…) = previously</td>
+          </tr>
+          <tr>
+            <td>def = definition(s)</td>
+            <td>pt = Part(s)</td>
+          </tr>
+          <tr>
+            <td>Dict = Dictionary</td>
+            <td>r = regulation(s)/Court rule(s)</td>
+          </tr>
+          <tr>
+            <td>disallowed = disallowed by Parliament</td>
+            <td>reloc = relocated</td>
+          </tr>
+          <tr>
+            <td>div = Division(s)</td>
+            <td>renum = renumbered</td>
+          </tr>
+          <tr>
+            <td>ed = editorial change</td>
+            <td>rep = repealed</td>
+          </tr>
+          <tr>
+            <td>exp = expires/expired or ceases/ceased to have</td>
+            <td>rs = repealed and substituted</td>
+          </tr>
+          <tr>
+            <td>effect</td>
+            <td>s = section(s)/subsection(s)</td>
+          </tr>
+          <tr>
+            <td>gaz = gazette</td>
+            <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+          </tr>
+          <tr>
+            <td>LA = Legislation Act 2003</td>
+            <td>sch = Schedule(s)</td>
+          </tr>
+          <tr>
+            <td>LIA = Legislative Instruments Act 2003</td>
+            <td>SLI = Select Legislative Instrument</td>
+          </tr>
+          <tr>
+            <td>(md) = misdescribed amendment can be given</td>
+            <td>SR = Statutory Rules</td>
+          </tr>
+          <tr>
+            <td>effect</td>
+            <td>sub ch = Sub-Chapter(s)</td>
+          </tr>
+          <tr>
+            <td>(md not incorp) = misdescribed amendment</td>
+            <td>sub div = Subdivision(s)</td>
+          </tr>
+          <tr>
+            <td>cannot be given effect</td>
+            <td>sub pt = Subpart(s)</td>
+          </tr>
+          <tr>
+            <td>mod = modified/modification</td>
+            <td>underlining = whole or part not</td>
+          </tr>
+          <tr>
+            <td>No. = Number(s)</td>
+            <td>commenced or to be commenced</td>
+          </tr>
+          <tr>
+            <td>Ord = Ordinance</td>
+            <td></td>
+          </tr>
+        </table>
+        <content>
+          <p>Endnote 3—Legislation history</p>
+        </content>
+        <table>
+          <tr>
+            <th>Act
+(Register ID)</th>
+            <th>Number and year</th>
+            <th>Assent</th>
+            <th>Commencement</th>
+            <th>Application, saving and transitional provisions</th>
+          </tr>
+          <tr>
+            <td>Corporations (Review Fees) Act 2003 (C2004A01108)</td>
+            <td>23, 2003</td>
+            <td>11 Apr 2003</td>
+            <td>1 July 2003 (s 2)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Corporations (Review Fees) Amendment Act 2007 (C2007A00103)</td>
+            <td>103, 2007</td>
+            <td>28 June 2007</td>
+            <td>sch 1: 1 Sept 2007 (s 2(1) item 2)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Insolvency Law Reform Act 2016 (C2016A00011)</td>
+            <td>11, 2016</td>
+            <td>29 Feb 2016</td>
+            <td>sch 2 (items 266, 267): 1 Mar 2017 (s 2(1) item 5)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Corporations (Review Fees) Amendment Act 2018 (C2018A00072)</td>
+            <td>72, 2018</td>
+            <td>29 June 2018</td>
+            <td>sch 1: 18 Sept 2018 (s 2(1) item 2)</td>
+            <td>sch 1 (item 4)</td>
+          </tr>
+          <tr>
+            <td>Treasury Laws Amendment (2023 Law Improvement Package No. 1) Act 2023 (C2023A00076)</td>
+            <td>76, 2023</td>
+            <td>20 Sept 2023</td>
+            <td>sch 2 (item 639): 20 Oct 2023 (s 2(1) item 2)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Corporations (Review Fees) Amendment (Technical Amendments) Act 2026 (C2026A00006)</td>
+            <td>6, 2026</td>
+            <td>13 Mar 2026</td>
+            <td>14 Mar 2026 (s 2(1) item 1)</td>
+            <td>—</td>
+          </tr>
+        </table>
+        <content>
+          <p>Endnote 4—Amendment history</p>
+        </content>
+        <table>
+          <tr>
+            <th>Provision affected</th>
+            <th>How affected</th>
+          </tr>
+          <tr>
+            <td>s 4</td>
+            <td>am No 72, 2018; No 76, 2023</td>
+          </tr>
+          <tr>
+            <td>s 5</td>
+            <td>am No 103, 2007; No 11, 2016</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>rs No 72, 2018</td>
+          </tr>
+          <tr>
+            <td>s 7</td>
+            <td>am No 11, 2016; No 72, 2018</td>
+          </tr>
+          <tr>
+            <td>s 7A</td>
+            <td>ad No 6, 2026</td>
+          </tr>
+          <tr>
+            <td>s 8</td>
+            <td>am No 103, 2007</td>
+          </tr>
+        </table>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

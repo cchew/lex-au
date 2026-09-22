@@ -1,0 +1,3173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1991/131/!main"/>
+          <FRBRuri value="/akn/au/act/1991/131"/>
+          <FRBRdate date="1991-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="131"/>
+          <FRBRname value="australian-national-university-act-1991"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1991/131/eng@2014-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/1991/131/eng@2014-07-01"/>
+          <FRBRdate date="2014-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1991/131/eng@2014-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1991/131/eng@2014-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1991-01-01" type="generation" eId="evt-creation" source="#australian-national-university-act-1991"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1992/158"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1995/168"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1996/43"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1999/156"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2001/86" date="2001-07-18"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2003/150"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2004/80" date="2004-06-23"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2004/114" date="2004-07-13"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2004/157"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2005/143"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2008/20" date="2008-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2008/73" date="2008-07-03"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2014/62" date="2014-06-30"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="registrar" href="/ontology/roles/au/registrar" showAs="the Registrar"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-academic-staff-of-the-faculties" href="/ontology/term/au/term-academic-staff-of-the-faculties" showAs="academic staff of The Faculties"/>
+        <TLCTerm eId="term-academic-staff-of-the-institute" href="/ontology/term/au/term-academic-staff-of-the-institute" showAs="academic staff of the Institute"/>
+        <TLCTerm eId="term-appropriation-act" href="/ontology/term/au/term-appropriation-act" showAs="Appropriation Act"/>
+        <TLCTerm eId="term-arts-institute" href="/ontology/term/au/term-arts-institute" showAs="Arts Institute"/>
+        <TLCTerm eId="term-arts-institute-instrument" href="/ontology/term/au/term-arts-institute-instrument" showAs="Arts Institute instrument"/>
+        <TLCTerm eId="term-arts-institute-ordinance" href="/ontology/term/au/term-arts-institute-ordinance" showAs="Arts Institute Ordinance"/>
+        <TLCTerm eId="term-assets" href="/ontology/term/au/term-assets" showAs="assets"/>
+        <TLCTerm eId="term-certificate-holder" href="/ontology/term/au/term-certificate-holder" showAs="certificate holder"/>
+        <TLCTerm eId="term-chancellor" href="/ontology/term/au/term-chancellor" showAs="Chancellor"/>
+        <TLCTerm eId="term-commencement" href="/ontology/term/au/term-commencement" showAs="commencement"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-dean" href="/ontology/term/au/term-dean" showAs="dean"/>
+        <TLCTerm eId="term-deputy-vice-chancellor" href="/ontology/term/au/term-deputy-vice-chancellor" showAs="Deputy Vice-Chancellor"/>
+        <TLCTerm eId="term-elect" href="/ontology/term/au/term-elect" showAs="elect"/>
+        <TLCTerm eId="term-general-staff" href="/ontology/term/au/term-general-staff" showAs="general staff"/>
+        <TLCTerm eId="term-institute" href="/ontology/term/au/term-institute" showAs="Institute"/>
+        <TLCTerm eId="term-liabilities" href="/ontology/term/au/term-liabilities" showAs="liabilities"/>
+        <TLCTerm eId="term-nominations-committee-of-council" href="/ontology/term/au/term-nominations-committee-of-council" showAs="Nominations Committee of Council"/>
+        <TLCTerm eId="term-original-act" href="/ontology/term/au/term-original-act" showAs="original Act"/>
+        <TLCTerm eId="term-pro-chancellor" href="/ontology/term/au/term-pro-chancellor" showAs="Pro-Chancellor"/>
+        <TLCTerm eId="term-repealed-enactment" href="/ontology/term/au/term-repealed-enactment" showAs="repealed enactment"/>
+        <TLCTerm eId="term-statute" href="/ontology/term/au/term-statute" showAs="Statute"/>
+        <TLCTerm eId="term-the-faculties" href="/ontology/term/au/term-the-faculties" showAs="The Faculties"/>
+        <TLCTerm eId="term-university" href="/ontology/term/au/term-university" showAs="University"/>
+        <TLCTerm eId="term-vice-chancellor" href="/ontology/term/au/term-vice-chancellor" showAs="Vice-Chancellor"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p></p>
+      <p>Australian National University Act 1991</p>
+      <p>No. 131 of 1991 as amended</p>
+      <p><b>Compilation start date: </b><b>	</b><b>	</b>1 July 2014</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 62, 2014</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian National University Act 1991</i> as in force on 1 July 2014. It includes any commenced amendment affecting the legislation to that date.</p>
+      <p>This compilation was prepared on <date date="2014-07-14">14 July 2014</date>.</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of each amended provision.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in the endnotes.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If a provision of the compiled law is affected by a modification that is in force, details are included in the endnotes.</p>
+      <p><b>Provisions ceasing to have effect</b></p>
+      <p>If a provision of the compiled law has expired or otherwise ceased to have effect in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p><ref href="#part-2">Part 2</ref>—The Australian National University	4</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Establishment of the University	4</p>
+      <p>4	Establishment of the University	4</p>
+      <p>4A	Application of the <i>Public Governance, Performance and Accountability Act 2013</i>	4</p>
+      <p>4B	University’s reporting period starts on 1 January	5</p>
+      <p>5	Functions of the University	5</p>
+      <p>6	Powers of the University	6</p>
+      <p>7	Organisation of the University	7</p>
+      <p><ref href="#dvs-2">Division 2</ref>—The Council	8</p>
+      <p>8	The Council	8</p>
+      <p>9	Powers of Council	8</p>
+      <p>10	Constitution of Council	8</p>
+      <p>11	Qualifications for membership of Council	10</p>
+      <p>12	Meetings of Council	10</p>
+      <p>13	Resolutions without meetings	11</p>
+      <p>15	Vacation of office	12</p>
+      <p>16	Casual vacancies	13</p>
+      <p>17	Delegation to member of Council etc.	13</p>
+      <p>18	Delegation to committee of Council	14</p>
+      <p><ref href="#dvs-3">Division 3</ref>—The Institute of Advanced Studies	16</p>
+      <p>19	Constitution of the Institute	16</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Convocation	17</p>
+      <p>30	Constitution of Convocation	17</p>
+      <p>31	Quorum at meetings of Convocation	17</p>
+      <p><ref href="#dvs-6">Division 6</ref>—Senior officers of the University	18</p>
+      <p>32	Chancellor	18</p>
+      <p>33	Pro-Chancellor	18</p>
+      <p>34	Vice-Chancellor	18</p>
+      <p>35	Deputy Vice-Chancellor	19</p>
+      <p>37	Acting appointments	19</p>
+      <p><ref href="#dvs-7">Division 7</ref>—Miscellaneous	20</p>
+      <p>38	Execution of contracts	20</p>
+      <p>39	Validity of acts and proceedings	20</p>
+      <p>40	Religious test not to be administered	21</p>
+      <p><ref href="#part-3">Part 3</ref>—Financial matters	22</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Fees	22</p>
+      <p>41	Fees	22</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Finances of the University	23</p>
+      <p>43	Application of fees and other money	23</p>
+      <p>44	Borrowing	23</p>
+      <p>48	Taxation	24</p>
+      <p><ref href="#part-4">Part 4</ref>—Statutes	25</p>
+      <p>50	Statutes	25</p>
+      <p>51	Statutes relating to traffic	28</p>
+      <p>52	Statutes to be published	28</p>
+      <p><ref href="#part-5">Part 5</ref>—Consequential and transitional provisions	30</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	30</p>
+      <p>53	Interpretation	30</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Repeal	32</p>
+      <p>54	Repeal	32</p>
+      <p><ref href="#dvs-3">Division 3</ref>—General	33</p>
+      <p>55	Senior officers to continue in office	33</p>
+      <p>56	University successor in law of the Arts Institute	33</p>
+      <p>57	Preservation of Statutes etc.	33</p>
+      <p>58	Transfer of assets and liabilities of the Arts Institute	34</p>
+      <p>59	Arts Institute instruments	35</p>
+      <p>60	State or Territory officer may act on certificate	35</p>
+      <p>61	Pending proceedings	36</p>
+      <p>62	Staff of the Arts Institute	36</p>
+      <p>63	Students of the Arts Institute	36</p>
+      <p>64	Granting of Arts Institute awards	37</p>
+      <p>65	Transfer of appropriated money	37</p>
+      <p>66	Annual report and financial statements	38</p>
+      <p>Endnotes	39</p>
+      <p>Endnote 1—About the endnotes	39</p>
+      <p>Endnote 2—Abbreviation key	41</p>
+      <p>Endnote 3—Legislation history	42</p>
+      <p>Endnote 4—Amendment history	45</p>
+      <p>Endnote 5—Uncommenced amendments [none]	48</p>
+      <p>Endnote 6—Modifications [none]	48</p>
+      <p>Endnote 7—Misdescribed amendments [none]	48</p>
+      <p>Endnote 8—Miscellaneous [none]	48</p>
+      <p>An Act to amend the constitution of the Australian National University and create within it a new institute to replace the Canberra Institute of the Arts, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian</i><i> </i><i>National</i><i> </i><i>University</i><i> Act</i><i> </i><i>1991</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act commences on <date date="1992-01-01">1 January 1992</date>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-academic-staff-of-the-faculties">academic staff of The Faculties</term> means <def>the persons who are to be regarded as members of the academic staff of The Faculties because of Statutes made under paragraph 50(2)(d).</def></p>
+            <p><term refersTo="#term-academic-staff-of-the-institute">academic staff of the Institute</term> means <def>the persons who are to be regarded as members of the academic staff of the Institute because of Statutes made under paragraph 50(2)(d).</def></p>
+            <p><term refersTo="#term-arts-institute">Arts Institute</term> means <def>the Canberra Institute of the Arts established by the Arts Institute Ordinance.</def></p>
+            <p><term refersTo="#term-arts-institute-ordinance">Arts Institute Ordinance</term> means <def>the Canberra Institute of the Arts Ordinance 1988.</def></p>
+            <p><term refersTo="#term-certificate-holder">certificate holder</term>, in relation to an institution, means <def>a person who has been awarded a certificate by the institution.</def></p>
+            <p><term refersTo="#term-chancellor">Chancellor</term> means <def>the Chancellor of the University appointed under <ref href="#sec-32">section 32</ref>.</def></p>
+            <p><term refersTo="#term-commencement">commencement</term> means <def>the commencement of this Act.</def></p>
+            <p><term refersTo="#term-council">Council</term> means <def>the Council referred to in <ref href="#sec-8">section 8</ref>.</def></p>
+            <p><term refersTo="#term-dean">dean</term> means <def>the head, by whatever name called, of any faculty.</def></p>
+            <p><term refersTo="#term-deputy-vice-chancellor">Deputy Vice-Chancellor</term> means <def>a Deputy Vice-Chancellor of the University appointed under <ref href="#sec-35">section 35</ref>.</def></p>
+            <p><term refersTo="#term-elect">elect</term> includes <def>re-elect.</def></p>
+            <p><b><i>executive office</i></b> means:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the office of Vice-Chancellor; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the office or offices of Deputy Vice-Chancellor.</p>
+            </content>
+            <content>
+              <p><b><i>ex officio member</i></b>, in relation to the Council, means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the Chancellor; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>the Vice-Chancellor.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-general-staff">general staff</term> means <def>members of the staff of the University other than: the holders of the executive offices; the academic staff of the Institute; and the academic staff of The Faculties.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the holders of the executive offices;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the academic staff of the Institute; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>the academic staff of The Faculties.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-institute">Institute</term> means <def>the Institute of Advanced Studies referred to in paragraph 7(1)(a).</def></p>
+              <p><term refersTo="#term-nominations-committee-of-council">Nominations Committee of Council</term> means <def>the persons referred to in subsection 10(2).</def></p>
+              <p><term refersTo="#term-original-act">original Act</term> means <def><ref href="/akn/au/act/australian-national-university-act-1946" class="unresolved">the Australian National University Act 1946</ref>.</def></p>
+              <p><term refersTo="#term-pro-chancellor">Pro-Chancellor</term> means <def>the Pro-Chancellor of the University appointed under <ref href="#sec-33">section 33</ref>.</def></p>
+              <p><b><i>professor</i></b> does not include an assistant professor or an associate professor.</p>
+              <p><term refersTo="#term-statute">Statute</term> means <def>a Statute of the University made by the Council under <ref href="#part-4">Part 4</ref>.</def></p>
+              <p><term refersTo="#term-the-faculties">The Faculties</term> means <def>the group of faculties and other bodies referred to in paragraph 7(1)(b).</def></p>
+              <p><term refersTo="#term-university">University</term> means <def>the Australian National University continued in existence under subsection 4(1).</def></p>
+              <p><b><i>University body</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the Council; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>Convocation.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-vice-chancellor">Vice-Chancellor</term> means <def>the Vice-Chancellor of the University appointed under <ref href="#sec-34">section 34</ref>.</def></p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>The Australian National University</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Establishment of the University</heading>
+          <section eId="part-2__dvs-1__sec-4">
+            <num>4</num>
+            <heading>Establishment of the University</heading>
+            <subsection eId="part-2__dvs-1__sec-4__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Australian National University that was, immediately before the commencement of this Act, in existence by virtue of the original Act is continued in existence under the same name.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-4__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The University:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-4__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>continues to be a body corporate; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-4__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>has a seal; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-4__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>may acquire, hold and dispose of real and personal property.</p>
+                </content>
+                <authorialNote placement="end" eId="note-1" marker="1">
+                  <content>
+                    <p>Note:	Subject to <ref href="#sec-4A">section 4A</ref>, the <i>Public Governance, Performance and Accountability Act 2013</i> applies to the University. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-4__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The seal of the University must be kept in such custody as the Council directs and may be used only as authorised by the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-4__subsec-4">
+              <num>4</num>
+              <content>
+                <p>All courts, judges and persons acting judicially must take judicial notice of the imprint of the seal of the University appearing on a document and must presume that it was duly affixed.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-4A">
+            <num>4A</num>
+            <heading>Application of the Public Governance, Performance and Accountability Act 2013</heading>
+            <subsection eId="part-2__dvs-1__sec-4A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Sections 22, 36 and 59 of the <i>Public Governance, Performance and Accountability Act 2013</i> do not apply in relation to the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-4A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	Nothing in <ref href="#sec-19">section 19</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> requires the members of the Council to do anything that will or might affect the academic independence or integrity of the University.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	Sections 19, 22, 36 and 59 of that Act are about the duty to keep Ministers informed, application of Government policies, Budget estimates and investments.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-4B">
+            <num>4B</num>
+            <heading>University’s reporting period starts on 1 January</heading>
+            <content>
+              <p>		For the purposes of the <i>Public Governance, Performance and Accountability Act 2013</i>, the University’s reporting period is a period of 12 months starting on 1 January.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-1__sec-5">
+            <num>5</num>
+            <heading>Functions of the University</heading>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The functions of the University include the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>advancing and transmitting knowledge, by undertaking research and teaching of the highest quality;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>encouraging, and providing facilities for, research and postgraduate study, both generally and in relation to subjects of national importance to Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>providing facilities and courses for higher education generally, including education appropriate to professional and other occupations, for students from within Australia and overseas;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>providing facilities and courses at higher education level and other levels in the visual and performing arts, and, in so doing, promoting the highest standards of practice in those fields;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>awarding and conferring degrees, diplomas and certificates in its own right or jointly with other institutions, as determined by the Council;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>providing opportunities for persons, including those who already have post-secondary qualifications, to obtain higher education qualifications;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-5__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>engaging in extension activities.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-5__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In the performance of its functions, the University must pay attention to its national and international roles and to the needs of the Australian Capital Territory and the surrounding regions.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Powers of the University</heading>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to <ref href="#dvs-2">Division 2</ref> of <ref href="#part-3">Part 3</ref>, the University has power to do all things that are necessary or convenient to be done for, or in connection with, the performance of its functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The powers of the University under subsection (1) include, but are not limited to, the following powers:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>to buy, take on lease or otherwise acquire real and personal property, and to sell, grant leases of, or otherwise dispose of, such property;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>to develop commercially any discovery, invention or property;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>to make charges for work done, services rendered and goods and information supplied by it;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>to form, and participate in the formation of, companies;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>to subscribe for and buy shares in, and debentures and other securities of, companies;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-f">
+                <num>f</num>
+                <content>
+                  <p>to enter into partnerships;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-g">
+                <num>g</num>
+                <content>
+                  <p>to participate in joint ventures and arrangements for the sharing of profits;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-h">
+                <num>h</num>
+                <content>
+                  <p>to enter into contracts;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>to erect buildings;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-j">
+                <num>j</num>
+                <content>
+                  <p>to occupy, use and control any land or building made available to the University by the Commonwealth for the purposes of the University;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-k">
+                <num>k</num>
+                <content>
+                  <p>to employ staff;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-l">
+                <num>l</num>
+                <content>
+                  <p>to invest money of the University, and to dispose of investments;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-m">
+                <num>m</num>
+                <content>
+                  <p>to make astronomical, seismological, meteorological and other scientific observations;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-n">
+                <num>n</num>
+                <content>
+                  <p>to make loans and grants to students;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-o">
+                <num>o</num>
+                <content>
+                  <p>to accept gifts, grants, bequests and devises made to it;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-p">
+                <num>p</num>
+                <content>
+                  <p>to act as trustee of money and other property vested in it on trust;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-q">
+                <num>q</num>
+                <content>
+                  <p>to do such other things as it is authorised to do by or under this Act or any other Act;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-r">
+                <num>r</num>
+                <content>
+                  <p>to do anything incidental to any of its powers.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	In spite of anything contained in this Act or the <i>Public Governance, Performance and Accountability Act 2013</i>, any money or other property held by the University on trust must be dealt with in accordance with the powers and duties of the University as trustee.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The powers of the University may be exercised within or outside Australia.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Organisation of the University</heading>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p>There are, within the University:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an Institute of Advanced Studies constituted in accordance with <ref href="#sec-19">section 19</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a group of faculties and other bodies determined by the Council, to be known as the “The Faculties”.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Nothing in this Act prevents the Council from establishing, within the University, for academic or administrative purposes, an organisational structure that:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>includes bodies, or members of staff, from the Institute and The Faculties; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>in any other way draws its resources from the Institute and The Faculties.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>The Council</heading>
+          <section eId="part-2__dvs-2__sec-8">
+            <num>8</num>
+            <heading>The Council</heading>
+            <content>
+              <p>The governing authority of the University is the Council.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Powers of Council</heading>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this Act and the Statutes, the Council has the entire control and management of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Council is to act in all matters concerning the University in the way it thinks will best promote the interests of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The powers of the Council include, but are not limited to, the power to appoint persons (whether members of the staff of the University or not) to positions of responsibility within the University.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Constitution of Council</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council consists of the following members:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Chancellor;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Vice-Chancellor;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>one person who is either a dean or the head of a research school and is elected, in either case, by the deans and the heads of the research schools voting together;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-l">
+                <num>l</num>
+                <content>
+                  <p>one member of the academic staff of the Institute of Advanced Studies elected by members of that staff;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-m">
+                <num>m</num>
+                <content>
+                  <p>one member of the academic staff of The Faculties elected by members of that staff;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-n">
+                <num>n</num>
+                <content>
+                  <p>one member of the general staff of the University elected by members of that staff;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-o">
+                <num>o</num>
+                <content>
+                  <p>one postgraduate student of the University elected by the postgraduate students of the University;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-p">
+                <num>p</num>
+                <content>
+                  <p>one undergraduate student of the University elected by the undergraduate students of the University;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-q">
+                <num>q</num>
+                <content>
+                  <p>7 members appointed by <role refersTo="#minister">the Minister</role> on the recommendation of the Nominations Committee of Council.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Nominations Committee of Council consists of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Chancellor; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>6 other persons appointed by the Chancellor in accordance with guidelines determined by the Council.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In making recommendations to <role refersTo="#minister">the Minister</role> under paragraph (1)(q), the Nominations Committee of Council must have regard to the desirability of ensuring that there is a balance of skills, expertise and gender among members of the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-4">
+              <num>4</num>
+              <content>
+                <p>At least 2 of the members appointed under paragraph 10(1)(q) must have a high level of relevant financial expertise.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-5">
+              <num>5</num>
+              <content>
+                <p>At least one member appointed under paragraph 10(1)(q) must have a high level of relevant commercial expertise.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The Nominations Committee of Council must not recommend under paragraph 10(1)(q) a person who is:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>a current member of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-i">
+                <num>i</num>
+                <content>
+                  <p>the Commonwealth Parliament; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a State Parliament; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the legislature of a Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>a current member of the academic or general staff of the University; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-c">
+                <num>c</num>
+                <content>
+                  <p>a student of the University; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-6__para-d">
+                <num>d</num>
+                <content>
+                  <p>a member of the Nominations Committee of Council.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The Minister must, <quantity refersTo="#deadline">within 60 days</quantity> after receiving written advice from the Nominations Committee of Council recommending that a person be appointed to the Council:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>appoint the person specified to the Council for a period not exceeding 4 years; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>decide not to appoint the person specified if, in <role refersTo="#minister">the Minister</role>’s opinion, the appointment is not in the best interests of the University.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-8">
+              <num>8</num>
+              <content>
+                <p>If <role refersTo="#minister">the Minister</role> decides under paragraph (7)(b) not to appoint a person, <role refersTo="#minister">the Minister</role> must:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>notify the Council, in writing, of the refusal; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>give reasons for the refusal.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-9">
+              <num>9</num>
+              <content>
+                <p>In deciding under paragraph (7)(b) not to appoint a person, <role refersTo="#minister">the Minister</role> must only consider the balance of skills, expertise and gender, and the periods of appointment (or proposed periods of appointment) of proposed and continuing members of the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-10">
+              <num>10</num>
+              <content>
+                <p>Subject to this Act, the members of the Council referred to in paragraphs (1)(k), (l), (m), (n), (o) and (p) hold office for such periods as the Statutes provide.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Qualifications for membership of Council</heading>
+            <content>
+              <p>		A person is not qualified to become or remain a member of the Council (other than an <i>ex officio </i>member) if:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-11__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is under 18;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is an undischarged bankrupt or a person in respect of whom there is in operation a personal insolvency agreement with the person’s creditors under the law relating to bankruptcy;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-c">
+              <num>c</num>
+              <content>
+                <p>the person has been convicted and is serving a sentence of imprisonment for an offence against the law of the Commonwealth or of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-11__para-d">
+              <num>d</num>
+              <content>
+                <p>in accordance with the law of a State or Territory, all or any of the person’s property is, because of his or her mental incapacity, under the control of another person.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Meetings of Council</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chancellor is to preside at all meetings of the Council at which he or she is present.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Chancellor is not present at a meeting of the Council; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the Pro-Chancellor is a member of the Council—he or she is present;</p>
+                </content>
+                <content>
+                  <p>the Pro-Chancellor is to preside at the meeting.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If neither the Chancellor nor the Pro-Chancellor (if he or she is a member of the Council) is present at a meeting of the Council, the members present must elect one of their number to preside at the meeting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-4">
+              <num>4</num>
+              <content>
+                <p>At a meeting of the Council, a quorum is constituted by a majority of the persons for the time being holding office as members of the Council.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Resolutions without meetings</heading>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Chancellor or Pro-Chancellor (if he or she is a member of the Council) may, in writing, request members to pass a resolution without a meeting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A copy of the request and the text of the proposed resolution, must be sent to each member of the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subject to subsection (4), the resolution is passed if each of a majority of the members of the Council eligible to vote on that resolution signs a document containing the text of the resolution and returns it to the Chancellor or Pro-Chancellor (if he or she is a member of the Council).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	If the proposed resolution deals with whether a member of the Council has breached his or her duties under Subdivision A of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-2">Part 2</ref>-2 of the <i>Public Governance, Performance and Accountability Act 2013</i> as a member of the Council, the resolution is passed if each of at least a two-thirds majority of the members of the Council eligible to vote on that resolution:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>signs a document containing the text of the resolution; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>returns it to the Chancellor or Pro-Chancellor (if he or she is a member of the Council).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-5">
+              <num>5</num>
+              <content>
+                <p>For the purposes of this section, a member of the Council is not eligible to vote on a resolution if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>the resolution relates to a matter in which the member has a direct or indirect pecuniary interest; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	if the resolution deals with whether a member of the Council has breached his or her duties under Subdivision A of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-2">Part 2</ref>-2 of the <i>Public Governance, Performance and Accountability Act 2013</i> as a member of the Council—he or she is the member to whom the resolution relates.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Vacation of office</heading>
+            <subsection eId="part-2__dvs-2__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	If a member of the Council (other than an <i>ex officio </i>member):</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>becomes disqualified under <ref href="#sec-11">section 11</ref> from remaining a member of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>dies; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>resigns from membership of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>is absent without leave of the Council from 3 consecutive meetings of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>in the case of a member referred to in paragraph 10(1)(k), (l), (m), (n), (o) or (p)—ceases to be qualified to be elected as mentioned in the paragraph concerned; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>becomes a Deputy Vice-Chancellor of the University under <ref href="#sec-35">section 35</ref>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-j">
+                <num>j</num>
+                <content>
+                  <p>	(j)	is or becomes disqualified from managing corporations under <ref href="#part-2D">Part 2D</ref>.6 of the <i>Corporations Act 2001</i>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>	(k)	has, in the Council’s opinion formed by resolution passed as mentioned in subsection (1A) or subsection 13(4), breached his or her duties under Subdivision A of <ref href="#dvs-3">Division 3</ref> of <ref href="#part-2">Part 2</ref>-2 of the <i>Public Governance, Performance and Accountability Act 2013</i><i> </i>as a member of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-1__para-l">
+                <num>l</num>
+                <content>
+                  <p>is, in the Council’s opinion, incapable (other than on a temporary basis) of performing his or her duties;</p>
+                </content>
+                <content>
+                  <p>the member’s office becomes vacant.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-15__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>For the purposes of paragraph (1)(k), the Council forms its opinion by resolution passed at a meeting of the Council if the resolution is passed at the meeting by at least a two-thirds majority of the members of the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If a person holding office as a member of the Council referred to in one of the paragraphs of subsection 10(1), other than paragraph (a) or (c), is, before otherwise ceasing to hold that office, appointed to the office of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-15__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>Vice-Chancellor;</p>
+                </content>
+                <content>
+                  <p>that person ceases, upon being so appointed, to hold that first-mentioned office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-16">
+            <num>16</num>
+            <heading>Casual vacancies</heading>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Where a vacancy in the membership of the Council occurs under <ref href="#sec-15">section 15</ref>, that vacancy must be filled:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>where the Statutes make provision for the filling of that casual vacancy—in the manner provided by the Statutes; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>in any other case—in the manner provided in subsection 10(1) for the appointment of a person to the vacant office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person appointed to fill such a vacancy holds office for the remainder of the term of office of the person’s predecessor.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (2) does not apply, and does not prevent paragraph 10(7)(a) applying, to the filling of a vacancy in the membership of the Council if the vacancy is one to which paragraph 10(1)(q) relates.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Delegation to member of Council etc.</heading>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, the Council may delegate all or any of its functions and powers under this Act (except its powers in relation to the making of Statutes) to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a member of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a member of the staff of the University.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Council may revoke a delegation under this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Council must not delegate its power to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>appoint the Chancellor, Pro-Chancellor or Vice-Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>approve the University’s annual budget or its business plan; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>approve the annual report of the University; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-3__para-d">
+                <num>d</num>
+                <content>
+                  <p>monitor its commercial activities, and its subsidiaries and any other entities that it controls, to the extent required to ensure they do not have any significant adverse impact on, or pose an unreasonable risk to, the University’s finances and operations; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-3__para-e">
+                <num>e</num>
+                <content>
+                  <p>	(e)	review and monitor the management of the University as a whole or the University’s performance as a university (as defined by the <i>Higher Education Support Act 2003</i>).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Delegation to committee of Council</heading>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, the Council may delegate all or any of its functions and powers under this Act (except its powers in relation to the making of Statutes) to the members of a committee consisting of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>members of the Council; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>members of the Council and other persons.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A function or power so delegated may be performed or exercised by a majority of the members of the committee, acting jointly, and may not otherwise be performed or exercised under the delegation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Council may revoke a delegation under this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Council must not delegate its power to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>appoint the Chancellor, Pro-Chancellor or Vice-Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>approve the University’s annual budget or its business plan; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>approve the annual report of the University; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-4__para-d">
+                <num>d</num>
+                <content>
+                  <p>monitor its commercial activities, and its subsidiaries and any other entities that it controls, to the extent required to ensure they do not have any significant adverse impact on, or pose any reasonable risk to, the University’s finances and operations; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-4__para-e">
+                <num>e</num>
+                <content>
+                  <p>	(e)	review and monitor the management of the University as a whole or the University’s performance as a university (as defined by the <i>Higher Education Support Act 2003</i>).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>The Institute of Advanced Studies</heading>
+          <section eId="part-2__dvs-3__sec-19">
+            <num>19</num>
+            <heading>Constitution of the Institute</heading>
+            <subsection eId="part-2__dvs-3__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Institute consists of such research schools and other bodies as are established by the Council for the purposes of this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A research school or another body is to be established in relation to each of the following fields of learning:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-19__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>medical science;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-19__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the physical sciences;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-19__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the social sciences;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-19__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>Pacific studies.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Research schools or other bodies may be established in relation to such other fields of learning as are determined by the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-19__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The research school in relation to medical science is to be known as “The John Curtin School of Medical Research”.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-19__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The names of the other research schools and other bodies are as determined by the Council.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-5">
+          <num>5</num>
+          <heading>Convocation</heading>
+          <section eId="part-2__dvs-5__sec-30">
+            <num>30</num>
+            <heading>Constitution of Convocation</heading>
+            <subsection eId="part-2__dvs-5__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Convocation consists of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-5__sec-30__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>all members and former members of the Council;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-30__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>all former members of the Board of the Arts Institute;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-30__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>all graduates and diplomates of the University, the Arts Institute and the former Schools of Art and Music;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-30__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>such certificate holders of the University, the Arts Institute and the former Schools of Art and Music as are, in accordance with the Statutes, admitted as members of Convocation;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-30__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>such graduates of other universities, or other persons, as are, in accordance with the Statutes, admitted as members of Convocation.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Council must cause a roll to be kept of all members of Convocation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-30__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Meetings of Convocation may be convened by the Vice-Chancellor or as provided in the Statutes.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-5__sec-31">
+            <num>31</num>
+            <heading>Quorum at meetings of Convocation</heading>
+            <content>
+              <p>At a meeting of Convocation a quorum is constituted by 50 members of Convocation.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-2__dvs-6">
+          <num>6</num>
+          <heading>Senior officers of the University</heading>
+          <section eId="part-2__dvs-6__sec-32">
+            <num>32</num>
+            <heading>Chancellor</heading>
+            <subsection eId="part-2__dvs-6__sec-32__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council must appoint the Chancellor of the University. The appointee must not be a student or an employee of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-32__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>The Chancellor ceases to hold office as Chancellor if he or she becomes a student or an employee of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-32__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection (1A) and the Statutes, the Chancellor holds office for such period, and on such conditions, as the Council determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-6__sec-33">
+            <num>33</num>
+            <heading>Pro-Chancellor</heading>
+            <subsection eId="part-2__dvs-6__sec-33__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council may appoint a Pro-Chancellor of the University. The appointee must be a member of the Council appointed by <role refersTo="#minister">the Minister</role> under paragraph 10(1)(q).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-33__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>The Pro-Chancellor may hold that office for a period that is shorter than the period of his or her office as a member of the Council. However, if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-6__sec-33__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>the period of his or her office as a member of the Council ends at a particular time; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-6__sec-33__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>his or her office as a member of the Council becomes vacant under <ref href="#sec-15">section 15</ref> at a particular time;</p>
+                </content>
+                <content>
+                  <p>he or she also ceases to hold office as Pro-Chancellor at that time.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-33__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection (1A) and the Statutes, the Pro-Chancellor holds office for such period, and on such conditions, as the Council determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-6__sec-34">
+            <num>34</num>
+            <heading>Vice-Chancellor</heading>
+            <subsection eId="part-2__dvs-6__sec-34__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council must appoint the Vice-Chancellor of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-34__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Vice-Chancellor:</p>
+              </content>
+              <paragraph eId="part-2__dvs-6__sec-34__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>is the chief executive officer of the University; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-6__sec-34__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>has such powers and duties as the Statutes prescribe or, subject to the Statutes, as the Council determines.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-34__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subject to the Statutes, the Vice-Chancellor holds office for such period, and on such conditions, as the Council determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-6__sec-35">
+            <num>35</num>
+            <heading>Deputy Vice-Chancellor</heading>
+            <subsection eId="part-2__dvs-6__sec-35__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council must appoint a Deputy Vice-Chancellor of the University, or more than one.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-35__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A Deputy Vice-Chancellor has such powers and duties as the Statutes prescribe or, subject to the Statutes, as the Council determines.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-6__sec-35__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A Deputy Vice-Chancellor holds office for such period, and on such conditions, subject to the Statutes, as the Council determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-6__sec-37">
+            <num>37</num>
+            <heading>Acting appointments</heading>
+            <content>
+              <p>The Council may appoint a person to act in an executive office:</p>
+            </content>
+            <paragraph eId="part-2__dvs-6__sec-37__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the executive office, whether or not an appointment has previously been made to the executive office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-6__sec-37__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when the holder of the executive office is absent from duty or from Australia, is acting in another executive office or is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-2__dvs-7">
+          <num>7</num>
+          <heading>Miscellaneous</heading>
+          <section eId="part-2__dvs-7__sec-38">
+            <num>38</num>
+            <heading>Execution of contracts</heading>
+            <subsection eId="part-2__dvs-7__sec-38__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Any contract that, if made between private persons, would be by law required to be in writing under seal may be made on behalf of the University in writing under the seal of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-7__sec-38__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Any contract to which subsection (1) does not apply may be made on behalf of the University by any person acting with <role refersTo="#authority">the authority</role> of the Council, express or implied, and, where such a contract is made in writing, it may be executed on behalf of the University by that person.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-7__sec-39">
+            <num>39</num>
+            <heading>Validity of acts and proceedings</heading>
+            <subsection eId="part-2__dvs-7__sec-39__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies to the following acts and proceedings:</p>
+              </content>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an act or proceeding of a University body;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an act or proceeding of the members, or a committee, of a University body;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>an act done by the Chancellor, the Pro-Chancellor or a person holding an executive office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-7__sec-39__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An act or proceeding is not invalid merely because of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a defect in the appointment, election, choosing or admission of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the Chancellor, the Pro-Chancellor or a person holding an executive office; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>any other member of a University body or of a committee of a University body;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the disqualification of a member of a University body or committee of a University body from membership of the University body or committee;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>a defect in the convening of a meeting; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-7__sec-39__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>any vacancy in the membership of the Council or a committee of the Council.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-7__sec-40">
+            <num>40</num>
+            <heading>Religious test not to be administered</heading>
+            <content>
+              <p>The University may not administer any religious test in relation to:</p>
+            </content>
+            <paragraph eId="part-2__dvs-7__sec-40__para-a">
+              <num>a</num>
+              <content>
+                <p>the admission of any person to the University; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-7__sec-40__para-b">
+              <num>b</num>
+              <content>
+                <p>the award of any degree, diploma, certificate or honour; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-7__sec-40__para-c">
+              <num>c</num>
+              <content>
+                <p>the holding of any office.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Financial matters</heading>
+        <division eId="part-3__dvs-1">
+          <num>1</num>
+          <heading>Fees</heading>
+          <section eId="part-3__dvs-1__sec-41">
+            <num>41</num>
+            <heading>Fees</heading>
+            <subsection eId="part-3__dvs-1__sec-41__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	Fees that are payable to the University, including student contribution amounts and tuition fees within the meaning of the <i>Higher Education Support Act 2003</i>, are payable in accordance with the Statutes.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-2">
+          <num>2</num>
+          <heading>Finances of the University</heading>
+          <section eId="part-3__dvs-2__sec-43">
+            <num>43</num>
+            <heading>Application of fees and other money</heading>
+            <content>
+              <p>The Council must apply the following solely for the purposes of the University:</p>
+            </content>
+            <paragraph eId="part-3__dvs-2__sec-43__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	all financial assistance paid to the University under the <i>Higher Education Support Act 2003</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__dvs-2__sec-43__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	student contribution amounts within the meaning of the <i>Higher Education Support Act 2003</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__dvs-2__sec-43__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	tuition fees within the meaning of the <i>Higher Education Support Act 2003</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__dvs-2__sec-43__para-d">
+              <num>d</num>
+              <content>
+                <p>other money received by the University under this Act or otherwise.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-3__dvs-2__sec-44">
+            <num>44</num>
+            <heading>Borrowing</heading>
+            <subsection eId="part-3__dvs-2__sec-44__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), the University may borrow money.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-44__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The University’s power to borrow is subject to such limits as the Finance Minister determines as to:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-44__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the total amount of money (other than interest) that may be owed by the University at any time as a result of borrowings; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-44__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the periods for which money may be borrowed.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-44__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	The Finance Minister may, by written instrument, delegate any of the Finance Minister’s powers or functions under this section to an official (within the meaning of the <i>Public Governance, Performance and Accountability Act 2013</i>) of a non-corporate Commonwealth entity (within the meaning of that Act). In exercising powers or functions under a delegation, the official must comply with any directions of the Finance Minister.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-44__subsec-4">
+              <num>4</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>Finance Minister</i></b> means the Minister who administers the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-2__sec-48">
+            <num>48</num>
+            <heading>Taxation</heading>
+            <subsection eId="part-3__dvs-2__sec-48__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), the University is not subject to taxation under the laws of the Commonwealth or of a State or Territory.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-48__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The University is subject to payroll tax under the law of a State or Territory.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Statutes</heading>
+        <section eId="part-4__sec-50">
+          <num>50</num>
+          <heading>Statutes</heading>
+          <subsection eId="part-4__sec-50__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Council may make Statutes, not inconsistent with this Act or the <i>Public Governance, Performance and Accountability Act 2013</i>, prescribing matters:</p>
+            </content>
+            <paragraph eId="part-4__sec-50__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the Statutes; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed by the Statutes for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-50__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The powers of the Council under subsection (1) include, but are not limited to, the power to make Statutes with respect to the following matters:</p>
+            </content>
+            <paragraph eId="part-4__sec-50__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the management, good government and discipline of the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the imposition, by or on behalf of the University, of penalties upon:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>students of the University; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>persons employed by the University;</p>
+              </content>
+              <content>
+                <p>for contravention of, or failure to comply with, a Statute made under paragraph (a);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the method of any election provided for by this Act, and the determination of questions raised in relation to the conduct or result of any such election;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the persons who are to be regarded, for the purposes of this Act, as members of the academic staff of the Institute or as members of the academic staff of The Faculties;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the persons who are to be regarded, for the purposes of this Act, as undergraduate students, or postgraduate students, of the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>in relation to each University body:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the manner and time of convening, holding and adjourning its meetings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>voting at such meetings (including postal or proxy voting);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>disclosure of pecuniary interests at meetings of the Convocation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the appointment, powers and duties of chairpersons at such meetings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-v">
+              <num>v</num>
+              <content>
+                <p>the conduct and recording of business at such meetings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-vi">
+              <num>vi</num>
+              <content>
+                <p>the appointment of committees of the University body; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-vii">
+              <num>vii</num>
+              <content>
+                <p>the quorums for meetings of committees mentioned in subparagraph (vi), and the powers and duties of such committees;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>the resignation of the following persons:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the Chancellor;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the Pro-Chancellor;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>any person holding an executive office;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>the exercise and performance by a Deputy Vice-Chancellor, in specified circumstances, of the powers and duties of the Vice-Chancellor;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the tenure of the holder of any office or place established by or under this Act in respect of which this Act does not:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>specify a term of office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>provide for the fixing of the term of office otherwise than by the Statutes;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>the employment of members of staff of the University, including the terms and conditions of such employment and the termination of such employment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-k">
+              <num>k</num>
+              <content>
+                <p>the appointment of persons to positions of responsibility within the University, the terms and conditions of such appointments and the termination of such appointments;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-l">
+              <num>l</num>
+              <content>
+                <p>the admission and enrolment of students;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-m">
+              <num>m</num>
+              <content>
+                <p>the times, places and manner of holding lectures, classes and examinations, and the number and character of such lectures, classes and examinations;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-n">
+              <num>n</num>
+              <content>
+                <p>the promotion and extension of University teaching;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-o">
+              <num>o</num>
+              <content>
+                <p>the granting of degrees, diplomas, certificates and honours;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-p">
+              <num>p</num>
+              <content>
+                <p>the granting of fellowships, scholarships, exhibitions and bursaries;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-q">
+              <num>q</num>
+              <content>
+                <p>the conferring, on persons who hold degrees, diplomas or other awards granted by other institutions, of any corresponding degree, diploma or other award of the University without examination;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-r">
+              <num>r</num>
+              <content>
+                <p>the exemption of persons undertaking a course leading to a degree, diploma or other award from the requirement to undertake particular work that would otherwise be required to be undertaken for the purposes of that course and the grant of status in respect of that work, whether or not on condition that other work be undertaken instead of the work the subject of the exemption;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-s">
+              <num>s</num>
+              <content>
+                <p>the admission of members of Convocation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-t">
+              <num>t</num>
+              <content>
+                <p>the admission of persons who are undertaking or have undertaken studies at another institution to a corresponding status within the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-u">
+              <num>u</num>
+              <content>
+                <p>	(u)	the payment to the University of fees, including student contribution amounts and tuition fees within the meaning of the <i>Higher Education Support Act 2003</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-v">
+              <num>v</num>
+              <content>
+                <p>the establishment, management and control of libraries, laboratories and museums in connection with the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-w">
+              <num>w</num>
+              <content>
+                <p>the establishment or affiliation of residential colleges;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-x">
+              <num>x</num>
+              <content>
+                <p>the affiliation or admission to the University of any education or research establishment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-y">
+              <num>y</num>
+              <content>
+                <p>the control and investment of the property of the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-2__para-z">
+              <num>z</num>
+              <content>
+                <p>the provision of superannuation or similar benefits for, and for the families of, persons holding executive office and other persons employed by the University.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-50__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Statutes may empower any authority (including the Council) or officer of the University to make rules or orders, not inconsistent with this Act or with any Statute:</p>
+            </content>
+            <paragraph eId="part-4__sec-50__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>regulating, or providing for the regulation of, any specified matter (being a matter with respect to which Statutes may be made); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>for carrying out or giving effect to the Statutes.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-50__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A rule or order so made has the same force as a Statute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-50__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection (3) does not permit the making of rules or orders:</p>
+            </content>
+            <paragraph eId="part-4__sec-50__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>regulating, or providing for the regulation of, a matter referred to in subsection 51(1); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-50__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>for carrying out or giving effect to a Statute dealing with a matter referred to in subsection 51(1) except to the extent that the rules or orders are made with respect to the discipline of the University and provide for the enforcement of such a Statute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-51">
+          <num>51</num>
+          <heading>Statutes relating to traffic</heading>
+          <subsection eId="part-4__sec-51__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council may make Statutes:</p>
+            </content>
+            <paragraph eId="part-4__sec-51__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>for or in relation to the regulation or control of traffic, or of the parking, stopping, standing or leaving of vehicles, on land occupied by the University in the Australian Capital Territory, including Statutes authorising, and providing for the effect of, signs and markings; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-51__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>providing for the punishment, upon summary conviction, by a fine, of offences against such a Statute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-51__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A Statute made under this section is not to be inconsistent with a law of the Australian Capital Territory (including an enactment <ref href="#sec-3">as defined in section 3</ref> of the <i>Australian Capital Territory (Self</i><i>-</i><i>Government) Act 1988</i>), but a Statute is not to be treated as inconsistent with such a law merely because it makes provisions with respect to a matter dealt with by that law, if the provisions can be obeyed without contravening that law.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-52">
+          <num>52</num>
+          <heading>Statutes to be published</heading>
+          <subsection eId="part-4__sec-52__subsec-1">
+            <num>1</num>
+            <content>
+              <p>When a Statute has been made by the Council:</p>
+            </content>
+            <paragraph eId="part-4__sec-52__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>it must be sealed with the seal of the University; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-52__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the Council must cause the Statute to be notified in the <i>Gazette</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-52__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Statute has the force of law from the day on which it is so notified.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-52__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The notification of a Statute in the <i>Gazette </i>must specify the place at which copies of the Statute may be bought.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-52__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The production of:</p>
+            </content>
+            <paragraph eId="part-4__sec-52__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a copy of a Statute under the seal of the University; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-52__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>a document purporting to be a copy of a Statute and to have been printed by the Government Printer;</p>
+              </content>
+              <content>
+                <p>is, in all proceedings, sufficient evidence of the Statute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-52__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	The Statutes are to be numbered consecutively in the order in which they are notified in the <i>Gazette</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-52__subsec-7">
+            <num>7</num>
+            <content>
+              <p>	(7)	A notice in the <i>Gazette </i>of the fact that a Statute has been made that specifies the number of the Statute is sufficient compliance with the requirement of subsection (2) that the Statute be notified in the <i>Gazette</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Consequential and transitional provisions</heading>
+        <division eId="part-5__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-5__dvs-1__sec-53">
+            <num>53</num>
+            <heading>Interpretation</heading>
+            <content>
+              <p>In this Part, unless the contrary intention appears:</p>
+              <p><term refersTo="#term-appropriation-act">Appropriation Act</term> means <def>an Act appropriating money for expenditure in respect of a financial year and includes an Act appropriating money, by way of interim provision, for such expenditure.</def></p>
+              <p><term refersTo="#term-arts-institute-instrument">Arts Institute instrument</term> means <def>an instrument (including a legislative instrument) or any other document: to which the Arts Institute was a party; or that was given to or in favour of the Arts Institute; or in which a reference is made to the Arts Institute; or under which money is, or may become, payable, or any other property is to be, or may become liable to be, transferred to or by the Arts Institute; being an instrument or document subsisting immediately before the commencement.</def></p>
+            </content>
+            <paragraph eId="part-5__dvs-1__sec-53__para-a">
+              <num>a</num>
+              <content>
+                <p>to which the Arts Institute was a party; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-53__para-b">
+              <num>b</num>
+              <content>
+                <p>that was given to or in favour of the Arts Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-53__para-c">
+              <num>c</num>
+              <content>
+                <p>in which a reference is made to the Arts Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-53__para-d">
+              <num>d</num>
+              <content>
+                <p>under which money is, or may become, payable, or any other property is to be, or may become liable to be, transferred to or by the Arts Institute;</p>
+              </content>
+              <content>
+                <p>being an instrument or document subsisting immediately before the commencement.</p>
+                <p><term refersTo="#term-assets">assets</term> means <def>property of every kind, and includes, but is not limited to: choses in action; and rights, interests and claims of every kind in or to property, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-53__para-a">
+              <num>a</num>
+              <content>
+                <p>choses in action; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-53__para-b">
+              <num>b</num>
+              <content>
+                <p>rights, interests and claims of every kind in or to property, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-liabilities">liabilities</term> means <def>liabilities of every kind, and includes, but is not limited to, obligations of every kind, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</def></p>
+                <p><term refersTo="#term-repealed-enactment">repealed enactment</term> means <def>an enactment repealed by <ref href="#sec-54">section 54</ref>.</def></p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-5__dvs-2">
+          <num>2</num>
+          <heading>Repeal</heading>
+          <section eId="part-5__dvs-2__sec-54">
+            <num>54</num>
+            <heading>Repeal</heading>
+            <subsection eId="part-5__dvs-2__sec-54__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The original Act is repealed.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-54__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Arts Institute Ordinance is repealed.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-3">
+          <num>3</num>
+          <heading>General</heading>
+          <section eId="part-5__dvs-3__sec-55">
+            <num>55</num>
+            <heading>Senior officers to continue in office</heading>
+            <subsection eId="part-5__dvs-3__sec-55__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	A person who, immediately before the commencement, held under the original Act the office of Chancellor, Pro-Chancellor, Vice-Chancellor or Deputy Vice-Chancellor (in this section called the <b><i>previous office</i></b>) is taken to have been, on the commencement, duly appointed under <ref href="#part-2">Part 2</ref> to:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the office of Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the office of Pro-Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the office of Vice-Chancellor; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>an office of Deputy Vice-Chancellor;</p>
+                </content>
+                <content>
+                  <p>(as the case may be).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-55__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person is taken to have been so appointed:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>for a period equal to the remainder of the term of his or her appointment to the previous office; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-55__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>subject to the terms and conditions that were, immediately before the commencement, applicable to that appointment.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-56">
+            <num>56</num>
+            <heading>University successor in law of the Arts Institute</heading>
+            <content>
+              <p>The University is the successor in law of the Arts Institute, and the succeeding provisions of this Division do not limit the generality of this section.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-3__sec-57">
+            <num>57</num>
+            <heading>Preservation of Statutes etc.</heading>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies to:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a Statute made by the Council of the University under <ref href="#sec-27">section 27</ref> or 27A of the original Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a Statute made by the Board of the Arts Institute under <ref href="#sec-16">section 16</ref> of the Arts Institute Ordinance;</p>
+                </content>
+                <content>
+                  <p>that was in force immediately before the commencement (in this section called a <b><i>continued statute</i></b>).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A continued statute has effect after the commencement as if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>it were a Statute of the University duly made by the Council under <ref href="#part-4">Part 4</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the requirements of <ref href="#sec-52">section 52</ref> had been complied with in relation to it;</p>
+                </content>
+                <content>
+                  <p>and may accordingly be amended or repealed by the Council.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Any rules or orders made under the continued statute that were in force immediately before the commencement have effect on and after the commencement as if they had been made under a Statute, and may be amended or repealed accordingly.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Where any difficulty arises in the application to a particular matter of:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>a continued statute; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-57__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>any rules or orders referred to in subsection (3);</p>
+                </content>
+                <content>
+                  <p>the Council may make such decision as it thinks proper to resolve the difficulty.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A reference in subsection (4) to a difficulty arising includes a reference to a difficulty arising because of a conflict or inconsistency between 2 or more continued statutes or between rules or orders made under 2 or more continued statutes.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-57__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A decision made under subsection (4) has effect in spite of anything contained in a continued statute or in any rules or orders referred to in subsection (3).</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-58">
+            <num>58</num>
+            <heading>Transfer of assets and liabilities of the Arts Institute</heading>
+            <subsection eId="part-5__dvs-3__sec-58__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At the commencement, the assets and liabilities of the Arts Institute become assets and liabilities of the University.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-58__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The following provisions apply to assets and liabilities that have become assets and liabilities of the University because of subsection (1):</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-58__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>an asset that was, immediately before the commencement, held by the Arts Institute on trust must, after the commencement, be held by the University on trust and subject to the terms of the trust on which the asset was so held by the Arts Institute;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-58__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>liabilities of the Arts Institute to make payments must, after the commencement, be taken to be liabilities incurred by the University in the performance of its functions and the exercise of its powers.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-59">
+            <num>59</num>
+            <heading>Arts Institute instruments</heading>
+            <content>
+              <p>An Arts Institute instrument continues to have effect after the commencement but, in its operation in relation to acts, transactions, matters or things done, entered into or occurring after the commencement, has effect as if a reference in the instrument to the Arts Institute were a reference to the University.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-3__sec-60">
+            <num>60</num>
+            <heading>State or Territory officer may act on certificate</heading>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-60__para-a">
+              <num>a</num>
+              <content>
+                <p>under this Division an estate or interest in land becomes an asset of the University; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-60__para-b">
+              <num>b</num>
+              <content>
+                <p>a certificate that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-60__para-i">
+              <num>i</num>
+              <content>
+                <p>identifies the land and the estate or interest;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-60__para-ii">
+              <num>ii</num>
+              <content>
+                <p>states that the estate or interest has, because of this Division, become an asset of the University; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-60__para-iii">
+              <num>iii</num>
+              <content>
+                <p>is signed by an officer of the Attorney-General’s Department authorised by <role refersTo="#secretary">the Secretary</role> of that Department to give such certificates;</p>
+              </content>
+              <content>
+                <p>is lodged with <role refersTo="#registrar">the Registrar</role>-General, Registrar of Titles or other proper officer of the State or Territory in which the land is situated;</p>
+                <p>the officer with whom the certificate is lodged may deal with and give effect to the certificate as if it were a grant, conveyance, memorandum or instrument of transfer of the estate or interest to the University duly executed under the laws in force in that State or Territory.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-61">
+            <num>61</num>
+            <heading>Pending proceedings</heading>
+            <content>
+              <p>Where, immediately before the commencement, proceedings to which the Arts Institute was a party were pending in any court, then, after the commencement, the University is substituted for the Arts Institute as a party to the proceedings and has the same rights in the proceedings as the Arts Institute had.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-3__sec-62">
+            <num>62</num>
+            <heading>Staff of the Arts Institute</heading>
+            <subsection eId="part-5__dvs-3__sec-62__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person who, immediately before the commencement, was employed as a member of the staff of the Arts Institute:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-62__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>is taken to have been employed, with effect from the commencement, as a member of the staff of the University;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-62__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>is taken to have been so employed on the same terms and conditions as those on which the person was employed as a member of the staff of the old institution; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-62__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>is taken to have accrued an entitlement to benefits in connection with that employment that is equivalent to the entitlement that the person had accrued in connection with employment as a member of the staff of the Arts Institute immediately before the commencement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-62__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Where, because of subsection (1), a person is taken to have been employed as a member of the staff of the University with effect from the commencement, that employment is taken for all purposes to have been continuous with the employment of the person immediately before the commencement as a member of the staff of the Arts Institute.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-63">
+            <num>63</num>
+            <heading>Students of the Arts Institute</heading>
+            <subsection eId="part-5__dvs-3__sec-63__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person who, immediately before the commencement, was enrolled, or entitled to be enrolled, as a student in a course of study offered by the Arts Institute is entitled to enrol, not later than <date date="1992-12-31">31 December 1992</date>, as a student of the University in a course of study that is the same as, or substantially similar to, the first-mentioned course of study.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-63__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Where:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-63__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>before the commencement, a person had, with the permission of the Arts Institute, deferred the person’s enrolment in a course of study offered by the Arts Institute; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-63__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>immediately before the commencement, that permission had not expired or been revoked;</p>
+                </content>
+                <content>
+                  <p>the person is, in the academic year in which the person would, by the terms of that permission, have been required to enrol in that course of study, entitled to enrol as a student of the University in a course of study that is the same as, or substantially similar to, the first-mentioned course of study.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-63__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section does not apply to a person who, immediately before the commencement, had completed the requirements of the course of study concerned.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-63__subsec-4">
+              <num>4</num>
+              <content>
+                <p>This section has effect subject to the Statutes and to any rules and orders made under Statutes made under subsection 50(3).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-63__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The University must offer appropriate courses of study for the purposes of this section.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-64">
+            <num>64</num>
+            <heading>Granting of Arts Institute awards</heading>
+            <content>
+              <p>The University may grant a degree, diploma or certificate of the Arts Institute to a student who has, in the circumstances specified in the Statutes, completed the requirements of a course in which the student was enrolled at the Arts Institute before the commencement, being a course that led to the granting of that degree, diploma or certificate.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-3__sec-65">
+            <num>65</num>
+            <heading>Transfer of appropriated money</heading>
+            <content>
+              <p>For the purposes of the operation of an Appropriation Act after the commencement:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-65__para-a">
+              <num>a</num>
+              <content>
+                <p>references to the Arts Institute are to be read as references to the University; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-65__para-b">
+              <num>b</num>
+              <content>
+                <p>references to a repealed enactment are to be read as references to this Act.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-66">
+            <num>66</num>
+            <heading>Annual report and financial statements</heading>
+            <content>
+              <p>Sections 47 and 49 apply in relation to the year ending on <date date="1992-12-31">31 December 1992</date>, subject to the following qualifications:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-66__para-a">
+              <num>a</num>
+              <content>
+                <p>the accounts and records to which <ref href="#sec-47">section 47</ref> applies are the accounts and records of the University and such of the accounts and records of the Arts Institute as are in the possession of the University;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-66__para-b">
+              <num>b</num>
+              <content>
+                <p>the Council and the Auditor-General may, in discharging their obligations under <ref href="#sec-49">section 49</ref>, rely on accounts and records of the Arts Institute that are in the possession of the University or to which the Council is allowed access and on any other information provided to the Council by any person who held an office established by a repealed enactment or who was a member of the staff of the Arts Institute;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-66__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	for the purposes of paragraph 49(2)(c), <b><i>this Act</i></b> includes the original Act and the Arts Institute Ordinance.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide details of the history of this legislation and its provisions. The following endnotes are included in each compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p>Endnote 5—Uncommenced amendments</p>
+                <p>Endnote 6—Modifications</p>
+                <p>Endnote 7—Misdescribed amendments</p>
+                <p>Endnote 8—Miscellaneous</p>
+                <p>If there is no information under a particular endnote, the word “none” will appear in square brackets after the endnote heading.</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key in this endnote sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended the compiled law. The information includes commencement information for amending laws and details of application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision level. It also includes information about any provisions that have expired or otherwise ceased to have effect in accordance with a provision of the compiled law.</p>
+                <p><b>Uncommenced amendments—Endnote 5</b></p>
+                <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in endnote 5.</p>
+                <p><b>Modifications—Endnote 6</b></p>
+                <p>If the compiled law is affected by a modification that is in force, details of the modification are included in endnote 6.</p>
+                <p><b>Misdescribed amendments—Endnote 7</b></p>
+                <p>An amendment is a misdescribed amendment if the effect of the amendment cannot be incorporated into the text of the compilation. Any misdescribed amendment is included in endnote 7.</p>
+                <p><b>Miscellaneous—Endnote 8</b></p>
+                <p>Endnote 8 includes any additional information that may be helpful for a reader of the compilation.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>pres = present</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>(prev) = previously</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>Reg = Regulation/Regulations</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>exp = expired or ceased to have effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>hdg = heading(s)</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>LI = Legislative Instrument</td>
+                  <td>s = section(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>No = Number(s)</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>o = order(s)</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>orig = original</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>par = paragraph(s)/subparagraph(s)
+/sub-subparagraph(s)</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Australian National University Act 1991</td>
+                  <td>131, 1991</td>
+                  <td>2 Sept 1991</td>
+                  <td>1 Jan 1992</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Higher Education Funding Amendment Act (No. 2) 1992</td>
+                  <td>158, 1992</td>
+                  <td>11 Dec 1992</td>
+                  <td>Part 1 (ss. 1, 2): Royal Assent
+Parts 2, 3 (ss. 
+3–46) and Part 5 (ss. 60–70): 1 Jan 1993
+Remainder: 1 Jan 1994</td>
+                  <td>s. 38(3)</td>
+                </tr>
+                <tr>
+                  <td>Industrial Relations and other Legislation Amendment Act 1995</td>
+                  <td>168, 1995</td>
+                  <td>16 Dec 1995</td>
+                  <td>ss. 1–12, Schedules 5 and 7–10: Royal Assent
+s. 13: 13 Jan 1996
+Remainder: 15 Jan 1996 (see Gazette 1996, No. S16)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 1996</td>
+                  <td>43, 1996</td>
+                  <td>25 Oct 1996</td>
+                  <td>Schedule 3 (item 5): 2 Sept 1991</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+                  <td>152, 1997</td>
+                  <td>24 Oct 1997</td>
+                  <td>Schedule 2 (items 415–422): 1 Jan 1998 (see Gazette 1997, No. GN49)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Corporate Law Economic Reform Program Act 1999</td>
+                  <td>156, 1999</td>
+                  <td>24 Nov 1999</td>
+                  <td>Schedule 10 (item 45): 13 Mar 2000 (see Gazette 2000, No. S114)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Higher Education Funding Amendment Act 2001</td>
+                  <td>86, 2001</td>
+                  <td>18 July 2001</td>
+                  <td>Schedule 3: Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Higher Education Support (Transitional Provisions and Consequential Amendments) Act 2003</td>
+                  <td>150, 2003</td>
+                  <td>19 Dec 2003</td>
+                  <td>Schedule 2 (items 20–63): 1 July 2004</td>
+                  <td>Sch. 2 (item 37)</td>
+                </tr>
+                <tr>
+                  <td>Bankruptcy Legislation Amendment Act 2004</td>
+                  <td>80, 2004</td>
+                  <td>23 June 2004</td>
+                  <td>Schedule 1 (items 191, 212, 213, 215): 1 Dec 2004 (see Gazette 2004, No. GN34)</td>
+                  <td>Sch. 1 (items 212, 213, 215)</td>
+                </tr>
+                <tr>
+                  <td>Higher Education Legislation Amendment Act (No. 2) 2004</td>
+                  <td>114, 2004</td>
+                  <td>13 July 2004</td>
+                  <td>Schedule 2 (items 39–45, 80): 14 July 2004
+Remainder: Royal Assent</td>
+                  <td>Sch. 4 (items 
+20–22)</td>
+                </tr>
+                <tr>
+                  <td>Higher Education Legislation Amendment Act (No. 3) 2004</td>
+                  <td>157, 2004</td>
+                  <td>17 Dec 2004</td>
+                  <td>Schedule 3: Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Framework Legislation Amendment Act 2005</td>
+                  <td>8, 2005</td>
+                  <td>22 Feb 2005</td>
+                  <td>Schedule 2 (items 56, 57, 174): Royal Assent</td>
+                  <td>Sch. 2 (item 174)</td>
+                </tr>
+                <tr>
+                  <td>Higher Education Legislation Amendment (2005 Measures No. 3) Act 2005</td>
+                  <td>143, 2005</td>
+                  <td>14 Dec 2005</td>
+                  <td>Schedule 8 (item 1): Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Commonwealth Authorities and Companies Amendment Act 2008</td>
+                  <td>20, 2008</td>
+                  <td>26 May 2008</td>
+                  <td>Schedule 2 (item 3): 1 July 2008</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2008</td>
+                  <td>73, 2008</td>
+                  <td>3 July 2008</td>
+                  <td>Schedule 1 (item 10): (a)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2011</td>
+                  <td>5, 2011</td>
+                  <td>22 Mar 2011</td>
+                  <td>Schedule 7 (item 24): 19 Apr 2011</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts Interpretation Amendment Act 2011</td>
+                  <td>46, 2011</td>
+                  <td>27 June 2011</td>
+                  <td>Schedule 2 (items 203–207) and Schedule 3 (items 10, 11): 27 Dec 2011</td>
+                  <td>Sch. 3 (items 10, 11)</td>
+                </tr>
+                <tr>
+                  <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                  <td>62, 2014</td>
+                  <td>30 June 2014</td>
+                  <td>Sch 7 (items 331–339): (b)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-66__para-a">
+              <num>a</num>
+              <content>
+                <p><i>(</i><i>a</i><i>)</i><i>	</i>Subsection 2(1) (item 8) of the <i>Statute Law Revision Act 2008</i><i> </i>provides as follows:</p>
+              </content>
+            </paragraph>
+            <subsection eId="part-5__dvs-3__sec-66__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                </tr>
+                <tr>
+                  <td>Column 1</td>
+                  <td>Column 2</td>
+                  <td>Column 3</td>
+                </tr>
+                <tr>
+                  <td>Provision(s)</td>
+                  <td>Commencement</td>
+                  <td>Date/Details</td>
+                </tr>
+                <tr>
+                  <td>8.  Schedule 1, item 10</td>
+                  <td>Immediately after the commencement of item 36 of Schedule 2 to the Higher Education Support (Transitional Provisions and Consequential Amendments) Act 2003.</td>
+                  <td>1 July 2004</td>
+                </tr>
+              </table>
+              <paragraph eId="part-5__dvs-3__sec-66__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p><i>(b)</i><i>	</i>Subsection 2(1) (item 6) of the <i>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</i> provides as follows:</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-66__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision(s)</th>
+                  <th>Commencement</th>
+                  <th>Date/Details</th>
+                </tr>
+                <tr>
+                  <td>6.  Schedules 6 to 12</td>
+                  <td>Immediately after the commencement of section 6 of the Public Governance, Performance and Accountability Act 2013.</td>
+                  <td>1 July 2014</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 3</td>
+                  <td>am. No. 86, 2001; No. 150, 2003; No. 114, 2004</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Note to s. 4(2)</td>
+                  <td>ad. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rs No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 4A</td>
+                  <td>ad. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am. No. 20, 2008</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rs No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 4B</td>
+                  <td>ad. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rs No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 6</td>
+                  <td>am. No. 152, 1997; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 7</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 10</td>
+                  <td>am. No. 86, 2001; No. 150, 2003; Nos. 114 and 157, 2004; No. 73, 2008</td>
+                </tr>
+                <tr>
+                  <td>s. 11</td>
+                  <td>am. No. 80, 2004</td>
+                </tr>
+                <tr>
+                  <td>s. 12</td>
+                  <td>am. No. 114, 2004</td>
+                </tr>
+                <tr>
+                  <td>s. 13</td>
+                  <td>am. No. 114, 2004; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 14</td>
+                  <td>rep. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>s. 15</td>
+                  <td>am. No. 152, 1997; No. 156, 1999; No. 86, 2001; No. 150, 2003; No. 114, 2004; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>ss. 16–18</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>ss. 18A–18G</td>
+                  <td>ad. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 20</td>
+                  <td>am. No. 86, 2001</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>ss. 21–24</td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Division 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Heading to Div. 4</td>
+                  <td>rep. No. 143, 2005</td>
+                </tr>
+                <tr>
+                  <td>s. 25</td>
+                  <td>am. No. 86, 2001</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>ss. 26–29</td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Division 6</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>ss. 32, 33</td>
+                  <td>am. No. 114, 2004</td>
+                </tr>
+                <tr>
+                  <td>s. 36</td>
+                  <td>rep. No. 168, 1995</td>
+                </tr>
+                <tr>
+                  <td>s. 37</td>
+                  <td>am. No. 46, 2011</td>
+                </tr>
+                <tr>
+                  <td>Note to s. 37</td>
+                  <td>ad. No. 46, 2011</td>
+                </tr>
+                <tr>
+                  <td>Division 7</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 39</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 41</td>
+                  <td>rs. No. 158, 1992</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 42</td>
+                  <td>rep. No. 158, 1992</td>
+                </tr>
+                <tr>
+                  <td>s. 43</td>
+                  <td>am. No. 158, 1992</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rs. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>s. 44</td>
+                  <td>am. No. 8, 2005; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>ss. 45–47</td>
+                  <td>rep. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>s. 49</td>
+                  <td>rep. No. 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 50</td>
+                  <td>am. No. 158, 1992; No. 152, 1997; No. 150, 2003; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s. 51</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Heading to s. 52</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>s. 52</td>
+                  <td>am. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s. 60</td>
+                  <td>am. No. 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>Div. 4 of Part 5</td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>ss. 67–75</td>
+                  <td>rep. No. 150, 2003</td>
+                </tr>
+                <tr>
+                  <td>Div. 5 of Part 5</td>
+                  <td>rep. No. 43, 1996</td>
+                </tr>
+                <tr>
+                  <td>ss. 76, 77</td>
+                  <td>rep. No. 43, 1996</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 5—Uncommenced amendments [none]</p>
+                <p>Endnote 6—Modifications [none]</p>
+                <p>Endnote 7—Misdescribed amendments [none]</p>
+                <p>Endnote 8—Miscellaneous [none]</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

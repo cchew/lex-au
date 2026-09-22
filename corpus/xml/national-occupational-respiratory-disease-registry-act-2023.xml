@@ -1,0 +1,2480 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2023/95/!main"/>
+          <FRBRuri value="/akn/au/act/2023/95"/>
+          <FRBRdate date="2023-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="95"/>
+          <FRBRname value="national-occupational-respiratory-disease-registry-act-2023"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2023/95/eng@2026-01-01/!main"/>
+          <FRBRuri value="/akn/au/act/2023/95/eng@2026-01-01"/>
+          <FRBRdate date="2026-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2023/95/eng@2026-01-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2023/95/eng@2026-01-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2023-01-01" type="generation" eId="evt-creation" source="#national-occupational-respiratory-disease-registry-act-2023"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2025/62" date="2025-11-10"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-additional-notification-information" href="/ontology/term/au/term-additional-notification-information" showAs="additional notification information"/>
+        <TLCTerm eId="term-approved-form" href="/ontology/term/au/term-approved-form" showAs="approved form"/>
+        <TLCTerm eId="term-australian-centre-for-disease-control" href="/ontology/term/au/term-australian-centre-for-disease-control" showAs="Australian Centre for Disease Control"/>
+        <TLCTerm eId="term-civil-penalty-provision" href="/ontology/term/au/term-civil-penalty-provision" showAs="civil penalty provision"/>
+        <TLCTerm eId="term-commercial-in-confidence" href="/ontology/term/au/term-commercial-in-confidence" showAs="commercial-in-confidence"/>
+        <TLCTerm eId="term-commonwealth-authority" href="/ontology/term/au/term-commonwealth-authority" showAs="Commonwealth authority"/>
+        <TLCTerm eId="term-contracted-service-provider" href="/ontology/term/au/term-contracted-service-provider" showAs="contracted service provider"/>
+        <TLCTerm eId="term-director-general-of-the-cdc" href="/ontology/term/au/term-director-general-of-the-cdc" showAs="Director-General of the CDC"/>
+        <TLCTerm eId="term-enforcement-body" href="/ontology/term/au/term-enforcement-body" showAs="enforcement body"/>
+        <TLCTerm eId="term-enforcement-related-activity" href="/ontology/term/au/term-enforcement-related-activity" showAs="enforcement related activity"/>
+        <TLCTerm eId="term-entity" href="/ontology/term/au/term-entity" showAs="entity"/>
+        <TLCTerm eId="term-healthcare" href="/ontology/term/au/term-healthcare" showAs="healthcare"/>
+        <TLCTerm eId="term-minimum-notification-information" href="/ontology/term/au/term-minimum-notification-information" showAs="minimum notification information"/>
+        <TLCTerm eId="term-national-registry" href="/ontology/term/au/term-national-registry" showAs="National Registry"/>
+        <TLCTerm eId="term-non-prescribed-occupational-respiratory-disease" href="/ontology/term/au/term-non-prescribed-occupational-respiratory-disease" showAs="non-prescribed occupational respiratory disease"/>
+        <TLCTerm eId="term-occupational-respiratory-disease" href="/ontology/term/au/term-occupational-respiratory-disease" showAs="occupational respiratory disease"/>
+        <TLCTerm eId="term-personal-information" href="/ontology/term/au/term-personal-information" showAs="personal information"/>
+        <TLCTerm eId="term-prescribed-medical-practitioner" href="/ontology/term/au/term-prescribed-medical-practitioner" showAs="prescribed medical practitioner"/>
+        <TLCTerm eId="term-prescribed-occupational-respiratory-disease" href="/ontology/term/au/term-prescribed-occupational-respiratory-disease" showAs="prescribed occupational respiratory disease"/>
+        <TLCTerm eId="term-protected-information" href="/ontology/term/au/term-protected-information" showAs="protected information"/>
+        <TLCTerm eId="term-purposes-of-the-national-registry" href="/ontology/term/au/term-purposes-of-the-national-registry" showAs="purposes of the National Registry"/>
+        <TLCTerm eId="term-registration-authority" href="/ontology/term/au/term-registration-authority" showAs="registration authority"/>
+        <TLCTerm eId="term-regulatory-powers-act" href="/ontology/term/au/term-regulatory-powers-act" showAs="Regulatory Powers Act"/>
+        <TLCTerm eId="term-relevant-state-or-territory-authority" href="/ontology/term/au/term-relevant-state-or-territory-authority" showAs="relevant State or Territory authority"/>
+        <TLCTerm eId="term-respiratory-disease-causing-agents" href="/ontology/term/au/term-respiratory-disease-causing-agents" showAs="respiratory disease-causing agents"/>
+        <TLCTerm eId="term-rules" href="/ontology/term/au/term-rules" showAs="rules"/>
+        <TLCTerm eId="term-state-or-territory-authority" href="/ontology/term/au/term-state-or-territory-authority" showAs="State or Territory authority"/>
+        <TLCTerm eId="term-state-or-territory-health-minister" href="/ontology/term/au/term-state-or-territory-health-minister" showAs="State or Territory Health Minister"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>National Occupational Respiratory Disease Registry Act 2023</p>
+      <p>No. 95, 2023</p>
+      <p><b>Compilation No. </b><b>1</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 January 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act. No 62, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>National Occupational Respiratory Disease Registry Act 2023</i> that shows the text of the law as amended and in force on 1 January 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Object of this Act	2</p>
+      <p>4	Simplified outline of this Act	2</p>
+      <p>5	Act binds the Crown	3</p>
+      <p>6	Act extends to external Territories	3</p>
+      <p>7	Concurrent operation of State and Territory laws	3</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Interpretation	5</p>
+      <p>8	Definitions	5</p>
+      <p>9	Meaning of <i>commercial</i><i>-in</i><i>-confidence</i>	8</p>
+      <p><ref href="#part-2">Part 2</ref>—National Occupational Respiratory Disease Registry	9</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Simplified outline of this <ref href="#part-9">Part	9</ref></p>
+      <p>10	Simplified outline of this <ref href="#part-9">Part	9</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Establishment, contents and purposes	10</p>
+      <p>11	Establishment of the National Registry	10</p>
+      <p>12	Contents of the National Registry	10</p>
+      <p>13	Purposes of the National Registry	11</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Notifying information for the National Registry	14</p>
+      <p>14	Notifying information about prescribed occupational respiratory diseases—diagnosing prescribed medical practitioner	14</p>
+      <p>15	Notifying information about prescribed occupational respiratory diseases—treating prescribed medical practitioner	15</p>
+      <p>16	Notifying information about non-prescribed occupational respiratory diseases—diagnosing prescribed medical practitioner	17</p>
+      <p>17	Notifying information about non-prescribed occupational respiratory diseases—treating prescribed medical practitioner	18</p>
+      <p>18	Director-General of the CDC or contracted service provider may request individual to provide additional notification information	20</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Variation of information in the National Registry	21</p>
+      <p>19	Variation of information included in the National Registry	21</p>
+      <p><ref href="#part-3">Part 3</ref>—Dealing with information in the National Registry	22</p>
+      <p>20	Simplified outline of this <ref href="#part-22">Part	22</ref></p>
+      <p>21	Authorised dealings with information—general	22</p>
+      <p>22	Authorised dealings with information—Commonwealth authorities and State or Territory authorities	25</p>
+      <p>23	Offence relating to protected information	27</p>
+      <p>24	Exceptions relating to the person to whom the protected information relates	27</p>
+      <p>25	Exception for disclosure to person who provided the information	27</p>
+      <p>26	Reports including statistical and other information relating to information included in the National Registry	28</p>
+      <p><ref href="#part-4">Part 4</ref>—Other matters	30</p>
+      <p>27	Simplified outline of this <ref href="#part-30">Part	30</ref></p>
+      <p>28	Civil penalty provisions	30</p>
+      <p>29	Approved forms	31</p>
+      <p>30	Agreements	31</p>
+      <p>31	Fees	31</p>
+      <p>32	Delegation	32</p>
+      <p>33	Rules	33</p>
+      <p>Endnotes	34</p>
+      <p>Endnote 1—About the endnotes	34</p>
+      <p>Endnote 2—Abbreviation key	36</p>
+      <p>Endnote 3—Legislation history	37</p>
+      <p>Endnote 4—Amendment history	38</p>
+      <p>An Act to establish the National Occupational Respiratory Disease Registry, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <division eId="part-1__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-1__dvs-1__sec-1">
+            <num>1</num>
+            <heading>Short title</heading>
+            <content>
+              <p>		This Act is the <i>National Occupational Respiratory Disease Registry </i><i>Act 202</i><i>3</i>.</p>
+            </content>
+          </section>
+          <section eId="part-1__dvs-1__sec-2">
+            <num>2</num>
+            <heading>Commencement</heading>
+            <subsection eId="part-1__dvs-1__sec-2__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                  <th>Commencement information</th>
+                </tr>
+                <tr>
+                  <td>Column 1</td>
+                  <td>Column 2</td>
+                  <td>Column 3</td>
+                </tr>
+                <tr>
+                  <td>Provisions</td>
+                  <td>Commencement</td>
+                  <td>Date/Details</td>
+                </tr>
+                <tr>
+                  <td>1.  The whole of this Act</td>
+                  <td>A single day to be fixed by Proclamation.
+However, if the provisions do not commence within the period of 6 months beginning on the day this Act receives the Royal Assent, they commence on the day after the end of that period.</td>
+                  <td>22 May 2024</td>
+                </tr>
+              </table>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-2__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-1__dvs-1__sec-3">
+            <num>3</num>
+            <heading>Object of this Act</heading>
+            <content>
+              <p>The object of this Act is to establish a National Occupational Respiratory Disease Registry that will record the incidence of occupational respiratory diseases in Australia and assist in preventing further worker exposure to respiratory disease-causing agents.</p>
+            </content>
+          </section>
+          <section eId="part-1__dvs-1__sec-4">
+            <num>4</num>
+            <heading>Simplified outline of this Act</heading>
+            <content>
+              <p>The Commonwealth is to establish the National Occupational Respiratory Disease Registry (<ref href="#sec-11">section 11</ref>).</p>
+              <p>The National Registry is to include certain information in relation to individuals who have been diagnosed with, or are being treated for, an occupational respiratory disease (<ref href="#part-2">Part 2</ref>).</p>
+              <p>The purposes of the National Registry (<ref href="#sec-13">section 13</ref>) relate to:</p>
+            </content>
+            <paragraph eId="part-1__dvs-1__sec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>providing access to information about occupational respiratory diseases; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>supporting the identification of industries, occupations, job tasks and workplaces where there is a risk of exposure to respiratory disease-causing agents; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-1__sec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>occupational respiratory disease matters more broadly.</p>
+              </content>
+              <content>
+                <p>There are protections for sensitive information (<ref href="#part-3">Part 3</ref>).</p>
+                <p>The Director-General of the CDC must publish an annual report including certain statistical information in relation to information included in the National Registry, and may publish or make available other reports in relation to information included in the National Registry (<ref href="#sec-26">section 26</ref>).</p>
+                <p>Fees may be charged in relation to the disclosure of protected information in certain circumstances (<ref href="#sec-31">section 31</ref>).</p>
+                <p>Certain matters are to be prescribed by rules made by <role refersTo="#minister">the Minister</role>, or determinations made by the Director-General of the CDC. The rules and determinations are disallowable legislative instruments (sections 12, 31 and 33).</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-1__dvs-1__sec-5">
+            <num>5</num>
+            <heading>Act binds the Crown</heading>
+            <content>
+              <p>This Act binds the Crown in each of its capacities. However, it does not make the Crown liable to be prosecuted for an offence.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	See subsection 28(4) in relation to civil penalties.</p>
+              </content>
+            </authorialNote>
+          </section>
+          <section eId="part-1__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Act extends to external Territories</heading>
+            <content>
+              <p>This Act extends to every external Territory.</p>
+            </content>
+          </section>
+          <section eId="part-1__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Concurrent operation of State and Territory laws</heading>
+            <subsection eId="part-1__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This Act does not exclude or limit the operation of a law of a State or Territory relating to the use, reporting or other disclosure of information concerning occupational respiratory diseases, to the extent that the law of the State or Territory is capable of operating concurrently with this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting subsection (1), this Act does not exclude or limit the concurrent operation of a law of a State or Territory to the extent that:</p>
+              </content>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the law makes an act or omission:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>an offence; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>subject to a civil penalty; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>that (or any similar) act or omission is also:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>an offence against a provision of this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>subject to a civil penalty under this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-1__dvs-1__sec-7__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (2) applies even if the law of the State or Territory does any one or more of the following in relation to the offence or civil penalty:</p>
+              </content>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>provides for a penalty that differs from the penalty provided by this Act;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>provides for fault elements that differ from the fault elements applicable to the offence or civil penalty provision created by this Act;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-1__dvs-1__sec-7__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>provides for defences or exceptions that differ from the defences or exceptions applicable to the offence or civil penalty provision created by this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-1__dvs-2">
+          <num>2</num>
+          <heading>Interpretation</heading>
+          <section eId="part-1__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Definitions</heading>
+            <content>
+              <p>In this Act:</p>
+              <p><term refersTo="#term-additional-notification-information">additional notification information</term> has the meaning given by <def>subsection 12(3).</def></p>
+              <p><term refersTo="#term-approved-form">approved form</term> means <def>a form approved under <ref href="#sec-29">section 29</ref>.</def></p>
+              <p><b><i>Australia</i></b>, when used in a geographical sense, includes every external Territory.</p>
+              <p><term refersTo="#term-australian-centre-for-disease-control">Australian Centre for Disease Control</term> means <def>the Australian Centre for Disease Control established by <ref href="#sec-7">section 7</ref> of <ref href="">the Australian Centre for Disease Control Act 2025</ref>.</def></p>
+              <p><term refersTo="#term-civil-penalty-provision">civil penalty provision</term> has the same meaning as <def>in the Regulatory Powers Act.</def></p>
+              <p><term refersTo="#term-commercial-in-confidence">commercial-in-confidence</term> has the meaning given by <def><ref href="#sec-9">section 9</ref>.</def></p>
+              <p><term refersTo="#term-commonwealth-authority">Commonwealth authority</term> means <def>a Commonwealth entity within the meaning of the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-contracted-service-provider">contracted service provider</term> means <def>a person who is engaged under an agreement in force under <ref href="#sec-30">section 30</ref>.</def></p>
+              <p><term refersTo="#term-director-general-of-the-cdc">Director-General of the CDC</term> means <def>the Director-General of the Australian Centre for Disease Control appointed under <ref href="#sec-10">section 10</ref> of <ref href="">the Australian Centre for Disease Control Act 2025</ref>.</def></p>
+              <p><term refersTo="#term-enforcement-body">enforcement body</term> means <def>any of the following: the Australian Federal Police; 	(b)	the National Anti-Corruption Commissioner (within the meaning of the <i>National Anti</i><i>-</i><i>Corruption Commission Act 2022</i>); the Australian Crime Commission; the Office of the Director of Public Prosecutions.</def></p>
+            </content>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>the Australian Federal Police;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the National Anti-Corruption Commissioner (within the meaning of the <i>National Anti</i><i>-</i><i>Corruption Commission Act 2022</i>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the Australian Crime Commission;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-d">
+              <num>d</num>
+              <content>
+                <p>the Office of the Director of Public Prosecutions.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-enforcement-related-activity">enforcement related activity</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+                <p><term refersTo="#term-entity">entity</term> means <def>any of the following: a person; a partnership; any other unincorporated association or body; a trust; a part of another entity (under a previous application of this definition).</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a person;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>a partnership;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>any other unincorporated association or body;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-d">
+              <num>d</num>
+              <content>
+                <p>a trust;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-e">
+              <num>e</num>
+              <content>
+                <p>a part of another entity (under a previous application of this definition).</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-healthcare">healthcare</term> means <def>a health service <ref href="#sec-6__subsec-1">within the meaning of subsection 6(1)</ref> of <ref href="">the Privacy Act 1988</ref>.</def></p>
+                <p><term refersTo="#term-minimum-notification-information">minimum notification information</term> has the meaning given by <def>subsection 12(2).</def></p>
+                <p><term refersTo="#term-national-registry">National Registry</term> means <def>the National Occupational Respiratory Disease Registry established under <ref href="#sec-11">section 11</ref>.</def></p>
+                <p><term refersTo="#term-non-prescribed-occupational-respiratory-disease">non-prescribed occupational respiratory disease</term> means <def>an occupational respiratory disease that is not a prescribed occupational respiratory disease.</def></p>
+                <p><term refersTo="#term-occupational-respiratory-disease">occupational respiratory disease</term> means <def>a medical condition associated with an individual’s respiratory system that is likely to have been caused or exacerbated, in whole or in part, by the individual’s work or workplace.</def></p>
+                <p><term refersTo="#term-personal-information">personal information</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+                <p><b><i>personal representative</i></b>, of an individual, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a parent or guardian of the individual, if the individual is incapable of managing the individual’s health affairs; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>a trustee of an estate of the individual, if the individual is under a legal disability; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>a person who holds an enduring power of attorney granted by the individual.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-prescribed-medical-practitioner">prescribed medical practitioner</term> means <def>a medical practitioner of a kind prescribed by the rules.</def></p>
+                <p><term refersTo="#term-prescribed-occupational-respiratory-disease">prescribed occupational respiratory disease</term> means <def>an occupational respiratory disease prescribed by the rules.</def></p>
+                <p><term refersTo="#term-protected-information">protected information</term> means <def>personal information, workplace identifying information or information that is commercial-in-confidence, to the extent that the information is: included in the National Registry or obtained under, or in accordance with, this Act; or derived from a record of information that was included in the National Registry or was obtained under, or in accordance with, this Act; or derived from a disclosure or use of information that was included in the National Registry or was obtained under, or in accordance with, this Act.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>included in the National Registry or obtained under, or in accordance with, this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>derived from a record of information that was included in the National Registry or was obtained under, or in accordance with, this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>derived from a disclosure or use of information that was included in the National Registry or was obtained under, or in accordance with, this Act.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-purposes-of-the-national-registry">purposes of the National Registry</term> means <def>the purposes set out in <ref href="#sec-13">section 13</ref>.</def></p>
+                <p><term refersTo="#term-registration-authority">registration authority</term> means <def>an entity that is responsible under a law for registering members of a particular health profession.</def></p>
+                <p><term refersTo="#term-regulatory-powers-act">Regulatory Powers Act</term> means <def>the Regulatory Powers (Standard Provisions) Act 2014.</def></p>
+                <p><term refersTo="#term-relevant-state-or-territory-authority">relevant State or Territory authority</term> means <def>a State or Territory authority that: has functions in relation to, or that is responsible for or deals with, occupational health and safety in the State or Territory; or has functions in relation to, or that is responsible for or deals with, health in the State or Territory; or is prescribed by the rules. <b><i>r</i></b><b><i>esearch</i></b>: means research relating to occupational respiratory diseases; and includes research relating to the causes, incidence, prevalence, nature, extent and trends of occupational respiratory diseases.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>has functions in relation to, or that is responsible for or deals with, occupational health and safety in the State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>has functions in relation to, or that is responsible for or deals with, health in the State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>is prescribed by the rules.</p>
+              </content>
+              <content>
+                <p><b><i>r</i></b><b><i>esearch</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>means research relating to occupational respiratory diseases; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>includes research relating to the causes, incidence, prevalence, nature, extent and trends of occupational respiratory diseases.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-respiratory-disease-causing-agents">respiratory disease-causing agents</term> means <def>agents such as dusts, gases, fumes, vapours, mists, fungi and fibres that can cause or contribute to an occupational respiratory disease.</def></p>
+                <p><term refersTo="#term-rules">rules</term> means <def>rules made under subsection 33(1).</def></p>
+                <p><term refersTo="#term-state-or-territory-authority">State or Territory authority</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+                <p><term refersTo="#term-state-or-territory-health-minister">State or Territory Health Minister</term> means <def>the State or Territory Minister who is responsible, or principally responsible, for matters relating to health in the State or Territory.</def></p>
+                <p><b><i>workplace identifying information</i></b>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>means information about an identified, or reasonably identifiable, workplace; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>includes information that identifies, or could be used to identify, an employer or business.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-1__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Meaning of commercial-in-confidence</heading>
+            <content>
+              <p>		Information is <b><i>commercial</i></b><b><i>-</i></b><b><i>in</i></b><b><i>-</i></b><b><i>confidence</i></b> if a person demonstrates to the Minister that:</p>
+            </content>
+            <paragraph eId="part-1__dvs-2__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>release of the information would cause competitive detriment to the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>the information is not in the public domain; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-9__para-c">
+              <num>c</num>
+              <content>
+                <p>the information is not required to be disclosed under a law of the Commonwealth, or of a State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__dvs-2__sec-9__para-d">
+              <num>d</num>
+              <content>
+                <p>the information is not readily discoverable.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>National Occupational Respiratory Disease Registry</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Simplified outline of this Part</heading>
+          <section eId="part-2__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>The Commonwealth is to establish the National Occupational Respiratory Disease Registry (<ref href="#sec-11">section 11</ref>).</p>
+              <p>The National Registry is to include certain information relating to individuals who have been diagnosed with, or are being treated for, an occupational respiratory disease (<ref href="#sec-12">section 12</ref>).</p>
+              <p>The purposes of the National Registry (<ref href="#sec-13">section 13</ref>) relate to:</p>
+            </content>
+            <paragraph eId="part-2__dvs-1__sec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>providing access to information about occupational respiratory diseases; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>supporting the identification of industries, occupations, job tasks and workplaces where there is a risk of exposure to respiratory disease-causing agents; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-1__sec-10__para-c">
+              <num>c</num>
+              <content>
+                <p>occupational respiratory disease matters more broadly.</p>
+              </content>
+              <content>
+                <p>A prescribed medical practitioner who has diagnosed an individual with an occupational respiratory disease may be authorised or required to notify the Director-General of the CDC of certain information in relation to the individual for inclusion in the National Registry. A prescribed medical practitioner who is treating an individual for an occupational respiratory disease may also notify the Director-General of the CDC of certain information in relation to the individual for inclusion in the National Registry (<ref href="#dvs-3">Division 3</ref>).</p>
+                <p>The Director-General of the CDC may vary information included in the National Registry (<ref href="#dvs-4">Division 4</ref>).</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Establishment, contents and purposes</heading>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Establishment of the National Registry</heading>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commonwealth must establish and keep a registry to be called the National Occupational Respiratory Disease Registry.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The National Registry may be kept by electronic means.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Parts of the National Registry may be kept separate from each other, and be called different names.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-11__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The National Registry is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Contents of the National Registry</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The National Registry may include the following information in relation to individuals who have been diagnosed with, or are being treated for, an occupational respiratory disease:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>minimum notification information;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>additional notification information;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>any other information that is relevant to the purposes of the National Registry and is determined by the Director-General of the CDC under subsection (4) for the purposes of this paragraph.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	<b><i>M</i></b><b><i>inimum notification information</i></b> in relation to an individual who has been diagnosed with, or is being treated for, an occupational respiratory disease is information that is relevant to the purposes of the National Registry and is determined by the Director-General of the CDC under subsection (4) for the purposes of this subsection.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	<b><i>Additional</i></b><b><i> notification information</i></b> in relation to an individual who has been diagnosed with, or is being treated for, an occupational respiratory disease is information (other than minimum notification information) that is relevant to the purposes of the National Registry and is determined by the Director-General of the CDC under subsection (4) for the purposes of this subsection.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Director-General of the CDC may, by legislative instrument, determine the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>information for the purposes of paragraph (1)(c);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>information for the purposes of subsection (2);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>information for the purposes of subsection (3).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Purposes of the National Registry</heading>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The purposes of the National Registry are to facilitate the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>collecting, storing, analysing and publishing by electronic means information relating to the diagnosis and progression of occupational respiratory diseases in Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>collecting, analysing and publishing statistics in relation to occupational respiratory diseases in Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>providing statistics in relation to occupational respiratory diseases in Australia to States and Territories and to prescribed medical practitioners;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>for the benefit of the nation:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>monitoring the incidence of occupational respiratory diseases in Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>taking preventative action;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>any activities that are incidental to the above purposes.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The purposes of the National Registry also include to facilitate the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>supporting the identification of industries, occupations, job tasks and workplaces where there is a risk of exposure to respiratory disease-causing agents:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>to enable the application of timely and targeted interventions and prevention activities to reduce further worker exposure and disease; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>to assist with compliance and enforcement activities in relation to occupational health and safety matters;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>providing prescribed medical practitioners with access to information included in the National Registry in relation to an individual who has been diagnosed with an occupational respiratory disease for the purpose of providing healthcare to the individual in relation to the disease;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>monitoring the quality and effectiveness of policy and regulatory arrangements in relation to occupational respiratory diseases to inform and enhance policy development, programs and decision-making relating to the prevention of occupational respiratory diseases;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>planning, delivering and promoting healthcare and associated services in relation to occupational respiratory diseases;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>identifying individuals for inclusion in clinical trials or observational studies in relation to occupational respiratory diseases;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-f">
+                <num>f</num>
+                <content>
+                  <p>research (<ref href="#sec-8">as defined in section 8</ref>);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-2__para-g">
+                <num>g</num>
+                <content>
+                  <p>any activities that are incidental to the above purposes.</p>
+                </content>
+                <content>
+                  <p>Constitutional basis—subsection (2)</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subparagraph (2)(a)(i) and paragraphs (2)(b) to (g) rely on the legislative power that the Parliament has under the Constitution to give effect to Australia’s obligations under the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>paragraph 1 of Article 2 and subparagraphs (b), (c) and (d) of paragraph 2 of Article 12 of the International Covenant on Economic, Social and Cultural Rights done at New York on <date date="1966-12-16">16 December 1966</date>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>Articles 4 and 8 and subparagraph (c) of Article 11 of the International Labour Organization Convention No. 155 concerning Occupational Safety and Health and the Working Environment done at Geneva on <date date="1981-06-22">22 June 1981</date>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Protocol of 2002 to the Occupational Safety and Health Convention 1981 done at Geneva on <date date="2002-06-20">20 June 2002</date>.</p>
+                </content>
+                <authorialNote placement="end" eId="note-3" marker="3">
+                  <content>
+                    <p>Note 1:	The International Covenant on Economic, Social and Cultural Rights is in Australian Treaty Series 1976 No. 5 ([1976] ATS 5) and could in 2023 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-4" marker="4">
+                  <content>
+                    <p>Note 2:	The International Labour Organization Convention No. 155 concerning Occupational Safety and Health and the Working Environment is in Australian Treaty Series 2005 No. 11 ([2005] ATS 11) and could in 2023 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-5" marker="5">
+                  <content>
+                    <p>Note 3:	The Protocol of 2002 to the Occupational Safety and Health Convention 1981<i> </i>is in Australian Treaty Series 2012 No. 26 ([2012] ATS 26) and could in 2023 be viewed in the Australian Treaties Library on the AustLII website (http://www.austlii.edu.au).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subparagraph (2)(a)(ii) relies on the legislative power that the Parliament has under the Constitution to give effect to Australia’s obligations under paragraph 1 of Article 2 and subparagraphs (b) and (c) of paragraph 2 of Article 12 of the International Covenant on Economic, Social and Cultural Rights done at New York on <date date="1966-12-16">16 December 1966</date>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Paragraph (2)(b) also relies on the legislative power that the Parliament has under the Constitution with respect to the provision of medical services.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Paragraphs (2)(c), (d) and (f) also rely on the legislative power that the Parliament has under the Constitution with respect to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>the executive power of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>matters incidental to the execution of any of the legislative powers of the Parliament.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Notifying information for the National Registry</heading>
+          <section eId="part-2__dvs-3__sec-14">
+            <num>14</num>
+            <heading>Notifying information about prescribed occupational respiratory diseases—diagnosing prescribed medical practitioner</heading>
+            <content>
+              <p>Minimum notification information must be notified</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a prescribed medical practitioner diagnoses an individual with an occupational respiratory disease at or after the commencement of this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>at the time the diagnosis is made, the occupational respiratory disease is a prescribed occupational respiratory disease;</p>
+                </content>
+                <content>
+                  <p>the prescribed medical practitioner must notify the Director-General of the CDC, in an approved form and by the time, or within the period, prescribed by the rules, of the minimum notification information in relation to the individual.</p>
+                </content>
+                <authorialNote placement="end" eId="note-6" marker="6">
+                  <content>
+                    <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (5)).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) applies whether or not the individual consents to the notification of the information under that subsection.</p>
+              </content>
+              <content>
+                <p>Civil penalty provision</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person is liable to a civil penalty if the person contravenes subsection (1).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Continuing contraventions</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subsection 93(2) of the Regulatory Powers Act does not apply in relation to a contravention of subsection (1) of this section.</p>
+              </content>
+              <content>
+                <p>Additional information may be notified</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A prescribed medical practitioner who notifies minimum notification information in relation to an individual under subsection (1) may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of some or all of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>the additional notification information in relation to the individual;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>other information (if any) in relation to the individual determined under subsection 12(4) for the purposes of paragraph 12(1)(c).</p>
+                </content>
+                <authorialNote placement="end" eId="note-8" marker="8">
+                  <content>
+                    <p>Note:	For <b><i>additional notification information</i></b>, see subsection 12(3).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-15">
+            <num>15</num>
+            <heading>Notifying information about prescribed occupational respiratory diseases—treating prescribed medical practitioner</heading>
+            <content>
+              <p>Minimum notification information may be notified</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a prescribed medical practitioner has diagnosed an individual with a prescribed occupational respiratory disease before the commencement of this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the minimum notification information in relation to the individual is not included in the National Registry;</p>
+                </content>
+                <content>
+                  <p>a prescribed medical practitioner who is treating the individual for the disease may, with the individual’s consent, notify the Director-General of the CDC, in an approved form, of the minimum notification information in relation to the individual.</p>
+                </content>
+                <authorialNote placement="end" eId="note-9" marker="9">
+                  <content>
+                    <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-10" marker="10">
+                  <content>
+                    <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (3)).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-11" marker="11">
+                  <content>
+                    <p>Note 3:	The prescribed medical practitioner who diagnosed the individual with the prescribed occupational respiratory disease and the prescribed medical practitioner who is treating the individual for the disease may be the same person.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a prescribed medical practitioner diagnoses an individual with a prescribed occupational respiratory disease at or after the commencement of this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the minimum notification information in relation to the individual is not included in the National Registry;</p>
+                </content>
+                <content>
+                  <p>a prescribed medical practitioner who is treating the individual for the disease may, without obtaining the individual’s consent, notify the Director-General of the CDC, in an approved form, of the minimum notification information in relation to the individual.</p>
+                  <p>Additional information may be notified</p>
+                </content>
+                <authorialNote placement="end" eId="note-12" marker="12">
+                  <content>
+                    <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-13" marker="13">
+                  <content>
+                    <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (3)).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-14" marker="14">
+                  <content>
+                    <p>Note 3:	The prescribed medical practitioner who diagnosed the individual with the prescribed occupational respiratory disease and the prescribed medical practitioner who is treating the individual for the disease may be the same person.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-15__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A prescribed medical practitioner who notifies minimum notification information in relation to an individual under subsection (1) or (2) may, with the individual’s consent, notify the Director-General of the CDC, in an approved form, of some or all of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the additional notification information in relation to the individual;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-15__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>other information (if any) in relation to the individual determined under subsection 12(4) for the purposes of paragraph 12(1)(c).</p>
+                </content>
+                <authorialNote placement="end" eId="note-15" marker="15">
+                  <content>
+                    <p>Note:	For <b><i>additional</i></b><b><i> notification information</i></b>, see subsection 12(3).</p>
+                  </content>
+                </authorialNote>
+                <content>
+                  <p>Information included in the National Registry may be corrected or updated</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-15__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If information in relation to an individual who has been diagnosed with a prescribed occupational respiratory disease is included in the National Registry under <ref href="#sec-14">section 14</ref> or this section, a prescribed medical practitioner who is treating the individual for the disease may, subject to subsection (5), correct or update the information by notifying the Director-General of the CDC in an approved form.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-15__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A prescribed medical practitioner may correct or update information in relation to an individual under subsection (4) to make minor or technical changes (including to correct a minor error) without obtaining the individual’s consent. For any other changes, the prescribed medical practitioner must obtain the consent of the individual.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-16">
+            <num>16</num>
+            <heading>Notifying information about non-prescribed occupational respiratory diseases—diagnosing prescribed medical practitioner</heading>
+            <content>
+              <p>Minimum notification information may be notified</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), a prescribed medical practitioner who diagnoses an individual with a non-prescribed occupational respiratory disease at or after the commencement of this Act may, with the individual’s consent, notify the Director-General of the CDC, in an approved form, of the minimum notification information in relation to the individual.</p>
+              </content>
+              <authorialNote placement="end" eId="note-16" marker="16">
+                <content>
+                  <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-17" marker="17">
+                <content>
+                  <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (3)).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-16__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a prescribed medical practitioner diagnoses an individual with a non-prescribed occupational respiratory disease at or after the commencement of this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-16__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>for the purpose of complying with a requirement under a law of a State or Territory, the medical practitioner is required to notify the Director-General of the CDC, in an approved form, of the diagnosis of that disease in relation to the individual;</p>
+                </content>
+                <content>
+                  <p>the medical practitioner may, without obtaining the individual’s consent, notify the Director-General, in an approved form, of the minimum notification information in relation to the individual.</p>
+                  <p>Additional information may be notified</p>
+                </content>
+                <authorialNote placement="end" eId="note-18" marker="18">
+                  <content>
+                    <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-19" marker="19">
+                  <content>
+                    <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (3)).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A prescribed medical practitioner who notifies minimum notification information in relation to an individual under subsection (1) or (2) may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of some or all of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-16__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the additional notification information in relation to the individual;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-16__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>other information (if any) in relation to the individual determined under subsection 12(4) for the purposes of paragraph 12(1)(c).</p>
+                </content>
+                <authorialNote placement="end" eId="note-20" marker="20">
+                  <content>
+                    <p>Note:	For <b><i>additional notification information</i></b>, see subsection 12(3).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-17">
+            <num>17</num>
+            <heading>Notifying information about non-prescribed occupational respiratory diseases—treating prescribed medical practitioner</heading>
+            <content>
+              <p>Minimum notification information may be notified</p>
+            </content>
+            <subsection eId="part-2__dvs-3__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-17__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a prescribed medical practitioner diagnoses an individual with a non-prescribed occupational respiratory disease (whether the diagnosis was made before, or is made at or after, the commencement of this Act); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-17__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the minimum notification information in relation to the individual is not included in the National Registry;</p>
+                </content>
+                <content>
+                  <p>a prescribed medical practitioner who is treating the individual for the disease may, with the individual’s consent, notify the Director-General of the CDC, in an approved form, of the minimum notification information in relation to the individual.</p>
+                  <p>Additional information may be notified</p>
+                </content>
+                <authorialNote placement="end" eId="note-21" marker="21">
+                  <content>
+                    <p>Note 1:	For <b><i>minimum notification information</i></b>, see subsection 12(2).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-22" marker="22">
+                  <content>
+                    <p>Note 2:	The prescribed medical practitioner may, with the individual’s consent, also notify the Director-General of the CDC, in an approved form, of additional information in relation to the individual (see subsection (2)).</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-23" marker="23">
+                  <content>
+                    <p>Note 3:	The prescribed medical practitioner who diagnosed the individual with the non-prescribed occupational respiratory disease and the prescribed medical practitioner who is treating the individual for the disease may be the same person.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A prescribed medical practitioner who notifies minimum notification information in relation to an individual under subsection (1) may, with the individual’s consent, notify the Director-General of the CDC, in an approved form, of some or all of the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-17__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the additional notification information in relation to the individual;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-17__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>other information (if any) in relation to the individual determined under subsection 12(4) for the purposes of paragraph 12(1)(c).</p>
+                </content>
+                <authorialNote placement="end" eId="note-24" marker="24">
+                  <content>
+                    <p>Note:	For <b><i>additional notification information</i></b>, see subsection 12(3).</p>
+                  </content>
+                </authorialNote>
+                <content>
+                  <p>Information included in the National Registry may be corrected or updated</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-17__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If information in relation to an individual who has been diagnosed with a non-prescribed occupational respiratory disease is included in the National Registry under <ref href="#sec-16">section 16</ref> or this section, a prescribed medical practitioner who is treating the individual for the disease may, subject to subsection (4), correct or update the information by notifying the Director-General of the CDC in an approved form.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-17__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A prescribed medical practitioner may correct or update information in relation to an individual under subsection (3) to make minor or technical changes (including to correct a minor error) without obtaining the individual’s consent. For any other changes, the prescribed medical practitioner must obtain the consent of the individual.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-18">
+            <num>18</num>
+            <heading>Director-General of the CDC or contracted service provider may request individual to provide additional notification information</heading>
+            <subsection eId="part-2__dvs-3__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a prescribed medical practitioner has notified the Director-General of the CDC of the minimum notification information in relation to an individual under <ref href="#sec-14">section 14</ref>, 15, 16 or 17, the Director-General, or a contracted service provider, may request, in writing, the individual to give the Director-General, or the contracted service provider, additional notification information in relation to the individual as specified in the request.</p>
+              </content>
+              <authorialNote placement="end" eId="note-25" marker="25">
+                <content>
+                  <p>Note:	For <b><i>additional notification information</i></b>, see subsection 12(3).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A request under subsection (1) may:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-18__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>be made by electronic communication; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-18__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>ask the individual to give the specified information by electronic communication.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An individual who receives a request under subsection (1) is not obliged to comply with the request.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-4">
+          <num>4</num>
+          <heading>Variation of information in the National Registry</heading>
+          <section eId="part-2__dvs-4__sec-19">
+            <num>19</num>
+            <heading>Variation of information included in the National Registry</heading>
+            <content>
+              <p>Director-General of the CDC must correct personal information on request by individual</p>
+            </content>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An individual may request the Director-General of the CDC, in writing, to correct personal information in relation to the individual that is included in the National Registry.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If the Director-General of the CDC receives a request under subsection (1) to correct personal information in relation to an individual, the Director-General must correct the information to ensure that, having regard to the purpose for which the information is included in the National Registry, the information is accurate, up-to-date, complete, relevant and not misleading.</p>
+              </content>
+              <content>
+                <p>Director-General of the CDC may correct minor errors etc.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-19__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Director-General of the CDC may, on the Director-General’s own initiative, vary information included in the National Registry:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-19__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>to correct a minor or technical error; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-19__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>to ensure that correct and consistent terminology is used.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Dealing with information in the National Registry</heading>
+        <section eId="part-3__sec-20">
+          <num>20</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>Information may be collected for inclusion in the National Registry (subsection 21(1)).</p>
+            <p>Personal information, workplace identifying information and information that is commercial-in-confidence that is included in the National Registry, or is derived from information included in the National Registry, is protected information.</p>
+            <p>Recording, disclosure and use of protected information is authorised in specific circumstances, including for the purposes of the National Registry, by prescribed medical practitioners and for research (sections 21 and 22).</p>
+            <p>It is an offence for a person to make a record of, disclose or otherwise use protected information, without authorisation (<ref href="#sec-23">section 23</ref>).</p>
+            <p>There are exceptions to the offence (sections 24 and 25).</p>
+            <p>The Director-General of the CDC must publish an annual report including certain statistical information in relation to information included in the National Registry, and may publish or make available other reports in relation to information included in the National Registry (<ref href="#sec-26">section 26</ref>).</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-21">
+          <num>21</num>
+          <heading>Authorised dealings with information—general</heading>
+          <content>
+            <p>Including information etc. in the National Registry</p>
+          </content>
+          <subsection eId="part-3__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person may collect, make a record of, disclose or otherwise use:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>personal information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>workplace identifying information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>information that is commercial-in-confidence;</p>
+              </content>
+              <content>
+                <p>if the person does so for the purposes of including information in the National Registry.</p>
+                <p>Authorised collection, disclosure or other use of information in the National Registry</p>
+              </content>
+              <authorialNote placement="end" eId="note-26" marker="26">
+                <content>
+                  <p>Note 1:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-27" marker="27">
+                <content>
+                  <p>Note 2:	Certain information in relation to an individual may be collected and recorded in the National Registry under <ref href="#part-2">Part 2</ref> only with the individual’s consent.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person may collect, make a record of, disclose or otherwise use protected information included in the National Registry, if:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person does so for the purposes of the National Registry and is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>an officer or employee of the Commonwealth or a Commonwealth authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>engaged by the Commonwealth, or a Commonwealth authority, to perform work relating to the purposes of the National Registry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>an officer or employee of a person referred to in subparagraph (ii), or engaged by a person referred to in subparagraph (ii) to perform work relating to the purposes of the National Registry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>all of the following apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the person is a prescribed medical practitioner;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the information is about a diagnosis, or the progression, of an occupational respiratory disease in relation to an individual;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the collection, recording, disclosure or use is for the purposes of providing healthcare to the individual in relation to the occupational respiratory disease; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>all of the following apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the person is a prescribed medical practitioner;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the person has diagnosed an individual with an occupational respiratory disease, or is treating an individual for an occupational respiratory disease;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the collection, recording, disclosure or use is for the purpose of checking whether information in relation to the individual is included in the National Registry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the person does so for the purposes of performing the person’s functions or duties, or exercising the person’s powers, under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the person is required or authorised to do so by or under a law of the Commonwealth, or of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>all of the following apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the person is the Director-General of the CDC;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the collection, recording, disclosure or use is for the purposes of disclosing information to an enforcement body;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the person reasonably believes that the information is reasonably necessary for, or directly related to, one or more enforcement related activities being conducted by, or on behalf of, the enforcement body; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>the information is disclosed to the person under this section, and the collection, recording, disclosure or use is for the purpose for which the information was disclosed to the person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>the person does so for the purposes of court or tribunal proceedings, or in accordance with an order of a court or tribunal; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the person does so for the purposes of a coronial inquiry, or in accordance with an order of a coroner.</p>
+              </content>
+              <authorialNote placement="end" eId="note-28" marker="28">
+                <content>
+                  <p>Note:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Restrictions on collection, recording, disclosure or use of certain protected information for the purposes of research</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>However, the following information in relation to an individual must not be disclosed to a person under subsection (2) for the purposes of research:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>information that identifies, or could be used to identify, the most recent workplace, or the main workplace, where the individual was exposed to a respiratory disease-causing agent;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>information that identifies, or could be used to identify, the prescribed medical practitioner who notified information in relation to the individual under <ref href="#part-2">Part 2</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>any other kind of information that is prescribed by the rules.</p>
+              </content>
+              <authorialNote placement="end" eId="note-29" marker="29">
+                <content>
+                  <p>Note:	For <b><i>research</i></b>, see <ref href="#sec-8">section 8</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-21__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Collection, recording, disclosure or use of personal information for the purposes of research of a kind to which guidelines approved under <ref href="#sec-95">section 95</ref> or 95A of the <i>Privacy Act 1988</i> relate is authorised under paragraph (2)(a) or (g) of this section only if:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the collection, recording, use or disclosure is in accordance with the guidelines; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>in the case of disclosure—the disclosure is not prohibited by subsection (3) of this section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-22">
+          <num>22</num>
+          <heading>Authorised dealings with information—Commonwealth authorities and State or Territory authorities</heading>
+          <content>
+            <p>Commonwealth authorities</p>
+          </content>
+          <subsection eId="part-3__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director-General of the CDC, or a contracted service provider, may disclose any minimum notification information in relation to an individual that is included in the National Registry and is protected information:</p>
+            </content>
+            <paragraph eId="part-3__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to a Commonwealth authority prescribed by the rules; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>for purposes connected with the performance of functions, or the exercise of powers, of the Commonwealth authority.</p>
+              </content>
+              <authorialNote placement="end" eId="note-30" marker="30">
+                <content>
+                  <p>Note 1:	For <b><i>Commonwealth authority</i></b>, see <ref href="#sec-8">section 8</ref>.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-31" marker="31">
+                <content>
+                  <p>Note 2:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A Commonwealth authority to which protected information is disclosed under subsection (1) may collect, make a record of, disclose or otherwise use that information for any of the purposes for which the information was disclosed to the Commonwealth authority.</p>
+            </content>
+            <authorialNote placement="end" eId="note-32" marker="32">
+              <content>
+                <p>Note:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>State or Territory authorities</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director-General of the CDC, or a contracted service provider, may disclose to a relevant State or Territory authority, for a purpose referred to in paragraph 13(2)(a), (c), (d) or (f), any minimum notification information in relation to an individual that is included in the National Registry and is protected information if the individual:</p>
+            </content>
+            <paragraph eId="part-3__sec-22__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>resides in the State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>was exposed to a respiratory disease-causing agent in the State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-22__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>was diagnosed with an occupational respiratory disease in the State or Territory.</p>
+              </content>
+              <authorialNote placement="end" eId="note-33" marker="33">
+                <content>
+                  <p>Note 1:	For <b><i>relevant </i></b><b><i>State or Territory authority</i></b>, see <ref href="#sec-8">section 8</ref>.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-34" marker="34">
+                <content>
+                  <p>Note 2:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A relevant State or Territory authority to which protected information is disclosed under subsection (3) may collect, make a record of, disclose or otherwise use that information for a purpose referred to in paragraph 13(2)(a), (c), (d) or (f).</p>
+            </content>
+            <authorialNote placement="end" eId="note-35" marker="35">
+              <content>
+                <p>Note:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-23">
+          <num>23</num>
+          <heading>Offence relating to protected information</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-3__sec-23__para-a">
+            <num>a</num>
+            <content>
+              <p>the person makes a record of, discloses or otherwise uses information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-23__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-23__para-c">
+            <num>c</num>
+            <content>
+              <p>the making of the record, disclosure or use, is not authorised by a provision of this Part.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity> or <quantity refersTo="#penaltyUnit">120 penalty units</quantity>, or both.</p>
+              </content>
+            </hcontainer>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-24">
+          <num>24</num>
+          <heading>Exceptions relating to the person to whom the protected information relates</heading>
+          <subsection eId="part-3__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Section 23 does not apply to a person if:</p>
+            </content>
+            <paragraph eId="part-3__sec-24__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person discloses protected information to the person to whom the information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-24__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the person to whom the protected information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-24__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the making of the record, disclosure or use of the protected information is in accordance with the express or implied consent of the person to whom the information relates.</p>
+              </content>
+              <authorialNote placement="end" eId="note-36" marker="36">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matters in this subsection (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies as if a reference in that subsection to the person to whom the protected information relates included a reference to the person’s personal representative.</p>
+            </content>
+            <authorialNote placement="end" eId="note-37" marker="37">
+              <content>
+                <p>Note:	For <b><i>personal representative</i></b>, see <ref href="#sec-8">section 8</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-25">
+          <num>25</num>
+          <heading>Exception for disclosure to person who provided the information</heading>
+          <content>
+            <p>Section 23 does not apply to a person if:</p>
+          </content>
+          <paragraph eId="part-3__sec-25__para-a">
+            <num>a</num>
+            <content>
+              <p>the person obtains protected information from another person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-25__para-b">
+            <num>b</num>
+            <content>
+              <p>the person discloses that information to the other person.</p>
+            </content>
+            <authorialNote placement="end" eId="note-38" marker="38">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-26">
+          <num>26</num>
+          <heading>Reports including statistical and other information relating to information included in the National Registry</heading>
+          <subsection eId="part-3__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director-General of the CDC must, as soon as practicable after 30 June in each year, publish a report including the following information:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the number of notifications of each prescribed occupational respiratory disease made under <ref href="#dvs-3">Division 3</ref> of <ref href="#part-2">Part 2</ref> during the period of 12 months ending on that 30 June;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the number of notifications of each non-prescribed occupational respiratory disease made under <ref href="#dvs-3">Division 3</ref> of <ref href="#part-2">Part 2</ref> during the period of 12 months ending on that 30 June;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>aggregate information and statistics about the occupation, main job task, industry and State of residence of diagnosed individuals at the time they were exposed to respiratory disease-causing agents.</p>
+              </content>
+              <authorialNote placement="end" eId="note-39" marker="39">
+                <content>
+                  <p>Note:	See subsection (6) in relation to the first report published under this subsection.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director-General of the CDC may at any time, for the purposes of the National Registry:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>prepare statistical reports at a national level relating to information that is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>included in the National Registry; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>of a kind prescribed by the rules; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>make the reports available to relevant State or Territory authorities and prescribed medical practitioners.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director-General of the CDC may at any time, for the purposes of the National Registry, publish reports relating to information that is:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>included in the National Registry; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>of a kind prescribed by the rules.</p>
+              </content>
+              <content>
+                <p>The reports may include statistical and other information.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If protected information is to be published or otherwise made available under this section, the Director-General of the CDC must, before publishing the information or making it available, take such steps as are reasonable in the circumstances to ensure that the information is de-identified.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	For the purposes of subsection (4), information is <b><i>de</i></b><b><i>-</i></b><b><i>identified</i></b> if the information is no longer about:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>an identifiable individual or an individual who is reasonably identifiable; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>an identified workplace, employer or business or a workplace, employer or business that is reasonably identifiable.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If this Act commences on a day other than 1 July in a year, subsection (1) has effect in relation to the first report required to be published under that subsection as if each reference to the period of 12 months ending on that 30 June were a reference to the period starting on the day this Act commences and ending on that 30 June.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Other matters</heading>
+        <section eId="part-4__sec-27">
+          <num>27</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part deals with other matters, such as civil penalties, approved forms, agreements, fees, delegations and rules.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-28">
+          <num>28</num>
+          <heading>Civil penalty provisions</heading>
+          <content>
+            <p>Enforceable civil penalty provisions</p>
+          </content>
+          <subsection eId="part-4__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each civil penalty provision of this Act is enforceable under Part 4 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-40" marker="40">
+              <content>
+                <p>Note:	Part 4 of the Regulatory Powers Act allows a civil penalty provision to be enforced by obtaining an order for a person to pay a pecuniary penalty for the contravention of the provision.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Authorised applicant</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following persons is an authorised applicant in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Director-General of the CDC;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or an acting SES employee, in the Australian Centre for Disease Control.</p>
+              </content>
+              <content>
+                <p>Relevant court</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following courts is a relevant court in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Federal Court of Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+              <content>
+                <p>Liability of Crown</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Part 4 of the Regulatory Powers Act, as that Part applies in relation to the civil penalty provisions of this Act, does not make the Crown liable to a pecuniary penalty.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-29">
+          <num>29</num>
+          <heading>Approved forms</heading>
+          <content>
+            <p>The Director-General of the CDC may, in writing, approve a form for the purposes of a provision of this Act.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-30">
+          <num>30</num>
+          <heading>Agreements</heading>
+          <content>
+            <p>The Director-General of the CDC may, on behalf of the Commonwealth, engage a person under a written agreement to perform services for, or on behalf of, the Commonwealth in connection with functions of the Commonwealth or the Director-General under this Act.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-31">
+          <num>31</num>
+          <heading>Fees</heading>
+          <subsection eId="part-4__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director-General of the CDC may, on behalf of the Commonwealth, charge a fee in relation to the disclosure of protected information to a person (other than a Commonwealth authority) under <ref href="#sec-21">section 21</ref> or 22 if the disclosure is made in response to a specific request by the person.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The amount of the fee that may be charged under subsection (1) is the amount:</p>
+            </content>
+            <paragraph eId="part-4__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>determined by the Director-General of the CDC by legislative instrument; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>worked out in accordance with a method determined by the Director-General by legislative instrument.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-31__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A legislative instrument under paragraph (2)(a) or (b) may determine different amounts, or different methods for working out amounts (as the case may be), having regard to the form or manner in which protected information is disclosed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-31__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A fee that is due and payable to the Commonwealth under subsection (1) may be recovered as a debt that is due to the Commonwealth by action in:</p>
+            </content>
+            <paragraph eId="part-4__sec-31__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the Federal Court of Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-31__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-31__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-31__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A fee charged under subsection (1) must not be such as to amount to taxation.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-32">
+          <num>32</num>
+          <heading>Delegation</heading>
+          <content>
+            <p>Minister’s functions and powers</p>
+          </content>
+          <subsection eId="part-4__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate <role refersTo="#minister">the Minister</role>’s functions or powers under <ref href="#sec-9">section 9</ref> (commercial-in-confidence information) to:</p>
+            </content>
+            <paragraph eId="part-4__sec-32__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Director-General of the CDC; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-32__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or an acting SES employee, in the Australian Centre for Disease Control.</p>
+              </content>
+              <content>
+                <p>Director-General of the CDC’s functions and powers</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director-General of the CDC may, in writing, delegate the Director-General’s functions or powers under this Act (other than subsection 12(4)) to an SES employee, or an acting SES employee, in the Australian Centre for Disease Control.</p>
+            </content>
+            <content>
+              <p>Delegate must comply with directions of delegator</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-32__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In performing a function, or exercising a power, under a delegation, the delegate must comply with any directions of the person who delegated the function or power.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-33">
+          <num>33</num>
+          <heading>Rules</heading>
+          <subsection eId="part-4__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters:</p>
+            </content>
+            <paragraph eId="part-4__sec-33__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Before making rules for the purposes of the definition of <b><i>prescribed occupational respiratory disease</i></b> in <ref href="#sec-8">section 8</ref>, the Minister must:</p>
+            </content>
+            <paragraph eId="part-4__sec-33__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>consult the Director-General of the CDC; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>consult the relevant State or Territory authorities of each State or Territory through the State or Territory Health Minister; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>have regard to the submissions (if any) made by the Director-General or a State or Territory Health Minister because of that consultation.</p>
+              </content>
+              <authorialNote placement="end" eId="note-41" marker="41">
+                <content>
+                  <p>Note:	For <b><i>relevant State or Territory authority</i></b>, see <ref href="#sec-8">section 8</ref>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>To avoid doubt, the rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-4__sec-33__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-33__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>orig = original</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>p = page(s)</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>para = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>cl = clause(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>cont. = continued</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>r = regulation(s)/Court rule(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>sub ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>sub div = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>sub pt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act
+(Register ID)</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>National Occupational Respiratory Disease Registry Act 2023 (C2023A00095)</td>
+                  <td>95, 2023</td>
+                  <td>22 Nov 2023</td>
+                  <td>22 May 2024 (s 2(1) item 1)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Australian Centre for Disease Control (Consequential Amendments and Transitional Provisions) Act 2025 (C2025A00062)</td>
+                  <td>62, 2025</td>
+                  <td>10 Nov 2025</td>
+                  <td>sch 1 (items 31-40), sch 2 (items 2, 15-17): 1 Jan 2026 (s 2(1) item 2)</td>
+                  <td>sch 2 (items 2, 15-17)</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 8</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 12</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 14</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 15</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 16</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 17</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 18</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Division 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 19</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 20</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 21</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 22</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 26</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 29</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 30</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 31</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 32</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 33</td>
+                  <td>am No 62, 2025</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

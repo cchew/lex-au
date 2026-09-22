@@ -1,0 +1,974 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2010/36/!main"/>
+          <FRBRuri value="/akn/au/act/2010/36"/>
+          <FRBRdate date="2010-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="36"/>
+          <FRBRname value="trans-tasman-proceedings-(transitional-and-consequential-provisions)-act-2010"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2010/36/eng@2013-10-11/!main"/>
+          <FRBRuri value="/akn/au/act/2010/36/eng@2013-10-11"/>
+          <FRBRdate date="2013-10-11" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2010/36/eng@2013-10-11/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2010/36/eng@2013-10-11/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2010-01-01" type="generation" eId="evt-creation" source="#trans-tasman-proceedings-(transitional-and-consequential-provisions)-act-2010"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2011/64" date="2011-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2012/136" date="2012-09-22"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-2"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCTerm eId="term-commencement" href="/ontology/term/au/term-commencement" showAs="commencement"/>
+        <TLCTerm eId="term-trans-tasman-act" href="/ontology/term/au/term-trans-tasman-act" showAs="Trans-Tasman Act"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p></p>
+      <p>Trans-Tasman Proceedings (Transitional and Consequential Provisions) Act 2010</p>
+      <p>No. 36, 2010 as amended</p>
+      <p><b>Compilation start date: </b><b>	</b><b>	</b>11 October 2013</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 136, 2012</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Trans-Tasman Proceedings (Transitional and Consequential Provisions) Act 2010</i> as in force on 11 October 2013. It includes any commenced amendment affecting the legislation to that date.</p>
+      <p>This compilation was prepared on <date date="2013-10-11">11 October 2013</date>.</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of each amended provision.</p>
+      <p><b>Uncommenced</b><b> amendments</b></p>
+      <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in the endnotes.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If a provision of the compiled law is affected by a modification that is in force, details are included in the endnotes.</p>
+      <p><b>Provisions ceasing to have effect</b></p>
+      <p>If a provision of the compiled law has expired or otherwise ceased to have effect in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Schedule(s)	2</p>
+      <p>4	Definitions	3</p>
+      <p>Schedule 1—Application of the Trans-Tasman Act	4</p>
+      <p>Schedule 2—Consequential repeals and amendments	6</p>
+      <p><ref href="#part-1">Part 1</ref>—Repeal of the Evidence and Procedure (New Zealand) Act 1994	6</p>
+      <p>Evidence and Procedure (New Zealand) Act 1994	6</p>
+      <p><ref href="#part-2">Part 2</ref>—Amendment of <ref href="">the Federal Court of Australia Act 1976</ref>	8</p>
+      <p>Federal Court of Australia Act 1976	8</p>
+      <p><ref href="#part-3">Part 3</ref>—Other amendments	10</p>
+      <p>Defence Force Discipline Act 1982	10</p>
+      <p>Family Law Act 1975	10</p>
+      <p>Federal Magistrates Act 1999	11</p>
+      <p>Foreign Judgments Act 1991	11</p>
+      <p>Law and Justice Legislation Amendment (Identity Crimes and Other Measures) Act 2010	12</p>
+      <p>Service and Execution of Process Act 1992	12</p>
+      <p>Trans-Tasman Proceedings Act 2010	12</p>
+      <p>Endnotes	13</p>
+      <p>Endnote 1—About the endnotes	13</p>
+      <p>Endnote 2—Abbreviation key	15</p>
+      <p>Endnote 3—Legislation history	16</p>
+      <p>Endnote 4—Amendment history	17</p>
+      <p>Endnote 5—Uncommenced amendments [none]	18</p>
+      <p>Endnote 6—Modifications [none]	18</p>
+      <p>Endnote 7—Misdescribed amendments [none]	18</p>
+      <p>Endnote 8—Miscellaneous [none]	18</p>
+      <p>An Act to deal with transitional and consequential matters in connection with the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>, and for related purposes</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Trans</i><i>-</i><i>Tasman Proceedings (Transitional </i><i>and Consequential Provisions</i><i>) Act 20</i><i>10</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <subsection eId="sec-2__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+          </content>
+          <table>
+            <tr>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+            </tr>
+            <tr>
+              <td>Column 1</td>
+              <td>Column 2</td>
+              <td>Column 3</td>
+            </tr>
+            <tr>
+              <td>Provision(s)</td>
+              <td>Commencement</td>
+              <td>Date/Details</td>
+            </tr>
+            <tr>
+              <td>1.  Sections 1 to 4 and anything in this Act not elsewhere covered by this table</td>
+              <td>The day this Act receives the Royal Assent.</td>
+              <td>13 April 2010</td>
+            </tr>
+            <tr>
+              <td>2.  Schedule 1</td>
+              <td>At the same time as section 3 of the Trans-Tasman Proceedings Act 2010 commences.</td>
+              <td>11 October 2013</td>
+            </tr>
+            <tr>
+              <td>3.  Schedule 2, items 1 to 23</td>
+              <td>At the same time as section 3 of the Trans-Tasman Proceedings Act 2010 commences.</td>
+              <td>11 October 2013</td>
+            </tr>
+            <tr>
+              <td>4.  Schedule 2, item 24</td>
+              <td>Immediately after the commencement of item 22 of Schedule 2 to the Law and Justice Legislation Amendment (Identity Crimes and Other Measures) Act 2011.
+However, the provision(s) do not commence at all if item 22 of Schedule 2 to the Law and Justice Legislation Amendment (Identity Crimes and Other Measures) Act 2011commences before the commencement of the provision(s) covered by table item 3.</td>
+              <td>Does not commence</td>
+            </tr>
+            <tr>
+              <td>5.  Schedule 2, items 25 and 26</td>
+              <td>At the same time as section 3 of the Trans-Tasman Proceedings Act 2010 commences.</td>
+              <td>11 October 2013</td>
+            </tr>
+            <tr>
+              <td>6.  Schedule 2, items 27 and 28</td>
+              <td>The later of:
+(a) immediately after the commencement of the provision(s) covered by table item 3; and
+(b) immediately after the commencement of item 22 of Schedule 2 to the Law and Justice Legislation Amendment (Identity Crimes and Other Measures) Act 2011.
+However, the provision(s) do not commence at all if the event mentioned in paragraph (b) does not occur.</td>
+              <td>11 October 2013</td>
+            </tr>
+          </table>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	This table relates only to the provisions of this Act as originally passed by both Houses of the Parliament and assented to. It will not be expanded to deal with provisions inserted in this Act after assent.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-2__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Column 3 of the table contains additional information that is not part of this Act. Information in this column may be added to or edited in any published version of this Act.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Schedule(s)</heading>
+        <content>
+          <p>Each Act that is specified in a Schedule to this Act is amended or repealed as set out in the applicable items in the Schedule concerned, and any other item in a Schedule to this Act has effect according to its terms.</p>
+        </content>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Definitions</heading>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>In this Act:</p>
+          </content>
+          <content>
+            <p><term refersTo="#term-commencement">commencement</term> means <def>the day on which <ref href="#sec-3">section 3</ref> of the Trans-Tasman Proceedings Act 2010 commences.</def></p>
+            <p><term refersTo="#term-trans-tasman-act">Trans-Tasman Act</term> means <def>the Trans-Tasman Proceedings Act 2010.</def></p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-2">
+          <num>2</num>
+          <content>
+            <p>In this Act, expressions that are defined in the Trans-Tasman Act have the same meanings as they have in that Act.</p>
+          </content>
+        </subsection>
+      </section>
+    </body>
+    <attachments>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-1">
+          <num>1</num>
+          <heading>Application of the Trans-Tasman Act</heading>
+          <hcontainer name="item" eId="schedule-1__item-1">
+            <num>1</num>
+            <heading>Application of Part 2 of the Trans-Tasman Act</heading>
+            <content>
+              <p>Part 2 of the Trans-Tasman Act (which deals with service in New Zealand of initiating documents issued by Australian courts and tribunals) applies to:</p>
+            </content>
+            <paragraph eId="schedule-1__item-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a civil proceeding commenced on or after commencement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__item-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a civil proceeding commenced before commencement, but only if not all of the initiating documents for the proceeding have been served before commencement.</p>
+              </content>
+            </paragraph>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-2">
+            <num>2</num>
+            <heading>Application of Part 3 of the Trans-Tasman Act</heading>
+            <content>
+              <p>Part 3 of the Trans-Tasman Act (which deals with Australian courts declining jurisdiction on the grounds that a New Zealand court is the more appropriate forum) applies to an application made under that Part on or after commencement by a defendant to a civil proceeding that:</p>
+            </content>
+            <paragraph eId="schedule-1__item-2__para-a">
+              <num>a</num>
+              <content>
+                <p>was commenced in an Australian court on or after commencement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="schedule-1__item-2__para-b">
+              <num>b</num>
+              <content>
+                <p>was commenced in an Australian court before commencement, but only if an initiating document for the proceeding was served on the defendant in New Zealand after commencement under <ref href="#part-2">Part 2</ref> of that Act.</p>
+              </content>
+              <content>
+                <p>3  Application of Part 4 of the Trans-Tasman Act</p>
+                <p>Part 4 of the Trans-Tasman Act (which deals with Australian courts granting interim relief in support of civil proceedings in New Zealand courts) applies to a civil proceeding commenced, or to be commenced, in a New Zealand court on or after commencement.</p>
+              </content>
+            </paragraph>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-3">
+            <num>4</num>
+            <heading>Application of Part 5 of the Trans-Tasman Act</heading>
+            <subsection eId="schedule-1__item-3__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Part 5 of the Trans-Tasman Act (which deals with subpoenas) applies to a subpoena issued before, on or after commencement.</p>
+              </content>
+            </subsection>
+            <subsection eId="schedule-1__item-3__subsec-2">
+              <num>2</num>
+              <content>
+                <p>(2)	Despite subitem (1), <ref href="#dvs-2">Division 2</ref> of Part 5 of the Trans-Tasman Act (which deals with Australian subpoenas) does not apply to a subpoena if, before commencement, the court gave leave under <ref href="#sec-9">section 9</ref> of the <i>Evidence and Procedure (New Zealand) Act 1994</i> for the subpoena to be served in New Zealand.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	The <i>Evidence and Procedure (New Zealand) Act 1994</i> continues to apply to the subpoena: see item 2 of Schedule 2 to this Act.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-4">
+            <num>5</num>
+            <heading>Application of Part 6 of the Trans-Tasman Act</heading>
+            <subsection eId="schedule-1__item-4__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Part 6 of the Trans-Tasman Act (which deals with remote appearances) applies to a remote appearance that is made on or after commencement. It does not matter whether the proceeding in which the remote appearance is made commenced before, on or after commencement.</p>
+              </content>
+            </subsection>
+            <subsection eId="schedule-1__item-4__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Despite subitem (1), <ref href="#dvs-2">Division 2</ref> of Part 6 of the Trans-Tasman Act (which deals with remote appearances from New Zealand in Australian proceedings) does not apply to a remote appearance if:</p>
+              </content>
+              <paragraph eId="schedule-1__item-4__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the remote appearance is to give evidence or make submissions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="schedule-1__item-4__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	before commencement, the court directed under <ref href="#sec-25">section 25</ref> of the <i>Evidence and Procedure (New Zealand) Act 1994</i> that the evidence be given or submissions be made, by video link or telephone, from New Zealand.</p>
+                </content>
+                <authorialNote placement="end" eId="note-3" marker="3">
+                  <content>
+                    <p>Note:	The <i>Evidence and Procedure (New Zealand) Act 1994</i> continues to apply to these remote appearances: see item 2 of Schedule 2 to this Act.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-5">
+            <num>6</num>
+            <heading>Application of Part 7 of the Trans-Tasman Act</heading>
+            <content>
+              <p>Part 7 of the Trans-Tasman Act (which deals with the recognition and enforcement in Australia of specified judgments of New Zealand courts and tribunals) applies to judgments given on or after commencement. It does not matter whether the proceeding in which the judgment is given commenced before, on or after commencement.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-6">
+            <num>7</num>
+            <heading>Application of Part 8 of the Trans-Tasman Act</heading>
+            <content>
+              <p>Part 8 of the Trans-Tasman Act (which deals with trans-Tasman market proceedings) applies to proceedings commenced on or after commencement.</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="item" eId="schedule-1__item-7">
+            <num>8</num>
+            <heading>Application of Part 9 of the Trans-Tasman Act</heading>
+            <content>
+              <p>Part 9 of the Trans-Tasman Act (which deals with evidence of certain New Zealand matters) applies to proceedings commenced before, on or after commencement.</p>
+            </content>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-2">
+          <num>2</num>
+          <heading>Consequential repeals and amendments</heading>
+          <hcontainer name="part" eId="schedule-2__part-1">
+            <num>1</num>
+            <heading>Repeal of the Evidence and Procedure (New Zealand) Act 1994</heading>
+            <hcontainer name="amendedAct" eId="schedule-2__part-1__amdact-1">
+              <heading>Evidence and Procedure (New Zealand) Act 1994</heading>
+              <hcontainer name="item" eId="schedule-2__part-1__amdact-1__item-1">
+                <num>1</num>
+                <heading>The whole of the Act</heading>
+                <content>
+                  <p>Repeal the Act.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-1__amdact-1__item-2">
+                <num>2</num>
+                <heading>Saving</heading>
+                <subsection eId="schedule-2__part-1__amdact-1__item-2__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	This item applies despite the repeal of the <i>Evidence and Procedure (New Zealand) Act 1994</i> (the <b><i>EPNZA</i></b>)<b> </b>made by this Schedule.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-1__amdact-1__item-2__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>If, before commencement, a court gave leave under <ref href="#sec-9">section 9</ref> of the EPNZA for a subpoena to be served in New Zealand, then the EPNZA, as in force immediately before commencement, continues to apply on and after commencement in relation to the subpoena.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-1__amdact-1__item-2__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>If, before commencement, a court directed under <ref href="#sec-25">section 25</ref> of the EPNZA that:</p>
+                  </content>
+                  <paragraph eId="schedule-2__part-1__amdact-1__item-2__subsec-3__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>evidence be taken; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-1__amdact-1__item-2__subsec-3__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>submissions be made;</p>
+                    </content>
+                    <content>
+                      <p>by video link or telephone from New Zealand, then the EPNZA, as in force immediately before commencement, continues to apply on and after commencement in relation to the taking of that evidence or the making of those submissions.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+                <subsection eId="schedule-2__part-1__amdact-1__item-2__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>(4)	Section 47 of the EPNZA (which deals with the application of the <i>Foreign Judgments Act 1991</i>), as in force immediately before commencement, continues to apply on and after commencement in relation to a judgment given before commencement.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-1__amdact-1__item-2__subsec-5">
+                  <num>5</num>
+                  <content>
+                    <p>Regulations made under <ref href="#sec-49">section 49</ref> of the EPNZA, as in force immediately before commencement, continue to apply on and after commencement in relation to:</p>
+                  </content>
+                  <paragraph eId="schedule-2__part-1__amdact-1__item-2__subsec-5__para-a">
+                    <num>a</num>
+                    <content>
+                      <p>a subpoena to which subitem (2) applies; or</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-1__amdact-1__item-2__subsec-5__para-b">
+                    <num>b</num>
+                    <content>
+                      <p>the taking of evidence, or making of submissions, to which subitem (3) applies.</p>
+                    </content>
+                  </paragraph>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-2__part-2">
+            <num>2</num>
+            <heading>Amendment of the Federal Court of Australia Act 1976</heading>
+            <hcontainer name="amendedAct" eId="schedule-2__part-2__amdact-2">
+              <heading>Federal Court of Australia Act 1976</heading>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-1">
+                <num>3</num>
+                <heading>Paragraph 32A(4)(b)</heading>
+                <content>
+                  <p>Omit “Australian proceeding within the meaning of <ref href="#part-IIIA">Part IIIA</ref>”, substitute “Australian market proceeding within the meaning of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-2">
+                <num>4</num>
+                <heading>Part IIIA</heading>
+                <content>
+                  <p>Repeal the Part.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-3">
+                <num>5</num>
+                <heading>Subsection 47A(5) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-2__amdact-2__item-3__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-4" marker="4">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-4">
+                <num>6</num>
+                <heading>Subsection 47B(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-2__amdact-2__item-4__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-5" marker="5">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-5">
+                <num>7</num>
+                <heading>Section 47G</heading>
+                <content>
+                  <p>Omit “the <i>Evidence and Procedure (New Zealand) Act 1994</i>”, substitute “the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-6">
+                <num>8</num>
+                <heading>Paragraphs 59(2)(y), (za), (zb), (zc), (zd) and (ze)</heading>
+                <content>
+                  <p>Repeal the paragraphs, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-2__amdact-2__item-6__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-y">
+                    <num>y</num>
+                    <content>
+                      <p>	(y)	the Court’s sittings in New Zealand under Part 8 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-za">
+                    <num>za</num>
+                    <content>
+                      <p>	(za)	the enforcement of orders under subsection 85(5) of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-zb">
+                    <num>zb</num>
+                    <content>
+                      <p>	(zb)	the registration and enforcement, and the setting aside of the registration, of judgments under Part 7 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-zc">
+                    <num>zc</num>
+                    <content>
+                      <p>the transmission of documents to the High Court of New Zealand; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-zd">
+                    <num>zd</num>
+                    <content>
+                      <p>	(zd)	taking evidence under <ref href="#sec-89">section 89</ref> of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>; and</p>
+                    </content>
+                  </paragraph>
+                  <paragraph eId="schedule-2__part-2__amdact-2__item-6__qstr-1__para-ze">
+                    <num>ze</num>
+                    <content>
+                      <p>	(ze)	the exercise in Chambers of the Court’s jurisdiction under Part 8 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>; and</p>
+                    </content>
+                  </paragraph>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-2__amdact-2__item-7">
+                <num>9</num>
+                <heading>Saving</heading>
+                <subsection eId="schedule-2__part-2__amdact-2__item-7__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>(1)	Despite the repeal of <ref href="#part-III">Part III</ref>A of the <i>Federal Court of Australia Act 1976</i> made by this Schedule, <ref href="#part-IIIA">Part IIIA</ref> of that Act, as in force immediately before commencement, continues to apply on and after commencement in relation to a proceeding commenced before commencement.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-2__amdact-2__item-7__subsec-2">
+                  <num>2</num>
+                  <content>
+                    <p>(2)	Despite subitem (1), <ref href="#dvs-5">Division 5</ref> of <ref href="#part-III">Part III</ref>A of the <i>Federal Court of Australia Act 1976</i> does not apply on and after commencement in relation to a judgment given on or after commencement.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-2__amdact-2__item-7__subsec-3">
+                  <num>3</num>
+                  <content>
+                    <p>(3)	Despite the amendments made to paragraphs 59(2)(y), (za), (zb), (zc), (zd) and (ze) of the <i>Federal Court of Australia Act 1976</i> by this Schedule, Rules of Court made for the purposes of those paragraphs continue to apply on and after commencement in relation to a proceeding commenced before commencement.</p>
+                  </content>
+                </subsection>
+                <subsection eId="schedule-2__part-2__amdact-2__item-7__subsec-4">
+                  <num>4</num>
+                  <content>
+                    <p>(4)	Regulations made under <ref href="#sec-60">section 60</ref> of the <i>Federal Court of Australia Act 1976</i> for the purposes of <ref href="#part-IIIA">Part IIIA</ref> of that Act continue to apply on and after commencement in relation to a proceeding commenced before commencement.</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-2__part-3">
+            <num>3</num>
+            <heading>Other amendments</heading>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-3">
+              <heading>Defence Force Discipline Act 1982</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-3__item-1">
+                <num>10</num>
+                <heading>Subsection 148A(5) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-3__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-6" marker="6">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-3__item-2">
+                <num>11</num>
+                <heading>Subsection 148B(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-3__item-2__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-7" marker="7">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-3__item-3">
+                <num>12</num>
+                <heading>Section 148F</heading>
+                <content>
+                  <p>Omit “the <i>Evidence and Procedure (New Zealand) Act 1994</i>”, substitute “the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-4">
+              <heading>Family Law Act 1975</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-4__item-1">
+                <num>13</num>
+                <heading>Subsection 102C(5) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-4__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-8" marker="8">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-4__item-2">
+                <num>14</num>
+                <heading>Subsection 102D(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-4__item-2__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-9" marker="9">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-4__item-3">
+                <num>15</num>
+                <heading>Subsection 102E(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-4__item-3__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-10" marker="10">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-4__item-4">
+                <num>16</num>
+                <heading>Section 102L</heading>
+                <content>
+                  <p>Omit “the <i>Evidence and Procedure (New Zealand) Act 1994</i>”, substitute “the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-5">
+              <heading>Federal Magistrates Act 1999</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-5__item-1">
+                <num>17</num>
+                <heading>Subsection 66(5) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-5__item-1__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-11" marker="11">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-5__item-2">
+                <num>18</num>
+                <heading>Subsection 67(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-5__item-2__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-12" marker="12">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-5__item-3">
+                <num>19</num>
+                <heading>Subsection 68(3) (note)</heading>
+                <content>
+                  <p>Repeal the note, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-5__item-3__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <authorialNote placement="end" eId="note-13" marker="13">
+                    <content>
+                      <p>Note:	See Part 6 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                    </content>
+                  </authorialNote>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-5__item-4">
+                <num>20</num>
+                <heading>Section 73</heading>
+                <content>
+                  <p>Omit “the <i>Evidence and Procedure (New Zealand) Act 1994</i>”, substitute “the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-6">
+              <heading>Foreign Judgments Act 1991</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-6__item-1">
+                <num>21</num>
+                <heading>Paragraph 5(8)(d)</heading>
+                <content>
+                  <p>Omit “New Zealand or”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-6__item-2">
+                <num>22</num>
+                <heading>Subsection 5(10)</heading>
+                <content>
+                  <p>Repeal the subsection, substitute:</p>
+                </content>
+                <quotedStructure eId="schedule-2__part-3__amdact-6__item-2__qstr-1" startQuote="“" endQuote="”" from="#" to="#">
+                  <subsection eId="schedule-2__part-3__amdact-6__item-2__qstr-1__subsec-10">
+                    <num>10</num>
+                    <content>
+                      <p>This Part does not apply to a judgment given by a court of New Zealand.</p>
+                    </content>
+                    <authorialNote placement="end" eId="note-14" marker="14">
+                      <content>
+                        <p>Note:	For the enforcement in Australia of judgments given by courts of New Zealand, see Part 7 of the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>.</p>
+                      </content>
+                    </authorialNote>
+                  </subsection>
+                </quotedStructure>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-6__item-3">
+                <num>23</num>
+                <heading>Saving</heading>
+                <content>
+                  <p>Despite the amendments made to paragraph 5(8)(d) and subsection 5(10) of the <i>Foreign Judgments Act 1991</i> by this Schedule, those provisions, as in force immediately before commencement, continue to apply on and after commencement in relation to a judgment given before commencement.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-7">
+              <heading>Law and Justice Legislation Amendment (Identity Crimes and Other Measures) Act 2010</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-7__item-1">
+                <num>24</num>
+                <heading>Item 22 of Schedule 2</heading>
+                <content>
+                  <p>Repeal the item.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-8">
+              <heading>Service and Execution of Process Act 1992</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-8__item-1">
+                <num>25</num>
+                <heading>Subsection 3(1) (paragraph (e) of the definition of judgment)</heading>
+                <content>
+                  <p>After “the <i>Foreign Judgments Act 1991</i>”, insert “or the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-8__item-2">
+                <num>26</num>
+                <heading>Subsection 3(1) (paragraph (f) of the definition of judgment)</heading>
+                <content>
+                  <p>After “the <i>Foreign Judgments Act 1991</i>”, insert “or the <i>Trans</i><i>-</i><i>Tasman Proceedings Act 20</i><i>10</i>”.</p>
+                </content>
+              </hcontainer>
+            </hcontainer>
+            <hcontainer name="amendedAct" eId="schedule-2__part-3__amdact-9">
+              <heading>Trans-Tasman Proceedings Act 2010</heading>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-9__item-1">
+                <num>27</num>
+                <heading>Subsection 62(2)</heading>
+                <content>
+                  <p>Before “judicial proceeding”, insert “federal”.</p>
+                </content>
+              </hcontainer>
+              <hcontainer name="item" eId="schedule-2__part-3__amdact-9__item-2">
+                <num>28</num>
+                <heading>Subsection 87(2)</heading>
+                <content>
+                  <p>Before “judicial proceeding”, insert “federal”.</p>
+                  <p>Endnotes</p>
+                  <p>Endnote 1—About the endnotes</p>
+                  <p>The endnotes provide details of the history of this legislation and its provisions. The following endnotes are included in each compilation:</p>
+                  <p>Endnote 1—About the endnotes</p>
+                  <p>Endnote 2—Abbreviation key</p>
+                  <p>Endnote 3—Legislation history</p>
+                  <p>Endnote 4—Amendment history</p>
+                  <p>Endnote 5—Uncommenced amendments</p>
+                  <p>Endnote 6—Modifications</p>
+                  <p>Endnote 7—Misdescribed amendments</p>
+                  <p>Endnote 8—Miscellaneous</p>
+                  <p>If there is no information under a particular endnote, the word “none” will appear in square brackets after the endnote heading.</p>
+                  <p><b>Abbreviation key—Endnote 2</b></p>
+                  <p>The abbreviation key in this endnote sets out abbreviations that may be used in the endnotes.</p>
+                  <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                  <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                  <p>The legislation history in endnote 3 provides information about each law that has amended the compiled law. The information includes commencement information for amending laws and details of application, saving or transitional provisions that are not included in this compilation.</p>
+                  <p>The amendment history in endnote 4 provides information about amendments at the provision level. It also includes information about any provisions that have expired or otherwise ceased to have effect in accordance with a provision of the compiled law.</p>
+                  <p><b>Uncommenced</b><b> amendments—Endnote 5</b></p>
+                  <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in endnote 5.</p>
+                  <p><b>Modifications—Endnote 6</b></p>
+                  <p>If the compiled law is affected by a modification that is in force, details of the modification are included in endnote 6.</p>
+                  <p><b>Misdescribed</b><b> amendments—Endnote 7</b></p>
+                  <p>An amendment is a misdescribed amendment if the effect of the amendment cannot be incorporated into the text of the compilation. Any misdescribed amendment is included in endnote 7.</p>
+                  <p><b>Miscellaneous—Endnote 8</b></p>
+                  <p>Endnote 8 includes any additional information that may be helpful for a reader of the compilation.</p>
+                  <p>Endnote 2—Abbreviation key</p>
+                </content>
+                <table>
+                  <tr>
+                    <td>ad = added or inserted</td>
+                    <td>pres = present</td>
+                  </tr>
+                  <tr>
+                    <td>am = amended</td>
+                    <td>prev = previous</td>
+                  </tr>
+                  <tr>
+                    <td>c = clause(s)</td>
+                    <td>(prev) = previously</td>
+                  </tr>
+                  <tr>
+                    <td>Ch = Chapter(s)</td>
+                    <td>Pt = Part(s)</td>
+                  </tr>
+                  <tr>
+                    <td>def = definition(s)</td>
+                    <td>r = regulation(s)/rule(s)</td>
+                  </tr>
+                  <tr>
+                    <td>Dict = Dictionary</td>
+                    <td>Reg = Regulation/Regulations</td>
+                  </tr>
+                  <tr>
+                    <td>disallowed = disallowed by Parliament</td>
+                    <td>reloc = relocated</td>
+                  </tr>
+                  <tr>
+                    <td>Div = Division(s)</td>
+                    <td>renum = renumbered</td>
+                  </tr>
+                  <tr>
+                    <td>exp = expired or ceased to have effect</td>
+                    <td>rep = repealed</td>
+                  </tr>
+                  <tr>
+                    <td>hdg = heading(s)</td>
+                    <td>rs = repealed and substituted</td>
+                  </tr>
+                  <tr>
+                    <td>LI = Legislative Instrument</td>
+                    <td>s = section(s)</td>
+                  </tr>
+                  <tr>
+                    <td>LIA = Legislative Instruments Act 2003</td>
+                    <td>Sch = Schedule(s)</td>
+                  </tr>
+                  <tr>
+                    <td>mod = modified/modification</td>
+                    <td>Sdiv = Subdivision(s)</td>
+                  </tr>
+                  <tr>
+                    <td>No = Number(s)</td>
+                    <td>SLI = Select Legislative Instrument</td>
+                  </tr>
+                  <tr>
+                    <td>o = order(s)</td>
+                    <td>SR = Statutory Rules</td>
+                  </tr>
+                  <tr>
+                    <td>Ord = Ordinance</td>
+                    <td>Sub-Ch = Sub-Chapter(s)</td>
+                  </tr>
+                  <tr>
+                    <td>orig = original</td>
+                    <td>SubPt = Subpart(s)</td>
+                  </tr>
+                  <tr>
+                    <td>par = paragraph(s)/subparagraph(s)
+/sub-subparagraph(s)</td>
+                    <td></td>
+                  </tr>
+                </table>
+                <content>
+                  <p>Endnote 3—Legislation history</p>
+                </content>
+                <table>
+                  <tr>
+                    <td>Act</td>
+                    <td>Number and year</td>
+                    <td>Assent</td>
+                    <td>Commencement</td>
+                    <td>Application, saving and transitional provisions</td>
+                  </tr>
+                  <tr>
+                    <td>Trans-Tasman Proceedings (Transitional and Consequential Provisions) Act 2010</td>
+                    <td>36, 2010</td>
+                    <td>13 Apr 2010</td>
+                    <td>See s 2(1)</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Trans-Tasman Proceedings Amendment and Other Measures Act 2011</td>
+                    <td>64, 2011</td>
+                    <td>29 June 2011</td>
+                    <td>Sch 2 (item 12): (a)</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Statute Law Revision Act 2012</td>
+                    <td>136, 2012</td>
+                    <td>22 Sept 2012</td>
+                    <td>Sch 2 (item 44): 2 Mar 2011 (see s 2(1))</td>
+                    <td>—</td>
+                  </tr>
+                </table>
+                <paragraph eId="schedule-2__part-3__amdact-9__item-2__para-a">
+                  <num>a</num>
+                  <content>
+                    <p><i>(a)</i><i>	</i>Subsection 2(1) (item 2) of the <i>Trans</i><i>-</i><i>Tasman Proceedings Amendment and Other Measures Act 2011</i><i> </i>provides as follows:</p>
+                  </content>
+                </paragraph>
+                <subsection eId="schedule-2__part-3__amdact-9__item-2__subsec-1">
+                  <num>1</num>
+                  <content>
+                    <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+                  </content>
+                  <table>
+                    <tr>
+                      <td>Commencement information</td>
+                      <td>Commencement information</td>
+                      <td>Commencement information</td>
+                    </tr>
+                    <tr>
+                      <td>Column 1</td>
+                      <td>Column 2</td>
+                      <td>Column 3</td>
+                    </tr>
+                    <tr>
+                      <td>Provision(s)</td>
+                      <td>Commencement</td>
+                      <td>Date/Details</td>
+                    </tr>
+                    <tr>
+                      <td>2.  Schedules 1 and 2</td>
+                      <td>Immediately after the commencement of section 3 of the Trans-Tasman Proceedings Act 2010.</td>
+                      <td>11 October 2013</td>
+                    </tr>
+                  </table>
+                  <content>
+                    <p>Endnote 4—Amendment history</p>
+                  </content>
+                  <table>
+                    <tr>
+                      <td>Provision affected</td>
+                      <td>How affected</td>
+                    </tr>
+                    <tr>
+                      <td>s 2</td>
+                      <td>am No 136, 2012</td>
+                    </tr>
+                    <tr>
+                      <td>Sch 1</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>item 2</td>
+                      <td>am No 64, 2011</td>
+                    </tr>
+                  </table>
+                  <content>
+                    <p>Endnote 5—Uncommenced amendments [none]</p>
+                    <p>Endnote 6—Modifications [none]</p>
+                    <p>Endnote 7—Misdescribed amendments [none]</p>
+                    <p>Endnote 8—Miscellaneous [none]</p>
+                  </content>
+                </subsection>
+              </hcontainer>
+            </hcontainer>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+    </attachments>
+  </act>
+</akomaNtoso>

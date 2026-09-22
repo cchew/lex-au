@@ -1,0 +1,1439 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2020/23/!main"/>
+          <FRBRuri value="/akn/au/act/2020/23"/>
+          <FRBRdate date="2020-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="23"/>
+          <FRBRname value="boosting-cash-flow-for-employers-(coronavirus-economic-response-package)-act-2020"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2020/23/eng@2020-06-20/!main"/>
+          <FRBRuri value="/akn/au/act/2020/23/eng@2020-06-20"/>
+          <FRBRdate date="2020-06-20" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2020/23/eng@2020-06-20/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2020/23/eng@2020-06-20/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2020-01-01" type="generation" eId="evt-creation" source="#boosting-cash-flow-for-employers-(coronavirus-economic-response-package)-act-2020"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2020/38" date="2020-04-09"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2020/61" date="2020-06-19"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="insertion" eId="mod-1">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-2A"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-3">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-4">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-5">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-6"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCTerm eId="term-abn" href="/ontology/term/au/term-abn" showAs="ABN"/>
+        <TLCTerm eId="term-acnc-registered-charity" href="/ontology/term/au/term-acnc-registered-charity" showAs="ACNC-registered charity"/>
+        <TLCTerm eId="term-alienated-personal-services-payment" href="/ontology/term/au/term-alienated-personal-services-payment" showAs="alienated personal services payment"/>
+        <TLCTerm eId="term-annual-tax-period" href="/ontology/term/au/term-annual-tax-period" showAs="annual tax period"/>
+        <TLCTerm eId="term-assessable-income" href="/ontology/term/au/term-assessable-income" showAs="assessable income"/>
+        <TLCTerm eId="term-assessed-net-amount" href="/ontology/term/au/term-assessed-net-amount" showAs="assessed net amount"/>
+        <TLCTerm eId="term-assessment" href="/ontology/term/au/term-assessment" showAs="assessment"/>
+        <TLCTerm eId="term-associate" href="/ontology/term/au/term-associate" showAs="associate"/>
+        <TLCTerm eId="term-business" href="/ontology/term/au/term-business" showAs="business"/>
+        <TLCTerm eId="term-cash-flow-boost" href="/ontology/term/au/term-cash-flow-boost" showAs="cash flow boost"/>
+        <TLCTerm eId="term-commissioner" href="/ontology/term/au/term-commissioner" showAs="Commissioner"/>
+        <TLCTerm eId="term-entity" href="/ontology/term/au/term-entity" showAs="entity"/>
+        <TLCTerm eId="term-general-interest-charge" href="/ontology/term/au/term-general-interest-charge" showAs="general interest charge"/>
+        <TLCTerm eId="term-gst-return" href="/ontology/term/au/term-gst-return" showAs="GST return"/>
+        <TLCTerm eId="term-income-year" href="/ontology/term/au/term-income-year" showAs="income year"/>
+        <TLCTerm eId="term-large-withholder" href="/ontology/term/au/term-large-withholder" showAs="large withholder"/>
+        <TLCTerm eId="term-medium-withholder" href="/ontology/term/au/term-medium-withholder" showAs="medium withholder"/>
+        <TLCTerm eId="term-non-profit-body" href="/ontology/term/au/term-non-profit-body" showAs="non-profit body"/>
+        <TLCTerm eId="term-quarter" href="/ontology/term/au/term-quarter" showAs="quarter"/>
+        <TLCTerm eId="term-scheme" href="/ontology/term/au/term-scheme" showAs="scheme"/>
+        <TLCTerm eId="term-small-business-entity" href="/ontology/term/au/term-small-business-entity" showAs="small business entity"/>
+        <TLCTerm eId="term-small-withholder" href="/ontology/term/au/term-small-withholder" showAs="small withholder"/>
+        <TLCTerm eId="term-tax-period" href="/ontology/term/au/term-tax-period" showAs="tax period"/>
+        <TLCTerm eId="term-taxable-supply" href="/ontology/term/au/term-taxable-supply" showAs="taxable supply"/>
+        <TLCTerm eId="term-withholding-period-total" href="/ontology/term/au/term-withholding-period-total" showAs="withholding period total"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Boosting Cash Flow for Employers (Coronavirus Economic Response Package) Act 2020</p>
+      <p>No. 23, 2020</p>
+      <p><b>Compilation No.</b><b> </b><b>2</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>20 June 2020</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 61, 2020</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>26 June 2020</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Boosting Cash Flow for Employers (Coronavirus Economic Response Package) Act 2020</i> that shows the text of the law as amended and in force on 20 June 2020 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>2A	Application to external Territories	1</p>
+      <p>3	General administration of Act	2</p>
+      <p>4	Definitions	2</p>
+      <p>5	Entitlement to cash flow boost—first boosts	5</p>
+      <p>6	Entitlement to cash flow boost—second boosts	8</p>
+      <p>7	Amount of cash flow boost	10</p>
+      <p>8	Payment of cash flow boost	12</p>
+      <p>9	Overpayments etc.	14</p>
+      <p>10	General interest charge on overpayment debts	14</p>
+      <p>11	Time limits for cash flow boost	15</p>
+      <p>12	Review of decisions	16</p>
+      <p>Endnotes	18</p>
+      <p>Endnote 1—About the endnotes	18</p>
+      <p>Endnote 2—Abbreviation key	20</p>
+      <p>Endnote 3—Legislation history	21</p>
+      <p>Endnote 4—Amendment history	22</p>
+      <p>An Act to provide for a cash flow boost relating to the coronavirus, and for related purposes</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act is the <i>Boosting Cash Flow for Employers (Coronavirus Economic Response Package) </i><i>Act 2020</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <subsection eId="sec-2__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+          </content>
+          <table>
+            <tr>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+              <th>Commencement information</th>
+            </tr>
+            <tr>
+              <td>Column 1</td>
+              <td>Column 2</td>
+              <td>Column 3</td>
+            </tr>
+            <tr>
+              <td>Provisions</td>
+              <td>Commencement</td>
+              <td>Date/Details</td>
+            </tr>
+            <tr>
+              <td>1.  The whole of this Act</td>
+              <td>The day this Act receives the Royal Assent.</td>
+              <td>24 March 2020</td>
+            </tr>
+          </table>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-2__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-2A">
+        <num>2A</num>
+        <heading>Application to external Territories</heading>
+        <content>
+          <p>		This Act extends to every external Territory referred to in the definition of <b><i>Australia</i></b> (<ref href="#sec-960">within the meaning of section 960</ref>-505 of the <i>Income Tax Assessment Act 1997</i>).</p>
+        </content>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>General administration of Act</heading>
+        <content>
+          <p><role refersTo="#commissioner">The Commissioner</role> has the general administration of this Act.</p>
+        </content>
+        <authorialNote placement="end" eId="note-2" marker="2">
+          <content>
+            <p>Note:	An effect of this provision is that people who acquire information under this Act are subject to the confidentiality obligations and exceptions in <ref href="#dvs-355">Division 355</ref> in Schedule 1 to the <i>Taxation Administration Act 1953</i>.</p>
+          </content>
+        </authorialNote>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Definitions</heading>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>In this Act:</p>
+          </content>
+          <content>
+            <p><term refersTo="#term-abn">ABN</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-acnc-registered-charity">ACNC-registered charity</term> has the meaning given by <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><b><i>agent</i></b>: this Act applies to some entities that are not agents in the same way as it applies to agents: see subsections (6) and (7).</p>
+            <p><term refersTo="#term-alienated-personal-services-payment">alienated personal services payment</term> has the meaning given by <def><ref href="#sec-13">section 13</ref>-10 in Schedule 1 to <ref href="">the Taxation Administration Act 1953</ref>.</def></p>
+            <p><term refersTo="#term-annual-tax-period">annual tax period</term> has the meaning given by <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><term refersTo="#term-assessable-income">assessable income</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-assessed-net-amount">assessed net amount</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-assessment">assessment</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-associate">associate</term> has the meaning given by <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><term refersTo="#term-business">business</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-cash-flow-boost">cash flow boost</term> has the meaning given by <def>subsections 5(1) and 6(1).</def></p>
+            <p><term refersTo="#term-commissioner">Commissioner</term> means <def>the Commissioner of Taxation.</def></p>
+            <p><term refersTo="#term-entity">entity</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-general-interest-charge">general interest charge</term> means <def>the charge worked out under <ref href="#part-II">Part II</ref>A of <ref href="">the Taxation Administration Act 1953</ref>.</def></p>
+            <p><term refersTo="#term-gst-return">GST return</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-income-year">income year</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-large-withholder">large withholder</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><b><i>medium business entity</i></b>, for an income year, means an entity covered by subsection (2) for the income year.</p>
+            <p><term refersTo="#term-medium-withholder">medium withholder</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-non-profit-body">non-profit body</term> has the same meaning as <def>in <ref href="#sec-23">section 23</ref>-15 of the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><term refersTo="#term-quarter">quarter</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-scheme">scheme</term> has the meaning given by <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><term refersTo="#term-small-business-entity">small business entity</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-small-withholder">small withholder</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-taxable-supply">taxable supply</term> has the meaning given by <def>the A New Tax System (Goods and Services Tax) Act 1999.</def></p>
+            <p><term refersTo="#term-tax-period">tax period</term> has the meaning given by <def><ref href="">the Income Tax Assessment Act 1997</ref>.</def></p>
+            <p><term refersTo="#term-withholding-period-total">withholding period total</term> has the meaning given by <def>subsection (4).</def></p>
+          </content>
+          <authorialNote placement="end" eId="note-3" marker="3">
+            <content>
+              <p>Note:	The term <b><i>non</i></b><b><i>-</i></b><b><i>profit body</i></b> is not defined in the <i>A New Tax System (Goods and Services Tax) Act 1999</i>. However, this definition ensures that the meaning of the term in this Act does not diverge from the meaning of the term in <ref href="#sec-23">section 23</ref>-15 of that Act.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-4__subsec-2">
+          <num>2</num>
+          <content>
+            <p>An entity is covered by this subsection for an income year if:</p>
+          </content>
+          <paragraph eId="sec-4__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the entity is not a small business entity for the income year; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>the entity would be a small business entity for the income year if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-2__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	each reference in Subdivision 328-C of the <i>Income Tax Assessment Act 1997</i> (about what is a small business entity) to $10 million were instead a reference to $50 million; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-2__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the reference in paragraph 328-110(5)(b) of that Act to a small business entity were instead a reference to an entity covered by this subsection.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-3">
+          <num>3</num>
+          <content>
+            <p>For the purposes of this Act, in determining whether an entity is a small business entity or a medium business entity for an income year, treat the entity as carrying on a business in the year if the entity is a non-profit body during the year.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-4">
+          <num>4</num>
+          <content>
+            <p>	(4)	An entity’s <b><i>withholding period total</i></b><b> </b>for a period<b> </b>is the total of the following:</p>
+          </content>
+          <paragraph eId="sec-4__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	the total of all amounts that the entity withholds under Subdivision 12-B, 12-C or 12-D in Schedule 1 to the <i>Taxation Administration Act 1953</i> from payments that it makes in the period;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>the total of all amounts that the entity must pay under <ref href="#dvs-13">Division 13</ref> in that Schedule in relation to alienated personal services payments that it receives in the period (regardless of whether the entity actually pays the amounts).</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-5">
+          <num>5</num>
+          <content>
+            <p>	(5)	For the purposes of this Act, in determining whether an entity must withhold amounts from payments under Subdivision 12-B, 12-C or 12-D in Schedule 1 to the <i>Taxation Administration Act 1953</i>, disregard any provision that provides for an exception to the entity’s obligation to withhold such amounts.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-6">
+          <num>6</num>
+          <content>
+            <p>	(6)	For the purposes of this Act, <ref href="#sec-960">section 960</ref>-105 of the <i>Income Tax Assessment Act 1997</i> applies in determining whether an entity is an agent of another entity.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-7">
+          <num>7</num>
+          <content>
+            <p>	(7)	For the purposes of subsection (6), treat the reference in subsection 960-105(2) of the <i>Income Tax Assessment Act 1997</i> to “a provision of this Act” as instead being a reference to “a provision of this Act or of the <i>Boosting Cash Flow for Employers (Coronavirus Economic Response Package) Act 2020</i>”.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-5">
+        <num>5</num>
+        <heading>Entitlement to cash flow boost—first boosts</heading>
+        <subsection eId="sec-5__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	An entity is entitled to a payment (known as a <b><i>cash flow boost</i></b>) for a period covered by subsection (2) if:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>any of the following requirements are satisfied:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	the entity makes a payment in the period and must withhold an amount from the payment under Subdivision 12-B, 12-C or 12-D in Schedule 1 to the <i>Taxation Administration Act 1953 </i>(regardless of whether the entity actually withholds the amount);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the entity must pay an amount under <ref href="#dvs-13">Division 13</ref> in that Schedule in relation to an alienated personal services payment that it receives in the period (regardless of whether the entity actually pays the amount); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-c">
+            <num>c</num>
+            <content>
+              <p>the period applies to the entity under subsection (3); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-d">
+            <num>d</num>
+            <content>
+              <p>any of the following requirements are satisfied:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	the entity was a small business entity or a medium business entity for the most recent income year for which there is an assessment in respect of the entity of a kind mentioned in subparagraph (a)(ii) of the definition of <b><i>assessment</i></b> in subsection 6(1) of the <i>Income Tax Assessment Act 1936</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> is satisfied on a reasonable basis that the entity is a small business entity or a medium business entity for the income year in which the period starts; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-e">
+            <num>e</num>
+            <content>
+              <p>the entity notifies <role refersTo="#commissioner">the Commissioner</role>, in the approved form lodged with <role refersTo="#commissioner">the Commissioner</role>, of its withholding period total for the period; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-f">
+            <num>f</num>
+            <content>
+              <p>either:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>the entity is an ACNC-registered charity at any time in the period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the entity had an ABN on <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner), and the requirement in subsection (5) or (6) is satisfied; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-g">
+            <num>g</num>
+            <content>
+              <p>neither the entity nor any associate or agent of the entity has entered into or carried out a scheme or part of a scheme for the sole or dominant purpose of achieving any of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>making the entity entitled to the cash flow boost for the period;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>increasing the amount of the cash flow boost to which the entity is entitled (disregarding this paragraph) for the period.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The following periods are covered by this subsection:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the months of March 2020, April 2020, May 2020 and June 2020;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>the quarters ending on <date date="2020-03-31">31 March 2020</date> and <date date="2020-06-30">30 June 2020</date>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-3">
+          <num>3</num>
+          <content>
+            <p>A period applies to an entity if:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>for a period that is a month—the entity is a large withholder or a medium withholder for the month; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>for a period that is a quarter—the entity is a small withholder for a month that starts in the quarter.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-4">
+          <num>4</num>
+          <content>
+            <p>For the purposes of subsection (3):</p>
+          </content>
+          <paragraph eId="sec-5__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>treat an entity that is a large withholder or a medium withholder for the first month in a quarter as being a large withholder or a medium withholder for each month in the quarter; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>treat an entity that is a small withholder for the first month in a quarter as being a small withholder for each month in the quarter.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-5">
+          <num>5</num>
+          <content>
+            <p>For the purposes of paragraph (1)(f), the requirement in this subsection is satisfied if:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>an amount was included in the entity’s assessable income for the 2018-19 income year in relation to it carrying on a business; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the Commissioner had notice on or before <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner) that the amount should be so included.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-6">
+          <num>6</num>
+          <content>
+            <p>For the purposes of paragraph (1)(f), the requirement in this subsection is satisfied if:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>the entity made a taxable supply in a tax period that applied to it that:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-6__para-i">
+            <num>i</num>
+            <content>
+              <p>started on or after <date date="2018-07-01">1 July 2018</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-6__para-ii">
+            <num>ii</num>
+            <content>
+              <p>ended before <date date="2020-03-12">12 March 2020</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>the Commissioner had notice on or before <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner) that the entity had made the taxable supply.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-5__subsec-7">
+          <num>7</num>
+          <content>
+            <p>	(7)	For the purposes of subsection (6), in determining whether the entity made a supply (within the meaning of the <i>A New Tax System (Goods and Services Tax) Act 1999</i>) that is a taxable supply:</p>
+          </content>
+          <paragraph eId="sec-5__subsec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>assume that the entity is registered (within the meaning of that Act); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>assume that the supply is neither GST-free (within the meaning of that Act) nor input taxed (within the meaning of that Act); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-5__subsec-7__para-c">
+            <num>c</num>
+            <content>
+              <p>for an entity carrying on business solely in the external Territories—assume that the external Territories are part of the indirect tax zone (within the meaning of that Act).</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-6">
+        <num>6</num>
+        <heading>Entitlement to cash flow boost—second boosts</heading>
+        <subsection eId="sec-6__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	An entity is entitled to a payment (also known as a <b><i>cash flow boost</i></b>) for a period covered by subsection (2) if:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>the period covered by subsection (2) applies to the entity under subsection (3); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>the entity is entitled to one or more cash flow boosts for periods covered by subsection 5(2); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-c">
+            <num>c</num>
+            <content>
+              <p>the entity notifies <role refersTo="#commissioner">the Commissioner</role>, in the approved form lodged with <role refersTo="#commissioner">the Commissioner</role>, in respect of the entitlement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-d">
+            <num>d</num>
+            <content>
+              <p>either:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>the entity is an ACNC-registered charity at any time in the period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the entity had an ABN on <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner), and the requirement in subsection (5) or (6) is satisfied; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-e">
+            <num>e</num>
+            <content>
+              <p>neither the entity nor any associate or agent of the entity has entered into or carried out a scheme or part of a scheme for the sole or dominant purpose of achieving any of the following:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>making the entity entitled to the cash flow boost for the period;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>increasing the amount of the cash flow boost to which the entity is entitled (disregarding this paragraph) for the period.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The following periods are covered by this subsection:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the months of June 2020, July 2020, August 2020 and September 2020;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>the quarters ending on <date date="2020-06-30">30 June 2020</date> and <date date="2020-09-30">30 September 2020</date>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	An entity may be entitled to a cash flow boost under subsection (1) for the month of June 2020 or the quarter ending on <date date="2020-06-30">30 June 2020</date>, and also be entitled to a cash flow boost under subsection 5(1) for the same month or quarter.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-3">
+          <num>3</num>
+          <content>
+            <p>A period applies to an entity if:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>for a period that is a month—the entity is a large withholder or a medium withholder for the month; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>for a period that is a quarter:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-3__para-i">
+            <num>i</num>
+            <content>
+              <p>the entity is a small withholder for a month that starts in the quarter; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-3__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the entity is not a large withholder, a medium withholder or a small withholder for a month that starts in the quarter.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-4">
+          <num>4</num>
+          <content>
+            <p>For the purposes of subsection (3):</p>
+          </content>
+          <paragraph eId="sec-6__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>treat an entity that is a large withholder or a medium withholder for the first month in a quarter as being a large withholder or a medium withholder for each month in the quarter; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>treat an entity that is a small withholder for the first month in a quarter as being a small withholder for each month in the quarter.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-5">
+          <num>5</num>
+          <content>
+            <p>For the purposes of paragraph (1)(d), the requirement in this subsection is satisfied if:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>an amount was included in the entity’s assessable income for the 2018-19 income year in relation to it carrying on a business; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the Commissioner had notice on or before <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner) that the amount should be so included.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-6">
+          <num>6</num>
+          <content>
+            <p>For the purposes of paragraph (1)(d), the requirement in this subsection is satisfied if:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>the entity made a taxable supply in a tax period that applied to it that:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-6__para-i">
+            <num>i</num>
+            <content>
+              <p>started on or after <date date="2018-07-01">1 July 2018</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-6__para-ii">
+            <num>ii</num>
+            <content>
+              <p>ended before <date date="2020-03-12">12 March 2020</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>the Commissioner had notice on or before <date date="2020-03-12">12 March 2020</date> (or a later time allowed by the Commissioner) that the entity had made the taxable supply.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-7">
+          <num>7</num>
+          <content>
+            <p>	(7)	For the purposes of subsection (6), in determining whether the entity made a supply (within the meaning of the <i>A New Tax System (Goods and Services Tax) Act 1999</i>) that is a taxable supply:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>assume that the entity is registered (within the meaning of that Act); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>assume that the supply is neither GST-free (within the meaning of that Act) nor input taxed (within the meaning of that Act); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-7__para-c">
+            <num>c</num>
+            <content>
+              <p>for an entity carrying on business solely in the external Territories—assume that the external Territories are part of the indirect tax zone (within the meaning of that Act).</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-7">
+        <num>7</num>
+        <heading>Amount of cash flow boost</heading>
+        <content>
+          <p>First boosts</p>
+        </content>
+        <subsection eId="sec-7__subsec-1">
+          <num>1</num>
+          <content>
+            <p>If an entity is entitled to a cash flow boost for a period covered by subsection 5(2), the amount of the entity’s cash flow boost for the period is:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>if the period is the first period for which the entity is entitled to a cash flow boost—the greater of $10,000 and the entity’s withholding period total for the period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>otherwise—the entity’s withholding period total for the period.</p>
+            </content>
+            <content>
+              <p>Caps on amount of first boosts</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The amount worked out under subsection (1) must be reduced to the extent (if any) necessary to ensure that the sum of the entity’s cash flow boost for the period, and its cash flow boost for any previous periods:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>does not exceed $50,000; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>if paragraph (1)(b) applies—does not exceed the sum of the entity’s withholding period totals for those periods.</p>
+            </content>
+            <authorialNote placement="end" eId="note-5" marker="5">
+              <content>
+                <p>Note:	This may result in that amount being reduced to nil.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-3">
+          <num>3</num>
+          <content>
+            <p>For the purposes of subsections (1) and (2), treat an entity’s withholding period total for a period that is the month of March 2020 as being 3 times the actual amount of that withholding period total.</p>
+          </content>
+          <content>
+            <p>Second boosts</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-4">
+          <num>4</num>
+          <content>
+            <p>If an entity is entitled to a cash flow boost for a period covered by subsection 6(2), the amount of the entity’s cash flow boost for the period is:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>if the period is a month—25% of the total of the amounts of cash flow boosts to which the entity is entitled for periods covered by subsection 5(2); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>if the period is a quarter—50% of that total.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-5">
+          <num>5</num>
+          <content>
+            <p>Subsection (6) applies if:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>both of the following requirements are satisfied:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>the period of the month of June 2020 applies to the entity under subsection 6(3);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the period of the quarter ending on <date date="2020-09-30">30 September 2020</date> applies to the entity under subsection 6(3); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>both of the following requirements are satisfied:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>the period of the quarter ending on <date date="2020-06-30">30 June 2020</date> applies to the entity under subsection 6(3);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the period of the month of July 2020 applies to the entity under subsection 6(3).</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-6">
+          <num>6</num>
+          <content>
+            <p>Despite subsection (4), <role refersTo="#commissioner">the Commissioner</role> may adjust the amount of the entity’s cash flow boost for a period worked out under that subsection to ensure that:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>the total of the amounts of cash flow boosts to which the entity is entitled for periods covered by subsection 6(2) equals the total of the amounts of cash flow boosts to which the entity is entitled for periods covered by subsection 5(2); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>the total of the amounts of cash flow boosts to which the entity is entitled for periods covered by subsection 6(2) does not exceed the total of the amounts of cash flow boosts to which the entity is entitled for periods covered by subsection 5(2).</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-8">
+        <num>8</num>
+        <heading>Payment of cash flow boost</heading>
+        <content>
+          <p>First boosts</p>
+        </content>
+        <subsection eId="sec-8__subsec-1">
+          <num>1</num>
+          <content>
+            <p>If <role refersTo="#commissioner">the Commissioner</role> is satisfied that an entity is entitled to a cash flow boost for a period covered by subsection 5(2), <role refersTo="#commissioner">the Commissioner</role> must pay the entity that cash flow boost no later than:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>if the entity is a large withholder for the period—the time at which:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	the entity must pay the Commissioner, in accordance with <ref href="#dvs-3">Division 3</ref>3 of the<i> A New Tax System (Goods and Services Tax) Act 1999</i>, the entity’s assessed net amount for the tax period in which the period starts; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> must pay the entity, in accordance with <ref href="#dvs-35">Division 35</ref> of that Act, an amount in respect of the entity’s assessed net amount for the tax period in which the period starts; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>otherwise—the later of:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>the time of the notification mentioned in paragraph 5(1)(e); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	the time at which the entity must notify the Commissioner of its withholding period total for the period in accordance with subsection 16-150(1) in Schedule 1 to the <i>Taxation Administration Act 1953</i>.</p>
+            </content>
+            <content>
+              <p>Second boosts</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-2">
+          <num>2</num>
+          <content>
+            <p>If <role refersTo="#commissioner">the Commissioner</role> is satisfied that an entity is entitled to a cash flow boost for a period covered by subsection 6(2), <role refersTo="#commissioner">the Commissioner</role> must pay the entity that cash flow boost no later than the latest of the following times:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the time of the notification mentioned in paragraph 6(1)(c);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the time at which the entity must give the Commissioner its GST return for the tax period corresponding to the period in accordance with <ref href="#dvs-3">Division 3</ref>1 of the<i> A New Tax System (Goods and Services Tax) Act 1999</i>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-c">
+            <num>c</num>
+            <content>
+              <p>the time at which the entity actually gives <role refersTo="#commissioner">the Commissioner</role> that GST return.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	Subsection (2) does not apply if the 2019-20 financial year is an annual tax period that applies to the entity or if the entity is not registered (within the meaning of the <i>A New Tax System (Goods and Services Tax) Act 1999</i>). Instead, if the Commissioner is satisfied that the entity is entitled to a cash flow boost for a period covered by subsection 6(2), the Commissioner must pay the entity that cash flow boost no later than the later of:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the time of the notification mentioned in paragraph 6(1)(c); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>either:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-3__para-i">
+            <num>i</num>
+            <content>
+              <p>if the period is the quarter ending on <date date="2020-06-30">30 June 2020</date>—<date date="2020-07-28">28 July 2020</date>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-3__para-ii">
+            <num>ii</num>
+            <content>
+              <p>if the period is the quarter ending on <date date="2020-09-30">30 September 2020</date>—<date date="2020-10-28">28 October 2020</date>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-9">
+        <num>9</num>
+        <heading>Overpayments etc.</heading>
+        <subsection eId="sec-9__subsec-1">
+          <num>1</num>
+          <content>
+            <p>This section applies if:</p>
+          </content>
+          <paragraph eId="sec-9__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> pays an amount by way of a cash flow boost for an entity; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>either:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>the entity was not entitled to the cash flow boost; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the amount paid is more than the correct amount of the entity’s cash flow boost.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-9__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The entity is liable to repay the following amount to the Commonwealth:</p>
+          </content>
+          <paragraph eId="sec-9__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>if the entity was not entitled to the cash flow boost—the whole of the amount referred to in paragraph (1)(a);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>if the amount paid is more than the correct amount of the cash flow boost—the amount by which the amount paid exceeds the correct amount.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-9__subsec-3">
+          <num>3</num>
+          <content>
+            <p>An amount that an entity is liable to repay under subsection (2) is due and payable on the day on which <role refersTo="#commissioner">the Commissioner</role> pays the amount referred to in paragraph (1)(a).</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-10">
+        <num>10</num>
+        <heading>General interest charge on overpayment debts</heading>
+        <subsection eId="sec-10__subsec-1">
+          <num>1</num>
+          <content>
+            <p>If:</p>
+          </content>
+          <paragraph eId="sec-10__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>an entity is liable under subsection 9(2) to repay an amount; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-10__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>the whole or a part of the amount remains unpaid after the time by which the amount is due to be paid;</p>
+            </content>
+            <content>
+              <p>the entity is liable to pay general interest charge on the unpaid amount.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-10__subsec-2">
+          <num>2</num>
+          <content>
+            <p>An entity who is liable under this section to pay general interest charge on an unpaid amount is liable to pay the charge for each day in the period that:</p>
+          </content>
+          <paragraph eId="sec-10__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>started at the beginning of the day by which the unpaid amount was due to be paid; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-10__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>finishes at the end of the last day at the end of which any of the following remains unpaid:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-10__subsec-2__para-i">
+            <num>i</num>
+            <content>
+              <p>the unpaid amount;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-10__subsec-2__para-ii">
+            <num>ii</num>
+            <content>
+              <p>general interest charge on any of the unpaid amount.</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-11">
+        <num>11</num>
+        <heading>Time limits for cash flow boost</heading>
+        <subsection eId="sec-11__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Despite anything in this Act:</p>
+          </content>
+          <paragraph eId="sec-11__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>the Commissioner must not pay an amount by way of a cash flow boost after <date date="2026-06-30">30 June 2026</date>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-1__para-i">
+            <num>i</num>
+            <content>
+              <p>an entity is entitled to a cash flow boost for a period (disregarding this paragraph); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-1__para-ii">
+            <num>ii</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> would contravene paragraph (a) by paying that cash flow boost;</p>
+            </content>
+            <content>
+              <p>the entity is not entitled to the cash flow boost for the period.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-11__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Despite anything in this Act:</p>
+          </content>
+          <paragraph eId="sec-11__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> must not pay an amount by way of a cash flow boost for a period if the entity fails to notify <role refersTo="#commissioner">the Commissioner</role>, in the approved form lodged with <role refersTo="#commissioner">the Commissioner</role> and by the deadline mentioned in subsection (3), of:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-2__para-i">
+            <num>i</num>
+            <content>
+              <p>for a period covered by subsection 5(2)—its withholding period total for the period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-2__para-ii">
+            <num>ii</num>
+            <content>
+              <p>for a period covered by subsection 6(2)—its entitlement to the cash flow boost for the period; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-2__para-i">
+            <num>i</num>
+            <content>
+              <p>an entity is entitled to a cash flow boost for a period (disregarding this paragraph); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-2__para-ii">
+            <num>ii</num>
+            <content>
+              <p><role refersTo="#commissioner">the Commissioner</role> would contravene paragraph (a) by paying that cash flow boost;</p>
+            </content>
+            <content>
+              <p>the entity is not entitled to the cash flow boost for the period.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-11__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	For the purposes of paragraph (2)(a), for a period covered by subsection 5(2), the deadline is 2 years after the day on which the entity must notify the Commissioner under subsection 16-150(1) in Schedule 1 to the <i>Taxation Administration Act 1953</i> of an amount that it must pay the Commissioner in respect of an amount that it withheld in the period.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-11__subsec-4">
+          <num>4</num>
+          <content>
+            <p>For the purposes of paragraph (2)(a), for a period covered by subsection 6(2), the deadline is:</p>
+          </content>
+          <paragraph eId="sec-11__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	unless paragraph (b) applies—2 years after the time at which the entity must give the Commissioner its GST return for the tax period corresponding to the period in accordance with <ref href="#dvs-3">Division 3</ref>1 of the<i> A New Tax System (Goods and Services Tax) Act 1999</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>if the 2019-20 financial year is an annual tax period that applies to the entity:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>if the period is the quarter ending on <date date="2020-06-30">30 June 2020</date>—<date date="2022-07-28">28 July 2022</date>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-11__subsec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>if the period is the quarter ending on <date date="2020-09-30">30 September 2020</date>—<date date="2022-10-28">28 October 2022</date>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-12">
+        <num>12</num>
+        <heading>Review of decisions</heading>
+        <subsection eId="sec-12__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	A person who is dissatisfied with a decision covered by subsection (2) may object against the decision, in the manner set out in <ref href="#part-IV">Part IV</ref>C of the <i>Taxation Administration Act 1953</i>.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-12__subsec-2">
+          <num>2</num>
+          <content>
+            <p>This subsection covers a decision of <role refersTo="#commissioner">the Commissioner</role> under this Act that the person:</p>
+          </content>
+          <paragraph eId="sec-12__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>is not entitled to a cash flow boost for a period; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-12__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>is entitled to a cash flow boost for a period of a particular amount.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-12__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	For the purposes of this section, treat the reference in paragraph 14ZW(1)(c) of the <i>Taxation Administration Act 1953</i> to “notice of the taxation decision to which it relates has been served on the person” as instead being a reference to “the taxation decision to which it relates was made”.</p>
+          </content>
+          <content>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Boosting Cash Flow for Employers (Coronavirus Economic Response Package) Act 2020</td>
+              <td>23, 2020</td>
+              <td>24 Mar 2020</td>
+              <td>24 Mar 2020 (s 2(1) item 1)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Coronavirus Economic Response Package Omnibus (Measures No. 2) Act 2020</td>
+              <td>38, 2020</td>
+              <td>9 Apr 2020</td>
+              <td>Sch 2 (items 22–26): 9 Apr 2020 (s 2(1) item 4)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Treasury Laws Amendment (2020 Measures No. 3) Act 2020</td>
+              <td>61, 2020</td>
+              <td>19 June 2020</td>
+              <td>Sch 6: 20 June 2020 (s 2(1) item 9)</td>
+              <td>Sch 6 (item 4)</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>s 2A</td>
+              <td>ad No 38, 2020</td>
+            </tr>
+            <tr>
+              <td>s 4</td>
+              <td>am No 61, 2020</td>
+            </tr>
+            <tr>
+              <td>s 5</td>
+              <td>am No 38, 2020; No 61, 2020</td>
+            </tr>
+            <tr>
+              <td>s 6</td>
+              <td>am No 38, 2020</td>
+            </tr>
+          </table>
+        </subsection>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

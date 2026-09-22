@@ -1,0 +1,2531 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1980/115/!main"/>
+          <FRBRuri value="/akn/au/act/1980/115"/>
+          <FRBRdate date="1980-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="115"/>
+          <FRBRname value="national-museum-of-australia-act-1980"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1980/115/eng@2021-05-01/!main"/>
+          <FRBRuri value="/akn/au/act/1980/115/eng@2021-05-01"/>
+          <FRBRdate date="2021-05-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1980/115/eng@2021-05-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1980/115/eng@2021-05-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1980-01-01" type="generation" eId="evt-creation" source="#national-museum-of-australia-act-1980"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1984/63" date="1984-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1985/166" date="1985-12-11"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1985/193" date="1985-12-16"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1986/76" date="1986-06-24"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1987/141" date="1987-12-18"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1989/60" date="1989-06-19"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1991/179" date="1991-11-25"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1994/20" date="1994-08-01"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1996/43" date="1996-10-25"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1997/152" date="1997-10-24"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/1999/146" date="1999-11-11"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/1999/156" date="1999-11-24"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2001/159" date="2001-10-29"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2021/20" date="2021-03-02"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-australian-natural-environment" href="/ontology/term/au/term-australian-natural-environment" showAs="Australian natural environment"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-deputy-chair" href="/ontology/term/au/term-deputy-chair" showAs="Deputy Chair"/>
+        <TLCTerm eId="term-director" href="/ontology/term/au/term-director" showAs="Director"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-historical-material" href="/ontology/term/au/term-historical-material" showAs="historical material"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-museum" href="/ontology/term/au/term-museum" showAs="Museum"/>
+        <TLCTerm eId="term-part-time-member" href="/ontology/term/au/term-part-time-member" showAs="part-time member"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>National Museum of Australia Act 1980</p>
+      <p>No. 115, 1980</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 May 2021</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 20, 2021</p>
+      <p><b>Registered:</b><b>	</b>4 May 2021</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>National Museum of Australia Act 1980</i> that shows the text of the law as amended and in force on 1 May 2021 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p><ref href="#part-II">Part II</ref>—The National Museum of Australia	4</p>
+      <p>4	Establishment of Museum	4</p>
+      <p>5	Gallery of Aboriginal Australia	4</p>
+      <p>6	Functions of Museum	5</p>
+      <p>7	Powers of Museum	6</p>
+      <p>8	Land and historical material for Museum	7</p>
+      <p>9	Disposal of historical material in national historical collection	8</p>
+      <p>9A	Disposal of historical material not in national historical collection	9</p>
+      <p><ref href="#part-III">Part III</ref>—The Council of the Museum	10</p>
+      <p>10	Establishment of Council	10</p>
+      <p>13	Membership of Council	10</p>
+      <p>14	Deputy Chair	11</p>
+      <p>15	Acting members	12</p>
+      <p>16	Remuneration etc.	13</p>
+      <p>17	Termination of appointment	13</p>
+      <p>18	Resignation	14</p>
+      <p>20	Meetings of Council	14</p>
+      <p>21	Committees of Council	15</p>
+      <p>22	Delegation by Council	16</p>
+      <p><ref href="#part-IV">Part IV</ref>—The Director of the Museum	17</p>
+      <p>23	Office of Director	17</p>
+      <p>24	Terms and conditions of appointment etc.	17</p>
+      <p>25	Remuneration etc.	17</p>
+      <p>26	Leave of absence	17</p>
+      <p>27	Termination of appointment	18</p>
+      <p>28	Resignation	18</p>
+      <p>29	Acting Director	19</p>
+      <p><ref href="#part-V">Part V</ref>—Staff and consultants	20</p>
+      <p>30	Staff	20</p>
+      <p>31	Arrangements relating to staff	20</p>
+      <p>32	Engagement of consultants etc.	20</p>
+      <p><ref href="#part-VI">Part VI</ref>—Finance	22</p>
+      <p>33	Moneys payable to Museum	22</p>
+      <p>34	National Museum of Australia Fund	22</p>
+      <p>35	Application of moneys held by Museum	23</p>
+      <p>36	Investment policy	23</p>
+      <p>37	Restrictions on financial transactions	24</p>
+      <p>38	Annual report	25</p>
+      <p>39	Exemption from taxation	26</p>
+      <p><ref href="#part-VII">Part VII</ref>—Miscellaneous	27</p>
+      <p>41	Supply of liquor on premises of Museum	27</p>
+      <p>41A	Minister may give directions to Council	27</p>
+      <p>42	Delegation by <role refersTo="#minister">the Minister</role>	27</p>
+      <p>43	Copyright	28</p>
+      <p>44	Regulations	28</p>
+      <p>Endnotes	30</p>
+      <p>Endnote 1—About the endnotes	30</p>
+      <p>Endnote 2—Abbreviation key	32</p>
+      <p>Endnote 3—Legislation history	33</p>
+      <p>Endnote 4—Amendment history	38</p>
+      <p>An Act to make provision for the establishment of a National Museum of Australia</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>National Museum of Australia Act 1980</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on the day on which it receives the Royal Assent.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-3__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><b><i>Australian history</i></b> includes:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the natural history of Australia; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the history of the interaction of man with the Australian natural environment.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-australian-natural-environment">Australian natural environment</term> includes <def>all aspects of the surroundings of man in Australia, whether affecting him as an individual or in his social groupings.</def></p>
+                <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Council.</def></p>
+                <p><term refersTo="#term-council">Council</term> means <def>the Council of the National Museum of Australia.</def></p>
+                <p><term refersTo="#term-deputy-chair">Deputy Chair</term> means <def>the Deputy Chair of the Council.</def></p>
+                <p><term refersTo="#term-director">Director</term> means <def>the Director of the National Museum of Australia.</def></p>
+                <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+                <p><term refersTo="#term-historical-material">historical material</term> means <def>material (whether in written form or in any other form) relating to Australian history.</def></p>
+                <p><term refersTo="#term-member">member</term> means <def>a member of the Council.</def></p>
+                <p><term refersTo="#term-museum">Museum</term> means <def>the National Museum of Australia established by this Act.</def></p>
+                <p><b><i>national historical collection</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	all historical material that was in the ownership of the Museum at the time when the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>2) 1985 </i> received the Royal Assent other than any such material that the Council determines should not be in the national historical collection;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>such historical material that was in the possession of the Museum at the time referred to in paragraph (a) as the Council determines should be included in the national historical collection; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>such historical material that comes into the ownership or possession of the Museum after the time referred to in paragraph (a) as the Council determines should be included in the national historical collection.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-part-time-member">part-time member</term> means <def>a member appointed to be a part-time member.</def></p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the definitions of <b><i>Australian history</i></b> and <b><i>Australian natural environment</i></b> in subsection (1), <b><i>Australia</i></b> includes:</p>
+            </content>
+            <paragraph eId="part-I__sec-3__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>every external Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-3__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the continental shelf that is adjacent to the coast of Australia or of an external Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	For the purposes of subsection (2), <b><i>external Territory</i></b> includes any territory that was formerly a Territory referred to in <ref href="#sec-122">section 122</ref> of the Constitution (including a Territory administered by Australia under a Trusteeship Agreement) but has ceased to be a Territory referred to in that section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-3__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	Any determination made by the Council for the purposes of the definition of <b><i>national historical collection</i></b> in subsection (1) shall be based upon criteria, and made in accordance with guidelines, approved by the Minister.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>The National Museum of Australia</heading>
+        <section eId="part-II__sec-4">
+          <num>4</num>
+          <heading>Establishment of Museum</heading>
+          <subsection eId="part-II__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this Act a National Museum of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Museum:</p>
+            </content>
+            <paragraph eId="part-II__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is a body corporate, with perpetual succession;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall have a common seal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>may acquire, hold and dispose of real and personal property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>may sue and be sued in its corporate name.</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Museum. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The common seal of the Museum shall be kept in such custody as the Council directs and shall not be used except as authorized by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-4">
+            <num>4</num>
+            <content>
+              <p>All courts, judges and persons acting judicially shall take judicial notice of the common seal of the Museum affixed to a document and shall presume that it was duly affixed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-5">
+          <num>5</num>
+          <heading>Gallery of Aboriginal Australia</heading>
+          <subsection eId="part-II__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Gallery of Aboriginal Australia, which shall form part of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Gallery shall consist of:</p>
+            </content>
+            <paragraph eId="part-II__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a collection of historical material owned by the Museum that relates to Aboriginals and Torres Strait Islanders; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the land and premises used in connection with the exhibition of that material.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Nothing in subsection (2) prevents the exhibition in the Gallery of historical material relating to Aboriginals and Torres Strait Islanders that is in the possession of the Museum otherwise than as part of the national historical collection.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In the performance of its functions in relation to the Gallery, the Council shall pursue a policy directed towards securing, under the Council, the development and maintenance of the Gallery, and the exhibition of historical material referred to in subsections (2) and (3), by persons who are Aboriginals, Torres Strait Islanders or descendants of Aboriginals or Torres Strait Islanders.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Functions of Museum</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The functions of the Museum are:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to develop and maintain a national collection of historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to exhibit, or to make available for exhibition by others, historical material from the national historical collection or historical material that is otherwise in the possession of the Museum;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-baa">
+              <num>baa</num>
+              <content>
+                <p>to exhibit material, whether in written form or in any other form, that relates to Australia’s past, present and future;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-ba">
+              <num>ba</num>
+              <content>
+                <p>from time to time as the occasion requires, to exhibit, by itself or in collaboration with others, in Australia or elsewhere, material, whether in written form or in any other form and whether relating to Australia or to a foreign country;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to conduct, arrange for or assist in research into matters pertaining to Australian history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>to disseminate information relating to Australian history and information relating to the Museum and its functions; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>to develop and implement sponsorship, marketing and other commercial activities relating to the Museum’s functions.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Museum shall use every endeavour to make the most advantageous use of the national collection in the national interest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Powers of Museum</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Act, the Museum has power to do all things necessary or convenient to be done for or in connection with the performance of its functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), the powers of the Museum referred to in that subsection include power:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to purchase or take on hire, or to accept as a gift or on deposit or loan, historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to lend or hire out or otherwise deal with (otherwise than by way of disposal) historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>to accept gifts, devises, bequests or assignments made to the Museum, whether on trust or otherwise, and whether unconditionally or subject to a condition and, if a gift, devise, bequest or assignment is accepted by the Museum on trust or subject to a condition, to act as trustee or to comply with the condition, as the case may be;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>to collect, and make available (whether in writing or in any other form and whether by sale or otherwise), information relating to Australian history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>to make available (whether by sale or otherwise) reproductions, replicas or other representations (whether in writing or in any other form) of historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>to make available (whether in writing or in any other form and whether by sale or otherwise) information relating to the Museum and its functions;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>to occupy, use and control any land or building owned or held under lease by the Commonwealth and made available to the Museum under <ref href="#sec-8">section 8</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>to erect buildings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>to purchase or take on hire, or to accept as a gift or on deposit or loan, and to dispose of or otherwise deal with, furnishings, equipment and other goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-ja">
+              <num>ja</num>
+              <content>
+                <p>to charge such fees and impose such charges (in addition to the charges fixed by regulations) as are reasonable in respect of services rendered by the Museum;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-jb">
+              <num>jb</num>
+              <content>
+                <p>to raise money for the purposes of the Museum by appropriate means, having regard to the proper performance of the functions of the Museum;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-k">
+              <num>k</num>
+              <content>
+                <p>to act as trustee of moneys or other property vested in the Museum on trust; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-m">
+              <num>m</num>
+              <content>
+                <p>to act on behalf of the Commonwealth or of an authority of the Commonwealth in the administration of a trust relating to historical material or related matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Museum shall not dispose of historical material except in accordance with <ref href="#sec-9">section 9</ref> or 9A.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Notwithstanding anything contained in this Act, any money or other property held by the Museum upon trust or accepted by the Museum subject to a condition shall not be dealt with except in accordance with the obligations of the Museum as trustee of the trust or as the person who has accepted the money or other property subject to the condition, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Nothing in this Act requires the Museum to perform its functions or exercise its powers in relation to historical material that is owned or otherwise in the possession of an authority of the Commonwealth, being historical material that is used for the purposes of <role refersTo="#authority">the authority</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Land and historical material for Museum</heading>
+          <subsection eId="part-II__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may make available to the Museum for the purposes of the Museum such land owned or held under lease by the Commonwealth as is specified by the Minister by notice in the <i>Gazette </i>and any building, structure or other improvements on that land.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Council so requests, <role refersTo="#minister">the Minister</role> may:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>transfer or cause to be transferred to the Museum, for inclusion in the national historical collection, historical material owned by the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>transfer or cause to be transferred to the Museum such other goods or equipment owned by the Commonwealth as he or she considers would be of use to the Museum.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall transfer or cause to be transferred to the Museum, for inclusion in the national historical collection, the specimens and animals that are the property of the Commonwealth by virtue of:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the agreement a copy of which was set forth in the Schedule to the <i>Zoological Museum Agreement Act 1924</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the agreement specified in paragraph (a) as varied by the agreement a copy of which was set forth in the Schedule to the <i>Australian Institute of Anatomy Agreement Act 1931</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-9">
+          <num>9</num>
+          <heading>Disposal of historical material in national historical collection</heading>
+          <subsection eId="part-II__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (3), where the Council is satisfied that historical material in the national historical collection:</p>
+            </content>
+            <paragraph eId="part-II__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is unfit for the collection; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is not required as part of the collection;</p>
+              </content>
+              <content>
+                <p>the Council may resolve that the historical material be disposed of by sale, gift or destruction.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Council is satisfied that the exchange of historical material in the national historical collection for other historical material would be advantageous to the collection, the Council may resolve that the first-mentioned historical material be disposed of in exchange for that other historical material.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council shall not resolve that historical material be disposed of by destruction unless the Council is satisfied that the material has no saleable value.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the Council has resolved, in accordance with this section, that historical material be disposed of, the Museum may dispose of that historical material accordingly.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	Particulars of any such disposals must be included in the annual report (see <ref href="#sec-38">section 38</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection (4) is subject to <ref href="#sec-37">section 37</ref> (about restrictions on financial transactions).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-9A">
+          <num>9A</num>
+          <heading>Disposal of historical material not in national historical collection</heading>
+          <subsection eId="part-II__sec-9A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), the Council may resolve that historical material owned by or in the possession of the Museum, but not in the national historical collection, be disposed of by sale, gift, exchange for other historical material, or destruction.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council shall not resolve that historical material be disposed of by destruction unless the Council is satisfied that the material has no saleable value and cannot be disposed of in any other way.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-9A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the Council has resolved, in accordance with this section, that historical material be disposed of, the Museum may dispose of that historical material accordingly.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	Particulars of any such disposals must be included in the annual report (see <ref href="#sec-38">section 38</ref>).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-II__sec-9A__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (3) is subject to <ref href="#sec-37">section 37</ref> (about restrictions on financial transactions).</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>The Council of the Museum</heading>
+        <section eId="part-III__sec-10">
+          <num>10</num>
+          <heading>Establishment of Council</heading>
+          <subsection eId="part-III__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this section a Council by the name of the Council of the National Museum of Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council is responsible for the conduct and control of the affairs of the Museum and, subject to sections 5 and 12, the policy of the Museum with respect to any matter shall be determined by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>All acts and things done in the name of, or on behalf of, the Museum by the Council or with <role refersTo="#authority">the authority</role> of the Council shall be deemed to have been done by the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	The Council shall commence to function when the Minister has declared, by notice published in the <i>Gazette</i>, that the first members of the Council have been duly appointed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-13">
+          <num>13</num>
+          <heading>Membership of Council</heading>
+          <subsection eId="part-III__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council shall consist of:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a Chair;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Director; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>not less than 7 nor more than 10 other members.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The members, other than the Director, shall be appointed by the Governor-General having regard to their knowledge and experience with respect to matters relating to Australian history or with respect to any other area of knowledge relevant to the affairs of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A member, other than the Director:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>shall be appointed to be a part-time member; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>holds office for such term, not exceeding 3 years, as is fixed by the Governor-General in the instrument of his or her appointment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>A person must not be appointed as a member referred to in paragraph (1)(a) or (c) for a term if the sum of the following exceeds 9 years:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-3A__para-a">
+              <num>a</num>
+              <content>
+                <p>that term;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-3A__para-b">
+              <num>b</num>
+              <content>
+                <p>any terms of previous appointment of the person as a member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The performance of the functions, or the exercise of the powers, of the Council is not affected by reason only of there being a vacancy or vacancies in the membership of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The appointment of a person as a part-time member is not invalidated, and shall not be called in question, by reason of a defect or irregularity in or in connection with his or her appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Deputy Chair</heading>
+          <subsection eId="part-III__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Deputy Chair of the Council who shall be elected by the members from among the members referred to in paragraph 13(1)(c).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member elected as the Deputy Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-14__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>holds office as the Deputy Chair for the period fixed by the Council at the time of his or her election, but that period shall not extend beyond the expiration of the term for which he or she is holding office as a member at that time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-14__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is eligible for re-election.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Deputy Chair may resign his or her office by writing signed by him or her and delivered to the Chair.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The election of a person as the Deputy Chair is not invalidated, and shall not be called in question, by reason of a defect or irregularity in or in connection with his or her election.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The validity of anything done by a person purporting to be the Deputy Chair shall not be called in question on the ground that there is a defect or irregularity in or in connection with his or her election as the Deputy Chair, that he or she has ceased to be the Deputy Chair or that the occasion for him or her to perform the functions, or exercise the powers, of the Deputy Chair had not arisen or had ceased.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-15">
+          <num>15</num>
+          <heading>Acting members</heading>
+          <content>
+            <p>Acting by operation of law</p>
+          </content>
+          <subsection eId="part-III__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Deputy Chair is to act as the Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of Chair (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when the Chair:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	For rules that apply to persons acting as the Chair, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Acting appointments</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council may, by written instrument, appoint a member to act as the Deputy Chair during any period, or during all periods, when the Deputy Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is acting as the Chair; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by written instrument, appoint a person to act as a member (other than as the Director, Chair or Deputy Chair):</p>
+            </content>
+            <paragraph eId="part-III__sec-15__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of a member (whether or not an appointment has previously been made to the office); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when a member:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>is acting as the Deputy Chair; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is absent from duty or from Australia; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-15__subsec-3__para-iii">
+              <num>iii</num>
+              <content>
+                <p>is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-16">
+          <num>16</num>
+          <heading>Remuneration etc.</heading>
+          <subsection eId="part-III__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to a person who is:</p>
+            </content>
+            <paragraph eId="part-III__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a part-time member; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-16__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a member of a committee constituted under <ref href="#sec-21">section 21</ref> other than a member of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person to whom this section applies shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person to whom this section applies shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-16__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	This section has effect subject to the<i> Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-III__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of a part-time member by reason of the misbehaviour or physical or mental incapacity of that member.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a part-time member:</p>
+            </content>
+            <paragraph eId="part-III__sec-17__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	is absent, except on leave granted by the Council, from 3<i> </i>consecutive meetings of the Council otherwise than on business of the Council undertaken with the approval of the Council;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate the appointment of that member.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	The appointment of a part-time member may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013 </i>(which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>A part-time member may resign his or her office by writing signed by him or her and delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-20">
+          <num>20</num>
+          <heading>Meetings of Council</heading>
+          <subsection eId="part-III__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chair or, if for any reason the Chair is unable to act, the Deputy Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>shall convene such meetings of the Council as he or she considers necessary for the efficient conduct of its business; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	shall, on receipt of a written request signed by not less than 4<i> </i>members, convene a meeting of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may at any time convene a meeting of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chair shall preside at all meetings of the Council at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In the event of the absence of the Chair from a meeting of the Council, the Deputy Chair shall preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In the event of the absence of both the Chair and the Deputy Chair from a meeting of the Council, the members present shall elect one of their number to preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-6">
+            <num>6</num>
+            <content>
+              <p>At a meeting of the Council, a quorum is constituted by a majority of members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subject to subsection (8), all questions arising at a meeting of the Council shall be decided by a majority of the votes of the members present and voting, including the member presiding.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-8">
+            <num>8</num>
+            <content>
+              <p>In the event of an equality of votes on a resolution proposed at a meeting of the Council, the resolution shall be taken not to be passed but, if the same resolution is proposed at the first meeting of the Council held after the date of that first-mentioned meeting and there is again an equality of votes, the member presiding has a casting vote on the resolution.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The Council may regulate the conduct of proceedings at its meetings as it thinks fit and shall keep minutes of those proceedings.</p>
+            </content>
+            <authorialNote placement="end" eId="note-8" marker="8">
+              <content>
+                <p>Note:	Section 33B of the <i>Acts Interpretation Act 1901</i> provides for participation in meetings by telephone etc.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-III__sec-20__subsec-13">
+            <num>13</num>
+            <content>
+              <p>If the Council so determines, a resolution shall be taken to have been passed at a meeting of the Council if, without meeting, a majority of the number of members of the Council who would, if present at a meeting of the Council and entitled to vote on the resolution at that meeting, have constituted a quorum of the Council indicate agreement with the resolution in accordance with the method determined by the Council.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-21">
+          <num>21</num>
+          <heading>Committees of Council</heading>
+          <subsection eId="part-III__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Council may constitute such committees as it thinks necessary for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A committee may be constituted wholly by members of the Council or partly by members of the Council and partly by other persons.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Delegation by Council</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Council may, by resolution, either generally or as otherwise provided by the resolution, delegate all or any of its powers under this Act (except this power of delegation) to the Director, to any other member or to a member of the staff of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power so delegated, when exercised by the delegate, shall, for the purposes of this Act, be deemed to have been exercised by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegate is, in the exercise of a power so delegated, subject to the directions of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A delegation of a power under this section:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>may be revoked by resolution of the Council (whether or not constituted by the persons constituting the Council at the time the power was delegated);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>does not prevent the exercise of the power by the Council; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>continues in force notwithstanding a change in the membership of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Section 34A of the <i>Acts Interpretation Act 1901 </i>applies in relation to a delegation under this section as if the Council were a person.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	A certificate signed by the Chair stating any matter with respect to the delegation of a power under this section is <i>prima facie</i> evidence of that matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A document purporting to be a certificate mentioned in subsection (6) shall, unless the contrary is established, be deemed to be such a certificate and to have been duly given.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>The Director of the Museum</heading>
+        <section eId="part-IV__sec-23">
+          <num>23</num>
+          <heading>Office of Director</heading>
+          <subsection eId="part-IV__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Director of the National Museum of Australia, who shall be appointed by the Governor-General.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director is the executive member of the Council and shall, subject to and in accordance with the general directions of the Council, manage the affairs of the Museum.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-24">
+          <num>24</num>
+          <heading>Terms and conditions of appointment etc.</heading>
+          <subsection eId="part-IV__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director holds office for such period, not exceeding 7 years, as is specified in the instrument of his or her appointment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director holds office on such terms and conditions (if any) in respect of matters not provided for by this Act as are determined by the Governor-General.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-25">
+          <num>25</num>
+          <heading>Remuneration etc.</heading>
+          <subsection eId="part-IV__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the<i> Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Leave of absence</heading>
+          <subsection eId="part-IV__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director has such recreation leave entitlements as are determined by the Remuneration Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may grant the Director leave of absence, other than recreation leave, on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-IV__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of the Director by reason of the misbehaviour or physical or mental incapacity of the Director.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Director:</p>
+            </content>
+            <paragraph eId="part-IV__sec-27__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent from duty, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>is absent, except on leave granted by the Council, from 3 consecutive meetings of the Council otherwise than on business of the Council undertaken with the approval of the Council; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-27__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>engages in paid employment outside the duties of his or her office without the approval of <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate the appointment of the Director.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	The appointment of the Director may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013 </i>(which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>The Director may resign his or her office by writing signed by him or her and delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Acting Director</heading>
+          <subsection eId="part-IV__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may appoint a person to act in the place of the Director:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>during a vacancy in the office of the Director, whether or not an appointment has previously been made to the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>during any period, or during all periods, when the Director is absent from duty or from Australia, or is, for any other reason, unable to perform the functions of his or her office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A person who is acting as Director may attend a meeting of the Council and, in relation to a meeting that he or she so attends, shall, for the purposes of this Act, be deemed to be the Director.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Staff and consultants</heading>
+        <section eId="part-V__sec-30">
+          <num>30</num>
+          <heading>Staff</heading>
+          <subsection eId="part-V__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to <ref href="#sec-31">section 31</ref>, the staff of the Museum shall be persons engaged under the <i>Public Service Act 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+            </content>
+            <paragraph eId="part-V__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Director and the APS employees assisting the Director together constitute a Statutory Agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Director is the Head of that Statutory Agency.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-31">
+          <num>31</num>
+          <heading>Arrangements relating to staff</heading>
+          <subsection eId="part-V__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Council may arrange with an Agency Head (within the meaning of the <i>Public Service Act 1999</i>) or with a body (other than a company or association) established for a public purpose by or under a law of the Commonwealth for the services of officers or employees of the body to be made available to the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council may enter into an arrangement with the appropriate authority of a State or Territory for the services of officers or employees of the Public Service of the State or Territory, or of a body established for a public purpose by or under a law of the State or Territory, to be made available to the Museum.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-32">
+          <num>32</num>
+          <heading>Engagement of consultants etc.</heading>
+          <subsection eId="part-V__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director may, on behalf of the Museum, engage persons having suitable qualifications and experience as consultants to the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The terms and conditions of the engagement of a person under subsection (1) are such as are determined by the Director.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director may, in writing, delegate the Director’s powers under this section to an SES employee, or acting SES employee, of the Museum.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901</i> contain provisions relating to delegations.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-V__sec-32__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In exercising a delegated power, the delegate must comply with any written directions of the Director.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Finance</heading>
+        <section eId="part-VI__sec-33">
+          <num>33</num>
+          <heading>Moneys payable to Museum</heading>
+          <subsection eId="part-VI__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There are payable to the Museum such moneys as are appropriated, from time to time, by the Parliament for the purposes of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may give directions as to the amounts in which, and the times at which, moneys referred to in subsection (1) are to be paid to the Museum.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-34">
+          <num>34</num>
+          <heading>National Museum of Australia Fund</heading>
+          <subsection eId="part-VI__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this section a fund by the name of the National Museum of Australia Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Income received from the investment of money standing to the credit of the Fund forms part of the Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>These are to be paid into the Fund:</p>
+            </content>
+            <paragraph eId="part-VI__sec-34__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>gifts and bequests of money that the Museum accepts after the commencement of this section (otherwise than on trust);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-34__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>money that the Museum receives after that commencement (other than money to be held on trust by the Museum) from the disposal of property given, devised, bequeathed or assigned to the Museum (whether before, at or after that commencement);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-34__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>so much of the money held by the Museum in bank accounts (otherwise than on trust) immediately before that commencement as the Minister determines by notice in writing given to the Museum <quantity refersTo="#deadline">within 21 days</quantity> after that commencement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-34__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The payment of money into a bank account maintained by the Museum under the name of the National Museum of Australia Fund is taken, for the purposes of subsection (3) of this section, to be a payment of the money into the Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-35">
+          <num>35</num>
+          <heading>Application of moneys held by Museum</heading>
+          <subsection eId="part-VI__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Moneys held by the Museum otherwise than upon trust shall be applied only:</p>
+            </content>
+            <paragraph eId="part-VI__sec-35__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the costs, expenses and other obligations incurred by the Museum in the performance of its functions or the exercise of its powers under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-35__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of any remuneration and allowances payable to any person under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not prevent investment, under subsection (3) of this section or <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, of money that is not immediately required for the purposes of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In addition to investments authorised by <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, the Museum may invest the following in any other form of investment:</p>
+            </content>
+            <paragraph eId="part-VI__sec-35__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>money accepted as a gift or bequest to the Museum;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-35__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>money that the Museum receives from the disposal of property given, devised, bequeathed or assigned to the Museum by a person other than the Commonwealth;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-35__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>income received from an investment made under this subsection or from the disposal of such an investment.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	See subsection 7(4) for obligations of the Museum as trustee of a trust.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-35__subsec-4">
+            <num>4</num>
+            <content>
+              <p>An investment under subsection (3), or the disposal of such an investment, must be in accordance with a policy in force under <ref href="#sec-36">section 36</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-36">
+          <num>36</num>
+          <heading>Investment policy</heading>
+          <subsection eId="part-VI__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council may formulate a written policy in relation to the following matters:</p>
+            </content>
+            <paragraph eId="part-VI__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the investment strategy of the Museum;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>benchmarks and standards for assessing the performance of the Museum’s investments;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-36__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>risk management for the Museum’s investments.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	For variation and revocation, see subsection 33(3) of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Publication of policy</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Council must cause a copy of the policy to be published on the Museum’s website.</p>
+            </content>
+            <content>
+              <p>Review of policy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Council must conduct periodic reviews of the policy.</p>
+            </content>
+            <content>
+              <p>Compliance with policy</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the Council formulates a policy under subsection (1), the Museum must comply with the policy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A failure to comply with the policy does not affect the validity of any transaction.</p>
+            </content>
+            <content>
+              <p>Policy not a legislative instrument</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-36__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A policy formulated under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-37">
+          <num>37</num>
+          <heading>Restrictions on financial transactions</heading>
+          <subsection eId="part-VI__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Museum must not, without the written approval of <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>acquire any historical material for a consideration exceeding in amount or value the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>dispose of any historical material if the amount or value of the consideration for the disposal, or the value of the historical material, exceeds the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>acquire any property, right or privilege, other than historical material, for a consideration exceeding in amount or value the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>dispose of any property, right or privilege, other than historical material, if the amount or value of the consideration for the disposal, or the value of the property, right or privilege, exceeds the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>enter into a contract for the construction of a building for the Museum, being a contract under which the Museum is to pay an amount exceeding the amount prescribed by the regulations for the purposes of this paragraph; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>enter into a lease of land for a period exceeding 10 years.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An approval under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (1) does not apply to a contract if the contract provides for the supply of a service to the Museum for the day-to-day operations of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Subsection (1) does not apply to the following:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>an investment acquired under subsection 35(3);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the disposal of such an investment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-38">
+          <num>38</num>
+          <heading>Annual report</heading>
+          <content>
+            <p>		The annual report prepared by the Council and given to the Minister under <ref href="#sec-46">section 46</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> for a period must:</p>
+          </content>
+          <paragraph eId="part-VI__sec-38__para-a">
+            <num>a</num>
+            <content>
+              <p>set out all directions given by <role refersTo="#minister">the Minister</role> to the Museum or the Council during the period; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VI__sec-38__para-b">
+            <num>b</num>
+            <content>
+              <p>include particulars of any disposals of historical material under <ref href="#sec-9">section 9</ref> or 9A during the period.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-VI__sec-39">
+          <num>39</num>
+          <heading>Exemption from taxation</heading>
+          <content>
+            <p>The Museum is not subject to taxation under a law of Australia or of a State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VII__sec-41">
+          <num>41</num>
+          <heading>Supply of liquor on premises of Museum</heading>
+          <subsection eId="part-VII__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The regulations may make provision for and in relation to the sale, supply, disposal, possession or control of liquor on premises in the Australian Capital Territory owned by or under the control of the Museum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The law of the Australian Capital Territory relating to the sale, supply and disposal of liquor does not apply with respect to premises in respect of which regulations are in force under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In this section, <b><i>liquor</i></b> means wine, spirits, ale, beer, porter, cider, perry or any liquid containing alcohol ordinarily used or fit for use as a beverage.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-41A">
+          <num>41A</num>
+          <heading>Minister may give directions to Council</heading>
+          <subsection eId="part-VII__sec-41A__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, give written directions to the Council about the performance of its functions or the exercise of its powers.</p>
+            </content>
+            <authorialNote placement="end" eId="note-14" marker="14">
+              <content>
+                <p>Note:	Section 42 (disallowance) and <ref href="#part-4">Part 4</ref> of Chapter 3 (sunsetting) of the <i>Legislation Act 2003</i> do not apply to the directions (see regulations made for the purposes of paragraphs 44(2)(b) and 54(2)(b) of that Act).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-VII__sec-41A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A direction under subsection (1) must be of a general nature only.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council must comply with a direction under subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-42">
+          <num>42</num>
+          <heading>Delegation by the Minister</heading>
+          <subsection eId="part-VII__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate all or any of <role refersTo="#minister">the Minister</role>’s functions or powers under this Act to:</p>
+            </content>
+            <paragraph eId="part-VII__sec-42__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role> of the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-42__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or acting SES employee, in the Department.</p>
+              </content>
+              <authorialNote placement="end" eId="note-15" marker="15">
+                <content>
+                  <p>Note:	Sections 34AA to 34A of the <i>Acts Interpretation Act 1901</i> contain provisions relating to delegations.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>However, subsection (1) does not apply to <role refersTo="#minister">the Minister</role>’s functions or powers under <ref href="#sec-8">section 8</ref>, 15 or 41A.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-42__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In performing a delegated function or exercising a delegated power, the delegate must comply with any written directions of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-43">
+          <num>43</num>
+          <heading>Copyright</heading>
+          <content>
+            <p>Nothing in this Act authorizes the Museum to commit any breach of copyright.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-44">
+          <num>44</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that by this Act are required or permitted to be prescribed, or are necessary or convenient to be prescribed for carrying out or giving effect to this Act, and, in particular:</p>
+          </content>
+          <paragraph eId="part-VII__sec-44__para-a">
+            <num>a</num>
+            <content>
+              <p>for regulating, restricting or prohibiting the entry of persons onto any land or building, or any part of any land or building, owned by or under the control of the Museum, and for regulating the conduct of persons on any such land or building, or any part of any such land or building, including making provision for and in relation to the removal of persons from any such land or building, or any part of any such land or building;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-44__para-b">
+            <num>b</num>
+            <content>
+              <p>for fixing charges for entry onto any land, or into any building, owned by, or under the control of, the Museum;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-44__para-c">
+            <num>c</num>
+            <content>
+              <p>for regulating, restricting or prohibiting the making, using, printing, publishing, exhibiting, selling or offering for sale of replicas, photographs, representations or copies of historical material forming part of the national historical collection; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-44__para-d">
+            <num>d</num>
+            <content>
+              <p>for prescribing penalties not exceeding a fine of <quantity refersTo="#penaltyUnit">5 penalty units</quantity> for offences against the regulations.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Museum of Australia Act 1980</td>
+                <td>115, 1980</td>
+                <td>8 Sept 1980</td>
+                <td>8 Sept 1980</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Service Reform Act 1984</td>
+                <td>63, 1984</td>
+                <td>25 June 1984</td>
+                <td>s. 151(1): 1 July 1984 (see Gazette 1984, No. S245) (a)</td>
+                <td>s. 151(9)</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1985</td>
+                <td>65, 1985</td>
+                <td>5 June 1985</td>
+                <td>s. 3: 3 July 1985 (b)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Service and Statutory Authorities Amendment Act 1985</td>
+                <td>166, 1985</td>
+                <td>11 Dec 1985</td>
+                <td>s. 45: 8 Jan 1986 (c)</td>
+                <td>s. 45(2)</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1986</td>
+                <td>76, 1986</td>
+                <td>24 June 1986</td>
+                <td>s. 3: (d)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 2) 1985</td>
+                <td>193, 1985</td>
+                <td>16 Dec 1985</td>
+                <td>s. 3: Royal Assent (e)</td>
+                <td>ss. 15(2) and 16</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No. 1) 1986</td>
+                <td>76, 1986</td>
+                <td>24 June 1986</td>
+                <td>s. 3: (f)</td>
+                <td>s. 9</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act 1987</td>
+                <td>141, 1987</td>
+                <td>18 Dec 1987</td>
+                <td>s. 3: Royal Assent (g)</td>
+                <td>s. 5(1)</td>
+              </tr>
+              <tr>
+                <td>Arts, Territories and Environment Legislation Amendment Act 1989</td>
+                <td>60, 1989</td>
+                <td>19 June 1989</td>
+                <td>ss. 11 and 13: 7 Dec 1988 
+Part 5 (ss. 14, 15): 11 May 1989 (see s. 2(3) and Gazette 1989, No. S164)
+Remainder: Royal Assent</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Sport, Environment, Tourism and Territories Legislation Amendment Act (No. 2) 1991</td>
+                <td>179, 1991</td>
+                <td>25 Nov 1991</td>
+                <td>25 Nov 1991</td>
+                <td>s. 3(2)</td>
+              </tr>
+              <tr>
+                <td>Maritime Legislation Amendment Act 1994</td>
+                <td>20, 1994</td>
+                <td>15 Feb 1994</td>
+                <td>1 Aug 1994 (see Gazette 1994, No. S289)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1996</td>
+                <td>43, 1996</td>
+                <td>25 Oct 1996</td>
+                <td>Sch 4 (items 106, 107) and Sch 5 (items 96–98): 25 Oct 1996 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+                <td>152, 1997</td>
+                <td>24 Oct 1997</td>
+                <td>Sch 2 (items 1004–1017): 1 Jan 1998 (s 2(2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (items 655–658): 5 Dec 1999 (s 2(1), (2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Corporate Law Economic Reform Program Act 1999</td>
+                <td>156, 1999</td>
+                <td>24 Nov 1999</td>
+                <td>Sch 10 (items 102, 103): 13 Mar 2000 (s 2(2)(c) and gaz 2000, No S114)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>National Museum of Australia Amendment Act 2001</td>
+                <td>3, 2001</td>
+                <td>20 Mar 2001</td>
+                <td>20 Mar 2001 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+                <td>159, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>29 Oct 2001 (s 2(1))</td>
+                <td>Sch 1 (item 97)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2011</td>
+                <td>5, 2011</td>
+                <td>22 Mar 2011</td>
+                <td>Schedule 5 (items 157, 158): 19 Apr 2011</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Schedule 2 (items 825–832) and Schedule 3 (items 10, 11): 27 Dec 2011</td>
+                <td>Sch. 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 10 (items 153–169) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (item 347): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>National Collecting Institutions Legislation Amendment Act 2021</td>
+                <td>20, 2021</td>
+                <td>2 Mar 2021</td>
+                <td>Sch 1 (items 13–15, 19) and Sch 2 (items 37–49): 1 May 2021 (s 2(1) item 1)</td>
+                <td>Sch 1 (item 19) and Sch 2 (item 49)</td>
+              </tr>
+            </table>
+          </paragraph>
+          <paragraph eId="part-VII__sec-44__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by subsection 151(1) only of the <i>Public Service Reform Act 1984</i>, subsection 2(4) of which provides as follows:</p>
+            </content>
+          </paragraph>
+          <subsection eId="part-VII__sec-44__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on such day as is, or on such respective days as are, fixed by Proclamation.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p><i>(b)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1985</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the twenty-eighth day after the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><i>(c)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by <ref href="#sec-45">section 45</ref> only of the <i>Public Service and Statutory Authorities Amendment Act 1985</i>, subsection 2(7) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-7">
+            <num>7</num>
+            <content>
+              <p>The remaining provisions of this Act shall come into operation on the twenty-eighth day after the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-7__para-d">
+              <num>d</num>
+              <content>
+                <p><i>(d)</i>	The <i>Public Service and Statutory Authorities Amendment Act 1985 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1986</i>, subsection 2(19) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-19">
+            <num>19</num>
+            <content>
+              <p>	(19)	The amendments of the <i>Public Service and Statutory Authorities Amendment Act 1985 </i>made by this Act shall be deemed to have come into operation immediately after <ref href="#sec-45">section 45</ref> of that Act came into operation.</p>
+            </content>
+            <content>
+              <p>Section 45 came into operation on <date date="1986-01-08">8 January 1986</date>.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-19__para-e">
+              <num>e</num>
+              <content>
+                <p><i>(e)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>2) 1985</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p><i>(f)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act (No.</i><i> </i><i>1) 1986</i>, subsection 2(14) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-14">
+            <num>14</num>
+            <content>
+              <p>	(14)	The amendment of the <i>National Museum of Australia Act 1980 </i>made by this Act shall be deemed to have come into operation on 16 December 1985.</p>
+            </content>
+            <paragraph eId="part-VII__sec-44__subsec-14__para-g">
+              <num>g</num>
+              <content>
+                <p><i>(g)</i>	The <i>National Museum of Australia Act 1980 </i>was amended by <ref href="#sec-3">section 3</ref> only of the <i>Statute Law (Miscellaneous Provisions) Act 1987</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act shall come into operation on the day on which it receives the Royal Assent.</p>
+            </content>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td>am. No. 193, 1985</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 1</td>
+                <td>am No 193, 1985</td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 193, 1985; No 20, 1994; No 152, 1997; No 5, 2011; No 46, 2011; No 62, 2014; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part II heading</td>
+                <td>am No 76, 1986</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 193, 1985; No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 193, 1985; No 3, 2001</td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am No 141, 1987; No 3, 2001</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am No 193, 1985; No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 179, 1991; No 152, 1997; No 3, 2001; No 62, 2014; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 9A</td>
+                <td>ad No 141, 1987</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 179, 1991; No 3, 2001; No 62, 2014; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>am No 193, 1985</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>rep No 193, 1985</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>rs No 193, 1985</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 43, 1996; No 152, 1997; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No 43, 1996; No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 43, 1996; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 152, 1997; No 156, 1999; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 60, 1989; No 43, 1996; No 152, 1997; No 46, 2011; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>am No 193, 1985</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>am No 43, 1996; No 159, 2001</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>rs No 179, 1991</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>am No 179, 1991; No 43, 1996; No 3, 2001; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 43, 1996; No 46, 2011</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No 63, 1984; No 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>am No 63, 1984; No 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>am No 166, 1985 (as am by No 76, 1986); No 193, 1985; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 33</td>
+                <td>am No 5, 2011</td>
+              </tr>
+              <tr>
+                <td>s 34</td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad No 3, 2001</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 35</td>
+                <td>am No 152, 1997; No 62, 2014; No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 36</td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ad No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 37</td>
+                <td>am No 60, 1989; No 179, 1991; No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 38</td>
+                <td>am No 193, 1985; No 152, 1997</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 40</td>
+                <td>rep No 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 41A</td>
+                <td>ad No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 42</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs No 20, 2021</td>
+              </tr>
+              <tr>
+                <td>s 44</td>
+                <td>am No 61, 2016</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

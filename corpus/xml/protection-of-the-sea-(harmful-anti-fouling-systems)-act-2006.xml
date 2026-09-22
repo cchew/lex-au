@@ -1,0 +1,2455 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2006/107/!main"/>
+          <FRBRuri value="/akn/au/act/2006/107"/>
+          <FRBRdate date="2006-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="107"/>
+          <FRBRname value="protection-of-the-sea-(harmful-anti-fouling-systems)-act-2006"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2006/107/eng@2023-01-01/!main"/>
+          <FRBRuri value="/akn/au/act/2006/107/eng@2023-01-01"/>
+          <FRBRdate date="2023-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2006/107/eng@2023-01-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2006/107/eng@2023-01-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2006-01-01" type="generation" eId="evt-creation" source="#protection-of-the-sea-(harmful-anti-fouling-systems)-act-2006"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2009/131" date="2009-12-14"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2012/129" date="2012-09-13"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2022/78" date="2022-12-05"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-anti-fouling-certificate" href="/ontology/term/au/term-anti-fouling-certificate" showAs="anti-fouling certificate"/>
+        <TLCTerm eId="term-australia" href="/ontology/term/au/term-australia" showAs="Australia"/>
+        <TLCTerm eId="term-australian-law" href="/ontology/term/au/term-australian-law" showAs="Australian law"/>
+        <TLCTerm eId="term-australian-shipping-facility" href="/ontology/term/au/term-australian-shipping-facility" showAs="Australian shipping facility"/>
+        <TLCTerm eId="term-authority" href="/ontology/term/au/term-authority" showAs="Authority"/>
+        <TLCTerm eId="term-complies-with-the-anti-fouling-requirements" href="/ontology/term/au/term-complies-with-the-anti-fouling-requirements" showAs="complies with the anti-fouling requirements"/>
+        <TLCTerm eId="term-convention" href="/ontology/term/au/term-convention" showAs="Convention"/>
+        <TLCTerm eId="term-designated-external-surface" href="/ontology/term/au/term-designated-external-surface" showAs="designated external surface"/>
+        <TLCTerm eId="term-engage-in-conduct" href="/ontology/term/au/term-engage-in-conduct" showAs="engage in conduct"/>
+        <TLCTerm eId="term-exempt-platform" href="/ontology/term/au/term-exempt-platform" showAs="exempt platform"/>
+        <TLCTerm eId="term-foreign-convention-law" href="/ontology/term/au/term-foreign-convention-law" showAs="foreign Convention law"/>
+        <TLCTerm eId="term-foreign-ship" href="/ontology/term/au/term-foreign-ship" showAs="foreign ship"/>
+        <TLCTerm eId="term-gross-tonnage" href="/ontology/term/au/term-gross-tonnage" showAs="gross tonnage"/>
+        <TLCTerm eId="term-hafc-short-for-harmful-anti-fouling-compound" href="/ontology/term/au/term-hafc-short-for-harmful-anti-fouling-compound" showAs="HAFC (short for harmful anti-fouling compound)"/>
+        <TLCTerm eId="term-inspector" href="/ontology/term/au/term-inspector" showAs="inspector"/>
+        <TLCTerm eId="term-international-voyage" href="/ontology/term/au/term-international-voyage" showAs="international voyage"/>
+        <TLCTerm eId="term-length" href="/ontology/term/au/term-length" showAs="length"/>
+        <TLCTerm eId="term-marine-order" href="/ontology/term/au/term-marine-order" showAs="Marine Order"/>
+        <TLCTerm eId="term-master" href="/ontology/term/au/term-master" showAs="master"/>
+        <TLCTerm eId="term-owner" href="/ontology/term/au/term-owner" showAs="owner"/>
+        <TLCTerm eId="term-pre-2003-exempt-platform" href="/ontology/term/au/term-pre-2003-exempt-platform" showAs="pre-2003 exempt platform"/>
+        <TLCTerm eId="term-pre-2023-exempt-platform" href="/ontology/term/au/term-pre-2023-exempt-platform" showAs="pre-2023 exempt platform"/>
+        <TLCTerm eId="term-prescribed" href="/ontology/term/au/term-prescribed" showAs="prescribed"/>
+        <TLCTerm eId="term-regulations" href="/ontology/term/au/term-regulations" showAs="regulations"/>
+        <TLCTerm eId="term-ship" href="/ontology/term/au/term-ship" showAs="ship"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Protection of the Sea (Harmful Anti-fouling Systems) Act 2006</p>
+      <p>No. 107, 2006</p>
+      <p><b>Compilation No. </b><b>8</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 January 2023</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 78, 2022</p>
+      <p><b>Registered:</b><b>	</b>10 January 2023</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Protection of the Sea (Harmful Anti-fouling Systems) Act 2006</i> that shows the text of the law as amended and in force on 1 January 2023 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Definitions	2</p>
+      <p>4	Definition: compliance with anti-fouling requirements	5</p>
+      <p>5	Approving a body corporate approved as a survey authority	5</p>
+      <p>6	Scope of Act	5</p>
+      <p>7	Act to bind Crown	5</p>
+      <p><ref href="#part-2">Part 2</ref>—Application or use of harmful anti-fouling systems	7</p>
+      <p>8	HAFC not to be applied to a ship	7</p>
+      <p>9	Non-complying ships not to enter or remain in shipping facilities	8</p>
+      <p><ref href="#part-3">Part 3</ref>—Anti-fouling certificates and anti-fouling declarations	13</p>
+      <p>10	Issue and endorsement of anti-fouling certificates	13</p>
+      <p>11	Lapsing of anti-fouling certificates	14</p>
+      <p>12	Cancellation of anti-fouling certificates	14</p>
+      <p>13	Obligation to carry anti-fouling certificate	15</p>
+      <p>14	Obligation to report damage etc. to ship	16</p>
+      <p>15	Obligation to carry anti-fouling declaration	17</p>
+      <p><ref href="#part-4">Part 4</ref>—Inspection and enforcement powers	19</p>
+      <p>16	Inspectors and identity cards	19</p>
+      <p>17	Inspection of ships	20</p>
+      <p>18	Detention of ships	21</p>
+      <p>19	Compensation for undue detention or delay	22</p>
+      <p><ref href="#part-5">Part 5</ref>—Miscellaneous	24</p>
+      <p>20	Service of documents on master or owner of ship	24</p>
+      <p>21	Time limit for prosecution of offences	24</p>
+      <p>22	Evidence of terms of the Convention	25</p>
+      <p>23	Evidence of analyst	25</p>
+      <p>24	Orders	27</p>
+      <p>25	Regulations	27</p>
+      <p>Endnotes	28</p>
+      <p>Endnote 1—About the endnotes	28</p>
+      <p>Endnote 2—Abbreviation key	30</p>
+      <p>Endnote 3—Legislation history	31</p>
+      <p>Endnote 4—Amendment history	32</p>
+      <p>An Act relating to the protection of the sea from the effects of harmful anti-fouling systems</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Protection of the Sea (Harmful Anti</i><i>-</i><i>fouling Systems) Act 2006</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provision(s)</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  Sections 1 and 2 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day on which this Act receives the Royal Assent.</td>
+                <td>27 September 2006</td>
+              </tr>
+              <tr>
+                <td>2.  Sections 3 to 25</td>
+                <td>A single day to be fixed by Proclamation.
+A Proclamation must not specify a day that occurs before the day on which the Convention enters into force for Australia.
+However, if the provision(s) do not commence within the period of 6 months beginning on the day on which the Convention enters into force for Australia, they commence on the first day after the end of that period. If the provision(s) commence in this way, the Minister must announce by notice in the Gazette the day on which the provision(s) commenced.
+The notice is not a legislative instrument.</td>
+                <td>17 September 2008
+(see F2008L00369)</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally passed by the Parliament and assented to. It will not be expanded to deal with provisions inserted in this Act after assent.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Column 3 of the table contains additional information that is not part of this Act. Information in this column may be added to or edited in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-anti-fouling-certificate">anti-fouling certificate</term> means <def>a certificate issued under <ref href="#sec-10">section 10</ref>.</def></p>
+            <p><term refersTo="#term-australia">Australia</term> includes <def>the external Territories.</def></p>
+            <p><term refersTo="#term-australian-law">Australian law</term> means <def>a law of the Commonwealth or of a State or Territory.</def></p>
+            <p><b><i>Australian ship</i></b> means:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	a ship registered, or required to be registered, under the <i>Shipping Registration Act 1981</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	an unregistered ship that has Australian nationality under the <i>Shipping Registration Act 1981</i>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-australian-shipping-facility">Australian shipping facility</term> means <def>a shipping facility in Australia or in Australia’s exclusive economic zone.</def></p>
+              <p><term refersTo="#term-authority">Authority</term> means <def><ref href="/akn/au/act/australian-maritime-safety-authority-established-by-the-australian-maritime-safety-authority-act-1990" class="unresolved">the Australian Maritime Safety Authority established by the Australian Maritime Safety Authority Act 1990</ref>.</def></p>
+              <p><term refersTo="#term-complies-with-the-anti-fouling-requirements">complies with the anti-fouling requirements</term> has the meaning given by <def><ref href="#sec-4">section 4</ref>.</def></p>
+              <p><b><i>conduct</i></b>, in relation to an offence, has the same meaning as in the <i>Criminal Code</i>.</p>
+              <p><term refersTo="#term-convention">Convention</term> means <def>the International Convention on the Control of Harmful Anti-fouling Systems on Ships, done at London on 5 October 2001.</def></p>
+              <p><term refersTo="#term-designated-external-surface">designated external surface</term> means <def>any part of the hull or external parts or surfaces. For this purpose, hull or external parts or surfaces has the same meaning as in the Convention.</def></p>
+              <p><term refersTo="#term-engage-in-conduct">engage in conduct</term> has the same meaning as <def>in the Criminal Code.</def></p>
+              <p><term refersTo="#term-exempt-platform">exempt platform</term> means <def>any of the following (within the meaning of the Convention): a fixed or floating platform; a floating storage unit; a floating production, storage and off-loading unit.</def></p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	In 2006, the text of the Convention was accessible through the Australian Treaties Library on the AustLII website (www.austlii.edu.au).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>a fixed or floating platform;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a floating storage unit;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>a floating production, storage and off-loading unit.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-foreign-convention-law">foreign Convention law</term> means <def>a law of a foreign country that gives effect (wholly or partly) to the Convention.</def></p>
+              <p><term refersTo="#term-foreign-ship">foreign ship</term> means <def>a ship that is not an Australian ship.</def></p>
+              <p><term refersTo="#term-gross-tonnage">gross tonnage</term> has the same meaning as <def>in the Convention.</def></p>
+              <p><term refersTo="#term-hafc-short-for-harmful-anti-fouling-compound">HAFC (short for harmful anti-fouling compound)</term> means <def>an organotin compound that acts as a biocide in an anti-fouling system, or cybutryne. For this purpose, organotin compound, biocide and anti-fouling system have the same meaning as in the Convention.</def></p>
+              <p><term refersTo="#term-inspector">inspector</term> has the meaning given by <def><ref href="#sec-16">section 16</ref>.</def></p>
+              <p><term refersTo="#term-international-voyage">international voyage</term> has the same meaning as <def>in the Convention.</def></p>
+              <p><term refersTo="#term-length">length</term> has the same meaning as <def>in the Convention.</def></p>
+              <p><term refersTo="#term-marine-order">Marine Order</term> has the meaning given by <def><ref href="#sec-24">section 24</ref>.</def></p>
+              <p><term refersTo="#term-master">master</term>, in relation to a ship, means <def>the person having command or charge of the ship, but does not include a person exercising powers under an Australian law.</def></p>
+              <p><b><i>offence against this Act</i></b> includes:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>an offence against the regulations; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	an offence against Chapter 7 of the <i>Criminal Code</i> that relates to this Act or the regulations.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-owner">owner</term>, in relation to a ship that is operated by a person other than the owner, includes <def>the operator.</def></p>
+              <p><term refersTo="#term-pre-2003-exempt-platform">pre-2003 exempt platform</term> means <def>an exempt platform that was constructed before 1 January 2003 and has not been in dry dock on or after that date.</def></p>
+              <p><term refersTo="#term-pre-2023-exempt-platform">pre-2023 exempt platform</term> means <def>an exempt platform that was constructed before 1 January 2023 and has not been in dry dock on or after that date.</def></p>
+              <p><term refersTo="#term-prescribed">prescribed</term> means <def>prescribed by the regulations.</def></p>
+              <p><term refersTo="#term-regulations">regulations</term> includes <def>Marine Orders.</def></p>
+              <p><term refersTo="#term-ship">ship</term> has the same meaning as <def>in Article 2 of the Convention, but does not include a ship that is being used for non-commercial purposes by: the Commonwealth, a State or a Territory; or the government of a foreign country.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the Commonwealth, a State or a Territory; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the government of a foreign country.</p>
+            </content>
+            <content>
+              <p><b><i>shipping facility</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>a port; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a shipyard; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>an offshore terminal;</p>
+            </content>
+            <content>
+              <p>within the meaning of the Convention.</p>
+              <p><b><i>survey authority</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p><role refersTo="#authority">the Authority</role>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a body corporate approved by <role refersTo="#authority">the Authority</role> under <ref href="#sec-5">section 5</ref>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definition: compliance with anti-fouling requirements</heading>
+          <content>
+            <p>		A ship <b><i>complies with the anti</i></b><b><i>-</i></b><b><i>fouling requirements</i></b> if, and only if:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>it has no HAFC applied on any designated external surface; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>each HAFC that is applied on any designated external surface has a coating that forms a barrier to the HAFC leaching into the water; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>for a ship that has cybutryne applied on a designated external surface—neither of the following has occurred:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>the first scheduled renewal of the ship’s anti-fouling system after <date date="2023-01-01">1 January 2023</date>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the day that is 60 months after the last application of cybutryne to the ship before <date date="2023-01-01">1 January 2023</date>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Approving a body corporate approved as a survey authority</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may, in writing, approve a body corporate as a survey authority.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An approval made under subsection (1) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Scope of Act</heading>
+          <subsection eId="part-1__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies to every external Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act extends to acts, omissions, matters and things outside Australia (unless the contrary intention appears).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Act to bind Crown</heading>
+          <subsection eId="part-1__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in each of its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not make the Crown liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (2) does not affect any liability of any employee or agent of the Commonwealth or of a State or Territory to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Application or use of harmful anti-fouling systems</heading>
+        <section eId="part-2__sec-8">
+          <num>8</num>
+          <heading>HAFC not to be applied to a ship</heading>
+          <content>
+            <p>Ordinary offence: applying an HAFC</p>
+          </content>
+          <subsection eId="part-2__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-8__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person engages in conduct; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct results in an HAFC being applied or re-applied on a designated external surface of a ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the person is negligent as to causing that result; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the ship is an Australian ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the ship is a foreign ship and the conduct occurred in an Australian shipping facility.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">2,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Strict liability offence: applying an HAFC</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>an HAFC is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>applied or re-applied on a designated external surface of an Australian ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>applied or re-applied on a designated external surface of a foreign ship in an Australian shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the owner or master of the ship.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">500 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An offence against subsection (2) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>No offence if State or Territory law applies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-8__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this subsection, particular conduct would constitute an offence against this section; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-8__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct constitutes an offence against a law of a State or Territory;</p>
+              </content>
+              <content>
+                <p>then the conduct does not constitute an offence against this section.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (4): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-9">
+          <num>9</num>
+          <heading>Non-complying ships not to enter or remain in shipping facilities</heading>
+          <content>
+            <p>Ordinary offence: non-complying Australian ship entering shipping facility</p>
+          </content>
+          <subsection eId="part-2__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>takes an Australian ship to a shipping facility; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>permits an Australian ship to be taken to a shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">2,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Ordinary offence: non-complying Australian ship remaining in shipping facility</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a person allows an Australian ship to remain in a shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform;</p>
+              </content>
+              <content>
+                <p>then the person commits an offence for each day on which the ship so remains.</p>
+                <p>Ordinary offence: non-complying foreign ship entering Australian shipping facility</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>takes a foreign ship to an Australian shipping facility; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>permits a foreign ship to be taken to an Australian shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">2,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Ordinary offence: non-complying foreign ship remaining in Australian shipping facility</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a person allows a foreign ship to remain in an Australian shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform;</p>
+              </content>
+              <content>
+                <p>then the person commits an offence for each day on which the ship so remains.</p>
+                <p>Strict liability offence: non-complying Australian ship entering shipping facility</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>an Australian ship enters a shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-5__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">500 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Strict liability offence: non-complying Australian ship remaining in shipping facility</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>an Australian ship remains in a shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-6__para-d">
+              <num>d</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform;</p>
+              </content>
+              <content>
+                <p>then the master and owner each commit an offence for each day on which the ship so remains.</p>
+                <p>Strict liability offence: non-complying foreign ship entering Australian shipping facility</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">400 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>a foreign ship enters an Australian shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-7__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-7__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-7__para-e">
+              <num>e</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">500 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Strict liability offence: non-complying foreign ship remaining in Australian shipping facility</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-8">
+            <num>8</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-8__para-a">
+              <num>a</num>
+              <content>
+                <p>a foreign ship remains in an Australian shipping facility; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-8__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-8__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship is not a pre-2003 exempt platform; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-8__para-d">
+              <num>d</num>
+              <content>
+                <p>for a ship that has cybutryne applied to a designated external surface—the ship is not a pre-2023 exempt platform;</p>
+              </content>
+              <content>
+                <p>then the master and owner each commit an offence for each day on which the ship so remains.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">400 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-9">
+            <num>9</num>
+            <content>
+              <p>An offence against subsection (5), (6), (7) or (8) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-5" marker="5">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Exception for emergencies etc.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-10">
+            <num>10</num>
+            <content>
+              <p>Subsections (1) to (8) do not apply if:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>the ship enters or remains (as the case may be) for the purpose of securing the safety of the ship or seeking urgent medical attention for a person on board the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship is under the control of a person exercising powers under an Australian law.</p>
+              </content>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (10): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>No offence if State or Territory law applies</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-11">
+            <num>11</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-11__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this subsection, particular conduct would constitute an offence against this section; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-11__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct constitutes an offence against a law of a State or Territory;</p>
+              </content>
+              <content>
+                <p>then the conduct does not constitute an offence against this section.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (11): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Anti-fouling certificates and anti-fouling declarations</heading>
+        <section eId="part-3__sec-10">
+          <num>10</num>
+          <heading>Issue and endorsement of anti-fouling certificates</heading>
+          <content>
+            <p>Initial certificate</p>
+          </content>
+          <subsection eId="part-3__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a survey authority surveys an Australian ship with a gross tonnage of 400 or more, for the purpose of determining whether the ship complies with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship does not have a current anti-fouling certificate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>on the basis of the survey, the survey authority is satisfied that the ship complies with the anti-fouling requirements;</p>
+              </content>
+              <content>
+                <p>then the survey authority must issue an anti-fouling certificate in respect of the ship, in the prescribed form.</p>
+                <p>Endorsement of existing certificate</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a survey authority surveys an Australian ship with a gross tonnage of 400 or more, for the purpose of determining whether the ship complies with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship has a current anti-fouling certificate, but needs an endorsement in order for the certificate to continue in effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>on the basis of the survey, the survey authority is satisfied that the ship complies with the anti-fouling requirements;</p>
+              </content>
+              <content>
+                <p>then the survey authority must endorse the anti-fouling certificate in accordance with the regulations.</p>
+                <p>Status of certificate and endorsement</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An anti-fouling certificate issued under subsection (1), or the endorsement of an anti-fouling certificate under subsection (2), is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-11">
+          <num>11</num>
+          <heading>Lapsing of anti-fouling certificates</heading>
+          <subsection eId="part-3__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An anti-fouling certificate ceases to be in force if the ship ceases to be an Australian ship.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An anti-fouling certificate ceases to be in force if:</p>
+            </content>
+            <paragraph eId="part-3__sec-11__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>since the certificate was issued or last endorsed, any coating or treatment is applied to any designated external surface of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-11__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>after the coating or treatment is applied, the ship is taken to sea without the certificate having been endorsed in respect of the coating or treatment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-12">
+          <num>12</num>
+          <heading>Cancellation of anti-fouling certificates</heading>
+          <subsection eId="part-3__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may cancel an anti-fouling certificate that is in force in respect of an Australian ship if <role refersTo="#authority">the Authority</role> has reason to believe that:</p>
+            </content>
+            <paragraph eId="part-3__sec-12__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the ship does not comply with the anti-fouling requirements; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-12__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the anti-fouling certificate was issued or endorsed upon false or erroneous information.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may cancel an anti-fouling certificate under subsection (1) whether or not the certificate was issued by <role refersTo="#authority">the Authority</role>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-8" marker="8">
+              <content>
+                <p>Note:	Under <ref href="#sec-10">section 10</ref>, an anti-fouling certificate can be issued by <role refersTo="#authority">the Authority</role> or by another survey authority.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The cancellation takes effect when <role refersTo="#authority">the Authority</role> gives notice in writing of the cancellation:</p>
+            </content>
+            <paragraph eId="part-3__sec-12__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>addressed to the master, owner or agent of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-12__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>served in accordance with the regulations.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If an anti-fouling certificate in respect of an Australian ship is cancelled under this section, <role refersTo="#authority">the Authority</role> may:</p>
+            </content>
+            <paragraph eId="part-3__sec-12__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>require the certificate to be given to a specified person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-12__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>detain the ship until the requirement is complied with.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-12__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The requirement under paragraph (4)(a) must be:</p>
+            </content>
+            <paragraph eId="part-3__sec-12__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>made by notice in writing; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-12__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>addressed to the owner, agent or master of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-12__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>served in accordance with the regulations.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-12__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A requirement made by notice under paragraph (5)(a) is not a legislative instrument.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-13">
+          <num>13</num>
+          <heading>Obligation to carry anti-fouling certificate</heading>
+          <content>
+            <p>Ordinary offence: failing to carry anti-fouling certificate</p>
+          </content>
+          <subsection eId="part-3__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-3__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>on or after <date date="2008-01-01">1 January 2008</date>, the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>takes an Australian ship to or from a shipping facility on an international voyage; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>permits an Australian ship to be taken to or from a shipping facility on an international voyage; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the ship has a gross tonnage of 400 or more; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship does not have on board a current anti-fouling certificate for the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the ship is not an exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Strict liability offence: failing to carry anti-fouling certificate</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-3__sec-13__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>on or after <date date="2008-01-01">1 January 2008</date>, an Australian ship with a gross tonnage of 400 or more enters or leaves a shipping facility on an international voyage; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship does not have on board a current anti-fouling certificate for the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship is not an exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">400 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An offence against subsection (2) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-9" marker="9">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>No offence if State or Territory law applies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-13__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this subsection, particular conduct would constitute an offence against this section; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-13__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct constitutes an offence against a law of a State or Territory;</p>
+              </content>
+              <content>
+                <p>then the conduct does not constitute an offence against this section.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (4): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-14">
+          <num>14</num>
+          <heading>Obligation to report damage etc. to ship</heading>
+          <subsection eId="part-3__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-14__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an Australian ship has a current anti-fouling certificate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-14__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>something happens to the ship that affects, or might affect, its compliance with the anti-fouling requirements; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-14__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>notice of the happening is not given in accordance with the regulations <quantity refersTo="#deadline">within 7 days</quantity> after the happening;</p>
+              </content>
+              <content>
+                <p>then the master and owner each commit an offence for each subsequent day that passes without the notice having been given.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">100 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An offence against subsection (1) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>No offence if State or Territory law applies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-14__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this subsection, particular conduct would constitute an offence against this section; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-14__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct constitutes an offence against a law of a State or Territory;</p>
+              </content>
+              <content>
+                <p>then the conduct does not constitute an offence against this section.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (3): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-15">
+          <num>15</num>
+          <heading>Obligation to carry anti-fouling declaration</heading>
+          <content>
+            <p>Ordinary offence: failing to carry anti-fouling declaration</p>
+          </content>
+          <subsection eId="part-3__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-3__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>on or after <date date="2008-01-01">1 January 2008</date>, the person:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>takes an Australian ship to or from a shipping facility on an international voyage; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>permits an Australian ship to be taken to or from a shipping facility on an international voyage; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship is at least 24 metres in length and has a gross tonnage of less than 400; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship does not have on board an anti-fouling declaration for the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the ship is not an exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+              <content>
+                <p>Strict liability offence: failing to carry anti-fouling declaration</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-3__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>on or after <date date="2008-01-01">1 January 2008</date> an Australian ship enters or leaves a shipping facility on an international voyage; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the master or owner of the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the ship is at least 24 metres in length and has a gross tonnage of less than 400; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the ship does not have on board an anti-fouling declaration for the ship; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the ship is not an exempt platform.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">400 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An offence against subsection (2) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-13" marker="13">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>No offence if State or Territory law applies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-15__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>apart from this subsection, particular conduct would constitute an offence against this section; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-15__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct constitutes an offence against a law of a State or Territory;</p>
+              </content>
+              <content>
+                <p>then the conduct does not constitute an offence against this section.</p>
+                <p>Definition</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (4): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-15__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>anti</i></b><b><i>-</i></b><b><i>fouling declaration</i></b> means a declaration relating to compliance with the anti-fouling requirements, being a declaration in a form prescribed for the purposes of this definition.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Inspection and enforcement powers</heading>
+        <section eId="part-4__sec-16">
+          <num>16</num>
+          <heading>Inspectors and identity cards</heading>
+          <subsection eId="part-4__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Each of the following persons is an <b><i>inspector</i></b> for the purposes of this Act:</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a person appointed by <role refersTo="#authority">the Authority</role> under subsection (2);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	an inspector within the meaning of the <i>Navigation Act 2012</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a member, or special member, of the Australian Federal Police.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may, in writing, appoint appropriately qualified persons as inspectors.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> must issue an identity card to each inspector appointed under subsection (2). The card must incorporate a photograph of the inspector.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-4__sec-16__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the person has been issued with an identity card; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the person ceases to be an inspector; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-16__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>the person does not immediately return the identity card to <role refersTo="#authority">the Authority</role>.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">1 penalty unit</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection (4) does not apply if the identity card was lost or destroyed.</p>
+            </content>
+            <authorialNote placement="end" eId="note-15" marker="15">
+              <content>
+                <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (5): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A person to whom an identity card has been issued under subsection (3) must carry the card at all times when exercising powers or performing functions as an inspector under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-16__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>appropriately qualified</i></b> means having such training or experience as may be prescribed for the purposes of this definition.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-17">
+          <num>17</num>
+          <heading>Inspection of ships</heading>
+          <subsection eId="part-4__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An inspector may exercise the powers under this section in relation to a ship in an Australian shipping facility for the purpose of ascertaining:</p>
+            </content>
+            <paragraph eId="part-4__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>whether this Act and the regulations are being complied with in respect of the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>whether the Convention is being complied with in respect of the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>whether a foreign Convention law is being complied with in respect of the ship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The inspector may do any of the following:</p>
+            </content>
+            <paragraph eId="part-4__sec-17__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>go on board the ship with such assistants and equipment as the inspector considers necessary;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>require the master of the ship to take such steps as the inspector directs to facilitate the boarding;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>examine, and take samples of, any substances on board the ship or on any designated external surface of the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>inspect any part of the ship or its machinery or equipment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>require the master of the ship to take such steps as the inspector directs to facilitate the inspection of any part of the ship or its machinery or equipment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>open, or require the master of the ship to cause to be opened, any hold, compartment or receptacle in or on board the ship and inspect the contents of any hold, compartment or receptacle in or on board the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>require the master of the ship to produce:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>any certificate, declaration, endorsement or record that is required by this Act or the regulations to be carried on the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>any other documents, records or books relating to the ship or its cargo that are carried on the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>make copies of, or take extracts from, any such documents, records or books;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>require the master of the ship to certify that a true copy or extract made by the inspector under paragraph (h) is a true copy of the original;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>take photographs (including video recordings) of the ship or of equipment, or anything else, in or on board the ship;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-17__subsec-2__para-k">
+              <num>k</num>
+              <content>
+                <p>require a person to answer questions.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>This section does not authorise an inspector to exercise powers in a manner inconsistent with the Convention.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A person must not fail to comply with a requirement made of the person by an inspector under this section.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">80 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+          </subsection>
+          <subsection eId="part-4__sec-17__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An offence against subsection (4) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-16" marker="16">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-18">
+          <num>18</num>
+          <heading>Detention of ships</heading>
+          <subsection eId="part-4__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may detain a ship in an Australian shipping facility if <role refersTo="#authority">the Authority</role> has reasonable grounds for believing that an offence against this Act has been committed in respect of the ship.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The ship must be released immediately if:</p>
+            </content>
+            <paragraph eId="part-4__sec-18__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>security is provided in accordance with subsection (3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>all proceedings that have been instituted in respect of the offence have been discontinued; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>all such proceedings have been concluded (whether or not any appeal is pending) without any person being convicted of an offence or being found liable to pay an amount of money; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>all such proceedings have been concluded, and all penalties and other amounts of money, and all costs and expenses ordered to be paid, in respect of the offence have been paid; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> forms the belief that the offence did not occur, or did not occur as a result of actions in relation to the ship; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> determines for any other reason that the ship should be released.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Security referred to in subsection (2) must:</p>
+            </content>
+            <paragraph eId="part-4__sec-18__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>be provided in a form acceptable to <role refersTo="#authority">the Authority</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-18__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>be an amount that, in <role refersTo="#authority">the Authority</role>’s opinion, is equivalent to the maximum amount of all penalties, other amounts of money, costs and expenses that could be payable by the master and owner of the ship in respect of the offence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If the ship leaves the shipping facility while it is under detention, then the master and owner each commit an offence.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#penaltyUnit">1,000 penalty units</quantity>.</p>
+              </content>
+            </hcontainer>
+          </subsection>
+          <subsection eId="part-4__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An offence against subsection (4) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-17" marker="17">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-4__sec-18__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	While a ship is detained under subsection (1), a person does not have the power of seizure provided for by <ref href="#sec-123">section 123</ref> of the <i>Personal Property Securities Act 2009</i> in relation to the ship.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-19">
+          <num>19</num>
+          <heading>Compensation for undue detention or delay</heading>
+          <subsection eId="part-4__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If a ship is unduly detained or delayed under this Act, then <role refersTo="#authority">the Authority</role> is liable to pay the owner reasonable compensation for any loss or damage suffered by the owner as a result of the undue detention or delay.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If <role refersTo="#authority">the Authority</role> and the owner are unable to agree on the amount of the compensation, then the owner may institute proceedings in the Federal Court of Australia for such reasonable compensation as the Court determines.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>unduly detained or delayed</i></b> has the same meaning as in Article 13 of the Convention.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-5__sec-20">
+          <num>20</num>
+          <heading>Service of documents on master or owner of ship</heading>
+          <subsection eId="part-5__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A document to be served on the master or owner of a ship under this Act, or in respect of an offence against this Act, may be served on the agent of the ship instead.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A document served on the agent of a ship under subsection (1) is taken to have been served on the master and owner of the ship.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-21">
+          <num>21</num>
+          <heading>Time limit for prosecution of offences</heading>
+          <subsection eId="part-5__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), a prosecution for an offence against this Act may be brought at any time.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the prosecution relates to an offence involving a foreign ship:</p>
+            </content>
+            <paragraph eId="part-5__sec-21__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the prosecution must not be brought more than 3 years after the commission of the offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-21__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the prosecution must be suspended if, under paragraph 1 of article 228 of the Law of the Sea Convention, it is required to be suspended; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-21__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the prosecution must be terminated if, under paragraph 1 of article 228 of the Law of the Sea Convention, it is required to be terminated.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Law of the Sea Convention</i></b> means the United Nations Convention on the Law of the Sea, done at Montego Bay on 10 December 1982.</p>
+            </content>
+            <authorialNote placement="end" eId="note-18" marker="18">
+              <content>
+                <p>Note:	The text of the Convention is set out in Australian Treaty Series 1994 No. 31. In 2006, the text of a Convention in the Australian Treaty Series was accessible through the Australian Treaties Library on the AustLII website (www.austlii.edu.au).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-22">
+          <num>22</num>
+          <heading>Evidence of terms of the Convention</heading>
+          <subsection eId="part-5__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may issue a certificate stating that a document set out in, or annexed to, the certificate sets out the terms of the Convention.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Such a certificate is prima facie evidence of the matters so certified.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-23">
+          <num>23</num>
+          <heading>Evidence of analyst</heading>
+          <content>
+            <p>Authority may appoint analysts</p>
+          </content>
+          <subsection eId="part-5__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may, in writing, appoint appropriately qualified persons to be analysts for the purposes of this Act.</p>
+            </content>
+            <content>
+              <p>Analyst may issue certificate</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An analyst appointed under subsection (1) may issue a certificate setting out, in relation to a substance, one or more of the following:</p>
+            </content>
+            <paragraph eId="part-5__sec-23__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>when and from whom the substance was received by the analyst;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>what labels or other means of identifying the substance accompanied it when it was received by the analyst;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>what container the substance was in when it was received by the analyst;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a description of the substance received by the analyst;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>that he or she has analysed or examined the substance;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>the date on which the analysis or examination was carried out;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>the method used in conducting the analysis or examination;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>the results of the analysis or examination.</p>
+              </content>
+              <content>
+                <p>Certificate admissible in proceedings for offence</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The certificate is admissible in any proceeding for an offence against this Act as prima facie evidence of:</p>
+            </content>
+            <paragraph eId="part-5__sec-23__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the matters in the certificate; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the correctness of the results of the analysis or examination.</p>
+              </content>
+              <content>
+                <p>Restriction on admissibility of certificate</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A certificate must not be admitted in evidence under subsection (3) in proceedings for an offence unless:</p>
+            </content>
+            <paragraph eId="part-5__sec-23__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the person charged with the offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>a barrister or solicitor who has appeared for the person in those proceedings;</p>
+              </content>
+              <content>
+                <p>has, at least 14 days before the certificate is sought to be so admitted, been given a copy of the certificate together with reasonable notice of the intention to produce the certificate as evidence in the proceedings.</p>
+                <p>Document taken to be a certificate unless contrary established</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A document purporting to be a certificate referred to in subsection (2) is taken to be such a certificate and to have been duly given unless the contrary is established.</p>
+            </content>
+            <content>
+              <p>Analyst may be called to give evidence</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If the certificate is admitted in evidence, the person charged may require the analyst to be called as a witness for the prosecution and the analyst may be cross-examined as if he or she had given evidence of the matters stated in the certificate.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subsection (6) does not entitle a person to require an analyst to be called as a witness for the prosecution unless:</p>
+            </content>
+            <paragraph eId="part-5__sec-23__subsec-7__para-a">
+              <num>a</num>
+              <content>
+                <p>the prosecutor has been given at least 5 days notice of the person’s intention to require the analyst to be so called; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-23__subsec-7__para-b">
+              <num>b</num>
+              <content>
+                <p>the court, by order, allows the person to require the analyst to be so called.</p>
+              </content>
+              <content>
+                <p>Evidence in support, or rebuttal, of matter in certificate to be considered on its merits</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-23__subsec-8">
+            <num>8</num>
+            <content>
+              <p>Any evidence given in support, or in rebuttal, of a matter stated in a certificate issued under subsection (2) must be considered on its merits. The credibility and probative value of the evidence is neither increased nor diminished because of this section.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-24">
+          <num>24</num>
+          <heading>Orders</heading>
+          <content>
+            <p>		The Authority may, by legislative instrument, make orders (<b><i>Marine Orders</i></b>) on any matter on which regulations may be made. However, orders cannot impose penalties for contraventions of the orders.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-25">
+          <num>25</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-5__sec-25__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-25__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act;</p>
+            </content>
+            <content>
+              <p>and, in particular:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-25__para-c">
+            <num>c</num>
+            <content>
+              <p>for and in relation to giving effect to the Convention, other than provisions of the Convention to which effect is given by a provision of this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-5__sec-25__para-d">
+            <num>d</num>
+            <content>
+              <p>prescribing penalties not exceeding <quantity refersTo="#penaltyUnit">30 penalty units</quantity> for a contravention of the regulations.</p>
+            </content>
+            <authorialNote placement="end" eId="note-19" marker="19">
+              <content>
+                <p>Note:	The regulations can prescribe penalties for contraventions of Marine Orders: see the definition of <b><i>regulations</i></b> in <ref href="#sec-3">section 3</ref>.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Protection of the Sea (Harmful Anti-fouling Systems) Act 2006</td>
+                <td>107, 2006</td>
+                <td>27 Sept 2006</td>
+                <td>s 3–25: 17 Sept 2008 (s 2(1) item 2)
+Remainder: 27 Sept 2006 (s 2(1) item 1)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Personal Property Securities (Consequential Amendments) Act 2009</td>
+                <td>131, 2009</td>
+                <td>14 Dec 2009</td>
+                <td>Sch 3 (item 12): 30 Jan 2012 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2010</td>
+                <td>8, 2010</td>
+                <td>1 Mar 2010</td>
+                <td>Sch 5 (items 80, 81): 1 Mar 2010 (s 2(1) item 35)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Sch 2 (item 940) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 7, 12)</td>
+                <td>Sch 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Navigation (Consequential Amendments) Act 2012</td>
+                <td>129, 2012</td>
+                <td>13 Sept 2012</td>
+                <td>Sch 2 (item 53): 1 July 2013 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Maritime Legislation Amendment Act 2022</td>
+                <td>78, 2022</td>
+                <td>5 Dec 2022</td>
+                <td>Sch 3: 1 Jan 2023 (s 2(1) item 4)
+Sch 4 (items 1–5): 6 Dec 2022 (s 2(1) item 5)</td>
+                <td>Sch 3 (item 20)</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 8, 2010; No 46, 2011; No 78, 2022</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 78, 2022</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 78, 2022</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 129, 2012</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am No 131, 2009</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 8, 2010</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>am No 78, 2022</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>am No 78, 2022</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

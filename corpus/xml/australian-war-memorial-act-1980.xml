@@ -1,0 +1,2075 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1980/104/!main"/>
+          <FRBRuri value="/akn/au/act/1980/104"/>
+          <FRBRdate date="1980-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="104"/>
+          <FRBRname value="australian-war-memorial-act-1980"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1980/104/eng@2016-10-21/!main"/>
+          <FRBRuri value="/akn/au/act/1980/104/eng@2016-10-21"/>
+          <FRBRdate date="2016-10-21" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1980/104/eng@2016-10-21/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1980/104/eng@2016-10-21/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1980-01-01" type="generation" eId="evt-creation" source="#australian-war-memorial-act-1980"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1981/61" date="1981-06-12"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1984/63" date="1984-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1985/166" date="1985-12-11"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1989/93" date="1989-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1991/122" date="1991-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1996/43" date="1996-10-25"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1997/152" date="1997-10-24"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1999/146" date="1999-11-11"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1999/156" date="1999-11-24"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2001/159" date="2001-10-01"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2014/128" date="2014-12-05"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2016/61" date="2016-09-23"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-active-service" href="/ontology/term/au/term-active-service" showAs="active service"/>
+        <TLCTerm eId="term-appoint" href="/ontology/term/au/term-appoint" showAs="appoint"/>
+        <TLCTerm eId="term-appointed-member" href="/ontology/term/au/term-appointed-member" showAs="appointed member"/>
+        <TLCTerm eId="term-australian-military-history" href="/ontology/term/au/term-australian-military-history" showAs="Australian military history"/>
+        <TLCTerm eId="term-board" href="/ontology/term/au/term-board" showAs="Board"/>
+        <TLCTerm eId="term-chair" href="/ontology/term/au/term-chair" showAs="Chair"/>
+        <TLCTerm eId="term-commencing-date" href="/ontology/term/au/term-commencing-date" showAs="commencing date"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-defence-force" href="/ontology/term/au/term-defence-force" showAs="Defence Force"/>
+        <TLCTerm eId="term-director" href="/ontology/term/au/term-director" showAs="Director"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-fund" href="/ontology/term/au/term-fund" showAs="Fund"/>
+        <TLCTerm eId="term-historical-material" href="/ontology/term/au/term-historical-material" showAs="historical material"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-memorial" href="/ontology/term/au/term-memorial" showAs="Memorial"/>
+        <TLCTerm eId="term-memorial-collection" href="/ontology/term/au/term-memorial-collection" showAs="memorial collection"/>
+        <TLCTerm eId="term-repealed-act" href="/ontology/term/au/term-repealed-act" showAs="repealed Act"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian War Memorial Act 1980</p>
+      <p>No. 104, 1980</p>
+      <p><b>Compilation No.</b><b> </b><b>12</b></p>
+      <p><b>Compilation date: </b><b>	</b><b>	</b><b>	</b>21 October 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 61, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>14 November 2016</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian War Memorial Act 1980</i> that shows the text of the law as amended and in force on 21 October 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p><ref href="#part-II">Part II</ref>—The Australian War Memorial	3</p>
+      <p>4	Incorporation of Memorial	3</p>
+      <p>5	Functions of Memorial	3</p>
+      <p>6	Powers of Memorial	4</p>
+      <p>7	Land and historical material for Memorial	6</p>
+      <p>8	Disposal of historical material in memorial collection	7</p>
+      <p><ref href="#part-III">Part III</ref>—The Council of the Memorial	8</p>
+      <p>9	Establishment of Council	8</p>
+      <p>10	Membership of Council	8</p>
+      <p>11	Chair	9</p>
+      <p>12	Deputies of members	9</p>
+      <p>13	Remuneration etc.	10</p>
+      <p>14	Termination of appointment	10</p>
+      <p>15	Resignation	11</p>
+      <p>17	Meetings of Council	11</p>
+      <p>18	Committees of Council	12</p>
+      <p>19	Delegation by Council	12</p>
+      <p><ref href="#part-IV">Part IV</ref>—The Director of the Memorial	14</p>
+      <p>20	Office of Director	14</p>
+      <p>21	Terms and conditions of appointment etc.	14</p>
+      <p>22	Remuneration etc.	14</p>
+      <p>23	Leave of absence	14</p>
+      <p>24	Termination of appointment	15</p>
+      <p>25	Resignation	15</p>
+      <p>26	Acting Director	15</p>
+      <p><ref href="#part-V">Part V</ref>—Staff and consultants	16</p>
+      <p>27	Staff	16</p>
+      <p>28	Arrangements relating to staff	16</p>
+      <p>29	Engagement of consultants etc.	16</p>
+      <p><ref href="#part-VI">Part VI</ref>—Finance	17</p>
+      <p>30	Moneys payable to Memorial	17</p>
+      <p>32	Australian War Memorial Fund	17</p>
+      <p>33	Application of moneys held by Memorial	18</p>
+      <p>34	Investment	18</p>
+      <p>35	Contracts	18</p>
+      <p>37	Exemption from taxation	18</p>
+      <p><ref href="#part-VII">Part VII</ref>—Miscellaneous	19</p>
+      <p>39	Delegation by Minister	19</p>
+      <p>40	Operation of certain other laws not affected	19</p>
+      <p>41	Supply of liquor on premises of Memorial	19</p>
+      <p>42	Regulations	20</p>
+      <p><ref href="#part-VIII">Part VIII</ref>—Repeal of certain Acts and consequent transitional provisions	21</p>
+      <p>43	Interpretation	21</p>
+      <p>44	Repeal of certain Acts	21</p>
+      <p>45	Rights of Board to vest in Memorial etc.	21</p>
+      <p>46	Instrument etc. not liable to stamp duty or other tax	22</p>
+      <p>47	Application of moneys of Memorial	22</p>
+      <p>48	Report of operations of Board	23</p>
+      <p>Endnotes	24</p>
+      <p>Endnote 1—About the endnotes	24</p>
+      <p>Endnote 2—Abbreviation key	26</p>
+      <p>Endnote 3—Legislation history	27</p>
+      <p>Endnote 4—Amendment history	30</p>
+      <p>An Act relating to the Australian War Memorial</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian War Memorial Act 1980</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act shall come into operation on a date to be fixed by Proclamation.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-active-service">active service</term> means <def>active service in war or in warlike operations by members of the Defence Force.</def></p>
+            <p><term refersTo="#term-appoint">appoint</term> includes <def>re-appoint.</def></p>
+            <p><term refersTo="#term-appointed-member">appointed member</term> means <def>a member of the Council appointed by the Governor-General.</def></p>
+            <p><term refersTo="#term-australian-military-history">Australian military history</term> means <def>the history of: wars and warlike operations in which Australians have been on active service, including the events leading up to, and the aftermath of, such wars and warlike operations; and the Defence Force.</def></p>
+          </content>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>wars and warlike operations in which Australians have been on active service, including the events leading up to, and the aftermath of, such wars and warlike operations; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the Defence Force.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-chair">Chair</term> means <def>the Chair of the Council.</def></p>
+              <p><term refersTo="#term-council">Council</term> means <def>the Council of the Australian War Memorial.</def></p>
+              <p><term refersTo="#term-defence-force">Defence Force</term> includes <def>any naval or military force of the Crown raised in Australia before the establishment of the Commonwealth.</def></p>
+              <p><term refersTo="#term-director">Director</term> means <def>the Director of the Australian War Memorial.</def></p>
+              <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-fund">Fund</term> means <def>the Australian War Memorial Fund referred to in <ref href="#sec-32">section 32</ref>.</def></p>
+              <p><term refersTo="#term-historical-material">historical material</term> means <def>material (whether in writing or in any other form) relating to Australian military history.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of the Council.</def></p>
+              <p><term refersTo="#term-memorial">Memorial</term> means <def>the corporation established by subsection 4(1) under the name of the Australian War Memorial.</def></p>
+              <p><term refersTo="#term-memorial-collection">memorial collection</term> means <def>all historical material that is owned by the Memorial from time to time.</def></p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>The Australian War Memorial</heading>
+        <section eId="part-II__sec-4">
+          <num>4</num>
+          <heading>Incorporation of Memorial</heading>
+          <subsection eId="part-II__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this section a corporation by the name of the Australian War Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Memorial:</p>
+            </content>
+            <paragraph eId="part-II__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>has perpetual succession;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall have a common seal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>may acquire, hold and dispose of real and personal property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-4__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>may sue and be sued in its corporate name.</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Memorial. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The common seal of the Memorial shall be kept in such custody as the Council directs and shall not be used except as authorized by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-4__subsec-4">
+            <num>4</num>
+            <content>
+              <p>All courts, judges and persons acting judicially shall take judical notice of the common seal of the Memorial affixed to a document and shall presume that it was duly affixed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-5">
+          <num>5</num>
+          <heading>Functions of Memorial</heading>
+          <subsection eId="part-II__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The functions of the Memorial are:</p>
+            </content>
+            <paragraph eId="part-II__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	to maintain and develop the national memorial referred to in subsection 6(1) of the <i>Australian War Memorial Act 1962 </i>as a national memorial of Australians who have died:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>on or as a result of active service; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>as a result of any war or warlike operations in which Australians have been on active service;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to develop and maintain, as an integral part of the national memorial referred to in paragraph (a), a national collection of historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to exhibit, or to make available for exhibition by others, historical material from the memorial collection or historical material that is otherwise in the possession of the Memorial;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>to conduct, arrange for and assist in research into matters pertaining to Australian military history; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>to disseminate information relating to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>Australian military history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the national memorial referred to in paragraph (a);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the memorial collection; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-5__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>the Memorial and its functions.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Memorial shall use every endeavour to make the most advantageous use of the memorial collection in the national interest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-6">
+          <num>6</num>
+          <heading>Powers of Memorial</heading>
+          <subsection eId="part-II__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Act, the Memorial has power to do all things necessary or convenient to be done for or in connection with the performance of its functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), the powers of the Memorial include power:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to purchase or take on hire, or to accept as a gift or on deposit or loan, historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to lend or hire out or otherwise deal with (otherwise than by way of disposal) historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>to accept gifts, devises, bequests or assignments made to the Memorial, whether on trust or otherwise, and whether unconditionally or subject to a condition and, if a gift, devise, bequest or assignment is accepted by the Memorial on trust or subject to a condition, to act as trustee or to comply with the condition, as the case may be;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>to collect, and make available (whether in writing or in any other form and whether by sale or otherwise), information relating to Australian military history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>to make available (whether by sale or otherwise) reproductions, replicas or other representations (whether in writing or in any other form) of historical material;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>to make available (whether in writing or in any other form and whether by sale or otherwise) information relating to the Memorial and its functions;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-g">
+              <num>g</num>
+              <content>
+                <p>to provide facilities to stimulate interest in Australian military history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-h">
+              <num>h</num>
+              <content>
+                <p>to assist educational institutions in matters relating to Australian military history;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-j">
+              <num>j</num>
+              <content>
+                <p>to train members of the staff of the Memorial, and such other persons as the Council approves, in developing, caring for and undertaking research in relation to the memorial collection;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-k">
+              <num>k</num>
+              <content>
+                <p>to assist, on request, in the creation and maintenance of military museums in Defence Force establishments;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-m">
+              <num>m</num>
+              <content>
+                <p>to occupy, use and control any land or building owned or held under lease by the Commonwealth and made available to the Memorial under <ref href="#sec-7">section 7</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-n">
+              <num>n</num>
+              <content>
+                <p>to erect buildings;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-o">
+              <num>o</num>
+              <content>
+                <p>to purchase or take on hire, or to accept as a gift or on deposit or loan, and to dispose of or otherwise deal with, furnishings, equipment and other goods;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-p">
+              <num>p</num>
+              <content>
+                <p>to act as trustee of moneys or other property vested in the Memorial on trust; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-2__para-q">
+              <num>q</num>
+              <content>
+                <p>to act on behalf of the Commonwealth or of an authority of the Commonwealth in the administration of a trust relating to historical material or related matters.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Memorial shall not dispose of historical material except in accordance with <ref href="#sec-8">section 8</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Notwithstanding anything contained in this Act, any money or other property held by the Memorial upon trust or accepted by the Memorial subject to a condition shall not be dealt with except in accordance with the obligations of the Memorial as trustee of the trust or as the person who has accepted the money or other property subject to the condition, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Memorial must not fix charges for parking a vehicle on any land, or for entry onto any land or into any building, that:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>is owned by, or under the control of, the Memorial; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>is in Campbell, Australian Capital Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-6__subsec-6">
+            <num>6</num>
+            <content>
+              <p>To avoid doubt, subsection (5) does not apply in relation to the following:</p>
+            </content>
+            <paragraph eId="part-II__sec-6__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the hiring or leasing<i> </i>of any such land or building;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the provision of educational programs by the Memorial;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-6__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>the provision of any other services by the Memorial following entry onto any such land or into any such building.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Land and historical material for Memorial</heading>
+          <subsection eId="part-II__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may make available to the Memorial for the purposes of the Memorial such land owned or held under lease by the Commonwealth as is specified by the Minister by notice in the <i>Gazette </i>and any building, structure or other improvements on that land.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to this Act, <role refersTo="#minister">the Minister</role> may, on behalf of the Commonwealth, make arrangements, in writing, with the Memorial for:</p>
+            </content>
+            <paragraph eId="part-II__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the transfer of the ownership of historical material from the Commonwealth to the Memorial for the purpose of the inclusion of the material in the memorial collection;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the deposit in the custody of the Memorial of historical material owned by the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-7__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the transfer to the Memorial of the ownership of, or the deposit in the custody of the Memorial of, such other goods or equipment owned by the Commonwealth as he or she considers to be of use to the Memorial;</p>
+              </content>
+              <content>
+                <p>upon such terms and conditions as are specified in the arrangement.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-8">
+          <num>8</num>
+          <heading>Disposal of historical material in memorial collection</heading>
+          <subsection eId="part-II__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (3), where the Council is satisfied that historical material in the memorial collection:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is unfit for the collection; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>is not required as part of the collection;</p>
+              </content>
+              <content>
+                <p>the Council may resolve that the historical material be disposed of by sale, gift or destruction.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the Council is satisfied that the exchange of historical material in the memorial collection for other historical material would be advantageous to the collection, the Council may resolve that the first-mentioned historical material be disposed of in exchange for that other historical material.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council shall not resolve that historical material be disposed of by destruction unless the Council is satisfied that the material has no saleable value.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-II__sec-8__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the Council has resolved, in accordance with this section, that historical material be disposed of; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-8__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>if the value of that historical material exceeds $5,000, <role refersTo="#minister">the Minister</role> has approved of that disposal;</p>
+              </content>
+              <content>
+                <p>the Memorial may dispose of that historical material accordingly.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>The Council of the Memorial</heading>
+        <section eId="part-III__sec-9">
+          <num>9</num>
+          <heading>Establishment of Council</heading>
+          <subsection eId="part-III__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is established by this section a Council by the name of the Council of the Australian War Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council is responsible for the conduct and control of the affairs of the Memorial and the policy of the Memorial with respect to any matters shall be determined by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>All acts and things done in the name of, or on behalf of, the Memorial by the Council or with <role refersTo="#authority">the authority</role> of the Council shall be deemed to have been done by the Memorial.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-10">
+          <num>10</num>
+          <heading>Membership of Council</heading>
+          <subsection eId="part-III__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council shall consist of:</p>
+            </content>
+            <paragraph eId="part-III__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chief of Navy;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Chief of Army;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Chief of Air Force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>not less than 8 nor more than 10 other members.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The members referred to in paragraph (1)(d) shall be appointed by the Governor-General having regard to their knowledge and experience with respect to matters relevant to the functions of the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An appointed member:</p>
+            </content>
+            <paragraph eId="part-III__sec-10__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>shall be appointed to be a part-time member; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-10__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>holds office for such term, not exceeding 3 years, as is fixed by the Governor-General in the instrument of his or her appointment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The performance of the functions, or the exercise of the powers, of the Council is not affected by reason only of there being a vacancy or vacancies in the membership of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-10__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The appointment of a person as an appointed member is not invalidated, and shall not be called in question, by reason of a defect or irregularity in, or in connection with, his or her appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-11">
+          <num>11</num>
+          <heading>Chair</heading>
+          <subsection eId="part-III__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Chair of the Council who shall be elected by the members from among their number.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member elected as the Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-11__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>holds office as the Chair for the period fixed by the Council at the time of his or her election, but that period shall not extend beyond the expiration of the term for which he or she is holding office as a member at that time; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-11__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is eligible for re-election.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chair may resign his or her office by writing signed by him or her and delivered to <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The election of a person as the Chair is not invalidated, and shall not be called in question, by reason of a defect or irregularity in or in connection with his or her election.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-11__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The validity of anything done by a person purporting to be the Chair shall not be called in question on the ground that there is a defect or irregularity in or in connection with his or her election as the Chair or that he or she has ceased to be the Chair.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-12">
+          <num>12</num>
+          <heading>Deputies of members</heading>
+          <subsection eId="part-III__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A member may, with the approval of <role refersTo="#minister">the Minister</role>, appoint a person, other than a member, to be his or her deputy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A member may revoke the appointment of a person as his or her deputy, but the revocation is not effective until the member has given notice of it, in writing, to <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A deputy of a member may resign his or her office by writing signed by him or her and delivered to <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A deputy of a member is entitled, in the event of the absence of the member of whom he or she is the deputy from a meeting of the Council, to attend that meeting and, when so attending, shall be deemed to be a member.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-12__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The appointment of a person as a deputy of a member is not invalidated, and shall not be called in question, by reason of a defect or irregularity in or in connection with his or her appointment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-13">
+          <num>13</num>
+          <heading>Remuneration etc.</heading>
+          <subsection eId="part-III__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to a person who is:</p>
+            </content>
+            <paragraph eId="part-III__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an appointed member;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a deputy of a member; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a member of a committee constituted under <ref href="#sec-18">section 18</ref> other than a member of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person to whom this section applies shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person to whom this section applies shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-14">
+          <num>14</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-III__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of an appointed member by reason of the misbehaviour or physical or mental incapacity of that member.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If an appointed member:</p>
+            </content>
+            <paragraph eId="part-III__sec-14__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-14__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent, except on leave granted by the Council, from 3 consecutive meetings of the Council otherwise than on business of the Council undertaken with the approval of the Council;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate the appointment of that member.</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	The appointment of an appointed member may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-15">
+          <num>15</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>An appointed member may resign his or her office by writing signed by him or her and delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-17">
+          <num>17</num>
+          <heading>Meetings of Council</heading>
+          <subsection eId="part-III__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chair:</p>
+            </content>
+            <paragraph eId="part-III__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>shall convene such meetings of the Council as he or she considers necessary for the efficient conduct of its business; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>shall, on receipt of a written request signed by not less than 4 members, convene a meeting of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may at any time convene a meeting of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chair shall preside at all meetings of the Council at which he or she is present.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In the event of the absence of the Chair from a meeting of the Council, the members present shall elect one of their number to preside at that meeting.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-5">
+            <num>5</num>
+            <content>
+              <p>At a meeting of the Council, 5 members constitute a quorum.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subject to subsection (7), all questions arising at a meeting of the Council shall be decided by a majority of the votes of the members present and voting, including the member presiding.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-7">
+            <num>7</num>
+            <content>
+              <p>In the event of an equality of votes on a resolution proposed at a meeting of the Council, the resolution shall be taken not to be passed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-17__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The Council may regulate the conduct of proceedings at its meetings as it thinks fit and shall keep minutes of those proceedings.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-18">
+          <num>18</num>
+          <heading>Committees of Council</heading>
+          <subsection eId="part-III__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Council may constitute such committees as it thinks necessary for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A committee may be constituted wholly by members of the Council or partly by members of the Council and partly by other persons.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-19">
+          <num>19</num>
+          <heading>Delegation by Council</heading>
+          <subsection eId="part-III__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Council may, by resolution, either generally or as otherwise provided by the resolution, delegate all or any of its powers under this Act (except this power of delegation) to a member of the Council, to the Director or to a member of the staff of the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power so delegated, when exercised by the delegate, shall, for the purposes of this Act, be deemed to have been exercised by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegate is, in the exercise of a power so delegated, subject to the directions of the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A delegation of a power under this section:</p>
+            </content>
+            <paragraph eId="part-III__sec-19__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>may be revoked by resolution of the Council (whether or not constituted by the persons constituting the Council at the time the power was delegated);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-19__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>does not prevent the exercise of the power by the Council; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-19__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>continues in force notwithstanding a change in the membership of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	Section 34A of the <i>Acts Interpretation Act 1901 </i>applies in relation to a delegation under this section as if the Council were a person.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	A certificate signed by the Chair stating any matter with respect to the delegation of a power under this section is <i>prima facie </i>evidence of that matter.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-19__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A document purporting to be a certificate mentioned in subsection (6) shall, unless the contrary is established, be deemed to be such a certificate and to have been duly given.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>The Director of the Memorial</heading>
+        <section eId="part-IV__sec-20">
+          <num>20</num>
+          <heading>Office of Director</heading>
+          <subsection eId="part-IV__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Director of the Australian War Memorial, who shall be appointed by the Governor-General.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director is the chief executive officer of the Memorial and shall, subject to and in accordance with the general directions of the Council, manage the affairs of the Memorial.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-21">
+          <num>21</num>
+          <heading>Terms and conditions of appointment etc.</heading>
+          <subsection eId="part-IV__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director holds office for such period, not exceeding 7 years, as is specified in the instrument of his or her appointment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Director holds office on such terms and conditions (if any) in respect of matters not provided for by this Act as are determined by the Governor-General.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-22">
+          <num>22</num>
+          <heading>Remuneration etc.</heading>
+          <subsection eId="part-IV__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, he or she shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Director shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-23">
+          <num>23</num>
+          <heading>Leave of absence</heading>
+          <subsection eId="part-IV__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director has such recreation leave entitlements as are determined by the Remuneration Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may grant the Director leave of absence, other than recreation leave, on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-24">
+          <num>24</num>
+          <heading>Termination of appointment</heading>
+          <subsection eId="part-IV__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may terminate the appointment of the Director by reason of the misbehaviour or physical or mental incapacity of the Director.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the Director:</p>
+            </content>
+            <paragraph eId="part-IV__sec-24__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>becomes bankrupt, applies to take the benefit of any law for the relief of bankrupt or insolvent debtors, compounds with his or her creditors or makes an assignment of his or her remuneration for their benefit;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-24__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is absent from duty, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-24__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>engages in paid employment outside the duties of his or her office without the approval of <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+              <content>
+                <p>the Governor-General shall terminate the appointment of the Director.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-25">
+          <num>25</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>The Director may resign his or her office by writing signed by him or her and delivered to the Governor-General.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Acting Director</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may appoint a person to act in the place of the Director:</p>
+          </content>
+          <paragraph eId="part-IV__sec-26__para-a">
+            <num>a</num>
+            <content>
+              <p>during a vacancy in the office of the Director, whether or not an appointment has previously been made to the office; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-26__para-b">
+            <num>b</num>
+            <content>
+              <p>during any period, or during all periods, when the Director is absent from duty or from Australia, or is, for any other reason, unable to perform the functions of his or her office.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Staff and consultants</heading>
+        <section eId="part-V__sec-27">
+          <num>27</num>
+          <heading>Staff</heading>
+          <subsection eId="part-V__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to <ref href="#sec-28">section 28</ref>, the staff of the Memorial shall be persons engaged under the <i>Public Service Act 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+            </content>
+            <paragraph eId="part-V__sec-27__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Director and the APS employees assisting the Director together constitute a Statutory Agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-27__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Director is the Head of that Statutory Agency.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-28">
+          <num>28</num>
+          <heading>Arrangements relating to staff</heading>
+          <subsection eId="part-V__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Council may arrange with an Agency Head (within the meaning of the <i>Public Service Act 1999</i>) or with a body (other than a company or association) established for a public purpose by or under a law of the Commonwealth for the services of officers or employees of the body to be made available to the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council may enter into an arrangement with the appropriate authority of a State or Territory for the services of officers or employees of the Public Service of the State or Territory, or of a body established for a public purpose by or under a law of the State or Territory, to be made available to the Memorial.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-29">
+          <num>29</num>
+          <heading>Engagement of consultants etc.</heading>
+          <subsection eId="part-V__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director may, on behalf of the Memorial engage persons having suitable qualifications and experience as consultants to the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The terms and conditions of the engagement of a person under subsection (1) are such as are determined by the Council.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Finance</heading>
+        <section eId="part-VI__sec-30">
+          <num>30</num>
+          <heading>Moneys payable to Memorial</heading>
+          <subsection eId="part-VI__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There are payable to the Memorial such moneys as are appropriated, from time to time, by the Parliament for the purposes of the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may give directions as to the amounts in which, and the times at which, moneys referred to in subsection (1) are to be paid to the Memorial.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-32">
+          <num>32</num>
+          <heading>Australian War Memorial Fund</heading>
+          <subsection eId="part-VI__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Australian War Memorial Fund that was established by the <i>Australian War Memorial Act 1925 </i>and continued in existence under that name by the <i>Australian War Memorial Act 1962 </i>is continued in existence under that name and vested in the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The moneys and investments constituting the Fund immediately before the commencement of this Act shall continue to form part of the Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>There shall be paid into the Fund all moneys received by the Memorial other than:</p>
+            </content>
+            <paragraph eId="part-VI__sec-32__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>moneys paid to the Memorial under <ref href="#sec-30">section 30</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-32__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>moneys held by the Memorial upon trust.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-32__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The payment of moneys into a bank account maintained by the Memorial under the name of the Australian War Memorial Fund shall be deemed, for the purposes of subsection (3), to be a payment of those moneys into the Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-33">
+          <num>33</num>
+          <heading>Application of moneys held by Memorial</heading>
+          <subsection eId="part-VI__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Moneys (including moneys standing to the credit of the Fund) held by the Memorial otherwise than upon trust shall be applied only:</p>
+            </content>
+            <paragraph eId="part-VI__sec-33__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the costs, expenses and other obligations incurred by the Memorial in the performance of its functions or the exercise of its powers under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-33__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of any remuneration and allowances payable to any person under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not prevent investment, under <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, of money that is not immediately required for the purposes of the Memorial.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-34">
+          <num>34</num>
+          <heading>Investment</heading>
+          <subsection eId="part-VI__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Income derived from the investment of moneys standing to the credit of the Fund forms part of the Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VI__sec-35">
+          <num>35</num>
+          <heading>Contracts</heading>
+          <content>
+            <p>Subject to subsection 8(4), the Memorial shall not, without the approval of <role refersTo="#minister">the Minister</role>, enter into a contract under which the Memorial is to pay or receive:</p>
+          </content>
+          <paragraph eId="part-VI__sec-35__para-a">
+            <num>a</num>
+            <content>
+              <p>in the case of a contract for the acquisition of any historical material—an amount exceeding $250,000 or, if a higher amount is for the time being prescribed for the purposes of this paragraph, that higher amount; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VI__sec-35__para-b">
+            <num>b</num>
+            <content>
+              <p>in any other case—an amount exceeding $150,000 or, if a higher amount is for the time being prescribed for the purposes of this paragraph, that higher amount.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-VI__sec-37">
+          <num>37</num>
+          <heading>Exemption from taxation</heading>
+          <content>
+            <p>The Memorial is not subject to taxation under a law of Australia or of a State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VII__sec-39">
+          <num>39</num>
+          <heading>Delegation by Minister</heading>
+          <subsection eId="part-VII__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, either generally or as otherwise provided by the instrument of delegation, by writing signed by him or her, delegate to a person any of his or her powers under this Act, other than this power of delegation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power so delegated, when exercised by the delegate, shall, for the purposes of this Act, be deemed to have been exercised by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegation under this section does not prevent the exercise of a power by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-40">
+          <num>40</num>
+          <heading>Operation of certain other laws not affected</heading>
+          <content>
+            <p>Nothing in this Act affects the operation of any law (whether passed before or after the commencement of this Act) relating to copyright, to the preservation and use of archival resources or to the rights of members of the public to access to official documents of the Government of the Commonwealth and of its agencies.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-41">
+          <num>41</num>
+          <heading>Supply of liquor on premises of Memorial</heading>
+          <subsection eId="part-VII__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The regulations may make provision for and in relation to the sale, supply, disposal, possession or control of liquor on premises in the Australian Capital Territory owned by or under the control of the Memorial.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The law of the Australian Capital Territory relating to the sale, supply and disposal of liquor does not apply with respect to premises in respect of which regulations are in force under subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	In this section, <b><i>liquor</i></b> means wine, spirits, ale, beer, porter, cider, perry or any liquid containing alcohol ordinarily used or fit for use as a beverage.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-42">
+          <num>42</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters that by this Act are required or permitted to be prescribed, or are necessary or convenient to be prescribed for carrying out or giving effect to this Act, and, in particular:</p>
+          </content>
+          <paragraph eId="part-VII__sec-42__para-a">
+            <num>a</num>
+            <content>
+              <p>for regulating, restricting or prohibiting the entry of persons onto any land or building, or any part of any land or building, owned by or under the control of the Memorial, and for regulating the conduct of persons on any such land or building, or any part of any such land or building, including making provision for and in relation to the removal of persons from any such land or building, or any part of any such land or building;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-42__para-b">
+            <num>b</num>
+            <content>
+              <p>for fixing charges for entry onto any land, or into any building, owned by, or under the control of, the Memorial (other than any land or building in Campbell, Australian Capital Territory);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-42__para-c">
+            <num>c</num>
+            <content>
+              <p>for regulating, controlling, restricting or prohibiting the making, using, printing, publishing, exhibiting, selling or offering for sale of replicas, photographs, representations or copies of historical material forming part of the memorial collection; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VII__sec-42__para-d">
+            <num>d</num>
+            <content>
+              <p>for prescribing penalties not exceeding a fine of <quantity refersTo="#penaltyUnit">5 penalty units</quantity> for offences against the regulations.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VIII">
+        <num>VIII</num>
+        <heading>Repeal of certain Acts and consequent transitional provisions</heading>
+        <section eId="part-VIII__sec-43">
+          <num>43</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Part:</p>
+            <p><term refersTo="#term-board">Board</term> means <def>the Board of Trustees of the Australian War Memorial established by the repealed Act.</def></p>
+            <p><term refersTo="#term-commencing-date">commencing date</term> means <def>the date of commencement of this Act.</def></p>
+            <p><term refersTo="#term-repealed-act">repealed Act</term> means <def><ref href="/akn/au/act/australian-war-memorial-act-1962" class="unresolved">the Australian War Memorial Act 1962</ref>.</def></p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-44">
+          <num>44</num>
+          <heading>Repeal of certain Acts</heading>
+          <content>
+            <p>The following Acts are repealed:</p>
+            <p><i>Australian War Memorial Act 1962</i>;</p>
+            <p><i>Australian War Memorial Act 1975</i>.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-45">
+          <num>45</num>
+          <heading>Rights of Board to vest in Memorial etc.</heading>
+          <subsection eId="part-VIII__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Act, upon the commencing date:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any rights, property or assets that, immediately before that date were vested in the Board are, by force of this subsection, vested in the Memorial;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any historical material that, immediately before that date:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>was vested in the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>formed part of the war relics of Australia within the meaning of the repealed Act;</p>
+              </content>
+              <content>
+                <p>is, by force of this subsection, vested in the Memorial;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Memorial becomes, by force of this subsection, entitled to the custody of material, being any other historical material or other goods or equipment held, immediately before that date, in the custody of the Board, upon the terms and conditions upon which that material was held by the Board; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the Memorial becomes, by force of this subsection, liable to pay and discharge any debts, liabilities or obligations of the Board that existed immediately before that date.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An arrangement or contract entered into by or on behalf of the Board as a party and in force immediately before the commencing date continues in force notwithstanding the repeals effected by <ref href="#sec-44">section 44</ref>, but that arrangement or contract has effect, on and after the commencing date, as if:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-45__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Memorial were substituted for the Board as a party to the arrangement or contract; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-45__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>any reference in the arrangement or contract to the Board were (except in relation to a matter that occurred before that date) a reference to the Memorial.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where, immediately before the commencing date, proceedings to which the Board was a party were pending in any court, the Memorial is, by force of this subsection, substituted for the Board as a party to the proceedings and has the same rights in the proceedings as the party for which it is substituted.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-46">
+          <num>46</num>
+          <heading>Instrument etc. not liable to stamp duty or other tax</heading>
+          <content>
+            <p>An instrument or document that <role refersTo="#secretary">the Secretary</role> to the Department of Home Affairs or an officer of that Department authorized by him or her in writing for the purposes of this section certifies to have been made, executed or given by reason of, or for a purpose connected with or arising out of, the operation of this Part is not liable to stamp duty or other tax under a law of the Commonwealth or of a State or Territory.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-47">
+          <num>47</num>
+          <heading>Application of moneys of Memorial</heading>
+          <content>
+            <p>The moneys of the Memorial may be applied in payment or discharge of the debts, liabilities or obligations referred to in paragraph 45(1)(d).</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-48">
+          <num>48</num>
+          <heading>Report of operations of Board</heading>
+          <subsection eId="part-VIII__sec-48__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Memorial shall, not later than 6 months after the commencement of this Act, prepare and submit to the Minister a report of the operations of the Board during the period that commenced on 1 July 1979 and ended immediately before the commencing date (in this section referred to as <b><i>the final year</i></b>), together with financial statements in respect of the final year in such form as the Minister approves.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-48__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Before submitting financial statements to <role refersTo="#minister">the Minister</role> under subsection (1), the Memorial shall submit them to the Auditor-General, who shall report to <role refersTo="#minister">the Minister</role>:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-48__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>whether, in his or her opinion, the statements are based on proper accounts and records;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-48__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>whether the statements are in agreement with the accounts and records and show fairly the financial operations of the Board and the state of the Fund and the affairs of the Board;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-48__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>whether the receipt and expenditure of moneys by the Board during the year have been in accordance with this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-48__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>as to such other matters arising out of the statements as the Auditor-General considers should be reported to <role refersTo="#minister">the Minister</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-48__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> shall cause copies of the report and financial statements together with a copy of the report of the Auditor-General to be laid before each House of the Parliament within 15 sitting days of that House after their receipt by <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-48__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The persons who, immediately before the commencing date, were members of the Board shall furnish the Memorial with such information as is necessary to enable the Memorial to prepare the report and financial statements.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Australian War Memorial Act 1980</td>
+                <td>104, 1980</td>
+                <td>6 June 1980</td>
+                <td>1 July 1980 (s 2 and gaz 1980, No S148)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1981</td>
+                <td>61, 1981</td>
+                <td>12 June 1981</td>
+                <td>s 115: 12 June 1981 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Service Reform Act 1984</td>
+                <td>63, 1984</td>
+                <td>25 June 1984</td>
+                <td>s 151(1): 1 July 1984 (s 2(4) and gaz 1984, No S245)</td>
+                <td>s 151(9)</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No 1) 1985</td>
+                <td>65, 1985</td>
+                <td>5 June 1985</td>
+                <td>s 3: 3 July 1985 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Service and Statutory Authorities Amendment Act 1985</td>
+                <td>166, 1985</td>
+                <td>11 Dec 1985</td>
+                <td>s 45: 8 Jan 1986 (s 2(7))</td>
+                <td>s 45(2)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment Act 1989</td>
+                <td>93, 1989</td>
+                <td>27 June 1989</td>
+                <td>s 4 and 5: 27 June 1989 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Industrial Relations Legislation Amendment Act 1991</td>
+                <td>122, 1991</td>
+                <td>27 June 1991</td>
+                <td>Sch: 10 Dec 1991 (s 2(3) and gaz 1991, No S332)</td>
+                <td>s 31(2)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1996</td>
+                <td>43, 1996</td>
+                <td>25 Oct 1996</td>
+                <td>Sch 4 (items 46, 47) and Sch 5 (items 33–35): 25 Oct 1996</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Defence Legislation Amendment Act (No 1) 1997</td>
+                <td>1, 1997</td>
+                <td>19 Feb 1997</td>
+                <td>Sch 2 (items 9, 51, 95): 19 Feb 1997</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+                <td>152, 1997</td>
+                <td>24 Oct 1997</td>
+                <td>Sch 2 (items 542–553): 1 Jan 1998 (s 2(2))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                <td>146, 1999</td>
+                <td>11 Nov 1999</td>
+                <td>Sch 1 (items 273–276): 5 Dec 1999 (s 2(1), (2) and gaz 1999, No S584)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Corporate Law Economic Reform Program Act 1999</td>
+                <td>156, 1999</td>
+                <td>24 Nov 1999</td>
+                <td>Sch 10 (item 62): 13 Mar 2000 (s 2(2)(c) and gaz 2000, No S114)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+                <td>159, 2001</td>
+                <td>1 Oct 2001</td>
+                <td>Sch 1: 29 Oct 2001 (s 2(1))</td>
+                <td>Sch 1 (item 97)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2011</td>
+                <td>5, 2011</td>
+                <td>22 Mar 2011</td>
+                <td>Sch 5 (items 42, 43): 19 Apr 2011 (s 2(1) item 13)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts Interpretation Amendment Act 2011</td>
+                <td>46, 2011</td>
+                <td>27 June 2011</td>
+                <td>Sch 2 (items 280–284) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) items 2, 3, 12)</td>
+                <td>Sch 3 (items 10, 11)</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 7 (473–481) and Sch 14: 1 July 2014 (s 2(1) item 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Australian War Memorial Amendment Act 2014</td>
+                <td>128, 2014</td>
+                <td>4 Dec 2014</td>
+                <td>5 Dec 2014 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (item 56): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 152, 1997; No 5, 2011; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>am No 128, 2014</td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 10</td>
+                <td>am No 43, 1996; No 1, 1997</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>am No 43, 1996; No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No 43, 1996; No 152, 1997; No 156, 1999; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 15</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 43, 1996; No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>am No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 43, 1996; No 159, 2001</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>rs No 122, 1991</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 24</td>
+                <td>am No 122, 1991;  No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 25</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>am No 43, 1996; No 46, 2011</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>am No 61, 1981; No 63, 1984; No 146, 1999</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 63, 1984; No 146,1999</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 166, 1985</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No 5, 2011</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>am No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 33</td>
+                <td>am No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 34</td>
+                <td>am No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>s 35</td>
+                <td>am No 93, 1989; No 152, 1997; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 36</td>
+                <td>rep No 152, 1997</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 38</td>
+                <td>rep No 65, 1985</td>
+              </tr>
+              <tr>
+                <td>s 39</td>
+                <td>am No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 42</td>
+                <td>am No 128, 2014; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>Part VIII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 46</td>
+                <td>am No 43, 1996</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

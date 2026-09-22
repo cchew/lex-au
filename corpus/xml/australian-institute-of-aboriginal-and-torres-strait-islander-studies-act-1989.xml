@@ -1,0 +1,2223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1989/149/!main"/>
+          <FRBRuri value="/akn/au/act/1989/149"/>
+          <FRBRdate date="1989-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="149"/>
+          <FRBRname value="australian-institute-of-aboriginal-and-torres-strait-islander-studies-act-1989"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1989/149/eng@2016-03-05/!main"/>
+          <FRBRuri value="/akn/au/act/1989/149/eng@2016-03-05"/>
+          <FRBRdate date="2016-03-05" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1989/149/eng@2016-03-05/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1989/149/eng@2016-03-05/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1989-01-01" type="generation" eId="evt-creation" source="#australian-institute-of-aboriginal-and-torres-strait-islander-studies-act-1989"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1991/122" date="1991-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1999/146"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1999/156"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2000/137"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2001/112"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2001/159"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2005/32"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2006/101"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2011/46" date="2011-06-27"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2012/136" date="2012-09-22"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2015/10" date="2015-03-05"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-aboriginal-person" href="/ontology/term/au/term-aboriginal-person" showAs="Aboriginal person"/>
+        <TLCTerm eId="term-appointed-councillor" href="/ontology/term/au/term-appointed-councillor" showAs="appointed Councillor"/>
+        <TLCTerm eId="term-assets" href="/ontology/term/au/term-assets" showAs="assets"/>
+        <TLCTerm eId="term-chief-executive-officer" href="/ontology/term/au/term-chief-executive-officer" showAs="Chief Executive Officer"/>
+        <TLCTerm eId="term-commencement" href="/ontology/term/au/term-commencement" showAs="commencement"/>
+        <TLCTerm eId="term-council" href="/ontology/term/au/term-council" showAs="Council"/>
+        <TLCTerm eId="term-council-chairperson" href="/ontology/term/au/term-council-chairperson" showAs="Council Chairperson"/>
+        <TLCTerm eId="term-councillor" href="/ontology/term/au/term-councillor" showAs="Councillor"/>
+        <TLCTerm eId="term-elected-councillor" href="/ontology/term/au/term-elected-councillor" showAs="elected Councillor"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-institute" href="/ontology/term/au/term-institute" showAs="Institute"/>
+        <TLCTerm eId="term-institute-rules" href="/ontology/term/au/term-institute-rules" showAs="Institute rules"/>
+        <TLCTerm eId="term-liabilities" href="/ontology/term/au/term-liabilities" showAs="liabilities"/>
+        <TLCTerm eId="term-new-institute" href="/ontology/term/au/term-new-institute" showAs="new Institute"/>
+        <TLCTerm eId="term-old-institute" href="/ontology/term/au/term-old-institute" showAs="old Institute"/>
+        <TLCTerm eId="term-old-institute-instrument" href="/ontology/term/au/term-old-institute-instrument" showAs="old Institute instrument"/>
+        <TLCTerm eId="term-torres-strait-islander" href="/ontology/term/au/term-torres-strait-islander" showAs="Torres Strait Islander"/>
+        <TLCTerm eId="term-tsra" href="/ontology/term/au/term-tsra" showAs="TSRA"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Institute of Aboriginal and Torres Strait Islander Studies Act 1989</p>
+      <p>No. 149, 1989</p>
+      <p><b>Compilation No.</b><b> </b><b>19</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>5 March 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 6, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>7 March 2016</p>
+      <p><b>This compilation includes commenced amendments made by Act No.</b><b> </b><b>10, 2015</b></p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Institute of Aboriginal and Torres Strait Islander Studies Act 1989</i> that shows the text of the law as amended and in force on 5 March 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>3A	Application of the <i>Criminal Code</i>	2</p>
+      <p><ref href="#part-2">Part 2</ref>—Australian Institute of Aboriginal and Torres Strait Islander Studies	3</p>
+      <p>4	Australian Institute of Aboriginal and Torres Strait Islander Studies	3</p>
+      <p><ref href="#part-3">Part 3</ref>—Functions of Institute	4</p>
+      <p>5	Functions of Institute	4</p>
+      <p>6	Powers of Institute	4</p>
+      <p><ref href="#part-4">Part 4</ref>—Members of Institute	6</p>
+      <p>7	Members of Institute	6</p>
+      <p>8	Period of membership	6</p>
+      <p>9	Resignation	6</p>
+      <p>10	Register of members	6</p>
+      <p>11	Rights of members	7</p>
+      <p><ref href="#part-5">Part 5</ref>—Council of Institute	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Constitution of Council	8</p>
+      <p>12	Constitution of Council	8</p>
+      <p>13	Responsibilities of Council	9</p>
+      <p>14	Chairperson and Deputy Chairperson of Council	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Administrative provisions	10</p>
+      <p>15	Term of office	10</p>
+      <p>16	Remuneration and allowances	10</p>
+      <p>17	Leave of absence	10</p>
+      <p>18	Acting appointments	10</p>
+      <p>20	Resignation	12</p>
+      <p>21	Termination of membership of Council	12</p>
+      <p>22	Other terms and conditions	12</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Operations of Council	13</p>
+      <p>23	Meetings of Council	13</p>
+      <p><ref href="#part-6">Part 6</ref>—Chief Executive Officer	15</p>
+      <p>24	Chief Executive Officer	15</p>
+      <p>25	Period of appointment	15</p>
+      <p>26	Remuneration and allowances	15</p>
+      <p>26A	Recreation leave	15</p>
+      <p>27	Resignation	15</p>
+      <p>28	Other terms and conditions	16</p>
+      <p><ref href="#part-7">Part 7</ref>—Staff	17</p>
+      <p>29	Staff	17</p>
+      <p>30	Consultants	17</p>
+      <p><ref href="#part-9">Part 9</ref>—Finance	18</p>
+      <p>36	Money payable to the Institute	18</p>
+      <p>38	Application of money held by Institute	18</p>
+      <p>39	Exemption from taxation	18</p>
+      <p><ref href="#part-10">Part 10</ref>—Miscellaneous	19</p>
+      <p>41	Certain information not to be disclosed	19</p>
+      <p>42	Informing TSRA about general conduct of Institute	19</p>
+      <p>43	Minister may ask for advice	19</p>
+      <p>44	Delegation to Chief Executive Officer or staff	20</p>
+      <p>45	Remuneration and allowances	20</p>
+      <p>45A	Recreation leave	21</p>
+      <p>47	Conduct of directors, employees and agents	21</p>
+      <p>48	Rules	23</p>
+      <p>49	Regulations	23</p>
+      <p><ref href="#part-11">Part 11</ref>—Transitional provisions	25</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	25</p>
+      <p>50	Interpretation	25</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Transitional provisions	27</p>
+      <p>54	Transfer of assets and liabilities of old Institute	27</p>
+      <p>55	Old Institute instruments	27</p>
+      <p>64	Operation of the <i>Superannuation (Productivity Benefit) Act 1988</i>	27</p>
+      <p>Endnotes	29</p>
+      <p>Endnote 1—About the endnotes	29</p>
+      <p>Endnote 2—Abbreviation key	31</p>
+      <p>Endnote 3—Legislation history	32</p>
+      <p>Endnote 4—Amendment history	36</p>
+      <p>An Act to establish an Australian Institute of Aboriginal and Torres Strait Islander Studies, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Institute of Aboriginal and </i><i>Torres Strait</i><i> Islander Studies Act 1989</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>		This Act commences on the commencement of the <i>Aboriginal and </i><i>Torres Strait</i><i> Islander Commission Act 1989</i>.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	The <i>Aboriginal and Torres Strait Islander Commission Act 1989</i> was renamed the <i>Aboriginal and </i><i>Torres Strait</i><i> Islander Act 2005</i>. See item 3 of Schedule 1 to the <i>Aboriginal and </i><i>Torres Strait</i><i> Islander Commission Amendment Act 2005</i>.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-aboriginal-person">Aboriginal person</term> means <def>a person of the Aboriginal race of Australia.</def></p>
+            <p><term refersTo="#term-appointed-councillor">appointed Councillor</term> means <def>a Councillor referred to in paragraph 12(1)(c).</def></p>
+            <p><term refersTo="#term-chief-executive-officer">Chief Executive Officer</term> means <def>the Chief Executive Officer of the Institute referred to in <ref href="#sec-24">section 24</ref>.</def></p>
+            <p><term refersTo="#term-council">Council</term> means <def>the Council of the Institute referred to in <ref href="#sec-12">section 12</ref>.</def></p>
+            <p><term refersTo="#term-council-chairperson">Council Chairperson</term> means <def>the Chairperson of the Council appointed under subsection 14(1).</def></p>
+            <p><term refersTo="#term-councillor">Councillor</term> means <def>a member of the Council.</def></p>
+            <p><term refersTo="#term-elected-councillor">elected Councillor</term> means <def>a Councillor referred to in paragraph 12(1)(a) or (b).</def></p>
+            <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+            <p><term refersTo="#term-institute">Institute</term> means <def>the Australian Institute of Aboriginal and Torres Strait Islander Studies established by <ref href="#sec-4">section 4</ref>.</def></p>
+            <p><term refersTo="#term-institute-rules">Institute rules</term> means <def>rules made by the Council under <ref href="#sec-48">section 48</ref>.</def></p>
+            <p><term refersTo="#term-torres-strait-islander">Torres Strait Islander</term> means <def>a descendant of an indigenous inhabitant of the Torres Strait Islands.</def></p>
+            <p><term refersTo="#term-tsra">TSRA</term> means <def>the Torres Strait Regional Authority established by <ref href="#part-3">Part 3</ref>A of <ref href="">the Aboriginal and Torres Strait Islander Act 2005</ref>.</def></p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3A">
+          <num>3A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code </i>(except <ref href="#part-2">Part 2</ref>.5) applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-2" marker="2">
+            <content>
+              <p>Note 1:	Chapter 2 of the <i>Criminal Code </i>sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+          <authorialNote placement="end" eId="note-3" marker="3">
+            <content>
+              <p>Note 2:	<ref href="#part-2">Part 2</ref>.5 of the <i>Criminal Code</i> (which deals with corporate criminal responsibility) is excluded from applying to offences against this Act by subsection 47(10).</p>
+            </content>
+          </authorialNote>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Australian Institute of Aboriginal and Torres Strait Islander Studies</heading>
+        <section eId="part-2__sec-4">
+          <num>4</num>
+          <heading>Australian Institute of Aboriginal and Torres Strait Islander Studies</heading>
+          <subsection eId="part-2__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An Australian Institute of Aboriginal and Torres Strait Islander Studies is established.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Institute:</p>
+            </content>
+            <paragraph eId="part-2__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is a body corporate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>shall have a seal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>may acquire, hold and dispose of real and personal property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-4__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>may sue and be sued.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Institute. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-4__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The seal of the Institute shall be kept in such custody as the Council directs and shall not be used except as authorised by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-4__subsec-4">
+            <num>4</num>
+            <content>
+              <p>All courts, judges and persons acting judicially shall take judicial notice of the imprint of the seal of the Institute appearing on a document and shall presume that it was duly affixed.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Functions of Institute</heading>
+        <section eId="part-3__sec-5">
+          <num>5</num>
+          <heading>Functions of Institute</heading>
+          <content>
+            <p>The Institute has the following functions:</p>
+          </content>
+          <paragraph eId="part-3__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>to develop, preserve and provide access to a national collection of Aboriginal and Torres Strait Islander culture and heritage;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>to use that national collection to strengthen and promote knowledge and understanding of Aboriginal and Torres Strait Islander culture and heritage;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>to provide leadership in the fields of:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>Aboriginal and Torres Strait Islander research; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>ethics and protocols for research, and other activities relating to collections, related to Aboriginal and Torres Strait Islander peoples; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-iii">
+            <num>iii</num>
+            <content>
+              <p>use (including use for research) of that national collection and other collections containing Aboriginal and Torres Strait Islander culture and heritage;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>to lead and promote collaborations and partnerships among the academic, research, non-government, business and government sectors and Aboriginal and Torres Strait Islander peoples in support of the other functions of the Institute;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-5__para-e">
+            <num>e</num>
+            <content>
+              <p>to provide advice to the Commonwealth on the situation and status of Aboriginal and Torres Strait Islander culture and heritage.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-6">
+          <num>6</num>
+          <heading>Powers of Institute</heading>
+          <subsection eId="part-3__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Institute has power to do all things that are necessary or convenient to be done for or in connection with the performance of its functions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The powers of the Institute under subsection (1) include, but are not limited to, the following powers:</p>
+            </content>
+            <paragraph eId="part-3__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to accept gifts, grants, bequests and devises made to it;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to act as trustee of money and other property vested in it on trust.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In spite of anything contained in this Act, any money or other property held by the Institute on trust shall be dealt with in accordance with the powers and duties of the Institute as trustee.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Members of Institute</heading>
+        <section eId="part-4__sec-7">
+          <num>7</num>
+          <heading>Members of Institute</heading>
+          <subsection eId="part-4__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Part, the members of the Institute are persons appointed by the Council as members.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council shall not appoint a person to be a member of the Institute unless:</p>
+            </content>
+            <paragraph eId="part-4__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person has applied for membership of the Institute in accordance with the Institute rules; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person has a demonstrated interest in Aboriginal and Torres Strait Islander culture and heritage.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-8">
+          <num>8</num>
+          <heading>Period of membership</heading>
+          <subsection eId="part-4__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An appointment of a person as a member of the Institute is for 5 years.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Nothing in this section prevents the Council from appointing as a member of the Institute a person who has previously been a member of the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-9">
+          <num>9</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>A member of the Institute may resign by writing signed by him or her and sent to the Chief Executive Officer.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-10">
+          <num>10</num>
+          <heading>Register of members</heading>
+          <content>
+            <p>The Chief Executive Officer shall establish and maintain a register of the members of the Institute.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-11">
+          <num>11</num>
+          <heading>Rights of members</heading>
+          <content>
+            <p>Membership of the Institute does not confer any rights or powers other than those expressly conferred by this Act or by the Institute rules.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Council of Institute</heading>
+        <division eId="part-5__dvs-1">
+          <num>1</num>
+          <heading>Constitution of Council</heading>
+          <section eId="part-5__dvs-1__sec-12">
+            <num>12</num>
+            <heading>Constitution of Council</heading>
+            <subsection eId="part-5__dvs-1__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>There shall be a Council of the Institute consisting of the following members:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>2 persons who:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>are members of the Institute; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>are Aboriginal persons or Torres Strait Islanders; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>are elected by the members of the Institute in accordance with the Institute rules;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>2 other persons who:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>are members of the Institute; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>may or may not be Aboriginal persons or Torres Strait Islanders; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>are elected by the members of the Institute in accordance with the Institute rules;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>5 other persons who are appointed by <role refersTo="#minister">the Minister</role> and each of whom has skills or experience in one or more of the following:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>cultural material conservation;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>collection management;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>research;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>fundraising;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-v">
+                <num>v</num>
+                <content>
+                  <p>finance;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-vi">
+                <num>vi</num>
+                <content>
+                  <p>business;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1__para-vii">
+                <num>vii</num>
+                <content>
+                  <p>law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-12__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>In making one or more appointments, <role refersTo="#minister">the Minister</role> must ensure that, immediately following the appointments (and taking into account the characteristics of all the elected Councillors and appointed Councillors at that time):</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>at least 5 of the Councillors are Aboriginal persons or Torres Strait Islanders; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-12__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>at least one of the Councillors is a Torres Strait Islander.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-12__subsec-1B">
+              <num>1B</num>
+              <content>
+                <p>A person cannot be elected or appointed as a Councillor for a term that starts immediately after the end of 2 consecutive terms of office of the person as a Councillor (whether the person was an elected Councillor or an appointed Councillor for either or both of those earlier terms).</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	Section 15 deals with the term of office of a Councillor.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>All the Councillors hold office on a part-time basis.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-13">
+            <num>13</num>
+            <heading>Responsibilities of Council</heading>
+            <content>
+              <p>It is the responsibility of the Council to ensure the proper and efficient performance of the functions of the Institute and to determine the policy of the Institute with respect to any matter.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-1__sec-14">
+            <num>14</num>
+            <heading>Chairperson and Deputy Chairperson of Council</heading>
+            <subsection eId="part-5__dvs-1__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> shall appoint a Chairperson and a Deputy Chairperson of the Council from among the Councillors.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Councillor who is the Chairperson or the Deputy Chairperson of the Council ceases to be the Chairperson or the Deputy Chairperson of the Council, as the case may be, if he or she ceases to be a Councillor.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-2">
+          <num>2</num>
+          <heading>Administrative provisions</heading>
+          <section eId="part-5__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Term of office</heading>
+            <subsection eId="part-5__dvs-2__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An appointed Councillor holds office for such period, not exceeding 4 years, as is specified in the instrument of appointment.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An elected Councillor holds office for such period, not exceeding 4 years, as is determined in accordance with the Institute rules.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-16">
+            <num>16</num>
+            <heading>Remuneration and allowances</heading>
+            <content>
+              <p>A Councillor is entitled to remuneration and allowances in accordance with <ref href="#sec-45">section 45</ref>.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Leave of absence</heading>
+            <subsection eId="part-5__dvs-2__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may grant a Councillor leave of absence from duty on such terms and conditions as to remuneration or otherwise as <role refersTo="#minister">the Minister</role> determines in writing.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may delegate, to the Council Chairperson, the power under subsection (1) to grant leave of absence to the other Councillors.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Acting appointments</heading>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Deputy Chairperson of the Council shall act as the Council Chairperson:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in the office of Council Chairperson, whether or not an appointment has previously been made to the office; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when the Council Chairperson is absent from duty or from Australia or is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+                <authorialNote placement="end" eId="note-6" marker="6">
+                  <content>
+                    <p>Note:	For rules that apply to persons acting as the Council Chairperson, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may appoint a person to act in the office of an appointed Councillor:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in that office, whether or not an appointment has previously been made to the office; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when the appointed Councillor is absent from duty or from Australia, or is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person appointed to act during a vacancy in the office of an appointed Councillor under subsection (2):</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>shall not continue so to act for more than 6 months; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-18__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>shall not be re-appointed to act during that vacancy for a period that would be continuous with the period of 6 months from the date when the person first started acting during that vacancy.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> shall not appoint a person to act in an office of appointed Councillor unless, having regard to <ref href="#sec-12">section 12</ref>, the person could be appointed to that office.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-5">
+              <num>5</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may appoint a member of the Institute to act in the office of an elected Councillor during any period, or during all periods, when the elected Councillor is absent from duty or from Australia or is, for any reason, unable to perform the duties of the office.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	For rules that apply to acting appointments, see <ref href="#sec-33A">section 33A</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-18__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The appointment of a person to act in the office of a Councillor who is also the Chairperson or Deputy Chairperson of the Council does not constitute an appointment of the person to act as the Chairperson or Deputy Chairperson, as the case may be.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-20">
+            <num>20</num>
+            <heading>Resignation</heading>
+            <content>
+              <p>A Councillor may resign by writing signed by him or her and sent to <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-2__sec-21">
+            <num>21</num>
+            <heading>Termination of membership of Council</heading>
+            <subsection eId="part-5__dvs-2__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may terminate a person’s membership of the Council because of misbehaviour or physical or mental incapacity.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> must terminate a person’s membership of the Council if the member is absent, except on leave granted under <ref href="#sec-17">section 17</ref>, from 3 consecutive meetings of the Council.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	A Council member’s membership may also be terminated under <ref href="#sec-30">section 30</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-21__subsec-2A">
+              <num>2A</num>
+              <content>
+                <p>	(2A)	Section 30 of the <i>Public Governance, Performance and Accountability Act 2013</i> applies to an election of a member under paragraph 12(1)(a) or (b) of this Act as if the election were an appointment by the Minister.</p>
+              </content>
+              <authorialNote placement="end" eId="note-10" marker="10">
+                <content>
+                  <p>Note:	This enables the Minister to remove from office an elected member if the member fails to comply with the general duties of officials under the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-21__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An elected Councillor ceases to be a Councillor if he or she ceases to be a member of the Institute.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-22">
+            <num>22</num>
+            <heading>Other terms and conditions</heading>
+            <content>
+              <p>		A Councillor holds office on such terms and conditions (if any) in respect of matters not provided for by this Act as are determined by the Minister by notice in writing published in the <i>Gazette</i>.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-5__dvs-3">
+          <num>3</num>
+          <heading>Operations of Council</heading>
+          <section eId="part-5__dvs-3__sec-23">
+            <num>23</num>
+            <heading>Meetings of Council</heading>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Council Chairperson shall convene such meetings of the Council as, in the Chairperson’s opinion, are necessary for the efficient performance of the Council’s responsibilities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, at any time, convene a meeting of the Council.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Council Chairperson shall convene a meeting of the Council upon receipt of a written request for a meeting signed by at least 4 Councillors.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-4">
+              <num>4</num>
+              <content>
+                <p>At a meeting of the Council, a quorum is constituted by 5 Councillors.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Where:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-23__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a Councillor who is present at a meeting is required by rules made for the purposes of <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> not to be present during the deliberations, or to take part in any decision, of the Council with respect to a particular matter; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-23__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>when the Councillor leaves the meeting there is no longer a quorum present;</p>
+                </content>
+                <content>
+                  <p>the Councillors remaining at the meeting constitute a quorum for the purpose of any deliberation or decision at that meeting with respect to that matter.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The Council Chairperson shall preside at all meetings of the Council at which he or she is present.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-7">
+              <num>7</num>
+              <content>
+                <p>If the Council Chairperson is not present at a meeting of the Council:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-23__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the Deputy Chairperson of the Council is present, the Deputy Chairperson of the Council shall preside at the meeting; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-23__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>in any other case, the Councillors present shall elect one of their number to preside at the meeting.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-8">
+              <num>8</num>
+              <content>
+                <p>Questions arising at a meeting of the Council shall be determined by a majority of the votes of the Councillors present and voting.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-9">
+              <num>9</num>
+              <content>
+                <p>The person presiding at a meeting of the Council has a deliberative vote and, in the event of an equality of votes, also has a casting vote.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-23__subsec-10">
+              <num>10</num>
+              <content>
+                <p>The Council may regulate the conduct of proceedings at its meetings as it thinks fit and shall cause minutes of those proceedings to be kept.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Chief Executive Officer</heading>
+        <section eId="part-6__sec-24">
+          <num>24</num>
+          <heading>Chief Executive Officer</heading>
+          <subsection eId="part-6__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There shall be a Chief Executive Officer of the Institute who shall be appointed by the Council.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Chief Executive Officer shall, subject to subsection (3), manage the day-to-day administration of the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Chief Executive Officer shall, in managing the administration of the Institute and in exercising any powers conferred on the Chief Executive Officer by this Act, act in accordance with any policies determined, and any directions given, by the Council in writing.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-25">
+          <num>25</num>
+          <heading>Period of appointment</heading>
+          <content>
+            <p>The Chief Executive Officer holds office for such period, not exceeding 5 years, as is specified in the instrument of appointment.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-26">
+          <num>26</num>
+          <heading>Remuneration and allowances</heading>
+          <content>
+            <p>The Chief Executive Officer is entitled to remuneration and allowances in accordance with <ref href="#sec-45">section 45</ref>.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-26A">
+          <num>26A</num>
+          <heading>Recreation leave</heading>
+          <content>
+            <p>The Chief Executive Officer is entitled to recreation leave in accordance with <ref href="#sec-45A">section 45A</ref>.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-27">
+          <num>27</num>
+          <heading>Resignation</heading>
+          <content>
+            <p>The Chief Executive Officer may resign by writing signed by him or her and sent to the Council.</p>
+          </content>
+        </section>
+        <section eId="part-6__sec-28">
+          <num>28</num>
+          <heading>Other terms and conditions</heading>
+          <content>
+            <p>		The Chief Executive Officer holds office on such terms and conditions (if any) in respect of matters not provided for by this Act as are determined by the Council by notice in writing published in the <i>Gazette</i>.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-7">
+        <num>7</num>
+        <heading>Staff</heading>
+        <section eId="part-7__sec-29">
+          <num>29</num>
+          <heading>Staff</heading>
+          <subsection eId="part-7__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Subject to <ref href="#sec-30">section 30</ref>, the staff required to assist the Institute in the performance of its functions shall be persons engaged under the <i>Public Service Act 1999</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-7__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+            </content>
+            <paragraph eId="part-7__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the Chief Executive Officer and the APS employees assisting the Principal together constitute a Statutory Agency; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Chief Executive Officer is the Head of that Statutory Agency.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-7__sec-30">
+          <num>30</num>
+          <heading>Consultants</heading>
+          <subsection eId="part-7__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chief Executive Officer may, on behalf of the Institute, engage as consultants to the Institute persons having suitable qualifications and experience.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-7__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The terms and conditions on which consultants are engaged shall be as determined by the Council by notice published in the <i>Gazette</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-9">
+        <num>9</num>
+        <heading>Finance</heading>
+        <section eId="part-9__sec-36">
+          <num>36</num>
+          <heading>Money payable to the Institute</heading>
+          <subsection eId="part-9__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>There is payable to the Institute such money as is appropriated by the Parliament for the purposes of the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-9__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Finance Minister may give directions as to the amounts in which, and the times at which, money so appropriated is to be paid to the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-38">
+          <num>38</num>
+          <heading>Application of money held by Institute</heading>
+          <subsection eId="part-9__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Money held by the Institute shall be applied only:</p>
+            </content>
+            <paragraph eId="part-9__sec-38__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in payment or discharge of the costs, expenses and other obligations incurred by the Institute in the performance of its functions and the exercise of its powers;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-38__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in payment of any remuneration and allowances payable to any person under this Act or any other Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-9__sec-38__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>in making any other payments which the Institute is authorised or required to make under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-9__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subsection (1) does not prevent investment, under <ref href="#sec-59">section 59</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i>, of money that is not immediately required for the purposes of the Institute.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-9__sec-39">
+          <num>39</num>
+          <heading>Exemption from taxation</heading>
+          <content>
+            <p>The Institute is not subject to taxation under any law of the Commonwealth or of a State or Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-10">
+        <num>10</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-10__sec-41">
+          <num>41</num>
+          <heading>Certain information not to be disclosed</heading>
+          <subsection eId="part-10__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where information or other matter has been deposited with the Institute under conditions of restricted access, the Institute or the Council shall not disclose that information or other matter except in accordance with those conditions.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Institute or the Council shall not disclose information or other matter held by it (including information or other matter covered by subsection (1)) if that disclosure would be inconsistent with the views or sensitivities of relevant Aboriginal persons or Torres Strait Islanders.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-42">
+          <num>42</num>
+          <heading>Informing TSRA about general conduct of Institute</heading>
+          <subsection eId="part-10__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council may from time to time inform the TSRA about the general conduct of the activities of the Institute.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-42__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where the Council receives a request from the TSRA for information about the activities of the Institute, the Council may give to the TSRA, as the case may be, such information relating to the activities of the Institute as the Council thinks appropriate.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-43">
+          <num>43</num>
+          <heading>Minister may ask for advice</heading>
+          <subsection eId="part-10__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> or the TSRA may, from time to time, ask the Council to provide advice on aspects of the culture, history and society of Aboriginal and Torres Strait Islander peoples.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Council:</p>
+            </content>
+            <paragraph eId="part-10__sec-43__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>shall comply with a request under subsection (1) made by <role refersTo="#minister">the Minister</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-43__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>may comply with a request under subsection (1) made by the TSRA.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Council may, in response to a request under subsection (1):</p>
+            </content>
+            <paragraph eId="part-10__sec-43__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>prepare its advice having regard only to any relevant information that is already in the possession of the Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-43__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if the Council considers it appropriate to do so—arrange for the conduct of research into the matter to which the request relates by or on behalf of the Institute, and prepare its advice having regard to that research and to any other relevant information that is otherwise in the possession of the Institute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-44">
+          <num>44</num>
+          <heading>Delegation to Chief Executive Officer or staff</heading>
+          <content>
+            <p>The Institute may, by writing under its seal, delegate any or all of its functions and powers to the Chief Executive Officer or to a member of the staff of the Institute.</p>
+          </content>
+        </section>
+        <section eId="part-10__sec-45">
+          <num>45</num>
+          <heading>Remuneration and allowances</heading>
+          <subsection eId="part-10__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following provisions apply in relation to the holder of an office who is, by a provision of this Act, entitled to remuneration and allowances in accordance with this section:</p>
+            </content>
+            <paragraph eId="part-10__sec-45__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the holder of the office shall be paid such remuneration as is determined by the Remuneration Tribunal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-45__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if no determination of that remuneration by the Remuneration Tribunal is in operation, the holder of the office shall be paid such remuneration as is determined under subsection (2) by <role refersTo="#minister">the Minister</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-45__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the holder of the office shall be paid such allowances as are determined under subsection (2) by <role refersTo="#minister">the Minister</role>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of paragraph (1)(b) or (c), <role refersTo="#minister">the Minister</role> may, by notifiable instrument, determine remuneration or allowances to be paid to the holder of an office.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note:	Notifiable instruments must be registered under the <i>Legislation Act 2003</i>, but they are not subject to parliamentary scrutiny or sunsetting under that Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-10__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-45A">
+          <num>45A</num>
+          <heading>Recreation leave</heading>
+          <content>
+            <p>The holder of an office who is, by a provision of this Act, entitled to recreation leave in accordance with this section is entitled to such recreation leave as is determined by the Remuneration Tribunal.</p>
+          </content>
+        </section>
+        <section eId="part-10__sec-47">
+          <num>47</num>
+          <heading>Conduct of directors, employees and agents</heading>
+          <subsection eId="part-10__sec-47__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, in proceedings for an offence against this Act, it is necessary to establish the state of mind of a body corporate in relation to particular conduct, it is sufficient to show:</p>
+            </content>
+            <paragraph eId="part-10__sec-47__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that the conduct was engaged in by a director, employee or agent of the body corporate within the scope of his or her actual or apparent authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the director, employee or agent had the state of mind.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any conduct engaged in on behalf of a body corporate by a director, employee or agent of the body corporate within the scope of his or her actual or apparent authority shall be taken, for the purposes of a prosecution for an offence against this Act, to have been engaged in also by the body corporate unless the body corporate establishes that the body corporate took reasonable precautions and exercised due diligence to avoid the conduct.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where, in proceedings for an offence against this Act, it is necessary to establish the state of mind of a person other than a body corporate in relation to particular conduct, it is sufficient to show:</p>
+            </content>
+            <paragraph eId="part-10__sec-47__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>that the conduct was engaged in by an employee or agent of the person within the scope of his or her actual or apparent authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>that the employee or agent had the state of mind.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Any conduct engaged in on behalf of a person other than a body corporate by an employee or agent of the person within the scope of his or her actual or apparent authority shall be taken, for the purposes of a prosecution for an offence against this Act, to have been engaged in also by the first-mentioned person unless the first-mentioned person establishes that the first-mentioned person took reasonable precautions and exercised due diligence to avoid the conduct.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-10__sec-47__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a person other than a body corporate is convicted of an offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the person would not have been convicted of the offence if subsections (3) and (4) had not been enacted;</p>
+              </content>
+              <content>
+                <p>the person is not liable to be punished by imprisonment for that offence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A reference in subsection (1) or (3) to the state of mind of a person includes a reference to:</p>
+            </content>
+            <paragraph eId="part-10__sec-47__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the knowledge, intention, opinion, belief or purpose of the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the person’s reasons for the intention, opinion, belief or purpose.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-7">
+            <num>7</num>
+            <content>
+              <p>A reference in this section to a director of a body corporate includes a reference to a constituent member of a body corporate incorporated for a public purpose by a law of the Commonwealth, of a State or of a Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-8">
+            <num>8</num>
+            <content>
+              <p>A reference in this section to engaging in conduct includes a reference to failing or refusing to engage in conduct.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-9">
+            <num>9</num>
+            <content>
+              <p>A reference in this section to an offence against this Act includes a reference to:</p>
+            </content>
+            <paragraph eId="part-10__sec-47__subsec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>an offence created by the regulations; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>an offence created by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-9__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	<ref href="#sec-6">section 6</ref> of the <i>Crimes Act 1914</i>;<i> </i>or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-9__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	<ref href="#sec-11">section 11</ref>.1, 11.2, 11.2A, 11.4 or 11.5 of the <i>Criminal Code</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-47__subsec-9__para-iii">
+              <num>iii</num>
+              <content>
+                <p>	(iii)	<ref href="#sec-134">section 134</ref>.1, 134.2, 135.1, 135.2, 135.4 or 136.1 of the <i>Criminal Code</i>;</p>
+              </content>
+              <content>
+                <p>being an offence that relates to this Act or the regulations.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-47__subsec-10">
+            <num>10</num>
+            <content>
+              <p>	(10)	<ref href="#part-2">Part 2</ref>.5 of the <i>Criminal Code</i> does not apply to an offence against this Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-12" marker="12">
+              <content>
+                <p>Note:	<ref href="#part-2">Part 2</ref>.5 of the <i>Criminal Code</i> deals with corporate criminal responsibility.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-48">
+          <num>48</num>
+          <heading>Rules</heading>
+          <subsection eId="part-10__sec-48__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Council may make rules, not inconsistent with this Act or the regulations, prescribing matters:</p>
+            </content>
+            <paragraph eId="part-10__sec-48__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the Institute rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-48__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed by the Institute rules in connection with the conduct of the affairs of the Institute.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-48__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Rules made under this section are not legislative instruments.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-10__sec-49">
+          <num>49</num>
+          <heading>Regulations</heading>
+          <subsection eId="part-10__sec-49__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters:</p>
+            </content>
+            <paragraph eId="part-10__sec-49__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-49__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-10__sec-49__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), the regulations may:</p>
+            </content>
+            <paragraph eId="part-10__sec-49__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>prescribe fees payable in respect of any matter under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-49__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide penalties for breaches of the regulations not exceeding:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-49__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>in the case of a natural person—$1,000; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-10__sec-49__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in the case of a body corporate—$5,000.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-11">
+        <num>11</num>
+        <heading>Transitional provisions</heading>
+        <division eId="part-11__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-11__dvs-1__sec-50">
+            <num>50</num>
+            <heading>Interpretation</heading>
+            <content>
+              <p>In this Part, unless the contrary intention appears:</p>
+              <p><term refersTo="#term-assets">assets</term> means <def>property of every kind, and, without limiting the generality of the foregoing, includes: choses in action; and rights, interests and claims of every kind in or to property, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</def></p>
+            </content>
+            <paragraph eId="part-11__dvs-1__sec-50__para-a">
+              <num>a</num>
+              <content>
+                <p>choses in action; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__dvs-1__sec-50__para-b">
+              <num>b</num>
+              <content>
+                <p>rights, interests and claims of every kind in or to property, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-commencement">commencement</term> means <def>the commencement of this Act.</def></p>
+                <p><term refersTo="#term-liabilities">liabilities</term> means <def>liabilities of every kind, and, without limiting the generality of the foregoing, includes obligations of every kind, whether arising under or by virtue of an instrument or otherwise, and whether liquidated or unliquidated, certain or contingent, accrued or accruing.</def></p>
+                <p><term refersTo="#term-new-institute">new Institute</term> means <def>the Australian Institute of Aboriginal and Torres Strait Islander Studies.</def></p>
+                <p><term refersTo="#term-old-institute">old Institute</term> means <def>the Australian Institute of Aboriginal Studies.</def></p>
+                <p><term refersTo="#term-old-institute-instrument">old Institute instrument</term> means <def>an instrument: to which the old Institute was a party; that was given to or in favour of the old Institute; in which a reference is made to the old Institute; or under which money is, or may become, payable, or any other property is to be, or may become liable to be, transferred, to or by the old Institute; being an instrument subsisting immediately before the commencement.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__dvs-1__sec-50__para-a">
+              <num>a</num>
+              <content>
+                <p>to which the old Institute was a party;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__dvs-1__sec-50__para-b">
+              <num>b</num>
+              <content>
+                <p>that was given to or in favour of the old Institute;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__dvs-1__sec-50__para-c">
+              <num>c</num>
+              <content>
+                <p>in which a reference is made to the old Institute; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-11__dvs-1__sec-50__para-d">
+              <num>d</num>
+              <content>
+                <p>under which money is, or may become, payable, or any other property is to be, or may become liable to be, transferred, to or by the old Institute;</p>
+              </content>
+              <content>
+                <p>being an instrument subsisting immediately before the commencement.</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-11__dvs-3">
+          <num>3</num>
+          <heading>Transitional provisions</heading>
+          <section eId="part-11__dvs-3__sec-54">
+            <num>54</num>
+            <heading>Transfer of assets and liabilities of old Institute</heading>
+            <subsection eId="part-11__dvs-3__sec-54__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At the commencement, the assets and liabilities of the old Institute become assets and liabilities of the new Institute.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-11__dvs-3__sec-54__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The following provisions apply to assets and liabilities that have become assets and liabilities of the new Institute because of subsection (1):</p>
+              </content>
+              <paragraph eId="part-11__dvs-3__sec-54__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>an asset that was, immediately before the commencement, held by the old Institute on trust shall, after the commencement, be held by the new Institute on trust and subject to the terms of the trust on which the asset was so held by the old Institute;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-11__dvs-3__sec-54__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>liabilities of the old Institute to make payments shall, after the commencement, be taken to be liabilities incurred by the new Institute in the performance of its functions and the exercise of its powers.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-11__dvs-3__sec-55">
+            <num>55</num>
+            <heading>Old Institute instruments</heading>
+            <content>
+              <p>An old Institute instrument continues to have effect after the commencement but, in its operation in relation to acts, transactions, matters or things done, entered into or occurring after the commencement, has effect as if a reference in the instrument to the old Institute were a reference to the new Institute.</p>
+            </content>
+          </section>
+          <section eId="part-11__dvs-3__sec-64">
+            <num>64</num>
+            <heading>Operation of the Superannuation (Productivity Benefit) Act 1988</heading>
+            <subsection eId="part-11__dvs-3__sec-64__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Superannuation Act and any related law apply in relation to any person who:</p>
+              </content>
+              <paragraph eId="part-11__dvs-3__sec-64__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>before the commencement, was employed by the old Institute; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-11__dvs-3__sec-64__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	after the commencement, is employed under the <i>Public Service Act 1922 </i>in the new Institute;</p>
+                </content>
+                <content>
+                  <p>as if:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-11__dvs-3__sec-64__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person’s employer was in each case the same body; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-11__dvs-3__sec-64__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the continuity of the person’s employment was not affected by the abolition of the old Institute and the establishment of the new Institute.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-11__dvs-3__sec-64__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>related law</i></b> means any law of the Commonwealth, to the extent that it relates to the superannuation benefits covered by the Superannuation Act.</p>
+                <p><b><i>Superannuation Act</i></b> means the <i>Superannuation (Productivity Benefit) Act 1988</i>.</p>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>o = order(s)</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>Ord = Ordinance</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>orig = original</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>par = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>F = Federal Register of Legislation</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Australian Institute of Aboriginal and Torres Strait Islander Studies Act 1989</td>
+                  <td>149, 1989</td>
+                  <td>27 Nov 1989</td>
+                  <td>5 Mar 1990 (s. 2 and gaz 1990, No. S48) (s 2)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Industrial Relations Legislation Amendment Act 1991</td>
+                  <td>122, 1991</td>
+                  <td>27 June 1991</td>
+                  <td>s 4(1), 10(b) and 15–20: 1 Dec 1988
+s 28(b)–(e), 30 and 31: 10 Dec 1991 (gaz 1991, No. S332)
+Remainder: 27 June 1991
+(s 2(1))</td>
+                  <td>s 31(2)</td>
+                </tr>
+                <tr>
+                  <td>Aboriginal and Torres Strait Islander Commission Amendment Act (No. 3) 1993</td>
+                  <td>1, 1994</td>
+                  <td>14 Jan 1994</td>
+                  <td>s. 80: 1 July 1994 (s 2(1)(b))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+                  <td>152, 1997</td>
+                  <td>24 Oct 1997</td>
+                  <td>Sch 2 (items 316–323): 1 Jan 1998 (gaz 1997, No GN49) (s 2(2))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Employment (Consequential and Transitional) Amendment Act 1999</td>
+                  <td>146, 1999</td>
+                  <td>11 Nov 1999</td>
+                  <td>Sch 1 (items 192–194): 5 Dec 1999 (gaz 1999, No. S584) (s 2(1))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Corporate Law Economic Reform Program Act 1999</td>
+                  <td>156, 1999</td>
+                  <td>24 Nov 1999</td>
+                  <td>Sch 10 (item 34): 13 Mar 2000 (gaz 2000, No. S114) (s 2(2)(c))</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Criminal Code Amendment (Theft, Fraud, Bribery and Related Offences) Act 2000</td>
+                  <td>137, 2000</td>
+                  <td>24 Nov 2000</td>
+                  <td>Sch 2 (items 43-46, 418, 419): 24 May 2001 (s 2(3))</td>
+                  <td>Sch 2 (items 418, 419)</td>
+                </tr>
+                <tr>
+                  <td>Reconciliation and Aboriginal and Torres Strait Islander Affairs Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                  <td>112, 2001</td>
+                  <td>17 Sept 2001</td>
+                  <td>15 Oct 2001 (s 2)</td>
+                  <td>s 4</td>
+                </tr>
+                <tr>
+                  <td>Abolition of Compulsory Age Retirement (Statutory Officeholders) Act 2001</td>
+                  <td>159, 2001</td>
+                  <td>1 Oct 2001</td>
+                  <td>29 Oct 2001 (s 2(1))</td>
+                  <td>Sch 1 (item 97)</td>
+                </tr>
+                <tr>
+                  <td>Aboriginal and Torres Strait Islander Commission Amendment Act 2005</td>
+                  <td>32, 2005</td>
+                  <td>22 Mar 2005</td>
+                  <td>Sch 4 (items 12–22): 24 Mar 2005 (s 2(1) item 4)</td>
+                  <td>Sch 4 (item 18)</td>
+                </tr>
+                <tr>
+                  <td>Tax Laws Amendment (Repeal of Inoperative Provisions) Act 2006</td>
+                  <td>101, 2006</td>
+                  <td>14 Sept 2006</td>
+                  <td>Sch 5 (item 21) and Sch 6 (items 5–11):14 Sept 2006 (s 2(1) item 4)</td>
+                  <td>Sch 6 (items 5–11)</td>
+                </tr>
+                <tr>
+                  <td>Crimes Legislation Amendment (Serious and Organised Crime) Act (No. 2) 2010</td>
+                  <td>4, 2010</td>
+                  <td>19 Feb 2010</td>
+                  <td>Sch 10 (item 4): 20 Feb 2010 (s 2(1) item 13)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2011</td>
+                  <td>5, 2011</td>
+                  <td>22 Mar 2011</td>
+                  <td>Sch 5 (items 26, 27) and Sch 7 (item 20): 19 Apr 2011 (s 2(1) items 13, 17)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts Interpretation Amendment Act 2011</td>
+                  <td>46, 2011</td>
+                  <td>27 June 2011</td>
+                  <td>Sch 2 (items 171–173) and Sch 3 (items 10, 11): 27 Dec 2011 (s 2(1) item 3)</td>
+                  <td>Sch 3 (items 10, 11)</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2012</td>
+                  <td>136, 2012</td>
+                  <td>22 Sept 2012</td>
+                  <td>Sch 6 (items 11, 12): 22 Sept 2012 (s 2(1) item 37)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                  <td>62, 2014</td>
+                  <td>30 June 2014</td>
+                  <td>Sch 7 (items 268–272) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                  <td>Sch 14</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                  <td>36, 2015</td>
+                  <td>13 Apr 2015</td>
+                  <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                  <td>Sch 7</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                  <td>126, 2015</td>
+                  <td>10 Sept 2015</td>
+                  <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                  <td>126, 2015</td>
+                  <td>10 Sept 2015</td>
+                  <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act (No. 1) 2015</td>
+                  <td>5, 2015</td>
+                  <td>25 Feb 2015</td>
+                  <td>Sch 3 (items 36-41): 25 Mar 2015 (s 2(1) item 10)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) Act 2015</td>
+                  <td>10, 2015</td>
+                  <td>5 Mar 2015</td>
+                  <td>Sch 3 (items 8–10, 348, 349): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>Sch 3 (items 348, 349)</td>
+                </tr>
+                <tr>
+                  <td>Australian Institute of Aboriginal and Torres Strait Islander Studies Amendment Act 2016</td>
+                  <td>6, 2016</td>
+                  <td>11 Feb 2016</td>
+                  <td>12 Feb 2016 (s 2(1) item 1)</td>
+                  <td>Sch 1 (items 12, 15, 18, 23, 32)</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 2</td>
+                  <td>am No 32, 2005</td>
+                </tr>
+                <tr>
+                  <td>s 3</td>
+                  <td>am No 1, 1994; No 32, 2005; No 5, 2011; No 62, 2014; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 3A</td>
+                  <td>ad No 112, 2001</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 152, 1997; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 5</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 7</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 8</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 9</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 12</td>
+                  <td>am No 32, 2005; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 18</td>
+                  <td>am No 46, 2011</td>
+                </tr>
+                <tr>
+                  <td>s 19</td>
+                  <td>rep No 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>s 21</td>
+                  <td>am No 152, 1997; No 156, 1999; No 62, 2014; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Div 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 23</td>
+                  <td>am No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>Part 6</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 6 heading</td>
+                  <td>rs No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 24</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 25</td>
+                  <td>am No 159, 2001; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 26</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 26A</td>
+                  <td>ad No 122, 1991</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 27</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Part 7</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 29</td>
+                  <td>am No 146, 1999; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 30</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Part 8</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 31</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 32</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 33</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 34</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 35</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Part 9</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 36</td>
+                  <td>am No 5, 2011</td>
+                </tr>
+                <tr>
+                  <td>s 37</td>
+                  <td>rep No 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>s 38</td>
+                  <td>am No 152, 1997; No 62, 2014</td>
+                </tr>
+                <tr>
+                  <td>s 39</td>
+                  <td>am No 101, 2006</td>
+                </tr>
+                <tr>
+                  <td>s 40</td>
+                  <td>rep No 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>Part 10</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 42</td>
+                  <td>am No 1, 1994; No 152, 1997; No 32, 2005</td>
+                </tr>
+                <tr>
+                  <td>s 43</td>
+                  <td>am No 1, 1994; No 32, 2005; No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 44</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 45</td>
+                  <td>am No 10, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 45A</td>
+                  <td>ad No 122, 1991</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 146, 1999</td>
+                </tr>
+                <tr>
+                  <td>s 46</td>
+                  <td>rep No 137, 2000</td>
+                </tr>
+                <tr>
+                  <td>s 47</td>
+                  <td>am No 137, 2000; No 112, 2001; No 4, 2010; No 5, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 48</td>
+                  <td>am No 10, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 11</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 11 heading</td>
+                  <td>rs No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 50</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>s 51</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 52</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 53</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 56</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 57</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 58</td>
+                  <td>rep No 152, 1997</td>
+                </tr>
+                <tr>
+                  <td>s 59</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 60</td>
+                  <td>am No 5, 2011</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 61</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 62</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 63</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 64</td>
+                  <td>am No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 65</td>
+                  <td>rep No 6, 2016</td>
+                </tr>
+                <tr>
+                  <td>Division 4</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>s 66</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+                <tr>
+                  <td>s 67</td>
+                  <td>rep No 136, 2012</td>
+                </tr>
+              </table>
+            </subsection>
+          </section>
+        </division>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

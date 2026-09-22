@@ -1,0 +1,3400 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2006/135/!main"/>
+          <FRBRuri value="/akn/au/act/2006/135"/>
+          <FRBRdate date="2006-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="135"/>
+          <FRBRname value="australian-participants-in-british-nuclear-tests-and-british-commonwealth-occupation-force-(treatment)-act-2006"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2006/135/eng@2026-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/2006/135/eng@2026-07-01"/>
+          <FRBRdate date="2026-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2006/135/eng@2026-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2006/135/eng@2026-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2006-01-01" type="generation" eId="evt-creation" source="#australian-participants-in-british-nuclear-tests-and-british-commonwealth-occupation-force-(treatment)-act-2006"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2008/81" date="2008-07-12"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2010/120" date="2010-11-17"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2011/169" date="2011-12-04"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2013/99" date="2013-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2017/59" date="2017-06-22"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2017/108" date="2017-09-14"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2017/128" date="2017-11-30"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2018/17" date="2018-03-28"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2024/38" date="2024-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2025/17" date="2025-02-20"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2025/45" date="2025-09-19"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-australian-resident" href="/ontology/term/au/term-australian-resident" showAs="Australian resident"/>
+        <TLCTerm eId="term-british-commonwealth-occupation-force-participant" href="/ontology/term/au/term-british-commonwealth-occupation-force-participant" showAs="British Commonwealth Occupation Force participant"/>
+        <TLCTerm eId="term-commission" href="/ontology/term/au/term-commission" showAs="Commission"/>
+        <TLCTerm eId="term-dishonestly" href="/ontology/term/au/term-dishonestly" showAs="dishonestly"/>
+        <TLCTerm eId="term-eligible-person" href="/ontology/term/au/term-eligible-person" showAs="eligible person"/>
+        <TLCTerm eId="term-hospital-or-other-institution" href="/ontology/term/au/term-hospital-or-other-institution" showAs="hospital or other institution"/>
+        <TLCTerm eId="term-medical-service-provider" href="/ontology/term/au/term-medical-service-provider" showAs="medical service provider"/>
+        <TLCTerm eId="term-nuclear-test-area" href="/ontology/term/au/term-nuclear-test-area" showAs="nuclear test area"/>
+        <TLCTerm eId="term-nuclear-test-participant" href="/ontology/term/au/term-nuclear-test-participant" showAs="nuclear test participant"/>
+        <TLCTerm eId="term-pathology-practitioner" href="/ontology/term/au/term-pathology-practitioner" showAs="pathology practitioner"/>
+        <TLCTerm eId="term-pathology-service" href="/ontology/term/au/term-pathology-service" showAs="pathology service"/>
+        <TLCTerm eId="term-pharmaceutical-benefits" href="/ontology/term/au/term-pharmaceutical-benefits" showAs="pharmaceutical benefits"/>
+        <TLCTerm eId="term-repatriation-pharmaceutical-benefits-scheme" href="/ontology/term/au/term-repatriation-pharmaceutical-benefits-scheme" showAs="Repatriation Pharmaceutical Benefits Scheme"/>
+        <TLCTerm eId="term-repatriation-private-patient-principles" href="/ontology/term/au/term-repatriation-private-patient-principles" showAs="Repatriation Private Patient Principles"/>
+        <TLCTerm eId="term-staff-member-assisting-the-commission" href="/ontology/term/au/term-staff-member-assisting-the-commission" showAs="staff member assisting the Commission"/>
+        <TLCTerm eId="term-treatment" href="/ontology/term/au/term-treatment" showAs="treatment"/>
+        <TLCTerm eId="term-treatment-principles" href="/ontology/term/au/term-treatment-principles" showAs="Treatment Principles"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Participants in British Nuclear Tests and British Commonwealth Occupation Force (Treatment) Act 2006</p>
+      <p>No. 135, 2006</p>
+      <p><b>Compilation No. </b><b>12</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 July 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 17, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Participants in British Nuclear Tests and British Commonwealth Occupation Force (Treatment) Act 2006</i> that shows the text of the law as amended and in force on 1 July 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Extension to external Territories	1</p>
+      <p>4	Definitions	1</p>
+      <p>5	Meaning of <i>nuclear test participant</i> etc.	4</p>
+      <p>6	Procedures for making claims etc.	6</p>
+      <p><ref href="#part-2">Part 2</ref>—Treatment	8</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Eligibility to be provided with treatment	8</p>
+      <p>7	Eligibility	8</p>
+      <p>8	Claims for eligibility	9</p>
+      <p>9	Withdrawal of claims	9</p>
+      <p>10	Determination of claims	9</p>
+      <p>11	Revocation of determination of eligibility	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Provision of treatment	10</p>
+      <p>12	Provision of treatment	10</p>
+      <p>13	Approval of treatment already provided	10</p>
+      <p>13A	Commission may accept financial responsibility for costs in relation to treatment not arranged by Commission	11</p>
+      <p>14	Limits on provision of treatment	11</p>
+      <p>15	Treatment at hospitals and other institutions	12</p>
+      <p>16	Application and modification of the Treatment Principles	12</p>
+      <p>17	Application and modification of the Repatriation Private Patient Principles	14</p>
+      <p>18	Application and modification of Repatriation Pharmaceutical Benefits Scheme	15</p>
+      <p><ref href="#part-3">Part 3</ref>—Travelling expenses	17</p>
+      <p>19	Entitlement to travelling expenses	17</p>
+      <p>20	Advances of travelling expenses	17</p>
+      <p>21	Claims for travelling expenses	18</p>
+      <p>22	Withdrawal of claims	18</p>
+      <p>23	Determination of claims	19</p>
+      <p><ref href="#part-3A">Part 3A</ref>—Pharmaceutical supplement	20</p>
+      <p>23A	Simplified outline	20</p>
+      <p>23B	Eligibility for pharmaceutical supplement	20</p>
+      <p>23C	Pharmaceutical supplement not payable in some circumstances	20</p>
+      <p>23D	Rate of pharmaceutical supplement	22</p>
+      <p>23E	Payment of pharmaceutical supplement	22</p>
+      <p><ref href="#part-4">Part 4</ref>—Review of decisions	23</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Review by Commission	23</p>
+      <p>24	Request for review	23</p>
+      <p>25	Review by Commission	23</p>
+      <p>26	Commission must make written record of review decision and reasons	24</p>
+      <p>27	Person who requested review to be notified of decision	24</p>
+      <p>28	Withdrawal of request for review	24</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Review by Administrative Review Tribunal	25</p>
+      <p>29	Review by Administrative Review Tribunal	25</p>
+      <p><ref href="#part-5">Part 5</ref>—Administration and enforcement	26</p>
+      <p><ref href="#dvs-1">Division 1</ref>—General	26</p>
+      <p>30	Additional functions of Commission	26</p>
+      <p>31	Commission not bound by technicalities	26</p>
+      <p>32	Delegation	27</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Obtaining and giving information etc.	28</p>
+      <p>33	Commission may obtain information etc.	28</p>
+      <p>34	Failure to comply with a notice	29</p>
+      <p>35	Self-incrimination	29</p>
+      <p>36	Giving information	30</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Offences	31</p>
+      <p>37	False or misleading statements or documents relating to treatment	31</p>
+      <p>38	Medical service providers causing detriment to others	32</p>
+      <p>39	Medical service providers threatening detriment	32</p>
+      <p>40	Bribery by medical service providers	33</p>
+      <p>41	Practitioners receiving bribes etc.	33</p>
+      <p>42	Pathology practitioners making payments to requesting practitioners	34</p>
+      <p>43	Pathology practitioners providing pathology services to persons with whom they have arrangements	35</p>
+      <p>44	Providing staff to be used in pathology services	36</p>
+      <p>45	Counselling statements inadmissible as evidence	36</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Recovery of amounts paid because of false or misleading statements	38</p>
+      <p>46	Recovery of amounts paid because of false or misleading statements	38</p>
+      <p>47	Interest payable on amounts paid because of false or misleading statements	38</p>
+      <p>48	Reduction in payments because of previous overpayments	40</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Recovery of cost of treatment	41</p>
+      <p>48A	Recovery of cost of treatment	41</p>
+      <p><ref href="#dvs-6">Division 6</ref>—Recovery of overpayments of pharmaceutical supplement	42</p>
+      <p>48B	Recovery of overpayments of pharmaceutical supplement	42</p>
+      <p><ref href="#part-6">Part 6</ref>—Miscellaneous	43</p>
+      <p>49	Appropriation	43</p>
+      <p>50	Regulations	43</p>
+      <p>Endnotes	44</p>
+      <p>Endnote 1—About the endnotes	44</p>
+      <p>Endnote 2—Abbreviation key	46</p>
+      <p>Endnote 3—Legislation history	47</p>
+      <p>Endnote 4—Amendment history	50</p>
+      <p>An Act to provide for treatment for Australian participants in British nuclear tests and in the British Commonwealth Occupation Force, and for other purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Participants in British Nuclear Tests</i><i> and British Commonwealth Occupation Force</i><i> (Treatment) Act 2006</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act commences on the day after it receives the Royal Assent.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Extension to external Territories</heading>
+          <content>
+            <p>This Act extends to every external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <subsection eId="part-1__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-australian-resident">Australian resident</term> has the same meaning as <def>in <ref href="#sec-5G">section 5G</ref> of the Veterans’ Entitlements Act 1986.</def></p>
+              <p><term refersTo="#term-british-commonwealth-occupation-force-participant">British Commonwealth Occupation Force participant</term> means <def>a person who was a member of the Australian Defence Force who served in the British Commonwealth Occupation Force in Japan at any time during the period from the beginning of 31 January 1946 to the end of 28 April 1952.</def></p>
+              <p><term refersTo="#term-commission">Commission</term> has the same meaning as <def>in <ref href="">the Military Rehabilitation and Compensation Act 2004</ref>.</def></p>
+              <p><term refersTo="#term-dishonestly">dishonestly</term> has the meaning given by <def>subsection (2).</def></p>
+              <p><term refersTo="#term-eligible-person">eligible person</term> means <def>a person who, under <ref href="#sec-7">section 7</ref>, is eligible to be provided with treatment under this Act.</def></p>
+              <p><term refersTo="#term-hospital-or-other-institution">hospital or other institution</term> includes <def>the following: 	(a)	an approved residential care home (within the meaning of the <i>Aged Care Act 2024</i>); a medical centre; an out-patient clinic; a rehabilitation establishment.</def></p>
+            </content>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	an approved residential care home (within the meaning of the <i>Aged Care Act 2024</i>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a medical centre;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an out-patient clinic;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a rehabilitation establishment.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-medical-service-provider">medical service provider</term> means <def>a person: who is a pathology practitioner; or who is a proprietor of premises at which pathology services are rendered; or who is a proprietor of a hospital or other institution that is not operated by the Commonwealth, a State or a Territory; or who is acting on behalf of a proprietor of such a hospital or other institution.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>who is a pathology practitioner; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>who is a proprietor of premises at which pathology services are rendered; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>who is a proprietor of a hospital or other institution that is not operated by the Commonwealth, a State or a Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>who is acting on behalf of a proprietor of such a hospital or other institution.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-nuclear-test-area">nuclear test area</term> has the meaning given by <def>subsection 5(4).</def></p>
+                <p><term refersTo="#term-nuclear-test-participant">nuclear test participant</term> means <def>a person who is a nuclear test participant under one or more of subsections 5(1), (2), (3), (3A) and (3C).</def></p>
+                <p><term refersTo="#term-pathology-practitioner">pathology practitioner</term> means <def>a person in respect of whom there is in force an undertaking given by the person, and accepted by <ref href="/akn/au/act/minister-administering-the-health-insurance-act-1973" class="unresolved">the Minister administering the Health Insurance Act 1973</ref>, under <ref href="#sec-23D">section 23D</ref>C of that Act.</def></p>
+                <p><term refersTo="#term-pathology-service">pathology service</term> has the meaning given by <def>subsection 3(1) of <ref href="">the Health Insurance Act 1973</ref>.</def></p>
+                <p><term refersTo="#term-pharmaceutical-benefits">pharmaceutical benefits</term> means <def>drugs, medicinal preparations and other pharmaceutical items (including aids to treatment and dressings) for the treatment of sicknesses or injuries suffered by human beings.</def></p>
+                <p><b><i>proprietor</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in relation to premises—the person, authority or body of persons having effective control of the premises (whether or not that person, authority or body is the holder of an estate or interest in the premises); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to a hospital or other institution—the proprietor (within the meaning of paragraph (a)) of the premises occupied by the hospital or other institution.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-repatriation-pharmaceutical-benefits-scheme">Repatriation Pharmaceutical Benefits Scheme</term> means <def>the Repatriation Pharmaceutical Benefits Scheme in force under <ref href="#sec-91">section 91</ref> of the Veterans’ Entitlements Act 1986.</def></p>
+                <p><term refersTo="#term-repatriation-private-patient-principles">Repatriation Private Patient Principles</term> means <def>the Repatriation Private Patient Principles in force under <ref href="#sec-90A">section 90A</ref> of the Veterans’ Entitlements Act 1986.</def></p>
+                <p><term refersTo="#term-staff-member-assisting-the-commission">staff member assisting the Commission</term> means <def>a person engaged under <ref href="">the Public Service Act 1999</ref> and made available for the purposes of this Act by the Secretary of the Department.</def></p>
+                <p><term refersTo="#term-treatment">treatment</term> means <def>treatment (<ref href="#sec-80__subsec-1">within the meaning of subsection 80(1)</ref> of the Veterans’ Entitlements Act 1986).</def></p>
+                <p><term refersTo="#term-treatment-principles">Treatment Principles</term> means <def>the Treatment Principles in force under <ref href="#sec-90">section 90</ref> of the Veterans’ Entitlements Act 1986.</def></p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	That subsection covers treatment of malignant neoplasia and the provision of diagnostic services.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	For the purposes of this Act, a person engages in conduct <b><i>dishonestly </i></b>if:</p>
+            </content>
+            <paragraph eId="part-1__sec-4__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person engages in conduct; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the conduct is dishonest according to the standards of ordinary people; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the defendant knows the conduct is dishonest according to the standards of ordinary people.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Meaning of nuclear test participant etc.</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	A person is a <b><i>nuclear test participant</i></b> if the person:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>was present in a nuclear test area at any time during:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>if the area was the Monte Bello Islands area—the period from the beginning of <date date="1952-10-03">3 October 1952</date> to the end of <date date="1958-06-19">19 June 1958</date>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the area was the Emu Field area—the period from the beginning of <date date="1953-10-15">15 October 1953</date> to the end of <date date="1955-10-25">25 October 1955</date>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>if the area was the Maralinga area—the period from the beginning of <date date="1956-09-27">27 September 1956</date> to the end of <date date="1965-04-30">30 April 1965</date>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>was, at that time, an Australian resident.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A person is a <b><i>nuclear test participant</i></b> if the person:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>was involved in the transport, recovery, maintenance or cleaning of a vessel, vehicle, aircraft or equipment that was contaminated as a result of its use in a nuclear test area, being involvement that occurred at any time during:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>if the area was the Monte Bello Islands area—the period from the beginning of <date date="1952-10-03">3 October 1952</date> to the end of <date date="1956-07-19">19 July 1956</date>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the area was the Emu Field area—the period from the beginning of <date date="1953-10-15">15 October 1953</date> to the end of <date date="1953-11-25">25 November 1953</date>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>if the area was the Maralinga area—the period from the beginning of <date date="1956-09-27">27 September 1956</date> to the end of <date date="1963-05-30">30 May 1963</date>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>was, at that time:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>a member of the Australian Defence Force; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an employee of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a person who, under a contract with the Commonwealth, provided construction, maintenance or support services relating to the conduct of nuclear tests in that nuclear test area during that period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>was, at that time, an Australian resident.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A person is a <b><i>nuclear test participant</i></b> if:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>at any time during the period from the beginning of <date date="1952-10-03">3 October 1952</date> to the end of <date date="1957-10-31">31 October 1957</date>, the person flew in an aircraft of the Royal Australian Air Force or the Royal Air Force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>at the time the person flew in the aircraft, the aircraft:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>was used in measuring fallout from nuclear tests conducted in a nuclear test area; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>was contaminated by the fallout; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>at that time, the person was:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>a member of the Australian Defence Force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an Australian resident.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>	(3A)	A person is a <b><i>nuclear test participant</i></b> if the person:</p>
+            </content>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-a">
+              <num>a</num>
+              <content>
+                <p>was at any time during the period from the beginning of <date date="1965-05-01">1 May 1965</date> to the end of <date date="1988-06-30">30 June 1988</date> present in the nuclear test area that was the Maralinga area; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-b">
+              <num>b</num>
+              <content>
+                <p>was at that time:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	a Commonwealth Police Officer under the <i>Commonwealth Police Act 1957</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	a member of the Australian Federal Police under the <i>Australian Federal Police Act 1979</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-iii">
+              <num>iii</num>
+              <content>
+                <p>	(iii)	a protective service officer, or a special protective service officer, within the meaning of the <i>Australian Protective Service Act 1987</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-iv">
+              <num>iv</num>
+              <content>
+                <p>a protective service officer, or a special protective service officer, in a Department of the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5__subsec-3A__para-c">
+              <num>c</num>
+              <content>
+                <p>was, at that time, an Australian resident.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3B">
+            <num>3B</num>
+            <content>
+              <p>	(3B)	Paragraph 5(1)(a) of the <i>Australian Federal Police Act 1979</i> does not apply to subparagraph (3A)(b)(i) of this section.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	Paragraph 5(1)(a) of the <i>Australian Federal Police Act 1979</i> provides that a reference in a law of the Commonwealth to a Commonwealth Police Officer is to be read as a reference to a member of the Australian Federal Police.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3C">
+            <num>3C</num>
+            <content>
+              <p>	(3C)	A person is a <b><i>nuclear test participant</i></b> if the person satisfies the requirements specified in an instrument under subsection (3D).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-3D">
+            <num>3D</num>
+            <content>
+              <p>The Commission may, by legislative instrument, specify requirements for the purposes of subsection (3C).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	A <b><i>nuclear test area</i></b> is any of the areas described in the following table:</p>
+            </content>
+            <table>
+              <tr>
+                <th>Item</th>
+                <th>Name of nuclear test area</th>
+                <th>Description of nuclear test area</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Monte Bello Islands area</td>
+                <td>The area within 10 kilometres of Main Beach on Trimouille Island in the Monte Bello Archipelago</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Emu Field area</td>
+                <td>The area within 25 kilometres of the Totem test sites at Emu Field</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Maralinga area</td>
+                <td>The area within 40 kilometres of any of the Buffalo or Antler test sites</td>
+              </tr>
+            </table>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Procedures for making claims etc.</heading>
+          <subsection eId="part-1__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purposes of this Act, a claim or application is taken to have been made, or a document is taken to have been given, in accordance with this section if it is made, or given, in accordance with procedures determined by <role refersTo="#secretary">the Secretary</role> under subsection (2).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, by legislative instrument, determine the procedures for making claims and applications, and lodging documents.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Treatment</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Eligibility to be provided with treatment</heading>
+          <section eId="part-2__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Eligibility</heading>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person is eligible to be provided with treatment under this Act if the person:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>is:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>a nuclear test participant; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a British Commonwealth Occupation Force participant; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>a person who served as a member of the Australian Defence Force in Japan at any time during the period from the beginning of <date date="1945-08-16">16 August 1945</date> to the end of <date date="1946-01-30">30 January 1946</date>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>is an Australian resident.</p>
+                </content>
+                <authorialNote placement="end" eId="note-3" marker="3">
+                  <content>
+                    <p>Note:	Under <ref href="#sec-203">section 203</ref> of the <i>Veterans’ Entitlements Act 1986</i>, the Minister may enter into an arrangement with a foreign country providing for the provision of treatment that is, or the making of payments that are, comparable to treatment or payments under this Act.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, a person is not eligible to be provided with treatment under this Act if the person is:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	eligible for treatment under <ref href="#sec-53D">section 53D</ref>, subsection 85(3), (4), (4A), (4B), (5), (7) or (7A) or <ref href="#sec-86">section 86</ref> of the <i>Veterans’ Entitlements Act 1986</i> for any injury or disease (within the meaning of that Act); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-7__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	entitled to be provided with treatment under <ref href="#sec-281">section 281</ref>, 282 or 284 of the <i>Military Rehabilitation and Compensation Act 2004</i> for any injury or disease (within the meaning of that Act).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Claims for eligibility</heading>
+            <content>
+              <p>A person who wants to establish that he or she is an eligible person must make a claim in accordance with <ref href="#sec-6">section 6</ref> for a determination that he or she is an eligible person.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Withdrawal of claims</heading>
+            <subsection eId="part-2__dvs-1__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A claimant may, at any time before the Commission determines the claim, withdraw the claim by giving written notice to the Commission in accordance with <ref href="#sec-6">section 6</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The withdrawal of a claim does not prevent the claimant from subsequently making another claim under this Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Determination of claims</heading>
+            <subsection eId="part-2__dvs-1__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission is to determine claims under <ref href="#sec-8">section 8</ref>.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	Rejections of claims are reviewable under <ref href="#part-4">Part 4</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission must give to the claimant written notice of its determination.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-1__sec-11">
+            <num>11</num>
+            <heading>Revocation of determination of eligibility</heading>
+            <subsection eId="part-2__dvs-1__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-11__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Commission has determined that a person is an eligible person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-11__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Commission subsequently becomes satisfied that the information before the Commission when it made the determination was false in a material particular;</p>
+                </content>
+                <content>
+                  <p>the Commission may revoke the determination.</p>
+                </content>
+                <authorialNote placement="end" eId="note-5" marker="5">
+                  <content>
+                    <p>Note:	Revocations are reviewable under <ref href="#part-4">Part 4</ref>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission must give to the person written notice of the revocation.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Provision of treatment</heading>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Provision of treatment</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may arrange for the provision of treatment for eligible persons.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to <ref href="#sec-13">section 13</ref>, the Commission is not taken to have arranged for the provision of treatment for a person unless:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the treatment was provided in accordance with arrangements made by the Commission under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the treatment was provided in the circumstances in which, and in accordance with the conditions subject to which, the treatment may be provided under this Act; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Commission approved the provision of the treatment before the treatment was provided, or began to be provided, as the case may be.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13">
+            <num>13</num>
+            <heading>Approval of treatment already provided</heading>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may approve the provision of treatment for a person that was provided, or that began to be provided, without the prior approval of the Commission if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is an eligible person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-13__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Commission is satisfied that it would be proper for the Commission to approve provision of the treatment after it had been provided or had begun to be provided.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, the Commission must not approve the provision of treatment that was provided more than 3 months before the person made a claim under <ref href="#sec-8">section 8</ref> that he or she is an eligible person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Commission is taken to have arranged for the provision of treatment approved under this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-13__subsec-4">
+              <num>4</num>
+              <content>
+                <p>If the person for whom the treatment was provided has paid for the provision of treatment approved under this section, the Commonwealth may reimburse the person for the amount paid.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-13A">
+            <num>13A</num>
+            <heading>Commission may accept financial responsibility for costs in relation to treatment not arranged by Commission</heading>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-a">
+              <num>a</num>
+              <content>
+                <p>the Commission is satisfied that an entity, other than the Commission, has arranged for the provision of treatment for an eligible person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-13A__para-b">
+              <num>b</num>
+              <content>
+                <p>the treatment is of a kind specified under paragraph 16(4A)(a);</p>
+              </content>
+              <content>
+                <p>then the Commission may, in accordance with paragraph 16(4A)(b), accept financial responsibility for particular costs in relation to that treatment (including amounts of subsidy payable under <ref href="#part-2">Part 2</ref> of Chapter 4 of the <i>Aged Care Act 2024</i>).</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-14">
+            <num>14</num>
+            <heading>Limits on provision of treatment</heading>
+            <subsection eId="part-2__dvs-2__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Nothing in this Act is taken to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>impose a duty on the Commission to arrange for the provision of; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>confer a right on a person to be provided, under arrangements made by the Commission, with;</p>
+                </content>
+                <content>
+                  <p>treatment outside Australia.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subject to subsection 12(1), nothing in this Act is taken to confer on a person a right to be provided with treatment:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-14__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>by the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-14__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>by the Commission otherwise than to the extent that, and in a manner that, the treatment may be provided under arrangements made by, or with the approval of, the Commission.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-15">
+            <num>15</num>
+            <heading>Treatment at hospitals and other institutions</heading>
+            <content>
+              <p>For the purposes of this Part, the Commission may:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-15__para-a">
+              <num>a</num>
+              <content>
+                <p>enter into arrangements with the appropriate authority of the Commonwealth, a State or a Territory for the provision of care and welfare, at a public hospital or other institution operated by the Commonwealth, State or Territory, for eligible persons; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-15__para-b">
+              <num>b</num>
+              <content>
+                <p>enter into arrangements with any other body operating a hospital or other institution for the provision of care and welfare at that hospital or institution for eligible persons.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-16">
+            <num>16</num>
+            <heading>Application and modification of the Treatment Principles</heading>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Treatment Principles, or, if the Treatment Principles have been modified under this section, the Treatment Principles as so modified, are binding on the Commission in the Commission’s exercise of its powers and discretions under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission may, in writing, prepare modifications of the Treatment Principles in their application for the purposes of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The modifications are to set out circumstances in which, and conditions subject to which, treatment of a particular kind, or included in a particular class of treatment, may be provided under this Act for eligible persons.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Without limiting subsection (2), the modifications may also include provisions dealing with the following matters in relation to treatment to be provided to eligible persons:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>whether approval by the Commission of the treatment is required;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>if approval by the Commission of the treatment is required—the exercise of the Commission’s power to approve the treatment, whether before or after the treatment is given or begins to be given;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>where the treatment may be provided.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-4A">
+              <num>4A</num>
+              <content>
+                <p>Without limiting subsection (2), the modifications may also include provisions:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-4A__para-a">
+                <num>a</num>
+                <content>
+                  <p>specifying kinds of treatment for the purposes of paragraph 13A(b); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-4A__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	specifying the circumstances in which, and the extent to which, the Commission may accept financial responsibility for particular costs relating to that treatment (including amounts of subsidy payable under <ref href="#part-2">Part 2</ref> of Chapter 4 of the <i>Aged Care Act 2024</i>).</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-5">
+              <num>5</num>
+              <content>
+                <p>Without limiting subsection (2), the modifications may specify kinds or classes of treatment that:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>will not be provided for eligible persons; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-16__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>will not be so provided at places, or in circumstances, specified or described in the modifications.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The Commission may, in writing, prepare variations or revocations of the modifications at any time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, has no effect unless <role refersTo="#minister">the Minister</role> has, in writing, approved the instrument making the modification, variation or revocation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-16__subsec-8">
+              <num>8</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, prepared by the Commission and approved by <role refersTo="#minister">the Minister</role> is a legislative instrument made by <role refersTo="#minister">the Minister</role> on the day on which the modification, variation or revocation is approved.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Application and modification of the Repatriation Private Patient Principles</heading>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Repatriation Private Patient Principles, or, if the Repatriation Private Patient Principles have been modified under this section, the Repatriation Private Patient Principles as so modified, are binding on the Commission in the Commission’s exercise of its powers and discretions under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission may, in writing, prepare modifications of the Repatriation Private Patient Principles in their application for the purposes of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The modifications are to set out circumstances in which treatment provided under this Act for eligible persons is to be provided for those persons as private patients.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Without limiting subsection (2), the modifications may also include provisions dealing with the following matters in relation to treatment provided under this Act for such persons as private patients:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>whether approval by the Commission of the treatment is required;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>if approval by the Commission of the treatment is required—the exercise of the Commission’s power to approve the treatment, whether before or after the treatment is given or begins to be given;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>where the treatment may be provided.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The Commission may, in writing, prepare variations or revocations of the modifications at any time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, has no effect unless <role refersTo="#minister">the Minister</role> has, in writing, approved the instrument making the modification, variation or revocation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-7">
+              <num>7</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, prepared by the Commission and approved by <role refersTo="#minister">the Minister</role> is a legislative instrument made by <role refersTo="#minister">the Minister</role> on the day on which the modification, variation or revocation is approved.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-17__subsec-8">
+              <num>8</num>
+              <content>
+                <p>For the purposes of this section, treatment is taken to be provided to a person as a private patient if:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the treatment is provided to the person as a person who is, for the purposes of the <i>Health Insurance Act 1973</i>, a private patient of a hospital; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-17__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>the treatment is provided to the person by a medical specialist to whom the person has been referred but is not provided at a hospital.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Application and modification of Repatriation Pharmaceutical Benefits Scheme</heading>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Repatriation Pharmaceutical Benefits Scheme, or, if that scheme has been modified under this section, that scheme as so modified, applies to the provision of pharmaceutical benefits in connection with treatment of eligible persons.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission may, in writing, prepare modifications of the Repatriation Pharmaceutical Benefits Scheme in its application for the purposes of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Without limiting subsection (2), the modifications may specify classes of eligible persons for whom:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>pharmaceutical benefits; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>pharmaceutical benefits of a kind specified in the instrument; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-18__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>pharmaceutical benefits included in a class of pharmaceutical benefits specified in the instrument;</p>
+                </content>
+                <content>
+                  <p>will not be provided, or will not be provided in circumstances specified or described in the instrument.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Commission may, in writing, prepare variations or revocations of the modifications at any time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, has no effect unless <role refersTo="#minister">the Minister</role> has, in writing, approved the instrument making the modification, variation or revocation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-18__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A modification, or a variation or revocation of a modification, prepared by the Commission and approved by <role refersTo="#minister">the Minister</role> is a legislative instrument made by <role refersTo="#minister">the Minister</role> on the day on which the modification, variation or revocation is approved.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Travelling expenses</heading>
+        <section eId="part-3__sec-19">
+          <num>19</num>
+          <heading>Entitlement to travelling expenses</heading>
+          <subsection eId="part-3__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an eligible person travels for the purpose of obtaining treatment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Commission approves the travel; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>such conditions as are prescribed are satisfied;</p>
+              </content>
+              <content>
+                <p>the person is entitled to be paid such travelling expenses, in connection with the travel, as are prescribed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-19__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a person travels for the purpose of accompanying a person referred to in subsection (1) as his or her attendant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Commission authorises the travel for that purpose; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>such conditions as are prescribed are satisfied;</p>
+              </content>
+              <content>
+                <p>the attendant is entitled to be paid such travelling expenses, in connection with the travel, as are prescribed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>An approval under paragraph (1)(b) or an authorisation under paragraph (2)(b) may be given before or after the travel is completed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Travelling expenses are not payable under this section in respect of travel outside Australia.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-20">
+          <num>20</num>
+          <heading>Advances of travelling expenses</heading>
+          <subsection eId="part-3__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the Commission is satisfied:</p>
+            </content>
+            <paragraph eId="part-3__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that a person may reasonably be expected to become entitled to be paid travelling expenses under <ref href="#sec-19">section 19</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that it is in all the circumstances appropriate for the person to be paid an advance on account of the travelling expenses that the person is expected to become entitled to be paid;</p>
+              </content>
+              <content>
+                <p>the Commission may authorise payment to the person of an advance on account of the travelling expenses that the person is expected to become entitled to be paid.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the amount of the advance paid to a person on account of any travelling expenses in respect of any travel of the person exceeds the amount of travelling expenses that become payable to the person in respect of that travel, the person is liable to repay an amount equal to the excess to the Commonwealth.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-20__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Commonwealth may recover in a court of competent jurisdiction an amount that a person is liable to pay to the Commonwealth under subsection (2).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-21">
+          <num>21</num>
+          <heading>Claims for travelling expenses</heading>
+          <subsection eId="part-3__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who wants to establish that he or she is entitled to be paid travelling expenses under this Part must make a claim in accordance with <ref href="#sec-6">section 6</ref> for a determination that he or she is entitled to be paid travelling expenses under this Part.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A claim for travelling expenses must be made:</p>
+            </content>
+            <paragraph eId="part-3__sec-21__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><quantity refersTo="#deadline">within 12 months</quantity> after the completion of the travel to which it relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-21__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the Commission thinks that there are exceptional circumstances that justify extending that period—such further period as the Commission allows.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-22">
+          <num>22</num>
+          <heading>Withdrawal of claims</heading>
+          <subsection eId="part-3__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A claimant may, at any time before the Commission determines the claim, withdraw the claim by giving written notice to the Commission in accordance with <ref href="#sec-6">section 6</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The withdrawal of a claim does not prevent the claimant from subsequently making another claim under this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-23">
+          <num>23</num>
+          <heading>Determination of claims</heading>
+          <subsection eId="part-3__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Commission is to determine claims under <ref href="#sec-21">section 21</ref>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	Rejections of claims are reviewable under <ref href="#part-4">Part 4</ref>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-3__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Commission must give to the claimant written notice of its determination.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3A">
+        <num>3A</num>
+        <heading>Pharmaceutical supplement</heading>
+        <section eId="part-3A__sec-23A">
+          <num>23A</num>
+          <heading>Simplified outline</heading>
+          <content>
+            <p>A person is eligible for pharmaceutical supplement if the person is eligible to be provided with treatment under this Act. However, pharmaceutical supplement is not payable in some circumstances.</p>
+          </content>
+        </section>
+        <section eId="part-3A__sec-23B">
+          <num>23B</num>
+          <heading>Eligibility for pharmaceutical supplement</heading>
+          <content>
+            <p>A person is eligible for pharmaceutical supplement under this section if the person is eligible to be provided with treatment under this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-7" marker="7">
+            <content>
+              <p>Note:	Section 23C sets out some circumstances when pharmaceutical supplement is not payable.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-3A__sec-23C">
+          <num>23C</num>
+          <heading>Pharmaceutical supplement not payable in some circumstances</heading>
+          <content>
+            <p>People leaving Australia otherwise than temporarily</p>
+          </content>
+          <subsection eId="part-3A__sec-23C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who leaves Australia otherwise than temporarily is not eligible for pharmaceutical supplement under <ref href="#sec-23B">section 23B</ref> after the day on which he or she left Australia.</p>
+            </content>
+            <content>
+              <p>Temporary absence from Australia</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-23C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person who is temporarily absent from Australia and has been so absent for more than 26 weeks is not eligible for pharmaceutical supplement under <ref href="#sec-23B">section 23B</ref> after the first 26 weeks of the absence.</p>
+            </content>
+            <content>
+              <p>When a person becomes eligible for pharmaceutical supplement after leaving Australia</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-23C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The person mentioned in subsections (1) and (2) again becomes eligible to receive pharmaceutical supplement under <ref href="#sec-23B">section 23B</ref> on the later of the following days:</p>
+            </content>
+            <paragraph eId="part-3A__sec-23C__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the day on which the person returns to Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the day on which the person notifies the Commission of his or her return to Australia.</p>
+              </content>
+              <content>
+                <p>When pharmaceutical supplement is not payable</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-23C__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Even though a person is eligible for pharmaceutical supplement under <ref href="#sec-23B">section 23B</ref>, the supplement is not payable to the person if:</p>
+            </content>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	he or she is receiving veterans supplement under <ref href="#sec-118A">section 118A</ref> of the <i>Veterans’ Entitlements Act 1986</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	he or she is receiving MRCA supplement under <ref href="#sec-300">section 300</ref> of the <i>Military Rehabilitation and Compensation Act 2004</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	he or she is receiving a pharmaceutical allowance under the <i>Social Security Act 1991</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	he or she is a wholly dependent partner of a deceased member (within the meaning of the <i>Military Rehabilitation and Compensation Act 2004</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	he or she is receiving a social security payment (within the meaning of the <i>Social Security Act 1991</i>) for which a pension supplement amount (within the meaning of that Act) is used to work out the rate of the payment; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	he or she is receiving a pension under <ref href="#part-II">Part II</ref> or IV of the <i>Veterans’ Entitlements Act 1986 </i>at a rate determined under or by reference to subsection 30(1) of that Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-g">
+              <num>g</num>
+              <content>
+                <p>	(g)	he or she is receiving a service pension (within the meaning of the <i>Veterans’ Entitlements Act 1986</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-23C__subsec-4__para-h">
+              <num>h</num>
+              <content>
+                <p>	(h)	he or she is receiving a veteran payment made under an instrument made under <ref href="#sec-45S">section 45S</ref>B of the <i>Veterans’ Entitlements Act 1986</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-23D">
+          <num>23D</num>
+          <heading>Rate of pharmaceutical supplement</heading>
+          <content>
+            <p>		The rate of pharmaceutical supplement that is payable under <ref href="#sec-23B">section 23B</ref> is the rate of veterans supplement that is payable from time to time under <ref href="#sec-118C">section 118C</ref> of the <i>Veterans’ Entitlements Act 1986</i>.</p>
+          </content>
+        </section>
+        <section eId="part-3A__sec-23E">
+          <num>23E</num>
+          <heading>Payment of pharmaceutical supplement</heading>
+          <content>
+            <p>		A person’s pharmaceutical supplement under <ref href="#sec-23B">section 23B</ref> is payable on each pension payday (<ref href="#sec-5Q__subsec-1">within the meaning of subsection 5Q(1)</ref> of the <i>Veterans’ Entitlements Act 1986</i>) on which:</p>
+          </content>
+          <paragraph eId="part-3A__sec-23E__para-a">
+            <num>a</num>
+            <content>
+              <p>the person is eligible for the pharmaceutical supplement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3A__sec-23E__para-b">
+            <num>b</num>
+            <content>
+              <p>the pharmaceutical supplement is payable to the person.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Review of decisions</heading>
+        <division eId="part-4__dvs-1">
+          <num>1</num>
+          <heading>Review by Commission</heading>
+          <section eId="part-4__dvs-1__sec-24">
+            <num>24</num>
+            <heading>Request for review</heading>
+            <subsection eId="part-4__dvs-1__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A claimant who is dissatisfied with:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a decision of the Commission in relation to a claim under <ref href="#sec-8">section 8</ref> for a determination that he or she is an eligible person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a decision of the Commission under <ref href="#sec-11">section 11</ref> revoking a determination that he or she is an eligible person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>a decision of the Commission in relation to a claim under <ref href="#sec-21">section 21</ref> for a determination that he or she is entitled to be paid travelling expenses under <ref href="#part-3">Part 3</ref>;</p>
+                </content>
+                <content>
+                  <p>may request the Commission to review the decision.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The request:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>must be made <quantity refersTo="#deadline">within 3 months</quantity> after the claimant was notified of the decision; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-24__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>must be made in accordance with <ref href="#sec-6">section 6</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-25">
+            <num>25</num>
+            <heading>Review by Commission</heading>
+            <subsection eId="part-4__dvs-1__sec-25__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If a request for review of a decision is made in accordance with <ref href="#sec-24">section 24</ref>, the Commission must:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-25__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>review the decision; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-25__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>affirm the decision or set it aside.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-25__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If the Commission sets the decision aside it must substitute a new decision in accordance with this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-25__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If the Commission has delegated its powers under this section to the person who made the decision under review, that person must not review the decision.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-26">
+            <num>26</num>
+            <heading>Commission must make written record of review decision and reasons</heading>
+            <subsection eId="part-4__dvs-1__sec-26__subsec-1">
+              <num>1</num>
+              <content>
+                <p>When the Commission reviews a decision under this Division, it must make a written record of its decision upon review.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-26__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The written record must include a statement that:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-26__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>sets out the Commission’s findings on material questions of fact; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-26__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>refers to the evidence or other material on which those findings are based; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-26__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>provides reasons for the Commission’s decision.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-27">
+            <num>27</num>
+            <heading>Person who requested review to be notified of decision</heading>
+            <content>
+              <p>When the Commission affirms or sets aside a decision under this Division, it must give the person who requested the review of the decision:</p>
+            </content>
+            <paragraph eId="part-4__dvs-1__sec-27__para-a">
+              <num>a</num>
+              <content>
+                <p>a copy of the Commission’s decision; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__dvs-1__sec-27__para-b">
+              <num>b</num>
+              <content>
+                <p>a copy of the statement about the decision referred to in subsection 26(2).</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note:	Section 266 of the <i>Administrative Review Tribunal Act 2024</i> requires the person to be notified of the person’s review rights.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </section>
+          <section eId="part-4__dvs-1__sec-28">
+            <num>28</num>
+            <heading>Withdrawal of request for review</heading>
+            <subsection eId="part-4__dvs-1__sec-28__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person who requests a review under <ref href="#sec-24">section 24</ref> may, at any time before the Commission determines the request, withdraw the request by giving written notice to the Commission in accordance with <ref href="#sec-6">section 6</ref>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-28__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The withdrawal of a request for review does not prevent a person from subsequently making another request for review under this Act.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	Paragraph 24(2)(a) provides that a person who wants to request a review of a decision must do so <quantity refersTo="#deadline">within 3 months</quantity> after the person has received notice of the decision.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-2">
+          <num>2</num>
+          <heading>Review by Administrative Review Tribunal</heading>
+          <section eId="part-4__dvs-2__sec-29">
+            <num>29</num>
+            <heading>Review by Administrative Review Tribunal</heading>
+            <content>
+              <p>If the Commission, under <ref href="#sec-25">section 25</ref>, affirms a decision or sets it aside and substitutes another decision for it, an application may be made to the Administrative Review Tribunal for a review of the decision so affirmed or substituted.</p>
+            </content>
+          </section>
+        </division>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Administration and enforcement</heading>
+        <division eId="part-5__dvs-1">
+          <num>1</num>
+          <heading>General</heading>
+          <section eId="part-5__dvs-1__sec-30">
+            <num>30</num>
+            <heading>Additional functions of Commission</heading>
+            <subsection eId="part-5__dvs-1__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The functions of the Commission include:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-30__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to arrange for the provision of treatment for eligible persons under this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-30__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to administer payment of travelling expenses under <ref href="#part-3">Part 3</ref>.</p>
+                </content>
+                <authorialNote placement="end" eId="note-10" marker="10">
+                  <content>
+                    <p>Note:	For the functions of the Commission, see also <ref href="#sec-360B">section 360B</ref>B of the <i>Military Rehabilitation and Compensation Act 2004</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Commission has the general administration of this Act, subject to the control of <role refersTo="#minister">the Minister</role>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-31">
+            <num>31</num>
+            <heading>Commission not bound by technicalities</heading>
+            <content>
+              <p>In making a decision under this Act, the Commission:</p>
+            </content>
+            <paragraph eId="part-5__dvs-1__sec-31__para-a">
+              <num>a</num>
+              <content>
+                <p>is not bound to act in a formal manner and is not bound by any rules of evidence, but may inform itself on any matter in such manner as it thinks just; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-31__para-b">
+              <num>b</num>
+              <content>
+                <p>may act according to substantial justice and the substantial merits of the case, without regard to legal form and technicalities; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-31__para-c">
+              <num>c</num>
+              <content>
+                <p>without limiting paragraph (a) or (b), must take into account any difficulties that, for any reason, lie in the way of ascertaining the existence of any fact, matter, cause or circumstance, including any reason attributable to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-31__para-i">
+              <num>i</num>
+              <content>
+                <p>the effects of the passage of time, including the effect of the passage of time on the availability of witnesses; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-1__sec-31__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the absence of, or a deficiency in, relevant official records.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-1__sec-32">
+            <num>32</num>
+            <heading>Delegation</heading>
+            <subsection eId="part-5__dvs-1__sec-32__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may, by resolution, delegate any of its functions or powers under a provision of this Act, or under the regulations or any other legislative instrument made under this Act, to:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-32__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a member of the Commission; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-32__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a staff member assisting the Commission; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-32__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>a consultant to, or an employee of a consultant to, the Commission; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-32__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	a person who is engaged under the <i>Public Service Act 1999</i> and performing duties in the Department.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-32__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, subsection (1) does not apply to the Commission’s power under subsection 5(3D).</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-2">
+          <num>2</num>
+          <heading>Obtaining and giving information etc.</heading>
+          <section eId="part-5__dvs-2__sec-33">
+            <num>33</num>
+            <heading>Commission may obtain information etc.</heading>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may give a written notice to any person requiring the person, for the purposes of this Act:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to provide to the Commission (or a specified staff member assisting the Commission) such information as the Commission requires; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to produce to the Commission (or a specified staff member assisting the Commission) any documents in the custody or under the control of the person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to appear before a specified staff member assisting the Commission to answer questions.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, the person given the notice may be a person employed:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>in, or in connection with, a Department of the Commonwealth, a State or Territory; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>by any authority of the Commonwealth, a State or Territory.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The notice must specify:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>if paragraph (1)(a) or (b) applies:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the period within which the person must comply with the notice; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the manner in which the person must comply with the notice; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>if paragraph (1)(c) applies:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>the time at which the person must appear before the staff member; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-33__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the place at which the person must appear before the staff member.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The specified period or the specified time mentioned in subsection (3) must be at least 14 days after the notice is given.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The Commission may require the information or answers provided under paragraph (1)(c) to be verified by, or given on, oath or affirmation and either orally or in writing.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-6">
+              <num>6</num>
+              <content>
+                <p>A staff member to whom information or answers are verified or given may administer the oath or affirmation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-7">
+              <num>7</num>
+              <content>
+                <p>This section does not require a person to give information, produce a document or give evidence to the extent that, in doing so, the person would contravene a law of the Commonwealth (not being a law of a Territory).</p>
+              </content>
+              <authorialNote placement="end" eId="note-11" marker="11">
+                <content>
+                  <p>Note:	A law of a State or Territory cannot prevent a person from giving information, producing documents or giving evidence for the purposes of this Act (see <ref href="#sec-36">section 36</ref>).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-33__subsec-8">
+              <num>8</num>
+              <content>
+                <p>This section binds the Crown in each of its capacities, but does not make the Crown liable to be prosecuted for an offence.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-34">
+            <num>34</num>
+            <heading>Failure to comply with a notice</heading>
+            <subsection eId="part-5__dvs-2__sec-34__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if the person fails to comply with a notice under <ref href="#sec-33">section 33</ref>.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">10 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-34__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An offence under subsection (1) is an offence of strict liability.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-34__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (1) does not apply to the extent that the person is not capable of complying with the notice.</p>
+              </content>
+              <authorialNote placement="end" eId="note-13" marker="13">
+                <content>
+                  <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (3) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-35">
+            <num>35</num>
+            <heading>Self-incrimination</heading>
+            <subsection eId="part-5__dvs-2__sec-35__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An individual is not excused from giving information or evidence, or producing a document or a copy of a document, under <ref href="#sec-33">section 33</ref> on the ground that the information or evidence, or the production of the document or copy, might tend to incriminate the individual or expose the individual to a penalty.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-35__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-35__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>giving the information or evidence, or producing the document or copy; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-35__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>any information, document or thing obtained as a direct or indirect consequence of giving the information or evidence, or producing the document or copy;</p>
+                </content>
+                <content>
+                  <p>is not admissible in evidence against the individual in any proceedings, other than proceedings for an offence under <ref href="#sec-137">section 137</ref>.1 or 137.2 of the <i>Criminal Code </i>that relates to this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-36">
+            <num>36</num>
+            <heading>Giving information</heading>
+            <subsection eId="part-5__dvs-2__sec-36__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Nothing in a law of a State or a Territory operates to prevent a person from giving information, producing documents or giving evidence for the purposes of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-36__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> or an employee in the Department may provide any information obtained in the performance of his or her duties under this Act to <role refersTo="#secretary">the Secretary</role> of another Department of the Commonwealth, or to the head of an authority of the Commonwealth, for the purposes of that Department or authority.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-3">
+          <num>3</num>
+          <heading>Offences</heading>
+          <section eId="part-5__dvs-3__sec-37">
+            <num>37</num>
+            <heading>False or misleading statements or documents relating to treatment</heading>
+            <subsection eId="part-5__dvs-3__sec-37__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>any of the following applies:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person makes a statement (whether oral or written);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the person issues or presents a document;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the person authorises a statement to be made or a document to be issued or presented; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the statement or document is false or misleading in a material particular; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the statement or document is capable of being used in connection with a claim for treatment provided under this Act.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#penaltyUnit">20 penalty units</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-37__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) is an offence of strict liability.</p>
+              </content>
+              <authorialNote placement="end" eId="note-14" marker="14">
+                <content>
+                  <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-37__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (1) does not apply if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person did not know, and could not reasonably be expected to have known, that the statement or document was false or misleading in a material particular; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-37__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person did not know, and could not reasonably be expected to have known, that the statement or document was capable of being used in connection with a claim for treatment provided under this Act.</p>
+                </content>
+                <authorialNote placement="end" eId="note-15" marker="15">
+                  <content>
+                    <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (3) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-37__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Section 9.2 of the <i>Criminal Code </i>(mistake of fact) does not apply in relation to the matters mentioned in subsection (3).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-37__subsec-5">
+              <num>5</num>
+              <content>
+                <p>	(5)	Despite <ref href="#sec-15B">section 15B</ref> of the <i>Crimes Act 1914</i>, a prosecution for an offence under this section can be commenced at any time within 3 years after the offence is committed.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-38">
+            <num>38</num>
+            <heading>Medical service providers causing detriment to others</heading>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-38__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is a medical service provider; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-b">
+              <num>b</num>
+              <content>
+                <p>the person engages in conduct or omits to engage in conduct; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-c">
+              <num>c</num>
+              <content>
+                <p>the conduct or omission causes detriment to another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-d">
+              <num>d</num>
+              <content>
+                <p>the person engages in the conduct or omits to engage in the conduct intending:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-i">
+              <num>i</num>
+              <content>
+                <p>the conduct or omission to cause detriment to the other person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-ii">
+              <num>ii</num>
+              <content>
+                <p>to encourage the other person to request a pathology service in respect of treatment provided under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-38__para-e">
+              <num>e</num>
+              <content>
+                <p>the other person does not consent to the conduct or omission.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-39">
+            <num>39</num>
+            <heading>Medical service providers threatening detriment</heading>
+            <subsection eId="part-5__dvs-3__sec-39__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is a medical service provider; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the medical service provider makes a threat to another person to cause detriment to the other person or a third person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the medical service provider is reckless as to causing the other person or the third person to fear that the threat will be carried out; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	the medical service provider makes the threat intending to encourage the other person<i> </i>to request a pathology service in respect of treatment provided under this Act.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-39__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of subsection (1), a threat may be:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>express or implied; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-39__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>conditional or unconditional.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-39__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In a prosecution for an offence against subsection (1), it is not necessary to prove that the person actually feared that the threat would be carried out.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-40">
+            <num>40</num>
+            <heading>Bribery by medical service providers</heading>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-40__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is a medical service provider; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-b">
+              <num>b</num>
+              <content>
+                <p>the person dishonestly:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-i">
+              <num>i</num>
+              <content>
+                <p>provides a benefit to another person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-ii">
+              <num>ii</num>
+              <content>
+                <p>causes a benefit to be provided to another person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-iii">
+              <num>iii</num>
+              <content>
+                <p>offers or promises to provide a benefit to another person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-iv">
+              <num>iv</num>
+              <content>
+                <p>causes an offer or a promise to provide a benefit to be made to another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-40__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	the person does so intending to encourage the other person<i> </i>to request a pathology service in respect of treatment provided under this Act.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-41">
+            <num>41</num>
+            <heading>Practitioners receiving bribes etc.</heading>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-41__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is a practitioner; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-b">
+              <num>b</num>
+              <content>
+                <p>the person dishonestly:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-i">
+              <num>i</num>
+              <content>
+                <p>asks for a benefit for himself or herself, or for another person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-ii">
+              <num>ii</num>
+              <content>
+                <p>receives or obtains a benefit for himself or herself, or for another person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-iii">
+              <num>iii</num>
+              <content>
+                <p>agrees to receive or obtain a benefit for himself or herself, or for another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-c">
+              <num>c</num>
+              <content>
+                <p>the person does so intending:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-i">
+              <num>i</num>
+              <content>
+                <p>that treatment provided by him or her under this Act will be influenced; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-41__para-ii">
+              <num>ii</num>
+              <content>
+                <p>to induce, foster or sustain a belief that such treatment will be influenced.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-42">
+            <num>42</num>
+            <heading>Pathology practitioners making payments to requesting practitioners</heading>
+            <subsection eId="part-5__dvs-3__sec-42__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is a pathology practitioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	another practitioner (the <b><i>requesting practitioner</i></b>) requests the pathology practitioner to provide pathology services to a person (the <b><i>patient</i></b>); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the patient is an eligible person; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the pathology practitioner provides those services; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>the pathology practitioner makes a payment (either directly or indirectly) to the requesting practitioner either:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>in respect of other services provided by the requesting practitioner to the patient in connection with the request; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-42__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>in respect of the use of the requesting practitioner’s staff in connection with taking pathology specimens from the patient.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#penaltyUnit">60 penalty units</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-42__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Strict liability applies to paragraph (1)(c).</p>
+              </content>
+              <authorialNote placement="end" eId="note-16" marker="16">
+                <content>
+                  <p>Note:	For <b><i>strict liability</i></b>, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-43">
+            <num>43</num>
+            <heading>Pathology practitioners providing pathology services to persons with whom they have arrangements</heading>
+            <subsection eId="part-5__dvs-3__sec-43__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is a pathology practitioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person has entered an arrangement with another practitioner to share the cost of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>employing staff; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>buying, renting or maintaining items of equipment;</p>
+                </content>
+                <content>
+                  <p>(whether or not the arrangement involves paying money or providing other consideration); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the other practitioner requests the person to provide pathology services in respect of treatment under this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the person provides those services while the arrangement is in force.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-43__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is a pathology practitioner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the person has entered an arrangement with another practitioner:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>to share a particular space in a building; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>for one of them to provide space in a building for the other to use or occupy; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>for one of them to permit the other to use or occupy the building; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the charges payable under the arrangement are not charges fixed at normal commercial rates; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>the other practitioner requests the person to provide pathology services in respect of treatment under this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-43__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>the person provides those services while the arrangement is in force.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-44">
+            <num>44</num>
+            <heading>Providing staff to be used in pathology services</heading>
+            <content>
+              <p>A person commits an offence if:</p>
+            </content>
+            <paragraph eId="part-5__dvs-3__sec-44__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is a pathology practitioner; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-44__para-b">
+              <num>b</num>
+              <content>
+                <p>the person provides nursing or other staff at the premises of another practitioner (whether the staff are present full-time, part-time or from time to time); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__dvs-3__sec-44__para-c">
+              <num>c</num>
+              <content>
+                <p>the person intends the staff to be used in taking pathology specimens in respect of treatment under this Act.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#penaltyUnit">120 penalty units</quantity> or <quantity refersTo="#custodialSentence">imprisonment for 2 years</quantity>.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </section>
+          <section eId="part-5__dvs-3__sec-45">
+            <num>45</num>
+            <heading>Counselling statements inadmissible as evidence</heading>
+            <subsection eId="part-5__dvs-3__sec-45__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	a person (the <b><i>treatment provider</i></b>) has provided treatment under this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the treatment provider has been counselled by a staff member assisting the Commission with respect to providing treatment under this Act; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the treatment provider makes a statement during the counselling.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-45__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The statement is inadmissible as evidence against the treatment provider in proceedings prosecuting him or her for an offence mentioned in subsection (3) unless:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the treatment provider consents to the statement being admitted as evidence in the proceedings; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>both of the following apply:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>evidence of another statement made by the treatment provider during such counselling is admitted on behalf of the provider;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>evidence of the statement mentioned in paragraph (1)(c) is adduced to refute evidence of that other statement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-45__subsec-3">
+              <num>3</num>
+              <content>
+                <p>For the purposes of subsection (2), these are the offences:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>an offence under this Division;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>an offence against:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>	(i)	<ref href="#sec-6">section 6</ref> of the <i>Crimes Act 1914 </i>(accessory after the fact); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-45__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>	(ii)	<ref href="#sec-11">section 11</ref>.1, 11.4 or 11.5 of the <i>Criminal Code </i>(attempt, incitement or conspiracy);</p>
+                </content>
+                <content>
+                  <p>		that relates to an offence under this Division<i>.</i></p>
+                </content>
+                <authorialNote placement="end" eId="note-17" marker="17">
+                  <content>
+                    <p>Note:	In addition to the offences under this Part, there are offence provisions in the <i>Criminal Code</i> that might also apply (such as Parts 7.3 (fraudulent conduct), 7.4 (false and misleading statements) and 7.7 (forgery)).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-4">
+          <num>4</num>
+          <heading>Recovery of amounts paid because of false or misleading statements</heading>
+          <section eId="part-5__dvs-4__sec-46">
+            <num>46</num>
+            <heading>Recovery of amounts paid because of false or misleading statements</heading>
+            <subsection eId="part-5__dvs-4__sec-46__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an amount is paid to a person:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>purportedly by way of reimbursement to a person under subsection 13(4); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>purportedly as travelling expenses under <ref href="#part-3">Part 3</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>as a result of making a false or misleading statement, the amount paid exceeds the amount (if any) that should have been paid.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-46__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The amount of the excess is recoverable, in a court of competent jurisdiction, as a debt due to the Commonwealth from:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person by or on behalf of whom the statement was made; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the estate of that person.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-46__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (2) applies whether or not:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the amount was paid to the person by or on behalf of whom the statement was made; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-46__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>any person has been convicted of an offence in relation to the making of the statement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-4__sec-47">
+            <num>47</num>
+            <heading>Interest payable on amounts paid because of false or misleading statements</heading>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	an amount (the <b><i>principal sum</i></b>) is recoverable as a debt due to the Commonwealth from a person or estate under <ref href="#sec-46">section 46</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Commission has served a notice on the person or estate (as the case requires) claiming the amount as a debt due to the Commonwealth; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	an arrangement has been entered into between the Commission and the person or estate (as the case requires) to repay the principal sum within the following period (the <b><i>relevant period</i></b>):</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the period of 3 months from the day the notice is served;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>such longer period as the Commission allows; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>there has been a default (whether before or after the end of that period) in repaying all or part of the principal sum as required by the arrangement.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-2">
+              <num>2</num>
+              <content>
+                <p>This section applies if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	an amount (the <b><i>principal sum</i></b>) is recoverable as a debt due to the Commonwealth from a person or estate under <ref href="#sec-46">section 46</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Commission has served a notice on the person or estate (as the case requires) claiming the amount as a debt due to the Commonwealth; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>	(c)	an arrangement to repay the principal sum has not been entered into within the following period (the <b><i>relevant period</i></b>):</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the period of 3 months from the day the notice is served;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>such longer period as the Commission allows; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>all or part of the principal sum remains unpaid.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Interest is payable on the amount of the principal sum that remains unpaid from time to time.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The interest is payable from:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>the day after the end of the relevant period; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-47__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>such other later day ordered by a court in any proceedings instituted by the Commonwealth to recover an amount due under this section.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-5">
+              <num>5</num>
+              <content>
+                <p>	(5)	The interest is payable at the rate prescribed from time to time for the purposes of subsection 129AC(2) of the <i>Health Insurance Act 1973</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-47__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The interest is recoverable, in a court of competent jurisdiction, as a debt due to the Commonwealth from the person or estate (as the case requires).</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-4__sec-48">
+            <num>48</num>
+            <heading>Reduction in payments because of previous overpayments</heading>
+            <subsection eId="part-5__dvs-4__sec-48__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commission may reduce the amount of any payment that becomes payable to a person if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an amount has previously been paid to the person:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>purportedly by way of reimbursement to a person under subsection 13(4); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>purportedly as travelling expenses under <ref href="#part-3">Part 3</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the amount paid exceeds the amount (if any) that should have been paid; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the person agrees to the reduction.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-4__sec-48__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The amount of the reduction must not exceed:</p>
+              </content>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the Commission has not previously reduced a payment under this section—the amount of the excess; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-4__sec-48__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>otherwise—the amount by which the sum of all amounts of excess under subsection (1) exceeds the sum of all amounts recovered under this section.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-5">
+          <num>5</num>
+          <heading>Recovery of cost of treatment</heading>
+          <section eId="part-5__dvs-5__sec-48A">
+            <num>48A</num>
+            <heading>Recovery of cost of treatment</heading>
+            <content>
+              <p>		Section 93 of the <i>Veterans’ Entitlements Act 1986</i> applies to the provision of treatment under this Act in a corresponding way to the way that section applies to the provision of treatment under <ref href="#part-V">Part V</ref> of that Act.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-5__dvs-6">
+          <num>6</num>
+          <heading>Recovery of overpayments of pharmaceutical supplement</heading>
+          <section eId="part-5__dvs-6__sec-48B">
+            <num>48B</num>
+            <heading>Recovery of overpayments of pharmaceutical supplement</heading>
+            <subsection eId="part-5__dvs-6__sec-48B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>This section applies if a person has been paid an amount of pharmaceutical supplement under <ref href="#part-3A">Part 3A</ref> that should not have been paid.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-6__sec-48B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The amount is recoverable, in a court of competent jurisdiction, as a debt due to the Commonwealth from:</p>
+              </content>
+              <paragraph eId="part-5__dvs-6__sec-48B__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-6__sec-48B__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the estate of that person.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-6__sec-48B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The amount may be deducted from an amount that is payable to the person under this Act.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-6__sec-49">
+          <num>49</num>
+          <heading>Appropriation</heading>
+          <content>
+            <p>The Consolidated Revenue Fund is appropriated to the extent necessary for the payment of:</p>
+          </content>
+          <paragraph eId="part-6__sec-49__para-a">
+            <num>a</num>
+            <content>
+              <p>amounts payable for provision of treatment under this Act (including amounts payable by way of reimbursement under subsection 13(4)); and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-49__para-aa">
+            <num>aa</num>
+            <content>
+              <p>costs the Commission has accepted financial responsibility for as mentioned in <ref href="#sec-13A">section 13A</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-49__para-b">
+            <num>b</num>
+            <content>
+              <p>travelling expenses payable under <ref href="#part-3">Part 3</ref>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-49__para-c">
+            <num>c</num>
+            <content>
+              <p>pharmaceutical supplement under <ref href="#part-3A">Part 3A</ref>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-6__sec-50">
+          <num>50</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-6__sec-50__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-6__sec-50__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>orig = original</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>p = page(s)</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>para = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>cl = clause(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>cont. = continued</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>r = regulation(s)/Court rule(s)</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>div = Division(s)</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>sub ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>sub div = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>sub pt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+              <tr>
+                <td>Ord = Ordinance</td>
+                <td></td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act
+(Register ID)</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Australian Participants in British Nuclear Tests (Treatment) Act 2006 (C2006A00135)</td>
+                <td>135, 2006</td>
+                <td>30 Nov 2006</td>
+                <td>1 Dec 2006 (s 2)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (International Agreements and Other Measures) Act 2008 (C2008A00081)</td>
+                <td>81, 2008</td>
+                <td>12 July 2008</td>
+                <td>sch 2: 13 July 2008 (s 2(1) item 8)</td>
+                <td>sch 2 (items 3, 4)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs and Other Legislation Amendment (Miscellaneous Measures) Act 2010 (C2010A00120)</td>
+                <td>120, 2010</td>
+                <td>17 Nov 2010</td>
+                <td>sch 1 (items 1-5): 17 Nov 2010 (s 2(1) item 2)</td>
+                <td>sch 1 (items 4, 5)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Participants in British Nuclear Tests) Act 2011 (C2011A00169)</td>
+                <td>169, 2011</td>
+                <td>4 Dec 2011</td>
+                <td>sch 1 (items 1-6): 4 Dec 2011 (s 2)</td>
+                <td>sch 1 (items 5, 6)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Military Compensation Review and Other Measures) Act 2013 (C2013A00099)</td>
+                <td>99, 2013</td>
+                <td>28 June 2013</td>
+                <td>sch 13 (items 2-4, 12): 26 July 2013 (s 2(1) item 7)</td>
+                <td>sch 13 (item 12)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Miscellaneous Measures) Act 2014 (C2014A00005)</td>
+                <td>5, 2014</td>
+                <td>28 Feb 2014</td>
+                <td>sch 1 (items 1-3): 28 Feb 2014 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Budget Measures) Act 2017 (C2017A00059)</td>
+                <td>59, 2017</td>
+                <td>22 June 2017</td>
+                <td>sch 1 (items 1-16): 1 July 2017 (s 2(1) item 2)</td>
+                <td>sch 1 (item 16)</td>
+              </tr>
+              <tr>
+                <td>Safety, Rehabilitation and Compensation Legislation Amendment (Defence Force) Act 2017 (C2017A00108)</td>
+                <td>108, 2017</td>
+                <td>14 Sept 2017</td>
+                <td>sch 3 (item 3): 12 Oct 2017 (s 2(1) item 5)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Omnibus) Act 2017 (C2017A00128)</td>
+                <td>128, 2017</td>
+                <td>30 Nov 2017</td>
+                <td>sch 3 (item 1), sch 7 (items 1-6, 44, 54): 1 Dec 2017 (s 2(1) items 4, 10)</td>
+                <td>sch 7 (items 6, 44, 54)</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Affairs Legislation Amendment (Veteran-centric Reforms No. 1) Act 2018 (C2018A00017)</td>
+                <td>17, 2018</td>
+                <td>28 Mar 2018</td>
+                <td>sch 2 (item 41): 1 May 2018 (s 2(1) item 3)
+sch 8 (item 1): 29 Mar 2018 (s 2(1) item 11)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024 (C2024A00038)</td>
+                <td>38, 2024</td>
+                <td>31 May 2024</td>
+                <td>sch 15 (items 1, 40): 14 Oct 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Veterans’ Entitlements, Treatment and Support (Simplification and Harmonisation) Act 2025 (C2025A00017)</td>
+                <td>17, 2025</td>
+                <td>20 Feb 2025</td>
+                <td>sch 8 (items 16, 17): 1 July 2026 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Aged Care and Other Legislation Amendment Act 2025 (C2025A00045)</td>
+                <td>45, 2025</td>
+                <td>19 Sept 2025</td>
+                <td>sch 3 (items 80-83): 1 Nov 2025 (s 2(1) item 6)</td>
+                <td>sch 3 (item 83)</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Title</td>
+                <td>am No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 1</td>
+                <td>am No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 4</td>
+                <td>am No 81, 2008; No 169, 2011; No 59, 2017; No 128, 2017; No 17, 2025; No 45, 2025</td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>am No 81, 2008; No 120, 2010; No 169, 2011; No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 2 heading</td>
+                <td>rs No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 7</td>
+                <td>am No 59, 2017; No 108, 2017 (amdt never applied (Sch 3 item 3)); No 128, 2017; No 17, 2018</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 99, 2013</td>
+              </tr>
+              <tr>
+                <td>s 13A</td>
+                <td>am No 45, 2025</td>
+              </tr>
+              <tr>
+                <td>s 14</td>
+                <td>am No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 16</td>
+                <td>am No 99, 2013; No 45, 2025</td>
+              </tr>
+              <tr>
+                <td>s 18</td>
+                <td>am No 128, 2017</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>am No 5, 2014</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 5, 2014</td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part 3A</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 23A</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 23B</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 23C</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am No 17, 2018</td>
+              </tr>
+              <tr>
+                <td>s 23D</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 23E</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 27</td>
+                <td>am No 38, 2024</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 2 heading</td>
+                <td>am No 38, 2024</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 38, 2024</td>
+              </tr>
+              <tr>
+                <td>Part 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No 17, 2025</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>am No 169, 2011</td>
+              </tr>
+              <tr>
+                <td>Division 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 5</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 48A</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Division 6</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 6</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>s 48B</td>
+                <td>ad No 59, 2017</td>
+              </tr>
+              <tr>
+                <td>Part 6</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 49</td>
+                <td>am No 99, 2013; No 59, 2017</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

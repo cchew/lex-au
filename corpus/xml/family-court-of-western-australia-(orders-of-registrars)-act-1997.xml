@@ -1,0 +1,718 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1997/148/!main"/>
+          <FRBRuri value="/akn/au/act/1997/148"/>
+          <FRBRdate date="1997-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="148"/>
+          <FRBRname value="family-court-of-western-australia-(orders-of-registrars)-act-1997"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1997/148/eng@2021-09-01/!main"/>
+          <FRBRuri value="/akn/au/act/1997/148/eng@2021-09-01"/>
+          <FRBRdate date="2021-09-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1997/148/eng@2021-09-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1997/148/eng@2021-09-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1997-01-01" type="generation" eId="evt-creation" source="#family-court-of-western-australia-(orders-of-registrars)-act-1997"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2021/13" date="2021-03-01"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-11"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-12"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCTerm eId="term-corresponding-western-australian-act" href="/ontology/term/au/term-corresponding-western-australian-act" showAs="corresponding Western Australian Act"/>
+        <TLCTerm eId="term-federal-family-jurisdiction" href="/ontology/term/au/term-federal-family-jurisdiction" showAs="federal family jurisdiction"/>
+        <TLCTerm eId="term-ineffective-order" href="/ontology/term/au/term-ineffective-order" showAs="ineffective order"/>
+        <TLCTerm eId="term-liability" href="/ontology/term/au/term-liability" showAs="liability"/>
+        <TLCTerm eId="term-parenting-plan" href="/ontology/term/au/term-parenting-plan" showAs="parenting plan"/>
+        <TLCTerm eId="term-proceedings" href="/ontology/term/au/term-proceedings" showAs="proceedings"/>
+        <TLCTerm eId="term-right" href="/ontology/term/au/term-right" showAs="right"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Family Court of Western Australia (Orders of Registrars) Act 1997</p>
+      <p>No. 148, 1997</p>
+      <p><b>Compilation No. </b><b>1</b></p>
+      <p><b>Compilation date:</b><b>	</b>1 September 2021</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 13 of 2021</p>
+      <p><b>Registered:</b><b>	</b>9 November 2021</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Family Court of Western Australia (Orders of Registrars) Act 1997</i> that shows the text of the law as amended and in force on 1 September 2021 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>4	Meaning of <i>ineffective order</i>	2</p>
+      <p>5	Rights and liabilities declared in certain cases	3</p>
+      <p>6	Effect of declared rights and liabilities	4</p>
+      <p>7	Effect of things done or omitted to be done under or in relation to rights and liabilities	4</p>
+      <p>8	Section 5 regarded as having ceased to have effect in certain cases	6</p>
+      <p>9	Powers of courts in relation to declared rights and liabilities	7</p>
+      <p>10	Evidence	8</p>
+      <p>11	Act does not apply to certain orders	8</p>
+      <p>12	Jurisdiction of courts	8</p>
+      <p>Endnotes	9</p>
+      <p>Endnote 1—About the endnotes	9</p>
+      <p>Endnote 2—Abbreviation key	11</p>
+      <p>Endnote 3—Legislation history	12</p>
+      <p>Endnote 4—Amendment history	13</p>
+      <p>An Act relating to certain ineffective orders of Registrars of the Family Court of Western Australia</p>
+    </preface>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Family Court of </i><i>Western Australia</i><i> (Orders of Registrars) Act 1997</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Commencement</heading>
+        <content>
+          <p>This Act commences on the day on which it receives the Royal Assent.</p>
+        </content>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Interpretation</heading>
+        <content>
+          <p>In this Act:</p>
+          <p><term refersTo="#term-corresponding-western-australian-act">corresponding Western Australian Act</term> means <def>the Family Court (Orders of Registrars) Act 1997 of Western Australia.</def></p>
+          <p><term refersTo="#term-federal-family-jurisdiction">federal family jurisdiction</term> means <def>jurisdiction under: 	(a)	the <i>Family Law Act 1975</i>; or 	(b)	the <i>Child Support (Registration and Collection) Act 1988</i>; or 	(c)	the <i>Child Support (Assessment) Act 1989</i>.</def></p>
+        </content>
+        <paragraph eId="sec-3__para-a">
+          <num>a</num>
+          <content>
+            <p>	(a)	the <i>Family Law Act 1975</i>; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-b">
+          <num>b</num>
+          <content>
+            <p>	(b)	the <i>Child Support (Registration and Collection) Act 1988</i>; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-c">
+          <num>c</num>
+          <content>
+            <p>	(c)	the <i>Child Support (Assessment) Act 1989</i>.</p>
+          </content>
+          <content>
+            <p><term refersTo="#term-ineffective-order">ineffective order</term> has the meaning given by <def><ref href="#sec-4">section 4</ref>.</def></p>
+            <p><term refersTo="#term-liability">liability</term> includes <def>a duty or obligation.</def></p>
+            <p><term refersTo="#term-parenting-plan">parenting plan</term> means <def>a parenting plan under <ref href="">the Family Law Act 1975</ref>.</def></p>
+            <p><term refersTo="#term-proceedings">proceedings</term> includes <def>an initiating application.</def></p>
+            <p><b><i>proceedings for the order</i></b> means:</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-a">
+          <num>a</num>
+          <content>
+            <p>in relation to an ineffective order of the kind referred to in subsection 4(2)—the proceedings in or in relation to which the order was purportedly made; and</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-3__para-b">
+          <num>b</num>
+          <content>
+            <p>	(b)	in relation to provisions of a parenting plan that are an ineffective order of the kind referred to in subsection 4(3)—the proceedings that would have been constituted by the application to register the parenting plan if it had instead been an application to the Family Court of Western Australia for an order of the relevant kind under the <i>Family Law Act 1975</i> and the parties to the plan had been parties to that application.</p>
+          </content>
+          <content>
+            <p><b><i>Registrar</i></b> has the meaning it had in the <i>Family Court Act 1975</i> of Western Australia as in force immediately before the commencement of the corresponding Western Australian Act.</p>
+            <p><b><i>registration decision</i></b>, in relation to an ineffective order of the kind referred to in subsection 4(3), means the Registrar’s decision to register the parenting plan as mentioned in that subsection.</p>
+            <p><term refersTo="#term-right">right</term> includes <def>an interest or status.</def></p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Meaning of ineffective order</heading>
+        <subsection eId="sec-4__subsec-1">
+          <num>1</num>
+          <content>
+            <p>	(1)	A reference in this Act to an <b><i>ineffective order</i></b> is a reference to a purported order described in subsection (2), or provisions of a parenting plan described in subsection (3). This has effect subject to subsections (4) and (5) as they affect the meaning of a reference to an ineffective order in the context of a particular case.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	An order that a Registrar has purported to make, before the commencement of the corresponding Western Australian Act, is an <b><i>ineffective order</i></b> if it was made:</p>
+          </content>
+          <paragraph eId="sec-4__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>in the exercise or purported exercise of the federal family jurisdiction of the Family Court of Western Australia; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-4__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>by way of a judicial determination that was not reviewable (otherwise than on appeal).</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-4__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	Provisions of a parenting plan that a Registrar has purported to register under <ref href="#sec-63E">section 63E</ref> of the <i>Family Law Act 1975</i>, before the commencement of the corresponding Western Australian Act, are an <b><i>ineffective order</i></b> if they would have had effect under <ref href="#sec-63F">section 63F</ref> or 63G of the <i>Family Law Act 1975</i> as a particular kind of order if the decision to register the plan had been a decision made by the Family Court of Western Australia.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-4__subsec-4">
+          <num>4</num>
+          <content>
+            <p>If a court or Registrar has purported to vary, revoke, set aside, revive or suspend an ineffective order, the reference is, subject to subsection (5), a reference to the order in the form in which, and to the extent to which, it purports or purported to have effect from time to time.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note 1:	In the case of an ineffective order of the kind referred to in subsection 4(3), this subsection applies to a purported variation, revocation, setting aside, revival or suspension of provisions of the parenting plan as they had effect as an order (rather than a purported variation, revocation, setting aside, revival or suspension of the provisions as provisions of an agreement).</p>
+            </content>
+          </authorialNote>
+          <authorialNote placement="end" eId="note-2" marker="2">
+            <content>
+              <p>Note 2:	This subsection applies if a court has proceeded on the basis that an ineffective order was valid. The situation where a court has proceeded on the basis that an ineffective order was or might have been invalid is dealt with in <ref href="#sec-8">section 8</ref>.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-4__subsec-5">
+          <num>5</num>
+          <content>
+            <p>	(5)	If clause 2 of Schedule 2 to the <i>Family Law Reform Act 1995 </i>would have applied to an ineffective order if it had been an order made by the Family Court of Western Australia in the exercise of its federal family jurisdiction, then, so far as the reference relates to a time after the commencement of that Schedule, it is, subject to subsection (4), a reference to the order as it would have, or would have had, effect if that clause applied to it.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-5">
+        <num>5</num>
+        <heading>Rights and liabilities declared in certain cases</heading>
+        <subsection eId="sec-5__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The rights and liabilities of all persons are, by force of this Act, declared to be, and always to have been, the same as if each ineffective order had been an order made by the Family Court of Western Australia in the exercise of its federal family jurisdiction in or in relation to the proceedings for the order.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	Subsection (1) has effect in relation to an ineffective order of the kind referred to in subsection 4(3) subject to the same conditions and limitations as apply under the <i>Family Law Act 1975</i> in relation to provisions of registered parenting plans having effect as orders.</p>
+          </content>
+          <authorialNote placement="end" eId="note-3" marker="3">
+            <content>
+              <p>Note:	See, for example, the conditions and limitations specified in sections 63F and 63G of the <i>Family Law Act 1975</i>.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+      </section>
+      <section eId="sec-6">
+        <num>6</num>
+        <heading>Effect of declared rights and liabilities</heading>
+        <subsection eId="sec-6__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A right or liability conferred, imposed or affected by <ref href="#sec-5">section 5</ref>:</p>
+          </content>
+          <paragraph eId="sec-6__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>is exercisable or enforceable; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-6__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>is to be regarded as always having been exercisable or enforceable;</p>
+            </content>
+            <content>
+              <p>as if it were a right or liability conferred, imposed or affected by an order made by the Family Court of Western Australia, in the exercise of its federal family jurisdiction, in or in relation to the proceedings for the order.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-6__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	Subsection (1) has effect in relation to an ineffective order of the kind referred to in subsection 4(3) subject to the same conditions and limitations as apply under the <i>Family Law Act 1975</i> in relation to provisions of registered parenting plans having effect as orders.</p>
+          </content>
+          <authorialNote placement="end" eId="note-4" marker="4">
+            <content>
+              <p>Note:	See, for example, the conditions and limitations specified in sections 63F and 63G of the <i>Family Law Act 1975</i>.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-6__subsec-3">
+          <num>3</num>
+          <content>
+            <p>In this section:</p>
+          </content>
+          <content>
+            <p><b><i>enforceable</i></b> includes able to be dealt with by proceedings under <ref href="#dvs-2">Division 2</ref> of <ref href="#part-XIII">Part XIII</ref>A of the <i>Family Law Act 1975</i> relating to a contravention of an order.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-7">
+        <num>7</num>
+        <heading>Effect of things done or omitted to be done under or in relation to rights and liabilities</heading>
+        <subsection eId="sec-7__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Any act or thing done or omitted to be done before or after the commencement of this Act under or in relation to a right or liability conferred, imposed or affected by <ref href="#sec-5">section 5</ref> of this Act, or the equivalent provision of the corresponding Western Australian Act:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>has the same effect, and gives rise to the same consequences, for the purposes of any written or other law; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>is to be regarded as always having had the same effect, and given rise to the same consequences, for the purposes of any written or other law;</p>
+            </content>
+            <content>
+              <p>as if it were done or omitted to be done to give effect to, or under <role refersTo="#authority">the authority</role> of, or in reliance on:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-1__para-c">
+            <num>c</num>
+            <content>
+              <p>an order made by the Family Court of Western Australia, in the exercise of its federal family jurisdiction, in or in relation to the proceedings for the order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-1__para-d">
+            <num>d</num>
+            <content>
+              <p>an order made by the Family Court of Western Australia in or in relation to the proceedings referred to in the equivalent provision of the corresponding Western Australian Act;</p>
+            </content>
+            <content>
+              <p>as the case requires.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-7__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Subject to subsection (3), for the purposes of an enforcement law (see subsection (4)), any act or thing done or omitted to be done before or after the commencement of this Act gives rise to the same consequences, and is to be regarded as always having given rise to the same consequences, as if each ineffective order were an order made by the Family Court of Western Australia, in the exercise of its federal family jurisdiction, in or in relation to the proceedings for the order.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-3">
+          <num>3</num>
+          <content>
+            <p>If, before the commencement of this Act, a court purported to convict a person of an offence against an enforcement law on the basis that an order of the kind referred to in subsection 4(2) was a valid order, nothing in this section is to be taken to validate or confirm that conviction.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-4">
+          <num>4</num>
+          <content>
+            <p>In this section:</p>
+          </content>
+          <content>
+            <p><b><i>enforcement law </i></b>means a provision of a law of the Commonwealth, other than a law relating to contempt of court, that sets out a consequence for a person if the person:</p>
+          </content>
+          <paragraph eId="sec-7__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>contravenes; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-7__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>acts in a specified way while there is in force;</p>
+            </content>
+            <content>
+              <p>an order, or a particular kind of order, made by a court exercising federal family jurisdiction (whether or not the provision also applies to other orders of courts).</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-8">
+        <num>8</num>
+        <heading>Section 5 regarded as having ceased to have effect in certain cases</heading>
+        <subsection eId="sec-8__subsec-1">
+          <num>1</num>
+          <content>
+            <p>If:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	before the commencement of this Act, a court, in the exercise of its federal family jurisdiction, made an order (the <b><i>new order</i></b>) on the basis that an ineffective order of the kind referred to in subsection 4(2) was or might be invalid; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>the new order replaced the ineffective order (see subsection (2));</p>
+            </content>
+            <content>
+              <p><ref href="#sec-5">section 5</ref> is to be regarded as having ceased to have effect in respect of the ineffective order when the new order took effect.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-2">
+          <num>2</num>
+          <content>
+            <p>For the purposes of subsection (1), the new order replaced the ineffective order if the new order:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>conferred or imposed rights or liabilities similar to or different from those purportedly conferred or imposed by the ineffective order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>affected rights or liabilities in the same way as they were purportedly affected by the ineffective order or in a different way.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-3">
+          <num>3</num>
+          <content>
+            <p>If:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	before the commencement of this Act, a court, in the exercise of its federal family jurisdiction, made an order or decision (the <b><i>new order or decision</i></b>) on the basis that the registration decision in relation to an ineffective order of the kind referred to in subsection 4(3) was or might be invalid; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>the new order or decision replaced the ineffective order (see subsection (4));</p>
+            </content>
+            <content>
+              <p><ref href="#sec-5">section 5</ref> is to be regarded as having ceased to have effect in respect of the ineffective order when the new order or decision took effect.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-4">
+          <num>4</num>
+          <content>
+            <p>For the purposes of subsection (3), the new order or decision replaced the ineffective order if:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>it was an order:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>conferring or imposing rights or liabilities similar to or different from those purportedly conferred or imposed by the ineffective order; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>affecting rights or liabilities in the same way as they were purportedly affected by the ineffective order or in a different way; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	it was a decision to register the same or a different parenting plan under <ref href="#sec-63E">section 63E</ref> of the <i>Family Law Act 1975</i>.</p>
+            </content>
+          </paragraph>
+        </subsection>
+      </section>
+      <section eId="sec-9">
+        <num>9</num>
+        <heading>Powers of courts in relation to declared rights and liabilities</heading>
+        <subsection eId="sec-9__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A court may vary, revoke, set aside, revive or suspend a right or liability conferred, imposed or affected by <ref href="#sec-5">section 5</ref> as if it were a right or liability conferred, imposed or affected by an order made by the Family Court of Western Australia in the exercise of its federal family jurisdiction in or in relation to the proceedings for the order.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-9__subsec-2">
+          <num>2</num>
+          <content>
+            <p>In addition to its powers under subsection (1), a court also has power to make an order achieving any other result that could have been achieved if:</p>
+          </content>
+          <paragraph eId="sec-9__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>the ineffective order had been an order made by the Family Court of Western Australia in the exercise of its federal family jurisdiction in or in relation to the proceedings for the order; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>the court had been considering whether to vary, revoke, set aside, revive or suspend that order.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-9__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	This section has effect in relation to an ineffective order of the kind referred to in subsection 4(3) subject to the same conditions and limitations as apply under the <i>Family Law Act 1975</i> in relation to provisions of registered parenting plans having effect as orders.</p>
+          </content>
+          <authorialNote placement="end" eId="note-5" marker="5">
+            <content>
+              <p>Note:	See, for example, the conditions and limitations specified in sections 63F and 63G of the <i>Family Law Act 1975</i>.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+      </section>
+      <section eId="sec-10">
+        <num>10</num>
+        <heading>Evidence</heading>
+        <content>
+          <p>The court record, or a copy of the court record, of:</p>
+        </content>
+        <paragraph eId="sec-10__para-a">
+          <num>a</num>
+          <content>
+            <p>an ineffective order of the kind referred to in subsection 4(2); or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-10__para-b">
+          <num>b</num>
+          <content>
+            <p>the registration decision in relation to an ineffective order of the kind referred to in subsection 4(3);</p>
+          </content>
+          <content>
+            <p>may be adduced in evidence to show the existence, nature and extent of each right or liability conferred, imposed or affected by <ref href="#sec-5">section 5</ref>.</p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-11">
+        <num>11</num>
+        <heading>Act does not apply to certain orders</heading>
+        <content>
+          <p>Nothing in this Act applies to an order declared to be invalid by the Full Court of the Family Court of Australia before the commencement of the corresponding Western Australian Act.</p>
+        </content>
+      </section>
+      <section eId="sec-12">
+        <num>12</num>
+        <heading>Jurisdiction of courts</heading>
+        <subsection eId="sec-12__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Subject to subsection (3), jurisdiction is conferred on the Federal Circuit and Family Court of Australia (<ref href="#dvs-1">Division 1</ref>) and the Supreme Court of the Northern Territory, and the Family Court of Western Australia is invested with federal jurisdiction, with respect to matters arising under this Act.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-12__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Subject to subsection (3), each court of summary jurisdiction of each State is invested with federal jurisdiction, and jurisdiction is conferred on each court of summary jurisdiction of each Territory, with respect to matters arising under this Act.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-12__subsec-3">
+          <num>3</num>
+          <content>
+            <p>	(3)	A court only has jurisdiction in respect of a matter arising under this Act if it has jurisdiction in respect of an equivalent matter arising under the <i>Family Law Act 1975</i>, the <i>Child Support (Registration and Collection) Act 1988</i> or the <i>Child Support (Assessment) Act 1989</i>, as the case requires. The court’s jurisdiction under this Act is subject to the same conditions and limitations as would apply to it in dealing with the equivalent matter.</p>
+          </content>
+          <content>
+            <p>Endnotes</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>The endnotes provide information about this compilation and the compiled law.</p>
+            <p>The following endnotes are included in every compilation:</p>
+            <p>Endnote 1—About the endnotes</p>
+            <p>Endnote 2—Abbreviation key</p>
+            <p>Endnote 3—Legislation history</p>
+            <p>Endnote 4—Amendment history</p>
+            <p><b>Abbreviation key—Endnote 2</b></p>
+            <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+            <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+            <p>Amending laws are annotated in the legislation history and amendment history.</p>
+            <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+            <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+            <p><b>Editorial changes</b></p>
+            <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+            <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+            <p><b>Misdescribed amendments</b></p>
+            <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+            <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+            <p>Endnote 2—Abbreviation key</p>
+          </content>
+          <table>
+            <tr>
+              <th>ad = added or inserted</th>
+              <th>o = order(s)</th>
+            </tr>
+            <tr>
+              <td>am = amended</td>
+              <td>Ord = Ordinance</td>
+            </tr>
+            <tr>
+              <td>amdt = amendment</td>
+              <td>orig = original</td>
+            </tr>
+            <tr>
+              <td>c = clause(s)</td>
+              <td>par = paragraph(s)/subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>C[x] = Compilation No. x</td>
+              <td>/sub-subparagraph(s)</td>
+            </tr>
+            <tr>
+              <td>Ch = Chapter(s)</td>
+              <td>pres = present</td>
+            </tr>
+            <tr>
+              <td>def = definition(s)</td>
+              <td>prev = previous</td>
+            </tr>
+            <tr>
+              <td>Dict = Dictionary</td>
+              <td>(prev…) = previously</td>
+            </tr>
+            <tr>
+              <td>disallowed = disallowed by Parliament</td>
+              <td>Pt = Part(s)</td>
+            </tr>
+            <tr>
+              <td>Div = Division(s)</td>
+              <td>r = regulation(s)/rule(s)</td>
+            </tr>
+            <tr>
+              <td>ed = editorial change</td>
+              <td>reloc = relocated</td>
+            </tr>
+            <tr>
+              <td>exp = expires/expired or ceases/ceased to have</td>
+              <td>renum = renumbered</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>rep = repealed</td>
+            </tr>
+            <tr>
+              <td>F = Federal Register of Legislation</td>
+              <td>rs = repealed and substituted</td>
+            </tr>
+            <tr>
+              <td>gaz = gazette</td>
+              <td>s = section(s)/subsection(s)</td>
+            </tr>
+            <tr>
+              <td>LA = Legislation Act 2003</td>
+              <td>Sch = Schedule(s)</td>
+            </tr>
+            <tr>
+              <td>LIA = Legislative Instruments Act 2003</td>
+              <td>Sdiv = Subdivision(s)</td>
+            </tr>
+            <tr>
+              <td>(md) = misdescribed amendment can be given</td>
+              <td>SLI = Select Legislative Instrument</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td>SR = Statutory Rules</td>
+            </tr>
+            <tr>
+              <td>(md not incorp) = misdescribed amendment</td>
+              <td>Sub-Ch = Sub-Chapter(s)</td>
+            </tr>
+            <tr>
+              <td>cannot be given effect</td>
+              <td>SubPt = Subpart(s)</td>
+            </tr>
+            <tr>
+              <td>mod = modified/modification</td>
+              <td>underlining = whole or part not</td>
+            </tr>
+            <tr>
+              <td>No. = Number(s)</td>
+              <td>commenced or to be commenced</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 3—Legislation history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Act</th>
+              <th>Number and year</th>
+              <th>Assent</th>
+              <th>Commencement</th>
+              <th>Application, saving and transitional provisions</th>
+            </tr>
+            <tr>
+              <td>Family Court of Western Australia (Orders of Registrars) Act 1997</td>
+              <td>148, 1997</td>
+              <td>17 Oct 1997</td>
+              <td>17 Oct 1997 (s 2)</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Federal Circuit and Family Court of Australia (Consequential Amendments and Transitional Provisions) Act 2021</td>
+              <td>13, 2021</td>
+              <td>1 Mar 2021</td>
+              <td>Sch 2 (items 417, 418): 1 Sept 2021 (s 2(1) item 5)</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>s 11</td>
+              <td>am No 13, 2021</td>
+            </tr>
+            <tr>
+              <td>s 12</td>
+              <td>am No 13, 2021</td>
+            </tr>
+          </table>
+        </subsection>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

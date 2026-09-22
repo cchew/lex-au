@@ -1,0 +1,3515 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1988/106/!main"/>
+          <FRBRuri value="/akn/au/act/1988/106"/>
+          <FRBRdate date="1988-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="106"/>
+          <FRBRname value="australian-capital-territory-(self-government)-act-1988"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1988/106/eng@2024-12-11/!main"/>
+          <FRBRuri value="/akn/au/act/1988/106/eng@2024-12-11"/>
+          <FRBRdate date="2024-12-11" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1988/106/eng@2024-12-11/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1988/106/eng@2024-12-11/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1988-01-01" type="generation" eId="evt-creation" source="#australian-capital-territory-(self-government)-act-1988"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1989/60" date="1989-06-19"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1991/33"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1992/10"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1992/49" date="1992-06-17"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1992/104" date="1992-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1993/82"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1994/6"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1994/92" date="1994-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/1994/165"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/1997/66" date="1997-05-30"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/1998/101" date="1998-07-30"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2003/140"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2006/109"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2011/166" date="2011-12-04"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2013/28" date="2013-03-31"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2015/126" date="2015-09-10"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2016/33" date="2016-03-23"/>
+        <eventRef type="amendment" eId="evt-amd-19" source="/akn/au/act/2024/115" date="2024-12-10"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCTerm eId="term-assembly" href="/ontology/term/au/term-assembly" showAs="Assembly"/>
+        <TLCTerm eId="term-attorney-general-of-the-territory" href="/ontology/term/au/term-attorney-general-of-the-territory" showAs="Attorney-General of the Territory"/>
+        <TLCTerm eId="term-casual-vacancy" href="/ontology/term/au/term-casual-vacancy" showAs="casual vacancy"/>
+        <TLCTerm eId="term-chief-magistrate" href="/ontology/term/au/term-chief-magistrate" showAs="Chief Magistrate"/>
+        <TLCTerm eId="term-chief-minister" href="/ontology/term/au/term-chief-minister" showAs="Chief Minister"/>
+        <TLCTerm eId="term-commencing-day" href="/ontology/term/au/term-commencing-day" showAs="commencing day"/>
+        <TLCTerm eId="term-commissioner" href="/ontology/term/au/term-commissioner" showAs="Commissioner"/>
+        <TLCTerm eId="term-commonwealth-gazette" href="/ontology/term/au/term-commonwealth-gazette" showAs="Commonwealth Gazette"/>
+        <TLCTerm eId="term-commonwealth-minister" href="/ontology/term/au/term-commonwealth-minister" showAs="Commonwealth Minister"/>
+        <TLCTerm eId="term-deputy-chief-minister" href="/ontology/term/au/term-deputy-chief-minister" showAs="Deputy Chief Minister"/>
+        <TLCTerm eId="term-deputy-presiding-officer" href="/ontology/term/au/term-deputy-presiding-officer" showAs="Deputy Presiding Officer"/>
+        <TLCTerm eId="term-elector-of-the-territory" href="/ontology/term/au/term-elector-of-the-territory" showAs="elector of the Territory"/>
+        <TLCTerm eId="term-electoral-enactment" href="/ontology/term/au/term-electoral-enactment" showAs="electoral enactment"/>
+        <TLCTerm eId="term-executive" href="/ontology/term/au/term-executive" showAs="Executive"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-general-election" href="/ontology/term/au/term-general-election" showAs="general election"/>
+        <TLCTerm eId="term-judicial-commission" href="/ontology/term/au/term-judicial-commission" showAs="judicial commission"/>
+        <TLCTerm eId="term-magistrate" href="/ontology/term/au/term-magistrate" showAs="Magistrate"/>
+        <TLCTerm eId="term-meeting" href="/ontology/term/au/term-meeting" showAs="meeting"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-minister" href="/ontology/term/au/term-minister" showAs="Minister"/>
+        <TLCTerm eId="term-presiding-officer" href="/ontology/term/au/term-presiding-officer" showAs="Presiding Officer"/>
+        <TLCTerm eId="term-public-money-of-the-territory" href="/ontology/term/au/term-public-money-of-the-territory" showAs="public money of the Territory"/>
+        <TLCTerm eId="term-resolution-of-no-confidence" href="/ontology/term/au/term-resolution-of-no-confidence" showAs="resolution of no confidence"/>
+        <TLCTerm eId="term-subordinate-law" href="/ontology/term/au/term-subordinate-law" showAs="subordinate law"/>
+        <TLCTerm eId="term-supreme-court" href="/ontology/term/au/term-supreme-court" showAs="Supreme Court"/>
+        <TLCTerm eId="term-territory-gazette" href="/ontology/term/au/term-territory-gazette" showAs="Territory Gazette"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Capital Territory (Self-Government) Act 1988</p>
+      <p>No. 106, 1988</p>
+      <p><b>Compilation No. </b><b>26</b></p>
+      <p><b>Compilation date:</b><b>	</b>11 December 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 115, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Capital Territory (Self-Government) Act 1988</i> that shows the text of the law as amended and in force on 11 December 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Interpretation	1</p>
+      <p>4	Meaning of day on which election held	4</p>
+      <p>5	Meaning of day on which result of election declared	4</p>
+      <p>6	Powers includes functions and duties	4</p>
+      <p><ref href="#part-II">Part II</ref>—Australian Capital Territory	5</p>
+      <p>7	Establishment of body politic	5</p>
+      <p><ref href="#part-III">Part III</ref>—Legislative Assembly	6</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Constitution of Assembly	6</p>
+      <p>8	Legislative Assembly	6</p>
+      <p>9	Oath or Affirmation of Allegiance	6</p>
+      <p>10	Term of office of member	6</p>
+      <p>11	Presiding Officer of Assembly	7</p>
+      <p>12	Vacation of office by Presiding Officer	7</p>
+      <p>13	Resignation of members	8</p>
+      <p>14	Disqualification of member	8</p>
+      <p>15	Conflict of interest	9</p>
+      <p>16	Dissolution of Assembly by Governor-General	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Procedure of Assembly	11</p>
+      <p>17	Times of meetings	11</p>
+      <p>18	Procedure at meetings	11</p>
+      <p>19	Resolution of no confidence in Chief Minister	12</p>
+      <p>20	Minutes of meetings	12</p>
+      <p>21	Standing rules and orders	12</p>
+      <p><ref href="#part-IV">Part IV</ref>—Powers of Legislative Assembly	14</p>
+      <p>22	Power of Assembly to make laws	14</p>
+      <p>23	Matters excluded from power to make laws	14</p>
+      <p>24	Powers, privileges and immunities of Assembly	14</p>
+      <p>25	Notification of enactment	15</p>
+      <p>26	Special procedures for making certain enactments	16</p>
+      <p>27	Crown may be bound	17</p>
+      <p>28	Inconsistency with other laws	17</p>
+      <p>29	Avoidance of application of enactments to Parliament	18</p>
+      <p>30	Judicial notice	18</p>
+      <p>31	Publication of enactments	18</p>
+      <p>33	Application of Acts Interpretation Act	18</p>
+      <p>34	Certain laws converted into enactments	19</p>
+      <p><ref href="#part-V">Part V</ref>—The Executive	20</p>
+      <p>36	Australian Capital Territory Executive	20</p>
+      <p>37	General powers of Executive	20</p>
+      <p>38	Executive matters not limited by Schedule 4	20</p>
+      <p>38A	Executive’s powers under Commonwealth Acts	20</p>
+      <p>39	Membership of Executive	20</p>
+      <p>40	Chief Minister for the Territory	21</p>
+      <p>41	Ministers for the Territory	21</p>
+      <p>42	Presiding Officer or Deputy Presiding Officer not to be a Minister	22</p>
+      <p>43	Ministerial portfolios	22</p>
+      <p>44	Deputy Chief Minister for the Territory	22</p>
+      <p>45	Resignation of Ministers	23</p>
+      <p>46	Vacation of office by Ministers	23</p>
+      <p>47	Vacancies in all Ministerial offices	23</p>
+      <p>48	Resolution of no confidence in Chief Minister	24</p>
+      <p><ref href="#part-VA">Part VA</ref>—The Judiciary	25</p>
+      <p>48A	Jurisdiction and powers of the Supreme Court	25</p>
+      <p>48AA	ACT laws may give concurrent jurisdiction to the Federal Court of Australia	25</p>
+      <p>48B	Retirement age of Judges etc. of the Supreme Court	25</p>
+      <p>48C	Judicial commission	26</p>
+      <p>48D	Removal of a judicial officer from office	26</p>
+      <p><ref href="#part-VII">Part VII</ref>—Finance	28</p>
+      <p>57	Public money	28</p>
+      <p>58	Withdrawals of public money	28</p>
+      <p>59	Financial relations between Commonwealth and Territory	28</p>
+      <p>60	Borrowing from Commonwealth	29</p>
+      <p>65	Proposal of money votes	29</p>
+      <p><ref href="#part-VIII">Part VIII</ref>—Elections to Assembly	30</p>
+      <p>66	Interpretation	30</p>
+      <p>66A	Part to bind Crown	30</p>
+      <p>66B	Election of members	30</p>
+      <p>67	Qualifications of candidates	30</p>
+      <p>67A	General elections	30</p>
+      <p>67B	Electoral enactment	30</p>
+      <p>67C	Qualifications of electors	31</p>
+      <p>67D	Territory electorates	31</p>
+      <p><ref href="#part-IX">Part IX</ref>—Miscellaneous	33</p>
+      <p>69A	Acts that bind States to bind Territory	33</p>
+      <p>69	Trade and commerce to be free	33</p>
+      <p>70	Validity of certain actions	33</p>
+      <p>73	Remuneration and allowances	34</p>
+      <p>74	Regulations	35</p>
+      <p>Schedule 1		36</p>
+      <p>Schedule 2—Commonwealth Acts and provisions to become enactments	37</p>
+      <p>Schedule 4—Matters concerning which the Executive has power to govern the Territory	38</p>
+      <p>Schedule 5—Laws and provisions other than those that shall become enactments	41</p>
+      <p><ref href="#part-1">Part 1</ref>—Ordinances of the Territory	41</p>
+      <p><ref href="#part-2">Part 2</ref>—Acts of the Parliament of New South Wales in force in the Territory	42</p>
+      <p><ref href="#part-3">Part 3</ref>—Imperial Acts in force in the Territory	43</p>
+      <p>Endnotes	44</p>
+      <p>Endnote 1—About the endnotes	44</p>
+      <p>Endnote 2—Abbreviation key	46</p>
+      <p>Endnote 3—Legislation history	47</p>
+      <p>Endnote 4—Amendment history	52</p>
+      <p>An Act to provide for the Government of the Australian Capital Territory, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Capital Territory</i><i> (Self</i><i>-</i><i>Government) Act 1988</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-I__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Section 1 and this section commence on the day on which this Act receives the Royal Assent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The remaining provisions of this Act commence on a day or days to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-assembly">Assembly</term> means <def>the Legislative Assembly for the Australian Capital Territory established by <ref href="#sec-8">section 8</ref>.</def></p>
+            <p><term refersTo="#term-attorney-general-of-the-territory">Attorney-General of the Territory</term> means <def>the Minister who has the responsibility for the administration of justice in the Territory.</def></p>
+            <p><term refersTo="#term-casual-vacancy">casual vacancy</term> means <def>a vacancy in the membership of the Assembly occurring otherwise than because of <ref href="#sec-10">section 10</ref> or 16.</def></p>
+            <p><term refersTo="#term-chief-magistrate">Chief Magistrate</term> means <def><ref href="/akn/au/act/chief-magistrate-appointed-under-the-magistrates-court-act-1930" class="unresolved">the Chief Magistrate appointed under the Magistrates Court Act 1930</ref> of the Territory.</def></p>
+            <p><term refersTo="#term-chief-minister">Chief Minister</term> means <def>the Chief Minister elected under <ref href="#sec-40">section 40</ref>.</def></p>
+            <p><term refersTo="#term-commencing-day">commencing day</term> means <def>the day on which <ref href="#sec-22">section 22</ref> commences.</def></p>
+            <p><term refersTo="#term-commissioner">Commissioner</term> means <def>a Commissioner appointed under <ref href="#sec-16">section 16</ref>.</def></p>
+            <p><term refersTo="#term-commonwealth-gazette">Commonwealth Gazette</term> means <def>the Commonwealth of Australia Gazette.</def></p>
+            <p><term refersTo="#term-commonwealth-minister">Commonwealth Minister</term> means <def>the Minister of State administering this Act, and has the additional meaning given by <ref href="#sec-19">section 19</ref> of <ref href="">the Acts Interpretation Act 1901</ref>.</def></p>
+            <p><term refersTo="#term-deputy-chief-minister">Deputy Chief Minister</term> means <def>the Deputy Chief Minister appointed under <ref href="#sec-44">section 44</ref>.</def></p>
+            <p><term refersTo="#term-deputy-presiding-officer">Deputy Presiding Officer</term> means <def>the person (if any) elected under subsection 21(2).</def></p>
+            <p><term refersTo="#term-elector-of-the-territory">elector of the Territory</term> means <def>a person who is entitled to vote at a general election.</def></p>
+            <p><b><i>enactment</i></b> means:</p>
+          </content>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>a law (however described or entitled) made by the Assembly under this Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a law, or part of a law, that is an enactment because of <ref href="#sec-34">section 34</ref>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-executive">Executive</term> means <def>the Australian Capital Territory Executive established by <ref href="#sec-36">section 36</ref>.</def></p>
+              <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+              <p><term refersTo="#term-general-election">general election</term> means <def>a general election of members of the Assembly.</def></p>
+              <p><term refersTo="#term-judicial-commission">judicial commission</term> means <def>a body or authority established by the Assembly having the function (whether alone or together with another body or authority of the Territory) of investigating, and reporting to the Attorney-General of the Territory on, complaints concerning the conduct or the physical or mental capacity of a judicial officer.</def></p>
+              <p><b><i>judicial officer</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>the Chief Justice of the Supreme Court; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>a Judge (other than an additional Judge) of the Supreme Court; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>the Master of the Supreme Court; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-d">
+            <num>d</num>
+            <content>
+              <p>the Chief Magistrate; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-e">
+            <num>e</num>
+            <content>
+              <p>a Magistrate; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-f">
+            <num>f</num>
+            <content>
+              <p>any other judicial office holder or member of a tribunal specified in an enactment relating to the establishment of a judicial commission for the Territory.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-magistrate">Magistrate</term> means <def>a Magistrate (other than a Special Magistrate) appointed under <ref href="/akn/au/act/magistrates-court-act-1930" class="unresolved">the Magistrates Court Act 1930</ref> of the Territory.</def></p>
+              <p><term refersTo="#term-meeting">meeting</term> means <def>a meeting of the Assembly.</def></p>
+              <p><term refersTo="#term-member">member</term> means <def>a member of the Assembly.</def></p>
+              <p><term refersTo="#term-minister">Minister</term> means <def>the Chief Minister or a Minister appointed under <ref href="#sec-41">section 41</ref>.</def></p>
+              <p><term refersTo="#term-presiding-officer">Presiding Officer</term> means <def>the officer elected under <ref href="#sec-11">section 11</ref>, by whatever title determined by the Assembly.</def></p>
+              <p><term refersTo="#term-public-money-of-the-territory">public money of the Territory</term> means <def>revenues, loans and other money received by the Territory.</def></p>
+              <p><term refersTo="#term-resolution-of-no-confidence">resolution of no confidence</term> means <def>a resolution passed in accordance with <ref href="#sec-19">section 19</ref>.</def></p>
+              <p><term refersTo="#term-subordinate-law">subordinate law</term> means <def>an instrument of a legislative nature (including a regulation, rule or by-law) made under an enactment.</def></p>
+              <p><term refersTo="#term-supreme-court">Supreme Court</term> means <def><ref href="/akn/au/act/supreme-court-of-the-territory-existing-under-the-supreme-court-act-1933" class="unresolved">the Supreme Court of the Territory existing under the Supreme Court Act 1933</ref> of the Territory.</def></p>
+              <p><b><i>Territory</i></b>:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>when used in a geographical sense, means the Australian Capital Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>when used in any other sense, means the body politic established by <ref href="#sec-7">section 7</ref>.</p>
+            </content>
+            <content>
+              <p><b><i>Territory authority</i></b>:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>except in <ref href="#part-VII">Part VII</ref>—means a body, whether corporate or not:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-i">
+            <num>i</num>
+            <content>
+              <p>established by or under enactment; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-ii">
+            <num>ii</num>
+            <content>
+              <p>otherwise established by the Executive; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>in <ref href="#part-VII">Part VII</ref>—means a body corporate established for a public purpose by or under enactment and having power to borrow money.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-territory-gazette">Territory Gazette</term> means <def>the Australian Capital Territory Gazette.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Meaning of day on which election held</heading>
+          <content>
+            <p>A reference in this Act to the day on which an election has been, is, or is to be, held, is a reference to the polling day for that election.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-5">
+          <num>5</num>
+          <heading>Meaning of day on which result of election declared</heading>
+          <content>
+            <p>Where the results of a general election are declared on different days, a reference in this Act to the day on which the result of the election is declared is a reference to the last of those days.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-6">
+          <num>6</num>
+          <heading>Powers includes functions and duties</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+          </content>
+          <paragraph eId="part-I__sec-6__para-a">
+            <num>a</num>
+            <content>
+              <p>a reference to powers includes a reference to functions or duties; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-I__sec-6__para-b">
+            <num>b</num>
+            <content>
+              <p>a reference to the exercise of powers includes a reference to the performance of functions or duties.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Australian Capital Territory</heading>
+        <section eId="part-II__sec-7">
+          <num>7</num>
+          <heading>Establishment of body politic</heading>
+          <content>
+            <p>The Australian Capital Territory is established as a body politic under the Crown by the name of the Australian Capital Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Legislative Assembly</heading>
+        <division eId="part-III__dvs-1">
+          <num>1</num>
+          <heading>Constitution of Assembly</heading>
+          <section eId="part-III__dvs-1__sec-8">
+            <num>8</num>
+            <heading>Legislative Assembly</heading>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>There shall be a Legislative Assembly for the Australian Capital Territory.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Assembly is to consist of:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-8__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>such number of members as is provided by enactment (subject to subsection (3)); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-8__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>until provision is made—17 members.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-3">
+              <num>3</num>
+              <content>
+                <p>An enactment providing for the number of members of the Assembly (or an enactment amending or repealing such an enactment) has no effect unless it is passed by a number of members at least equal to two-thirds of the number of members provided for, at that time, by or in accordance with subsection (2).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-8__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subsection (3) has effect despite anything else in this Act.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-9">
+            <num>9</num>
+            <heading>Oath or Affirmation of Allegiance</heading>
+            <subsection eId="part-III__dvs-1__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member shall, before taking his or her seat, make and subscribe an oath or affirmation in accordance with the form in Schedule 1.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The oath or affirmation shall be made before the Chief Justice of the Supreme Court of the Australian Capital Territory or some person authorised by the Chief Justice.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>This section has effect subject to any enactment.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-10">
+            <num>10</num>
+            <heading>Term of office of member</heading>
+            <content>
+              <p>The term of office of a member duly elected begins at the end of the day on which the election of the member is declared and, unless sooner ended by resignation or disqualification, or by dissolution of the Assembly, ends on the polling day for the next general election.</p>
+            </content>
+          </section>
+          <section eId="part-III__dvs-1__sec-11">
+            <num>11</num>
+            <heading>Presiding Officer of Assembly</heading>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At the first meeting of the Assembly after a general election, the members present shall, before any other business, elect one of their number to be the Presiding Officer of the Assembly.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The title of the Presiding Officer shall be determined by the Assembly.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If there is a vacancy in the office of Presiding Officer (not because of a dissolution of the Assembly), then:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-11__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the vacancy happens at a meeting, the members present shall, before any further business, elect one of their number to be the Presiding Officer; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-11__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the vacancy happens at any other time, at the next meeting the members present shall, before any other business, elect one of their number to be the Presiding Officer.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-11__subsec-4">
+              <num>4</num>
+              <content>
+                <p>This section does not prevent the Assembly from appointing a person to preside at meetings in the absence of the Presiding Officer, but a person holding office as a Minister shall not be so appointed.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-12">
+            <num>12</num>
+            <heading>Vacation of office by Presiding Officer</heading>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person holding office as Presiding Officer vacates the office:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>immediately before a Presiding Officer is elected at the first meeting of the Assembly after a general election;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>when the person resigns office as Presiding Officer;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>when the person ceases to be a member of the Assembly (not because of a general election); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-12__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>when an absolute majority of the members of the Assembly vote in favour of the person’s removal from office.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person who has vacated the office of Presiding Officer may be re-elected.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-13">
+            <num>13</num>
+            <heading>Resignation of members</heading>
+            <subsection eId="part-III__dvs-1__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member may resign office as a member by written notice delivered to a person authorised by the Assembly to receive it.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Presiding Officer may resign office as Presiding Officer by written notice delivered to a person authorised by the Assembly to receive it.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The person receiving a notice of resignation must arrange for it to be laid before the Assembly as soon as practicable after receiving that notice.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-14">
+            <num>14</num>
+            <heading>Disqualification of member</heading>
+            <subsection eId="part-III__dvs-1__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member vacates office if the member:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>at any time after the beginning of the first meeting of the Assembly after a general election, is not qualified to take a seat as a member;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>is absent without permission of the Assembly from:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>such number of consecutive meetings as is specified by enactment for the purposes of this subparagraph; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>if no such enactment is in force—4 consecutive meetings of the Assembly; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>takes or agrees to take, directly or indirectly, any remuneration, allowance, honorarium or reward for services rendered in the Assembly, otherwise than under <ref href="#sec-73">section 73</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person who has vacated an office of member may be re-elected.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Paragraph (1)(c) does not apply to a superannuation scheme:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>that is established by or under an enactment; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>under which any or all of the following benefits are provided:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>benefits for a person upon ceasing to hold an office of member;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>benefits for a person who is or was a member in the event of the permanent or temporary disability of the person;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-14__subsec-3__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>benefits for dependants of a person who is or was a member in the event of the death of the person.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-14__subsec-4">
+              <num>4</num>
+              <content>
+                <p>In subsection (3):</p>
+              </content>
+              <content>
+                <p><b><i>dependant</i></b> has the same meaning as in the <i>Superannuation Industry (Supervision) Act 1993</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-15">
+            <num>15</num>
+            <heading>Conflict of interest</heading>
+            <subsection eId="part-III__dvs-1__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A member of the Assembly who is a party to, or has a direct or indirect interest in, a contract made by or on behalf of the Territory or a Territory authority shall not take part in a discussion of a matter, or vote on a question, in a meeting of the Assembly where the matter or question relates directly or indirectly to that contract.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A question concerning the application of subsection (1) shall be decided by the Assembly, and a contravention of that subsection does not invalidate anything done by the Assembly.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-1__sec-16">
+            <num>16</num>
+            <heading>Dissolution of Assembly by Governor-General</heading>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If, in the opinion of the Governor-General, the Assembly:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>is incapable of effectively performing its functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>is conducting its affairs in a grossly improper manner;</p>
+                </content>
+                <content>
+                  <p>the Governor-General may dissolve the Assembly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Where the Assembly is dissolved:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Governor-General:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>shall appoint a Commissioner for the purposes of this section; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>may, at any time, give directions to <role refersTo="#commissioner">the Commissioner</role> about the exercise of the powers of the Executive; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	a general election shall be held on a day specified by the Commonwealth Minister by notice published in the <i>Commonwealth Gazette</i>, being not earlier than 36 days, nor later than 90 days, after the dissolution of the Assembly.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Commonwealth Minister shall not specify a day that is the polling day for an election of the Senate or a general election of the House of Representatives.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-4">
+              <num>4</num>
+              <content>
+                <p><role refersTo="#commissioner">The Commissioner</role>:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>shall exercise all the powers of the Executive in accordance with any directions given by the Governor-General; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>if it is necessary to issue or spend public money of the Territory when not authorised to do so by or under enactment—may do so with <role refersTo="#authority">the authority</role> of the Governor-General.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-5">
+              <num>5</num>
+              <content>
+                <p><role refersTo="#commissioner">The Commissioner</role> shall be paid such remuneration and allowances as are determined by the Governor-General.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Unless sooner terminated by the Governor-General, the term of office of <role refersTo="#commissioner">the Commissioner</role> ceases at the beginning of the first meeting of the Assembly held after the next general election.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-7">
+              <num>7</num>
+              <content>
+                <p>The powers of the Governor-General under this section shall be exercised by Proclamation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-8">
+              <num>8</num>
+              <content>
+                <p>The Commonwealth Minister shall cause a statement of the reasons for the dissolution to be:</p>
+              </content>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-8__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	published in the <i>Commonwealth Gazette</i> as soon as practicable after the day of the dissolution; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-1__sec-16__subsec-8__para-b">
+                <num>b</num>
+                <content>
+                  <p>laid before each House of the Parliament within 15 sitting days of that House after the day of the dissolution.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-9">
+              <num>9</num>
+              <content>
+                <p>A person holding office, or acting as, Chief Executive of the Chief Minister’s Department must not be appointed as a Commissioner under this section.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-1__sec-16__subsec-10">
+              <num>10</num>
+              <content>
+                <p>If the name of the office of Chief Executive, or of the Chief Minister’s Department, is changed, a reference in subsection (9) to that office or Department is to be taken to be a reference to the office or Department under the new name.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-III__dvs-2">
+          <num>2</num>
+          <heading>Procedure of Assembly</heading>
+          <section eId="part-III__dvs-2__sec-17">
+            <num>17</num>
+            <heading>Times of meetings</heading>
+            <subsection eId="part-III__dvs-2__sec-17__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (3), the Assembly shall meet:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-17__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p><quantity refersTo="#deadline">within 7 days</quantity> after the result of a general election is declared; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-17__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p><quantity refersTo="#deadline">within 7 days</quantity> after a written request for a meeting, signed by such number of members as is fixed by enactment, is delivered to the Presiding Officer.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-17__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	The Presiding Officer shall, by notice published in the <i>Territory Gazette</i>, convene a meeting when it is necessary to do so to comply with subsection (1).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-17__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If the Presiding Officer is required by subsection (2) to convene a meeting within a particular period and:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-17__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the office of Presiding Officer is vacant, whether or not a person has been previously elected to the office; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-17__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Presiding Officer is unable, or refuses or fails, to convene a meeting within that period;</p>
+                </content>
+                <content>
+                  <p>the Commonwealth Minister shall, by notice published in the <i>Commonwealth Gazette</i>, convene the meeting within that period or, if that is not practicable, within 7 days after that period.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-18">
+            <num>18</num>
+            <heading>Procedure at meetings</heading>
+            <subsection eId="part-III__dvs-2__sec-18__subsec-1">
+              <num>1</num>
+              <content>
+                <p>At a meeting of the Assembly, a quorum is formed by an absolute majority of the members.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-18__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Questions arising at a meeting shall be decided by a majority of the votes of the members present and voting, unless a special majority is required by the standing rules and orders.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-18__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The member presiding at a meeting has a deliberative vote only, and, if the votes on a question are equal, the question shall pass in the negative.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-18__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subject to subsection 15(1) and to the standing rules and orders, the Presiding Officer shall preside at all meetings of the Assembly at which he or she is present.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-19">
+            <num>19</num>
+            <heading>Resolution of no confidence in Chief Minister</heading>
+            <content>
+              <p>A resolution of no confidence in the Chief Minister has no effect unless:</p>
+            </content>
+            <paragraph eId="part-III__dvs-2__sec-19__para-a">
+              <num>a</num>
+              <content>
+                <p>it affirms a motion that is expressed to be a motion of no confidence in the Chief Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-19__para-b">
+              <num>b</num>
+              <content>
+                <p>at least one week’s notice of the motion has been given in accordance with the standing rules and orders; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__dvs-2__sec-19__para-c">
+              <num>c</num>
+              <content>
+                <p>the resolution is passed by at least the number of members necessary to be a quorum.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-III__dvs-2__sec-20">
+            <num>20</num>
+            <heading>Minutes of meetings</heading>
+            <subsection eId="part-III__dvs-2__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Assembly shall cause minutes to be kept of meetings.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A copy of any minutes so kept shall, on request made by a person:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-20__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>be made available for inspection by the person; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-20__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>be supplied to the person on payment of such fee (if any) as is fixed by or under enactment.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-20__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (2) does not apply to minutes of a committee meeting held in private.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-III__dvs-2__sec-21">
+            <num>21</num>
+            <heading>Standing rules and orders</heading>
+            <subsection eId="part-III__dvs-2__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this Act, the Assembly may make standing rules and orders with respect to the conduct of business.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-III__dvs-2__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Without limiting the generality of subsection (1), standing rules and orders may be made:</p>
+              </content>
+              <paragraph eId="part-III__dvs-2__sec-21__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>for the election of a deputy (however titled) to the Presiding Officer; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-III__dvs-2__sec-21__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>conferring on that deputy such powers as are specified in the rules and orders (including powers of the Presiding Officer under this Act).</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Powers of Legislative Assembly</heading>
+        <section eId="part-IV__sec-22">
+          <num>22</num>
+          <heading>Power of Assembly to make laws</heading>
+          <subsection eId="part-IV__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Part and <ref href="#part-VA">Part VA</ref>, the Assembly has power to make laws for the peace, order and good government of the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The power to make laws extends to the power to make laws with respect to the exercise of powers by the Executive.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-23">
+          <num>23</num>
+          <heading>Matters excluded from power to make laws</heading>
+          <subsection eId="part-IV__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, the Assembly has no power to make laws with respect to:</p>
+            </content>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the acquisition of property otherwise than on just terms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the provision by the Australian Federal Police of police services in relation to the Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the raising or maintaining of any naval, military or air force;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the coining of money;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-23__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>the classification of materials for the purposes of censorship.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The regulations may omit any of the paragraphs in subsection (1) or reduce the scope of any of those paragraphs.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-24">
+          <num>24</num>
+          <heading>Powers, privileges and immunities of Assembly</heading>
+          <subsection eId="part-IV__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>powers</i></b> includes privileges and immunities, but does not include legislative powers.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of <ref href="#sec-22">section 22</ref>, the Assembly may also make laws:</p>
+            </content>
+            <paragraph eId="part-IV__sec-24__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>declaring the powers of the Assembly and of its members and committees, but so that the powers so declared do not exceed the powers for the time being of the House of Representatives or of its members or committees; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-24__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>providing for the manner in which powers so declared may be exercised or upheld.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Until the Assembly makes a law with respect to its powers, the Assembly and its members and committees have the same powers as the powers for the time being of the House of Representatives and its members and committees.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-24__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Nothing in this section empowers the Assembly to imprison or fine a person.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-25">
+          <num>25</num>
+          <heading>Notification of enactment</heading>
+          <subsection eId="part-IV__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where a proposed law has been passed by the Assembly, the Chief Minister, or another person authorised by enactment to do so, shall publish in the <i>Territory Gazette </i>a notice of the proposed law having been passed and of the place or places where copies of the law can be purchased.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Where a proposed law is notified in the <i>Territory Gazette</i>, it takes effect upon the day of notification or, if the proposed law otherwise provides, as so provided.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>At the time of publication of the notice under subsection (1) of the passing of a proposed law or as soon as practicable thereafter, copies of the law shall be made available for purchase at the place, or at each of the places, specified in the notice.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where, on the day of publication of the notice under subsection (1) of the passing of a proposed law, there are no copies of the law available for purchase at the place, or at one or more of the places, specified in the notice, the Chief Minister shall cause to be laid before the Assembly, within 15 sitting days of the Assembly after that day, a statement that copies of the law were not so available and the reason why they were not so available.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Failure to comply with the requirements of subsection (3) or (4) in relation to a proposed law shall not be taken to constitute a failure to comply with subsection (1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-25__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subsections (1) to (5) (inclusive) cease to have effect on and after the commencement of an enactment providing for:</p>
+            </content>
+            <paragraph eId="part-IV__sec-25__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the publication of a notice of the passing of a proposed law by the Assembly otherwise than under subsection (1); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-25__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>the commencement of such a proposed law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-26">
+          <num>26</num>
+          <heading>Special procedures for making certain enactments</heading>
+          <subsection eId="part-IV__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Assembly may pass a law (in this section called the <b><i>entrenching law</i></b>) prescribing restrictions on the manner and form of making particular enactments (which may include enactments amending or repealing the entrenching law).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The entrenching law shall be submitted to a referendum of the electors of the Territory as provided by enactment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If a majority of the electors approve the entrenching law, it takes effect as provided by <ref href="#sec-25">section 25</ref>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-4">
+            <num>4</num>
+            <content>
+              <p>While the entrenching law is in force, an enactment to which it applies has no effect unless made in accordance with the entrenching law.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	If an entrenching law includes the requirement (however expressed) that an enactment or enactments be passed by a specified majority of the members (in this subsection called a <b><i>special majority</i></b>), the same requirement shall be taken to apply to the entrenching law, so that it must be passed by:</p>
+            </content>
+            <paragraph eId="part-IV__sec-26__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>that special majority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-26__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>if it specifies different special majorities for different enactments—the highest of those special majorities.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-26__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If an entrenching law passed by the Assembly:</p>
+            </content>
+            <paragraph eId="part-IV__sec-26__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>includes the requirement (however expressed) that an enactment or enactments be submitted to a referendum of the electors of the Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-26__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	includes provision (however expressed) that, to have effect, the referendum is to be passed by a specified majority of the electors (in this subsection called a <b><i>special majority</i></b>);</p>
+              </content>
+              <content>
+                <p>the same requirement shall be taken to apply to the entrenching law, so that the reference in subsection (3) to a majority of the electors shall be taken to be a reference to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-26__subsec-6__para-c">
+              <num>c</num>
+              <content>
+                <p>that special majority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-26__subsec-6__para-d">
+              <num>d</num>
+              <content>
+                <p>if the entrenching law specifies different special majorities for different enactments—the highest of those special majorities.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-27">
+          <num>27</num>
+          <heading>Crown may be bound</heading>
+          <content>
+            <p>Except as provided by the regulations, an enactment does not bind the Crown in right of the Commonwealth.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-28">
+          <num>28</num>
+          <heading>Inconsistency with other laws</heading>
+          <subsection eId="part-IV__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A provision of an enactment has no effect to the extent that it is inconsistent with a law defined by subsection (2), but such a provision shall be taken to be consistent with such a law to the extent that it is capable of operating concurrently with that law.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>law</i></b> means:</p>
+            </content>
+            <paragraph eId="part-IV__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a law in force in the Territory (other than an enactment or a subordinate law); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an order or determination, or any other instrument of a legislative character, made under a law falling within paragraph (a).</p>
+              </content>
+              <authorialNote placement="end" eId="note-1" marker="1">
+                <content>
+                  <p>Note:	Sections 29 and 40 of <ref href="">the Fair Work Act 2009</ref> deals with inconsistency between awards and agreements made under that Act, and laws of the Territory.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-29">
+          <num>29</num>
+          <heading>Avoidance of application of enactments to Parliament</heading>
+          <subsection eId="part-IV__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>enactment</i></b> includes a part of an enactment.</p>
+              <p><b><i>Parliamentary precincts</i></b> means the precincts defined by subsection 3(1) of the <i>Parliamentary Precincts Act 1988</i>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If either House of the Parliament passes a resolution declaring that an enactment made after the commencing day does not apply:</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to that House;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to the members of that House; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>in the Parliamentary precincts;</p>
+              </content>
+              <content>
+                <p>the resolution has effect according to its tenor and the enactment does not apply accordingly.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-29__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A resolution under subsection (2):</p>
+            </content>
+            <paragraph eId="part-IV__sec-29__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>does not have effect in respect of the application of an enactment on a day before the day on which the resolution is passed; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-29__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>has effect, to the extent that the enactment ceases to apply, as if the enactment were repealed by another enactment.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-30">
+          <num>30</num>
+          <heading>Judicial notice</heading>
+          <content>
+            <p>All courts, judges and persons acting judicially shall take judicial notice of enactments and subordinate laws.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-31">
+          <num>31</num>
+          <heading>Publication of enactments</heading>
+          <content>
+            <p>The Executive shall publish copies of enactments and subordinate laws and make them available for purchase by the public.</p>
+          </content>
+        </section>
+        <section eId="part-IV__sec-33">
+          <num>33</num>
+          <heading>Application of Acts Interpretation Act</heading>
+          <content>
+            <p>		Neither paragraph 46(1)(a) of the <i>Acts Interpretation Act 1901</i> nor paragraph 13(1)(a) or (b) of the <i>Legislation Act 2003</i> applies to:</p>
+          </content>
+          <paragraph eId="part-IV__sec-33__para-a">
+            <num>a</num>
+            <content>
+              <p>an enactment;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-33__para-b">
+            <num>b</num>
+            <content>
+              <p>a subordinate law; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IV__sec-33__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	an instrument required by this Act to be published in the <i>Territory Gazette</i>.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-IV__sec-34">
+          <num>34</num>
+          <heading>Certain laws converted into enactments</heading>
+          <subsection eId="part-IV__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>Imperial Act</i></b> has the same meaning as in the <i>Imperial Acts Application Ordinance 1986</i> of the Territory.</p>
+              <p><b><i>law</i></b> includes a provision of a law.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A law specified in Schedule 2 shall be taken to be an enactment, and may be amended or repealed accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A law (other than a law of the Commonwealth) that, immediately before the commencing day:</p>
+            </content>
+            <paragraph eId="part-IV__sec-34__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>was in force in the Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-34__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>was an Ordinance, an Act of the Parliament of New South Wales or an Imperial Act;</p>
+              </content>
+              <content>
+                <p>shall be taken to be an enactment, and may be amended or repealed accordingly.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Subsection (4) does not apply to a law specified in Schedule 5.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-9">
+            <num>9</num>
+            <content>
+              <p>This section does not limit the power of the Assembly to make laws with respect to the common law.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>The Executive</heading>
+        <section eId="part-V__sec-36">
+          <num>36</num>
+          <heading>Australian Capital Territory Executive</heading>
+          <content>
+            <p>There shall be an Australian Capital Territory Executive.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-37">
+          <num>37</num>
+          <heading>General powers of Executive</heading>
+          <content>
+            <p>The Executive has the responsibility of:</p>
+          </content>
+          <paragraph eId="part-V__sec-37__para-a">
+            <num>a</num>
+            <content>
+              <p>governing the Territory with respect to matters specified in Schedule 4;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-37__para-b">
+            <num>b</num>
+            <content>
+              <p>executing and maintaining enactments and subordinate laws;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-37__para-c">
+            <num>c</num>
+            <content>
+              <p>exercising such other powers as are vested in the Executive by or under a law in force in the Territory or an agreement or arrangement between the Territory and the Commonwealth, a State or another Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-V__sec-37__para-d">
+            <num>d</num>
+            <content>
+              <p>exercising prerogatives of the Crown so far as they relate to the Executive’s responsibility mentioned in paragraph (a), (b) or (c).</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-V__sec-38">
+          <num>38</num>
+          <heading>Executive matters not limited by Schedule 4</heading>
+          <content>
+            <p>A matter specified in Schedule 4 does not limit the generality of any other matter specified in that Schedule.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-38A">
+          <num>38A</num>
+          <heading>Executive’s powers under Commonwealth Acts</heading>
+          <content>
+            <p>An enactment may provide for the exercise by a member or members of the Executive of powers vested in the Executive by or under an Act.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-39">
+          <num>39</num>
+          <heading>Membership of Executive</heading>
+          <subsection eId="part-V__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The members of the Executive are the Chief Minister and such other Ministers as are appointed by the Chief Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The exercise of the powers of the Executive is not affected merely because of a vacancy or vacancies in the membership of the Executive.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-40">
+          <num>40</num>
+          <heading>Chief Minister for the Territory</heading>
+          <subsection eId="part-V__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>At the first meeting of the Assembly after a general election, the members present shall, after electing a Presiding Officer and before any other business, elect one of their number to be the Chief Minister for the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If there is a vacancy in the office of Chief Minister (not because of a dissolution of the Assembly), then:</p>
+            </content>
+            <paragraph eId="part-V__sec-40__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the vacancy happens at a meeting, the members present shall elect one of their number to be the Chief Minister; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-40__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	if the vacancy happens at any other time, the Presiding Officer shall, by notice published in the <i>Territory Gazette</i>, convene a meeting as soon as practicable and, at the meeting, the members present shall elect one of their number to be the Chief Minister.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-40__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If a resolution of no confidence in the Chief Minister is passed, the members present shall elect one of their number to be the Chief Minister.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-41">
+          <num>41</num>
+          <heading>Ministers for the Territory</heading>
+          <subsection eId="part-V__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chief Minister must appoint Ministers for the Territory from among the members of the Assembly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The number of Ministers is to be as provided by enactment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-2A">
+            <num>2A</num>
+            <content>
+              <p>Until provision is made, the number of Ministers is not to exceed 5.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A Minister may be dismissed from office at any time by a person holding office as Chief Minister at that time.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-42">
+          <num>42</num>
+          <heading>Presiding Officer or Deputy Presiding Officer not to be a Minister</heading>
+          <content>
+            <p>The person for the time being holding office as Presiding Officer or Deputy Presiding Officer is not eligible to be a Minister.</p>
+          </content>
+        </section>
+        <section eId="part-V__sec-43">
+          <num>43</num>
+          <heading>Ministerial portfolios</heading>
+          <subsection eId="part-V__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A Minister shall administer such matters relating to the powers of the Executive as are allocated to that Minister from time to time by the Chief Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Chief Minister may authorise a Minister or Ministers to act on behalf of the Chief Minister or any other Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The Chief Minister shall publish particulars of such arrangements in the <i>Territory Gazette</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-44">
+          <num>44</num>
+          <heading>Deputy Chief Minister for the Territory</heading>
+          <subsection eId="part-V__sec-44__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chief Minister shall appoint one of the Ministers to be Deputy Chief Minister for the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-44__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Deputy Chief Minister shall act as Chief Minister at any time when there is a vacancy in the office of Chief Minister or the Chief Minister is absent from duty or from Australia or is, for any other reason, unable to exercise the powers of Chief Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-44__subsec-3">
+            <num>3</num>
+            <content>
+              <p>While the Deputy Chief Minister is acting as Chief Minister, he or she shall exercise all the powers of the Chief Minister other than the dismissal of a Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-44__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The exercise of the powers of the Chief Minister by the Deputy Chief Minister during the absence of the Chief Minister from Australia does not affect the exercise of a power by the Chief Minister.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-45">
+          <num>45</num>
+          <heading>Resignation of Ministers</heading>
+          <subsection eId="part-V__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Chief Minister may resign office as Chief Minister by written notice delivered to the Presiding Officer.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any other Minister may resign office as Minister by written notice delivered to the Chief Minister.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-46">
+          <num>46</num>
+          <heading>Vacation of office by Ministers</heading>
+          <subsection eId="part-V__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person holding office as Chief Minister vacates the office:</p>
+            </content>
+            <paragraph eId="part-V__sec-46__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>when the person resigns the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>when the person ceases to be a member (not because of a general election); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>immediately before a Chief Minister is elected after:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the next general election; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the passing of a resolution of no confidence in the Chief Minister.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-46__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>A person holding office as a Minister (other than the Chief Minister) vacates the office:</p>
+            </content>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>when the person resigns the office; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>when the person ceases to be a member (not because of a general election); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-c">
+              <num>c</num>
+              <content>
+                <p>when the person is dismissed from office by the Chief Minister; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-d">
+              <num>d</num>
+              <content>
+                <p>immediately before another Chief Minister is elected after:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-i">
+              <num>i</num>
+              <content>
+                <p>the next general election; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-46__subsec-1A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the passing of a resolution of no confidence in the Chief Minister.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-46__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person who has vacated an office of Minister may be re-elected or re-appointed.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-47">
+          <num>47</num>
+          <heading>Vacancies in all Ministerial offices</heading>
+          <subsection eId="part-V__sec-47__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-V__sec-47__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>at any time after the election of a Chief Minister, all the Ministerial offices (including the office of Chief Minister) have become vacant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-47__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>it is necessary to exercise powers of the Executive for the purpose of maintaining the provision and control of essential services;</p>
+              </content>
+              <content>
+                <p>the Commonwealth Minister may exercise those powers for that purpose until a Chief Minister is elected.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-47__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply where the vacancies result from a dissolution of the Assembly.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-48">
+          <num>48</num>
+          <heading>Resolution of no confidence in Chief Minister</heading>
+          <subsection eId="part-V__sec-48__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-V__sec-48__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>on a particular day, the Assembly passes a resolution of no confidence in the Chief Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-48__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the Assembly does not, within the period of 30 days after that day, elect a Chief Minister; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-48__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the Governor-General does not, within that period of 30 days, dissolve the Assembly under <ref href="#sec-16">section 16</ref>;</p>
+              </content>
+              <content>
+                <p>a general election shall be held on a day specified by the Commonwealth Minister by notice published in the <i>Commonwealth Gazette</i>, being not earlier than 36 days, nor later than 90 days, after the end of that period of 30 days.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-48__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Commonwealth Minister shall not specify a day that is the polling day for an election of the Senate or a general election of the House of Representatives.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VA">
+        <num>VA</num>
+        <heading>The Judiciary</heading>
+        <section eId="part-VA__sec-48A">
+          <num>48A</num>
+          <heading>Jurisdiction and powers of the Supreme Court</heading>
+          <subsection eId="part-VA__sec-48A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Supreme Court is to have all original and appellate jurisdiction that is necessary for the administration of justice in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VA__sec-48A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In addition, the Supreme Court may have such further jurisdiction as is conferred on it by any Act, enactment or Ordinance, or any law made under any Act, enactment or Ordinance.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VA__sec-48A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Supreme Court is not bound to exercise any powers where it has concurrent jurisdiction with another court or tribunal.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VA__sec-48AA">
+          <num>48AA</num>
+          <heading>ACT laws may give concurrent jurisdiction to the Federal Court of Australia</heading>
+          <content>
+            <p>Nothing in <ref href="#sec-48A">section 48A</ref> is to be taken to imply that a law of the Australian Capital Territory may not confer on the Federal Court of Australia original or appellate jurisdiction in any matter in respect of which, by virtue of <ref href="#sec-48A">section 48A</ref>, jurisdiction is conferred on the Supreme Court.</p>
+          </content>
+        </section>
+        <section eId="part-VA__sec-48B">
+          <num>48B</num>
+          <heading>Retirement age of Judges etc. of the Supreme Court</heading>
+          <subsection eId="part-VA__sec-48B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to the following offices:</p>
+            </content>
+            <paragraph eId="part-VA__sec-48B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>Chief Justice of the Supreme Court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VA__sec-48B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>Judge (other than additional Judge) of the Supreme Court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VA__sec-48B__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>Master of the Supreme Court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VA__sec-48B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An enactment that changes the retirement age in relation to an office to which this section applies does not affect the term of office of a person who was appointed to such an office before the commencement of that enactment unless the person has consented in writing to the application of the enactment to him or her.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VA__sec-48C">
+          <num>48C</num>
+          <heading>Judicial commission</heading>
+          <subsection eId="part-VA__sec-48C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An enactment relating to the establishment of a judicial commission for the Territory must provide that:</p>
+            </content>
+            <paragraph eId="part-VA__sec-48C__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the commission is to be constituted by persons who:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VA__sec-48C__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	have been Justices of the High Court or are, or have been, Judges of a superior court of record of the Commonwealth or of a State or Territory (other than persons who are Judges of the Supreme Court of the Territory appointed under subsection 7(1) of the <i>Supreme Court Act 1933</i> of the Territory); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VA__sec-48C__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>are appointed by the Executive for such terms as are determined in accordance with the enactment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VA__sec-48C__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the commission is to have the function (whether alone or together with another body or authority of the Territory) of investigating, and reporting to the Attorney-General of the Territory on, complaints concerning the conduct or the physical or mental capacity of a judicial officer.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VA__sec-48C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A judicial commission may have functions in addition to the function mentioned in paragraph (1)(b).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VA__sec-48D">
+          <num>48D</num>
+          <heading>Removal of a judicial officer from office</heading>
+          <content>
+            <p>An enactment relating to the removal from office of a judicial officer must provide that:</p>
+          </content>
+          <paragraph eId="part-VA__sec-48D__para-a">
+            <num>a</num>
+            <content>
+              <p>a judicial officer may only be removed from office if:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VA__sec-48D__para-i">
+            <num>i</num>
+            <content>
+              <p>a judicial commission appointed by the Executive to examine a complaint concerning the judicial officer has submitted to the Attorney-General of the Territory a report that:</p>
+            </content>
+            <content>
+              <p>(A)	sets out the facts found by the commission in relation to the subject matter of the complaint; and</p>
+              <p>(B)	states that, in the commission’s opinion, the facts so found could amount to misbehaviour or physical or mental incapacity (as the case may be) warranting the officer’s removal from office; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VA__sec-48D__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the Assembly:</p>
+            </content>
+            <content>
+              <p>(A)	has determined that the facts so found amount to misbehaviour or physical or mental incapacity identified by the commission; and</p>
+              <p>(B)	has passed a motion requiring the Executive to remove the officer from office on the ground of that misbehaviour or incapacity; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VA__sec-48D__para-b">
+            <num>b</num>
+            <content>
+              <p>a judicial officer may only be removed from office by the Executive in writing.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Finance</heading>
+        <section eId="part-VII__sec-57">
+          <num>57</num>
+          <heading>Public money</heading>
+          <subsection eId="part-VII__sec-57__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The public money of the Territory shall be available for the expenditure of the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-57__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The receipt, spending and control of public money of the Territory shall be regulated as provided by enactment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-58">
+          <num>58</num>
+          <heading>Withdrawals of public money</heading>
+          <subsection eId="part-VII__sec-58__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection 16(4), no public money of the Territory shall be issued or spent except as authorised by enactment.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-58__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The public money of the Territory may be invested as provided by enactment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-59">
+          <num>59</num>
+          <heading>Financial relations between Commonwealth and Territory</heading>
+          <subsection eId="part-VII__sec-59__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Commonwealth shall conduct its financial relations with the Territory so as to ensure that the Territory is treated on the same basis as the States and the Northern Territory, while having regard to the special circumstances arising from the existence of the national capital and the seat of government of the Commonwealth in the Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-59__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Territory is not liable to bear the cost, or part of the cost, of:</p>
+            </content>
+            <paragraph eId="part-VII__sec-59__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>any power of the Commonwealth relating to a matter referred to in <ref href="#sec-23">section 23</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-59__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>administering a law, or a provision of a law, referred to in Schedule 5; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-59__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>any other power of the Commonwealth, or of a Commonwealth authority, relating to the Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-60">
+          <num>60</num>
+          <heading>Borrowing from Commonwealth</heading>
+          <content>
+            <p>The Finance Minister may, on behalf of the Commonwealth, out of money appropriated by the Parliament for the purpose, lend money to the Territory or to a Territory authority on such terms and conditions as that Minister determines in writing.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-65">
+          <num>65</num>
+          <heading>Proposal of money votes</heading>
+          <subsection eId="part-VII__sec-65__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	An enactment, vote or resolution (<b><i>proposal</i></b>) for the appropriation of the public money of the Territory must not be proposed in the Assembly except by a Minister.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-65__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not prevent a member other than a Minister from moving an amendment to a proposal made by a Minister unless the amendment is to increase the amount of public money of the Territory to be appropriated.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VIII">
+        <num>VIII</num>
+        <heading>Elections to Assembly</heading>
+        <section eId="part-VIII__sec-66">
+          <num>66</num>
+          <heading>Interpretation</heading>
+          <content>
+            <p>In this Part:</p>
+            <p><term refersTo="#term-electoral-enactment">electoral enactment</term> means <def>an enactment described in subsection 67A(1).</def></p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-66A">
+          <num>66A</num>
+          <heading>Part to bind Crown</heading>
+          <content>
+            <p>This Part binds the Crown in right of the Territory, but nothing in this Act renders the Crown liable to be prosecuted for an offence.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-66B">
+          <num>66B</num>
+          <heading>Election of members</heading>
+          <content>
+            <p>The members are to be elected in accordance with this Part.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-67">
+          <num>67</num>
+          <heading>Qualifications of candidates</heading>
+          <subsection eId="part-VIII__sec-67__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The qualifications of a person to be elected and take a seat as a member shall be as provided by enactment.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-67A">
+          <num>67A</num>
+          <heading>General elections</heading>
+          <subsection eId="part-VIII__sec-67A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The members to be elected at a general election are to be elected as provided by sections 67, 67C and 67D and by an enactment that:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-67A__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>provides for general elections; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-67A__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>complies with <ref href="#sec-67B">section 67B</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-67A__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>was made after polling day for the second general election.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-67B">
+          <num>67B</num>
+          <heading>Electoral enactment</heading>
+          <content>
+            <p>An electoral enactment is to provide, among other things:</p>
+          </content>
+          <paragraph eId="part-VIII__sec-67B__para-a">
+            <num>a</num>
+            <content>
+              <p>for the times of general elections; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-67B__para-b">
+            <num>b</num>
+            <content>
+              <p>for a Roll of the electors of the Territory for the purposes of general elections; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-67B__para-c">
+            <num>c</num>
+            <content>
+              <p>that every person who is entitled to be enrolled on that Roll and who is resident in the Territory is required to claim enrolment; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-67B__para-d">
+            <num>d</num>
+            <content>
+              <p>if the electoral enactment provides for the distribution of the Territory into electorates—that a redistribution of the Territory into electorates is to commence not later than 6 years after the previous distribution or redistribution.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-VIII__sec-67C">
+          <num>67C</num>
+          <heading>Qualifications of electors</heading>
+          <subsection eId="part-VIII__sec-67C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>At a general election held on a particular day, a person is entitled to vote if:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-67C__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>on that day, the person’s name is on the Roll of the electors of the Territory for the purposes of general elections; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-67C__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person would be entitled to vote at an election held on that day to choose a member of the House of Representatives for the Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-67C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person’s name is taken not to be on the Roll for the purposes of paragraph (1)(a) if an electoral enactment so provides.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-67C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>This section does not prevent an electoral enactment from providing that other persons, in addition to persons entitled under subsection (1), be entitled to vote at a general election.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-67D">
+          <num>67D</num>
+          <heading>Territory electorates</heading>
+          <subsection eId="part-VIII__sec-67D__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>quota</i></b>, in relation to an electorate for the Territory, means the number calculated in accordance with the formula:</p>
+            </content>
+            <figure>
+              <img src="corpus/images/australian-capital-territory-(self-government)-act-1988-fig-1.png" alt=""/>
+            </figure>
+            <content>
+              <p>where:</p>
+              <p><b><i>Number of Territory electors</i></b> means the number of electors of the Territory.</p>
+              <p><b><i>Number of electorate members</i></b> means the number of members to be elected by the electorate.</p>
+              <p><b><i>Number of Territory members</i></b> means the number of members of the Assembly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-67D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A distribution or redistribution of the Territory into electorates is not to result in any electorate having, immediately after the distribution or redistribution:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-67D__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a number of electors of the Territory greater than 110% of its quota; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-67D__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a number of electors of the Territory less than 90% of its quota.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IX">
+        <num>IX</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-IX__sec-69A">
+          <num>69A</num>
+          <heading>Acts that bind States to bind Territory</heading>
+          <subsection eId="part-IX__sec-69A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If an Act (whether or not by express provision) binds each of the States, or the Crown in right of each of the States, that Act binds the Territory, or the Crown in right of the Territory, by force of this subsection, unless that Act specifically provides otherwise.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IX__sec-69A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not affect the application of a law of the Commonwealth in and in relation to the Territory otherwise than as provided in that subsection.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IX__sec-69">
+          <num>69</num>
+          <heading>Trade and commerce to be free</heading>
+          <subsection eId="part-IX__sec-69__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), trade, commerce and intercourse between the Territory and a State, and between the Territory and the Northern Territory, Norfolk Island, the Jervis Bay Territory, the Territory of Christmas Island or the Territory of Cocos (Keeling) Islands, shall be absolutely free.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IX__sec-69__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not bind the Commonwealth.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IX__sec-70">
+          <num>70</num>
+          <heading>Validity of certain actions</heading>
+          <subsection eId="part-IX__sec-70__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In subsection (2):</p>
+            </content>
+            <content>
+              <p><b><i>office</i></b> means the office of Chief Minister, Deputy Chief Minister, Minister, Presiding Officer, Deputy Presiding Officer or Commissioner.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IX__sec-70__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Anything done by or in relation to a person who has been elected or appointed to an office, or a person purporting to act in an office, under this Act is not invalid on the ground that:</p>
+            </content>
+            <paragraph eId="part-IX__sec-70__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the occasion for the election or appointment had not arisen;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-70__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>there was a defect or irregularity in connection with the election or appointment;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-70__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the election or appointment had ceased to have effect; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-70__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the occasion for the person to act had not arisen or had ceased.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IX__sec-70__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Anything done by or in relation to a person who has purported to sit or vote as a member at a meeting of the Assembly or of a committee is not invalid on the ground that the person:</p>
+            </content>
+            <paragraph eId="part-IX__sec-70__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>was not duly elected or chosen; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-70__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>had vacated office as a member.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IX__sec-73">
+          <num>73</num>
+          <heading>Remuneration and allowances</heading>
+          <subsection eId="part-IX__sec-73__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>office</i></b> means any of the following offices:</p>
+            </content>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>Chief Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>Deputy Chief Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>Minister;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>member;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>Presiding Officer;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>Deputy Presiding Officer;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-fa">
+              <num>fa</num>
+              <content>
+                <p>Chief Justice of the Supreme Court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-fb">
+              <num>fb</num>
+              <content>
+                <p>Judge of the Supreme Court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-fc">
+              <num>fc</num>
+              <content>
+                <p>Master of the Supreme Court;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-fd">
+              <num>fd</num>
+              <content>
+                <p>Chief Magistrate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-fe">
+              <num>fe</num>
+              <content>
+                <p>Magistrate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>an office declared by an enactment to be an office to which this section applies.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IX__sec-73__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	Subject to subsection (3A) of this section and subsection 29A(2) of the <i>A.C.T. Self</i><i>-</i><i>Government (Consequential Provisions) Act 1988</i>, a person is, in respect of services in an office, to be paid such remuneration and allowances:</p>
+            </content>
+            <paragraph eId="part-IX__sec-73__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if they are determined or specified by or under an enactment—as so determined or specified; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—as are determined by the Remuneration Tribunal.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IX__sec-73__subsec-3A">
+            <num>3A</num>
+            <content>
+              <p>The remuneration and allowances of a person holding an office specified in paragraph (1)(fa), (fb), (fc), (fd) or (fe) are not to be diminished while the person holds that office.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IX__sec-73__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IX__sec-73__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the term of office of a person as member ends on the polling day for a general election; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is re-elected at that general election;</p>
+              </content>
+              <content>
+                <p>then, for the purposes of this section, the person shall be taken to have continued to serve in the office of member until the day on which the election of the person is declared.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IX__sec-73__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IX__sec-73__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>the term of office of a person as member ends because the Assembly is dissolved under <ref href="#sec-16">section 16</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IX__sec-73__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is a candidate at the next general election;</p>
+              </content>
+              <content>
+                <p>then, for the purposes of this section, the person shall be taken to have continued to serve in the office of member until the polling day for that general election or, if the person is re-elected, until the day on which the election of the person is declared.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IX__sec-74">
+          <num>74</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations:</p>
+          </content>
+          <paragraph eId="part-IX__sec-74__para-a">
+            <num>a</num>
+            <content>
+              <p>prescribing matters:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IX__sec-74__para-i">
+            <num>i</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IX__sec-74__para-ii">
+            <num>ii</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-IX__sec-74__para-b">
+            <num>b</num>
+            <content>
+              <p>adding further matters to Schedule 4.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+    <attachments>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-1">
+          <num>1</num>
+          <heading>Schedule 1</heading>
+          <content>
+            <p>Section 9</p>
+            <p>OATH</p>
+            <p>I, <i>A.B.</i>, swear that I will be faithful and bear true allegiance to <i>(insert name of the Sovereign)</i>, <i>(insert applicable pronoun, such as ‘His’ or ‘Her’)</i> heirs and successors according to law: So help me God! </p>
+            <p>AFFIRMATION</p>
+            <p>I, <i>A.B.</i>, solemnly affirm that I will be faithful and bear true allegiance to <i>(insert name of the Sovereign)</i>, <i>(insert applicable pronoun, such as ‘His’ or ‘Her’)</i> heirs and successors according to law.</p>
+          </content>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-2">
+          <num>2</num>
+          <heading>Commonwealth Acts and provisions to become enactments</heading>
+          <content>
+            <p>Section 34</p>
+            <p><i>Commonwealth Functions (Statutes Review) Act 1981</i>, <ref href="#part-II">Part II</ref></p>
+            <p><i>Commonwealth Teaching Service Act 1972</i></p>
+            <p><i>Removal of Prisoners (</i><i>Australian Capital Territory</i><i>) Act 1968</i></p>
+            <p><i>Australian Capital Territory</i><i> Evidence (Temporary Provisions) Act 1971</i></p>
+            <p><i>Australian Capital Territory</i><i> Supreme Court Act 1933</i></p>
+            <p><i>University</i><i> of </i><i>Canberra</i><i> Act 1989</i>.</p>
+          </content>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-3">
+          <num>4</num>
+          <heading>Matters concerning which the Executive has power to govern the Territory</heading>
+          <content>
+            <p>Section 37</p>
+            <p>Remuneration, allowances and other entitlements in respect of services of members of the Assembly, the Chief Minister, the Deputy Chief Minister, Ministers, the Presiding Officer, the Deputy Presiding Officer, and the holders of offices established by or under Assembly Law</p>
+          </content>
+          <table>
+            <tr>
+              <td>Territory insurance</td>
+            </tr>
+            <tr>
+              <td>Territory banking</td>
+            </tr>
+            <tr>
+              <td>Taxation</td>
+            </tr>
+            <tr>
+              <td>Provision of rural, industrial and home finance credit and assistance</td>
+            </tr>
+            <tr>
+              <td>The public service</td>
+            </tr>
+            <tr>
+              <td>Legal aid</td>
+            </tr>
+            <tr>
+              <td>Correctional and remand services</td>
+            </tr>
+            <tr>
+              <td>Private law</td>
+            </tr>
+            <tr>
+              <td>Administration of estates and trusts</td>
+            </tr>
+            <tr>
+              <td>Civil liberties and human rights</td>
+            </tr>
+            <tr>
+              <td>Inquiries and administrative reviews (including matters relating to a Territory Ombudsman)</td>
+            </tr>
+            <tr>
+              <td>Markets and marketing</td>
+            </tr>
+            <tr>
+              <td>Consumer affairs</td>
+            </tr>
+            <tr>
+              <td>Sales and leases of goods, supply of services, and security interests in or over goods</td>
+            </tr>
+            <tr>
+              <td>Control of prices and of rents</td>
+            </tr>
+            <tr>
+              <td>Industry, including primary production</td>
+            </tr>
+            <tr>
+              <td>Regulation of businesses, professions, trades and callings (excluding the legal profession)</td>
+            </tr>
+            <tr>
+              <td>Tourism</td>
+            </tr>
+            <tr>
+              <td>Printing and publishing</td>
+            </tr>
+            <tr>
+              <td>Industrial relations (including training and apprenticeship and workers’ compensation and compulsory insurance)</td>
+            </tr>
+            <tr>
+              <td>Occupational health and safety</td>
+            </tr>
+            <tr>
+              <td>Exploration for, and recovery of, minerals in any form, whether solid, liquid or gaseous</td>
+            </tr>
+            <tr>
+              <td>Territory Land as defined in the Australian Capital Territory (Planning and Land Management) Act 1988</td>
+            </tr>
+            <tr>
+              <td>Use, planning and development of land</td>
+            </tr>
+            <tr>
+              <td>Civil aviation</td>
+            </tr>
+            <tr>
+              <td>Regulation of transport on land and water (including traffic control, carriers, roads, tunnels and bridges, vehicle registration and compulsory third party insurance, driver licensing and road safety)</td>
+            </tr>
+            <tr>
+              <td>Environment protection and conservation (including parks, reserves and gardens and preservation of historical objects and areas)</td>
+            </tr>
+            <tr>
+              <td>Flora and fauna</td>
+            </tr>
+            <tr>
+              <td>Fire prevention and control</td>
+            </tr>
+            <tr>
+              <td>Water resources</td>
+            </tr>
+            <tr>
+              <td>Use and supply of energy</td>
+            </tr>
+            <tr>
+              <td>Public utilities</td>
+            </tr>
+            <tr>
+              <td>Public works</td>
+            </tr>
+            <tr>
+              <td>Registration of instruments</td>
+            </tr>
+            <tr>
+              <td>Registration of births, deaths and marriages</td>
+            </tr>
+            <tr>
+              <td>Local government</td>
+            </tr>
+            <tr>
+              <td>Housing</td>
+            </tr>
+            <tr>
+              <td>Public health</td>
+            </tr>
+            <tr>
+              <td>Public safety</td>
+            </tr>
+            <tr>
+              <td>Education</td>
+            </tr>
+            <tr>
+              <td>Territory Archives</td>
+            </tr>
+            <tr>
+              <td>Welfare services</td>
+            </tr>
+            <tr>
+              <td>Territory museums, memorials, libraries and art galleries</td>
+            </tr>
+            <tr>
+              <td>Scientific research</td>
+            </tr>
+            <tr>
+              <td>Recreation, entertainment and sport</td>
+            </tr>
+            <tr>
+              <td>Community, cultural and ethnic affairs</td>
+            </tr>
+            <tr>
+              <td>Gambling</td>
+            </tr>
+            <tr>
+              <td>Liquor</td>
+            </tr>
+            <tr>
+              <td>Firearms, explosives and hazardous and dangerous substances</td>
+            </tr>
+            <tr>
+              <td>Civil defence and emergency services</td>
+            </tr>
+            <tr>
+              <td>Territorial censorship, except classification of materials</td>
+            </tr>
+            <tr>
+              <td>Landlord and tenant</td>
+            </tr>
+            <tr>
+              <td>Co-operative societies</td>
+            </tr>
+            <tr>
+              <td>The Public Trustee and the Youth Advocate</td>
+            </tr>
+            <tr>
+              <td>Matters in respect of which the Assembly may make laws under section 24</td>
+            </tr>
+            <tr>
+              <td>Matters in respect of which powers or authorities are expressly conferred on the Chief Minister, the Deputy Chief Minister, a Minister or a member of the public service by or under any law in force in the Territory (including an enactment or subordinate law) or an agreement or arrangement referred to in paragraph 37(c)</td>
+            </tr>
+            <tr>
+              <td>Matters provided for by or under a law made by the Assembly under another Act that expressly provides for the making of such a law</td>
+            </tr>
+            <tr>
+              <td>Making instruments under enactments or subordinate laws</td>
+            </tr>
+            <tr>
+              <td>Matters arising under instruments made under enactments or subordinate laws</td>
+            </tr>
+            <tr>
+              <td>Entering into, and implementing, agreements and arrangements with the Commonwealth, a State or the Northern Territory</td>
+            </tr>
+            <tr>
+              <td>Matters incidental to the exercise of any power of the Executive</td>
+            </tr>
+            <tr>
+              <td>Law and Order</td>
+            </tr>
+            <tr>
+              <td>Legal practitioners</td>
+            </tr>
+            <tr>
+              <td>Magistrates Court and Coroners Court</td>
+            </tr>
+            <tr>
+              <td>Courts (other than the Magistrates Court and Coroners Court)</td>
+            </tr>
+            <tr>
+              <td>The formation of corporations, corporate regulation and the regulation of financial products and services</td>
+            </tr>
+          </table>
+        </hcontainer>
+      </attachment>
+      <attachment>
+        <hcontainer name="schedule" eId="schedule-4">
+          <num>5</num>
+          <heading>Laws and provisions other than those that shall become enactments</heading>
+          <content>
+            <p>Section 34</p>
+          </content>
+          <hcontainer name="part" eId="schedule-4__part-1">
+            <num>1</num>
+            <heading>Ordinances of the Territory</heading>
+            <table>
+              <tr>
+                <td>Canberra Institute of the Arts Ordinance 1988</td>
+              </tr>
+              <tr>
+                <td>Classification of Publications Ordinance 1983</td>
+              </tr>
+              <tr>
+                <td>Companies Auditors and Liquidators Disciplinary Board Ordinance 1982</td>
+              </tr>
+              <tr>
+                <td>Corporate Affairs Commission Ordinance 1980</td>
+              </tr>
+              <tr>
+                <td>National Land Ordinance 1989</td>
+              </tr>
+              <tr>
+                <td>National Memorials Ordinance 1928</td>
+              </tr>
+              <tr>
+                <td>Ordinance Revision (Companies Amendments) Ordinance 1982</td>
+              </tr>
+              <tr>
+                <td>Police Pensions Ordinance 1958</td>
+              </tr>
+              <tr>
+                <td>Reserved Laws (Administration) Ordinance 1989</td>
+              </tr>
+              <tr>
+                <td>Reserved Laws (Interpretation) Ordinance 1989</td>
+              </tr>
+              <tr>
+                <td>The Commercial Banking Company of Sydney Limited (Merger) Ordinance 1982</td>
+              </tr>
+              <tr>
+                <td>The Commercial Bank of Australia Limited (Merger) Ordinance 1982</td>
+              </tr>
+              <tr>
+                <td>Unlawful Assemblies Ordinance 1937</td>
+              </tr>
+            </table>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-4__part-2">
+            <num>2</num>
+            <heading>Acts of the Parliament of New South Wales in force in the Territory</heading>
+            <content>
+              <p>Life, Fire and Marine Insurance Act 1902</p>
+            </content>
+          </hcontainer>
+          <hcontainer name="part" eId="schedule-4__part-3">
+            <num>3</num>
+            <heading>Imperial Acts in force in the Territory</heading>
+            <table>
+              <tr>
+                <td>Demise of the Crown</td>
+                <td>(1760) 1 Geo. 3 c. 23</td>
+              </tr>
+              <tr>
+                <td>Naval Prize Act</td>
+                <td>(1864) 27 and 28 Vic. c. 25</td>
+              </tr>
+              <tr>
+                <td>Naval Prize (Procedure) Act</td>
+                <td>(1916) 6 and 7 Geo. 5 c. 2</td>
+              </tr>
+              <tr>
+                <td>Prize Act</td>
+                <td>(1939) 2 and 3 Geo. 6 c. 65</td>
+              </tr>
+              <tr>
+                <td>Prize Courts Act</td>
+                <td>(1894) 57 and 58 Vic. c. 39</td>
+              </tr>
+              <tr>
+                <td>Prize Courts Act</td>
+                <td>(1915) 5 and 6 Geo. 5 c. 57</td>
+              </tr>
+              <tr>
+                <td>Prize Courts (Procedure) Act</td>
+                <td>(1914) 4 and 5 Geo. 5 c. 13</td>
+              </tr>
+              <tr>
+                <td>Territorial Waters Jurisdiction</td>
+                <td>(1878) 41 and 42 Vic. c. 73.</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <td>ad = added or inserted</td>
+                <td>o = order(s)</td>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <td>Act</td>
+                <td>Number and year</td>
+                <td>Assent</td>
+                <td>Commencement</td>
+                <td>Application, saving and transitional provisions</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory (Self-Government) Act 1988</td>
+                <td>106, 1988</td>
+                <td>6 Dec 1988</td>
+                <td>s 1 and 2: 6 Dec 1988 (s 2(1))
+s 3–6, 8–21, 66–68, 73 and 74: 7 Dec 1988 (s 2(2) and gaz 1988, No S374)
+s 34(8): 31 Jan 1989 (s 2(2) and gaz 1989, No S39)
+s 56(1): repealed before commencing (s 2(2))
+Remainder: 11 May 1989 (s 2(2) and gaz 1989, No S164)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Arts, Territories and Environment Legislation Amendment Act 1989</td>
+                <td>60, 1989</td>
+                <td>19 June 1989</td>
+                <td>s 8–10: 19 June 1989 (s 2(1))</td>
+                <td>s 8(2)</td>
+              </tr>
+              <tr>
+                <td>Arts, Sport, Environment, Tourism and Territories Legislation Amendment Act 1991</td>
+                <td>33, 1991</td>
+                <td>21 Mar 1991</td>
+                <td>s 5 and Sch (amdt to s 3, 61–63 of the Australian Capital Territory (Self–Government) Act 1988): 1 July 1991 (s 2(2))
+Sch (amdt to s 14 of the Australian Capital Territory (Self–Government) Act 1988): 21 Mar 1991 (s 2(1))</td>
+                <td>s 5</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory Self-Government Legislation Amendment Act 1992</td>
+                <td>10, 1992</td>
+                <td>6 Mar 1992</td>
+                <td>s 4, 7–9: 15 Feb 1992 (s 2(2))
+s 5, 6: 6 Mar 1992 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>A.C.T. Supreme Court (Transfer) Act 1992</td>
+                <td>49, 1992</td>
+                <td>17 June 1992</td>
+                <td>s 4–9: 1 July 1992 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Law Reform Act 1992</td>
+                <td>104, 1992</td>
+                <td>30 June 1992</td>
+                <td>Sch 4: 1 July 1992 (s 2(3))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Superannuation Industry (Supervision) Consequential Amendments Act 1993</td>
+                <td>82, 1993</td>
+                <td>30 Nov 1993</td>
+                <td>s 4: 1 July 1994 (s 2(2)(a))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Arts, Environment and Territories Legislation Amendment Act 1993</td>
+                <td>6, 1994</td>
+                <td>18 Jan 1994</td>
+                <td>Sch: 18 Jan 1994 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory Government Service (Consequential Provisions) Act 1994</td>
+                <td>92, 1994</td>
+                <td>29 June 1994</td>
+                <td>Sch 2: 1 July 1994 (s 2(1) and gaz 1994, No S256)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory Electoral Legislation Amendment Act 1994</td>
+                <td>165, 1994</td>
+                <td>16 Dec 1994</td>
+                <td>Sch: 16 Dec 1994 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Euthanasia Laws Act 1997</td>
+                <td>17, 1997</td>
+                <td>27 Mar 1997</td>
+                <td>Sch 2: 27 Mar 1997 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Education Legislation Amendment Act 1997</td>
+                <td>66, 1997</td>
+                <td>30 May 1997</td>
+                <td>Sch 1 (items 14, 19–23): 1 Dec 1997 (s 2(4))</td>
+                <td>Sch 1 (items 19–23)</td>
+              </tr>
+              <tr>
+                <td>Gas Pipelines Access (Commonwealth) Act 1998</td>
+                <td>101, 1998</td>
+                <td>30 July 1998</td>
+                <td>Sch 1 (item 1): 30 July 1998 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory Legislation Amendment Act 2003</td>
+                <td>1, 2003</td>
+                <td>24 Feb 2003</td>
+                <td>Sch 1: 25 Feb 2003 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Legislative Instruments (Transitional Provisions and Consequential Amendments) Act 2003</td>
+                <td>140, 2003</td>
+                <td>17 Dec 2003</td>
+                <td>s 4 and Sch 1 (item 11): 1 Jan 2005 (s 2(1) items 2, 3)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Maritime Transport and Offshore Facilities Security Amendment (Security Plans and Other Measures) Act 2006</td>
+                <td>109, 2006</td>
+                <td>27 Sept 2006</td>
+                <td>Sch 2 (items 9–11): 27 Sept 2006 (s 2(1) item 3)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Fair Work (State Referral and Consequential and Other Amendments) Act 2009</td>
+                <td>54, 2009</td>
+                <td>25 June 2009</td>
+                <td>Sch 5 (item 4): 1 July 2009 (s 2(1) item 11)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2011</td>
+                <td>5, 2011</td>
+                <td>22 Mar 2011</td>
+                <td>Sch 5 (items 20, 21, 275, 276): 19 Apr 2011 (s 2(1) item 13)</td>
+                <td>Sch 5 (items 275, 276)</td>
+              </tr>
+              <tr>
+                <td>Territories Self-Government Legislation Amendment (Disallowance and Amendment of Laws) Act 2011</td>
+                <td>166, 2011</td>
+                <td>4 Dec 2011</td>
+                <td>s 4 and Sch 1: 4 Dec 2011 (s 2)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Australian Capital Territory (Self-Government) Amendment Act 2013</td>
+                <td>28, 2013</td>
+                <td>30 Mar 2013</td>
+                <td>31 Mar 2013 (s 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 7 (item 193) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (items 37, 38): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Territories Legislation Amendment Act 2016</td>
+                <td>33, 2016</td>
+                <td>23 Mar 2016</td>
+                <td>Sch 5 (item 11): 1 July 2016 (s 2(1) item 7)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Restoring Territory Rights Act 2022</td>
+                <td>95, 2022</td>
+                <td>13 Dec 2022</td>
+                <td>Sch 1 (item 1): 13 Dec 2022 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crown References Amendment Act 2024</td>
+                <td>115, 2024</td>
+                <td>10 Dec 2024</td>
+                <td>Sch 1 (item 5): 11 Dec 2024 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td>Number and year</td>
+                <td>FRLI registration or gazettal</td>
+                <td>Commencement</td>
+                <td>Application, saving and transitional provisions</td>
+              </tr>
+              <tr>
+                <td>1989 No. 86</td>
+                <td>10 May 1989</td>
+                <td>r. 5(1): 11 May 1989 (r 2(1))
+r. 5(2): 1 July 1990
+r. 5(3): 1 July 1992
+Remainder: 10 May 1989</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>1989 No. 87</td>
+                <td>10 May 1989</td>
+                <td>10 May 1989</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>1990 No. 405</td>
+                <td>17 Dec 1990</td>
+                <td>17 Dec 1990</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>2006 No. 39</td>
+                <td>17 Feb 2006 (F2006L00453)</td>
+                <td>18 Feb 2006</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>2006 No. 50</td>
+                <td>17 Mar 2006 (F2006L00820)</td>
+                <td>Sch 48: 27 Mar 2006 (r 2(b))</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <td>Provision affected</td>
+                <td>How affected</td>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 3</td>
+                <td>am. No. 33, 1991; Nos. 10 and 49, 1992; Nos. 6 and 92, 1994; No. 5, 2011; No 62, 2014; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Division 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 8</td>
+                <td>am. No. 28, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 10</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 13</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 14</td>
+                <td>am. No. 33, 1991; No. 82, 1993</td>
+              </tr>
+              <tr>
+                <td>s. 16</td>
+                <td>am. No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>Division 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 17</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 22</td>
+                <td>am. No. 49, 1992</td>
+              </tr>
+              <tr>
+                <td>s 23</td>
+                <td>am SR 1989 No 86 (as am by SR 1989 No 87; SLI 2006 No 39); No 49, 1992; No 17, 1997; No 95, 2022</td>
+              </tr>
+              <tr>
+                <td>s. 25</td>
+                <td>am. No. 60, 1989; No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 26</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 28</td>
+                <td>am. SLI 2006 No. 50; No. 54, 2009</td>
+              </tr>
+              <tr>
+                <td>s. 32</td>
+                <td>rep. No. 109, 2006</td>
+              </tr>
+              <tr>
+                <td>s. 33</td>
+                <td>am. No. 140, 2003; No 126, 2015</td>
+              </tr>
+              <tr>
+                <td>s. 34</td>
+                <td>am. No. 60, 1989; No. 49, 1992; No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 35</td>
+                <td>am. No. 109, 2006</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 166, 2011</td>
+              </tr>
+              <tr>
+                <td>Part V</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 37</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 38A</td>
+                <td>ad. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 41</td>
+                <td>am. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 46</td>
+                <td>am. No. 6, 1994; No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>s. 48</td>
+                <td>am. No. 165, 1994; No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>Part VA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Part VA</td>
+                <td>ad. No. 49, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 48A</td>
+                <td>ad. No. 49, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 48AA</td>
+                <td>ad. No. 101, 1998</td>
+              </tr>
+              <tr>
+                <td>ss. 48B–48D</td>
+                <td>ad. No. 49, 1992</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td>rep. No. 92, 1994</td>
+              </tr>
+              <tr>
+                <td>ss. 49–56</td>
+                <td>rep. No. 92, 1994</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 59</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 60</td>
+                <td>am. No. 5, 2011</td>
+              </tr>
+              <tr>
+                <td>ss. 61–63</td>
+                <td>rep. No. 33, 1991</td>
+              </tr>
+              <tr>
+                <td>s. 64</td>
+                <td>rep. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 65</td>
+                <td>am. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>Part VIII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 66</td>
+                <td>rs. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>ss. 66A, 66B</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 67</td>
+                <td>am. No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>s. 67A</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. No. 165, 1994; No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>s. 67B</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 67C</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>am. Nos. 6 and 165, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 67D</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td>s. 67E</td>
+                <td>ad. No. 10, 1992</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>s. 68</td>
+                <td>am. No. 10, 1992; No. 165, 1994</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>Part IX</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 69A</td>
+                <td>ad. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 69</td>
+                <td>am. No. 104, 1992; No 33, 2016</td>
+              </tr>
+              <tr>
+                <td>s. 70</td>
+                <td>am. No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>s. 71</td>
+                <td>rep. No. 92, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 72</td>
+                <td>rep. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 73</td>
+                <td>am. No. 49, 1992; Nos. 6 and 92, 1994</td>
+              </tr>
+              <tr>
+                <td>s. 74</td>
+                <td>am. No. 60, 1989</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rs. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>Schedule 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Schedule 1</td>
+                <td>am No 115, 2024</td>
+              </tr>
+              <tr>
+                <td>Schedule 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Schedule 2</td>
+                <td>am. No. 66, 1997</td>
+              </tr>
+              <tr>
+                <td>Schedule 3</td>
+                <td>am. SR 1989 No. 86</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep. No. 6, 1994</td>
+              </tr>
+              <tr>
+                <td>Schedule 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Schedule 4</td>
+                <td>am. SR 1989 No. 86 (as am. by SLI 2006 No. 39); No. 1, 2003</td>
+              </tr>
+              <tr>
+                <td>Schedule 5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Schedule 5</td>
+                <td>am. SR 1989 No. 86 (as am. by SR 1990 No. 405)</td>
+              </tr>
+            </table>
+          </hcontainer>
+        </hcontainer>
+      </attachment>
+    </attachments>
+  </act>
+</akomaNtoso>

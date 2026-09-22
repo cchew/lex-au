@@ -1,0 +1,1945 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1998/53/!main"/>
+          <FRBRuri value="/akn/au/act/1998/53"/>
+          <FRBRdate date="1998-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="53"/>
+          <FRBRname value="financial-institutions-supervisory-levies-collection-act-1998"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1998/53/eng@2025-02-21/!main"/>
+          <FRBRuri value="/akn/au/act/1998/53/eng@2025-02-21"/>
+          <FRBRdate date="2025-02-21" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1998/53/eng@2025-02-21/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1998/53/eng@2025-02-21/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1998-01-01" type="generation" eId="evt-creation" source="#financial-institutions-supervisory-levies-collection-act-1998"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1999/121"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2000/24"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2001/121"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2002/37" date="2002-06-26"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2005/14"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/2007/74" date="2007-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2007/154"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2008/92"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2008/105"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2009/75" date="2009-08-27"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2010/82" date="2010-06-29"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2015/60" date="2015-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2015/70" date="2015-06-25"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2015/87" date="2015-06-26"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2024/39" date="2024-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2025/14" date="2025-02-20"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="trustee" href="/ontology/roles/au/trustee" showAs="the trustee"/>
+        <TLCTerm eId="term-adi" href="/ontology/term/au/term-adi" showAs="ADI"/>
+        <TLCTerm eId="term-approved-deposit-fund" href="/ontology/term/au/term-approved-deposit-fund" showAs="approved deposit fund"/>
+        <TLCTerm eId="term-apra" href="/ontology/term/au/term-apra" showAs="APRA"/>
+        <TLCTerm eId="term-business-day" href="/ontology/term/au/term-business-day" showAs="business day"/>
+        <TLCTerm eId="term-collapsed-insurer-levy-day" href="/ontology/term/au/term-collapsed-insurer-levy-day" showAs="collapsed insurer levy day"/>
+        <TLCTerm eId="term-fund" href="/ontology/term/au/term-fund" showAs="fund"/>
+        <TLCTerm eId="term-general-insurance-company" href="/ontology/term/au/term-general-insurance-company" showAs="general insurance company"/>
+        <TLCTerm eId="term-late-payment-penalty" href="/ontology/term/au/term-late-payment-penalty" showAs="late payment penalty"/>
+        <TLCTerm eId="term-leviable-body" href="/ontology/term/au/term-leviable-body" showAs="leviable body"/>
+        <TLCTerm eId="term-levy" href="/ontology/term/au/term-levy" showAs="levy"/>
+        <TLCTerm eId="term-levy-determination" href="/ontology/term/au/term-levy-determination" showAs="levy determination"/>
+        <TLCTerm eId="term-levy-month" href="/ontology/term/au/term-levy-month" showAs="levy month"/>
+        <TLCTerm eId="term-life-insurance-company" href="/ontology/term/au/term-life-insurance-company" showAs="life insurance company"/>
+        <TLCTerm eId="term-private-health-insurer" href="/ontology/term/au/term-private-health-insurer" showAs="private health insurer"/>
+        <TLCTerm eId="term-rsa-provider" href="/ontology/term/au/term-rsa-provider" showAs="RSA provider"/>
+        <TLCTerm eId="term-superannuation-entity" href="/ontology/term/au/term-superannuation-entity" showAs="superannuation entity"/>
+        <TLCTerm eId="term-superannuation-fund" href="/ontology/term/au/term-superannuation-fund" showAs="superannuation fund"/>
+        <TLCTerm eId="term-trustee" href="/ontology/term/au/term-trustee" showAs="trustee"/>
+        <TLCTerm eId="term-unpaid-levy" href="/ontology/term/au/term-unpaid-levy" showAs="unpaid levy"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Financial Institutions Supervisory Levies Collection Act 1998</p>
+      <p>No. 53, 1998</p>
+      <p><b>Compilation No. </b><b>18</b></p>
+      <p><b>Compilation date:</b><b>	</b>21 February 2025</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 14, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Financial Institutions Supervisory Levies Collection Act 1998</i> that shows the text of the law as amended and in force on 21 February 2025 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self-repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Act binds the Crown	1</p>
+      <p>4	External Territories	1</p>
+      <p>5	Application of Act to Lloyd’<ref href="#sec-1">s	1</ref></p>
+      <p>6	Definitions	2</p>
+      <p><ref href="#part-2">Part 2</ref>—Supervisory levies	3</p>
+      <p>7	Definitions	3</p>
+      <p>8	Liability to levy	5</p>
+      <p>9	When levy due for payment	7</p>
+      <p>10	Late payment penalty	8</p>
+      <p>11	Payment of levy and late payment penalty	9</p>
+      <p>12	Waiver of levy and late payment penalty	9</p>
+      <p>13	Recovery of levy and late payment penalty	9</p>
+      <p>14	Exempting laws ineffective	10</p>
+      <p>15	Regulations may modify this Part if levy Act commences during a financial year	10</p>
+      <p><ref href="#part-3">Part 3</ref>—Superannuation (financial assistance funding) levy	11</p>
+      <p>16	Definitions	11</p>
+      <p>17	Fund’s accounts to be prima facie evidence of value of its assets	11</p>
+      <p>18	Liability to levy	12</p>
+      <p>19	When levy due for payment	12</p>
+      <p>20	Late payment penalty	12</p>
+      <p>21	Payment of levy and late payment penalty	12</p>
+      <p>22	Waiver of late payment penalty	13</p>
+      <p>23	Recovery of levy and late payment penalty	13</p>
+      <p>24	Application of levy, late payment penalty and repayments of financial assistance	13</p>
+      <p>25	Exempting laws ineffective	13</p>
+      <p>26	Delegation	14</p>
+      <p><ref href="#part-3A">Part 3A</ref>—Financial claims scheme levies	15</p>
+      <p>26A	Definitions	15</p>
+      <p>26B	Liability to levy	15</p>
+      <p>26C	When levy due for payment	15</p>
+      <p>26D	Late payment penalty	16</p>
+      <p>26E	Payment of levy and late payment penalty	16</p>
+      <p>26F	Waiver of levy and late payment penalty	16</p>
+      <p>26G	Recovery of levy and late payment penalty	17</p>
+      <p>26H	Exempting laws ineffective	17</p>
+      <p><ref href="#part-3B">Part 3B</ref>—Private health insurance collapsed insurer levy	18</p>
+      <p>26J	Definitions	18</p>
+      <p>26K	Liability to levy	18</p>
+      <p>26L	When levy due for payment	18</p>
+      <p>26M	Late payment penalty	18</p>
+      <p>26N	Payment of levy and late payment penalty	19</p>
+      <p>26P	Waiver of levy and late payment penalty	19</p>
+      <p>26Q	Recovery of levy and late payment penalty	20</p>
+      <p>26R	Exempting laws ineffective	20</p>
+      <p><ref href="#part-4">Part 4</ref>—Miscellaneous	21</p>
+      <p>27	Review of certain decisions	21</p>
+      <p>28	Statements to accompany notification of decisions	22</p>
+      <p>29	Regulations	23</p>
+      <p>Endnotes	25</p>
+      <p>Endnote 1—About the endnotes	25</p>
+      <p>Endnote 2—Abbreviation key	27</p>
+      <p>Endnote 3—Legislation history	28</p>
+      <p>Endnote 4—Amendment history	31</p>
+      <p>An Act to make provision for the collection of levies imposed in respect of various financial institutions, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Financial Institutions Supervisory Levies Collection Act 1998</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>		This Act commences on the commencement of the <i>Australian Prudential Regulation Authority Act 1998</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Act binds the Crown</heading>
+          <content>
+            <p>This Act binds the Crown in each of its capacities.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>External Territories</heading>
+          <content>
+            <p>This Act extends to each external Territory.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Application of Act to Lloyd’s</heading>
+          <subsection eId="part-1__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	This Act applies to Lloyd’s (<ref href="#sec-3">within the meaning of section 3</ref> of the <i>Insurance Act 1973</i>), at all times after the commencement of this Act, as if Lloyd’s were a body corporate authorised under that Act to carry on insurance business.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Nothing in this Act makes any Lloyd’s underwriter liable to pay levy under this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-apra">APRA</term> means <def>the Australian Prudential Regulation Authority.</def></p>
+            <p><term refersTo="#term-private-health-insurer">private health insurer</term> has the same meaning as <def>in the Private Health Insurance (Prudential Supervision) Act 2015.</def></p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Supervisory levies</heading>
+        <section eId="part-2__sec-7">
+          <num>7</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Part, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-adi">ADI</term> has the same meaning as <def>in <ref href="">the Banking Act 1959</ref>.</def></p>
+            <p><b><i>authorised NOHC</i></b> means:</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	ADI is short for authorised deposit-taking institution.</p>
+            </content>
+          </authorialNote>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>an authorised NOHC within the meaning of either:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	the <i>Banking Act 1959</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	the <i>Insurance Act 1973</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	a registered NOHC within the meaning of the <i>Life Insurance Act 1995</i>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	NOHC is short for non-operating holding company.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p><term refersTo="#term-business-day">business day</term> means <def>a day that is not a Saturday, a Sunday, a public holiday or a bank holiday in the place concerned.</def></p>
+              <p><term refersTo="#term-general-insurance-company">general insurance company</term> means <def>a body corporate that is authorised under <ref href="">the Insurance Act 1973</ref> to carry on insurance business within the meaning of that Act.</def></p>
+              <p><term refersTo="#term-late-payment-penalty">late payment penalty</term> means <def>penalty payable under <ref href="#sec-10">section 10</ref>.</def></p>
+              <p><term refersTo="#term-leviable-body">leviable body</term> means <def>any of the following types of bodies: an ADI; an authorised NOHC; a life insurance company; a general insurance company; a private health insurer; an RSA provider; a superannuation entity.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>an ADI;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>an authorised NOHC;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-c">
+            <num>c</num>
+            <content>
+              <p>a life insurance company;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-d">
+            <num>d</num>
+            <content>
+              <p>a general insurance company;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-da">
+            <num>da</num>
+            <content>
+              <p>a private health insurer;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-e">
+            <num>e</num>
+            <content>
+              <p>an RSA provider;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-f">
+            <num>f</num>
+            <content>
+              <p>a superannuation entity.</p>
+            </content>
+            <content>
+              <p><b><i>levy</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	in respect of a leviable body that is an ADI—levy imposed by the <i>Authorised Deposit</i><i>-</i><i>taking Institutions Supervisory Levy Imposition Act 1998</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	in respect of a leviable body that is an authorised NOHC—levy imposed by the <i>Authorised Non</i><i>-</i><i>operating Holding Companies Supervisory Levy Imposition Act 1998</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-c">
+            <num>c</num>
+            <content>
+              <p>	(c)	in respect of a leviable body that is a life insurance company—levy imposed by the<i> Life Insurance Supervisory Levy Imposition Act 1998</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-d">
+            <num>d</num>
+            <content>
+              <p>	(d)	in respect of a leviable body that is a general insurance company—levy imposed by the <i>General Insurance Supervisory Levy Imposition Act 1998</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-da">
+            <num>da</num>
+            <content>
+              <p>	(da)	in respect of a leviable body that is a private health insurer—levy imposed by the <i>Private Health Insurance Supervisory Levy Imposition Act 2015</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-e">
+            <num>e</num>
+            <content>
+              <p>	(e)	in respect of a leviable body that is an RSA provider—levy imposed by the <i>Retirement Savings Account Providers Supervisory Levy Imposition Act 1998</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-f">
+            <num>f</num>
+            <content>
+              <p>	(f)	in respect of a leviable body that is a superannuation entity—levy imposed by the <i>Superannuation Supervisory Levy Imposition Act </i><i>1998</i>.</p>
+            </content>
+            <content>
+              <p><b><i>levy imposition day</i></b>, in relation to the imposition of a levy in respect of a leviable body of a particular type for a financial year, means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>if the leviable body is that type of leviable body on 1 July of the financial year—that day; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>if the leviable body becomes that type of leviable body on a day during the financial year that is after 1 July of the financial year—the day, during the financial year, on which the leviable body becomes that type of leviable body.</p>
+            </content>
+            <content>
+              <p><b><i>levy paying entity</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>a leviable body, other than a superannuation entity; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#trustee">the trustee</role> of a superannuation entity.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-life-insurance-company">life insurance company</term> means <def>a company that is registered under <ref href="#sec-21">section 21</ref> of <ref href="">the Life Insurance Act 1995</ref>.</def></p>
+              <p><term refersTo="#term-rsa-provider">RSA provider</term> has the same meaning as <def>in <ref href="">the Retirement Savings Accounts Act 1997</ref>.</def></p>
+              <p><term refersTo="#term-superannuation-entity">superannuation entity</term> means <def>an entity that: 	(a)	is a superannuation entity within the meaning of the <i>Superannuation Industry (Supervision) Act 1993</i>; and is not a self managed superannuation fund within the meaning of that Act.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	is a superannuation entity within the meaning of the <i>Superannuation Industry (Supervision) Act 1993</i>; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-7__para-b">
+            <num>b</num>
+            <content>
+              <p>is not a self managed superannuation fund within the meaning of that Act.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-trustee">trustee</term>, in relation to a superannuation entity, means <def>the person who is the trustee of the entity for the purposes of the Superannuation Industry (Supervision) Act 1993.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-2__sec-8">
+          <num>8</num>
+          <heading>Liability to levy</heading>
+          <content>
+            <p>ADIs</p>
+          </content>
+          <subsection eId="part-2__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	A body corporate that is an ADI at any time during a financial year that ends after the commencement of the <i>Authorised Deposit</i><i>-</i><i>taking Institutions Supervisory Levy Imposition Act 1998</i> is liable to pay a levy in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>Authorised NOHCs</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A body corporate that is an authorised NOHC at any time during a financial year that ends on or after the commencement of the <i>Authorised Non</i><i>-</i><i>operating Holding Companies Supervisory Levy Imposition Act 1998 </i>is liable to pay a levy in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>General insurance bodies corporate</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A body corporate that is a general insurance company at any time during a financial year that ends after the commencement of the <i>General Insurance Supervisory Levy Imposition Act 1998</i> is liable to pay a levy in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>Life Insurance companies</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	A body corporate that is a life insurance company at any time during a financial year that ends after the commencement of the <i>Life Insurance Supervisory Levy Imposition Act 1998</i> is liable to pay a levy imposed in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>Private health insurers: 2015-16 financial year</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-4A">
+            <num>4A</num>
+            <content>
+              <p>A body corporate that is a private health insurer on the liability day in a quarter in the financial year starting on <date date="2015-07-01">1 July 2015</date> is liable to pay a levy in respect of that quarter. However, this subsection does not apply to a quarter if the liability day for the quarter is before the commencement of this subsection.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-4B">
+            <num>4B</num>
+            <content>
+              <p>In subsection (4A):</p>
+            </content>
+            <content>
+              <p><b><i>liability day</i></b> in a quarter means the 28th day of the second month of the quarter.</p>
+              <p><b><i>quarter</i></b> means a period of 3 months starting on 1 July, 1 October, 1 January or 1 April.</p>
+              <p>Private health insurers: 2016-17 financial year and later financial years</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-4C">
+            <num>4C</num>
+            <content>
+              <p>A body corporate that is a private health insurer at any time during the financial year starting on <date date="2016-07-01">1 July 2016</date> or a later financial year is liable to pay a levy in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>RSA providers</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	A body corporate that is an RSA provider at any time during a financial year that ends after the commencement of the <i>Retirement Savings Account Providers Supervisory Levy Imposition Act 1998</i> is liable to pay a levy imposed in respect of that financial year.</p>
+            </content>
+            <content>
+              <p>Superannuation entities</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-8__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	A trustee of a superannuation entity that is a superannuation entity at any time during a financial year that ends after the commencement of the <i>Superannuation Supervisory Levy Imposition Act 1998</i> is liable to pay a levy in respect of that financial year.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-9">
+          <num>9</num>
+          <heading>When levy due for payment</heading>
+          <subsection eId="part-2__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Levy payable by a leviable body for a financial year (other than levy payable under subsection 8(4A) or (6)) is due and payable on:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the levy imposition day relating to the levy payable by the leviable body is 1 July of the financial year—a business day that is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>specified in a notice given to the leviable body by APRA in relation to the financial year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is not earlier than 28 days after the day on which the notice is given; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the levy imposition day relating to the levy payable by the leviable body is a day of that financial year after 1 July—by:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the day that is 6 weeks after the day on which the leviable body becomes that type of leviable body; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if the day applicable under subparagraph (i) is not a business day, the first business day following that day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Levy payable under subsection 8(6) for a financial year by a trustee of a superannuation entity is due and payable:</p>
+            </content>
+            <paragraph eId="part-2__sec-9__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the entity is a superannuation entity on 1 July of the financial year and became a superannuation entity before that day—on a business day that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	is specified in a notice given by APRA to the trustee on or after the day on which an annual return that is a reporting document under <ref href="#sec-13">section 13</ref> of the <i>Financial Sector (Collection of Data) Act 2001 </i>and that relates to the previous financial year was received by APRA; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is not earlier than 6 weeks after the day on which the notice is given; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the entity becomes a superannuation entity on or after 1 July of the financial year—on a business day that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>is specified in a notice given by APRA to <role refersTo="#trustee">the trustee</role>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-9__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is not earlier than 6 weeks after the day on which the notice is given.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Levy payable by a private health insurer for a quarter under subsection 8(4A) is payable on the 14th day after the liability day for the quarter.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	For the meaning of <b><i>quarter</i></b> and <b><i>liability day</i></b>, see subsection 8(4B).</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-10">
+          <num>10</num>
+          <heading>Late payment penalty</heading>
+          <subsection eId="part-2__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If any levy payable by a levy paying entity:</p>
+            </content>
+            <paragraph eId="part-2__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	is not paid on or before the day on which it is due and payable (the <b><i>due day for payment</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>remains unpaid after the penalty calculation day;</p>
+              </content>
+              <content>
+                <p>the levy paying entity is liable to pay, by way of penalty, an amount worked out at the applicable rate per year on the amount unpaid, computed from the end of the due day for payment to the end of the penalty calculation day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The <b><i>penalty calculation day</i></b> is:</p>
+            </content>
+            <paragraph eId="part-2__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the levy is paid on or after the first day of a month and before the sixth day of that month—the 20th day of the immediately preceding month; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the levy is paid on or after the sixth day of a month and before the 20th day of that month—the sixth day of that month; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>if the levy is paid on or after the 20th day of a month and on or before the last day of that month—the 20th day of that month.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The <b><i>applicable rate</i></b>, in relation to an amount of unpaid levy, is:</p>
+            </content>
+            <paragraph eId="part-2__sec-10__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	20% (unless the levy was imposed by the <i>Private Health Insurance Supervisory Levy Imposition Act 2015</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	if the levy was imposed by the <i>Private Health Insurance Supervisory Levy Imposition Act 2015</i>:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-3__para-i">
+              <num>i</num>
+              <content>
+                <p>15% (unless subparagraph (ii) applies); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-10__subsec-3__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if, under a legislative instrument made by <role refersTo="#minister">the Minister</role> for the purposes of this subparagraph, a specified rate of less than 15% applies in relation to the unpaid levy—that specified rate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-11">
+          <num>11</num>
+          <heading>Payment of levy and late payment penalty</heading>
+          <content>
+            <p>Levy and late payment penalty are payable to APRA on behalf of the Commonwealth.</p>
+          </content>
+          <authorialNote placement="end" eId="note-4" marker="4">
+            <content>
+              <p>Note:	Levy and late payment penalty may be payable to the Commissioner of Taxation because of <ref href="#sec-252G">section 252G</ref> of the <i>Superannuation Industry (Supervision) Act 1993</i>.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-2__sec-12">
+          <num>12</num>
+          <heading>Waiver of levy and late payment penalty</heading>
+          <content>
+            <p>APRA, on behalf of the Commonwealth, may, if APRA considers it is appropriate to do so, waive the payment of the whole or a part of an amount of levy or late payment penalty that is payable by a levy paying entity.</p>
+          </content>
+          <authorialNote placement="end" eId="note-5" marker="5">
+            <content>
+              <p>Note:	For example, if levy is payable by a body corporate which has ceased to be authorised under the <i>Insurance Act 1973</i> to carry on an insurance business and has ceased to be a life company, APRA may waive the payment of the levy if APRA considers it appropriate to do so because payment of the levy would prevent payment in full of claims under contracts of insurance made with the body corporate.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-2__sec-13">
+          <num>13</num>
+          <heading>Recovery of levy and late payment penalty</heading>
+          <subsection eId="part-2__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following amounts may be recovered by the Commonwealth as debts due to the Commonwealth:</p>
+            </content>
+            <paragraph eId="part-2__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>levy that is due and payable;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>late payment penalty that is due and payable.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>APRA is authorised, as agent of the Commonwealth, to bring proceedings in the name of the Commonwealth for the recovery of a debt due to the Commonwealth of a kind mentioned in subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-14">
+          <num>14</num>
+          <heading>Exempting laws ineffective</heading>
+          <subsection eId="part-2__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Nothing in a law passed before the commencement of this section exempts a levy paying entity from liability to pay levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a law (including a provision of a law) passed after the commencement of this section purports to exempt a levy paying entity from:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>liability to pay taxes under laws of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>liability to pay certain taxes under laws of the Commonwealth that would otherwise include levy;</p>
+              </content>
+              <content>
+                <p>the law does not operate to exempt the levy paying entity from liability to pay levy unless the exemption expressly refers to levy under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section applies in relation to levy imposed by the <i>Private Health Insurance Supervisory Levy Imposition Act 2015 </i>as if subsections (1) and (2) referred to the time when this subsection commences (rather than to the commencement of this section).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-15">
+          <num>15</num>
+          <heading>Regulations may modify this Part if levy Act commences during a financial year</heading>
+          <content>
+            <p>If an Act mentioned in <ref href="#sec-8">section 8</ref> that imposes levy in respect of a particular type of leviable body commences during a financial year (but not on 1 July of that financial year), this Act has effect in relation to that financial year and that type of leviable body subject to the modifications specified in the regulations.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Superannuation (financial assistance funding) levy</heading>
+        <section eId="part-3__sec-16">
+          <num>16</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Part, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-approved-deposit-fund">approved deposit fund</term> has the same meaning as <def>in the Superannuation Industry (Supervision) Act 1993.</def></p>
+            <p><term refersTo="#term-fund">fund</term> means <def>a superannuation fund or an approved deposit fund, but does not include a self managed superannuation fund (within the meaning of the Superannuation Industry (Supervision) Act 1993).</def></p>
+            <p><term refersTo="#term-late-payment-penalty">late payment penalty</term> means <def>penalty payable under <ref href="#sec-20">section 20</ref>.</def></p>
+            <p><term refersTo="#term-levy">levy</term> means <def>levy imposed by regulations under the Superannuation (Financial Assistance Funding) Levy Act 1993.</def></p>
+            <p><term refersTo="#term-levy-month">levy month</term> means <def>one of the 12 months of the calendar year.</def></p>
+            <p><term refersTo="#term-superannuation-fund">superannuation fund</term> has the same meaning as <def>in the Superannuation Industry (Supervision) Act 1993.</def></p>
+            <p><b><i>trustee</i></b>, in relation to a fund, has the same meaning as in the <i>Superannuation Industry (Supervision) Act 1993</i>.</p>
+            <p><term refersTo="#term-unpaid-levy">unpaid levy</term> means <def>the amount of levy unpaid by the trustee of a fund as at the beginning of a levy month.</def></p>
+          </content>
+        </section>
+        <section eId="part-3__sec-17">
+          <num>17</num>
+          <heading>Fund’s accounts to be prima facie evidence of value of its assets</heading>
+          <subsection eId="part-3__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies if:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>accounts of a fund were prepared for a financial year; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an amount is shown on those accounts as the value of an asset of the fund as at the end of that financial year.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of this Part, the accounts are prima facie evidence of the value of the asset at the end of that financial year.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may certify that a document is a copy of the accounts.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>This section applies to the certified copy as if it were the original.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18">
+          <num>18</num>
+          <heading>Liability to levy</heading>
+          <content>
+            <p><role refersTo="#trustee">The trustee</role> of a fund is liable to pay a levy imposed on the fund.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-19">
+          <num>19</num>
+          <heading>When levy due for payment</heading>
+          <subsection eId="part-3__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A levy payable by <role refersTo="#trustee">the trustee</role> of a fund is due and payable on such date as is specified in the regulations imposing the levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The date to be so specified must not be earlier than the 28th day after the day on which the regulation imposing the levy took effect.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-20">
+          <num>20</num>
+          <heading>Late payment penalty</heading>
+          <subsection eId="part-3__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If any levy payable by <role refersTo="#trustee">the trustee</role> of a fund remains unpaid as at:</p>
+            </content>
+            <paragraph eId="part-3__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the beginning of the first levy month after the time when it became due for payment; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the beginning of a later levy month;</p>
+              </content>
+              <content>
+                <p><role refersTo="#trustee">the trustee</role> is liable to pay to the Commonwealth, in respect of that levy month, by way of penalty, the amount worked out using the formula:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/financial-institutions-supervisory-levies-collection-act-1998-fig-1.png" alt=""/>
+              </figure>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Late payment penalty for a levy month is due and payable at the end of the levy month.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-21">
+          <num>21</num>
+          <heading>Payment of levy and late payment penalty</heading>
+          <content>
+            <p>Levy and late payment penalty are payable to <role refersTo="#minister">the Minister</role>.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-22">
+          <num>22</num>
+          <heading>Waiver of late payment penalty</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may waive the whole or a part of an amount of late payment penalty.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-23">
+          <num>23</num>
+          <heading>Recovery of levy and late payment penalty</heading>
+          <content>
+            <p>The following amounts may be recovered by the Commonwealth as debts due to the Commonwealth:</p>
+          </content>
+          <paragraph eId="part-3__sec-23__para-a">
+            <num>a</num>
+            <content>
+              <p>levy that is due and payable;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-23__para-b">
+            <num>b</num>
+            <content>
+              <p>late payment penalty that is due and payable.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-24">
+          <num>24</num>
+          <heading>Application of levy, late payment penalty and repayments of financial assistance</heading>
+          <content>
+            <p>If levy is imposed as a result of a determination by <role refersTo="#minister">the Minister</role> to make a grant of financial assistance, the following amounts must be paid to the Commonwealth:</p>
+          </content>
+          <paragraph eId="part-3__sec-24__para-a">
+            <num>a</num>
+            <content>
+              <p>amounts of the levy, and late payment penalty in respect of the levy, received by <role refersTo="#minister">the Minister</role>;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-24__para-b">
+            <num>b</num>
+            <content>
+              <p>repayments of the financial assistance.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-25">
+          <num>25</num>
+          <heading>Exempting laws ineffective</heading>
+          <subsection eId="part-3__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Nothing in a law passed before the commencement of this section exempts a trustee of a fund from liability to pay levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If a law (including a provision of a law) passed after the commencement of this section purports to exempt a trustee of a fund from:</p>
+            </content>
+            <paragraph eId="part-3__sec-25__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>liability to pay taxes under laws of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-25__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>liability to pay certain taxes under laws of the Commonwealth that would otherwise include levy;</p>
+              </content>
+              <content>
+                <p>the law does not operate to exempt <role refersTo="#trustee">the trustee</role> from liability to pay levy unless the exemption expressly refers to levy under this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-26">
+          <num>26</num>
+          <heading>Delegation</heading>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may, by signed writing, delegate to APRA all or any of his or her powers under this Part.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-3A">
+        <num>3A</num>
+        <heading>Financial claims scheme levies</heading>
+        <section eId="part-3A__sec-26A">
+          <num>26A</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Part:</p>
+            <p><term refersTo="#term-late-payment-penalty">late payment penalty</term> means <def>penalty payable under <ref href="#sec-26D">section 26D</ref>.</def></p>
+            <p><b><i>levy</i></b> means:</p>
+          </content>
+          <paragraph eId="part-3A__sec-26A__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	levy imposed by regulations under the <i>Financial Claims Scheme (ADIs) Levy Act 2008</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3A__sec-26A__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	levy imposed by regulations under the <i>Financial Claims Scheme (General Insurers) Levy Act 2008</i>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-levy-month">levy month</term> means <def>one of the 12 months of the calendar year.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3A__sec-26B">
+          <num>26B</num>
+          <heading>Liability to levy</heading>
+          <subsection eId="part-3A__sec-26B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>An ADI is liable to pay a levy imposed on the ADI’s liabilities to its depositors.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-26B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A general insurer is liable to pay a levy imposed on the gross premiums received by the general insurer.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-26C">
+          <num>26C</num>
+          <heading>When levy due for payment</heading>
+          <subsection eId="part-3A__sec-26C__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A levy payable by an ADI or a general insurer is due and payable on the date specified in the regulations imposing the levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-26C__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The date specified must not be earlier than the 28th day after the day on which the regulation imposing the levy took effect.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-26C__subsec-3">
+            <num>3</num>
+            <content>
+              <p>However, APRA may, by written notice given to the ADI or general insurer before, on or after the day on which levy would be due and payable apart from this subsection, specify a later day as the day on which the levy is due and payable. The notice has effect, and is taken always to have had effect, according to its terms.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	The notice may affect whether and when the ADI or general insurer is liable to pay late payment penalty.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-26D">
+          <num>26D</num>
+          <heading>Late payment penalty</heading>
+          <subsection eId="part-3A__sec-26D__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If any levy payable by an ADI or general insurer remains unpaid at the start of a levy month after the levy became due for payment, the ADI or general insurer is liable to pay the Commonwealth, for that levy month, a penalty worked out using the formula:</p>
+            </content>
+            <figure>
+              <img src="corpus/images/financial-institutions-supervisory-levies-collection-act-1998-fig-2.png" alt=""/>
+            </figure>
+          </subsection>
+          <subsection eId="part-3A__sec-26D__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Late payment penalty for a levy month is due and payable at the end of the levy month.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-26D__subsec-3">
+            <num>3</num>
+            <content>
+              <p>However, APRA may, by written notice given to the ADI or general insurer before, on or after the day on which late payment penalty would be due and payable apart from this subsection, specify a later day as the day on which the late payment penalty is due and payable. The notice has effect, and is taken always to have had effect, according to its terms.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-26E">
+          <num>26E</num>
+          <heading>Payment of levy and late payment penalty</heading>
+          <content>
+            <p>Levy and late payment penalty are payable to APRA on behalf of the Commonwealth.</p>
+          </content>
+        </section>
+        <section eId="part-3A__sec-26F">
+          <num>26F</num>
+          <heading>Waiver of levy and late payment penalty</heading>
+          <content>
+            <p>On behalf of the Commonwealth, APRA may waive the whole or a part of an amount of levy or late payment penalty.</p>
+          </content>
+        </section>
+        <section eId="part-3A__sec-26G">
+          <num>26G</num>
+          <heading>Recovery of levy and late payment penalty</heading>
+          <subsection eId="part-3A__sec-26G__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following amounts may be recovered by the Commonwealth as debts due to the Commonwealth:</p>
+            </content>
+            <paragraph eId="part-3A__sec-26G__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>levy that is due and payable;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3A__sec-26G__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>late payment penalty that is due and payable.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3A__sec-26G__subsec-2">
+            <num>2</num>
+            <content>
+              <p>APRA may bring proceedings in the name of the Commonwealth (as its agent) for the recovery of a debt due to the Commonwealth as described in subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3A__sec-26H">
+          <num>26H</num>
+          <heading>Exempting laws ineffective</heading>
+          <subsection eId="part-3A__sec-26H__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A law made before the commencement of this section does not exempt an ADI or general insurer from liability to pay levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3A__sec-26H__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A law made on or after the commencement of this section purporting to exempt an ADI or general insurer from liability to pay taxes under laws of the Commonwealth that would otherwise include levy does not exempt the ADI or general insurer from liability to pay levy unless the exemption expressly refers to levy under the Act under which the levy is imposed.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3B">
+        <num>3B</num>
+        <heading>Private health insurance collapsed insurer levy</heading>
+        <section eId="part-3B__sec-26J">
+          <num>26J</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Part:</p>
+            <p><term refersTo="#term-collapsed-insurer-levy-day">collapsed insurer levy day</term> has the same meaning as <def>in the Private Health Insurance (Collapsed Insurer Levy) Act 2003.</def></p>
+            <p><term refersTo="#term-late-payment-penalty">late payment penalty</term> means <def>penalty payable under <ref href="#sec-26M">section 26M</ref>.</def></p>
+            <p><term refersTo="#term-levy">levy</term> means <def>levy imposed by the Private Health Insurance (Collapsed Insurer Levy) Act 2003.</def></p>
+            <p><term refersTo="#term-levy-determination">levy determination</term>, in relation to a collapsed insurer levy day, means <def>the determination under <ref href="#sec-7">section 7</ref> of the Private Health Insurance (Collapsed Insurer Levy) Act 2003 because of which that day is a collapsed insurer levy day.</def></p>
+          </content>
+        </section>
+        <section eId="part-3B__sec-26K">
+          <num>26K</num>
+          <heading>Liability to levy</heading>
+          <content>
+            <p>A private health insurer is liable to pay a levy imposed on the insurer on a collapsed insurer levy day.</p>
+          </content>
+        </section>
+        <section eId="part-3B__sec-26L">
+          <num>26L</num>
+          <heading>When levy due for payment</heading>
+          <content>
+            <p>A levy imposed on a private health insurer on a collapsed insurer levy day is due and payable on the day specified in the levy determination as the payment day in relation to that collapsed insurer levy day.</p>
+          </content>
+        </section>
+        <section eId="part-3B__sec-26M">
+          <num>26M</num>
+          <heading>Late payment penalty</heading>
+          <subsection eId="part-3B__sec-26M__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If any levy payable by a private health insurer:</p>
+            </content>
+            <paragraph eId="part-3B__sec-26M__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	is not paid on or before the day on which it is due and payable (the <b><i>due day for payment</i></b>); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-26M__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>remains unpaid after the penalty calculation day;</p>
+              </content>
+              <content>
+                <p>the insurer is liable to pay, by way of penalty, an amount worked out at the applicable rate per year on the amount unpaid, computed from the end of the due day for payment to the end of the penalty calculation day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-26M__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The <b><i>penalty calculation day</i></b> is:</p>
+            </content>
+            <paragraph eId="part-3B__sec-26M__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the levy is paid on or after the first day of a month and before the sixth day of that month—the 20th day of the immediately preceding month; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-26M__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the levy is paid on or after the sixth day of a month and before the 20th day of that month—the sixth day of that month; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-26M__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>if the levy is paid on or after the 20th day of a month and on or before the last day of that month—the 20th day of that month.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-26M__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	The <b><i>applicable rate</i></b>, in relation to an amount of unpaid levy, is:</p>
+            </content>
+            <paragraph eId="part-3B__sec-26M__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>15% (unless paragraph (b) applies); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-26M__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if, under a legislative instrument made by <role refersTo="#minister">the Minister</role> for the purposes of this paragraph, a specified rate of less than 15% applies in relation to the unpaid levy—that specified rate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3B__sec-26N">
+          <num>26N</num>
+          <heading>Payment of levy and late payment penalty</heading>
+          <content>
+            <p>Levy and late payment penalty are payable to APRA on behalf of the Commonwealth.</p>
+          </content>
+        </section>
+        <section eId="part-3B__sec-26P">
+          <num>26P</num>
+          <heading>Waiver of levy and late payment penalty</heading>
+          <subsection eId="part-3B__sec-26P__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may waive the whole or a part of an amount of levy or late payment penalty.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-26P__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate to APRA the power under subsection (1) to waive levy or late payment penalty.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3B__sec-26Q">
+          <num>26Q</num>
+          <heading>Recovery of levy and late payment penalty</heading>
+          <subsection eId="part-3B__sec-26Q__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The following amounts may be recovered by the Commonwealth as debts due to the Commonwealth:</p>
+            </content>
+            <paragraph eId="part-3B__sec-26Q__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>levy that is due and payable;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3B__sec-26Q__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>late payment penalty that is due and payable.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3B__sec-26Q__subsec-2">
+            <num>2</num>
+            <content>
+              <p>APRA may bring proceedings in the name of the Commonwealth (as its agent) for the recovery of a debt due to the Commonwealth as described in subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3B__sec-26R">
+          <num>26R</num>
+          <heading>Exempting laws ineffective</heading>
+          <subsection eId="part-3B__sec-26R__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A law made before the commencement of this section does not exempt a private health insurer from liability to pay levy.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3B__sec-26R__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A law made on or after the commencement of this section purporting to exempt a private health insurer from liability to pay taxes under laws of the Commonwealth that would otherwise include levy does not exempt the private health insurer from liability to pay levy unless the exemption expressly refers to levy under the Act under which the levy is imposed.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-4__sec-27">
+          <num>27</num>
+          <heading>Review of certain decisions</heading>
+          <subsection eId="part-4__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A levy paying entity that is affected by a reviewable decision of the decision maker may, if dissatisfied with the decision, request the decision maker to reconsider the decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The request must:</p>
+            </content>
+            <paragraph eId="part-4__sec-27__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>be made by notice given to the decision maker within:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>the period of 21 days after the day on which the levy paying entity first receives notice of the decision; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the further period that the decision maker allows; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>set out the reasons for making the request.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>When the decision maker receives the request the decision maker must reconsider the decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The decision maker may confirm or revoke the decision or vary the decision in the manner that the decision maker thinks fit. However, if the decision maker does not confirm, revoke or vary the decision within the period of 21 days after the day on which the decision maker received the request, the decision maker is taken to have confirmed the decision immediately after the end of that period.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If the decision maker confirms, revokes or varies the decision during the period of 21 days after the day on which the decision maker received the request, the decision maker is to give a notice in writing to the levy paying entity that made the request. The notice must set out the result of the reconsideration of the decision and the reasons for confirming, varying or revoking the decision, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Applications may be made to the Administrative Review Tribunal for review of:</p>
+            </content>
+            <paragraph eId="part-4__sec-27__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>decisions of the decision maker that have been confirmed or varied under subsection (4); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>decisions of the decision maker to revoke reviewable decisions.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-8">
+            <num>8</num>
+            <content>
+              <p>	(8)	If a request is made under subsection (1) in respect of a reviewable decision, <ref href="#sec-32">section 32</ref> of the <i>Administrative Review Tribunal Act 2024</i> applies as if the making of the request were the making of an application to the Administrative Review Tribunal for a review of that decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-9">
+            <num>9</num>
+            <content>
+              <p>	(9)	An order must not be made under subsection 32(2) of the <i>Administrative Review Tribunal Act 2024</i> in respect of a reviewable decision except by the Administrative Review Tribunal.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-27__subsec-10">
+            <num>10</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>decision maker</i></b>, in relation to a reviewable decision, means:</p>
+            </content>
+            <paragraph eId="part-4__sec-27__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>if the reviewable decision is a decision of APRA under <ref href="#sec-12">section 12</ref>—APRA; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>if the reviewable decision is a decision of <role refersTo="#minister">the Minister</role> under <ref href="#sec-22">section 22</ref> or subsection 26P(1)—<role refersTo="#minister">the Minister</role>.</p>
+              </content>
+              <content>
+                <p><b><i>levy paying entity</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>an entity that is a levy paying entity <ref href="#sec-7">as defined in section 7</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>a trustee of a fund <ref href="#sec-16">as defined in section 16</ref>.</p>
+              </content>
+              <content>
+                <p><b><i>reviewable decision</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-10__para-a">
+              <num>a</num>
+              <content>
+                <p>a decision of APRA under <ref href="#sec-12">section 12</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-27__subsec-10__para-b">
+              <num>b</num>
+              <content>
+                <p>a decision of <role refersTo="#minister">the Minister</role> under <ref href="#sec-22">section 22</ref> or subsection 26P(1).</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-28">
+          <num>28</num>
+          <heading>Statements to accompany notification of decisions</heading>
+          <subsection eId="part-4__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If notice in writing is given to a levy paying entity affected by a reviewable decision that the reviewable decision has been made, that notice must include words to the effect that:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the levy paying entity may seek a reconsideration of the reviewable decision by the decision maker in accordance with subsection 27(1) if the levy paying entity is dissatisfied with the decision; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the levy paying entity may, subject to the <i>Administrative Review Tribunal Act 2024</i>, apply to the Administrative Review Tribunal for review of a reviewable decision that is confirmed or varied under subsection 27(4), or for review of a decision to revoke a reviewable decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-4__sec-28__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the decision maker confirms or varies a reviewable decision under subsection 27(4), or makes a decision to revoke a reviewable decision under that subsection; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-28__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>gives the levy paying entity affected by the decision notice in writing of the confirmation or variation of the decision, or of the revocation of the decision;</p>
+              </content>
+              <content>
+                <p>that notice must include words to the effect that the levy paying entity may, subject to the <i>Administrative Review Tribunal Act 2024</i>, apply to the Administrative Review Tribunal for review of the reviewable decision as confirmed or varied, or for review of the decision to revoke the reviewable decision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A failure to comply with the requirements of subsections (1) and (2) in relation to a reviewable decision or a decision under subsection 27(4) does not affect the validity of that decision.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-28__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>decision maker</i></b>, in relation to a reviewable decision, has the same meaning as in <ref href="#sec-27">section 27</ref>.</p>
+              <p><b><i>levy paying entity</i></b> has the same meaning as in <ref href="#sec-27">section 27</ref>.</p>
+              <p><b><i>reviewable decision</i></b> has the same meaning as in <ref href="#sec-27">section 27</ref>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-29">
+          <num>29</num>
+          <heading>Regulations</heading>
+          <subsection eId="part-4__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing matters:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting subsection (1), the regulations may, in particular:</p>
+            </content>
+            <paragraph eId="part-4__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>provide for the manner of payment for levy, late payment penalty and other amounts payable under this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide for the refund (or other application) of overpayments.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>o = order(s)</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>Ord = Ordinance</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>orig = original</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>par = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>F = Federal Register of Legislation</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Financial Institutions Supervisory Levies Collection Act 1998</td>
+                  <td>53, 1998</td>
+                  <td>29 June 1998</td>
+                  <td>1 July 1998 (see Gazette 1998, No. S316)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Superannuation Legislation Amendment Act (No. 3) 1999</td>
+                  <td>121, 1999</td>
+                  <td>8 Oct 1999</td>
+                  <td>Schedule 2 (items 3, 4, 42(2)): Royal Assent</td>
+                  <td>Sch. 2 (item 42(2))</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Reform (Amendments and Transitional Provisions) Act (No. 1) 2000</td>
+                  <td>24, 2000</td>
+                  <td>3 Apr 2000</td>
+                  <td>Sch 9 (item 1) and Sch 12 (items 1–3, 10): 3 Apr 2000 (s 2(1), (12), (13))</td>
+                  <td>Sch. 12 (items 1–3, 10)</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector (Collection of Data—Consequential and Transitional Provisions) Act 2001</td>
+                  <td>121, 2001</td>
+                  <td>24 Sept 2001</td>
+                  <td>ss. 1–3: Royal Assent
+Remainder: 1 July 2002 (see s. 2(2) and Gazette 2002, No.  GN24)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>as amended by</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Legislation Amendment (Simplifying Regulation and Review) Act 2007</td>
+                  <td>154, 2007</td>
+                  <td>24 Sept 2007</td>
+                  <td>Schedule 3 (item 2): Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Legislation Amendment Act (No. 1) 2002</td>
+                  <td>37, 2002</td>
+                  <td>26 June 2002</td>
+                  <td>Schedule 2: 27 June 2002</td>
+                  <td>Sch. 2 (item 4)</td>
+                </tr>
+                <tr>
+                  <td>Financial Framework Legislation Amendment Act 2005</td>
+                  <td>8, 2005</td>
+                  <td>22 Feb 2005</td>
+                  <td>Schedule 1 (items 137, 138): Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Institutions Supervisory Levies Collection Amendment Act 2005</td>
+                  <td>14, 2005</td>
+                  <td>22 Feb 2005</td>
+                  <td>22 Feb 2005</td>
+                  <td>Sch 1 (item 2)</td>
+                </tr>
+                <tr>
+                  <td>Governance Review Implementation (Treasury Portfolio Agencies) Act 2007</td>
+                  <td>74, 2007</td>
+                  <td>5 June 2007</td>
+                  <td>Schedules 1 and 2: 1 July 2007
+Remainder: Royal Assent</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Legislation Amendment (Simplifying Regulation and Review) Act 2007</td>
+                  <td>154, 2007</td>
+                  <td>24 Sept 2007</td>
+                  <td>Sch 2 (items 1, 2, 21) and Sch 3 (item 1): 24 Sept 2007 (s 2(1) item 7)</td>
+                  <td>Sch 2 (item 21)</td>
+                </tr>
+                <tr>
+                  <td>First Home Saver Accounts (Further Provisions) Amendment Act 2008</td>
+                  <td>92, 2008</td>
+                  <td>30 Sept 2008</td>
+                  <td>Sch 3 (items 2–5): 1 July 2009 (s 2(1) item 3)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial System Legislation Amendment (Financial Claims Scheme and Other Measures) Act 2008</td>
+                  <td>105, 2008</td>
+                  <td>17 Oct 2008</td>
+                  <td>Sch 1 (items 55–57):  18 Oct 2008 (s 2(1) items 2, 3)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Legislation Amendment (Enhancing Supervision and Enforcement) Act 2009</td>
+                  <td>75, 2009</td>
+                  <td>27 Aug 2009</td>
+                  <td>Sch 1 (items 200, 201): 27 Feb 2010 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Financial Sector Legislation Amendment (Prudential Refinements and Other Measures) Act 2010</td>
+                  <td>82, 2010</td>
+                  <td>29 June 2010</td>
+                  <td>Sch 4 (item 3): 27 July 2010 (s 2(1) item 11)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Tribunals Amalgamation Act 2015</td>
+                  <td>60, 2015</td>
+                  <td>26 May 2015</td>
+                  <td>Sch 8 (item 21) and Sch 9: 1 July 2015 (s 2(1) items 18, 22)</td>
+                  <td>Sch 9</td>
+                </tr>
+                <tr>
+                  <td>Tax and Superannuation Laws Amendment (2015 Measures No. 1) Act 2015</td>
+                  <td>70, 2015</td>
+                  <td>25 June 2015</td>
+                  <td>Sch 1 (items 39–44, 195–205): 1 July 2015 (s 2(1) items 3, 6)</td>
+                  <td>Sch 1 (items 195–205)</td>
+                </tr>
+                <tr>
+                  <td>Private Health Insurance (Prudential Supervision) (Consequential Amendments and Transitional Provisions) Act 2015</td>
+                  <td>87, 2015</td>
+                  <td>26 June 2015</td>
+                  <td>Sch 1 (items 9–20): 1 July 2015 (s 2(1) item 2)
+Sch 2 (items 1–43): 27 June 2015 (s 2(1) item 9)</td>
+                  <td>Sch 2 (items 1–43)</td>
+                </tr>
+                <tr>
+                  <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 2) Act 2024</td>
+                  <td>39, 2024</td>
+                  <td>31 May 2024</td>
+                  <td>Sch 14 (items 11–16): 14 Oct 2024 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Administrative Review Tribunal (Miscellaneous Measures) Act 2025</td>
+                  <td>14, 2025</td>
+                  <td>20 Feb 2025</td>
+                  <td>Sch 2 (item 2): 21 Feb 2025 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 6</td>
+                  <td>am No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 2 heading</td>
+                  <td>rs. No. 105, 2008</td>
+                </tr>
+                <tr>
+                  <td>s. 7</td>
+                  <td>am. No. 121, 1999; No. 14, 2005; No. 92, 2008; No. 75, 2009; No 70, 2015; No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s. 8</td>
+                  <td>am. No. 92, 2008; No 70, 2015; No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s. 9</td>
+                  <td>am. No. 121, 2001 (as am. by No. 154, 2007); No 37, 2002; No. 154, 2007; No. 82, 2010; No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s. 10</td>
+                  <td>rs. No. 37, 2002</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s. 11</td>
+                  <td>am. No. 121, 1999; No. 8, 2005; No. 74, 2007</td>
+                </tr>
+                <tr>
+                  <td>s. 13</td>
+                  <td>am. No. 37, 2002; No. 74, 2007</td>
+                </tr>
+                <tr>
+                  <td>s 14</td>
+                  <td>am No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 3 heading</td>
+                  <td>rs. No. 105, 2008</td>
+                </tr>
+                <tr>
+                  <td>s 16</td>
+                  <td>am No 24, 2000; No 154, 2007</td>
+                </tr>
+                <tr>
+                  <td>s. 24</td>
+                  <td>rs. No. 8, 2005; No. 154, 2007</td>
+                </tr>
+                <tr>
+                  <td>Part 3A</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 3A</td>
+                  <td>ad. No. 105, 2008</td>
+                </tr>
+                <tr>
+                  <td>ss. 26A–26H</td>
+                  <td>ad. No. 105, 2008</td>
+                </tr>
+                <tr>
+                  <td>Part 3B</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 3B</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26J</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26K</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26L</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26M</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26N</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26P</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26Q</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 26R</td>
+                  <td>ad No 87, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 27</td>
+                  <td>am No 60, 2015; No 39, 2024; No 14, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 39, 2024</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,2936 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1984/139/!main"/>
+          <FRBRuri value="/akn/au/act/1984/139"/>
+          <FRBRdate date="1984-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="139"/>
+          <FRBRname value="biological-control-act-1984"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1984/139/eng@2024-10-14/!main"/>
+          <FRBRuri value="/akn/au/act/1984/139/eng@2024-10-14"/>
+          <FRBRdate date="2024-10-14" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1984/139/eng@2024-10-14/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1984/139/eng@2024-10-14/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1984-01-01" type="generation" eId="evt-creation" source="#biological-control-act-1984"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1985/65" date="1985-06-05"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1986/168"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1994/129"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1996/43"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1998/15"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1999/92" date="1999-07-16"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/2001/82" date="2001-07-11"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2001/115"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2008/73" date="2008-07-03"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2015/62" date="2015-06-16"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2015/145" date="2015-11-12"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2016/28" date="2016-03-23"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2016/61" date="2016-09-23"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2024/38" date="2024-05-31"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2024/54" date="2024-07-05"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-agent-application" href="/ontology/term/au/term-agent-application" showAs="agent application"/>
+        <TLCTerm eId="term-agent-organisms" href="/ontology/term/au/term-agent-organisms" showAs="agent organisms"/>
+        <TLCTerm eId="term-agent-recommendation" href="/ontology/term/au/term-agent-recommendation" showAs="agent recommendation"/>
+        <TLCTerm eId="term-australia" href="/ontology/term/au/term-australia" showAs="Australia"/>
+        <TLCTerm eId="term-authority" href="/ontology/term/au/term-authority" showAs="Authority"/>
+        <TLCTerm eId="term-person" href="/ontology/term/au/term-person" showAs="person"/>
+        <TLCTerm eId="term-prescribed-organisms" href="/ontology/term/au/term-prescribed-organisms" showAs="prescribed organisms"/>
+        <TLCTerm eId="term-relevant-state-law" href="/ontology/term/au/term-relevant-state-law" showAs="relevant State law"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-target-application" href="/ontology/term/au/term-target-application" showAs="target application"/>
+        <TLCTerm eId="term-target-organisms" href="/ontology/term/au/term-target-organisms" showAs="target organisms"/>
+        <TLCTerm eId="term-target-recommendation" href="/ontology/term/au/term-target-recommendation" showAs="target recommendation"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Biological Control Act 1984</p>
+      <p>No. 139, 1984</p>
+      <p><b>Compilation No.</b><b> </b><b>13</b></p>
+      <p><b>Compilation date:</b>	14 October 2024</p>
+      <p><b>Includes amendments:</b>	Act No. 38, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Biological Control Act 1984</i> that shows the text of the law as amended and in force on 14 October 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-I">Part I</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Interpretation	1</p>
+      <p>3	Biological control	4</p>
+      <p>4	Extension of Act to external Territories	4</p>
+      <p>5	Saving of other laws	5</p>
+      <p>6	Act binds the Crown	5</p>
+      <p>6A	Application of the <i>Criminal Code</i>	5</p>
+      <p>7	Act not limited to agricultural pests	5</p>
+      <p>8	Commonwealth Biological Control Authority	6</p>
+      <p>9	Relevant State laws	6</p>
+      <p>10	Delegation	6</p>
+      <p><ref href="#part-II">Part II</ref>—Target organisms	8</p>
+      <p>12	Target organisms	8</p>
+      <p>13	Target application	8</p>
+      <p>14	Withdrawal of target application	9</p>
+      <p>15	Referral of target application to Council	9</p>
+      <p>16	Notice of rejection of target application	9</p>
+      <p>17	Notice of proposed target organisms	10</p>
+      <p>18	Consideration of submissions relating to target organisms	11</p>
+      <p>19	Inquiries relating to target organisms	11</p>
+      <p>20	Declaration of target organisms	12</p>
+      <p><ref href="#part-III">Part III</ref>—Agent organisms	14</p>
+      <p>21	Agent organisms	14</p>
+      <p>22	Agent application	14</p>
+      <p>23	Withdrawal of agent application	15</p>
+      <p>24	Referral of agent application to Council	15</p>
+      <p>25	Notice of rejection of agent application	15</p>
+      <p>26	Notice of proposed agent organisms	16</p>
+      <p>27	Consideration of submissions relating to agent organisms	17</p>
+      <p>28	Inquiries relating to agent organisms	17</p>
+      <p>29	Declaration of agent organisms	19</p>
+      <p><ref href="#part-IV">Part IV</ref>—Special declarations of target organisms and agent organisms	21</p>
+      <p>30	Emergency declarations	21</p>
+      <p>31	Declarations of existing released organisms	22</p>
+      <p>32	Notice of proposed declaration under <ref href="#sec-31">section 31</ref>	23</p>
+      <p>33	Inquiries relating to declarations under <ref href="#sec-31">section 31</ref>	24</p>
+      <p>34	Declaration of organisms declared under relevant State law	25</p>
+      <p><ref href="#part-V">Part V</ref>—Release of agent organisms	26</p>
+      <p>35	Release of agent organisms	26</p>
+      <p>36	No legal proceedings to be instituted in respect of release of agent organisms	26</p>
+      <p><ref href="#part-VI">Part VI</ref>—Biological control under State laws	28</p>
+      <p>37	Legal proceedings not to be instituted	28</p>
+      <p><ref href="#part-VII">Part VII</ref>—Inquiries	30</p>
+      <p>38	Commissions of inquiry	30</p>
+      <p>39	Remuneration of Commissioners	31</p>
+      <p>40	Notice of inquiries	31</p>
+      <p>41	Procedure at inquiries	32</p>
+      <p>42	Power to summon witnesses	33</p>
+      <p>43	Failure of witness to attend	33</p>
+      <p>44	Power to administer oath or affirmation	33</p>
+      <p>45	Refusal to be sworn or to answer questions	33</p>
+      <p>46	Protection of Commissioners and witnesses	34</p>
+      <p>47	False or misleading evidence	34</p>
+      <p>48	Contempt of Commission	35</p>
+      <p>49	Powers of Commission in relation to documents produced	35</p>
+      <p>50	Allowances to witnesses	35</p>
+      <p>51	Witness not to be prejudiced	36</p>
+      <p><ref href="#part-VIII">Part VIII</ref>—Miscellaneous	38</p>
+      <p>52	Act not to render other controls illegal	38</p>
+      <p>53	Revocation of declarations	38</p>
+      <p>54	Declarations continue in operation	38</p>
+      <p>55	Service of documents on Authority	38</p>
+      <p>56	Application for review	39</p>
+      <p>57	Regulations	40</p>
+      <p>Endnotes	41</p>
+      <p>Endnote 1—About the endnotes	41</p>
+      <p>Endnote 2—Abbreviation key	43</p>
+      <p>Endnote 3—Legislation history	44</p>
+      <p>Endnote 4—Amendment history	47</p>
+      <p>An Act to make provision for the biological control of pests in the Australian Capital Territory, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-I">
+        <num>I</num>
+        <heading>Preliminary</heading>
+        <section eId="part-I__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Biological Control Act 1984</i>.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-2">
+          <num>2</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-I__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-agent-application">agent application</term> means <def>an application under <ref href="#sec-22">section 22</ref>.</def></p>
+              <p><term refersTo="#term-agent-organisms">agent organisms</term> means <def>organisms in respect of which there is in force a declaration by the Authority, under <ref href="#sec-29">section 29</ref>, 30, 31 or 34, that the organisms are agent organisms for the purposes of this Act.</def></p>
+              <p><term refersTo="#term-agent-recommendation">agent recommendation</term> means <def>a recommendation to the Authority by the Council that organisms of a particular kind should be declared to be agent organisms for the purposes of this Act.</def></p>
+              <p><term refersTo="#term-australia">Australia</term> includes <def>the external Territories (if any) in respect of which a declaration under subsection 4(1) is in force.</def></p>
+              <p><term refersTo="#term-authority">Authority</term> means <def>the Commonwealth Biological Control Authority established by <ref href="#sec-8">section 8</ref>.</def></p>
+              <p><b><i>control</i></b>, in relation to organisms, includes:</p>
+            </content>
+            <paragraph eId="part-I__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>reduce the number of those organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>prevent an increase in the number of those organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>reduce the activity or appetite of some or all of those organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>modify the behaviour or characteristics of some or all of those organisms.</p>
+              </content>
+              <content>
+                <p><b><i>Council</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if there is a body (however described) that consists of <role refersTo="#minister">the Minister</role> of the Commonwealth, <role refersTo="#minister">the Minister</role> of each State and Territory and <role refersTo="#minister">the Minister</role> of New Zealand who is responsible, or principally responsible, for matters relating to agriculture—that body; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—a body prescribed by the regulations for the purposes of this paragraph.</p>
+              </content>
+              <content>
+                <p><b><i>kind</i></b>, in relation to live organisms, viruses or sub-viral agents, means species, sub-species or variety.</p>
+                <p><b><i>organism</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an organism (whether alive or dead and whether or not indigenous to Australia) other than a human; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a part of, or matter discharged from, an organism within the meaning of paragraph (a); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a virus or a sub-viral agent.</p>
+              </content>
+              <content>
+                <p><b><i>organization</i></b> includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a body corporate;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an association or other body of persons; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an association that consists of 2 or more organizations within the meaning of the preceding paragraphs.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-person">person</term> includes <def>an organization.</def></p>
+                <p><term refersTo="#term-prescribed-organisms">prescribed organisms</term> means <def>organisms that are: live organisms; or viruses or sub-viral agents; but does not include live vaccines or resistant cultivars.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>live organisms; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>viruses or sub-viral agents;</p>
+              </content>
+              <content>
+                <p>but does not include live vaccines or resistant cultivars.</p>
+                <p><term refersTo="#term-relevant-state-law">relevant State law</term> means <def>a law of a State declared by the Authority under <ref href="#sec-9">section 9</ref> to be a relevant State law for the purposes of this Act.</def></p>
+                <p><term refersTo="#term-state">State</term> includes <def>the Northern Territory.</def></p>
+                <p><term refersTo="#term-target-application">target application</term> means <def>an application under <ref href="#sec-13">section 13</ref>.</def></p>
+                <p><term refersTo="#term-target-organisms">target organisms</term> means <def>organisms in respect of which there is in force a declaration by the Authority, under <ref href="#sec-20">section 20</ref>, 30, 31 or 34, that the organisms are target organisms for the purposes of this Act.</def></p>
+                <p><term refersTo="#term-target-recommendation">target recommendation</term> means <def>a recommendation to the Authority by the Council that organisms of a particular kind should be declared to be target organisms for the purposes of this Act.</def></p>
+                <p><b><i>Territory</i></b> does not include the Northern Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of this Act, the Jervis Bay Territory shall be taken to be part of the Australian Capital Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of this Act, organisms of a particular kind shall be taken to cause harm if the control of those organisms would be for the public benefit.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of this Act, organisms of a particular kind shall be taken to cause harm in the Australian Capital Territory if they cause harm in a part or parts only of that Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-4A">
+            <num>4A</num>
+            <content>
+              <p>For the purposes of this Act:</p>
+            </content>
+            <paragraph eId="part-I__sec-2__subsec-4A__para-a">
+              <num>a</num>
+              <content>
+                <p>a recommendation or decision of, or an approval by, the Council, has effect whether or not it was made while the Council was in session;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-4A__para-b">
+              <num>b</num>
+              <content>
+                <p>a recommendation of the Council shall be taken to be unanimous if, and only if, the recommendation is a recommendation of all the members of the Council;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-4A__para-c">
+              <num>c</num>
+              <content>
+                <p>an approval by the Council shall be taken to be unanimous if, and only if, the approval is an approval by all the members of the Council; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-4A__para-d">
+              <num>d</num>
+              <content>
+                <p>where a person is authorised to act as a member of the Council in place of another person, then while the first-mentioned person is so acting, the first-mentioned person is to be taken to be a member of the Council and the other person is not to be taken to be a member of the Council.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A reference in this Act to a recommendation by the Council that organisms of a particular kind should be declared to be agent organisms for the purposes of this Act includes a reference to a recommendation that organisms of a particular kind should be so declared if organisms to which a target recommendation applies are declared to be target organisms for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-2__subsec-6">
+            <num>6</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <paragraph eId="part-I__sec-2__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>a reference to a Minister of a State shall, except in relation to the Northern Territory, be read as a reference to a Minister of the Crown of the State; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-2__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a reference to a Minister of a State shall, in relation to the Northern Territory, be read as a reference to a person holding an office referred to in <ref href="#sec-34">section 34</ref> of the <i>Northern Territory (Self</i><i>-</i><i>Government) Act 1978</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-3">
+          <num>3</num>
+          <heading>Biological control</heading>
+          <content>
+            <p>For the purposes of this Act, organisms of a particular kind shall be taken to be controllable by biological means if, and only if, those organisms can be controlled by the release of prescribed organisms of another kind.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-4">
+          <num>4</num>
+          <heading>Extension of Act to external Territories</heading>
+          <subsection eId="part-I__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Minister may, by notice published in the <i>Gazette</i>, declare that this Act extends to:</p>
+            </content>
+            <paragraph eId="part-I__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Territory of Cocos (Keeling) Islands;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Territory of Christmas Island;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Coral Sea Islands Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the Territory of Ashmore and Cartier Islands.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a declaration under subsection (1) is in force in relation to a Territory, this Act has effect, in relation to that Territory, as if the references in this Act, other than in this section, to the Australian Capital Territory were references to that Territory.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-5">
+          <num>5</num>
+          <heading>Saving of other laws</heading>
+          <subsection eId="part-I__sec-5__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act shall be read and construed as being in addition to, and not in derogation of or in substitution for:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any other law of the Commonwealth, whether passed or made before or after the commencement of this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if this Act extends to an external Territory, any law of that Territory, whether passed or made before or after the commencement of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-5__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), this Act shall not be read or construed as authorizing or permitting the doing of any act in contravention of:</p>
+            </content>
+            <paragraph eId="part-I__sec-5__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>Biosecurity Act 2015</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-5__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<ref href="#part-13">Part 13</ref>A of the <i>Environment Protection and Biodiversity Conservation Act 1999</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-6">
+          <num>6</num>
+          <heading>Act binds the Crown</heading>
+          <subsection eId="part-I__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in each of its capacities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act does not make the Crown liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-6A">
+          <num>6A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-I__sec-7">
+          <num>7</num>
+          <heading>Act not limited to agricultural pests</heading>
+          <content>
+            <p>The fact that certain powers of <role refersTo="#authority">the Authority</role> under this Act cannot be exercised except on the recommendation of the Council does not imply that the only kinds of organisms that may be regarded as causing harm for the purposes of this Act are kinds that are harmful by reason of their effect on agriculture.</p>
+          </content>
+        </section>
+        <section eId="part-I__sec-8">
+          <num>8</num>
+          <heading>Commonwealth Biological Control Authority</heading>
+          <subsection eId="part-I__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purposes of this Act, a Commonwealth Biological Control Authority is established by this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall be <role refersTo="#minister">the Minister</role> who is for the time being a member of the Council.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-9">
+          <num>9</num>
+          <heading>Relevant State laws</heading>
+          <subsection eId="part-I__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where a law of a State:</p>
+            </content>
+            <paragraph eId="part-I__sec-9__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>provides for the control by biological means of organisms causing harm in the State; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-9__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>establishes an authority having similar powers and functions to those of <role refersTo="#authority">the Authority</role>;</p>
+              </content>
+              <content>
+                <p>the Authority may, by notice published in the <i>Gazette</i>, declare that law to be a relevant State law for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A declaration shall not be made under subsection (1) in respect of a law of a State unless <role refersTo="#minister">the Minister</role> of the State administering that law consents in writing to the declaration being made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-9__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A declaration made under subsection (1) shall cease to have effect in respect of a law if that law ceases to be a law described in paragraphs (1)(a) and (b).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-I__sec-10">
+          <num>10</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-I__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> may, either generally or as otherwise provided by the instrument of delegation, by writing signed by <role refersTo="#authority">the Authority</role>, delegate to an officer of the Department any of the powers of <role refersTo="#authority">the Authority</role> under this Act, other than:</p>
+            </content>
+            <paragraph eId="part-I__sec-10__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the powers of <role refersTo="#authority">the Authority</role> under <ref href="#sec-9">section 9</ref>, 19, 20, 28, 29, 30, 31, 33, 34, 38 or 53; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-I__sec-10__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>this power of delegation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-I__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A power so delegated, when exercised by the delegate, shall, for the purposes of this Act, be deemed to have been exercised by <role refersTo="#authority">the Authority</role>.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-I__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A delegation under this section does not prevent the exercise of a power by <role refersTo="#authority">the Authority</role>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-II">
+        <num>II</num>
+        <heading>Target organisms</heading>
+        <section eId="part-II__sec-12">
+          <num>12</num>
+          <heading>Target organisms</heading>
+          <subsection eId="part-II__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to and in accordance with this Part, organisms of a particular kind may be declared to be target organisms for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Action for the declaration of target organisms in accordance with this Part may be commenced by:</p>
+            </content>
+            <paragraph eId="part-II__sec-12__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a unanimous recommendation to <role refersTo="#authority">the Authority</role> by the Council; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-12__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an application under <ref href="#sec-13">section 13</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-13">
+          <num>13</num>
+          <heading>Target application</heading>
+          <subsection eId="part-II__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where a person considers that organisms of a particular kind are causing harm in the Australian Capital Territory and are, or are likely to be, controllable by biological means, the person may make an application to <role refersTo="#authority">the Authority</role> for a declaration that organisms of that kind are target organisms for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A target application shall be in writing signed:</p>
+            </content>
+            <paragraph eId="part-II__sec-13__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of an application by a natural person—by the applicant; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-13__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—by a natural person authorized by the applicant to do so.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A target application in relation to organisms of a particular kind shall set out:</p>
+            </content>
+            <paragraph eId="part-II__sec-13__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>particulars identifying the organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-13__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>particulars of the reasons why the organisms are considered to be causing harm in the Australian Capital Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-13__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>reasons why the applicant considers that the organisms are, or are likely to be, controllable by biological means; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-13__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>such other particulars (if any) as are prescribed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-14">
+          <num>14</num>
+          <heading>Withdrawal of target application</heading>
+          <subsection eId="part-II__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who has made a target application may withdraw that application at any time before the application is referred to the Council under subsection 15(1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The withdrawal of a target application is to be effected by the making of a request for withdrawal to <role refersTo="#authority">the Authority</role> in writing signed:</p>
+            </content>
+            <paragraph eId="part-II__sec-14__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of an application by a natural person—by the person who signed the application or by the legal personal representative of that person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-14__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—by the person who signed the application or by a person authorized by the applicant to sign the request.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-15">
+          <num>15</num>
+          <heading>Referral of target application to Council</heading>
+          <subsection eId="part-II__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), where a target application is received by <role refersTo="#authority">the Authority</role>, <role refersTo="#authority">the Authority</role> shall refer the application to the Council for its consideration.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> is not required to refer to the Council a target application in respect of organisms of a particular kind if:</p>
+            </content>
+            <paragraph eId="part-II__sec-15__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>other action to have them declared to be target organisms is being, or has been, taken under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-15__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>action to have them declared to be organisms that may be controlled by biological means is being, or has been, taken under a relevant State law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-16">
+          <num>16</num>
+          <heading>Notice of rejection of target application</heading>
+          <subsection eId="part-II__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the Council, after considering a target application referred to it by <role refersTo="#authority">the Authority</role>, informs <role refersTo="#authority">the Authority</role> that it does not recommend that the organisms to which the application relates should be target organisms, <role refersTo="#authority">the Authority</role> shall cause to be given, in such manner as <role refersTo="#authority">the Authority</role> considers appropriate, to the person who made the target application and to the persons (if any) who made a later target application in respect of those organisms notice in writing stating that the Council does not recommend that those organisms should be target organisms.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) shall:</p>
+            </content>
+            <paragraph eId="part-II__sec-16__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if reasons have been given by the Council for not recommending that organisms to which the notice relates should be target organisms—set out those reasons; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-16__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if there are circumstances in which, in the opinion of <role refersTo="#authority">the Authority</role>, a target application in relation to those organisms might result in a recommendation by the Council that those organisms should be target organisms—specify those circumstances.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-17">
+          <num>17</num>
+          <heading>Notice of proposed target organisms</heading>
+          <subsection eId="part-II__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where the Council has unanimously recommended to the Authority that organisms of a particular kind should be target organisms, the Authority shall publish in the <i>Gazette</i> and in such newspapers or journals as the Authority considers appropriate a notice that the Authority is contemplating declaring those organisms to be target organisms.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), a notice under that subsection shall be published in each State and the Australian Capital Territory by being published in at least one newspaper circulating generally in that State or Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A notice under subsection (1) in relation to organisms of a particular kind shall:</p>
+            </content>
+            <paragraph eId="part-II__sec-17__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>set out particulars identifying the organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-17__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>set out brief particulars of the reasons why the organisms are believed to be causing harm in the Australian Capital Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-17__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>set out brief particulars of the benefits (if any) resulting from the absence of biological control of the population of the organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-17__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>state that the Council has unanimously recommended that the organisms should be declared to be target organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-17__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>where the recommendation of the Council followed a target application in relation to the organisms—inform the public that copies of the target application can be perused at a place specified in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-17__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	invite any persons who object to, or support, the organisms being declared to be target organisms to submit written particulars of the grounds for that objection or support, as the case may be, to the Authority within the period of 6 weeks after the date of the publication of the notice in the <i>Gazette</i>, or within such further period as the Authority (either before or after the expiration of that period) allows.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> publishes a notice under subsection (1) in relation to a target application, <role refersTo="#authority">the Authority</role> shall cause copies of the application to be available for perusal at the place specified in the notice in accordance with paragraph (3)(e).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-18">
+          <num>18</num>
+          <heading>Consideration of submissions relating to target organisms</heading>
+          <content>
+            <p><role refersTo="#authority">The Authority</role> shall consider any submissions in response to an invitation referred to in paragraph 17(3)(f).</p>
+          </content>
+        </section>
+        <section eId="part-II__sec-19">
+          <num>19</num>
+          <heading>Inquiries relating to target organisms</heading>
+          <subsection eId="part-II__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role>, after:</p>
+            </content>
+            <paragraph eId="part-II__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>complying with sections 17 and 18 in respect of a target recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>consulting the Council regarding the appropriateness of action under this section in respect of that recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-19__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>considering the nature of, the proceedings in, and the findings of, any inquiry that <role refersTo="#authority">the Authority</role> considers relevant to the recommendation (which may be an inquiry conducted on behalf of a State); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-19__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>considering any reports relating to the recommendation made by any person or authority competent to do so that <role refersTo="#authority">the Authority</role> considers relevant;</p>
+              </content>
+              <content>
+                <p>considers that there is evidence that a person or the environment would be adversely affected by the control of organisms of the kind to which the recommendation relates but an adequate investigation or inquiry into the effect of such control has not been held, <role refersTo="#authority">the Authority</role> may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-19__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>direct that an inquiry under <ref href="#part-VII">Part VII</ref> be conducted in respect of the recommendation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-19__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	arrange for the Minister who administers the <i>Productivity Commission Act 1998</i> to refer the recommendation to the Productivity Commission for inquiry and report.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-19__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>Action shall not be taken under paragraph (1)(e) or (f) in respect of a target recommendation unless the Council, upon being consulted in accordance with paragraph (1)(b), has unanimously recommended that the action be taken.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-II__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> takes action under paragraph (1)(e) or (f) for an inquiry in relation to a target recommendation, <role refersTo="#authority">the Authority</role> shall not take any further action under this Act in relation to that recommendation unless and until <role refersTo="#authority">the Authority</role> has considered the report made as the result of that inquiry.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-II__sec-20">
+          <num>20</num>
+          <heading>Declaration of target organisms</heading>
+          <subsection eId="part-II__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role>, after:</p>
+            </content>
+            <paragraph eId="part-II__sec-20__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>complying with the preceding provisions of this Part in relation to a target recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>considering all reports and other matters relating to that recommendation that <role refersTo="#authority">the Authority</role> considers it appropriate to consider; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-ba">
+              <num>ba</num>
+              <content>
+                <p>consulting the Council regarding the appropriateness of action under this section in respect of that recommendation;</p>
+              </content>
+              <content>
+                <p>is satisfied:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>that organisms of the kind to which the recommendation relates are causing harm in the Australian Capital Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>that organisms of that kind are, or that there is a probability that organisms of that kind are likely to be, controllable by biological means; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the control throughout Australia of organisms of that kind would not cause any significant harm to any person or to the environment; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-II__sec-20__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>any harm caused to persons or to the environment by the control throughout Australia of organisms of that kind would be significantly less than the harm caused, or likely to be caused, by failure to control organisms of that kind throughout Australia;</p>
+              </content>
+              <content>
+                <p>the Authority, subject to subsection (2), shall, by notice published in the <i>Gazette</i>, declare organisms of that kind to be target organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-II__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall not make a declaration under subsection (1) in respect of a target recommendation unless the Council, upon being consulted in accordance with paragraph (1)(ba), has unanimously recommended that the declaration be made.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-III">
+        <num>III</num>
+        <heading>Agent organisms</heading>
+        <section eId="part-III__sec-21">
+          <num>21</num>
+          <heading>Agent organisms</heading>
+          <subsection eId="part-III__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to and in accordance with this Part, prescribed organisms of a particular kind may be declared to be agent organisms for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Action for the declaration of agent organisms in accordance with this Part may be commenced by:</p>
+            </content>
+            <paragraph eId="part-III__sec-21__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a unanimous recommendation made to <role refersTo="#authority">the Authority</role> by the Council; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-21__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an application under <ref href="#sec-22">section 22</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-22">
+          <num>22</num>
+          <heading>Agent application</heading>
+          <subsection eId="part-III__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where a person considers that the release of prescribed organisms of a particular kind would result in the control of:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>target organisms of a particular kind or kinds; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>organisms to which a target recommendation applies or target recommendations apply;</p>
+              </content>
+              <content>
+                <p>(whether or not the organisms referred to in paragraph (a) or (b) can be controlled by existing agent organisms) the person may make an application to <role refersTo="#authority">the Authority</role> for a declaration that the first-mentioned organisms are agent organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An agent application shall be in writing signed:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of an application by a natural person—by the applicant; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—by a natural person authorized by the applicant to do so.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An agent application in relation to organisms of a particular kind shall set out:</p>
+            </content>
+            <paragraph eId="part-III__sec-22__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>particulars identifying the organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>particulars of the possible ways in which the applicant considers that the release of the organisms could control the relevant population of target organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-22__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>such other particulars (if any) as are prescribed.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-23">
+          <num>23</num>
+          <heading>Withdrawal of agent application</heading>
+          <subsection eId="part-III__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who has made an agent application may withdraw that application at any time before the application is referred to the Council under subsection 24(1).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The withdrawal of an agent application is to be effected by the making of a request for withdrawal to <role refersTo="#authority">the Authority</role> in writing signed:</p>
+            </content>
+            <paragraph eId="part-III__sec-23__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of an application by a natural person—by the person who signed the application or by the legal personal representative of that person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-23__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—by the person who signed the application or by a person authorized by the applicant to sign the request.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-24">
+          <num>24</num>
+          <heading>Referral of agent application to Council</heading>
+          <subsection eId="part-III__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), where an agent application is received by <role refersTo="#authority">the Authority</role>, <role refersTo="#authority">the Authority</role> shall refer the application to the Council for its consideration.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> is not required to refer to the Council an agent application in respect of organisms of a particular kind if:</p>
+            </content>
+            <paragraph eId="part-III__sec-24__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>other action to have them declared to be agent organisms is being, or has been, taken under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-24__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>action to have them declared to be organisms that may be released to control the population of other organisms is being, or has been, taken under a relevant State law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-25">
+          <num>25</num>
+          <heading>Notice of rejection of agent application</heading>
+          <subsection eId="part-III__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the Council, after considering an agent application referred to it by <role refersTo="#authority">the Authority</role>, informs <role refersTo="#authority">the Authority</role> that it does not recommend that the organisms to which the application relates should be agent organisms, <role refersTo="#authority">the Authority</role> shall cause to be given, in such manner as <role refersTo="#authority">the Authority</role> considers appropriate, to the person who made the agent application and to the persons (if any) who made a later agent application in respect of those organisms notice in writing that the Council does not recommend that those organisms should be agent organisms.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) shall:</p>
+            </content>
+            <paragraph eId="part-III__sec-25__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if reasons have been given by the Council for not recommending that organisms to which the notice relates should be agent organisms—set out those reasons; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-25__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if there are circumstances in which, in the opinion of <role refersTo="#authority">the Authority</role>, an agent application in relation to those organisms might result in a recommendation by the Council that those organisms should be agent organisms—specify those circumstances.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-26">
+          <num>26</num>
+          <heading>Notice of proposed agent organisms</heading>
+          <subsection eId="part-III__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where the Council has unanimously recommended to the Authority that prescribed organisms of a particular kind should be agent organisms, the Authority shall publish in the <i>Gazette</i>, and may publish in such newspapers or journals as the Authority thinks appropriate, a notice that the Authority is contemplating declaring those organisms to be agent organisms.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	A notice under subsection (1) in relation to organisms of a particular kind (in this subsection referred to as the <b><i>relevant organisms</i></b>) shall:</p>
+            </content>
+            <paragraph eId="part-III__sec-26__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>set out particulars identifying the relevant organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-26__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>specify the organisms which it is intended to control by the release of the relevant organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-26__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>set out brief particulars of the manner in which the relevant organisms would control the organisms specified in the notice in accordance with paragraph (b);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-26__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>state that the Council has unanimously recommended that the relevant organisms should be declared to be agent organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-26__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>where the recommendation of the Council followed an agent application in relation to the organisms—inform the public that copies of the agent application can be perused at a place specified in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-26__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	invite any persons who object to, or support, the relevant organisms being declared to be agent organisms to submit written particulars of the grounds for that objection or support, as the case may be, to the Authority within the period of 6 weeks after the date of the publication of the notice in the <i>Gazette</i>, or within such further period as the Authority (either before or after the expiration of that period) allows.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-26__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> publishes a notice under subsection (1) in relation to an agent application, <role refersTo="#authority">the Authority</role> shall cause copies of the application to be available for perusal at the place specified in the notice in accordance with paragraph (2)(e).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-26__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where the Council has recommended to <role refersTo="#authority">the Authority</role> that 2 or more kinds of organisms should be agent organisms for the purpose of the control of the same population of particular organisms, a notice under subsection (1) relating to one of those kinds may be combined with a notice under that subsection relating to the other kind or kinds.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-27">
+          <num>27</num>
+          <heading>Consideration of submissions relating to agent organisms</heading>
+          <content>
+            <p><role refersTo="#authority">The Authority</role> shall consider any submissions in response to an invitation referred to in paragraph 26(2)(f).</p>
+          </content>
+        </section>
+        <section eId="part-III__sec-28">
+          <num>28</num>
+          <heading>Inquiries relating to agent organisms</heading>
+          <subsection eId="part-III__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role>, after:</p>
+            </content>
+            <paragraph eId="part-III__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>complying with sections 26 and 27 in respect of an agent recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>consulting the Council regarding the appropriateness of action under this section in respect of that recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>considering the nature of, the proceedings in, and the findings of, any inquiry that <role refersTo="#authority">the Authority</role> considers relevant to the recommendation (which may be an inquiry under <ref href="#part-VII">Part VII</ref> in respect of a target recommendation or an inquiry conducted on behalf of a State); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>considering any reports relating to the recommendation made by any person or authority competent to do so that <role refersTo="#authority">the Authority</role> considers relevant;</p>
+              </content>
+              <content>
+                <p>considers that there is evidence that a person or the environment would be adversely affected by the release of organisms of the kind to which the recommendation relates but an adequate investigation or inquiry into the effect of such a release has not been held, <role refersTo="#authority">the Authority</role> may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>direct that an inquiry under <ref href="#part-VII">Part VII</ref> be conducted in respect of the recommendation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-28__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>	(f)	arrange for the Minister who administers the <i>Industries Assistance Commission Act 1973</i> to refer the recommendation to the Industries Assistance Commission for inquiry and report.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-28__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>Action shall not be taken under paragraph (1)(e) or (f) in respect of an agent recommendation unless the Council, upon being consulted in accordance with paragraph (1)(b), has unanimously recommended that the action be taken.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An inquiry by virtue of paragraph (1)(e) or (f) in respect of an agent recommendation that recommends that organisms of a particular kind should be declared to be agent organisms if organisms to which a target recommendation applies are declared to be target organisms and an inquiry by virtue of paragraph 19(1)(e) or (f), as the case may be, in respect of that target recommendation may be conducted as if they were one inquiry.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-28__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> takes action under paragraph (1)(e) or (f) for an inquiry in relation to an agent recommendation, <role refersTo="#authority">the Authority</role> shall not take any further action under this Act in relation to that recommendation unless and until <role refersTo="#authority">the Authority</role> has considered the report made as the result of that inquiry.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-III__sec-29">
+          <num>29</num>
+          <heading>Declaration of agent organisms</heading>
+          <subsection eId="part-III__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role>, after:</p>
+            </content>
+            <paragraph eId="part-III__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>complying with the preceding provisions of this Part in relation to an agent recommendation;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>considering all reports and other matters relating to that recommendation that <role refersTo="#authority">the Authority</role> considers it appropriate to consider; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-ba">
+              <num>ba</num>
+              <content>
+                <p>consulting the Council regarding the appropriateness of action under this section in respect of that recommendation;</p>
+              </content>
+              <content>
+                <p>is satisfied:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	that the release of organisms of the kind to which the recommendation relates (in this subsection referred to as the <b><i>relevant organisms</i></b>) could result in the control of target organisms of a particular kind or kinds in the Australian Capital Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>the release of the relevant organisms would not cause any significant harm to any person or to the environment, other than the harm (if any) resulting from the control throughout Australia of target organisms of that kind or those kinds; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>any harm caused to persons or to the environment by the release of the relevant organisms, other than the harm (if any) resulting from the control throughout Australia of target organisms of that kind or those kinds, would be significantly less than:</p>
+              </content>
+              <content>
+                <p>(A)	the harm caused, or likely to be caused, by failure to control target organisms of that kind or those kinds throughout Australia; and</p>
+                <p>(B)	where target organisms of that kind or those kinds can be controlled by the release of other organisms or otherwise than by biological means—the harm (if any) caused, or likely to be caused, by controlling target organisms of that kind or those kinds throughout Australia by the release of those other organisms or by those other means;</p>
+                <p>the Authority, subject to subsection (1A), shall, by notice published in the <i>Gazette</i>, declare the relevant organisms to be agent organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-III__sec-29__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall not make a declaration under subsection (1) in respect of an agent recommendation unless the Council, upon being consulted in accordance with paragraph (1)(ba), has unanimously recommended that the declaration be made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-III__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) declaring organisms of a particular kind to be agent organisms may set out conditions under which those organisms may be released, which conditions may be or include:</p>
+            </content>
+            <paragraph eId="part-III__sec-29__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>conditions specifying the persons who may release those organisms; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-III__sec-29__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>conditions specifying the circumstances in which those organisms may be released.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-IV">
+        <num>IV</num>
+        <heading>Special declarations of target organisms and agent organisms</heading>
+        <section eId="part-IV__sec-30">
+          <num>30</num>
+          <heading>Emergency declarations</heading>
+          <subsection eId="part-IV__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If <role refersTo="#authority">the Authority</role> is satisfied:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that an emergency exists because organisms of a particular kind (whether or not they are target organisms):</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>are having, or are likely to have, a serious effect on the health of humans, animals or plants in the Australian Capital Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>are causing, or are likely to cause, harm in that Territory so as to result in significant damage to the economy; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>are causing, or are likely to cause, significant damage to the environment in that Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the release of prescribed organisms that are not agent organisms would control the first-mentioned organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the release of the organisms of the second-mentioned kind would not have any significant adverse effects;</p>
+              </content>
+              <content>
+                <p>the Authority, subject to subsection (1A), shall, by notice published in the <i>Gazette</i>, declare:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>where the organisms of the first-mentioned kind are not target organisms, the organisms of the first-mentioned kind to be target organisms for the purposes of this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>organisms of the second-mentioned kind to be agent organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall not make a declaration under subsection (1) in respect of an organism unless:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> has first consulted the Council regarding the appropriateness of action under this section in respect of that organism; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>the Council has unanimously recommended that the declaration be made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) declaring organisms of a particular kind to be agent organisms may set out particulars of the conditions under which those organisms may be released, which conditions may be or include:</p>
+            </content>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>conditions specifying the persons who may release those organisms; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>conditions specifying the circumstances in which those organisms may be released.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-31">
+          <num>31</num>
+          <heading>Declarations of existing released organisms</heading>
+          <subsection eId="part-IV__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If <role refersTo="#authority">the Authority</role> is satisfied that:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>before the commencement of this Act, prescribed organisms of a particular kind were released in the Australian Capital Territory for the purpose of the control, by biological means, of organisms of another kind in that Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if this Act had been in force before the release of the first-mentioned organisms, it is probable that action would have been taken under this Act that would have resulted in the organisms of the second-mentioned kind being declared to be target organisms and the organisms of the first-mentioned kind being declared to be agent organisms;</p>
+              </content>
+              <content>
+                <p>the Authority, subject to subsection (1A), may, by notice published in the <i>Gazette</i>, declare:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>organisms of the second-mentioned kind to be target organisms for the purposes of this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>organisms of the first-mentioned kind to be agent organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall not make a declaration under subsection (1) in respect of an organism unless:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> has first consulted the Council regarding the appropriateness of action under this section in respect of that organism; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>the Council has unanimously recommended that the declaration be made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) declaring organisms of a particular kind to be agent organisms may set out conditions under which the organisms may be released, which conditions may be or include:</p>
+            </content>
+            <paragraph eId="part-IV__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>conditions specifying the persons who may release those organisms; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>conditions specifying the circumstances in which those organisms may be released.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-32">
+          <num>32</num>
+          <heading>Notice of proposed declaration under section 31</heading>
+          <subsection eId="part-IV__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where the Authority is contemplating making a declaration under <ref href="#sec-31">section 31</ref>, the Authority, subject to subsection (1A), may publish in the <i>Gazette</i> and in such newspapers or journals as the Authority considers appropriate a notice that the Authority is contemplating making that declaration.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-32__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p><role refersTo="#authority">The Authority</role> shall not publish a notice under subsection (1) in respect of an organism unless:</p>
+            </content>
+            <paragraph eId="part-IV__sec-32__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> has first consulted the Council regarding the appropriateness of action under this section in respect of that organism; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-32__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>the Council has unanimously recommended that the notice be published.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice under subsection (1) shall:</p>
+            </content>
+            <paragraph eId="part-IV__sec-32__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>set out particulars identifying the organisms that <role refersTo="#authority">the Authority</role> is contemplating declaring to be target organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-32__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>set out particulars identifying the organisms that <role refersTo="#authority">the Authority</role> is contemplating declaring to be agent organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-32__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>identify the occasions known to <role refersTo="#authority">the Authority</role> on which the organisms referred to in paragraph (b) were released; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-32__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	invite any persons who object to, or support, the declaration being made to submit written particulars of the grounds for that objection or support, as the case may be, to the Authority within 6 weeks after the date of the publication of the notice in the <i>Gazette</i>, or within such further period as the Authority (either before or after the expiration of that period) allows.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> publishes a notice under subsection (1) in relation to a contemplated declaration, <role refersTo="#authority">the Authority</role> shall not make that declaration unless and until <role refersTo="#authority">the Authority</role> has considered any submissions in response to an invitation referred to in paragraph (2)(d) in relation to the declaration.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-33">
+          <num>33</num>
+          <heading>Inquiries relating to declarations under section 31</heading>
+          <subsection eId="part-IV__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role>:</p>
+            </content>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>is contemplating making a declaration under <ref href="#sec-31">section 31</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>after:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>consulting the Council regarding the appropriateness of action under this section in respect of the contemplated declaration;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>considering the nature of, the proceedings in, and the findings of, any inquiry that <role refersTo="#authority">the Authority</role> considers relevant (which may be an inquiry conducted on behalf of a State); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>considering any reports made by any person or authority competent to do so that <role refersTo="#authority">the Authority</role> considers relevant;</p>
+              </content>
+              <content>
+                <p>considers that there is evidence that a person or the environment would be adversely affected by the release of organisms of the kind to which the declaration would relate but an adequate investigation or inquiry into the effect of such a release has not been held;</p>
+                <p><role refersTo="#authority">the Authority</role> may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>direct that an inquiry under <ref href="#part-VII">Part VII</ref> be conducted in respect of the contemplated declaration; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-33__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	arrange for the Minister who administers the <i>Industries Assistance Commission Act 1973</i> to refer the contemplated declaration to the Industries Assistance Commission for inquiry and report.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-33__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>Action shall not be taken under paragraph (1)(c) or (d) in respect of a contemplated declaration unless the Council, upon being consulted in accordance with subparagraph (1)(b)(i), has unanimously recommended that the action be taken.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where <role refersTo="#authority">the Authority</role> takes action under paragraph (1)(c) or (d) for an inquiry in relation to a contemplated declaration, <role refersTo="#authority">the Authority</role> shall not make that declaration unless and until <role refersTo="#authority">the Authority</role> has considered the report made as the result of the inquiry.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-IV__sec-34">
+          <num>34</num>
+          <heading>Declaration of organisms declared under relevant State law</heading>
+          <subsection eId="part-IV__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where organisms of a particular kind are organisms that for the purposes of a relevant State law may be controlled by biological means, the Authority may, by notice published in the <i>Gazette</i>, declare those organisms to be target organisms for the purposes of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-IV__sec-34__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>prescribed organisms of a particular kind are organisms that for the purposes of a relevant State law may be released to control other organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-34__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>those other organisms are target organisms;</p>
+              </content>
+              <content>
+                <p>the Authority shall, by notice published in the <i>Gazette</i>, declare those first-mentioned organisms to be agent organisms for the purposes of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-IV__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A notice under subsection (2) declaring organisms of a particular kind to be agent organisms may set out conditions under which the organisms may be released, which conditions may be or include:</p>
+            </content>
+            <paragraph eId="part-IV__sec-34__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>conditions specifying the persons who may release those organisms; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-IV__sec-34__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>conditions specifying the circumstances in which those organisms may be released.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-V">
+        <num>V</num>
+        <heading>Release of agent organisms</heading>
+        <section eId="part-V__sec-35">
+          <num>35</num>
+          <heading>Release of agent organisms</heading>
+          <subsection eId="part-V__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), agent organisms may be released in the Australian Capital Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-V__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a notice under <ref href="#sec-29">section 29</ref>, 30, 31 or 34 declaring organisms to be agent organisms specified conditions under which the organisms may be released, those organisms shall not be released otherwise than in accordance with those conditions.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-V__sec-36">
+          <num>36</num>
+          <heading>No legal proceedings to be instituted in respect of release of agent organisms</heading>
+          <subsection eId="part-V__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (3), no action or other proceeding shall be instituted or continued in any court:</p>
+            </content>
+            <paragraph eId="part-V__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>to prevent the release of agent organisms in accordance with <ref href="#sec-35">section 35</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>to recover damages in respect of any loss incurred, or any damage suffered, in a Territory by reason of the release of agent organisms in accordance with that section; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>to recover damages in respect of any loss incurred, or any damage suffered, in a State by reason of the release of agent organisms in accordance with that section.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If, at the time at which organisms of a particular kind were declared under <ref href="#sec-29">section 29</ref>, 30, 31 or 34 to be agent organisms, there was in force an order of a court relating to the release of organisms of that kind, no action or other proceeding shall be instituted or continued in any court in respect of that order in so far as the order purports to prohibit a person from:</p>
+            </content>
+            <paragraph eId="part-V__sec-36__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>releasing organisms of that kind in the Australian Capital Territory in accordance with <ref href="#sec-35">section 35</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>doing anything to assist or further the release of organisms of that kind in that Territory in accordance with <ref href="#sec-35">section 35</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-V__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Nothing in subsection (1) prevents the institution or continuation in any court of an action or other proceeding to recover damages in respect of any loss incurred, or any damage suffered, by reason of the release of agent organisms of a particular kind in accordance with <ref href="#sec-35">section 35</ref> where:</p>
+            </content>
+            <paragraph eId="part-V__sec-36__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the loss incurred or the damage suffered was the result of the release having had a significant effect on other organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>at the time of the release, the persons in Australia having a reputation for special knowledge of the biology of organisms of that kind knew, or had reasonable grounds to expect, that such a release could have such an effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-V__sec-36__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>in making the declaration declaring organisms of that kind to be agent organisms, <role refersTo="#authority">the Authority</role> did not take into account (whether because of the state of scientific knowledge or otherwise) the factor that such a release could have such an effect.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VI">
+        <num>VI</num>
+        <heading>Biological control under State laws</heading>
+        <section eId="part-VI__sec-37">
+          <num>37</num>
+          <heading>Legal proceedings not to be instituted</heading>
+          <subsection eId="part-VI__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (4), no action or other proceeding shall be instituted or continued in any court to recover damages in respect of any loss incurred, or any damage suffered, in a Territory by reason of the release of organisms in accordance with a relevant State law.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (4), no action or other proceeding shall be instituted or continued in any court of a Territory:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>to prevent the release of organisms in accordance with a relevant State law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>to recover damages in respect of any loss incurred, or any damage suffered, in a State by reason of the release of organisms in accordance with a relevant State law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If, at the time at which prescribed organisms of a particular kind became organisms that could be released in accordance with a relevant State law, there was in force an order of a court relating to the release of organisms of that kind, no action or other proceeding shall be instituted or continued in any court of a Territory in respect of that order in so far as the order purports to restrict a person from:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>releasing organisms of that kind in accordance with that law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>doing anything to assist or further the release of organisms of that kind in accordance with that law.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VI__sec-37__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Nothing in subsection (1) or (2) prevents the institution or continuation in any court of an action or other proceeding to recover damages in respect of any loss incurred, or any damage suffered, by reason of the release of organisms of a particular kind in accordance with a relevant State law where:</p>
+            </content>
+            <paragraph eId="part-VI__sec-37__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>the loss incurred or the damage suffered was the result of the release having had a significant effect on other organisms;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>at the time of the release, the persons in Australia having a reputation for special knowledge of the biology of organisms of that kind knew, or had reasonable grounds to expect, that such a release could have such an effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VI__sec-37__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>in making the declaration by virtue of which organisms of that kind became organisms that could be released in accordance with the relevant State law, <role refersTo="#authority">the authority</role> established by that law did not take into account (whether because of the state of scientific knowledge or otherwise) the factor that such a release could have such an effect.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VII">
+        <num>VII</num>
+        <heading>Inquiries</heading>
+        <section eId="part-VII__sec-38">
+          <num>38</num>
+          <heading>Commissions of inquiry</heading>
+          <subsection eId="part-VII__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where, in accordance with paragraph 19(1)(e), 28(1)(e) or 33(1)(c), <role refersTo="#authority">the Authority</role> directs that an inquiry be conducted under this Part, <role refersTo="#authority">the Authority</role> shall, after consulting the Council and having regard to any unanimous recommendation made by the Council, appoint a Commissioner or Commissioners to be a Commission to conduct that inquiry and may appoint a person or persons to advise the Commission.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where there is more than one Commissioner, <role refersTo="#authority">the Authority</role> shall appoint one of the Commissioners to preside at the inquiry.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A Commission established to conduct an inquiry shall inquire into:</p>
+            </content>
+            <paragraph eId="part-VII__sec-38__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>such matters as it considers necessary to ascertain, from the broad community viewpoint, the overall benefits and disadvantages of declaring organisms of the kind to which the inquiry relates to be target organisms or agent organisms, as the case requires;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-38__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>such relevant matters unanimously approved by the Council as <role refersTo="#authority">the Authority</role>, by notice in writing given to <role refersTo="#commissioner">the Commissioner</role> or to <role refersTo="#commissioner">the Commissioner</role> presiding at the inquiry, as the case requires, directs, which may be or include the following matter, namely, whether assistance should be given to any persons if a declaration is made in respect of those organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-38__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>any other relevant matters that the Commission considers it should inquire into.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The Commission shall report its findings and recommendations to <role refersTo="#authority">the Authority</role> and shall, after so reporting but subject to subsection (6), make public those findings and recommendations.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-5">
+            <num>5</num>
+            <content>
+              <p>When <role refersTo="#authority">the Authority</role> appoints a Commissioner or Commissioners to be a Commission, <role refersTo="#authority">the Authority</role> may nominate a day as the day on which the Commission is to report its findings and recommendations to <role refersTo="#authority">the Authority</role>, and, where <role refersTo="#authority">the Authority</role> nominates a day, the Commission shall report its findings and recommendations to <role refersTo="#authority">the Authority</role> on or before that day or such later day as <role refersTo="#authority">the Authority</role> (before the nominated day) allows.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The Commission shall not make public any evidence or matters in respect of which directions have been given under paragraph 41(2)(b) or matters the publication of which is excepted from subsection 41(5).</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-38__subsec-7">
+            <num>7</num>
+            <content>
+              <p>Subject to this Act, a Commission is not subject to directions by <role refersTo="#authority">the Authority</role>, or otherwise by or on behalf of the Government of the Commonwealth, in or in relation to the conduct of an inquiry.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-39">
+          <num>39</num>
+          <heading>Remuneration of Commissioners</heading>
+          <subsection eId="part-VII__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A Commissioner shall be paid such remuneration as is determined by the Remuneration Tribunal, but, if no determination of that remuneration by the Tribunal is in operation, a Commissioner shall be paid such remuneration as is prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A Commissioner shall be paid such allowances as are prescribed.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act</i><i> </i><i>1973</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-40">
+          <num>40</num>
+          <heading>Notice of inquiries</heading>
+          <content>
+            <p>		Before a Commission commences an inquiry, the Commission shall give reasonable notice, by advertisement published in the <i>Gazette</i> and in such newspapers or journals as it thinks necessary, of its intention to hold the inquiry, the subject of the inquiry and the time and place at which the inquiry is to be commenced.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-41">
+          <num>41</num>
+          <heading>Procedure at inquiries</heading>
+          <subsection eId="part-VII__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, an inquiry by a Commission shall be held in public and evidence in the inquiry shall be taken in public on oath or affirmation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a Commission is satisfied that it is desirable to do so in the public interest by reason of the confidential nature of any evidence or matter or for any other reason, the Commission may:</p>
+            </content>
+            <paragraph eId="part-VII__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>direct that an inquiry or a part of an inquiry shall take place in private and give directions as to the persons who may be present; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>give directions prohibiting or restricting the publication of evidence given before the Commission or of matters contained in documents lodged with the Commission.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A Commission may, if it thinks fit, permit a person appearing as a witness before the Commission to give evidence by tendering, and verifying by oath or affirmation, a written statement.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a Commission considers that the attendance of a person as a witness before the Commission would cause serious hardship to a person, the Commission may permit the person to give evidence by sending to the Commission a written statement, verified in such manner as the Commission allows.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where evidence is given to a Commission by a written statement in accordance with subsection (3) or (4), the Commission shall make available to the public in such manner as the Commission thinks fit the contents of the statement other than any matter the publication of which, in the opinion of the Commission, would be contrary to the public interest by reason of its confidential nature or for any other reason.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-41__subsec-6">
+            <num>6</num>
+            <content>
+              <p>Subject to this section and the regulations:</p>
+            </content>
+            <paragraph eId="part-VII__sec-41__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>the procedure to be followed at an inquiry by a Commission is within the discretion of the Commission; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-41__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a Commission is not bound by the rules of evidence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-42">
+          <num>42</num>
+          <heading>Power to summon witnesses</heading>
+          <content>
+            <p>A Commissioner may, by writing signed by <role refersTo="#commissioner">the Commissioner</role>, summon a person to appear before the Commission at a time and place specified in the summons to give evidence and produce such books and documents (if any) as are referred to in the summons.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-43">
+          <num>43</num>
+          <heading>Failure of witness to attend</heading>
+          <subsection eId="part-VII__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person served with a summons to appear as a witness at an inquiry by a Commission shall not:</p>
+            </content>
+            <paragraph eId="part-VII__sec-43__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>fail to attend as required by the summons; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-43__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>fail to appear and report himself or herself from day to day unless excused or released from further attendance by or on behalf of the Commission.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">10 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply if the person has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (2). See subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-VII__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An offence under subsection (1) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-3" marker="3">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-44">
+          <num>44</num>
+          <heading>Power to administer oath or affirmation</heading>
+          <content>
+            <p>A Commissioner may administer an oath or affirmation to a person appearing as a witness before the Commission.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-45">
+          <num>45</num>
+          <heading>Refusal to be sworn or to answer questions</heading>
+          <subsection eId="part-VII__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person appearing as a witness at an inquiry by a Commission shall not:</p>
+            </content>
+            <paragraph eId="part-VII__sec-45__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>refuse or fail to be sworn or to make an affirmation; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-45__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>refuse or fail to answer a question that the person is required to answer by <role refersTo="#commissioner">the Commissioner</role> presiding at the inquiry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-45__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>refuse or fail to produce a document that the person was required to produce by a summons under this Act served on him or her.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 6 months</quantity> or <quantity refersTo="#penaltyUnit">10 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply if the person has a reasonable excuse.</p>
+            </content>
+            <authorialNote placement="end" eId="note-4" marker="4">
+              <content>
+                <p>Note:	The defendant bears an evidential burden in relation to the matter in subsection (2). See subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-VII__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An offence under subsection (1) is an offence of strict liability.</p>
+            </content>
+            <authorialNote placement="end" eId="note-5" marker="5">
+              <content>
+                <p>Note:	For strict liability, see <ref href="#sec-6">section 6</ref>.1 of the <i>Criminal Code</i>.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-46">
+          <num>46</num>
+          <heading>Protection of Commissioners and witnesses</heading>
+          <subsection eId="part-VII__sec-46__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A Commissioner has, in the performance of the duties of a Commissioner, the same protection and immunity as a Justice of the High Court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-46__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to this Act, a person appearing before a Commission as a witness at an inquiry has the same protection, and is, in addition to the penalties provided by this Act, subject to the same liabilities, in any civil or criminal proceedings as a witness in proceedings in the High Court.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-47">
+          <num>47</num>
+          <heading>False or misleading evidence</heading>
+          <subsection eId="part-VII__sec-47__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person shall not, at a hearing before a Commission, give evidence that is to the knowledge of the person false or misleading in a material particular.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-47__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An offence against subsection (1) is an indictable offence and, subject to this section, is punishable, upon conviction, by imprisonment for a period not exceeding 2 years or by a fine not exceeding <quantity refersTo="#penaltyUnit">50 penalty units</quantity>, or both.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-47__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Notwithstanding that an offence against subsection (1) is an indictable offence, a court of summary jurisdiction may hear and determine proceedings in respect of such an offence if the court is satisfied that it is proper to do so and the defendant and the prosecutor consent.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-47__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where, in accordance with subsection (3), a court of summary jurisdiction convicts a person of an offence against subsection (1), the penalty that the court may impose is imprisonment for a period not exceeding 12 months or a fine not exceeding <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-48">
+          <num>48</num>
+          <heading>Contempt of Commission</heading>
+          <subsection eId="part-VII__sec-48__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person shall not:</p>
+            </content>
+            <paragraph eId="part-VII__sec-48__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>obstruct or hinder a Commission or a Commissioner in the conduct of an inquiry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-48__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>disrupt a hearing before a Commission.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-48__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An offence against subsection (1) is punishable on summary conviction.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-49">
+          <num>49</num>
+          <heading>Powers of Commission in relation to documents produced</heading>
+          <subsection eId="part-VII__sec-49__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A Commissioner, or a person assisting a Commission and authorized by a Commissioner to do so, may inspect any books or documents furnished to the Commission for the purposes of the performance of its functions under this Act or produced at an inquiry and may make copies of, or take extracts from, those books or documents.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VII__sec-49__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Books or documents so furnished may be retained by the Commission for such reasonable period as the Commission thinks fit.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VII__sec-50">
+          <num>50</num>
+          <heading>Allowances to witnesses</heading>
+          <content>
+            <p>A witness summoned under this Act to appear at an inquiry by a Commission is entitled to be paid by the Commonwealth such allowances for the witness’s travelling and other expenses as are prescribed.</p>
+          </content>
+        </section>
+        <section eId="part-VII__sec-51">
+          <num>51</num>
+          <heading>Witness not to be prejudiced</heading>
+          <subsection eId="part-VII__sec-51__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person shall not:</p>
+            </content>
+            <paragraph eId="part-VII__sec-51__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>use violence to or inflict injury on;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>cause or procure violence, damage, loss or disadvantage to; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>cause or procure the punishment of;</p>
+              </content>
+              <content>
+                <p>a person for or on account of the last-mentioned person having appeared, or being about to appear, as a witness at an inquiry by a Commission or for or on account of any evidence given by the last-mentioned person before a Commission.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both.</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-51__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of subsection (1), an employer shall not:</p>
+            </content>
+            <paragraph eId="part-VII__sec-51__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>dismiss an employee from his or her employment, or prejudice an employee in his or her employment, by reason that the employee has appeared as a witness, or has given any evidence, at an inquiry by a Commission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>dismiss, or threaten to dismiss, an employee from his or her employment or prejudice, or threaten to prejudice, an employee in his or her employment, by reason that the employee proposes to appear as a witness or to give evidence at an inquiry by a Commission.</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Penalty:</p>
+                </content>
+              </hcontainer>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the offender is a natural person—<quantity refersTo="#custodialSentence">imprisonment for 12 months</quantity> or <quantity refersTo="#penaltyUnit">20 penalty units</quantity>, or both; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the offender is a body corporate—<quantity refersTo="#penaltyUnit">100 penalty units</quantity>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VII__sec-51__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In any proceedings arising out of subsection (2):</p>
+            </content>
+            <paragraph eId="part-VII__sec-51__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if it is established that the employee was dismissed from, or prejudiced in, his or her employment and that, before he or she was so dismissed or prejudiced, he or she appeared as a witness, or gave any evidence, at an inquiry by a Commission—the burden lies on the employer of proving that the employee was not dismissed or prejudiced by reason that he or she so appeared as a witness or gave evidence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VII__sec-51__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>if it is established that the employee was dismissed, or threatened with dismissal, from his or her employment, or was prejudiced, or threatened with prejudice, in his or her employment and that, before he or she was so dismissed, threatened with dismissal, prejudiced or threatened with prejudice, he or she proposed to appear as a witness, or to give evidence, at an inquiry by a Commission—the burden lies on the employer of proving that the employee was not so dismissed, threatened with dismissal, prejudiced or threatened with prejudice by reason that he or she proposed so to appear as a witness or to give evidence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-VIII">
+        <num>VIII</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-VIII__sec-52">
+          <num>52</num>
+          <heading>Act not to render other controls illegal</heading>
+          <content>
+            <p>Subject to subsection 35(2), nothing in this Act shall be taken to render unlawful any release of organisms for the purpose of the biological control of other organisms if the release of the first-mentioned organisms would, but for this Act, be lawful.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-53">
+          <num>53</num>
+          <heading>Revocation of declarations</heading>
+          <subsection eId="part-VIII__sec-53__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Authority may, by notice published in the <i>Gazette</i>, revoke a declaration made under this Act where the Council has unanimously approved of that action being taken.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-VIII__sec-53__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-53__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> revokes a declaration declaring organisms of a kind to be target organisms; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-53__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>by reason of that revocation there would be no target organisms for the purpose of controlling which organisms of a kind have been declared to be agent organisms;</p>
+              </content>
+              <content>
+                <p><role refersTo="#authority">the Authority</role> shall revoke the declaration declaring those last-mentioned organisms to be agent organisms.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-54">
+          <num>54</num>
+          <heading>Declarations continue in operation</heading>
+          <content>
+            <p>Where a declaration in relation to agent organisms is in force, those organisms may be released in accordance with <ref href="#sec-35">section 35</ref> notwithstanding the length of the period of time that has elapsed since the last release of those organisms took place.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-55">
+          <num>55</num>
+          <heading>Service of documents on Authority</heading>
+          <content>
+            <p>Where a person is entitled by this Act to make an application to <role refersTo="#authority">the Authority</role> or to submit particulars to <role refersTo="#authority">the Authority</role>, the person shall do so by causing the application or particulars to be lodged at the principal office of the Department in Canberra.</p>
+          </content>
+        </section>
+        <section eId="part-VIII__sec-56">
+          <num>56</num>
+          <heading>Application for review</heading>
+          <subsection eId="part-VIII__sec-56__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Application may be made to the Administrative Review Tribunal for review of:</p>
+            </content>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-19">section 19</ref> not to hold an inquiry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-20">section 20</ref>, being a decision that is inconsistent with a finding or recommendation of a Commission referred to in <ref href="#part-VII">Part VII</ref> or the Industries Assistance Commission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> under <ref href="#sec-26">section 26</ref> not to publish a notice in any newspaper or journal; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-28">section 28</ref> not to hold an inquiry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-29">section 29</ref>, being a decision that is inconsistent with a finding or recommendation of a Commission referred to in <ref href="#part-VII">Part VII</ref> or the Productivity Commission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-30">section 30</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-31">section 31</ref>, being a decision that is inconsistent with a finding or recommendation of a Commission referred to in <ref href="#part-VII">Part VII</ref> or the Industries Assistance Commission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> for the purposes of <ref href="#sec-33">section 33</ref> not to hold an inquiry; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-VIII__sec-56__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>a decision of <role refersTo="#authority">the Authority</role> under <ref href="#sec-53">section 53</ref> to revoke a declaration.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-VIII__sec-56__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In subsection (1), <b><i>decision</i></b> has the same meaning as in the <i>Administrative Review Tribunal Act 2024</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-VIII__sec-57">
+          <num>57</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters:</p>
+          </content>
+          <paragraph eId="part-VIII__sec-57__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-VIII__sec-57__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Biological Control Act 1984</td>
+                <td>139, 1984</td>
+                <td>25 Oct 1984</td>
+                <td>22 Nov 1984</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No.1) 1985</td>
+                <td>65, 1985</td>
+                <td>5 June 1985</td>
+                <td>s 3: 3 July 1985 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law (Miscellaneous Provisions) Act (No.2) 1986</td>
+                <td>168, 1986</td>
+                <td>18 Dec 1986</td>
+                <td>s 3: 18 Dec 1986 (s 2(1))</td>
+                <td>s 5(1)</td>
+              </tr>
+              <tr>
+                <td>Primary Industries and Energy Legislation Amendment Act (No. 2) 1994</td>
+                <td>129, 1994</td>
+                <td>21 Oct 1994</td>
+                <td>s 3: 21 Oct 1994 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 1996</td>
+                <td>43, 1996</td>
+                <td>25 Oct 1996</td>
+                <td>Sch 4 (items 1, 50): 25 Oct 1996 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Productivity Commission (Repeals, Transitional and Consequential Amendments) Act 1998</td>
+                <td>15, 1998</td>
+                <td>16 Apr 1998</td>
+                <td>16 Apr 1998</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Environmental Reform (Consequential Provisions) Act 1999</td>
+                <td>92, 1999</td>
+                <td>16 July 1999</td>
+                <td>Sch 3 (items 19–37): 16 July 2000 (s 2(1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Environment Protection and Biodiversity Conservation Amendment (Wildlife Protection) Act 2001</td>
+                <td>82, 2001</td>
+                <td>11 July 2001</td>
+                <td>Sch 3: 11 Jan 2002 (s 2(3))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Agriculture, Fisheries and Forestry Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>115, 2001</td>
+                <td>18 Sept 2001</td>
+                <td>s 4 and Sch 1 (items 139–143): 16 Oct 2001 (s 2)</td>
+                <td>s 4</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2008</td>
+                <td>73, 2008</td>
+                <td>3 July 2008</td>
+                <td>Sch 4 (item 109): 4 July 2008 (s 2(1) item 64)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Biosecurity (Consequential Amendments and Transitional Provisions) Act 2015</td>
+                <td>62, 2015</td>
+                <td>16 June 2015</td>
+                <td>Sch 3: 16 June 2015 (s 2(1) item 3)
+Sch 2 (item 4) and Sch 4: 16 June 2016 (s 2(1) items 2, 4)</td>
+                <td>Sch 3 and 4</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Statute Update (Winter 2017) Act 2017</td>
+                <td>93, 2017</td>
+                <td>23 Aug 2017</td>
+                <td>Sch 2 (item 9): 20 Sept 2017 (s 2(1) item 4)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act (No. 2) 2015</td>
+                <td>145, 2015</td>
+                <td>12 Nov 2015</td>
+                <td>Sch 3 (item 8): 10 Dec 2015 (s 2(1) item 7)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Biological Control Amendment Act 2016</td>
+                <td>28, 2016</td>
+                <td>23 Mar 2016</td>
+                <td>Sch 1: 1 Jan 2017 (s 2(1) item 2)</td>
+                <td>Sch 1 (item 9)</td>
+              </tr>
+              <tr>
+                <td>Statute Update Act 2016</td>
+                <td>61, 2016</td>
+                <td>23 Sept 2016</td>
+                <td>Sch 1 (items 63–68): 21 Oct 2016 (s 2(1) item 1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024</td>
+                <td>38, 2024</td>
+                <td>31 May 2024</td>
+                <td>Sch 5 (item 3): awaiting commencement (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>COAG Legislation Amendment Act 2024</td>
+                <td>54, 2024</td>
+                <td>5 July 2024</td>
+                <td>Sch 2 (items 11, 94–107): 6 July 2024 (s 2(1) item 3)</td>
+                <td>Sch 2 (items 94–107)</td>
+              </tr>
+              <tr>
+                <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024</td>
+                <td>38, 2024</td>
+                <td>31 May 2024</td>
+                <td>Sch 5 (item 3): 14 Oct 2024 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part I</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 2</td>
+                <td>am No 65, 1985; No 168, 1986; No 129, 1994; No 28, 2016; No 54, 2024</td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>am No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 5</td>
+                <td>am No 82, 2001; No 62, 2015</td>
+              </tr>
+              <tr>
+                <td>s 6</td>
+                <td>rs No 145, 2015</td>
+              </tr>
+              <tr>
+                <td>s 6A</td>
+                <td>ad No 115, 2001</td>
+              </tr>
+              <tr>
+                <td>s 8</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 9</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 11</td>
+                <td>rs No 168, 1986</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>rep No 15, 1998</td>
+              </tr>
+              <tr>
+                <td>Part II</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 12</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 17</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 19</td>
+                <td>am No 168, 1986; No 15, 1998; No 92, 1999</td>
+              </tr>
+              <tr>
+                <td>s 20</td>
+                <td>am No 65, 1985; No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>Part III</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 21</td>
+                <td>am No 168, 1986; No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 22</td>
+                <td>am No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 26</td>
+                <td>am No 65, 1985; No 168, 1986; No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 28</td>
+                <td>am No 168, 1986; No 92, 1999</td>
+              </tr>
+              <tr>
+                <td>s 29</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>Part IV</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 30</td>
+                <td>am No 168, 1986; No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 31</td>
+                <td>am No 168, 1986; No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>s 32</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 33</td>
+                <td>am No 168, 1986; No 92, 1999</td>
+              </tr>
+              <tr>
+                <td>s 34</td>
+                <td>am No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>Part VI</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 37</td>
+                <td>am No 28, 2016</td>
+              </tr>
+              <tr>
+                <td>Part VII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 38</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 39</td>
+                <td>am No 65, 1985; No 43, 1996</td>
+              </tr>
+              <tr>
+                <td>s 43</td>
+                <td>am No 115, 2001; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 45</td>
+                <td>am No 115, 2001; No 73, 2008; No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 47</td>
+                <td>am No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 48</td>
+                <td>am No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>s 51</td>
+                <td>am No 61, 2016</td>
+              </tr>
+              <tr>
+                <td>Part VIII</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s 53</td>
+                <td>am No 168, 1986</td>
+              </tr>
+              <tr>
+                <td>s 56</td>
+                <td>am No 15, 1998; No 92, 1999; No 38, 2024</td>
+              </tr>
+            </table>
+          </paragraph>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,2004 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2015/138/!main"/>
+          <FRBRuri value="/akn/au/act/2015/138"/>
+          <FRBRdate date="2015-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="138"/>
+          <FRBRname value="australian-immunisation-register-act-2015"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2015/138/eng@2025-12-05/!main"/>
+          <FRBRuri value="/akn/au/act/2015/138/eng@2025-12-05"/>
+          <FRBRdate date="2025-12-05" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2015/138/eng@2025-12-05/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2015/138/eng@2025-12-05/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2015-01-01" type="generation" eId="evt-creation" source="#australian-immunisation-register-act-2015"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2015/139" date="2015-11-12"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2016/66" date="2016-10-20"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2017/81" date="2017-08-16"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2025/54" date="2025-11-04"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2025/73" date="2025-12-04"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-ai-register" href="/ontology/term/au/term-ai-register" showAs="AI register"/>
+        <TLCTerm eId="term-approved-form" href="/ontology/term/au/term-approved-form" showAs="approved form"/>
+        <TLCTerm eId="term-arrangement" href="/ontology/term/au/term-arrangement" showAs="arrangement"/>
+        <TLCTerm eId="term-chief-executive-medicare" href="/ontology/term/au/term-chief-executive-medicare" showAs="Chief Executive Medicare"/>
+        <TLCTerm eId="term-civil-penalty-provision" href="/ontology/term/au/term-civil-penalty-provision" showAs="civil penalty provision"/>
+        <TLCTerm eId="term-commercial-in-confidence" href="/ontology/term/au/term-commercial-in-confidence" showAs="commercial-in-confidence"/>
+        <TLCTerm eId="term-family-assistance" href="/ontology/term/au/term-family-assistance" showAs="family assistance"/>
+        <TLCTerm eId="term-general-practitioner" href="/ontology/term/au/term-general-practitioner" showAs="general practitioner"/>
+        <TLCTerm eId="term-healthcare-identifier" href="/ontology/term/au/term-healthcare-identifier" showAs="healthcare identifier"/>
+        <TLCTerm eId="term-healthcare-identifier-information-for-a-person" href="/ontology/term/au/term-healthcare-identifier-information-for-a-person" showAs="healthcare identifier information for a person"/>
+        <TLCTerm eId="term-personal-information" href="/ontology/term/au/term-personal-information" showAs="personal information"/>
+        <TLCTerm eId="term-prescribed-body" href="/ontology/term/au/term-prescribed-body" showAs="prescribed body"/>
+        <TLCTerm eId="term-protected-information" href="/ontology/term/au/term-protected-information" showAs="protected information"/>
+        <TLCTerm eId="term-provider-identification-information" href="/ontology/term/au/term-provider-identification-information" showAs="provider identification information"/>
+        <TLCTerm eId="term-purposes-of-the-ai-register" href="/ontology/term/au/term-purposes-of-the-ai-register" showAs="purposes of the AI register"/>
+        <TLCTerm eId="term-regulatory-powers-act" href="/ontology/term/au/term-regulatory-powers-act" showAs="Regulatory Powers Act"/>
+        <TLCTerm eId="term-relevant-identifying-information-for-an-individual" href="/ontology/term/au/term-relevant-identifying-information-for-an-individual" showAs="relevant identifying information for an individual"/>
+        <TLCTerm eId="term-relevant-vaccination" href="/ontology/term/au/term-relevant-vaccination" showAs="relevant vaccination"/>
+        <TLCTerm eId="term-rules" href="/ontology/term/au/term-rules" showAs="rules"/>
+        <TLCTerm eId="term-secretary" href="/ontology/term/au/term-secretary" showAs="Secretary"/>
+        <TLCTerm eId="term-vaccine-preventable-disease" href="/ontology/term/au/term-vaccine-preventable-disease" showAs="vaccine preventable disease"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Australian Immunisation Register Act 2015</p>
+      <p>No. 138, 2015</p>
+      <p><b>Compilation No. </b><b>7</b></p>
+      <p><b>Compilation date:</b><b>	</b>5 December 2025</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 73, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Australian Immunisation Register Act 2015</i> that shows the text of the law as amended and in force on 5 December 2025 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Simplified outline of this Act	1</p>
+      <p>4	Definitions	2</p>
+      <p>5	Meaning of <i>commercial</i><i>-in</i><i>-confidence</i>	4</p>
+      <p>5A	Meaning of <i>provider identification information</i>	5</p>
+      <p>5B	Meaning of <i>healthcare identifier information</i>	5</p>
+      <p>6	Act binds the Crown	6</p>
+      <p><ref href="#part-2">Part 2</ref>—Australian Immunisation Register	7</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Simplified outline	7</p>
+      <p>7	Simplified outline of this <ref href="#part-7">Part	7</ref></p>
+      <p><ref href="#dvs-2">Division 2</ref>—Establishment, contents and purposes	8</p>
+      <p>8	Establishment of the register	8</p>
+      <p>9	Contents of the register	8</p>
+      <p>10	Purposes of the register	9</p>
+      <p><ref href="#dvs-2A">Division 2A</ref>—Reporting obligation etc.	11</p>
+      <p>10A	Requirement to report information relating to certain relevant vaccinations	11</p>
+      <p>10B	Secretary may require recognised vaccination provider to give information	12</p>
+      <p>10C	Secretary may give formal warning to recognised vaccination provider	13</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Requests about personal information in the register	14</p>
+      <p>11	Requests about personal information in the register	14</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Payments relating to the register	15</p>
+      <p>12	Payments relating to vaccinations	15</p>
+      <p><ref href="#dvs-5">Division 5</ref>—Alternative constitutional bases	16</p>
+      <p>13	Alternative constitutional bases	16</p>
+      <p><ref href="#part-4">Part 4</ref>—Dealing with protected information in the register	17</p>
+      <p>21	Simplified outline of this <ref href="#part-17">Part	17</ref></p>
+      <p>22	Authorised dealings with protected information	17</p>
+      <p>23	Offence relating to protected information	19</p>
+      <p>24	Exception for use in good faith	19</p>
+      <p>25	Exception if unaware information is commercial-in-confidence	19</p>
+      <p>26	Exceptions relating to the person to whom the protected information relates	19</p>
+      <p>27	Exception for disclosure to person who provided the information	20</p>
+      <p><ref href="#part-5">Part 5</ref>—Other matters	21</p>
+      <p>28	Simplified outline of this <ref href="#part-21">Part	21</ref></p>
+      <p>28A	Civil penalty provisions	21</p>
+      <p>29	Approved forms	22</p>
+      <p>30	Delegation	22</p>
+      <p>31	Rules	23</p>
+      <p>Endnotes	24</p>
+      <p>Endnote 1—About the endnotes	24</p>
+      <p>Endnote 2—Abbreviation key	26</p>
+      <p>Endnote 3—Legislation history	27</p>
+      <p>Endnote 4—Amendment history	29</p>
+      <p>An Act to establish and provide for an immunisation register, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Australian Immunisation Register </i><i>Act 201</i><i>5</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provisions</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  The whole of this Act</td>
+                <td>1 January 2016.</td>
+                <td>1 January 2016</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>This Act establishes a register of information about vaccinations.</p>
+            <p>The purposes of the register relate to supporting Australian vaccination programs, and vaccination matters more broadly.</p>
+            <p>Sensitive information in the register is protected.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act:</p>
+            <p><term refersTo="#term-ai-register">AI register</term> means <def>the Australian Immunisation Register.</def></p>
+            <p><term refersTo="#term-approved-form">approved form</term> means <def>a form approved under subsection 29(1).</def></p>
+            <p><term refersTo="#term-arrangement">arrangement</term> includes <def>a contract or deed.</def></p>
+            <p><term refersTo="#term-chief-executive-medicare">Chief Executive Medicare</term> has the same meaning as <def>in the Human Services (Medicare) Act 1973.</def></p>
+            <p><term refersTo="#term-civil-penalty-provision">civil penalty provision</term> has the same meaning as <def>in the Regulatory Powers Act.</def></p>
+            <p><term refersTo="#term-commercial-in-confidence">commercial-in-confidence</term> has the meaning given by <def><ref href="#sec-5">section 5</ref>.</def></p>
+            <p><term refersTo="#term-family-assistance">family assistance</term> has the same meaning as <def>in the A New Tax System (Family Assistance) Act 1999.</def></p>
+            <p><term refersTo="#term-general-practitioner">general practitioner</term> has the same meaning as <def>in <ref href="">the Health Insurance Act 1973</ref>.</def></p>
+            <p><term refersTo="#term-healthcare-identifier">healthcare identifier</term> has the same meaning as <def>in <ref href="">the Healthcare Identifiers Act 2010</ref>.</def></p>
+            <p><term refersTo="#term-healthcare-identifier-information-for-a-person">healthcare identifier information for a person</term> has the meaning given by <def><ref href="#sec-5B">section 5B</ref>.</def></p>
+            <p><b><i>legal personal representative</i></b>, of an individual, means:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a parent or guardian of the individual, if the individual is under the age of 18 years; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a trustee of an estate of the individual, if the individual is under a legal disability; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>a person who holds an enduring power of attorney granted by the individual.</p>
+            </content>
+            <content>
+              <p><b><i>parent</i></b>: without limiting who is a parent of anyone for the purposes of this Act, a person is the <b><i>parent</i></b> of another person if the other person is a child of the person within the meaning of the <i>Family Law Act 1975</i>.</p>
+              <p><term refersTo="#term-personal-information">personal information</term> has the same meaning as <def>in <ref href="">the Privacy Act 1988</ref>.</def></p>
+              <p><term refersTo="#term-prescribed-body">prescribed body</term> means <def>a person prescribed by the rules for the purposes of this definition.</def></p>
+              <p><term refersTo="#term-protected-information">protected information</term> means <def>personal information, relevant identifying information or information that is commercial-in-confidence, to the extent that this information: is obtained under, or in accordance with, this Act; or is derived from a record of information that was made under, or in accordance with, this Act; or is derived from a disclosure or use of information that was made under, or in accordance with, this Act.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>is obtained under, or in accordance with, this Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>is derived from a record of information that was made under, or in accordance with, this Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>is derived from a disclosure or use of information that was made under, or in accordance with, this Act.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-provider-identification-information">provider identification information</term> has the meaning given by <def><ref href="#sec-5A">section 5A</ref>.</def></p>
+              <p><term refersTo="#term-purposes-of-the-ai-register">purposes of the AI register</term> means <def>the purposes set out in <ref href="#sec-10">section 10</ref>.</def></p>
+              <p><b><i>recognised vaccination provider</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>a general practitioner; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>an individual, or body, endorsed to administer vaccines in Australia, if the endorsement:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>is for purposes that include the purposes of the AI register; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>is by the Commonwealth, a State or a Territory.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-regulatory-powers-act">Regulatory Powers Act</term> means <def>the Regulatory Powers (Standard Provisions) Act 2014.</def></p>
+              <p><term refersTo="#term-relevant-identifying-information-for-an-individual">relevant identifying information for an individual</term> means <def>the following: the individual’s name, contact details, date of birth, gender and Indigenous status; 	(b)	the individual’s medicare number (within the meaning of <ref href="#part-VI">Part VI</ref>I of the <i>National Health Act 1953</i>) (if any); the individual’s healthcare identifier (if any); the name and contact details of a legal personal representative of the individual if the individual is incapable of managing his or her health affairs; any other information of a kind prescribed by the rules for the purposes of this definition that identifies the individual.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the individual’s name, contact details, date of birth, gender and Indigenous status;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the individual’s medicare number (within the meaning of <ref href="#part-VI">Part VI</ref>I of the <i>National Health Act 1953</i>) (if any);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>the individual’s healthcare identifier (if any);</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-d">
+            <num>d</num>
+            <content>
+              <p>the name and contact details of a legal personal representative of the individual if the individual is incapable of managing his or her health affairs;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-e">
+            <num>e</num>
+            <content>
+              <p>any other information of a kind prescribed by the rules for the purposes of this definition that identifies the individual.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-relevant-vaccination">relevant vaccination</term> means <def>a vaccination administered: in Australia; or outside Australia, if information about the vaccination is given to a recognised vaccination provider.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>in Australia; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>outside Australia, if information about the vaccination is given to a recognised vaccination provider.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-rules">rules</term> means <def>the rules made under <ref href="#sec-31">section 31</ref>.</def></p>
+              <p><term refersTo="#term-secretary">Secretary</term> means <def>the Secretary of the Department.</def></p>
+              <p><term refersTo="#term-vaccine-preventable-disease">vaccine preventable disease</term> means <def>a disease listed as a vaccine preventable disease in the latest edition of the Australian Immunisation Handbook published by the Government Printer.</def></p>
+            </content>
+            <authorialNote placement="end" eId="note-2" marker="2">
+              <content>
+                <p>Note:	The Handbook could in 2015 be viewed on the Department’s website (http://www.immunise.health.gov.au/internet/immunise/publishing.nsf/Content/Handbook10-home).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Meaning of commercial-in-confidence</heading>
+          <content>
+            <p>		Information is <b><i>commercial</i></b><b><i>-</i></b><b><i>in</i></b><b><i>-</i></b><b><i>confidence</i></b> if a person demonstrates to the Minister that:</p>
+          </content>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>release of the information would cause competitive detriment to the person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is not in the public domain; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>the information is not required to be disclosed under a law of the Commonwealth, or of a State or Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>the information is not readily discoverable.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5A">
+          <num>5A</num>
+          <heading>Meaning of provider identification information</heading>
+          <content>
+            <p>		If a recognised vaccination provider administers a vaccine, or is given information about a relevant vaccination, at a place where the provider practices the provider’s profession, then each of the following is <b><i>provider identification information</i></b> for the provider:</p>
+          </content>
+          <paragraph eId="part-1__sec-5A__para-a">
+            <num>a</num>
+            <content>
+              <p>the provider’s name and contact details;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5A__para-b">
+            <num>b</num>
+            <content>
+              <p>if a number known as a provider number has been allocated by the Chief Executive Medicare to the provider in respect of that place—that number;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5A__para-c">
+            <num>c</num>
+            <content>
+              <p>if a number known as the AIR provider number has been allocated to the provider for the purposes of this Act—that number.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5B">
+          <num>5B</num>
+          <heading>Meaning of healthcare identifier information</heading>
+          <subsection eId="part-1__sec-5B__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Each of the following is <b><i>healthcare identifier information</i></b> for a person:</p>
+            </content>
+            <paragraph eId="part-1__sec-5B__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if the person is a healthcare provider that has a healthcare identifier—the healthcare identifier;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5B__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the person is an individual healthcare provider linked to a healthcare provider organisation that has a healthcare identifier—the healthcare identifier for the healthcare provider organisation.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-5B__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In subsection (1), the following terms have the same meaning as in the <i>Healthcare Identifiers Act 2010</i>:</p>
+            </content>
+            <paragraph eId="part-1__sec-5B__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	<b><i>healthcare provider</i></b>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5B__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<b><i>healthcare provider organisation</i></b>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5B__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<b><i>individual healthcare provider</i></b>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-5B__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	<b><i>linked</i></b><i>.</i></p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Act binds the Crown</heading>
+          <content>
+            <p>This Act binds the Crown in each of its capacities. However, it does not make the Crown liable to a pecuniary penalty or to be prosecuted for an offence.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Australian Immunisation Register</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Simplified outline</heading>
+          <section eId="part-2__dvs-1__sec-7">
+            <num>7</num>
+            <heading>Simplified outline of this Part</heading>
+            <content>
+              <p>The Australian Immunisation Register is established to keep information about vaccinations of individuals.</p>
+              <p>The purposes of the register relate to supporting Australian vaccination programs, and vaccination matters more broadly.</p>
+              <p>Recognised vaccination providers are required to report certain information in relation to certain relevant vaccinations that have been administered. This information will be included in the register.</p>
+              <p>A recognised vaccination provider may be required to give information, or be given a formal warning, if the provider is not complying, or has not complied, with the requirement to report.</p>
+              <p>Individuals can opt out from receiving certain information from the register. They can also request for their information in the register not to be disclosed for certain purposes.</p>
+              <p>Payments relating to vaccinations may be made on behalf of the Commonwealth.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Establishment, contents and purposes</heading>
+          <section eId="part-2__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Establishment of the register</heading>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Commonwealth must establish and keep a register to be called the Australian Immunisation Register.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Parts of the register may be kept separate from each other, and be called different names.</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	For example, the parts of the register dealing with vaccinations given through school programs could be kept separately and be called the Australian School Vaccination Register.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The register is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Contents of the register</heading>
+            <content>
+              <p>The AI register may include the following:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2__sec-9__para-a">
+              <num>a</num>
+              <content>
+                <p>relevant identifying information for each individual who has, or could have, a relevant vaccination;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-b">
+              <num>b</num>
+              <content>
+                <p>information provided by a recognised vaccination provider about each relevant vaccination, including:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-i">
+              <num>i</num>
+              <content>
+                <p>the day of the vaccination; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-ii">
+              <num>ii</num>
+              <content>
+                <p>information about the vaccine administered; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-iii">
+              <num>iii</num>
+              <content>
+                <p>if the vaccine was administered in Australia—provider identification information and healthcare identifier information for the recognised vaccination provider who administered the vaccine; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-iv">
+              <num>iv</num>
+              <content>
+                <p>if the vaccine was administered outside Australia—provider identification information and healthcare identifier information for the recognised vaccination provider who has been given information about the vaccination;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-c">
+              <num>c</num>
+              <content>
+                <p>relevant identifying information for each individual who is assessed by a general practitioner, a paediatrician, a public health physician, an infectious diseases physician or a clinical immunologist as:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-i">
+              <num>i</num>
+              <content>
+                <p>not requiring a vaccination because the individual has contracted a disease or diseases, and as a result has developed a natural immunity; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-ii">
+              <num>ii</num>
+              <content>
+                <p>having a medical contraindication to a vaccine, and as a result should not receive a vaccination;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-d">
+              <num>d</num>
+              <content>
+                <p>information about each of those assessments, including:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-i">
+              <num>i</num>
+              <content>
+                <p>the day of the assessment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-ii">
+              <num>ii</num>
+              <content>
+                <p>information about the vaccine relevant to the assessment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-iii">
+              <num>iii</num>
+              <content>
+                <p>the name and contact details of, and healthcare identifier information for, the general practitioner, paediatrician, public health physician, infectious diseases physician or clinical immunologist who conducted the assessment; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-iv">
+              <num>iv</num>
+              <content>
+                <p>if a number known as a provider number has been allocated by the Chief Executive Medicare to that general practitioner, paediatrician, public health physician, infectious diseases physician or clinical immunologist in respect of the place at which the assessment was conducted—that number;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2__sec-9__para-e">
+              <num>e</num>
+              <content>
+                <p>other information relating to vaccinations of individuals.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Purposes of the register</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The purposes of the AI register are to facilitate the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>establishing and keeping an electronic database of records relating to vaccinations of individuals;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>collecting, analysing and publishing statistics, and other information, about vaccination coverage across Australia and parts of Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>monitoring vaccination coverage across Australia and parts of Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>monitoring the effectiveness of vaccines and vaccination programs in preventing vaccine preventable diseases;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>identifying any parts of Australia at risk during disease outbreaks because of the number of unvaccinated individuals in those parts;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>checking an individual’s vaccination status by that individual or by a recognised vaccination provider;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>checking an individual’s vaccination status:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>by (or on behalf of) the Commonwealth; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>to the extent that this is necessary for determining eligibility for family assistance;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>advising an individual when he or she is, or was, due to receive doses of a vaccine;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>certifying when a course of vaccination has been completed;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-j">
+                <num>j</num>
+                <content>
+                  <p>promoting individuals’ health and well-being by giving information on new developments associated with vaccinations to them and to recognised vaccination providers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>payments relating to vaccinations;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-l">
+                <num>l</num>
+                <content>
+                  <p>research relating to vaccinations;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-m">
+                <num>m</num>
+                <content>
+                  <p>anything incidental to any of the above paragraphs.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For an individual who is incapable of managing his or her health affairs:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>paragraph (1)(f) also applies to checking of the individual’s vaccination status by a legal personal representative of the individual; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>paragraphs (1)(h), (i) and (j) also apply to advising, or giving a certificate or information to, a legal personal representative of the individual.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2A">
+          <num>2A</num>
+          <heading>Reporting obligation etc.</heading>
+          <section eId="part-2__dvs-2A__sec-10A">
+            <num>10A</num>
+            <heading>Requirement to report information relating to certain relevant vaccinations</heading>
+            <content>
+              <p>Relevant vaccination administered in Australia</p>
+            </content>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>a recognised vaccination provider administers a relevant vaccination in Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the relevant vaccination:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>is of a kind prescribed by the rules; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is administered in the circumstances prescribed by the rules;</p>
+                </content>
+                <content>
+                  <p>the provider must report, within the period prescribed by the rules and in the manner prescribed by the rules, the information prescribed by the rules for that vaccination for inclusion in the AI Register.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply if the recognised vaccination provider reasonably believes that complying with that subsection is likely to pose a risk to the health or safety of an individual.</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Relevant vaccination administered outside Australia</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>a recognised vaccination provider is given information about a relevant vaccination that was administered outside Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the relevant vaccination:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-3__para-i">
+                <num>i</num>
+                <content>
+                  <p>is of a kind prescribed by the rules; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2A__sec-10A__subsec-3__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>was administered in the circumstances prescribed by the rules;</p>
+                </content>
+                <content>
+                  <p>the provider must report, within the period prescribed by the rules and in the manner prescribed by the rules, the information prescribed by the rules for that vaccination for inclusion in the AI Register.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subsection (3) does not apply if the recognised vaccination provider reasonably believes that complying with that subsection is likely to pose a risk to the health or safety of an individual.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in this subsection (see <ref href="#sec-96">section 96</ref> of the Regulatory Powers Act).</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Civil penalty provision etc.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A person is liable to a civil penalty if the person contravenes subsection (1) or (3).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10A__subsec-6">
+              <num>6</num>
+              <content>
+                <p>Subsection 93(2) of the Regulatory Powers Act does not apply in relation to a contravention of subsection (5) of this section.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2A__sec-10B">
+            <num>10B</num>
+            <heading>Secretary may require recognised vaccination provider to give information</heading>
+            <subsection eId="part-2__dvs-2A__sec-10B__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If <role refersTo="#secretary">the Secretary</role> reasonably believes that a recognised vaccination provider is not complying with subsection 10A(1) or (3), <role refersTo="#secretary">the Secretary</role> may, by written notice, require the provider to give, within the period specified in the notice and in the manner specified in the notice, information relating to that non-compliance.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10B__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The period specified in the notice must not be shorter than 14 days after the notice is given.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2A__sec-10B__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person is liable to a civil penalty if the person fails to comply with a notice given to the person under subsection (1).</p>
+              </content>
+              <hcontainer name="penalty">
+                <content>
+                  <p>Civil penalty:	<quantity refersTo="#penaltyUnit">30 penalty units</quantity>.</p>
+                </content>
+              </hcontainer>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2A__sec-10C">
+            <num>10C</num>
+            <heading>Secretary may give formal warning to recognised vaccination provider</heading>
+            <content>
+              <p>If <role refersTo="#secretary">the Secretary</role> reasonably believes that a recognised vaccination provider may have contravened subsection 10A(1) or (3), <role refersTo="#secretary">the Secretary</role> may, by written notice given to the provider:</p>
+            </content>
+            <paragraph eId="part-2__dvs-2A__sec-10C__para-a">
+              <num>a</num>
+              <content>
+                <p>inform the provider of that matter; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__dvs-2A__sec-10C__para-b">
+              <num>b</num>
+              <content>
+                <p>warn the provider that the provider may be liable to a civil penalty under subsection 10A(5).</p>
+              </content>
+            </paragraph>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Requests about personal information in the register</heading>
+          <section eId="part-2__dvs-3__sec-11">
+            <num>11</num>
+            <heading>Requests about personal information in the register</heading>
+            <subsection eId="part-2__dvs-3__sec-11__subsec-1">
+              <num>1</num>
+              <content>
+                <p>An individual may, in the approved form, request that the individual not be given by (or on behalf of) the Commonwealth:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-11__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>any advice of a kind referred to in paragraph 10(1)(h); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-11__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any certification of a kind referred to in paragraph 10(1)(i); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-11__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>any information of a kind referred to in paragraph 10(1)(j).</p>
+                </content>
+                <authorialNote placement="end" eId="note-6" marker="6">
+                  <content>
+                    <p>Note:	The request could be made by a legal personal representative of an individual who is incapable of managing his or her health affairs (see subsection 10(2)).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-11__subsec-2">
+              <num>2</num>
+              <content>
+                <p>An individual may, in the approved form, request that personal information on the AI register relating to or identifying:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-11__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the individual; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-11__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the individual is a legal personal representative of another individual who is incapable of managing his or her health affairs—that other individual;</p>
+                </content>
+                <content>
+                  <p>not be disclosed from the AI register for one or more purposes of the AI register.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-11__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Commonwealth must comply with a request under this section as soon as practicable.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-4">
+          <num>4</num>
+          <heading>Payments relating to the register</heading>
+          <section eId="part-2__dvs-4__sec-12">
+            <num>12</num>
+            <heading>Payments relating to vaccinations</heading>
+            <subsection eId="part-2__dvs-4__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, make a payment to a recognised vaccination provider in relation to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the provider’s administrative costs incurred in reporting information for inclusion in the AI register; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the provider:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>identifying an individual who is overdue for a relevant vaccination; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>administering the vaccination; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>reporting information about the vaccination for inclusion in the AI register.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-4__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#minister">The Minister</role> may, on behalf of the Commonwealth, make a payment:</p>
+              </content>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>for the purposes of the AI register; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-4__sec-12__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>in circumstances of a kind prescribed by the rules for the purposes of this subsection.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-5">
+          <num>5</num>
+          <heading>Alternative constitutional bases</heading>
+          <section eId="part-2__dvs-5__sec-13">
+            <num>13</num>
+            <heading>Alternative constitutional bases</heading>
+            <subsection eId="part-2__dvs-5__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Without limiting its effect apart from this section, this Act also has the effect it would have if the purposes of the AI register were, by express provision, confined to purposes relating to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the provision of pharmaceutical benefits; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the provision of medical services (without any form of civil conscription); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>census or statistics; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>external affairs, including:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>giving effect to an international agreement to which Australia is a party; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>addressing matters of international concern; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>	(e)	a Territory or a Commonwealth place (within the meaning of the <i>Commonwealth Places (Application of Laws) Act 1970</i>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>the implied power of the Parliament to make laws with respect to nationhood; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>the executive power of the Commonwealth; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-5__sec-13__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>matters incidental to the execution of any of the legislative powers of the Parliament or the executive power of the Commonwealth.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-5__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A term used in this section and the Constitution has the same meaning in this section as it has in the Constitution.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Dealing with protected information in the register</heading>
+        <section eId="part-4__sec-21">
+          <num>21</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>Information can be collected for inclusion in the AI register.</p>
+            <p>Section 23 makes it an offence if a person, while unauthorised to do so, discloses or uses protected information.</p>
+            <p>The main authorisation relates to disclosure or use for the purposes of the register. There are also a number of exceptions to the offence.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-22">
+          <num>22</num>
+          <heading>Authorised dealings with protected information</heading>
+          <content>
+            <p>Uploading personal information etc. to the AI register</p>
+          </content>
+          <subsection eId="part-4__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person may collect, make a record of, disclose or otherwise use:</p>
+            </content>
+            <paragraph eId="part-4__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>personal information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>relevant identifying information; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>information that is commercial-in-confidence;</p>
+              </content>
+              <content>
+                <p>if the person does so for the purposes of including the information in the AI register.</p>
+                <p>Using or disclosing protected information in the AI register</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person may make a record of, disclose or otherwise use protected information if:</p>
+            </content>
+            <paragraph eId="part-4__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person does so for the purposes of the AI register, and the person is:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>an officer or employee of the Commonwealth or of an authority of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>engaged by the Commonwealth, or by an authority of the Commonwealth, to perform work relating to the purposes of the AI register; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-iii">
+              <num>iii</num>
+              <content>
+                <p>an officer or employee of, or is engaged by, a person referred to in subparagraph (ii) to perform work relating to the purposes of the AI register; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-iv">
+              <num>iv</num>
+              <content>
+                <p>a prescribed body; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-v">
+              <num>v</num>
+              <content>
+                <p>a recognised vaccination provider; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is authorised to do so under subsection (3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the person does so for the purposes of performing the person’s functions, or exercising the person’s powers, under this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-ca">
+              <num>ca</num>
+              <content>
+                <p>	(ca)	the person does so for the purposes of including information in the register kept under Part 2 of the <i>National Cancer Screening Register Act 2016</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>the person is required or authorised to do so by or under a law of the Commonwealth or of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>the person does so for the purposes of court or tribunal proceedings, or in accordance with an order of a court or tribunal; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-f">
+              <num>f</num>
+              <content>
+                <p>the person does so for the purposes of a coronial inquiry, or in accordance with an order of a coroner.</p>
+              </content>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note 1:	This subsection is an authorisation for the purposes of other laws, including the Australian Privacy Principles.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note 2:	Protected information is not limited to information in the register (see <ref href="#sec-4">section 4</ref>). It can also cover information that:</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>is obtained as the result of a disclosure from the register, whether directly or indirectly because of one or more on-disclosures; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-22__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>is derived from information that was in the register.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, authorise a person to make a record of, disclose or otherwise use protected information for a specified purpose that <role refersTo="#minister">the Minister</role> is satisfied is in the public interest.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-22__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Paragraph (2)(a) does not apply to personal information to the extent that a disclosure under that paragraph would be contrary to a request in force under subsection 11(2).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-23">
+          <num>23</num>
+          <heading>Offence relating to protected information</heading>
+          <content>
+            <p>A person commits an offence if:</p>
+          </content>
+          <paragraph eId="part-4__sec-23__para-a">
+            <num>a</num>
+            <content>
+              <p>the person obtains information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-23__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-23__para-c">
+            <num>c</num>
+            <content>
+              <p>the person makes a record of, discloses or otherwise uses the information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-23__para-d">
+            <num>d</num>
+            <content>
+              <p>the making of the record, or the disclosure or use, is not authorised by <ref href="#sec-22">section 22</ref>.</p>
+            </content>
+            <hcontainer name="penalty">
+              <content>
+                <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 2 years</quantity> or <quantity refersTo="#penaltyUnit">120 penalty units</quantity>, or both.</p>
+              </content>
+            </hcontainer>
+          </paragraph>
+        </section>
+        <section eId="part-4__sec-24">
+          <num>24</num>
+          <heading>Exception for use in good faith</heading>
+          <content>
+            <p>Section 23 does not apply to a person to the extent that the person makes a record of, discloses or otherwise uses protected information in good faith and in purported compliance with <ref href="#sec-22">section 22</ref>.</p>
+          </content>
+          <authorialNote placement="end" eId="note-10" marker="10">
+            <content>
+              <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-4__sec-25">
+          <num>25</num>
+          <heading>Exception if unaware information is commercial-in-confidence</heading>
+          <content>
+            <p>Section 23 does not apply to a person if:</p>
+          </content>
+          <paragraph eId="part-4__sec-25__para-a">
+            <num>a</num>
+            <content>
+              <p>the person makes a record of, discloses or otherwise uses protected information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-25__para-b">
+            <num>b</num>
+            <content>
+              <p>the information is commercial-in-confidence; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-25__para-c">
+            <num>c</num>
+            <content>
+              <p>the person does not know that the information is commercial-in-confidence.</p>
+            </content>
+            <authorialNote placement="end" eId="note-11" marker="11">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+        <section eId="part-4__sec-26">
+          <num>26</num>
+          <heading>Exceptions relating to the person to whom the protected information relates</heading>
+          <subsection eId="part-4__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Section 23 does not apply to a person if:</p>
+            </content>
+            <paragraph eId="part-4__sec-26__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person discloses protected information to the person to whom the information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-26__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is the person to whom the protected information relates; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-26__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the making of the record, or the disclosure or use, of the protected information is in accordance with the express or implied consent of the person to whom the information relates.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matters in this subsection (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) applies as if a reference in that subsection to the person to whom the protected information relates includes a reference to the person’s legal personal representative if the person is incapable of managing his or her health affairs.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-27">
+          <num>27</num>
+          <heading>Exception for disclosure to person who provided the information</heading>
+          <content>
+            <p>Section 23 does not apply to a person if:</p>
+          </content>
+          <paragraph eId="part-4__sec-27__para-a">
+            <num>a</num>
+            <content>
+              <p>the person obtains protected information from another person; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-27__para-b">
+            <num>b</num>
+            <content>
+              <p>the person discloses that information to the other person.</p>
+            </content>
+            <authorialNote placement="end" eId="note-13" marker="13">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in this section (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Other matters</heading>
+        <section eId="part-5__sec-28">
+          <num>28</num>
+          <heading>Simplified outline of this Part</heading>
+          <content>
+            <p>This Part deals with other matters, such as civil penalties, approved forms, delegations and rules.</p>
+          </content>
+        </section>
+        <section eId="part-5__sec-28A">
+          <num>28A</num>
+          <heading>Civil penalty provisions</heading>
+          <content>
+            <p>Enforceable civil penalty provisions</p>
+          </content>
+          <subsection eId="part-5__sec-28A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each civil penalty provision of this Act is enforceable under Part 4 of the Regulatory Powers Act.</p>
+            </content>
+            <authorialNote placement="end" eId="note-14" marker="14">
+              <content>
+                <p>Note:	Part 4 of the Regulatory Powers Act allows a civil penalty provision to be enforced by obtaining an order for a person to pay a pecuniary penalty for the contravention of the provision.</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Authorised applicant</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-28A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following persons is an authorised applicant in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-5__sec-28A__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><role refersTo="#secretary">the Secretary</role>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-28A__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>an SES employee, or an acting SES employee, in the Department.</p>
+              </content>
+              <content>
+                <p>Relevant court</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-28A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of Part 4 of the Regulatory Powers Act, each of the following courts is a relevant court in relation to the civil penalty provisions of this Act:</p>
+            </content>
+            <paragraph eId="part-5__sec-28A__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Federal Court of Australia;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-28A__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the Federal Circuit and Family Court of Australia (<ref href="#dvs-2">Division 2</ref>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-28A__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>a court of a State or Territory that has jurisdiction in relation to the matter.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-29">
+          <num>29</num>
+          <heading>Approved forms</heading>
+          <subsection eId="part-5__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, approve a form for the purposes of a provision of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A request required by a provision of this Act to be in the approved form must be given to the person specified in the form for that purpose.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-30">
+          <num>30</num>
+          <heading>Delegation</heading>
+          <content>
+            <p>Delegation by <role refersTo="#minister">the Minister</role></p>
+          </content>
+          <subsection eId="part-5__sec-30__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate his or her functions or powers under subsection 22(3) (about authorising disclosures etc.) to:</p>
+            </content>
+            <paragraph eId="part-5__sec-30__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a person who holds or performs the duties of an SES Band 3 position, or an equivalent or higher position, in the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-30__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Chief Executive Medicare.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-30__subsec-2">
+            <num>2</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, in writing, delegate his or her functions or powers under:</p>
+            </content>
+            <paragraph eId="part-5__sec-30__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p><ref href="#sec-5">section 5</ref> (about commercial-in-confidence information); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-30__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p><ref href="#sec-12">section 12</ref> (about payments relating to vaccinations); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-30__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p><ref href="#sec-29">section 29</ref> (about approved forms);</p>
+              </content>
+              <content>
+                <p>to an SES employee, or an acting SES employee, in the Department or to the Chief Executive Medicare.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-30__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In performing a function, or exercising a power, under a delegation, the delegate must comply with any directions of <role refersTo="#minister">the Minister</role>.</p>
+            </content>
+            <content>
+              <p>Delegation by <role refersTo="#secretary">the Secretary</role></p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-30__subsec-4">
+            <num>4</num>
+            <content>
+              <p><role refersTo="#secretary">The Secretary</role> may, in writing, delegate <role refersTo="#secretary">the Secretary</role>’s functions or powers under <ref href="#sec-10B">section 10B</ref> or 10C of this Act to an SES employee, or an acting SES employee, in the Department.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-5__sec-30__subsec-5">
+            <num>5</num>
+            <content>
+              <p>In performing a function, or exercising a power, under a delegation, the delegate must comply with any directions of <role refersTo="#secretary">the Secretary</role>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-5__sec-31">
+          <num>31</num>
+          <heading>Rules</heading>
+          <subsection eId="part-5__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p><role refersTo="#minister">The Minister</role> may, by legislative instrument, make rules prescribing matters:</p>
+            </content>
+            <paragraph eId="part-5__sec-31__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-5__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-5__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-5__sec-31__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—Endnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>orig = original</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>p = page(s)</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>para = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>cl = clause(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>cont. = continued</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>r = regulation(s)/Court rule(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>sub ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>sub div = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>sub pt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Australian Immunisation Register Act 2015</td>
+                  <td>138, 2015</td>
+                  <td>12 Nov 2015</td>
+                  <td>1 Jan 2016 (s 2(1) item 1)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Australian Immunisation Register (Consequential and Transitional Provisions) Act 2015</td>
+                  <td>139, 2015</td>
+                  <td>12 Nov 2015</td>
+                  <td>Sch 2 (items 1–33): 30 Sept 2016 (s 2(1) item 3)
+Sch 3 (items 1–3): 1 Jan 2017 (s 2(1) item 4)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <th>Act
+(Register ID)</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>National Cancer Screening Register (Consequential and Transitional Provisions) Act 2016 (C2016A00066)</td>
+                  <td>66, 2016</td>
+                  <td>20 Oct 2016</td>
+                  <td>sch 1 (items 1, 4-6): 21 Oct 2016 (s 2(1) item 2)</td>
+                  <td>sch 1 (items 4-6)</td>
+                </tr>
+                <tr>
+                  <td>Australian Immunisation Register and Other Legislation Amendment Act 2017 (C2017A00081)</td>
+                  <td>81, 2017</td>
+                  <td>16 Aug 2017</td>
+                  <td>sch 1: 17 Aug 2017 (s 2(1) item 1)</td>
+                  <td>sch 1 (item 4)</td>
+                </tr>
+                <tr>
+                  <td>Australian Immunisation Register Amendment (Reporting) Act 2021 (C2021A00001)</td>
+                  <td>1, 2021</td>
+                  <td>15 Feb 2021</td>
+                  <td>sch 1 (items 1-13): 16 Feb 2021 (s 2(1) item 2)
+sch 1 (item 14): 1 Sept 2021 (s 2(1) item 3)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Health Legislation Amendment (Miscellaneous Measures No. 1) Act 2025 (C2025A00054)</td>
+                  <td>54, 2025</td>
+                  <td>4 Nov 2025</td>
+                  <td>sch 1 (items 8, 9): awaiting commencement (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Regulatory Reform Omnibus Act 2025 (C2025A00073)</td>
+                  <td>73, 2025</td>
+                  <td>4 Dec 2025</td>
+                  <td>sch 1 (items 72-76): 5 Dec 2025 (s 2(1) item 5)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 3</td>
+                  <td>rs No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 139, 2015; No 1, 2021; No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 5A</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 54, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 5B</td>
+                  <td>ad No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 6</td>
+                  <td>am No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Part 2 heading</td>
+                  <td>rs No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 7</td>
+                  <td>rs No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 8</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 9</td>
+                  <td>am No 139, 2015; No 81, 2017; No 1, 2021; No 54, 2025; No 73, 2025</td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>Division 2A</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2A</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 10A</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 10B</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 10C</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 11</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>Division 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 12</td>
+                  <td>am No 139, 2015; No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>Division 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 13</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 21</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>s 22</td>
+                  <td>am No 139, 2015; No 66, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 26</td>
+                  <td>am No 139, 2015</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 28A</td>
+                  <td>ad No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>am No 1, 2021</td>
+                </tr>
+                <tr>
+                  <td>s 30</td>
+                  <td>am No 1, 2021</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

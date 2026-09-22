@@ -1,0 +1,819 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1953/92/!main"/>
+          <FRBRuri value="/akn/au/act/1953/92"/>
+          <FRBRdate date="1953-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="92"/>
+          <FRBRname value="royal-australian-air-force-veterans'-residences-act-1953"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1953/92/eng@2014-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/1953/92/eng@2014-07-01"/>
+          <FRBRdate date="2014-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1953/92/eng@2014-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1953/92/eng@2014-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1953-01-01" type="generation" eId="evt-creation" source="#royal-australian-air-force-veterans'-residences-act-1953"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1965/124"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1973/216"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1978/36" date="1978-06-12"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1984/164"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1986/163"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1993/95"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1997/152"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/2008/144"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2014/62" date="2014-06-30"/>
+      </lifecycle>
+      <analysis source="#lex-au">
+        <passiveModifications>
+          <textualMod type="substitution" eId="mod-1">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-2"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-2">
+            <source href="#evt-amd-5"/>
+            <destination href="#sec-2"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-3">
+            <source href="#evt-amd-8"/>
+            <destination href="#sec-2"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-4">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-4"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-5">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-6">
+            <source href="#evt-amd-6"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-7">
+            <source href="#evt-amd-9"/>
+            <destination href="#sec-5"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-8">
+            <source href="#evt-amd-2"/>
+            <destination href="#sec-6"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-9">
+            <source href="#evt-amd-6"/>
+            <destination href="#sec-6"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-10">
+            <source href="#evt-amd-1"/>
+            <destination href="#sec-8"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-11">
+            <source href="#evt-amd-4"/>
+            <destination href="#sec-8"/>
+          </textualMod>
+          <textualMod type="substitution" eId="mod-12">
+            <source href="#evt-amd-9"/>
+            <destination href="#sec-9"/>
+          </textualMod>
+        </passiveModifications>
+      </analysis>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCTerm eId="term-de-facto-partner-of-a-person" href="/ontology/term/au/term-de-facto-partner-of-a-person" showAs="de facto partner of a person"/>
+        <TLCTerm eId="term-surviving-spouse-or-de-facto-partner" href="/ontology/term/au/term-surviving-spouse-or-de-facto-partner" showAs="surviving spouse or de facto partner"/>
+        <TLCTerm eId="term-the-fund" href="/ontology/term/au/term-the-fund" showAs="the Fund"/>
+        <TLCTerm eId="term-the-trust" href="/ontology/term/au/term-the-trust" showAs="the Trust"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p></p>
+      <p>Royal Australian Air Force Veterans’ Residences Act 1953</p>
+      <p>No. 92, 1953 as amended</p>
+      <p><b>Compilation start date: </b><b>	</b><b>	</b>1 July 2014</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 62, 2014</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Royal Australian Air Force Veterans’ Residences Act 1953</i> as in force on 1 July 2014. It includes any commenced amendment affecting the legislation to that date.</p>
+      <p>This compilation was prepared on <date date="2014-08-08">8 August 2014</date>.</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of each amended provision.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in the endnotes.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If a provision of the compiled law is affected by a modification that is in force, details are included in the endnotes.</p>
+      <p><b>Provisions ceasing to have effect</b></p>
+      <p>If a provision of the compiled law has expired or otherwise ceased to have effect in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p>1	Short title	1</p>
+      <p>2	Interpretation	1</p>
+      <p>3	Establishment of Fund	3</p>
+      <p>4	Purpose of Fund	3</p>
+      <p>5	Constitution of Trust	3</p>
+      <p>6	Deputies of members	4</p>
+      <p>7	Incorporation of Trust	4</p>
+      <p>8	Powers of Trust	5</p>
+      <p>9	Investment of moneys	6</p>
+      <p>11	Taxation	6</p>
+      <p>12	Members of Trust not entitled to remuneration	6</p>
+      <p>13	Regulations	6</p>
+      <p>Endnotes	8</p>
+      <p>Endnote 1—About the endnotes	8</p>
+      <p>Endnote 2—Abbreviation key	10</p>
+      <p>Endnote 3—Legislation history	11</p>
+      <p>Endnote 4—Amendment history	13</p>
+      <p>Endnote 5—Uncommenced amendments [none]	14</p>
+      <p>Endnote 6—Modifications [none]	14</p>
+      <p>Endnote 7—Misdescribed amendments [none]	14</p>
+      <p>Endnote 8—Miscellaneous [none]	14</p>
+      <p>An Act to provide for the application of the share of the proceeds of Prize captured during the State of War that commenced on <date date="1939-09-03">3 September 1939</date>, that is available for the benefit of members of the Royal Australian Air Force</p>
+      <p>Preamble</p>
+      <p>AND WHEREAS it is impracticable to distribute the moneys so available to individual members of the Royal Australian Air Force who so served:</p>
+      <p>AND WHEREAS it is, for that reason, desirable that other provision be made for the application of those moneys:</p>
+      <p>BE it therefore enacted by the Queen’s Most Excellent Majesty, the Senate, and the House of Representatives of the Commonwealth of Australia, as follows:</p>
+    </preface>
+    <preamble>
+      <recitals>
+        <recital>
+          <p>WHEREAS, out of the proceeds of prize captured during the state of war that commenced on <date date="1939-09-03">3 September 1939</date>, the sum of pounds 229,000 is available for application for the benefit of members of the Royal Australian Air Force who served during that state of war:</p>
+        </recital>
+      </recitals>
+    </preamble>
+    <body>
+      <section eId="sec-1">
+        <num>1</num>
+        <heading>Short title</heading>
+        <content>
+          <p>		This Act may be cited as the <i>Royal Australian Air Force Veterans’ Residences Act 1953</i>.</p>
+        </content>
+      </section>
+      <section eId="sec-2">
+        <num>2</num>
+        <heading>Interpretation</heading>
+        <content>
+          <p>In this Act, unless the contrary intention appears:</p>
+          <p><term refersTo="#term-de-facto-partner-of-a-person">de facto partner of a person</term> has the meaning given by <def><ref href="">the Acts Interpretation Act 1901</ref>.</def></p>
+          <p><b><i>eligible person</i></b> means:</p>
+        </content>
+        <paragraph eId="sec-2__para-a">
+          <num>a</num>
+          <content>
+            <p>a former member of the Royal Australian Air Force; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-b">
+          <num>b</num>
+          <content>
+            <p>a former member of the Royal Australian Air Force Nursing Service; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-c">
+          <num>c</num>
+          <content>
+            <p>a former member of the Women’s Auxiliary Australian Air Force; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-d">
+          <num>d</num>
+          <content>
+            <p>a surviving spouse or de facto partner of a person referred to in paragraph (a), (b) or (c); or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-e">
+          <num>e</num>
+          <content>
+            <p>a parent of a former member referred to in paragraph (a), (b) or (c), if:</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-i">
+          <num>i</num>
+          <content>
+            <p>the former member is deceased and does not have a surviving spouse or de facto partner; and</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-ii">
+          <num>ii</num>
+          <content>
+            <p>the parent is the surviving spouse or de facto partner of another person who has died; and</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-iii">
+          <num>iii</num>
+          <content>
+            <p>the parent was, at the time of the former member’s appointment to, or enlistment in, the Force or Service referred to in paragraph (a), (b) or (c), dependent on the former member; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-f">
+          <num>f</num>
+          <content>
+            <p>a parent of a former member referred to in paragraph (a), (b) or (c), if:</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-i">
+          <num>i</num>
+          <content>
+            <p>the former member is deceased and does not have a surviving spouse or de facto partner; or</p>
+          </content>
+        </paragraph>
+        <paragraph eId="sec-2__para-ii">
+          <num>ii</num>
+          <content>
+            <p>the parent has a spouse or de facto partner who is so incapacitated as to be unable to contribute materially to the support of the parent.</p>
+          </content>
+          <content>
+            <p><b><i>parent</i></b>: without limiting who is a parent of anyone for the purposes of this Act, a person is the <b><i>parent </i></b>of another person if the other person is a child of the person within the meaning of the <i>Family Law Act 1975</i>.</p>
+            <p><term refersTo="#term-surviving-spouse-or-de-facto-partner">surviving spouse or de facto partner</term>, in relation to a deceased person, means <def>a person who was the spouse or de facto partner of the deceased person immediately before the deceased’s death.</def></p>
+            <p><term refersTo="#term-the-fund">the Fund</term> means <def>the Royal Australian Air Force Veterans’ Residences Trust Fund established under this Act.</def></p>
+            <p><term refersTo="#term-the-trust">the Trust</term> means <def>the Royal Australian Air Force Veterans’ Residences Trust established under this Act.</def></p>
+          </content>
+        </paragraph>
+      </section>
+      <section eId="sec-3">
+        <num>3</num>
+        <heading>Establishment of Fund</heading>
+        <subsection eId="sec-3__subsec-1">
+          <num>1</num>
+          <content>
+            <p>For the purposes of this Act, there shall be a fund to be known as the Royal Australian Air Force Veterans’ Residences Trust Fund.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-3__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The Fund shall be vested in the Trust.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-3__subsec-4">
+          <num>4</num>
+          <content>
+            <p>The Fund consists of money from the Prize Money Trust Account paid to the Trust for the purposes of the Fund and of all other moneys or property acquired or received by the Trust, including moneys or property given, devised or bequeathed to the Trust.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-4">
+        <num>4</num>
+        <heading>Purpose of Fund</heading>
+        <content>
+          <p>The purpose of the Fund is the provision of a residence or residences in which eligible persons who are in necessitous circumstances, and, if the Trust so approves, the dependants of such eligible persons, may be accommodated or supported.</p>
+        </content>
+      </section>
+      <section eId="sec-5">
+        <num>5</num>
+        <heading>Constitution of Trust</heading>
+        <subsection eId="sec-5__subsec-1">
+          <num>1</num>
+          <content>
+            <p>For the purposes of this Act, there shall be a Royal Australian Air Force Veterans’ Residences Trust.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The Trust shall consist of three persons appointed by <role refersTo="#minister">the Minister</role> to be members of the Trust.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-3">
+          <num>3</num>
+          <content>
+            <p>One member shall be a person who is or has been an officer of the Royal Australian Air Force.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-4">
+          <num>4</num>
+          <content>
+            <p>One member shall be a person who holds or has held office in the Air Force Association.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-5">
+          <num>5</num>
+          <content>
+            <p>One member shall be a person who has had substantial business and financial experience and is, at the date of his appointment, a member of the Returned Services League of Australia.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-6">
+          <num>6</num>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may terminate the appointment of a member at any time.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-5__subsec-7">
+          <num>7</num>
+          <content>
+            <p>	(7)	Section 30 of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with terminating the appointment of an accountable authority, or a member of an accountable authority, for contravening general duties of officials) does not apply in relation to a member despite subsection 30(6) of that Act.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-6">
+        <num>6</num>
+        <heading>Deputies of members</heading>
+        <subsection eId="sec-6__subsec-1">
+          <num>1</num>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may appoint a person to be the deputy of a member of the Trust.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-1A">
+          <num>1A</num>
+          <content>
+            <p><role refersTo="#minister">The Minister</role> may terminate the appointment of a deputy at any time.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-2">
+          <num>2</num>
+          <content>
+            <p>The deputy of the member referred to in subsection 5(3) shall be a person who is or has been an officer of the Royal Australian Air Force.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-3">
+          <num>3</num>
+          <content>
+            <p>The deputy of the member referred to in subsection 5(4) shall be a person who holds or has held office in the Air Force Association.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-4">
+          <num>4</num>
+          <content>
+            <p>The deputy of the member referred to in subsection 5(5) shall be a person who has had substantial business and financial experience and is, at the date of his appointment, a member of the Returned Services League of Australia.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-6__subsec-5">
+          <num>5</num>
+          <content>
+            <p>A person appointed under this section is, in the event of the absence from a meeting of the Trust of the member of whom he is the deputy, entitled to attend that meeting and, when so attending, shall be deemed to be a member of the Trust.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-7">
+        <num>7</num>
+        <heading>Incorporation of Trust</heading>
+        <subsection eId="sec-7__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The Trust is a body corporate with perpetual succession and a common seal and is capable of acquiring, holding and disposing of real and personal property and of suing and being sued in its corporate name.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	The <i>Public Governance, Performance and Accountability Act 2013</i> applies to the Trust. That Act deals with matters relating to corporate Commonwealth entities, including reporting and the use and management of public resources.</p>
+            </content>
+          </authorialNote>
+        </subsection>
+        <subsection eId="sec-7__subsec-2">
+          <num>2</num>
+          <content>
+            <p>All courts, judges and persons acting judicially shall take judicial notice of the seal of the Trust and shall presume that it was duly affixed.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-7__subsec-3">
+          <num>3</num>
+          <content>
+            <p>The performance or exercise of the functions, powers, rights, authorities, duties or obligations of the Trust is not affected by reason only of there being a vacancy in the office of a member of the Trust.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-8">
+        <num>8</num>
+        <heading>Powers of Trust</heading>
+        <subsection eId="sec-8__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The Trust may, at such time and in such manner as, in its discretion, it determines, apply moneys or property forming part of the Fund for the purpose of the Fund, and do all other things necessary or convenient for, or incidental to, the carrying out of that purpose.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-8__subsec-2">
+          <num>2</num>
+          <content>
+            <p>Without limiting the generality of the last preceding subsection, the Trust may:</p>
+          </content>
+          <paragraph eId="sec-8__subsec-2__para-a">
+            <num>a</num>
+            <content>
+              <p>acquire and dispose of land, including land upon which buildings are erected;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-b">
+            <num>b</num>
+            <content>
+              <p>erect, alter, enlarge or rebuild buildings on land vested in the Trust;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-c">
+            <num>c</num>
+            <content>
+              <p>improve, decorate, furnish and equip land or buildings vested in the Trust;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-d">
+            <num>d</num>
+            <content>
+              <p>determine the conditions under which eligible persons and their dependants are eligible to receive accommodation or support at residences maintained by the Trust, and the charges (if any) to be paid by a person receiving such accommodation or support;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-e">
+            <num>e</num>
+            <content>
+              <p>employ such persons as are necessary for the purposes of the Trust on such terms and conditions as it determines; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-8__subsec-2__para-g">
+            <num>g</num>
+            <content>
+              <p>do all things necessary for maintaining the property and managing the affairs of the Trust.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-8__subsec-3">
+          <num>3</num>
+          <content>
+            <p>The Trust shall, in the provision of accommodation under this Act, give preference to former members of the Royal Australian Air Force, of the Royal Australian Air Force Nursing Service and of the Women’s Auxiliary Australian Air Force who served in the war that commenced on <date date="1939-09-03">3 September 1939</date> and their dependants.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-8__subsec-4">
+          <num>4</num>
+          <content>
+            <p>The Trust may, in its discretion, determine that, where accommodation was, or accommodation and support were, provided in a residence for an eligible person and his dependants jointly, the dependants shall, on the death of the eligible person, continue to be eligible to receive accommodation or accommodation and support, as the case may be.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-9">
+        <num>9</num>
+        <heading>Investment of moneys</heading>
+        <subsection eId="sec-9__subsec-1">
+          <num>1</num>
+          <content>
+            <p>The Trust may:</p>
+          </content>
+          <paragraph eId="sec-9__subsec-1__para-a">
+            <num>a</num>
+            <content>
+              <p>invest moneys forming part of the Fund in securities of the Commonwealth, on deposit with a bank or in any other manner for the time being allowed by an Act or State Act for the investment of trust funds; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="sec-9__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p>realize and convert into money the investments so made and any other property of the Fund.</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-9__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	Section 59 of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with investment by corporate Commonwealth entities) does not apply to the Trust.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-11">
+        <num>11</num>
+        <heading>Taxation</heading>
+        <content>
+          <p>The property and income of the Trust is not subject to taxation under a law of the Commonwealth or to taxation under a law of a State to which the Commonwealth is not subject.</p>
+        </content>
+      </section>
+      <section eId="sec-12">
+        <num>12</num>
+        <heading>Members of Trust not entitled to remuneration</heading>
+        <subsection eId="sec-12__subsec-1">
+          <num>1</num>
+          <content>
+            <p>A member of the Trust is not entitled to receive remuneration for his services as a member or employee of the Trust.</p>
+          </content>
+        </subsection>
+        <subsection eId="sec-12__subsec-2">
+          <num>2</num>
+          <content>
+            <p>A member of the Trust is entitled to be paid out of the Fund such expenses as are reasonably incurred by him in the performance of his duties as a member.</p>
+          </content>
+        </subsection>
+      </section>
+      <section eId="sec-13">
+        <num>13</num>
+        <heading>Regulations</heading>
+        <content>
+          <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing all matters which are required or permitted to be prescribed, or which are necessary or convenient to be prescribed for carrying out or giving effect to this Act, and in particular making provision in relation to the convening of, and proceedings at, meetings of the Trust, including provision with respect to a quorum, voting and the decision of questions arising, at those meetings.</p>
+          <p>Endnotes</p>
+          <p>Endnote 1—About the endnotes</p>
+          <p>The endnotes provide details of the history of this legislation and its provisions. The following endnotes are included in each compilation:</p>
+          <p>Endnote 1—About the endnotes</p>
+          <p>Endnote 2—Abbreviation key</p>
+          <p>Endnote 3—Legislation history</p>
+          <p>Endnote 4—Amendment history</p>
+          <p>Endnote 5—Uncommenced amendments</p>
+          <p>Endnote 6—Modifications</p>
+          <p>Endnote 7—Misdescribed amendments</p>
+          <p>Endnote 8—Miscellaneous</p>
+          <p>If there is no information under a particular endnote, the word “none” will appear in square brackets after the endnote heading.</p>
+          <p><b>Abbreviation key—Endnote 2</b></p>
+          <p>The abbreviation key in this endnote sets out abbreviations that may be used in the endnotes.</p>
+          <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+          <p>Amending laws are annotated in the legislation history and amendment history.</p>
+          <p>The legislation history in endnote 3 provides information about each law that has amended the compiled law. The information includes commencement information for amending laws and details of application, saving or transitional provisions that are not included in this compilation.</p>
+          <p>The amendment history in endnote 4 provides information about amendments at the provision level. It also includes information about any provisions that have expired or otherwise ceased to have effect in accordance with a provision of the compiled law.</p>
+          <p><b>Uncommenced amendments—Endnote 5</b></p>
+          <p>The effect of uncommenced amendments is not reflected in the text of the compiled law but the text of the amendments is included in endnote 5.</p>
+          <p><b>Modifications—Endnote 6</b></p>
+          <p>If the compiled law is affected by a modification that is in force, details of the modification are included in endnote 6.</p>
+          <p><b>Misdescribed amendments—Endnote 7</b></p>
+          <p>An amendment is a misdescribed amendment if the effect of the amendment cannot be incorporated into the text of the compilation. Any misdescribed amendment is included in endnote 7.</p>
+          <p><b>Miscellaneous—Endnote 8</b></p>
+          <p>Endnote 8 includes any additional information that may be helpful for a reader of the compilation.</p>
+          <p>Endnote 2—Abbreviation key</p>
+        </content>
+        <table>
+          <tr>
+            <th>ad = added or inserted</th>
+            <th>pres = present</th>
+          </tr>
+          <tr>
+            <td>am = amended</td>
+            <td>prev = previous</td>
+          </tr>
+          <tr>
+            <td>c = clause(s)</td>
+            <td>(prev) = previously</td>
+          </tr>
+          <tr>
+            <td>Ch = Chapter(s)</td>
+            <td>Pt = Part(s)</td>
+          </tr>
+          <tr>
+            <td>def = definition(s)</td>
+            <td>r = regulation(s)/rule(s)</td>
+          </tr>
+          <tr>
+            <td>Dict = Dictionary</td>
+            <td>Reg = Regulation/Regulations</td>
+          </tr>
+          <tr>
+            <td>disallowed = disallowed by Parliament</td>
+            <td>reloc = relocated</td>
+          </tr>
+          <tr>
+            <td>Div = Division(s)</td>
+            <td>renum = renumbered</td>
+          </tr>
+          <tr>
+            <td>exp = expired or ceased to have effect</td>
+            <td>rep = repealed</td>
+          </tr>
+          <tr>
+            <td>hdg = heading(s)</td>
+            <td>rs = repealed and substituted</td>
+          </tr>
+          <tr>
+            <td>LI = Legislative Instrument</td>
+            <td>s = section(s)</td>
+          </tr>
+          <tr>
+            <td>LIA = Legislative Instruments Act 2003</td>
+            <td>Sch = Schedule(s)</td>
+          </tr>
+          <tr>
+            <td>mod = modified/modification</td>
+            <td>Sdiv = Subdivision(s)</td>
+          </tr>
+          <tr>
+            <td>No = Number(s)</td>
+            <td>SLI = Select Legislative Instrument</td>
+          </tr>
+          <tr>
+            <td>o = order(s)</td>
+            <td>SR = Statutory Rules</td>
+          </tr>
+          <tr>
+            <td>Ord = Ordinance</td>
+            <td>Sub-Ch = Sub-Chapter(s)</td>
+          </tr>
+          <tr>
+            <td>orig = original</td>
+            <td>SubPt = Subpart(s)</td>
+          </tr>
+          <tr>
+            <td>par = paragraph(s)/subparagraph(s)
+/sub-subparagraph(s)</td>
+            <td></td>
+          </tr>
+        </table>
+        <content>
+          <p>Endnote 3—Legislation history</p>
+        </content>
+        <table>
+          <tr>
+            <th>Act</th>
+            <th>Number and year</th>
+            <th>Assent</th>
+            <th>Commencement</th>
+            <th>Application, saving and transitional provisions</th>
+          </tr>
+          <tr>
+            <td>Royal Australian Air Force Veterans’ Residences Act 1953</td>
+            <td>92, 1953</td>
+            <td>12 Dec 1953</td>
+            <td>9 Jan 1954</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Royal Australian Air Force Veterans’ Residences Act 1965</td>
+            <td>124, 1965</td>
+            <td>18 Dec 1965</td>
+            <td>18 Dec 1965</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Statute Law Revision Act 1973</td>
+            <td>216, 1973</td>
+            <td>19 Dec 1973</td>
+            <td>31 Dec 1973</td>
+            <td>ss. 9 and 10</td>
+          </tr>
+          <tr>
+            <td>Royal Australian Air Force Veterans’ Residences Amendment Act 1976</td>
+            <td>3, 1977</td>
+            <td>28 Feb 1977</td>
+            <td>28 Feb 1977</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Administrative Changes (Consequential Provisions) Act 1978</td>
+            <td>36, 1978</td>
+            <td>12 June 1978</td>
+            <td>12 June 1978</td>
+            <td>s. 8</td>
+          </tr>
+          <tr>
+            <td>Defence Legislation Amendment Act 1984</td>
+            <td>164, 1984</td>
+            <td>25 Oct 1984</td>
+            <td>ss. 110-112: 22 Nov 1984 (a)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Sex Discrimination (Consequential Amendments) Act 1986</td>
+            <td>163, 1986</td>
+            <td>18 Dec 1986</td>
+            <td>15 Jan 1987</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Defence Legislation Amendment Act 1993</td>
+            <td>95, 1993</td>
+            <td>22 Dec 1993</td>
+            <td>22 Dec 1993</td>
+            <td>s. 24</td>
+          </tr>
+          <tr>
+            <td>Audit (Transitional and Miscellaneous) Amendment Act 1997</td>
+            <td>152, 1997</td>
+            <td>24 Oct 1997</td>
+            <td>Schedule 2 (items 1160–1163): 1 Jan 1998 (see Gazette 1997, No. GN49) (b)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Same-Sex Relationships (Equal Treatment in Commonwealth Laws—General Law Reform) Act 2008</td>
+            <td>144, 2008</td>
+            <td>9 Dec 2008</td>
+            <td>Schedule 4 (items 48–53): 10 Dec 2008</td>
+            <td>Sch. 4 (item 53)</td>
+          </tr>
+          <tr>
+            <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+            <td>62, 2014</td>
+            <td>30 June 2014</td>
+            <td>Sch 11 (items 137–141) and Sch 14 (items 1–4): 1 July 2014 (s 2(1) items 6, 14)</td>
+            <td>Sch 14 (items 1–4)</td>
+          </tr>
+        </table>
+        <paragraph eId="sec-13__para-a">
+          <num>a</num>
+          <content>
+            <p><i>(a)</i>	The <i>Royal Australian Air Force Veterans’ Residences Act 1953 </i>was amended by sections 110–112 only of the <i>Defence Legislation Amendment Act 1984</i>, subsection 2(1) of which provides as follows:</p>
+          </content>
+        </paragraph>
+        <subsection eId="sec-13__subsec-1">
+          <num>1</num>
+          <content>
+            <p>Subject to this section, this Act shall come into operation on the twenty-eighth day after the day on which it receives the Royal Assent.</p>
+          </content>
+          <paragraph eId="sec-13__subsec-1__para-b">
+            <num>b</num>
+            <content>
+              <p><i>(b)</i><i>	</i>The <i>Royal Australian Air Force Veterans’ Residences Act 1953 </i>was amended by Schedule 2 (items 1160–1163) only of the <i>Audit (Transitional and Miscellaneous) Amendment Act 1997</i>, subsection 2(2) of which provides as follows:</p>
+            </content>
+          </paragraph>
+        </subsection>
+        <subsection eId="sec-13__subsec-2">
+          <num>2</num>
+          <content>
+            <p>	(2)	Schedules 1, 2 and 4 commence on the same day as the <i>Financial Management and Accountability Act 1997</i>.</p>
+          </content>
+          <content>
+            <p>Endnote 4—Amendment history</p>
+          </content>
+          <table>
+            <tr>
+              <th>Provision affected</th>
+              <th>How affected</th>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td>am No 3, 1977</td>
+            </tr>
+            <tr>
+              <td>Preamble</td>
+              <td>am No 3, 1977; No 95, 1993</td>
+            </tr>
+            <tr>
+              <td>s 2</td>
+              <td>am No 124, 1965; No 3, 1977; No 163, 1986; No 144, 2008</td>
+            </tr>
+            <tr>
+              <td>s 3</td>
+              <td>am No 3, 1977; No 95, 1993; No 152, 1997</td>
+            </tr>
+            <tr>
+              <td>s 4</td>
+              <td>rs No 124, 1965</td>
+            </tr>
+            <tr>
+              <td>s 5</td>
+              <td>am No 216, 1973; No 95, 1993; No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 6</td>
+              <td>am No 216, 1973; No 95, 1993</td>
+            </tr>
+            <tr>
+              <td>s 5A</td>
+              <td>ad No 152, 1997</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>Note to s 7(1)</td>
+              <td>ad No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 8</td>
+              <td>am No 124, 1965; No 3, 1977; No 164, 1984</td>
+            </tr>
+            <tr>
+              <td>s 9</td>
+              <td>am No 62, 2014</td>
+            </tr>
+            <tr>
+              <td>s 10</td>
+              <td>am No 124, 1965; No 36, 1978</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rs No 164, 1984</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 152, 1997</td>
+            </tr>
+            <tr>
+              <td>s 10A</td>
+              <td>ad No 124, 1965</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>rep No 164, 1984</td>
+            </tr>
+          </table>
+          <content>
+            <p>Endnote 5—Uncommenced amendments [none]</p>
+            <p>Endnote 6—Modifications [none]</p>
+            <p>Endnote 7—Misdescribed amendments [none]</p>
+            <p>Endnote 8—Miscellaneous [none]</p>
+          </content>
+        </subsection>
+      </section>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,3088 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1998/129/!main"/>
+          <FRBRuri value="/akn/au/act/1998/129"/>
+          <FRBRdate date="1998-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="129"/>
+          <FRBRname value="national-environment-protection-measures-(implementation)-act-1998"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1998/129/eng@2024-10-14/!main"/>
+          <FRBRuri value="/akn/au/act/1998/129/eng@2024-10-14"/>
+          <FRBRdate date="2024-10-14" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1998/129/eng@2024-10-14/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1998/129/eng@2024-10-14/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1998-01-01" type="generation" eId="evt-creation" source="#national-environment-protection-measures-(implementation)-act-1998"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2001/15"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2001/55" date="2001-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2002/86"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2015/10" date="2015-03-05"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/2024/38" date="2024-05-31"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="deadline" href="/ontology/concept/au/deadline" showAs="deadline"/>
+        <TLCConcept eId="penaltyUnit" href="/ontology/concept/au/penaltyUnit" showAs="penalty unit"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-activity" href="/ontology/term/au/term-activity" showAs="activity"/>
+        <TLCTerm eId="term-applied-state-law" href="/ontology/term/au/term-applied-state-law" showAs="applied State law"/>
+        <TLCTerm eId="term-commonwealth-place" href="/ontology/term/au/term-commonwealth-place" showAs="Commonwealth place"/>
+        <TLCTerm eId="term-continental-shelf-of-australia" href="/ontology/term/au/term-continental-shelf-of-australia" showAs="continental shelf of Australia"/>
+        <TLCTerm eId="term-department" href="/ontology/term/au/term-department" showAs="Department"/>
+        <TLCTerm eId="term-engaging-in-conduct" href="/ontology/term/au/term-engaging-in-conduct" showAs="engaging in conduct"/>
+        <TLCTerm eId="term-enter" href="/ontology/term/au/term-enter" showAs="enter"/>
+        <TLCTerm eId="term-environment" href="/ontology/term/au/term-environment" showAs="environment"/>
+        <TLCTerm eId="term-environment-minister" href="/ontology/term/au/term-environment-minister" showAs="Environment Minister"/>
+        <TLCTerm eId="term-environment-secretary" href="/ontology/term/au/term-environment-secretary" showAs="Environment Secretary"/>
+        <TLCTerm eId="term-environmental-auditor" href="/ontology/term/au/term-environmental-auditor" showAs="environmental auditor"/>
+        <TLCTerm eId="term-environmental-impact-statement" href="/ontology/term/au/term-environmental-impact-statement" showAs="environmental impact statement"/>
+        <TLCTerm eId="term-exclusive-economic-zone" href="/ontology/term/au/term-exclusive-economic-zone" showAs="exclusive economic zone"/>
+        <TLCTerm eId="term-external-territory-to-which-this-act-extends" href="/ontology/term/au/term-external-territory-to-which-this-act-extends" showAs="external Territory to which this Act extends"/>
+        <TLCTerm eId="term-national-environment-protection-goal" href="/ontology/term/au/term-national-environment-protection-goal" showAs="national environment protection goal"/>
+        <TLCTerm eId="term-national-environment-protection-guideline" href="/ontology/term/au/term-national-environment-protection-guideline" showAs="national environment protection guideline"/>
+        <TLCTerm eId="term-national-environment-protection-protocol" href="/ontology/term/au/term-national-environment-protection-protocol" showAs="national environment protection protocol"/>
+        <TLCTerm eId="term-national-environment-protection-standard" href="/ontology/term/au/term-national-environment-protection-standard" showAs="national environment protection standard"/>
+        <TLCTerm eId="term-nepm" href="/ontology/term/au/term-nepm" showAs="NEPM"/>
+        <TLCTerm eId="term-premises" href="/ontology/term/au/term-premises" showAs="premises"/>
+        <TLCTerm eId="term-responsible-officer" href="/ontology/term/au/term-responsible-officer" showAs="responsible officer"/>
+        <TLCTerm eId="term-territorial-sea" href="/ontology/term/au/term-territorial-sea" showAs="territorial sea"/>
+        <TLCTerm eId="term-territory-except-in-the-expression-external-territory" href="/ontology/term/au/term-territory-except-in-the-expression-external-territory" showAs="Territory (except in the expression external Territory)"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>National Environment Protection Measures (Implementation) Act 1998</p>
+      <p>No. 129, 1998</p>
+      <p><b>Compilation No.</b><b> </b><b>9</b></p>
+      <p><b>Compilation date:</b><b>	</b>14 October 2024</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 38, 2024</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>National Environment Protection Measures (Implementation) Act 1998</i> that shows the text of the law as amended and in force on 14 October 2024 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Preliminary	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Objects of Act	1</p>
+      <p>4	Simplified outline of Act	1</p>
+      <p>5	Definitions	2</p>
+      <p>6	Extension to certain external Territories	8</p>
+      <p>6A	Application of the <i>Criminal Code</i>	8</p>
+      <p>7	Activities carried on by contractors	9</p>
+      <p>8	Laws made by local governing authorities	9</p>
+      <p>9	Operation of State and Territory laws implementing NEPMs	9</p>
+      <p>10	Operation of Act in relation to Commonwealth or a Commonwealth authority	10</p>
+      <p><ref href="#part-2">Part 2</ref>—Implementation of NEPMs by extending the application of certain provisions of applied State laws to Commonwealth activities in Commonwealth places	13</p>
+      <p>11	Part does not apply to certain NEPMs affecting national interest etc.	13</p>
+      <p>12	Applied State laws implementing NEPMs to apply to Commonwealth and its authorities	14</p>
+      <p>13	Certain provisions of applied State laws not to apply to Commonwealth and its authorities	15</p>
+      <p>14	Functions and powers of authorities or officers under applied provisions of applied State laws	17</p>
+      <p>15	Applied provisions of applied State laws to be interpreted by reference to the relevant State interpretation statute	18</p>
+      <p><ref href="#part-3">Part 3</ref>—Implementation of NEPMs by extending the application of certain provisions of State or Territory laws to Commonwealth activities	19</p>
+      <p>16	Part does not apply to certain NEPMs affecting national interest etc.	19</p>
+      <p>17	State or Territory laws implementing NEPMs to apply to Commonwealth and its authorities	20</p>
+      <p>18	Certain provisions of State or Territory laws not to apply to Commonwealth and its authorities	21</p>
+      <p>19	Functions and powers of authorities or officers under applied provisions of State or Territory laws	23</p>
+      <p>20	Applied provisions of State or Territory laws to be interpreted by reference to the relevant State or Territory interpretation statute	24</p>
+      <p><ref href="#part-4">Part 4</ref>—Implementation of NEPMs by the making of appropriate regulations	25</p>
+      <p>21	NEPMs may be implemented by regulations	25</p>
+      <p><ref href="#part-5">Part 5</ref>—Implementation of NEPMs by environmental audits and environment management plans	29</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Preliminary	29</p>
+      <p>22	Meaning of <i>environmental auditor</i>	29</p>
+      <p>23	Activities in relation to which this Part applies	29</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Environmental audits	32</p>
+      <p>24	Relevant Minister to arrange for carrying out of environmental audit	32</p>
+      <p>25	Environmental auditors	32</p>
+      <p>26	Environmental auditor not to be officer or employee of the relevant Minister’s Department or to be employed by the relevant Commonwealth authority	32</p>
+      <p>27	Environmental auditor to be a fit and proper person	33</p>
+      <p>28	Nature of environmental audit	33</p>
+      <p>29	Report by environmental auditor	34</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Environment management plans	35</p>
+      <p>30	Environment management plan	35</p>
+      <p>31	Matters to be dealt with in environment management plan	35</p>
+      <p>32	Duties of environment manager	36</p>
+      <p><ref href="#part-6">Part 6</ref>—Ensuring implementation of NEPMs under Parts 4 and 5	38</p>
+      <p>33	Relevant Minister responsible for adequate implementation of a NEPM in respect of an activity to which <ref href="#part-4">Part 4</ref> or 5 applies	38</p>
+      <p><ref href="#part-7">Part 7</ref>—Administrative and judicial review	40</p>
+      <p>34	Review of decisions by Administrative Review Tribunal	40</p>
+      <p>35	Civil jurisdiction of Federal Court	40</p>
+      <p><ref href="#part-8">Part 8</ref>—Miscellaneous	42</p>
+      <p>36	Person entering or searching premises occupied by Commonwealth or Commonwealth authority not to disclose information obtained from entry or search	42</p>
+      <p>37	Restriction of entry into or search of exempt premises	43</p>
+      <p>38	Commonwealth or Commonwealth authority may pay certain fees and charges	45</p>
+      <p>39	Arrangements with States and Territories	45</p>
+      <p>40	Annual reports	46</p>
+      <p>41	Application of the <i>Criminal Code</i>	47</p>
+      <p>42	Regulations	47</p>
+      <p>43	Review of operation of Act	47</p>
+      <p>Endnotes	49</p>
+      <p>Endnote 1—About the endnotes	49</p>
+      <p>Endnote 2—Abbreviation key	51</p>
+      <p>Endnote 3—Legislation history	52</p>
+      <p>Endnote 4—Amendment history	54</p>
+      <p>An Act to provide for the implementation of national environment protection measures in respect of certain activities carried on by or on behalf of the Commonwealth and Commonwealth authorities, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Preliminary</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>National Environment Protection Measures (Implementation) Act 1998</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <content>
+            <p>This Act commences on the day on which it receives the Royal Assent.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Objects of Act</heading>
+          <content>
+            <p>The objects of this Act are:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>to make provision for the implementation of national environment protection measures in respect of certain activities carried on by or on behalf of the Commonwealth and Commonwealth authorities; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>to protect, restore and enhance the quality of the environment in Australia, having regard to the need to maintain ecologically sustainable development; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-c">
+            <num>c</num>
+            <content>
+              <p>to ensure that the community has access to relevant and meaningful information about pollution.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Simplified outline of Act</heading>
+          <content>
+            <p>The following is a simplified outline of the operation of this Act:</p>
+            <p>State and Territory laws implementing national environment protection measures (<b><i>NEPMs</i></b>) do not apply to the activities of the Commonwealth or Commonwealth authorities, either of their own force or because of the <i>Commonwealth Places (Application of Laws) Act 1970 </i>(see <ref href="#sec-9">section 9</ref>).</p>
+            <p>Under this Act, the Environment Minister may (subject to considerations of national interest or administrative efficiency):</p>
+            <p>•	apply those State laws to the activities of the Commonwealth or Commonwealth authorities in Commonwealth places (<ref href="#part-2">Part 2</ref>); or</p>
+            <p>•	apply those State or Territory laws to the activities of the Commonwealth or Commonwealth authorities in other places (<ref href="#part-3">Part 3</ref>).</p>
+            <p>If NEPMs are not implemented in relation to the activities of the Commonwealth or Commonwealth authorities under <ref href="#part-2">Part 2</ref> or <ref href="#part-3">Part 3</ref>, they can be implemented:</p>
+            <p>•	by regulations (<ref href="#part-4">Part 4</ref>); or</p>
+            <p>•	if there are no regulations under <ref href="#part-4">Part 4</ref>, through environmental audits and environment management plans (<ref href="#part-5">Part 5</ref>).</p>
+            <p>The implementation of NEPMs in relation to the activities of the Commonwealth or Commonwealth authorities may be restricted by the Environment Minister in the national interest.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Definitions</heading>
+          <content>
+            <p>In this Act, unless the contrary intention appears:</p>
+            <p><term refersTo="#term-activity">activity</term> means <def>a physical activity that has a direct effect on, or represents a substantial risk of damage to, an aspect of the environment to which a NEPM applies but, to avoid doubt, does not include: the formulation of a policy; or the making of a decision by a Minister or by a person to whom a Minister has, under an Act or an instrument made or having effect under an Act, delegated the power to make the decision.</def></p>
+          </content>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>the formulation of a policy; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the making of a decision by a Minister or by a person to whom a Minister has, under an Act or an instrument made or having effect under an Act, delegated the power to make the decision.</p>
+            </content>
+            <content>
+              <p><b><i>applied provision </i></b>means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>in relation to an applied State law—a provision of that applied State law that applies as mentioned in <ref href="#sec-12">section 12</ref>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>in relation to a law of a State or Territory—a provision of that law that applies as mentioned in <ref href="#sec-17">section 17</ref>.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-applied-state-law">applied State law</term> means <def>a provision of a law of a State that applies in a Commonwealth place under the Commonwealth Places (Application of Laws) Act 1970.</def></p>
+              <p><b><i>carrying on of an activity by the Commonwealth or a Commonwealth authority</i></b> has a meaning affected by <ref href="#sec-7">section 7</ref>.</p>
+              <p><b><i>coastal waters</i></b>:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>	(a)	in relation to a State—means that part of the sea that is included in the coastal waters of the State within the meaning of the <i>Coastal Waters (State Powers) Act 1980</i> and includes the airspace over, and the sea-bed and subsoil beneath, that part of that sea; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	in relation to the Northern Territory—means that part of the sea that is included in the coastal waters of the Territory within the meaning of the <i>Coastal Waters (Northern Territory Powers) Act 1980</i> and includes the airspace over, and the sea-bed and subsoil beneath, that part of that sea; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>in relation to an external Territory to which this Act extends—means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>the territorial sea adjacent to the external Territory; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the sea on the landward side of the territorial sea adjacent to the external Territory and not within the limits of the external Territory, including the airspace over, and the sea-bed and subsoil beneath, that sea.</p>
+            </content>
+            <content>
+              <p><b><i>Commonwealth authority</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a body, whether incorporated or not, that is established for a public purpose by or under an Act; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a body, whether incorporated or not, that is established by the Governor-General or by a Minister; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>a body that is:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>an incorporated company over which the Commonwealth or a body referred to in paragraph (a) or (b) is in a position to exercise control; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>	(ii)	a subsidiary (within the meaning of the <i>Corporations Act 2001</i>) of an incorporated company referred to in subparagraph (i).</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-commonwealth-place">Commonwealth place</term> means <def>a place (other than the seat of government) with respect to which the Parliament, under <ref href="#sec-52">section 52</ref> of the Constitution, has, subject to the Constitution, exclusive power to make laws for the peace, order and good government of the Commonwealth.</def></p>
+              <p><term refersTo="#term-continental-shelf-of-australia">continental shelf of Australia</term> has the same meaning as <def>in <ref href="">the Seas and Submerged Lands Act 1973</ref>.</def></p>
+              <p><term refersTo="#term-department">Department</term> means <def>a Department of State of the Commonwealth.</def></p>
+              <p><term refersTo="#term-engaging-in-conduct">engaging in conduct</term> includes <def>doing, or omitting to do, anything.</def></p>
+              <p><term refersTo="#term-enter">enter</term>, in relation to a vessel or aircraft, includes <def>go on board.</def></p>
+              <p><term refersTo="#term-environment">environment</term> includes <def>all aspects of the surroundings of human beings, whether affecting them as individuals or in social groupings.</def></p>
+              <p><term refersTo="#term-environmental-impact-statement">environmental impact statement</term> includes <def>an environment effects statement, an impact assessment study in relation to the environment, and a public environment document, and any similar statement or study.</def></p>
+              <p><term refersTo="#term-environment-minister">Environment Minister</term> means <def>the Minister who administers this Act.</def></p>
+              <p><term refersTo="#term-environment-secretary">Environment Secretary</term> means <def>the Secretary of the Department administered by the Environment Minister.</def></p>
+              <p><term refersTo="#term-exclusive-economic-zone">exclusive economic zone</term> means <def>the exclusive economic zone, within the meaning of <ref href="">the Seas and Submerged Lands Act 1973</ref>, adjacent to the coast of Australia or the coast of an external Territory to which this Act extends.</def></p>
+              <p><term refersTo="#term-external-territory-to-which-this-act-extends">external Territory to which this Act extends</term> means <def>an external Territory other than Norfolk Island.</def></p>
+              <p><b><i>implementation</i></b>, in relation to a NEPM, includes, but is not limited to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>if the NEPM incorporates a national environment protection standard—requiring and securing compliance with the standard, including monitoring and reporting on observance of the standard; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>if the NEPM incorporates a national environment protection goal—encouraging attainment of the goal; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>if the NEPM incorporates a national environment protection guideline—ensuring that the guideline is taken into account; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>if the NEPM incorporates a national environment protection protocol—securing compliance with the protocol.</p>
+            </content>
+            <content>
+              <p><b><i>law</i></b>, in relation to a State or Territory, means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a law in force in the State or Territory other than:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>a law made by a local governing authority (other than a local governing authority that has entered into an arrangement with the Commonwealth for the application of this Act to laws made by <role refersTo="#authority">the authority</role>); or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>a law of the Commonwealth; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>an instrument made or having effect under a law to which paragraph (a) applies.</p>
+            </content>
+            <content>
+              <p><b><i>law</i></b>, in relation to a local governing authority, has a meaning affected by <ref href="#sec-8">section 8</ref>.</p>
+              <p><b><i>make a decision</i></b> includes:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>make, suspend, revoke or refuse to make an order, award or determination; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>give, suspend, revoke or refuse to give a certificate, direction, approval, consent or permission; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>issue, suspend, revoke or refuse to issue a licence, authority or other instrument; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-d">
+            <num>d</num>
+            <content>
+              <p>impose a condition or restriction; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-e">
+            <num>e</num>
+            <content>
+              <p>make a declaration, demand or requirement; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-f">
+            <num>f</num>
+            <content>
+              <p>retain, or refuse to deliver up, an article; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-g">
+            <num>g</num>
+            <content>
+              <p>do or refuse to do anything else.</p>
+            </content>
+            <content>
+              <p><b><i>matter of national interest</i></b> means:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a matter concerning:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>Australia’s relations with another country or Australia’s international obligations; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>national security; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-iii">
+            <num>iii</num>
+            <content>
+              <p>national defence; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-iv">
+            <num>iv</num>
+            <content>
+              <p>a national emergency; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a prescribed matter relating to:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-i">
+            <num>i</num>
+            <content>
+              <p>	(i)	a telecommunications activity authorised by <ref href="#dvs-2">Division 2</ref>, 3 or 4 of <ref href="#part-1">Part 1</ref> of Schedule 3 to the <i>Telecommunications Act 1997</i>; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-ii">
+            <num>ii</num>
+            <content>
+              <p>the management of aviation airspace or airports, including aircraft emissions, aircraft noise and on-ground airport management, but not including matters specified in subregulation 1.04(2) of the Airports (Environment Protection) Regulations; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>any other matter agreed between the Commonwealth, the States and the Territories.</p>
+            </content>
+            <content>
+              <p><b><i>modification</i></b>, in relation to a provision of an applied State law referred to in subsection 12(4) or a provision of a law of a State or Territory referred to in subsection 17(3) or 21(8) or (9), includes a modification that involves:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>the omission of part of the provision; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the addition of a provision; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>the omission of the provision or part of the provision and the substitution of a different provision.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-national-environment-protection-goal">national environment protection goal</term> means <def>a goal that: relates to desired environmental outcomes; and guides the formulation of strategies for the management of human activities that may affect the environment.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>relates to desired environmental outcomes; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>guides the formulation of strategies for the management of human activities that may affect the environment.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-national-environment-protection-guideline">national environment protection guideline</term> means <def>a guideline that gives guidance on possible means for achieving desired environmental outcomes.</def></p>
+              <p><term refersTo="#term-national-environment-protection-protocol">national environment protection protocol</term> means <def>a protocol that relates to the process to be followed in measuring environmental characteristics to determine: whether a particular standard or goal is being met or achieved; or the extent of the difference between the measured characteristic of the environment and a particular standard or a particular goal.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>whether a particular standard or goal is being met or achieved; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>the extent of the difference between the measured characteristic of the environment and a particular standard or a particular goal.</p>
+            </content>
+            <content>
+              <p><term refersTo="#term-national-environment-protection-standard">national environment protection standard</term> means <def>a standard that consists of quantifiable characteristics of the environment against which environmental quality can be assessed.</def></p>
+              <p><term refersTo="#term-nepm">NEPM</term> means <def>a national environment protection measure in force under subsection 14(1) of <ref href="">the National Environment Protection Council Act 1994</ref>.</def></p>
+              <p><term refersTo="#term-premises">premises</term> includes <def>any place (whether enclosed or built on or not) including a place situated under ground or under water, and, in particular, includes: a building, aircraft, vehicle or vessel; and any structure, whether fixed or moveable, and whether on land or the bed of any waters or floating on any waters; and a part of premises (including a part of any premises of a kind referred to in paragraph (a) or (b)). <b><i>relevant Minister</i></b>, in relation to activities carried on by the Commonwealth or a Commonwealth authority, means the Minister: who administers the Department that is responsible for the carrying on of the activities; or who administers the enactment by or under which the Commonwealth authority that is responsible for the carrying on of the activities is established or who is otherwise administratively responsible for <role refersTo="#authority">the authority</role>’s actions; as the case requires.</def></p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a building, aircraft, vehicle or vessel; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>any structure, whether fixed or moveable, and whether on land or the bed of any waters or floating on any waters; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-c">
+            <num>c</num>
+            <content>
+              <p>a part of premises (including a part of any premises of a kind referred to in paragraph (a) or (b)).</p>
+            </content>
+            <content>
+              <p><b><i>relevant Minister</i></b>, in relation to activities carried on by the Commonwealth or a Commonwealth authority, means the Minister:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>who administers the Department that is responsible for the carrying on of the activities; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>who administers the enactment by or under which the Commonwealth authority that is responsible for the carrying on of the activities is established or who is otherwise administratively responsible for <role refersTo="#authority">the authority</role>’s actions;</p>
+            </content>
+            <content>
+              <p>as the case requires.</p>
+              <p><term refersTo="#term-responsible-officer">responsible officer</term>, in relation to a State or Territory, means <def>the chief executive officer of the Department of the Government of the State or Territory that is responsible for matters relating to the environment.</def></p>
+              <p><b><i>securing compliance with</i></b> includes enforcing.</p>
+              <p><term refersTo="#term-territorial-sea">territorial sea</term> means <def>the territorial sea of Australia and includes the airspace over, and the sea-bed and subsoil beneath, that sea.</def></p>
+              <p><term refersTo="#term-territory-except-in-the-expression-external-territory">Territory (except in the expression external Territory)</term> means <def>the Australian Capital Territory, the Northern Territory or the Jervis Bay Territory.</def></p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Extension to certain external Territories</heading>
+          <content>
+            <p>This Act extends to the external Territories other than Norfolk Island.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-6A">
+          <num>6A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p><i>	</i><i>	</i>Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Activities carried on by contractors</heading>
+          <content>
+            <p>A reference in this Act to the carrying on of an activity by the Commonwealth or a Commonwealth authority includes a reference to the engaging in of any conduct by another person under a contract entered into by the person with the Commonwealth or <role refersTo="#authority">the authority</role> in connection with the carrying on of such an activity for or on behalf of the Commonwealth or <role refersTo="#authority">the authority</role>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-8">
+          <num>8</num>
+          <heading>Laws made by local governing authorities</heading>
+          <content>
+            <p>To avoid doubt, no Act passed by the Legislative Assembly for the Australian Capital Territory or the Legislative Assembly of the Northern Territory is to be taken, for the purposes of this Act, to be a law made by a local governing authority.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-9">
+          <num>9</num>
+          <heading>Operation of State and Territory laws implementing NEPMs</heading>
+          <subsection eId="part-1__sec-9__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	A provision of a State law implementing a NEPM that applies in a Commonwealth place in a State because of the operation of the <i>Commonwealth Places (Application of Laws) Act 1970</i> does not extend to activities carried on in that place by or on behalf of the Commonwealth or a Commonwealth authority, except to the extent that it so applies under this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-9__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A provision of a State law or a Territory law implementing a NEPM does not extend to activities carried on by or on behalf of the Commonwealth or a Commonwealth authority anywhere other than in a Commonwealth place in a State, except to the extent that it so applies under this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-10">
+          <num>10</num>
+          <heading>Operation of Act in relation to Commonwealth or a Commonwealth authority</heading>
+          <content>
+            <p>Act to bind Commonwealth</p>
+          </content>
+          <subsection eId="part-1__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	This Act binds the Crown in right of the Commonwealth.</p>
+            </content>
+            <content>
+              <p>State officer may report contraventions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If the responsible officer of a State:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>considers that the Commonwealth, a Commonwealth authority, or an officer or employee of the Commonwealth or of such an authority, may have contravened an applied provision of an applied State law of the State, or an applied provision of a law of the State; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>has told <role refersTo="#secretary">the Secretary</role> of the relevant Department or the chief executive officer of <role refersTo="#authority">the authority</role>, as the case requires, of the circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>has formed the opinion that the Department or authority has not taken appropriate action to deal with the matter and has told <role refersTo="#secretary">the Secretary</role> of the Department or the chief executive officer of <role refersTo="#authority">the authority</role> that the officer has formed that opinion;</p>
+              </content>
+              <content>
+                <p>the officer may report the circumstances in writing to the Environment Secretary.</p>
+                <p>Territory officer may report contraventions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If the responsible officer of a Territory:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>considers that the Commonwealth, a Commonwealth authority, or an officer or employee of the Commonwealth or of such an authority, may have contravened an applied provision of a law of the Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>has told <role refersTo="#secretary">the Secretary</role> of the relevant Department or the chief executive officer of <role refersTo="#authority">the authority</role>, as the case requires, of the circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>has formed the opinion that the Department or authority has not taken appropriate action to deal with the matter and has told <role refersTo="#secretary">the Secretary</role> of the Department or the chief executive officer of <role refersTo="#authority">the authority</role> that the officer has formed that opinion;</p>
+              </content>
+              <content>
+                <p>the officer may report the circumstances in writing to the Environment Secretary.</p>
+                <p>Duties of Environment Secretary</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If a report is made under subsection (2) or (3), the Environment Secretary must, <quantity refersTo="#deadline">within 60 days</quantity>:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>investigate the circumstances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>if he or she thinks it appropriate to do so:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>prepare draft recommendations for action to be taken by the relevant Department or authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>give written notice to <role refersTo="#secretary">the Secretary</role> of the Department or the chief executive officer of <role refersTo="#authority">the authority</role> setting out the draft recommendations and asking for comments within a reasonable period stated in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>give the Environment Minister a written report that:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-i">
+              <num>i</num>
+              <content>
+                <p>is accompanied by the report by the officer of the State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-ii">
+              <num>ii</num>
+              <content>
+                <p>sets out any comments of <role refersTo="#secretary">the Secretary</role> of the relevant Department or chief executive officer of <role refersTo="#authority">the authority</role> made within the period stated in the notice; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-4__para-iii">
+              <num>iii</num>
+              <content>
+                <p>sets out any action that the Environment Secretary, after considering the comments (if any), recommends should be taken by the Department or authority.</p>
+              </content>
+              <content>
+                <p>Powers of Environment Minister</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-5">
+            <num>5</num>
+            <content>
+              <p>When such a report is given to the Environment Minister, that Minister must, <quantity refersTo="#deadline">within 60 days</quantity>:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>if he or she administers the relevant Department, or administers the enactment by or under which <role refersTo="#authority">the authority</role> is established or is otherwise administratively responsible for the actions of <role refersTo="#authority">the authority</role>—take any action that he or she thinks appropriate; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise—make any recommendations that he or she thinks appropriate to <role refersTo="#minister">the Minister</role> who administers the relevant Department, or who administers the enactment by or under which <role refersTo="#authority">the authority</role> is established or is otherwise administratively responsible for the actions of <role refersTo="#authority">the authority</role>.</p>
+              </content>
+              <content>
+                <p>Ministers to give comments, and report on action, to Environment Minister</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-6">
+            <num>6</num>
+            <content>
+              <p>If a recommendation is made to a Minister under paragraph (5)(b), that Minister is to give the Environment Minister <quantity refersTo="#deadline">within 60 days</quantity> of receiving the recommendation:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>his or her comments on the recommendation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>a report as to the action that has been taken, in respect of the matters to which the recommendation relates, since <role refersTo="#secretary">the Secretary</role> of the Department or the chief executive officer of <role refersTo="#authority">the authority</role> was told of the relevant circumstances.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Implementation of NEPMs by extending the application of certain provisions of applied State laws to Commonwealth activities in Commonwealth places</heading>
+        <section eId="part-2__sec-11">
+          <num>11</num>
+          <heading>Part does not apply to certain NEPMs affecting national interest etc.</heading>
+          <content>
+            <p>Exclusion of Part in certain circumstances</p>
+          </content>
+          <subsection eId="part-2__sec-11__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Part does not apply in relation to an applied State law providing for the implementation of a NEPM that is relevant to the carrying on of a particular activity by the Commonwealth or a Commonwealth authority if there is in force a declaration by the Environment Minister stating:</p>
+            </content>
+            <paragraph eId="part-2__sec-11__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that an alternative Commonwealth regime for the implementation of the NEPM in relation to that activity will achieve the environmental outcomes specified in the NEPM; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-11__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the application of that alternative Commonwealth regime is more appropriate than taking any action under this Part:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-11__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>because the activity involves a specified matter of national interest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-11__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>	(ii)	for reasons of administrative efficiency, having regard to the objects of this Act, the <i>National Environment Protection Council Act 1994</i> and the principles of ecologically sustainable development.</p>
+              </content>
+              <content>
+                <p>Environment Minister may make declarations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-11__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Environment Minister may, by writing, make declarations for the purposes of subsection (1). A copy of a declaration is to be published in the <i>Gazette</i>.</p>
+            </content>
+            <content>
+              <p>Declarations to be tabled</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-11__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Within 15 sitting days after making a declaration for the purposes of subsection (1), <role refersTo="#minister">the Minister</role> must cause a copy of the declaration to be tabled in each House of the Parliament.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-12">
+          <num>12</num>
+          <heading>Applied State laws implementing NEPMs to apply to Commonwealth and its authorities</heading>
+          <content>
+            <p>Application of provision of applied State law</p>
+          </content>
+          <subsection eId="part-2__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Subject to <ref href="#sec-13">section 13</ref>, if:</p>
+            </content>
+            <paragraph eId="part-2__sec-12__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>there is in force a declaration by the Environment Minister stating that a particular provision of an applied State law that is applicable in a Commonwealth place is necessary for the implementation of a NEPM; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-12__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>there is in force a declaration by the Environment Minister stating that it is desirable for the provision to apply to the carrying on of the activity by the Commonwealth or by a particular Commonwealth authority in the Commonwealth place;</p>
+              </content>
+              <content>
+                <p>the provision applies, in accordance with its terms, in relation to the carrying on of an activity by the Commonwealth or by <role refersTo="#authority">the authority</role> in the Commonwealth place.</p>
+                <p>Environment Minister may make declarations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Environment Minister may, by writing, make declarations for the purposes of paragraphs (1)(a) and (b). A copy of a declaration is to be published in the <i>Gazette</i>.</p>
+            </content>
+            <content>
+              <p>Declarations to be tabled</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-12__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Within 15 sitting days after making a declaration for the purposes of paragraph (1)(a) or (1)(b), <role refersTo="#minister">the Minister</role> must cause a copy of the declaration to be tabled in each House of the Parliament.</p>
+            </content>
+            <content>
+              <p>Regulations may modify application of provisions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-12__subsec-4">
+            <num>4</num>
+            <content>
+              <p><b>	</b>(4)	In order to ensure that a provision of an applied State law that applies under subsection (1) in relation to the carrying on of an activity by the Commonwealth or a Commonwealth authority can operate effectively in relation to the carrying on of that activity by the Commonwealth or the authority, the regulations may provide that the provision applies subject to modifications set out in the regulations. If the regulations so provide, the provision applies subject to those modifications.</p>
+            </content>
+            <content>
+              <p>Relevant State to be consulted</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-12__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Environment Minister is to ensure that the appropriate officers of the relevant State are consulted in the preparation of regulations to be made for the purposes of subsection (4).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-13">
+          <num>13</num>
+          <heading>Certain provisions of applied State laws not to apply to Commonwealth and its authorities</heading>
+          <content>
+            <p>Qualification on application of applied State laws</p>
+          </content>
+          <subsection eId="part-2__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Section 12 does not have effect so as to:</p>
+            </content>
+            <paragraph eId="part-2__sec-13__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>alter the purpose for which land may be used if the land had been used for that purpose at any time before the commencement of this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>require a licence, permit or other authorisation (however described) for the construction, alteration or demolition of a building or structure, or for the installation, alteration or removal of any plant or equipment, except where the requirement is made for the purpose of implementing a NEPM; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>apply a provision whose primary purpose is to regulate the making of decisions about the use of land except to the extent that the provision requires a licence, permit or other authorisation (however described) for the construction, alteration or demolition of a building or structure, or for the installation, alteration or removal of any plant or equipment, for the purpose of implementing a NEPM; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>require the preparation, before the carrying on or continuation of an activity, of an environmental impact statement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>provide for the judicial or administrative review, under an applied State law, of a decision; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-13__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>require the payment of a fee or charge.</p>
+              </content>
+              <content>
+                <p>Discretion to pay fees or charges</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Paragraph (1)(f) does not affect the operation of <ref href="#sec-38">section 38</ref>.</p>
+            </content>
+            <content>
+              <p>Regulations may exclude the application of a provision of an applied State law</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The regulations may declare that <ref href="#sec-12">section 12</ref> is not to apply to a particular provision of an applied State law, either indefinitely or for a particular period. If the regulations so declare, that section does not apply to the provision, or to the provision for that period, as the case may be.</p>
+            </content>
+            <content>
+              <p>Regulations may exclude applied State law from applying in relation to an activity in all Commonwealth places or a particular Commonwealth place</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The regulations may declare that <ref href="#sec-12">section 12</ref> is not to apply to any provision, or to a particular provision, of an applied State law in relation to the carrying on of a particular activity or particular activities by the Commonwealth, or by a particular Commonwealth authority, either indefinitely or for a particular period and either in all Commonwealth places, or in a particular Commonwealth place or a particular part of a Commonwealth place, in the State. If the regulations so declare, that section does not apply to the declared extent.</p>
+            </content>
+            <content>
+              <p>Matters to be taken into account in making regulations</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-13__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Regulations may only be made for the purposes of subsection (3) or (4) if the Environment Minister is satisfied that it is desirable to make the regulations because of considerations relating to a matter of national interest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-14">
+          <num>14</num>
+          <heading>Functions and powers of authorities or officers under applied provisions of applied State laws</heading>
+          <content>
+            <p>State authorities or officers may exercise functions and powers</p>
+          </content>
+          <subsection eId="part-2__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a provision of an applied State law confers functions or powers on:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>an authority of the State other than a local governing authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an officer of the State other than an officer of a local governing authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the provision is applied as mentioned in <ref href="#sec-12">section 12</ref>;</p>
+              </content>
+              <content>
+                <p>then, subject to <ref href="#sec-13">section 13</ref>, <role refersTo="#authority">the authority</role> or officer has corresponding functions or powers under the applied provision.</p>
+                <p>How functions and powers are to be exercised</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In performing a function or exercising a power conferred by subsection (1) in relation to an applied provision of an applied State law, an authority or officer must act as nearly as practicable as <role refersTo="#authority">the authority</role> or officer would act in performing the same function or exercising the same power under the corresponding provision of the applied State law.</p>
+            </content>
+            <content>
+              <p>State laws for investigation of offences to apply</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The laws of a State respecting the investigation of offences against an applied State law apply so far as they are applicable to the investigation, by an authority or officer of the State under subsection (1), of offences against the applied law, and so apply to the exclusion of the laws of the Commonwealth that would otherwise apply to the investigation of an offence against a Commonwealth law.</p>
+            </content>
+            <content>
+              <p>Certain Commonwealth laws not affected</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-14__subsec-4">
+            <num>4</num>
+            <content>
+              <p>To avoid doubt, subsection (3) does not affect the operation of any of the following laws in relation to offences against an applied State law:</p>
+            </content>
+            <paragraph eId="part-2__sec-14__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>Director of Public Prosecutions Act 1983</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<ref href="#sec-21B">section 21B</ref> of the <i>Crimes Act 1914</i>; </p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<ref href="#part-I">Part I</ref>B of the <i>Crimes Act 1914</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	the <i>Proceeds of Crime Act 1987</i>; </p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-14__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	the <i>Proceeds of Crime Act 2002</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-15">
+          <num>15</num>
+          <heading>Applied provisions of applied State laws to be interpreted by reference to the relevant State interpretation statute</heading>
+          <content>
+            <p>If a provision of an applied State law is applied as mentioned in <ref href="#sec-12">section 12</ref>:</p>
+          </content>
+          <paragraph eId="part-2__sec-15__para-a">
+            <num>a</num>
+            <content>
+              <p>any provisions of the applied State laws with respect to the interpretation of the first-mentioned provision have effect for the purposes of that provision as so applied; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-15__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the <i>Acts Interpretation Act 1901</i> does not apply in relation to the applied provision.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Implementation of NEPMs by extending the application of certain provisions of State or Territory laws to Commonwealth activities</heading>
+        <section eId="part-3__sec-16">
+          <num>16</num>
+          <heading>Part does not apply to certain NEPMs affecting national interest etc.</heading>
+          <content>
+            <p>Exclusion of Part in certain circumstances</p>
+          </content>
+          <subsection eId="part-3__sec-16__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Part does not apply in relation to a State law or a Territory law providing for the implementation of a NEPM that is relevant to the carrying on of a particular activity by the Commonwealth or a Commonwealth authority if there is in force a declaration by the Environment Minister stating:</p>
+            </content>
+            <paragraph eId="part-3__sec-16__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that an alternative Commonwealth regime for the implementation of the NEPM in relation to that activity will achieve appropriate environmental outcomes; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that the application of that alternative Commonwealth regime is more appropriate than taking any action under this Part:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>because the activity involves a specified matter of national interest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-16__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>for reasons of administrative efficiency.</p>
+              </content>
+              <content>
+                <p>Environment Minister may make declarations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Environment Minister may, by writing, make declarations for the purposes of subsection (1). A copy of a declaration is to be published in the <i>Gazette</i>.</p>
+            </content>
+            <content>
+              <p>Declarations to be tabled</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-16__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Within 15 sitting days after making a declaration for the purposes of subsection (1), <role refersTo="#minister">the Minister</role> must cause a copy of the declaration to be tabled in each House of the Parliament.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-17">
+          <num>17</num>
+          <heading>State or Territory laws implementing NEPMs to apply to Commonwealth and its authorities</heading>
+          <content>
+            <p>Application of provision of State or Territory law</p>
+          </content>
+          <subsection eId="part-3__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Subject to <ref href="#sec-18">section 18</ref>, if:</p>
+            </content>
+            <paragraph eId="part-3__sec-17__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>there is in force a declaration by the Environment Minister stating that a particular provision of a law of a State or Territory is necessary for the implementation of a NEPM; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>there is in force a declaration by the Environment Minister stating that it is desirable for the provision to apply to the carrying on of an activity by the Commonwealth or by a particular Commonwealth authority;</p>
+              </content>
+              <content>
+                <p>the following paragraphs apply:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the provision applies, in accordance with its terms, in relation to the carrying on of the activity by the Commonwealth or <role refersTo="#authority">the authority</role> in the State or Territory or in the coastal waters of the State or Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-17__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>if the provision is in force in an external Territory to which this Act extends—the provision applies, in accordance with its terms, in relation to the carrying on of the activity by the Commonwealth or <role refersTo="#authority">the authority</role> in the external Territory and the coastal waters of the external Territory.</p>
+              </content>
+              <content>
+                <p>Environment Minister may make declarations</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Environment Minister may, by writing, make declarations for the purposes of paragraphs (1)(a) and (b). A copy of a declaration is to be published in the <i>Gazette</i>.</p>
+            </content>
+            <content>
+              <p>Regulations may modify application of provisions</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p><b>	</b>(3)	In order to ensure that a provision of a law of a State or Territory that applies under subsection (1) in relation to the carrying on of an activity by the Commonwealth or a Commonwealth authority can operate effectively in relation to the carrying on of that activity by the Commonwealth or the authority, the regulations may provide that the provision applies subject to modifications set out in the regulations. If the regulations so provide, the provision applies subject to those modifications.</p>
+            </content>
+            <content>
+              <p>Relevant State or Territory to be consulted</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-17__subsec-4">
+            <num>4</num>
+            <content>
+              <p><b>	</b>(4)	The Environment Minister is to ensure that the appropriate officers of the relevant State or Territory are consulted in the preparation of regulations to be made for the purposes of subsection (3).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-18">
+          <num>18</num>
+          <heading>Certain provisions of State or Territory laws not to apply to Commonwealth and its authorities</heading>
+          <content>
+            <p>Qualification on application of State or Territory laws</p>
+          </content>
+          <subsection eId="part-3__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Section 17 does not have effect so as to:</p>
+            </content>
+            <paragraph eId="part-3__sec-18__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>alter the purpose for which land may be used if the land had been used for that purpose at any time before the commencement of this Act; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>require a licence, permit or other authorisation (however described) for the construction, alteration or demolition of a building or structure, or for the installation, alteration or removal of any plant or equipment, except where the requirement is made for the purpose of implementing a NEPM; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>apply a provision whose primary purpose is to regulate the making of decisions about the use of land except to the extent that the provision requires a licence, permit or other authorisation (however described) for the construction, alteration or demolition of a building or structure, or for the installation, alteration or removal of any plant or equipment, for the purpose of implementing a NEPM; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>require the preparation, before the carrying on or continuation of an activity, of an environmental impact statement; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>confer any judicial power; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>provide for the judicial or administrative review, under a law of a State or Territory, of a decision; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>impose a tax; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-18__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>require the payment of a fee or charge.</p>
+              </content>
+              <content>
+                <p>Discretion to pay fees or charges</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p><b>	</b>(2)	Paragraph (1)(h) does not affect the operation of <ref href="#sec-38">section 38</ref>.</p>
+            </content>
+            <content>
+              <p>Regulations may exclude the application of a provision of a State or Territory law</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p><b>	</b>(3)	The regulations may declare that <ref href="#sec-17">section 17</ref> is not to apply to a particular provision of a law of a State or Territory, either indefinitely or for a particular period. If the regulations so declare, that section does not apply to the provision, or to the provision for that period, as the case may be.</p>
+            </content>
+            <content>
+              <p>Regulations may exclude State or Territory law from applying in relation to an activity in, or in a part of, the State or Territory</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The regulations may declare that <ref href="#sec-17">section 17</ref> is not to apply to any provision, or to a particular provision, of a law of a State or Territory in relation to the carrying on of a particular activity or particular activities by the Commonwealth, or by a particular Commonwealth authority, either indefinitely or for a particular period and either in, or in a particular part of, the State or Territory. If the regulations so declare, that section does not apply to the declared extent.</p>
+            </content>
+            <content>
+              <p>Matters to be taken into account in making regulations</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Regulations may only be made for the purposes of subsection (3) or (4) if the Environment Minister is satisfied that it is desirable to make the regulations because of considerations relating to a matter of national interest.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-19">
+          <num>19</num>
+          <heading>Functions and powers of authorities or officers under applied provisions of State or Territory laws</heading>
+          <content>
+            <p>State authorities or officers may exercise functions or powers</p>
+          </content>
+          <subsection eId="part-3__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-3__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a provision of a law of a State or Territory confers functions or powers on:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>an authority of the State or Territory other than a local governing authority; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>an officer of the State or Territory other than an officer of a local governing authority; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the provision is applied as mentioned in <ref href="#sec-17">section 17</ref>;</p>
+              </content>
+              <content>
+                <p>then, subject to <ref href="#sec-18">section 18</ref>, <role refersTo="#authority">the authority</role> or officer has corresponding functions or powers under the applied provision.</p>
+                <p>How functions or powers are to be exercised</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In performing a function or exercising a power conferred by subsection (1) in relation to an applied provision of a law of a State or Territory, an authority or officer must act as nearly as practicable as <role refersTo="#authority">the authority</role> or officer would act in performing the same function or exercising the same power under the corresponding provision of the law of the State or Territory.</p>
+            </content>
+            <content>
+              <p>State or Territory laws for investigation of offences to apply</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The laws of a State or Territory respecting the investigation of offences against an applied provision of a law of a State or Territory apply so far as they are applicable to the investigation, by an authority or officer of the State or Territory under subsection (1), of offences against the applied provision, and so apply to the exclusion of the laws of the Commonwealth that would otherwise apply to the investigation of an offence against a Commonwealth law.</p>
+            </content>
+            <content>
+              <p>Commonwealth laws not affected</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-19__subsec-4">
+            <num>4</num>
+            <content>
+              <p>To avoid doubt, subsection (3) does not affect the operation of any of the following laws in relation to offences against an applied State or Territory law:</p>
+            </content>
+            <paragraph eId="part-3__sec-19__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>Director of Public Prosecutions Act 1983</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	<ref href="#sec-21B">section 21B</ref> of the <i>Crimes Act 1914</i>; </p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>	(c)	<ref href="#part-I">Part I</ref>B of the <i>Crimes Act 1914</i>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-4__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	the <i>Proceeds of Crime Act 1987</i>; </p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-19__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p>	(e)	the <i>Proceeds of Crime Act 2002</i>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-20">
+          <num>20</num>
+          <heading>Applied provisions of State or Territory laws to be interpreted by reference to the relevant State or Territory interpretation statute</heading>
+          <content>
+            <p><b>	</b><b>	</b>If a provision of a law of a State or Territory is applied as mentioned in <ref href="#sec-17">section 17</ref>:</p>
+          </content>
+          <paragraph eId="part-3__sec-20__para-a">
+            <num>a</num>
+            <content>
+              <p>any provisions of the laws of the State or Territory with respect to the interpretation of the first-mentioned provision have effect for the purposes of that provision as so applied; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-20__para-b">
+            <num>b</num>
+            <content>
+              <p>	(b)	the <i>Acts Interpretation Act 1901</i> does not apply in relation to the applied provision.</p>
+            </content>
+          </paragraph>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Implementation of NEPMs by the making of appropriate regulations</heading>
+        <section eId="part-4__sec-21">
+          <num>21</num>
+          <heading>NEPMs may be implemented by regulations</heading>
+          <content>
+            <p>Circumstances to which Part applies</p>
+          </content>
+          <subsection eId="part-4__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Part applies for the purposes of the implementation of a NEPM in relation to an activity carried on by the Commonwealth or a Commonwealth authority if the Environment Minister becomes satisfied that:</p>
+            </content>
+            <paragraph eId="part-4__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the NEPM is relevant to the carrying on of the activity; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the activity is carried on in a place (the <b><i>relevant place</i></b>) referred to in any of the following subparagraphs:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>a Commonwealth place in which, in the Environment Minister’s opinion, the NEPM is not being implemented, or satisfactorily implemented, under an applied State law of the State in which the Commonwealth place is situated;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a State or Territory, or the coastal waters of a State or Territory, in which, in the Environment Minister’s opinion, the NEPM is not being implemented, or satisfactorily implemented, under a law of the State or Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>	(iii)	a Commonwealth place in a State, where a provision of a law of the State for the implementation of the NEPM that applies in the Commonwealth place under the <i>Commonwealth Places (Application of Laws) Act 1970</i> is not, and is not to be, applied under <ref href="#part-2">Part 2</ref> in relation to the carrying on of the activity;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>a State or Territory or the coastal waters of a State or Territory, where a provision of a law of the State or Territory for the implementation of the NEPM is not, and is not to be, applied under <ref href="#part-3">Part 3</ref> in relation to the carrying on of the activity;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-v">
+              <num>v</num>
+              <content>
+                <p>an external Territory to which this Act extends or its coastal waters;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-vi">
+              <num>vi</num>
+              <content>
+                <p>a part of the territorial sea of Australia that is not part of the coastal waters of a State or Territory;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-vii">
+              <num>vii</num>
+              <content>
+                <p>a part of the exclusive economic zone;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-viii">
+              <num>viii</num>
+              <content>
+                <p>a part of any area of the continental shelf of Australia that is beyond the limits of the exclusive economic zone; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the NEPM is not, and is not to be, implemented in relation to the carrying on of the activity by another law of the Commonwealth in a way that the Environment Minister is satisfied will achieve appropriate environmental outcomes.</p>
+              </content>
+              <content>
+                <p>Part may be excluded by regulation</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Part does not apply for the purposes of the implementation of a NEPM in relation to an activity if the activity is excluded, under the regulations, from the application of this Part for the purposes of the implementation of the NEPM.</p>
+            </content>
+            <content>
+              <p>Period of exclusion</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Regulations made for the purposes of subsection (2) may exclude an activity for the purposes of the application of a NEPM:</p>
+            </content>
+            <paragraph eId="part-4__sec-21__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>indefinitely or for a particular period; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>either wherever the activity is carried on or in a particular place where the activity is carried on.</p>
+              </content>
+              <content>
+                <p>Exclusion only if required by matter of national interest</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Regulations may only be made for the purposes of subsection (2) if the Environment Minister is satisfied that it is desirable to make the regulations because of considerations relating to a matter of national interest.</p>
+            </content>
+            <content>
+              <p>Regulations may implement NEPM</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The regulations may make provision for or in relation to the implementation of a NEPM in respect of the carrying on of an activity by the Commonwealth or a Commonwealth authority, including provision for penalties for offences against the regulations.</p>
+            </content>
+            <content>
+              <p>Maximum penalty for contravention of regulations</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The penalty for a contravention of the regulations must not exceed (except in the circumstances mentioned in subsection (9)):</p>
+            </content>
+            <paragraph eId="part-4__sec-21__subsec-6__para-a">
+              <num>a</num>
+              <content>
+                <p>if the contravention causes or is likely to cause, whether directly or indirectly, harm to the environment (irrespective of the duration of the harm):</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>in respect of a contravention by an individual—<quantity refersTo="#penaltyUnit">2,000 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in respect of a contravention by a corporation—<quantity refersTo="#penaltyUnit">10,000 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p>otherwise:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-6__para-i">
+              <num>i</num>
+              <content>
+                <p>in respect of a contravention by an individual—<quantity refersTo="#penaltyUnit">500 penalty units</quantity>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-21__subsec-6__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in respect of a contravention by a corporation—<quantity refersTo="#penaltyUnit">2,500 penalty units</quantity>.</p>
+              </content>
+              <content>
+                <p>When contravention is taken to harm the environment</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-7">
+            <num>7</num>
+            <content>
+              <p>If harm to the environment is caused, or is likely to be caused, by a combination of a contravention of the regulations and any other factor or factors, the harm is taken for the purposes of paragraph (6)(a) to be caused, or to be likely to be caused, as the case may be, by the contravention.</p>
+            </content>
+            <content>
+              <p>Regulations implementing NEPM may apply State or Territory law</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-8">
+            <num>8</num>
+            <content>
+              <p>The provision for the implementation of a NEPM that may be made under subsection (5) in respect of an activity may include the application, with or without modifications, of provisions of a law of any State or Territory as in force at a particular time or as in force from time to time, even if the activity is not carried on in that State or Territory.</p>
+            </content>
+            <content>
+              <p>Regulations applying State or Territory law may apply penalties</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-21__subsec-9">
+            <num>9</num>
+            <content>
+              <p>The provisions of a law of a State or Territory that may be applied by regulations as mentioned in subsection (8) may include provisions of that law imposing penalties for offences against the provisions so applied, but any modifications of those provisions made by the regulations must not increase those penalties.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Implementation of NEPMs by environmental audits and environment management plans</heading>
+        <division eId="part-5__dvs-1">
+          <num>1</num>
+          <heading>Preliminary</heading>
+          <section eId="part-5__dvs-1__sec-22">
+            <num>22</num>
+            <heading>Meaning of environmental auditor</heading>
+            <content>
+              <p>In this Part:</p>
+              <p><term refersTo="#term-environmental-auditor">environmental auditor</term> has the meaning given by <def><ref href="#sec-26">section 26</ref>.</def></p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-1__sec-23">
+            <num>23</num>
+            <heading>Activities in relation to which this Part applies</heading>
+            <content>
+              <p>Circumstances in which Part applies</p>
+            </content>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to this section, Divisions 2 and 3 apply for the purposes of the implementation of a NEPM in relation to an activity carried on by the Commonwealth or a Commonwealth authority if the Environment Minister becomes satisfied that:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the NEPM is relevant to the carrying on of the activity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the activity is carried on in a place (the <b><i>relevant place</i></b>) referred to in any of the following subparagraphs:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>a Commonwealth place in which, in the Environment Minister’s opinion, the NEPM is not being implemented, or satisfactorily implemented, under an applied State law of the State in which the Commonwealth place is situated;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a State or Territory, or the coastal waters of a State or Territory, in which, in the Environment Minister’s opinion, the NEPM is not being implemented, or satisfactorily implemented, under a law of the State or Territory;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>	(iii)	a Commonwealth place in a State, where a provision of a law of the State for the implementation of the NEPM that applies in the Commonwealth place under the <i>Commonwealth Places (Application of Laws) Act 1970</i> is not, and is not to be, applied under <ref href="#part-2">Part 2</ref> in relation to the carrying on of the activity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>a State or Territory or the coastal waters of a State or Territory, where a provision of a law of the State or Territory for the implementation of the NEPM is not, and is not to be, applied under <ref href="#part-3">Part 3</ref> in relation to the carrying on of the activity;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-v">
+                <num>v</num>
+                <content>
+                  <p>an external Territory to which this Act extends or its coastal waters;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-vi">
+                <num>vi</num>
+                <content>
+                  <p>a part of the territorial sea of Australia that is not part of the coastal waters of a State or Territory;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-vii">
+                <num>vii</num>
+                <content>
+                  <p>a part of the exclusive economic zone;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-viii">
+                <num>viii</num>
+                <content>
+                  <p>a part of any area of the continental shelf of Australia that is beyond the limits of the exclusive economic zone; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the NEPM is not, and is not to be, implemented in relation to the carrying on of the activity:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>by regulations under <ref href="#part-4">Part 4</ref>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>by another law of the Commonwealth in a way that the Environment Minister is satisfied will achieve appropriate environmental outcomes.</p>
+                </content>
+                <content>
+                  <p>Provisions of Part may be excluded by regulation</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p><ref href="#dvs-2">Division 2</ref> or 3, or a provision of <ref href="#dvs-2">Division 2</ref> or 3, does not apply for the purposes of the implementation of a NEPM in relation to an activity if the activity is excluded, under the regulations, from the application of the Division or provision, as the case may be, for the purposes of the implementation of the NEPM.</p>
+              </content>
+              <content>
+                <p>Period of exclusion</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Regulations made for the purposes of subsection (2) may exclude an activity for the purposes of the implementation of a NEPM:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>indefinitely or for a particular period; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-23__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>either wherever the activity is carried on or in a particular place where the activity is carried on.</p>
+                </content>
+                <content>
+                  <p>Exclusion only if required by matter of national interest</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Regulations may only be made for the purposes of subsection (2) if the Environment Minister is satisfied that it is desirable to make the regulations because of considerations relating to a matter of national interest.</p>
+              </content>
+              <content>
+                <p>Notice of application of provisions to be given to relevant Minister</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-5">
+              <num>5</num>
+              <content>
+                <p>If all or any of the provisions of Divisions 2 and 3 apply for the purposes of the implementation of a NEPM in relation to an activity carried on by the Commonwealth or a Commonwealth authority, the Environment Minister must notify the relevant Minister accordingly.</p>
+              </content>
+              <content>
+                <p>Provisions to apply when notice received by relevant Minister</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-23__subsec-6">
+              <num>6</num>
+              <content>
+                <p>If the relevant Minister is so notified, those provisions (other than any provisions that afterwards cease to apply because of regulations made for the purposes of subsection (2) after the notification) have effect for the purposes of the implementation of the NEPM in relation to the activity.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-2">
+          <num>2</num>
+          <heading>Environmental audits</heading>
+          <section eId="part-5__dvs-2__sec-24">
+            <num>24</num>
+            <heading>Relevant Minister to arrange for carrying out of environmental audit</heading>
+            <subsection eId="part-5__dvs-2__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	The relevant Minister must arrange for an environmental audit to be carried out for the purposes of the implementation of the NEPM with respect to the carrying on by the Commonwealth or the Commonwealth authority of the activities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p><b>	</b>(2)	The relevant Minister must ensure that the audit is begun within 90 days after he or she is told by the Environment Minister that this Division applies in relation to the activities for the purposes of the implementation of the NEPM.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-25">
+            <num>25</num>
+            <heading>Environmental auditors</heading>
+            <subsection eId="part-5__dvs-2__sec-25__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	Subject to sections 26 and 27, the relevant Minister may appoint any person (the <b><i>environmental auditor</i></b>) to carry out an environmental audit for the purposes of this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-25__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The regulations may make provision for the accreditation of environmental auditors.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-26">
+            <num>26</num>
+            <heading>Environmental auditor not to be officer or employee of the relevant Minister’s Department or to be employed by the relevant Commonwealth authority</heading>
+            <content>
+              <p>		The person (the <b><i>environmental auditor</i></b>) appointed to carry out the environmental audit must be a person who is not an officer of, or employed in, the Department administered by the relevant Minister or is not employed by the Commonwealth authority, as the case may be.</p>
+            </content>
+          </section>
+          <section eId="part-5__dvs-2__sec-27">
+            <num>27</num>
+            <heading>Environmental auditor to be a fit and proper person</heading>
+            <subsection eId="part-5__dvs-2__sec-27__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person must not be appointed as an environmental auditor unless the relevant Minister is satisfied that the person is a fit and proper person.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-27__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In deciding whether a person is a fit and proper person, the relevant Minister must have regard to:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-27__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>any conviction of the person, or any body corporate of which the person is a director, for contravention of any Australian environment protection or related law; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-27__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>any suspension or revocation of any licence or other authority held by the person, or any body corporate of which the person is a director, under any Australian environment protection or related law.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-27__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A person’s appointment as an environmental auditor must be revoked if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-27__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person, or a body corporate of which the person is a director, is convicted for a contravention of any Australian environment protection or related law; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-27__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>any licence or authority held by the person, or a body corporate of which the person is a director, under any Australian environment protection or related law is suspended or revoked.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-28">
+            <num>28</num>
+            <heading>Nature of environmental audit</heading>
+            <subsection eId="part-5__dvs-2__sec-28__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The environmental audit for the purposes of the implementation of the NEPM is to consist of:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an evaluation of the nature of the environment that is or will be affected by the activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an assessment of the risks to the environment resulting from the activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>an assessment of the existing capacity of the Commonwealth or the Commonwealth authority to comply with the NEPM in carrying on the activities; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>an assessment of what the Commonwealth or the Commonwealth authority will need to do in order so to comply.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-28__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In carrying out the environmental audit, the environmental auditor may, if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>an environmental audit relating to the implementation of the NEPM was completed within the preceding 2 years; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the environmental auditor is satisfied that the previous environmental audit is still relevant;</p>
+                </content>
+                <content>
+                  <p>have regard to the results of the previous audit.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-28__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the environmental auditor is carrying out the environmental audit; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>in the course of carrying out the audit, the environmental auditor conceals, or fails to take into account, any information or document; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-28__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the information or document is relevant to the audit;</p>
+                </content>
+                <content>
+                  <p>the environmental auditor commits an offence punishable on conviction by imprisonment for not more than 6 months.</p>
+                </content>
+                <authorialNote placement="end" eId="note-2" marker="2">
+                  <content>
+                    <p>Note 1:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+                  </content>
+                </authorialNote>
+                <authorialNote placement="end" eId="note-3" marker="3">
+                  <content>
+                    <p>Note 2:	Subsection 4B(2) of the <i>Crimes Act 1914</i> allows a court that convicts an individual of an offence to impose a fine instead of, or in addition to, a term of imprisonment. The maximum fine that a court can impose on the individual is worked out by multiplying the maximum term of imprisonment (in months) by 5, and then multiplying the resulting number by the amount of a penalty unit. The amount of a penalty unit is stated in <ref href="#sec-4A">section 4A</ref>A of that Act.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-2__sec-29">
+            <num>29</num>
+            <heading>Report by environmental auditor</heading>
+            <subsection eId="part-5__dvs-2__sec-29__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	After completing the environmental audit, the environmental auditor must prepare, and give the relevant Minister and the Environment Minister, a written report setting out:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-29__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the auditor’s qualifications and experience; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-29__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the results of the audit.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-3">
+          <num>3</num>
+          <heading>Environment management plans</heading>
+          <section eId="part-5__dvs-3__sec-30">
+            <num>30</num>
+            <heading>Environment management plan</heading>
+            <subsection eId="part-5__dvs-3__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	As soon as practicable after receiving the report of the environmental auditor, the relevant Minister must arrange for the Department or the Commonwealth authority that is carrying on, or proposes to carry on, activities relevant to the NEPM to cause an environment management plan to be prepared with respect to the carrying on of the activities.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p><role refersTo="#secretary">The Secretary</role> of that Department, or the chief executive officer of that authority, as the case may be, must appoint an officer of that Department, or a person employed by that authority, to be the environment manager for the purposes of the environment management plan.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-31">
+            <num>31</num>
+            <heading>Matters to be dealt with in environment management plan</heading>
+            <subsection eId="part-5__dvs-3__sec-31__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	An environment management plan in respect of activities relevant to the NEPM must include the matters set out in subsection (2) and must have regard to the objects of this Act and the <i>National Environment Protection Council Act 1994</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-31__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The matters referred to in subsection (1) are as follows:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the objectives of the plan;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the activities to which the plan relates;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>how the NEPM is to be implemented and a timetable for implementation;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>if the NEPM relates to ambient environmental quality, how the activities will be carried on so as to give effect to the NEPM;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-e">
+                <num>e</num>
+                <content>
+                  <p>appropriate performance indicators at designated intervals;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-f">
+                <num>f</num>
+                <content>
+                  <p>appropriate provision for the participation of, and for consultation with, the community in the development of the plan;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-g">
+                <num>g</num>
+                <content>
+                  <p>provision for monitoring and reporting on the implementation of the plan;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-h">
+                <num>h</num>
+                <content>
+                  <p>provision for any necessary up-grading of the manner in which the activities are, or are to be, carried out, and the equipment used, or to be used, in the carrying out of the activities, for the purpose of meeting the objectives of the plan;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-31__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>provision for action to be taken in a contingency or emergency.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-3__sec-32">
+            <num>32</num>
+            <heading>Duties of environment manager</heading>
+            <subsection eId="part-5__dvs-3__sec-32__subsec-1">
+              <num>1</num>
+              <content>
+                <p><b>	</b>(1)	The duties of the environment manager in relation to an environment management plan are:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to cause a preliminary plan to be prepared; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to give copies of the preliminary plan to the relevant Minister and the Environment Minister; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>if either of them gives the environment manager any comments on the preliminary plan within a reasonable period—to take the comments into account in the preparation of the final plan; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>to cause a final plan to be prepared and to give copies of it to the relevant Minister and the Environment Minister; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>to ensure, to the maximum extent practicable, that the plan is not contravened; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>unless the regulations otherwise provide, to cause copies of the plan to be made available for inspection, and for purchase at a reasonable price, by members of the public.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-32__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Regulations may only be made for the purposes of paragraph (1)(f) if the Environment Minister is satisfied that it is desirable to make the regulations because of considerations relating to a matter of national interest.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-32__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>after a final environment management plan has been prepared, a further NEPM comes into force; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-32__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>a period of 3 years has elapsed since a final environment management plan was prepared or last revised;</p>
+                </content>
+                <content>
+                  <p>the plan is to be revised for the purpose of giving effect to the NEPMs that apply to matters to which the plan relates.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Ensuring implementation of NEPMs under Parts 4 and 5</heading>
+        <section eId="part-6__sec-33">
+          <num>33</num>
+          <heading>Relevant Minister responsible for adequate implementation of a NEPM in respect of an activity to which Part 4 or 5 applies</heading>
+          <subsection eId="part-6__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This section applies to activities carried on by the Commonwealth or a Commonwealth authority in respect of which:</p>
+            </content>
+            <paragraph eId="part-6__sec-33__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a regulation made for the purposes of <ref href="#part-4">Part 4</ref> applies; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-33__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an environment management plan prepared under <ref href="#part-5">Part 5</ref> applies;</p>
+              </content>
+              <content>
+                <p>for the purpose of implementing a NEPM.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The relevant Minister must do everything necessary to ensure that the NEPM is adequately implemented in respect of the activities.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-6__sec-33__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the Environment Minister is not the relevant Minister; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-33__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the Environment Minister forms the opinion that the NEPM is not being adequately implemented in respect of the activities;</p>
+              </content>
+              <content>
+                <p>the Environment Minister may request the relevant Minister to give the Environment Minister a written report setting out:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-33__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>the reasons (including any mitigating circumstances) for the inadequate implementation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-33__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>the action that the relevant Minister intends to take to ensure adequate implementation; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-33__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>the period that the relevant Minister thinks necessary for the taking of the action.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-33__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If, after such period following the making of the request as the Environment Minister thinks reasonable, he or she is satisfied that the NEPM has not been adequately implemented in respect of the activities, he or she may make a written declaration to that effect.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-33__subsec-5">
+            <num>5</num>
+            <content>
+              <p>	(5)	If the Environment Minister makes such a declaration, he or she is to cause a copy of the declaration to be published in the <i>Gazette</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-7">
+        <num>7</num>
+        <heading>Administrative and judicial review</heading>
+        <section eId="part-7__sec-34">
+          <num>34</num>
+          <heading>Review of decisions by Administrative Review Tribunal</heading>
+          <subsection eId="part-7__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Application may be made to the Administrative Review Tribunal for review of any reviewable decision made under:</p>
+            </content>
+            <paragraph eId="part-7__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an applied provision of an applied State law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an applied provision of a law of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-34__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a provision of a regulation made for the purposes of <ref href="#part-4">Part 4</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-34__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p><ref href="#part-5">Part 5</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-7__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In subsection (1):</p>
+            </content>
+            <content>
+              <p><b><i>reviewable decision</i></b>, in relation to an applied provision referred to in paragraph (1)(a) or (b), a provision of a regulation referred to in paragraph (1)(c) or a provision of <ref href="#part-5">Part 5</ref>, means:</p>
+            </content>
+            <paragraph eId="part-7__sec-34__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the regulations provide that any decision made under the provision is a reviewable decision—any decision made under the provision; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-34__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the regulations provide that a decision of a kind described in the regulations that is made under the provision is a reviewable decision—any decision of that kind made under the provision.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-7__sec-34__subsec-3">
+            <num>3</num>
+            <content>
+              <p><b>	</b>(3)	This section has effect subject to the <i>Administrative Review Tribunal Act 2024</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-7__sec-35">
+          <num>35</num>
+          <heading>Civil jurisdiction of Federal Court</heading>
+          <subsection eId="part-7__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Jurisdiction is conferred on the Federal Court of Australia with respect to all civil matters arising under:</p>
+            </content>
+            <paragraph eId="part-7__sec-35__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an applied provision of an applied State law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-35__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an applied provision of a law of a State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-35__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a regulation made for the purposes of <ref href="#part-4">Part 4</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-7__sec-35__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p><ref href="#part-5">Part 5</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-7__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The jurisdiction of the Federal Court of Australia under subsection (1) is, subject to the Constitution and the <i>Jurisdiction of Courts (Cross</i><i>-</i><i>vesting) Act 1987</i>, exclusive of the jurisdiction of any other court.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-8">
+        <num>8</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-8__sec-36">
+          <num>36</num>
+          <heading>Person entering or searching premises occupied by Commonwealth or Commonwealth authority not to disclose information obtained from entry or search</heading>
+          <content>
+            <p>Information not to be disclosed</p>
+          </content>
+          <subsection eId="part-8__sec-36__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	If:</p>
+            </content>
+            <paragraph eId="part-8__sec-36__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a person (the <b><i>first person</i></b>) enters or searches premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the entry or search is made under a power that the first person has:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>because of the operation of <ref href="#sec-12">section 12</ref> or 17; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>because of regulations made under <ref href="#sec-21">section 21</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the first person discloses any information, directly or indirectly, to another person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the information was acquired by the first person as a result of the entry or search;</p>
+              </content>
+              <content>
+                <p>the first person commits an offence punishable on conviction by imprisonment for not more than 2 years.</p>
+                <p>Exception</p>
+              </content>
+              <authorialNote placement="end" eId="note-4" marker="4">
+                <content>
+                  <p>Note 1:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note 2:	Subsection 4B(2) of the <i>Crimes Act 1914</i> allows a court that convicts an individual of an offence to impose a fine instead of, or in addition to, a term of imprisonment. The maximum fine that a court can impose on the individual is worked out by multiplying the maximum term of imprisonment (in months) by 5, and then multiplying the resulting number by the amount of a penalty unit. The amount of a penalty unit is stated in <ref href="#sec-4A">section 4A</ref>A of that Act.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-36__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply to a disclosure made in the performance of duties under an applied provision of an applied State law, under an applied provision of a law of a State or Territory or under regulations made under <ref href="#sec-21">section 21</ref>.</p>
+            </content>
+            <authorialNote placement="end" eId="note-6" marker="6">
+              <content>
+                <p>Note:	A defendant bears an evidential burden in relation to the matters in subsection (2) (see subsection 13.3(3) of the <i>Criminal Code</i>).</p>
+              </content>
+            </authorialNote>
+            <content>
+              <p>Court not to require production of document or disclosure of information</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-36__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A person who enters or searches premises under a power that the person has because of the operation of <ref href="#sec-12">section 12</ref> or 17 or because of regulations made under <ref href="#sec-21">section 21</ref> cannot, except for the purposes of an applied provision of an applied State law, an applied provision of a law of a State or Territory or a provision of the regulations, be required:</p>
+            </content>
+            <paragraph eId="part-8__sec-36__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>to produce in court any document that has come into his or her possession or under his or her control as a result of the entry or search; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-36__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>to disclose to a court any information acquired by the person as a result of the entry or search.</p>
+              </content>
+              <content>
+                <p>Definitions</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-36__subsec-4">
+            <num>4</num>
+            <content>
+              <p><b>	</b>(4)	In this section:</p>
+            </content>
+            <content>
+              <p><b><i>court</i></b> includes a tribunal, authority or person having power to require the production of documents or the answering of questions.</p>
+              <p><b><i>disclose</i></b>, in relation to information, means give or communicate in any way.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-37">
+          <num>37</num>
+          <heading>Restriction of entry into or search of exempt premises</heading>
+          <content>
+            <p>Declaration of exempt premises</p>
+          </content>
+          <subsection eId="part-8__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p><b>	</b>(1)	Subject to subsection (2), the regulations may declare premises described in the regulations to be <b><i>exempt premises</i></b> for the purposes of this section.</p>
+            </content>
+            <content>
+              <p>National interest to be criterion for exemption</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p><b>	</b>(2)	Regulations may only be made for the purposes of subsection (1) in relation to premises if the Environment Minister is satisfied that, because of a matter of national interest, it is desirable that entry into, or search of, the premises under an applied provision of an applied State law, an applied provision of a law of a State or Territory or a regulation made under <ref href="#sec-21">section 21</ref> be prohibited or restricted.</p>
+            </content>
+            <content>
+              <p>Orders prohibiting entry into exempt premises</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Environment Minister may, by legislative instrument, make an order that prohibits or restricts, either absolutely or subject to conditions stated in the order, people who have the power to enter or search premises:</p>
+            </content>
+            <paragraph eId="part-8__sec-37__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>because of the operation of <ref href="#sec-12">section 12</ref> or 17; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>because of regulations made under <ref href="#sec-21">section 21</ref>;</p>
+              </content>
+              <content>
+                <p>from entering or searching exempt premises referred to in the order.</p>
+                <p>Offence</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-37__subsec-5">
+            <num>5</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-8__sec-37__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>a person enters or searches premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>the entry or search is made under a power that the person has:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>because of the operation of <ref href="#sec-12">section 12</ref> or 17; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>because of regulations made under <ref href="#sec-21">section 21</ref>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-c">
+              <num>c</num>
+              <content>
+                <p>the premises are exempt premises; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-d">
+              <num>d</num>
+              <content>
+                <p>the entry or search contravenes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-i">
+              <num>i</num>
+              <content>
+                <p>an order in force under subsection (3); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-37__subsec-5__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a condition to which such an order is subject;</p>
+              </content>
+              <content>
+                <p>the person commits an offence punishable on conviction by imprisonment for not more than 2 years.</p>
+              </content>
+              <authorialNote placement="end" eId="note-7" marker="7">
+                <content>
+                  <p>Note 1:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-8" marker="8">
+                <content>
+                  <p>Note 2:	Subsection 4B(2) of the <i>Crimes Act 1914</i> allows a court that convicts an individual of an offence to impose a fine instead of, or in addition to, a term of imprisonment. The maximum fine that a court can impose on the individual is worked out by multiplying the maximum term of imprisonment (in months) by 5, and then multiplying the resulting number by the amount of a penalty unit. The amount of a penalty unit is stated in <ref href="#sec-4A">section 4A</ref>A of that Act.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-38">
+          <num>38</num>
+          <heading>Commonwealth or Commonwealth authority may pay certain fees and charges</heading>
+          <content>
+            <p>Fees or charges for carrying on activities in Commonwealth places</p>
+          </content>
+          <subsection eId="part-8__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Commonwealth or a Commonwealth authority may pay to a State, or to a State authority, a fee or charge which, if paragraph 13(1)(f) had not been enacted, would have been payable by the Commonwealth or <role refersTo="#authority">the authority</role> under an applied provision of an applied State law in respect of an application for, or a grant of, a licence, permit or other authorisation (however described) relating to an activity carried on, or to be carried on, by the Commonwealth or <role refersTo="#authority">the authority</role> in a Commonwealth place in the State.</p>
+            </content>
+            <content>
+              <p>Fees or charges for carrying on activities in States or Territories</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Commonwealth or a Commonwealth authority may pay to a State or Territory, or to a State or Territory authority, a fee or charge which, if paragraph 18(1)(h) had not been enacted, would have been payable by the Commonwealth or <role refersTo="#authority">the authority</role> under an applied provision of a law of the State or Territory in respect of an application for, or a grant of, a licence, permit or other authorisation (however described) relating to an activity carried on, or to be carried on, by the Commonwealth or <role refersTo="#authority">the authority</role> in the State or Territory or in its coastal waters.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-39">
+          <num>39</num>
+          <heading>Arrangements with States and Territories</heading>
+          <subsection eId="part-8__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Environment Minister may make an arrangement with:</p>
+            </content>
+            <paragraph eId="part-8__sec-39__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an appropriate Minister of a State in relation to the exercise of a power or the performance of a duty or function by, or by an officer of, the State or an authority of the State under an applied provision of an applied State law or under an applied provision of a law of the State; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-39__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an appropriate Minister of a Territory in relation to the exercise of a power or the performance of a duty or function by, or by an officer of, the Territory or an authority of the Territory under an applied provision of a law of the Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>If an arrangement is in force under subsection (1), the power, duty or function may be, or is to be, as the case may be, exercised or performed by the officer or authority accordingly.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-39__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Environment Minister may make an arrangement (including a financial arrangement) with an appropriate Minister of a State or Territory with respect to any matter necessary or convenient for the purpose of carrying out or giving effect to this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-39__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Without limiting the generality of subsections (1), (2) and (3), an arrangement may contain any supplementary or incidental provisions that the Environment Minister and <role refersTo="#minister">the Minister</role> of the State or Territory think necessary.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-39__subsec-5">
+            <num>5</num>
+            <content>
+              <p>The Environment Minister may arrange with a Minister of a State or Territory with whom an arrangement is in force under this section for the variation or revocation of the arrangement.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-40">
+          <num>40</num>
+          <heading>Annual reports</heading>
+          <subsection eId="part-8__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If, in the year ending on <date date="1998-06-30">30 June 1998</date> or in a later year ending on 30 June, a Department or Commonwealth authority is responsible for the carrying on of an activity to which a NEPM applies, the Minister:</p>
+            </content>
+            <paragraph eId="part-8__sec-40__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>who administers the Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-40__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>who administers the enactment by or under which <role refersTo="#authority">the authority</role> is established or is otherwise administratively responsible for the actions of <role refersTo="#authority">the authority</role>;</p>
+              </content>
+              <content>
+                <p>must prepare in respect of the year concerned, and give to the Environment Minister within one month after the end of that year, a report, in writing and containing the prescribed information, as to the implementation of NEPMs by the Department or authority.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The Environment Minister must, as soon as practicable after each 30 June, cause to be laid before each House of the Parliament a report as to the implementation of NEPMs by the Commonwealth and Commonwealth authorities in the year that ended on that 30 June.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-40__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The first report under subsection (2) is to relate to the year that ends on <date date="1998-06-30">30 June 1998</date>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-8__sec-41">
+          <num>41</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences referred to in subsection 21(5) and all offences against Parts 5 and 8.</p>
+          </content>
+        </section>
+        <section eId="part-8__sec-42">
+          <num>42</num>
+          <heading>Regulations</heading>
+          <content>
+            <p><b>	</b><b>	</b> The Governor-General may make regulations prescribing matters:</p>
+          </content>
+          <paragraph eId="part-8__sec-42__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-8__sec-42__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-8__sec-43">
+          <num>43</num>
+          <heading>Review of operation of Act</heading>
+          <subsection eId="part-8__sec-43__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Environment Minister must cause an independent review of:</p>
+            </content>
+            <paragraph eId="part-8__sec-43__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the operation of this Act; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-43__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the extent to which the policy objectives of this Act remain valid; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-43__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>whether the provisions of this Act remain appropriate for the achievement of those policy objectives;</p>
+              </content>
+              <content>
+                <p>to be undertaken as soon as possible after the fifth anniversary of the commencement of this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-8__sec-43__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person who undertakes such a review must give <role refersTo="#minister">the Minister</role> a written report of the review.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-43__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The Minister must cause a copy of the report of the review to be tabled in each House of the Parliament <quantity refersTo="#deadline">within 12 months</quantity> after the fifth anniversary of the commencement of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-8__sec-43__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>independent review</i></b> means a review undertaken by persons who:</p>
+            </content>
+            <paragraph eId="part-8__sec-43__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>in the Environment Minister’s opinion possess appropriate qualifications to undertake the review; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-8__sec-43__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>include one or more persons who are not employed by the Commonwealth or a Commonwealth authority and have not, since the commencement of the Act, provided services to the Commonwealth or a Commonwealth authority under or in connection with a contract.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>A = Act</th>
+                  <th>o = order(s)</th>
+                </tr>
+                <tr>
+                  <td>ad = added or inserted</td>
+                  <td>Ord = Ordinance</td>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>orig = original</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>par = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>c = clause(s)</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>Ch = Chapter(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>Pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>r = regulation(s)/rule(s)</td>
+                </tr>
+                <tr>
+                  <td>Div = Division(s)</td>
+                  <td>Reg = Regulation/Regulations</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>F = Federal Register of Legislative Instruments</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>LI = Legislative Instrument</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>Sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>Sdiv = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>Sub-Ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>SubPt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act</th>
+                  <th>Number and year</th>
+                  <th>Assent date</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>National Environment Protection Measures (Implementation) Act 1998</td>
+                  <td>129, 1998</td>
+                  <td>21 Dec 1998</td>
+                  <td>21 Dec 1998 (s 2)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Environment and Heritage Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                  <td>15, 2001</td>
+                  <td>22 Mar 2001</td>
+                  <td>s 4 and Sch 1 (items 104, 105): 24 May 2001 (s 2(1)(c))</td>
+                  <td>s 4</td>
+                </tr>
+                <tr>
+                  <td>Corporations (Repeals, Consequentials and Transitionals) Act 2001</td>
+                  <td>55, 2001</td>
+                  <td>28 June 2001</td>
+                  <td>s 4–14 and Sch 3 (item 339): 15 July 2001 (s 2(3) and gaz 2001, No S285)</td>
+                  <td>s 4–14</td>
+                </tr>
+                <tr>
+                  <td>Proceeds of Crime (Consequential Amendments and Transitional Provisions) Act 2002</td>
+                  <td>86, 2002</td>
+                  <td>11 Oct 2002</td>
+                  <td>s 1–3: Royal Assent
+Remainder: 1 Jan 2003 (s 2(1) and gaz 2002, No GN44)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act 2011</td>
+                  <td>5, 2011</td>
+                  <td>22 Mar 2011</td>
+                  <td>Sch 7 (item 98): 19 Apr 2011 (s 2(1) item 18)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Acts and Instruments (Framework Reform) Act 2015</td>
+                  <td>10, 2015</td>
+                  <td>5 Mar 2015</td>
+                  <td>Sch 3 (items 272, 273, 348, 349): 5 Mar 2016 (s 2(1) item 2)</td>
+                  <td>Sch 3 (items 348, 349)</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Revision Act (No. 1) 2016</td>
+                  <td>4, 2016</td>
+                  <td>11 Feb 2016</td>
+                  <td>Sch 4 (items 1, 218): 10 Mar 2016 (s 2(1) item 6)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Statute Law Amendment (Prescribed Forms and Other Updates) Act 2023</td>
+                  <td>74, 2023</td>
+                  <td>20 Sept 2023</td>
+                  <td>Sch 1 (item 72): 20 Mar 2024 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Administrative Review Tribunal (Consequential and Transitional Provisions No. 1) Act 2024</td>
+                  <td>38, 2024</td>
+                  <td>31 May 2024</td>
+                  <td>Sch 7 (item 13): 14 Oct 2024 (s 2(1) item 2)</td>
+                  <td>—</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 5</td>
+                  <td>am No 55, 2001; No 5, 2011</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>ed C8</td>
+                </tr>
+                <tr>
+                  <td>s 6A</td>
+                  <td>ad No 15, 2001</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 14</td>
+                  <td>am No 86, 2002</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 19</td>
+                  <td>am No 86, 2002</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 28</td>
+                  <td>am No 4, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 29</td>
+                  <td>am No 15, 2001</td>
+                </tr>
+                <tr>
+                  <td>Part 7</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 34</td>
+                  <td>am No 38, 2024</td>
+                </tr>
+                <tr>
+                  <td>Part 8</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 36</td>
+                  <td>am No 4, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 37</td>
+                  <td>am No 10, 2015; No 4, 2016</td>
+                </tr>
+                <tr>
+                  <td>s 40</td>
+                  <td>am No, 74, 2023</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

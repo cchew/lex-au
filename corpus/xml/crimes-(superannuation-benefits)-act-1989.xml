@@ -1,0 +1,3062 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/1989/145/!main"/>
+          <FRBRuri value="/akn/au/act/1989/145"/>
+          <FRBRdate date="1989-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="145"/>
+          <FRBRname value="crimes-(superannuation-benefits)-act-1989"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/1989/145/eng@2016-07-01/!main"/>
+          <FRBRuri value="/akn/au/act/1989/145/eng@2016-07-01"/>
+          <FRBRdate date="2016-07-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/1989/145/eng@2016-07-01/!main.akn"/>
+          <FRBRuri value="/akn/au/act/1989/145/eng@2016-07-01/!main.akn"/>
+          <FRBRdate date="2026-09-22" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="1989-01-01" type="generation" eId="evt-creation" source="#crimes-(superannuation-benefits)-act-1989"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/1989/153"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/1991/123"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/1992/94" date="1992-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/1992/164"/>
+        <eventRef type="amendment" eId="evt-amd-5" source="/akn/au/act/1992/196"/>
+        <eventRef type="amendment" eId="evt-amd-6" source="/akn/au/act/1994/182"/>
+        <eventRef type="amendment" eId="evt-amd-7" source="/akn/au/act/1997/20"/>
+        <eventRef type="amendment" eId="evt-amd-8" source="/akn/au/act/1999/194"/>
+        <eventRef type="amendment" eId="evt-amd-9" source="/akn/au/act/2001/24"/>
+        <eventRef type="amendment" eId="evt-amd-10" source="/akn/au/act/2008/26" date="2008-06-23"/>
+        <eventRef type="amendment" eId="evt-amd-11" source="/akn/au/act/2008/144"/>
+        <eventRef type="amendment" eId="evt-amd-12" source="/akn/au/act/2011/5" date="2011-03-22"/>
+        <eventRef type="amendment" eId="evt-amd-13" source="/akn/au/act/2011/58" date="2011-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-14" source="/akn/au/act/2012/167" date="2012-11-28"/>
+        <eventRef type="amendment" eId="evt-amd-15" source="/akn/au/act/2013/13" date="2013-03-14"/>
+        <eventRef type="amendment" eId="evt-amd-16" source="/akn/au/act/2014/62" date="2014-06-30"/>
+        <eventRef type="amendment" eId="evt-amd-17" source="/akn/au/act/2015/59" date="2015-05-26"/>
+        <eventRef type="amendment" eId="evt-amd-18" source="/akn/au/act/2015/153" date="2015-11-26"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="registrar" href="/ontology/roles/au/registrar" showAs="the Registrar"/>
+        <TLCTerm eId="term-afp" href="/ontology/term/au/term-afp" showAs="AFP"/>
+        <TLCTerm eId="term-afp-employee" href="/ontology/term/au/term-afp-employee" showAs="AFP employee"/>
+        <TLCTerm eId="term-benefit" href="/ontology/term/au/term-benefit" showAs="benefit"/>
+        <TLCTerm eId="term-commencing-day" href="/ontology/term/au/term-commencing-day" showAs="commencing day"/>
+        <TLCTerm eId="term-controlling-interest" href="/ontology/term/au/term-controlling-interest" showAs="controlling interest"/>
+        <TLCTerm eId="term-corruption-offence" href="/ontology/term/au/term-corruption-offence" showAs="corruption offence"/>
+        <TLCTerm eId="term-csc-short-for-commonwealth-superannuation-corporation" href="/ontology/term/au/term-csc-short-for-commonwealth-superannuation-corporation" showAs="CSC (short for Commonwealth Superannuation Corporation)"/>
+        <TLCTerm eId="term-dpp" href="/ontology/term/au/term-dpp" showAs="DPP"/>
+        <TLCTerm eId="term-encumbrance" href="/ontology/term/au/term-encumbrance" showAs="encumbrance"/>
+        <TLCTerm eId="term-extend" href="/ontology/term/au/term-extend" showAs="extend"/>
+        <TLCTerm eId="term-finance-minister" href="/ontology/term/au/term-finance-minister" showAs="Finance Minister"/>
+        <TLCTerm eId="term-fund" href="/ontology/term/au/term-fund" showAs="fund"/>
+        <TLCTerm eId="term-member" href="/ontology/term/au/term-member" showAs="member"/>
+        <TLCTerm eId="term-property" href="/ontology/term/au/term-property" showAs="property"/>
+        <TLCTerm eId="term-recovery-order" href="/ontology/term/au/term-recovery-order" showAs="recovery order"/>
+        <TLCTerm eId="term-relevant-period" href="/ontology/term/au/term-relevant-period" showAs="relevant period"/>
+        <TLCTerm eId="term-restraining-order" href="/ontology/term/au/term-restraining-order" showAs="restraining order"/>
+        <TLCTerm eId="term-state" href="/ontology/term/au/term-state" showAs="State"/>
+        <TLCTerm eId="term-superannuation-order" href="/ontology/term/au/term-superannuation-order" showAs="superannuation order"/>
+        <TLCTerm eId="term-superannuation-scheme" href="/ontology/term/au/term-superannuation-scheme" showAs="superannuation scheme"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Crimes (Superannuation Benefits) Act 1989</p>
+      <p>No. 145, 1989</p>
+      <p><b>Compilation No.</b><b> </b><b>21</b></p>
+      <p><b>Compilation date:</b><b>	</b><b>	</b><b>	</b>1 July 2016</p>
+      <p><b>Includes amendments up to:</b><b>	</b>Act No. 4, 2016</p>
+      <p><b>Registered:</b><b>	</b><b>	</b><b>	</b><b>	</b>7 July 2016</p>
+      <p><b>This compilation includes commenced amendments made by Act No.</b><b> </b><b>59, 2015</b></p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Crimes (Superannuation Benefits) Act 1989</i> that shows the text of the law as amended and in force on 1 July 2016 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. Any uncommenced amendments affecting the law are accessible on the Legislation Register (www.legislation.gov.au). The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. For more information on any uncommenced amendments, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Application, saving and transitional provisions for provisions and amendments</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. For more information on any modifications, see the series page on the Legislation Register for the compiled law.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Introductory	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Interpretation	1</p>
+      <p>3	Related offences	6</p>
+      <p>4	Abscond	6</p>
+      <p>5	Charge with offence	7</p>
+      <p>6	Conviction and quashing of conviction	7</p>
+      <p>7	Employee	8</p>
+      <p>8	Property of a person	9</p>
+      <p>9	Dealing with property	10</p>
+      <p>10	Effective control of property	10</p>
+      <p>11	Sufficient consideration	11</p>
+      <p>12	Application to convictions and offences	12</p>
+      <p>12A	Application of the <i>Criminal Code</i>	12</p>
+      <p>13	Act binds the Crown	12</p>
+      <p>14	Application and extension of Act	12</p>
+      <p><ref href="#part-2">Part 2</ref>—Superannuation orders	13</p>
+      <p>15	Notice of charge etc.	13</p>
+      <p>16	Authority to apply for superannuation order	13</p>
+      <p>17	Application for superannuation order	14</p>
+      <p>18	Application for superannuation order: evidence	14</p>
+      <p>19	Superannuation orders: making	16</p>
+      <p>20	When does a superannuation order take effect?	18</p>
+      <p>21	Effect of superannuation orders	18</p>
+      <p>22	Superannuation orders: variation	20</p>
+      <p>23	Superannuation orders: revocation	21</p>
+      <p><ref href="#part-3">Part 3</ref>—Restraining orders	22</p>
+      <p>24	Application for restraining order	22</p>
+      <p>25	Making of restraining orders	22</p>
+      <p>26	Restraining order may be subject to conditions	23</p>
+      <p>27	Affidavit of police officer needed in certain cases	24</p>
+      <p>28	Notice of application for restraining order	25</p>
+      <p>28A	Extension of certain restraining orders	25</p>
+      <p>29	Persons who may appear and adduce evidence	25</p>
+      <p>30	Witnesses not required to answer questions etc. in certain cases	26</p>
+      <p>31	Notice of restraining orders	26</p>
+      <p>32	Ancillary orders	26</p>
+      <p>33	Charge on property subject to restraining order	28</p>
+      <p>34	Registration of restraining orders	30</p>
+      <p>35	Contravention of restraining orders	30</p>
+      <p>36	Restraining orders: revocation	31</p>
+      <p>37	When do restraining orders cease to have effect?	31</p>
+      <p>38	Extension of period of effect of restraining orders	32</p>
+      <p>39	Notice of applications	33</p>
+      <p><ref href="#part-4">Part 4</ref>—Miscellaneous	34</p>
+      <p>40	Court may lift corporate veil etc.	34</p>
+      <p>41	Amounts payable under <ref href="#sec-19">section 19</ref>, 21 or 23	34</p>
+      <p>42	Multiple payments in respect of same employee contributions not allowed	35</p>
+      <p>43	Possible superannuation order not to be taken into account in sentencing	36</p>
+      <p>44	Constitution of appropriate courts	36</p>
+      <p>45	Regulations	36</p>
+      <p>Endnotes	38</p>
+      <p>Endnote 1—About the endnotes	38</p>
+      <p>Endnote 2—Abbreviation key	40</p>
+      <p>Endnote 3—Legislation history	41</p>
+      <p>Endnote 4—Amendment history	47</p>
+      <p>Endnote 5—Miscellaneous	48</p>
+      <p>An Act relating to certain superannuation benefits paid or payable to or in respect of certain persons convicted of corruption offences, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Introductory</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act may be cited as the <i>Crimes (Superannuation Benefits) Act 1989</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Interpretation</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act, unless the contrary intention appears:</p>
+            </content>
+            <content>
+              <p><b><i>abscond</i></b> has the meaning given in <ref href="#sec-4">section 4</ref>.</p>
+              <p><term refersTo="#term-afp">AFP</term> means <def>the Australian Federal Police.</def></p>
+              <p><term refersTo="#term-afp-employee">AFP employee</term> has the same meaning as <def>in <ref href="">the Australian Federal Police Act 1979</ref>.</def></p>
+              <p><b><i>appropriate court</i></b> means:</p>
+            </content>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in relation to a person’s conviction of an offence—the court of the State or Territory before which the person was convicted and in addition, where that court is not the Supreme Court of the State or Territory, that Supreme Court; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to the charging, or proposed charging, of a person with an offence—the Supreme Court of the State or Territory in which the person has been, or is to be, charged with the offence.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-benefit">benefit</term> means <def>any benefit payable under a superannuation scheme, including a lump sum payment and a pension.</def></p>
+                <p><term refersTo="#term-commencing-day">commencing day</term> means <def>the day on which this Act commences.</def></p>
+                <p><b><i>Commonwealth authority</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a body corporate incorporated for a public purpose (whether before, on or after the commencing day) by a law of the Commonwealth or of a Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a body corporate:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>incorporated (whether before, on or after the commencing day) under a law of the Commonwealth or a law in force in a State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in which the Commonwealth or a body corporate mentioned in paragraph (a) has the controlling interest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a body corporate, whether incorporated before, on or after the commencing day:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>that is a subsidiary of another body corporate mentioned in paragraph (a) or (b); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>in which that other body corporate has the controlling interest; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>an unincorporated authority or body (other than a prescribed authority or body) established for a public purpose (whether before, on or after the commencing day) by or under a law of the Commonwealth, of a Territory, or of the Australian Capital Territory, the Northern Territory or Norfolk Island; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>any other incorporated or unincorporated authority or body (however established), other than a prescribed authority or body, that is wholly or substantially financed, either directly or indirectly, by the Commonwealth, whether <role refersTo="#authority">the authority</role> or body was or is established before, on or after the commencing day.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-controlling-interest">controlling interest</term>, in relation to a body corporate, means <def>an interest that derives from ownership of at least 50% of the shares in the body corporate that confer voting rights.</def></p>
+                <p><b><i>convicted</i></b> has the meaning given in <ref href="#sec-6">section 6</ref>.</p>
+                <p><term refersTo="#term-corruption-offence">corruption offence</term> means <def>an offence by a person who was an employee at the time when it was committed, being an offence: whose commission involved an abuse by the person of his or her office as such an employee; or that, having regard to the powers and duties of such an employee, was committed for a purpose that involved corruption; or that was committed for the purpose of perverting, or attempting to pervert, the course of justice.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>whose commission involved an abuse by the person of his or her office as such an employee; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that, having regard to the powers and duties of such an employee, was committed for a purpose that involved corruption; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>that was committed for the purpose of perverting, or attempting to pervert, the course of justice.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-csc-short-for-commonwealth-superannuation-corporation">CSC (short for Commonwealth Superannuation Corporation)</term> has the same meaning as <def>in <ref href="">the Governance of Australian Government Superannuation Schemes Act 2011</ref>.</def></p>
+                <p><b><i>defendant</i></b>, in <ref href="#part-3">Part 3</ref>, has the meaning given in <ref href="#sec-24">section 24</ref>.</p>
+                <p><term refersTo="#term-dpp">DPP</term> means <def>the Director of Public Prosecutions.</def></p>
+                <p><b><i>employee</i></b> has the meaning given in <ref href="#sec-7">section 7</ref>.</p>
+                <p><b><i>employee contributions</i></b>, in relation to a person, includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>any amount paid or transferred into a fund, being an amount that is, under the person’s superannuation scheme, to be taken to be employee contributions; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any other amount paid or transferred into a fund under the person’s superannuation scheme, being an amount:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>attributable to employer contributions paid by the person’s previous employer under another superannuation scheme (not being a superannuation scheme within the meaning of this Act) applicable to the person’s previous employment by that employer; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>payable to the person as an additional lump sum benefit on his or her resignation or retirement.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-encumbrance">encumbrance</term>, in relation to property, includes <def>any interest, mortgage, charge, right, claim or demand in respect of the property.</def></p>
+                <p><term refersTo="#term-extend">extend</term>, in relation to the period of effect of a restraining order, includes <def>further extend.</def></p>
+                <p><term refersTo="#term-finance-minister">Finance Minister</term> means <def>the Minister administering the Public Governance, Performance and Accountability Act 2013.</def></p>
+                <p><term refersTo="#term-fund">fund</term> includes <def>the Consolidated Revenue Fund.</def></p>
+                <p><b><i>interest</i></b>, in relation to property, means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a legal or equitable estate or interest in the property; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a right, power or privilege in connection with the property;</p>
+              </content>
+              <content>
+                <p>whether present or future and whether vested or contingent.</p>
+                <p><term refersTo="#term-member">member</term>, in relation to a superannuation scheme, includes <def>a person who is eligible for a benefit (including a deferred benefit) under the scheme.</def></p>
+                <p><b><i>offence</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a common law offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an offence against a law of the Commonwealth or of a State or Territory, being an offence punishable by imprisonment for life or for a term longer than 12 months.</p>
+              </content>
+              <content>
+                <p><b><i>police authority</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in relation to an offence against a law of a State or Territory that has its own police force—<role refersTo="#commissioner">the Commissioner</role> or head (however described) of the police force of the State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to an offence against a law of the Commonwealth, or of a State or Territory other than a State or Territory mentioned in paragraph (a)—<role refersTo="#commissioner">the Commissioner</role> of Police of the AFP; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>in relation to a common law offence—<role refersTo="#commissioner">the Commissioner</role> or head (however described) of the police force of the State or Territory in which the offence was committed or, where the offence was committed in a Territory that does not have its own police force, <role refersTo="#commissioner">the Commissioner</role> of Police of the AFP.</p>
+              </content>
+              <content>
+                <p><b><i>police officer</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an AFP member; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a member of the police force of a State or Territory.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-property">property</term> means <def>real or personal property of every description, whether situated in Australia or anywhere else and whether tangible or intangible, and includes an interest in any such real or personal property.</def></p>
+                <p><term refersTo="#term-recovery-order">recovery order</term> means <def>a superannuation order containing an order of the kind mentioned in subsection 19(4).</def></p>
+                <p><b><i>related offence</i></b> has the meaning given in <ref href="#sec-3">section 3</ref>.</p>
+                <p><term refersTo="#term-relevant-period">relevant period</term>, in relation to a restraining order, means <def>the period starting on the day when the order was made and ending: if an order or orders have been made under <ref href="#sec-38">section 38</ref>—at the time, or on the occurrence of the event, specified in the order, or the last of the orders, so made; or if paragraph (a) does not apply but an order or orders have been made under paragraph 32(1)(a) or (b) in relation to the restraining order—at the end of 6 months after the day when the order, or the last of the orders, was so made, or such longer period (if any) as is specified in the order, or the last of the orders; or in any other case—at the end of 6 months after the day on which the restraining order was made, or such longer period (if any) as is specified in the order.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>if an order or orders have been made under <ref href="#sec-38">section 38</ref>—at the time, or on the occurrence of the event, specified in the order, or the last of the orders, so made; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if paragraph (a) does not apply but an order or orders have been made under paragraph 32(1)(a) or (b) in relation to the restraining order—at the end of 6 months after the day when the order, or the last of the orders, was so made, or such longer period (if any) as is specified in the order, or the last of the orders; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>in any other case—at the end of 6 months after the day on which the restraining order was made, or such longer period (if any) as is specified in the order.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-restraining-order">restraining order</term> means <def>an order under <ref href="#sec-25">section 25</ref>.</def></p>
+                <p><b><i>sentence</i></b> does not include:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a sentence that is wholly suspended; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a sentence passed, or an order made, under subsection 20AB(1) of the <i>Crimes Act 1914</i>.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-state">State</term> includes <def>the Australian Capital Territory, the Northern Territory and Norfolk Island.</def></p>
+                <p><b><i>Superannuation Act</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	the <i>Superannuation Act 1976</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	the <i>Superannuation Act 1990</i>.</p>
+              </content>
+              <content>
+                <p><b><i>superannuation authority</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	in relation to the superannuation scheme established by the <i>Superannuation Act 1976 </i>or by deed under the <i>Superannuation Act 1990</i>—CSC; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-2__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—the person (however described) responsible for the administration of the relevant superannuation scheme.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-superannuation-order">superannuation order</term> means <def>an order under <ref href="#sec-19">section 19</ref>, and includes such an order as varied under <ref href="#sec-22">section 22</ref>.</def></p>
+                <p><term refersTo="#term-superannuation-scheme">superannuation scheme</term>, in relation to a person, means <def>a superannuation scheme (other than a scheme established under a law of a State) under which employer contributions or benefits are paid or payable, or have at any time been paid, by the Commonwealth or a Commonwealth authority to or in respect of the person, and includes any scheme or arrangement under which such contributions are vested in the person.</def></p>
+                <p><b><i>Territory</i></b> does not include the Australian Capital Territory or the Northern Territory, and, except in <ref href="#sec-14">section 14</ref>, does not include Norfolk Island.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Related offences</heading>
+          <content>
+            <p>For the purposes of this Act, 2 offences are related to each other if the physical elements of the 2 offences are:</p>
+          </content>
+          <paragraph eId="part-1__sec-3__para-a">
+            <num>a</num>
+            <content>
+              <p>substantially the same acts or omissions; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-3__para-b">
+            <num>b</num>
+            <content>
+              <p>acts or omissions in a single series.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Abscond</heading>
+          <content>
+            <p>For the purposes of this Act, other than subsection 19(2), a person is to be taken to abscond in connection with an offence if and only if:</p>
+          </content>
+          <paragraph eId="part-1__sec-4__para-a">
+            <num>a</num>
+            <content>
+              <p>the person is charged with the offence; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-b">
+            <num>b</num>
+            <content>
+              <p>a warrant for the arrest of the person is issued in relation to that information; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-c">
+            <num>c</num>
+            <content>
+              <p>one of the following happens:</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-i">
+            <num>i</num>
+            <content>
+              <p>at the end of the period of 6 months starting on the day on which the warrant is issued:</p>
+            </content>
+            <content>
+              <p>(A)	the person cannot be found; or</p>
+              <p>(B)	the person is, for any other reason, not amenable to justice and, if the person is outside Australia, extradition proceedings are not on foot;</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-4__para-ii">
+            <num>ii</num>
+            <content>
+              <p>at the end of the period of 6 months starting on the day on which the warrant is issued:</p>
+            </content>
+            <content>
+              <p>(A)	the person is not amenable to justice because he or she is outside Australia; and</p>
+              <p>(B)	extradition proceedings are on foot;</p>
+              <p>and those proceedings later end without an order for the person’s extradition.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Charge with offence</heading>
+          <content>
+            <p>A reference in this Act to a person being charged with an offence is a reference to an information being laid against the person for the offence, whether or not:</p>
+          </content>
+          <paragraph eId="part-1__sec-5__para-a">
+            <num>a</num>
+            <content>
+              <p>a summons has been issued requiring the attendance of the person to answer the information; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-5__para-b">
+            <num>b</num>
+            <content>
+              <p>a warrant for the arrest of the person has been issued.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-6">
+          <num>6</num>
+          <heading>Conviction and quashing of conviction</heading>
+          <subsection eId="part-1__sec-6__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purposes of this Act, a person is to be taken to be convicted of an offence if:</p>
+            </content>
+            <paragraph eId="part-1__sec-6__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is convicted of the offence, whether summarily or on indictment; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person absconds in connection with the offence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of this Act, a person is to be taken to have been convicted of an offence in a particular State or Territory if:</p>
+            </content>
+            <paragraph eId="part-1__sec-6__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>where paragraph (1)(a) applies—the person was convicted of the offence in a court in that State or Territory; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>where paragraph (1)(b) applies—the information relating to the offence was laid in that State or Territory.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of this Act, where a person is to be taken to have been convicted of an offence in a particular State or Territory because of paragraph (2)(b), the person is to be taken to have been so convicted before the Supreme Court of that State or Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-4">
+            <num>4</num>
+            <content>
+              <p>For the purposes of this Act, a person’s conviction of an offence is to be taken to be quashed:</p>
+            </content>
+            <paragraph eId="part-1__sec-6__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>where paragraph (1)(a) applies—if the conviction is quashed or set aside; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-6__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>where paragraph (1)(b) applies—if, after the person is brought before a court in respect of the offence, the person is discharged in respect of the offence or a conviction of the person for the offence is quashed or set aside.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-6__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A reference in this Act, in relation to a person’s conviction of an offence, to the commission of the offence is, where paragraph (1)(b) applies, a reference to the alleged commission of the offence by the person.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-7">
+          <num>7</num>
+          <heading>Employee</heading>
+          <subsection eId="part-1__sec-7__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	In this Act, <b><i>employee</i></b> means a person (other than an AFP employee) employed by the Commonwealth or by a Commonwealth authority, whether the person is so employed under a law of the Commonwealth or of a State or Territory, or under a contract of service or apprenticeship.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-7__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting subsection (1):</p>
+            </content>
+            <paragraph eId="part-1__sec-7__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a member of the Parliament; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a justice or judge of a federal court; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>a member of the Defence Force; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a person (other than a person mentioned in subsection (3)) who is the holder of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>an office established by a law of the Commonwealth; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a prescribed office established by a law of a Territory;</p>
+              </content>
+              <content>
+                <p>is to be taken, for the purposes of this Act, to be employed by the Commonwealth.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-7__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Without limiting subsection (1), a person is to be taken, for the purposes of this Act, to be employed by a Commonwealth authority if:</p>
+            </content>
+            <paragraph eId="part-1__sec-7__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the person constitutes, or is a member of, <role refersTo="#authority">the authority</role>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-7__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>where <role refersTo="#authority">the authority</role> is a body corporate—the person is a director of the body corporate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-8">
+          <num>8</num>
+          <heading>Property of a person</heading>
+          <subsection eId="part-1__sec-8__subsec-1">
+            <num>1</num>
+            <content>
+              <p>For the purpose of making a restraining order against a person’s property, that property is to be taken to include property in which the person has a beneficial interest.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-8__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purpose of making a restraining order against the property of a person who is a defendant within the meaning of <ref href="#part-3">Part 3</ref>, that property is to be taken to include:</p>
+            </content>
+            <paragraph eId="part-1__sec-8__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>any property of the person that has been transferred by way of gift to another person within 2 years immediately before the day on which the restraining order is made or the day on which the person is charged with the relevant offence, whichever is the first to happen; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-8__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>where property of the person has been transferred to another person within that period for a consideration whose value is less than the commercial value of the property when the transfer was made—an interest in the property equal to the proportion worked out using the formula:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/crimes-(superannuation-benefits)-act-1989-fig-1.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>VP</i></b><i> (</i><b><i>value of the property</i></b><i>)</i> is the number of dollars in the commercial value of the property when the transfer was made. </p>
+                <p><b><i>VC </i></b><i>(</i><b><i>value of consideration</i></b><i>)</i> is the number of dollars in the value of the consideration for the transfer when the transfer was made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-8__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Property that is to be taken to be property of a person under subsection (1) is available to satisfy a recovery order made against the person, whether or not a restraining order has been made against the property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-8__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Property that is to be taken to be property of a person under subsection (2) is available to satisfy a recovery order made against the person if, and only if, a restraining order has been made against the property.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-9">
+          <num>9</num>
+          <heading>Dealing with property</heading>
+          <content>
+            <p>For the purposes of this Act, dealing with property of a person includes:</p>
+          </content>
+          <paragraph eId="part-1__sec-9__para-a">
+            <num>a</num>
+            <content>
+              <p>if a debt owing by the person is secured by an encumbrance on the property—incurring any further liability or increasing the amount of that debt by any means; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-9__para-b">
+            <num>b</num>
+            <content>
+              <p>removing the property from Australia; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-1__sec-9__para-c">
+            <num>c</num>
+            <content>
+              <p>receiving or making a gift of the property.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-1__sec-10">
+          <num>10</num>
+          <heading>Effective control of property</heading>
+          <subsection eId="part-1__sec-10__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Property may be subject to the effective control of a person within the meaning of this Act whether or not the person has an interest in the property.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Without limiting the generality of any other provision of this Act, in determining:</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>whether or not property is subject to the effective control of a person; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>whether or not there are reasonable grounds to believe that property is subject to the effective control of a person;</p>
+              </content>
+              <content>
+                <p>regard may be had to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>shareholdings in, debentures over or directorships of a company that has an interest (whether direct or indirect) in the property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>a trust that has a relationship to the property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>family, domestic and business relationships between persons having an interest in the property, or in companies of the kind mentioned in paragraph (c) or trusts of the kind mentioned in paragraph (d), and other persons.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-3">
+            <num>3</num>
+            <content>
+              <p>For the purposes of paragraph (2)(e), family relationships are taken to include the following (without limitation):</p>
+            </content>
+            <paragraph eId="part-1__sec-10__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	relationships between de facto partners (within the meaning of the <i>Acts Interpretation Act 1901</i>);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	relationships of child and parent that arise if someone is the child of a person because of the definition of <b><i>child</i></b> in this section;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-10__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>relationships traced through relationships mentioned in paragraphs (a) and (b).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-10__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>child</i></b>: without limiting who is a child of a person for the purposes of this section, someone is the <b><i>child</i></b> of a person if he or she is a child of the person within the meaning of the <i>Family Law Act 1975</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-11">
+          <num>11</num>
+          <heading>Sufficient consideration</heading>
+          <content>
+            <p>A reference in this Act to transferring or acquiring property, or an interest in property, for sufficient consideration is a reference to transferring or acquiring the property or interest for a consideration that is sufficient and, having regard solely to commercial considerations, reflects the value of the property or the interest.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-12">
+          <num>12</num>
+          <heading>Application to convictions and offences</heading>
+          <subsection eId="part-1__sec-12__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act does not apply to a person’s conviction of an offence if the conviction happened before the commencing day.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-12__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act applies to an offence committed, or believed to have been committed, at any time, whether before, on or after the commencing day.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-12A">
+          <num>12A</num>
+          <heading>Application of the Criminal Code</heading>
+          <content>
+            <p>		Chapter 2 of the <i>Criminal Code</i> applies to all offences against this Act.</p>
+          </content>
+          <authorialNote placement="end" eId="note-1" marker="1">
+            <content>
+              <p>Note:	Chapter 2 of the <i>Criminal Code</i> sets out the general principles of criminal responsibility.</p>
+            </content>
+          </authorialNote>
+        </section>
+        <section eId="part-1__sec-13">
+          <num>13</num>
+          <heading>Act binds the Crown</heading>
+          <subsection eId="part-1__sec-13__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act binds the Crown in right of the Commonwealth, of each of the States, of the Australian Capital Territory and of the Northern Territory.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-13__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Nothing in this Act renders the Crown liable to be prosecuted for an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-14">
+          <num>14</num>
+          <heading>Application and extension of Act</heading>
+          <subsection eId="part-1__sec-14__subsec-1">
+            <num>1</num>
+            <content>
+              <p>This Act applies throughout the whole of Australia and also applies outside Australia.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-1__sec-14__subsec-2">
+            <num>2</num>
+            <content>
+              <p>This Act extends to the external Territories.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Superannuation orders</heading>
+        <section eId="part-2__sec-15">
+          <num>15</num>
+          <heading>Notice of charge etc.</heading>
+          <subsection eId="part-2__sec-15__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a person who is or was (whether before, on or after the commencing day) an employee is charged with an offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the relevant police authority thinks that the offence is, or may be, a corruption offence;</p>
+              </content>
+              <content>
+                <p>the police authority in relation to the offence may notify <role refersTo="#minister">the Minister</role> in writing of the charge.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A notice must contain particulars of the charge and set out the reasons why the police authority thinks that the offence is, or may be, a corruption offence.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-15__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where a police authority notifies <role refersTo="#minister">the Minister</role> that a person has been charged with an offence, <role refersTo="#authority">the authority</role> must notify <role refersTo="#minister">the Minister</role> in writing if:</p>
+            </content>
+            <paragraph eId="part-2__sec-15__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the person is acquitted or convicted of the offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-15__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the charge is withdrawn or otherwise disposed of without the conviction of the person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-16">
+          <num>16</num>
+          <heading>Authority to apply for superannuation order</heading>
+          <content>
+            <p>Where:</p>
+          </content>
+          <paragraph eId="part-2__sec-16__para-a">
+            <num>a</num>
+            <content>
+              <p>a person who is or was (whether before, on or after the commencing day) an employee is convicted of an offence; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-2__sec-16__para-b">
+            <num>b</num>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> is of the opinion that the offence is a corruption offence;</p>
+            </content>
+            <content>
+              <p><role refersTo="#minister">the Minister</role> may, by notice in writing, authorise the DPP to apply to the appropriate court for a superannuation order in respect of the person.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-2__sec-17">
+          <num>17</num>
+          <heading>Application for superannuation order</heading>
+          <subsection eId="part-2__sec-17__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If the DPP is authorised to apply for a superannuation order in respect of a person who is taken to have been convicted of an offence because of paragraph 6(1)(b), the DPP must make that application to the appropriate court.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-17__subsec-1A">
+            <num>1A</num>
+            <content>
+              <p>If:</p>
+            </content>
+            <paragraph eId="part-2__sec-17__subsec-1A__para-a">
+              <num>a</num>
+              <content>
+                <p>the DPP is authorised to apply for a superannuation order in respect of a person who is convicted of 1 or more offences; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-17__subsec-1A__para-b">
+              <num>b</num>
+              <content>
+                <p>the person is sentenced to imprisonment for life in respect of the offence, or any of the offences; or:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-17__subsec-1A__para-i">
+              <num>i</num>
+              <content>
+                <p>if there is only 1 offence—to imprisonment for a term longer than 12 months; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-17__subsec-1A__para-ii">
+              <num>ii</num>
+              <content>
+                <p>if there are 2 or more offences—to imprisonment for a single term longer than 12 months, or to cumulative terms that together add up to longer than 12 months, in respect of all or any of them;</p>
+              </content>
+              <content>
+                <p>the DPP must make that application to the appropriate court.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-17__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The DPP must not make an application for a superannuation order otherwise than under this section.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-17__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The DPP must take reasonable steps to give written notice of an application to the person in respect of whom the superannuation order is sought.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-18">
+          <num>18</num>
+          <heading>Application for superannuation order: evidence</heading>
+          <subsection eId="part-2__sec-18__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In determining an application for a superannuation order in respect of a person, the appropriate court may have regard to the transcript of any proceedings against the person for the offence to which the application relates and to the evidence given in any such proceedings.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-18__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	In an application for a superannuation order, any finding of fact made by a court in any proceedings for the offence to which the application relates, is <i>prima facie </i>evidence of that fact and the finding may be proved by the production of documents, under the seal of the court, in which the finding appears.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-18__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In an application for a superannuation order in respect of a person, a certificate signed or sealed by the person’s superannuation authority:</p>
+            </content>
+            <paragraph eId="part-2__sec-18__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>stating that employer contributions or benefits made or payable by the Commonwealth or a specified Commonwealth authority in respect of the person are held in a specified fund under the relevant superannuation scheme; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-18__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>stating the amount that equals the sum of those contributions or benefits as at the specified day plus the amount of interest on those contributions or benefits accrued under the scheme before that day;</p>
+              </content>
+              <content>
+                <p>is <i>prima facie </i>evidence of the matters stated in the certificate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-18__subsec-4">
+            <num>4</num>
+            <content>
+              <p>In an application for a superannuation order in respect of the person, a certificate signed or sealed by the person’s superannuation authority:</p>
+            </content>
+            <paragraph eId="part-2__sec-18__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>stating that benefits have been paid to the person under the relevant superannuation scheme; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-18__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>stating the amount that equals the sum of the benefits so paid as at the specified day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-18__subsec-4__para-c">
+              <num>c</num>
+              <content>
+                <p>stating another amount that equals the part of the amount referred to in paragraph (b) that is attributable to the sum of the employee contributions paid under the scheme by the person as at the specified day plus the amount of interest on those contributions accrued under the scheme before that day;</p>
+              </content>
+              <content>
+                <p>is <i>prima facie </i>evidence of the matters stated in the certificate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-18__subsec-5">
+            <num>5</num>
+            <content>
+              <p>A document purporting to be sealed with the seal of a court is to be taken to have been lawfully sealed with the seal of that court unless the contrary is proved.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-18__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A document purporting to be signed or sealed by a person’s superannuation authority is to be taken to have been signed or duly sealed by that superannuation authority unless the contrary is proved.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-19">
+          <num>19</num>
+          <heading>Superannuation orders: making</heading>
+          <subsection eId="part-2__sec-19__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), where an application is made for a superannuation order in respect of a person, the court must, if satisfied that the offence to which the application relates is a corruption offence, by order, declare:</p>
+            </content>
+            <paragraph eId="part-2__sec-19__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>that the person was convicted of a corruption offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>that this Part applies in relation to the rights of, and benefits paid or payable to or in respect of, the person under any superannuation scheme.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-19__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a person is, because of paragraph 6(1)(b), to be taken to have been convicted of an offence, a court must not make a superannuation order in relation to the person unless the court is also satisfied, on the balance of probabilities, that the person has absconded and:</p>
+            </content>
+            <paragraph eId="part-2__sec-19__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person has been committed for trial for the offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the court is satisfied, having regard to all the evidence before it, that a reasonable jury, properly instructed, could lawfully find the person guilty of the offence.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-19__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-2__sec-19__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>employer contributions or benefits made or payable by the Commonwealth or a Commonwealth authority in respect of the person under any superannuation scheme for any period of employment (not just a period during which the offence was committed) have been paid into, and are held in, a fund under the scheme; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the person would, but for subsection 21(1), become entitled, subject to and in accordance with the scheme, to the benefit, or to a benefit attributable to the employer contributions, as the case may be;</p>
+              </content>
+              <content>
+                <p>the court must:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>work out, and specify in the superannuation order, the amount that it thinks reflects the value of the sum of those contributions or benefits as at the day on which the order is made, plus the interest on those contributions or benefits accrued under the scheme before that day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>include in the superannuation order an order that the amount so specified be paid to the Commonwealth or Commonwealth authority, whichever the court considers appropriate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-19__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where any benefits have been paid to the person under any superannuation scheme (whether before, on or after the commencing day), the court must:</p>
+            </content>
+            <paragraph eId="part-2__sec-19__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>specify in the superannuation order the amount worked out using the formula:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/crimes-(superannuation-benefits)-act-1989-fig-2.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>AB </i></b><i>(</i><b><i>amount of benefits</i></b><i>)</i> is the amount that the court thinks reflects the value of the sum of the benefits paid by the Commonwealth or Commonwealth authority to the person under the scheme for any period of employment (not just a period during which the offence was committed) as at the day on which the order is made. </p>
+                <p><b><i>EC </i></b><i>(</i><b><i>employee contributions</i></b><i>)</i> is the amount that the court thinks is equal to the part of <b>AB</b> that is attributable to the sum of the employee contributions paid under the scheme by the person as at that day plus the interest on those contributions accrued under the scheme before that day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-19__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>include in the superannuation order an order that the person pay the amount so specified to the Commonwealth or Commonwealth authority, whichever the court considers appropriate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-19__subsec-5">
+            <num>5</num>
+            <content>
+              <p>For the purposes of subsection (4), the value of an amount of employer contributions or benefits, and of accrued interest, is their value worked out having regard to any decline in the purchasing power of money between the day on which the contributions or benefits were made or paid, or the interest accrued, as the case may be, and the day as at which their value must be worked out.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-19__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The DPP must give written notice of a superannuation order to the person’s superannuation authority.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-20">
+          <num>20</num>
+          <heading>When does a superannuation order take effect?</heading>
+          <subsection eId="part-2__sec-20__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A superannuation order made in relation to a person who has absconded takes effect on the day on which it is made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-20__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A superannuation order made in relation to a person, other than a person who has absconded, does not take effect until:</p>
+            </content>
+            <paragraph eId="part-2__sec-20__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the end of the period (if any) allowed for appealing against the conviction or sentence under the relevant Commonwealth, State or Territory law; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-20__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>if the person appeals against his or her conviction or sentence, or both—the appeal, and any proceedings resulting from it, are finally determined, withdrawn or otherwise disposed of.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-21">
+          <num>21</num>
+          <heading>Effect of superannuation orders</heading>
+          <subsection eId="part-2__sec-21__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where a court makes a superannuation order in respect of a person:</p>
+            </content>
+            <paragraph eId="part-2__sec-21__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>all rights of, and benefits payable to or in respect of, the person or a dependant of the person (being rights or benefits arising out of the person’s membership of any superannuation scheme) cease, or cease to be payable, on the day on which the order takes effect, and the person ceases to be a member of the scheme on that day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-21__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any amount of the kind mentioned in subsection 19(3) that is vested in the person ceases to be so vested on that day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-21__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Commonwealth or a Commonwealth authority is not liable to pay any employer contribution or benefit under the scheme in respect of the person on or after that day.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-21__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An amount payable by a person to the Commonwealth or a Commonwealth authority under a superannuation order is a debt due by the person to the Commonwealth or the Commonwealth authority, as the case may be.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-21__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An order under subsection 19(3) or (4) against a person may be enforced as if it were an order made in civil proceedings instituted by the Commonwealth or the relevant Commonwealth authority against the person to recover a debt due by the person to the Commonwealth or the Commonwealth authority, and the debt arising from the order is to be taken to be a judgment debt.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-21__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Despite the Superannuation Act, or any other Act or any agreement, where subsection (1) applies to a person who is an employee when the superannuation order takes effect, the person is entitled, on the day on which he or she ceases to be a member of the relevant superannuation scheme, to payment of an amount equal to the sum of the employee contributions paid under the scheme by the person (being contributions that are held in a fund under the scheme) plus the amount of interest on those contributions accrued under the scheme.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-21__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Despite the Superannuation Act, or any other Act or any agreement, where subsection (1) applies to a person who:</p>
+            </content>
+            <paragraph eId="part-2__sec-21__subsec-5__para-a">
+              <num>a</num>
+              <content>
+                <p>was an employee when the relevant corruption offence was committed but ceases to be an employee before the superannuation order takes effect; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-21__subsec-5__para-b">
+              <num>b</num>
+              <content>
+                <p>would, but for that subsection, have been entitled to payment of benefits under the relevant superannuation scheme on or after the day on which the superannuation order takes effect;</p>
+              </content>
+              <content>
+                <p>the person is entitled, on the day on which he or she ceases to be a member of the scheme, to payment of an amount worked out using the formula:</p>
+              </content>
+              <figure>
+                <img src="corpus/images/crimes-(superannuation-benefits)-act-1989-fig-3.png" alt=""/>
+              </figure>
+              <content>
+                <p>where:</p>
+                <p><b><i>AC</i></b><i> (</i><b><i>amount of contributions</i></b><i>)</i> is an amount equal to the sum of the employee contributions paid under the scheme by the person plus the amount of interest on those contributions accrued under the scheme.</p>
+                <p><b><i>AR</i></b><i> (</i><b><i>amount received</i></b><i>)</i> is an amount equal to that part of the sum of all amounts paid by way of benefit before the day on which the superannuation order takes effect that is attributable to <b>AC</b>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-22">
+          <num>22</num>
+          <heading>Superannuation orders: variation</heading>
+          <subsection eId="part-2__sec-22__subsec-1">
+            <num>1</num>
+            <content>
+              <p>If a superannuation order made in respect of a person:</p>
+            </content>
+            <paragraph eId="part-2__sec-22__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>specifies an amount under subsection 19(3) or (4); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-22__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>takes effect on a day that is later than the day on which the order is made;</p>
+              </content>
+              <content>
+                <p>the DPP may, as soon as practicable after the order takes effect, apply to the court that made the order to vary the order by substituting for the specified amount an increased amount, having regard to any amount of employer contributions or benefits paid by the Commonwealth or a Commonwealth authority in respect of the person during the prescribed period.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-22__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the DPP makes an application, the court must vary the superannuation order accordingly and, for the purposes of working out the increased amount to be specified in the superannuation order, as varied, subsections 19(3), (4) and (5) apply as if references in subsections 19(3) and (4) to the day on which the order is made were references to the day on which the variation is made.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-2__sec-22__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>prescribed period</i></b> means the period starting on the day on which the superannuation order is made and ending on the day on which the variation is made.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-2__sec-23">
+          <num>23</num>
+          <heading>Superannuation orders: revocation</heading>
+          <subsection eId="part-2__sec-23__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A superannuation order made in relation to a person is to be taken to have been revoked if:</p>
+            </content>
+            <paragraph eId="part-2__sec-23__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person’s conviction is quashed; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person’s sentence is so reduced or otherwise changed that it would no longer support the making of an application for a superannuation order under subsection 17(1A); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>where the person is taken to be convicted because of paragraph 6(1)(b)—the person is brought before a court in respect of the offence concerned and, having been convicted of that offence, does not receive a sentence that would support the making of an application for a superannuation order under subsection 17(1A).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-23__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a superannuation order is taken to have been revoked, the DPP must give written notice of the fact to:</p>
+            </content>
+            <paragraph eId="part-2__sec-23__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the person in respect of whom the order was made; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the person’s superannuation authority.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-2__sec-23__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-2__sec-23__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a superannuation order is made in relation to a person who is taken to be convicted because of paragraph 6(1)(b); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the superannuation order is to be taken to have been revoked;</p>
+              </content>
+              <content>
+                <p>there is payable to the person an amount determined by the Finance Minister, being an amount that <role refersTo="#minister">the Minister</role> considers to be a fair recompense to the person, having regard to:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>any amount paid to the person under subsection 21(4) or (5); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-3__para-d">
+              <num>d</num>
+              <content>
+                <p>any amount recovered from the person under a recovery order against the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-3__para-e">
+              <num>e</num>
+              <content>
+                <p>any other financial loss sustained by the person as a result of the superannuation order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-2__sec-23__subsec-3__para-f">
+              <num>f</num>
+              <content>
+                <p>any other matters that <role refersTo="#minister">the Minister</role> thinks are relevant in the circumstances of the case.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Restraining orders</heading>
+        <section eId="part-3__sec-24">
+          <num>24</num>
+          <heading>Application for restraining order</heading>
+          <subsection eId="part-3__sec-24__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	Where a person (in this Part called <b><i>the defendant</i></b>):</p>
+            </content>
+            <paragraph eId="part-3__sec-24__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>has been convicted of an offence; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-24__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>has been, or is about to be, charged with an offence;</p>
+              </content>
+              <content>
+                <p>the DPP may apply to the appropriate court for a restraining order against specified property of the defendant or of another person, or both.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-24__subsec-2">
+            <num>2</num>
+            <content>
+              <p>For the purposes of an application, the DPP may, on behalf of the Commonwealth, give the court such undertakings with respect to the payment of damages or costs, or both, as the court requires.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-25">
+          <num>25</num>
+          <heading>Making of restraining orders</heading>
+          <subsection eId="part-3__sec-25__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this Part, where an application is made for a restraining order against property and the appropriate court is satisfied that:</p>
+            </content>
+            <paragraph eId="part-3__sec-25__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the offence concerned is, or may be, a corruption offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-25__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>if the defendant has been sentenced in respect of the offence—the sentence would support the making of an application for a superannuation order under subsection 17(1A); and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-25__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the defendant is, or has been, a member of a superannuation scheme;</p>
+              </content>
+              <content>
+                <p>the court may, by order, direct that the property, or such part of the property as is specified in the order, is not to be disposed of, or otherwise dealt with, by any person except in the manner and circumstances (if any) specified in the order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A restraining order must not be made against a person’s property to any extent greater than is necessary to ensure the recovery of any amount payable, or reasonably likely to be payable, by the defendant under a recovery order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Subsection (2) does not prevent the court from making a restraining order against a person’s property, being property whose value is more than the amount payable, or reasonably likely to be payable, by the defendant under a recovery order if there is no other property of sufficient value in respect of which the court can make a restraining order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-4">
+            <num>4</num>
+            <content>
+              <p>A court may make a restraining order against property whether or not there is any risk of the property being disposed of, or otherwise dealt with, in a manner that would defeat the operation of this Act.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where the application is made in reliance on the proposed charging of the defendant with the offence concerned, the court must not make a restraining order unless satisfied that the defendant will be charged with the offence, or with a related corruption offence, within 48 hours.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-25__subsec-6">
+            <num>6</num>
+            <content>
+              <p>A court may refuse to make a restraining order if the Commonwealth refuses or fails to give the court such undertakings as the court considers appropriate with respect to the payment of damages or costs, or both, in relation to the making and operation of the order.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-26">
+          <num>26</num>
+          <heading>Restraining order may be subject to conditions</heading>
+          <subsection eId="part-3__sec-26__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A restraining order against a person’s property may be made subject to such conditions as the court thinks fit, for example, conditions providing for meeting, out of the property or a specified part of the property, all or any of the following:</p>
+            </content>
+            <paragraph eId="part-3__sec-26__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the person’s reasonable living expenses (including the reasonable living expenses of any dependants of the person) and reasonable business expenses;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the person’s taxed legal expenses in defending a criminal charge;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-26__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a specified debt incurred by the person in good faith (being a debt to which neither paragraph (a) or (b) applies).</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-26__subsec-2">
+            <num>2</num>
+            <content>
+              <p>The court must not make provision of a kind mentioned in subsection (1) unless satisfied that the person cannot meet the expense or debt concerned out of property that is not subject to a restraining order.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-27">
+          <num>27</num>
+          <heading>Affidavit of police officer needed in certain cases</heading>
+          <subsection eId="part-3__sec-27__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an application is made for a restraining order and the defendant has not been convicted of the offence concerned, the court must not make a restraining order unless:</p>
+            </content>
+            <paragraph eId="part-3__sec-27__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the application for the order is supported by an affidavit of a police officer stating that the officer believes the defendant committed the offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-27__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the court is satisfied, having regard to the matters contained in the affidavit, that there are reasonable grounds for so believing.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where an application for a restraining order is made against specified property of a person other than the defendant, the court must not make a restraining order against the property unless:</p>
+            </content>
+            <paragraph eId="part-3__sec-27__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the application is supported by an affidavit of a police officer stating that the officer believes that the property is subject to the effective control of the defendant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-27__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the court is satisfied, having regard to the matters contained in the affidavit, that there are reasonable grounds for so believing.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An affidavit made by a police officer for the purpose of this section that states that the officer believes a particular matter must set out the grounds on which the officer holds that belief.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-27__subsec-4">
+            <num>4</num>
+            <content>
+              <p>The court may, at any time before the final determination of an application for:</p>
+            </content>
+            <paragraph eId="part-3__sec-27__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a restraining order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-27__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>an extension of the period of effect of a restraining order;</p>
+              </content>
+              <content>
+                <p>direct the DPP to give or publish notice of the application to a specified person or class of persons in the manner and within the time the court thinks appropriate.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-28">
+          <num>28</num>
+          <heading>Notice of application for restraining order</heading>
+          <subsection eId="part-3__sec-28__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), the DPP must give written notice of an application for a restraining order against property to:</p>
+            </content>
+            <paragraph eId="part-3__sec-28__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the owner of the property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-28__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>any other person the DPP has reason to believe may have an interest in the property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-28__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where notice of an application has not been given, the court must consider the application if the DPP asks it to do so but, subject to <ref href="#sec-28A">section 28A</ref>, a restraining order made by virtue of this subsection ceases to have effect at the end of the period (not exceeding 14 days) specified by the court in the restraining order.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-28A">
+          <num>28A</num>
+          <heading>Extension of certain restraining orders</heading>
+          <subsection eId="part-3__sec-28A__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), the court may, on application made by the DPP before the end of the period mentioned in subsection 28(2), extend the period of effect of a restraining order made in reliance on that subsection.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28A__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsections 27(1), (2) and (3) apply, with the necessary changes made, to the extension of the period of operation of a restraining order made in reliance on subsection 28(2) in the same way as they apply to the making of a restraining order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-28A__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The DPP must give written notice of an application under subsection (1) for the extension of the period of effect of a restraining order to:</p>
+            </content>
+            <paragraph eId="part-3__sec-28A__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the owner of the property against which the restraining order was made; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-28A__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>any other person who the DPP has reason to believe may have an interest in the property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-29">
+          <num>29</num>
+          <heading>Persons who may appear and adduce evidence</heading>
+          <subsection eId="part-3__sec-29__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-29__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the DPP applies for a restraining order against property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-29__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>notice of the application is given under subsection 28(1);</p>
+              </content>
+              <content>
+                <p>any person who claims an interest in the property may appear and adduce evidence at the hearing of the application.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-29__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where the DPP applies for the extension of the period of effect of a restraining order made in respect of property, any person who claims an interest in the property may appear and adduce evidence at the hearing of the application.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-30">
+          <num>30</num>
+          <heading>Witnesses not required to answer questions etc. in certain cases</heading>
+          <content>
+            <p>On the hearing of an application for a restraining order, a witness is not required to answer a question or to produce a document if the court is satisfied that the answering of the question or the production of the document may prejudice the investigation of, or the prosecution of a person for, an offence.</p>
+          </content>
+        </section>
+        <section eId="part-3__sec-31">
+          <num>31</num>
+          <heading>Notice of restraining orders</heading>
+          <subsection eId="part-3__sec-31__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), where a restraining order is made against a person’s property, the DPP must give the person written notice of the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-31__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-31__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a court makes a restraining order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-31__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the court is satisfied that it would be in the public interest to delay giving notice of the order to a person;</p>
+              </content>
+              <content>
+                <p>the court may include in the restraining order an order that giving the person notice of the restraining order be delayed for the specified period and the DPP must give the person notice of the restraining order as soon as practicable after the end of the specified period.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-32">
+          <num>32</num>
+          <heading>Ancillary orders</heading>
+          <subsection eId="part-3__sec-32__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an appropriate court makes a restraining order, it may, at the same time or at any later time, make any ancillary orders that it thinks appropriate, for example:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>an order varying the property to which the restraining order relates; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>an order varying any condition to which the restraining order is subject; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>an order for the examination on oath before the court or <role refersTo="#registrar">the Registrar</role> of the court of any person, including:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	the owner of property subject to the restraining order (in this paragraph called the <b><i>owner</i></b>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>the defendant;</p>
+              </content>
+              <content>
+                <p>about the affairs (including the nature and location of any property) of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>anyone else who is either the owner or the defendant, or both; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-iv">
+              <num>iv</num>
+              <content>
+                <p>if the person to be examined is either the owner or the defendant, or both—that person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>an order about carrying out any undertaking with respect to the payment of damages or costs given by the Commonwealth in connection with the making of the restraining order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-2">
+            <num>2</num>
+            <content>
+              <p>An ancillary order may be made on application by:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the DPP; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the owner of property subject to the restraining order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>with the leave of the court—any other person.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-32__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>a defendant has been convicted of, or has been charged or is about to be charged with, an offence; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>an appropriate court makes a restraining order against property in reliance on the conviction, charging or proposed charging; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-32__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>a person, other than the defendant, who has an interest in the property applies to the court for a variation of the order to exclude the person’s interest from the order;</p>
+              </content>
+              <content>
+                <p>the court must grant the application if satisfied that the applicant’s interest in the property is not subject to the effective control of the defendant.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where a person is examined before a court or a registrar under an order under subsection (1), the person is not excused from answering a question when required to do so by the court or registrar, as the case may be, on the ground that the answer to the question might tend to incriminate the person or make the person liable to forfeiture or a penalty.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-5">
+            <num>5</num>
+            <content>
+              <p>Where a person is examined before a court or registrar under an order under subsection (1), the statement or disclosure made by the person in answer to a question put in the course of the examination, and any information, document or thing obtained as a direct or indirect result of the statement or disclosure, is not admissible against the person in any criminal proceedings except a proceeding for giving false testimony in the course of the examination.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-6">
+            <num>6</num>
+            <content>
+              <p>For the purposes of subsection (5), proceedings on an application for a superannuation order or a restraining order are not criminal proceedings.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-32__subsec-7">
+            <num>7</num>
+            <content>
+              <p>On the hearing of an application for an order under subsection (1), a witness is not required to answer a question or to produce a document if the court is satisfied that the answering of the question or the production of the document may prejudice the investigation of, or the prosecution of the person for, an offence.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-33">
+          <num>33</num>
+          <heading>Charge on property subject to restraining order</heading>
+          <subsection eId="part-3__sec-33__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-33__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a recovery order is made against a defendant; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a restraining order is, or has been, made against:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>property of the defendant; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>property of another person in relation to which an order is, or has been, made under subsection 40(1);</p>
+              </content>
+              <content>
+                <p>in reliance on the defendant’s conviction of a particular offence or a related corruption offence or on the charging, or proposed charging, of the defendant with a particular offence or a related corruption offence;</p>
+                <p>then, upon the making of the later of the orders, there is created, by force of this section, a charge on the property to secure the payment of the amount specified in the recovery order to the Commonwealth or the relevant Commonwealth authority, as the case requires.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-33__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A charge on property of a person ceases to have effect:</p>
+            </content>
+            <paragraph eId="part-3__sec-33__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>if the relevant recovery order ceases to have effect; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>upon payment to the Commonwealth, or the relevant Commonwealth authority, of the amount specified in the order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>upon the person becoming a bankrupt; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>upon the sale or other disposition of the property by the owner of the property with the consent of the court that made the recovery order; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>upon the sale of the property to a purchaser in good faith for sufficient consideration who, at the time of the purchase, has no notice of the charge;</p>
+              </content>
+              <content>
+                <p>whichever first occurs.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-33__subsec-3">
+            <num>3</num>
+            <content>
+              <p>A charge on property:</p>
+            </content>
+            <paragraph eId="part-3__sec-33__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>is subject to every encumbrance on the property that came into existence before the charge and that would, but for this subsection, have priority over the charge; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>has priority over all other encumbrances; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>subject to subsection (2), is not affected by any change of ownership of the property.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-33__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-33__subsec-4__para-a">
+              <num>a</num>
+              <content>
+                <p>a charge is created on property of a particular kind; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-33__subsec-4__para-b">
+              <num>b</num>
+              <content>
+                <p>the provisions of any law of the Commonwealth or of a State or Territory provide for the registration of title to, or charges over, property of that kind;</p>
+              </content>
+              <content>
+                <p>the DPP may cause the charge to be registered under the provisions of that law and, if the charge is so registered, a person who purchases, or otherwise acquires an interest in, the property after the registration is to be taken, for the purposes of paragraph (2)(e), to have notice of the charge at the time of the purchase or acquisition.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-34">
+          <num>34</num>
+          <heading>Registration of restraining orders</heading>
+          <subsection eId="part-3__sec-34__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-34__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a restraining order applies to property of a particular kind; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-34__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the provisions of any law of the Commonwealth or of a State or Territory provide for the registration of title to, or charges over, property of that kind;</p>
+              </content>
+              <content>
+                <p><role refersTo="#authority">the authority</role> responsible for administering those provisions may, on application by the DPP, record on the register kept under those provisions particulars of the restraining order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-34__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where particulars of a restraining order are recorded under subsection (1), a person who later deals with the property is to be taken, for the purposes of <ref href="#sec-35">section 35</ref>, to have notice of the restraining order at the time of the dealing.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-35">
+          <num>35</num>
+          <heading>Contravention of restraining orders</heading>
+          <subsection eId="part-3__sec-35__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who intentionally contravenes a restraining order by disposing of, or otherwise dealing with, property that is subject to the restraining order commits an offence punishable, upon conviction, by imprisonment for a period not exceeding 5 years.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where:</p>
+            </content>
+            <paragraph eId="part-3__sec-35__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>a restraining order is made against property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the property is disposed of, or otherwise dealt with, in contravention of the restraining order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the disposition or dealing was either not for sufficient consideration or not in favour of a person who acted in good faith;</p>
+              </content>
+              <content>
+                <p>the DPP may apply to the court that made the restraining order for an order that the disposition or dealing be set aside.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-35__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where the DPP makes an application under subsection (2) in relation to a disposition or dealing, the court may make an order:</p>
+            </content>
+            <paragraph eId="part-3__sec-35__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>setting the disposition or dealing aside as from the day on which it took place; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-35__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>setting the disposition or dealing aside as from the day of the order under this subsection and declaring the respective rights of any persons who acquired interests in the property on or after the day on which the disposition or dealing took place and before the day of the order under this subsection.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-36">
+          <num>36</num>
+          <heading>Restraining orders: revocation</heading>
+          <content>
+            <p>Where a court has made a restraining order against a person’s property, the court may, on application made by the person, revoke the order if:</p>
+          </content>
+          <paragraph eId="part-3__sec-36__para-a">
+            <num>a</num>
+            <content>
+              <p>where the order was made in reliance on the person’s conviction of an offence or the charging, or proposed charging, of the person with an offence—the person gives security satisfactory to the court for the payment of any amount that may be specified in a recovery order against the person; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-3__sec-36__para-b">
+            <num>b</num>
+            <content>
+              <p>the person gives undertakings satisfactory to the court concerning the person’s property.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-3__sec-37">
+          <num>37</num>
+          <heading>When do restraining orders cease to have effect?</heading>
+          <subsection eId="part-3__sec-37__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A restraining order ceases to have effect if any of the following things happen:</p>
+            </content>
+            <paragraph eId="part-3__sec-37__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the defendant is acquitted of the offence, or the charge is withdrawn or otherwise disposed of without conviction and the defendant has not been charged with a related corruption offence before the acquittal, withdrawal or disposal;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-37__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the defendant is convicted of the offence, but does not receive a sentence that would support the making of an application for a superannuation order under subsection 17(1A);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-37__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#minister">the Minister</role> refuses to authorise the DPP to apply for a superannuation order in respect of the defendant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-37__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the appropriate court refuses to make a recovery order against the defendant;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-37__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>such an order is made in respect of the defendant but is later satisfied or is taken to have been revoked;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-37__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>where the restraining order was made in reliance on the proposed charging of the person with an offence—the defendant is not charged with the offence or a related corruption offence before the end of the period of 48 hours after the order is made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-37__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to this section, a restraining order ceases to have effect, if it has not already done so under subsection (1), at the end of the relevant period in relation to the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-37__subsec-3">
+            <num>3</num>
+            <content>
+              <p>If, within the relevant period in relation to a restraining order, an application is made under <ref href="#sec-38">section 38</ref> for an extension of the period of effect of the restraining order and the court refuses the application after the end of the relevant period, the restraining order ceases to have effect when the court refuses the application.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-37__subsec-4">
+            <num>4</num>
+            <content>
+              <p>If, within the relevant period in relation to a restraining order, an application is made under <ref href="#sec-38">section 38</ref> for an extension of the period of effect of the restraining order and the application is granted, the restraining order ceases to have effect at the time, or on the occurrence of the event, specified in an order made by the court under that section.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-38">
+          <num>38</num>
+          <heading>Extension of period of effect of restraining orders</heading>
+          <subsection eId="part-3__sec-38__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The DPP may, before the end of the relevant period in relation to a restraining order made in reliance on a person’s conviction of an offence or the charging, or proposed charging, of a person with an offence, apply to the court that made the restraining order for an extension of the period of effect of the order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-38__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where, on an application for an extension of the period of effect of a restraining order, the court is satisfied:</p>
+            </content>
+            <paragraph eId="part-3__sec-38__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>that a recovery order has been, or may still be, made against the person; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-38__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>where the property concerned is the property of another person—an order under subsection 40(1) has been, or may still be, made;</p>
+              </content>
+              <content>
+                <p>the court may:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-38__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>by order, extend the period of effect of the restraining order; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__sec-38__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>make such other order or orders as it thinks appropriate in relation to the operation of the restraining order.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-3__sec-38__subsec-3">
+            <num>3</num>
+            <content>
+              <p>The DPP must give a person written notice of an application in relation to a restraining order in respect of the person’s property.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-3__sec-39">
+          <num>39</num>
+          <heading>Notice of applications</heading>
+          <subsection eId="part-3__sec-39__subsec-1">
+            <num>1</num>
+            <content>
+              <p>A person who applies under <ref href="#sec-32">section 32</ref> for an ancillary order in relation to a restraining order must give written notice of the application to each other person who is entitled under subsection 32(2) to make an application under <ref href="#sec-32">section 32</ref> in relation to the restraining order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-3__sec-39__subsec-2">
+            <num>2</num>
+            <content>
+              <p>A person who applies under <ref href="#sec-36">section 36</ref> for revocation of a restraining order must given written notice of the application to the DPP.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-4__sec-40">
+          <num>40</num>
+          <heading>Court may lift corporate veil etc.</heading>
+          <subsection eId="part-4__sec-40__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an appropriate court makes a recovery order against a person, it may, on application by the DPP, if it thinks that particular property is subject to the effective control of the person, make an order declaring that the whole, or a specified part, of that property is available to satisfy the recovery order.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-40__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where a court declares that property is available to satisfy a recovery order:</p>
+            </content>
+            <paragraph eId="part-4__sec-40__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the recovery order may be enforced against the property as if the property were property of the person against whom the order is made; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-40__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>a restraining order may be made in respect of the property as if the property were property of the person against whom the restraining order is made.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-40__subsec-3">
+            <num>3</num>
+            <content>
+              <p>Where the DPP applies for an order under subsection (1) that property is available to satisfy a recovery order against a person:</p>
+            </content>
+            <paragraph eId="part-4__sec-40__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>the DPP must give written notice of the application to the person and to any other person who the DPP has reason to believe may have an interest in the property; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-40__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>the person and any person who claims an interest in the property may appear and adduce evidence at the hearing of the application.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-41">
+          <num>41</num>
+          <heading>Amounts payable under section 19, 21 or 23</heading>
+          <subsection eId="part-4__sec-41__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Where an amount is payable under an order made under subsection 19(3) in respect of employer contributions or benefits that are held in a fund other than the Consolidated Revenue Fund, the amount is payable out of the fund by the person responsible for the administration of the fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-41__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Where an amount is payable under an order made under subsection 19(3) in respect of employer contributions or benefits that have been paid to the Commonwealth, the Finance Minister is to make arrangements:</p>
+            </content>
+            <paragraph eId="part-4__sec-41__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>for the payment of the amount out of the Consolidated Revenue Fund; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-41__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>where it is not appropriate to make such a payment—for any other appropriate action to be taken;</p>
+              </content>
+              <content>
+                <p>and the order is to be taken to have been satisfied by the taking of any action that gives effect to the arrangements.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-41__subsec-3">
+            <num>3</num>
+            <content>
+              <p>An amount payable to a person under subsection 21(4) or (5) is payable:</p>
+            </content>
+            <paragraph eId="part-4__sec-41__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>if the relevant superannuation scheme is established by an Act—by the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-41__subsec-3__para-b">
+              <num>b</num>
+              <content>
+                <p>in any other case—by the relevant superannuation authority out of the fund established under the relevant superannuation scheme.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-41__subsec-4">
+            <num>4</num>
+            <content>
+              <p>Where an amount mentioned in subsection (3) is payable by the Commonwealth, the amount is payable out of the fund established under the relevant Act or, if an amount attributable to the employee contributions of the person has been paid to the Commonwealth, out of the Consolidated Revenue Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-41__subsec-5">
+            <num>5</num>
+            <content>
+              <p>An amount payable to a person under subsection 23(3) is payable by the Commonwealth out of the Consolidated Revenue Fund.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-41__subsec-6">
+            <num>6</num>
+            <content>
+              <p>The Consolidated Revenue Fund is appropriated to the extent necessary to pay any amount that is payable under this section out of that Fund.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-42">
+          <num>42</num>
+          <heading>Multiple payments in respect of same employee contributions not allowed</heading>
+          <subsection eId="part-4__sec-42__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In spite of this Act and the AFP Act, where an amount has been paid to a person under subsection 21(4) or (5) of this Act in respect of employee contributions and interest on those contributions, the person is not entitled to payment of another amount under either of those subsections, or under subsection 47(2) or (3), 49(2) or 51(3) of the AFP Act, in respect of the same employee contributions and interest.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-42__subsec-2">
+            <num>2</num>
+            <content>
+              <p>In spite of this Act and the AFP Act, where an amount has been paid to a person under subsection 47(2) or (3), 49(2) or 51(3) of the AFP Act in respect of employee contributions and interest on those contributions, the person is not entitled to payment to another amount under subsection 21(4) or (5) of this Act in respect of the same employee contributions and interest.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-42__subsec-3">
+            <num>3</num>
+            <content>
+              <p>In this section:</p>
+            </content>
+            <content>
+              <p><b><i>AFP Act</i></b> means the <i>Australian Federal Police Act 1979</i>.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-4__sec-43">
+          <num>43</num>
+          <heading>Possible superannuation order not to be taken into account in sentencing</heading>
+          <content>
+            <p>A court shall not, in sentencing a person convicted of an offence punishable by imprisonment for life or for a term longer than 12 months, take into account the possibility that a superannuation order may be made in relation to the person.</p>
+          </content>
+        </section>
+        <section eId="part-4__sec-44">
+          <num>44</num>
+          <heading>Constitution of appropriate courts</heading>
+          <content>
+            <p>Where an application for a superannuation order or a restraining order is made to a court before which a person was convicted of a corruption offence:</p>
+          </content>
+          <paragraph eId="part-4__sec-44__para-a">
+            <num>a</num>
+            <content>
+              <p>the application may be dealt with by the court; and</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-44__para-b">
+            <num>b</num>
+            <content>
+              <p>any power in relation to the order may be exercised by the court;</p>
+            </content>
+            <content>
+              <p>whether or not it is constituted in the same way in which it was constituted when the person was convicted of the offence.</p>
+            </content>
+          </paragraph>
+        </section>
+        <section eId="part-4__sec-45">
+          <num>45</num>
+          <heading>Regulations</heading>
+          <content>
+            <p>The Governor-General may make regulations, not inconsistent with this Act, prescribing matters:</p>
+          </content>
+          <paragraph eId="part-4__sec-45__para-a">
+            <num>a</num>
+            <content>
+              <p>required or permitted by this Act to be prescribed; or</p>
+            </content>
+          </paragraph>
+          <paragraph eId="part-4__sec-45__para-b">
+            <num>b</num>
+            <content>
+              <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+            </content>
+            <content>
+              <p>Endnotes</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>The endnotes provide information about this compilation and the compiled law.</p>
+              <p>The following endnotes are included in every compilation:</p>
+              <p>Endnote 1—About the endnotes</p>
+              <p>Endnote 2—Abbreviation key</p>
+              <p>Endnote 3—Legislation history</p>
+              <p>Endnote 4—Amendment history</p>
+              <p><b>Abbreviation key—Endnote 2</b></p>
+              <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+              <p><b>Legislation history and amendment history—Endnotes 3 and 4</b></p>
+              <p>Amending laws are annotated in the legislation history and amendment history.</p>
+              <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+              <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+              <p><b>Editorial changes</b></p>
+              <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+              <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+              <p><b>Misdescribed amendments</b></p>
+              <p>A misdescribed amendment is an amendment that does not accurately describe the amendment to be made. If, despite the misdescription, the amendment can be given effect as intended, the amendment is incorporated into the compiled law and the abbreviation “(md)” added to the details of the amendment included in the amendment history.</p>
+              <p>If a misdescribed amendment cannot be given effect as intended, the abbreviation “(md not incorp)” is added to the details of the amendment included in the amendment history.</p>
+              <p>Endnote 2—Abbreviation key</p>
+            </content>
+            <table>
+              <tr>
+                <th>ad = added or inserted</th>
+                <th>o = order(s)</th>
+              </tr>
+              <tr>
+                <td>am = amended</td>
+                <td>Ord = Ordinance</td>
+              </tr>
+              <tr>
+                <td>amdt = amendment</td>
+                <td>orig = original</td>
+              </tr>
+              <tr>
+                <td>c = clause(s)</td>
+                <td>par = paragraph(s)/subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>C[x] = Compilation No. x</td>
+                <td>/sub-subparagraph(s)</td>
+              </tr>
+              <tr>
+                <td>Ch = Chapter(s)</td>
+                <td>pres = present</td>
+              </tr>
+              <tr>
+                <td>def = definition(s)</td>
+                <td>prev = previous</td>
+              </tr>
+              <tr>
+                <td>Dict = Dictionary</td>
+                <td>(prev…) = previously</td>
+              </tr>
+              <tr>
+                <td>disallowed = disallowed by Parliament</td>
+                <td>Pt = Part(s)</td>
+              </tr>
+              <tr>
+                <td>Div = Division(s)</td>
+                <td>r = regulation(s)/rule(s)</td>
+              </tr>
+              <tr>
+                <td>ed = editorial change</td>
+                <td>reloc = relocated</td>
+              </tr>
+              <tr>
+                <td>exp = expires/expired or ceases/ceased to have</td>
+                <td>renum = renumbered</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>rep = repealed</td>
+              </tr>
+              <tr>
+                <td>F = Federal Register of Legislation</td>
+                <td>rs = repealed and substituted</td>
+              </tr>
+              <tr>
+                <td>gaz = gazette</td>
+                <td>s = section(s)/subsection(s)</td>
+              </tr>
+              <tr>
+                <td>LA = Legislation Act 2003</td>
+                <td>Sch = Schedule(s)</td>
+              </tr>
+              <tr>
+                <td>LIA = Legislative Instruments Act 2003</td>
+                <td>Sdiv = Subdivision(s)</td>
+              </tr>
+              <tr>
+                <td>(md) = misdescribed amendment can be given</td>
+                <td>SLI = Select Legislative Instrument</td>
+              </tr>
+              <tr>
+                <td>effect</td>
+                <td>SR = Statutory Rules</td>
+              </tr>
+              <tr>
+                <td>(md not incorp) = misdescribed amendment</td>
+                <td>Sub-Ch = Sub-Chapter(s)</td>
+              </tr>
+              <tr>
+                <td>cannot be given effect</td>
+                <td>SubPt = Subpart(s)</td>
+              </tr>
+              <tr>
+                <td>mod = modified/modification</td>
+                <td>underlining = whole or part not</td>
+              </tr>
+              <tr>
+                <td>No. = Number(s)</td>
+                <td>commenced or to be commenced</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 3—Legislation history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Act</th>
+                <th>Number and year</th>
+                <th>Assent</th>
+                <th>Commencement</th>
+                <th>Application, saving and transitional provisions</th>
+              </tr>
+              <tr>
+                <td>Crimes (Superannuation Benefits) Act 1989</td>
+                <td>145, 1989</td>
+                <td>23 Nov 1989</td>
+                <td>21 Dec 1989</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Australian Federal Police Legislation Amendment Act (No. 2) 1989</td>
+                <td>153, 1989</td>
+                <td>17 Dec 1989</td>
+                <td>ss. 1, 2 and Part 3 (ss. 61, 62): Royal Assent
+s. 11: 1 July 1991
+ss. 38 and 71: 1 Jan 1992
+Remainder: 1 Jan 1990 (see Gazette 1989, No. S397)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment Act (No. 2) 1991</td>
+                <td>123, 1991</td>
+                <td>23 Aug 1991</td>
+                <td>ss. 5–10, Parts 3–7 and 9 (ss. 11–34, 38, 39) and ss. 40–50: 20 Sept 1991
+Part 8 (ss. 35–37): 6 Dec 1991 (see Gazette 1991, No. S330)
+s. 51: 23 Feb 1992
+Remainder: Royal Assent</td>
+                <td>ss. 24(2), 27 and 28(2)</td>
+              </tr>
+              <tr>
+                <td>Superannuation Legislation (Consequential Amendments and Transitional Provisions) Act 1992</td>
+                <td>94, 1992</td>
+                <td>30 June 1992</td>
+                <td>s. 3: 1 July 1990
+Remainder: Royal Assent</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment Act 1992</td>
+                <td>164, 1992</td>
+                <td>11 Dec 1992</td>
+                <td>Part 1 (ss. 1, 2) and Parts 3–11 (ss. 18–53): 8 Jan 1993
+Remainder: 1 Feb 1993 (see Gazette 1993, No. GN1)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Crimes and Other Legislation Amendment Act 1994</td>
+                <td>182, 1994</td>
+                <td>19 Dec 1994</td>
+                <td>s. 31: 8 Jan 1993 (a)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Qantas Sale Act 1992</td>
+                <td>196, 1992</td>
+                <td>21 Dec 1992</td>
+                <td>Schedule (Part 1): 10 Mar 1993 (see Gazette 1993, No. GN17) (b)
+Schedule (Part 5): 30 Aug 1995 (see Gazette 1995, No. S324) (b)</td>
+                <td>s. 2(6) (as am. by 60, 1993, s. 4; 168, 1994, s. 3)</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Qantas Sale Amendment Act 1993</td>
+                <td>60, 1993</td>
+                <td>3 Nov 1993</td>
+                <td>10 Mar 1993</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Qantas Sale Amendment Act 1994</td>
+                <td>168, 1994</td>
+                <td>16 Dec 1994</td>
+                <td>s. 3 (item 17): Royal Assent (c)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes and Other Legislation Amendment Act 1994</td>
+                <td>182, 1994</td>
+                <td>19 Dec 1994</td>
+                <td>s. 31: 16 Jan 1995 (d)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes and Other Legislation Amendment Act 1997</td>
+                <td>20, 1997</td>
+                <td>7 Apr 1997</td>
+                <td>Schedule 1 (items 10–16): Royal Assent (e)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Financial Sector Reform (Consequential Amendments) Act 1998</td>
+                <td>48, 1998</td>
+                <td>29 June 1998</td>
+                <td>Sch 1 (items  39–41): never commenced (s 2(6))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Financial Sector Reform (Amendments and Transitional Provisions) Act (No. 1) 1999</td>
+                <td>44, 1999</td>
+                <td>17 June 1999</td>
+                <td>Sch 6 (item 17): 17 June 1999 (s 3(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Federal Magistrates (Consequential Amendments) Act 1999</td>
+                <td>194, 1999</td>
+                <td>23 Dec 1999</td>
+                <td>Sch 10: 23 Dec 1999 (s 2(1))</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Australian Federal Police Legislation Amendment Act 2000</td>
+                <td>9, 2000</td>
+                <td>7 Mar 2000</td>
+                <td>Sch 2 (items 25, 26): 2 July 2000 (s 2(1) and gaz 2000, No S328)</td>
+                <td>Sch 3 (items 20, 34, 35)</td>
+              </tr>
+              <tr>
+                <td>Law and Justice Legislation Amendment (Application of Criminal Code) Act 2001</td>
+                <td>24, 2001</td>
+                <td>6 Apr 2001</td>
+                <td>s 4(1), (2) and Sch 18: 24 May 2001 (s 2(1)(a))</td>
+                <td>s 4(1), (2)</td>
+              </tr>
+              <tr>
+                <td>Financial Framework Legislation Amendment Act 2005</td>
+                <td>8, 2005</td>
+                <td>22 Feb 2005</td>
+                <td>s 4 and Sch 1 (items 124, 125, 496): 22 Feb 2005 (s 2(1) items 2, 10)</td>
+                <td>s 4 and Sch 1 (item 496)</td>
+              </tr>
+              <tr>
+                <td>Superannuation Legislation Amendment (Trustee Board and Other Measures) (Consequential Amendments) Act 2008</td>
+                <td>26, 2008</td>
+                <td>23 June 2008</td>
+                <td>Sch 1 (items 55, 56): 23 June 2008 (s 2(1) item 4)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Same-Sex Relationships (Equal Treatment in Commonwealth Laws—General Law Reform) Act 2008</td>
+                <td>144, 2008</td>
+                <td>9 Dec 2008</td>
+                <td>Sch 2 (items 41, 42): 10 Dec 2008</td>
+                <td>Sch. 2 (item 42)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act 2011</td>
+                <td>5, 2011</td>
+                <td>22 Mar 2011</td>
+                <td>Sch 5 (items 71, 72): 19 Apr 2011 (s 2(1) item 13)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Superannuation Legislation (Consequential Amendments and Transitional Provisions) Act 2011</td>
+                <td>58, 2011</td>
+                <td>28 June 2011</td>
+                <td>Sch 1 (items 33, 34): 1 July 2011 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment (Serious Drugs, Identity Crime and Other Measures) Act 2012</td>
+                <td>167, 2012</td>
+                <td>28 Nov 2012</td>
+                <td>Sch 3 (items 12, 13, 15): 29 Nov 2012 (s 2(1) item 7)</td>
+                <td>Sch 3 (item 15)</td>
+              </tr>
+              <tr>
+                <td>Federal Circuit Court of Australia (Consequential Amendments) Act 2013</td>
+                <td>13, 2013</td>
+                <td>14 Mar 2013</td>
+                <td>Sch 1 (items 109, 110): 12 Apr 2013 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Public Governance, Performance and Accountability (Consequential and Transitional Provisions) Act 2014</td>
+                <td>62, 2014</td>
+                <td>30 June 2014</td>
+                <td>Sch 8 (item 84) and Sch 14: 1 July 2014 (s 2(1) items 6, 14)</td>
+                <td>Sch 14</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Public Governance and Resources Legislation Amendment Act (No. 1) 2015</td>
+                <td>36, 2015</td>
+                <td>13 Apr 2015</td>
+                <td>Sch 2 (items 7–9) and Sch 7: 14 Apr 2015 (s 2)</td>
+                <td>Sch 7</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 486): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Acts and Instruments (Framework Reform) (Consequential Provisions) Act 2015</td>
+                <td>126, 2015</td>
+                <td>10 Sept 2015</td>
+                <td>Sch 1 (item 495): 5 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Norfolk Island Legislation Amendment Act 2015</td>
+                <td>59, 2015</td>
+                <td>26 May 2015</td>
+                <td>Sch 2 (item 118): 1 July 2016 (s 2(1) item 5)
+Sch 2 (items 356–396): 18 June 2015 (s 2(1) item 6)</td>
+                <td>Sch 2 (items 356–396)</td>
+              </tr>
+              <tr>
+                <td>as amended by</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Territories Legislation Amendment Act 2016</td>
+                <td>33, 2016</td>
+                <td>23 Mar 2016</td>
+                <td>Sch 2: 24 Mar 2016 (s 2(1) item 2)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Crimes Legislation Amendment (Powers, Offences and Other Measures) Act 2015</td>
+                <td>153, 2015</td>
+                <td>26 Nov 2015</td>
+                <td>Sch 14 (items 7, 8): 27 Nov 2015 (s 2(1) item 2)</td>
+                <td>Sch 14 (item 8)</td>
+              </tr>
+              <tr>
+                <td>Statute Law Revision Act (No. 1) 2016</td>
+                <td>4, 2016</td>
+                <td>11 Feb 2016</td>
+                <td>Sch 4 (items 1, 83): 10 Mar 2016 (s 2(1) item 6)</td>
+                <td>—</td>
+              </tr>
+            </table>
+          </paragraph>
+          <paragraph eId="part-4__sec-45__para-a">
+            <num>a</num>
+            <content>
+              <p><i>(a)</i>	The <i>Crimes Legislation Amendment Act 1992 </i>was amended by <ref href="#sec-31">section 31</ref> only of the <i>Crimes and Other Legislation Amendment Act 1994</i>, subsection 2(6) of which provides as follows:</p>
+            </content>
+          </paragraph>
+          <subsection eId="part-4__sec-45__subsec-6">
+            <num>6</num>
+            <content>
+              <p>	(6)	The amendment made by this Act to the <i>Crimes Legislation Amendment Act 1992 </i>is taken to have commenced on 8 January 1993 immediately after the commencement of <ref href="#sec-34">section 34</ref> of that Act.</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-6__para-b">
+              <num>b</num>
+              <content>
+                <p><i>(b)</i>	The <i>Crimes (Superannuation Benefits) Act 1989 </i>was amended by the Schedule (Parts 1 and 5) of the <i>Qantas Sale Act 1992</i>, subsections 2(2), (3)(a) and (c) of which provide as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subject to subsection (3), the remaining provisions of this Act commence on a day or days to be fixed by Proclamation.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-3">
+            <num>3</num>
+            <content>
+              <p>	(3)	A Proclamation may fix a day that is earlier than the day on which the Proclamation is published in the <i>Gazette </i>but only if:</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-3__para-a">
+              <num>a</num>
+              <content>
+                <p>in the case of sections 30, 31, 35, 37, 39, 43 and 50 and Parts 1 and 2 of the Schedule—the day is not earlier than the substantial minority sale day; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-45__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p>in the case of sections 25, 36, 38, 44 and 51 and Parts 5, 6 and 7 of the Schedule—the day is not earlier than the 100% sale day.</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-4__sec-45__subsec-3__para-c">
+              <num>c</num>
+              <content>
+                <p><i>(c)</i>	The <i>Qantas Sale Act 1992 </i>was amended by <ref href="#sec-3">section 3</ref> (item 17) only of the <i>Qantas Sale Amendment Act 1994</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to this section, this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p><i>(d)</i>	The <i>Crimes (Superannuation Benefits) Act 1989 </i>was amended by <ref href="#sec-31">section 31</ref> only of the <i>Crimes and Other Legislation Amendment Act 1994</i>, subsection 2(4) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-4">
+            <num>4</num>
+            <content>
+              <p>	(4)	The amendments made by this Act to the <i>Australian Federal Police Act 1979</i>, the <i>Crimes (Aviation) Act 1991 </i>(other than the amendment made to Schedule 5 to that Act), the <i>Crimes (Hostages) Act 1989</i>, the <i>Crimes (Internationally Protected Persons) Act 1976</i>, the <i>Crimes (Overseas) Act 1964</i>, the <i>Crimes (Superannuation Benefits) Act 1989</i>, the <i>Crimes (Traffic in Narcotic Drugs and Psychotropic Substances) Act 1990</i>, the <i>Customs Act 1901</i>, the <i>Director of Public Prosecutions Act 1983</i>, the <i>Extradition Act 1988</i>, the <i>Financial Transaction Reports Act 1988 </i>and to sections 23 and 59 of the <i>Proceeds of Crime Act 1987 </i>commence on the 28th day after the day on which this Act receives the Royal Assent.</p>
+            </content>
+            <paragraph eId="part-4__sec-45__subsec-4__para-e">
+              <num>e</num>
+              <content>
+                <p><i>(e)</i>	The <i>Crimes (Superannuation Benefits) Act 1989 </i>was amended by Schedule 1 (items 10–16) only of the <i>Crimes and Other Legislation Amendment Act 1997</i>, subsection 2(1) of which provides as follows:</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-4__sec-45__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Subject to subsection (2), this Act commences on the day on which it receives the Royal Assent.</p>
+            </content>
+            <content>
+              <p>Endnote 4—Amendment history</p>
+            </content>
+            <table>
+              <tr>
+                <th>Provision affected</th>
+                <th>How affected</th>
+              </tr>
+              <tr>
+                <td>Part 1</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 2</td>
+                <td>am. Nos. 94, 164 and 196, 1992; No. 20, 1997; No. 9, 2000; No. 26, 2008; Nos. 5 and 58, 2011; No 62, 2014</td>
+              </tr>
+              <tr>
+                <td>s 3</td>
+                <td>rs No 153, 2015</td>
+              </tr>
+              <tr>
+                <td>s. 7</td>
+                <td>am. No. 153, 1989; No. 194, 1999; No. 9, 2000; No. 13, 2013</td>
+              </tr>
+              <tr>
+                <td>s. 10</td>
+                <td>am. No. 144, 2008</td>
+              </tr>
+              <tr>
+                <td>s. 12A</td>
+                <td>ad. No. 24, 2001</td>
+              </tr>
+              <tr>
+                <td>s 13</td>
+                <td>am No 59, 2015</td>
+              </tr>
+              <tr>
+                <td>Part 2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 17</td>
+                <td>am. No. 20, 1997</td>
+              </tr>
+              <tr>
+                <td>s. 18</td>
+                <td>am. No. 123, 1991</td>
+              </tr>
+              <tr>
+                <td>s. 19</td>
+                <td>am. No. 182, 1994; No. 167, 2012</td>
+              </tr>
+              <tr>
+                <td>s. 21</td>
+                <td>am. No. 164, 1992 (as am. by No. 182, 1994)</td>
+              </tr>
+              <tr>
+                <td>s. 23</td>
+                <td>am. No. 20, 1997; No. 5, 2011</td>
+              </tr>
+              <tr>
+                <td>Part 3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 25</td>
+                <td>am. No. 20, 1997</td>
+              </tr>
+              <tr>
+                <td>s. 28</td>
+                <td>am. No. 123, 1991</td>
+              </tr>
+              <tr>
+                <td>s. 28A</td>
+                <td>ad. No. 123, 1991</td>
+              </tr>
+              <tr>
+                <td>s. 32</td>
+                <td>am. No. 123, 1991</td>
+              </tr>
+              <tr>
+                <td>s. 35</td>
+                <td>am. No. 24, 2001; No 4, 2016</td>
+              </tr>
+              <tr>
+                <td>s. 37</td>
+                <td>am. No. 20, 1997</td>
+              </tr>
+              <tr>
+                <td>Part 4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>s. 41</td>
+                <td>am. No. 8, 2005; No. 5, 2011</td>
+              </tr>
+            </table>
+            <content>
+              <p>Endnote 5—Miscellaneous</p>
+              <p>This endnote sets out other information relating to the <i>Crimes (Superannuation Benefits) Act 1989</i><i>.</i></p>
+              <p>The <i>Crimes (Superannuation Benefits) Act 1989</i> is affected by <ref href="#sec-41">section 41</ref> of the <i>CSL Sale Act 1993</i>.</p>
+              <p>The <i>Crimes (Superannuation Benefits) Act 1989</i> is affected by <ref href="#sec-29">section 29</ref> of the <i>Housing Loans Insurance Corporation (Transfer of Assets and Abolition) Act 1996</i>.</p>
+            </content>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>

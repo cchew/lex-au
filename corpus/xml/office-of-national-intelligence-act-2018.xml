@@ -1,0 +1,3767 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="act">
+    <meta>
+      <identification source="#lex-au">
+        <FRBRWork>
+          <FRBRthis value="/akn/au/act/2018/155/!main"/>
+          <FRBRuri value="/akn/au/act/2018/155"/>
+          <FRBRdate date="2018-01-01" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="au"/>
+          <FRBRsubtype value="act"/>
+          <FRBRnumber value="155"/>
+          <FRBRname value="office-of-national-intelligence-act-2018"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/au/act/2018/155/eng@2026-06-04/!main"/>
+          <FRBRuri value="/akn/au/act/2018/155/eng@2026-06-04"/>
+          <FRBRdate date="2026-06-04" name="Generation"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRlanguage language="eng"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/au/act/2018/155/eng@2026-06-04/!main.akn"/>
+          <FRBRuri value="/akn/au/act/2018/155/eng@2026-06-04/!main.akn"/>
+          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRauthor href="#lex-au"/>
+        </FRBRManifestation>
+      </identification>
+      <lifecycle source="#parliament">
+        <eventRef date="2018-01-01" type="generation" eId="evt-creation" source="#office-of-national-intelligence-act-2018"/>
+        <eventRef type="amendment" eId="evt-amd-1" source="/akn/au/act/2022/31" date="2022-04-01"/>
+        <eventRef type="amendment" eId="evt-amd-2" source="/akn/au/act/2023/33" date="2023-06-28"/>
+        <eventRef type="amendment" eId="evt-amd-3" source="/akn/au/act/2023/73" date="2023-09-20"/>
+        <eventRef type="amendment" eId="evt-amd-4" source="/akn/au/act/2025/75" date="2025-12-04"/>
+      </lifecycle>
+      <temporalData source="#parliament">
+        <temporalGroup eId="tg-1">
+          <timeInterval start="#evt-creation" refersTo="#periodCurrent"/>
+        </temporalGroup>
+      </temporalData>
+      <references source="#lex-au">
+        <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
+        <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCConcept eId="custodialSentence" href="/ontology/concept/au/custodialSentence" showAs="term of imprisonment"/>
+        <TLCRole eId="authority" href="/ontology/roles/au/authority" showAs="the Authority"/>
+        <TLCRole eId="commissioner" href="/ontology/roles/au/commissioner" showAs="the Commissioner"/>
+        <TLCRole eId="minister" href="/ontology/roles/au/minister" showAs="the Minister"/>
+        <TLCRole eId="privacy-commissioner" href="/ontology/roles/au/privacy-commissioner" showAs="Privacy Commissioner"/>
+        <TLCRole eId="secretary" href="/ontology/roles/au/secretary" showAs="the Secretary"/>
+        <TLCTerm eId="term-agency-with-an-intelligence-role-or-function" href="/ontology/term/au/term-agency-with-an-intelligence-role-or-function" showAs="agency with an intelligence role or function"/>
+        <TLCTerm eId="term-ago" href="/ontology/term/au/term-ago" showAs="AGO"/>
+        <TLCTerm eId="term-asd" href="/ontology/term/au/term-asd" showAs="ASD"/>
+        <TLCTerm eId="term-asio" href="/ontology/term/au/term-asio" showAs="ASIO"/>
+        <TLCTerm eId="term-asis" href="/ontology/term/au/term-asis" showAs="ASIS"/>
+        <TLCTerm eId="term-austrac" href="/ontology/term/au/term-austrac" showAs="AUSTRAC"/>
+        <TLCTerm eId="term-defence-department" href="/ontology/term/au/term-defence-department" showAs="Defence Department"/>
+        <TLCTerm eId="term-defence-minister" href="/ontology/term/au/term-defence-minister" showAs="Defence Minister"/>
+        <TLCTerm eId="term-department-of-home-affairs" href="/ontology/term/au/term-department-of-home-affairs" showAs="Department of Home Affairs"/>
+        <TLCTerm eId="term-dio" href="/ontology/term/au/term-dio" showAs="DIO"/>
+        <TLCTerm eId="term-director-general" href="/ontology/term/au/term-director-general" showAs="Director-General"/>
+        <TLCTerm eId="term-general-rules" href="/ontology/term/au/term-general-rules" showAs="general rules"/>
+        <TLCTerm eId="term-home-affairs-minister" href="/ontology/term/au/term-home-affairs-minister" showAs="Home Affairs Minister"/>
+        <TLCTerm eId="term-intelligence-information" href="/ontology/term/au/term-intelligence-information" showAs="intelligence information"/>
+        <TLCTerm eId="term-national-intelligence-community" href="/ontology/term/au/term-national-intelligence-community" showAs="national intelligence community"/>
+        <TLCTerm eId="term-national-security" href="/ontology/term/au/term-national-security" showAs="national security"/>
+        <TLCTerm eId="term-oni" href="/ontology/term/au/term-oni" showAs="ONI"/>
+        <TLCTerm eId="term-paid-work" href="/ontology/term/au/term-paid-work" showAs="paid work"/>
+        <TLCTerm eId="term-privacy-rules" href="/ontology/term/au/term-privacy-rules" showAs="privacy rules"/>
+        <TLCTerm eId="term-public-international-organisation" href="/ontology/term/au/term-public-international-organisation" showAs="public international organisation"/>
+        <TLCTerm eId="term-record" href="/ontology/term/au/term-record" showAs="record"/>
+        <TLCConcept eId="periodCurrent" href="/ontology/concept/au/periodCurrent" showAs="Period during which this expression is current"/>
+      </references>
+    </meta>
+    <preface>
+      <p>Office of National Intelligence Act 2018</p>
+      <p>No. 155, 2018</p>
+      <p><b>Compilation No. </b><b>5</b></p>
+      <p><b>Compilation date:</b><b>	</b>4 June 2026</p>
+      <p><b>Includes amendments:</b><b>	</b>Act No. 75, 2025</p>
+      <p><b>About this compilation</b></p>
+      <p><b>This compilation</b></p>
+      <p>This is a compilation of the <i>Office of National Intelligence Act 2018</i> that shows the text of the law as amended and in force on 4 June 2026 (the <b><i>compilation date</i></b>).</p>
+      <p>The notes at the end of this compilation (the <b><i>endnotes</i></b>) include information about amending laws and the amendment history of provisions of the compiled law.</p>
+      <p><b>Uncommenced amendments</b></p>
+      <p>The effect of uncommenced amendments is not shown in the text of the compiled law. The details of amendments made up to, but not commenced at, the compilation date are underlined in the endnotes. Any uncommenced amendments affecting the law are accessible on the Register (www.legislation.gov.au).</p>
+      <p><b>Application, saving and transitional provisions</b></p>
+      <p>If the operation of a provision or amendment of the compiled law is affected by an application, saving or transitional provision that is not included in this compilation, details are included in the endnotes.</p>
+      <p><b>Editorial changes</b></p>
+      <p>For more information about any editorial changes made in this compilation, see the endnotes.</p>
+      <p><b>Presentational changes</b></p>
+      <p>The <i>Legislation Act 2003</i> provides for First Parliamentary Counsel to make presentational changes to a compilation. Presentational changes are applied to give a more consistent look and feel to legislation published on the Register, and enable the user to more easily navigate those documents.</p>
+      <p><b>Modifications</b></p>
+      <p>If the compiled law is modified by another law, the compiled law operates as modified but the modification does not amend the text of the law. Accordingly, this compilation does not show the text of the compiled law as modified. Any modifications affecting the law are accessible on the Register.</p>
+      <p><b>Self</b><b>-</b><b>repealing provisions</b></p>
+      <p>If a provision of the compiled law has been repealed in accordance with a provision of the law, details are included in the endnotes.</p>
+      <p>Contents</p>
+      <p><ref href="#part-1">Part 1</ref>—Introduction	1</p>
+      <p>1	Short title	1</p>
+      <p>2	Commencement	1</p>
+      <p>3	Simplified outline of this Act	2</p>
+      <p>4	Definitions	3</p>
+      <p>5	Extension to external Territories	8</p>
+      <p><ref href="#part-2">Part 2</ref>—Office of National Intelligence	9</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Office of National Intelligence	9</p>
+      <p>6	Establishment	9</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Functions and powers	10</p>
+      <p>7	Functions of ONI	10</p>
+      <p>8	Leading the national intelligence community	12</p>
+      <p>9	Evaluating matters relating to the national intelligence community	13</p>
+      <p>10	Matters that are not part of ONI’s functions	14</p>
+      <p>11	Powers of ONI	15</p>
+      <p>12	Prime Minister may give directions	15</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Cooperation	17</p>
+      <p>13	Cooperation with entities in connection with performance of ONI’s functions	17</p>
+      <p>14	Cooperation with intelligence agencies etc. in connection with performance of their functions	18</p>
+      <p><ref href="#part-3">Part 3</ref>—Director-General of National Intelligence and staff of ONI	19</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Functions and powers of the Director-General	19</p>
+      <p>15	Director-General of National Intelligence	19</p>
+      <p>16	Functions of the Director-General	19</p>
+      <p>17	Prime Minister to be kept informed on matters relating to the national intelligence community	21</p>
+      <p>18	Leader of Opposition to be kept informed on significant intelligence matters	21</p>
+      <p>18A	Briefing the Parliamentary Joint Committee on Intelligence and Security	21</p>
+      <p>19	Special responsibilities of the Director-General	21</p>
+      <p>20	Director-General may give directions	22</p>
+      <p>21	Director-General may issue guidelines	23</p>
+      <p>22	Requests for reports or assessments	24</p>
+      <p>23	Consultation with National Assessments Board	24</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Appointment of the Director-General	26</p>
+      <p>24	Appointment	26</p>
+      <p>25	Term of appointment	26</p>
+      <p>26	Acting appointments	26</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Terms and conditions of appointment	28</p>
+      <p>27	Remuneration and allowances	28</p>
+      <p>28	Leave of absence	28</p>
+      <p>29	Outside employment	28</p>
+      <p>30	Resignation	28</p>
+      <p>31	Termination of appointment	29</p>
+      <p>32	Other terms and conditions	30</p>
+      <p><ref href="#dvs-4">Division 4</ref>—Staff of ONI	31</p>
+      <p>33	Staff	31</p>
+      <p>34	Consultants	31</p>
+      <p>35	Secondment of ONI employees	31</p>
+      <p>36	Secondment of persons to ONI	32</p>
+      <p><ref href="#part-4">Part 4</ref>—Provisions relating to information	33</p>
+      <p><ref href="#dvs-1">Division 1</ref>—Information gathering	33</p>
+      <p>37	Requirement to provide information, documents or things to ONI relating to international matters	33</p>
+      <p>38	Ability to provide information, documents or things to ONI relating to international or other matters	34</p>
+      <p>39	Ability of agencies to provide information, documents or things to ONI relating to its functions	34</p>
+      <p>40	Use of information, documents or things	35</p>
+      <p>41	Protection of information, documents or things	35</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Secrecy	37</p>
+      <p>42	Offence—communicating certain information	37</p>
+      <p>44	Offences—dealing with and making records	38</p>
+      <p>45	Instituting prosecutions for offences against this <ref href="#dvs-41">Division	41</ref></p>
+      <p>46	Offences against this Division—IGIS officials	42</p>
+      <p><ref href="#part-5">Part 5</ref>—Administration	43</p>
+      <p><ref href="#dvs-1">Division 1</ref>—National Assessments Board	43</p>
+      <p>47	National Assessments Board	43</p>
+      <p>48	Constitution	43</p>
+      <p>49	Holding of meetings	44</p>
+      <p>50	Presiding at meetings	44</p>
+      <p>51	Officials to attend meetings	44</p>
+      <p><ref href="#dvs-2">Division 2</ref>—Committees	45</p>
+      <p>52	Committees	45</p>
+      <p><ref href="#dvs-3">Division 3</ref>—Privacy rules	46</p>
+      <p>53	Privacy rules to protect Australians	46</p>
+      <p><ref href="#part-6">Part 6</ref>—Miscellaneous	48</p>
+      <p>54	Delegation	48</p>
+      <p>55	General rules	48</p>
+      <p>Endnotes	50</p>
+      <p>Endnote 1—About the endnotes	50</p>
+      <p>Endnote 2—Abbreviation key	52</p>
+      <p>Endnote 3—Legislation history	53</p>
+      <p>Endnote 4—Amendment history	54</p>
+      <p>An Act to provide for the Office of National Intelligence, and for related purposes</p>
+    </preface>
+    <body>
+      <part eId="part-1">
+        <num>1</num>
+        <heading>Introduction</heading>
+        <section eId="part-1__sec-1">
+          <num>1</num>
+          <heading>Short title</heading>
+          <content>
+            <p>		This Act is the <i>Office of National Intelligence Act 2018</i>.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-2">
+          <num>2</num>
+          <heading>Commencement</heading>
+          <subsection eId="part-1__sec-2__subsec-1">
+            <num>1</num>
+            <content>
+              <p>Each provision of this Act specified in column 1 of the table commences, or is taken to have commenced, in accordance with column 2 of the table. Any other statement in column 2 has effect according to its terms.</p>
+            </content>
+            <table>
+              <tr>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+                <th>Commencement information</th>
+              </tr>
+              <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+                <td>Column 3</td>
+              </tr>
+              <tr>
+                <td>Provisions</td>
+                <td>Commencement</td>
+                <td>Date/Details</td>
+              </tr>
+              <tr>
+                <td>1.  Sections 1 and 2 and anything in this Act not elsewhere covered by this table</td>
+                <td>The day this Act receives the Royal Assent.</td>
+                <td>10 December 2018</td>
+              </tr>
+              <tr>
+                <td>2.  Sections 3 to 55</td>
+                <td>A single day to be fixed by Proclamation.
+However, if the provisions do not commence within the period of 6 months beginning on the day this Act receives the Royal Assent, they commence on the day after the end of that period.</td>
+                <td>20 December 2018
+(F2018N00191)</td>
+              </tr>
+            </table>
+            <authorialNote placement="end" eId="note-1" marker="1">
+              <content>
+                <p>Note:	This table relates only to the provisions of this Act as originally enacted. It will not be amended to deal with any later amendments of this Act.</p>
+              </content>
+            </authorialNote>
+          </subsection>
+          <subsection eId="part-1__sec-2__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Any information in column 3 of the table is not part of this Act. Information may be inserted in this column, or information in it may be edited, in any published version of this Act.</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-3">
+          <num>3</num>
+          <heading>Simplified outline of this Act</heading>
+          <content>
+            <p>This Act continues the former Office of National Assessments as the Office of National Intelligence (ONI). ONI’s functions include leading the national intelligence community, carrying out evaluations, providing quality assurance and advice in relation to the Commonwealth’s highest level of security clearances, preparing assessments and reports and otherwise providing advice to the Prime Minister on matters relating to the national intelligence community.</p>
+            <p>The Director-General manages ONI and ensures the proper, efficient and effective performance of ONI’s functions. In carrying out the role, the Director-General may give directions and issue guidelines to be followed by the national intelligence community or particular agencies within the community.</p>
+            <p>The Director-General has a leadership role in the national intelligence community and also has responsibility for keeping the Prime Minister informed on matters relating to the national intelligence community and the Leader of the Opposition informed on matters relating to intelligence.</p>
+            <p>This Act also continues the National Assessments Board. The Board considers whether assessments prepared by ONI are national assessments, and considers national assessments.</p>
+            <p>Commonwealth authorities must provide relevant information to ONI, if requested to do so, for the purpose of ONI preparing assessments relating to international matters. Commonwealth authorities may provide information to ONI for the purpose of ONI preparing assessments relating to international or other matters.</p>
+            <p>This Act also deals with other matters such as secrecy obligations, providing for privacy rules to be made to protect the collection, communication and handling of certain personal information about an Australian citizen or permanent resident, as well as other administrative matters.</p>
+          </content>
+        </section>
+        <section eId="part-1__sec-4">
+          <num>4</num>
+          <heading>Definitions</heading>
+          <subsection eId="part-1__sec-4__subsec-1">
+            <num>1</num>
+            <content>
+              <p>In this Act:</p>
+            </content>
+            <intro>
+              <p><term refersTo="#term-agency-with-an-intelligence-role-or-function">agency with an intelligence role or function</term> means:</p>
+            </intro>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	AUSTRAC (within the meaning of the <i>Anti</i><i>-</i><i>Money Laundering and Counter</i><i>-</i><i>Terrorism Financing Act 2006</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Department of Home Affairs; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>the Defence Department (other than AGO or DIO);</p>
+              </content>
+              <content>
+                <p>to the extent that the agency:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>collects, correlates, analyses, produces or disseminates intelligence that relates, or may relate, to national intelligence priorities, requirements or capabilities; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>either:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>maintains a capability that materially assists in doing any of the things mentioned in paragraph (e); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>is developing a capability that is designed to materially assist in doing any of the things mentioned in paragraph (e).</p>
+              </content>
+              <authorialNote placement="end" eId="note-2" marker="2">
+                <content>
+                  <p>Note:	The Defence Department does not include the Australian Defence Force.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p><term refersTo="#term-ago">AGO</term> means <def>that part of the Defence Department known as the Australian Geospatial-Intelligence Organisation.</def></p>
+                <p><term refersTo="#term-asd">ASD</term> means <def>the Australian Signals Directorate.</def></p>
+                <p><term refersTo="#term-asio">ASIO</term> means <def>the Australian Security Intelligence Organisation.</def></p>
+                <p><term refersTo="#term-asis">ASIS</term> means <def>the Australian Secret Intelligence Service.</def></p>
+                <p><term refersTo="#term-austrac">AUSTRAC</term> means <def>the Australian Transaction Reports and Analysis Centre.</def></p>
+                <p><b><i>Commonwealth authority</i></b> includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	an Agency within the meaning of the <i>Public Service Act 1999</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a Department within the meaning of the <i>Parliamentary Service Act 1999</i>; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>the Defence Force; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>a body, whether incorporated or not, established, or continued in existence, for a public purpose by or under a law of the Commonwealth; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>a body corporate in which the Commonwealth or a body referred to in paragraph (d) has a controlling interest.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-defence-department">Defence Department</term> means <def>the Department administered by the Defence Minister.</def></p>
+                <p><term refersTo="#term-defence-minister">Defence Minister</term> means <def><ref href="/akn/au/act/minister-responsible-for-administering-the-defence-act-1903" class="unresolved">the Minister responsible for administering the Defence Act 1903</ref>.</def></p>
+                <p><term refersTo="#term-department-of-home-affairs">Department of Home Affairs</term> means <def>the Department administered by the Home Affairs Minister.</def></p>
+                <p><term refersTo="#term-dio">DIO</term> means <def>that part of the Defence Department known as the Defence Intelligence Organisation.</def></p>
+                <p><term refersTo="#term-director-general">Director-General</term> means <def>the Director-General of National Intelligence.</def></p>
+                <p><term refersTo="#term-general-rules">general rules</term> means <def>the rules made under <ref href="#sec-55">section 55</ref>.</def></p>
+                <p><b><i>head</i></b>, in relation to an intelligence agency or an agency with an intelligence role or function, means the following persons:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>in relation to the ASD—the Director-General of ASD;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>in relation to the ASIO—the Director-General of Security;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>in relation to the ASIS—the Director-General of the ASIS;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>in relation to AUSTRAC—the Chief Executive Officer of AUSTRAC;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>in relation to the agency known as the Australian Criminal Intelligence Commission—the Chief Executive Officer of that agency;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>in relation to the Australian Federal Police—<role refersTo="#commissioner">the Commissioner</role> of Police;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>in relation to the part of the Defence Department known as the Australian Geospatial-Intelligence Organisation—the Director of that part of the Department;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>in relation to the part of the Defence Department known as the Defence Intelligence Organisation—the Director of that part of the Department;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>in relation to ONI—the Director-General;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>in relation to any other Department of the Commonwealth or part of such a Department—<role refersTo="#secretary">the Secretary</role> of the Department.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-home-affairs-minister">Home Affairs Minister</term> means <def><ref href="/akn/au/act/minister-administering-the-australian-border-force-act-2015" class="unresolved">the Minister administering the Australian Border Force Act 2015</ref>.</def></p>
+                <p><b><i>IGIS official</i></b>: see <b><i>Inspector</i></b><b><i>-</i></b><b><i>General of Intelligence and Security official</i></b>.</p>
+                <p><b><i>Inspector</i></b><b><i>-</i></b><b><i>General of Intelligence and Security official</i></b> or <b><i>IGIS official</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>the Inspector-General of Intelligence and Security; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>	(b)	a person covered by subsection 32(1) of the <i>Inspector</i><i>-</i><i>General of Intelligence and Security Act 1986</i>.</p>
+              </content>
+              <content>
+                <p><b><i>intelligence agency</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>ASD, ASIO, ASIS, AGO or DIO; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the agency known as the Australian Criminal Intelligence Commission.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-intelligence-information">intelligence information</term> has the meaning given by <def>subsection 53(1C).</def></p>
+                <p><term refersTo="#term-national-intelligence-community">national intelligence community</term> means <def>the following agencies: ONI; each intelligence agency; each agency with an intelligence role or function.</def></p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>ONI;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>each intelligence agency;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>each agency with an intelligence role or function.</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-national-security">national security</term> has the same meaning as <def>in the National Security Information (Criminal and Civil Proceedings) Act 2004.</def></p>
+                <p><term refersTo="#term-oni">ONI</term> means <def>the body continued in existence by <ref href="#sec-6">section 6</ref> under the name Office of National Intelligence.</def></p>
+                <p><term refersTo="#term-paid-work">paid work</term> means <def>work for financial gain or reward (whether as an employee, a self-employed person or otherwise).</def></p>
+                <p><b><i>permanent resident</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>	(a)	a natural person who is a permanent resident within the meaning of the <i>Australian Security Intelligence Organisation Act 1979</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a body corporate incorporated under a law in force in a State or Territory, other than a body corporate whose activities one or more of the following controls, or is in a position to control, whether directly or indirectly:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>a foreign power;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-ii">
+              <num>ii</num>
+              <content>
+                <p>a natural person who is neither an Australian citizen nor a person covered by paragraph (a);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-iii">
+              <num>iii</num>
+              <content>
+                <p>a group of natural persons, none of whom is an Australian citizen or a person covered by paragraph (a).</p>
+              </content>
+              <content>
+                <p><b><i>personal information about an Australian citizen or permanent resident</i></b> has the meaning given by subsection 53(1B).</p>
+                <p><b><i>prescribed Commonwealth officer</i></b> means:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a Secretary of a Department; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>the Chief of the Defence Force; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p><role refersTo="#commissioner">the Commissioner</role> of the Australian Federal Police; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-d">
+              <num>d</num>
+              <content>
+                <p>	(d)	the Australian Border Force Commissioner (within the meaning of the <i>Australian Border Force Act 2015</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-e">
+              <num>e</num>
+              <content>
+                <p>the Director-General of ASD; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-f">
+              <num>f</num>
+              <content>
+                <p>the Director-General of ASIS; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-g">
+              <num>g</num>
+              <content>
+                <p>the Chief Executive Officer of the agency known as the Australian Criminal Intelligence Commission; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-h">
+              <num>h</num>
+              <content>
+                <p>	(h)	the AUSTRAC CEO (within the meaning of the <i>Anti</i><i>-</i><i>Money Laundering and Counter</i><i>-</i><i>Terrorism Financing Act 2006</i>); or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-i">
+              <num>i</num>
+              <content>
+                <p>	(i)	the Director-General of Security holding office under the <i>Australian Security Intelligence Organisation Act 1979</i>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-j">
+              <num>j</num>
+              <content>
+                <p>	(j)	any other person employed by the Commonwealth (whether under the <i>Public Service Act 1999</i> or otherwise) who is authorised in an instrument under subsection (2).</p>
+              </content>
+              <content>
+                <p><term refersTo="#term-privacy-rules">privacy rules</term> means <def>the rules made under <ref href="#sec-53">section 53</ref>.</def></p>
+                <p><term refersTo="#term-public-international-organisation">public international organisation</term> has the same meaning as <def>in <ref href="#sec-70">section 70</ref>.1 of the Criminal Code.</def></p>
+                <p><term refersTo="#term-record">record</term> means <def>a document, or any other object by which words, images, sounds or signals are recorded or stored or from which information can be obtained, and includes part of a record.</def></p>
+                <p><b><i>staff member</i></b> means:</p>
+              </content>
+              <authorialNote placement="end" eId="note-3" marker="3">
+                <content>
+                  <p>Note:	For the definition of <b><i>document</i></b>, see <ref href="#sec-2B">section 2B</ref> of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a member of the staff of ONI referred to in <ref href="#sec-33">section 33</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a consultant engaged under <ref href="#sec-34">section 34</ref>; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a person whose services are made available to the Director-General under <ref href="#sec-36">section 36</ref>.</p>
+              </content>
+              <content>
+                <p><b><i>State authority</i></b> includes:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>a Department of State of a State or Territory or a Department of the Public Service of a State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>a body, whether incorporated or not, established, or continued in existence, for a public purpose by or under a law of a State or Territory; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-1__sec-4__subsec-1__para-c">
+              <num>c</num>
+              <content>
+                <p>a body corporate in which a State, Territory or a body referred to in paragraph (b) has a controlling interest.</p>
+              </content>
+              <content>
+                <p>Prescribed Commonwealth officer instrument</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-1__sec-4__subsec-2">
+            <num>2</num>
+            <content>
+              <p>	(2)	The Prime Minister may, in writing, authorise a person employed by the Commonwealth (whether under the <i>Public Service Act 1999</i> or otherwise) for the purposes of paragraph (j) of the definition of <b><i>prescribed Commonwealth officer</i></b> in subsection (1).</p>
+            </content>
+          </subsection>
+        </section>
+        <section eId="part-1__sec-5">
+          <num>5</num>
+          <heading>Extension to external Territories</heading>
+          <content>
+            <p>This Act extends to every external Territory.</p>
+          </content>
+        </section>
+      </part>
+      <part eId="part-2">
+        <num>2</num>
+        <heading>Office of National Intelligence</heading>
+        <division eId="part-2__dvs-1">
+          <num>1</num>
+          <heading>Office of National Intelligence</heading>
+          <section eId="part-2__dvs-1__sec-6">
+            <num>6</num>
+            <heading>Establishment</heading>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Office of National Assessments established by <ref href="#sec-4">section 4</ref> of the <i>Office of National Assessments Act 1977</i> continues in existence, by force of this subsection, under and subject to the provisions of this Act, under the name Office of National Intelligence.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-1__sec-6__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	For the purposes of the finance law (within the meaning of the <i>Public Governance, Performance and Accountability Act 2013</i>):</p>
+              </content>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>ONI is a listed entity; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Director-General is the accountable authority of ONI; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the following persons are officials of ONI:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the Director-General;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the staff of ONI referred to in <ref href="#sec-33">section 33</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>consultants engaged under <ref href="#sec-34">section 34</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>persons whose services are made available to the Director-General under <ref href="#sec-36">section 36</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-1__sec-6__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>the purposes of ONI include the functions of ONI referred to in <ref href="#sec-7">section 7</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-2">
+          <num>2</num>
+          <heading>Functions and powers</heading>
+          <section eId="part-2__dvs-2__sec-7">
+            <num>7</num>
+            <heading>Functions of ONI</heading>
+            <subsection eId="part-2__dvs-2__sec-7__subsec-1">
+              <num>1</num>
+              <content>
+                <p>ONI has the following functions:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>to lead the national intelligence community, as described in <ref href="#sec-8">section 8</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to carry out the evaluation functions mentioned in <ref href="#sec-9">section 9</ref>;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-ba">
+                <num>ba</num>
+                <content>
+                  <p>to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>provide quality assurance, reporting and advice to support the consistency and transferability of the highest level of security clearances issued by the Commonwealth; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>assist the Commonwealth authorities that sponsor those security clearances to establish and maintain those authorities’ capability to prevent and detect insider threats;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>assemble, correlate and analyse information relating to international matters that are of political, strategic or economic significance to Australia, including domestic aspects relating to such matters; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>prepare assessments and reports in relation to such matters in accordance with the Government’s requirements;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>assemble, correlate and analyse information relating to other matters that are of political, strategic or economic significance to Australia; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>prepare assessments and reports in relation to such matters in accordance with the Government’s requirements;</p>
+                </content>
+                <content>
+                  <p>if doing so would support the performance of any other function or the Director-General’s functions, or complement the work of the national intelligence community;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>to provide advice to the Prime Minister, from a whole-of-national intelligence community perspective, on national intelligence priorities, requirements and capabilities;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>to provide advice, from time to time, to the Prime Minister on matters relating to the national intelligence community more generally;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>to collect, interpret and disseminate information relating to matters of political, strategic or economic significance to Australia that is accessible to any section of the public;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-ga">
+                <num>ga</num>
+                <content>
+                  <p>to communicate, in accordance with the Government’s requirements, intelligence that is produced under paragraph (c), (d) or (g);</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>to cooperate with and assist bodies referred to in <ref href="#sec-14">section 14</ref> in accordance with that section;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>to provide assessments or reports, prepared under paragraph (c) or (d), to a person or body, inside or outside Australia;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-j">
+                <num>j</num>
+                <content>
+                  <p>such other functions as are conferred on ONI by this Act or any other law of the Commonwealth;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-7__subsec-1__para-k">
+                <num>k</num>
+                <content>
+                  <p>to do anything incidental or conducive to the performance of any of its functions.</p>
+                </content>
+                <authorialNote placement="end" eId="note-4" marker="4">
+                  <content>
+                    <p>Note:	For matters that do not form part of ONI’s functions: see subsection 10(2).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-7__subsec-2">
+              <num>2</num>
+              <content>
+                <p>ONI must perform its function under paragraph (1)(a) in ways that promote the appropriate integration of the intelligence capabilities of the national intelligence community.</p>
+              </content>
+              <authorialNote placement="end" eId="note-5" marker="5">
+                <content>
+                  <p>Note 1:	The Director-General must ensure that ONI performs its functions in ways that do not inappropriately impact on, or encroach on, the functions and responsibilities of other agencies within the national intelligence community: see subsection 10(1).</p>
+                </content>
+              </authorialNote>
+              <authorialNote placement="end" eId="note-6" marker="6">
+                <content>
+                  <p>Note 2:	The Prime Minister may give directions to the Director-General about the performance of ONI’s functions, but not in relation to the content or conclusions to be contained in any advice, report or assessment by ONI: see <ref href="#sec-12">section 12</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-8">
+            <num>8</num>
+            <heading>Leading the national intelligence community</heading>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-1">
+              <num>1</num>
+              <content>
+                <p>ONI is to provide leadership in the national intelligence community by guiding the direction of the national intelligence community so as to ensure the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the development, strategic planning, coordination and appropriate integration of matters relating to the national intelligence community;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>prioritisation of national intelligence priorities and requirements, and allocation of resources accordingly;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>structured and appropriate responses to technological advancements.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Examples of the ways in which ONI might provide that leadership in the national intelligence community include:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>identifying particular areas of intelligence focus that require greater integration and overseeing appropriate action; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>developing strategic policies relating to the national intelligence community, and coordinating and overseeing their implementation; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>coordinating matters relating to the national intelligence community.</p>
+                </content>
+                <authorialNote placement="end" eId="note-7" marker="7">
+                  <content>
+                    <p>Note:	Leadership could, for example, be provided in areas such as intelligence liaison with international partners, engagement with the private sector, workforce planning, training for agencies within the national intelligence community, data management, or information technology and communication networks or systems.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-3">
+              <num>3</num>
+              <content>
+                <p>ONI must perform its leadership function in ways that are consistent with other agencies in the national intelligence community developing relationships with other entities, including international partners and the private sector.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-8__subsec-4">
+              <num>4</num>
+              <content>
+                <p>ONI’s leadership in the national intelligence community is to be supported by:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>directions given by the Director-General under <ref href="#sec-20">section 20</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-8__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>guidelines issued by the Director-General under <ref href="#sec-21">section 21</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-9">
+            <num>9</num>
+            <heading>Evaluating matters relating to the national intelligence community</heading>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The evaluation functions of ONI are the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>evaluating the activities of an affected agency or agencies, having regard to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>Australia’s national intelligence priorities and requirements; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the intelligence needs of relevant Ministers;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>evaluating the adequacy of the resources available to carry out Australia’s national intelligence activities and whether those resources are being appropriately allocated;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to the extent required to perform any other function, evaluating other aspects of an affected agency or agencies;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>at the direction of the Prime Minister, evaluating an affected agency or agencies to assess the national intelligence community’s effectiveness in relation to specific matters;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>providing advice to the Prime Minister on:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the results of any evaluations made; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>any improvements or changes that should be made to remedy any identified inadequacies.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In carrying out its evaluation functions, ONI may have regard to:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>directions given by the Director-General under <ref href="#sec-20">section 20</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>guidelines issued by the Director-General under <ref href="#sec-21">section 21</ref>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>to the extent that an evaluation relates to an affected agency or agencies, any failure by the affected agency or agencies to comply with:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>a direction given by the Director-General under <ref href="#sec-20">section 20</ref>; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a guideline issued by the Director-General under <ref href="#sec-21">section 21</ref>.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Before providing advice to the Prime Minister under this section, ONI must consult with any affected agency or agencies to which the advice relates. Any advice provided to the Prime Minister must include any comments made by any affected agency or agencies that are relevant to the advice.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-9__subsec-4">
+              <num>4</num>
+              <content>
+                <p>In this section:</p>
+              </content>
+              <content>
+                <p><b><i>affected agency or agencies</i></b> means:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>a particular intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>a particular agency with an intelligence role or function; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-d">
+                <num>d</num>
+                <content>
+                  <p>a class of agencies within the national intelligence community; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-9__subsec-4__para-e">
+                <num>e</num>
+                <content>
+                  <p>the national intelligence community as a whole.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-10">
+            <num>10</num>
+            <heading>Matters that are not part of ONI’s functions</heading>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General must ensure that ONI performs its functions in ways that do not inappropriately impact on, or encroach on the functions, powers and responsibilities of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an agency with an intelligence role or function; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>a Department in relation to an intelligence agency or agency with an intelligence role or function in the same portfolio as the Department; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>a person who holds any office or appointment under a law of the Commonwealth, being an office or appointment that relates to an agency within the national intelligence community or the national intelligence community more generally.</p>
+                </content>
+                <authorialNote placement="end" eId="note-8" marker="8">
+                  <content>
+                    <p>Note:	The Director-General must also take all reasonable steps to ensure that ONI is kept free from any influences or considerations not relevant to its functions and that nothing is done that might lend colour to any suggestion that ONI is concerned to further or protect the interests of any particular section of the community: see <ref href="#sec-19">section 19</ref>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2">
+              <num>2</num>
+              <content>
+                <p>In particular, ONI’s functions do not include the following:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>directing an intelligence agency or an agency with an intelligence role or function to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>carry out operational activities; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>allocate resources, or use particular methods, when carrying out such operational activities;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>conducting inquiries into individual complaints about the activities of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>directing the content of, or conclusions reached in, any intelligence communicated, or any advice given or assessments or reports prepared, by:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>inquiring into the legality, propriety or integrity of activities undertaken by:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-10__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-2A">
+              <num>2A</num>
+              <content>
+                <p>Paragraphs (2)(b) and (d) do not prevent ONI from performing its function under paragraph 7(1)(ba).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-10__subsec-3">
+              <num>3</num>
+              <content>
+                <p>To avoid doubt, the reference to directing in paragraphs (2)(a) and (c) is not limited to directions given by the Director-General under <ref href="#sec-20">section 20</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-2__sec-11">
+            <num>11</num>
+            <heading>Powers of ONI</heading>
+            <content>
+              <p>ONI has power to do all things necessary or convenient to be done for or in connection with the performance of its functions.</p>
+            </content>
+          </section>
+          <section eId="part-2__dvs-2__sec-12">
+            <num>12</num>
+            <heading>Prime Minister may give directions</heading>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-1">
+              <num>1</num>
+              <content>
+                <p>Subject to subsection (2), the Prime Minister may give directions to the Director-General concerning the performance of ONI’s functions or the exercise of ONI’s powers.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, the Director-General is not subject to direction in respect of the content of, or any conclusions to be reached in, any advice given, or report or assessment prepared, by ONI under this Act.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Director-General need not comply with a direction to the extent that:</p>
+              </content>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	compliance with the direction would be inconsistent with the Director-General’s performance of functions or exercise of powers under the <i>Public Governance, Performance and Accountability Act 2013</i> in relation to ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-2__sec-12__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>	(b)	the direction relates to the Director-General’s performance of functions or exercise of powers under the <i>Public Service Act 1999</i> in relation to ONI.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Director-General may request that a direction be given in writing, and if the Director-General makes such a request, the Prime Minister must provide the direction in writing.</p>
+              </content>
+              <authorialNote placement="end" eId="note-9" marker="9">
+                <content>
+                  <p>Note:	The Inspector-General of Intelligence and Security has oversight powers in relation to Ministerial directions given under this Act. See in particular <ref href="#sec-32B">section 32B</ref> of the <i>Inspector</i><i>-</i><i>General of Intelligence and Security Act 1986</i> (which requires the Minister to give a copy of a direction under this section to the Inspector-General of Intelligence and Security as soon as practicable after the direction is given).</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-2__dvs-2__sec-12__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A direction given under this section is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-2__dvs-3">
+          <num>3</num>
+          <heading>Cooperation</heading>
+          <section eId="part-2__dvs-3__sec-13">
+            <num>13</num>
+            <heading>Cooperation with entities in connection with performance of ONI’s functions</heading>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-1">
+              <num>1</num>
+              <content>
+                <p>In performing functions and exercising powers, ONI may cooperate with:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>subject to subsections (5) and (6):</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>an authority of another country; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a public international organisation;</p>
+                </content>
+                <content>
+                  <p>approved in an instrument under subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>any other person or entity, within or outside Australia.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of paragraph (1)(a), the Director-General may, in writing, approve an authority of another country, or a public international organisation, as being capable of assisting ONI in the performance of its functions and the exercise of its powers.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Each month the Director-General must, in writing, notify the Prime Minister of:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>each approval given under subsection (2) during the month; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>each variation or revocation of an approval given under subsection (2) during the month.</p>
+                </content>
+                <authorialNote placement="end" eId="note-10" marker="10">
+                  <content>
+                    <p>Note:	The Director-General does not need to notify the Prime Minister if no approvals are given, and no variations or revocations of approvals are made, in a particular month.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-5">
+              <num>5</num>
+              <content>
+                <p>The Prime Minister may, at any time, cancel an approval given under subsection (2).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The cancellation of an approval:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>must be in writing; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-13__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>unless specified otherwise, has immediate effect.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-13__subsec-7">
+              <num>7</num>
+              <content>
+                <p>An approval under subsection (2), and a cancellation of an approval under subsection (5), are not legislative instruments.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-2__dvs-3__sec-14">
+            <num>14</num>
+            <heading>Cooperation with intelligence agencies etc. in connection with performance of their functions</heading>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-1">
+              <num>1</num>
+              <content>
+                <p>ONI may cooperate with and assist:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>an intelligence agency in the performance of its functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an agency with an intelligence role or function in the performance of that intelligence role or function; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>any of the following kinds of bodies prescribed by the general rules for the purposes of this paragraph:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>a Commonwealth authority;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>a State authority.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However, ONI may only do so:</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>subject to any arrangements made or directions given by the Prime Minister; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>on request by the head (however described) of the agency or body referred to in subsection (1).</p>
+                </content>
+                <authorialNote placement="end" eId="note-11" marker="11">
+                  <content>
+                    <p>Note:	The Inspector-General of Intelligence and Security has oversight powers in relation to Ministerial directions and authorisations given under this Act. See in particular <ref href="#sec-32B">section 32B</ref> of the <i>Inspector</i><i>-</i><i>General of Intelligence and Security Act 1986</i> (which requires the Minister to give a copy of a direction under this section to the Inspector-General of Intelligence and Security as soon as practicable after the direction is given).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Without limiting subsection (1), in cooperating with and assisting an agency or body in accordance with this section, ONI may make the services of staff members and other resources available to the agency or body.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-2__dvs-3__sec-14__subsec-4">
+              <num>4</num>
+              <content>
+                <p>An arrangement or direction under paragraph (2)(a):</p>
+              </content>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>must be in writing; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-2__dvs-3__sec-14__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>is not a legislative instrument.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-3">
+        <num>3</num>
+        <heading>Director-General of National Intelligence and staff of ONI</heading>
+        <division eId="part-3__dvs-1">
+          <num>1</num>
+          <heading>Functions and powers of the Director-General</heading>
+          <section eId="part-3__dvs-1__sec-15">
+            <num>15</num>
+            <heading>Director-General of National Intelligence</heading>
+            <subsection eId="part-3__dvs-1__sec-15__subsec-1">
+              <num>1</num>
+              <content>
+                <p>There is to be a Director-General of National Intelligence.</p>
+              </content>
+              <authorialNote placement="end" eId="note-12" marker="12">
+                <content>
+                  <p>Note:	In this Act, <b><i>Director</i></b><b><i>-</i></b><b><i>General</i></b> means the Director-General of National Intelligence: see <ref href="#sec-4">section 4</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-15__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General has a leadership role in the national intelligence community and may, as part of that role, provide advice relating to the appointment or engagement of persons in senior leadership roles within the national intelligence community.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-15__subsec-3">
+              <num>3</num>
+              <content>
+                <p>To avoid doubt, subsection (2) does not require that the Director-General’s advice be sought in relation to any appointment or engagement of a person in a senior leadership role within the national intelligence community.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-1__sec-16">
+            <num>16</num>
+            <heading>Functions of the Director-General</heading>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The functions of the Director-General are:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>subject to any direction by the Prime Minister under <ref href="#sec-12">section 12</ref>, to ensure the proper, efficient and effective performance of ONI’s functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>to manage ONI; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>to endeavour to respond to requests under <ref href="#sec-22">section 22</ref> for reports or assessments; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>if the Director-General considers that an assessment made by ONI should be a national assessment but the National Assessments Board does not, or vice versa, to decide whether the assessment is a national assessment; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>any other functions conferred on the Director-General by this Act or any other law of the Commonwealth.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General must inform the Prime Minister:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>if the Director-General decides that an assessment is not to be a national assessment under paragraph (1)(d); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>of the matter or matters on which there is a difference of opinion in relation to the assessment.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-3">
+              <num>3</num>
+              <content>
+                <p>The Director-General has power to do all things necessary or convenient to be done for or in connection with the performance of the Director-General’s functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-4">
+              <num>4</num>
+              <content>
+                <p>The Director-General must perform the Director-General’s functions and powers in ways that do not inappropriately impact on, or encroach on the functions, powers and responsibilities of:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>an agency with an intelligence role or function; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>a Department in relation to an intelligence agency or agency with an intelligence role or function in the same portfolio as the Department; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-4__para-d">
+                <num>d</num>
+                <content>
+                  <p>a person who holds any office or appointment under a law of the Commonwealth, being an office or appointment that relates to an agency within the national intelligence community or the national intelligence community more generally.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-5">
+              <num>5</num>
+              <content>
+                <p>In particular, the Director-General’s functions and powers do not include the following:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-a">
+                <num>a</num>
+                <content>
+                  <p>directing an intelligence agency or an agency with an intelligence role or function to:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-i">
+                <num>i</num>
+                <content>
+                  <p>carry out operational activities; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>allocate resources, or use particular methods, when carrying out such operational activities;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-b">
+                <num>b</num>
+                <content>
+                  <p>conducting inquiries into individual complaints about the activities of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-c">
+                <num>c</num>
+                <content>
+                  <p>directing the content of, or conclusions reached in, any intelligence communicated, or any advice given or assessments or reports prepared, by:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-d">
+                <num>d</num>
+                <content>
+                  <p>inquiring into the legality, propriety or integrity of activities undertaken by:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-i">
+                <num>i</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-16__subsec-5__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>an agency with an intelligence role or function.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-16__subsec-6">
+              <num>6</num>
+              <content>
+                <p>To avoid doubt, the reference to directing in paragraphs (5)(a) and (c) is not limited to directions given by the Director-General under <ref href="#sec-20">section 20</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-1__sec-17">
+            <num>17</num>
+            <heading>Prime Minister to be kept informed on matters relating to the national intelligence community</heading>
+            <content>
+              <p>The Director-General must keep the Prime Minister informed on matters relating to the national intelligence community.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-1__sec-18">
+            <num>18</num>
+            <heading>Leader of Opposition to be kept informed on significant intelligence matters</heading>
+            <content>
+              <p>The Director-General must consult regularly with the Leader of the Opposition in the House of Representatives for the purpose of keeping the Leader of the Opposition informed on matters relating to intelligence that the Director-General considers significant.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-1__sec-18A">
+            <num>18A</num>
+            <heading>Briefing the Parliamentary Joint Committee on Intelligence and Security</heading>
+            <content>
+              <p>The Director-General must brief the Parliamentary Joint Committee on Intelligence and Security at least once each calendar year.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-1__sec-19">
+            <num>19</num>
+            <heading>Special responsibilities of the Director-General</heading>
+            <content>
+              <p>The Director-General must take all reasonable steps to ensure that:</p>
+            </content>
+            <paragraph eId="part-3__dvs-1__sec-19__para-a">
+              <num>a</num>
+              <content>
+                <p>ONI is kept free from any influences or considerations not relevant to its functions; and</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-3__dvs-1__sec-19__para-b">
+              <num>b</num>
+              <content>
+                <p>nothing is done that might lend colour to any suggestion that ONI is concerned to further or protect the interests of any particular section of the community, or with any matters other than the performance of its functions.</p>
+              </content>
+            </paragraph>
+          </section>
+          <section eId="part-3__dvs-1__sec-20">
+            <num>20</num>
+            <heading>Director-General may give directions</heading>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If the Director-General considers it necessary to enable ONI to perform its function under paragraph 7(1)(a) (to lead the national intelligence community), the Director-General may give written directions to:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>for the national intelligence community as a whole—the head of each agency within the community; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>for a class of agencies within the national intelligence community—the head of each agency within the class; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the head of a particular intelligence agency or agency with an intelligence role or function.</p>
+                </content>
+                <authorialNote placement="end" eId="note-13" marker="13">
+                  <content>
+                    <p>Note:	The Director-General and ONI must perform functions in ways that do not inappropriately impact on, or encroach on, the functions and responsibilities of intelligence agencies, see sections 10 and 16. In particular, for matters on which directions may not be given: see subsections 10(2) and 16(5).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before giving a direction, the Director-General must consult with:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the head of any agency mentioned in subsection (1) that would be affected by the proposed direction; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if AGO would be affected by the proposed direction—the head of AGO and <role refersTo="#secretary">the Secretary</role> of the Defence Department; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>if DIO would be affected by the proposed direction—the head of DIO and <role refersTo="#secretary">the Secretary</role> of the Defence Department.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A direction given under this section in relation to an agency mentioned in subsection (1) has no effect to the extent that:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>the direction is inconsistent with a direction given to the agency or head of the agency by <role refersTo="#minister">the Minister</role> responsible for the agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>the direction is inconsistent with a statutory rule made by <role refersTo="#minister">the Minister</role> responsible for the agency and applicable to the agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>compliance with the direction would be inconsistent with a guideline given to the agency or head of the agency by <role refersTo="#minister">the Minister</role> responsible for the agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-3__para-d">
+                <num>d</num>
+                <content>
+                  <p>compliance with the direction would be directly inconsistent with obligations imposed on the agency or head of the agency by any other law of the Commonwealth.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Failure to comply with a direction given under this section cannot result in any sanction or penalty being imposed on:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-4__para-a">
+                <num>a</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-4__para-b">
+                <num>b</num>
+                <content>
+                  <p>an agency with an intelligence role or function; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-20__subsec-4__para-c">
+                <num>c</num>
+                <content>
+                  <p>the head of an intelligence agency or an agency with an intelligence role or function.</p>
+                </content>
+                <authorialNote placement="end" eId="note-14" marker="14">
+                  <content>
+                    <p>Note:	See also subsection 9(2).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-20__subsec-5">
+              <num>5</num>
+              <content>
+                <p>A direction given under this section is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-1__sec-21">
+            <num>21</num>
+            <heading>Director-General may issue guidelines</heading>
+            <subsection eId="part-3__dvs-1__sec-21__subsec-1">
+              <num>1</num>
+              <content>
+                <p>To assist ONI’s performance of its functions or the Director-General’s performance of the Director-General’s functions, the Director-General may, by written notice to the heads of the agencies within the national intelligence community, issue guidelines to be followed in relation to matters relevant to, or affecting:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the national intelligence community as a whole; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a class of agencies within the national intelligence community.</p>
+                </content>
+                <authorialNote placement="end" eId="note-15" marker="15">
+                  <content>
+                    <p>Note:	The Director-General and ONI must perform functions in ways that do not inappropriately impact on, or encroach on, the functions and responsibilities of intelligence agencies: see sections 10 and 16. In particular, for matters on which guidelines may not be issued: see subsections 10(2) and 16(5).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-21__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before issuing guidelines, the Director-General must consult with:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the heads of agencies within the national intelligence community that would be affected by the proposed guidelines; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>if AGO would be affected by the proposed guidelines—the head of AGO and <role refersTo="#secretary">the Secretary</role> of the Defence Department; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>if DIO would be affected by the proposed guidelines—the head of DIO and <role refersTo="#secretary">the Secretary</role> of the Defence Department.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-21__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Failure to comply with guidelines issued under this section cannot result in any sanction or penalty being imposed on:</p>
+              </content>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-3__para-a">
+                <num>a</num>
+                <content>
+                  <p>an intelligence agency; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-3__para-b">
+                <num>b</num>
+                <content>
+                  <p>an agency with an intelligence role or function; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-1__sec-21__subsec-3__para-c">
+                <num>c</num>
+                <content>
+                  <p>the head of an intelligence agency or an agency with an intelligence role or function.</p>
+                </content>
+                <authorialNote placement="end" eId="note-16" marker="16">
+                  <content>
+                    <p>Note:	See also subsection 9(2).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-21__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Guidelines issued under this section are not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-1__sec-22">
+            <num>22</num>
+            <heading>Requests for reports or assessments</heading>
+            <content>
+              <p>For the purpose of obtaining assistance in forming policies or plans by the Commonwealth Government, a Minister or prescribed Commonwealth officer may request that ONI prepare a report or make an assessment in accordance with paragraph 7(1)(c) or (d).</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-1__sec-23">
+            <num>23</num>
+            <heading>Consultation with National Assessments Board</heading>
+            <subsection eId="part-3__dvs-1__sec-23__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General must consult the National Assessments Board in relation to each national assessment made by ONI, and if practicable, before providing the assessment.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-23__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If there is a significant difference of opinion between the Director-General and the National Assessments Board in relation to a national assessment, the Director-General and the Board must endeavour to reach agreement.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-1__sec-23__subsec-3">
+              <num>3</num>
+              <content>
+                <p>If the Director-General and the National Assessments Board are unable to reach agreement, the Director-General must give a statement to each person to whom the national assessment is provided that sets out the matter on which there is a difference of opinion.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-2">
+          <num>2</num>
+          <heading>Appointment of the Director-General</heading>
+          <section eId="part-3__dvs-2__sec-24">
+            <num>24</num>
+            <heading>Appointment</heading>
+            <subsection eId="part-3__dvs-2__sec-24__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General is to be appointed by the Governor-General by written instrument, on a full-time basis.</p>
+              </content>
+              <authorialNote placement="end" eId="note-17" marker="17">
+                <content>
+                  <p>Note:	The Director-General may be reappointed: see <ref href="#sec-33A">section 33A</ref>A of the <i>Acts Interpretation Act 1901</i>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-24__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before a recommendation is made to the Governor-General for the appointment of a person as the Director-General, the Prime Minister must consult with the Leader of the Opposition in the House of Representatives.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-2__sec-25">
+            <num>25</num>
+            <heading>Term of appointment</heading>
+            <content>
+              <p>The Director-General holds office for the period specified in the instrument of appointment. The period must not exceed 5 years.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-2__sec-26">
+            <num>26</num>
+            <heading>Acting appointments</heading>
+            <subsection eId="part-3__dvs-2__sec-26__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Prime Minister may, by written instrument, appoint a person to act as the Director-General:</p>
+              </content>
+              <paragraph eId="part-3__dvs-2__sec-26__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>during a vacancy in the office of Director-General (whether or not an appointment has previously been made to the office); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-26__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>during any period, or during all periods, when the Director-General:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-26__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>is absent from duty or from Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-2__sec-26__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is, for any reason, unable to perform the duties of the office.</p>
+                </content>
+                <authorialNote placement="end" eId="note-18" marker="18">
+                  <content>
+                    <p>Note:	For rules that apply to acting appointments: see sections 33AB and 33A of the <i>Acts Interpretation Act 1901</i>.</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-2__sec-26__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before the appointment of a person under subsection (1) to act as the Director-General, the Prime Minister must consult with the Leader of the Opposition in the House of Representatives, unless it is impracticable to do so.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-3__dvs-3">
+          <num>3</num>
+          <heading>Terms and conditions of appointment</heading>
+          <section eId="part-3__dvs-3__sec-27">
+            <num>27</num>
+            <heading>Remuneration and allowances</heading>
+            <subsection eId="part-3__dvs-3__sec-27__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General is to be paid the remuneration that is determined by the Remuneration Tribunal. If no determination of that remuneration by the Tribunal is in operation, the Director-General is to be paid the remuneration that is prescribed by the general rules.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-27__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General is to be paid the allowances that are prescribed by the general rules.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-27__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	This section has effect subject to the <i>Remuneration Tribunal Act 1973</i>.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-28">
+            <num>28</num>
+            <heading>Leave of absence</heading>
+            <subsection eId="part-3__dvs-3__sec-28__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General has the recreation leave entitlements that are determined by the Remuneration Tribunal.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-28__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Prime Minister may grant the Director-General leave of absence, other than recreation leave, on the terms and conditions as to remuneration or otherwise that the Prime Minister determines.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-29">
+            <num>29</num>
+            <heading>Outside employment</heading>
+            <content>
+              <p>		The Director-General<i> </i>must not engage in paid work outside the duties of the Director-General’s office without the Prime Minister’s approval.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-3__sec-30">
+            <num>30</num>
+            <heading>Resignation</heading>
+            <subsection eId="part-3__dvs-3__sec-30__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General may resign the Director-General’s appointment by giving the Governor-General a written resignation.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-30__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The resignation takes effect on the day it is received by the Governor-General or, if a later day is specified in the resignation, on that later day.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-31">
+            <num>31</num>
+            <heading>Termination of appointment</heading>
+            <subsection eId="part-3__dvs-3__sec-31__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Governor-General may terminate the appointment of the Director-General:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>for misbehaviour; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>if the Director-General is unable to perform the duties of the Director-General’s office because of physical or mental incapacity.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-3__sec-31__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Governor-General may terminate the appointment of the Director-General if:</p>
+              </content>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Director-General:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>becomes bankrupt; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>applies to take the benefit of any law for the relief of bankrupt or insolvent debtors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>compounds with the Director-General’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>makes an assignment of the Director-General’s remuneration for the benefit of the Director-General’s creditors; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Director-General is absent, except on leave of absence, for 14 consecutive days or for 28 days in any 12 months; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the Director-General engages, except with the Prime Minister’s approval, in paid work outside the duties of the Director-General’s office (see <ref href="#sec-29">section 29</ref>); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-3__sec-31__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>	(d)	the Director-General fails, without reasonable excuse, to comply with <ref href="#sec-29">section 29</ref> of the <i>Public Governance, Performance and Accountability Act 2013</i> (which deals with the duty to disclose interests) or rules made for the purposes of that section.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-3__sec-32">
+            <num>32</num>
+            <heading>Other terms and conditions</heading>
+            <content>
+              <p>The Director-General holds office on the terms and conditions (if any) in relation to matters not covered by this Act that are determined by the Governor-General.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-3__dvs-4">
+          <num>4</num>
+          <heading>Staff of ONI</heading>
+          <section eId="part-3__dvs-4__sec-33">
+            <num>33</num>
+            <heading>Staff</heading>
+            <subsection eId="part-3__dvs-4__sec-33__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The staff of ONI are to be:</p>
+              </content>
+              <paragraph eId="part-3__dvs-4__sec-33__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	persons engaged under the <i>Public Service Act 1999</i>; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-33__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>such other persons, if any, as the Director-General considers necessary for the performance of ONI’s functions.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-33__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	For the purposes of the <i>Public Service Act 1999</i>:</p>
+              </content>
+              <paragraph eId="part-3__dvs-4__sec-33__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Director-General and the APS employees assisting the Director-General together constitute a Statutory Agency; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-3__dvs-4__sec-33__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the Director-General is the Head of that Statutory Agency.</p>
+                </content>
+                <content>
+                  <p>Staff of ONI who are not APS employees</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-33__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	A person mentioned in paragraph (1)(b) is to be employed on the terms and conditions that the Director-General determines in writing. Although such a person is not employed under the <i>Public Service Act 1999</i>, the Director-General must adopt the principles of that Act in relation to the person to the extent to which the Director-General considers they are consistent with the effective performance of ONI’s functions.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-4__sec-34">
+            <num>34</num>
+            <heading>Consultants</heading>
+            <content>
+              <p>The Director-General may, on behalf of the Commonwealth, engage consultants to assist in the performance of ONI’s functions.</p>
+            </content>
+          </section>
+          <section eId="part-3__dvs-4__sec-35">
+            <num>35</num>
+            <heading>Secondment of ONI employees</heading>
+            <content>
+              <p>Secondment</p>
+            </content>
+            <subsection eId="part-3__dvs-4__sec-35__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General may, in writing, arrange for a member of ONI’s staff to be seconded for a specified period to a body or organisation whether within or outside Australia.</p>
+              </content>
+              <content>
+                <p>Termination of secondment</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-35__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General may at any time, by notice given to the body or organisation to which the member of ONI’s staff is seconded under subsection (1), terminate the secondment.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-3__dvs-4__sec-36">
+            <num>36</num>
+            <heading>Secondment of persons to ONI</heading>
+            <subsection eId="part-3__dvs-4__sec-36__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General may, by written agreement with a body or organisation (whether inside or outside Australia), arrange for a person who is an officer, employee or other member of staff of the body or organisation to be made available to ONI to perform services in connection with the performance of its functions or the exercise of its powers.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-3__dvs-4__sec-36__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The terms and conditions (including remuneration and allowances) applicable to a person performing services under an agreement are those specified in the agreement.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-4">
+        <num>4</num>
+        <heading>Provisions relating to information</heading>
+        <division eId="part-4__dvs-1">
+          <num>1</num>
+          <heading>Information gathering</heading>
+          <section eId="part-4__dvs-1__sec-37">
+            <num>37</num>
+            <heading>Requirement to provide information, documents or things to ONI relating to international matters</heading>
+            <subsection eId="part-4__dvs-1__sec-37__subsec-1">
+              <num>1</num>
+              <content>
+                <p>For the purpose of ONI performing its function under paragraph 7(1)(c), the Director-General may make a written request that a Commonwealth authority provide information, documents or things in its possession that relate to:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>international matters of political, strategic or economic significance to Australia; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>domestic aspects relating to such international matters.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-37__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Before making a written request of a Commonwealth authority under subsection (1), the Director-General must:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>consult with the Commonwealth authority; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>consider any concerns raised by the Commonwealth authority, including concerns about:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>a contract, arrangement or understanding that would prohibit or limit the Commonwealth authority’s ability to provide information, documents or things that would need to be provided in response to a request; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-37__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>	(ii)	the need to provide personal information (within the meaning of the <i>Privacy Act 1988</i>) in response to a request.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-37__subsec-3">
+              <num>3</num>
+              <content>
+                <p>A Commonwealth authority must provide any information, documents or things to ONI in response to a written request by the Director-General under subsection (1), unless and to the extent that a law of the Commonwealth, or of a State or Territory prohibits the provision (however described) of the information, documents or things.</p>
+              </content>
+              <authorialNote placement="end" eId="note-19" marker="19">
+                <content>
+                  <p>Note:	For limits on the use that ONI may make of such information, documents or things: see <ref href="#sec-40">section 40</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-38">
+            <num>38</num>
+            <heading>Ability to provide information, documents or things to ONI relating to international or other matters</heading>
+            <subsection eId="part-4__dvs-1__sec-38__subsec-1">
+              <num>1</num>
+              <content>
+                <p>For the purpose of ONI performing its function under paragraph 7(1)(c) or (d), a Commonwealth authority may provide to ONI information, documents or things that the head (however described) of the Commonwealth authority considers relates to matters of political, strategic or economic significance to Australia.</p>
+              </content>
+              <authorialNote placement="end" eId="note-20" marker="20">
+                <content>
+                  <p>Note:	Even though a Commonwealth authority may voluntarily provide information, documents or things under this section, the Commonwealth authority may be required to provide the same information, documents or things in response to a request made under <ref href="#sec-37">section 37</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-38__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, a Commonwealth authority may provide information, documents or things to ONI under this section even if doing so would not otherwise fall within the Commonwealth authority’s statutory functions.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-39">
+            <num>39</num>
+            <heading>Ability of agencies to provide information, documents or things to ONI relating to its functions</heading>
+            <subsection eId="part-4__dvs-1__sec-39__subsec-1">
+              <num>1</num>
+              <content>
+                <p>For the purpose of ONI performing its functions, an intelligence agency or agency with an intelligence role or function may provide to ONI information, documents or things that relate, or may relate, to any of ONI’s functions.</p>
+              </content>
+              <authorialNote placement="end" eId="note-21" marker="21">
+                <content>
+                  <p>Note:	Even though an intelligence agency or agency with an intelligence role or function may voluntarily provide information, documents or things under this section, if the agency is a Commonwealth authority, the agency may be required to provide the same information, documents or things in response to a request made under <ref href="#sec-37">section 37</ref>.</p>
+                </content>
+              </authorialNote>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-39__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, an intelligence agency or agency with an intelligence role or function may provide information, documents or things to ONI under this section even if doing so would not otherwise fall within the agency’s statutory functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-39__subsec-3">
+              <num>3</num>
+              <content>
+                <p>For the purpose of ONI performing its function under paragraph 7(1)(ba), any Commonwealth authority may provide to ONI information, documents or things that relate, or may relate, to that function, even if doing so would not otherwise fall within the Commonwealth authority’s statutory functions.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-40">
+            <num>40</num>
+            <heading>Use of information, documents or things</heading>
+            <subsection eId="part-4__dvs-1__sec-40__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If information, documents or things are provided to ONI under <ref href="#sec-37">section 37</ref>, the Director-General must ensure that the information, documents and things are only used for the purpose of ONI performing its function under paragraph 7(1)(c), unless the head (however described) of the relevant Commonwealth authority gives written authorisation for the subsequent use of information, documents or things in relation to:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the performance of another of ONI’s functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the exercise of ONI’s powers; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the performance of the Director-General’s functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the exercise of the Director-General’s powers.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-40__subsec-2">
+              <num>2</num>
+              <content>
+                <p>To avoid doubt, ONI does not contravene subsection (1) in relation to information, documents and things if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the information, a document or thing is mentioned or referred to in any way in an assessment or report prepared under paragraph 7(1)(c); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-40__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>anything is done in relation to an assessment or report prepared under paragraph 7(1)(c) that is otherwise allowed by this Act or the general rules.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-1__sec-41">
+            <num>41</num>
+            <heading>Protection of information, documents or things</heading>
+            <subsection eId="part-4__dvs-1__sec-41__subsec-1">
+              <num>1</num>
+              <content>
+                <p>If information, documents or things are provided to ONI under this Division by an intelligence agency or agency with an intelligence role or function, the Director-General must make arrangements with the head of the relevant agency for the protection of the information, documents or things while they remain in ONI’s possession.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-41__subsec-2">
+              <num>2</num>
+              <content>
+                <p>If such arrangements are not made, ONI must take all reasonable steps to ensure:</p>
+              </content>
+              <paragraph eId="part-4__dvs-1__sec-41__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the appropriate storage, access, use or further disclosure of the information or documents, according to their sensitivity or classification; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-41__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>in relation to a thing:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-41__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the appropriate storage, access or use of the thing; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-1__sec-41__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the appropriate further disclosure of information or documents generated from the thing;</p>
+                </content>
+                <content>
+                  <p>according to the thing’s sensitivity or classification.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-1__sec-41__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (2) is subject to <ref href="#sec-40">section 40</ref>.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-4__dvs-2">
+          <num>2</num>
+          <heading>Secrecy</heading>
+          <section eId="part-4__dvs-2__sec-42">
+            <num>42</num>
+            <heading>Offence—communicating certain information</heading>
+            <content>
+              <p>Communication of information or matter</p>
+            </content>
+            <subsection eId="part-4__dvs-2__sec-42__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person communicates any information or matter that:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>was acquired or prepared by or on behalf of ONI in connection with its functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>relates or related to the performance by ONI of its functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the information or matter has come to the knowledge or into the possession of the person by reason of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person being, or having been, a staff member of ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the person having entered into any contract, agreement or arrangement with ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the person having been an employee or agent of another person who has entered into a contract, agreement or arrangement with ONI; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the communication was not made:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>to the Director-General or a staff member by the person in the course of the person’s duties as a staff member; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>to the Director-General or a staff member by the person in accordance with a contract, agreement or arrangement; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>by the person in the course of the person’s duties as a staff member, within the limits of authority conferred on the person by the Director-General; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-42__subsec-1__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>with the approval of the Director-General or of a staff member having <role refersTo="#authority">the authority</role> of the Director-General to give such an approval.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 10 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+                <content>
+                  <p>Exception—information or matter lawfully available</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-42__subsec-2">
+              <num>2</num>
+              <content>
+                <p>Subsection (1) does not apply to information or matter that has already been communicated or made available to the public with <role refersTo="#authority">the authority</role> of the Commonwealth.</p>
+              </content>
+              <authorialNote placement="end" eId="note-22" marker="22">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (2): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Exception—communication to IGIS officials</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-42__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (1) does not apply if the person communicates the information or matter to an IGIS official for the purpose of the IGIS official exercising a power, or performing a function or duty, as an IGIS official.</p>
+              </content>
+              <authorialNote placement="end" eId="note-23" marker="23">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (3): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Extended geographical jurisdiction</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-42__subsec-4">
+              <num>4</num>
+              <content>
+                <p>	(4)	Section 15.4 of the <i>Criminal Code</i> (extended geographical jurisdiction—category D) applies to an offence against subsection (1).</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-44">
+            <num>44</num>
+            <heading>Offences—dealing with and making records</heading>
+            <content>
+              <p>Unauthorised dealing with records</p>
+            </content>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>	(a)	the person engages in any of the following conduct (the <b><i>relevant conduct</i></b>):</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>copying a record;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>transcribing a record;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>retaining a record;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>removing a record;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-v">
+                <num>v</num>
+                <content>
+                  <p>dealing with a record in any other manner; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the record was obtained by the person by reason of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person being, or having been, a staff member of ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the person having entered into any contract, agreement or arrangement with ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the person having been an employee or agent of a person who has entered into a contract, agreement or arrangement with ONI; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>the record:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>was acquired or prepared by or on behalf of ONI in connection with its functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>relates to the performance by ONI of its functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>the relevant conduct was not engaged in:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-i">
+                <num>i</num>
+                <content>
+                  <p>in the course of the person’s duties as a staff member; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>in accordance with a contract, agreement or arrangement with ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>by the person acting within the limits of authority conferred on the person by the Director-General; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-1__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>with the approval of the Director-General or a staff member having <role refersTo="#authority">the authority</role> of the Director-General to give such an approval.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 3 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+                <content>
+                  <p>Unauthorised recording of information or matter</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-2">
+              <num>2</num>
+              <content>
+                <p>A person commits an offence if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person makes a record of any information or matter; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the information or matter has come to the knowledge or into the possession of the person by reason of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>the person being, or having been, a staff member of ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>the person having entered into any contract, agreement or arrangement with ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>the person having been an employee or agent of a person who has entered into a contract, agreement or arrangement with ONI; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the information or matter:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>was acquired or prepared by or on behalf of ONI in connection with its functions; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>relates to the performance by ONI of its functions; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-d">
+                <num>d</num>
+                <content>
+                  <p>the record was not made:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-i">
+                <num>i</num>
+                <content>
+                  <p>in the course of the person’s duties as a staff member; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>in accordance with a contract, agreement or arrangement with ONI; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-iii">
+                <num>iii</num>
+                <content>
+                  <p>by the person acting within the limits of authority conferred on the person by the Director-General; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-2__para-iv">
+                <num>iv</num>
+                <content>
+                  <p>with the approval of the Director-General or of a staff member having <role refersTo="#authority">the authority</role> of the Director-General to give such an approval.</p>
+                </content>
+                <hcontainer name="penalty">
+                  <content>
+                    <p>Penalty:	<quantity refersTo="#custodialSentence">Imprisonment for 3 years</quantity>.</p>
+                  </content>
+                </hcontainer>
+                <content>
+                  <p>Exception—record, information or matter lawfully available</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Subsection (1) does not apply to a record, and subsection (2) does not apply to information or matter, that has already been communicated or made available to the public with <role refersTo="#authority">the authority</role> of the Commonwealth.</p>
+              </content>
+              <authorialNote placement="end" eId="note-24" marker="24">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (3): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Exception—dealing with or making record for IGIS officials</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Subsection (1) does not apply if the person deals with, and subsection (2) does not apply if the person makes, the record for the purpose of an IGIS official exercising a power, or performing a function or duty, as an IGIS official.</p>
+              </content>
+              <authorialNote placement="end" eId="note-25" marker="25">
+                <content>
+                  <p>Note:	A defendant bears an evidential burden in relation to the matter in subsection (4): see subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+                </content>
+              </authorialNote>
+              <content>
+                <p>Extended geographical jurisdiction</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-5">
+              <num>5</num>
+              <content>
+                <p>	(5)	Section 15.4 of the <i>Criminal Code</i> (extended geographical jurisdiction—category D) applies to an offence against this section.</p>
+              </content>
+              <content>
+                <p>Alternative verdicts</p>
+              </content>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-6">
+              <num>6</num>
+              <content>
+                <p>In a prosecution for an offence against subsection (1), the trier of fact may find the defendant not guilty of that offence but guilty of an offence against subsection (2) if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>the trier of fact:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-6__para-i">
+                <num>i</num>
+                <content>
+                  <p>is not satisfied that the defendant is guilty of the offence against subsection (1); but</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-6__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is satisfied beyond reasonable doubt that the defendant is guilty of the offence against subsection (2); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>the defendant has been accorded procedural fairness in relation to that finding of guilt.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-44__subsec-7">
+              <num>7</num>
+              <content>
+                <p>In a prosecution for an offence against subsection (2), the trier of fact may find the defendant not guilty of that offence but guilty of an offence against subsection (1) if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>the trier of fact:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-7__para-i">
+                <num>i</num>
+                <content>
+                  <p>is not satisfied that the defendant is guilty of the offence against subsection (2); but</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-7__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>is satisfied beyond reasonable doubt that the defendant is guilty of the offence against subsection (1); and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-44__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>the defendant has been accorded procedural fairness in relation to that finding of guilt.</p>
+                </content>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-45">
+            <num>45</num>
+            <heading>Instituting prosecutions for offences against this Division</heading>
+            <subsection eId="part-4__dvs-2__sec-45__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A prosecution under this Division may be instituted only by or with the consent of:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-45__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Attorney-General; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-45__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>a person acting under the Attorney-General’s direction.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-45__subsec-2">
+              <num>2</num>
+              <content>
+                <p>However:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-45__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>a person charged with an offence against this Division may be arrested, or a warrant for the person’s arrest may be issued and executed; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-45__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>such a person may be remanded in custody or on bail;</p>
+                </content>
+                <content>
+                  <p>even if the consent of the Attorney-General or a person acting under the Attorney-General’s direction has not been obtained, but no further proceedings are to be taken until that consent has been obtained.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-45__subsec-3">
+              <num>3</num>
+              <content>
+                <p>Nothing in subsection (1) or (2) prevents the discharging of the accused if proceedings are not continued within a reasonable time.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-4__dvs-2__sec-46">
+            <num>46</num>
+            <heading>Offences against this Division—IGIS officials</heading>
+            <subsection eId="part-4__dvs-2__sec-46__subsec-1">
+              <num>1</num>
+              <content>
+                <p>A person does not commit an offence against this Division if:</p>
+              </content>
+              <paragraph eId="part-4__dvs-2__sec-46__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the person is an IGIS official; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-4__dvs-2__sec-46__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the relevant conduct is engaged in by the person for the purpose of exercising powers, or performing functions or duties, as an IGIS official.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-4__dvs-2__sec-46__subsec-2">
+              <num>2</num>
+              <content>
+                <p>	(2)	In a prosecution for an offence against this Division, the defendant does not bear an evidential burden in relation to the matter in subsection (1) of this section, despite subsection 13.3(3) of the <i>Criminal Code</i>.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-5">
+        <num>5</num>
+        <heading>Administration</heading>
+        <division eId="part-5__dvs-1">
+          <num>1</num>
+          <heading>National Assessments Board</heading>
+          <section eId="part-5__dvs-1__sec-47">
+            <num>47</num>
+            <heading>National Assessments Board</heading>
+            <subsection eId="part-5__dvs-1__sec-47__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The National Assessments Board continues in existence.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-47__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The National Assessments Board’s functions are:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-47__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>to consider which assessments made by ONI are national assessments; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-47__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>to consider national assessments.</p>
+                </content>
+                <authorialNote placement="end" eId="note-26" marker="26">
+                  <content>
+                    <p>Note:	After the Board considers which assessments made by ONI are to be national assessments, the Director-General decides whether they are: see paragraph 16(1)(d).</p>
+                  </content>
+                </authorialNote>
+              </paragraph>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-48">
+            <num>48</num>
+            <heading>Constitution</heading>
+            <subsection eId="part-5__dvs-1__sec-48__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The National Assessments Board consists of:</p>
+              </content>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Director-General; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>an official of the Department of the Prime Minister and Cabinet; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-c">
+                <num>c</num>
+                <content>
+                  <p>an official of the Department of Foreign Affairs and Trade; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-d">
+                <num>d</num>
+                <content>
+                  <p>an official of the Defence Department; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-e">
+                <num>e</num>
+                <content>
+                  <p>an official of the Department of Home Affairs; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-f">
+                <num>f</num>
+                <content>
+                  <p>an official of the Department of the Treasury; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-g">
+                <num>g</num>
+                <content>
+                  <p>a member of the Defence Force; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-1__sec-48__subsec-1__para-h">
+                <num>h</num>
+                <content>
+                  <p>such other persons as the Prime Minister directs.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-48__subsec-2">
+              <num>2</num>
+              <content>
+                <p>For the purposes of a particular national assessment, the Director-General may add one or more persons to the membership of the National Assessments Board.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-49">
+            <num>49</num>
+            <heading>Holding of meetings</heading>
+            <subsection eId="part-5__dvs-1__sec-49__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General must hold such meetings as are necessary for the efficient performance of the National Assessment Board’s functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-49__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General may convene a meeting at any time.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-50">
+            <num>50</num>
+            <heading>Presiding at meetings</heading>
+            <subsection eId="part-5__dvs-1__sec-50__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General presides at all meetings of the National Assessments Board.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-1__sec-50__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General may direct the procedure to be followed at a meeting.</p>
+              </content>
+            </subsection>
+          </section>
+          <section eId="part-5__dvs-1__sec-51">
+            <num>51</num>
+            <heading>Officials to attend meetings</heading>
+            <content>
+              <p>When a national assessment is under consideration by the National Assessments Board at a meeting, the Director-General must take reasonable steps to ensure that representatives of Departments and agencies appropriate to the subject matter of the national assessment are present.</p>
+            </content>
+          </section>
+        </division>
+        <division eId="part-5__dvs-2">
+          <num>2</num>
+          <heading>Committees</heading>
+          <section eId="part-5__dvs-2__sec-52">
+            <num>52</num>
+            <heading>Committees</heading>
+            <subsection eId="part-5__dvs-2__sec-52__subsec-1">
+              <num>1</num>
+              <content>
+                <p>The Director-General may establish committees to advise or assist in the performance of ONI’s functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-52__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Director-General may determine, in relation to a committee established under this section:</p>
+              </content>
+              <paragraph eId="part-5__dvs-2__sec-52__subsec-2__para-a">
+                <num>a</num>
+                <content>
+                  <p>the committee’s terms of reference; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-52__subsec-2__para-b">
+                <num>b</num>
+                <content>
+                  <p>the terms and conditions of appointment of the members of the committee; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-2__sec-52__subsec-2__para-c">
+                <num>c</num>
+                <content>
+                  <p>the procedures to be followed by the committee.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-52__subsec-3">
+              <num>3</num>
+              <content>
+                <p>	(3)	The members of the committee (other than a member who is a person mentioned in paragraph 6(2)(c)) are not officials for the purposes of the <i>Public Governance, Performance and Accountability Act 2013</i>.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-2__sec-52__subsec-4">
+              <num>4</num>
+              <content>
+                <p>A determination made under subsection (2) is not a legislative instrument.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+        <division eId="part-5__dvs-3">
+          <num>3</num>
+          <heading>Privacy rules</heading>
+          <section eId="part-5__dvs-3__sec-53">
+            <num>53</num>
+            <heading>Privacy rules to protect Australians</heading>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-1">
+              <num>1</num>
+              <content>
+                <p>	(1)	The Prime Minister must make rules (the <b><i>privacy </i></b><b><i>rules</i></b>) regulating:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1__para-a">
+                <num>a</num>
+                <content>
+                  <p>the collection of information mentioned in paragraph 7(1)(g), to the extent that information is personal information about an Australian citizen or permanent resident; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1__para-b">
+                <num>b</num>
+                <content>
+                  <p>the communication, handling and retention by ONI of intelligence information that is personal information about an Australian citizen or permanent resident.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-1A">
+              <num>1A</num>
+              <content>
+                <p>ONI must not, except in accordance with the privacy rules:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1A__para-a">
+                <num>a</num>
+                <content>
+                  <p>collect personal information about an Australian citizen or permanent resident under paragraph 7(1)(g); or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1A__para-b">
+                <num>b</num>
+                <content>
+                  <p>communicate intelligence information that is personal information about an Australian citizen or permanent resident.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-1B">
+              <num>1B</num>
+              <content>
+                <p>	(1B)	<b><i>Personal information about an Australian citizen or permanent resident</i></b> means information or an opinion about an identified Australian citizen or permanent resident, or an Australian citizen or permanent resident who is reasonably identifiable:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1B__para-a">
+                <num>a</num>
+                <content>
+                  <p>whether the information or opinion is true or not; and</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-1B__para-b">
+                <num>b</num>
+                <content>
+                  <p>whether the information or opinion is recorded in a material form or not.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-1C">
+              <num>1C</num>
+              <content>
+                <p><b><i>	</i></b>(1C)	<b><i>Intelligence information</i></b> means intelligence produced by ONI under paragraph 7(1)(c), (d) or (g).</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-2">
+              <num>2</num>
+              <content>
+                <p>The Prime Minister may make privacy rules dealing with other matters if the Prime Minister considers it appropriate to do so.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-3">
+              <num>3</num>
+              <content>
+                <p>In making the privacy rules, the Prime Minister must have regard to the need to ensure that the privacy of Australian citizens and permanent residents is preserved as far as is consistent with the proper performance by ONI of its functions.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-4">
+              <num>4</num>
+              <content>
+                <p>Before making the privacy rules, the Prime Minister must consult with the Director-General, the Inspector-General of Intelligence and Security, <role refersTo="#privacy-commissioner">the Privacy Commissioner</role> and the Attorney-General, including by providing those persons with a copy of the privacy rules the Prime Minister is proposing to make.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-4A">
+              <num>4A</num>
+              <content>
+                <p>The privacy rules must be published on ONI’s website as soon as practicable after the rules are made, except to the extent that the rules contain information that has a protective security classification.</p>
+              </content>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-6">
+              <num>6</num>
+              <content>
+                <p>The Inspector-General of Intelligence and Security must brief the Parliamentary Joint Committee on Intelligence and Security on the content and effect of the privacy rules if:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-6__para-a">
+                <num>a</num>
+                <content>
+                  <p>the Committee requests the Inspector-General to do so; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-6__para-b">
+                <num>b</num>
+                <content>
+                  <p>the privacy rules change.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-7">
+              <num>7</num>
+              <content>
+                <p>To avoid doubt, the privacy rules may not do the following:</p>
+              </content>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-a">
+                <num>a</num>
+                <content>
+                  <p>create an offence or civil penalty;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-b">
+                <num>b</num>
+                <content>
+                  <p>provide powers of:</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-i">
+                <num>i</num>
+                <content>
+                  <p>arrest or detention; or</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-ii">
+                <num>ii</num>
+                <content>
+                  <p>entry, search or seizure;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-c">
+                <num>c</num>
+                <content>
+                  <p>impose a tax;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-d">
+                <num>d</num>
+                <content>
+                  <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+                </content>
+              </paragraph>
+              <paragraph eId="part-5__dvs-3__sec-53__subsec-7__para-e">
+                <num>e</num>
+                <content>
+                  <p>directly amend the text of this Act.</p>
+                </content>
+              </paragraph>
+            </subsection>
+            <subsection eId="part-5__dvs-3__sec-53__subsec-8">
+              <num>8</num>
+              <content>
+                <p>Privacy rules made under this section are not legislative instruments.</p>
+              </content>
+            </subsection>
+          </section>
+        </division>
+      </part>
+      <part eId="part-6">
+        <num>6</num>
+        <heading>Miscellaneous</heading>
+        <section eId="part-6__sec-54">
+          <num>54</num>
+          <heading>Delegation</heading>
+          <subsection eId="part-6__sec-54__subsec-1">
+            <num>1</num>
+            <content>
+              <p>The Director-General may, by written instrument, delegate any of the Director-General’s functions or powers under this Act or the general rules (other than those mentioned in subsection (2)) to a person who holds, or performs the duties of, an SES position, or an equivalent position, in ONI.</p>
+            </content>
+          </subsection>
+          <subsection eId="part-6__sec-54__subsec-2">
+            <num>2</num>
+            <content>
+              <p>Subsection (1) does not apply to the following functions and powers:</p>
+            </content>
+            <paragraph eId="part-6__sec-54__subsec-2__para-aa">
+              <num>aa</num>
+              <content>
+                <p>the power to approve an authority of another country or a public international organisation under subsection 13(2);</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-54__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>the power to give written directions under <ref href="#sec-20">section 20</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-54__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>the power to issue guidelines under <ref href="#sec-21">section 21</ref>;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-54__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>the power to make a written request under <ref href="#sec-37">section 37</ref>.</p>
+              </content>
+            </paragraph>
+          </subsection>
+        </section>
+        <section eId="part-6__sec-55">
+          <num>55</num>
+          <heading>General rules</heading>
+          <subsection eId="part-6__sec-55__subsec-1">
+            <num>1</num>
+            <content>
+              <p>	(1)	The Prime Minister may, by legislative instrument, make rules (the <b><i>general </i></b><b><i>rules</i></b>) prescribing matters:</p>
+            </content>
+            <paragraph eId="part-6__sec-55__subsec-1__para-a">
+              <num>a</num>
+              <content>
+                <p>required or permitted by this Act to be prescribed by the rules; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-1__para-b">
+              <num>b</num>
+              <content>
+                <p>necessary or convenient to be prescribed for carrying out or giving effect to this Act.</p>
+              </content>
+            </paragraph>
+          </subsection>
+          <subsection eId="part-6__sec-55__subsec-2">
+            <num>2</num>
+            <content>
+              <p>To avoid doubt, the general rules may not do the following:</p>
+            </content>
+            <paragraph eId="part-6__sec-55__subsec-2__para-a">
+              <num>a</num>
+              <content>
+                <p>create an offence or civil penalty;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-b">
+              <num>b</num>
+              <content>
+                <p>provide powers of:</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-i">
+              <num>i</num>
+              <content>
+                <p>arrest or detention; or</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-ii">
+              <num>ii</num>
+              <content>
+                <p>entry, search or seizure;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-c">
+              <num>c</num>
+              <content>
+                <p>impose a tax;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-d">
+              <num>d</num>
+              <content>
+                <p>set an amount to be appropriated from the Consolidated Revenue Fund under an appropriation in this Act;</p>
+              </content>
+            </paragraph>
+            <paragraph eId="part-6__sec-55__subsec-2__para-e">
+              <num>e</num>
+              <content>
+                <p>directly amend the text of this Act.</p>
+              </content>
+              <content>
+                <p>Endnotes</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>The endnotes provide information about this compilation and the compiled law.</p>
+                <p>The following endnotes are included in every compilation:</p>
+                <p>Endnote 1—About the endnotes</p>
+                <p>Endnote 2—Abbreviation key</p>
+                <p>Endnote 3—Legislation history</p>
+                <p>Endnote 4—Amendment history</p>
+                <p><b>Abbreviation key—</b><b>E</b><b>ndnote 2</b></p>
+                <p>The abbreviation key sets out abbreviations that may be used in the endnotes.</p>
+                <p><b>Legislation history and amendment history—</b><b>E</b><b>ndnotes 3 and 4</b></p>
+                <p>Amending laws are annotated in the legislation history and amendment history.</p>
+                <p>The legislation history in endnote 3 provides information about each law that has amended (or will amend) the compiled law. The information includes commencement details for amending laws and details of any application, saving or transitional provisions that are not included in this compilation.</p>
+                <p>The amendment history in endnote 4 provides information about amendments at the provision (generally section or equivalent) level. It also includes information about any provision of the compiled law that has been repealed in accordance with a provision of the law.</p>
+                <p><b>Editorial changes</b></p>
+                <p>The <i>Legislation Act 2003</i> authorises First Parliamentary Counsel to make editorial and presentational changes to a compiled law in preparing a compilation of the law for registration. The changes must not change the effect of the law. Editorial changes take effect from the compilation registration date.</p>
+                <p>If the compilation includes editorial changes, the endnotes include a brief outline of the changes in general terms. Full details of any changes can be obtained from the Office of Parliamentary Counsel.</p>
+                <p><b>Misdescribed amendments</b></p>
+                <p>A misdescribed amendment is an amendment that does not accurately describe how an amendment is to be made. If, despite the misdescription, the amendment can be given effect as intended, then the misdescribed amendment can be incorporated through an editorial change made under <ref href="#sec-15V">section 15V</ref> of the <i>Legislation Act 2003</i>.</p>
+                <p>If a misdescribed amendment cannot be given effect as intended, the amendment is not incorporated and “(md not incorp)” is added to the amendment history.</p>
+                <p>Endnote 2—Abbreviation key</p>
+              </content>
+              <table>
+                <tr>
+                  <th>ad = added or inserted</th>
+                  <th>orig = original</th>
+                </tr>
+                <tr>
+                  <td>am = amended</td>
+                  <td>p = page(s)</td>
+                </tr>
+                <tr>
+                  <td>amdt = amendment</td>
+                  <td>para = paragraph(s)/subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>C[x] = Compilation No. x</td>
+                  <td>/sub-subparagraph(s)</td>
+                </tr>
+                <tr>
+                  <td>ch = Chapter(s)</td>
+                  <td>pres = present</td>
+                </tr>
+                <tr>
+                  <td>cl = clause(s)</td>
+                  <td>prev = previous</td>
+                </tr>
+                <tr>
+                  <td>cont. = continued</td>
+                  <td>(prev…) = previously</td>
+                </tr>
+                <tr>
+                  <td>def = definition(s)</td>
+                  <td>pt = Part(s)</td>
+                </tr>
+                <tr>
+                  <td>Dict = Dictionary</td>
+                  <td>r = regulation(s)/Court rule(s)</td>
+                </tr>
+                <tr>
+                  <td>disallowed = disallowed by Parliament</td>
+                  <td>reloc = relocated</td>
+                </tr>
+                <tr>
+                  <td>div = Division(s)</td>
+                  <td>renum = renumbered</td>
+                </tr>
+                <tr>
+                  <td>ed = editorial change</td>
+                  <td>rep = repealed</td>
+                </tr>
+                <tr>
+                  <td>exp = expires/expired or ceases/ceased to have</td>
+                  <td>rs = repealed and substituted</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>s = section(s)/subsection(s)</td>
+                </tr>
+                <tr>
+                  <td>gaz = gazette</td>
+                  <td>/rule(s)/subrule(s)/order(s)/suborder(s)</td>
+                </tr>
+                <tr>
+                  <td>LA = Legislation Act 2003</td>
+                  <td>sch = Schedule(s)</td>
+                </tr>
+                <tr>
+                  <td>LIA = Legislative Instruments Act 2003</td>
+                  <td>SLI = Select Legislative Instrument</td>
+                </tr>
+                <tr>
+                  <td>(md) = misdescribed amendment can be given</td>
+                  <td>SR = Statutory Rules</td>
+                </tr>
+                <tr>
+                  <td>effect</td>
+                  <td>sub ch = Sub-Chapter(s)</td>
+                </tr>
+                <tr>
+                  <td>(md not incorp) = misdescribed amendment</td>
+                  <td>sub div = Subdivision(s)</td>
+                </tr>
+                <tr>
+                  <td>cannot be given effect</td>
+                  <td>sub pt = Subpart(s)</td>
+                </tr>
+                <tr>
+                  <td>mod = modified/modification</td>
+                  <td>underlining = whole or part not</td>
+                </tr>
+                <tr>
+                  <td>No. = Number(s)</td>
+                  <td>commenced or to be commenced</td>
+                </tr>
+                <tr>
+                  <td>Ord = Ordinance</td>
+                  <td></td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 3—Legislation history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Act
+(Register ID)</th>
+                  <th>Number and year</th>
+                  <th>Assent</th>
+                  <th>Commencement</th>
+                  <th>Application, saving and transitional provisions</th>
+                </tr>
+                <tr>
+                  <td>Office of National Intelligence Act 2018 (C2018A00155)</td>
+                  <td>155, 2018</td>
+                  <td>10 Dec 2018</td>
+                  <td>s 3-55: 20 Dec 2018 (s 2(1) item 2)
+Remainder: 10 Dec 2018 (s 2(1) item 1)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>National Security Legislation Amendment (Comprehensive Review and Other Measures No. 1) Act 2022 (C2022A00031)</td>
+                  <td>31, 2022</td>
+                  <td>1 Apr 2022</td>
+                  <td>sch 7: 2 Apr 2022 (s 2(1) item 2)
+sch 10 (items 17-25): 1 Oct 2022 (s 2(1) item 6)</td>
+                  <td>sch 7 (item 5), sch10 (item 25)</td>
+                </tr>
+                <tr>
+                  <td>Australian Security Intelligence Organisation Amendment Act 2023 (C2023A00033)</td>
+                  <td>33, 2023</td>
+                  <td>28 June 2023</td>
+                  <td>sch 1 (items 45-48): 1 July 2023 (s 2(1) item 1)</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Inspector-General of Intelligence and Security and Other Legislation Amendment (Modernisation) Act 2023 (C2023A00073)</td>
+                  <td>73, 2023</td>
+                  <td>20 Sept 2023</td>
+                  <td>sch 1 (item 193), sch 3 (item 2): 21 Sept 2023 (s 2(1) items 2, 5)</td>
+                  <td>sch 3 (item 2)</td>
+                </tr>
+                <tr>
+                  <td>Strengthening Oversight of the National Intelligence Community Act 2025 (C2025A00075)</td>
+                  <td>75, 2025</td>
+                  <td>4 Dec 2025</td>
+                  <td>sch 1 (item 88), sch 5 (item 1): 1 June 2026 (s 2(1) items 2, 4)</td>
+                  <td>sch 5 (item 1)</td>
+                </tr>
+              </table>
+              <content>
+                <p>Endnote 4—Amendment history</p>
+              </content>
+              <table>
+                <tr>
+                  <th>Provision affected</th>
+                  <th>How affected</th>
+                </tr>
+                <tr>
+                  <td>Part 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 3</td>
+                  <td>am No 31, 2022; No 33, 2023</td>
+                </tr>
+                <tr>
+                  <td>s 4</td>
+                  <td>am No 31, 2022; No 73, 2023</td>
+                </tr>
+                <tr>
+                  <td>Part 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 7</td>
+                  <td>am No 31, 2022; No 33, 2023</td>
+                </tr>
+                <tr>
+                  <td>s 10</td>
+                  <td>am No 33, 2023</td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 13</td>
+                  <td>am No 31, 2022</td>
+                </tr>
+                <tr>
+                  <td>Part 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 18A</td>
+                  <td>ad No 75, 2025</td>
+                </tr>
+                <tr>
+                  <td>Part 4</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 39</td>
+                  <td>am No 33, 2023</td>
+                </tr>
+                <tr>
+                  <td>Part 5</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Division 3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 53</td>
+                  <td>am No 31, 2022</td>
+                </tr>
+                <tr>
+                  <td>Part 6</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>s 54</td>
+                  <td>am No 31, 2022</td>
+                </tr>
+              </table>
+            </paragraph>
+          </subsection>
+        </section>
+      </part>
+    </body>
+  </act>
+</akomaNtoso>
