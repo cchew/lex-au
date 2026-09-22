@@ -1,8 +1,9 @@
+import json
 import subprocess
 import sys
 from pathlib import Path
 
-from scripts.check_eid_drift import eid_drift
+from scripts.check_eid_drift import eid_drift, load_allowlist, partition_body_moved
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 
@@ -289,3 +290,146 @@ def test_cli_min_acts_fails_below_threshold(tmp_path: Path):
     assert result.returncode == 1
     assert "acts compared: 1" in result.stdout
     assert "FAIL" in result.stdout
+
+
+def test_load_allowlist_accepts_bare_array(tmp_path: Path):
+    allowlist_path = tmp_path / "allowlist.json"
+    allowlist_path.write_text(json.dumps(["a.xml", "b.xml"]))
+
+    assert load_allowlist(allowlist_path) == {"a.xml", "b.xml"}
+
+
+def test_load_allowlist_accepts_entries_wrapper(tmp_path: Path):
+    allowlist_path = tmp_path / "allowlist.json"
+    allowlist_path.write_text(json.dumps({
+        "_comment": "one-time bridge manifest",
+        "generated": "2026-09-22",
+        "entries": ["a.xml", "b.xml"],
+    }))
+
+    assert load_allowlist(allowlist_path) == {"a.xml", "b.xml"}
+
+
+def test_partition_body_moved_splits_correctly():
+    body_moved = [
+        {"act": "act-a-1999.xml", "old_eid": "sec_1", "new_eid": "sec_1A"},
+        {"act": "act-b-1999.xml", "old_eid": "sec_2", "new_eid": "sec_2A"},
+        {"act": "act-a-1999.xml", "old_eid": "sec_3", "new_eid": "sec_3A"},
+    ]
+    allowlist = {"act-a-1999.xml"}
+
+    real, allowlisted = partition_body_moved(body_moved, allowlist)
+
+    assert real == [
+        {"act": "act-b-1999.xml", "old_eid": "sec_2", "new_eid": "sec_2A"},
+    ]
+    assert allowlisted == [
+        {"act": "act-a-1999.xml", "old_eid": "sec_1", "new_eid": "sec_1A"},
+        {"act": "act-a-1999.xml", "old_eid": "sec_3", "new_eid": "sec_3A"},
+    ]
+
+
+def test_cli_allowlisted_body_move_passes(tmp_path: Path):
+    old_dir, new_dir = _dirs(tmp_path)
+
+    _write_doc(
+        old_dir / "example-act-1999.xml",
+        sec5_eid="sec_5", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        new_dir / "example-act-1999.xml",
+        sec5_eid="sec_5A", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+
+    allowlist_path = tmp_path / "allowlist.json"
+    allowlist_path.write_text(json.dumps({"entries": ["example-act-1999.xml"]}))
+
+    result = _run_cli(
+        "--old-dir", str(old_dir), "--new-dir", str(new_dir),
+        "--allowlist", str(allowlist_path),
+    )
+
+    assert result.returncode == 0
+    assert "PASS" in result.stdout
+    assert "example-act-1999.xml: 'sec_5' -> 'sec_5A'" in result.stdout
+
+
+def test_cli_non_allowlisted_body_move_still_fails(tmp_path: Path):
+    old_dir, new_dir = _dirs(tmp_path)
+
+    _write_doc(
+        old_dir / "allowlisted-act-1999.xml",
+        sec5_eid="sec_5", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        new_dir / "allowlisted-act-1999.xml",
+        sec5_eid="sec_5A", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        old_dir / "other-act-1999.xml",
+        sec5_eid="sec_5", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        new_dir / "other-act-1999.xml",
+        sec5_eid="sec_5A", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+
+    allowlist_path = tmp_path / "allowlist.json"
+    allowlist_path.write_text(json.dumps({"entries": ["allowlisted-act-1999.xml"]}))
+
+    result = _run_cli(
+        "--old-dir", str(old_dir), "--new-dir", str(new_dir),
+        "--allowlist", str(allowlist_path),
+    )
+
+    assert result.returncode == 1
+    assert "FAIL" in result.stdout
+
+    fail_section = result.stdout.split("FAIL: body eIds moved", 1)[1]
+    assert "other-act-1999.xml" in fail_section
+    assert "allowlisted-act-1999.xml" not in fail_section
+
+
+def test_cli_without_allowlist_flag_behaves_exactly_as_before(tmp_path: Path):
+    old_dir, new_dir = _dirs(tmp_path)
+
+    _write_doc(
+        old_dir / "example-act-1999.xml",
+        sec5_eid="sec_5", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        new_dir / "example-act-1999.xml",
+        sec5_eid="sec_5A", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+
+    result = _run_cli("--old-dir", str(old_dir), "--new-dir", str(new_dir))
+
+    assert result.returncode == 1
+    assert "FAIL" in result.stdout
+
+
+def test_cli_reports_unused_allowlist_entries(tmp_path: Path):
+    old_dir, new_dir = _dirs(tmp_path)
+
+    _write_doc(
+        old_dir / "example-act-1999.xml",
+        sec5_eid="sec_5", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+    _write_doc(
+        new_dir / "example-act-1999.xml",
+        sec5_eid="sec_5A", sched_name="clause", sched_eid="schedule-1__clause-3",
+    )
+
+    allowlist_path = tmp_path / "allowlist.json"
+    allowlist_path.write_text(json.dumps({
+        "entries": ["example-act-1999.xml", "never-appears-act-1999.xml"],
+    }))
+
+    result = _run_cli(
+        "--old-dir", str(old_dir), "--new-dir", str(new_dir),
+        "--allowlist", str(allowlist_path),
+    )
+
+    unused_section = result.stdout.split("unused allowlist entries", 1)[1]
+    assert "never-appears-act-1999.xml" in unused_section
+    assert "example-act-1999.xml" not in unused_section

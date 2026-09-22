@@ -140,6 +140,34 @@ def eid_drift(old_dir: Path, new_dir: Path) -> dict[str, list[dict[str, str | No
     return {"body_moved": body_moved, "schedule_moved": schedule_moved}
 
 
+def load_allowlist(allowlist_path: Path) -> set[str]:
+    """Load the manifest and return the set of allowlisted Act filenames.
+
+    Tolerates either a bare [...] array or the documented {"entries": [...],
+    ...metadata} shape (docs/legacy-eid-allowlist.json uses the latter so it
+    can carry a top-level _comment/generated/etc. -- mirrors
+    validate_akn_schema.py's load_whitelist() convention for
+    docs/xsd-whitelist.json).
+    """
+    data = json.loads(Path(allowlist_path).read_text())
+    entries = data.get("entries", data) if isinstance(data, dict) else data
+    return set(entries)
+
+
+def partition_body_moved(
+    body_moved: list[dict[str, str | None]], allowlist: set[str]
+) -> tuple[list[dict[str, str | None]], list[dict[str, str | None]]]:
+    """Split `body_moved` entries into (real, allowlisted) by whether each
+    entry's `act` filename is a member of `allowlist`. `real` is what the
+    gate must still fail on; `allowlisted` is logged only, never fails.
+    An empty `allowlist` makes every entry `real` -- fully backward
+    compatible with the pre-allowlist zero-tolerance behavior.
+    """
+    real = [e for e in body_moved if e["act"] not in allowlist]
+    allowlisted = [e for e in body_moved if e["act"] in allowlist]
+    return real, allowlisted
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--old-dir", type=Path, required=True, help="Pre-re-convert corpus XML directory")
@@ -151,6 +179,12 @@ def main() -> int:
              "i.e. just guard against a typo'd/missing path or zero filename overlap). "
              "Pass e.g. --min-acts 3000 for a stronger corpus-size sanity check on a "
              "full-corpus run; not hardcoded here since the corpus size drifts.",
+    )
+    ap.add_argument(
+        "--allowlist", type=Path, default=None,
+        help="Optional JSON manifest (docs/legacy-eid-allowlist.json) of legacy Act "
+             "filenames permitted to move -- logged, not failed. Omit for the original "
+             "fully-strict zero-tolerance behavior.",
     )
     args = ap.parse_args()
 
@@ -167,21 +201,36 @@ def main() -> int:
 
     result = eid_drift(args.old_dir, args.new_dir)
 
+    allowlist = load_allowlist(args.allowlist) if args.allowlist else set()
+    real, allowlisted = partition_body_moved(result["body_moved"], allowlist)
+
     if args.out is not None:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
         print(f"wrote {args.out}")
 
-    print(f"body_moved: {len(result['body_moved'])}")
+    print(f"body_moved: {len(result['body_moved'])} ({len(real)} real, {len(allowlisted)} allowlisted)")
     print(f"schedule_moved: {len(result['schedule_moved'])}")
 
-    if result["body_moved"]:
+    if allowlisted:
+        print("ALLOWLISTED (legacy-Act bridge, item 9 -- logged, not failed):")
+        for entry in allowlisted:
+            print(f"  {entry['act']}: {entry['old_eid']!r} -> {entry['new_eid']!r}")
+
+    if args.allowlist:
+        unused = sorted(allowlist - {e["act"] for e in allowlisted})
+        if unused:
+            print("unused allowlist entries (no drift observed this run -- safe to prune):")
+            for name in unused:
+                print(f"  {name}")
+
+    if real:
         print("FAIL: body eIds moved -- lex-au-graph node identity would break:")
-        for entry in result["body_moved"]:
+        for entry in real:
             print(f"  {entry['act']}: {entry['old_eid']!r} -> {entry['new_eid']!r}")
         return 1
 
-    print("PASS: only schedule eIds moved.")
+    print("PASS: only schedule eIds moved (or allowlisted legacy-Act body moves).")
     return 0
 
 
