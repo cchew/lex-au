@@ -351,7 +351,7 @@ _LEGACY_FALLBACK_MAX_SECTION = 12
 # "<Verb> of …" heading shape is a noun phrase, not an instruction — real
 # corpus headings "Repeal of Acts" (australian-trade-commission-
 # (transitional-provisions…)-act-1985) and "Repeal of section 17a"
-# (social-security-and-repatriation-legislation-amendment-act-1986) are
+# (social-security-and-repatriation-legislation-amendment-act-1984) are
 # genuine and must not be rejected.
 _LEGACY_BARE_INSTRUCTION_RE = re.compile(
     r'^(Omit|Insert|Repeal|Substitute|Add|Renumber|Before|After)\b(?!\s+of\b)',
