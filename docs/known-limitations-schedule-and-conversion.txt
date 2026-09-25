@@ -150,3 +150,23 @@ capture was fixed. They came from an over-collecting `a:blip` search that
 pulled a second inline image off FIGURE paragraphs in two Acts
 (excise-tariff-act-1921, corporate-law-economic-reform-program-act-1999);
 `_figure_blobs` now takes only the first blob per FIGURE paragraph.
+
+
+(f) DOCX footnotes, endnotes, headers and footers are not read
+----------------------------------------------------------------
+
+`docx_reader.iter_paragraphs` and `fidelity.docx_paragraphs` both consume
+`word/document.xml` only. `word/footnotes.xml`, `word/endnotes.xml`,
+`word/header*.xml` and `word/footer*.xml` are never read, so their text is
+neither converted to AKN nor visible to the fidelity audit. Corpus impact
+(measured 2026-09-07, P7): substantive footnotes in 6 Acts
+(`crimes-(currency)-act-1981`, `cross-border-insolvency-act-2008`,
+`international-fund-for-agricultural-development-act-1977`,
+`marine-insurance-act-1909`, `national-environment-protection-council-act-1994`,
+`psychotropic-substances-act-1976`), all inside Schedules that reproduce an
+international instrument, 3 weakly operative and 3 explanatory; zero
+substantive endnotes; zero operative header/footer content (all header/footer
+text is `STYLEREF` running heads duplicating body headings, Word field-error
+placeholders, or the OPC/FRL "electronic version... available on the Federal
+Register of Legislation" publishing stamp). Accepted, not tracked as a
+regression.

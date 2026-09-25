@@ -28,6 +28,8 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **Status: v0.9.0** - 3,076 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au.netlify.app](https://lex-au.netlify.app).
 
+lex-au-explorer renders the Commonwealth corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see `docs/known-limitations-schedule-and-conversion.txt`, entry (f)).
+
 ## Why AKN XML
 
 - **Machine-readable, not just marked-up** - defined terms are extracted even where source DOCX carries no distinguishing markup (apart from italics, which is lost entirely in DOCX→text conversion) for them.
