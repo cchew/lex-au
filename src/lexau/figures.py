@@ -142,8 +142,14 @@ def _convert_chunk(
         if not produced.exists():
             continue
         data = produced.read_bytes()
-        pending.out_path.write_bytes(data)
         w, h = _png_size(data)
+        if w is None and h is None:
+            # Malformed/truncated PNG -- most likely on the timeout/OSError
+            # paths above, where soffice was killed/crashed mid-write and
+            # left a partial file on disk. Do not ship it as "converted";
+            # fall back to the placeholder default instead.
+            continue
+        pending.out_path.write_bytes(data)
         pending.result.kind = "converted"
         pending.result.width = w
         pending.result.height = h

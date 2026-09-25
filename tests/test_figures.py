@@ -164,6 +164,33 @@ def test_chunk_oserror_finalises_partial_success(tmp_path, monkeypatch):
     assert not (tmp_path / "o-fig-2.png").exists()
 
 
+def test_chunk_malformed_png_stays_placeholder(tmp_path, monkeypatch):
+    # A file landing in tmp_dir named <stem>.png is not proof it's a valid
+    # PNG -- a timeout/OSError can leave a partial/truncated write behind.
+    # _png_size already detects this (bad magic bytes / missing IHDR ->
+    # (None, None)); the finalisation loop must act on that instead of
+    # shipping a corrupt file as "converted".
+    monkeypatch.setattr("lexau.figures._SOFFICE_CHUNK", 8)
+
+    def fake_run(cmd, *a, **k):
+        outdir = Path(cmd[cmd.index("--outdir") + 1])
+        inputs = cmd[cmd.index("--outdir") + 2:]
+        # First input converts to a genuinely valid PNG; second "converts"
+        # to truncated garbage (soffice killed mid-write).
+        (outdir / (Path(inputs[0]).stem + ".png")).write_bytes(_PNG_1x1)
+        (outdir / (Path(inputs[1]).stem + ".png")).write_bytes(b"not a real png")
+        raise subprocess.TimeoutExpired(cmd=cmd, timeout=90)
+
+    monkeypatch.setattr("lexau.figures.shutil.which", lambda _: "/usr/local/bin/soffice")
+    monkeypatch.setattr("lexau.figures.subprocess.run", fake_run)
+    figures = [[(".emf", b"a")], [(".wmf", b"b")]]
+    res = materialise_figures("m", "m", figures, tmp_path)
+    kinds = [r[0].kind for r in res]
+    assert kinds == ["converted", "placeholder"]
+    assert (tmp_path / "m-fig-1.png").exists()
+    assert not (tmp_path / "m-fig-2.png").exists()
+
+
 def test_two_images_one_paragraph(tmp_path):
     res = materialise_figures("y", "y", [[(".png", _PNG_1x1), (".png", _PNG_1x1)]], tmp_path)
     assert [r.src for r in res[0]] == ["corpus/images/y-fig-1.png", "corpus/images/y-fig-1b.png"]
