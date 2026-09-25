@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -84,6 +85,84 @@ def test_chunked_partial_failure(tmp_path, monkeypatch):
     res = materialise_figures("v", "v", [[(".emf", b"a")], [(".emf", b"b")], [(".emf", b"c")]], tmp_path)
     kinds = [r[0].kind for r in res]
     assert kinds == ["converted", "converted", "placeholder"]
+
+def test_chunk_nonzero_exit_finalises_partial_success(tmp_path, monkeypatch):
+    # Real-world shape (task-18B diagnosis): one bad/pathological blob in an
+    # otherwise-good batched soffice invocation can make the WHOLE call exit
+    # non-zero even though soffice already wrote PNGs for the other files in
+    # the chunk before choking. Those already-written files must not be
+    # thrown away just because the batch's overall exit code is non-zero.
+    monkeypatch.setattr("lexau.figures._SOFFICE_CHUNK", 8)
+
+    def fake_run(cmd, *a, **k):
+        outdir = Path(cmd[cmd.index("--outdir") + 1])
+        inputs = cmd[cmd.index("--outdir") + 2:]
+        # Every input except the last converts fine; the last one is the
+        # pathological blob that sinks the batch's exit code.
+        for s in inputs[:-1]:
+            (outdir / (Path(s).stem + ".png")).write_bytes(_PNG_1x1)
+
+        class R:
+            pass
+
+        R.returncode = 1
+        return R()
+
+    monkeypatch.setattr("lexau.figures.shutil.which", lambda _: "/usr/local/bin/soffice")
+    monkeypatch.setattr("lexau.figures.subprocess.run", fake_run)
+    figures = [[(".emf", b"a")], [(".emf", b"b")], [(".emf", b"c")]]
+    res = materialise_figures("v", "v", figures, tmp_path)
+    kinds = [r[0].kind for r in res]
+    assert kinds == ["converted", "converted", "placeholder"]
+    assert (tmp_path / "v-fig-1.png").exists()
+    assert (tmp_path / "v-fig-2.png").exists()
+    assert not (tmp_path / "v-fig-3.png").exists()
+
+
+def test_chunk_timeout_finalises_partial_success(tmp_path, monkeypatch):
+    # Same collateral-loss shape, but via the TimeoutExpired path rather than
+    # a non-zero exit -- soffice can hang on one blob after already writing
+    # PNGs for the earlier files in the same batched invocation.
+    monkeypatch.setattr("lexau.figures._SOFFICE_CHUNK", 8)
+
+    def fake_run(cmd, *a, **k):
+        outdir = Path(cmd[cmd.index("--outdir") + 1])
+        inputs = cmd[cmd.index("--outdir") + 2:]
+        for s in inputs[:-1]:
+            (outdir / (Path(s).stem + ".png")).write_bytes(_PNG_1x1)
+        raise subprocess.TimeoutExpired(cmd=cmd, timeout=90)
+
+    monkeypatch.setattr("lexau.figures.shutil.which", lambda _: "/usr/local/bin/soffice")
+    monkeypatch.setattr("lexau.figures.subprocess.run", fake_run)
+    figures = [[(".wmf", b"a")], [(".wmf", b"b")]]
+    res = materialise_figures("t", "t", figures, tmp_path)
+    kinds = [r[0].kind for r in res]
+    assert kinds == ["converted", "placeholder"]
+    assert (tmp_path / "t-fig-1.png").exists()
+    assert not (tmp_path / "t-fig-2.png").exists()
+
+
+def test_chunk_oserror_finalises_partial_success(tmp_path, monkeypatch):
+    # Same shape again via OSError (e.g. soffice crashes/is killed partway
+    # through a batch after writing some output).
+    monkeypatch.setattr("lexau.figures._SOFFICE_CHUNK", 8)
+
+    def fake_run(cmd, *a, **k):
+        outdir = Path(cmd[cmd.index("--outdir") + 1])
+        inputs = cmd[cmd.index("--outdir") + 2:]
+        for s in inputs[:-1]:
+            (outdir / (Path(s).stem + ".png")).write_bytes(_PNG_1x1)
+        raise OSError("soffice crashed")
+
+    monkeypatch.setattr("lexau.figures.shutil.which", lambda _: "/usr/local/bin/soffice")
+    monkeypatch.setattr("lexau.figures.subprocess.run", fake_run)
+    figures = [[(".emf", b"a")], [(".emf", b"b")]]
+    res = materialise_figures("o", "o", figures, tmp_path)
+    kinds = [r[0].kind for r in res]
+    assert kinds == ["converted", "placeholder"]
+    assert (tmp_path / "o-fig-1.png").exists()
+    assert not (tmp_path / "o-fig-2.png").exists()
+
 
 def test_two_images_one_paragraph(tmp_path):
     res = materialise_figures("y", "y", [[(".png", _PNG_1x1), (".png", _PNG_1x1)]], tmp_path)

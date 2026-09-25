@@ -107,9 +107,15 @@ class _Pending:
 def _convert_chunk(
     soffice_bin: str, tmp_dir: Path, chunk: list[_Pending], out_dir: Path
 ) -> None:
-    """Run one batched soffice conversion. On success finalise each file whose
-    PNG landed; on non-zero exit / timeout / missing output leave the chunk's
-    FigureResults as placeholders."""
+    """Run one batched soffice conversion. A batch's returncode/timeout
+    status describes the WHOLE invocation, not each individual file -- one
+    slow/pathological blob can make soffice exit non-zero, hang past
+    ``_SOFFICE_TIMEOUT_S``, or (rarely) raise ``OSError`` even after several
+    of the chunk's other files converted cleanly and are already sitting in
+    ``tmp_dir``. So regardless of how the subprocess call ends (clean exit,
+    non-zero exit, timeout, or OSError), finalise every ``tmp_dir/<stem>.png``
+    that actually exists on disk; only files that never got produced are left
+    as placeholders."""
     lo_profile = tmp_dir / "lo"
     cmd = [
         soffice_bin,
@@ -122,16 +128,14 @@ def _convert_chunk(
         *[str(p.in_path) for p in chunk],
     ]
     try:
-        proc = subprocess.run(
+        subprocess.run(
             cmd,
             capture_output=True,
             timeout=_SOFFICE_TIMEOUT_S,
             env={**os.environ, "SAL_USE_VCLPLUGIN": "svp"},
         )
     except (subprocess.TimeoutExpired, OSError):
-        return
-    if getattr(proc, "returncode", 1) != 0:
-        return
+        pass
     out_dir.mkdir(parents=True, exist_ok=True)
     for pending in chunk:
         produced = tmp_dir / (pending.in_path.stem + ".png")
