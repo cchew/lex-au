@@ -2,8 +2,10 @@ Known limitations: schedule rendering and DOCX-to-AKN conversion
 ===============================================================
 
 Companion to docs/known-limitations-empty-body.txt. Each entry is a standing,
-accepted limitation in the v0.9.0 pipeline, not a regression the spot-check or
-fidelity audit should keep re-flagging.
+accepted limitation, not a regression the spot-check or fidelity audit should
+keep re-flagging -- except where an entry itself says "Resolved", which means
+the underlying pipeline defect is fixed and the entry is kept only as a
+historical record.
 
 
 (a) Two Acts retain pre-v0.9.0 XML (stale _resolve_title apostrophe fallback)
@@ -55,18 +57,19 @@ than the v0.9.1 branch table allows. Deferred to a future patch. The 2 Acts
 
 (b) Prose after a schedule <paragraph>/<subparagraph> can attach above it
 -----------------------------------------------------------------------
-`_build_schedule_content` (src/lexau/builder.py) resets the running
+**Resolved in v0.10.0** (SDD plan 2026-09-08-wfw-v0.3.1-phase2-4, Task 2).
+`_build_schedule_content` (src/lexau/builder.py) previously reset the running
 `current_content` pointer to None after a clause boundary, a subclause boundary
-and a TABLE element, so prose that follows those opens a fresh <content> in the
-correct document position. The PARAGRAPH and SUBPARAGRAPH branches do NOT reset
-`current_content`. If a schedule emits a <paragraph> (or <subparagraph>) and is
-then followed by loose BODY prose, that prose is appended to the <content> that
-was open before the <paragraph>, so it renders above the <paragraph> in document
-order instead of after it.
+and a TABLE element, but NOT after the PARAGRAPH or SUBPARAGRAPH branches, so
+loose BODY prose following a schedule <paragraph>/<subparagraph> attached to the
+<content> opened before it instead of a fresh one after it -- rendering above the
+<paragraph> in document order instead of after it.
 
-Pre-existing, low incidence (schedules rarely interleave numbered paragraphs with
-trailing loose prose), and distinct from the TABLE-reset path, which IS fixed.
-Deferred; not addressed in the v0.9.0 fix wave.
+Fixed by resetting `current_content = None` at the end of both branches too,
+matching the existing TABLE-reset pattern. Regression-tested
+(tests/test_builder.py, schedule-content module) and live in the full v0.10.0
+corpus re-convert. Was low-incidence pre-existing behaviour (schedules rarely
+interleave numbered paragraphs with trailing loose prose); no longer occurs.
 
 
 (c) ParseReport.tables_found counts body tables only
@@ -123,18 +126,22 @@ The 1-line guard is committed and regression-tested
 so every future build is correct.
 
 
-(e) DOCX figure extraction: vector backlog, static-site gap, quotedStructure edge
+(e) DOCX figure extraction: static-site gap, quotedStructure edge
 -------------------------------------------------------------------------------
-DOCX `<figure>` images are extracted to `corpus/images/` as of v0.9.1. Of the
-284 `<figure>`-bearing Acts, 225 were re-converted in the v0.9.1 sweep; the
-figure reports for those Acts record 156 raster / 376 soffice-converted / 0
-placeholder images.
+DOCX `<figure>` images are extracted to `corpus/images/` as of v0.9.1.
 
-59 vector-bearing Acts remain on placeholder `<figure>` elements pending a
-follow-up conversion sweep. These include 5 ITAA-scale giants whose source
-DOCX runs 8.8-27.9 MB. Such Acts degrade to a placeholder `<figure>` (the
-computed `corpus/images/<slug>-fig-N.png` src with no file on disk), not to
-broken markup.
+**The vector backlog is resolved as of v0.10.0** (SDD plan
+2026-09-08-wfw-v0.3.1-phase2-4, Task 18B). The 59-Act backlog noted in earlier
+versions of this entry was found to actually be 97 Acts / 1,512 missing images
+at full-corpus scale, caused by a `_convert_chunk` batching defect: a single
+non-zero exit / timeout / OSError discarded the ENTIRE soffice-conversion
+chunk of up to 8 images, even when most of that chunk's images had already
+converted successfully. Fixed: `_convert_chunk` now finalises every image
+that actually landed on disk regardless of how the batch call ended, and all
+97 affected Acts (including 5 ITAA-scale giants whose source DOCX runs
+8.8-27.9 MB) have been re-swept. `corpus/images/` now holds 2,084 files; 0
+Acts have any missing-image placeholder, verified by a direct `<img src>` vs
+on-disk file-existence scan across the full 3,084-Act corpus.
 
 `lexau site`, the static-site generator, does not copy `corpus/images/`, so
 figures are unresolved in static-site output. The lex-au-explorer reader
