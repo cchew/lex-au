@@ -8,19 +8,52 @@ the underlying pipeline defect is fixed and the entry is kept only as a
 historical record.
 
 
-(a) Two Acts retain pre-v0.9.0 XML (stale _resolve_title apostrophe fallback)
----------------------------------------------------------------------------
+(a) Two Acts were stuck on pre-v0.9.0 XML (stale _resolve_title apostrophe fallback)
+--------------------------------------------------------------------------------
+**Resolved in v0.10.0** (SDD plan 2026-09-08-wfw-v0.3.1-phase2-4, Task 20B).
+
 Slugs:
   industrial-relations-court-(judges'-remuneration)-act-1993
   royal-australian-air-force-veterans'-residences-act-1953
 
 The v0.9.0 `--force` re-ingest did not re-convert these two Acts. `_resolve_title`
-has an apostrophe-handling fallback that fails to match the canonical
+had an apostrophe-handling fallback that failed to match the canonical
 legislation.gov.au title for names containing a typographic apostrophe, so the
 fetch step resolved no compilation and the build was skipped. Their committed XML
-is therefore the pre-v0.9.0 output: no schedule tables, older reflinks placement.
-Fixing `_resolve_title` needs its own patch (tracked separately); until then a
-targeted re-convert of these two Acts is blocked.
+was therefore the pre-v0.9.0 output: no schedule tables, older reflinks placement.
+
+`_resolve_title` (src/lexau/crawler.py) already carried a fix for this dated
+2026-09-08 -- the same day this SDD plan started -- but it had never been
+exercised against these 2 specific Acts. Task 20B ran
+`lexau build --acts "Industrial Relations Court (Judges' Remuneration) Act
+1993" --acts "Royal Australian Air Force Veterans' Residences Act 1953"
+--force` and confirmed the fix resolves both end-to-end:
+  - Industrial Relations Court (Judges' Remuneration) Act 1993 -> resolves to
+    compilation C2004A04659 (compilation #0, i.e. the as-made version --
+    confirmed live against api.prod.legislation.gov.au/v1/Versions that this
+    Act has never been compiled beyond as-made, so registerId == titleId and
+    compilationNumber '0' are genuine current API values, not a fallback
+    artifact)
+  - Royal Australian Air Force Veterans' Residences Act 1953 -> resolves to
+    compilation C2014C00545 (compilationNumber null is likewise a genuine
+    API field value for this Act, not a fallback)
+
+Both Acts re-converted onto current-pipeline XML: FRBR Generation date
+2026-09-26 confirms a fresh build; the RAAF Act's schedule now renders 132
+`<td>`/`<th>` table cells (the pre-fix XML had none -- this is v0.9.0's
+headline schedule-table fix now applied); IRC has no schedule content
+(consistent with its size). XSD validation of both files surfaced no
+violation signature outside `docs/xsd-whitelist.json`'s existing coverage
+(Families A/B only). A `--slug`-scoped fidelity audit for each Act found
+drop/spurious paragraph counts of 1, in line with the rest of the corpus.
+Full test suite: 3680 passed, the 2 pre-existing `test_figures.py`
+sandbox-artifact failures unrelated to this fix.
+
+The 2 Acts (0.065% of the corpus) are now on current-pipeline XML like the
+rest of the corpus.
+
+Historical record kept below: the live-probe investigation that established
+what the underlying apostrophe bug actually was, before the 2026-09-08 fix.
 
 Live probe 2026-09-04 (api.prod.legislation.gov.au/v1), and DESCOPED from v0.9.1.
 The v0.9.1 design (unit A1) proposed a glyph-swap `name eq` retry -- replace the
@@ -46,13 +79,13 @@ title uses a typographic apostrophe. The probe disproves that premise:
     but an empty result set: the stored name is straight, so the swapped query
     matches nothing.
 
-So the glyph-swap `eq` retry is inert for these two Acts, and the existing
-`contains()` fallback still fails because every trimmed fragment it builds
-retains the U+0027 and re-triggers the 400. A working fix must neutralise the
-apostrophe inside the `contains()` fragment (or select an apostrophe-free
-distinctive fragment) and confirm with a glyph-insensitive exact match -- larger
-than the v0.9.1 branch table allows. Deferred to a future patch. The 2 Acts
-(0.065% of the corpus) stay on pre-v0.9.0 XML, as disclosed above.
+So the glyph-swap `eq` retry was inert for these two Acts, and the existing
+`contains()` fallback still failed because every trimmed fragment it built
+retained the U+0027 and re-triggered the 400. The working fix (landed
+2026-09-08, exercised against these 2 Acts by Task 20B, see above) neutralises
+the apostrophe inside the `contains()` fragment and confirms with a
+glyph-insensitive exact match, per _resolve_title's own docstring
+(src/lexau/crawler.py).
 
 
 (b) Prose after a schedule <paragraph>/<subparagraph> can attach above it
