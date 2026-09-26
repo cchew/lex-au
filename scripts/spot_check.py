@@ -149,10 +149,9 @@ def main() -> int:
         "--xsd-whitelist", type=Path,
         default=Path("docs/xsd-whitelist.json"),
         help="Strict-with-whitelist XSD gate manifest (see "
-             "scripts/validate_akn_schema.py:gate()). Reported as a "
-             "non-fatal warning only -- does not affect this script's exit "
-             "code until Task 20 flips it to fatal once the re-converted "
-             "corpus is confirmed clean against the manifest.",
+             "scripts/validate_akn_schema.py:gate()). Fatal: a failing gate "
+             "(any XSD signature not covered by the manifest) adds to "
+             "total_failures and causes this script to exit non-zero.",
     )
     args = parser.parse_args()
 
@@ -236,15 +235,16 @@ def main() -> int:
         xsd_path = _COBALT_XSD / "akomantoso30.xsd"
         gate_passed, gate_failing = gate(xml_dir, xsd_path, args.xsd_whitelist)
         if gate_passed:
-            print("XSD strict-with-whitelist gate: PASS (warning-only, non-fatal)")
+            print("XSD strict-with-whitelist gate: PASS (fatal)")
         else:
             print(
-                f"XSD strict-with-whitelist gate: WARN (non-fatal) -- "
+                f"XSD strict-with-whitelist gate: FAIL (fatal) -- "
                 f"{len(gate_failing)} signature(s) not covered by "
                 f"{args.xsd_whitelist}:"
             )
             for sig in gate_failing:
                 print(f"        {sig}")
+            total_failures += len(gate_failing)
     else:
         print(f"XSD strict-with-whitelist gate: SKIPPED -- {args.xsd_whitelist} not found")
 

@@ -92,7 +92,14 @@ def test_report_conditional_checks_skip_when_content_absent_by_design(tmp_path: 
     )
 
     result = subprocess.run(
-        [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir)],
+        [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir),
+         # This test's synthetic Act XML is a minimal fixture, not a full
+         # valid AKN document, so it isn't meant to pass the real
+         # strict-with-whitelist XSD gate (now fatal). Point at a
+         # nonexistent manifest so the gate is SKIPPED and this test stays
+         # focused on report-conditional-check behaviour, which is what it
+         # actually exercises.
+         "--xsd-whitelist", str(tmp_path / "no-such-whitelist.json")],
         capture_output=True, text=True,
     )
 
