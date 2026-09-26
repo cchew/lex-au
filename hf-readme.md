@@ -23,7 +23,11 @@ configs:
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads. This dataset provides structured XML, section-level addressing and AKN for Commonwealth Acts in force.
 
-**Version: v0.8.2** - 3,076 Acts + 2 Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+**Version: v0.10.0** - 3,084 Acts + 2 Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+
+lex-au-explorer renders this corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see [known limitations](https://github.com/cchew/lex-au/blob/main/docs/known-limitations-schedule-and-conversion.txt), entry (f)).
+
+**v0.10.0**: schedule clause eIds renumbered (fixed a `_CLAUSE_RE` false-positive fabrication mechanism that flattened ~98.7% of schedule eId collisions into a shared namespace; see [FUTURE.md](https://github.com/cchew/lex-au/blob/main/FUTURE.md) "Schedule clause eIds collide"). Full corpus re-converted; figure extraction gap closed (0 Acts now missing any embedded image, was 97 Acts / 1,512 placeholders).
 
 See [github.com/cchew/lex-au](https://github.com/cchew/lex-au) for source code and CLI (if you want to change the AKN mapping), version history and known limits.
 
@@ -66,7 +70,7 @@ Each Act is a single AKN 3.0 XML file with:
 - `<blockList>`/`<item>` for unnumbered list structures
 - `<lifecycle>`, `<temporalData>`, `<passiveModifications>` populated from Endnote 3-4 amendment history
 - `<quotedStructure>` for single-provision amendment inserts; `<figure>`/`<img>` for embedded images; `<rref>` for section range references
-- Embedded figures extracted to `images/` (PNG, plus JPEG where the source blob was JPEG; EMF/WMF vector art rasterised to PNG via LibreOffice), referenced from `<figure>`/`<img>` with pixel dimensions. The `src` attribute carries a `corpus/` prefix from the source-repo layout, so resolve figures by basename against `images/`. Some vector-bearing Acts still carry placeholder `<figure>` elements pending a follow-up conversion sweep
+- Embedded figures extracted to `images/` (PNG, plus JPEG where the source blob was JPEG; EMF/WMF vector art rasterised to PNG via LibreOffice), referenced from `<figure>`/`<img>` with pixel dimensions. The `src` attribute carries a `corpus/` prefix from the source-repo layout, so resolve figures by basename against `images/`. 0 Acts have any missing-image placeholder as of v0.10.0
 - Corpus index at `index.json` (also mirrored as `title_id`/`comp_id`/`aliases` columns in `data/train.jsonl`) — combine `title_id` with `https://www.legislation.gov.au/{title_id}/latest/text` for a working link back to the Act's real page on legislation.gov.au (Act-level only; the site has no stable per-section anchor scheme). `aliases` lists any superseded name(s) legislation.gov.au previously served the same Act under (empty for most Acts). Parse report per Act in `reports/`.
 
 Full element-by-element conformance detail, organised by AKN 3.0 spec chapter: [`docs/akn-conformance.md`](https://github.com/cchew/lex-au/blob/main/docs/akn-conformance.md) in the source repo.
