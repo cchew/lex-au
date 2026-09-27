@@ -39,6 +39,21 @@ def small_corpus(tmp_path, privacy_meta):
     return tmp_path / "corpus"
 
 
+def test_installed_huggingface_hub_supports_upload_large_folder():
+    """export_hf() calls api.upload_large_folder against a *mocked* HfApi in
+    every other test here, so those tests can't detect the installed
+    huggingface_hub version actually dropping the method (it was removed
+    outright in 2.0.0, breaking growth-check 2026-09-27 -- CI's unpinned
+    install picked up 2.0.0 the day it released). Exercise the real class."""
+    from huggingface_hub import HfApi
+
+    assert hasattr(HfApi(), "upload_large_folder"), (
+        "HfApi.upload_large_folder is gone from the installed huggingface_hub "
+        "-- pyproject.toml's huggingface-hub ceiling needs revisiting (and "
+        "lexau.cli.export_hf needs a different upload path)."
+    )
+
+
 def test_export_hf_calls_upload_large_folder(small_corpus):
     runner = CliRunner()
     with patch("lexau.cli.HfApi") as mock_api_cls:
