@@ -123,3 +123,18 @@ def test_gate_fails_when_whitelisted_signature_exceeds_ceiling(tmp_path):
     ok, failing = gate(xml_dir, _XSD, whitelist)
     assert ok is False
     assert failing == [_SIG_ACT_NAME]
+
+
+def test_gate_ignores_ceiling_when_entry_marked_non_fatal(tmp_path):
+    """fatal: false entries are recognised (not "absent") but never fail the
+    gate on ceiling overrun -- for deferred defect classes that scale with
+    corpus size and aren't being actively driven down."""
+    xml_dir = tmp_path / "xml"; xml_dir.mkdir()
+    (xml_dir / "bad.xml").write_text(_INVALID)
+    whitelist = _write_whitelist(tmp_path / "whitelist.json", {
+        _SIG_ACT_NAME: {"family": "X", "max_entries": 0, "fatal": False, "reason": "test"},
+        _SIG_BOGUS: {"family": "X", "max_entries": 1, "reason": "test"},
+    })
+    ok, failing = gate(xml_dir, _XSD, whitelist)
+    assert ok is True
+    assert failing == []

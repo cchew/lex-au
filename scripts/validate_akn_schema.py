@@ -106,12 +106,18 @@ def gate(corpus_xml_dir: Path, xsd_path: Path, whitelist_path: Path) -> tuple[bo
     """Strict-with-whitelist gate.
 
     Passes iff every violation signature found by validate_corpus() is a key
-    in the whitelist manifest AND its observed count does not exceed that
-    entry's ``max_entries`` ceiling. Returns (passed, failing_signatures) --
-    failing_signatures lists, in validate_corpus's by-count-descending order,
-    every signature that is either absent from the manifest (a regression or
-    a new defect class) or present but over its ceiling (a regression within
-    a known-partial signature).
+    in the whitelist manifest AND (its observed count does not exceed that
+    entry's ``max_entries`` ceiling, OR the entry is marked ``fatal: false``).
+    Returns (passed, failing_signatures) -- failing_signatures lists, in
+    validate_corpus's by-count-descending order, every signature that is
+    either absent from the manifest (a regression or a new defect class) or
+    present, ceiling-enforced, and over its ceiling (a regression within a
+    known-partial signature).
+
+    ``fatal: false`` is for signatures whose defect class is deferred
+    out-of-scope and scales with corpus size (e.g. Family A) -- listing them
+    documents the known count without re-blocking growth on every corpus
+    increment. Ceiling enforcement is the default (``fatal`` absent or true).
     """
     whitelist = load_whitelist(whitelist_path)
     result = validate_corpus(Path(corpus_xml_dir), Path(xsd_path))
@@ -120,6 +126,8 @@ def gate(corpus_xml_dir: Path, xsd_path: Path, whitelist_path: Path) -> tuple[bo
         entry = whitelist.get(sig)
         if entry is None:
             failing.append(sig)
+            continue
+        if entry.get("fatal", True) is False:
             continue
         ceiling = entry.get("max_entries")
         if ceiling is not None and info["count"] > ceiling:
