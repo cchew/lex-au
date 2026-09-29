@@ -27,6 +27,9 @@ inputs:
       just because there's nothing to publish. Only the actual publish
       steps (HF export, Netlify deploy) are skipped when this is "false".
     required: true
+  lex-au-graph-dispatch-token:
+    description: "Token with dispatch rights on cchew/lex-au-graph, used to notify it of a corpus publish"
+    required: true
 
 runs:
   using: "composite"
@@ -103,3 +106,12 @@ runs:
         NETLIFY_AUTH_TOKEN: ${{ inputs.netlify-auth-token }}
         NETLIFY_SITE_ID: ${{ inputs.netlify-site-id }}
       run: npx --yes netlify-cli deploy --prod --dir=site
+
+    - name: Notify lex-au-graph of corpus update
+      if: inputs.has-changes == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.lex-au-graph-dispatch-token }}
+      run: |
+        echo '{"event_type":"corpus-published","client_payload":{"triggered_by":"'"${{ github.run_id }}"'"}}' \
+          | gh api repos/cchew/lex-au-graph/dispatches --input -
