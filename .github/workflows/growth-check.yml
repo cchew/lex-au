@@ -92,6 +92,7 @@ jobs:
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           gh-token: ${{ github.token }}
           has-changes: ${{ steps.diff.outputs.found }}
+          lex-au-graph-dispatch-token: ${{ secrets.LEX_AU_GRAPH_DISPATCH_TOKEN }}
 
       - name: Regenerate and commit acts.txt
         if: steps.diff.outputs.found == 'true'
