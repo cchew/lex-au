@@ -110,6 +110,7 @@ runs:
     - name: Notify lex-au-graph of corpus update
       if: inputs.has-changes == 'true'
       shell: bash
+      continue-on-error: true
       env:
         GH_TOKEN: ${{ inputs.lex-au-graph-dispatch-token }}
       run: |
