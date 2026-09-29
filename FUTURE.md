@@ -49,6 +49,32 @@ Confirmed example (kept from the original write-up; it is genuine but small): `a
 
 **Fixed (B4, commits `b88624a..c71da41`, folded into the full corpus re-convert at `78ea173`):** `_build_schedule_content` now runs quoted-structure preprocessing over schedule groups, wraps amendment-instruction items as their own container instead of the literal instruction number, and skips schedule-TOC-styled paragraphs — collapsing the ~98.7% false-positive share. This is already live in every file under `corpus/xml/` on `main` (`78ea173` is an ancestor of `434a672`, verified via `git merge-base --is-ancestor`). Only the package version string (`pyproject.toml`, still `0.9.3`) and the `v0.10.0` git tag/release remain pending — that's Task 20, a human-gated version-numbering formality, not a code/data gap. lex-au-explorer's `build/bundle.py` `_schedule_units`/`build_toc` still need updating to walk the new nesting this fix produces — that work (Task 22) is unblocked and can start against the current corpus today; its `~N` eId-disambiguation workaround is now largely redundant (harmless to leave in place until Task 22 lands). See the P1 note's "Fix-set recommendation" (B4) for the full mechanism table; the dataset CHANGELOG note ("schedule clause eIds renumbered in v0.10.0; see B4") is applied to the published Hugging Face dataset card whenever `export-hf` next runs.
 
+## `termlinks.py` / `inject_terms` / `inject_list_defs` miss bold/italic-formatted definienda
+
+Raised 2026-09-08 from lex-au-graph's defined-term-highlighting Task 0 spike
+(`../lex-au-graph/docs/superpowers/notes/2026-09-08-termhighlight-spike.md` in the EA
+project wrapper) and 2026-09-08's `<term>`-tail fix (lex-au-graph `v0.12.2`); moved here
+2026-09-29 since the fix belongs in this repo's extraction pipeline, not the graph loader.
+
+lex-au-graph's cross-reference graph covers only ~29% of Acts (894 / 3,076) because it
+inherits this repo's `<term>`/`<def>` markup wholesale. The Task 0 spike confirmed the gap
+is not Acts with zero defined terms (those are mostly disguised amendment Acts with no own
+definitions) — it's extraction quality *inside* the 894 covered Acts: definienda formatted
+as `<b><i>…</i></b>` inline rather than tagged `<term>`, `<ref>`-bearing pointer
+definitions, and "in relation to"-qualified definiens that `inject_terms`/`inject_list_defs`
+currently skip. lex-au-graph's own downstream memory estimates ~46% of dictionary-style
+definitions corpus-wide use bold/italic (not `<term>`) formatting and are silently missed.
+
+One confirmed instance: `corporations-act-2001.xml`'s `<def>` for "borrow" is drawn too
+wide in the source AKN and swallows the definitions of "borrower", "borrowed", and
+"business affairs" (each marked `<b><i>…</i></b>` inline, not `<term>`) — a `<def>`-scoping
+bug in this repo's converter, not fixable from lex-au-graph's loader since
+`def_el.itertext()` is already correctly bounded to the `<def>` subtree it's given.
+
+lex-au-graph assessed a non-LLM graph-side enrichment (spike 0a) and rejected it: it flips
+only ~5 of 81 real gap Acts for ~9 new nodes — the lever is a pattern rewrite in this
+repo's `termlinks.py`, not a downstream graph-build step. Not started.
+
 ## Fidelity audit can't distinguish genuine content loss from table-segmentation noise
 
 `scripts/audit_conversion_fidelity.py` / `src/lexau/fidelity.py`'s `drop_text`, `drop_para` and `spurious_para` metrics (98,073 / 12,942 / 58,467 paragraphs respectively as of the v0.10.0 corpus, across 2,791 of 3,084 Acts with at least one non-minor divergence) are explicitly documented in the audit's own `SUMMARY.md` caveat as unreliable as a loss count — they blend genuine content loss with (1) DOCX-paragraph-vs-AKN-`<td>`/`<th>`-cell segmentation mismatches for table content, and (2) AKN front-matter/per-volume text repeated as spurious paragraphs, "in unknown proportion."
