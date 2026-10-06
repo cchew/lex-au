@@ -88,5 +88,5 @@ CC BY 4.0. Source legislation is Crown copyright - Commonwealth of Australia; re
 ## Related
 
 - [github.com/cchew/lex-au](https://github.com/cchew/lex-au) - source code and CLI
-- [lex-au.netlify.app](https://lex-au.netlify.app) - browsable preview of the corpus, rendered from this XML
+- [lex-au-explorer.netlify.app](https://lex-au-explorer.netlify.app) - browsable reader for the corpus, rendered from this XML
 - [Open Australian Legal Corpus](https://huggingface.co/datasets/umarbutler/open-australian-legal-corpus) - complementary plain-text corpus

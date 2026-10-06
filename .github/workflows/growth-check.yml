@@ -88,8 +88,6 @@ jobs:
         with:
           run-label: growth-check
           hf-token: ${{ secrets.HF_TOKEN }}
-          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
           gh-token: ${{ github.token }}
           has-changes: ${{ steps.diff.outputs.found }}
           lex-au-graph-dispatch-token: ${{ secrets.LEX_AU_GRAPH_DISPATCH_TOKEN }}
