@@ -32,6 +32,15 @@ def orphan_asset_globs(key: str) -> tuple[str, list[str]]:
     return report_glob, docx_globs
 
 
+class NameCollisionError(ValueError):
+    """Two instruments in different jurisdictions share a name.
+
+    Downstream consumers (lex-au-graph's title index, lex-au-search's Act records) key on the
+    display name, so they would silently merge or mis-resolve the pair. Fail at build time
+    until those consumers are locality-aware; pass allow_name_collision=True to override.
+    """
+
+
 class Corpus:
     def __init__(self, root: Path) -> None:
         self.root = root
@@ -47,8 +56,26 @@ class Corpus:
     def _write_index(self, data: dict) -> None:
         self._index_path.write_text(json.dumps(data, indent=2, default=str))
 
-    def save(self, meta: ActMetadata, xml: etree._Element, source_format: str | None = None) -> Path:
+    def save(
+        self,
+        meta: ActMetadata,
+        xml: etree._Element,
+        source_format: str | None = None,
+        allow_name_collision: bool = False,
+    ) -> Path:
         index = self._read_index()
+
+        if not allow_name_collision:
+            for key, existing in index["acts"].items():
+                if (
+                    key != meta.safe_name
+                    and existing.get("name") == meta.name
+                    and existing.get("locality") != meta.locality
+                ):
+                    raise NameCollisionError(
+                        f"{meta.name!r} already exists in the corpus under {key!r} "
+                        f"(locality {existing.get('locality')!r}); refusing to add locality {meta.locality!r}"
+                    )
 
         # Trusts meta.name as canonical without re-verifying against the API --
         # safe because fetch_metadata() (crawler.py) always resolves the
@@ -88,6 +115,8 @@ class Corpus:
             "xml_path": str(xml_path.relative_to(self.root)),
             "aliases": sorted(aliases),
         }
+        if meta.locality:
+            entry["locality"] = meta.locality
         if source_format is not None:
             entry["source_format"] = source_format
         index["acts"][meta.safe_name] = entry
@@ -116,6 +145,7 @@ class Corpus:
                     number=entry["number"],
                     effective_date=date.fromisoformat(entry["effective_date"]),
                     aliases=entry.get("aliases", []),
+                    locality=entry.get("locality"),
                 )
             )
         return result

@@ -169,9 +169,10 @@ def _term_eid(show_as: str) -> str:
     return f"term-{slug}"
 
 
-def _is_definition_section(section_el: etree._Element) -> bool:
+def _is_definition_section(section_el: etree._Element, def_heading_re: re.Pattern[str] | None = None) -> bool:
+    pattern = def_heading_re or _DEF_HEADING_RE
     for heading in section_el.findall(f"{AKN_TAG}heading"):
-        if _DEF_HEADING_RE.search("".join(heading.itertext())):
+        if pattern.search("".join(heading.itertext())):
             return True
     return False
 
@@ -327,7 +328,18 @@ def _process_p(
     return 0
 
 
-def inject_terms(root: etree._Element) -> tuple[dict[str, str], int]:
+def _definition_containers(root: etree._Element, include_schedules: bool) -> list[etree._Element]:
+    containers = list(root.iter(_SECTION_TAG))
+    if include_schedules:
+        containers += [h for h in root.iter(f"{AKN_TAG}hcontainer") if h.get("name") == "schedule"]
+    return containers
+
+
+def inject_terms(
+    root: etree._Element,
+    def_heading_re: re.Pattern[str] | None = None,
+    include_schedules: bool = False,
+) -> tuple[dict[str, str], int]:
     """Walk definition sections; inject <term>/<def>; return (registry, count).
 
     Must be called BEFORE inject_refs so p_el.text is still a raw string.
@@ -335,8 +347,8 @@ def inject_terms(root: etree._Element) -> tuple[dict[str, str], int]:
     registry: dict[str, str] = {}
     count = 0
 
-    for section_el in root.iter(_SECTION_TAG):
-        if not _is_definition_section(section_el):
+    for section_el in _definition_containers(root, include_schedules):
+        if not _is_definition_section(section_el, def_heading_re):
             continue
         for p_el in section_el.iter(_P_TAG):
             parent = p_el.getparent()
@@ -350,6 +362,8 @@ def inject_terms(root: etree._Element) -> tuple[dict[str, str], int]:
 def inject_list_defs(
     root: etree._Element,
     registry: dict[str, str],
+    def_heading_re: re.Pattern[str] | None = None,
+    include_schedules: bool = False,
 ) -> int:
     """Detect 'X means:' list-form definitions and inject <term> + convert <content> to <intro>.
 
@@ -358,8 +372,8 @@ def inject_list_defs(
     """
     count = 0
 
-    for section_el in root.iter(_SECTION_TAG):
-        if not _is_definition_section(section_el):
+    for section_el in _definition_containers(root, include_schedules):
+        if not _is_definition_section(section_el, def_heading_re):
             continue
 
         # Walk all <content> elements inside this section

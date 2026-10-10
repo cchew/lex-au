@@ -4,6 +4,10 @@ import re
 from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from lexau.profiles import ParserProfile
 
 
 class ElementType(Enum):
@@ -720,22 +724,26 @@ def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:
     return None
 
 
-def parse_paragraph(style: str, text: str) -> ParsedParagraph:
+def parse_paragraph(style: str, text: str, profile: "ParserProfile | None" = None) -> ParsedParagraph:
     stripped = text.strip()
+    heading_re = (profile.heading_re if profile and profile.heading_re else _HEADING_RE)
+    section_re = (profile.section_re if profile and profile.section_re else _SECTION_RE)
 
     if not stripped:
         return ParsedParagraph(ElementType.SKIP, raw_style=style)
 
     if style.startswith("ActHead"):
+        if profile and profile.schedule_heading_re and profile.schedule_heading_re.match(stripped):
+            return ParsedParagraph(ElementType.BODY, text=stripped, raw_style=style)
         # Try prefix-based heading match first (determines element type from text)
-        m = _HEADING_RE.match(stripped)
+        m = heading_re.match(stripped)
         if m:
             prefix, number, heading = m.group(1), m.group(2).strip(), (m.group(3) or "").strip()
             etype = _PREFIX_TO_ELEMENT[prefix]
             return ParsedParagraph(etype, number=number, heading=heading, raw_style=style)
 
         # ActHead 5 (sections): "4  Short title"
-        m = _SECTION_RE.match(stripped)
+        m = section_re.match(stripped)
         if m:
             return ParsedParagraph(
                 ElementType.SECTION,

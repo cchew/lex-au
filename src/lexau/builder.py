@@ -13,7 +13,12 @@ from lexau.parser import ParsedParagraph, ElementType, InlineSpan
 from lexau.frbr import make_eid
 from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
+from typing import TYPE_CHECKING
+
 from lexau.termlinks import inject_terms, inject_list_defs, complete_list_definitions
+
+if TYPE_CHECKING:
+    from lexau.profiles import ParserProfile
 from lexau.quantlinks import inject_quantities, inject_roles, inject_asterisk_refs
 from lexau.datelinks import inject_dates
 from lexau.figures import materialise_figures
@@ -1538,9 +1543,11 @@ def inject_passive_mods(
 
 class AknBuilder:
     def __init__(
-        self, meta: ActMetadata, images_out: Path = Path("corpus/images")
+        self, meta: ActMetadata, images_out: Path = Path("corpus/images"),
+        profile: "ParserProfile | None" = None,
     ) -> None:
         self._meta = meta
+        self._profile = profile
         self._images_out = Path(images_out)
         self._paragraphs: list[ParsedParagraph] = []
         self._quoted_structures_found: int = 0
@@ -1920,14 +1927,14 @@ class AknBuilder:
         )
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
-        term_registry, terms_found = inject_terms(root)
+        term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules))
         report.terms_found = terms_found
         # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
         # Surface via ParseReport for corpus validation.
         report.duplicate_terms = terms_found - len(term_registry)
 
         # 1b. Inject list-form definitions (X means: + block list)
-        list_defs_count = inject_list_defs(root, term_registry)
+        list_defs_count = inject_list_defs(root, term_registry, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules))
         report.list_defs_found = list_defs_count
 
         # 1c. Inject <ref> links for asterisk-prefixed term usages (OPC DD 1.6).

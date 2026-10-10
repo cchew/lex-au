@@ -5,6 +5,7 @@ import re
 from collections.abc import Iterator
 from dataclasses import replace
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from docx import Document
 from docx.oxml.ns import qn
@@ -328,7 +329,18 @@ def _all_bold(spans: list[InlineSpan]) -> bool:
     return bool(non_ws) and all(s.bold for s in non_ws)
 
 
-def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
+if TYPE_CHECKING:
+    from lexau.profiles import ParserProfile
+
+
+def _is_char_def(run: Run, profile: "ParserProfile | None") -> bool:
+    """True when the run carries a profile-declared defined-term character style."""
+    if profile is None or not profile.char_def_styles:
+        return False
+    return run.style is not None and run.style.name in profile.char_def_styles
+
+
+def iter_paragraphs(doc: Document, profile: "ParserProfile | None" = None) -> Iterator[ParsedParagraph]:
     """Yield ParsedParagraph for each Paragraph and Table in document order.
 
     Uses doc.iter_inner_content() (python-docx 1.2.0) to preserve document order.
@@ -387,6 +399,15 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
         b for b in blocks if isinstance(b, Paragraph) and not _figure_only(b)
     ]
     styles = [b.style.name if b.style else "Default" for b in para_blocks]
+    if profile is not None and profile.style_map:
+        styles = [profile.map_style(s) for s in styles]
+    if profile is not None and profile.schedule_heading_re is not None:
+        styles = [
+            "ActHead 1"
+            if not s.lower().startswith("toc") and profile.schedule_heading_re.match(b.text.strip())
+            else s
+            for s, b in zip(styles, para_blocks)
+        ]
     legacy = is_legacy_document(styles)
 
     para_spans: list[list[InlineSpan]] = []
@@ -395,8 +416,8 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
         spans = [
             InlineSpan(
                 text=run.text,
-                bold=bool(run.bold),
-                italic=bool(run.italic),
+                bold=bool(run.bold) or _is_char_def(run, profile),
+                italic=bool(run.italic) or _is_char_def(run, profile),
                 superscript=bool(run.font.superscript),
                 subscript=bool(run.font.subscript),
             )
@@ -437,7 +458,7 @@ def iter_paragraphs(doc: Document) -> Iterator[ParsedParagraph]:
             if legacy:
                 parsed_list = legacy_results[para_pos]
             else:
-                parsed_list = [parse_paragraph(style, full_text)]
+                parsed_list = [parse_paragraph(style, full_text, profile)]
 
             for parsed in parsed_list:
                 if level is not None and parsed.element_type == ElementType.BODY:

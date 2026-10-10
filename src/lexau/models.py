@@ -17,11 +17,12 @@ class ActMetadata:
     subject_keywords: list[str] = field(default_factory=list)
     aliases: list[str] = field(default_factory=list)
     doc_type: str = "act"   # "act" | "regulation" | "instrument"
+    locality: str | None = None  # sub-national jurisdiction code, e.g. "vic" -> /akn/au-vic/...
 
     @property
     def _cobalt_uri(self) -> CobaltFrbrUri:
         return CobaltFrbrUri(
-            "au", None, self.doc_type, None, None,
+            "au", self.locality, self.doc_type, None, None,
             str(self.year), str(self.number),
             language="eng",
             expression_date=f"@{self.effective_date.isoformat()}",
@@ -37,7 +38,9 @@ class ActMetadata:
 
     @property
     def safe_name(self) -> str:
-        return self.name.lower().replace(" ", "-").replace("/", "-")
+        base = self.name.lower().replace(" ", "-").replace("/", "-")
+        # Namespaced by locality so same-named instruments in different jurisdictions cannot collide.
+        return f"{self.locality}-{base}" if self.locality else base
 
 
 @dataclass
