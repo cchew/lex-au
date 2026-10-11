@@ -333,6 +333,20 @@ if TYPE_CHECKING:
     from lexau.profiles import ParserProfile
 
 
+def _schedule_clause(text: str, style: str, profile: "ParserProfile | None") -> "ParsedParagraph | None":
+    """A SECTION-type clause for schedule text matching one of the profile's clause patterns."""
+    if profile is None or not profile.schedule_clause_res or style.startswith("ActHead"):
+        return None
+    stripped = text.strip()
+    for pattern in profile.schedule_clause_res:
+        m = pattern.match(stripped)
+        if m:
+            return ParsedParagraph(
+                ElementType.SECTION, number=m.group("number").strip(), heading=m.group("heading").strip(), raw_style=style
+            )
+    return None
+
+
 def _is_char_def(run: Run, profile: "ParserProfile | None") -> bool:
     """True when the run carries a profile-declared defined-term character style."""
     if profile is None or not profile.char_def_styles:
@@ -439,6 +453,7 @@ def iter_paragraphs(doc: Document, profile: "ParserProfile | None" = None) -> It
         legacy_results = None
 
     para_pos = 0
+    in_schedule = False
     for block in blocks:
         if isinstance(block, Paragraph):
             if _figure_only(block):
@@ -455,8 +470,15 @@ def iter_paragraphs(doc: Document, profile: "ParserProfile | None" = None) -> It
             spans = para_spans[para_pos]
             level = _list_level(block)
 
+            if profile is not None and profile.schedule_heading_re is not None and style == "ActHead 1" \
+                    and profile.schedule_heading_re.match(full_text.strip()):
+                in_schedule = True
+            clause = _schedule_clause(full_text, style, profile) if in_schedule else None
+
             if legacy:
                 parsed_list = legacy_results[para_pos]
+            elif clause is not None:
+                parsed_list = [clause]
             else:
                 parsed_list = [parse_paragraph(style, full_text, profile)]
 

@@ -26,6 +26,10 @@ class ParserProfile:
     schedule_heading_re: re.Pattern[str] | None = None
     # Also treat a schedule whose heading matches (e.g. Qld 'Schedule 5 Dictionary') as a definitions section.
     definitions_in_schedules: bool = False
+    # Inside a schedule, paragraphs matching one of these become clause headings or dotted
+    # subclauses whatever their source style (principles are numbered "1.", "1.1" or "IPP 1" in
+    # "Normal"-style text). Each pattern needs named groups `number` and `heading`.
+    schedule_clause_res: tuple[re.Pattern[str], ...] = ()
     # Extended definition grammar: qualifiers ("X, for Part 6A, ..."), "has the meaning given in",
     # signposts ("X see section N", "X, for Part 6A\u2014see section N") and lead-ins that end in a
     # dash as well as a colon. Off by default so Commonwealth output is unchanged.
