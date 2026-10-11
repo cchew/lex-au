@@ -30,6 +30,11 @@ class ParserProfile:
     # subclauses whatever their source style (principles are numbered "1.", "1.1" or "IPP 1" in
     # "Normal"-style text). Each pattern needs named groups `number` and `heading`.
     schedule_clause_res: tuple[re.Pattern[str], ...] = ()
+    # Headings that open an unnumbered schedule-like container (ACT "Dictionary"). The paragraph
+    # becomes a schedule heading; everything after it, up to the next schedule heading, belongs to it.
+    unnumbered_schedule_re: re.Pattern[str] | None = None
+    # Paragraph styles dropped entirely (non-operative back matter such as amendment-history endnotes).
+    skip_styles: frozenset[str] = frozenset()
     # Tag "In this Act, X means ..." (and "For this Act, ...") wherever it appears, not only in
     # definitions-headed sections. Act-wide scope only. Off by default; the Commonwealth corpus
     # stays off until a precision review passes.

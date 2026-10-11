@@ -723,6 +723,8 @@ def _is_schedule_heading(p: ParsedParagraph) -> bool:
     Act, TG(MD)R 2002, and Corporations Act: genuine schedule headings are always styled
     "ActHead N"; false-positive body prose is styled "subsection", "Definition", etc.
     """
+    if p.schedule_heading and p.element_type == ElementType.BODY:
+        return True
     return (
         p.element_type == ElementType.BODY
         and p.raw_style.startswith("ActHead")

@@ -711,6 +711,9 @@ class ParsedParagraph:
     # image, in document order. Empty for every other element type and for a
     # FIGURE whose blips have no resolvable embed relationship.
     image_blobs: list[tuple[str, bytes]] = field(default_factory=list)
+    # True for an unnumbered schedule-like heading ("Dictionary") that a ParserProfile has
+    # declared a schedule heading; builder._is_schedule_heading then accepts it without a "Schedule N" label.
+    schedule_heading: bool = False
 
 
 def _classify_annotation(style: str, stripped: str) -> ParsedParagraph | None:

@@ -415,6 +415,13 @@ def iter_paragraphs(doc: Document, profile: "ParserProfile | None" = None) -> It
     styles = [b.style.name if b.style else "Default" for b in para_blocks]
     if profile is not None and profile.style_map:
         styles = [profile.map_style(s) for s in styles]
+    if profile is not None and profile.unnumbered_schedule_re is not None:
+        styles = [
+            "ActHead 1"
+            if not s.lower().startswith("toc") and profile.unnumbered_schedule_re.match(b.text.strip())
+            else s
+            for s, b in zip(styles, para_blocks)
+        ]
     if profile is not None and profile.schedule_heading_re is not None:
         styles = [
             "ActHead 1"
@@ -475,14 +482,25 @@ def iter_paragraphs(doc: Document, profile: "ParserProfile | None" = None) -> It
                 in_schedule = True
             clause = _schedule_clause(full_text, style, profile) if in_schedule else None
 
+            unnumbered = bool(
+                profile is not None and profile.unnumbered_schedule_re is not None and style == "ActHead 1"
+                and profile.unnumbered_schedule_re.match(full_text.strip())
+            )
+            if unnumbered:
+                in_schedule = True
+
             if legacy:
                 parsed_list = legacy_results[para_pos]
+            elif profile is not None and style in profile.skip_styles:
+                parsed_list = [ParsedParagraph(ElementType.SKIP, raw_style=style)]
             elif clause is not None:
                 parsed_list = [clause]
             else:
                 parsed_list = [parse_paragraph(style, full_text, profile)]
 
             for parsed in parsed_list:
+                if unnumbered and parsed.element_type == ElementType.BODY:
+                    parsed = replace(parsed, schedule_heading=True)
                 if level is not None and parsed.element_type == ElementType.BODY:
                     parsed = replace(parsed, element_type=ElementType.LIST_ITEM, number=str(level), spans=spans)
                 else:
