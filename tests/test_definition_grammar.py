@@ -126,3 +126,15 @@ def test_bare_lead_in_inside_list_item_is_not_a_definition() -> None:
     _run(root)
     assert _terms(root) == ["health information"]
     assert "personal information about:" in "".join(root.xpath("//a:def", namespaces=A)[0].itertext())
+
+
+def test_sentences_and_cross_references_are_not_definitions() -> None:
+    root = _doc(
+        "<content><p>For subsection (1)—the services must be for the contracting agency.</p>"
+        "<p>otherwise—see section 4(4).</p>"
+        "<p>A TPP code may do 1 or more of the following:</p></content>"
+        "<paragraph><num>(a)</num><content><p>impose requirements;</p></content></paragraph>"
+    )
+    _run(root)
+    assert "A TPP code may do" not in " ".join(_terms(root))
+    assert "For subsection (1)" not in _terms(root)

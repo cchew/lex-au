@@ -200,10 +200,13 @@ _EXT_BARE_LEAD_IN_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 _PROSE_OPENER_RE = re.compile(
-    r"^(in\s+this|for\s+this|for\s+the|the\s+following|subject\s+to|despite|if|where|a\s+person|an\s+entity|"
-    r"nothing|this|these|that|to|note|example|however|unless|until|when|while)\b",
+    r"^(in\s+this|for\s+(?:this|the|a|an|each|any|subsection|section|paragraph|part|division|schedule)|the\s+following|"
+    r"subject\s+to|despite|if|where|a\s+person|an\s+entity|nothing|this|these|that|to|note|example|however|"
+    r"unless|until|when|while)\b",
     re.IGNORECASE,
 )
+# A definiendum is a noun phrase; a finite verb means the candidate is a sentence ("a TPP code may do ...").
+_SENTENCE_VERB_RE = re.compile(r"\b(may|must|shall|will|is|are|does|do|can|cannot)\b", re.IGNORECASE)
 _LEAD_IN_MARKS = ":\u2014\u2013"
 
 
@@ -301,10 +304,21 @@ def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, 
         term = pm.group("term").strip()
         return term, stripped[pm.end("term"): pm.start("rest")], pm.group("rest").strip()
     sm = _EXT_PLAIN_SEE_RE.match(stripped)
-    if sm and sm.group("rest").strip():
+    if (
+        sm
+        and sm.group("rest").strip()
+        and not _PROSE_OPENER_RE.match(stripped)
+        and not _SENTENCE_VERB_RE.search(sm.group("term"))
+        and len(sm.group("term").split()) <= 10
+    ):
         return sm.group("term").strip(), stripped[sm.end("term"): sm.start("rest")], sm.group("rest").strip()
     bm = _EXT_BARE_LEAD_IN_RE.match(stripped)
-    if bm and not _PROSE_OPENER_RE.match(stripped) and _has_following_list(p_el):
+    if (
+        bm
+        and not _PROSE_OPENER_RE.match(stripped)
+        and not _SENTENCE_VERB_RE.search(bm.group("term"))
+        and _has_following_list(p_el)
+    ):
         return bm.group("term").strip(), stripped[bm.end("term"):bm.start("rest")], bm.group("rest")
     return None
 
@@ -398,7 +412,7 @@ def _process_p(
 
     if extended:
         ext = _try_extended_match(p_el, stripped) if p_el.find(f"{AKN_TAG}term") is None else None
-        if ext is not None and (len(ext[0]) <= 100) and not _is_narrative_false_positive(ext[0]):
+        if ext is not None and (len(ext[0]) <= 100) and not _is_narrative_false_positive(ext[0]) and not _PROSE_OPENER_RE.match(ext[0]):
             # Only the shapes the default grammar cannot express reach here first; plain
             # "X means Y" still prefers the default path below so its output is unchanged.
             if not _plain_default_shape(stripped, ext):
