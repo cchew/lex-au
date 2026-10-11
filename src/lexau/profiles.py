@@ -30,6 +30,10 @@ class ParserProfile:
     # subclauses whatever their source style (principles are numbered "1.", "1.1" or "IPP 1" in
     # "Normal"-style text). Each pattern needs named groups `number` and `heading`.
     schedule_clause_res: tuple[re.Pattern[str], ...] = ()
+    # Tag "In this Act, X means ..." (and "For this Act, ...") wherever it appears, not only in
+    # definitions-headed sections. Act-wide scope only. Off by default; the Commonwealth corpus
+    # stays off until a precision review passes.
+    scope_phrase_definitions: bool = False
     # Extended definition grammar: qualifiers ("X, for Part 6A, ..."), "has the meaning given in",
     # signposts ("X see section N", "X, for Part 6A\u2014see section N") and lead-ins that end in a
     # dash as well as a colon. Off by default so Commonwealth output is unchanged.

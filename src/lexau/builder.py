@@ -15,7 +15,7 @@ from lexau.validator import validate_akn, ValidationResult
 from lexau.reflinks import inject_refs
 from typing import TYPE_CHECKING
 
-from lexau.termlinks import inject_terms, inject_list_defs, complete_list_definitions
+from lexau.termlinks import inject_terms, inject_list_defs, complete_list_definitions, inject_scope_phrase_terms
 
 if TYPE_CHECKING:
     from lexau.profiles import ParserProfile
@@ -1928,6 +1928,8 @@ class AknBuilder:
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
         term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions))
+        if self._profile is not None and self._profile.scope_phrase_definitions:
+            terms_found += inject_scope_phrase_terms(root, term_registry)
         report.terms_found = terms_found
         # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
         # Surface via ParseReport for corpus validation.

@@ -160,3 +160,18 @@ def test_formatted_term_with_qualifier_and_dash_lead_in_nested_in_a_list_item() 
     )
     _run(root)
     assert _terms(root) == ["collect"]
+
+
+def test_notes_and_examples_are_not_definitions_in_extended_mode() -> None:
+    body = (
+        "<content><p>Note\tState includes the Northern Territory.</p>"
+        "<p>For example, the signpost definition 'x'—see section 5.</p>"
+        "<p><b><i>real</i></b> means a thing.</p></content>"
+    )
+    assert _terms(_run_doc(body, True)) == ["real"]
+
+
+def _run_doc(body: str, extended: bool) -> etree._Element:
+    root = _doc(body)
+    _run(root, extended=extended)
+    return root

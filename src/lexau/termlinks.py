@@ -208,7 +208,7 @@ _EXT_BARE_LEAD_IN_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 _PROSE_OPENER_RE = re.compile(
-    r"^(in\s+this|for\s+(?:this|the|a|an|each|any|subsection|section|paragraph|part|division|schedule)|the\s+following|"
+    r"^(in\s+this|for\s+(?:this|the|a|an|each|any|example|instance|subsection|section|paragraph|part|division|schedule)|the\s+following|"
     r"subject\s+to|despite|if|where|a\s+person|an\s+entity|nothing|this|these|that|to|note|example|however|"
     r"unless|until|when|while)\b",
     re.IGNORECASE,
@@ -334,6 +334,70 @@ def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, 
     return None
 
 
+# "In this Act, X means ..." outside a definitions section: Act-wide scope, so the definition is an
+# ordinary Act-wide term. The phrase stays in the text as the paragraph's plain-text prefix.
+_SCOPE_ACT_RE = re.compile(
+    r"^\s*(?:In|For)\s+(?:the\s+purposes\s+of\s+)?this\s+Act\s*,\s*(?:(?:an?|the)\s+)?", re.IGNORECASE
+)
+
+
+# "In this Act, a reference to X includes ..." is a rule of construction, not a definition.
+_CONSTRUCTION_RE = re.compile(r"^(?:an?\s+|the\s+)?(?:references?|expressions?|words?)\s+(?:to|in)\b", re.IGNORECASE)
+
+
+def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) -> int:
+    """Tag Act-wide definitions introduced by a scope phrase ("In this Act, personal information means...").
+
+    Anchors on the leading formatted run after the phrase when there is one; otherwise accepts the
+    plain-text shape, which the phrase makes reliable. Skips paragraphs already tagged.
+    """
+    count = 0
+    for p_el in root.iter(_P_TAG):
+        parent = p_el.getparent()
+        if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
+            continue
+        if p_el.find(f"{AKN_TAG}term") is not None:
+            continue
+        stripped = "".join(p_el.itertext()).strip()
+        m = _SCOPE_ACT_RE.match(stripped)
+        if not m:
+            continue
+        prefix, remainder = stripped[: m.end()], stripped[m.end():]
+        hit: tuple[str, str, str] | None = None
+
+        run = None
+        for child in p_el:
+            if child.tag == f"{AKN_TAG}b" and len(child) == 1 and child[0].tag == f"{AKN_TAG}i":
+                run = (child[0].text or "").strip()
+            elif child.tag == f"{AKN_TAG}i":
+                run = (child.text or "").strip()
+            break
+        if run and remainder.startswith(run):
+            em = _EXT_TAIL_RE.match(remainder[len(run):])
+            if em and em.group("rest").strip():
+                hit = (run, remainder[len(run):][: em.start("rest")], em.group("rest").strip())
+        if hit is None:
+            pm = _EXT_PLAIN_RE.match(remainder)
+            if (
+                pm
+                and pm.group("rest").strip()
+                and not _FALSE_CONNECTOR_TAIL_RE.search(remainder[: pm.start("conn")])
+                and len(pm.group("term").split()) <= 6
+                and not _SENTENCE_VERB_RE.search(pm.group("term"))
+            ):
+                hit = (pm.group("term").strip(), remainder[pm.end("term"): pm.start("rest")], pm.group("rest").strip())
+        if (
+            hit is None
+            or _is_narrative_false_positive(hit[0])
+            or _PROSE_OPENER_RE.match(hit[0])
+            or _CONSTRUCTION_RE.match(hit[0])
+        ):
+            continue
+        _inject(p_el, hit[0], "", hit[2], False, registry, tail=hit[1], prefix=prefix)
+        count += 1
+    return count
+
+
 def _has_following_list(p_el: etree._Element, allow_nested: bool = False) -> bool:
     """True when p_el is the last <p> of its <content> and list items (<paragraph>/<blockList>) follow
     that content, at that level or any enclosing one, up to the section."""
@@ -368,11 +432,12 @@ def _inject(
     registry: dict[str, str],
     qualifier: str | None = None,
     tail: str | None = None,
+    prefix: str | None = None,
 ) -> None:
     eid = _term_eid(show_as)
     registry[eid] = show_as
 
-    p_el.text = None
+    p_el.text = prefix or None
     for child in list(p_el):
         p_el.remove(child)
 
@@ -452,6 +517,8 @@ def _process_p(
             show_as = m.group('term').strip()
             if _is_narrative_false_positive(show_as):
                 continue  # narrative prose, not a real definiendum
+            if extended and _PROSE_OPENER_RE.match(show_as):
+                continue  # "Note State includes ...", "For example, ..." -- explanatory text, not a definition
             qualifier = m.groupdict().get('qualifier') or None
             connector = m.group('connector').strip()
             definiens = m.group('definiens').strip()
