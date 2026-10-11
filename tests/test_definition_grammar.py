@@ -138,3 +138,25 @@ def test_sentences_and_cross_references_are_not_definitions() -> None:
     _run(root)
     assert "A TPP code may do" not in " ".join(_terms(root))
     assert "For subsection (1)" not in _terms(root)
+
+
+def test_stacked_qualifiers_and_comma_see() -> None:
+    root = _doc(
+        "<content><p><b><i>review period</i></b>, for a privacy complaint, for chapter 5, part 1, see section 164A(1).</p>"
+        "<p><b><i>modify</i></b>, for schedule 3, in relation to information, means change it.</p>"
+        "<p><i>emergency</i>, see section 18(1) of the Emergency Management Act 2013.</p>"
+        "<p><b><i>meaning thing</i></b> has a meaning affected by section 10;</p></content>"
+    )
+    _run(root)
+    assert _terms(root) == ["review period", "modify", "emergency", "meaning thing"]
+
+
+def test_formatted_term_with_qualifier_and_dash_lead_in_nested_in_a_list_item() -> None:
+    root = _doc(
+        "<paragraph><num>(a)</num><content><p>an earlier item;</p></content></paragraph>"
+        "<paragraph><num>(b)</num><content><p>a later item.</p>"
+        "<p><b><i>collect</i></b>, in relation to information —</p></content></paragraph>"
+        "<paragraph><num>(a)</num><content><p>the information is gathered; or</p></content></paragraph>"
+    )
+    _run(root)
+    assert _terms(root) == ["collect"]

@@ -172,8 +172,9 @@ _DEF_PATTERNS = [
 # a <def> holding just that mark, so complete_list_definitions can fold the list items in.
 _EXT_QUAL = r"(?P<qual>\s*,\s+(?:in relation to|for|of|in|when|if)\s+[^,\u2014\u2013:]{1,120}?,?)?"
 _EXT_CONN_FULL = (
-    r"(?P<conn>means|includes?|has\s+the\s+(?:same\s+)?meaning(?:\s+(?:given\s+by|given\s+in|as\s+in|in|as))?"
-    r"|see(?:\s+also)?|[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])"
+    r"(?P<conn>means|includes?"
+    r"|has\s+(?:the|a)\s+(?:same\s+)?meaning(?:\s+(?:given\s+by|given\s+in|affected\s+by|as\s+in|in|as))?"
+    r"|see(?:\s+also)?|[\u2014\u2013,-]\s*see(?:\s+also)?)(?![A-Za-z])"
 )
 # Without a leading formatted run there is no reliable term boundary, so the plain-text fallback
 # only trusts the explicit connectors (and the dash form of a signpost).
@@ -181,7 +182,14 @@ _EXT_CONN_PLAIN = (
     r"(?P<conn>means|includes?|has\s+the\s+(?:same\s+)?meaning(?:\s+(?:given\s+by|given\s+in|as\s+in|in|as))?"
     r"|[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])"
 )
-_EXT_TAIL_RE = re.compile(rf"^{_EXT_QUAL}\s*{_EXT_CONN_FULL}\s*(?P<rest>.*)$", re.DOTALL | re.IGNORECASE)
+_EXT_QUAL_MULTI = (
+    r"(?P<qual>\s*,\s+(?:in relation to|for|of|in|when|if|about|to|under|by)\s+[^\u2014\u2013:]{1,160}?)?"
+)
+_EXT_TAIL_RE = re.compile(
+    rf"^{_EXT_QUAL_MULTI}\s*,?\s*{_EXT_CONN_FULL}\s*(?P<rest>.*)$", re.DOTALL | re.IGNORECASE
+)
+# A formatted term followed (after optional qualifiers) by only a dash or colon: a list lead-in with no connector.
+_EXT_TAIL_BARE_RE = re.compile(rf"^{_EXT_QUAL_MULTI}\s*(?P<rest>[\u2014\u2013:])$", re.DOTALL)
 _EXT_PLAIN_RE = re.compile(
     rf"^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,100}}?){_EXT_QUAL}\s*{_EXT_CONN_PLAIN}\s*(?P<rest>.*)$",
     re.DOTALL | re.IGNORECASE,
@@ -189,7 +197,7 @@ _EXT_PLAIN_RE = re.compile(
 # Signpost terms can contain a comma ("collects, personal information\u2014see section 15"); the explicit
 # dash-see connector is what makes the wider term class safe.
 _EXT_PLAIN_SEE_RE = re.compile(
-    r"^(?P<term>[A-Za-z][^\u2014\u2013:;]{1,100}?)\s*(?P<conn>[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])\s*(?P<rest>.*)$",
+    r"^(?P<term>[A-Za-z][^\u2014\u2013:;]{1,170}?)\s*(?P<conn>[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])\s*(?P<rest>.*)$",
     re.DOTALL | re.IGNORECASE,
 )
 # A lead-in with no connector: "australian law\u2014", "subcontractor, in relation to a government contract\u2014"
@@ -294,11 +302,14 @@ def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, 
     read as a definition.
     """
     run_text = _leading_formatted_run_text(p_el)
-    if run_text and stripped.startswith(run_text):
+    if run_text and stripped.startswith(run_text):  # exact boundary from the source formatting
         rest = stripped[len(run_text):]
         em = _EXT_TAIL_RE.match(rest)
         if em and em.group("rest").strip():
             return run_text, rest[: em.start("rest")], em.group("rest").strip()
+        bare = _EXT_TAIL_BARE_RE.match(rest)
+        if bare and _has_following_list(p_el, allow_nested=True):
+            return run_text, rest[: bare.start("rest")], bare.group("rest")
     pm = _EXT_PLAIN_RE.match(stripped)
     if pm and pm.group("rest").strip() and not _FALSE_CONNECTOR_TAIL_RE.search(stripped[: pm.start("conn")]):
         term = pm.group("term").strip()
@@ -309,7 +320,7 @@ def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, 
         and sm.group("rest").strip()
         and not _PROSE_OPENER_RE.match(stripped)
         and not _SENTENCE_VERB_RE.search(sm.group("term"))
-        and len(sm.group("term").split()) <= 10
+        and len(sm.group("term").split()) <= 25
     ):
         return sm.group("term").strip(), stripped[sm.end("term"): sm.start("rest")], sm.group("rest").strip()
     bm = _EXT_BARE_LEAD_IN_RE.match(stripped)
@@ -323,7 +334,7 @@ def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, 
     return None
 
 
-def _has_following_list(p_el: etree._Element) -> bool:
+def _has_following_list(p_el: etree._Element, allow_nested: bool = False) -> bool:
     """True when p_el is the last <p> of its <content> and list items (<paragraph>/<blockList>) follow
     that content, at that level or any enclosing one, up to the section."""
     content = p_el.getparent()
@@ -332,7 +343,9 @@ def _has_following_list(p_el: etree._Element) -> bool:
     # A lead-in inside a list item ("(a) personal information about:") introduces a sub-list,
     # not a definition; only section- or subsection-level lead-ins qualify.
     holder = content.getparent()
-    if holder is None or holder.tag not in {_SECTION_TAG, f"{AKN_TAG}subsection", f"{AKN_TAG}hcontainer"}:
+    if holder is None or (
+        not allow_nested and holder.tag not in {_SECTION_TAG, f"{AKN_TAG}subsection", f"{AKN_TAG}hcontainer"}
+    ):
         return False
     node = content
     while node is not None and node.tag != _SECTION_TAG:
@@ -412,7 +425,7 @@ def _process_p(
 
     if extended:
         ext = _try_extended_match(p_el, stripped) if p_el.find(f"{AKN_TAG}term") is None else None
-        if ext is not None and (len(ext[0]) <= 100) and not _is_narrative_false_positive(ext[0]) and not _PROSE_OPENER_RE.match(ext[0]):
+        if ext is not None and (len(ext[0]) <= 170) and not _is_narrative_false_positive(ext[0]) and not _PROSE_OPENER_RE.match(ext[0]):
             # Only the shapes the default grammar cannot express reach here first; plain
             # "X means Y" still prefers the default path below so its output is unchanged.
             if not _plain_default_shape(stripped, ext):
