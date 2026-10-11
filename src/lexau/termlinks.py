@@ -163,6 +163,50 @@ _DEF_PATTERNS = [
 ]
 
 
+# Extended definition grammar (opt-in via ParserProfile.extended_definitions). State and territory
+# drafting adds three shapes the Commonwealth patterns do not cover:
+#   * qualifiers other than "in relation to": "X, for Part 6A, means ...", "X, for a government contract, means\u2014"
+#   * more "meaning" forms: "has the meaning given in section 5", "has the meaning in section 5"
+#   * signposts instead of definitions: "X see section 18.", "X, for Part 6A\u2014see section 59D(2)."
+# A lead-in with nothing after the connector but a colon or dash ("X means:", "X means\u2014") is kept as
+# a <def> holding just that mark, so complete_list_definitions can fold the list items in.
+_EXT_QUAL = r"(?P<qual>\s*,\s+(?:in relation to|for|of|in|when|if)\s+[^,\u2014\u2013:]{1,120}?,?)?"
+_EXT_CONN_FULL = (
+    r"(?P<conn>means|includes?|has\s+the\s+(?:same\s+)?meaning(?:\s+(?:given\s+by|given\s+in|as\s+in|in|as))?"
+    r"|see(?:\s+also)?|[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])"
+)
+# Without a leading formatted run there is no reliable term boundary, so the plain-text fallback
+# only trusts the explicit connectors (and the dash form of a signpost).
+_EXT_CONN_PLAIN = (
+    r"(?P<conn>means|includes?|has\s+the\s+(?:same\s+)?meaning(?:\s+(?:given\s+by|given\s+in|as\s+in|in|as))?"
+    r"|[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])"
+)
+_EXT_TAIL_RE = re.compile(rf"^{_EXT_QUAL}\s*{_EXT_CONN_FULL}\s*(?P<rest>.*)$", re.DOTALL | re.IGNORECASE)
+_EXT_PLAIN_RE = re.compile(
+    rf"^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,100}}?){_EXT_QUAL}\s*{_EXT_CONN_PLAIN}\s*(?P<rest>.*)$",
+    re.DOTALL | re.IGNORECASE,
+)
+# Signpost terms can contain a comma ("collects, personal information\u2014see section 15"); the explicit
+# dash-see connector is what makes the wider term class safe.
+_EXT_PLAIN_SEE_RE = re.compile(
+    r"^(?P<term>[A-Za-z][^\u2014\u2013:;]{1,100}?)\s*(?P<conn>[\u2014\u2013-]\s*see(?:\s+also)?)(?![A-Za-z])\s*(?P<rest>.*)$",
+    re.DOTALL | re.IGNORECASE,
+)
+# A lead-in with no connector: "australian law\u2014", "subcontractor, in relation to a government contract\u2014"
+# followed by list items. Only trusted when list items actually follow (checked by the caller) and the
+# term does not open like ordinary prose.
+_EXT_BARE_LEAD_IN_RE = re.compile(
+    rf"^(?P<term>[A-Za-z][{_DEFINIENDUM_CHARS}]{{1,100}}?){_EXT_QUAL}\s*(?P<rest>[\u2014\u2013:])$",
+    re.DOTALL | re.IGNORECASE,
+)
+_PROSE_OPENER_RE = re.compile(
+    r"^(in\s+this|for\s+this|for\s+the|the\s+following|subject\s+to|despite|if|where|a\s+person|an\s+entity|"
+    r"nothing|this|these|that|to|note|example|however|unless|until|when|while)\b",
+    re.IGNORECASE,
+)
+_LEAD_IN_MARKS = ":\u2014\u2013"
+
+
 def _term_eid(show_as: str) -> str:
     """Derive TLCTerm eId from showAs text: lowercase, kebab-case, strip punctuation."""
     slug = re.sub(r'[^a-z0-9]+', '-', show_as.lower()).strip('-')
@@ -239,6 +283,55 @@ def _try_structural_match(
     return run_text, connector, definiens, False
 
 
+def _try_extended_match(p_el: etree._Element, stripped: str) -> tuple[str, str, str] | None:
+    """Extended grammar: (term, verbatim tail, definiens) or None.
+
+    Prefers the leading formatted run as the term boundary (exact, no length cap). Falls back
+    to a plain-text pattern restricted to explicit connectors, so a stray "see" in prose is never
+    read as a definition.
+    """
+    run_text = _leading_formatted_run_text(p_el)
+    if run_text and stripped.startswith(run_text):
+        rest = stripped[len(run_text):]
+        em = _EXT_TAIL_RE.match(rest)
+        if em and em.group("rest").strip():
+            return run_text, rest[: em.start("rest")], em.group("rest").strip()
+    pm = _EXT_PLAIN_RE.match(stripped)
+    if pm and pm.group("rest").strip() and not _FALSE_CONNECTOR_TAIL_RE.search(stripped[: pm.start("conn")]):
+        term = pm.group("term").strip()
+        return term, stripped[pm.end("term"): pm.start("rest")], pm.group("rest").strip()
+    sm = _EXT_PLAIN_SEE_RE.match(stripped)
+    if sm and sm.group("rest").strip():
+        return sm.group("term").strip(), stripped[sm.end("term"): sm.start("rest")], sm.group("rest").strip()
+    bm = _EXT_BARE_LEAD_IN_RE.match(stripped)
+    if bm and not _PROSE_OPENER_RE.match(stripped) and _has_following_list(p_el):
+        return bm.group("term").strip(), stripped[bm.end("term"):bm.start("rest")], bm.group("rest")
+    return None
+
+
+def _has_following_list(p_el: etree._Element) -> bool:
+    """True when p_el is the last <p> of its <content> and list items (<paragraph>/<blockList>) follow
+    that content, at that level or any enclosing one, up to the section."""
+    content = p_el.getparent()
+    if content is None or content.tag != _CONTENT_TAG or content[-1] is not p_el:
+        return False
+    # A lead-in inside a list item ("(a) personal information about:") introduces a sub-list,
+    # not a definition; only section- or subsection-level lead-ins qualify.
+    holder = content.getparent()
+    if holder is None or holder.tag not in {_SECTION_TAG, f"{AKN_TAG}subsection", f"{AKN_TAG}hcontainer"}:
+        return False
+    node = content
+    while node is not None and node.tag != _SECTION_TAG:
+        parent = node.getparent()
+        if parent is None:
+            return False
+        sibs = list(parent)
+        if any(c.tag in {_PARA_TAG, _BLOCKLIST_TAG} for c in sibs[sibs.index(node) + 1:]):
+            return True
+        node = parent
+    return False
+
+
 def _inject(
     p_el: etree._Element,
     show_as: str,
@@ -247,6 +340,7 @@ def _inject(
     quoted: bool,
     registry: dict[str, str],
     qualifier: str | None = None,
+    tail: str | None = None,
 ) -> None:
     eid = _term_eid(show_as)
     registry[eid] = show_as
@@ -258,7 +352,11 @@ def _inject(
     term_el = etree.SubElement(p_el, f"{AKN_TAG}term")
     term_el.set("refersTo", f"#{eid}")
     term_el.text = f'"{show_as}"' if quoted else show_as
-    if qualifier:
+    if tail is not None:
+        # Extended grammar: carry the exact source text between term and definiens
+        # (" means ", ", for Part 6A\u2014see ", " see ") so nothing is reworded.
+        term_el.tail = tail
+    elif qualifier:
         # Relational definition ("X, in relation to Y, means Z") -- carry the
         # verbatim ", in relation to Y," clause forward as plain text so the
         # rebuilt <term>/<def> reads exactly the way the source DOCX did
@@ -277,6 +375,7 @@ def _inject(
 def _process_p(
     p_el: etree._Element,
     registry: dict[str, str],
+    extended: bool = False,
 ) -> int:
     """Try to inject <term> + <def> into a single <p>. Returns 1 if injected, 0 otherwise.
 
@@ -296,6 +395,15 @@ def _process_p(
         return 0
 
     stripped = text.strip()
+
+    if extended:
+        ext = _try_extended_match(p_el, stripped) if p_el.find(f"{AKN_TAG}term") is None else None
+        if ext is not None and (len(ext[0]) <= 100) and not _is_narrative_false_positive(ext[0]):
+            # Only the shapes the default grammar cannot express reach here first; plain
+            # "X means Y" still prefers the default path below so its output is unchanged.
+            if not _plain_default_shape(stripped, ext):
+                _inject(p_el, ext[0], "", ext[2], False, registry, tail=ext[1])
+                return 1
 
     structural = _try_structural_match(p_el, stripped)
     if structural is not None:
@@ -328,6 +436,14 @@ def _process_p(
     return 0
 
 
+def _plain_default_shape(stripped: str, ext: tuple[str, str, str]) -> bool:
+    """True when the default grammar already handles this definition (so keep its exact output):
+    a single space, then means/includes, then a space and body (no lead-in mark, no qualifier,
+    no signpost, no 'given in')."""
+    term, tail, definiens = ext
+    return bool(re.fullmatch(r"\s+(means|includes?)\s+", tail, re.IGNORECASE)) and definiens[:1] not in _LEAD_IN_MARKS
+
+
 def _definition_containers(root: etree._Element, include_schedules: bool) -> list[etree._Element]:
     containers = list(root.iter(_SECTION_TAG))
     if include_schedules:
@@ -339,6 +455,7 @@ def inject_terms(
     root: etree._Element,
     def_heading_re: re.Pattern[str] | None = None,
     include_schedules: bool = False,
+    extended: bool = False,
 ) -> tuple[dict[str, str], int]:
     """Walk definition sections; inject <term>/<def>; return (registry, count).
 
@@ -354,7 +471,7 @@ def inject_terms(
             parent = p_el.getparent()
             if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
                 continue
-            count += _process_p(p_el, registry)
+            count += _process_p(p_el, registry, extended)
 
     return registry, count
 
@@ -364,6 +481,7 @@ def inject_list_defs(
     registry: dict[str, str],
     def_heading_re: re.Pattern[str] | None = None,
     include_schedules: bool = False,
+    extended: bool = False,
 ) -> int:
     """Detect 'X means:' list-form definitions and inject <term> + convert <content> to <intro>.
 
@@ -383,6 +501,8 @@ def inject_list_defs(
             if len(p_children) != 1 or p_children[0].tag != _P_TAG:
                 continue
             p_el = p_children[0]
+            if extended and p_el.find(f"{AKN_TAG}term") is not None:
+                continue  # already tagged by the extended grammar; complete_list_definitions folds it
 
             # Get text (handles plain or mixed content from inline formatting)
             if list(p_el):
@@ -571,7 +691,7 @@ def _collect_and_append_list_content(
     return appended
 
 
-def complete_list_definitions(root: etree._Element) -> int:
+def complete_list_definitions(root: etree._Element, lead_ins: str = ":") -> int:
     """Find colon-terminated <def> elements and fold in their orphaned list
     content from following AKN siblings.
 
@@ -605,7 +725,7 @@ def complete_list_definitions(root: etree._Element) -> int:
     count = 0
     for def_el in list(root.iter(_DEF_TAG)):
         text = "".join(def_el.itertext()).strip()
-        if not text.endswith(":"):
+        if not text.endswith(tuple(lead_ins)):
             continue
         anchor = _find_qualifying_anchor(def_el)
         if anchor is None:

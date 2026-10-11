@@ -1927,14 +1927,14 @@ class AknBuilder:
         )
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
-        term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules))
+        term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions))
         report.terms_found = terms_found
         # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
         # Surface via ParseReport for corpus validation.
         report.duplicate_terms = terms_found - len(term_registry)
 
         # 1b. Inject list-form definitions (X means: + block list)
-        list_defs_count = inject_list_defs(root, term_registry, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules))
+        list_defs_count = inject_list_defs(root, term_registry, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions))
         report.list_defs_found = list_defs_count
 
         # 1c. Inject <ref> links for asterisk-prefixed term usages (OPC DD 1.6).
@@ -1973,7 +1973,7 @@ class AknBuilder:
         # 4b. Complete truncated list-form <def>s (colon-terminated definiens
         # with orphaned list content in sibling <paragraph>/<blockList>
         # elements). MUST run last -- see complete_list_definitions' docstring.
-        list_defs_completed = complete_list_definitions(root)
+        list_defs_completed = complete_list_definitions(root, self._profile.list_lead_ins if self._profile else ":")
         report.list_defs_completed = list_defs_completed
 
         # 6. Populate <references> with TLCTerm entries

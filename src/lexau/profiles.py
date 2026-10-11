@@ -26,6 +26,12 @@ class ParserProfile:
     schedule_heading_re: re.Pattern[str] | None = None
     # Also treat a schedule whose heading matches (e.g. Qld 'Schedule 5 Dictionary') as a definitions section.
     definitions_in_schedules: bool = False
+    # Extended definition grammar: qualifiers ("X, for Part 6A, ..."), "has the meaning given in",
+    # signposts ("X see section N", "X, for Part 6A\u2014see section N") and lead-ins that end in a
+    # dash as well as a colon. Off by default so Commonwealth output is unchanged.
+    extended_definitions: bool = False
+    # Trailing characters that mark a list-form definition lead-in ("X means:" / "X means\u2014").
+    list_lead_ins: str = ":"
     # Character styles that mark a defined term (treated as bold+italic).
     char_def_styles: frozenset[str] = frozenset()
 
