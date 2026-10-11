@@ -398,6 +398,96 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
     return count
 
 
+# Locally scoped definitions: "In this section/Part/Division/Schedule, X means ..." or a formatted term opening
+# a paragraph in an ordinary section. Formatted terms only -- plain text outside a definitions section is
+# far too ambiguous (measured 67% precision against 100% for the formatted-term gate).
+_SCOPE_LOCAL_RE = re.compile(
+    r"^\s*(?:In|For)\s+(?:the\s+purposes\s+of\s+)?this\s+"
+    r"(?P<kind>section|subsection|Part|Division|Subdivision|Chapter|Schedule)\s*,\s*(?:(?:an?|the)\s+)?",
+    re.IGNORECASE,
+)
+_SCOPE_KIND_TAG = {
+    "section": "section", "subsection": "subsection", "part": "part", "division": "division",
+    "subdivision": "subDivision", "chapter": "chapter", "schedule": "hcontainer",
+}
+
+
+def _scope_container(p_el: etree._Element, kind: str | None) -> etree._Element | None:
+    """The element a local definition applies to: the one the scope phrase names, else the nearest section."""
+    wanted = _SCOPE_KIND_TAG.get((kind or "section").lower(), "section")
+    fallback = None
+    for anc in p_el.iterancestors():
+        local = etree.QName(anc).localname
+        if local == wanted and (wanted != "hcontainer" or anc.get("name") == "schedule"):
+            return anc if anc.get("eId") else None
+        if kind is None and local == "hcontainer" and anc.get("name") == "schedule" and anc.get("eId"):
+            fallback = fallback if fallback is not None else anc
+    return fallback
+
+
+def inject_local_terms(
+    root: etree._Element,
+    registry: dict[str, str],
+    def_heading_re: re.Pattern[str] | None = None,
+) -> int:
+    """Tag locally scoped definitions outside definitions sections; returns the count tagged."""
+    count = 0
+    for p_el in root.iter(_P_TAG):
+        parent = p_el.getparent()
+        if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
+            continue
+        if p_el.find(f"{AKN_TAG}term") is not None:
+            continue
+        stripped = "".join(p_el.itertext()).strip()
+        if not stripped:
+            continue
+        m = _SCOPE_LOCAL_RE.match(stripped)
+        kind = m.group("kind") if m else None
+        prefix = stripped[: m.end()] if m else ""
+        remainder = stripped[len(prefix):]
+
+        # the leading formatted run must start right after the (optional) phrase
+        run = None
+        for child in p_el:
+            if child.tag == f"{AKN_TAG}b" and len(child) == 1 and child[0].tag == f"{AKN_TAG}i":
+                run = (child[0].text or "").strip()
+            elif child.tag == f"{AKN_TAG}i":
+                run = (child.text or "").strip()
+            break
+        if not run or not remainder.startswith(run):
+            continue
+        if not m and (p_el.text or "").strip():
+            continue  # something other than the term opens the paragraph
+        after = remainder[len(run):]
+        hit = None
+        em = _EXT_TAIL_RE.match(after)
+        if em and em.group("rest").strip():
+            hit = (after[: em.start("rest")], em.group("rest").strip())
+        else:
+            bare = _EXT_TAIL_BARE_RE.match(after)
+            if bare and _has_following_list(p_el, allow_nested=True):
+                hit = (after[: bare.start("rest")], bare.group("rest"))
+        if hit is None:
+            continue
+        if (
+            _is_narrative_false_positive(run)
+            or _PROSE_OPENER_RE.match(run)
+            or _CONSTRUCTION_RE.match(run)
+            or _SENTENCE_VERB_RE.search(run)
+            or len(run) > 170
+        ):
+            continue
+        container = _scope_container(p_el, kind)
+        if container is None:
+            continue
+        if _is_definition_section(container, def_heading_re):
+            continue  # an ordinary definitions section is handled by inject_terms
+        eid = f"{_term_eid(run)}--{container.get('eId')}"
+        _inject(p_el, run, "", hit[1], False, registry, tail=hit[0], prefix=prefix, eid=eid)
+        count += 1
+    return count
+
+
 def _has_following_list(p_el: etree._Element, allow_nested: bool = False) -> bool:
     """True when p_el is the last <p> of its <content> and list items (<paragraph>/<blockList>) follow
     that content, at that level or any enclosing one, up to the section."""
@@ -433,8 +523,9 @@ def _inject(
     qualifier: str | None = None,
     tail: str | None = None,
     prefix: str | None = None,
+    eid: str | None = None,
 ) -> None:
-    eid = _term_eid(show_as)
+    eid = eid or _term_eid(show_as)
     registry[eid] = show_as
 
     p_el.text = prefix or None

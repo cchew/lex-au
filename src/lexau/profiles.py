@@ -30,6 +30,10 @@ class ParserProfile:
     # subclauses whatever their source style (principles are numbered "1.", "1.1" or "IPP 1" in
     # "Normal"-style text). Each pattern needs named groups `number` and `heading`.
     schedule_clause_res: tuple[re.Pattern[str], ...] = ()
+    # Tag locally scoped definitions ("In this Part, X means ...", or a formatted term opening a paragraph
+    # inside an ordinary section). Formatted terms only. The term id carries its container
+    # (term-x--part-1__sec-4) so it cannot collide with an Act-wide term of the same word.
+    local_definitions: bool = False
     # Headings that open an unnumbered schedule-like container (ACT "Dictionary"). The paragraph
     # becomes a schedule heading; everything after it, up to the next schedule heading, belongs to it.
     unnumbered_schedule_re: re.Pattern[str] | None = None
