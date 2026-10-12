@@ -67,3 +67,37 @@ def test_sentences_and_rules_of_construction_are_not_local_terms() -> None:
     )
     _run(root)
     assert _refs(root) == []
+
+
+def test_quoted_amendment_text_is_not_a_definition_of_this_act() -> None:
+    root = etree.fromstring(
+        f'<akomaNtoso xmlns="{NS}"><act><body><section eId="s1"><num>1</num><heading>Amendment</heading>'
+        "<content><p>Insert:</p></content>"
+        '<quotedStructure><section eId="q1"><num>2</num><heading>Other</heading>'
+        "<content><p>In this Act, <i>widget</i> means a thing.</p>"
+        "<p><i>gadget</i> means a device.</p></content></section></quotedStructure>"
+        "</section></body></act></akomaNtoso>"
+    )
+    reg, _ = inject_terms(root, extended=True)
+    inject_scope_phrase_terms(root, reg)
+    inject_local_terms(root, reg)
+    assert root.xpath("//a:term", namespaces=A) == []
+
+
+def test_closing_quote_without_opening_quote_is_skipped() -> None:
+    root = _doc("<content><p><i>repeal day</i> has the same meaning as in Part 8 of the Sale Act 1994.”.</p></content>")
+    _run(root)
+    assert _refs(root) == []
+
+
+def test_asterisk_links_ignore_local_terms() -> None:
+    from lexau.quantlinks import inject_asterisk_refs
+
+    root = _doc(
+        "<content><p><i>amounts withheld</i> means the sum withheld.</p>"
+        "<p>The *amounts withheld exceeded $1 million.</p></content>"
+    )
+    reg = _run(root)
+    inject_asterisk_refs(root, {k: v for k, v in reg.items() if "--" not in k})
+    usage = [x for x in root.xpath("//a:p", namespaces=A) if "exceeded" in "".join(x.itertext())][0]
+    assert "".join(usage.itertext()) == "The *amounts withheld exceeded $1 million."

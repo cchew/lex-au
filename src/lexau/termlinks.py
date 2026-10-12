@@ -345,6 +345,18 @@ _SCOPE_ACT_RE = re.compile(
 _CONSTRUCTION_RE = re.compile(r"^(?:an?\s+|the\s+)?(?:references?|expressions?|words?)\s+(?:to|in)\b", re.IGNORECASE)
 
 
+def _in_quoted_structure(p_el: etree._Element) -> bool:
+    """True inside an amendment's quoted replacement text, which belongs to another Act.
+
+    Either a <quotedStructure> ancestor, or a paragraph that closes a quotation it never opened
+    (an inserted definition whose opening quote sits in the instruction paragraph above).
+    """
+    if any(a.tag == f"{AKN_TAG}quotedStructure" for a in p_el.iterancestors()):
+        return True
+    text = "".join(p_el.itertext()).strip()
+    return text.endswith(("\u201d", "\u201d.", "\u201d;", "\u201d,")) and "\u201c" not in text
+
+
 def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) -> int:
     """Tag Act-wide definitions introduced by a scope phrase ("In this Act, personal information means...").
 
@@ -356,7 +368,7 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
         parent = p_el.getparent()
         if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
             continue
-        if p_el.find(f"{AKN_TAG}term") is not None:
+        if p_el.find(f"{AKN_TAG}term") is not None or _in_quoted_structure(p_el):
             continue
         stripped = "".join(p_el.itertext()).strip()
         m = _SCOPE_ACT_RE.match(stripped)
@@ -436,7 +448,7 @@ def inject_local_terms(
         parent = p_el.getparent()
         if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
             continue
-        if p_el.find(f"{AKN_TAG}term") is not None:
+        if p_el.find(f"{AKN_TAG}term") is not None or _in_quoted_structure(p_el):
             continue
         stripped = "".join(p_el.itertext()).strip()
         if not stripped:
