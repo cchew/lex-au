@@ -856,7 +856,7 @@ def _looks_like_new_definition(item_p: etree._Element) -> bool:
 
 
 def _collect_and_append_list_content(
-    def_el: etree._Element, anchor_el: etree._Element
+    def_el: etree._Element, anchor_el: etree._Element, nested: bool = False
 ) -> bool:
     """Walk anchor_el's following <paragraph>/<blockList> siblings in document
     order, appending each <content>'s <p> children (there can be more than
@@ -885,7 +885,10 @@ def _collect_and_append_list_content(
         if sib.tag not in {_PARA_TAG, _BLOCKLIST_TAG}:
             break
         stop = False
-        for content_el in sib.findall(_CONTENT_TAG):
+        # nested: also take the (i), (ii) items under each (a), which sit in <content> elements of
+        # nested <paragraph>/<subparagraph> children (default keeps the Commonwealth behaviour).
+        contents = list(sib.iter(_CONTENT_TAG)) if nested else sib.findall(_CONTENT_TAG)
+        for content_el in contents:
             for item_p in content_el.findall(_P_TAG):
                 if item_p.find(f"{AKN_TAG}term") is not None or _looks_like_new_definition(item_p):
                     stop = True
@@ -899,7 +902,7 @@ def _collect_and_append_list_content(
     return appended
 
 
-def complete_list_definitions(root: etree._Element, lead_ins: str = ":") -> int:
+def complete_list_definitions(root: etree._Element, lead_ins: str = ":", nested: bool = False) -> int:
     """Find colon-terminated <def> elements and fold in their orphaned list
     content from following AKN siblings.
 
@@ -938,6 +941,6 @@ def complete_list_definitions(root: etree._Element, lead_ins: str = ":") -> int:
         anchor = _find_qualifying_anchor(def_el)
         if anchor is None:
             continue
-        if _collect_and_append_list_content(def_el, anchor):
+        if _collect_and_append_list_content(def_el, anchor, nested):
             count += 1
     return count

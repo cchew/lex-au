@@ -1979,7 +1979,11 @@ class AknBuilder:
         # 4b. Complete truncated list-form <def>s (colon-terminated definiens
         # with orphaned list content in sibling <paragraph>/<blockList>
         # elements). MUST run last -- see complete_list_definitions' docstring.
-        list_defs_completed = complete_list_definitions(root, self._profile.list_lead_ins if self._profile else ":")
+        list_defs_completed = complete_list_definitions(
+            root,
+            self._profile.list_lead_ins if self._profile else ":",
+            bool(self._profile and self._profile.extended_definitions),
+        )
         report.list_defs_completed = list_defs_completed
 
         # 6. Populate <references> with TLCTerm entries

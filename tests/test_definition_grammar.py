@@ -175,3 +175,24 @@ def _run_doc(body: str, extended: bool) -> etree._Element:
     root = _doc(body)
     _run(root, extended=extended)
     return root
+
+
+def test_nested_list_items_are_folded_with_extended_definitions() -> None:
+    body = (
+        "<content><p><b><i>health information</i></b> means:</p></content>"
+        "<paragraph><num>(a)</num><content><p>personal information about:</p></content>"
+        "<subparagraph><num>(i)</num><content><p>a person’s health; or</p></content></subparagraph>"
+        "<subparagraph><num>(ii)</num><content><p>a disability; or</p></content></subparagraph></paragraph>"
+        "<paragraph><num>(b)</num><content><p>a health service.</p></content></paragraph>"
+    )
+    from lexau.termlinks import complete_list_definitions
+
+    def folded(nested: bool) -> str:
+        root = _doc(body)
+        reg, _ = inject_terms(root, extended=True)
+        inject_list_defs(root, reg, extended=True)
+        complete_list_definitions(root, ":—–", nested)
+        return "".join(root.xpath("//a:def", namespaces=A)[0].itertext())
+
+    assert "a disability; or" in folded(True) and "a health service." in folded(True)
+    assert "a disability; or" not in folded(False)
