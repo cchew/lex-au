@@ -26,6 +26,9 @@ inputs:
   lex-au-graph-dispatch-token:
     description: "Token with dispatch rights on cchew/lex-au-graph, used to notify it of a corpus publish"
     required: true
+  lex-au-search-dispatch-token:
+    description: "Token with dispatch rights on cchew/lex-au-search, used to notify it of a corpus publish"
+    required: true
 
 runs:
   using: "composite"
@@ -99,3 +102,13 @@ runs:
       run: |
         echo '{"event_type":"corpus-published","client_payload":{"triggered_by":"'"${{ github.run_id }}"'"}}' \
           | gh api repos/cchew/lex-au-graph/dispatches --input -
+
+    - name: Notify lex-au-search of corpus update
+      if: inputs.has-changes == 'true'
+      shell: bash
+      continue-on-error: true
+      env:
+        GH_TOKEN: ${{ inputs.lex-au-search-dispatch-token }}
+      run: |
+        echo '{"event_type":"corpus-published","client_payload":{"triggered_by":"'"${{ github.run_id }}"'"}}' \
+          | gh api repos/cchew/lex-au-search/dispatches --input -
