@@ -398,6 +398,17 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
                 and not _SENTENCE_VERB_RE.search(pm.group("term"))
             ):
                 hit = (pm.group("term").strip(), remainder[pm.end("term"): pm.start("rest")], pm.group("rest").strip())
+        if hit is None:
+            # "For this Act, personal information\u2014" followed by list items that begin "means ...": the term has
+            # no connector of its own, the first list item supplies it. Needs the list to follow.
+            bm = _EXT_BARE_LEAD_IN_RE.match(remainder)
+            if (
+                bm
+                and len(bm.group("term").split()) <= 6
+                and not _SENTENCE_VERB_RE.search(bm.group("term"))
+                and _has_following_list(p_el)
+            ):
+                hit = (bm.group("term").strip(), remainder[bm.end("term"): bm.start("rest")], bm.group("rest"))
         if (
             hit is None
             or _is_narrative_false_positive(hit[0])

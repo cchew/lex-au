@@ -65,3 +65,21 @@ def test_already_tagged_paragraph_is_left_alone() -> None:
     root = _doc("<content><p>In this Act, <b><i>agency</i></b> means a body.</p></content>", heading="Definitions")
     names = _run(root)
     assert names.count("agency") <= 1
+
+
+def test_scope_phrase_with_bare_lead_in_and_a_list_that_supplies_the_connector() -> None:
+    root = etree.fromstring(
+        f'<akomaNtoso xmlns="{NS}"><act><body><section eId="s8"><num>8</num><heading>Meaning of personal information</heading>'
+        '<subsection eId="s8__1"><num>1</num><content><p>For this Act, personal information—</p></content>'
+        '<paragraph eId="s8__1__a"><num>a</num><content><p>means information about an individual; and</p></content></paragraph>'
+        '<paragraph eId="s8__1__b"><num>b</num><content><p>does not include health information.</p></content></paragraph>'
+        "</subsection></section></body></act></akomaNtoso>"
+    )
+    assert _run(root) == ["personal information"]
+    d = root.xpath("//a:def", namespaces=A)[0]
+    assert "means information about an individual" in "".join(d.itertext())
+
+
+def test_scope_phrase_bare_lead_in_without_a_list_is_not_a_definition() -> None:
+    root = _doc("<content><p>For this Act, personal information—</p></content>")
+    assert _run(root) == []
