@@ -91,7 +91,6 @@ jobs:
           gh-token: ${{ github.token }}
           has-changes: ${{ steps.diff.outputs.found }}
           lex-au-graph-dispatch-token: ${{ secrets.LEX_AU_GRAPH_DISPATCH_TOKEN }}
-          lex-au-search-dispatch-token: ${{ secrets.LEX_AU_SEARCH_DISPATCH_TOKEN }}
 
       - name: Regenerate and commit acts.txt
         if: steps.diff.outputs.found == 'true'
