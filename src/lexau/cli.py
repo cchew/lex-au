@@ -91,6 +91,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
                 continue
 
             if not force and corpus.is_current(meta):
+                corpus.touch_last_checked(meta)
                 click.echo(f"  SKIP -- compilation #{meta.comp_num} already current")
                 continue
 
@@ -465,4 +466,16 @@ def update(since: str, corpus_dir: Path) -> None:
         return
 
     click.echo(f"Found {len(in_corpus)} modified corpus Act(s): {', '.join(in_corpus)}")
-    _build_acts(in_corpus, corpus_dir, force=True)
+    # NOT force=True: legislation.gov.au's "modified since" signal is broader
+    # than "the compilation actually changed" (observed live 2026-10-13 --
+    # every Act in a 3,085-Act corpus showed as "modified" across a handful
+    # of weekly runs). force=True bypassed is_current()'s comp_num check, so
+    # every one of those got unconditionally rebuilt -- re-stamping
+    # FRBRManifestation's Generation date even when nothing legally changed,
+    # which made lex-au-search's raw-file-hash delta detection useless (every
+    # Act looked changed, every week, forever). Letting is_current() do its
+    # job here means an Act's XML (and its content hash) only actually
+    # changes when legislation.gov.au issues a new compilation; _build_acts's
+    # skip path still stamps last_checked, so "did lex-au reconsider this
+    # Act" stays visible even when nothing rebuilds.
+    _build_acts(in_corpus, corpus_dir, force=False)

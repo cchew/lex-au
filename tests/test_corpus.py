@@ -48,6 +48,38 @@ def test_save_omits_source_format_by_default(corpus, privacy_meta, minimal_xml):
     assert "source_format" not in index["acts"]["privacy-act-1988"]
 
 
+def test_save_stamps_last_checked(corpus, privacy_meta, minimal_xml):
+    corpus.save(privacy_meta, minimal_xml)
+    index = json.loads((corpus.root / "index.json").read_text())
+    assert index["acts"]["privacy-act-1988"]["last_checked"]
+
+
+def test_touch_last_checked_updates_existing_entry_only(corpus, privacy_meta, minimal_xml):
+    corpus.save(privacy_meta, minimal_xml)
+    index_before = json.loads((corpus.root / "index.json").read_text())
+    entry_before = dict(index_before["acts"]["privacy-act-1988"])
+
+    corpus.touch_last_checked(privacy_meta)
+
+    index_after = json.loads((corpus.root / "index.json").read_text())
+    entry_after = index_after["acts"]["privacy-act-1988"]
+    # last_checked moved, every other field (xml_path, comp_num, etc) didn't --
+    # touch_last_checked must not re-derive or rewrite anything else.
+    for key in entry_before:
+        if key != "last_checked":
+            assert entry_after[key] == entry_before[key], key
+
+
+def test_touch_last_checked_is_a_noop_for_an_unindexed_act(corpus, privacy_meta):
+    """Skip-path bookkeeping -- called on every Act the crawler reports as
+    modified, including ones that were never actually saved (e.g. a
+    legislation.gov.au report of a brand-new Act outside this corpus).
+    Must not raise or fabricate an index entry."""
+    corpus.touch_last_checked(privacy_meta)
+    index = json.loads((corpus.root / "index.json").read_text())
+    assert index["acts"] == {}
+
+
 def test_is_current_true_when_comp_num_matches(corpus, privacy_meta, minimal_xml):
     corpus.save(privacy_meta, minimal_xml)
     assert corpus.is_current(privacy_meta) is True

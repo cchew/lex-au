@@ -114,6 +114,7 @@ class Corpus:
             "effective_date": meta.effective_date.isoformat(),
             "xml_path": str(xml_path.relative_to(self.root)),
             "aliases": sorted(aliases),
+            "last_checked": datetime.now(timezone.utc).isoformat(),
         }
         if meta.locality:
             entry["locality"] = meta.locality
@@ -130,6 +131,23 @@ class Corpus:
         if entry is None:
             return False
         return entry["comp_num"] == meta.comp_num
+
+    def touch_last_checked(self, meta: ActMetadata) -> None:
+        """Stamp last_checked on an Act's existing index entry without
+        touching anything else -- the skip-path bookkeeping counterpart to
+        save(). Called whenever the crawler reports an Act as modified but
+        is_current(meta) says the compilation hasn't actually changed, so
+        there's still a record of "lex-au looked at this" even though the
+        XML file (and its FRBRManifestation date, and lex-au-search's
+        content hash) correctly didn't change. A no-op, not an error, if
+        the Act isn't indexed yet -- the crawler can report an Act outside
+        this corpus as modified."""
+        index = self._read_index()
+        entry = index["acts"].get(meta.safe_name)
+        if entry is None:
+            return
+        entry["last_checked"] = datetime.now(timezone.utc).isoformat()
+        self._write_index(index)
 
     def all_metadata(self) -> list[ActMetadata]:
         index = self._read_index()
