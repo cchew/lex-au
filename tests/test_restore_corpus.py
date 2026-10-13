@@ -13,12 +13,13 @@ _spec.loader.exec_module(rc)
 def test_restore_writes_fresh_sync_stamp(tmp_path):
     local = tmp_path / "corpus"
 
-    def fake_snapshot(*, repo_id, repo_type, local_dir):
+    def fake_snapshot(*, repo_id, repo_type, local_dir, **_):
         Path(local_dir).mkdir(parents=True, exist_ok=True)
         return str(local_dir)
 
     with patch.object(rc, "snapshot_download", side_effect=fake_snapshot) as snap, \
          patch.object(rc, "HfApi") as api_cls:
+        api_cls.return_value.list_repo_files.return_value = []
         api_cls.return_value.repo_info.return_value = MagicMock(sha="deadbeef" * 5)
         rc.restore("cchew/lex-au", str(local))
 
@@ -34,12 +35,13 @@ def test_restore_writes_fresh_sync_stamp(tmp_path):
 def test_restore_stamp_written_even_if_repo_info_fails(tmp_path):
     local = tmp_path / "corpus"
 
-    def fake_snapshot(*, repo_id, repo_type, local_dir):
+    def fake_snapshot(*, repo_id, repo_type, local_dir, **_):
         Path(local_dir).mkdir(parents=True, exist_ok=True)
         return str(local_dir)
 
     with patch.object(rc, "snapshot_download", side_effect=fake_snapshot), \
          patch.object(rc, "HfApi") as api_cls:
+        api_cls.return_value.list_repo_files.return_value = []
         api_cls.return_value.repo_info.side_effect = RuntimeError("offline")
         rc.restore("cchew/lex-au", str(local))
 
