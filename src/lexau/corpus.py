@@ -41,6 +41,16 @@ class NameCollisionError(ValueError):
     """
 
 
+# Version of the AKN structure this converter emits, written to index.json so
+# downstream consumers (lex-au-search chunker, lex-au-graph, lex-au-explorer)
+# can refuse a shape they have not been tested against. Bump on any change to
+# hcontainer names, nesting, eId scheme or quotedStructure placement.
+#   1: flat schedules (schedule/clause), pre-3b1b9be
+#   2: nested schedules (schedule > part > division > clause; amendedAct > item >
+#      quotedStructure), v0.10.0 onwards
+STRUCTURE_VERSION = 2
+
+
 class Corpus:
     def __init__(self, root: Path) -> None:
         self.root = root
@@ -48,7 +58,7 @@ class Corpus:
         self._index_path = root / "index.json"
         self._xml_dir.mkdir(parents=True, exist_ok=True)
         if not self._index_path.exists():
-            self._write_index({"acts": {}, "updated_at": None})
+            self._write_index({"acts": {}, "updated_at": None, "structure_version": STRUCTURE_VERSION})
 
     def _read_index(self) -> dict:
         return json.loads(self._index_path.read_text())
@@ -122,6 +132,7 @@ class Corpus:
             entry["source_format"] = source_format
         index["acts"][meta.safe_name] = entry
         index["updated_at"] = datetime.now(timezone.utc).isoformat()
+        index["structure_version"] = STRUCTURE_VERSION
         self._write_index(index)
         return xml_path
 

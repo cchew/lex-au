@@ -263,3 +263,13 @@ def test_all_metadata_defaults_aliases_when_absent_from_index(corpus, privacy_me
 
     metas = corpus.all_metadata()
     assert metas[0].aliases == []
+
+
+def test_new_corpus_index_records_structure_version(tmp_path):
+    import json
+
+    from lexau.corpus import STRUCTURE_VERSION, Corpus
+
+    Corpus(tmp_path)
+    index = json.loads((tmp_path / "index.json").read_text())
+    assert index["structure_version"] == STRUCTURE_VERSION == 2
