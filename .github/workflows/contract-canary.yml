@@ -1,0 +1,68 @@
+# .github/workflows/contract-canary.yml
+name: Contract canary
+
+on:
+  schedule:
+    # Weekly, Monday 02:00 UTC -- after growth-check and freshness-check have published.
+    - cron: "0 2 * * 1"
+  workflow_dispatch: {}
+
+# Own group: read-only, so it must never queue behind (or displace a pending) publish run.
+concurrency:
+  group: contract-canary
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lexau
+        run: pip install -e ".[dev]"
+
+      - name: Restore corpus from Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python scripts/restore_corpus_from_hf.py --repo cchew/lex-au --local-dir corpus
+
+      - name: Shape canary
+        id: canary
+        run: python scripts/canary_shape.py --corpus-dir corpus --baseline canary-baseline.json --report /tmp/canary-report.md
+        continue-on-error: true
+
+      - name: Publish report to job summary
+        if: always()
+        run: cat /tmp/canary-report.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Open or update drift issue
+        if: steps.canary.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            cat /tmp/canary-report.md
+            echo ""
+            echo "Consumers (lex-au-search, lex-au-graph, lex-au-explorer, lex-au-privacy) need re-testing against the new shape before their next rebuild."
+            echo "If the change is intended: bump STRUCTURE_VERSION in src/lexau/corpus.py, then refresh the baseline with 'python scripts/canary_shape.py --corpus-dir corpus --baseline canary-baseline.json --update'."
+            echo ""
+            echo "[Run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          } > /tmp/canary-issue-body.md
+          python scripts/report_pipeline_issue.py \
+            --repo "${{ github.repository }}" \
+            --label contract-canary \
+            --title "Contract canary: corpus shape changed" \
+            --body-file /tmp/canary-issue-body.md
+
+      - name: Fail the job on a hard failure
+        if: steps.canary.outcome == 'failure'
+        run: exit 1
