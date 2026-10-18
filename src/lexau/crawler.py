@@ -4,6 +4,8 @@ from datetime import date
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 from lexau.doc_convert import convert_doc_to_docx
 from lexau.models import ActMetadata
@@ -91,6 +93,20 @@ class Crawler:
         self._timeout = timeout
         self._session = requests.Session()
         self._session.headers.update({"Accept": "application/json"})
+        # The API intermittently stalls (2026-10-18: both scheduled workflows
+        # died on a single 60s ReadTimeout). Retry reads/connects and 5xx/429.
+        retry = Retry(
+            total=4,
+            connect=4,
+            read=4,
+            backoff_factor=2,
+            status_forcelist=(429, 500, 502, 503, 504),
+            allowed_methods=("GET", "HEAD"),
+            respect_retry_after_header=True,
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        self._session.mount("https://", adapter)
+        self._session.mount("http://", adapter)
 
     def _get(self, path: str, params: dict | None = None) -> dict:
         r = self._session.get(f"{API_BASE}/{path}", params=params, timeout=self._timeout)

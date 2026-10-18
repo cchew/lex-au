@@ -831,3 +831,12 @@ def test_list_instruments_default_page_size_is_100():
 
     request_url = resp_lib.calls[0].request.url
     assert "%24top=100" in request_url
+
+
+def test_session_retries_transient_failures():
+    adapter = Crawler()._session.get_adapter(API)
+    retry = adapter.max_retries
+    assert retry.total == 4
+    assert retry.read == 4
+    assert 503 in retry.status_forcelist
+    assert retry.allowed_methods is not None and "GET" in retry.allowed_methods
