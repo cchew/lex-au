@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=72"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexau-contract-fixtures"
+version = "2.0.0"
+description = "Golden AKN fixtures for the lex-au stack contract tests. Zero dependencies. Major version = lex-au STRUCTURE_VERSION."
+license = {text = "MIT"}
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lexau_contract_fixtures = ["data/index.json", "data/contract.json", "data/xml/*.xml"]
