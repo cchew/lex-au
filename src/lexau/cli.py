@@ -93,7 +93,13 @@ def _convert_act(
     return builder.build_with_report(corpus_index, last_volume_path=endnote_vol)
 
 
-def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act", local_definitions: bool = True) -> None:
+def _build_acts(
+    act_names: list[str],
+    corpus_dir: Path,
+    force: bool,
+    doc_type: str = "act",
+    local_definitions: bool = True,
+) -> None:
     """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
