@@ -15,6 +15,7 @@ from lexau.corpus import Corpus
 from lexau.crawler import Crawler
 from lexau.builder import AknBuilder
 from lexau.docx_reader import iter_paragraphs
+from lexau.profiles import profile_for
 
 # Files list_repo_files() returns that export_hf never derives from
 # corpus_dir -- the dataset card (uploaded separately, from --readme) and
@@ -69,7 +70,7 @@ def _load_corpus_index(index_path: Path) -> dict:
     return corpus_index
 
 
-def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act") -> None:
+def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act", local_definitions: bool = False) -> None:
     """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
@@ -102,7 +103,9 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             source_format = "doc-converted" if any(docx_dir.glob(f"{meta.safe_name}-c{meta.comp_num}-vol*.doc")) else None
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
-            builder = AknBuilder(meta, images_out=corpus_dir / "images")
+            builder = AknBuilder(
+                meta, images_out=corpus_dir / "images", profile=profile_for(doc_type, local_definitions),
+            )
             # Sole producer of volume_index. _split_stream's groupby() requires
             # paragraphs to be volume-contiguous; this loop guarantees it by
             # adding all of volume N before volume N+1's first paragraph.
@@ -170,6 +173,12 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
     show_default=True,
     help="Document type (act, regulation, or instrument)",
 )
+@click.option(
+    "--local-definitions/--no-local-definitions",
+    default=False,
+    show_default=True,
+    help="Tag locally scoped and 'In this Act' definitions (Acts only)",
+)
 def build(
     acts: tuple[str, ...],
     list_file: Path | None,
@@ -177,6 +186,7 @@ def build(
     corpus_dir: Path,
     force: bool,
     doc_type: str,
+    local_definitions: bool,
 ) -> None:
     """Download DOCX and convert to AKN XML."""
     act_names = list(acts)
@@ -191,7 +201,7 @@ def build(
             sys.exit(1)
         act_names += [ln.strip() for ln in default_list.read_text().splitlines() if ln.strip()]
 
-    _build_acts(act_names, corpus_dir, force, doc_type=doc_type)
+    _build_acts(act_names, corpus_dir, force, doc_type=doc_type, local_definitions=local_definitions)
 
 
 @cli.command()

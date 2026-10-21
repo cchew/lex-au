@@ -54,3 +54,14 @@ class ParserProfile:
 
     def map_style(self, style: str) -> str:
         return self.style_map.get(style, style)
+
+
+# Commonwealth Acts: tag locally scoped definitions and "In this Act, X means" wherever it appears.
+CTH_PROFILE: ParserProfile = ParserProfile(local_definitions=True, scope_phrase_definitions=True)
+
+
+def profile_for(doc_type: str, local_definitions: bool) -> ParserProfile | None:
+    """Profile for a Commonwealth build; None (unchanged behaviour) unless opted in for Acts."""
+    if local_definitions and doc_type == "act":
+        return CTH_PROFILE
+    return None
