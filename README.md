@@ -121,6 +121,8 @@ Build a single Act:
 lexau build --acts "Privacy Act 1988" --corpus-dir corpus/
 ```
 
+Local definitions (section/Part/Division-scoped terms and "In this Act, X means" definitions) are tagged by default for Acts. Pass `--no-local-definitions` to build without them (regulations and instruments are never affected). `lexau update` and the growth-check workflow use the default.
+
 Force rebuild even if already current:
 
 ```bash

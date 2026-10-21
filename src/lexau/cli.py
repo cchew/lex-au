@@ -7,6 +7,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import click
+from lxml import etree
 from docx import Document
 from huggingface_hub import HfApi
 from huggingface_hub.utils import filter_repo_objects
@@ -15,7 +16,8 @@ from lexau.corpus import Corpus
 from lexau.crawler import Crawler
 from lexau.builder import AknBuilder
 from lexau.docx_reader import iter_paragraphs
-from lexau.profiles import profile_for
+from lexau.models import ActMetadata, ParseReport
+from lexau.profiles import ParserProfile, profile_for
 
 # Files list_repo_files() returns that export_hf never derives from
 # corpus_dir -- the dataset card (uploaded separately, from --readme) and
@@ -70,7 +72,28 @@ def _load_corpus_index(index_path: Path) -> dict:
     return corpus_index
 
 
-def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act", local_definitions: bool = False) -> None:
+def _convert_act(
+    meta: ActMetadata,
+    docx_paths: list[Path],
+    corpus_dir: Path,
+    corpus_index: dict,
+    profile: ParserProfile | None,
+) -> tuple[etree._Element, ParseReport]:
+    """Convert an Act's cached DOCX volumes to AKN XML (no network, no writes beyond images)."""
+    builder = AknBuilder(meta, images_out=corpus_dir / "images", profile=profile)
+    # Sole producer of volume_index. _split_stream's groupby() requires
+    # paragraphs to be volume-contiguous; this loop guarantees it by
+    # adding all of volume N before volume N+1's first paragraph.
+    for vol_idx, docx_path in enumerate(docx_paths):
+        doc = Document(docx_path)
+        for p in iter_paragraphs(doc):
+            builder.add(replace(p, volume_index=vol_idx))
+
+    endnote_vol = _find_endnote_volume(docx_paths)
+    return builder.build_with_report(corpus_index, last_volume_path=endnote_vol)
+
+
+def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: str = "act", local_definitions: bool = True) -> None:
     """Build Acts: download DOCX and convert to AKN XML."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
@@ -103,19 +126,9 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
             source_format = "doc-converted" if any(docx_dir.glob(f"{meta.safe_name}-c{meta.comp_num}-vol*.doc")) else None
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
-            builder = AknBuilder(
-                meta, images_out=corpus_dir / "images", profile=profile_for(doc_type, local_definitions),
+            xml, report = _convert_act(
+                meta, docx_paths, corpus_dir, corpus_index, profile_for(doc_type, local_definitions),
             )
-            # Sole producer of volume_index. _split_stream's groupby() requires
-            # paragraphs to be volume-contiguous; this loop guarantees it by
-            # adding all of volume N before volume N+1's first paragraph.
-            for vol_idx, docx_path in enumerate(docx_paths):
-                doc = Document(docx_path)
-                for p in iter_paragraphs(doc):
-                    builder.add(replace(p, volume_index=vol_idx))
-
-            endnote_vol = _find_endnote_volume(docx_paths)
-            xml, report = builder.build_with_report(corpus_index, last_volume_path=endnote_vol)
             report.volumes_fetched = len(docx_paths)
 
             saved = corpus.save(meta, xml, source_format=source_format)
@@ -175,7 +188,7 @@ def _build_acts(act_names: list[str], corpus_dir: Path, force: bool, doc_type: s
 )
 @click.option(
     "--local-definitions/--no-local-definitions",
-    default=False,
+    default=True,
     show_default=True,
     help="Tag locally scoped and 'In this Act' definitions (Acts only)",
 )
