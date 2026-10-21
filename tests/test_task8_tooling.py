@@ -143,3 +143,51 @@ def test_review_extraction_strata_and_reproducible_sample(tmp_path: Path) -> Non
     assert rl.main([str(a), str(b), "--n", "5", "--seed", "9", "--out", str(out)]) == 0
     md = out.read_text()
     assert "Seed: 9" in md and "(b1)" in md and "Stratum 2" in md
+
+
+def _akn(gen: str, extra: str = "") -> bytes:
+    return (
+        f'<akomaNtoso xmlns="{NS}"><act><meta><identification><FRBRWork><FRBRdate date="2000-01-01" name="Generation"/></FRBRWork>'
+        f'<FRBRManifestation><FRBRthis value="x"/><FRBRdate date="{gen}" name="Generation"/></FRBRManifestation>'
+        f'</identification></meta><body>{extra}</body></act></akomaNtoso>'
+    ).encode()
+
+
+def _two_dirs(tmp_path: Path, base: bytes, new: bytes) -> tuple[Path, Path]:
+    b, n = tmp_path / "b", tmp_path / "n"
+    b.mkdir()
+    n.mkdir()
+    (b / "a.xml").write_bytes(base)
+    (n / "a.xml").write_bytes(new)
+    return b, n
+
+
+def test_generation_date_only_difference_is_identical(tmp_path: Path) -> None:
+    b, n = _two_dirs(tmp_path, _akn("2026-10-01"), _akn("2026-10-22"))
+    s = dc.diff_dirs(b, n)["summary"]
+    assert (s["identical"], s["differing"], s["date_only_differing"]) == (1, 0, 1)
+
+
+def test_other_difference_still_differs(tmp_path: Path) -> None:
+    b, n = _two_dirs(tmp_path, _akn("2026-10-01", "<p>a</p>"), _akn("2026-10-22", "<p>b</p>"))
+    s = dc.diff_dirs(b, n)["summary"]
+    assert (s["identical"], s["differing"], s["date_only_differing"]) == (0, 1, 0)
+
+
+def test_work_generation_date_change_is_not_normalised(tmp_path: Path) -> None:
+    b, n = _two_dirs(tmp_path, _akn("2026-10-01"), _akn("2026-10-01").replace(b'2000-01-01', b'2001-01-01'))
+    assert dc.diff_dirs(b, n)["summary"]["differing"] == 1
+
+
+def test_no_normalise_flag_differs_on_date(tmp_path: Path) -> None:
+    b, n = _two_dirs(tmp_path, _akn("2026-10-01"), _akn("2026-10-22"))
+    s = dc.diff_dirs(b, n, normalise_generation_date=False)["summary"]
+    assert (s["identical"], s["differing"], s["date_only_differing"]) == (0, 1, 0)
+
+
+def test_cli_flag_and_report_line(tmp_path: Path, capsys) -> None:
+    b, n = _two_dirs(tmp_path, _akn("2026-10-01"), _akn("2026-10-22"))
+    rep = tmp_path / "r.json"
+    assert dc.main([str(b), str(n), "--report", str(rep), "--require-identical"]) == 0
+    assert "date_only=1" in capsys.readouterr().out
+    assert dc.main([str(b), str(n), "--report", str(rep), "--require-identical", "--no-normalise-generation-date"]) == 1
