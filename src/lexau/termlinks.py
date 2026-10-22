@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import re
+from dataclasses import dataclass
 from lxml import etree
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
@@ -344,6 +345,13 @@ _SCOPE_ACT_RE = re.compile(
 # "In this Act, a reference to X includes ..." is a rule of construction, not a definition.
 _CONSTRUCTION_RE = re.compile(r"^(?:an?\s+|the\s+)?(?:references?|expressions?|words?)\s+(?:to|in)\b", re.IGNORECASE)
 
+# Chapeau wording the scope-phrase pass must never read as a term: "In this Act, except where otherwise
+# clearly intended:", "For the purposes of this Act, the following tables define:".
+_CHAPEAU_TEXT_TERM_RE = re.compile(r"^(?:except|unless|the\s+following|following)\b", re.IGNORECASE)
+# Definitions sections for the scope-phrase pass. "Meaning of X" sections are left out on purpose: there
+# "In this Act, X means" is the definition itself and inject_terms does not tag it.
+_SCOPE_PHRASE_DEF_HEADING_RE = re.compile(r"\b(definitions?|interpretations?|dictionary|defined\s+terms)\b", re.IGNORECASE)
+
 
 def _in_quoted_structure(p_el: etree._Element) -> bool:
     """True inside an amendment's quoted replacement text, which belongs to another Act.
@@ -373,6 +381,9 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
         stripped = "".join(p_el.itertext()).strip()
         m = _SCOPE_ACT_RE.match(stripped)
         if not m:
+            continue
+        section = next((a for a in p_el.iterancestors(_SECTION_TAG)), None)
+        if section is not None and _is_definition_section(section, _SCOPE_PHRASE_DEF_HEADING_RE):
             continue
         prefix, remainder = stripped[: m.end()], stripped[m.end():]
         hit: tuple[str, str, str] | None = None
@@ -414,6 +425,7 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
             or _is_narrative_false_positive(hit[0])
             or _PROSE_OPENER_RE.match(hit[0])
             or _CONSTRUCTION_RE.match(hit[0])
+            or _CHAPEAU_TEXT_TERM_RE.match(hit[0])
         ):
             continue
         _inject(p_el, hit[0], "", hit[2], False, registry, tail=hit[1], prefix=prefix)
@@ -448,12 +460,183 @@ def _scope_container(p_el: etree._Element, kind: str | None) -> etree._Element |
     return fallback
 
 
+# Chapeau: a lead-in paragraph of its own ("In this item:", "In this Act, unless the contrary intention
+# appears:") that sets the scope of the definitions listed after it. Commonwealth drafting puts the scope
+# here far more often than inline. A target with any other comma clause ("For the purposes of this Act,
+# the following tables define:") is still a scope lead-in, just not one we can trust: unrecognised.
+_CHAPEAU_RE = re.compile(
+    r"^(?:\(\w{1,6}\)\s*)?(?:In|For)\s+(?:the\s+purposes\s+of\s+)?(?P<target>[^,:—–]{1,80}?)\s*"
+    r"(?P<qual>,[^:—–]*)?[:—–]$",
+    re.IGNORECASE,
+)
+_CHAPEAU_QUAL_RE = re.compile(r"^,\s*(?:unless|except)\b", re.IGNORECASE)
+_FORMULA_LEAD_RE = re.compile(r"(?:^|\s)where\s*[:—–]$", re.IGNORECASE)
+_CHAPEAU_TARGETS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
+    (re.compile(rx + r"$", re.IGNORECASE), kind)
+    for rx, kind in (
+        (r"this\s+Act", "act"),
+        (r"this\s+section", "section"),
+        (r"this\s+regulation", "regulation"),
+        (r"this\s+item", "item"),
+        (r"this\s+clause", "clause"),
+        (r"this\s+Part", "part"),
+        (r"this\s+Division", "division"),
+        (r"this\s+Subdivision", "subdivision"),
+        (r"this\s+Chapter", "chapter"),
+        (r"this\s+Schedule", "schedule"),
+        (r"this\s+(?:subsection|subitem|subclause|subregulation|paragraph|subparagraph)", "subsection"),
+        (r"(?:sub)?(?:sections?|items?|clauses?|regulations?|paragraphs?|subparagraphs?)\s*\(.*", "subsection"),
+    )
+)
+# Ancestor that a chapeau kind names: (element localname, hcontainer @name values).
+_CHAPEAU_CONTAINER: dict[str, tuple[str | None, frozenset[str]]] = {
+    "section": ("section", frozenset()),
+    "regulation": ("section", frozenset()),
+    "item": (None, frozenset({"item", "clause"})),
+    "clause": (None, frozenset({"item", "clause"})),
+    "part": ("part", frozenset({"part"})),
+    "division": ("division", frozenset({"division"})),
+    "subdivision": ("subDivision", frozenset({"subDivision"})),
+    "chapter": ("chapter", frozenset({"chapter"})),
+    "schedule": (None, frozenset({"schedule"})),
+}
+_LIST_ITEM_TAGS = {_PARA_TAG, f"{AKN_TAG}subparagraph", _BLOCKLIST_TAG, f"{AKN_TAG}item"}
+_NOTE_OPENER_RE = re.compile(r"^(?:Note|Example)s?\b", re.IGNORECASE)
+
+
+@dataclass(frozen=True)
+class Chapeau:
+    kind: str
+    raw: str
+
+
+def _is_hcontainer(el: etree._Element, names: frozenset[str] | set[str]) -> bool:
+    return etree.QName(el).localname == "hcontainer" and el.get("name") in names
+
+
+def _chapeau_host(p_el: etree._Element) -> etree._Element | None:
+    """The unit a chapeau search stays inside: the nearest section, Schedule item/clause, or Schedule."""
+    for anc in p_el.iterancestors():
+        if anc.tag == _SECTION_TAG or _is_hcontainer(anc, {"item", "clause", "schedule"}):
+            return anc
+    return None
+
+
+def _in_list_item(p_el: etree._Element, host: etree._Element) -> bool:
+    for anc in p_el.iterancestors():
+        if anc is host:
+            return False
+        if anc.tag in _LIST_ITEM_TAGS:
+            return True
+    return False
+
+
+def _classify_chapeau(text: str) -> Chapeau | None:
+    if _FORMULA_LEAD_RE.search(text):
+        return Chapeau("formula", text)
+    m = _CHAPEAU_RE.match(text)
+    if not m:
+        return None
+    if m.group("qual") and not _CHAPEAU_QUAL_RE.match(m.group("qual")):
+        return Chapeau("unrecognised", text)
+    target = " ".join(m.group("target").split())
+    for rx, kind in _CHAPEAU_TARGETS:
+        if rx.match(target):
+            return Chapeau(kind, text)
+    return Chapeau("unrecognised", text)
+
+
+def _is_definition_entry(p_el: etree._Element, text: str) -> bool:
+    """Another entry of the same definitions list (tagged or not), or a note on one."""
+    return (
+        p_el.find(f"{AKN_TAG}term") is not None
+        or _leading_formatted_run_text(p_el) is not None
+        or _NOTE_OPENER_RE.match(text) is not None
+        or text[:1].islower()  # tail of the entry above, after its list: "who is approved under Division 4 ..."
+        or _looks_like_new_definition(p_el)
+    )
+
+
+def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
+    """The lead-in that governs the definition in p_el, or None.
+
+    Walks back through the preceding paragraphs of the same section / Schedule item / clause,
+    stepping over list items, other definitions and notes. Ordinary prose ends the walk: the
+    chapeau's list is over. A lead-in inside a list item ("(a) a person who:") introduces a
+    sub-list, never a scope, so it is stepped over too.
+    """
+    host = _chapeau_host(p_el)
+    if host is None:
+        return None
+    paras = [p for p in host.iter(_P_TAG) if p.getparent() is not None and p.getparent().tag not in {_HEADING_TAG, f"{AKN_TAG}num"}]
+    try:
+        idx = paras.index(p_el)
+    except ValueError:
+        return None
+    for prev in reversed(paras[:idx]):
+        if _in_list_item(prev, host):
+            continue
+        text = " ".join("".join(prev.itertext()).split())
+        if not text:
+            continue
+        chapeau = _classify_chapeau(text)
+        if chapeau is not None:
+            return chapeau
+        if _is_definition_entry(prev, text):
+            continue
+        return None
+    return None
+
+
+def _chapeau_container(p_el: etree._Element, kind: str) -> etree._Element | None:
+    """Nearest ancestor of the kind a chapeau names, never climbing out of a Schedule unless it names one."""
+    tag, names = _CHAPEAU_CONTAINER[kind]
+    for anc in p_el.iterancestors():
+        if (tag is not None and etree.QName(anc).localname == tag) or (names and _is_hcontainer(anc, names)):
+            return anc if anc.get("eId") else None
+        if _is_hcontainer(anc, {"schedule"}):
+            return None
+    return None
+
+
+def _default_container(p_el: etree._Element) -> etree._Element | None:
+    """No phrase, no chapeau: the enclosing section; in a Schedule, the enclosing item or clause."""
+    for anc in p_el.iterancestors():
+        if anc.tag == _SECTION_TAG or _is_hcontainer(anc, {"item", "clause"}):
+            return anc if anc.get("eId") else None
+        if _is_hcontainer(anc, {"schedule"}):
+            return None
+    return None
+
+
+def _in_schedule(p_el: etree._Element) -> bool:
+    return any(_is_hcontainer(a, {"schedule"}) for a in p_el.iterancestors())
+
+
+def _bump(stats: dict[str, int] | None, key: str) -> None:
+    if stats is not None:
+        stats[key] = stats.get(key, 0) + 1
+
+
+_CHAPEAU_SKIP_STAT = {
+    "subsection": "skipped_subsection_scope",
+    "formula": "skipped_formula",
+    "unrecognised": "skipped_unrecognised_chapeau",
+}
+
+
 def inject_local_terms(
     root: etree._Element,
     registry: dict[str, str],
     def_heading_re: re.Pattern[str] | None = None,
+    stats: dict[str, int] | None = None,
 ) -> int:
-    """Tag locally scoped definitions outside definitions sections; returns the count tagged."""
+    """Tag locally scoped definitions outside definitions sections; returns the count tagged.
+
+    Scope comes from, in order: an inline phrase ("In this Part, X means"), the chapeau the term is
+    listed under ("In this item:"), then the enclosing section (Schedule: item or clause). Fail closed:
+    a subsection/formula/unrecognised chapeau, or a Schedule term with no item or clause, is not tagged.
+    """
     count = 0
     for p_el in root.iter(_P_TAG):
         parent = p_el.getparent()
@@ -500,12 +683,33 @@ def inject_local_terms(
             or len(run) > 170
         ):
             continue
-        container = _scope_container(p_el, kind)
-        if container is None:
-            continue
-        if _is_definition_section(container, def_heading_re):
-            continue  # an ordinary definitions section is handled by inject_terms
-        eid = f"{_term_eid(run)}--{container.get('eId')}"
+        if m:
+            container = _scope_container(p_el, kind)
+            if container is None:
+                continue
+            if _is_definition_section(container, def_heading_re):
+                continue  # an ordinary definitions section is handled by inject_terms
+            eid = f"{_term_eid(run)}--{container.get('eId')}"
+        else:
+            section = next((a for a in p_el.iterancestors(_SECTION_TAG)), None)
+            if section is not None and _is_definition_section(section, def_heading_re):
+                continue  # an ordinary definitions section is handled by inject_terms
+            chapeau = _find_chapeau(p_el)
+            if chapeau is not None and chapeau.kind in _CHAPEAU_SKIP_STAT:
+                _bump(stats, _CHAPEAU_SKIP_STAT[chapeau.kind])
+                continue
+            if chapeau is not None and chapeau.kind == "act":
+                eid = _term_eid(run)
+                _bump(stats, "act_wide_via_chapeau")
+            else:
+                container = _chapeau_container(p_el, chapeau.kind) if chapeau else _default_container(p_el)
+                if container is None:
+                    if chapeau is not None:
+                        _bump(stats, "skipped_chapeau_container_missing")
+                    elif _in_schedule(p_el):
+                        _bump(stats, "skipped_no_scope_in_schedule")
+                    continue
+                eid = f"{_term_eid(run)}--{container.get('eId')}"
         _inject(p_el, run, "", hit[1], False, registry, tail=hit[0], prefix=prefix, eid=eid)
         count += 1
     return count

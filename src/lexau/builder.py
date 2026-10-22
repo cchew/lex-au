@@ -1933,7 +1933,7 @@ class AknBuilder:
         if self._profile is not None and self._profile.scope_phrase_definitions:
             terms_found += inject_scope_phrase_terms(root, term_registry)
         if self._profile is not None and self._profile.local_definitions:
-            terms_found += inject_local_terms(root, term_registry, self._profile.def_heading_re)
+            terms_found += inject_local_terms(root, term_registry, self._profile.def_heading_re, report.local_term_scope)
         report.terms_found = terms_found
         # Duplicate detection: count eIds that appeared more than once (last-write-wins in registry)
         # Surface via ParseReport for corpus validation.

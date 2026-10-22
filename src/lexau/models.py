@@ -91,3 +91,5 @@ class ParseReport:
     figures_raster: int = 0
     figures_converted: int = 0
     figures_placeholder: int = 0
+    # Local-definition pass (flags on only): terms skipped or widened by reason, from the chapeau.
+    local_term_scope: dict[str, int] = field(default_factory=dict)
