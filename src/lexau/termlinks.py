@@ -530,6 +530,16 @@ def _in_list_item(p_el: etree._Element, host: etree._Element) -> bool:
     return False
 
 
+def _shares_list_item(prev: etree._Element, p_el: etree._Element, host: etree._Element) -> bool:
+    """True when prev's nearest list item also contains p_el."""
+    for anc in prev.iterancestors():
+        if anc is host:
+            return False
+        if anc.tag in _LIST_ITEM_TAGS:
+            return p_el in anc.iterdescendants()
+    return False
+
+
 def _classify_chapeau(text: str) -> Chapeau | None:
     if _FORMULA_LEAD_RE.search(text):
         return Chapeau("formula", text)
@@ -574,6 +584,9 @@ def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
         return None
     for prev in reversed(paras[:idx]):
         if _in_list_item(prev, host):
+            # A "where:" legend lead-in in the list item that holds the definition governs it.
+            if _FORMULA_LEAD_RE.search(" ".join("".join(prev.itertext()).split())) and _shares_list_item(prev, p_el, host):
+                return Chapeau("formula", "where:")
             continue
         text = " ".join("".join(prev.itertext()).split())
         if not text:

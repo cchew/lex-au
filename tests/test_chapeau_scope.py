@@ -230,6 +230,66 @@ def test_formula_variables_are_not_tagged() -> None:
     assert stats.get("skipped_formula") == 2
 
 
+def test_formula_legend_inside_a_list_item_is_not_tagged() -> None:
+    # Small Superannuation Accounts Act s 50(4)(a): the legend sits in the same list item as "where:".
+    stats: dict[str, int] = {}
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-4"><num>4</num>'
+                "<content><p>If the withdrawal event comes first:</p></content>"
+                '<paragraph eId="part-2__sec-5__subsec-4__para-a"><num>a</num>'
+                "<content><p>the rate of accrual is the percentage worked out using the formula:</p></content>"
+                '<figure><img src="x.png" alt=""/></figure>'
+                "<content><p>where:</p>"
+                "<p><b><i>Adjusted allocation rate</i></b> means the last allocation rate published before the accrual day; and</p>"
+                "</content></paragraph></subsection>"
+            )
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_formula") == 1
+
+
+def test_formula_legend_with_multiple_entries_in_a_list_item_is_not_tagged() -> None:
+    # Airports Act s 12(5)(b) (Part 19): two legend entries after "where:".
+    stats: dict[str, int] = {}
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-5"><num>5</num><content><p>If:</p></content>'
+                '<paragraph eId="part-2__sec-5__subsec-5__para-b"><num>b</num>'
+                "<content><p>the first level company holds the interest in a second level company;</p></content>"
+                "<content><p>the person is taken to hold a percentage worked out using the formula:</p></content>"
+                '<figure><img src="x.png" alt=""/></figure>'
+                "<content><p>where:</p>"
+                "<p><b><i>first level percentage</i></b> means the percentage held by the person.</p>"
+                "<p><b><i>second level percentage</i></b> means the percentage held by the first level company.</p>"
+                "</content></paragraph></subsection>"
+            )
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_formula") == 2
+
+
+def test_nested_sublist_lead_in_is_still_ignored_as_chapeau() -> None:
+    root = _act(
+        body=_body_part(
+            _section(
+                "<content><p>In this section:</p></content>"
+                '<paragraph eId="part-2__sec-5__para-a"><num>a</num>'
+                "<content><p>a person who:</p></content>"
+                f"</paragraph><content>{_defn('widget')}</content>"
+            )
+        )
+    )
+    chapeau = _find_chapeau(root.xpath("//a:p[a:b]", namespaces=A)[0])
+    assert chapeau is not None and chapeau.kind == "section"
+
+
 def test_unrecognised_chapeau_is_not_tagged() -> None:
     stats: dict[str, int] = {}
     item = _item("schedule-2__item-2", f"<content><p>In the transitional Schedules:</p>{_defn('FWA member')}</content>")
