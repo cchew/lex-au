@@ -482,6 +482,8 @@ _REGS_CHAPEAU_RE = re.compile(
     re.IGNORECASE,
 )
 _REGS_NAME_RE = re.compile(r"(?:^|-)regulations?-\d{4}\b", re.IGNORECASE)
+# Amending or repealing instruments carry a regulations-style name but are not the regulations themselves.
+_AMENDING_NAME_RE = re.compile(r"amend|repeal|revo[ck]", re.IGNORECASE)
 _CHAPEAU_QUAL_RE = re.compile(r"^,\s*(?:unless|except)\b", re.IGNORECASE)
 _FORMULA_LEAD_RE = re.compile(r"(?:^|\s)where\s*[:—–]$", re.IGNORECASE)
 _CHAPEAU_TARGETS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
@@ -624,12 +626,16 @@ def _resolve_named_chapeau(chapeau: Chapeau, p_el: etree._Element) -> Chapeau:
     if cm:
         schedule = next((a for a in p_el.iterancestors() if _is_hcontainer(a, {"schedule"})), None)
         heading = schedule.find(_HEADING_TAG) if schedule is not None else None
-        if heading is not None and re.search(rf"\b{cm.group(1)}\b", "".join(heading.itertext()), re.IGNORECASE):
+        # The Schedule is the Code only when its heading ends with the word ("National Credit Code").
+        if heading is not None and re.search(
+            rf"\b{cm.group(1)}[\s.,;:]*$", " ".join("".join(heading.itertext()).split()), re.IGNORECASE
+        ):
             return Chapeau("schedule", chapeau.raw)
         return chapeau
     if _REGS_CHAPEAU_RE.match(chapeau.raw):
         name = p_el.getroottree().getroot().find(f".//{AKN_TAG}FRBRWork/{AKN_TAG}FRBRname")
-        if name is not None and _REGS_NAME_RE.search(name.get("value") or ""):
+        value = name.get("value") or "" if name is not None else ""
+        if _REGS_NAME_RE.search(value) and not _AMENDING_NAME_RE.search(value):
             return Chapeau("act", chapeau.raw)
     return chapeau
 

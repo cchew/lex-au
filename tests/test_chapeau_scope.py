@@ -625,6 +625,17 @@ def test_rule_a_negative_in_this_section_in_a_schedule_item_stays_skipped() -> N
     assert stats.get("skipped_chapeau_container_missing") == 1
 
 
+def test_rule_c_negative_heading_that_merely_contains_the_word_stays_skipped() -> None:
+    stats: dict[str, int] = {}
+    for heading in ("Amendment of the Criminal Code Act 1995", "Code of conduct and banning orders", "Family law matters"):
+        root = _act(schedules=_code_schedule(heading, "schedule-1__part-1__clause-27", "In this Code:" if "Code" in heading else "In this Law:", "conduct"))
+        _run(root, stats)
+        assert _refs(root) == [], heading
+    ok = _act(schedules=_code_schedule("National Credit Code.", "schedule-1__part-1__clause-27", "In this Code:", "conduct"))
+    _run(ok)
+    assert _refs(ok) == ["#term-conduct--schedule-1"]
+
+
 def _casr_section(chapeau: str) -> str:
     # CASR reg 21.041(1) shape.
     return _section(
@@ -647,14 +658,15 @@ def test_rule_d_in_these_regulations_is_instrument_wide() -> None:
 
 def test_rule_d_negative_in_these_regulations_outside_a_regulations_instrument_stays_skipped() -> None:
     stats: dict[str, int] = {}
-    for name in ("civil-aviation-act-1988", "civil-aviation-regulations-amendment-act-1999"):
+    for name in ("civil-aviation-act-1988", "civil-aviation-regulations-amendment-act-1999",
+                 "civil-aviation-safety-amendment-regulations-2025", "x-repeal-regulations-2025", "x-regulations-amendment-2025"):
         root = _named_act(name, body=_body_part(_casr_section("In these Regulations:")))
         _run(root, stats)
         assert _refs(root) == [], name
     no_meta = _act(body=_body_part(_casr_section("In these Regulations:")))
     _run(no_meta, stats)
     assert _refs(no_meta) == []
-    assert stats.get("skipped_unrecognised_chapeau") == 3
+    assert stats.get("skipped_unrecognised_chapeau") == 6
 
 
 def _atsi_schedule(chapeau: str) -> str:
