@@ -533,3 +533,248 @@ def test_definitions_clause_in_an_ordinary_schedule_still_tags() -> None:
     root = _act(schedules=_schedule(clause))
     _run(root)
     assert _refs(root) == ["#term-detention--schedule-1"]
+
+
+# --- Task 4: scope-recovery rules C, A, D, E, F and the "In applying ..." lead-in -------------------
+
+
+def _named_act(name: str, body: str = "", schedules: str = "") -> etree._Element:
+    return etree.fromstring(
+        f'<akomaNtoso xmlns="{NS}"><act><meta><identification><FRBRWork><FRBRname value="{name}"/></FRBRWork>'
+        f"</identification></meta><body>{body}</body>"
+        f"<attachments><attachment>{schedules}</attachment></attachments></act></akomaNtoso>"
+    )
+
+
+def _code_schedule(heading: str, clause_eid: str, chapeau: str, term: str) -> str:
+    # NCCP Sch 1 cl 27 shape: the chapeau sits in a subclause hcontainer, the entries in the clause after it.
+    return (
+        f'<hcontainer name="schedule" eId="schedule-1"><num>Schedule 1</num><heading>{heading}</heading>'
+        f'<hcontainer name="clause" eId="{clause_eid}"><num>27</num><heading>Definitions</heading>'
+        f'<hcontainer name="subclause" eId="{clause_eid}__subclause-1"><num>1</num>'
+        f"<content><p>{chapeau}</p></content></hcontainer>"
+        f"<content>{_defn(term)}</content></hcontainer></hcontainer>"
+    )
+
+
+def test_rule_c_code_law_scheme_chapeau_scopes_to_the_schedule_that_names_it() -> None:
+    cases = [
+        ("National Credit Code", "In this Code:", "credit limit"),
+        ("Marine Safety (Domestic Commercial Vessel) National Law", "In this Law:", "COAG"),
+        ("The cooperative scheme", "In this scheme:", "Australian ship"),
+    ]
+    for heading, chapeau, term in cases:
+        root = _act(schedules=_code_schedule(heading, "schedule-1__part-1__clause-27", chapeau, term))
+        _run(root)
+        assert _ref_of(root, term) == [f"#{'term-' + term.lower().replace(' ', '-')}--schedule-1"], (chapeau, _refs(root))
+
+
+def test_rule_c_negative_schedule_not_naming_it_and_act_body_stay_skipped() -> None:
+    stats: dict[str, int] = {}
+    # "In this Law:" inside a Schedule headed for a Code: the word does not match.
+    root = _act(schedules=_code_schedule("National Credit Code", "schedule-1__part-1__clause-27", "In this Law:", "credit limit"))
+    _run(root, stats)
+    # Criminal Code s 4.1(2) shape: "In this Code:" in the Act body.
+    body = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-2"><num>2</num><content><p>In this Code:</p></content>'
+                f"<content>{_defn('conduct')}</content></subsection>"
+            )
+        )
+    )
+    _run(body, stats)
+    assert _refs(root) == [] and _refs(body) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 2
+
+
+def _schedule_clause(sched_eid: str, clause_eid: str, sub: str, heading: str = "H—Demutualisation") -> str:
+    return (
+        f'<hcontainer name="schedule" eId="{sched_eid}"><num>Schedule 4</num><heading>{heading}</heading>'
+        f'<hcontainer name="clause" eId="{clause_eid}"><num>326-60</num><heading>Continuity test</heading>{sub}'
+        "</hcontainer></hcontainer>"
+    )
+
+
+def test_rule_a_in_this_section_in_a_schedule_clause_scopes_to_the_clause() -> None:
+    # ITAA 1936 Sch 4 cl 326-60(3): the Schedule's "sections" parse as clauses.
+    clause_eid = "schedule-4__dvs-326__subdvs-326-B__clause-326-60"
+    root = _act(
+        schedules=_schedule_clause(
+            "schedule-4",
+            clause_eid,
+            f'<hcontainer name="subclause" eId="{clause_eid}__subclause-3"><num>3</num>'
+            f"<content><p>In this section:</p></content></hcontainer><content>{_defn('accumulated surplus')}</content>",
+        )
+    )
+    _run(root)
+    assert _refs(root) == [f"#term-accumulated-surplus--{clause_eid}"]
+
+
+def test_rule_a_negative_in_this_section_in_a_schedule_item_stays_skipped() -> None:
+    # Corporations Regulations Sch 21 item 24: modification text quoting s 1017D, not a section of its own.
+    stats: dict[str, int] = {}
+    item = _item(
+        "schedule-21__part-1__item-24",
+        '<subsection eId="schedule-21__part-1__item-24__subsec-16"><num>16</num><content><p>In this section:</p></content>'
+        f"<content>{_defn('protected member')}</content></subsection>",
+    )
+    root = _act(schedules=_schedule(item, eid="schedule-21"))
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_chapeau_container_missing") == 1
+
+
+def _casr_section(chapeau: str) -> str:
+    # CASR reg 21.041(1) shape.
+    return _section(
+        f'<subsection eId="part-21__sec-21.041__subsec-1"><num>1</num><content><p>{chapeau}</p></content>'
+        f"<content>{_defn('type certificate')}</content></subsection>",
+        eid="part-21__sec-21.041",
+        heading="Type certificate—meaning",
+    )
+
+
+def test_rule_d_in_these_regulations_is_instrument_wide() -> None:
+    for chapeau in ("In these Regulations:", "In these Regulations, unless the contrary intention appears:"):
+        stats: dict[str, int] = {}
+        root = _named_act("civil-aviation-safety-regulations-1998", body=_body_part(_casr_section(chapeau)))
+        reg = _run(root, stats)
+        assert _refs(root) == ["#term-type-certificate"], chapeau
+        assert reg["term-type-certificate"] == "type certificate"
+        assert stats.get("act_wide_via_chapeau") == 1
+
+
+def test_rule_d_negative_in_these_regulations_outside_a_regulations_instrument_stays_skipped() -> None:
+    stats: dict[str, int] = {}
+    for name in ("civil-aviation-act-1988", "civil-aviation-regulations-amendment-act-1999"):
+        root = _named_act(name, body=_body_part(_casr_section("In these Regulations:")))
+        _run(root, stats)
+        assert _refs(root) == [], name
+    no_meta = _act(body=_body_part(_casr_section("In these Regulations:")))
+    _run(no_meta, stats)
+    assert _refs(no_meta) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 3
+
+
+def _atsi_schedule(chapeau: str) -> str:
+    # ATSI Act 2005 Sch 1 shape: numbered paragraphs straight under the Schedule, no clause containers.
+    return (
+        '<hcontainer name="schedule" eId="schedule-1"><num>2</num><heading>Method of counting votes</heading>'
+        f"<content><p>23.\t\tThe count continues.</p><p>{chapeau}</p>{_defn('continuing candidate')}</content></hcontainer>"
+    )
+
+
+def test_rule_e_numbered_chapeau_is_recognised() -> None:
+    root = _act(schedules=_atsi_schedule("24.\t\tIn this Schedule:"))
+    _run(root)
+    assert _refs(root) == ["#term-continuing-candidate--schedule-1"]
+
+
+def test_rule_e_negative_numbered_unrecognised_chapeau_stays_skipped() -> None:
+    stats: dict[str, int] = {}
+    root = _act(schedules=_atsi_schedule("24.\t\tIn this table:"))
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 1
+
+
+def test_rule_f_singular_for_the_purpose_of_this_section_scopes_to_the_section() -> None:
+    # ITAA 1936 s 79B(6).
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-6"><num>6</num><content><p>For the purpose of this section:</p></content>'
+                f"<content>{_defn('locality')}</content></subsection>"
+            )
+        )
+    )
+    _run(root)
+    assert _refs(root) == ["#term-locality--part-2__sec-5"]
+
+
+def test_rule_f_singular_formula_lead_in_is_no_longer_tagged() -> None:
+    # Social Security Act s 1061ZZCN(3): currently tagged "This section" because the plural-only regex missed it.
+    stats: dict[str, int] = {}
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-3"><num>3</num><content>'
+                "<p>For the purpose of applying the formula in subsection (2) immediately before the repayment time:</p>"
+                "</content>"
+                f"<content>{_defn('amounts repaid')}{_defn('principal sum')}</content></subsection>"
+            )
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 2
+
+
+def test_rule_f_negative_singular_subsection_chapeau_stays_skipped() -> None:
+    # Crimes (Currency) Act s 23(2).
+    stats: dict[str, int] = {}
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-2"><num>2</num><content><p>For the purpose of subsection (1):</p></content>'
+                f"<content>{_defn('Australian aircraft')}</content></subsection>"
+            )
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_subsection_scope") == 1
+
+
+def test_long_in_applying_lead_in_is_an_unrecognised_chapeau() -> None:
+    # Income Tax (Transitional Provisions) Act 1997 s 40-292(2) lead-in, over the 80-char target limit.
+    stats: dict[str, int] = {}
+    lead = (
+        "In applying section 40-290 of the new Act (including references in that section to the reduction of "
+        "deductions under section 40-25 of that Act) in relation to the asset, assume that using the asset for a "
+        "taxable purpose includes using it for:"
+    )
+    vea = (
+        "For the purposes of applying the Method statement in this section to an affected amount indexed under "
+        "section 198, 198A, 198D or 198F, the following expressions used in the Method statement have the meanings set out below:"
+    )
+    root = _act(
+        body=_body_part(
+            _section(
+                f'<subsection eId="part-2__sec-5__subsec-2"><num>2</num><content><p>{lead}</p></content>'
+                f"<content>{_defn('total decline in value')}</content></subsection>"
+            )
+            + _section(f"<content><p>{vea}</p>{_defn('indexed amount')}</content>", eid="part-2__sec-6")
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 2
+
+
+def test_long_application_of_this_section_lead_in_keeps_default_section_scope() -> None:
+    # Near miss: "For the purposes of the application of this section ..." over 80 chars keeps today's section scope.
+    lead = (
+        "For the purposes of the application of this section in relation to a taxpayer who is a member of a "
+        "partnership at the end of the year of income:"
+    )
+    root = _act(body=_body_part(_section(f"<content><p>{lead}</p>{_defn('net income')}</content>")))
+    _run(root)
+    assert _refs(root) == ["#term-net-income--part-2__sec-5"]
+
+
+def test_find_chapeau_kinds_for_new_shapes() -> None:
+    cases = {
+        "24. In this Schedule:": "schedule",
+        "3A. In this Part:": "part",
+        "For the purpose of this section:": "section",
+        "For the purpose of subsection (1):": "subsection",
+        "In this Code:": "unrecognised",  # body: no Schedule names it
+        "In these Regulations:": "unrecognised",  # no regulations instrument name
+    }
+    for chapeau, kind in cases.items():
+        root = _act(body=_body_part(_section(f"<content><p>{chapeau}</p>{_defn('thing')}</content>")))
+        p = root.xpath("//a:p[a:b]", namespaces=A)[0]
+        found = _find_chapeau(p)
+        assert found is not None and found.kind == kind, (chapeau, found)

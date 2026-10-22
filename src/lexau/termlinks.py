@@ -464,10 +464,24 @@ def _scope_container(p_el: etree._Element, kind: str | None) -> etree._Element |
 # here far more often than inline. A target with any other comma clause ("For the purposes of this Act,
 # the following tables define:") is still a scope lead-in, just not one we can trust: unrecognised.
 _CHAPEAU_RE = re.compile(
-    r"^(?:\(\w{1,6}\)\s*)?(?:In|For)\s+(?:the\s+purposes\s+of\s+)?(?P<target>[^,:—–]{1,80}?)\s*"
+    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:In|For)\s+(?:the\s+purposes?\s+of\s+)?(?P<target>[^,:—–]{1,80}?)\s*"
     r"(?P<qual>,[^:—–]*)?[:—–]$",
     re.IGNORECASE,
 )
+# "In applying section 40-290 of the new Act (...) in relation to the asset, assume ...:" -- a conditional
+# lead-in too long for _CHAPEAU_RE. Its terms belong to the application it describes, not the section.
+_APPLYING_LEAD_RE = re.compile(
+    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:In|For\s+the\s+purposes?\s+of)\s+applying\b.*[:—–]$",
+    re.IGNORECASE,
+)
+# Unrecognised targets that a Schedule or the instrument itself resolves: "In this Code:" inside the Schedule
+# that is the Code, "In these Regulations:" in a regulations instrument.
+_CODE_CHAPEAU_RE = re.compile(r"^(?:\(\w{1,6}\)\s*)?In\s+this\s+(Code|Law|scheme)\s*:$", re.IGNORECASE)
+_REGS_CHAPEAU_RE = re.compile(
+    r"^(?:\(\w{1,6}\)\s*)?In\s+these\s+Regulations\s*(?:,\s*unless\s+the\s+contrary\s+intention\s+appears\s*)?:$",
+    re.IGNORECASE,
+)
+_REGS_NAME_RE = re.compile(r"(?:^|-)regulations?-\d{4}\b", re.IGNORECASE)
 _CHAPEAU_QUAL_RE = re.compile(r"^,\s*(?:unless|except)\b", re.IGNORECASE)
 _FORMULA_LEAD_RE = re.compile(r"(?:^|\s)where\s*[:—–]$", re.IGNORECASE)
 _CHAPEAU_TARGETS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
@@ -545,7 +559,7 @@ def _classify_chapeau(text: str) -> Chapeau | None:
         return Chapeau("formula", text)
     m = _CHAPEAU_RE.match(text)
     if not m:
-        return None
+        return Chapeau("unrecognised", text) if _APPLYING_LEAD_RE.match(text) else None
     if m.group("qual") and not _CHAPEAU_QUAL_RE.match(m.group("qual")):
         return Chapeau("unrecognised", text)
     target = " ".join(m.group("target").split())
@@ -593,20 +607,48 @@ def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
             continue
         chapeau = _classify_chapeau(text)
         if chapeau is not None:
-            return chapeau
+            return _resolve_named_chapeau(chapeau, p_el) if chapeau.kind == "unrecognised" else chapeau
         if _is_definition_entry(prev, text):
             continue
         return None
     return None
 
 
+def _resolve_named_chapeau(chapeau: Chapeau, p_el: etree._Element) -> Chapeau:
+    """An unrecognised chapeau whose target the document itself identifies, else unchanged.
+
+    "In this Code:" / "In this Law:" / "In this scheme:" inside a Schedule whose heading names that word is
+    the Schedule. "In these Regulations:" in a regulations instrument is instrument-wide.
+    """
+    cm = _CODE_CHAPEAU_RE.match(chapeau.raw)
+    if cm:
+        schedule = next((a for a in p_el.iterancestors() if _is_hcontainer(a, {"schedule"})), None)
+        heading = schedule.find(_HEADING_TAG) if schedule is not None else None
+        if heading is not None and re.search(rf"\b{cm.group(1)}\b", "".join(heading.itertext()), re.IGNORECASE):
+            return Chapeau("schedule", chapeau.raw)
+        return chapeau
+    if _REGS_CHAPEAU_RE.match(chapeau.raw):
+        name = p_el.getroottree().getroot().find(f".//{AKN_TAG}FRBRWork/{AKN_TAG}FRBRname")
+        if name is not None and _REGS_NAME_RE.search(name.get("value") or ""):
+            return Chapeau("act", chapeau.raw)
+    return chapeau
+
+
 def _chapeau_container(p_el: etree._Element, kind: str) -> etree._Element | None:
-    """Nearest ancestor of the kind a chapeau names, never climbing out of a Schedule unless it names one."""
+    """Nearest ancestor of the kind a chapeau names, never climbing out of a Schedule unless it names one.
+
+    "In this section:" inside a Schedule clause is that clause: Code-style Schedules number their
+    sections as clauses. Schedule items are not (modification Schedules quote another Act's sections).
+    """
     tag, names = _CHAPEAU_CONTAINER[kind]
     for anc in p_el.iterancestors():
         if (tag is not None and etree.QName(anc).localname == tag) or (names and _is_hcontainer(anc, names)):
             return anc if anc.get("eId") else None
         if _is_hcontainer(anc, {"schedule"}):
+            if kind == "section":
+                unit = _chapeau_host(p_el)
+                if unit is not None and _is_hcontainer(unit, {"clause"}) and unit.get("eId"):
+                    return unit
             return None
     return None
 
