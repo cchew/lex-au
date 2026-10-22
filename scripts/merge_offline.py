@@ -4,6 +4,7 @@ Starts from a copy of the baseline corpus (xml/, index.json) so Acts that were n
 baseline XML, overlays the rebuilt XML from every chunk, and copies reports/ and images/. Index entries
 stay exactly as in the baseline (metadata is unchanged by an offline rebuild); only the top-level
 ``structure_version`` is taken from the chunks, and every chunk must agree on it.
+Rejects chunk XML that is not well-formed (a killed run can leave a truncated file).
 Never writes into the baseline or chunk directories.
 """
 from __future__ import annotations
@@ -14,6 +15,7 @@ import sys
 from pathlib import Path
 
 import click
+from lxml import etree
 
 
 def merge(baseline: Path, chunks: list[Path], out: Path) -> dict[str, int]:
@@ -37,6 +39,10 @@ def merge(baseline: Path, chunks: list[Path], out: Path) -> dict[str, int]:
                 raise click.UsageError(f"{xml.name} from {chunk} is not in the baseline index")
             if xml.stem in rebuilt:
                 raise click.UsageError(f"{xml.stem} was rebuilt by two chunks")
+            try:
+                etree.parse(str(xml))
+            except etree.XMLSyntaxError as exc:
+                raise click.UsageError(f"{xml} is not well-formed XML (truncated by a killed run?): {exc}")
             shutil.copy2(xml, out / "xml" / xml.name)
             rebuilt.add(xml.stem)
         for sub in ("reports", "images"):
