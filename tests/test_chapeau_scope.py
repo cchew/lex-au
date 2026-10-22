@@ -429,3 +429,47 @@ def test_builder_records_local_term_scope_counts() -> None:
 def test_builder_flags_off_leaves_local_term_scope_empty() -> None:
     _, report = _build_report(None)
     assert report.local_term_scope == {}
+
+
+# --- Dictionary Schedules stay untagged (inject_terms territory; definitions_in_schedules is off) ----
+
+
+def _dictionary_schedule(inner: str) -> str:
+    return f'<hcontainer name="schedule" eId="schedule-1"><num>Schedule 1</num><heading>Dictionary</heading>{inner}</hcontainer>'
+
+
+def test_dictionary_schedule_with_in_this_act_chapeau_is_not_tagged() -> None:
+    stats: dict[str, int] = {}
+    root = _act(
+        schedules=_dictionary_schedule(
+            f"<content><p>In this Act:</p>{_defn('agency')}{_defn('applicant')}"
+            "<p>In this Act, <i>widget</i> means a thing.</p></content>"
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("act_wide_via_chapeau") is None
+
+
+def test_dictionary_schedule_with_a_clause_level_chapeau_is_not_tagged() -> None:
+    # Patents Act 1990 shape: the whole Dictionary sits in one clause hcontainer.
+    clause = _item(
+        "schedule-1__clause-1952",
+        f"<content><p>In this Act, unless the contrary intention appears:</p>{_defn('application')}"
+        "<p><b><i>application</i></b>, in Chapter 15, means a thing.</p>"
+        f"{_defn('assignee')}</content>",
+        name="clause",
+    )
+    root = _act(schedules=_dictionary_schedule(clause))
+    _run(root)
+    assert _refs(root) == []
+
+
+def test_definitions_clause_in_an_ordinary_schedule_still_tags() -> None:
+    clause = (
+        '<hcontainer name="clause" eId="schedule-1__part-1__dvs-2__clause-2"><num>2</num><heading>Definitions</heading>'
+        f"<content><p>In this Schedule, unless the contrary intention appears:</p>{_defn('detention')}</content></hcontainer>"
+    )
+    root = _act(schedules=_schedule(clause))
+    _run(root)
+    assert _refs(root) == ["#term-detention--schedule-1"]

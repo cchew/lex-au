@@ -382,8 +382,7 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
         m = _SCOPE_ACT_RE.match(stripped)
         if not m:
             continue
-        section = next((a for a in p_el.iterancestors(_SECTION_TAG)), None)
-        if section is not None and _is_definition_section(section, _SCOPE_PHRASE_DEF_HEADING_RE):
+        if _in_definitions_unit(p_el, _SCOPE_PHRASE_DEF_HEADING_RE):
             continue
         prefix, remainder = stripped[: m.end()], stripped[m.end():]
         hit: tuple[str, str, str] | None = None
@@ -609,6 +608,19 @@ def _default_container(p_el: etree._Element) -> etree._Element | None:
     return None
 
 
+def _in_definitions_unit(p_el: etree._Element, def_heading_re: re.Pattern[str] | None) -> bool:
+    """True inside a definitions-headed section or Schedule (e.g. "Schedule 1—Dictionary").
+
+    Schedule items and clauses headed "Definitions" are not checked: inject_terms never processes them
+    under the Commonwealth profile, so the local pass is the only one that tags them (EPBC Sch 1 cl 2).
+    """
+    section = next((a for a in p_el.iterancestors(_SECTION_TAG)), None)
+    if section is not None and _is_definition_section(section, def_heading_re):
+        return True
+    schedule = next((a for a in p_el.iterancestors() if _is_hcontainer(a, {"schedule"})), None)
+    return schedule is not None and _is_definition_section(schedule, def_heading_re)
+
+
 def _in_schedule(p_el: etree._Element) -> bool:
     return any(_is_hcontainer(a, {"schedule"}) for a in p_el.iterancestors())
 
@@ -691,9 +703,8 @@ def inject_local_terms(
                 continue  # an ordinary definitions section is handled by inject_terms
             eid = f"{_term_eid(run)}--{container.get('eId')}"
         else:
-            section = next((a for a in p_el.iterancestors(_SECTION_TAG)), None)
-            if section is not None and _is_definition_section(section, def_heading_re):
-                continue  # an ordinary definitions section is handled by inject_terms
+            if _in_definitions_unit(p_el, def_heading_re):
+                continue  # a definitions section or Dictionary Schedule: inject_terms territory
             chapeau = _find_chapeau(p_el)
             if chapeau is not None and chapeau.kind in _CHAPEAU_SKIP_STAT:
                 _bump(stats, _CHAPEAU_SKIP_STAT[chapeau.kind])
