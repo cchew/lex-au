@@ -432,11 +432,16 @@ def inject_scope_phrase_terms(root: etree._Element, registry: dict[str, str]) ->
     return count
 
 
+# "Subject to subitem (2), in this Part:" -- a leading "Subject to ...," clause qualifies the scope phrase
+# that follows it without changing the scope. Lazy, so the first ", In/For" after it starts the phrase.
+_SUBJECT_TO = r"(?:Subject\s+to\s+[^:;\u2014\u2013]{1,120}?,\s*)?"
+
+
 # Locally scoped definitions: "In this section/Part/Division/Schedule, X means ..." or a formatted term opening
 # a paragraph in an ordinary section. Formatted terms only -- plain text outside a definitions section is
 # far too ambiguous (measured 67% precision against 100% for the formatted-term gate).
 _SCOPE_LOCAL_RE = re.compile(
-    r"^\s*(?:In|For)\s+(?:the\s+purposes\s+of\s+)?this\s+"
+    r"^\s*" + _SUBJECT_TO + r"(?:In|For)\s+(?:the\s+purposes\s+of\s+)?this\s+"
     r"(?P<kind>section|subsection|Part|Division|Subdivision|Chapter|Schedule)\s*,\s*(?:(?:an?|the)\s+)?",
     re.IGNORECASE,
 )
@@ -464,7 +469,7 @@ def _scope_container(p_el: etree._Element, kind: str | None) -> etree._Element |
 # here far more often than inline. A target with any other comma clause ("For the purposes of this Act,
 # the following tables define:") is still a scope lead-in, just not one we can trust: unrecognised.
 _CHAPEAU_RE = re.compile(
-    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:In|For)\s+(?:the\s+purposes?\s+of\s+)?(?P<target>[^,:—–]{1,80}?)\s*"
+    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?" + _SUBJECT_TO + r"(?:In|For)\s+(?:the\s+purposes?\s+of\s+)?(?P<target>[^,:—–]{1,80}?)\s*"
     r"(?P<qual>,[^:—–]*)?[:—–]$",
     re.IGNORECASE,
 )
@@ -476,9 +481,9 @@ _APPLYING_LEAD_RE = re.compile(
 )
 # Unrecognised targets that a Schedule or the instrument itself resolves: "In this Code:" inside the Schedule
 # that is the Code, "In these Regulations:" in a regulations instrument.
-_CODE_CHAPEAU_RE = re.compile(r"^(?:\(\w{1,6}\)\s*)?In\s+this\s+(Code|Law|scheme)\s*:$", re.IGNORECASE)
+_CODE_CHAPEAU_RE = re.compile(r"^(?:\(\w{1,6}\)\s*)?" + _SUBJECT_TO + r"In\s+this\s+(Code|Law|scheme)\s*:$", re.IGNORECASE)
 _REGS_CHAPEAU_RE = re.compile(
-    r"^(?:\(\w{1,6}\)\s*)?In\s+these\s+Regulations\s*(?:,\s*unless\s+the\s+contrary\s+intention\s+appears\s*)?:$",
+    r"^(?:\(\w{1,6}\)\s*)?" + _SUBJECT_TO + r"In\s+these\s+Regulations\s*(?:,\s*unless\s+the\s+contrary\s+intention\s+appears\s*)?:$",
     re.IGNORECASE,
 )
 _REGS_NAME_RE = re.compile(r"(?:^|-)regulations?-\d{4}\b", re.IGNORECASE)

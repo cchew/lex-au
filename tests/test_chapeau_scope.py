@@ -790,3 +790,90 @@ def test_find_chapeau_kinds_for_new_shapes() -> None:
         p = root.xpath("//a:p[a:b]", namespaces=A)[0]
         found = _find_chapeau(p)
         assert found is not None and found.kind == kind, (chapeau, found)
+
+
+# --- Task 7: "Subject to ..., in this Part:" lead-ins ---------------------------------------------
+
+
+def _fw_part6(chapeau: str, term: str = "agreement proceeding") -> etree._Element:
+    # Fair Work (Transitional Provisions and Consequential Amendments) Act 2009 Sch 4 Part 6 item 53 shape.
+    item = _item(
+        "schedule-4__part-6__item-1",
+        '<subsection eId="schedule-4__part-6__item-1__subsec-1"><num>1</num>'
+        f"<content><p>{chapeau}</p></content>"
+        f"<content>{_defn('agreement appeal')}</content>"
+        f"<content>{_defn(term)}</content></subsection>",
+    )
+    part = f'<hcontainer name="part" eId="schedule-4__part-6"><num>Part 6</num><heading>Div 2B</heading>{item}</hcontainer>'
+    return _act(schedules=_schedule(part, eid="schedule-4"))
+
+
+def test_subject_to_lead_in_before_in_this_part_scopes_to_the_part() -> None:
+    root = _fw_part6("Subject to subitem (2), in this Part:")
+    _run(root)
+    assert _refs(root) == [
+        "#term-agreement-appeal--schedule-4__part-6",
+        "#term-agreement-proceeding--schedule-4__part-6",
+    ]
+
+
+def test_subject_to_lead_in_with_commas_and_numbered_forms() -> None:
+    cases = {
+        "Subject to subsections (2), (3) and (4), in this Division:": "division",
+        "(1) Subject to subsection (2), in this section:": "section",
+        "Subject to section 5, for the purposes of this Act:": "act",
+        "Subject to subitem (2), in this Part, unless the contrary intention appears:": "part",
+        "Subject to subsection (2), in this subsection:": "subsection",
+    }
+    for chapeau, kind in cases.items():
+        root = _act(body=_body_part(_section(f"<content><p>{chapeau}</p>{_defn('thing')}</content>")))
+        p = root.xpath("//a:p[a:b]", namespaces=A)[0]
+        found = _find_chapeau(p)
+        assert found is not None and found.kind == kind, (chapeau, found)
+
+
+def test_subject_to_lead_in_with_an_unknown_target_fails_closed() -> None:
+    # Recognised as a lead-in, but neither target nor qualifier is one we trust: untagged, not defaulted.
+    stats: dict[str, int] = {}
+    root = _fw_part6("Subject to subitem (2), for each financial year, in this Part:")
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_unrecognised_chapeau") == 2
+
+
+def test_subject_to_in_these_regulations_resolves_in_a_regulations_instrument() -> None:
+    root = _named_act(
+        "agricultural-and-veterinary-chemicals-(administration)-regulations-1995",
+        body=_body_part(_casr_section("Subject to subregulation (2), in these Regulations:")),
+    )
+    _run(root)
+    assert _refs(root) == ["#term-type-certificate"]
+
+
+def test_subject_to_prose_lead_in_is_still_not_a_chapeau() -> None:
+    # "Subject to subsection (2), if ...:" introduces conditions, not a scope: unchanged (no chapeau).
+    root = _act(body=_body_part(_section(f"<content><p>Subject to subsection (2), if the company:</p>{_defn('thing')}</content>")))
+    p = root.xpath("//a:p[a:b]", namespaces=A)[0]
+    assert _find_chapeau(p) is None
+
+
+def test_subject_to_inline_scope_phrase_scopes_to_the_named_unit() -> None:
+    # Fair Work Act 2009 s 336(1) shape (Chapter-scoped inline phrase after a "Subject to" clause).
+    root = _act(
+        body='<chapter eId="chap-6"><num>6</num><heading>C</heading>'
+        + _section(
+            "<content><p>Subject to subsection (2), for the purposes of this Chapter, "
+            "<b><i>workplace relations matter</i></b> means any of the following.</p></content>",
+            eid="chap-6__sec-336",
+            heading="Workplace relations matter",
+        )
+        + "</chapter>"
+    )
+    _run(root)
+    assert _refs(root) == ["#term-workplace-relations-matter--chap-6"]
+
+
+def test_subject_to_in_this_code_resolves_to_the_schedule_that_names_it() -> None:
+    root = _act(schedules=_code_schedule("National Credit Code", "schedule-1__part-1__clause-27", "Subject to clause 3, in this Code:", "credit limit"))
+    _run(root)
+    assert _refs(root) == ["#term-credit-limit--schedule-1"]
