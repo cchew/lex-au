@@ -255,6 +255,10 @@ def test_part_limited_dictionary_part_is_left_to_nobody() -> None:
         "<heading>Definitions for this Part, Parts 42, 66, 145 and 147</heading>"
         "<content><p>In this Part, Parts 42, 66, 145 and 147:</p></content>"
         "<content><p><b><i>rating</i></b> means an authorisation.</p></content>"
+        # CASR Part 3 also holds list-form definitions; inject_list_defs must skip them too.
+        '<subsection eId="schedule-1__part-3__subsec-1"><content><p>flight crew licence means:</p></content>'
+        '<paragraph eId="schedule-1__part-3__subsec-1__para-a"><content><p>(a) a pilot licence; or</p></content></paragraph>'
+        "</subsection>"
         "</hcontainer></hcontainer>"
     )
     stats: dict[str, int] = {}
