@@ -9,9 +9,10 @@ from lexau.profiles import CTH_PROFILE, ParserProfile, profile_for
 def test_cth_profile_enables_both_flags() -> None:
     assert CTH_PROFILE.local_definitions is True
     assert CTH_PROFILE.scope_phrase_definitions is True
+    assert CTH_PROFILE.dictionary_schedules is True
     default = ParserProfile()
     for f in fields(ParserProfile):
-        if f.name in ("local_definitions", "scope_phrase_definitions"):
+        if f.name in ("local_definitions", "scope_phrase_definitions", "dictionary_schedules"):
             continue
         assert getattr(CTH_PROFILE, f.name) == getattr(default, f.name), f.name
 

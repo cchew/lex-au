@@ -928,10 +928,75 @@ def _plain_default_shape(stripped: str, ext: tuple[str, str, str]) -> bool:
     return bool(re.fullmatch(r"\s+(means|includes?)\s+", tail, re.IGNORECASE)) and definiens[:1] not in _LEAD_IN_MARKS
 
 
-def _definition_containers(root: etree._Element, include_schedules: bool) -> list[etree._Element]:
-    containers = list(root.iter(_SECTION_TAG))
+_DICTIONARY_UNIT_NAMES = frozenset({"part", "division", "subDivision", "chapter"})
+# "Definitions for this Part, Parts 42, 66, 145 and 147 ..." (CASR Dictionary Part 3).
+_LIMITED_DICTIONARY_HEADING_RE = re.compile(
+    r"\bfor\s+(?:this|these)\s+(?:Parts?|Divisions?|Subdivisions?|Subparts?|Chapters?)\b", re.IGNORECASE
+)
+# "In this Part, Parts 42, ...:" limits the unit; "In this Act:" / "In these Regulations:" does not.
+_DICTIONARY_CHAPEAU_RE = re.compile(r"^(?:In|For(?:\s+the\s+purposes\s+of)?)\s+(?:this|these)\s+(\w+)", re.IGNORECASE)
+_ACT_WIDE_CHAPEAU_WORDS = frozenset({"act", "regulations", "regulation", "code", "instrument", "ordinance", "rules", "law"})
+
+
+def _is_dictionary_schedule(h: etree._Element) -> bool:
+    """A Schedule headed exactly "Dictionary" (numbered or not) that is not an amending Schedule."""
+    if h.get("name") != "schedule":
+        return False
+    heading = h.find(f"{AKN_TAG}heading")
+    if heading is None or "".join(heading.itertext()).strip() != "Dictionary":
+        return False
+    if next(h.iter(f"{AKN_TAG}quotedStructure"), None) is not None:
+        return False
+    return not any(c.get("name") == "item" for c in h.iter(f"{AKN_TAG}hcontainer"))
+
+
+def _nearest_dictionary_unit(p_el: etree._Element, stop: etree._Element) -> etree._Element:
+    for anc in p_el.iterancestors():
+        if anc is stop or (anc.tag == f"{AKN_TAG}hcontainer" and anc.get("name") in _DICTIONARY_UNIT_NAMES):
+            return anc
+    return stop
+
+
+def _dictionary_unit_limited(unit: etree._Element) -> bool:
+    """True if a Dictionary (or one of its Parts) says it applies to less than the whole Act."""
+    heading = unit.find(f"{AKN_TAG}heading")
+    if heading is not None and _LIMITED_DICTIONARY_HEADING_RE.search("".join(heading.itertext())):
+        return True
+    seen = 0
+    for p_el in unit.iter(_P_TAG):
+        parent = p_el.getparent()
+        if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
+            continue
+        if _nearest_dictionary_unit(p_el, unit) is not unit:
+            continue  # a child Part's chapeau speaks for that Part only
+        m = _DICTIONARY_CHAPEAU_RE.match("".join(p_el.itertext()).strip())
+        if m:
+            return m.group(1).lower() not in _ACT_WIDE_CHAPEAU_WORDS
+        seen += 1
+        if seen >= 3:
+            break
+    return False
+
+
+def _limited_dictionary_units(schedule: etree._Element) -> set[etree._Element]:
+    units = [schedule] + [h for h in schedule.iter(f"{AKN_TAG}hcontainer") if h.get("name") in _DICTIONARY_UNIT_NAMES]
+    return {u for u in units if _dictionary_unit_limited(u)}
+
+
+def _in_limited_unit(p_el: etree._Element, limited: set[etree._Element]) -> bool:
+    return bool(limited) and any(a in limited for a in p_el.iterancestors())
+
+
+def _definition_containers(
+    root: etree._Element, include_schedules: bool, dictionary_schedules: bool = False
+) -> list[tuple[etree._Element, set[etree._Element]]]:
+    """(container, units inside it whose paragraphs must be skipped) for each definitions candidate."""
+    containers: list[tuple[etree._Element, set[etree._Element]]] = [(s, set()) for s in root.iter(_SECTION_TAG)]
+    schedules = [h for h in root.iter(f"{AKN_TAG}hcontainer") if h.get("name") == "schedule"]
     if include_schedules:
-        containers += [h for h in root.iter(f"{AKN_TAG}hcontainer") if h.get("name") == "schedule"]
+        containers += [(h, set()) for h in schedules]
+    elif dictionary_schedules:
+        containers += [(h, _limited_dictionary_units(h)) for h in schedules if _is_dictionary_schedule(h)]
     return containers
 
 
@@ -940,20 +1005,24 @@ def inject_terms(
     def_heading_re: re.Pattern[str] | None = None,
     include_schedules: bool = False,
     extended: bool = False,
+    dictionary_schedules: bool = False,
 ) -> tuple[dict[str, str], int]:
     """Walk definition sections; inject <term>/<def>; return (registry, count).
 
     Must be called BEFORE inject_refs so p_el.text is still a raw string.
+    dictionary_schedules: also walk Schedules headed exactly "Dictionary" (see _is_dictionary_schedule).
     """
     registry: dict[str, str] = {}
     count = 0
 
-    for section_el in _definition_containers(root, include_schedules):
+    for section_el, limited in _definition_containers(root, include_schedules, dictionary_schedules):
         if not _is_definition_section(section_el, def_heading_re):
             continue
         for p_el in section_el.iter(_P_TAG):
             parent = p_el.getparent()
             if parent is not None and parent.tag in {_HEADING_TAG, f"{AKN_TAG}num"}:
+                continue
+            if _in_limited_unit(p_el, limited):
                 continue
             count += _process_p(p_el, registry, extended)
 
@@ -966,6 +1035,7 @@ def inject_list_defs(
     def_heading_re: re.Pattern[str] | None = None,
     include_schedules: bool = False,
     extended: bool = False,
+    dictionary_schedules: bool = False,
 ) -> int:
     """Detect 'X means:' list-form definitions and inject <term> + convert <content> to <intro>.
 
@@ -974,7 +1044,7 @@ def inject_list_defs(
     """
     count = 0
 
-    for section_el in _definition_containers(root, include_schedules):
+    for section_el, limited in _definition_containers(root, include_schedules, dictionary_schedules):
         if not _is_definition_section(section_el, def_heading_re):
             continue
 
@@ -985,6 +1055,8 @@ def inject_list_defs(
             if len(p_children) != 1 or p_children[0].tag != _P_TAG:
                 continue
             p_el = p_children[0]
+            if _in_limited_unit(p_el, limited):
+                continue
             if extended and p_el.find(f"{AKN_TAG}term") is not None:
                 continue  # already tagged by the extended grammar; complete_list_definitions folds it
 

@@ -60,6 +60,7 @@ _ROMAN_CHARS = frozenset("ivxlcdm")
 _TOC_HEADING_STYLE = "TOC Heading"
 _TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
 _SCHEDULE_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGNORECASE)
+_UNNUMBERED_DICTIONARY_RE = re.compile(r"^Dictionary$")
 _ENACTING_RE = re.compile(r'\benacts?\s*:', re.IGNORECASE)
 _WHEREAS_RE  = re.compile(r'^WHEREAS\b', re.IGNORECASE)
 _STRUCTURAL = frozenset({
@@ -833,6 +834,10 @@ def _is_schedule_heading(p: ParsedParagraph) -> bool:
     "ActHead N"; false-positive body prose is styled "subsection", "Definition", etc.
     """
     if p.schedule_heading and p.element_type == ElementType.BODY:
+        return True
+    if p.element_type == ElementType.BODY and p.raw_style == "ActHead 1" and _UNNUMBERED_DICTIONARY_RE.match(p.text):
+        # An unnumbered end-of-instrument Dictionary (TGA (Medical Devices) Regs, Evidence Act,
+        # Criminal Code, CASR). Exact style and text: toc lines and body mentions never match.
         return True
     return (
         p.element_type == ElementType.BODY
@@ -2040,7 +2045,8 @@ class AknBuilder:
         )
 
         # 1. Inject <term>/<def> FIRST (requires raw p.text — must precede inject_refs)
-        term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions))
+        dictionary_schedules = bool(self._profile and self._profile.dictionary_schedules)
+        term_registry, terms_found = inject_terms(root, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions), dictionary_schedules)
         if self._profile is not None and self._profile.scope_phrase_definitions:
             terms_found += inject_scope_phrase_terms(root, term_registry)
         if self._profile is not None and self._profile.local_definitions:
@@ -2051,7 +2057,7 @@ class AknBuilder:
         report.duplicate_terms = terms_found - len(term_registry)
 
         # 1b. Inject list-form definitions (X means: + block list)
-        list_defs_count = inject_list_defs(root, term_registry, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions))
+        list_defs_count = inject_list_defs(root, term_registry, self._profile.def_heading_re if self._profile else None, bool(self._profile and self._profile.definitions_in_schedules), bool(self._profile and self._profile.extended_definitions), dictionary_schedules)
         report.list_defs_found = list_defs_count
 
         # 1c. Inject <ref> links for asterisk-prefixed term usages (OPC DD 1.6).

@@ -51,13 +51,19 @@ class ParserProfile:
     list_lead_ins: str = ":"
     # Character styles that mark a defined term (treated as bold+italic).
     char_def_styles: frozenset[str] = frozenset()
+    # Treat a Schedule headed exactly "Dictionary" (numbered or not, no amendment items or quoted
+    # text) as an Act-wide definitions container even when definitions_in_schedules is off.
+    # Dictionary Parts whose heading or chapeau limits them ("In this Part, Parts 42, ...") are skipped.
+    dictionary_schedules: bool = False
 
     def map_style(self, style: str) -> str:
         return self.style_map.get(style, style)
 
 
 # Commonwealth Acts: tag locally scoped definitions and "In this Act, X means" wherever it appears.
-CTH_PROFILE: ParserProfile = ParserProfile(local_definitions=True, scope_phrase_definitions=True)
+CTH_PROFILE: ParserProfile = ParserProfile(
+    local_definitions=True, scope_phrase_definitions=True, dictionary_schedules=True
+)
 
 
 def profile_for(doc_type: str, local_definitions: bool) -> ParserProfile | None:
