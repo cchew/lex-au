@@ -1,7 +1,7 @@
 """Scope of local definitions read from the chapeau ("In this item:", "In this Act:", ...)."""
 from lxml import etree
 
-from lexau.termlinks import _find_chapeau, inject_local_terms, inject_scope_phrase_terms, inject_terms
+from lexau.termlinks import _find_chapeau, _is_amending_instruction, inject_local_terms, inject_scope_phrase_terms, inject_terms
 
 NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 A = {"a": NS}
@@ -974,3 +974,39 @@ def test_definition_in_an_ordinary_list_after_a_chapeau_is_unaffected() -> None:
     )
     _run(root)
     assert _refs(root) == ["#term-total--part-2__sec-5", "#term-grand-total--part-2__sec-5"]
+
+
+def test_a_defined_term_that_is_an_amending_verb_is_not_an_instruction() -> None:
+    # National Credit Code cl 204: "repeal includes:" is itself a list definition under "In this Code:".
+    sub = (
+        "<content><p><b><i>repeal</i></b> includes:</p></content>"
+        # In the real build "repeal" is left untagged (its limbs are not a list the pass recognises).
+        "<content><p>repeal by implication; or</p></content>"
+        f"<content>{_defn('supplier', 'a supplier of goods or services.')}</content>"
+    )
+    clause = _code_schedule("National Credit Code", "schedule-1__part-13__clause-204", "In this Code:", "residential property")
+    root = _act(schedules=clause.replace("</hcontainer></hcontainer>", sub + "</hcontainer></hcontainer>"))
+    stats: dict[str, int] = {}
+    _run(root, stats)
+    assert _ref_of(root, "supplier") == ["#term-supplier--schedule-1"]
+    assert "skipped_amending_text" not in stats
+
+
+def test_instruction_quoting_an_italic_word_is_still_an_instruction() -> None:
+    root = _amending_section(
+        '<subsection eId="sec-24__subsec-2"><content><p>Omit "<i>ruling</i>", substitute:</p></content>'
+        f"<content>{_defn('ruling')}</content></subsection>"
+    )
+    _run(root)
+    assert _refs(root) == []
+
+
+def test_is_amending_instruction_needs_plain_text() -> None:
+    def p(xml: str) -> etree._Element:
+        return etree.fromstring(f'<p xmlns="{NS}">{xml}</p>')
+
+    assert _is_amending_instruction(p("Repeal the definition, substitute:"), "Repeal the definition, substitute:")
+    assert _is_amending_instruction(p('Omit "<i>ruling</i>", substitute:'), 'Omit "ruling", substitute:')
+    assert not _is_amending_instruction(p("<b><i>repeal</i></b> includes:"), "repeal includes:")
+    assert not _is_amending_instruction(p('<term refersTo="#term-repeal">repeal</term> includes:'), "repeal includes:")
+    assert not _is_amending_instruction(p("Before the Minister decides, the Minister must consult."), "Before the Minister decides, the Minister must consult.")

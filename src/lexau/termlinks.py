@@ -600,12 +600,21 @@ def _host_paragraphs(host: etree._Element) -> list[etree._Element]:
     return [p for p in host.iter(_P_TAG) if p.getparent() is not None and p.getparent().tag not in {_HEADING_TAG, f"{AKN_TAG}num"}]
 
 
+def _is_amending_instruction(p_el: etree._Element, text: str) -> bool:
+    """An instruction is plain text; a formatted or tagged opener is a defined term ("repeal includes:")."""
+    return (
+        bool(_AMENDING_INSTRUCTION_RE.match(text))
+        and p_el.find(f"{AKN_TAG}term") is None
+        and not (_leading_formatted_run_text(p_el) is not None and not (p_el.text or "").strip())
+    )
+
+
 def _follows_amending_instruction(paras: list[etree._Element], idx: int) -> bool:
     """True when the nearest non-empty paragraph before paras[idx] is an amendment instruction."""
     for prev in reversed(paras[:idx]):
         text = " ".join("".join(prev.itertext()).split())
         if text:
-            return bool(_AMENDING_INSTRUCTION_RE.match(text))
+            return _is_amending_instruction(prev, text)
     return False
 
 
@@ -638,7 +647,7 @@ def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
         text = " ".join("".join(prev.itertext()).split())
         if not text:
             continue
-        if _AMENDING_INSTRUCTION_RE.match(text):
+        if _is_amending_instruction(prev, text):
             return Chapeau("amending", text)
         chapeau = _classify_chapeau(text)
         if chapeau is not None:
