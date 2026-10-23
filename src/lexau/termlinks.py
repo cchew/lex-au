@@ -520,6 +520,15 @@ _CHAPEAU_CONTAINER: dict[str, tuple[str | None, frozenset[str]]] = {
     "chapter": ("chapter", frozenset({"chapter"})),
     "schedule": (None, frozenset({"schedule"})),
 }
+# An amendment instruction that opens quoted replacement text ("Insert:", "Repeal the definition,
+# substitute:", "At the end of section 69C / Add:"). The builder's test for Item-styled paragraphs
+# (builder._INSTRUCTION_VERB_RE plus a trailing colon); styles are gone by now, and the colon is what
+# keeps prose such as "Before the Governor-General makes regulations ..., the Minister must ..." out.
+# Definitions after one are another Act's text even when the parser missed the quotation.
+_AMENDING_INSTRUCTION_RE = re.compile(
+    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:insert|omit|repeal|add|substitute|after|before)\b.*:$",
+    re.IGNORECASE | re.DOTALL,
+)
 _LIST_ITEM_TAGS = {_PARA_TAG, f"{AKN_TAG}subparagraph", _BLOCKLIST_TAG, f"{AKN_TAG}item"}
 _NOTE_OPENER_RE = re.compile(r"^(?:Note|Example)s?\b", re.IGNORECASE)
 
@@ -587,6 +596,19 @@ def _is_definition_entry(p_el: etree._Element, text: str) -> bool:
     )
 
 
+def _host_paragraphs(host: etree._Element) -> list[etree._Element]:
+    return [p for p in host.iter(_P_TAG) if p.getparent() is not None and p.getparent().tag not in {_HEADING_TAG, f"{AKN_TAG}num"}]
+
+
+def _follows_amending_instruction(paras: list[etree._Element], idx: int) -> bool:
+    """True when the nearest non-empty paragraph before paras[idx] is an amendment instruction."""
+    for prev in reversed(paras[:idx]):
+        text = " ".join("".join(prev.itertext()).split())
+        if text:
+            return bool(_AMENDING_INSTRUCTION_RE.match(text))
+    return False
+
+
 def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
     """The lead-in that governs the definition in p_el, or None.
 
@@ -594,16 +616,20 @@ def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
     stepping over list items, other definitions and notes. Ordinary prose ends the walk: the
     chapeau's list is over. A lead-in inside a list item ("(a) a person who:") introduces a
     sub-list, never a scope, so it is stepped over too.
+
+    An amendment instruction ending the walk, or sitting right before the chapeau, means the
+    definition is quoted replacement text: kind "amending".
     """
     host = _chapeau_host(p_el)
     if host is None:
         return None
-    paras = [p for p in host.iter(_P_TAG) if p.getparent() is not None and p.getparent().tag not in {_HEADING_TAG, f"{AKN_TAG}num"}]
+    paras = _host_paragraphs(host)
     try:
         idx = paras.index(p_el)
     except ValueError:
         return None
-    for prev in reversed(paras[:idx]):
+    for j in range(idx - 1, -1, -1):
+        prev = paras[j]
         if _in_list_item(prev, host):
             # A "where:" legend lead-in in the list item that holds the definition governs it.
             if _FORMULA_LEAD_RE.search(" ".join("".join(prev.itertext()).split())) and _shares_list_item(prev, p_el, host):
@@ -612,8 +638,12 @@ def _find_chapeau(p_el: etree._Element) -> Chapeau | None:
         text = " ".join("".join(prev.itertext()).split())
         if not text:
             continue
+        if _AMENDING_INSTRUCTION_RE.match(text):
+            return Chapeau("amending", text)
         chapeau = _classify_chapeau(text)
         if chapeau is not None:
+            if _follows_amending_instruction(paras, j):
+                return Chapeau("amending", text)
             return _resolve_named_chapeau(chapeau, p_el) if chapeau.kind == "unrecognised" else chapeau
         if _is_definition_entry(prev, text):
             continue
@@ -700,6 +730,7 @@ _CHAPEAU_SKIP_STAT = {
     "subsection": "skipped_subsection_scope",
     "formula": "skipped_formula",
     "unrecognised": "skipped_unrecognised_chapeau",
+    "amending": "skipped_amending_text",
 }
 
 
@@ -713,7 +744,8 @@ def inject_local_terms(
 
     Scope comes from, in order: an inline phrase ("In this Part, X means"), the chapeau the term is
     listed under ("In this item:"), then the enclosing section (Schedule: item or clause). Fail closed:
-    a subsection/formula/unrecognised chapeau, or a Schedule term with no item or clause, is not tagged.
+    a subsection/formula/unrecognised chapeau, a definition in amending text the parser left unquoted,
+    or a Schedule term with no item or clause, is not tagged.
     """
     count = 0
     for p_el in root.iter(_P_TAG):
@@ -762,6 +794,11 @@ def inject_local_terms(
         ):
             continue
         if m:
+            host = _chapeau_host(p_el)
+            paras = _host_paragraphs(host) if host is not None else []
+            if p_el in paras and _follows_amending_instruction(paras, paras.index(p_el)):
+                _bump(stats, "skipped_amending_text")
+                continue
             container = _scope_container(p_el, kind)
             if container is None:
                 continue

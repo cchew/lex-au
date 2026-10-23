@@ -877,3 +877,100 @@ def test_subject_to_in_this_code_resolves_to_the_schedule_that_names_it() -> Non
     root = _act(schedules=_code_schedule("National Credit Code", "schedule-1__part-1__clause-27", "Subject to clause 3, in this Code:", "credit limit"))
     _run(root)
     assert _refs(root) == ["#term-credit-limit--schedule-1"]
+
+
+# --- Task 7: amending instructions and the quoted text after them ---------------------------------
+# Superannuation Contributions and Termination Payments Taxes Legislation Amendment Act 1999: its
+# Schedule items were parsed into the quoted sections they insert, so "Repeal the definition,
+# substitute:" sits inside sec-24 and the replacement definition looked like a local term of sec-24.
+
+
+def _amending_section(inner: str, eid: str = "sec-24") -> etree._Element:
+    return _act(body=_section(inner, eid=eid, heading="Objections against assessments"))
+
+
+def test_definition_after_repeal_and_substitute_is_not_tagged() -> None:
+    stats: dict[str, int] = {}
+    root = _amending_section(
+        f'<subsection eId="sec-24__subsec-2"><content><p>(c) altering a provision in the ruling.</p></content>'
+        "<content><p>29 Section 43 (definition of assessment)</p></content>"
+        "<content><p>Repeal the definition, substitute:</p></content>"
+        f"<content>{_defn('assessment', 'an assessment made under subsection 15(1).')}</content></subsection>"
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_amending_text") == 1
+
+
+def test_every_definition_after_insert_is_not_tagged() -> None:
+    stats: dict[str, int] = {}
+    root = _amending_section(
+        '<subsection eId="sec-24__subsec-2"><content><p>40 Section 43</p></content>'
+        "<content><p>Insert:</p></content>"
+        f"<content>{_defn('self-assessing superannuation provider')}</content>"
+        f"<content>{_defn('the 1999-2000 financial year')}</content></subsection>"
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_amending_text") == 2
+
+
+def test_chapeau_inside_inserted_text_is_not_trusted() -> None:
+    # Primary Industries and Energy Legislation Amendment Act (No. 2) 1996: "13 At the end of section 69C /
+    # Add: / (6) In this section: / relevant agency means ..." -- the chapeau is the quoted subsection.
+    stats: dict[str, int] = {}
+    root = _act(
+        body=_section(
+            "<content><p>13 At the end of section 69C</p></content><content><p>Add:</p></content>"
+            '<subsection eId="sec-4__subsec-6"><content><p>(6) In this section:</p></content>'
+            f"<content>{_defn('relevant agency', 'the Department or NRA.')}</content></subsection>",
+            eid="sec-4",
+        )
+    )
+    _run(root, stats)
+    assert _refs(root) == []
+    assert stats.get("skipped_amending_text") == 1
+
+
+def test_inline_scope_phrase_inside_inserted_text_is_not_tagged() -> None:
+    inner = "<content><p>In this Part, <b><i>ruling</i></b> means a ruling.</p></content>"
+    control = _act(body=_body_part(_section(inner)))
+    _run(control)
+    assert _refs(control) == ["#term-ruling--part-2"]
+    root = _act(body=_body_part(_section("<content><p>After subsection 24(1)</p></content><content><p>insert:</p></content>" + inner)))
+    _run(root)
+    assert _refs(root) == []
+
+
+def test_prose_opening_with_an_amending_verb_but_no_colon_is_not_an_instruction() -> None:
+    # EPBC Act s 323 / ACDC Act Sch 2: "Before ..." prose and "Repeal the Act." are not quote openers.
+    for lead in (
+        "Before the Governor-General makes regulations prescribing principles, the Minister must consult.",
+        "Repeal the Act.",
+    ):
+        root = _act(
+            body=_body_part(
+                _section(
+                    f"<content><p>{lead}</p></content>"
+                    f"<content><p>In this section:</p>{_defn('natural heritage')}</content>"
+                )
+            )
+        )
+        _run(root)
+        assert _refs(root) == ["#term-natural-heritage--part-2__sec-5"], lead
+
+
+def test_definition_in_an_ordinary_list_after_a_chapeau_is_unaffected() -> None:
+    # A list item that merely starts with "Add" or "After" is stepped over by the walk, as before.
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-1"><content><p>In this section:</p></content>'
+                f"<content>{_defn('total')}</content>"
+                '<paragraph eId="part-2__sec-5__subsec-1__para-a"><content><p>after the end of the year, either:</p></content></paragraph>'
+                f"<content>{_defn('grand total')}</content></subsection>"
+            )
+        )
+    )
+    _run(root)
+    assert _refs(root) == ["#term-total--part-2__sec-5", "#term-grand-total--part-2__sec-5"]
