@@ -262,3 +262,18 @@ def test_part_limited_dictionary_part_is_left_to_nobody() -> None:
     n += inject_list_defs(root, reg, dictionary_schedules=True)
     n += inject_local_terms(root, reg, stats=stats)
     assert n == 0 and reg == {}
+
+
+def test_endnotes_trailing_inside_a_dictionary_are_not_tagged() -> None:
+    """Endnotes are not cut from the stream, so they trail inside the last Schedule."""
+    root = _act(
+        '<hcontainer name="schedule" eId="schedule-1"><num>1</num><heading>Dictionary</heading>'
+        "<content><p><b><i>widget</i></b> means a thing.</p></content>"
+        "<content><p>Endnotes</p></content>"
+        "<content><p>Editorial changes</p></content>"
+        "<content><p><b><i>If the compilation</i></b> includes editorial changes, the endnotes include an outline.</p></content>"
+        "<content><p><b><i>gadget</i></b> means a thing.</p></content>"
+        "</hcontainer>"
+    )
+    reg, n = inject_terms(root, dictionary_schedules=True)
+    assert sorted(reg) == ["term-widget"]

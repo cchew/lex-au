@@ -979,12 +979,20 @@ def _dictionary_unit_limited(unit: etree._Element) -> bool:
 
 
 def _limited_dictionary_units(schedule: etree._Element) -> set[etree._Element]:
+    """Units (and stray paragraphs) of a Dictionary Schedule that must not be tagged: Parts limited to
+    less than the Act, and the endnotes that trail the last Schedule (from a paragraph "Endnotes" on)."""
     units = [schedule] + [h for h in schedule.iter(f"{AKN_TAG}hcontainer") if h.get("name") in _DICTIONARY_UNIT_NAMES]
-    return {u for u in units if _dictionary_unit_limited(u)}
+    skip = {u for u in units if _dictionary_unit_limited(u)}
+    in_endnotes = False
+    for p_el in schedule.iter(_P_TAG):
+        in_endnotes = in_endnotes or "".join(p_el.itertext()).strip() == "Endnotes"
+        if in_endnotes:
+            skip.add(p_el)
+    return skip
 
 
 def _in_limited_unit(p_el: etree._Element, limited: set[etree._Element]) -> bool:
-    return bool(limited) and any(a in limited for a in p_el.iterancestors())
+    return bool(limited) and (p_el in limited or any(a in limited for a in p_el.iterancestors()))
 
 
 def _definition_containers(
