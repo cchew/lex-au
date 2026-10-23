@@ -227,6 +227,109 @@ def _is_toc_paragraph(p: ParsedParagraph) -> bool:
     return bool(_TOC_STYLE_RE.match(p.raw_style.strip()))
 
 
+# Migration Regulations 1994 Schedule 2 ("visa-subclass schedule"): its Parts are
+# "Subclass 010—Bridging A" (ActHead 2, plain space, so the parser's NBSP-only
+# heading regex leaves them BODY), its Divisions/Subdivisions use dedicated
+# styles, and its clauses are bare "010.211" ActHead 5 lines. Everything below is
+# gated on a schedule group carrying a Subclass heading, so no other Act changes.
+_SUBCLASS_HEADING_RE = re.compile(r'^Subclass[\xa0 ](\d{3}[A-Z]?)—(.+)$', re.DOTALL)
+_VISA_DIVISION_RE = re.compile(r'^(\d{3}\.\d)—(.+)$', re.DOTALL)
+_VISA_SUBDIVISION_RE = re.compile(r'^(\d{3}\.\d{2})—(.+)$', re.DOTALL)
+_VISA_CLAUSE_RE = re.compile(r'^\d{3}\.\d{3}[A-Z]{0,2}$')
+_VISA_DIVISION_STYLE = "DivisionMigration"
+_VISA_SUBDIVISION_STYLE = "SubDivisionMigration"
+# Word's built-in TOC style ids are lowercase ("toc 2"); _TOC_STYLE_RE only knows
+# the display names. Dropped only inside visa-subclass schedules (other Acts that
+# carry them in schedules are left byte-identical).
+_LOWER_TOC_STYLE_RE = re.compile(r'^toc\b')
+
+
+def _is_subclass_heading(p: ParsedParagraph) -> bool:
+    return (
+        p.element_type == ElementType.BODY
+        and p.raw_style == "ActHead 2"
+        and bool(_SUBCLASS_HEADING_RE.match(p.text.strip()))
+    )
+
+
+def _is_visa_subclass_schedule(paragraphs: list[ParsedParagraph]) -> bool:
+    return any(_is_subclass_heading(p) for p in paragraphs)
+
+
+def _is_visa_clause(p: ParsedParagraph) -> bool:
+    """A bare "010.211" clause number (classified by `_classify_visa_paragraph`).
+
+    Parser-made SECTIONs always carry a heading (_SECTION_RE needs one), so an
+    empty heading on a dotted ActHead 5 SECTION only arises from this path.
+    """
+    return (
+        p.element_type == ElementType.SECTION
+        and p.raw_style == "ActHead 5"
+        and not p.heading
+        and bool(_VISA_CLAUSE_RE.match(p.number))
+    )
+
+
+def _classify_visa_paragraph(p: ParsedParagraph) -> ParsedParagraph | None:
+    """Structural reading of one visa-subclass schedule paragraph; None drops it (TOC line)."""
+    if _LOWER_TOC_STYLE_RE.match(p.raw_style.strip()):
+        return None
+    if p.element_type != ElementType.BODY:
+        return p
+    text = p.text.strip()
+    if p.raw_style == "ActHead 2":
+        m = _SUBCLASS_HEADING_RE.match(text)
+        if m:
+            return replace(p, element_type=ElementType.PART, number=m.group(1), heading=m.group(2).strip(), text="")
+    elif p.raw_style in (_VISA_DIVISION_STYLE, _VISA_SUBDIVISION_STYLE):
+        # The number decides the level, not the style: the source styles
+        # "191.21—Common criteria" DivisionMigration although it is a Subdivision.
+        m = _VISA_DIVISION_RE.match(text)
+        if m:
+            return replace(p, element_type=ElementType.DIVISION, number=m.group(1), heading=m.group(2).strip(), text="")
+        m = _VISA_SUBDIVISION_RE.match(text)
+        if m:
+            return replace(p, element_type=ElementType.SUBDIVISION, number=m.group(1), heading=m.group(2).strip(), text="")
+    elif p.raw_style == "ActHead 5" and _VISA_CLAUSE_RE.match(text):
+        return replace(p, element_type=ElementType.SECTION, number=text, heading="", text="")
+    return p
+
+
+_FRONT_MATTER_TYPES = frozenset({ElementType.BODY, ElementType.SKIP, ElementType.TABLE})
+
+
+def _merge_visa_schedule_continuations(
+    schedules: list[list[ParsedParagraph]],
+) -> list[list[ParsedParagraph]]:
+    """Fold a later volume's repeated visa-subclass Schedule heading into the open group.
+
+    Migration Regulations volume 3 restarts with its title page and TOC and then
+    repeats "Schedule 2—...". `_split_stream` carries the front matter into the
+    open Schedule 2 group and opens a second Schedule 2 group at the repeated
+    heading, shifting every later Schedule eId by one. Merge only when the earlier
+    group is a visa-subclass schedule and every paragraph it took from the new
+    volume is front matter (no ActHead line, nothing structural); otherwise leave
+    both groups alone.
+    """
+    out: list[list[ParsedParagraph]] = []
+    for group in schedules:
+        if out and group and out[-1]:
+            prev = out[-1]
+            head, vol = group[0], group[0].volume_index
+            if (
+                head.text.strip() == prev[0].text.strip()
+                and vol > prev[0].volume_index
+                and _is_visa_subclass_schedule(prev)
+            ):
+                tail = [p for p in prev if p.volume_index == vol]
+                if all(p.element_type in _FRONT_MATTER_TYPES and not p.raw_style.startswith("ActHead")
+                       for p in tail):
+                    out[-1] = [p for p in prev if p.volume_index != vol] + group[1:]
+                    continue
+        out.append(group)
+    return out
+
+
 def _is_item_head(p: ParsedParagraph) -> bool:
     return (
         p.element_type == ElementType.BODY
@@ -324,6 +427,7 @@ def _preprocess_schedule_group(
     TOC removal, which is what keeps plain non-amending schedules byte-identical.
     """
     out: list[ParsedParagraph | _ScheduleItem] = []
+    visa = _is_visa_subclass_schedule(paragraphs)
     i = 0
     n = len(paragraphs)
     while i < n:
@@ -332,7 +436,12 @@ def _preprocess_schedule_group(
             i += 1
             continue
         if not _is_item_head(p):
-            out.append(p)
+            if visa:
+                classified = _classify_visa_paragraph(p)
+                if classified is not None:
+                    out.append(classified)
+            else:
+                out.append(p)
             i += 1
             continue
 
@@ -847,7 +956,7 @@ def _split_stream(
     if current:
         schedules.append(current)
 
-    return preface, body, schedules
+    return preface, body, _merge_visa_schedule_continuations(schedules)
 
 
 def _build_preface(
@@ -1123,7 +1232,7 @@ def _build_schedule_content(
             # Dotted numbers (7.1, 7.2) are subclauses; plain numbers (7, 8) are top-level clauses.
             num_str = p.number
             heading_str = p.heading or ""
-            if "." in num_str:
+            if "." in num_str and not _is_visa_clause(p):
                 parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
                 eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str.replace('.', '-')}", quoted_seen_eids)
@@ -1243,7 +1352,9 @@ def _count_schedule_clauses(schedule_groups: list[list[ParsedParagraph]]) -> int
                         or _DATE_PATTERN_RE.match(text)
                     ):
                         count += 1
-            elif p.element_type == ElementType.SECTION and p.number and "." not in p.number:
+            elif p.element_type == ElementType.SECTION and p.number and (
+                "." not in p.number or _is_visa_clause(p)
+            ):
                 count += 1
     return count
 
