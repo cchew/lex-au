@@ -802,6 +802,68 @@ def test_schedule_num_guard_on_non_matching_heading():
         f"heading should be unchanged when regex doesn't match. Expected {heading_text!r}, got {heading_el.text!r}"
 
 
+@pytest.mark.parametrize("heading_text, num, heading", [
+    ("Schedule\xa02A—Classification rules for IVD medical devices", "2A", "Classification rules for IVD medical devices"),
+    ("Schedule\xa03AA—Requirements for Australian conformity assessment", "3AA", "Requirements for Australian conformity assessment"),
+    ("Schedule\xa021A—Income limit for FTB Part A supplement", "21A", "Income limit for FTB Part A supplement"),
+    ("Schedule\xa01AAA—Approved auditors—professional organisations", "1AAA", "Approved auditors—professional organisations"),
+    ("Schedule 8 BA—x", "8", "BA—x"),
+    ("Schedule\xa010BA—Modifications of the Act", "10BA", "Modifications of the Act"),
+    ("Schedule\xa02D–Tax exempt entities", "2D", "Tax exempt entities"),
+    ("Schedule\xa01A", "1A", "Schedule\xa01A"),
+    ("Schedule\xa01A Designated marketing faxes", "1A", "Designated marketing faxes"),
+    # The letter run belongs to the heading, not the number.
+    ("Schedule\xa01—A New Tax System", "1", "A New Tax System"),
+    ("Schedule\xa01—MNE-security-relevant offences", "1", "MNE-security-relevant offences"),
+    ("Schedule\xa04—FEE-HELP debts", "4", "FEE-HELP debts"),
+    ("Schedule\xa0IV—Roman Schedule", "IV", "Roman Schedule"),
+    ("Schedule\xa02—Amendments", "2", "Amendments"),
+])
+def test_schedule_letter_suffix_kept_in_num(heading_text, num, heading):
+    from lexau.builder import _build_attachments, AKN_NS
+
+    ns = {"akn": AKN_NS}
+    group = [
+        ParsedParagraph(ElementType.BODY, text=heading_text, raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content."),
+    ]
+    attachments_el, _ = _build_attachments([group])
+    hcontainer = attachments_el.find(".//akn:hcontainer[@name='schedule']", ns)
+    assert hcontainer.get("eId") == "schedule-1"
+    assert hcontainer.find("akn:num", ns).text == num
+    assert hcontainer.find("akn:heading", ns).text == heading
+
+
+@pytest.mark.parametrize("text, is_heading", [
+    ("Schedule\xa02A—Foo", True),
+    ("Schedule\xa03AA", True),
+    ("Schedule\xa01—A New Tax System", True),
+    ("Schedules 1 to 3—Amendments", False),
+    ("Schedule One—Spelled Out", False),
+])
+def test_schedule_heading_detection_with_letter_suffix(text, is_heading):
+    from lexau.builder import _is_schedule_heading
+
+    p = ParsedParagraph(ElementType.BODY, text=text, raw_style="ActHead 1")
+    assert _is_schedule_heading(p) is is_heading
+
+
+def test_schedule_and_letter_suffix_schedule_get_distinct_nums(meta):
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02—Classification rules", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content 2"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa02A—Classification rules for IVD medical devices", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="Content 2A"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+    scheds = xml.findall(".//akn:hcontainer[@name='schedule']", ns)
+    assert [s.get("eId") for s in scheds] == ["schedule-1", "schedule-2"]
+    assert [s.find("akn:num", ns).text for s in scheds] == ["2", "2A"]
+    assert scheds[1].find("akn:heading", ns).text == "Classification rules for IVD medical devices"
+
+
 def test_authorial_note_emitted(meta):
     paragraphs = [
         ParsedParagraph(ElementType.SECTION, number="16", heading="Notification"),

@@ -59,7 +59,12 @@ _ROMAN_CHARS = frozenset("ivxlcdm")
 
 _TOC_HEADING_STYLE = "TOC Heading"
 _TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
-_SCHEDULE_RE = re.compile(r'^Schedule[\xa0 ](\d+|[IVX]+)', re.IGNORECASE)
+# "Schedule 2A—..." numbers the Schedule "2A". An uppercase letter run is part of the number only
+# when it follows the digits directly and ends at a dash, whitespace or end of text, so
+# "Schedule 1—A New Tax ..." stays "1" and the match falls back to the bare digits otherwise.
+_SCHEDULE_RE = re.compile(
+    r'^Schedule[\xa0 ](\d+(?:(?-i:[A-Z]{1,3})(?=[—–\-\s]|$))?|[IVX]+)', re.IGNORECASE
+)
 _UNNUMBERED_DICTIONARY_RE = re.compile(r"^Dictionary$")
 _ENACTING_RE = re.compile(r'\benacts?\s*:', re.IGNORECASE)
 _WHEREAS_RE  = re.compile(r'^WHEREAS\b', re.IGNORECASE)
