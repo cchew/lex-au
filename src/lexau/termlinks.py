@@ -523,10 +523,11 @@ _CHAPEAU_CONTAINER: dict[str, tuple[str | None, frozenset[str]]] = {
 # An amendment instruction that opens quoted replacement text ("Insert:", "Repeal the definition,
 # substitute:", "At the end of section 69C / Add:"). The builder's test for Item-styled paragraphs
 # (builder._INSTRUCTION_VERB_RE plus a trailing colon); styles are gone by now, and the colon is what
-# keeps prose such as "Before the Governor-General makes regulations ..., the Minister must ..." out.
+# keeps prose such as "Repeal the Act." out. after/before are not in the verb list: "Before making an
+# instrument ..., the Minister must:" is ordinary prose (~395 corpus paragraphs).
 # Definitions after one are another Act's text even when the parser missed the quotation.
 _AMENDING_INSTRUCTION_RE = re.compile(
-    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:insert|omit|repeal|add|substitute|after|before)\b.*:$",
+    r"^(?:\(\w{1,6}\)\s*|\d{1,3}[A-Z]{0,2}\.\s+)?(?:insert|omit|repeal|add|substitute)\b.*:$",
     re.IGNORECASE | re.DOTALL,
 )
 _LIST_ITEM_TAGS = {_PARA_TAG, f"{AKN_TAG}subparagraph", _BLOCKLIST_TAG, f"{AKN_TAG}item"}

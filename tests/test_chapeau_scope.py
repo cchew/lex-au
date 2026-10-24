@@ -960,6 +960,26 @@ def test_prose_opening_with_an_amending_verb_but_no_colon_is_not_an_instruction(
         assert _refs(root) == ["#term-natural-heritage--part-2__sec-5"], lead
 
 
+def test_prose_opening_with_before_or_after_and_ending_in_a_colon_is_not_an_instruction() -> None:
+    # ~395 corpus paragraphs: "Before making an instrument ..., the Minister must:" and "(6) After receiving ...:".
+    for lead in (
+        "Before making an instrument under subsection (1), the Minister must:",
+        "(6) After receiving the Regulator's notice, the Secretary must:",
+    ):
+        stats: dict[str, int] = {}
+        root = _act(
+            body=_body_part(
+                _section(
+                    f"<content><p>{lead}</p></content>"
+                    f"<content><p>In this section:</p>{_defn('natural heritage')}</content>"
+                )
+            )
+        )
+        _run(root, stats)
+        assert _refs(root) == ["#term-natural-heritage--part-2__sec-5"], lead
+        assert "skipped_amending_text" not in stats, lead
+
+
 def test_definition_in_an_ordinary_list_after_a_chapeau_is_unaffected() -> None:
     # A list item that merely starts with "Add" or "After" is stepped over by the walk, as before.
     root = _act(
