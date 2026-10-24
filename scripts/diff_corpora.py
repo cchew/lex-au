@@ -37,6 +37,9 @@ def act_counts(xml_bytes: bytes) -> dict[str, int]:
         "sections": len(root.findall(f".//{{{AKN}}}section")),
         "terms": len(root.findall(f".//{{{AKN}}}term")),
         "local_refs": len(LOCAL_REF_RE.findall(xml_bytes.decode("utf-8"))),
+        # builder.py emits every figure as <figure><img src=...>; both counts must never drop.
+        "figures": len(root.findall(f".//{{{AKN}}}figure")),
+        "images": len(root.findall(f".//{{{AKN}}}img")),
     }
 
 
@@ -69,6 +72,9 @@ def diff_dirs(
             "new_terms": nc["terms"] - bc["terms"],
             "local_refs": [bc["local_refs"], nc["local_refs"]],
             "new_local_refs": nc["local_refs"] - bc["local_refs"],
+            "figures": [bc["figures"], nc["figures"]],
+            "images": [bc["images"], nc["images"]],
+            "figure_drop": nc["figures"] < bc["figures"] or nc["images"] < bc["images"],
         }
     compared = {k: v for k, v in acts.items() if "missing" not in v}
     summary = {
@@ -78,6 +84,7 @@ def diff_dirs(
         "date_only_differing": sum(v["date_only"] for v in compared.values()),
         "differing": sum(not v["identical"] for v in compared.values()),
         "section_count_mismatches": sorted(k for k, v in compared.items() if v["section_diff"]),
+        "figure_count_drops": sorted(k for k, v in compared.items() if v["figure_drop"]),
         "total_new_terms": sum(v["new_terms"] for v in compared.values()),
         "total_new_local_refs": sum(v["new_local_refs"] for v in compared.values()),
     }
@@ -109,12 +116,14 @@ def main(argv: list[str] | None = None) -> int:
     s = result["summary"]
     print(
         f"compared={s['acts_compared']} identical={s['identical']} (date_only={s['date_only_differing']}) differing={s['differing']} "
-        f"missing={len(s['acts_missing'])} section_mismatches={len(s['section_count_mismatches'])} "
+        f"missing={len(s['acts_missing'])} figure_drops={len(s['figure_count_drops'])} section_mismatches={len(s['section_count_mismatches'])} "
         f"new_terms={s['total_new_terms']} new_local_refs={s['total_new_local_refs']}"
     )
+    for k in s["figure_count_drops"][:20]:
+        print(f"  figure/image count dropped: {k} figures={result['acts'][k]['figures']} images={result['acts'][k]['images']}")
     for k in s["section_count_mismatches"][:20]:
         print(f"  section mismatch: {k} {result['acts'][k]['sections']}")
-    fail = bool(s["section_count_mismatches"]) or (args.require_identical and s["differing"] > 0)
+    fail = bool(s["section_count_mismatches"]) or bool(s["figure_count_drops"]) or (args.require_identical and s["differing"] > 0)
     return 1 if fail else 0
 
 
