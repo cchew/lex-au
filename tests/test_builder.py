@@ -818,6 +818,10 @@ def test_schedule_num_guard_on_non_matching_heading():
     ("Schedule\xa04—FEE-HELP debts", "4", "FEE-HELP debts"),
     ("Schedule\xa0IV—Roman Schedule", "IV", "Roman Schedule"),
     ("Schedule\xa02—Amendments", "2", "Amendments"),
+    # Follow-char guard, 3-letter cap and case sensitivity.
+    ("Schedule\xa01Amendments", "1", "Amendments"),
+    ("Schedule\xa01ABCD—x", "1", "ABCD—x"),
+    ("Schedule\xa02a—x", "2", "a—x"),
 ])
 def test_schedule_letter_suffix_kept_in_num(heading_text, num, heading):
     from lexau.builder import _build_attachments, AKN_NS

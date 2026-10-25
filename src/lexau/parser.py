@@ -234,8 +234,9 @@ _LEGACY_NUMBER_INT_RE = re.compile(r'^(\d+)')
 # text is never the start of the paragraph in either shape.
 _LEGACY_ENACTED_RE = re.compile(r'\benact\w*\b.*:', re.IGNORECASE | re.DOTALL)
 
-# Schedule-heading detector for the sequential-number gate below -- a local
-# copy of builder.py's own _SCHEDULE_RE (not imported, to avoid a
+# Schedule-heading detector for the sequential-number gate below -- matches a
+# prefix of what builder.py's own _SCHEDULE_RE matches (bare digits only, so
+# "Schedule 2A" still matches; not imported, to avoid a
 # parser<->builder circular dependency; builder.py already imports FROM
 # parser.py). Real corpus finding (veterans'-affairs-legislation-amendment-
 # act-(no.-1)-1996, surfaced by a corpus-wide regression scan of this fix):
