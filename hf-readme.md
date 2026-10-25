@@ -23,9 +23,11 @@ configs:
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads. This dataset provides structured XML, section-level addressing and AKN for Commonwealth Acts in force.
 
-**Version: v0.10.0** - 3,084 Acts + 2 Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+**Version: v0.13.0** - 3,085 Acts and Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
 
 lex-au-explorer renders this corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see [known limitations](https://github.com/cchew/lex-au/blob/main/docs/known-limitations-schedule-and-conversion.txt), entry (f)).
+
+**v0.13.0**: locally scoped definitions are tagged by default. A local `<term>` has `refersTo="#term-<slug>--<container eId>"` and applies only inside that section, Part, Division or Schedule (9,058 of 41,559 terms). Dictionary Schedules, Migration Regulations Schedule structure and Schedule letter suffixes (Schedule 2A) are fixed. Full corpus re-converted; `structure_version` stays 2.
 
 **v0.10.0**: schedule clause eIds renumbered (fixed a `_CLAUSE_RE` false-positive fabrication mechanism that flattened ~98.7% of schedule eId collisions into a shared namespace; see [FUTURE.md](https://github.com/cchew/lex-au/blob/main/FUTURE.md) "Schedule clause eIds collide"). Full corpus re-converted; figure extraction gap closed (0 Acts now missing any embedded image, was 97 Acts / 1,512 placeholders).
 

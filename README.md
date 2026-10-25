@@ -26,7 +26,7 @@ Crawls [legislation.gov.au](https://www.legislation.gov.au), converts DOCX to AK
 
 **If you just need Commonwealth legislation as structured data**, get it from the [Hugging Face dataset](https://huggingface.co/datasets/cchew/lex-au). Clone and run this repo only if you're adding new Acts or changing the AKN mapping logic.
 
-**Status: v0.10.0** - 3,076 Acts + 2 Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au-explorer.netlify.app](https://lex-au-explorer.netlify.app).
+**Status: v0.13.0** - 3,085 Acts and Regulations; published dataset at [cchew/lex-au](https://huggingface.co/datasets/cchew/lex-au) on Hugging Face (CC BY 4.0) and live corpus browser at [lex-au-explorer.netlify.app](https://lex-au-explorer.netlify.app).
 
 lex-au-explorer renders the Commonwealth corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see `docs/known-limitations-schedule-and-conversion.txt`, entry (f)).
 
@@ -45,6 +45,7 @@ lex-au-explorer renders the Commonwealth corpus word-for-word for body text. Foo
 
 ## Versions
 
+- **v0.13.0** - Local definitions on by default, scoped to their section, Part, Division or Schedule. Dictionary Schedules, Migration Regulations Schedule structure, Schedule letter suffixes (Schedule 2A) kept, "Subject to" lead-ins, amending text kept out of local terms. Full corpus re-converted: 3,085 Acts, 41,559 terms of which 9,058 local. `STRUCTURE_VERSION` unchanged at 2.
 - **v0.12.1** - `update --since` no longer force-rebuilds every Act legislation.gov.au reports as "modified" -- it now respects `is_current()`'s `comp_num` check like every other build path, only rebuilding when the compilation actually changed. Found live 2026-10-13: legislation.gov.au's "modified since" signal is broader than "the compilation changed" (ordinary administrative/metadata touches get reported too), so `force=True` was unconditionally re-stamping `FRBRManifestation`'s Generation date on Acts with nothing legally different -- correct per the AKN/FRBR spec (a Manifestation date is meant to track file generation, not legal change), but it made lex-au-search's raw-file-hash delta detection useless: across a handful of weekly runs since September, every one of 3,085 Acts ended up looking "changed" to `ingest-delta`, with the same result expected every future week. `Corpus.save`/new `Corpus.touch_last_checked` stamp a `last_checked` index field on both the rebuild and skip paths, so "did lex-au reconsider this Act" stays visible even when nothing legally changed and the file correctly doesn't get touched.
 - **v0.12.0** - Opt-in parsing support for non-Commonwealth sources (state and territory Word templates and register XML), built for `cchew/lex-au-privacy`. Everything is off unless a `ParserProfile` enables it, so Commonwealth output is unchanged (14 sampled Cth Acts built byte-identical; a 200-Act review of the two definition flags passed). `ParserProfile` options: `style_map`, `heading_re`/`section_re`, `schedule_heading_re`, `schedule_clause_res` (principles in "Normal" text become clauses), `unnumbered_schedule_re` and `skip_styles` (ACT Dictionary as a schedule, drop endnotes), `char_def_styles`, `definitions_in_schedules`, `extended_definitions` (qualifiers, "has the meaning given in", signposts, dash lead-ins, nested list folding), `scope_phrase_definitions` ("In this Act, X means ..." outside definitions sections), `local_definitions` (formatted-term definitions local to a section, Part, Division or schedule, written as `term-<slug>--<container eId>`; quoted amendment text is skipped and asterisk markers never link to a local term). `ActMetadata.locality` namespaces the FRBR URI (`/akn/au-vic/...`) and the corpus key, and `Corpus.save` raises `NameCollisionError` for a same-named instrument in another jurisdiction.
 - **v0.11.0** - Adds an optional `ParserProfile` (`lexau.profiles`) so documents authored with a non-Commonwealth Word template can use the same builder: style map, heading/section/schedule regexes, definition-section headings (including schedule dictionaries) and character-style defined terms, threaded through `iter_paragraphs`, `AknBuilder` and the term injectors. `ActMetadata.locality` namespaces the FRBR URI (`/akn/au-vic/act/...`) and the corpus key. `Corpus.save` raises `NameCollisionError` for a same-named instrument in a different jurisdiction. All additive: `profile=None` and `locality=None` reproduce existing output, 9 new tests. Motivated by `cchew/lex-au-privacy`.
@@ -188,6 +189,15 @@ Confirmed live (2026-07-21) for both Acts and legislative instruments. Act-level
 
 ## Known limits
 
+- Unnumbered Schedule headings (e.g. "The Schedule") in 87 Acts are absorbed into the preceding Schedule.
+- Table-of-contents lines leak into Schedules in 4 Acts (Corporations Regulations 2001, Customs Tariff Act 1995, Social Security (International Agreements) Act 1999, Taxation Administration Act 1953).
+- Migration Regulations 1994: Schedule 8 clauses 8207 and 8208 parse as one; Schedule 2 paragraphs sit beside subclauses, leaving positional `-N` eIds.
+- The Patents Act 1990 and Social Security (Administration) Act 1999 Dictionaries sit under a misparsed clause, so their `Act` definition is lost.
+- Definitions sections limited to a Part or Division ("In this Part:") are tagged Act-wide; CASR Dictionary Part 3 is untagged.
+- Quoted sections in some older amending Acts parse as body sections, giving 63 spurious local terms in 19 Acts.
+- Endnotes trail inside the last Schedule.
+- SIS Regulations 1994 and Training Guarantee (Administration) Amendment Act 1994 share the work URI `/akn/au/act/1994/57`: `doc_type` is not stored in `index.json`.
+- `reports/*-v0.5.0.json` figure counters published before v0.13.0 list converted figures as placeholders (1,890); the images were correct.
 - Defined terms are missed when the definiendum is bold/italic-formatted (e.g. `<b><i>ABN (Australian Business Number)</i></b> for an *entity means ...` in A New Tax System (Australian Business Number) Act 1999 s.41)
 - Asterisk-prefixed terms (`*entity`, `*Australian Business Register` - the OPC drafting convention marking a word as having its own Dictionary entry elsewhere in the Act) are preserved as literal `*` characters; not converted to a cross-reference or otherwise interpreted.
 - `<ref>` cross-references are pattern-matched; nested or unusual citation forms may be missed.
