@@ -12,6 +12,7 @@ from docx import Document
 from huggingface_hub import HfApi
 from huggingface_hub.utils import filter_repo_objects
 
+from lexau import hfsync
 from lexau.corpus import Corpus
 from lexau.crawler import Crawler
 from lexau.builder import AknBuilder
@@ -313,6 +314,69 @@ def _reconcile_deleted_files(
     return orphans
 
 
+def _unsynced_reason(head: str, corpus_dir: Path, repo: str) -> str | None:
+    """Return why corpus_dir is not a verified restore of repo's current
+    head, or None if it is. Checked before any upload: a stamp pinned to an
+    older sha means someone published since this corpus was restored, and
+    uploading would revert their files."""
+    stamp_path = corpus_dir / _HF_SYNC_STAMP
+    if not stamp_path.exists():
+        return f"{stamp_path} not found (corpus was never restored from Hugging Face)"
+    try:
+        stamp = json.loads(stamp_path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        return f"{stamp_path} is unreadable ({exc})"
+    if stamp.get("repo") != repo:
+        return f"{stamp_path} was written for repo {stamp.get('repo')!r}, not {repo!r}"
+    if stamp.get("allow_patterns"):
+        return f"{stamp_path} records a partial restore ({stamp['allow_patterns']})"
+    stamp_sha = stamp.get("remote_sha")
+    if not stamp_sha:
+        return f"{stamp_path} has no remote_sha (written by a pre-v0.13.1 restore)"
+    if head != stamp_sha:
+        return (
+            f"remote head is {head} but the corpus was restored from {stamp_sha} "
+            "(someone published in between)"
+        )
+    return None
+
+
+def _unexpected_change_reason(
+    changed: list[str], corpus_dir: Path, allowance: int
+) -> tuple[str, list[str]] | None:
+    """Return (reason, paths to show) if the upload set is not what one
+    pipeline run should produce, else None.
+
+    Files written this run are newer than the sync stamp (written at the
+    end of the restore). A changed file older than the stamp differs from
+    the remote without anything in this run having touched it: the stale
+    clobber signature. Separately, the total change set must fit within the
+    Acts built this run (changed xml/ files newer than the stamp) plus
+    `allowance` for their reports, images, index.json and train.jsonl."""
+    stamp_path = corpus_dir / _HF_SYNC_STAMP
+    stamp_mtime = stamp_path.stat().st_mtime if stamp_path.exists() else None
+    untouched = (
+        [p for p in changed if (corpus_dir / p).stat().st_mtime <= stamp_mtime]
+        if stamp_mtime is not None
+        else []
+    )
+    if untouched:
+        return (
+            f"{len(untouched)} file(s) differ from the remote but were not written "
+            "since the restore",
+            untouched,
+        )
+    built = sum(1 for p in changed if p.startswith("xml/") and p.endswith(".xml"))
+    limit = built + allowance
+    if len(changed) > limit:
+        return (
+            f"{len(changed)} files would change, more than the {built} Act(s) built "
+            f"this run + allowance {allowance} = {limit}",
+            changed,
+        )
+    return None
+
+
 @cli.command("export-hf")
 @click.option("--repo", required=True, help="HF dataset repo, e.g. cchew/lex-au")
 @click.option("--corpus-dir", type=click.Path(path_type=Path), default=Path("corpus"), show_default=True)
@@ -333,10 +397,67 @@ def _reconcile_deleted_files(
         "local corpus is deliberately authoritative."
     ),
 )
-def export_hf(repo: str, corpus_dir: Path, readme: Path, allow_deletes: bool) -> None:
-    """Push corpus XML + index + dataset card to a Hugging Face dataset."""
+@click.option(
+    "--change-allowance",
+    type=int,
+    default=200,
+    show_default=True,
+    help="Files allowed to change on top of one per Act built this run.",
+)
+@click.option(
+    "--allow-large-change",
+    is_flag=True,
+    default=False,
+    help="Skip the change-set limits, for a deliberate full re-publish (e.g. v0.13.0).",
+)
+@click.option(
+    "--skip-sync-check",
+    is_flag=True,
+    default=False,
+    help=(
+        f"Publish without a {_HF_SYNC_STAMP} pinned to the current remote head. Only "
+        "for a deliberately authoritative local corpus; may revert others' publishes."
+    ),
+)
+def export_hf(
+    repo: str,
+    corpus_dir: Path,
+    readme: Path,
+    allow_deletes: bool,
+    change_allowance: int,
+    allow_large_change: bool,
+    skip_sync_check: bool,
+) -> None:
+    """Push corpus XML + index + dataset card to a Hugging Face dataset.
+
+    Refuses (non-zero exit, nothing uploaded) unless the corpus is a
+    verified restore of the current remote head and the files that differ
+    from the remote are limited to what this run built."""
     api = HfApi()
     ignore_patterns = ["docx/**", "doc_spike/**", _HF_SYNC_STAMP]
+    head = api.repo_info(repo_id=repo, repo_type="dataset").sha
+    if not skip_sync_check:
+        reason = _unsynced_reason(head, corpus_dir, repo)
+        if reason is not None:
+            raise click.ClickException(
+                f"Refusing to export: {reason}. Restore into an empty directory with "
+                "scripts/restore_corpus_from_hf.py and rebuild, or pass "
+                "--skip-sync-check if the local corpus is deliberately authoritative."
+            )
+    remote = hfsync.remote_files(api, repo, head)
+    changed = hfsync.changed_files(corpus_dir, remote, ignore_patterns)
+    click.echo(f"{len(changed)} file(s) differ from {repo}@{head}.")
+    if not allow_large_change:
+        problem = _unexpected_change_reason(changed, corpus_dir, change_allowance)
+        if problem is not None:
+            reason, paths = problem
+            click.echo(f"First {min(20, len(paths))} of {len(paths)}:", err=True)
+            for path in paths[:20]:
+                click.echo(f"  - {path}", err=True)
+            raise click.ClickException(
+                f"Refusing to export: {reason}. Pass --allow-large-change only for a "
+                "deliberate full re-publish."
+            )
     click.echo(f"Uploading corpus to {repo}…")
     # upload_large_folder (not upload_folder) hashes files first and skips
     # ones unchanged since the last commit, and avoided a reproducible
