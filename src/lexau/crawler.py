@@ -405,8 +405,12 @@ class Crawler:
             time.sleep(self._delay)
         return sorted(names)
 
-    def list_modified_since(self, since: date) -> list[str]:
-        """Return Act names whose latest compilation started after `since`."""
+    def list_modified_since(self, since: date, page_size: int = 100) -> list[str]:
+        """Return Act names whose latest compilation started after `since`.
+
+        Paged explicitly: the Versions endpoint returns 50 rows by default
+        with no nextLink (confirmed live 2026-10-27), so a single request
+        silently dropped everything past the first 50."""
         # `start` is Edm.DateTimeOffset in the API's schema, not a string --
         # a quoted '...' literal 400s ("incompatible types ... DateTimeOffset
         # and String"). OData DateTimeOffset literals are unquoted and must
@@ -414,13 +418,24 @@ class Crawler:
         # (confirmed live: a 'Z' suffix also 400s -- exact format the API
         # accepts is bare 'yyyy-mm-ddThh:mm:ss').
         since_str = f"{since.isoformat()}T00:00:00"
-        versions = self._get(
-            "Versions",
-            {
-                "$filter": f"isLatest eq true and start gt {since_str}",
-                "$select": "titleId",
-            },
-        ).get("value", [])
+        versions: list[dict] = []
+        skip = 0
+        while True:
+            page = self._get(
+                "Versions",
+                {
+                    "$filter": f"isLatest eq true and start gt {since_str}",
+                    "$select": "titleId",
+                    "$top": page_size,
+                    "$skip": skip,
+                    "$orderby": "titleId asc",
+                },
+            ).get("value", [])
+            versions.extend(page)
+            if len(page) < page_size:
+                break
+            skip += page_size
+            time.sleep(self._delay)
 
         names: list[str] = []
         for v in versions:

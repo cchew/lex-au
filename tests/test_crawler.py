@@ -141,6 +141,28 @@ def test_list_modified_since_returns_act_names():
 
 
 @resp_lib.activate
+def test_list_modified_since_pages_past_the_server_default():
+    """The live Versions endpoint returns 50 rows by default with no
+    nextLink (2026-10-27: 186 latest versions since 1 Oct, 50 returned), so
+    freshness silently missed every Act past the first page."""
+    page1 = [{"titleId": f"C2026A{n:05d}"} for n in range(100)]
+    page2 = [{"titleId": "C2026A99999"}]
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json={"value": page1})
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json={"value": page2})
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": [{"name": "Some Act"}]})
+
+    crawler = Crawler(crawl_delay=0)
+    with patch("lexau.crawler.time.sleep"):
+        names = crawler.list_modified_since(date(2026, 10, 1), page_size=100)
+
+    assert len(names) == 101
+    version_calls = [c.request.url for c in resp_lib.calls if "/Versions" in c.request.url]
+    assert len(version_calls) == 2
+    assert "skip=100" in version_calls[1].replace("%24", "$")
+    assert "orderby=titleId" in version_calls[0].replace("%24", "$")
+
+
+@resp_lib.activate
 def test_list_modified_since_sends_unquoted_datetimeoffset_filter():
     # `start` is Edm.DateTimeOffset in the live API's schema -- a quoted
     # string literal 400s with "incompatible types ... DateTimeOffset and
