@@ -350,9 +350,10 @@ def _unexpected_change_reason(
     Files written this run are newer than the sync stamp (written at the
     end of the restore). A changed file older than the stamp differs from
     the remote without anything in this run having touched it: the stale
-    clobber signature. Separately, the total change set must fit within the
-    Acts built this run (changed xml/ files newer than the stamp) plus
-    `allowance` for their reports, images, index.json and train.jsonl."""
+    clobber signature. Separately, each Act built this run (xml newer than
+    the stamp) may change its own xml, reports and figures; everything else
+    (index.json, train.jsonl, ...) must fit within `allowance`. A rebuild
+    of ITAA 1997 alone rewrites 362 figures."""
     stamp_path = corpus_dir / _HF_SYNC_STAMP
     stamp_mtime = stamp_path.stat().st_mtime if stamp_path.exists() else None
     untouched = (
@@ -366,15 +367,52 @@ def _unexpected_change_reason(
             "since the restore",
             untouched,
         )
-    built = sum(1 for p in changed if p.startswith("xml/") and p.endswith(".xml"))
-    limit = built + allowance
-    if len(changed) > limit:
+    built = _built_this_run(corpus_dir, stamp_mtime)
+    expected = _expected_paths(corpus_dir, built)
+    unexpected = [
+        p for p in changed
+        if p not in expected
+        and not any(p.startswith(f"images/{s}-fig-") for s in built)
+    ]
+    if len(unexpected) > allowance:
         return (
-            f"{len(changed)} files would change, more than the {built} Act(s) built "
-            f"this run + allowance {allowance} = {limit}",
-            changed,
+            f"{len(unexpected)} file(s) outside the {len(built)} Act(s) built this run "
+            f"would change, more than allowance {allowance}",
+            unexpected,
         )
     return None
+
+
+def _built_this_run(corpus_dir: Path, stamp_mtime: float | None) -> list[str]:
+    """safe_names of Acts whose xml was (re)written since the restore.
+    `lexau build`/`update` rewrite xml/<safe_name>.xml for every Act they
+    convert, so its mtime is the record of what this run built."""
+    if stamp_mtime is None:
+        return []
+    xml_dir = corpus_dir / "xml"
+    if not xml_dir.is_dir():
+        return []
+    return sorted(p.stem for p in xml_dir.glob("*.xml") if p.stat().st_mtime > stamp_mtime)
+
+
+def _expected_paths(corpus_dir: Path, built: list[str]) -> set[str]:
+    """Paths a rebuild of `built` legitimately rewrites: each Act's xml, its
+    reports, and the images its xml references (<img src="corpus/images/...">)."""
+    expected: set[str] = set()
+    for safe_name in built:
+        expected.add(f"xml/{safe_name}.xml")
+        for report in (corpus_dir / "reports").glob(f"{safe_name}-v*.json"):
+            expected.add(f"reports/{report.name}")
+        try:
+            root = etree.parse(str(corpus_dir / "xml" / f"{safe_name}.xml")).getroot()
+        except (OSError, etree.XMLSyntaxError):
+            continue
+        for el in root.iter():
+            if isinstance(el.tag, str) and etree.QName(el).localname == "img":
+                src = el.get("src", "")
+                if src.startswith("corpus/"):
+                    expected.add(src[len("corpus/"):])
+    return expected
 
 
 @cli.command("export-hf")
@@ -402,7 +440,7 @@ def _unexpected_change_reason(
     type=int,
     default=200,
     show_default=True,
-    help="Files allowed to change on top of one per Act built this run.",
+    help="Files allowed to change beyond each built Act's own xml, reports and figures (index.json, train.jsonl, ...).",
 )
 @click.option(
     "--allow-large-change",

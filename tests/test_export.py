@@ -332,8 +332,71 @@ def test_export_hf_refuses_change_set_larger_than_built_plus_allowance(small_cor
     result, mock_api = _export(small_corpus, extra_args=["--change-allowance", "10"])
 
     assert result.exit_code != 0
-    assert "more than the 1 Act(s) built this run + allowance 10" in result.output
+    assert "31 file(s) outside the 1 Act(s) built this run" in result.output  # 30 + index.json
+    assert "allowance 10" in result.output
     assert "First 20 of" in result.output
+    mock_api.upload_large_folder.assert_not_called()
+
+
+def _add_figures(corpus_dir: Path, safe_name: str, count: int) -> None:
+    images = corpus_dir / "images"
+    images.mkdir(exist_ok=True)
+    for n in range(1, count + 1):
+        (images / f"{safe_name}-fig-{n}.png").write_bytes(b"\x89PNG %d" % n)
+
+
+def test_export_hf_built_act_figures_and_report_are_expected(small_corpus):
+    """ITAA 1997 has 362 figures. Rebuilding it legitimately rewrites its
+    xml, report and every figure; none of that counts against the
+    allowance for unexpected files."""
+    _add_figures(small_corpus, "privacy-act-1988", 362)
+    reports = small_corpus / "reports"
+    reports.mkdir(exist_ok=True)
+    (reports / "privacy-act-1988-v0.5.0.json").write_text("{}")
+
+    result, mock_api = _export(small_corpus)
+
+    assert result.exit_code == 0, result.output
+    mock_api.upload_large_folder.assert_called_once()
+
+
+def test_export_hf_images_referenced_by_built_xml_are_expected(small_corpus):
+    xml = small_corpus / "xml" / "privacy-act-1988.xml"
+    srcs = "".join(f'<img src="corpus/images/odd-name-{n}.png"/>' for n in range(20))
+    xml.write_text(xml.read_text().replace("</akomaNtoso>", srcs + "</akomaNtoso>"))
+    images = small_corpus / "images"
+    images.mkdir(exist_ok=True)
+    for n in range(20):
+        (images / f"odd-name-{n}.png").write_bytes(b"png")
+
+    result, mock_api = _export(small_corpus, extra_args=["--change-allowance", "5"])
+
+    assert result.exit_code == 0, result.output
+    mock_api.upload_large_folder.assert_called_once()
+
+
+def test_export_hf_figures_of_act_not_built_count_against_allowance(small_corpus):
+    """Images newer than the stamp but belonging to an Act whose xml was not
+    rewritten this run are unexpected."""
+    _add_figures(small_corpus, "other-act-2001", 12)
+
+    result, mock_api = _export(small_corpus, extra_args=["--change-allowance", "10"])
+
+    assert result.exit_code != 0
+    assert "outside the 1 Act(s) built this run" in result.output
+    mock_api.upload_large_folder.assert_not_called()
+
+
+def test_export_hf_stale_figure_of_built_act_still_refused(small_corpus):
+    """Being an expected path never excuses a file the run did not write."""
+    _add_figures(small_corpus, "privacy-act-1988", 1)
+    stale = small_corpus / "images" / "privacy-act-1988-fig-1.png"
+    _backdate(stale, small_corpus / ".hf-sync-stamp.json")
+
+    result, mock_api = _export(small_corpus)
+
+    assert result.exit_code != 0
+    assert "not written since the restore" in result.output
     mock_api.upload_large_folder.assert_not_called()
 
 
