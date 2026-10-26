@@ -1,7 +1,7 @@
+# corpus/ is never tracked: CI restores it from the HF dataset into an empty
+# directory, and any tracked file a checkout puts there could be published
+# back over the dataset (2026-10-25 incident). The HF dataset is the source.
 corpus/
-# Fidelity audit: keep SUMMARY.{md,json}, ignore the per-act detail dumps
-corpus/reports/fidelity/*.json
-!corpus/reports/fidelity/SUMMARY.json
 site/
 spike/docx/
 spike/spike_results.json
