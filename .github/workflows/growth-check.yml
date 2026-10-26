@@ -18,7 +18,7 @@ permissions:
 jobs:
   growth-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120  # restore: ~4 min via git, up to 60 min budget if it falls back to per-file + 429 waits
     steps:
       - uses: actions/checkout@v4
 
@@ -32,6 +32,7 @@ jobs:
       - name: Restore corpus from Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LEXAU_RESTORE_BUDGET_MINUTES: "60"
         run: python scripts/restore_corpus_from_hf.py --repo cchew/lex-au --local-dir corpus
 
       - name: Fetch live Act list
