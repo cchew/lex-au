@@ -82,6 +82,25 @@ def test_fetch_metadata_canonicalises_superseded_name():
 
 
 @resp_lib.activate
+def test_fetch_metadata_with_title_id_survives_upstream_rename():
+    """Corpus holds the old name; the name query would find nothing, the
+    title_id lookup must still resolve the renamed Act."""
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=RENAMED_TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=RENAMED_VERSIONS_RESPONSE)
+
+    meta = Crawler().fetch_metadata(
+        "Old Name Act 1973", title_id=RENAMED_TITLES_RESPONSE["value"][0]["id"]
+    )
+
+    assert meta is not None
+    assert meta.name == "Human Services (Medicare) Act 1973"
+    assert meta.aliases == ["Old Name Act 1973"]
+    sent = resp_lib.calls[0].request.url
+    assert "id+eq" in sent or "id%20eq" in sent
+    assert "name+eq" not in sent and "name%20eq" not in sent
+
+
+@resp_lib.activate
 def test_fetch_metadata_no_alias_when_name_already_canonical():
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)

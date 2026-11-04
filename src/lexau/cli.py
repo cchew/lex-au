@@ -100,8 +100,10 @@ def _build_acts(
     force: bool,
     doc_type: str = "act",
     local_definitions: bool = True,
+    title_ids: dict[str, str] | None = None,
 ) -> None:
-    """Build Acts: download DOCX and convert to AKN XML."""
+    """Build Acts: download DOCX and convert to AKN XML. `title_ids` maps an
+    Act name to its known title_id, so an upstream rename still resolves."""
     corpus = Corpus(corpus_dir)
     crawler = Crawler()
     docx_dir = corpus_dir / "docx"
@@ -116,7 +118,9 @@ def _build_acts(
     for act_name in act_names:
         try:
             click.echo(f"[fetch ] {act_name}")
-            meta = crawler.fetch_metadata(act_name, doc_type=doc_type)
+            meta = crawler.fetch_metadata(
+                act_name, doc_type=doc_type, title_id=(title_ids or {}).get(act_name)
+            )
             if meta is None:
                 click.echo(f"  SKIP -- not found in legislation.gov.au", err=True)
                 continue
@@ -684,4 +688,7 @@ def update(since: str, corpus_dir: Path, max_acts: int) -> None:
     # changes when legislation.gov.au issues a new compilation; _build_acts's
     # skip path still stamps last_checked, so "did lex-au reconsider this
     # Act" stays visible even when nothing rebuilds.
-    _build_acts(in_corpus, corpus_dir, force=False)
+    _build_acts(
+        in_corpus, corpus_dir, force=False,
+        title_ids={name: tid for tid, name in by_title.items()},
+    )

@@ -455,6 +455,7 @@ def test_git_bulk_fetch_keeps_token_out_of_remote_url_and_args(monkeypatch, tmp_
     calls = []
     monkeypatch.setattr(module.subprocess, "run", _recording_run(calls))
     monkeypatch.setenv("HF_TOKEN", "hf_secret123")
+    monkeypatch.delenv("HF_ENDPOINT", raising=False)
     module.git_bulk_fetch("cchew/lex-au", SHA, tmp_path / "corpus")
     for cmd, env, _ in calls:
         assert "hf_secret123" not in " ".join(cmd)

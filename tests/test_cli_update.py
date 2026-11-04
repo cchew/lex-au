@@ -8,7 +8,7 @@ from lexau import cli as cli_mod
 
 @pytest.fixture
 def harness(monkeypatch, tmp_path):
-    state = SimpleNamespace(modified=[], corpus=[], builds=[])
+    state = SimpleNamespace(modified=[], corpus=[], builds=[], kwargs=[])
 
     class FakeCrawler:
         def list_modified_since(self, since):
@@ -25,7 +25,9 @@ def harness(monkeypatch, tmp_path):
     monkeypatch.setattr(cli_mod, "Corpus", FakeCorpus)
     monkeypatch.setattr(
         cli_mod, "_build_acts",
-        lambda names, corpus_dir, force, **kw: state.builds.append((list(names), force)),
+        lambda names, corpus_dir, force, **kw: (
+            state.builds.append((list(names), force)), state.kwargs.append(kw)
+        ),
     )
 
     def run(*extra):
@@ -48,6 +50,7 @@ def test_update_matches_corpus_by_title_id_not_name(harness):
     result = harness.run()
     assert result.exit_code == 0, result.output
     assert harness.builds == [(["New Name Act 2020"], False)]
+    assert harness.kwargs[0]["title_ids"]["New Name Act 2020"] == "C1"
     assert "1 not in corpus" in result.output
     assert "modified corpus Act" in result.output
 
@@ -92,3 +95,11 @@ def test_update_default_max_acts_is_25(harness):
     assert result.exit_code != 0
     assert "more than --max-acts 25" in result.output
     assert harness.builds == []
+
+
+def test_update_default_max_acts_allows_25(harness):
+    harness.corpus = _acts(25)
+    harness.modified = [t for t, _ in harness.corpus]
+    result = harness.run()
+    assert result.exit_code == 0, result.output
+    assert len(harness.builds[0][0]) == 25

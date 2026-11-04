@@ -216,9 +216,25 @@ class Crawler:
                 return exact[0]
         return None
 
-    def fetch_metadata(self, act_name: str, doc_type: str = "act") -> ActMetadata | None:
-        # Step 1: resolve series title ID
-        t = self._resolve_title(act_name)
+    def _title_by_id(self, title_id: str) -> dict | None:
+        titles = self._get(
+            "Titles",
+            {
+                "$filter": f"id eq '{_odata_escape(title_id)}'",
+                "$top": 1,
+                "$select": "id,name,year,number",
+            },
+        ).get("value", [])
+        return titles[0] if titles else None
+
+    def fetch_metadata(
+        self, act_name: str, doc_type: str = "act", title_id: str | None = None
+    ) -> ActMetadata | None:
+        # Step 1: resolve series title ID. A known title_id is authoritative
+        # (survives an upstream rename); the name is the fallback.
+        t = self._title_by_id(title_id) if title_id else None
+        if t is None:
+            t = self._resolve_title(act_name)
         if t is None:
             return None
         title_id: str = t["id"]
