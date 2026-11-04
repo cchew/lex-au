@@ -406,48 +406,39 @@ class Crawler:
         return sorted(names)
 
     def list_modified_since(self, since: date, page_size: int = 100) -> list[str]:
-        """Return Act names whose latest compilation started after `since`.
+        """Return title ids whose latest compilation was registered after `since`.
+
+        Filters on `registeredAt`, not `start`: FRL registers some
+        compilations days after their start date (median lag 11 days; Migration
+        Act 1958 started 2026-10-08, registered 2026-10-15), and a `start`
+        window never sees those.
 
         Paged explicitly: the Versions endpoint returns 50 rows by default
         with no nextLink (confirmed live 2026-10-27), so a single request
         silently dropped everything past the first 50."""
-        # `start` is Edm.DateTimeOffset in the API's schema, not a string --
-        # a quoted '...' literal 400s ("incompatible types ... DateTimeOffset
-        # and String"). OData DateTimeOffset literals are unquoted and must
-        # include a time component, with no trailing offset/Z suffix
-        # (confirmed live: a 'Z' suffix also 400s -- exact format the API
-        # accepts is bare 'yyyy-mm-ddThh:mm:ss').
+        # `registeredAt` is Edm.DateTimeOffset in the API's schema, not a
+        # string -- a quoted '...' literal 400s ("incompatible types ...
+        # DateTimeOffset and String"). OData DateTimeOffset literals are
+        # unquoted and must include a time component, with no trailing
+        # offset/Z suffix (confirmed live: a 'Z' suffix also 400s -- exact
+        # format the API accepts is bare 'yyyy-mm-ddThh:mm:ss').
         since_str = f"{since.isoformat()}T00:00:00"
-        versions: list[dict] = []
+        title_ids: set[str] = set()
         skip = 0
         while True:
             page = self._get(
                 "Versions",
                 {
-                    "$filter": f"isLatest eq true and start gt {since_str}",
+                    "$filter": f"isLatest eq true and registeredAt gt {since_str}",
                     "$select": "titleId",
                     "$top": page_size,
                     "$skip": skip,
                     "$orderby": "titleId asc",
                 },
             ).get("value", [])
-            versions.extend(page)
+            title_ids.update(v["titleId"] for v in page)
             if len(page) < page_size:
                 break
             skip += page_size
             time.sleep(self._delay)
-
-        names: list[str] = []
-        for v in versions:
-            title_resp = self._get(
-                "Titles",
-                {
-                    "$filter": f"id eq '{_odata_escape(v['titleId'])}'",
-                    "$top": 1,
-                    "$select": "name",
-                },
-            ).get("value", [])
-            if title_resp:
-                names.append(title_resp[0]["name"])
-            time.sleep(0.3)
-        return names
+        return sorted(title_ids)

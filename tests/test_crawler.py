@@ -123,21 +123,22 @@ def test_fetch_docx_saves_file(tmp_path: Path):
 
 
 @resp_lib.activate
-def test_list_modified_since_returns_act_names():
+def test_list_modified_since_returns_title_ids():
     resp_lib.add(
         resp_lib.GET,
         f"{API}/Versions",
         json={"value": [
             {"titleId": "C2004A03712"},
             {"titleId": "C2009A00028"},
+            {"titleId": "C2004A03712"},
         ]},
     )
-    resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": [{"name": "Privacy Act 1988"}]})
-    resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": [{"name": "Fair Work Act 2009"}]})
 
     crawler = Crawler()
-    names = crawler.list_modified_since(date(2026, 1, 1))
-    assert "Privacy Act 1988" in names
+    ids = crawler.list_modified_since(date(2026, 1, 1))
+
+    assert ids == ["C2004A03712", "C2009A00028"]
+    assert not [c for c in resp_lib.calls if "/Titles" in c.request.url]
 
 
 @resp_lib.activate
@@ -149,39 +150,33 @@ def test_list_modified_since_pages_past_the_server_default():
     page2 = [{"titleId": "C2026A99999"}]
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json={"value": page1})
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json={"value": page2})
-    resp_lib.add(resp_lib.GET, f"{API}/Titles", json={"value": [{"name": "Some Act"}]})
 
     crawler = Crawler(crawl_delay=0)
     with patch("lexau.crawler.time.sleep"):
-        names = crawler.list_modified_since(date(2026, 10, 1), page_size=100)
+        ids = crawler.list_modified_since(date(2026, 10, 1), page_size=100)
 
-    assert len(names) == 101
+    assert len(ids) == 101
     version_calls = [c.request.url for c in resp_lib.calls if "/Versions" in c.request.url]
     assert len(version_calls) == 2
     assert "skip=100" in version_calls[1].replace("%24", "$")
     assert "orderby=titleId" in version_calls[0].replace("%24", "$")
+    assert not [c for c in resp_lib.calls if "/Titles" in c.request.url]
 
 
 @resp_lib.activate
-def test_list_modified_since_sends_unquoted_datetimeoffset_filter():
-    # `start` is Edm.DateTimeOffset in the live API's schema -- a quoted
-    # string literal 400s with "incompatible types ... DateTimeOffset and
-    # String" (confirmed against the real API). Mocked responses don't
-    # validate this server-side, so assert on the actual request query
-    # string sent, not just that a response gets parsed.
-    resp_lib.add(
-        resp_lib.GET,
-        f"{API}/Versions",
-        json={"value": []},
-    )
+def test_list_modified_since_filters_on_registered_at():
+    # FRL registers some compilations days after `start` (Migration Act 1958:
+    # start 2026-10-08, registered 2026-10-15), so `start` misses them.
+    # `registeredAt` is Edm.DateTimeOffset: a quoted literal 400s live, and
+    # mocked responses do not validate that, so assert on the sent URL.
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json={"value": []})
 
-    crawler = Crawler()
-    crawler.list_modified_since(date(2026, 8, 6))
+    Crawler().list_modified_since(date(2026, 8, 6))
 
     sent_url = resp_lib.calls[0].request.url
-    assert "start+gt+2026-08-06T00%3A00%3A00" in sent_url or "start%20gt%202026-08-06T00%3A00%3A00" in sent_url
-    assert "start+gt+%272026-08-06" not in sent_url
-    assert "start%20gt%20%272026-08-06" not in sent_url
+    assert "registeredAt+gt+2026-08-06T00%3A00%3A00" in sent_url or "registeredAt%20gt%202026-08-06T00%3A00%3A00" in sent_url
+    assert "start+gt" not in sent_url and "start%20gt" not in sent_url
+    assert "%272026-08-06" not in sent_url
 
 
 @resp_lib.activate
