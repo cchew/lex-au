@@ -12,6 +12,10 @@ on:
         description: "Optional ISO date override (e.g. 2026-08-01) for catch-up after a longer gap"
         required: false
         default: ""
+      max_acts:
+        description: "Max Acts to rebuild in one run (raise for catch-up after review)"
+        required: false
+        default: "25"
 
 concurrency:
   group: corpus-publish
@@ -55,8 +59,11 @@ jobs:
 
       - name: Update changed Acts
         id: update
+        env:
+          MAX_ACTS: ${{ github.event.inputs.max_acts }}
+        # A --max-acts refusal exits non-zero and must fail the run, not publish.
         run: |
-          output=$(lexau update --since "${{ steps.window.outputs.since }}" --corpus-dir corpus)
+          output=$(lexau update --since "${{ steps.window.outputs.since }}" --corpus-dir corpus --max-acts "${MAX_ACTS:-25}")
           echo "$output"
           if echo "$output" | grep -q "modified corpus Act"; then
             echo "found=true" >> "$GITHUB_OUTPUT"
