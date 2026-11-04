@@ -134,10 +134,10 @@ lexau build --all --corpus-dir corpus/ --force
 
 ### Incremental update
 
-Re-fetch and re-convert Acts modified since a given date:
+Re-fetch and re-convert Acts whose latest compilation was registered since a given date. Refuses to build more than `--max-acts` Acts (default 25) in one run:
 
 ```bash
-lexau update --since 2026-01-01 --corpus-dir corpus/
+lexau update --since 2026-01-01 --corpus-dir corpus/ --max-acts 100
 ```
 
 ### Generate static site
