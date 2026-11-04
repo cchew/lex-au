@@ -387,6 +387,48 @@ def test_export_hf_figures_of_act_not_built_count_against_allowance(small_corpus
     mock_api.upload_large_folder.assert_not_called()
 
 
+def test_export_hf_act_with_xml_older_than_stamp_is_not_built(small_corpus):
+    """An Act whose xml is unchanged since the restore was not built this
+    run, so figures written for it are unexpected. Kills the mutant that
+    treats every xml/ file as built."""
+    stamp = small_corpus / ".hf-sync-stamp.json"
+    old = small_corpus / "xml" / "other-act-2001.xml"
+    old.write_text("<akn>same</akn>")
+    _backdate(old, stamp)
+    _add_figures(small_corpus, "other-act-2001", 12)
+    tree = [_remote_entry(small_corpus, "xml/other-act-2001.xml")]
+
+    result, mock_api = _export(small_corpus, tree=tree, extra_args=["--change-allowance", "10"])
+
+    assert result.exit_code != 0
+    assert "outside the 1 Act(s) built this run" in result.output
+    mock_api.upload_large_folder.assert_not_called()
+
+
+def _export_with_reports(corpus_dir: Path, reports: int, allowance: int):
+    rdir = corpus_dir / "reports"
+    rdir.mkdir(exist_ok=True)
+    for i in range(reports):
+        (rdir / f"r{i:02d}.json").write_text(str(i))
+    return _export(corpus_dir, extra_args=["--change-allowance", str(allowance)])
+
+
+def test_export_hf_allowance_boundary_exactly_allowance_passes(small_corpus):
+    # index.json is the one other unexpected change: 9 reports + it = 10.
+    result, mock_api = _export_with_reports(small_corpus, reports=9, allowance=10)
+
+    assert result.exit_code == 0, result.output
+    mock_api.upload_large_folder.assert_called_once()
+
+
+def test_export_hf_allowance_boundary_one_over_is_refused(small_corpus):
+    result, mock_api = _export_with_reports(small_corpus, reports=10, allowance=10)
+
+    assert result.exit_code != 0
+    assert "11 file(s) outside" in result.output
+    mock_api.upload_large_folder.assert_not_called()
+
+
 def test_export_hf_stale_figure_of_built_act_still_refused(small_corpus):
     """Being an expected path never excuses a file the run did not write."""
     _add_figures(small_corpus, "privacy-act-1988", 1)
