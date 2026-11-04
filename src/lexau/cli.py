@@ -627,8 +627,15 @@ def list_instruments(output: Path | None, page_size: int) -> None:
     default=Path("corpus"),
     show_default=True,
 )
-def update(since: str, corpus_dir: Path) -> None:
-    """Fetch and re-convert Acts modified since a given date."""
+@click.option(
+    "--max-acts",
+    type=int,
+    default=25,
+    show_default=True,
+    help="Refuse to build more than this many Acts in one run (publish gate).",
+)
+def update(since: str, corpus_dir: Path, max_acts: int) -> None:
+    """Fetch and re-convert Acts registered since a given date."""
     from datetime import date as _date
 
     since_date = _date.fromisoformat(since)
@@ -642,10 +649,12 @@ def update(since: str, corpus_dir: Path) -> None:
         return
 
     # Only re-build Acts already in the corpus; legislation.gov.au returns
-    # modifications across all Acts, not just our corpus members.
+    # modifications across all Acts, not just our corpus members. Matched on
+    # title_id so an upstream rename cannot hide an Act.
     corpus = Corpus(corpus_dir)
-    corpus_names = {meta.name for meta in corpus.all_metadata()}
-    in_corpus = [name for name in modified if name in corpus_names]
+    by_title = {meta.title_id: meta.name for meta in corpus.all_metadata()}
+    in_corpus = sorted(by_title[t] for t in modified if t in by_title)
+    not_in_corpus = len(modified) - len(in_corpus)
 
     if not in_corpus:
         click.echo(
@@ -653,7 +662,16 @@ def update(since: str, corpus_dir: Path) -> None:
         )
         return
 
-    click.echo(f"Found {len(in_corpus)} modified corpus Act(s): {', '.join(in_corpus)}")
+    if len(in_corpus) > max_acts:
+        raise click.ClickException(
+            f"{len(in_corpus)} corpus Acts modified, more than --max-acts {max_acts}; "
+            "rerun with a higher --max-acts after review"
+        )
+
+    click.echo(
+        f"Found {len(in_corpus)} modified corpus Act(s) ({not_in_corpus} not in corpus): "
+        f"{', '.join(in_corpus)}"
+    )
     # NOT force=True: legislation.gov.au's "modified since" signal is broader
     # than "the compilation actually changed" (observed live 2026-10-13 --
     # every Act in a 3,085-Act corpus showed as "modified" across a handful
