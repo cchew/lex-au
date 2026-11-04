@@ -420,3 +420,54 @@ def test_git_bulk_fetch_rejects_wrong_head(monkeypatch, tmp_path):
     with pytest.raises(RuntimeError, match="not the pinned"):
         module.git_bulk_fetch("cchew/lex-au", SHA, tmp_path / "corpus")
     assert not (tmp_path / "corpus" / ".git").exists()
+
+
+def _recording_run(calls):
+    def fake_run(cmd, cwd, env, **kw):
+        calls.append((list(cmd), env, kw))
+        (Path(cwd) / ".git").mkdir(exist_ok=True)
+        return SimpleNamespace(stdout=SHA if cmd[1] == "rev-parse" else "")
+    return fake_run
+
+
+def test_git_bulk_fetch_passes_timeout_to_every_git_call(monkeypatch, tmp_path):
+    module = _load_module()
+    calls = []
+    monkeypatch.setattr(module.subprocess, "run", _recording_run(calls))
+    module.git_bulk_fetch("cchew/lex-au", SHA, tmp_path / "corpus")
+    assert calls
+    assert all(kw.get("timeout") == module.GIT_TIMEOUT_SECONDS for _, _, kw in calls)
+
+
+def test_bulk_fetch_timeout_falls_back_to_per_file(tmp_path):
+    module = _load_module()
+    calls = []
+
+    def stalled(repo, sha, target, include=None):
+        raise module.subprocess.TimeoutExpired("git", module.GIT_TIMEOUT_SECONDS)
+
+    _restore(module, tmp_path / "corpus", bulk=stalled, download=_downloader(calls=calls))
+    assert sorted(c["filename"] for c in calls) == sorted(REMOTE)
+
+
+def test_git_bulk_fetch_keeps_token_out_of_remote_url_and_args(monkeypatch, tmp_path):
+    module = _load_module()
+    calls = []
+    monkeypatch.setattr(module.subprocess, "run", _recording_run(calls))
+    monkeypatch.setenv("HF_TOKEN", "hf_secret123")
+    module.git_bulk_fetch("cchew/lex-au", SHA, tmp_path / "corpus")
+    for cmd, env, _ in calls:
+        assert "hf_secret123" not in " ".join(cmd)
+        assert env["GIT_CONFIG_VALUE_0"] == "Authorization: Bearer hf_secret123"
+    remote_add = next(cmd for cmd, _, _ in calls if cmd[1:3] == ["remote", "add"])
+    assert remote_add[-1] == "https://huggingface.co/datasets/cchew/lex-au"
+
+
+def test_git_bulk_fetch_without_token_sets_no_auth_header(monkeypatch, tmp_path):
+    module = _load_module()
+    calls = []
+    monkeypatch.setattr(module.subprocess, "run", _recording_run(calls))
+    monkeypatch.delenv("HF_TOKEN", raising=False)
+    monkeypatch.delenv("GIT_CONFIG_COUNT", raising=False)
+    module.git_bulk_fetch("cchew/lex-au", SHA, tmp_path / "corpus")
+    assert all("GIT_CONFIG_COUNT" not in env for _, env, _ in calls)
