@@ -78,3 +78,35 @@ def test_select_keys_keeps_commonwealth_instruments_drops_state():
         "s": {"name": "S Act", "title_id": "C2", "locality": "vic"},
     }
     assert mod.select_keys(acts, {}, False, None, 0, None) == ["a", "r"]
+
+
+def test_build_one_uses_profile_for_the_entrys_doc_type(tmp_path, monkeypatch):
+    """build_one must convert (not NameError) and pick the profile from the entry's derived doc_type."""
+    import importlib.util
+    from pathlib import Path
+    from types import SimpleNamespace
+    spec = importlib.util.spec_from_file_location(
+        "rebuild_offline", Path(__file__).parent.parent / "scripts" / "rebuild_offline.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    from lxml import etree
+    from lexau.models import ParseReport
+
+    seen = []
+
+    def fake_convert(meta, paths, out_dir, corpus_index, profile):
+        seen.append((meta.doc_type, profile))
+        return etree.fromstring("<a/>"), ParseReport(act_name=meta.name)
+
+    monkeypatch.setattr(mod, "_convert_act", fake_convert)
+    index = tmp_path / "index.json"
+    index.write_text('{"acts": {}}')
+    (tmp_path / "xml").mkdir()
+    (tmp_path / "reports").mkdir()
+    entry = dict(name="SIS Regulations 1994", title_id="F1996B00580", comp_id="c", comp_num="1",
+                 year=1994, number=57, effective_date="2026-01-01")
+    task = dict(key="k", out_dir=str(tmp_path), index_path=str(index), entry=entry,
+                paths=[], local_definitions=True)
+    result = mod.build_one(task)
+    assert result["status"] == "built", result
+    assert seen == [("regulation", mod.profile_for("regulation", True))]

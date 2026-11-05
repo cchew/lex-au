@@ -130,9 +130,7 @@ def build_one(task: dict[str, Any]) -> dict[str, Any]:
         meta = meta_from_entry(task["entry"])
         paths = [Path(p) for p in task["paths"]]
         profile = profile_for(meta.doc_type, task["local_definitions"])
-        xml, report = _convert_act(
-                meta, paths, out_dir, corpus_index, profile_for(meta.doc_type, local_definitions)
-            )
+        xml, report = _convert_act(meta, paths, out_dir, corpus_index, profile)
         report.volumes_fetched = len(paths)
         data = etree.tostring(xml, pretty_print=True, xml_declaration=True, encoding="UTF-8")
         _atomic_write(out_dir / "reports" / f"{meta.safe_name}.json", json.dumps(asdict(report), indent=2).encode())
@@ -292,7 +290,9 @@ def main(
             continue
         try:
             meta = meta_from_entry(entry)
-            xml, report = _convert_act(meta, paths, out_dir, corpus_index, profile)
+            xml, report = _convert_act(
+                meta, paths, out_dir, corpus_index, profile_for(meta.doc_type, local_definitions)
+            )
             report.volumes_fetched = len(paths)
             corpus.save(meta, xml, source_format=entry.get("source_format"))
             (reports_dir / f"{meta.safe_name}.json").write_text(json.dumps(asdict(report), indent=2))
