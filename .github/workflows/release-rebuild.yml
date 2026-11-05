@@ -1,0 +1,72 @@
+# .github/workflows/release-rebuild.yml
+# One-off, manual: apply parser/URI fixes to Acts whose compilation did NOT change
+# (freshness-check skips those), and optionally catch up late-registered compilations,
+# in a single publish so downstream consumers rebuild once.
+name: Release rebuild
+
+on:
+  workflow_dispatch:
+    inputs:
+      list_file:
+        description: "File of Act names (one per line) to force-rebuild; empty to skip"
+        required: false
+        default: "rebuild-list-2026-11.txt"
+      since:
+        description: "Optional ISO date: also update Acts registered since then (e.g. 2026-08-01)"
+        required: false
+        default: ""
+      max_acts:
+        description: "Cap for the --since update (refuses above it)"
+        required: false
+        default: "150"
+
+concurrency:
+  group: corpus-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  release-rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lexau
+        run: pip install -e ".[dev]"
+
+      - name: Restore corpus from Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LEXAU_RESTORE_BUDGET_MINUTES: "60"
+        run: python scripts/restore_corpus_from_hf.py --repo cchew/lex-au --local-dir corpus
+
+      - name: Catch up late-registered compilations
+        if: ${{ github.event.inputs.since != '' }}
+        env:
+          SINCE: ${{ github.event.inputs.since }}
+          MAX_ACTS: ${{ github.event.inputs.max_acts }}
+        # A --max-acts refusal exits non-zero and must fail the run, not publish.
+        run: lexau update --since "$SINCE" --corpus-dir corpus --max-acts "${MAX_ACTS:-150}"
+
+      - name: Force-rebuild listed Acts
+        if: ${{ github.event.inputs.list_file != '' }}
+        env:
+          LIST_FILE: ${{ github.event.inputs.list_file }}
+        run: lexau build --list-file "$LIST_FILE" --corpus-dir corpus --force
+
+      - name: Publish corpus
+        uses: ./.github/actions/publish-corpus
+        with:
+          run-label: release-rebuild
+          hf-token: ${{ secrets.HF_TOKEN }}
+          gh-token: ${{ github.token }}
+          has-changes: "true"
+          lex-au-graph-dispatch-token: ${{ secrets.LEX_AU_GRAPH_DISPATCH_TOKEN }}

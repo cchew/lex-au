@@ -41,9 +41,11 @@ V04_CHECKS = [
     ("FRBRWork has FRBRcountry=au",
      ".//akn:FRBRWork/akn:FRBRcountry/@value",
      lambda v: v == ["au"]),
-    ("FRBRWork has FRBRsubtype=act",
-     ".//akn:FRBRWork/akn:FRBRsubtype/@value",
-     lambda v: v == ["act"]),
+    # FRBRuri precedes FRBRsubtype in document order: the URI's doc-type segment must equal the subtype.
+    ("FRBRWork subtype is act/regulation/instrument and matches its FRBRuri",
+     ".//akn:FRBRWork/akn:FRBRuri/@value | .//akn:FRBRWork/akn:FRBRsubtype/@value",
+     lambda v: bool(v) and v[-1] in ("act", "regulation", "instrument")
+     and (len(v) == 1 or v[0].split("/")[3] == v[-1])),
     ("FRBRWork has FRBRnumber",
      ".//akn:FRBRWork/akn:FRBRnumber",
      lambda v: len(v) > 0),

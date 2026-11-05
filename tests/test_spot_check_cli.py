@@ -172,3 +172,28 @@ def test_baseline_empty_body_excludes_known_limitation_from_failure(tmp_path: Pa
     assert "OK" in stdout_lines[known_line_idx]
     assert "FAIL" in stdout_lines[unexpected_line_idx]
     assert "At least one section with eId" in stdout_lines[unexpected_line_idx + 1]
+
+
+def _subtype_check():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "spot_check", Path(__file__).parent.parent / "scripts" / "spot_check.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return next(fn for name, _xp, fn in mod.V04_CHECKS if name.startswith("FRBRWork subtype"))
+
+
+def test_subtype_check_accepts_matching_uri_and_subtype():
+    check = _subtype_check()
+    assert check(["/akn/au/act/1988/119", "act"])
+    assert check(["/akn/au/regulation/1994/F1996B00580", "regulation"])
+    assert check(["/akn/au-vic/act/2001/5", "act"])
+    assert check(["act"])  # no FRBRuri in the work: subtype alone is checked
+
+
+def test_subtype_check_rejects_mismatch_and_unknown():
+    check = _subtype_check()
+    assert not check(["/akn/au/act/1994/57", "regulation"])
+    assert not check(["/akn/au/regulation/1994/F1996B00580", "act"])
+    assert not check(["/akn/au/bill/2020/1", "bill"])
+    assert not check([])
