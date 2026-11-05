@@ -67,7 +67,8 @@ CTH_PROFILE: ParserProfile = ParserProfile(
 
 
 def profile_for(doc_type: str, local_definitions: bool) -> ParserProfile | None:
-    """Profile for a Commonwealth build; None (unchanged behaviour) unless opted in for Acts."""
-    if local_definitions and doc_type == "act":
+    """Profile for a Commonwealth build (Acts, Regulations and other instruments); None
+    (unchanged behaviour) unless local definitions are opted in."""
+    if local_definitions and doc_type in ("act", "regulation", "instrument"):
         return CTH_PROFILE
     return None

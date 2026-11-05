@@ -98,7 +98,7 @@ def _build_acts(
     act_names: list[str],
     corpus_dir: Path,
     force: bool,
-    doc_type: str = "act",
+    doc_type: str | None = None,
     local_definitions: bool = True,
     title_ids: dict[str, str] | None = None,
 ) -> None:
@@ -138,7 +138,7 @@ def _build_acts(
 
             click.echo(f"[convert] {act_name} ({len(docx_paths)} volume(s))")
             xml, report = _convert_act(
-                meta, docx_paths, corpus_dir, corpus_index, profile_for(doc_type, local_definitions),
+                meta, docx_paths, corpus_dir, corpus_index, profile_for(meta.doc_type, local_definitions),
             )
             report.volumes_fetched = len(docx_paths)
 
@@ -192,10 +192,9 @@ def _build_acts(
 @click.option("--force", is_flag=True, help="Re-convert even if compilation is current")
 @click.option(
     "--type", "doc_type",
-    default="act",
+    default=None,
     type=click.Choice(["act", "regulation", "instrument"]),
-    show_default=True,
-    help="Document type (act, regulation, or instrument)",
+    help="Document type override (default: derived from the FRL title id)",
 )
 @click.option(
     "--local-definitions/--no-local-definitions",

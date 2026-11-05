@@ -63,3 +63,18 @@ def test_merge_rejects_truncated_xml(tmp_path):
     (bad / "xml" / "a.xml").write_text("<r>truncat")
     with pytest.raises(click.UsageError, match="not well-formed"):
         merge_offline.merge(base, [bad], tmp_path / "out")
+
+
+def test_select_keys_keeps_commonwealth_instruments_drops_state():
+    import importlib.util
+    from pathlib import Path
+    spec = importlib.util.spec_from_file_location(
+        "rebuild_offline", Path(__file__).parent.parent / "scripts" / "rebuild_offline.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    acts = {
+        "a": {"name": "A Act", "title_id": "C1"},
+        "r": {"name": "R Regulations", "title_id": "F1"},
+        "s": {"name": "S Act", "title_id": "C2", "locality": "vic"},
+    }
+    assert mod.select_keys(acts, {}, False, None, 0, None) == ["a", "r"]

@@ -66,7 +66,7 @@ def select_keys(
     seed: int,
     acts_file: Path | None,
 ) -> list[str]:
-    keys = sorted(k for k, e in acts.items() if e.get("doc_type", "act") == "act")
+    keys = sorted(k for k, e in acts.items() if not e.get("locality"))
     if acts_file is not None:
         wanted = {ln.strip() for ln in acts_file.read_text().splitlines() if ln.strip()}
         keys = [k for k in keys if k in wanted or acts[k]["name"] in wanted]
@@ -129,8 +129,10 @@ def build_one(task: dict[str, Any]) -> dict[str, Any]:
         corpus_index = cache[task["index_path"]]
         meta = meta_from_entry(task["entry"])
         paths = [Path(p) for p in task["paths"]]
-        profile = profile_for("act", task["local_definitions"])
-        xml, report = _convert_act(meta, paths, out_dir, corpus_index, profile)
+        profile = profile_for(meta.doc_type, task["local_definitions"])
+        xml, report = _convert_act(
+                meta, paths, out_dir, corpus_index, profile_for(meta.doc_type, local_definitions)
+            )
         report.volumes_fetched = len(paths)
         data = etree.tostring(xml, pretty_print=True, xml_declaration=True, encoding="UTF-8")
         _atomic_write(out_dir / "reports" / f"{meta.safe_name}.json", json.dumps(asdict(report), indent=2).encode())
@@ -281,7 +283,6 @@ def main(
     corpus = Corpus(out_dir)
     reports_dir = out_dir / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
-    profile = profile_for("act", local_definitions)
     built, missing, errors = 0, [], []
     for key in keys:
         entry, paths = acts[key], volumes[key]

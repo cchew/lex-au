@@ -17,11 +17,12 @@ def test_cth_profile_enables_both_flags() -> None:
         assert getattr(CTH_PROFILE, f.name) == getattr(default, f.name), f.name
 
 
-def test_profile_for_acts_only() -> None:
+def test_profile_for_commonwealth_doc_types() -> None:
     assert profile_for("act", True) is CTH_PROFILE
     assert profile_for("act", False) is None
-    assert profile_for("regulation", True) is None
-    assert profile_for("instrument", True) is None
+    assert profile_for("regulation", True) is CTH_PROFILE
+    assert profile_for("instrument", True) is CTH_PROFILE
+    assert profile_for("regulation", False) is None
 
 
 def _drive_build_acts(monkeypatch, tmp_path, doc_type: str, **kwargs) -> list:
@@ -54,7 +55,7 @@ def _drive_build_acts(monkeypatch, tmp_path, doc_type: str, **kwargs) -> list:
 def test_build_acts_passes_profile_for_into_convert_act(monkeypatch, tmp_path) -> None:
     assert _drive_build_acts(monkeypatch, tmp_path, "act", local_definitions=True) == [CTH_PROFILE]
     assert _drive_build_acts(monkeypatch, tmp_path, "act", local_definitions=False) == [None]
-    assert _drive_build_acts(monkeypatch, tmp_path, "regulation", local_definitions=True) == [None]
+    assert _drive_build_acts(monkeypatch, tmp_path, "regulation", local_definitions=True) == [CTH_PROFILE]
     # default (not passed) is on
     assert _drive_build_acts(monkeypatch, tmp_path, "act") == [CTH_PROFILE]
 
@@ -94,3 +95,9 @@ def test_no_local_definitions_flag_disables_profile() -> None:
         assert m.call_args.kwargs["local_definitions"] is False
         CliRunner().invoke(cli.build, ["--acts", "X Act 2000"])
         assert m.call_args.kwargs["local_definitions"] is True
+
+
+def test_build_acts_uses_fetched_doc_type_not_caller_default(monkeypatch, tmp_path) -> None:
+    """The caller passes no doc_type; fetch_metadata derives it, and the profile follows meta."""
+    seen = _drive_build_acts(monkeypatch, tmp_path, "regulation", local_definitions=True)
+    assert seen == [CTH_PROFILE]

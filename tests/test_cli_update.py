@@ -103,3 +103,12 @@ def test_update_default_max_acts_allows_25(harness):
     result = harness.run()
     assert result.exit_code == 0, result.output
     assert len(harness.builds[0][0]) == 25
+
+
+def test_update_does_not_pin_doc_type(harness):
+    """A hard-coded doc_type="act" rebuilt regulations back to /akn/au/act/ URIs."""
+    harness.corpus = [("F1", "Some Regulations 2000")]
+    harness.modified = ["F1"]
+    result = harness.run()
+    assert result.exit_code == 0, result.output
+    assert harness.kwargs[0].get("doc_type") is None

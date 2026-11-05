@@ -8,7 +8,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 from lexau.doc_convert import convert_doc_to_docx
-from lexau.models import ActMetadata
+from lexau.models import ActMetadata, doc_type_for
 
 API_BASE = "https://api.prod.legislation.gov.au/v1"
 
@@ -228,7 +228,7 @@ class Crawler:
         return titles[0] if titles else None
 
     def fetch_metadata(
-        self, act_name: str, doc_type: str = "act", title_id: str | None = None
+        self, act_name: str, doc_type: str | None = None, title_id: str | None = None
     ) -> ActMetadata | None:
         # Step 1: resolve series title ID. A known title_id is authoritative
         # (survives an upstream rename); the name is the fallback.
@@ -278,7 +278,7 @@ class Crawler:
             effective_date=date.fromisoformat(v["start"][:10]),
             long_title=t.get("longTitle") or "",
             subject_keywords=subject_keywords,
-            doc_type=doc_type,
+            doc_type=doc_type or doc_type_for(title_id, canonical_name),
         )
 
     def fetch_docx_volumes(self, meta: ActMetadata, dest_dir: Path) -> list[Path]:

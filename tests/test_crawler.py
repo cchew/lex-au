@@ -101,6 +101,28 @@ def test_fetch_metadata_with_title_id_survives_upstream_rename():
 
 
 @resp_lib.activate
+def test_fetch_metadata_derives_regulation_doc_type():
+    titles = {"value": [{"id": "F1996B00580", "name": "Superannuation Industry (Supervision) Regulations 1994",
+                         "year": "1994", "number": "57"}]}
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=titles)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    meta = Crawler().fetch_metadata("Superannuation Industry (Supervision) Regulations 1994")
+
+    assert meta.doc_type == "regulation"
+    assert meta.frbr_work_uri == "/akn/au/regulation/1994/F1996B00580"
+
+
+@resp_lib.activate
+def test_fetch_metadata_explicit_doc_type_wins():
+    resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
+    resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
+
+    assert Crawler().fetch_metadata("Privacy Act 1988", doc_type="instrument").doc_type == "instrument"
+    assert Crawler().fetch_metadata("Privacy Act 1988").doc_type == "act"
+
+
+@resp_lib.activate
 def test_fetch_metadata_no_alias_when_name_already_canonical():
     resp_lib.add(resp_lib.GET, f"{API}/Titles", json=TITLES_RESPONSE)
     resp_lib.add(resp_lib.GET, f"{API}/Versions", json=VERSIONS_RESPONSE)
