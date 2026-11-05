@@ -82,3 +82,29 @@ def test_meta_from_entry_derives_doc_type():
                  year=1994, number=57, effective_date="2026-01-01")
     assert mod.meta_from_entry(entry).doc_type == "regulation"
     assert mod.meta_from_entry(dict(entry, title_id="C1", name="Privacy Act 1988")).doc_type == "act"
+
+
+# --- XML (Task 4) -----------------------------------------------------------
+
+_NS = {"a": _AKN}
+
+
+def _built(meta):
+    from lexau.builder import AknBuilder
+    return AknBuilder(meta).build_with_report({})[0]
+
+
+def test_regulation_xml_carries_uri_subtype_and_number():
+    m = _meta(name="SIS Regulations 1994", title_id="F1996B00580", doc_type="regulation")
+    xml = _built(m)
+    work = xml.xpath("//a:FRBRWork", namespaces=_NS)[0]
+    assert work.xpath("a:FRBRuri/@value", namespaces=_NS) == ["/akn/au/regulation/1994/F1996B00580"]
+    assert work.xpath("a:FRBRsubtype/@value", namespaces=_NS) == ["regulation"]
+    assert work.xpath("a:FRBRnumber/@value", namespaces=_NS) == ["57"]
+    assert not work.xpath("a:FRBRalias", namespaces=_NS)
+
+
+def test_act_xml_subtype_stays_act():
+    xml = _built(_meta(name="Privacy Act 1988", title_id="C2004A03712", year=1988, number=119))
+    assert xml.xpath("//a:FRBRWork/a:FRBRsubtype/@value", namespaces=_NS) == ["act"]
+    assert xml.xpath("//a:FRBRWork/a:FRBRuri/@value", namespaces=_NS) == ["/akn/au/act/1988/119"]

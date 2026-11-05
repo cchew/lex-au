@@ -2159,7 +2159,7 @@ class AknBuilder:
                             AKN.FRBRdate(date=f"{meta.year}-01-01", name="Generation"),
                             AKN.FRBRauthor(href="#parliament"),
                             AKN.FRBRcountry(value="au"),
-                            AKN.FRBRsubtype(value="act"),
+                            AKN.FRBRsubtype(value=meta.doc_type),
                             AKN.FRBRnumber(value=str(meta.number)),
                             AKN.FRBRname(value=meta.safe_name),
                             AKN.FRBRprescriptive(value="true"),
