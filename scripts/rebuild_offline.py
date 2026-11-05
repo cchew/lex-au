@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from lexau.cli import _convert_act, _load_corpus_index  # noqa: E402
 from lexau.corpus import STRUCTURE_VERSION, Corpus  # noqa: E402
-from lexau.models import ActMetadata  # noqa: E402
+from lexau.models import ActMetadata, doc_type_for  # noqa: E402
 from lexau.profiles import profile_for  # noqa: E402
 
 
@@ -42,7 +42,7 @@ def meta_from_entry(entry: dict) -> ActMetadata:
         number=int(entry["number"]),
         effective_date=date.fromisoformat(str(entry["effective_date"])[:10]),
         aliases=list(entry.get("aliases", [])),
-        doc_type=entry.get("doc_type", "act"),
+        doc_type=entry.get("doc_type") or doc_type_for(entry["title_id"], entry["name"]),
         locality=entry.get("locality"),
     )
 

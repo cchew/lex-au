@@ -33,3 +33,52 @@ def test_act_work_uri_unchanged():
 def test_locality_instrument_uri_unchanged():
     m = _meta(doc_type="instrument", locality="vic", title_id="F2020L00001")
     assert m.frbr_work_uri.endswith("/1994/57")
+
+
+# --- persistence (Task 2) ---------------------------------------------------
+
+import importlib.util
+import json
+from pathlib import Path
+
+from lxml import etree
+
+from lexau.corpus import Corpus
+
+_AKN = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+
+
+def _xml():
+    return etree.fromstring(f'<akomaNtoso xmlns="{_AKN}"><act name="act"><body/></act></akomaNtoso>')
+
+
+def test_save_writes_doc_type_only_when_not_act(tmp_path):
+    corpus = Corpus(tmp_path)
+    corpus.save(_meta(name="Privacy Act 1988", title_id="C2004A03712"), _xml())
+    corpus.save(_meta(name="SIS Regulations 1994", title_id="F1996B00580", doc_type="regulation"), _xml())
+    acts = json.loads((tmp_path / "index.json").read_text())["acts"]
+    assert "doc_type" not in acts["privacy-act-1988"]
+    assert acts["sis-regulations-1994"]["doc_type"] == "regulation"
+
+
+def test_all_metadata_derives_doc_type_when_missing(tmp_path):
+    corpus = Corpus(tmp_path)
+    corpus.save(_meta(name="Privacy Act 1988", title_id="C2004A03712"), _xml())
+    corpus.save(_meta(name="SIS Regulations 1994", title_id="F1996B00580", doc_type="regulation"), _xml())
+    index = json.loads((tmp_path / "index.json").read_text())
+    for entry in index["acts"].values():
+        entry.pop("doc_type", None)  # an index written before doc_type was persisted
+    (tmp_path / "index.json").write_text(json.dumps(index))
+    by_name = {m.name: m.doc_type for m in Corpus(tmp_path).all_metadata()}
+    assert by_name == {"Privacy Act 1988": "act", "SIS Regulations 1994": "regulation"}
+
+
+def test_meta_from_entry_derives_doc_type():
+    spec = importlib.util.spec_from_file_location(
+        "rebuild_offline", Path(__file__).parent.parent / "scripts" / "rebuild_offline.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    entry = dict(name="SIS Regulations 1994", title_id="F1996B00580", comp_id="c", comp_num="1",
+                 year=1994, number=57, effective_date="2026-01-01")
+    assert mod.meta_from_entry(entry).doc_type == "regulation"
+    assert mod.meta_from_entry(dict(entry, title_id="C1", name="Privacy Act 1988")).doc_type == "act"

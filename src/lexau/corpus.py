@@ -6,7 +6,7 @@ from pathlib import Path
 
 from lxml import etree
 
-from lexau.models import ActMetadata
+from lexau.models import ActMetadata, doc_type_for
 
 
 def orphan_asset_globs(key: str) -> tuple[str, list[str]]:
@@ -128,6 +128,8 @@ class Corpus:
         }
         if meta.locality:
             entry["locality"] = meta.locality
+        if meta.doc_type != "act":
+            entry["doc_type"] = meta.doc_type
         if source_format is not None:
             entry["source_format"] = source_format
         index["acts"][meta.safe_name] = entry
@@ -174,6 +176,7 @@ class Corpus:
                     number=entry["number"],
                     effective_date=date.fromisoformat(entry["effective_date"]),
                     aliases=entry.get("aliases", []),
+                    doc_type=entry.get("doc_type") or doc_type_for(entry["title_id"], entry["name"]),
                     locality=entry.get("locality"),
                 )
             )
