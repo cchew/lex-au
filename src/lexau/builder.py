@@ -81,6 +81,11 @@ _APP_CLAUSE_RE = re.compile(
 )
 _SUBCLAUSE_RE = re.compile(r'^(\d+(?:\.\d+){1,})\s+([A-Z].*)', re.DOTALL)
 _CLAUSE_RE    = re.compile(r'^(\d+[A-Z]?(?:\.\d+[A-Z]?)*)\s+([A-Z].*)', re.DOTALL)
+# A defined term that opens with a year ("1952 Act means the Patents Act 1952.",
+# "1986 Agreement has the meaning ...") is a Dictionary line, not clause 1952.
+_YEAR_TERM_DEF_RE = re.compile(
+    r'^(?:1[89]\d\d|20\d\d)[ \t\xa0]+(?:\S+[ \t]+){1,5}?(?:means|has the meaning|includes)\b'
+)
 _DATE_PREFIX_RE = re.compile(r'^(?:January|February|March|April|May|June|July|August|September|October|November|December)\b', re.IGNORECASE)
 _DATE_PATTERN_RE = re.compile(r'^\d{1,2}\s+\w+\s+\d{4}')
 
@@ -1191,7 +1196,7 @@ def _build_schedule_content(
                     etree.SubElement(current_content, f"{{{AKN_NS}}}p").text = content_text
                 continue
 
-            m = _CLAUSE_RE.match(text)
+            m = None if _YEAR_TERM_DEF_RE.match(text) else _CLAUSE_RE.match(text)
             if m:
                 num_str = m.group(1)
                 heading_str = m.group(2).strip()

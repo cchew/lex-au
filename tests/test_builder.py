@@ -2458,6 +2458,33 @@ def test_schedule_date_line_not_clause_heading(meta):
     assert len(date_prose) > 0, "Date line should appear as prose in schedule content"
 
 
+def test_schedule_year_prefixed_definition_not_clause_heading(meta):
+    # Patents Act 1990 / SS (Administration) Act 1999 / Social Security Act 1991 Dictionaries:
+    # "1952 Act means the Patents Act 1952." read "1952" as a clause number and swallowed the
+    # Dictionary under a bogus clause-1952. Controls: a year-numbered line with no
+    # "means / has the meaning / includes" still fabricates a clause, and a plain number does too.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01\u2014Dictionary", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.BODY, text="1952 Act means the Patents Act 1952."),
+        ParsedParagraph(ElementType.BODY, text="1986 Social Security Agreement has the meaning given by section 3."),
+        ParsedParagraph(ElementType.BODY, text="1991 Standard rate"),
+        ParsedParagraph(ElementType.BODY, text="30 Standard rate"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    ns = {"akn": AKN_NS}
+
+    eids = [e.get("eId") for e in xml.findall(".//akn:hcontainer[@name='clause']", ns)]
+    assert "schedule-1__clause-1952" not in eids
+    assert "schedule-1__clause-1986" not in eids
+    assert "schedule-1__clause-1991" in eids   # control: no means/includes
+    assert "schedule-1__clause-30" in eids     # control
+
+    text = "".join(xml.itertext())
+    assert "1952 Act means the Patents Act 1952." in text
+    assert "1986 Social Security Agreement has the meaning" in text
+
+
 # ---------------------------------------------------------------------------
 # Task 6 / §3 B4 — schedule quoted-structure + amendment-instruction awareness
 #
