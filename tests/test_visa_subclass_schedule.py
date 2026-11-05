@@ -144,13 +144,24 @@ def test_lowercase_toc_lines_dropped_from_visa_schedule() -> None:
     assert "Operation of Schedule 1" not in "".join(sched2.itertext())
 
 
-def test_non_visa_schedule_untouched() -> None:
-    """Gate: lowercase toc and repeated headings elsewhere (TAA, Customs Tariff) stay as they are."""
-    other = [("ActHead 1", "Schedule\xa01—Things"), ("toc 5", "1301  Something\t5"),
+def test_non_visa_schedule_drops_lowercase_toc_and_merges_continuation() -> None:
+    """The visa gate is gone: lowercase toc lines (TAA, Customs Tariff, Corporations
+    Regulations, SS International Agreements, PRRT Assessment) are dropped from every
+    schedule, and a later volume's repeated Schedule heading folds into the open group."""
+    other = [("ActHead 1", "Schedule\xa01\u2014Things"), ("toc 5", "1301  Something\t5"),
              ("ActHead 5", "101.001")]
-    cont = [("ShortT", "X"), ("ActHead 1", "Schedule\xa01—Things"), ("ActHead 5", "2  Clause two")]
+    cont = [("ShortT", "X"), ("ActHead 1", "Schedule\xa01\u2014Things"), ("ActHead 5", "2  Clause two")]
     xml, _ = _build([BODY_VOL[:3], other, cont])
     assert [s.get("eId") for s in xml.xpath("//a:hcontainer[@name='schedule']", namespaces=AKN)] == [
-        "schedule-1", "schedule-2",
+        "schedule-1",
     ]
-    assert "schedule-1__clause-1301" in _eids(xml, "clause")
+    assert "schedule-1__clause-1301" not in _eids(xml, "clause")
+    assert "schedule-1__clause-2" in _eids(xml, "clause")
+
+
+def test_repeated_heading_with_real_content_in_new_volume_is_not_merged() -> None:
+    """Merge only when everything taken from the new volume is front matter."""
+    first = [("ActHead 1", "Schedule\xa01\u2014Things"), ("ActHead 5", "1  Clause one")]
+    second = [("ActHead 1", "Schedule\xa01\u2014Things"), ("ActHead 5", "2  Clause two")]
+    xml, _ = _build([BODY_VOL[:3], first, second])
+    assert len(xml.xpath("//a:hcontainer[@name='schedule']", namespaces=AKN)) == 2

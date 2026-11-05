@@ -212,7 +212,9 @@ _INSTRUCTION_VERB_RE = re.compile(
 # Rendered table-of-contents lines inside schedule content. The schedule's own
 # sections already carry these headings, so the TOC line is pure duplication
 # (P1 note mechanism M3bt).
-_TOC_STYLE_RE = re.compile(r'^(?:Special\s+TOC|Schedule\s+TOC|TOC)\b')
+# Lowercase `toc N` is Word's built-in style id for the same lines (TAA, Customs Tariff,
+# Corporations Regulations, SS International Agreements, PRRT Assessment leak them).
+_TOC_STYLE_RE = re.compile(r'^(?:Special\s+TOC|Schedule\s+TOC|TOC|toc)\b')
 # "1  Section 12" -> ("1", "Section 12"). Same two-or-more-separator shape the
 # parser's _SECTION_RE uses, widened to accept \xa0 as a separator.
 _ITEM_HEAD_RE = re.compile(r'^(\S+)[ \t\xa0]{2,}(.+)$', re.DOTALL)
@@ -309,17 +311,17 @@ def _classify_visa_paragraph(p: ParsedParagraph) -> ParsedParagraph | None:
 _FRONT_MATTER_TYPES = frozenset({ElementType.BODY, ElementType.SKIP, ElementType.TABLE})
 
 
-def _merge_visa_schedule_continuations(
+def _merge_schedule_continuations(
     schedules: list[list[ParsedParagraph]],
 ) -> list[list[ParsedParagraph]]:
-    """Fold a later volume's repeated visa-subclass Schedule heading into the open group.
+    """Fold a later volume's repeated Schedule heading into the open group.
 
-    Migration Regulations volume 3 restarts with its title page and TOC and then
+    Migration Regulations volume 3 (and Customs Tariff, TAA) restart with its title page and TOC and then
     repeats "Schedule 2—...". `_split_stream` carries the front matter into the
     open Schedule 2 group and opens a second Schedule 2 group at the repeated
     heading, shifting every later Schedule eId by one. Merge only when the earlier
-    group is a visa-subclass schedule and every paragraph it took from the new
-    volume is front matter (no ActHead line, nothing structural); otherwise leave
+    group took front matter from the new volume and every paragraph it took is
+    front matter (no ActHead line, nothing structural); otherwise leave
     both groups alone.
     """
     out: list[list[ParsedParagraph]] = []
@@ -330,11 +332,12 @@ def _merge_visa_schedule_continuations(
             if (
                 head.text.strip() == prev[0].text.strip()
                 and vol > prev[0].volume_index
-                and _is_visa_subclass_schedule(prev)
             ):
                 tail = [p for p in prev if p.volume_index == vol]
-                if all(p.element_type in _FRONT_MATTER_TYPES and not p.raw_style.startswith("ActHead")
-                       for p in tail):
+                # A non-empty front-matter tail is the proof the new volume opened with
+                # its title page / TOC; a bare repeated heading is left alone.
+                if tail and all(p.element_type in _FRONT_MATTER_TYPES and not p.raw_style.startswith("ActHead")
+                                for p in tail):
                     out[-1] = [p for p in prev if p.volume_index != vol] + group[1:]
                     continue
         out.append(group)
@@ -971,7 +974,7 @@ def _split_stream(
     if current:
         schedules.append(current)
 
-    return preface, body, _merge_visa_schedule_continuations(schedules)
+    return preface, body, _merge_schedule_continuations(schedules)
 
 
 def _build_preface(
