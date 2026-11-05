@@ -58,7 +58,7 @@ Every section, subsection, and schedule clause carries a stable `eId` (e.g. `sec
 
 Each Act is a single AKN 3.0 XML file with:
 
-- FRBR URIs (`/akn/au/act/{year}/{slug}/aus/{comp_id}`)
+- FRBR URIs: Acts `/akn/au/act/{year}/{number}`, Regulations `/akn/au/regulation/{year}/{FRL title id}`. The older numeric form is `/akn/au/{doc_type}/{year}/{FRBRnumber}`; for numbers parsed from a register title id it is not a real citation.
 - Structural hierarchy: parts, divisions, subdivisions, sections
 - Intra-section hierarchy: `<subsection>`, `<paragraph>`, `<subparagraph>` with nested eIds (e.g. `sec-6__subsec-1__para-a`)
 - `<ref>` elements for same-Act section/subsection references and cross-Act FRBR URIs

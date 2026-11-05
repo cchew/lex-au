@@ -124,7 +124,7 @@ Build a single Act:
 lexau build --acts "Privacy Act 1988" --corpus-dir corpus/
 ```
 
-Local definitions (section/Part/Division-scoped terms and "In this Act, X means" definitions) are tagged by default for Acts. Pass `--no-local-definitions` to build without them (regulations and instruments are never affected). `lexau update` and the growth-check workflow use the default.
+Local definitions (section/Part/Division-scoped terms and "In this Act, X means" definitions) are tagged by default for Acts. Pass `--no-local-definitions` to build without them (Commonwealth regulations and instruments get the same local-definition handling as Acts). `lexau update` and the growth-check workflow use the default.
 
 Force rebuild even if already current:
 
@@ -164,7 +164,7 @@ Before uploading, `export-hf` checks that `corpus/.hf-sync-stamp.json` (written 
 
 ## Acts
 
-Acts are listed in [`acts.txt`](acts.txt), one per line. Regulations built separately with `--type regulation`.
+Acts are listed in [`acts.txt`](acts.txt), one per line. Regulations and other F-series instruments are built the same way; `doc_type` is derived from the FRL title id (override with `--type`).
 
 ## Corpus layout
 
@@ -200,7 +200,6 @@ Confirmed live (2026-07-21) for both Acts and legislative instruments. Act-level
 - Definitions sections limited to a Part or Division ("In this Part:") are tagged Act-wide; CASR Dictionary Part 3 is untagged.
 - Quoted sections in some older amending Acts parse as body sections, giving 63 spurious local terms in 19 Acts.
 - Endnotes trail inside the last Schedule.
-- SIS Regulations 1994 and Training Guarantee (Administration) Amendment Act 1994 share the work URI `/akn/au/act/1994/57`: `doc_type` is not stored in `index.json`.
 - `reports/*-v0.5.0.json` figure counters published before v0.13.0 list converted figures as placeholders (1,890); the images were correct.
 - Defined terms are missed when the definiendum is bold/italic-formatted (e.g. `<b><i>ABN (Australian Business Number)</i></b> for an *entity means ...` in A New Tax System (Australian Business Number) Act 1999 s.41)
 - Asterisk-prefixed terms (`*entity`, `*Australian Business Register` - the OPC drafting convention marking a word as having its own Dictionary entry elsewhere in the Act) are preserved as literal `*` characters; not converted to a cross-reference or otherwise interpreted.
