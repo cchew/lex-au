@@ -60,8 +60,12 @@ def test_select_keys_reproducible_and_filters(tmp_path: Path) -> None:
     f = tmp_path / "keys.txt"
     f.write_text("a01\nA2\n")
     assert ro.select_keys(acts, vols, False, None, 0, f) == ["a01", "a02"]
+    # Commonwealth regulations are rebuilt like Acts (B1); state/locality entries are not.
     acts["reg"] = _entry(doc_type="regulation")
-    assert "reg" not in ro.select_keys(acts, {**vols, "reg": []}, False, None, 0, None)
+    acts["vic"] = _entry(locality="vic")
+    keys = ro.select_keys(acts, {**vols, "reg": [], "vic": []}, False, None, 0, None)
+    assert "reg" in keys
+    assert "vic" not in keys
 
 
 def test_flag_is_required(tmp_path: Path) -> None:
