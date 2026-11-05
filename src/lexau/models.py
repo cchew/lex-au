@@ -1,7 +1,19 @@
+import re
 from dataclasses import dataclass, field
 from datetime import date
 
 from cobalt import FrbrUri as CobaltFrbrUri
+
+
+_REGULATIONS_RE = re.compile(r"\bRegulations?\b")
+
+
+def doc_type_for(title_id: str, name: str) -> str:
+    """FRL series F is legislative instruments: Regulations are "regulation", the rest
+    (Rules, Determinations, Orders) "instrument". Everything else is an Act."""
+    if not title_id.startswith("F"):
+        return "act"
+    return "regulation" if _REGULATIONS_RE.search(name) else "instrument"
 
 
 @dataclass
@@ -21,9 +33,12 @@ class ActMetadata:
 
     @property
     def _cobalt_uri(self) -> CobaltFrbrUri:
+        # Instruments are keyed by FRL title id: (year, number) collides across
+        # types (SIS Regulations 1994 vs Training Guarantee Amendment Act 1994).
+        number = self.title_id if self.doc_type != "act" and self.locality is None else self.number
         return CobaltFrbrUri(
             "au", self.locality, self.doc_type, None, None,
-            str(self.year), str(self.number),
+            str(self.year), str(number),
             language="eng",
             expression_date=f"@{self.effective_date.isoformat()}",
         )

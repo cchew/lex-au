@@ -140,7 +140,7 @@ def test_actmetadata_regulation_doc_type_frbr_work_uri():
         doc_type="regulation",
     )
     assert "regulation" in meta.frbr_work_uri
-    assert meta.frbr_work_uri == "/akn/au/regulation/2002/34"
+    assert meta.frbr_work_uri == "/akn/au/regulation/2002/F2002B00238"
 
 
 def test_actmetadata_regulation_doc_type_frbr_expression_uri():
@@ -155,7 +155,7 @@ def test_actmetadata_regulation_doc_type_frbr_expression_uri():
         doc_type="regulation",
     )
     assert "regulation" in meta.frbr_expression_uri
-    assert meta.frbr_expression_uri == "/akn/au/regulation/2002/34/eng@2024-01-01"
+    assert meta.frbr_expression_uri == "/akn/au/regulation/2002/F2002B00238/eng@2024-01-01"
 
 
 def test_actmetadata_instrument_doc_type_frbr_work_uri():
