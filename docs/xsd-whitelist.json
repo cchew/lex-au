@@ -116,9 +116,9 @@
     },
     "SCHEMAV_CVC_COMPLEX_TYPE_4 | eventRef | required-attr:date": {
       "family": "B",
-      "max_entries": 4619,
+      "max_entries": 4656,
       "census_files": 361,
-      "reason": "family B, documented partial. Original census ceiling was 17751/875 (no eventRef@date populated at all). Task 14 populates eventRef@date from Endnote 3 legislation_history where a single unambiguous date is derivable; it is left absent (never fabricated) where not derivable. Ceiling recalibrated Task 19B (2026-09-26) to the current observed 4619/361 (previously 4498/357, corpus grew 3076->3084 Acts with 0 new-Act contribution to this signature per Task 18's audit) -- a real, brief-mandated residual, not a defect. Per Task 14's own task review, roughly 63% of this residual is potentially recoverable in a future task via SR/SLI-style history-row keying plus a split-endnote-volume fix, so this ceiling is not necessarily an irreducible floor."
+      "reason": "family B, documented partial. Original census ceiling was 17751/875 (no eventRef@date populated at all). Task 14 populates eventRef@date from Endnote 3 legislation_history where a single unambiguous date is derivable; it is left absent (never fabricated) where not derivable. Ceiling recalibrated Task 19B (2026-09-26) to the current observed 4619/361 (previously 4498/357, corpus grew 3076->3084 Acts with 0 new-Act contribution to this signature per Task 18's audit) -- a real, brief-mandated residual, not a defect. Per Task 14's own task review, roughly 63% of this residual is potentially recoverable in a future task via SR/SLI-style history-row keying plus a split-endnote-volume fix, so this ceiling is not necessarily an irreducible floor. Recalibrated 2026-11-06 to 4656 (was 4619): the 2026-11 catch-up (103 updated + 1,223 newly compiled Acts since 2026-08-01) adds amendment events with no derivable single date; same residual class, no new defect."
     },
     "SCHEMAV_CVC_IDC | paragraph | dup-key:eId-act": {
       "family": "C",
@@ -136,7 +136,7 @@
       "family": "C",
       "max_entries": 492,
       "census_files": 63,
-      "reason": "family C, residual -- restored Task 19B (2026-09-26), NOT cleared. Same body-path defect and history as part|dup-key:eId-act above (task-13-report.md SS3a-SS4/SS7): validate_corpus-reported residual sits entirely under <body>, out of Task 13's <attachments>-only scope; before/after scan byte-for-byte identical (subsection: 491 unchanged). Note this is a distinct population from Task 13's own \u00a73d finding that <attachments>-internal subsection dup-key collisions ARE fully resolved (13 groups -> 0) -- the residual counted here is the separate body-path population the validator actually reports. Task 18's post-Task-17 audit confirmed near-zero net change (492 vs pre-Task-17 503). Ceiling set to the current observed count (492/63), re-verified independently Task 19B."
+      "reason": "family C, residual -- restored Task 19B (2026-09-26), NOT cleared. Same body-path defect and history as part|dup-key:eId-act above (task-13-report.md SS3a-SS4/SS7): validate_corpus-reported residual sits entirely under <body>, out of Task 13's <attachments>-only scope; before/after scan byte-for-byte identical (subsection: 491 unchanged). Note this is a distinct population from Task 13's own §3d finding that <attachments>-internal subsection dup-key collisions ARE fully resolved (13 groups -> 0) -- the residual counted here is the separate body-path population the validator actually reports. Task 18's post-Task-17 audit confirmed near-zero net change (492 vs pre-Task-17 503). Ceiling set to the current observed count (492/63), re-verified independently Task 19B."
     },
     "SCHEMAV_CVC_IDC | section | dup-key:eId-act": {
       "family": "C",

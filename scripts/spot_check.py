@@ -20,7 +20,7 @@ from lxml import etree
 # sys.path[0] is scripts/ itself rather than the repo root, as well as being
 # imported as scripts.spot_check by the test suite.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from scripts.validate_akn_schema import _COBALT_XSD, gate
+from scripts.validate_akn_schema import _COBALT_XSD, gate, load_whitelist, validate_corpus
 
 AKN_NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 NS = {"akn": AKN_NS}
@@ -244,8 +244,12 @@ def main() -> int:
                 f"{len(gate_failing)} signature(s) not covered by "
                 f"{args.xsd_whitelist}:"
             )
+            observed = validate_corpus(xml_dir, xsd_path)["by_signature"]
+            manifest = load_whitelist(args.xsd_whitelist)
             for sig in gate_failing:
-                print(f"        {sig}")
+                count = observed.get(sig, {}).get("count", "?")
+                ceiling = manifest.get(sig, {}).get("max_entries", "not in manifest")
+                print(f"        {sig}  (observed {count}, ceiling {ceiling})")
             total_failures += len(gate_failing)
     else:
         print(f"XSD strict-with-whitelist gate: SKIPPED -- {args.xsd_whitelist} not found")
