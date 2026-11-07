@@ -23,7 +23,7 @@ configs:
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads. This dataset provides structured XML, section-level addressing and AKN for Commonwealth Acts in force.
 
-**Version: v0.13.0** - 3,085 Acts and Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+**Version: v0.14.0** - 3,087 Acts and Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
 
 lex-au-explorer renders this corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see [known limitations](https://github.com/cchew/lex-au/blob/main/docs/known-limitations-schedule-and-conversion.txt), entry (f)).
 
