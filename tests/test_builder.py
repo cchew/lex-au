@@ -3156,3 +3156,24 @@ def test_quoted_content_disambiguation_does_not_shift_body_eids(meta):
     ns = {"akn": AKN_NS}
     assert xml.find(".//akn:section[@eId='sec-5']", ns) is not None
     assert xml.find(".//akn:subsection[@eId='sec-5__subsec-1']", ns) is not None
+
+
+def test_double_letter_subsections_keep_paragraph_eids_unique(meta):
+    # Regression: (2AA)/(2AB) were folded into (2), so each list's (a)/(b) reused
+    # subsec-2__para-a and the canary saw duplicate eIds.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="63", heading="Requirement"),
+        ParsedParagraph(ElementType.SUBSECTION, number="2", text="If the Secretary requires:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="attend an office; or"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="contact the Department;"),
+        ParsedParagraph(ElementType.SUBSECTION, number="2AA", text="Subsection (2AB) applies if:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="the person is 80; and"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="the person is absent."),
+        ParsedParagraph(ElementType.SUBSECTION, number="2AB", text="The Secretary may notify that:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="it relates to the person; and"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert len(eids) == len(set(eids))
+    assert "sec-63__subsec-2AA__para-a" in " ".join(eids)
+    assert "sec-63__subsec-2AB__para-a" in " ".join(eids)

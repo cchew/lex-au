@@ -84,6 +84,14 @@ def test_subsection_alphanumeric():
     assert "Despite" in p.text
 
 
+def test_subsection_double_letter_suffix():
+    # Section 63 of the Social Security (Administration) Act 1999 has (2AA)..(2AE).
+    p = parse_paragraph("Body Text", "(2AA)\tSubsection (2AB) applies to a person if:")
+    assert p.element_type == ElementType.SUBSECTION
+    assert p.number == "2AA"
+    assert p.text.startswith("Subsection (2AB)")
+
+
 def test_paragraph_list_paragraph_style():
     p = parse_paragraph("List Paragraph", "(a) the person has suffered serious harm; or")
     assert p.element_type == ElementType.PARAGRAPH

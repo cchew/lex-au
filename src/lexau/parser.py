@@ -46,7 +46,7 @@ _HEADING_RE = re.compile(
 _SECTION_RE = re.compile(r'^(\w[\w.\-]*)[ \t]{2,}(.+)$')
 
 # Matches "(1) text", "(2A) text" — subsection pattern
-_SUBSEC_RE = re.compile(r'^\((\d+[A-Z]?)\)\s+(.*)', re.DOTALL)
+_SUBSEC_RE = re.compile(r'^\((\d+[A-Z]*)\)\s+(.*)', re.DOTALL)
 
 # Matches "(a) text", "(b) text" — lowercase letter pattern
 _PARA_RE = re.compile(r'^\(([a-z]+)\)\s+(.*)', re.DOTALL)
