@@ -48,7 +48,10 @@ class NameCollisionError(ValueError):
 #   1: flat schedules (schedule/clause), pre-3b1b9be
 #   2: nested schedules (schedule > part > division > clause; amendedAct > item >
 #      quotedStructure), v0.10.0 onwards
-STRUCTURE_VERSION = 2
+#   3: (i)/(ii) nest as subparagraph under their paragraph; restarted lists under one
+#      parent get an `lstN` eId scope; any remaining body eId collision gets a `-N` suffix;
+#      (2AA)-style subsections are real subsections
+STRUCTURE_VERSION = 3
 
 
 class Corpus:

@@ -1,17 +1,18 @@
 {
-  "structure_version": 2,
+  "structure_version": 3,
   "shape_classes": [
     "attachment_table",
     "authorial_note",
     "cross_act_refs",
     "definitions",
-    "duplicate_eid",
     "flat_clause",
     "nested_clause",
+    "nested_subparagraph",
     "oversized_clause",
     "quoted_amendment",
     "quoted_definition",
-    "schedule_no_clause"
+    "schedule_no_clause",
+    "scoped_list_eid"
   ],
   "tag_vocabulary": [
     "FRBRExpression",
@@ -51,12 +52,16 @@
     "p",
     "paragraph",
     "part",
+    "preamble",
     "preface",
     "quotedStructure",
+    "recital",
+    "recitals",
     "ref",
     "references",
     "role",
     "section",
+    "subparagraph",
     "subsection",
     "sup",
     "table",
@@ -75,7 +80,7 @@
   ],
   "fixtures": {
     "carer-recognition-act-2010": {
-      "sha256": "d17dfe3b2cec37f952dac1d098a2bef3f433adb3052725534d6057bfa6655181",
+      "sha256": "ba2293fb784d3c8467a6c018b8f3b1ecff844583059060d96d2f636dd0cf5f88",
       "classes": [
         "flat_clause",
         "definitions"
@@ -92,6 +97,8 @@
         "attachment_tables": 0,
         "attachment_words": 238,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 0,
         "cross_act_refs": 0,
         "definitions": 7,
@@ -144,9 +151,10 @@
       }
     },
     "net-zero-economy-authority-(transitional-provisions)-act-2024": {
-      "sha256": "1ba270082d55d7e76fb87be44eb968f9803ef41e6fd4fbc704681e0e6b583d8e",
+      "sha256": "768c9a4a8067026e547726b42df58290378df7171454999d0aa2f4335096deaf",
       "classes": [
         "nested_clause",
+        "nested_subparagraph",
         "authorial_note"
       ],
       "facts": {
@@ -161,9 +169,11 @@
         "attachment_tables": 0,
         "attachment_words": 943,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 4,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
         "cross_act_refs": 0,
-        "definitions": 0,
+        "definitions": 1,
         "tags": [
           "FRBRExpression",
           "FRBRManifestation",
@@ -181,6 +191,7 @@
           "FRBRuri",
           "TLCOrganization",
           "TLCRole",
+          "TLCTerm",
           "act",
           "akomaNtoso",
           "attachment",
@@ -189,6 +200,7 @@
           "b",
           "body",
           "content",
+          "def",
           "formula",
           "hcontainer",
           "heading",
@@ -203,9 +215,11 @@
           "references",
           "role",
           "section",
+          "subparagraph",
           "subsection",
           "table",
           "td",
+          "term",
           "th",
           "tr"
         ],
@@ -218,7 +232,7 @@
       }
     },
     "tax-laws-amendment-(gifts)-act-2015": {
-      "sha256": "8bfbb682ea21240f7984bed74d098ceb69ed881478904c39bcd1a8db5a024064",
+      "sha256": "50f702aeb7baad090d9a700e6a1184096e747990b7660c4ecc0432c93bd49b69",
       "classes": [
         "quoted_amendment",
         "schedule_no_clause",
@@ -237,6 +251,8 @@
         "attachment_tables": 4,
         "attachment_words": 112,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
         "cross_act_refs": 0,
         "definitions": 0,
@@ -289,7 +305,7 @@
       }
     },
     "governor-general-amendment-(salary)-act-2014": {
-      "sha256": "0d786be48f485d4e8597525872617bc541292347f210925c8969ec97befd5eee",
+      "sha256": "fe6bdd69034ee01ac2c48953b52bce5a61ed985dba3dfa8ecb5b5838d942e6e3",
       "classes": [
         "schedule_no_clause"
       ],
@@ -305,6 +321,8 @@
         "attachment_tables": 0,
         "attachment_words": 64,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 0,
         "cross_act_refs": 0,
         "definitions": 0,
@@ -350,7 +368,7 @@
       }
     },
     "excise-tariff-amendment-(product-stewardship-for-oil)-act-2023": {
-      "sha256": "79a705be7ae788fa39c62a0252397c5ed8b1dea3f99623fe849aa30dc6cf04b0",
+      "sha256": "0322d98ddb416233379460584b2c82e65d7405c8c0eaf7c347aa876c712fa432",
       "classes": [
         "quoted_amendment",
         "schedule_no_clause",
@@ -369,6 +387,8 @@
         "attachment_tables": 4,
         "attachment_words": 109,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
         "cross_act_refs": 0,
         "definitions": 0,
@@ -421,14 +441,16 @@
       }
     },
     "digital-id-(transitional-and-consequential-provisions)-act-2024": {
-      "sha256": "4e1708eec8afcaf2107583daa93c84c0de6d8995fa9c50c1637d8bbc6a7e8ba8",
+      "sha256": "b3d719da23081c833b7f6125bb06c3e7d7125fa0d31f50c19d62302939bc074b",
       "classes": [
         "nested_clause",
         "quoted_amendment",
         "schedule_no_clause",
         "attachment_table",
         "oversized_clause",
-        "authorial_note"
+        "nested_subparagraph",
+        "authorial_note",
+        "definitions"
       ],
       "facts": {
         "flat_clauses": 0,
@@ -440,11 +462,13 @@
         "attachments": 2,
         "attachments_without_clause": 1,
         "attachment_tables": 4,
-        "attachment_words": 4210,
+        "attachment_words": 4209,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 2,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
-        "cross_act_refs": 0,
-        "definitions": 0,
+        "cross_act_refs": 1,
+        "definitions": 18,
         "tags": [
           "FRBRExpression",
           "FRBRManifestation",
@@ -462,6 +486,7 @@
           "FRBRuri",
           "TLCOrganization",
           "TLCRole",
+          "TLCTerm",
           "act",
           "akomaNtoso",
           "attachment",
@@ -470,6 +495,7 @@
           "b",
           "body",
           "content",
+          "def",
           "formula",
           "hcontainer",
           "heading",
@@ -485,9 +511,11 @@
           "references",
           "role",
           "section",
+          "subparagraph",
           "subsection",
           "table",
           "td",
+          "term",
           "th",
           "tr"
         ],
@@ -502,11 +530,12 @@
       }
     },
     "overseas-missions-(privileges-and-immunities)-act-1995": {
-      "sha256": "b1ac4a6afbd928f528bf09317e4dca553c63811b85257c3958da0d945cede470",
+      "sha256": "796c68cefe08d0ff336b3144c923124876a41401bcdb86ac993a43be8fd1640b",
       "classes": [
         "schedule_no_clause",
         "attachment_table",
-        "duplicate_eid",
+        "nested_subparagraph",
+        "scoped_list_eid",
         "definitions"
       ],
       "facts": {
@@ -520,7 +549,9 @@
         "attachments_without_clause": 2,
         "attachment_tables": 2,
         "attachment_words": 711,
-        "duplicate_eids": 5,
+        "duplicate_eids": 0,
+        "nested_subparagraphs": 4,
+        "lst_scoped_eids": 10,
         "authorial_notes": 0,
         "cross_act_refs": 0,
         "definitions": 9,
@@ -564,6 +595,7 @@
           "references",
           "role",
           "section",
+          "subparagraph",
           "subsection",
           "table",
           "td",
@@ -577,7 +609,7 @@
       }
     },
     "excess-exploration-credit-tax-act-2015": {
-      "sha256": "fa9af081ebb84414c46a23ca6152f0cb06820b6ebe5acf819f51440816b02b1f",
+      "sha256": "4706d3611ed1043ebc155e36aa146705c90d63f24136c78a9dd64a07a1ae7ae4",
       "classes": [
         "authorial_note"
       ],
@@ -593,6 +625,8 @@
         "attachment_tables": 0,
         "attachment_words": 0,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
         "cross_act_refs": 0,
         "definitions": 2,
@@ -636,7 +670,7 @@
       }
     },
     "customs-charges-and-levies-legislation-amendment-(sheep-and-lamb)-act-2020": {
-      "sha256": "69bb236d7e49832adc876469164d37a457cff8957125621c4cbd539b26cd475b",
+      "sha256": "3e18d54ab9f6fd4d228f6266e854423937e191932a04d2e2d84cf01ff410103e",
       "classes": [
         "quoted_amendment",
         "quoted_definition",
@@ -655,6 +689,8 @@
         "attachment_tables": 0,
         "attachment_words": 203,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
         "cross_act_refs": 0,
         "definitions": 1,
@@ -713,9 +749,8 @@
       }
     },
     "migration-legislation-amendment-act-(no.-6)-1995": {
-      "sha256": "19b45a234003b7ced8d9f67c78937df530ea5bf8b25fb43226ab630def5ac87d",
+      "sha256": "0672c5a2a9bfa0f971fa303198d95b525b10da05fb3e068690f2b39fbe40b026",
       "classes": [
-        "duplicate_eid",
         "authorial_note",
         "cross_act_refs"
       ],
@@ -730,7 +765,9 @@
         "attachments_without_clause": 0,
         "attachment_tables": 0,
         "attachment_words": 0,
-        "duplicate_eids": 2,
+        "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 2,
         "cross_act_refs": 17,
         "definitions": 0,
@@ -777,7 +814,7 @@
       }
     },
     "new-business-tax-system-(franking-deficit-tax)-act-2002": {
-      "sha256": "2112dc4f349f5e1d9e10b05723e07a72963e82cfdc8bfba7d2736da38615c0bf",
+      "sha256": "6dcad538a722a318cc78113dbea8b6ce66217c630d52d8f13cd1f8280ae1cd6d",
       "classes": [
         "authorial_note",
         "definitions"
@@ -794,6 +831,8 @@
         "attachment_tables": 0,
         "attachment_words": 0,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 0,
+        "lst_scoped_eids": 0,
         "authorial_notes": 2,
         "cross_act_refs": 0,
         "definitions": 6,
@@ -843,11 +882,12 @@
       }
     },
     "public-and-educational-lending-rights-(better-income-for-authors)-consequential-amendments-and-transitional-provisions-act-2026": {
-      "sha256": "0fd30d77716fce20d80311246c39969b40047ab259eb376f4e0065636ce1584f",
+      "sha256": "bdf82b74d6c76ae1b21a4ab257cff3b54323d73bc52cc171dd1616f1d9c58afc",
       "classes": [
         "flat_clause",
         "schedule_no_clause",
         "attachment_table",
+        "nested_subparagraph",
         "authorial_note"
       ],
       "facts": {
@@ -860,9 +900,91 @@
         "attachments": 2,
         "attachments_without_clause": 1,
         "attachment_tables": 1,
-        "attachment_words": 1090,
+        "attachment_words": 1089,
         "duplicate_eids": 0,
+        "nested_subparagraphs": 4,
+        "lst_scoped_eids": 0,
         "authorial_notes": 1,
+        "cross_act_refs": 0,
+        "definitions": 3,
+        "tags": [
+          "FRBRExpression",
+          "FRBRManifestation",
+          "FRBRWork",
+          "FRBRauthor",
+          "FRBRauthoritative",
+          "FRBRcountry",
+          "FRBRdate",
+          "FRBRlanguage",
+          "FRBRname",
+          "FRBRnumber",
+          "FRBRprescriptive",
+          "FRBRsubtype",
+          "FRBRthis",
+          "FRBRuri",
+          "TLCOrganization",
+          "TLCTerm",
+          "act",
+          "akomaNtoso",
+          "attachment",
+          "attachments",
+          "authorialNote",
+          "b",
+          "body",
+          "content",
+          "def",
+          "formula",
+          "hcontainer",
+          "heading",
+          "i",
+          "identification",
+          "meta",
+          "num",
+          "p",
+          "paragraph",
+          "preface",
+          "ref",
+          "references",
+          "section",
+          "subparagraph",
+          "subsection",
+          "table",
+          "td",
+          "term",
+          "th",
+          "tr"
+        ],
+        "hcontainer_names": [
+          "amendedAct",
+          "clause",
+          "item",
+          "schedule",
+          "subclause"
+        ]
+      }
+    },
+    "coastal-waters-(state-powers)-act-1980": {
+      "sha256": "5a8a00baf5cd3c7fab4fb497d093e8e2510e72c9db0fa8111899baa7ccfa3d32",
+      "classes": [
+        "nested_subparagraph",
+        "scoped_list_eid",
+        "authorial_note"
+      ],
+      "facts": {
+        "flat_clauses": 0,
+        "nested_clauses": 0,
+        "clause_max_words": 0,
+        "quoted_structures": 0,
+        "amended_acts": 0,
+        "quoted_definitions": 0,
+        "attachments": 0,
+        "attachments_without_clause": 0,
+        "attachment_tables": 0,
+        "attachment_words": 0,
+        "duplicate_eids": 0,
+        "nested_subparagraphs": 2,
+        "lst_scoped_eids": 3,
+        "authorial_notes": 2,
         "cross_act_refs": 0,
         "definitions": 0,
         "tags": [
@@ -883,14 +1005,11 @@
           "TLCOrganization",
           "act",
           "akomaNtoso",
-          "attachment",
-          "attachments",
           "authorialNote",
           "b",
           "body",
           "content",
-          "formula",
-          "hcontainer",
+          "date",
           "heading",
           "i",
           "identification",
@@ -898,23 +1017,21 @@
           "num",
           "p",
           "paragraph",
+          "preamble",
           "preface",
+          "recital",
+          "recitals",
           "ref",
           "references",
           "section",
+          "subparagraph",
           "subsection",
           "table",
           "td",
           "th",
           "tr"
         ],
-        "hcontainer_names": [
-          "amendedAct",
-          "clause",
-          "item",
-          "schedule",
-          "subclause"
-        ]
+        "hcontainer_names": []
       }
     }
   }

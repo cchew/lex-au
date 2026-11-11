@@ -25,13 +25,16 @@
         <FRBRManifestation>
           <FRBRthis value="/akn/au/act/2026/46/eng@2026-05-20/!main.akn"/>
           <FRBRuri value="/akn/au/act/2026/46/eng@2026-05-20/!main.akn"/>
-          <FRBRdate date="2026-09-23" name="Generation"/>
+          <FRBRdate date="2026-11-11" name="Generation"/>
           <FRBRauthor href="#lex-au"/>
         </FRBRManifestation>
       </identification>
       <references source="#lex-au">
         <TLCOrganization eId="parliament" href="/ontology/organization/au/parliament" showAs="Parliament of Australia"/>
         <TLCOrganization eId="lex-au" href="https://github.com/cchew/lex-au" showAs="lex-au"/>
+        <TLCTerm eId="term-new-committee--schedule-2" href="/ontology/term/au/term-new-committee--schedule-2" showAs="new committee"/>
+        <TLCTerm eId="term-old-committee--schedule-2" href="/ontology/term/au/term-old-committee--schedule-2" showAs="old committee"/>
+        <TLCTerm eId="term-old-scheme--schedule-2" href="/ontology/term/au/term-old-scheme--schedule-2" showAs="old scheme"/>
       </references>
     </meta>
     <preface>
@@ -142,9 +145,9 @@ However, the provisions do not commence at all if that section does not commence
             <heading>Definitions</heading>
             <content>
               <p>In this Schedule:</p>
-              <p><b><i>new committee </i></b>means the Public and Educational Lending Rights Committee established by <ref href="#sec-10">section 10</ref> of the <i>Public and Educational Lending Rights (Better Income for Authors) Act 2026</i>.</p>
-              <p><b><i>old committee </i></b>means the Public Lending Right Committee established under <ref href="#sec-7">section 7</ref> of the <i>Public Lending Right Act 1985</i>.</p>
-              <p><b><i>old scheme </i></b>means the <i>Public Lending Right Scheme 2016 </i>(as affected by any modification of that scheme).</p>
+              <p><term refersTo="#term-new-committee--schedule-2">new committee</term> means <def>the Public and Educational Lending Rights Committee established by <ref href="#sec-10">section 10</ref> of the Public and Educational Lending Rights (Better Income for Authors) Act 2026.</def></p>
+              <p><term refersTo="#term-old-committee--schedule-2">old committee</term> means <def>the Public Lending Right Committee established under <ref href="#sec-7">section 7</ref> of <ref href="">the Public Lending Right Act 1985</ref>.</def></p>
+              <p><term refersTo="#term-old-scheme--schedule-2">old scheme</term> means <def>the Public Lending Right Scheme 2016 (as affected by any modification of that scheme).</def></p>
             </content>
           </hcontainer>
           <hcontainer name="clause" eId="schedule-2__clause-2">
@@ -173,18 +176,18 @@ However, the provisions do not commence at all if that section does not commence
               <content>
                 <p>a person’s entitlement to a payment under the old scheme that arose on or after that commencement because of the following kind of decision:</p>
               </content>
-            </paragraph>
-            <paragraph eId="schedule-2__clause-2__para-i">
-              <num>i</num>
-              <content>
-                <p>	(i)	a decision (the <b><i>later decision</i></b>) made by the old committee upon reconsideration of the initial decision;</p>
-              </content>
-            </paragraph>
-            <paragraph eId="schedule-2__clause-2__para-ii">
-              <num>ii</num>
-              <content>
-                <p>a decision made by the Administrative Review Tribunal or a court following the initial decision or later decision;</p>
-              </content>
+              <subparagraph eId="schedule-2__clause-2__para-c__subpara-i">
+                <num>i</num>
+                <content>
+                  <p>	(i)	a decision (the <b><i>later decision</i></b>) made by the old committee upon reconsideration of the initial decision;</p>
+                </content>
+              </subparagraph>
+              <subparagraph eId="schedule-2__clause-2__para-c__subpara-ii">
+                <num>ii</num>
+                <content>
+                  <p>a decision made by the Administrative Review Tribunal or a court following the initial decision or later decision;</p>
+                </content>
+              </subparagraph>
             </paragraph>
             <paragraph eId="schedule-2__clause-2__para-d">
               <num>d</num>
@@ -374,18 +377,18 @@ Provision of the Public and Educational Lending Rights (Better Income for Author
               <content>
                 <p>provide powers of:</p>
               </content>
-            </paragraph>
-            <paragraph eId="schedule-2__clause-7__para-i">
-              <num>i</num>
-              <content>
-                <p>arrest or detention; or</p>
-              </content>
-            </paragraph>
-            <paragraph eId="schedule-2__clause-7__para-ii">
-              <num>ii</num>
-              <content>
-                <p>entry, search or seizure;</p>
-              </content>
+              <subparagraph eId="schedule-2__clause-7__para-b__subpara-i">
+                <num>i</num>
+                <content>
+                  <p>arrest or detention; or</p>
+                </content>
+              </subparagraph>
+              <subparagraph eId="schedule-2__clause-7__para-b__subpara-ii">
+                <num>ii</num>
+                <content>
+                  <p>entry, search or seizure;</p>
+                </content>
+              </subparagraph>
             </paragraph>
             <paragraph eId="schedule-2__clause-7__para-c">
               <num>c</num>

@@ -42,6 +42,7 @@ SELECTION = [
     "migration-legislation-amendment-act-(no.-6)-1995",
     "new-business-tax-system-(franking-deficit-tax)-act-2002",
     "public-and-educational-lending-rights-(better-income-for-authors)-consequential-amendments-and-transitional-provisions-act-2026",
+    "coastal-waters-(state-powers)-act-1980",
 ]
 
 # Each shape class is a predicate over the measured facts. Every class must be held by at
@@ -54,7 +55,8 @@ SHAPE_CLASSES = {
     "schedule_no_clause": lambda f: f["attachments_without_clause"] > 0,
     "attachment_table": lambda f: f["attachment_tables"] > 0,
     "oversized_clause": lambda f: f["clause_max_words"] >= 1500,
-    "duplicate_eid": lambda f: f["duplicate_eids"] > 0,
+    "nested_subparagraph": lambda f: f["nested_subparagraphs"] > 0,
+    "scoped_list_eid": lambda f: f["lst_scoped_eids"] > 0,
     "authorial_note": lambda f: f["authorial_notes"] > 0,
     "cross_act_refs": lambda f: f["cross_act_refs"] >= 5,
     "definitions": lambda f: f["definitions"] >= 5,
@@ -117,6 +119,12 @@ def measure(xml_path: Path) -> dict:
         "attachment_tables": sum(len(list(a.iter(f"{AKN}table"))) for a in attachments),
         "attachment_words": sum(_words(a) for a in attachments),
         "duplicate_eids": sum(c - 1 for c in eids.values() if c > 1),
+        "nested_subparagraphs": sum(
+            1
+            for sp in root.iter(f"{AKN}subparagraph")
+            if sp.getparent() is not None and _name(sp.getparent()) in {"paragraph", "subparagraph"}
+        ),
+        "lst_scoped_eids": sum(1 for e in eids if "__lst" in e),
         "authorial_notes": tags.get("authorialNote", 0),
         "cross_act_refs": len(cross_act),
         "definitions": tags.get("def", 0),

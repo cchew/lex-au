@@ -58,8 +58,8 @@ def test_duplicate_and_empty_eids_are_hard_failures(tmp_path):
 
 def test_unknown_version_is_a_hard_failure_and_absent_is_a_warning(tmp_path):
     base = cs.measure(_corpus(tmp_path, {"a": FLAT}, structure_version=2), 200)
-    hard, _ = cs.compare(dict(base, structure_version=3), base, 0.10)
-    assert any("structure_version 3" in h for h in hard)
+    hard, _ = cs.compare(dict(base, structure_version=4), base, 0.10)
+    assert any("structure_version 4" in h for h in hard)
     hard, warn = cs.compare(dict(base, structure_version=None), base, 0.10)
     assert hard == [] and any("no structure_version" in w for w in warn)
 

@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 import diff_corpora as dc  # noqa: E402
 import rebuild_offline as ro  # noqa: E402
+from lexau.corpus import STRUCTURE_VERSION  # noqa: E402
 
 FIXTURES = Path(__file__).parent / "fixtures" / "docx"
 NS = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
@@ -134,7 +135,7 @@ def test_workers_1_and_2_produce_identical_xml_and_index(tmp_path: Path) -> None
         assert (outs[1] / "reports" / name).read_text() == (outs[2] / "reports" / name).read_text()
     idx = json.loads((outs[2] / "index.json").read_text())
     base_idx = json.loads((base / "index.json").read_text())
-    assert idx["structure_version"] == 2 and idx["acts"] == base_idx["acts"]
+    assert idx["structure_version"] == STRUCTURE_VERSION and idx["acts"] == base_idx["acts"]
 
 
 def test_workers_1_path_unchanged_output(tmp_path: Path) -> None:

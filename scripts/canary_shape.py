@@ -27,7 +27,7 @@ from pathlib import Path
 
 from lxml import etree
 
-SUPPORTED_STRUCTURE_VERSIONS = frozenset({1, 2})
+SUPPORTED_STRUCTURE_VERSIONS = frozenset({1, 2, 3})
 SAMPLE_SIZE = 200
 AKN = "{http://docs.oasis-open.org/legaldocml/ns/akn/3.0}"
 COUNT_KEYS = ("hcontainer", "tags", "words")
