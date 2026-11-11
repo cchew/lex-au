@@ -814,6 +814,17 @@ def parse_paragraph(style: str, text: str, profile: "ParserProfile | None" = Non
                 text=m.group(2).strip(),
                 raw_style=style,
             )
+        # Compilation DOCX marks sub-paragraphs "paragraph(sub)"; without this (i) reads as the letter i
+        # and flattens under the subsection, colliding with every other list's (i).
+        if style == "paragraph(sub)":
+            m = _SUBPARA_RE.match(stripped)
+            if m:
+                return ParsedParagraph(
+                    ElementType.SUBPARAGRAPH,
+                    number=m.group(1),
+                    text=m.group(2).strip(),
+                    raw_style=style,
+                )
         m = _PARA_RE.match(stripped)
         if m:
             return ParsedParagraph(

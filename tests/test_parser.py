@@ -92,6 +92,16 @@ def test_subsection_double_letter_suffix():
     assert p.text.startswith("Subsection (2AB)")
 
 
+def test_paragraph_sub_style_is_subparagraph():
+    # Compilation DOCX styles sub-paragraphs "paragraph(sub)"; (i) must not read as the letter i.
+    p = parse_paragraph("paragraph(sub)", "(i)\tage pension;")
+    assert p.element_type == ElementType.SUBPARAGRAPH
+    assert p.number == "i"
+    p = parse_paragraph("paragraph(sub)", "(iii)\tdisability support pension; and")
+    assert p.element_type == ElementType.SUBPARAGRAPH
+    assert p.number == "iii"
+
+
 def test_paragraph_list_paragraph_style():
     p = parse_paragraph("List Paragraph", "(a) the person has suffered serious harm; or")
     assert p.element_type == ElementType.PARAGRAPH

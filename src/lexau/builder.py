@@ -57,6 +57,9 @@ _DEPTH = {
 
 _ROMAN_CHARS = frozenset("ivxlcdm")
 
+# Numbered list levels whose numbers restart within one parent (see AknBuilder.build).
+_LIST_GENERATION_TYPES = frozenset({ElementType.PARAGRAPH, ElementType.SUBPARAGRAPH})
+
 _TOC_HEADING_STYLE = "TOC Heading"
 _TOC_ITEM_STYLES = {"TOC 1", "TOC 2", "TOC 3"}
 # "Schedule 2A—..." numbers the Schedule "2A". An uppercase letter run is part of the number only
@@ -1745,9 +1748,16 @@ class AknBuilder:
             target_depth = _DEPTH.get(for_type, 99)
             while stack and _DEPTH.get(stack[-1][0], -1) >= target_depth:
                 stack.pop()
-            prefix = "__".join(make_eid(et.value, num) for et, num, _ in stack) if stack else ""
             parent = stack[-1][2] if stack else body
+            # Read the parent's own eId so a list-generation scope (`lstN`) carries down to its children.
+            prefix = parent.get("eId", "") if stack else ""
             return prefix, parent
+
+        # (parent id, element type) -> [current list generation, leaf eIds seen in it]
+        _list_generations: dict[tuple[int, ElementType], list] = {}
+        # Safety net for collisions the list scoping does not explain (legacy contents lines read as
+        # structure, repeated Part numbers in amending Acts): first occurrence keeps its eId.
+        _body_seen_eids: set[str] = set()
 
         # Preprocess body_paras: detect single-provision quoted structures
         processed_body, qs_found, qs_unhandled = _preprocess_quoted_structures(body_paras)
@@ -1788,7 +1798,18 @@ class AknBuilder:
                 current_content = None
                 prefix, parent = _current_parent(p.element_type)
                 leaf_eid = make_eid(p.element_type.value, p.number)
+                if p.element_type in _LIST_GENERATION_TYPES:
+                    # A number that repeats under one parent starts a new list (a definition's own
+                    # (a), (b)); the first list keeps its eIds, later ones get an `lstN` scope.
+                    gen = _list_generations.setdefault((id(parent), p.element_type), [1, set()])
+                    if leaf_eid in gen[1]:
+                        gen[0] += 1
+                        gen[1] = set()
+                    gen[1].add(leaf_eid)
+                    if gen[0] > 1:
+                        leaf_eid = f"lst{gen[0]}__{leaf_eid}"
                 full_eid = f"{prefix}__{leaf_eid}" if prefix else leaf_eid
+                full_eid = _unique_quoted_eid(full_eid, _body_seen_eids)
                 if p.element_type == ElementType.LEVEL4:
                     elem = etree.SubElement(
                         parent, f"{{{AKN_NS}}}hcontainer",
@@ -1812,14 +1833,13 @@ class AknBuilder:
                 level = int(p.number) if p.number.isdigit() else 0
                 parent_elem = stack[-1][2] if stack else body
                 # Build a full eId prefix from the stack for the section context
-                section_eid_prefix = "__".join(
-                    make_eid(et.value, num) for et, num, _ in stack
-                ) if stack else ""
+                section_eid_prefix = parent_elem.get("eId", "") if stack else ""
                 if _blocklist_el is None or level != _blocklist_level:
                     _flush_blocklist()
                     _blocklist_count += 1
                     _blocklist_level = level
                     bl_eid = f"{section_eid_prefix}__list-{_blocklist_count}" if section_eid_prefix else f"list-{_blocklist_count}"
+                    bl_eid = _unique_quoted_eid(bl_eid, _body_seen_eids)
                     _blocklist_el = etree.SubElement(parent_elem, f"{{{AKN_NS}}}blockList")
                     _blocklist_el.set("eId", bl_eid)
                 item_idx = len(list(_blocklist_el)) + 1
@@ -1977,6 +1997,13 @@ class AknBuilder:
             note_el.set("eId", f"note-{idx}")
             note_el.set("marker", str(idx))
 
+        # Backstop: eIds minted by a nested builder (quoted structures) or any path that bypasses the
+        # body loop's tracking. Document order, first occurrence keeps its eId.
+        final_seen: set[str] = set()
+        for el in root.iter():
+            if isinstance(el.tag, str) and el.get("eId"):
+                el.set("eId", _unique_quoted_eid(el.get("eId"), final_seen))
+
         return root, result
 
     def build_with_report(
@@ -2112,7 +2139,7 @@ class AknBuilder:
         list_defs_completed = complete_list_definitions(
             root,
             self._profile.list_lead_ins if self._profile else ":",
-            bool(self._profile and self._profile.extended_definitions),
+            True,  # (i), (ii) now nest under their (a); flat Commonwealth output is gone
         )
         report.list_defs_completed = list_defs_completed
 

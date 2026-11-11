@@ -498,85 +498,15 @@ def test_schedule_clause_no_collision_no_suffix(meta):
 
 
 # ---------------------------------------------------------------------------
-# Task 16B — schedule para-*/subclause-*/subpara-* eId de-duplication
+# Body-path list restarts (supersedes the Task 16B non-goal)
 #
-# Task 16A fixed the two clause-eId collision sites in this function (bare-
-# BODY _CLAUSE_RE and the SECTION-typed non-dotted branch). Five sibling
-# sites were left unfixed: the dotted-subclause branch (_SUBCLAUSE_RE and its
-# SECTION-typed twin), PARAGRAPH, SUBSECTION-typed subclause, and
-# SUBPARAGRAPH. All five keyed the eId only on (parent eId, scraped
-# number/letter) with no cross-sibling occurrence tracking, so multiple
-# lettered sub-lists restarting under the same parent (e.g. several
-# Definition-styled paragraphs, each opening its own (a)/(b) list) minted
-# identical eIds. Fixed by threading the same shared `quoted_seen_eids` set
-# (Task 13) through `_unique_quoted_eid` at all five sites.
+# Task 16B left body duplicate eIds alone because lex-au-graph keys ~111,000
+# nodes off them. The first list under a parent still mints the same eIds; only
+# a restarted list (a repeated number under one parent) gets an `lstN` scope.
 # ---------------------------------------------------------------------------
 
 
-def test_schedule_paragraph_letter_collision_gets_distinct_eids(meta):
-    # Two PARAGRAPH-typed schedule entries restarting at the same letter "a"
-    # under one clause (e.g. two Definition-styled sub-lists) minted identical
-    # eIds before this fix.
-    paragraphs = [
-        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
-        ParsedParagraph(ElementType.BODY, text="1  First clause"),
-        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha one"),
-        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha two"),
-    ]
-    xml, _ = build_xml(meta, paragraphs)
-    ns = {"akn": AKN_NS}
-    paras = xml.findall(".//akn:hcontainer[@name='clause']/akn:paragraph", ns)
-    assert len(paras) == 2
-    eids = [p.get("eId") for p in paras]
-    assert eids == ["schedule-1__clause-1__para-a", "schedule-1__clause-1__para-a-2"]
-    # The literal letter must still read "a" in <num> even though the eId is
-    # disambiguated (same convention as the Task 13 quoted-content fix).
-    nums = [p.find("akn:num", ns).text for p in paras]
-    assert nums == ["a", "a"]
-    # Word-for-word: both paragraphs kept, nothing merged or dropped.
-    text = " ".join(" ".join(xml.itertext()).split())
-    assert "alpha one" in text
-    assert "alpha two" in text
-
-
-def test_schedule_paragraph_no_collision_no_suffix(meta):
-    # Regression: distinct letters under one clause must be byte-identical to
-    # before this fix -- no spurious "-2" suffix when nothing actually
-    # collides.
-    paragraphs = [
-        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
-        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Test", raw_style="ActHead 1"),
-        ParsedParagraph(ElementType.BODY, text="1  First clause"),
-        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="alpha"),
-        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="beta"),
-        ParsedParagraph(ElementType.PARAGRAPH, number="c", text="gamma"),
-    ]
-    xml, _ = build_xml(meta, paragraphs)
-    ns = {"akn": AKN_NS}
-    paras = xml.findall(".//akn:hcontainer[@name='clause']/akn:paragraph", ns)
-    eids = [p.get("eId") for p in paras]
-    assert eids == [
-        "schedule-1__clause-1__para-a",
-        "schedule-1__clause-1__para-b",
-        "schedule-1__clause-1__para-c",
-    ]
-
-
-# ---------------------------------------------------------------------------
-# Task 16B — hard non-goal verification: body-path duplicate eIds untouched
-#
-# builder.py:1652-1653 (AknBuilder.build()'s main body loop) is a separate,
-# explicitly out-of-scope duplicate-eId class (26,878 groups across 695 Acts
-# at the pre-16B baseline) -- fixing it would rename body eIds that
-# lex-au-graph keys ~111,000 nodes off. No test in this suite previously
-# asserted body-path duplicates survive un-deduplicated; this one closes that
-# gap directly. The corpus-scale before/after count+set check lives in the
-# Task 16B report, not here.
-# ---------------------------------------------------------------------------
-
-
-def test_body_path_paragraph_letter_collision_stays_undeduped(meta):
+def test_body_path_paragraph_letter_restart_is_scoped(meta):
     xml, _ = build_xml(meta, [
         ParsedParagraph(ElementType.SECTION, number="5", heading="Obligations"),
         ParsedParagraph(ElementType.SUBSECTION, number="1", text=""),
@@ -587,9 +517,7 @@ def test_body_path_paragraph_letter_collision_stays_undeduped(meta):
     paras = xml.findall(".//akn:paragraph", ns)
     assert len(paras) == 2
     eids = [p.get("eId") for p in paras]
-    # Body path has no collision tracking (out of scope for Task 16B) -- both
-    # paragraphs mint the IDENTICAL eId, unlike the schedule-path fix above.
-    assert eids == ["sec-5__subsec-1__para-a", "sec-5__subsec-1__para-a"]
+    assert eids == ["sec-5__subsec-1__para-a", "sec-5__subsec-1__lst2__para-a"]
     text = " ".join(" ".join(xml.itertext()).split())
     assert "the first condition:" in text
     assert "the second condition:" in text
@@ -3177,3 +3105,74 @@ def test_double_letter_subsections_keep_paragraph_eids_unique(meta):
     assert len(eids) == len(set(eids))
     assert "sec-63__subsec-2AA__para-a" in " ".join(eids)
     assert "sec-63__subsec-2AB__para-a" in " ".join(eids)
+
+
+def test_list_definition_keeps_nested_subparagraph_text(meta):
+    # (i)/(ii) now nest under (a); the colon-terminated definition must still fold them in.
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="3", heading="Definitions"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="In this Act:"),
+        ParsedParagraph(ElementType.BODY, text="widget means:", raw_style="Body Text"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="a thing that is either:", raw_style="paragraph"),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text="blue; or", raw_style="paragraph(sub)"),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="ii", text="green; or", raw_style="paragraph(sub)"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="a gadget.", raw_style="paragraph"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    text = "".join(xml.itertext())
+    for fragment in ("blue; or", "green; or", "a gadget."):
+        assert fragment in text
+    d = xml.find(f".//{{{AKN_NS}}}def")
+    if d is not None:
+        assert "blue; or" in "".join(d.itertext())
+
+
+def test_restarted_lists_get_scoped_eids_first_list_unchanged(meta):
+    # Two definitions under one subsection each carry their own (a), (b).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="3", heading="Definitions"),
+        ParsedParagraph(ElementType.SUBSECTION, number="1", text="In this Act:"),
+        ParsedParagraph(ElementType.BODY, text="act includes:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="do an act; or"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="omit an act."),
+        ParsedParagraph(ElementType.BODY, text="territory means:"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="a", text="a state; or"),
+        ParsedParagraph(ElementType.SUBPARAGRAPH, number="i", text="inner one; or"),
+        ParsedParagraph(ElementType.PARAGRAPH, number="b", text="an area."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert len(eids) == len(set(eids))
+    assert "sec-3__subsec-1__para-a" in eids
+    assert "sec-3__subsec-1__para-b" in eids
+    assert "sec-3__subsec-1__lst2__para-a" in eids
+    assert "sec-3__subsec-1__lst2__para-a__subpara-i" in eids
+    assert "sec-3__subsec-1__lst2__para-b" in eids
+
+
+def test_repeated_section_number_gets_suffix_not_duplicate(meta):
+    # Legacy Acts can mint the same Part or section twice (a contents line read as structure).
+    paragraphs = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="First."),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title again"),
+        ParsedParagraph(ElementType.BODY, text="Second."),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert len(eids) == len(set(eids))
+    assert "sec-1" in eids and "sec-1-2" in eids
+    assert "First." in "".join(xml.itertext()) and "Second." in "".join(xml.itertext())
+
+
+def test_build_leaves_no_duplicate_eids_across_quoted_structures(meta):
+    # A quoted Part restating an outer Part number must not reuse its eId.
+    paragraphs = [
+        ParsedParagraph(ElementType.PART, number="3", heading="OUTER"),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.PART, number="3", heading="OUTER AGAIN"),
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+    ]
+    xml, _ = build_xml(meta, paragraphs)
+    eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert len(eids) == len(set(eids))
