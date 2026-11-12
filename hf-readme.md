@@ -27,7 +27,7 @@ Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and P
 
 lex-au-explorer renders this corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see [known limitations](https://github.com/cchew/lex-au/blob/main/docs/known-limitations-schedule-and-conversion.txt), entry (f)).
 
-**v0.15.0**: `@eId`s are unique within each Act. `(i)`, `(ii)` items nest as `<subparagraph>` under their paragraph, a restarted list under one parent gets an `lstN` eId scope, and `(2AA)`-style subsections are real subsections. About 294,000 eIds changed; `index.json` `structure_version` is 3.
+**v0.15.0**: `@eId`s are unique within each Act. `(i)`, `(ii)` items nest as `<subparagraph>` under their paragraph, a restarted list under one parent gets an `lstN` eId scope, and `(2AA)`-style subsections are real subsections. About 350,000 eIds changed; `index.json` `structure_version` is 3.
 
 **v0.13.0**: locally scoped definitions are tagged by default. A local `<term>` has `refersTo="#term-<slug>--<container eId>"` and applies only inside that section, Part, Division or Schedule (9,058 of 41,559 terms). Dictionary Schedules, Migration Regulations Schedule structure and Schedule letter suffixes (Schedule 2A) are fixed. Full corpus re-converted; `structure_version` stays 2.
 
