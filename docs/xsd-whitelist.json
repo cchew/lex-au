@@ -161,6 +161,13 @@
       "max_entries": 2,
       "census_files": 1,
       "reason": "new signature, added Task 19B (2026-09-26), narrowly whitelisted -- not fixed. 'amendment' is not a valid AKN textualMod@type enum value (repeal/substitution/insertion/replacement/renumbering/split/join). 0 occurrences in the pre-Task-17 snapshot; 2 occurrences in director-of-public-prosecutions-act-1983.xml now, both re-verified Task 19B. Traced (task-18-report.md SS2 Category C) to src/lexau/builder.py's _EFFECT_TO_TYPE fallback (Element 'textualMod' defaults to 'amendment' for an unmapped effect token, predates this plan, commit a2be004) firing because src/lexau/endnote_parser.py's amendment-history regex carried a 'SR No...' (Statutory Rules) parenthetical forward as an unmapped effect token onto a later, genuinely new amendment event that entered this Act's endnote history via Task 17's live re-fetch of fresh 2026 legislative data. Pre-existing parser edge case, not a Task 17 regression. Follow-up: fix _EFFECT_TO_TYPE / SR carry-forward, see task-18-report.md SS2 Category C."
+    },
+    "SCHEMAV_ELEMENT_CONTENT | subparagraph | not-expected:intro": {
+      "family": "A",
+      "max_entries": 14,
+      "census_files": 9,
+      "reason": "family A -- same content-then-children defect as the paragraph/subsection entries (a <content> sibling precedes the child where the schema expects <intro>). New in v0.15.0: roman (i), (ii) items that follow a lead-in directly under a subsection now emit <subparagraph> instead of a flattened <paragraph>. 14 occurrences in 9 Acts (e.g. defence-service-homes-act-1918 s26(3)). Fixed with the rest of family A, not separately.",
+      "fatal": false
     }
   }
 }
