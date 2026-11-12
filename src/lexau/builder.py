@@ -1753,8 +1753,9 @@ class AknBuilder:
             prefix = parent.get("eId", "") if stack else ""
             return prefix, parent
 
-        # (parent id, element type) -> [current list generation, leaf eIds seen in it]
-        _list_generations: dict[tuple[int, ElementType], list] = {}
+        # (parent element, element type) -> [current list generation, leaf eIds seen in it]. Keyed by the
+        # element, not id(): the key keeps the proxy alive, so a freed parent's id cannot be reused.
+        _list_generations: dict[tuple[etree._Element, ElementType], list] = {}
         # Safety net for collisions the list scoping does not explain (legacy contents lines read as
         # structure, repeated Part numbers in amending Acts): first occurrence keeps its eId.
         _body_seen_eids: set[str] = set()
@@ -1801,7 +1802,7 @@ class AknBuilder:
                 if p.element_type in _LIST_GENERATION_TYPES:
                     # A number that repeats under one parent starts a new list (a definition's own
                     # (a), (b)); the first list keeps its eIds, later ones get an `lstN` scope.
-                    gen = _list_generations.setdefault((id(parent), p.element_type), [1, set()])
+                    gen = _list_generations.setdefault((parent, p.element_type), [1, set()])
                     if leaf_eid in gen[1]:
                         gen[0] += 1
                         gen[1] = set()

@@ -562,13 +562,21 @@ def _in_list_item(p_el: etree._Element, host: etree._Element) -> bool:
 
 
 def _shares_list_item(prev: etree._Element, p_el: etree._Element, host: etree._Element) -> bool:
-    """True when prev's nearest list item also contains p_el."""
-    for anc in prev.iterancestors():
+    """True when prev and p_el have the same nearest list item.
+
+    Containment is not enough: "(b) a loan where:" contains its nested (i)-(iii), and a definition
+    trailing (iii) is not a legend entry of that lead-in.
+    """
+    return _nearest_list_item(prev, host) is not None and _nearest_list_item(prev, host) is _nearest_list_item(p_el, host)
+
+
+def _nearest_list_item(el: etree._Element, host: etree._Element) -> etree._Element | None:
+    for anc in el.iterancestors():
         if anc is host:
-            return False
+            return None
         if anc.tag in _LIST_ITEM_TAGS:
-            return p_el in anc.iterdescendants()
-    return False
+            return anc
+    return None
 
 
 def _classify_chapeau(text: str) -> Chapeau | None:

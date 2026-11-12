@@ -252,6 +252,28 @@ def test_formula_legend_inside_a_list_item_is_not_tagged() -> None:
     assert stats.get("skipped_formula") == 1
 
 
+def test_where_lead_in_of_an_outer_item_does_not_claim_definitions_after_its_nested_items() -> None:
+    # Income Tax Assessment Act 1936 s 26AJ(11)(b): "a loan where:" is the item's own lead-in for (i)-(iii);
+    # the definitions that follow (iii) belong to "In this section:", not to a legend.
+    root = _act(
+        body=_body_part(
+            _section(
+                '<subsection eId="part-2__sec-5__subsec-11"><num>11</num>'
+                "<content><p>In this section:</p></content>"
+                '<paragraph eId="part-2__sec-5__subsec-11__para-b"><num>b</num>'
+                "<content><p>a loan where:</p></content>"
+                '<subparagraph eId="part-2__sec-5__subsec-11__para-b__subpara-iii"><num>iii</num>'
+                "<content><p>the first instalment is due within 6 months.</p></content>"
+                "<content>"
+                "<p><b><i>investment</i></b> means any mode of application of money.</p>"
+                "</content></subparagraph></paragraph></subsection>"
+            )
+        )
+    )
+    _run(root)
+    assert _ref_of(root, "investment") == ["#term-investment--part-2__sec-5"]
+
+
 def test_formula_legend_with_multiple_entries_in_a_list_item_is_not_tagged() -> None:
     # Airports Act s 12(5)(b) (Part 19): two legend entries after "where:".
     stats: dict[str, int] = {}

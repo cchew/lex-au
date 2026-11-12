@@ -3150,6 +3150,21 @@ def test_restarted_lists_get_scoped_eids_first_list_unchanged(meta):
     assert "sec-3__subsec-1__lst2__para-b" in eids
 
 
+def test_first_lists_never_get_lst_scope_across_many_siblings(meta):
+    # List generations were keyed by id(parent); a freed parent's id could be reused by a later sibling,
+    # which then inherited its list state and got a spurious lst2 scope (run-to-run eId drift).
+    paragraphs = [ParsedParagraph(ElementType.SECTION, number="1", heading="Many")]
+    for n in range(1, 400):
+        paragraphs += [
+            ParsedParagraph(ElementType.SUBSECTION, number=str(n), text=f"Subsection {n}:"),
+            ParsedParagraph(ElementType.PARAGRAPH, number="a", text="one; or"),
+            ParsedParagraph(ElementType.PARAGRAPH, number="b", text="two."),
+        ]
+    xml, _ = build_xml(meta, paragraphs)
+    eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert not [e for e in eids if "__lst" in e]
+
+
 def test_repeated_section_number_gets_suffix_not_duplicate(meta):
     # Legacy Acts can mint the same Part or section twice (a contents line read as structure).
     paragraphs = [
