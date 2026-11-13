@@ -51,7 +51,9 @@ class NameCollisionError(ValueError):
 #   3: (i)/(ii) nest as subparagraph under their paragraph; restarted lists under one
 #      parent get an `lstN` eId scope; any remaining body eId collision gets a `-N` suffix;
 #      (2AA)-style subsections are real subsections
-STRUCTURE_VERSION = 3
+#   4: in schedules, paragraphs and prose nest under the numbered subclause they follow, and a
+#      restarted list under one parent (schedule or quoted content) gets an `lstN` eId scope
+STRUCTURE_VERSION = 4
 
 
 class Corpus:

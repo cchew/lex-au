@@ -272,4 +272,4 @@ def test_new_corpus_index_records_structure_version(tmp_path):
 
     Corpus(tmp_path)
     index = json.loads((tmp_path / "index.json").read_text())
-    assert index["structure_version"] == STRUCTURE_VERSION == 3
+    assert index["structure_version"] == STRUCTURE_VERSION == 4

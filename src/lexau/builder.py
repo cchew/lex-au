@@ -614,6 +614,8 @@ def _build_quoted_content(
     blocklist_el: etree._Element | None = None
     blocklist_level: int = -1
     blocklist_count: int = 0
+    # (parent element, element type) -> [list generation, leaf eIds seen in it], as in the body.
+    list_generations: dict[tuple[etree._Element, ElementType], list] = {}
 
     def _join(*parts: str) -> str:
         return "__".join(x for x in parts if x)
@@ -636,9 +638,16 @@ def _build_quoted_content(
             # further up can give an ancestor an occurrence-suffixed eId that
             # `make_eid(et.value, num)` would not reproduce.
             prefix = parent.get("eId", eid_prefix)
-            full_eid = _unique_quoted_eid(
-                _join(prefix, make_eid(p.element_type.value, p.number)), seen_eids
-            )
+            leaf_eid = make_eid(p.element_type.value, p.number)
+            if p.element_type in _LIST_GENERATION_TYPES:
+                gen = list_generations.setdefault((parent, p.element_type), [1, set()])
+                if leaf_eid in gen[1]:
+                    gen[0] += 1
+                    gen[1] = set()
+                gen[1].add(leaf_eid)
+                if gen[0] > 1:
+                    leaf_eid = f"lst{gen[0]}__{leaf_eid}"
+            full_eid = _unique_quoted_eid(_join(prefix, leaf_eid), seen_eids)
             if p.element_type == ElementType.LEVEL4:
                 elem = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="level4", eId=full_eid
@@ -1111,6 +1120,11 @@ def _build_schedule_content(
     current_clause: etree._Element | None = None
     current_subclause: etree._Element | None = None  # dotted subclause (e.g. 7.1) from SECTION
     current_para: etree._Element | None = None
+    # Latest numbered subclause ((1), (2)): siblings of each other, but the paragraphs and prose
+    # that follow belong to it, so (a), (b) under (3) do not collide with (a), (b) under (2).
+    current_numsub: etree._Element | None = None
+    # (parent element, element type) -> [list generation, leaf eIds seen in it], as in the body.
+    list_generations: dict[tuple[etree._Element, ElementType], list] = {}
     # Mirrors the body builder's `current_content` pointer: prose accumulates into
     # this <content> until a structural sibling (clause/subclause boundary, table)
     # forces a fresh one. Preserves document order when prose follows a <table>.
@@ -1159,6 +1173,26 @@ def _build_schedule_content(
             current_content = etree.SubElement(parent, f"{{{AKN_NS}}}content")
         return current_content
 
+    def _leaf_parent() -> etree._Element:
+        """Where paragraphs and prose attach: the latest numbered subclause, else the dotted
+        subclause, else the clause."""
+        if current_numsub is not None:
+            return current_numsub
+        if current_subclause is not None:
+            return current_subclause
+        return current_clause if current_clause is not None else _container()
+
+    def _list_leaf(parent: etree._Element, p: ParsedParagraph, prefix: str) -> str:
+        """Leaf eId for a list item. A label that repeats under one parent starts a new list:
+        the first list keeps its eIds, later ones get an `lstN` scope (as in the body)."""
+        leaf = f"{prefix}-{p.number}"
+        gen = list_generations.setdefault((parent, p.element_type), [1, set()])
+        if leaf in gen[1]:
+            gen[0] += 1
+            gen[1] = set()
+        gen[1].add(leaf)
+        return f"lst{gen[0]}__{leaf}" if gen[0] > 1 else leaf
+
     for entry in stream:
         # --- amendment-instruction item (§3 B4 item 2) ----------------------
         if isinstance(entry, _ScheduleItem):
@@ -1174,6 +1208,7 @@ def _build_schedule_content(
                 etree.SubElement(item_el, f"{{{AKN_NS}}}heading").text = entry.heading
             _build_item_body(item_el, item_eid, entry.body, quoted_seen_eids)
             current_clause = None
+            current_numsub = None
             current_subclause = None
             current_para = None
             current_content = None
@@ -1202,6 +1237,7 @@ def _build_schedule_content(
             amdact_el = None
             item_idx = 0
             current_clause = None
+            current_numsub = None
             current_subclause = None
             current_para = None
             current_content = None
@@ -1217,6 +1253,7 @@ def _build_schedule_content(
             etree.SubElement(amdact_el, f"{{{AKN_NS}}}heading").text = p.text.strip()
             item_idx = 0
             current_clause = None
+            current_numsub = None
             current_subclause = None
             current_para = None
             current_content = None
@@ -1243,6 +1280,7 @@ def _build_schedule_content(
                 etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                 if heading_str:
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_numsub = None
                 current_subclause = None
                 current_para = None
                 current_content = None
@@ -1255,6 +1293,7 @@ def _build_schedule_content(
                 parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
                 eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str.replace('.', '-')}", quoted_seen_eids)
+                current_numsub = None
                 current_subclause = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
                 )
@@ -1277,6 +1316,7 @@ def _build_schedule_content(
                     # Fall through to plain body text handling
                     # (reset clause state so prose goes to schedule content, not current clause)
                     current_clause = None
+                    current_numsub = None
                     current_subclause = None
                     current_para = None
                     current_content = None
@@ -1289,21 +1329,22 @@ def _build_schedule_content(
                     )
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                    current_numsub = None
                     current_subclause = None
                     current_para = None
                     current_content = None
                     continue
 
             # Plain body text
-            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else _container())
+            parent = _leaf_parent()
             content_el = _content_for(parent)
             _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
             _emit_p_inline(_p_el, p)
 
         elif p.element_type == ElementType.PARAGRAPH:
-            parent = current_subclause if current_subclause is not None else (current_clause if current_clause is not None else _container())
+            parent = _leaf_parent()
             parent_eid = parent.get("eId", schedule_eid)
-            eid = _unique_quoted_eid(f"{parent_eid}__para-{p.number}", quoted_seen_eids)
+            eid = _unique_quoted_eid(f"{parent_eid}__{_list_leaf(parent, p, 'para')}", quoted_seen_eids)
             current_para = etree.SubElement(parent, f"{{{AKN_NS}}}paragraph", eId=eid)
             etree.SubElement(current_para, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
@@ -1321,6 +1362,7 @@ def _build_schedule_content(
                 parent = current_clause if current_clause is not None else _container()
                 parent_eid = parent.get("eId", schedule_eid)
                 eid = _unique_quoted_eid(f"{parent_eid}__subclause-{num_str.replace('.', '-')}", quoted_seen_eids)
+                current_numsub = None
                 current_subclause = etree.SubElement(
                     parent, f"{{{AKN_NS}}}hcontainer", name="subclause", eId=eid
                 )
@@ -1339,6 +1381,7 @@ def _build_schedule_content(
                 etree.SubElement(current_clause, f"{{{AKN_NS}}}num").text = num_str
                 if heading_str:
                     etree.SubElement(current_clause, f"{{{AKN_NS}}}heading").text = heading_str
+                current_numsub = None
                 current_subclause = None
                 current_para = None
                 current_content = None
@@ -1361,21 +1404,16 @@ def _build_schedule_content(
                 content_el = etree.SubElement(sub_el, f"{{{AKN_NS}}}content")
                 _p_el = etree.SubElement(content_el, f"{{{AKN_NS}}}p")
                 _emit_p_inline(_p_el, p)
-            # Do NOT update current_subclause — numbered subclauses are siblings, not a new nesting level
+            # Numbered subclauses are siblings, not a new nesting level, so current_subclause is left alone;
+            # the paragraphs and prose after this one attach to it through current_numsub.
+            current_numsub = sub_el
             current_para = None
             current_content = None
 
         elif p.element_type == ElementType.SUBPARAGRAPH:
-            if current_para is not None:
-                parent = current_para
-            elif current_subclause is not None:
-                parent = current_subclause
-            elif current_clause is not None:
-                parent = current_clause
-            else:
-                parent = _container()
+            parent = current_para if current_para is not None else _leaf_parent()
             parent_eid = parent.get("eId", schedule_eid)
-            eid = _unique_quoted_eid(f"{parent_eid}__subpara-{p.number}", quoted_seen_eids)
+            eid = _unique_quoted_eid(f"{parent_eid}__{_list_leaf(parent, p, 'subpara')}", quoted_seen_eids)
             subpara_el = etree.SubElement(parent, f"{{{AKN_NS}}}subparagraph", eId=eid)
             etree.SubElement(subpara_el, f"{{{AKN_NS}}}num").text = p.number
             if p.text:
@@ -1390,9 +1428,7 @@ def _build_schedule_content(
             # context. Header-row position is inconsistent across schedule tables
             # (multi-row banners, blank spacer rows), so no row is promoted to
             # <th> — every row is a <td>, avoiding a false header signal.
-            parent = current_subclause if current_subclause is not None else (
-                current_clause if current_clause is not None else _container()
-            )
+            parent = _leaf_parent()
             table_el = etree.SubElement(parent, f"{{{AKN_NS}}}table")
             for row in p.table_rows:
                 tr_el = etree.SubElement(table_el, f"{{{AKN_NS}}}tr")

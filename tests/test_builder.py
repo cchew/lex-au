@@ -2632,20 +2632,20 @@ _PLAIN_SCHEDULE_BASELINE = """<attachments xmlns="http://docs.oasis-open.org/leg
             <content>
               <p>The manufacturer must document this.</p>
             </content>
+            <table>
+              <tr>
+                <td>Item</td>
+                <td>Requirement</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Sterility</td>
+              </tr>
+            </table>
+            <content>
+              <p>Trailing prose after the table.</p>
+            </content>
           </hcontainer>
-          <table>
-            <tr>
-              <td>Item</td>
-              <td>Requirement</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Sterility</td>
-            </tr>
-          </table>
-          <content>
-            <p>Trailing prose after the table.</p>
-          </content>
         </hcontainer>
         <content>
           <p>Note: see clause 8.</p>
@@ -3246,3 +3246,87 @@ def test_legacy_table_of_provisions_is_not_built_as_parts(meta):
 def test_table_of_provisions_without_a_repeated_title_page_is_left_alone(meta):
     xml, _ = build_xml(meta, _legacy_toc_stream(repeat_title=False))
     assert "part-I-2" in _eids(xml)
+
+
+def _schedule_eids(xml):
+    return [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId") and e.get("eId").startswith("schedule-")]
+
+
+def _sched(*items):
+    head = [
+        ParsedParagraph(ElementType.SECTION, number="1", heading="Short title"),
+        ParsedParagraph(ElementType.BODY, text="Schedule\xa01—Rules", raw_style="ActHead 1"),
+        ParsedParagraph(ElementType.SECTION, number="2", heading="Rules"),
+    ]
+    return head + list(items)
+
+
+def test_schedule_paragraphs_nest_under_their_numbered_subclause(meta):
+    p = ParsedParagraph
+    xml, _ = build_xml(meta, _sched(
+        p(ElementType.SUBSECTION, number="1", text="A person must:"),
+        p(ElementType.PARAGRAPH, number="a", text="register; and"),
+        p(ElementType.PARAGRAPH, number="b", text="report."),
+        p(ElementType.SUBSECTION, number="2", text="Subclause (1) does not apply if:"),
+        p(ElementType.PARAGRAPH, number="a", text="an exemption applies; or"),
+        p(ElementType.PARAGRAPH, number="b", text="the person is a child."),
+    ))
+    ids = _schedule_eids(xml)
+    assert len(ids) == len(set(ids))
+    assert "schedule-1__clause-2__subclause-1__para-a" in ids
+    assert "schedule-1__clause-2__subclause-2__para-a" in ids
+    ns = {"akn": AKN_NS}
+    sub2 = xml.find(".//akn:hcontainer[@eId='schedule-1__clause-2__subclause-2']", ns)
+    assert [e.get("eId") for e in sub2.findall("akn:paragraph", ns)] == [
+        "schedule-1__clause-2__subclause-2__para-a",
+        "schedule-1__clause-2__subclause-2__para-b",
+    ]
+
+
+def test_schedule_restarted_list_under_one_clause_gets_a_scope(meta):
+    p = ParsedParagraph
+    xml, _ = build_xml(meta, _sched(
+        p(ElementType.PARAGRAPH, number="a", text="first list a"),
+        p(ElementType.PARAGRAPH, number="b", text="first list b"),
+        p(ElementType.BODY, text="during the period that:"),
+        p(ElementType.PARAGRAPH, number="a", text="second list a"),
+        p(ElementType.PARAGRAPH, number="b", text="second list b"),
+    ))
+    ids = _schedule_eids(xml)
+    assert len(ids) == len(set(ids))
+    assert "schedule-1__clause-2__para-a" in ids
+    assert "schedule-1__clause-2__lst2__para-a" in ids
+    assert "schedule-1__clause-2__lst2__para-b" in ids
+
+
+def test_schedule_prose_after_a_numbered_subclause_stays_inside_it(meta):
+    p = ParsedParagraph
+    xml, _ = build_xml(meta, _sched(
+        p(ElementType.SUBSECTION, number="1", text="A person must:"),
+        p(ElementType.PARAGRAPH, number="a", text="register."),
+        p(ElementType.BODY, text="and must keep records."),
+        p(ElementType.SUBSECTION, number="2", text="Otherwise nothing."),
+    ))
+    ns = {"akn": AKN_NS}
+    sub1 = xml.find(".//akn:hcontainer[@eId='schedule-1__clause-2__subclause-1']", ns)
+    assert "and must keep records." in " ".join(sub1.itertext())
+
+
+def test_quoted_content_restarted_list_gets_a_scope():
+    from lexau.builder import _build_quoted_content
+
+    p = ParsedParagraph
+    container = etree.Element(f"{{{AKN_NS}}}hcontainer", eId="schedule-1__item-1")
+    seen: set[str] = set()
+    _build_quoted_content(container, "schedule-1__item-1", [
+        p(ElementType.SUBSECTION, number="10", text="Where:"),
+        p(ElementType.PARAGRAPH, number="a", text="first a"),
+        p(ElementType.PARAGRAPH, number="b", text="first b"),
+        p(ElementType.BODY, text="and where:"),
+        p(ElementType.PARAGRAPH, number="a", text="second a"),
+        p(ElementType.PARAGRAPH, number="b", text="second b"),
+    ], seen)
+    ids = [e.get("eId") for e in container.iter() if isinstance(e.tag, str) and e.get("eId")]
+    assert len(ids) == len(set(ids))
+    assert "schedule-1__item-1__subsec-10__para-a" in ids
+    assert "schedule-1__item-1__subsec-10__lst2__para-a" in ids

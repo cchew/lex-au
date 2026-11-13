@@ -120,7 +120,11 @@ def test_bare_number_clauses_become_clauses() -> None:
     assert cl.xpath("a:hcontainer[@name='subclause']/@eId", namespaces=AKN) == [
         clauses[0] + "__subclause-1", clauses[0] + "__subclause-2",
     ]
-    assert cl.xpath("a:paragraph/@eId", namespaces=AKN) == [clauses[0] + "__para-a"]
+    # (a) belongs to subclause (2), which introduces it.
+    assert cl.xpath("a:paragraph/@eId", namespaces=AKN) == []
+    assert cl.xpath("a:hcontainer[@name='subclause'][2]/a:paragraph/@eId", namespaces=AKN) == [
+        clauses[0] + "__subclause-2__para-a"
+    ]
 
 
 def test_continuation_volume_merges_into_open_schedule() -> None:
