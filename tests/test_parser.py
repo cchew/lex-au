@@ -781,3 +781,24 @@ def test_classify_legacy_stream_threads_style_for_heading5_shape():
     assert results[2][0].number == "2"
     assert results[3][0].element_type == ElementType.SUBSECTION
     assert results[3][0].number == "1"
+
+
+def test_classify_legacy_stream_table_of_provisions_numbers_do_not_advance_the_section_counter():
+    # The Table of Provisions' "N.\tTitle" lines parse as sections before the enacting
+    # formula and used to leave the counter far ahead, so the real, unbolded
+    # "Short title" / "1.\ttext" pair after the formula failed the sequential check.
+    stream = [
+        ("TABLE OF PROVISIONS", True, ""),
+        ("1.\tShort title", False, ""),
+        ("2.\tCommencement", False, ""),
+        ("3.\tPrincipal Act", False, ""),
+        ("SCHEDULE 1", True, ""),
+        ("The Parliament of Australia enacts:", False, ""),
+        ("Short title", False, ""),
+        ("1.\tThis Act may be cited as the Example Act 1990.", False, ""),
+    ]
+    results = classify_legacy_stream(stream)
+    assert results[7][0].element_type == ElementType.SECTION
+    assert results[7][0].number == "1"
+    assert results[7][0].heading == "Short title"
+

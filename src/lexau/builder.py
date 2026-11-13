@@ -243,6 +243,69 @@ def _is_toc_paragraph(p: ParsedParagraph) -> bool:
     return bool(_TOC_STYLE_RE.match(p.raw_style.strip()))
 
 
+_LEGACY_TOC_HEADING_RE = re.compile(r'^TABLE OF PROVISIONS\b', re.IGNORECASE)
+_LEGACY_TOC_SEARCH_WINDOW = 12
+_LEGACY_ACT_NUMBER_RE = re.compile(r'^No\.\s*\d+\s+of\s+\d{4}$')
+
+
+def _norm_text(p: ParsedParagraph) -> str:
+    return " ".join((p.text or "").split())
+
+
+def _drop_legacy_toc(paragraphs: list[ParsedParagraph]) -> list[ParsedParagraph]:
+    """Remove a pre-1990 compilation's unstyled Table of Provisions.
+
+    Those compilations run: title, "No. N of YYYY", "TABLE OF PROVISIONS" with its
+    own PART lines and "N.<tab>Title" entries, then the title and number again
+    above the long title and enacting formula. The TOC's PART lines are
+    structural, so they end the preface early and the whole contents list is
+    built as Parts, which then collide with the real ones (`part-I-2`).
+
+    Only drops when the repeated title page is found, so a TOC without that
+    marker is left untouched rather than guessed at.
+    """
+    if not paragraphs or paragraphs[0].volume_index != 0:
+        return paragraphs
+    window = paragraphs[:_LEGACY_TOC_SEARCH_WINDOW]
+    start = next(
+        (
+            i
+            for i, p in enumerate(window)
+            if p.element_type == ElementType.BODY
+            and not _is_toc_paragraph(p)
+            and _LEGACY_TOC_HEADING_RE.match(_norm_text(p))
+            and len(_norm_text(p)) <= 30
+        ),
+        None,
+    )
+    if start is None:
+        return paragraphs
+    # The title page (title, then "No. N of YYYY") comes back above the long title.
+    # The title can wrap differently the second time, so match its first line and
+    # the number line rather than the whole block.
+    front = [_norm_text(p) for p in paragraphs[:start] if p.element_type == ElementType.BODY and _norm_text(p)]
+    number = next((t for t in front if _LEGACY_ACT_NUMBER_RE.match(t)), None)
+    if not front or number is None:
+        return paragraphs
+    for j in range(start + 1, len(paragraphs)):
+        p = paragraphs[j]
+        t = _norm_text(p)
+        if p.element_type != ElementType.BODY or len(t) < 15 or not (t.startswith(front[0]) or front[0].startswith(t)):
+            continue
+        for k in range(j, min(j + 4, len(paragraphs))):
+            if _norm_text(paragraphs[k]) == number:
+                return paragraphs[:start] + paragraphs[k + 1 :]
+    return paragraphs
+    width = len(front)
+    for j in range(start + 1, len(paragraphs) - width + 1):
+        if all(
+            paragraphs[j + k].element_type == ElementType.BODY and _norm_text(paragraphs[j + k]) == front[k]
+            for k in range(width)
+        ):
+            return paragraphs[:start] + paragraphs[j + width :]
+    return paragraphs
+
+
 # Migration Regulations 1994 Schedule 2 ("visa-subclass schedule"): its Parts are
 # "Subclass 010—Bridging A" (ActHead 2, plain space, so the parser's NBSP-only
 # heading regex leaves them BODY), its Divisions/Subdivisions use dedicated
@@ -909,6 +972,7 @@ def _split_stream(
     a preface only makes sense at the very start of an Act, never partway
     through a later volume.
     """
+    paragraphs = _drop_legacy_toc(paragraphs)
     volumes: list[list[ParsedParagraph]] = [
         list(group) for _, group in groupby(paragraphs, key=lambda p: p.volume_index)
     ]

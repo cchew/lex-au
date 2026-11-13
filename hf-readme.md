@@ -23,9 +23,11 @@ configs:
 
 Australia's [legislation.gov.au](https://legislation.gov.au) provides DOCX and PDF downloads. This dataset provides structured XML, section-level addressing and AKN for Commonwealth Acts in force.
 
-**Version: v0.15.1** - 3,087 Acts and Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
+**Version: v0.15.2** - 3,087 Acts and Regulations ([full Act list](https://github.com/cchew/lex-au/blob/main/acts.txt)).
 
 lex-au-explorer renders this corpus word-for-word for body text. Footnotes in 6 international-instrument schedules are a named carve-out (see [known limitations](https://github.com/cchew/lex-au/blob/main/docs/known-limitations-schedule-and-conversion.txt), entry (f)).
+
+**v0.15.2**: the Table of Provisions in 127 pre-1990 compilations is removed from the body (it was being built as duplicate Parts). `structure_version` stays 3.
 
 **v0.15.1**: builds are deterministic (spurious `lstN` eId scopes removed in 687 Acts) and definitions after nested list items are tagged correctly. `structure_version` stays 3.
 

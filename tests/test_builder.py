@@ -3191,3 +3191,58 @@ def test_build_leaves_no_duplicate_eids_across_quoted_structures(meta):
     xml, _ = build_xml(meta, paragraphs)
     eids = [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
     assert len(eids) == len(set(eids))
+
+
+def _legacy_toc_stream(*, toc_heading="TABLE OF PROVISIONS", repeat_title=True):
+    """Pre-1990 compilation front matter: the Table of Provisions (unstyled, with its
+    own PART lines) sits between the title page and a repeated title page."""
+    title = "Customs Tariff (Miscellaneous Amendments) Act 1987"
+    p = ParsedParagraph
+    stream = [
+        p(ElementType.BODY, text=title),
+        p(ElementType.BODY, text="No. 76 of 1987"),
+        p(ElementType.BODY, text=toc_heading),
+        p(ElementType.PART, number="I", heading="PRELIMINARY"),
+        p(ElementType.BODY, text="Section"),
+        p(ElementType.BODY, text="1.\tShort title"),
+        p(ElementType.BODY, text="2.\tCommencement"),
+        p(ElementType.PART, number="II", heading="AMENDMENTS"),
+        p(ElementType.BODY, text="3.\tPrincipal Act"),
+        p(ElementType.FIGURE),
+    ]
+    if repeat_title:
+        stream += [p(ElementType.BODY, text=title), p(ElementType.BODY, text="No. 76 of 1987")]
+    stream += [
+        p(ElementType.BODY, text="An Act to amend the Customs Act 1901"),
+        p(ElementType.BODY, text="BE IT ENACTED by the Queen, and the Parliament enacts:"),
+        p(ElementType.PART, number="I", heading="PRELIMINARY"),
+        p(ElementType.SECTION, number="1", heading="Short title"),
+        p(ElementType.BODY, text="This Act may be cited."),
+        p(ElementType.SECTION, number="2", heading="Commencement"),
+        p(ElementType.BODY, text="On Royal Assent."),
+        p(ElementType.PART, number="II", heading="AMENDMENTS"),
+        p(ElementType.SECTION, number="3", heading="Principal Act"),
+        p(ElementType.BODY, text="In this Act."),
+    ]
+    return stream
+
+
+def _eids(xml):
+    return [e.get("eId") for e in xml.iter() if isinstance(e.tag, str) and e.get("eId")]
+
+
+def test_legacy_table_of_provisions_is_not_built_as_parts(meta):
+    xml, _ = build_xml(meta, _legacy_toc_stream())
+    ns = {"akn": AKN_NS}
+    assert sorted(e for e in _eids(xml) if "__" not in e and e.startswith("part-")) == ["part-I", "part-II"]
+    assert len(xml.findall(".//akn:body/akn:part", ns)) == 2
+    text = " ".join(xml.itertext())
+    assert "Principal Act" in text and "Section 1." not in text
+    preface = xml.find(".//akn:preface", ns)
+    assert "enacts" in " ".join(preface.itertext())
+    assert " ".join(preface.itertext()).count("Customs Tariff (Miscellaneous Amendments) Act 1987") == 1
+
+
+def test_table_of_provisions_without_a_repeated_title_page_is_left_alone(meta):
+    xml, _ = build_xml(meta, _legacy_toc_stream(repeat_title=False))
+    assert "part-I-2" in _eids(xml)

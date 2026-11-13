@@ -572,6 +572,12 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
         formula_seen_before_this_para = past_enacting_formula
         schedule_seen_before_this_para = past_schedule_heading
         if _LEGACY_ENACTED_RE.search(stripped):
+            if not past_enacting_formula:
+                # Everything before the formula is front matter: a Table of
+                # Provisions parses its entries as sections and lists the
+                # Schedules, which must not count against the real body.
+                last_section_num = 0
+                past_schedule_heading = False
             past_enacting_formula = True
         if all_bold and _LEGACY_SCHEDULE_HEADING_RE.match(stripped):
             past_schedule_heading = True
