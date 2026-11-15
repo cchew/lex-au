@@ -81,6 +81,8 @@ def test_build_one_writes_atomically_and_leaves_no_tmp(tmp_path: Path, monkeypat
     assert res["status"] == "built", res
     assert (tmp_path / "xml" / "foo-act-2000.xml").read_bytes().startswith(b"<?xml")
     assert not list(tmp_path.rglob("*.tmp"))
+    # spot_check.py reads `<Act>-v*.json`; an unversioned report would never be checked.
+    assert [p.name for p in (tmp_path / "reports").glob("foo-act-2000-v*.json")] == ["foo-act-2000-v0.5.0.json"]
 
 
 def test_resume_skips_wellformed_rebuilds_truncated_and_reports(tmp_path: Path, monkeypatch) -> None:

@@ -31,6 +31,10 @@ from lexau.corpus import STRUCTURE_VERSION, Corpus  # noqa: E402
 from lexau.models import ActMetadata, doc_type_for  # noqa: E402
 from lexau.profiles import profile_for  # noqa: E402
 
+# Same name `lexau build` writes (cli.py); spot_check.py globs `<Act>-v*.json`, so an unversioned
+# `<Act>.json` is never read and leaves the previous build's report standing.
+REPORT_SUFFIX = "-v0.5.0.json"
+
 
 def meta_from_entry(entry: dict) -> ActMetadata:
     return ActMetadata(
@@ -133,7 +137,7 @@ def build_one(task: dict[str, Any]) -> dict[str, Any]:
         xml, report = _convert_act(meta, paths, out_dir, corpus_index, profile)
         report.volumes_fetched = len(paths)
         data = etree.tostring(xml, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-        _atomic_write(out_dir / "reports" / f"{meta.safe_name}.json", json.dumps(asdict(report), indent=2).encode())
+        _atomic_write(out_dir / "reports" / f"{meta.safe_name}{REPORT_SUFFIX}", json.dumps(asdict(report), ensure_ascii=False, indent=2).encode())
         _atomic_write(out_dir / "xml" / f"{meta.safe_name}.xml", data)  # last: its presence marks the Act done
         result.update(status="built", vols=len(paths), terms=report.terms_found)
     except Exception as exc:  # noqa: BLE001
@@ -295,7 +299,7 @@ def main(
             )
             report.volumes_fetched = len(paths)
             corpus.save(meta, xml, source_format=entry.get("source_format"))
-            (reports_dir / f"{meta.safe_name}.json").write_text(json.dumps(asdict(report), indent=2))
+            (reports_dir / f"{meta.safe_name}{REPORT_SUFFIX}").write_text(json.dumps(asdict(report), ensure_ascii=False, indent=2))
             built += 1
             click.echo(f"OK {key} vols={len(paths)} terms={report.terms_found}")
         except Exception as exc:  # noqa: BLE001
