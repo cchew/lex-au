@@ -3330,3 +3330,20 @@ def test_quoted_content_restarted_list_gets_a_scope():
     assert len(ids) == len(set(ids))
     assert "schedule-1__item-1__subsec-10__para-a" in ids
     assert "schedule-1__item-1__subsec-10__lst2__para-a" in ids
+
+
+def test_quoted_span_keeps_text_before_its_provision(meta):
+    p = ParsedParagraph
+    xml, _ = build_xml(meta, [
+        p(ElementType.SECTION, number="1", heading="Short title"),
+        p(ElementType.BODY, text="The Act is amended as follows:"),
+        p(ElementType.BODY, text="“"),
+        p(ElementType.BODY, text="Lead-in text that sits before the quoted provision."),
+        p(ElementType.SECTION, number="6", heading="Quoted heading"),
+        p(ElementType.BODY, text="Quoted provision text."),
+        p(ElementType.BODY, text="”"),
+    ])
+    text = " ".join(xml.itertext())
+    assert "Lead-in text that sits before the quoted provision." in text
+    assert "Quoted provision text." in text
+    assert xml.find(f".//{{{AKN_NS}}}quotedStructure") is not None

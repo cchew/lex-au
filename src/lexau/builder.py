@@ -69,7 +69,7 @@ _SCHEDULE_RE = re.compile(
     r'^Schedule[\xa0 ](\d+(?:(?-i:[A-Z]{1,3})(?=[—–\-\s]|$))?|[IVX]+)', re.IGNORECASE
 )
 _UNNUMBERED_DICTIONARY_RE = re.compile(r"^Dictionary$")
-_ENACTING_RE = re.compile(r'\benacts?\s*:', re.IGNORECASE)
+_ENACTING_RE = re.compile(r'\benacts?\s*[:;]', re.IGNORECASE)
 _WHEREAS_RE  = re.compile(r'^WHEREAS\b', re.IGNORECASE)
 _STRUCTURAL = frozenset({
     ElementType.CHAPTER, ElementType.PART, ElementType.DIVISION,
@@ -167,7 +167,13 @@ def _preprocess_quoted_structures(
                     top_level_structural = 0
                 if top_level_structural == 1:
                     found += 1
-                    result.append(_QuotedSpan(inner_paras=inner))
+                    # The sub-builder keeps only what follows its first structural element, so
+                    # anything the quote opens with would vanish; keep it as ordinary paragraphs.
+                    first_structural = next(
+                        k for k, ip in enumerate(inner) if ip.element_type in _QUOTED_STRUCTURAL
+                    )
+                    result.extend(inner[:first_structural])
+                    result.append(_QuotedSpan(inner_paras=inner[first_structural:]))
                 else:
                     # Multi-provision or empty — drop markers, emit inner as-is
                     unhandled += 1

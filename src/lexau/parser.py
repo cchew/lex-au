@@ -87,6 +87,11 @@ def is_legacy_document(styles: Iterable[str]) -> bool:
 # the latter needed tightening against real corpus false positives.
 _LEGACY_FUSED_RE = re.compile(r'^(\w[\w.\-]*)\.\s+\((\d+[A-Z]?)\)\s+(.+)$', re.DOTALL)
 
+# Same shape without the space after the dot ("1.(1) This Act may be cited..."), as printed in
+# 1990s Acts, under a separate heading paragraph. Only used behind a heading donor and the
+# sequential-number check in classify_legacy_stream; the spaced form above is left as it was.
+_LEGACY_FUSED_UNSPACED_RE = re.compile(r'^(\d+[A-Z]*)\.\((\d+[A-Z]?)\)\s+(.+)$', re.DOTALL)
+
 # Legacy-only heading match. Reuses _HEADING_RE's prefix/heading grouping but
 # tolerates BOTH a plain space and \xa0 between the prefix and the number, and
 # matches case-insensitively. The plan's original assumption — "reuses
@@ -232,7 +237,7 @@ _LEGACY_NUMBER_INT_RE = re.compile(r'^(\d+)')
 # formula used by the pre-1960s Acts this task fixes, which _ENACTING_RE
 # does not match (no bare "enacts:"). `search`, not `match`: the formula
 # text is never the start of the paragraph in either shape.
-_LEGACY_ENACTED_RE = re.compile(r'\benact\w*\b.*:', re.IGNORECASE | re.DOTALL)
+_LEGACY_ENACTED_RE = re.compile(r'\benact\w*\b.*:|\benacts\s*;', re.IGNORECASE | re.DOTALL)
 
 # Schedule-heading detector for the sequential-number gate below -- matches a
 # prefix of what builder.py's own _SCHEDULE_RE matches (bare digits only, so
@@ -635,6 +640,20 @@ def classify_legacy_stream(paragraphs: list[tuple[str, bool, str]]) -> list[list
                 or _LEGACY_NUMBERED_RE.match(stripped)
                 or _SUBSEC_RE.match(stripped)
             )
+            mf = _LEGACY_FUSED_UNSPACED_RE.match(next_stripped)
+            if mf and candidacy_open and not donor_is_operative and not _legacy_bad_donor(stripped):
+                fused_num = _leading_int(mf.group(1))
+                if fused_num is not None and fused_num == last_section_num + 1:
+                    results[i] = []  # consumed into the section's heading
+                    results[i + 1] = [
+                        ParsedParagraph(ElementType.SECTION, number=mf.group(1), heading=stripped),
+                        ParsedParagraph(ElementType.SUBSECTION, number=mf.group(2), text=mf.group(3).strip()),
+                    ]
+                    last_section_num = fused_num
+                    if _LEGACY_SCHEDULES_SECTION_RE.match(stripped):
+                        past_schedule_heading = True
+                    i += 2
+                    continue
             if m and not donor_is_operative and not _LEGACY_FUSED_RE.match(next_stripped):
                 candidate_num = _leading_int(m.group(1))
                 sequential = (

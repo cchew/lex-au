@@ -802,3 +802,49 @@ def test_classify_legacy_stream_table_of_provisions_numbers_do_not_advance_the_s
     assert results[7][0].number == "1"
     assert results[7][0].heading == "Short title"
 
+
+
+_FUSED_ACT = [
+    ("The Parliament of Australia enacts:", False, ""),
+    ("Short title etc.", False, ""),
+    ("1.(1) This Act may be cited as the Example Act 1994.", False, ""),
+    ("(2) In this Act, “Principal Act” means the Crimes Act 1914.", False, ""),
+    ("Commencement", False, ""),
+    ("2.(1) This Act commences on a day to be fixed by Proclamation.", False, ""),
+    ("(2) If this Act does not commence within 6 months, it commences on the first day after.", False, ""),
+]
+
+
+def test_classify_legacy_stream_heading_then_unspaced_fused_section_and_subsection():
+    # 1994-era Acts print "1.(1) text" with no space after the dot, under a separate heading line.
+    results = classify_legacy_stream(_FUSED_ACT)
+    assert results[1] == []  # heading donor consumed
+    sec, sub = results[2]
+    assert (sec.element_type, sec.number, sec.heading) == (ElementType.SECTION, "1", "Short title etc.")
+    assert (sub.element_type, sub.number) == (ElementType.SUBSECTION, "1")
+    assert sub.text.startswith("This Act may be cited")
+    assert results[3][0].element_type == ElementType.SUBSECTION
+    assert results[4] == []
+    assert results[5][0].number == "2" and results[5][0].heading == "Commencement"
+
+
+def test_classify_legacy_stream_unspaced_fused_is_ignored_in_front_matter():
+    # Before the enacting formula (a Table of Provisions) the pair must not become a section.
+    stream = [("Short title etc.", False, "")] + _FUSED_ACT[2:3] + _FUSED_ACT
+    results = classify_legacy_stream(stream)
+    assert results[0][0].element_type == ElementType.BODY
+    assert results[1][0].element_type == ElementType.BODY
+
+
+def test_classify_legacy_stream_unspaced_fused_must_be_the_next_section_number():
+    stream = [_FUSED_ACT[0], ("Some heading", False, ""), ("7.(1) A number that skips ahead.", False, "")]
+    results = classify_legacy_stream(stream)
+    assert results[2][0].element_type == ElementType.BODY
+
+
+def test_classify_legacy_stream_enacting_formula_ending_in_a_semicolon():
+    # "The Parliament of Australia enacts;" (Family Law Reform Act 1995) must open section candidacy.
+    stream = [("The Parliament of Australia enacts;", False, "")] + _FUSED_ACT[1:]
+    results = classify_legacy_stream(stream)
+    assert results[2][0].element_type == ElementType.SECTION
+    assert results[2][0].number == "1" and results[2][0].heading == "Short title etc."
