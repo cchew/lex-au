@@ -148,6 +148,12 @@ def main() -> int:
              "the gate only fails on new regressions, not this known set",
     )
     parser.add_argument(
+        "--allow-missing-reports", action="store_true",
+        help="Do not fail an Act that has no <Act>-v*.json report. By default a missing "
+             "report is a failure: the report-based checks are skipped without it, and an "
+             "unversioned report name once let every Act pass with none of them run.",
+    )
+    parser.add_argument(
         "--xsd-whitelist", type=Path,
         default=Path("docs/xsd-whitelist.json"),
         help="Strict-with-whitelist XSD gate manifest (see "
@@ -208,6 +214,8 @@ def main() -> int:
             summary = f"vols={vols} subsecs={subsecs} paras={paras} sched={sched} refs={refs}"
         else:
             summary = "(no report)"
+            if not args.allow_missing_reports:
+                issues.append(f"no report found ({act_name}-v*.json): report-based checks did not run")
 
         status = "OK  " if not issues else "FAIL"
         print(f"  {status}  {act_name}  [{summary}]")

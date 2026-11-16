@@ -160,7 +160,7 @@ def test_baseline_empty_body_excludes_known_limitation_from_failure(tmp_path: Pa
 
     result = subprocess.run(
         [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir),
-         "--baseline-empty-body", str(baseline)],
+         "--baseline-empty-body", str(baseline), "--allow-missing-reports"],
         capture_output=True, text=True,
     )
 
@@ -197,3 +197,37 @@ def test_subtype_check_rejects_mismatch_and_unknown():
     assert not check(["/akn/au/regulation/1994/F1996B00580", "act"])
     assert not check(["/akn/au/bill/2020/1", "bill"])
     assert not check([])
+
+
+def test_missing_report_fails_the_gate_unless_allowed(tmp_path: Path):
+    corpus_dir = tmp_path / "corpus"
+    xml_dir = corpus_dir / "xml"
+    xml_dir.mkdir(parents=True)
+    _write_act_xml(xml_dir, "has-sections-act", has_section=True)
+
+    strict = subprocess.run(
+        [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir)],
+        capture_output=True, text=True,
+    )
+    assert strict.returncode == 1
+    assert "no report" in strict.stdout and "has-sections-act" in strict.stdout
+
+    relaxed = subprocess.run(
+        [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir), "--allow-missing-reports"],
+        capture_output=True, text=True,
+    )
+    assert "FAIL  has-sections-act" not in relaxed.stdout, relaxed.stdout
+    assert "OK    has-sections-act" in relaxed.stdout
+
+
+def test_versioned_report_satisfies_the_gate(tmp_path: Path):
+    corpus_dir = tmp_path / "corpus"
+    xml_dir = corpus_dir / "xml"
+    xml_dir.mkdir(parents=True)
+    _write_act_xml(xml_dir, "has-sections-act", has_section=True)
+    _write_report(corpus_dir / "reports", "has-sections-act", subsections_parsed=0)
+    result = subprocess.run(
+        [sys.executable, "scripts/spot_check.py", "--corpus-dir", str(corpus_dir)],
+        capture_output=True, text=True,
+    )
+    assert "no report" not in result.stdout

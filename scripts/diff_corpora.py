@@ -1,10 +1,14 @@
-"""Compare two corpus xml dirs: byte identity, section counts, term and local-term counts."""
+"""Compare two corpus xml dirs: byte identity, section counts, term counts, text loss, eId integrity, figure drops.
+
+Release check: exits 1 on lost paragraph text, duplicate or empty eIds, a section or figure drop, or (unless
+--allow-section-increase) any section-count change."""
 from __future__ import annotations
 
 import argparse
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 from lxml import etree
@@ -43,6 +47,49 @@ def act_counts(xml_bytes: bytes) -> dict[str, int]:
     }
 
 
+_LABEL_RE = re.compile(r"^(?:\d+[A-Z]*\.?\s*)?(?:\(\d+[A-Z]?\)\s+)?")
+_WS_RE = re.compile(r"\s+")
+_MIN_PROBE = 12
+
+
+def _norm(text: str) -> str:
+    return _WS_RE.sub(" ", text).strip()
+
+
+def _paragraph_texts(root: etree._Element) -> list[str]:
+    return [_norm("".join(p.itertext())) for p in root.iter(f"{{{AKN}}}p")]
+
+
+def lost_text(base_bytes: bytes, new_bytes: bytes) -> list[str]:
+    """Paragraphs present in the baseline whose text no longer appears anywhere in the new
+    Act. A leading section/subsection label ("3. ", "1.(1) ") is ignored, because a label
+    that moves into <num> or a heading is not loss; text that moves elsewhere is not loss either."""
+    base = Counter(_paragraph_texts(etree.fromstring(base_bytes)))
+    new_root = etree.fromstring(new_bytes)
+    new = Counter(_paragraph_texts(new_root))
+    full_new = _norm("".join(new_root.itertext()))
+    lost: list[str] = []
+    for text in (base - new).elements():
+        probe = _LABEL_RE.sub("", text, count=1)[:80]
+        if len(probe) >= _MIN_PROBE and probe not in full_new:
+            lost.append(text)
+    return lost
+
+
+def eid_problems(xml_bytes: bytes) -> tuple[int, int]:
+    """(duplicate eId count, empty eId count)."""
+    seen: Counter[str] = Counter()
+    empty = 0
+    for el in etree.fromstring(xml_bytes).iter():
+        eid = el.get("eId") if isinstance(el.tag, str) else None
+        if eid is None:
+            continue
+        if eid == "":
+            empty += 1
+        seen[eid] += 1
+    return sum(c - 1 for c in seen.values() if c > 1), empty
+
+
 def diff_dirs(
     base: Path,
     new: Path,
@@ -75,7 +122,13 @@ def diff_dirs(
             "figures": [bc["figures"], nc["figures"]],
             "images": [bc["images"], nc["images"]],
             "figure_drop": nc["figures"] < bc["figures"] or nc["images"] < bc["images"],
+            "section_drop": nc["sections"] < bc["sections"],
         }
+        dups, empties = eid_problems(nb)
+        acts[stem]["duplicate_eids"], acts[stem]["empty_eids"] = dups, empties
+        lost = [] if same else lost_text(bb, nb)
+        acts[stem]["text_lost"] = len(lost)
+        acts[stem]["text_lost_examples"] = [t[:120] for t in lost[:3]]
     compared = {k: v for k, v in acts.items() if "missing" not in v}
     summary = {
         "acts_compared": len(compared),
@@ -84,6 +137,10 @@ def diff_dirs(
         "date_only_differing": sum(v["date_only"] for v in compared.values()),
         "differing": sum(not v["identical"] for v in compared.values()),
         "section_count_mismatches": sorted(k for k, v in compared.items() if v["section_diff"]),
+        "section_drops": sorted(k for k, v in compared.items() if v["section_drop"]),
+        "text_lost_acts": sorted(k for k, v in compared.items() if v["text_lost"]),
+        "duplicate_eid_acts": sorted(k for k, v in compared.items() if v["duplicate_eids"]),
+        "empty_eid_acts": sorted(k for k, v in compared.items() if v["empty_eids"]),
         "figure_count_drops": sorted(k for k, v in compared.items() if v["figure_drop"]),
         "total_new_terms": sum(v["new_terms"] for v in compared.values()),
         "total_new_local_refs": sum(v["new_local_refs"] for v in compared.values()),
@@ -103,6 +160,11 @@ def main(argv: list[str] | None = None) -> int:
         help="compare raw bytes instead of masking the manifestation Generation date",
     )
     ap.add_argument("--require-identical", action="store_true")
+    ap.add_argument(
+        "--allow-section-increase",
+        action="store_true",
+        help="an Act gaining sections is reported but does not fail; a drop always fails",
+    )
     args = ap.parse_args(argv)
 
     names = None
@@ -123,7 +185,19 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  figure/image count dropped: {k} figures={result['acts'][k]['figures']} images={result['acts'][k]['images']}")
     for k in s["section_count_mismatches"][:20]:
         print(f"  section mismatch: {k} {result['acts'][k]['sections']}")
-    fail = bool(s["section_count_mismatches"]) or bool(s["figure_count_drops"]) or (args.require_identical and s["differing"] > 0)
+    for k in s["text_lost_acts"][:20]:
+        print(f"  text lost: {k} {result['acts'][k]['text_lost']} paragraph(s), e.g. {result['acts'][k]['text_lost_examples'][0]!r}")
+    for k in s["duplicate_eid_acts"][:20] + s["empty_eid_acts"][:20]:
+        print(f"  eId problem: {k} duplicates={result['acts'][k]['duplicate_eids']} empty={result['acts'][k]['empty_eids']}")
+    section_fail = s["section_drops"] if args.allow_section_increase else s["section_count_mismatches"]
+    fail = (
+        bool(section_fail)
+        or bool(s["figure_count_drops"])
+        or bool(s["text_lost_acts"])
+        or bool(s["duplicate_eid_acts"])
+        or bool(s["empty_eid_acts"])
+        or (args.require_identical and s["differing"] > 0)
+    )
     return 1 if fail else 0
 
 
